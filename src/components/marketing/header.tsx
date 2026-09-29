@@ -54,7 +54,9 @@ export function Header() {
 
         {/* Desktop CTA */}
         <div className="hidden md:block">
-          <Button size="sm">Get Started</Button>
+          <Link href="/auth/login">
+            <Button size="sm">Get Started</Button>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -86,9 +88,11 @@ export function Header() {
             </a>
           ))}
           <div className="mt-2 px-3 pb-1">
-            <Button size="sm" className="w-full">
-              Get Started
-            </Button>
+            <Link href="/auth/login" className="w-full">
+              <Button size="sm" className="w-full">
+                Get Started
+              </Button>
+            </Link>
           </div>
         </nav>
       </div>

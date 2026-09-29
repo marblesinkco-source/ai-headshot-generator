@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export function Hero() {
@@ -31,7 +32,9 @@ export function Hero() {
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Button size="lg">Get Started</Button>
+              <Link href="/auth/login">
+                <Button size="lg">Get Started</Button>
+              </Link>
               <Button variant="outline" size="lg">
                 See Examples
               </Button>
