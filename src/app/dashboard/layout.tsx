@@ -27,7 +27,7 @@ const NAV_ITEMS = [
     ),
   },
   {
-    label: 'New Order',
+    label: 'Create New',
     href: '/dashboard/upload',
     icon: (
       <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -85,7 +85,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         {/* Sidebar header */}
         <div className="flex h-16 items-center gap-2 border-b border-gray-200 px-6">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 text-white font-bold text-sm">
-            AI
+            TP
           </div>
           <span className="font-semibold text-gray-900">{siteConfig.name}</span>
           <button

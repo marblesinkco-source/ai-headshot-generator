@@ -4,17 +4,29 @@ import Stripe from 'stripe';
 import { nanoid } from 'nanoid';
 import { createClient } from '@/lib/supabase/server';
 import { PACKAGES, type PackageId } from '@/config/packages';
+import { getCategoryById, getPackageById, type CategoryId } from '@/config/categories';
 import { siteConfig } from '@/config/site';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2024-12-18.acacia' as Stripe.LatestApiVersion,
 });
 
-const checkoutSchema = z.object({
-  packageId: z.enum(['starter', 'professional', 'executive'] as const),
-  successUrl: z.string().url().optional(),
-  cancelUrl: z.string().url().optional(),
-});
+// Support both legacy package-only checkout and new category+package checkout
+const checkoutSchema = z.union([
+  // New category-based checkout
+  z.object({
+    categoryId: z.string(),
+    packageId: z.string(),
+    successUrl: z.string().url().optional(),
+    cancelUrl: z.string().url().optional(),
+  }),
+  // Legacy checkout (backward compatible)
+  z.object({
+    packageId: z.enum(['starter', 'professional', 'executive'] as const),
+    successUrl: z.string().url().optional(),
+    cancelUrl: z.string().url().optional(),
+  }),
+]);
 
 export async function POST(request: NextRequest) {
   try {
@@ -29,13 +41,44 @@ export async function POST(request: NextRequest) {
     }
 
     const { packageId, successUrl, cancelUrl } = parsed.data;
+    const categoryId = 'categoryId' in parsed.data ? parsed.data.categoryId : 'headshots';
 
-    const pkg = PACKAGES[packageId as PackageId];
-    if (!pkg) {
-      return NextResponse.json(
-        { error: 'Package not found' },
-        { status: 404 }
-      );
+    // Resolve package — try new category system first, fall back to legacy
+    let pkgName: string;
+    let pkgPrice: number;
+    let pkgCurrency: string;
+    let outputCount: number;
+    let productDescription: string;
+
+    const category = getCategoryById(categoryId as CategoryId);
+
+    if (category) {
+      const catPkg = getPackageById(categoryId as CategoryId, packageId);
+      if (!catPkg) {
+        return NextResponse.json(
+          { error: 'Package not found for this category' },
+          { status: 404 }
+        );
+      }
+      pkgName = catPkg.name;
+      pkgPrice = catPkg.price;
+      pkgCurrency = catPkg.currency;
+      outputCount = catPkg.outputCount;
+      productDescription = `${catPkg.outputCount} ${category.outputLabel} — ${catPkg.features.slice(0, 3).join(', ')}`;
+    } else {
+      // Legacy fallback for old headshot packages
+      const legacyPkg = PACKAGES[packageId as PackageId];
+      if (!legacyPkg) {
+        return NextResponse.json(
+          { error: 'Package not found' },
+          { status: 404 }
+        );
+      }
+      pkgName = legacyPkg.name;
+      pkgPrice = legacyPkg.price;
+      pkgCurrency = legacyPkg.currency;
+      outputCount = legacyPkg.headshots;
+      productDescription = `${legacyPkg.headshots} AI headshots, ${legacyPkg.backgrounds} backgrounds, ${legacyPkg.styles} styles`;
     }
 
     const supabase = await createClient();
@@ -58,9 +101,11 @@ export async function POST(request: NextRequest) {
         id: orderId,
         user_id: user.id,
         package_id: packageId,
-        amount: pkg.price,
-        currency: pkg.currency,
-        headshot_count: pkg.headshots,
+        category_id: categoryId as CategoryId,
+        amount: pkgPrice,
+        currency: pkgCurrency,
+        headshot_count: outputCount,
+        output_count: outputCount,
         status: 'pending',
       })
       .select('id')
@@ -75,6 +120,7 @@ export async function POST(request: NextRequest) {
     }
 
     const baseUrl = siteConfig.url;
+    const categoryLabel = category ? category.name : 'AI Headshots';
 
     const checkoutSession = await stripe.checkout.sessions.create({
       mode: 'payment',
@@ -82,12 +128,12 @@ export async function POST(request: NextRequest) {
       line_items: [
         {
           price_data: {
-            currency: pkg.currency,
+            currency: pkgCurrency,
             product_data: {
-              name: `${siteConfig.name} - ${pkg.name} Package`,
-              description: `${pkg.headshots} AI headshots, ${pkg.backgrounds} backgrounds, ${pkg.styles} styles`,
+              name: `${siteConfig.name} — ${categoryLabel} — ${pkgName}`,
+              description: productDescription,
             },
-            unit_amount: pkg.price,
+            unit_amount: pkgPrice,
           },
           quantity: 1,
         },
@@ -95,10 +141,11 @@ export async function POST(request: NextRequest) {
       metadata: {
         orderId: order.id,
         packageId,
+        categoryId,
         userId: user.id,
       },
       success_url: successUrl || `${baseUrl}/dashboard/orders/${order.id}?status=success`,
-      cancel_url: cancelUrl || `${baseUrl}/pricing?status=cancelled`,
+      cancel_url: cancelUrl || `${baseUrl}/dashboard/upload?category=${categoryId}&status=cancelled`,
     });
 
     return NextResponse.json({ url: checkoutSession.url });

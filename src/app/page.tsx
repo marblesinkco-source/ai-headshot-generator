@@ -1,5 +1,6 @@
 import { Header } from '@/components/marketing/header';
 import { Hero } from '@/components/marketing/hero';
+import { Categories } from '@/components/marketing/categories';
 import { HowItWorks } from '@/components/marketing/how-it-works';
 import { Pricing } from '@/components/marketing/pricing';
 import { Testimonials } from '@/components/marketing/testimonials';
@@ -11,6 +12,7 @@ export default function LandingPage() {
     <main className="min-h-screen">
       <Header />
       <Hero />
+      <Categories />
       <HowItWorks />
       <Pricing />
       <Testimonials />

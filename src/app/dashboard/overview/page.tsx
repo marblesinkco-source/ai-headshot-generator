@@ -6,11 +6,13 @@ import { createClient } from '@/lib/supabase/client';
 import { Button } from '@/components/ui/button';
 import { OrderStatusBadge } from '@/components/dashboard/order-status';
 import { formatPrice } from '@/lib/utils';
+import { getCategoryById, type CategoryId } from '@/config/categories';
 import type { OrderStatus } from '@/types';
 
 interface OrderRow {
   id: string;
   package_id: string;
+  category_id?: string;
   status: OrderStatus;
   amount: number;
   currency: string;
@@ -42,7 +44,7 @@ export default function DashboardOverviewPage() {
       // Fetch orders
       const { data: orders } = await supabase
         .from('orders')
-        .select('id, package_id, status, amount, currency, created_at')
+        .select('id, package_id, category_id, status, amount, currency, created_at')
         .eq('user_id', user.id)
         .order('created_at', { ascending: false });
 
@@ -101,7 +103,7 @@ export default function DashboardOverviewPage() {
       ),
     },
     {
-      label: 'Headshots Generated',
+      label: 'Photos Generated',
       value: stats.headshotsGenerated,
       icon: (
         <svg className="h-6 w-6 text-accent-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -127,14 +129,14 @@ export default function DashboardOverviewPage() {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Welcome back, {userName}</h1>
-          <p className="mt-1 text-sm text-gray-500">Here&apos;s what&apos;s happening with your headshots.</p>
+          <p className="mt-1 text-sm text-gray-500">Here&apos;s what&apos;s happening with your photos.</p>
         </div>
         <Link href="/dashboard/upload">
           <Button variant="primary" size="md">
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
             </svg>
-            New Order
+            Create New
           </Button>
         </Link>
       </div>
@@ -169,7 +171,7 @@ export default function DashboardOverviewPage() {
             <svg className="mx-auto h-12 w-12 text-gray-300" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
             </svg>
-            <p className="mt-4 text-sm text-gray-500">No orders yet. Create your first AI headshots!</p>
+            <p className="mt-4 text-sm text-gray-500">No orders yet. Create your first AI photos!</p>
             <Link href="/dashboard/upload" className="mt-4 inline-block">
               <Button variant="primary" size="sm">Get Started</Button>
             </Link>
@@ -190,7 +192,11 @@ export default function DashboardOverviewPage() {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-gray-900 capitalize">
-                      {order.package_id} Package
+                      {(() => {
+                        const cat = getCategoryById((order.category_id || 'headshots') as CategoryId);
+                        return cat ? `${cat.icon} ${cat.shortName}` : order.package_id;
+                      })()}{' '}
+                      — {order.package_id}
                     </p>
                     <p className="text-xs text-gray-500">
                       {new Date(order.created_at).toLocaleDateString('en-US', {

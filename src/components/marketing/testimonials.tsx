@@ -13,7 +13,7 @@ const testimonials = [
     name: 'Marcus Johnson',
     role: 'Founder & CEO, Luma Labs',
     quote:
-      "As a startup founder, I don't have time for photo shoots. AI Headshot Pro gave me a full set of professional photos in under two hours. The quality is indistinguishable from real studio shots.",
+      "As a startup founder, I don't have time for photo shoots. TailorPic gave me a full set of professional photos in under two hours. The quality is indistinguishable from real studio shots.",
     rating: 5,
   },
   {

@@ -17,21 +17,21 @@ export function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-400 opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-500" />
               </span>
-              AI-Powered Headshot Studio
+              AI-Powered Photo Studio
             </div>
 
             <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-              Professional Headshots,{' '}
-              <span className="text-gradient">Powered by AI</span>
+              Professional Photos,{' '}
+              <span className="text-gradient">Tailored by AI</span>
             </h1>
 
             <p className="mt-6 text-lg leading-relaxed text-gray-600 sm:text-xl">
-              Upload a few selfies. Get 120+ studio-quality professional photos in hours.
-              No photographer needed.
+              Headshots, pet portraits, dating photos, holiday cards &amp; more.
+              Upload a few photos, get stunning results in hours.
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Button size="lg">Get Your Headshots</Button>
+              <Button size="lg">Get Started</Button>
               <Button variant="outline" size="lg">
                 See Examples
               </Button>

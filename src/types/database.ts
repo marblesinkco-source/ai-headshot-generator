@@ -1,12 +1,14 @@
 /**
- * Supabase Database type definitions.
+ * TailorPic - Supabase Database type definitions.
  *
  * These types mirror the schema defined in migrations/001_initial.sql
- * and provide end-to-end type safety for Supabase queries.
+ * and migrations/002_add_categories.sql.
  *
  * To regenerate from a live database, run:
  *   npx supabase gen types typescript --project-id <ref> > src/types/database.ts
  */
+
+import type { CategoryId } from '@/config/categories';
 
 export type Json =
   | string
@@ -58,12 +60,14 @@ export interface Database {
           id: string;
           user_id: string;
           package_id: string;
+          category_id: CategoryId;
           status: OrderStatus;
           stripe_session_id: string | null;
           stripe_payment_intent: string | null;
           amount: number;
           currency: string;
           headshot_count: number;
+          output_count: number;
           created_at: string;
           updated_at: string;
           completed_at: string | null;
@@ -72,12 +76,14 @@ export interface Database {
           id: string;
           user_id: string;
           package_id: string;
+          category_id: CategoryId;
           status?: OrderStatus;
           stripe_session_id?: string | null;
           stripe_payment_intent?: string | null;
           amount: number;
           currency?: string;
           headshot_count?: number;
+          output_count?: number;
           created_at?: string;
           updated_at?: string;
           completed_at?: string | null;
@@ -86,12 +92,14 @@ export interface Database {
           id?: string;
           user_id?: string;
           package_id?: string;
+          category_id?: CategoryId;
           status?: OrderStatus;
           stripe_session_id?: string | null;
           stripe_payment_intent?: string | null;
           amount?: number;
           currency?: string;
           headshot_count?: number;
+          output_count?: number;
           created_at?: string;
           updated_at?: string;
           completed_at?: string | null;
@@ -132,6 +140,7 @@ export interface Database {
           order_id: string;
           storage_path: string;
           thumbnail_path: string | null;
+          category_id: CategoryId | null;
           style: string;
           background: string;
           resolution: string;
@@ -143,6 +152,7 @@ export interface Database {
           order_id: string;
           storage_path: string;
           thumbnail_path?: string | null;
+          category_id?: CategoryId | null;
           style: string;
           background: string;
           resolution?: string;
@@ -154,6 +164,7 @@ export interface Database {
           order_id?: string;
           storage_path?: string;
           thumbnail_path?: string | null;
+          category_id?: CategoryId | null;
           style?: string;
           background?: string;
           resolution?: string;

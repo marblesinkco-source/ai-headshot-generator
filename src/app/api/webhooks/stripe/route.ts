@@ -3,6 +3,7 @@ import Stripe from 'stripe';
 import { createAdminClient } from '@/lib/supabase/server';
 import { Resend } from 'resend';
 import { PACKAGES, type PackageId } from '@/config/packages';
+import { getCategoryById, getPackageById, type CategoryId } from '@/config/categories';
 import { siteConfig } from '@/config/site';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
@@ -65,26 +66,33 @@ export async function POST(request: NextRequest) {
           );
         }
 
-        const pkg = PACKAGES[packageId as PackageId];
+        const categoryId = (session.metadata?.categoryId || 'headshots') as CategoryId;
+        const category = getCategoryById(categoryId);
+        const catPkg = category ? getPackageById(categoryId, packageId) : null;
+        const legacyPkg = PACKAGES[packageId as PackageId];
         const customerEmail = session.customer_email || session.customer_details?.email;
 
-        if (customerEmail && pkg) {
+        const pkgName = catPkg?.name || legacyPkg?.name || packageId;
+        const categoryName = category?.name || 'AI Photos';
+        const outputLabel = category?.outputLabel || 'AI photos';
+        const outputCount = catPkg?.outputCount || legacyPkg?.headshots || 0;
+        const features = catPkg?.features || [];
+
+        if (customerEmail) {
           try {
             await resend.emails.send({
               from: `${siteConfig.name} <noreply@${new URL(siteConfig.url).hostname}>`,
               to: customerEmail,
-              subject: `Order confirmed - ${pkg.name} Package`,
+              subject: `Order confirmed — ${categoryName} ${pkgName} Package`,
               html: `
                 <h2>Thank you for your purchase!</h2>
-                <p>Your <strong>${pkg.name}</strong> package has been confirmed.</p>
-                <p>You can now upload your photos to start generating your AI headshots.</p>
+                <p>Your <strong>${categoryName} — ${pkgName}</strong> package has been confirmed.</p>
+                <p>You can now upload your photos to start generating your ${outputLabel}.</p>
                 <ul>
-                  <li>${pkg.headshots} AI headshots</li>
-                  <li>${pkg.backgrounds} backgrounds</li>
-                  <li>${pkg.styles} styles</li>
-                  <li>${pkg.resolution} resolution</li>
+                  <li>${outputCount} ${outputLabel}</li>
+                  ${features.map((f) => `<li>${f}</li>`).join('')}
                 </ul>
-                <p><a href="${siteConfig.url}/dashboard/orders/${orderId}/upload">Upload your photos now</a></p>
+                <p><a href="${siteConfig.url}/dashboard/upload?orderId=${orderId}">Upload your photos now</a></p>
               `,
             });
           } catch (emailError) {

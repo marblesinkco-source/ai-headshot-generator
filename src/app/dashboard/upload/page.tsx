@@ -4,16 +4,25 @@ import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import { PACKAGES, type PackageId } from '@/config/packages';
+import {
+  getActiveCategories,
+  getCategoryById,
+  getCategoryPackages,
+  CATEGORY_GROUPS,
+  type CategoryId,
+  type CategoryPackage,
+} from '@/config/categories';
 import { formatPrice } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { PhotoUploader } from '@/components/dashboard/photo-uploader';
 
-type Step = 1 | 2 | 3;
+type Step = 1 | 2 | 3 | 4;
 
 const STEPS = [
-  { num: 1, label: 'Choose Package' },
-  { num: 2, label: 'Upload Photos' },
-  { num: 3, label: 'Generate' },
+  { num: 1, label: 'Category' },
+  { num: 2, label: 'Package' },
+  { num: 3, label: 'Upload' },
+  { num: 4, label: 'Generate' },
 ] as const;
 
 export default function UploadPage() {
@@ -28,17 +37,22 @@ function UploadContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const orderIdParam = searchParams.get('orderId');
+  const categoryParam = searchParams.get('category') as CategoryId | null;
 
-  const [currentStep, setCurrentStep] = useState<Step>(orderIdParam ? 2 : 1);
-  const [selectedPackage, setSelectedPackage] = useState<PackageId | null>(null);
+  const [currentStep, setCurrentStep] = useState<Step>(orderIdParam ? 3 : categoryParam ? 2 : 1);
+  const [selectedCategory, setSelectedCategory] = useState<CategoryId | null>(categoryParam);
+  const [selectedPackage, setSelectedPackage] = useState<string | null>(null);
   const [orderId, setOrderId] = useState<string | null>(orderIdParam);
   const [uploadedCount, setUploadedCount] = useState(0);
   const [generating, setGenerating] = useState(false);
   const [generationStatus, setGenerationStatus] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [checkoutLoading, setCheckoutLoading] = useState<PackageId | null>(null);
+  const [checkoutLoading, setCheckoutLoading] = useState<string | null>(null);
 
   const supabase = createClient();
+  const activeCategories = getActiveCategories();
+  const category = selectedCategory ? getCategoryById(selectedCategory) : null;
+  const categoryPackages = selectedCategory ? getCategoryPackages(selectedCategory) : [];
 
   // If orderId is in URL, load order details
   useEffect(() => {
@@ -47,18 +61,19 @@ function UploadContent() {
     async function loadOrder() {
       const { data: order } = await supabase
         .from('orders')
-        .select('id, package_id, status')
+        .select('id, package_id, category_id, status')
         .eq('id', orderIdParam!)
         .single();
 
       if (order) {
-        setSelectedPackage(order.package_id as PackageId);
+        setSelectedCategory((order.category_id || 'headshots') as CategoryId);
+        setSelectedPackage(order.package_id);
         setOrderId(order.id);
 
         if (order.status === 'processing' || order.status === 'completed') {
-          setCurrentStep(3);
+          setCurrentStep(4);
         } else {
-          setCurrentStep(2);
+          setCurrentStep(3);
         }
       }
     }
@@ -66,7 +81,15 @@ function UploadContent() {
     loadOrder();
   }, [orderIdParam, supabase]);
 
-  async function handleCheckout(packageId: PackageId) {
+  function handleCategorySelect(catId: CategoryId) {
+    setSelectedCategory(catId);
+    setSelectedPackage(null);
+    setCurrentStep(2);
+  }
+
+  async function handleCheckout(packageId: string) {
+    if (!selectedCategory) return;
+
     setCheckoutLoading(packageId);
     setError(null);
 
@@ -74,7 +97,10 @@ function UploadContent() {
       const response = await fetch('/api/payments/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ packageId }),
+        body: JSON.stringify({
+          categoryId: selectedCategory,
+          packageId,
+        }),
       });
 
       const data = await response.json();
@@ -111,8 +137,8 @@ function UploadContent() {
         throw new Error(data.error || 'Failed to start generation');
       }
 
-      setGenerationStatus('Your headshots are being generated. This may take 10-20 minutes.');
-      setCurrentStep(3);
+      setGenerationStatus('Your photos are being generated. This may take 10-20 minutes.');
+      setCurrentStep(4);
 
       // Poll for completion or redirect to gallery
       setTimeout(() => {
@@ -126,10 +152,10 @@ function UploadContent() {
   }
 
   return (
-    <div className="mx-auto max-w-4xl space-y-8">
+    <div className="mx-auto max-w-5xl space-y-8">
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">Create New Headshots</h1>
-        <p className="mt-1 text-sm text-gray-500">Follow the steps below to generate your AI headshots.</p>
+        <h1 className="text-2xl font-bold text-gray-900">Create New Photos</h1>
+        <p className="mt-1 text-sm text-gray-500">Choose a category, pick your package, upload photos, and let AI do the magic.</p>
       </div>
 
       {/* Step Indicator */}
@@ -171,78 +197,128 @@ function UploadContent() {
         ))}
       </div>
 
-      {/* Step Content */}
+      {/* Step 1: Category Selection */}
       {currentStep === 1 && (
-        <div className="space-y-4">
-          <h2 className="text-lg font-semibold text-gray-900">Choose Your Package</h2>
-          <div className="grid gap-4 sm:grid-cols-3">
-            {(Object.entries(PACKAGES) as [PackageId, typeof PACKAGES[PackageId]][]).map(
-              ([id, pkg]) => {
-                const isRecommended = 'recommended' in pkg && pkg.recommended;
-                return (
-                  <div
-                    key={id}
-                    className={`relative rounded-xl border-2 bg-white p-6 shadow-sm transition-all cursor-pointer hover:shadow-md ${
-                      selectedPackage === id
-                        ? 'border-brand-600 ring-2 ring-brand-100'
-                        : isRecommended
-                        ? 'border-brand-200'
-                        : 'border-gray-200'
-                    }`}
-                    onClick={() => setSelectedPackage(id)}
-                  >
-                    {isRecommended && (
-                      <span className="absolute -top-3 left-4 rounded-full bg-brand-600 px-3 py-0.5 text-xs font-medium text-white">
-                        Recommended
-                      </span>
-                    )}
-                    <h3 className="text-lg font-semibold text-gray-900">{pkg.name}</h3>
-                    <p className="mt-2 text-3xl font-bold text-gray-900">
-                      {formatPrice(pkg.price, pkg.currency)}
-                    </p>
-                    <ul className="mt-4 space-y-2 text-sm text-gray-600">
-                      <li className="flex items-center gap-2">
-                        <svg className="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                        </svg>
-                        {pkg.headshots} headshots
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <svg className="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                        </svg>
-                        {pkg.backgrounds} backgrounds
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <svg className="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                        </svg>
-                        {pkg.styles} styles
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <svg className="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                        </svg>
-                        {pkg.resolution.toUpperCase()} resolution
-                      </li>
-                    </ul>
-                    <Button
-                      variant={selectedPackage === id ? 'primary' : 'outline'}
-                      size="md"
-                      className="mt-6 w-full"
-                      loading={checkoutLoading === id}
-                      disabled={checkoutLoading !== null && checkoutLoading !== id}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleCheckout(id);
-                      }}
+        <div className="space-y-6">
+          <h2 className="text-lg font-semibold text-gray-900">What would you like to create?</h2>
+
+          {CATEGORY_GROUPS.map((group) => {
+            const groupCategories = activeCategories.filter((c) =>
+              group.categories.includes(c.id)
+            );
+            if (groupCategories.length === 0) return null;
+
+            return (
+              <div key={group.label} className="space-y-3">
+                <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wider">
+                  {group.label}
+                </h3>
+                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                  {groupCategories.map((cat) => (
+                    <button
+                      key={cat.id}
+                      onClick={() => handleCategorySelect(cat.id)}
+                      className={`group relative rounded-xl border-2 bg-white p-5 text-left shadow-sm transition-all hover:shadow-md hover:border-brand-300 ${
+                        selectedCategory === cat.id
+                          ? 'border-brand-600 ring-2 ring-brand-100'
+                          : 'border-gray-200'
+                      }`}
                     >
-                      Select & Pay
-                    </Button>
-                  </div>
-                );
-              }
-            )}
+                      <div className="flex items-start gap-3">
+                        <span className="text-2xl">{cat.icon}</span>
+                        <div className="min-w-0 flex-1">
+                          <h4 className="font-semibold text-gray-900 group-hover:text-brand-700 transition-colors">
+                            {cat.name}
+                          </h4>
+                          <p className="mt-1 text-xs text-gray-500 line-clamp-2">
+                            {cat.tagline}
+                          </p>
+                          <p className="mt-2 text-xs font-medium text-brand-600">
+                            From {formatPrice(cat.packages[0]?.price || 0, cat.packages[0]?.currency || 'usd')}
+                          </p>
+                        </div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {/* Step 2: Package Selection */}
+      {currentStep === 2 && category && (
+        <div className="space-y-4">
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setCurrentStep(1)}
+              className="text-sm text-gray-500 hover:text-brand-600 transition-colors flex items-center gap-1"
+            >
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+              Back
+            </button>
+            <span className="text-2xl">{category.icon}</span>
+            <h2 className="text-lg font-semibold text-gray-900">
+              {category.name} — Choose Your Package
+            </h2>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-3">
+            {categoryPackages.map((pkg) => (
+              <div
+                key={pkg.id}
+                className={`relative rounded-xl border-2 bg-white p-6 shadow-sm transition-all cursor-pointer hover:shadow-md ${
+                  selectedPackage === pkg.id
+                    ? 'border-brand-600 ring-2 ring-brand-100'
+                    : pkg.recommended
+                    ? 'border-brand-200'
+                    : 'border-gray-200'
+                }`}
+                onClick={() => setSelectedPackage(pkg.id)}
+              >
+                {pkg.recommended && (
+                  <span className="absolute -top-3 left-4 rounded-full bg-brand-600 px-3 py-0.5 text-xs font-medium text-white">
+                    Recommended
+                  </span>
+                )}
+                <h3 className="text-lg font-semibold text-gray-900">{pkg.name}</h3>
+                <p className="mt-2 text-3xl font-bold text-gray-900">
+                  {formatPrice(pkg.price, pkg.currency)}
+                </p>
+                <ul className="mt-4 space-y-2 text-sm text-gray-600">
+                  <li className="flex items-center gap-2">
+                    <svg className="h-4 w-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    {pkg.outputCount} {category.outputLabel}
+                  </li>
+                  {pkg.features.map((feature) => (
+                    <li key={feature} className="flex items-center gap-2">
+                      <svg className="h-4 w-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <Button
+                  variant={selectedPackage === pkg.id ? 'primary' : 'outline'}
+                  size="md"
+                  className="mt-6 w-full"
+                  loading={checkoutLoading === pkg.id}
+                  disabled={checkoutLoading !== null && checkoutLoading !== pkg.id}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleCheckout(pkg.id);
+                  }}
+                >
+                  Select & Pay
+                </Button>
+              </div>
+            ))}
           </div>
           {error && (
             <div className="rounded-lg bg-red-50 border border-red-200 p-3 text-sm text-red-700">{error}</div>
@@ -250,12 +326,14 @@ function UploadContent() {
         </div>
       )}
 
-      {currentStep === 2 && orderId && (
+      {/* Step 3: Upload Photos */}
+      {currentStep === 3 && orderId && (
         <div className="space-y-6">
           <div>
             <h2 className="text-lg font-semibold text-gray-900">Upload Your Photos</h2>
             <p className="mt-1 text-sm text-gray-500">
-              Upload 4-10 clear photos of yourself. Include different angles and expressions for best results.
+              {category?.uploadInstructions ||
+                'Upload 4-10 clear photos. Include different angles and expressions for best results.'}
             </p>
           </div>
 
@@ -268,8 +346,8 @@ function UploadContent() {
             <Button
               variant="primary"
               size="md"
-              disabled={uploadedCount < 4}
-              onClick={() => setCurrentStep(3)}
+              disabled={uploadedCount < (category?.minPhotos || 4)}
+              onClick={() => setCurrentStep(4)}
             >
               Continue to Generate
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -280,7 +358,8 @@ function UploadContent() {
         </div>
       )}
 
-      {currentStep === 3 && (
+      {/* Step 4: Generate */}
+      {currentStep === 4 && (
         <div className="rounded-xl border border-gray-200 bg-white p-8 text-center shadow-sm">
           {generationStatus ? (
             <div className="space-y-4">
@@ -290,7 +369,9 @@ function UploadContent() {
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900">Generating Your Headshots</h3>
+              <h3 className="text-lg font-semibold text-gray-900">
+                Generating Your {category?.name || 'Photos'}
+              </h3>
               <p className="text-sm text-gray-500">{generationStatus}</p>
               <p className="text-xs text-gray-400">You can close this page. We&apos;ll notify you when they&apos;re ready.</p>
             </div>
@@ -303,7 +384,7 @@ function UploadContent() {
               </div>
               <h3 className="text-lg font-semibold text-gray-900">Ready to Generate</h3>
               <p className="text-sm text-gray-500">
-                {uploadedCount} photos uploaded. Click below to start generating your AI headshots.
+                {uploadedCount} photos uploaded. Click below to start generating your {category?.outputLabel || 'AI photos'}.
               </p>
               {error && (
                 <div className="rounded-lg bg-red-50 border border-red-200 p-3 text-sm text-red-700">{error}</div>
@@ -314,7 +395,7 @@ function UploadContent() {
                 loading={generating}
                 onClick={handleGenerate}
               >
-                Generate My Headshots
+                Generate My {category?.name || 'Photos'}
               </Button>
             </div>
           )}
