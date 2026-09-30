@@ -223,6 +223,11 @@ const terms: Term[] = [
       'The amount of light that reaches the camera sensor when a photo is taken, set by aperture, shutter speed and ISO. Correct exposure keeps skin tones detailed, while overexposure blows out highlights and underexposure hides detail in shadows.',
   },
   {
+    term: 'Focal Length',
+    definition:
+      'The distance, in millimeters, between the lens and the camera sensor when focused at infinity. It controls how zoomed in a photo looks and how facial features are rendered: moderate telephoto lengths around 85mm are favored for portraits because they flatter the face, while very wide lenses can distort proportions.',
+  },
+  {
     term: 'Image Metadata',
     definition:
       'Information embedded in a photo file, most commonly EXIF data such as camera model, lens, exposure settings, date and sometimes GPS location. It is useful for organizing photos, but you may want to strip it before sharing images publicly for privacy.',

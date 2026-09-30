@@ -642,6 +642,185 @@ export const photoStyles: PhotoStyle[] = [
     relatedCategories: ['headshots'],
     relatedBlogPosts: ['headshot-trends-2025', 'professional-headshot-tips-2025'],
   },
+  {
+    slug: 'cinematic',
+    name: 'Cinematic Portrait Headshots',
+    title: 'AI Cinematic Portrait Headshots',
+    description:
+      'Dramatic, movie-like portraits with moody lighting and rich color grading.',
+    metaDescription:
+      'Create AI cinematic portrait headshots with dramatic, movie-style lighting and color grading. Memorable, high-impact photos for any profile with TailorPic.',
+    heroText:
+      'Look like the lead in your own story. Cinematic portraits use directional light, deep shadows and film-style color grading to give your headshot drama and presence.',
+    features: [
+      'Dramatic directional lighting with soft falloff',
+      'Film-inspired color grading in teal, amber or muted tones',
+      'Shallow depth of field with a softly blurred background',
+      'Deep shadows that add mood and dimension',
+      'Wide-screen friendly composition',
+      'Strong, confident expressions',
+    ],
+    idealFor: [
+      'Actors, directors and filmmakers',
+      'Musicians, authors and podcast hosts',
+      'Creative professionals and portfolios',
+      'Speaker bios and event billing',
+      'Anyone wanting a bold, memorable profile photo',
+    ],
+    tips: [
+      'Upload selfies with clear side lighting so the AI learns your face shape',
+      'Include a few serious and a few relaxed expressions',
+      'Choose darker, solid clothing for a more dramatic result',
+      'Keep a softer alternative for formal or corporate platforms',
+      'Use one consistent grade across all your profiles',
+    ],
+    relatedCategories: ['headshots'],
+    relatedBlogPosts: ['headshot-trends-2025', 'professional-headshot-tips-2025'],
+  },
+  {
+    slug: 'studio-classic',
+    name: 'Classic Studio Headshots',
+    title: 'AI Classic Studio Headshots',
+    description:
+      'Traditional studio portraits with a seamless backdrop and polished, even lighting.',
+    metaDescription:
+      'Create AI classic studio headshots with a seamless backdrop and polished lighting. Traditional, professional portraits from a few selfies with TailorPic.',
+    heroText:
+      'The look that never dates. Classic studio headshots pair a clean seamless backdrop with balanced, professional lighting for a portrait that works everywhere.',
+    features: [
+      'Seamless paper-style backdrops in grey, white, black or colour',
+      'Balanced key and fill lighting with gentle shadows',
+      'Sharp focus on the eyes with natural skin texture',
+      'Consistent framing from the shoulders up',
+      'Timeless, conservative styling',
+      'High resolution files for print and web',
+    ],
+    idealFor: [
+      'Corporate and team pages',
+      'Professional directories and licensing profiles',
+      'Business cards and press kits',
+      'Teachers, doctors and other service professionals',
+      'Anyone who wants a safe, traditional portrait',
+    ],
+    tips: [
+      'Upload well lit selfies against a plain wall',
+      'Pick a backdrop color that flatters your skin and clothing',
+      'Wear solid colors and avoid busy patterns',
+      'Use the same backdrop for every team member',
+      'Include both smiling and closed-mouth expressions',
+    ],
+    relatedCategories: ['headshots', 'team-headshots'],
+    relatedBlogPosts: [
+      'headshot-background-guide',
+      'ai-headshots-vs-traditional-photography',
+      'corporate-team-photos-guide',
+    ],
+  },
+  {
+    slug: 'warm-golden',
+    name: 'Warm Golden Hour Headshots',
+    title: 'AI Warm Golden Hour Headshots',
+    description:
+      'Soft, sun-kissed portraits that recreate golden hour warmth, wherever you are.',
+    metaDescription:
+      'Create AI warm golden hour headshots with glowing, sun-kissed light recreated indoors. Friendly, flattering portraits from a few selfies with TailorPic.',
+    heroText:
+      'All the glow, none of the waiting for sunset. Warm golden hour headshots recreate low, honeyed sunlight to give your skin a healthy glow and your photo an inviting feel.',
+    features: [
+      'Warm, low-angle light with a gentle rim glow',
+      'Flattering, sun-kissed skin tones',
+      'Soft, creamy background blur',
+      'Indoor and studio settings styled to feel like late afternoon',
+      'Friendly, relaxed expressions',
+      'Consistent warm palette across every image',
+    ],
+    idealFor: [
+      'Coaches, therapists and wellness professionals',
+      'Real estate agents and realtors',
+      'Lifestyle brands and creators',
+      'Dating and social profiles',
+      'Small business owners who want an approachable look',
+    ],
+    tips: [
+      'Upload selfies in soft, natural window light',
+      'Choose earthy or neutral clothing that complements warm tones',
+      'Avoid heavy filters on your input photos',
+      'Pair with a cooler studio style for formal uses',
+      'Keep expressions relaxed and genuine',
+    ],
+    relatedCategories: ['headshots'],
+    relatedBlogPosts: ['professional-headshot-tips-2025', 'headshot-trends-2025'],
+  },
+  {
+    slug: 'headshot-close-up',
+    name: 'Close-Up Headshots',
+    title: 'AI Close-Up Headshots',
+    description:
+      'Tightly cropped, face-focused portraits that put your expression front and center.',
+    metaDescription:
+      'Create AI close-up headshots with a tight crop and sharp facial detail. Face-focused portraits that look great in small profile pictures with TailorPic.',
+    heroText:
+      'Small avatar, big impact. Close-up headshots use a tight crop so your face stays clear and recognizable even in the tiniest profile circle.',
+    features: [
+      'Tight crop from the top of the head to the collarbone',
+      'Sharp detail in the eyes and natural skin texture',
+      'Soft, shallow background that keeps focus on the face',
+      'Even, flattering lighting',
+      'Optimized for circular and square profile crops',
+      'Expressive, engaging looks',
+    ],
+    idealFor: [
+      'LinkedIn and social media avatars',
+      'Email signatures and chat apps',
+      'Speaker and author bylines',
+      'Online directories with small thumbnails',
+      'Video call and community profiles',
+    ],
+    tips: [
+      'Upload clear, front-facing selfies with your whole face visible',
+      'Skip hats and sunglasses so your features show',
+      'Keep a natural smile that reaches your eyes',
+      'Test the crop at thumbnail size before publishing',
+      'Choose simple collars so clothing does not distract',
+    ],
+    relatedCategories: ['headshots'],
+    relatedBlogPosts: ['professional-headshot-tips-2025', 'headshot-background-guide'],
+  },
+  {
+    slug: 'environmental',
+    name: 'Environmental Portrait Headshots',
+    title: 'AI Environmental Portrait Headshots',
+    description:
+      'Portraits that place you in your workspace or element to tell a story about what you do.',
+    metaDescription:
+      'Create AI environmental portraits that show you in your workspace or element. Story-driven headshots for professionals and creators with TailorPic.',
+    heroText:
+      'Show what you do, not just who you are. Environmental portraits place you in a studio, office, workshop or clinic so the setting adds context to your face.',
+    features: [
+      'Workspace settings such as offices, studios, kitchens and workshops',
+      'Subtle props and details that hint at your profession',
+      'Background kept soft enough to keep focus on you',
+      'Natural, candid-feeling poses',
+      'Wider framing that includes the shoulders and upper body',
+      'Lighting matched to the setting',
+    ],
+    idealFor: [
+      'Founders and small business owners',
+      'Chefs, makers, artists and tradespeople',
+      'Doctors, architects and consultants',
+      'About pages and magazine features',
+      'Personal brands that rely on a story',
+    ],
+    tips: [
+      'Decide on one setting that represents your work',
+      'Keep props minimal so they do not compete with your face',
+      'Wear clothing you would genuinely wear on the job',
+      'Upload selfies with varied angles and expressions',
+      'Pair with a close-up style for small avatars',
+    ],
+    relatedCategories: ['headshots'],
+    relatedBlogPosts: ['headshot-trends-2025', 'professional-headshot-tips-2025'],
+  },
 ];
 
 export function getPhotoStyle(slug: string): PhotoStyle | undefined {
