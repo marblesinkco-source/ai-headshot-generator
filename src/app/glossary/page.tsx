@@ -97,6 +97,11 @@ const terms: Term[] = [
       'Technology that locates human faces within an image. It is commonly used to check photo quality, center a crop and make sure a selfie is usable before it is processed.',
   },
   {
+    term: 'Facial Recognition',
+    definition:
+      'Technology that identifies or verifies a specific person by analyzing the unique geometry of their face. Unlike face detection, which only finds where a face is, facial recognition matches it to a known identity and is used in security, device unlock and photo organization.',
+  },
+  {
     term: 'Fill Light',
     definition:
       'A softer secondary light placed opposite or beside the key light to brighten shadows. It controls contrast, so a stronger fill gives a gentler, more even look.',
@@ -119,6 +124,11 @@ const terms: Term[] = [
       'The creation of new pictures by an AI model from a text description, reference images or both. The results are newly produced images rather than edited copies of existing photos.',
   },
   {
+    term: 'Image Resolution',
+    definition:
+      'The total number of pixels an image contains, typically expressed as width by height. Higher image resolution preserves finer detail in skin texture, hair and eyes, which matters when headshots are printed large or cropped tightly.',
+  },
+  {
     term: 'Key Light',
     definition:
       'The main and strongest light in a portrait setup. Its position and softness shape the face and set the overall mood of the photo.',
@@ -132,6 +142,12 @@ const terms: Term[] = [
     term: 'LoRA',
     definition:
       'Short for Low-Rank Adaptation, a lightweight fine-tuning technique that adds a small set of extra trainable weights to a model instead of changing the whole thing. It makes personalization fast and needs only a few photos.',
+    link: { href: '/blog/how-ai-headshots-work', label: 'How AI headshots work' },
+  },
+  {
+    term: 'LoRA Fine-Tuning',
+    definition:
+      'The process of applying Low-Rank Adaptation to customize a pre-trained AI model for a specific person or style. By training only a small number of extra parameters, LoRA fine-tuning can learn someone\'s face from a handful of selfies and generate new headshots that look like them.',
     link: { href: '/blog/how-ai-headshots-work', label: 'How AI headshots work' },
   },
   {

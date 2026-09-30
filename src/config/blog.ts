@@ -2986,6 +2986,233 @@ export const blogPosts: BlogPost[] = [
     tags: ['Dating', 'Photos', 'Tips'],
     readingTime: '5 min read',
   },
+  {
+    slug: 'headshot-makeup-tips',
+    title: 'Headshot Makeup Tips: Look Natural and Camera-Ready',
+    description:
+      'Practical makeup advice for professional headshots, covering foundation, eyes, lips and common mistakes so you look polished yet natural on camera.',
+    content: `
+      <p>Makeup for a professional headshot is not about transformation. It is about looking like yourself on a very good day. The camera picks up details differently than a mirror does, so what works in person does not always translate to a photograph. A few deliberate adjustments can help you look polished, confident and natural under studio or ring-light conditions without crossing into overdone territory.</p>
+
+      <h2>Why Headshot Makeup Is Different</h2>
+      <p>A camera lens flattens depth, exaggerates shine and can wash out subtle colour. Flash or continuous lighting adds another layer of challenge: it can make skin look oily, reveal unevenness you barely notice in daily life and dull lip or cheek colour. Headshot makeup compensates for these effects. The goal is not a dramatic look but a corrected, camera-friendly version of your everyday face. Think of it as calibrating your appearance for the medium.</p>
+
+      <h2>Start With Skincare</h2>
+      <p>Good makeup starts the night before. Hydrate well, get enough sleep and apply a light moisturiser in the morning. Avoid trying new products on the day of your shoot because reactions or breakouts are the last thing you want. If your skin tends toward oiliness, use a mattifying primer. If it leans dry, a hydrating primer will prevent foundation from settling into fine lines. Give your skincare ten minutes to absorb before applying anything else.</p>
+
+      <h2>Foundation and Concealer</h2>
+      <p>Choose a foundation that matches your neck, not just your face. A mismatch creates an obvious line in photos that is nearly impossible to fix in post-production. Medium coverage is usually the sweet spot: enough to even out tone without masking every natural detail. Apply with a damp beauty sponge for a skin-like finish rather than a heavy, painted look. Use concealer sparingly under the eyes and on any redness, blending well so edges disappear. Avoid anything with heavy shimmer or sparkle particles, as these catch light and create distracting hot spots.</p>
+
+      <h2>Setting Your Base</h2>
+      <p>Set your foundation with a translucent powder, but be cautious with the amount. Too much powder looks chalky on camera, especially under flash. A light dusting on the T-zone is usually enough. If you have dry skin, you may skip powder altogether and use a setting spray instead. One important warning: avoid products containing SPF or light-reflecting particles. These can cause flashback, a white cast that appears in photos taken with flash and can ruin an otherwise perfect shot.</p>
+
+      <h2>Eyes: Define Without Drama</h2>
+      <p>For most professional headshots, neutral eye makeup works best. A matte shadow close to your skin tone across the lid, a slightly deeper shade in the crease and a thin line along the upper lashes will define your eyes without overwhelming them. Brown or soft black tones tend to photograph more naturally than stark black. Curl your lashes and apply one or two coats of mascara. Skip false lashes unless they are very natural-looking, as heavy lashes can cast shadows and look theatrical in a tight crop. If you wear eyeliner on the lower lid, keep it to the outer third and smudge it softly.</p>
+
+      <h2>Brows</h2>
+      <p>Well-groomed brows frame the face and draw attention to the eyes, which is exactly where a viewer should look first. Fill in any sparse areas with light, hair-like strokes using a brow pencil or powder that matches your natural colour. Avoid overly sharp or dark brows, which can look harsh in close-up photos. Set them with a clear brow gel to keep hairs in place throughout the session.</p>
+
+      <h2>Cheeks and Contour</h2>
+      <p>A natural-looking blush adds warmth and prevents your face from looking flat on camera. Choose a shade close to the colour your cheeks turn when you are slightly flushed. Peach and soft rose tones work well across most skin tones. Apply to the apples of the cheeks and blend upward. If you contour, keep it subtle. Heavy contouring that looks sculpted in person can appear muddy or dirty in photographs. A light touch under the cheekbones and along the jawline is plenty.</p>
+
+      <h2>Lips</h2>
+      <p>Opt for a lip colour that enhances your natural shade. Nude pinks, soft berries and muted mauves are safe choices for professional settings. Matte or satin finishes photograph more predictably than high-gloss formulas, which can create distracting reflections. Line your lips with a pencil close to your natural lip colour to create a clean edge. If your lips tend to be dry, apply a thin layer of balm before your colour and blot any excess.</p>
+
+      <h2>Makeup for All Skin Tones</h2>
+      <p>The principles remain the same regardless of skin tone, but product selection matters. Darker skin tones should avoid ashy powders and opt for finely milled translucent or banana-toned setting powders. Highlighters with a warm gold or bronze undertone tend to photograph beautifully on deeper complexions. Lighter skin tones should watch for foundation oxidation, where the product turns darker or more orange throughout the day. Test your foundation in natural light and check it again after an hour to make sure the shade holds.</p>
+
+      <h2>Common Mistakes to Avoid</h2>
+      <p>The most frequent headshot makeup mistakes are overcomplicating the look, using products with SPF or shimmer under flash, choosing a foundation shade in artificial store lighting, applying too much powder, and skipping blending. Another common error is wearing makeup you do not normally wear. If you never use bold lipstick, your headshot day is not the time to experiment. You will look uncomfortable, and the camera will capture that tension. Stick with colours and techniques you know suit you, just refined for the lens.</p>
+
+      <h2>What About AI Headshots?</h2>
+      <p>If you are using a service like TailorPic to generate AI headshots from selfies, makeup still matters because the AI learns from your uploaded photos. Clean, well-applied makeup in your source images helps the model produce polished, natural-looking results. The same principles apply: even skin, defined eyes, natural lip colour and minimal shine. You can also use the <a href="/editor">TailorPic editor</a> to make small adjustments to your final headshots after generation.</p>
+
+      <p>Professional headshot makeup is about subtlety and intention. Prepare your skin, choose products that work with the camera, keep colours natural and blend everything thoroughly. The result should look effortless, like you simply showed up looking great, and that quiet confidence is exactly what a strong headshot conveys.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-09-05',
+    tags: ['Makeup', 'Tips', 'Photography'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'c-suite-headshot-guide',
+    title: 'Executive Headshot Guide: What C-Suite Leaders Need to Know',
+    description:
+      'A comprehensive guide to executive headshots for C-suite leaders, covering wardrobe, expression, branding consistency and how to project authority and approachability.',
+    content: `
+      <p>An executive headshot carries weight that goes far beyond a profile picture. For C-suite leaders, the headshot appears in board presentations, press releases, industry conference programmes, investor reports, company websites and media articles. It is often the first visual impression stakeholders, journalists, potential hires and partners form of you. Getting it right is not vanity. It is a communication decision that affects how your leadership is perceived before anyone reads your bio or hears you speak.</p>
+
+      <h2>Why Executive Headshots Are Different</h2>
+      <p>A standard professional headshot aims to look competent and approachable. An executive headshot needs to do more. It must convey authority, strategic thinking and trustworthiness while remaining human and accessible. The balance is delicate. Too casual and you look like you are not taking the role seriously. Too stiff and you seem unapproachable. The best executive portraits sit comfortably between these extremes, projecting calm confidence and quiet command.</p>
+
+      <h2>Wardrobe: Dress the Part Without Overdoing It</h2>
+      <p>Your clothing should match the culture of your organisation and the expectations of your audience. For CEOs and CFOs at financial institutions or law firms, a well-tailored suit in navy, charcoal or black is almost always the right call. Technology and startup leaders have more flexibility, but a structured blazer or a polished knit can strike the right note without a full suit. Whatever you choose, make sure it fits impeccably. Wrinkled collars, gaping buttons and ill-fitting shoulders are magnified in a close-up photograph. Solid colours photograph better than patterns, and darker tones tend to project more authority than lighter ones.</p>
+
+      <h2>Grooming and Preparation</h2>
+      <p>Schedule grooming appointments a few days before the shoot so everything looks natural rather than freshly done. A recent haircut that has had a day or two to settle looks more polished than one taken hours before. If you wear makeup, keep it natural and camera-ready, following the same principles that apply to any professional headshot. Men should decide whether they will be clean-shaven or keep facial hair and ensure it is neatly trimmed. Small details like clean nails, pressed collars and polished glasses make a difference at close range.</p>
+
+      <h2>Expression: The Leadership Look</h2>
+      <p>The most effective executive expression is a composed, slight smile with engaged eyes. A full grin can undermine gravitas, while a completely neutral face can read as cold or disengaged. Think about the expression you use when you are about to deliver good news to your board: confident, warm and in control. Direct eye contact with the camera builds connection. Slightly angling the body while keeping the face toward the camera adds dimension and avoids a rigid, passport-style composition.</p>
+
+      <h2>Background and Setting</h2>
+      <p>Neutral backgrounds work for most contexts because they keep all attention on your face. Deep grays, soft gradients and muted blues are popular choices for executive portraits. However, environmental portraits taken in a boardroom, office or architectural setting can communicate power and context. The key is that the environment should complement, not compete. If you choose an environmental shot, make sure the space is tidy, branded appropriately and lit to keep you as the clear focal point.</p>
+
+      <h2>Lighting for Authority</h2>
+      <p>Lighting shapes how your face reads in a photograph. For executive portraits, slightly dramatic lighting with controlled shadows adds depth and seriousness. Rembrandt lighting, where a small triangle of light appears on the cheek opposite the main light source, is a classic choice that adds dimension without looking theatrical. Avoid flat, even lighting that makes the image feel like an ID badge. If you are working with AI-generated headshots, look for a service that offers studio-quality lighting styles. TailorPic provides several lighting options in its <a href="/styles">style gallery</a> that can produce this polished executive look from uploaded photos.</p>
+
+      <h2>Consistency Across the Leadership Team</h2>
+      <p>When your entire C-suite or leadership page uses headshots taken at different times, in different styles, with different backgrounds, the result looks disjointed and unprofessional. Coordinating a consistent look across executives signals organisational cohesion. This means agreeing on background colour, framing style, crop ratio and general lighting direction. If scheduling a group session is impractical, AI headshot tools can help by applying the same style template to each person's photos individually while maintaining visual consistency across the set.</p>
+
+      <h2>Where Your Executive Headshot Will Appear</h2>
+      <p>Plan for the full range of uses before the shoot. Your headshot may appear at wildly different sizes: a small LinkedIn thumbnail, a large conference speaker slide, a website leadership page, an annual report, a press kit download and a magazine article. This means the image must work at both small and large scales. A tight crop that reads well as a tiny avatar may lose impact when enlarged, and a wide environmental shot may become unrecognisable at thumbnail size. Consider having two versions: a tightly cropped headshot for profiles and a wider composition for editorial and presentation use.</p>
+
+      <h2>Updating Your Headshot</h2>
+      <p>An executive headshot should be updated every two to three years, or sooner if your appearance changes significantly. Using an outdated photo creates an awkward disconnect when people meet you in person. It also subtly signals that you are not paying attention to details, which is the opposite of what an executive photo should communicate. If you have recently changed roles, joined a new company or undergone a personal rebrand, a fresh headshot should be one of the first items on your list.</p>
+
+      <h2>AI Headshots for Executives</h2>
+      <p>AI-generated executive headshots have improved significantly in realism and polish. Services like TailorPic can produce studio-quality portraits from a handful of well-taken selfies, which is particularly useful for busy leaders who struggle to block out time for a traditional shoot. The process is straightforward: upload clear, well-lit photos, select a style that suits your industry and receive a set of professional options. You can then refine results with tools like the <a href="/editor/background-changer">background changer</a> or the <a href="/editor">photo editor</a> to match your exact requirements.</p>
+
+      <h2>Final Considerations</h2>
+      <p>Your executive headshot is a strategic asset. It represents not just you but your organisation, your leadership style and your personal brand. Invest the same care you would in preparing for a keynote or a board meeting. Choose clothing that fits your culture, prepare your grooming in advance, practise a composed and confident expression, and make sure the result works across every medium where it will appear. A strong executive portrait does not just look professional. It tells people that you are someone worth paying attention to.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-09-12',
+    tags: ['Executive', 'Leadership', 'Guide'],
+    readingTime: '6 min read',
+  },
+  {
+    slug: 'dental-headshot-guide',
+    title: 'Dental Practice Headshot Guide: Build Patient Trust Online',
+    description:
+      'How dentists and dental teams can use professional headshots to build patient trust, improve online presence and create a welcoming practice image.',
+    content: `
+      <p>When a patient searches for a new dentist, one of the first things they see is the team page on your practice website. Before they read your credentials, check your reviews or look at your services, they look at your photo. That split-second impression influences whether they feel comfortable enough to book an appointment. A professional, approachable headshot is not a luxury for dental practices. It is a trust-building tool that directly affects patient acquisition.</p>
+
+      <h2>Why Dental Headshots Matter More Than You Think</h2>
+      <p>Dental anxiety is common. Many patients feel nervous about visiting any dentist, let alone a new one. Your headshot is the first opportunity to ease that anxiety. A warm, genuine smile in a professional setting tells a prospective patient that you are friendly, competent and someone they can feel safe with. Conversely, an outdated, blurry or overly formal photo can create distance. No photo at all can feel impersonal and may cause patients to choose a competitor whose team feels more visible and transparent.</p>
+
+      <h2>What Makes a Good Dental Headshot</h2>
+      <p>The best dental headshots share a few key qualities. They are well-lit, sharply focused and show a natural, confident smile. The background is clean and uncluttered. The dentist or team member is dressed professionally but not stiffly. The overall impression is one of warmth and competence. These are not dramatic portraits. They are clear, honest representations of the people a patient will meet when they walk through your door.</p>
+
+      <h2>Smile Naturally</h2>
+      <p>This advice might seem obvious for a dentist, but it is worth emphasising. Your smile is your calling card. A forced or tight-lipped smile can look stiff and uninviting. Think about the way you greet a patient in your office: relaxed, warm and confident. That is the expression you want to capture. If you find it difficult to smile naturally on command, ask the photographer to chat with you and capture candid moments. The best smiles usually happen between poses, not during them.</p>
+
+      <h2>Wardrobe Choices</h2>
+      <p>You have two main options: clinical attire or business professional. A clean, well-fitted lab coat over a collared shirt or blouse immediately identifies you as a healthcare professional and can make patients feel reassured. If your practice has a more modern or boutique feel, business casual without a lab coat can also work well. Whatever you choose, make sure the clothing is pressed, fits properly and does not have distracting logos or patterns. Scrubs can work for team photos but tend to look less polished for primary headshots on your website.</p>
+
+      <h2>Background and Setting</h2>
+      <p>A neutral, clean background keeps the focus on your face. Soft grays, whites and light blues evoke a clinical environment without feeling sterile. Some practices opt for environmental shots taken in a treatment room or reception area to give patients a preview of the space. If you go this route, make sure the area is spotless, well-organised and well-lit. Avoid busy backgrounds with visible equipment, cords or clutter. If your existing photos have distracting backgrounds, the <a href="/editor/background-changer">TailorPic background changer</a> can replace them with something clean and professional.</p>
+
+      <h2>Team Consistency</h2>
+      <p>A team page where every member has a matching headshot style looks cohesive and professional. Mismatched photos taken at different times with different lighting and backgrounds can make even a well-run practice look disorganised. Coordinate your team shoot so everyone is photographed in the same session with the same background, lighting and framing. If scheduling everyone together is impractical, an AI headshot service can help standardise the look by applying the same style across individual photos.</p>
+
+      <h2>Headshots for Dental Specialists</h2>
+      <p>If you are an orthodontist, periodontist, oral surgeon or endodontist, your headshot should reflect your specialty without being overly clinical. Specialists often appear on referral platforms, insurance directories and professional association listings, so the photo needs to work across multiple contexts. A clean, professional headshot with a neutral background is the most versatile option. Include a lab coat if it suits your brand, and make sure the image resolution is high enough for both web and print use.</p>
+
+      <h2>Where Your Headshots Will Appear</h2>
+      <p>Think beyond your website. Your headshot will likely appear on Google Business profiles, Healthgrades, Zocdoc, Yelp, insurance provider directories, social media pages, patient newsletters and referral materials. Each platform has different size requirements and display formats. A high-resolution, tightly cropped headshot works best across all of these. Make sure you have a version that reads well as a small thumbnail as well as a larger display image.</p>
+
+      <h2>Using AI for Dental Team Photos</h2>
+      <p>Coordinating a photo shoot for an entire dental team can be logistically challenging, especially for practices with multiple locations or rotating staff. AI headshot services like TailorPic offer a practical alternative. Each team member uploads a few selfies, selects a professional style and receives a set of consistent, studio-quality portraits. This approach saves time, reduces cost and makes it easy to add new team members without scheduling another full shoot. Browse the available <a href="/styles">headshot styles</a> to see options that suit a healthcare setting.</p>
+
+      <h2>Updating Your Photos</h2>
+      <p>Update your headshots every two to three years or whenever a team member's appearance changes noticeably. Patients who recognise you from your photo when they arrive feel an immediate sense of familiarity and comfort. An outdated photo that does not match reality can undermine that trust before the first handshake. Make headshot updates part of your annual marketing review.</p>
+
+      <p>Your dental practice headshot is one of the simplest and most effective investments you can make in patient trust. A clean, warm, professional photo tells prospective patients that you care about how you present yourself, and by extension, how you care for them. Get it right and it works quietly in the background, building confidence and filling your appointment book one first impression at a time.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-09-20',
+    tags: ['Dental', 'Healthcare', 'Guide'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'real-estate-headshot-tips',
+    title: 'Real Estate Agent Headshot Tips: Stand Out on Listings',
+    description:
+      'How real estate agents can use professional headshots to stand out on listings, build client trust and strengthen their personal brand in a competitive market.',
+    content: `
+      <p>In real estate, your face is your brand. It appears on yard signs, listing flyers, business cards, website banners, email signatures and every online directory where clients might find you. Unlike most professionals who use a headshot primarily for LinkedIn, real estate agents rely on their photo as a daily marketing tool. A strong headshot does not just look professional. It helps clients remember you, trust you and choose you over the dozens of other agents competing for their attention.</p>
+
+      <h2>Why Your Headshot Is Your Most Important Marketing Asset</h2>
+      <p>Real estate is a relationship business built on trust, and trust begins with a first impression. When a homeowner receives listing presentation materials from three agents, the headshot is the first thing they compare, often subconsciously. When a buyer scrolls through agent profiles on Zillow or Realtor.com, the photo determines whether they click to learn more. A clear, confident, approachable headshot signals professionalism and reliability. A blurry, outdated or overly glamorised photo signals the opposite.</p>
+
+      <h2>Dress for Your Market</h2>
+      <p>Your wardrobe should reflect the expectations of the clients you serve. If you work in luxury real estate, polished business attire in darker tones projects sophistication. If your market is suburban families, smart casual with approachable colours feels more relatable. Avoid busy patterns, large logos and trendy pieces that will date the photo quickly. Solid colours in jewel tones, navy, black and white tend to photograph well and keep the focus on your face. Whatever you choose, make sure it fits well and is freshly pressed. Wrinkles and poor fit are magnified in photographs.</p>
+
+      <h2>The Right Expression</h2>
+      <p>Approachability wins in real estate. The most effective agent headshots feature a genuine, confident smile with direct eye contact. Think about how you greet clients at an open house: warm, welcoming and self-assured. That is the expression to aim for. Avoid crossing your arms, which can read as defensive, and avoid an overly serious expression, which can feel cold. A slight head tilt and relaxed shoulders add warmth. Your eyes should be bright and engaged, as they are the focal point of any headshot.</p>
+
+      <h2>Background Choices</h2>
+      <p>For a versatile headshot that works across yard signs, websites and printed materials, a clean neutral background is the safest choice. It does not compete with text overlays and works at any size. However, some agents opt for environmental shots with a recognisable local landmark or upscale property in the background to reinforce their market expertise. If you go this route, make sure the background is blurred enough to keep attention on your face. If your current photo has a distracting or dated background, TailorPic's <a href="/editor/background-changer">background changer</a> can swap it for something polished in seconds.</p>
+
+      <h2>Consistency Across Platforms</h2>
+      <p>Use the same headshot everywhere. When a client sees your face on a listing sign, then finds your profile on Zillow, then receives your email, the same photo creates a cohesive brand experience. Different photos on different platforms make you harder to recognise and can look unprofessional. Choose one excellent headshot and deploy it consistently. Update it every one to two years to stay current.</p>
+
+      <h2>Technical Requirements</h2>
+      <p>Real estate headshots need to work at dramatically different sizes. On a yard sign viewed from a moving car, your face needs to be recognisable at a distance. On a business card, it needs to be sharp at a small print size. On a website banner, it may be displayed quite large. This means you need a high-resolution original with a tight crop that puts your face front and centre. Ask your photographer for files in multiple resolutions, or use an AI service that delivers high-resolution output you can crop and resize as needed.</p>
+
+      <h2>Standing Out in Agent Directories</h2>
+      <p>On platforms like Zillow, Realtor.com and local MLS directories, your headshot sits alongside dozens of other agents. To stand out, avoid the cliches: the crossed-arms power pose, the standing-in-front-of-a-mansion shot and the headshot taken fifteen years ago. Instead, invest in a current, well-lit, genuinely warm photo that makes a potential client want to call you. Authenticity stands out more than production value in a directory of polished headshots.</p>
+
+      <h2>Team Photos</h2>
+      <p>If you run a real estate team, consistent headshots across all members project professionalism and cohesion. Mismatched styles on a team page undermine the unified brand you are trying to build. Coordinate a team shoot with the same photographer, background and lighting, or use an AI headshot service to standardise the look across everyone. TailorPic's <a href="/styles">style options</a> make it easy to apply the same professional look to each team member individually.</p>
+
+      <h2>AI Headshots for Real Estate</h2>
+      <p>Many agents are turning to AI headshot services for practical reasons. New agents need a professional photo immediately, before their first listing appointment. Experienced agents want to refresh their image without the time commitment of a traditional shoot. Teams need a fast way to onboard new members with consistent photos. AI tools like TailorPic let you upload a few selfies, choose a polished style and receive professional headshots within hours. The results are realistic enough for yard signs, websites and print materials, and you can refine them with the <a href="/editor">built-in editor</a>.</p>
+
+      <h2>Common Mistakes to Avoid</h2>
+      <p>The most common real estate headshot mistakes include using a photo that is more than three years old, using a cropped group photo, wearing sunglasses, using heavy filters that alter your appearance, choosing a distracting background and using different photos across platforms. Another mistake is over-retouching. Clients will meet you in person, and a headshot that looks nothing like you starts the relationship with a disconnect. Keep retouching to minor corrections and let your genuine appearance shine through.</p>
+
+      <p>Your headshot is working for you around the clock, on signs, on screens and on paper. Make it count. Invest in a current, professional, approachable photo that accurately represents who you are and how you do business. In a market where clients have endless choices, a great headshot is one of the simplest ways to make sure they choose you.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-09-28',
+    tags: ['Real Estate', 'Tips', 'Marketing'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'family-photo-vs-headshot',
+    title: 'Family Photo vs Professional Headshot: When You Need Each',
+    description:
+      'A clear guide to understanding the differences between family photos and professional headshots, when each is appropriate and how to get the best results for both.',
+    content: `
+      <p>People often wonder whether a nice family photo can double as a professional headshot or whether their LinkedIn portrait works for the holiday card. The short answer is no. Family photos and professional headshots serve different purposes, reach different audiences and follow different rules. Understanding when you need each will save you from using the wrong image in the wrong context and help you make the most of both.</p>
+
+      <h2>What a Professional Headshot Is For</h2>
+      <p>A professional headshot is a solo portrait designed for work contexts. It appears on LinkedIn, company websites, email signatures, conference programmes, business cards, professional directories and press materials. Its purpose is to communicate competence, approachability and credibility to colleagues, clients, recruiters and professional contacts. The focus is entirely on you: your face, your expression and your professional presentation. Everything else, background, lighting, wardrobe, is engineered to support that impression.</p>
+
+      <h2>What a Family Photo Is For</h2>
+      <p>A family photo captures a group of people who matter to each other. It is designed for personal contexts: holiday cards, living room walls, social media, family albums and gifts for grandparents. Its purpose is to document connection, warmth and personality. The composition includes multiple people, often in a coordinated but casual setting, and the mood is relaxed and genuine. The focus is on relationships and the feeling of togetherness, not on any single individual's professional image.</p>
+
+      <h2>Why You Cannot Swap One for the Other</h2>
+      <p>Using a cropped family photo as a professional headshot is one of the most common profile photo mistakes. Even if you crop out everyone else, the result usually falls short. The lighting was set for a group, not an individual close-up. Your clothing was chosen to coordinate with your family, not to project professional authority. Your expression was warm and familial, not engaged and confident in a business context. The background may be a park, beach or studio backdrop chosen for a family aesthetic. And the crop itself often looks awkward, with a visible arm or shoulder from someone standing next to you.</p>
+      <p>In the other direction, using a formal business headshot on a holiday card or family social media post can feel oddly stiff. It signals work when the context is personal, and it misses the warmth and connection that family photos are meant to convey.</p>
+
+      <h2>Key Differences at a Glance</h2>
+      <p>Professional headshots feature one person, a clean or neutral background, business or industry-appropriate attire, a composed and confident expression and tight framing focused on the face and shoulders. Family photos feature multiple people, a natural or styled setting, coordinated casual clothing, relaxed and genuine expressions and wider framing that shows the group and their environment. The lighting, posing and post-production for each follow different priorities because the end use is fundamentally different.</p>
+
+      <h2>When You Need a Professional Headshot</h2>
+      <p>You need a dedicated professional headshot whenever your image represents you in a work capacity. This includes starting a new job, updating your LinkedIn profile, launching a personal website or portfolio, speaking at a conference, being featured in a press release or publication, joining a professional association and applying for jobs or board positions. In these contexts, the headshot is a branding tool. It should look intentional, polished and current.</p>
+
+      <h2>When You Need a Family Photo</h2>
+      <p>Family photos are appropriate for personal milestones and traditions. Holiday cards, birth announcements, milestone birthdays, family reunions, social media posts about family life and printed albums all call for group portraits that capture who your family is right now. These photos work best when they reflect genuine personality: matching pyjamas, a favourite hiking trail, the backyard where the children play. The goal is authenticity and connection, not perfection.</p>
+
+      <h2>Can You Shoot Both in One Session?</h2>
+      <p>Yes, and it is an efficient way to handle both needs. Many photographers offer sessions that include individual headshots and group family portraits. Start with the professional headshots while everyone is fresh and wardrobe is neat, then transition to family groupings with a more relaxed mood and setting. If you plan ahead, you can get both sets of images in a single booking, saving time and money.</p>
+
+      <h2>The AI Alternative for Headshots</h2>
+      <p>Family photos still benefit from a real photographer because they involve multiple people interacting naturally, something AI cannot replicate convincingly yet. But professional headshots are a different story. Since a headshot focuses on one person in a controlled setting, AI headshot services can produce excellent results. TailorPic lets you upload a few selfies and receive polished, studio-quality individual portraits without booking a session. This is especially practical if you need a quick headshot update between family photo sessions, or if your family photographer does not specialise in corporate-style portraits. Check the <a href="/styles">available styles</a> to see options that suit your industry.</p>
+
+      <h2>Getting the Best Results From Each</h2>
+      <p>For professional headshots, focus on a clean background, business-appropriate wardrobe, direct eye contact and a composed expression. For family photos, focus on coordinated clothing, a meaningful location, natural interaction and genuine emotion. Keep both updated. A headshot should be refreshed every two to three years, and annual family photos help document how your family grows and changes over time.</p>
+
+      <p>Family photos and professional headshots are both valuable, but they are not interchangeable. Each has a purpose, an audience and a set of standards that make it effective. Invest in both separately, and you will always have the right image for the right moment, whether you are impressing a hiring manager or making your grandmother smile.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-10-05',
+    tags: ['Family Photos', 'Headshots', 'Comparison'],
+    readingTime: '5 min read',
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
