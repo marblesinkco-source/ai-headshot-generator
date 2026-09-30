@@ -5,6 +5,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { siteConfig } from '@/config/site';
 import { getBlogPost, getAllBlogPosts } from '@/config/blog';
+import { ArticleSchema, BreadcrumbSchema } from '@/components/structured-data';
 import { ArrowLeft } from 'lucide-react';
 
 interface Props {
@@ -48,6 +49,21 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <main className="min-h-screen">
+      <ArticleSchema
+        title={post.title}
+        description={post.description}
+        slug={post.slug}
+        publishedAt={post.publishedAt}
+        updatedAt={post.updatedAt}
+        author={post.author}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: siteConfig.url },
+          { name: 'Blog', url: `${siteConfig.url}/blog` },
+          { name: post.title, url: `${siteConfig.url}/blog/${post.slug}` },
+        ]}
+      />
       <Header />
 
       <article className="pt-16">

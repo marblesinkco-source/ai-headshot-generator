@@ -13,6 +13,9 @@ export function OrganizationSchema() {
       siteConfig.links.twitter,
       siteConfig.links.linkedin,
       siteConfig.links.instagram,
+      siteConfig.links.tiktok,
+      siteConfig.links.youtube,
+      siteConfig.links.facebook,
     ],
     contactPoint: {
       '@type': 'ContactPoint',
@@ -163,6 +166,55 @@ export function SoftwareApplicationSchema() {
       ratingValue: '4.9',
       ratingCount: '500',
       bestRating: '5',
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+export function ArticleSchema({
+  title,
+  description,
+  slug,
+  publishedAt,
+  updatedAt,
+  author,
+}: {
+  title: string;
+  description: string;
+  slug: string;
+  publishedAt: string;
+  updatedAt?: string;
+  author?: string;
+}) {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    url: `${siteConfig.url}/blog/${slug}`,
+    datePublished: publishedAt,
+    dateModified: updatedAt || publishedAt,
+    author: {
+      '@type': 'Organization',
+      name: author || siteConfig.name,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteConfig.url}/brand/tailorpic/logo/tailorpic-horizontal-bronze.svg`,
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${siteConfig.url}/blog/${slug}`,
     },
   };
 

@@ -4,6 +4,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
+import { BreadcrumbSchema } from '@/components/structured-data';
 import { Shield, Zap, Users, Lock, Heart, Globe } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -66,6 +67,12 @@ const stats = [
 export default function AboutPage() {
   return (
     <main className="min-h-screen">
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: siteConfig.url },
+          { name: 'About', url: `${siteConfig.url}/about` },
+        ]}
+      />
       <Header />
 
       {/* Hero */}

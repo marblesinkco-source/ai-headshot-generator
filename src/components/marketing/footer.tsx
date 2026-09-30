@@ -9,6 +9,7 @@ const legalLinks = [
   { label: 'Cookie Policy', href: '/cookie-policy' },
   { label: 'Refund Policy', href: '/refund-policy' },
   { label: 'Security', href: '/security' },
+  { label: 'DPA', href: '/dpa' },
 ];
 
 const socialLinks = [
@@ -194,6 +195,14 @@ export function Footer() {
                   className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
                 >
                   Affiliate
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/headshot-cost-calculator"
+                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
+                >
+                  Cost Calculator
                 </Link>
               </li>
             </ul>

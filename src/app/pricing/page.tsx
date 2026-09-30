@@ -5,6 +5,7 @@ import { Pricing } from '@/components/marketing/pricing';
 import { CreditPackages } from '@/components/marketing/credit-packages';
 import { FAQ } from '@/components/marketing/faq';
 import { siteConfig } from '@/config/site';
+import { BreadcrumbSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
   title: 'Pricing',
@@ -20,6 +21,12 @@ export const metadata: Metadata = {
 export default function PricingPage() {
   return (
     <main className="min-h-screen">
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: siteConfig.url },
+          { name: 'Pricing', url: `${siteConfig.url}/pricing` },
+        ]}
+      />
       <Header />
 
       {/* Hero */}
