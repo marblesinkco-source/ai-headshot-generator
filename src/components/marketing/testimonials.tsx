@@ -83,6 +83,17 @@ export function Testimonials() {
           <p className="mt-4 text-lg text-tp-muted">
             See why thousands of professionals trust us with their image.
           </p>
+
+          {/* Review summary badge */}
+          <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-tp-line bg-white px-5 py-2.5 shadow-sm">
+            <div className="flex gap-0.5">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="h-4 w-4 fill-tp-bronze text-tp-bronze" />
+              ))}
+            </div>
+            <span className="text-sm font-semibold text-tp-ink">4.9/5</span>
+            <span className="text-xs text-tp-muted">from 500+ reviews</span>
+          </div>
         </div>
 
         {/* Cards */}

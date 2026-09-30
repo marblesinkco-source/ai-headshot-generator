@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Check, Zap } from 'lucide-react';
+import { Check, Zap, ShieldCheck } from 'lucide-react';
 import { getActiveCategories, type Category } from '@/config/categories';
 import { formatPrice } from '@/lib/utils';
 import { cn } from '@/lib/utils';
@@ -175,10 +175,20 @@ export function Pricing() {
           </p>
         )}
 
-        {/* Trust line */}
-        <p className="mt-8 text-center text-sm text-tp-muted">
-          Secure payment via Stripe. 100% satisfaction guaranteed or your money back.
-        </p>
+        {/* Money-back guarantee banner */}
+        <div className="mt-10 mx-auto max-w-2xl rounded-2xl border border-green-200 bg-green-50/60 p-5 sm:p-6 flex items-center gap-4">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-100 flex-shrink-0">
+            <ShieldCheck className="h-6 w-6 text-green-700" />
+          </div>
+          <div>
+            <p className="text-sm font-semibold text-green-900">
+              100% Money-Back Guarantee
+            </p>
+            <p className="text-xs text-green-700 mt-0.5 leading-relaxed">
+              Not satisfied with your results? Get a full refund within 14 days. No questions asked. Secure payment powered by Stripe.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

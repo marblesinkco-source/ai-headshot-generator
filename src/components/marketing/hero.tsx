@@ -22,7 +22,7 @@ export function Hero() {
             {/* Copy */}
             <div className="pt-6 pb-6 lg:pt-[45px] lg:pb-[42px] relative z-10">
               <p className="uppercase text-[10px] font-semibold tracking-[0.25em] text-tp-bronze-ink mb-5 sm:text-[10px]">
-                Professional photos. Tailored by AI.
+                Studio quality. Without the studio.
               </p>
 
               <h1
@@ -33,9 +33,12 @@ export function Hero() {
                 <em className="text-tp-bronze-ink not-italic font-normal font-display italic">Tailored</em> by AI.
               </h1>
 
-              <p className="text-[15px] text-tp-muted leading-[1.75] max-w-[485px] mb-7">
-                Professional, personal and creative photos, shaped around you.
-                Choose your category and find your next photo direction.
+              <p className="text-[15px] text-tp-muted leading-[1.75] max-w-[485px] mb-4">
+                Get 40+ studio-quality photos in under 2 hours — no studio, no photographer, no scheduling hassle.
+              </p>
+              <p className="text-[13px] text-tp-muted/70 leading-[1.6] max-w-[485px] mb-7">
+                <span className="line-through text-tp-muted/50">Traditional photoshoot: $200–$500</span>
+                {' '}→ Starting at <span className="font-semibold text-tp-bronze-ink">$9.90</span>
               </p>
 
               <div className="flex flex-wrap gap-3">
