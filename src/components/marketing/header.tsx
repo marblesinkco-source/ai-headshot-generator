@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { siteConfig } from '@/config/site';
@@ -13,7 +13,6 @@ const navLinks = [
 ];
 
 export function Header() {
-  const [mobileOpen, setMobileOpen] = useState(false);
   const mobileDialog = useRef<HTMLDialogElement>(null);
 
   return (
