@@ -1511,6 +1511,181 @@ export const photoStyles: PhotoStyle[] = [
     relatedCategories: ['headshots'],
     relatedBlogPosts: ['headshot-trends-2026', 'headshot-poses-guide', 'personal-brand-headshot-strategy'],
   },
+  {
+    slug: 'art-deco',
+    name: 'Art Deco Portraits',
+    title: 'AI Art Deco Portraits',
+    description:
+      'Elegant 1920s-inspired portraits with geometric gold details, glamorous lighting and a Great Gatsby sense of style.',
+    metaDescription:
+      'Create AI Art Deco portraits inspired by the 1920s, with geometric gold accents, glamorous styling and rich jewel tones. Elegant, distinctive photos with TailorPic.',
+    heroText:
+      'Step into the Jazz Age. Art Deco portraits pair bold geometry, gold accents and glamorous lighting for a look that feels timeless, theatrical and effortlessly elegant.',
+    features: [
+      'Geometric gold and black backdrops inspired by 1920s architecture',
+      'Glamorous, directional lighting with soft glowing highlights',
+      'Period-inspired styling such as tuxedos, beaded gowns and sleek hair',
+      'Rich jewel tones in emerald, navy, burgundy and champagne',
+      'Symmetrical, poised composition with a cinematic feel',
+      'High resolution files suited to invitations, posters and profiles',
+    ],
+    idealFor: [
+      'Themed parties, galas and Great Gatsby events',
+      'Wedding and anniversary invitations',
+      'Authors, performers and event hosts',
+      'Hotels, bars, venues and boutique brands',
+      'Anyone wanting a bold, elegant profile photo',
+    ],
+    tips: [
+      'Upload clear, front-facing selfies with even lighting',
+      'Choose one accent color such as emerald or gold and keep the rest restrained',
+      'Pick a formal neckline or collar to match the period styling',
+      'Use a simpler style for conservative platforms like LinkedIn',
+      'Generate a few variations and pick the one that still looks like you',
+    ],
+    relatedCategories: ['headshots', 'couple-engagement-photos'],
+    relatedBlogPosts: ['headshot-trends-2026', 'choosing-right-headshot-style', 'personal-brand-headshot-strategy'],
+  },
+  {
+    slug: 'cyberpunk',
+    name: 'Cyberpunk Portraits',
+    title: 'AI Cyberpunk Portraits',
+    description:
+      'Futuristic neon-lit portraits with city-night atmosphere, bold color contrast and a sci-fi edge.',
+    metaDescription:
+      'Create AI cyberpunk portraits with neon lighting, futuristic backdrops and bold color contrast. Striking sci-fi photos for gamers, creators and tech brands with TailorPic.',
+    heroText:
+      'Welcome to the neon future. Cyberpunk portraits wrap you in glowing magenta and cyan light against a rain-soaked city night, for a look that is unmistakably bold.',
+    features: [
+      'Neon magenta, cyan and violet lighting on face and background',
+      'Futuristic city nights, holographic signs and rainy streets',
+      'High-contrast shadows with glowing rim light',
+      'Tech-inspired styling such as sleek jackets and subtle accessories',
+      'Cinematic composition with a shallow depth of field',
+      'High resolution files for avatars, banners and posters',
+    ],
+    idealFor: [
+      'Gamers, streamers and esports teams',
+      'Developers, hackers and tech creators',
+      'Discord, Twitch and YouTube avatars',
+      'Sci-fi authors, artists and musicians',
+      'Event posters and album artwork',
+    ],
+    tips: [
+      'Upload selfies with neutral lighting so the neon colors can be applied cleanly',
+      'Wear dark, simple clothing that lets the glow stand out',
+      'Choose one dominant neon color for a more cohesive result',
+      'Keep a professional style in reserve for job applications',
+      'Crop to a square for avatars and keep your face centered',
+    ],
+    relatedCategories: ['headshots'],
+    relatedBlogPosts: ['headshot-trends-2026', 'choosing-right-headshot-style', 'social-media-profile-photo-guide'],
+  },
+  {
+    slug: 'renaissance',
+    name: 'Renaissance Portraits',
+    title: 'AI Renaissance Portraits',
+    description:
+      'Classical oil-painting portraits with rich color, dramatic chiaroscuro and the grandeur of Old Master art.',
+    metaDescription:
+      'Create AI Renaissance portraits in the style of classical oil paintings, with dramatic chiaroscuro lighting, rich fabrics and museum-style composition. Try TailorPic.',
+    heroText:
+      'Become a masterpiece. Renaissance portraits transform your selfies into classical oil paintings with deep color, soft candlelit shadows and the dignity of the Old Masters.',
+    features: [
+      'Oil-painting texture with visible, refined brushwork',
+      'Chiaroscuro lighting with warm highlights and deep shadows',
+      'Period-inspired clothing such as velvet, brocade and lace collars',
+      'Dark, atmospheric backgrounds in umber, green and deep red',
+      'Formal three-quarter composition in the classical tradition',
+      'High resolution files suited to framing and print',
+    ],
+    idealFor: [
+      'Gifts, family keepsakes and wall art',
+      'Authors, historians and educators',
+      'Museum, gallery and cultural projects',
+      'Costume parties and themed invitations',
+      'Memorable social media profile images',
+    ],
+    tips: [
+      'Upload sharp selfies with a neutral expression for the most faithful likeness',
+      'Remove glasses and hats where possible so the painted face stays clear',
+      'Pair with a print order for a striking framed portrait',
+      'Try a three-quarter angle selfie for a classical pose',
+      'Make a matching set for partners or family members',
+    ],
+    relatedCategories: ['headshots', 'family-portraits'],
+    relatedBlogPosts: ['choosing-right-headshot-style', 'headshot-trends-2026', 'family-photo-vs-headshot'],
+  },
+  {
+    slug: 'tropical',
+    name: 'Tropical Portraits',
+    title: 'AI Tropical Portraits',
+    description:
+      'Bright, sun-soaked portraits with palm leaves, turquoise water and a relaxed summer mood.',
+    metaDescription:
+      'Create AI tropical portraits with palm leaves, turquoise water and warm summer light. Cheerful vacation-style photos for profiles, travel and lifestyle brands with TailorPic.',
+    heroText:
+      'Bring the vacation with you. Tropical portraits place you amid palm leaves, warm sunshine and turquoise water for a fresh, happy look that feels like summer all year round.',
+    features: [
+      'Lush palms, hibiscus and jungle greenery backdrops',
+      'Warm sunshine with soft, flattering skin tones',
+      'Turquoise ocean, white sand and resort-style settings',
+      'Breezy linen, floral and summer clothing styling',
+      'Bright, saturated color with an easy, relaxed mood',
+      'High resolution files for social media and print',
+    ],
+    idealFor: [
+      'Travel bloggers and lifestyle creators',
+      'Hospitality, resort and tourism brands',
+      'Beach weddings and destination events',
+      'Holiday cards and summer invitations',
+      'Dating profiles with a relaxed, sunny vibe',
+    ],
+    tips: [
+      'Upload selfies taken in daylight with a natural smile',
+      'Wear light colors that contrast with the green backdrops',
+      'Choose a close crop for profile photos and a wider crop for banners',
+      'Use a corporate style alongside it for professional platforms',
+      'Generate a few scenes such as beach and jungle to compare',
+    ],
+    relatedCategories: ['headshots', 'dating-photos', 'holiday-cards'],
+    relatedBlogPosts: ['dating-profile-photo-tips', 'social-media-profile-photo-guide', 'choosing-right-headshot-style'],
+  },
+  {
+    slug: 'noir-detective',
+    name: 'Noir Detective Portraits',
+    title: 'AI Noir Detective Portraits',
+    description:
+      'Moody black-and-white portraits with trench coats, fedoras and venetian-blind shadows in classic detective style.',
+    metaDescription:
+      'Create AI noir detective portraits with trench coats, fedoras, venetian-blind shadows and smoky black-and-white drama. Atmospheric 1940s-style photos with TailorPic.',
+    heroText:
+      'The case starts with a great portrait. Noir detective photos bring trench coats, slatted window light and smoky black-and-white drama to your image, for a look full of mystery.',
+    features: [
+      'Black-and-white or muted tones with deep contrast',
+      'Venetian-blind shadows and hard, directional light',
+      'Trench coats, fedoras, suits and loosened ties',
+      'Smoky offices, rainy streets and lamplit alleys',
+      'Brooding, narrative-driven expressions and poses',
+      'High resolution files for posters, covers and profiles',
+    ],
+    idealFor: [
+      'Mystery, crime and thriller authors',
+      'True crime podcasters and storytellers',
+      'Private investigators and security professionals',
+      'Themed parties, murder mystery evenings and film fans',
+      'Book covers, posters and promotional art',
+    ],
+    tips: [
+      'Upload well-lit selfies so the dramatic shadows can be added convincingly',
+      'Wear a collared shirt or jacket to match the period look',
+      'Keep your expression serious and slightly guarded',
+      'Pair with a clean corporate style for formal uses',
+      'Try both a black-and-white and a warm sepia variation',
+    ],
+    relatedCategories: ['headshots'],
+    relatedBlogPosts: ['ai-headshot-for-authors', 'podcast-host-headshot-branding-guide', 'choosing-right-headshot-style'],
+  },
 ];
 
 export function getPhotoStyle(slug: string): PhotoStyle | undefined {

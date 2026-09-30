@@ -4,7 +4,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
-import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight, Heart, Monitor, GraduationCap, Camera, Clapperboard, SmilePlus, TrendingUp, Ruler, Target, Brain, Dumbbell, Music, PawPrint, Users, Handshake, Mic, Palette, Newspaper, Shield, Plane, Calendar, BookOpen, Leaf, Globe, BarChart3, Award, Briefcase, FileCheck, UserCheck } from 'lucide-react';
+import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight, Heart, Zap, Monitor, GraduationCap, Camera, Clapperboard, SmilePlus, TrendingUp, Ruler, Target, Brain, Dumbbell, Music, PawPrint, Users, Handshake, Mic, Palette, Newspaper, Shield, Plane, Calendar, BookOpen, Leaf, Globe, BarChart3, Award, Briefcase, FileCheck, UserCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'AI Photos by Industry | TailorPic',
@@ -404,6 +404,46 @@ const industries = [
       'Professional headshots for personal trainers. Energetic portraits for gym profiles, booking pages and social media.',
     href: '/industries/personal-trainers',
     cta: 'For Trainers',
+  },
+  {
+    icon: BookOpen,
+    name: 'Librarians',
+    description:
+      'Friendly headshots for public, academic and school librarians. Portraits for staff directories, library sites and LinkedIn.',
+    href: '/industries/librarians',
+    cta: 'For Librarians',
+  },
+  {
+    icon: Shield,
+    name: 'Firefighters',
+    description:
+      'Confident headshots for firefighters and fire officers. Portraits for department rosters, promotion packets and career profiles.',
+    href: '/industries/firefighters',
+    cta: 'For Firefighters',
+  },
+  {
+    icon: Heart,
+    name: 'Paramedics',
+    description:
+      'Credible headshots for paramedics and EMTs. Approachable portraits for agency pages, credentialing and job applications.',
+    href: '/industries/paramedics',
+    cta: 'For Paramedics',
+  },
+  {
+    icon: Zap,
+    name: 'Electricians',
+    description:
+      'Professional headshots for electricians and contractors. Build customer trust on your website, Google profile and estimates.',
+    href: '/industries/electricians',
+    cta: 'For Electricians',
+  },
+  {
+    icon: Briefcase,
+    name: 'Plumbers',
+    description:
+      'Professional headshots for plumbers and plumbing contractors. Friendly portraits for websites, local listings and quotes.',
+    href: '/industries/plumbers',
+    cta: 'For Plumbers',
   },
 ];
 

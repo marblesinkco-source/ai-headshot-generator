@@ -271,6 +271,41 @@ const useCases = [
     href: '/use-cases/job-application',
     tag: 'Career',
   },
+  {
+    icon: Target,
+    title: 'Coaching Profile Photos',
+    description: 'Warm, credible portraits for coaching sites, booking pages and program listings.',
+    href: '/use-cases/coaching-profile',
+    tag: 'Professional',
+  },
+  {
+    icon: Heart,
+    title: 'Volunteer Directory Photos',
+    description: 'Friendly portraits for volunteer rosters, recognition pages and community directories.',
+    href: '/use-cases/volunteer-directory',
+    tag: 'Community',
+  },
+  {
+    icon: Mic,
+    title: 'Podcast Guest Bio Photos',
+    description: 'Polished headshots ready for podcast guest pages, show notes and host requests.',
+    href: '/use-cases/podcast-guest-bio',
+    tag: 'Media',
+  },
+  {
+    icon: Mail,
+    title: 'Company Newsletter Photos',
+    description: 'Consistent employee portraits for newsletters, spotlights and internal announcements.',
+    href: '/use-cases/company-newsletter',
+    tag: 'Teams',
+  },
+  {
+    icon: Globe,
+    title: 'Visa Application Photos',
+    description: 'Clean, professional portraits for visa and immigration profiles. Always check official photo rules.',
+    href: '/use-cases/visa-application',
+    tag: 'Career',
+  },
 ];
 
 export default function UseCasesPage() {

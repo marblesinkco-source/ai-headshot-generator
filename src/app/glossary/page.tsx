@@ -151,6 +151,11 @@ const terms: Term[] = [
       "A smoothing filter that uses a Gaussian function to reduce image noise and detail. In portrait photography and AI headshot generation, Gaussian blur is commonly applied to backgrounds to create a pleasing bokeh-like effect that draws attention to the subject's face.",
   },
   {
+    term: 'Golden Hour',
+    definition:
+      'The period shortly after sunrise or before sunset when the sun is low and its light is soft, warm and directional. It flatters skin and creates a gentle glow, and AI headshot styles often imitate it for outdoor-style portraits.',
+  },
+  {
     term: 'Headshot',
     definition:
       'A portrait, usually framed from the shoulders up, used to represent a person professionally on profiles, company pages and business materials. Its purpose is to show your face clearly and look approachable.',
@@ -223,6 +228,11 @@ const terms: Term[] = [
     term: 'Portrait Photography',
     definition:
       'The genre of photography that focuses on capturing a person\'s appearance and personality. Headshots are one type of portrait, alongside environmental, lifestyle and group portraits.',
+  },
+  {
+    term: 'Posing',
+    definition:
+      'The way a subject positions their head, shoulders, hands and expression in front of the camera. Small adjustments such as angling the shoulders, lowering the chin slightly and relaxing the face make a headshot look more natural and confident.',
   },
   {
     term: 'Prompt',
