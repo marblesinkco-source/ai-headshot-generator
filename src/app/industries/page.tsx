@@ -4,12 +4,12 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
-import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight, Heart, Monitor, GraduationCap } from 'lucide-react';
+import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight, Heart, Monitor, GraduationCap, Camera, Clapperboard, SmilePlus, TrendingUp, Ruler } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'AI Photos by Industry | TailorPic',
   description:
-    'Professional AI-generated photos tailored for your industry. Real estate, legal, healthcare, nursing, engineering, education, consulting, accounting, e-commerce, and more.',
+    'Professional AI-generated photos tailored for your industry. Real estate, legal, healthcare, nursing, engineering, education, consulting, accounting, photography, acting, dental, financial advisory, architecture and more.',
 };
 
 const industries = [
@@ -84,6 +84,46 @@ const industries = [
       'Professional headshots for teachers and educators. School websites, academic profiles and conference materials.',
     href: '/industries/teachers',
     cta: 'For Teachers',
+  },
+  {
+    icon: Camera,
+    name: 'Photographers',
+    description:
+      'Professional headshots for photographers and creatives. Portfolio-ready, brand-consistent imagery for your own marketing.',
+    href: '/industries/photographers',
+    cta: 'For Photographers',
+  },
+  {
+    icon: Clapperboard,
+    name: 'Actors',
+    description:
+      'Casting-ready headshots for actors and performers. Multiple looks, expressions and styling for auditions and reels.',
+    href: '/industries/actors',
+    cta: 'For Actors',
+  },
+  {
+    icon: SmilePlus,
+    name: 'Dentists',
+    description:
+      'Trustworthy headshots for dentists and dental professionals. Patient-friendly portraits for practice websites and directories.',
+    href: '/industries/dentists',
+    cta: 'For Dentists',
+  },
+  {
+    icon: TrendingUp,
+    name: 'Financial Advisors',
+    description:
+      'Credible, polished headshots for financial advisors and wealth managers. Build client trust with professional imagery.',
+    href: '/industries/financial-advisors',
+    cta: 'For Advisors',
+  },
+  {
+    icon: Ruler,
+    name: 'Architects',
+    description:
+      'Professional headshots for architects and designers. Portfolio-ready imagery for firm websites and industry publications.',
+    href: '/industries/architects',
+    cta: 'For Architects',
   },
 ];
 

@@ -425,6 +425,44 @@ export const photoStyles: PhotoStyle[] = [
     relatedCategories: ['headshots', 'team-headshots'],
     relatedBlogPosts: ['executive-headshot-guide', 'corporate-team-photos-guide'],
   },
+  {
+    slug: 'casual',
+    name: 'Casual Headshots',
+    title: 'AI Casual Headshots',
+    description:
+      'Relaxed casual headshots perfect for creative industries, startups, and social media profiles.',
+    metaDescription:
+      'Create relaxed AI casual headshots for creative professionals, startups and social media. Approachable, authentic portraits ready in minutes with TailorPic.',
+    heroText:
+      'Not every photo needs a suit and tie. Casual headshots capture the real you with relaxed styling, natural expressions and laid-back settings that feel approachable and genuine, perfect for creative roles, startup culture and social profiles where personality matters more than formality.',
+    features: [
+      'Relaxed, everyday wardrobe including t-shirts, denim and casual layers',
+      'Warm, inviting backgrounds such as cafes, coworking spaces and soft neutrals',
+      'Natural, candid expressions that convey approachability and warmth',
+      'Soft, flattering lighting with a lifestyle photography feel',
+      'Versatile crops suited to social media avatars, bios and personal sites',
+    ],
+    idealFor: [
+      'Creative professionals and freelancers',
+      'Startup teams and tech workers',
+      'Social media profiles and personal blogs',
+      'Coaches, consultants and small business owners',
+      'Anyone who wants an authentic, personality-forward portrait',
+    ],
+    tips: [
+      'Upload selfies in natural light with a relaxed expression',
+      'Wear comfortable clothing you would actually wear day to day',
+      'Include a few smiling shots for a friendly, approachable vibe',
+      'Try both neutral and lifestyle backgrounds to see what fits your brand',
+      'Avoid overly formal attire so the casual feel stays consistent',
+    ],
+    relatedCategories: ['headshots', 'dating-photos'],
+    relatedBlogPosts: [
+      'headshot-trends-2025',
+      'remote-worker-headshot-guide',
+      'social-media-profile-photo-sizes',
+    ],
+  },
 ];
 
 export function getPhotoStyle(slug: string): PhotoStyle | undefined {

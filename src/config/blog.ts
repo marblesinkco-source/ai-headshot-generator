@@ -2288,6 +2288,375 @@ export const blogPosts: BlogPost[] = [
     tags: ['Students', 'Internships', 'Career'],
     readingTime: '5 min read',
   },
+  {
+    slug: 'professional-headshot-lighting-tips',
+    title: 'Professional Headshot Lighting: 7 Tips for Perfect Portraits',
+    description:
+      'Master headshot lighting with these 7 practical tips covering natural light, studio setups, modifiers, and common mistakes to avoid for flattering portraits every time.',
+    content: `
+      <p>Lighting is the single biggest factor that separates a polished headshot from an amateur snapshot. Even the most expensive camera and lens combination will produce mediocre results if the light is wrong. Conversely, a smartphone can deliver surprisingly professional portraits when the light is right. Whether you are setting up a DIY shoot at home or directing a photographer, understanding these seven lighting principles will help you get flattering, consistent headshots every time.</p>
+
+      <h2>1. Use Soft, Diffused Light as Your Foundation</h2>
+      <p>Hard, direct light creates harsh shadows under the nose, chin and eye sockets that age the subject and draw attention to skin texture. Soft light wraps around the face, minimises blemishes and creates a natural, approachable look that works across industries.</p>
+      <p>To soften light, place a diffuser between the source and the subject. A large window with sheer curtains is the simplest option. In a studio, a softbox or shoot-through umbrella does the same job. The larger the light source relative to the subject, the softer the result. A four-foot softbox placed three feet from the face will produce much softer light than a bare flash six feet away.</p>
+      <p><strong>Quick test:</strong> look at the shadow edge under the subject's chin. If the transition from light to shadow is gradual over an inch or more, the light is soft enough for most professional headshots.</p>
+
+      <h2>2. Position the Key Light at 30 to 45 Degrees</h2>
+      <p>The key light is your primary source. Placing it directly in front of the subject (flat lighting) eliminates shadows but also removes dimension, making the face look flat and lifeless. Moving it too far to the side creates dramatic shadows that suit editorial work but feel too intense for a business headshot.</p>
+      <p>The sweet spot for most professional headshots is 30 to 45 degrees off-centre and slightly above eye level. This angle produces a gentle shadow on the far side of the nose and a small triangle of light on the shadow-side cheek, known as Rembrandt lighting. It flatters most face shapes and conveys both warmth and authority.</p>
+      <p>If the subject has a wider face, pulling the light slightly further to the side (closer to 45 degrees) adds slimming definition. For narrower faces, keeping it closer to centre (around 30 degrees) avoids exaggerating angular features.</p>
+
+      <h2>3. Add Fill Light to Control the Shadow Ratio</h2>
+      <p>Once your key light is set, the shadow side of the face may be too dark. A fill light or reflector on the opposite side lifts those shadows without eliminating them. The goal is a ratio that looks natural: enough shadow to show shape, but not so much that the dark side of the face disappears.</p>
+      <p>A white foam board or a collapsible reflector placed close to the subject on the shadow side is often all you need. In a studio, a second light at lower power works too. A common starting point is a 2:1 ratio, where the shadow side is roughly one stop darker than the lit side. For corporate headshots, even less contrast (closer to 1.5:1) keeps things clean and approachable.</p>
+      <p>Avoid silver reflectors for headshots. They produce a specular fill that can look unnatural on skin and create competing catchlights in the eyes.</p>
+
+      <h2>4. Watch for Catchlights in the Eyes</h2>
+      <p>Catchlights are the small reflections of your light source in the subject's eyes. They add life and energy to a portrait. Without them, the eyes can look dull and lifeless, no matter how well-lit the rest of the face is.</p>
+      <p>Ideally, you want one or two catchlights in each eye, positioned in the upper half. If the catchlight sits at the bottom of the iris, the light is too low and the overall effect will feel eerie. Multiple scattered catchlights from too many sources look confusing.</p>
+      <p>Check catchlights by zooming in on a test shot. If they are missing, raise your light or move it closer. If using natural light, have the subject face slightly toward the window until the catchlights appear.</p>
+
+      <h2>5. Separate the Subject from the Background</h2>
+      <p>A headshot should draw attention to the person, not the wall behind them. Light separation creates depth and prevents the subject from blending into the background. There are two main approaches.</p>
+      <p><strong>Background light:</strong> a small light aimed at the background behind the subject creates a gradient that pushes the person forward visually. Adjust the power and distance to taste. A subtle glow is usually more professional than a bright hotspot.</p>
+      <p><strong>Rim or hair light:</strong> a light placed behind and above the subject, aimed at the back of the head and shoulders, creates a thin edge of brightness that separates dark hair or clothing from a dark background. Use this sparingly; too much rim light looks artificial.</p>
+      <p>If you are shooting against a plain background at home, simply positioning the subject three to four feet in front of the wall is often enough. The falloff of your key light will naturally darken the background relative to the face.</p>
+
+      <h2>6. Leverage Natural Light Like a Professional</h2>
+      <p>You do not need a studio to get professional lighting. A large north-facing window on an overcast day provides some of the most flattering portrait light available, and it costs nothing. Position the subject facing the window at a slight angle, with their body turned 15 to 30 degrees away from it.</p>
+      <p>Avoid direct sunlight streaming through a window. It creates hard shadows and forces the subject to squint. If you must shoot in a sunny room, hang a white sheet over the window or wait until the sun moves past.</p>
+      <p><strong>Best times for window light:</strong> mid-morning and mid-afternoon on cloudy days. The light is bright enough to keep ISO low but diffused enough to stay soft. Avoid noon light from skylights or high windows, which creates unflattering downward shadows.</p>
+      <p>If you do not have access to good natural light or a studio, <a href="/">TailorPic</a> can generate studio-quality headshots from your selfies using AI. The AI applies professional lighting effects that would be difficult to replicate at home, giving you polished results without any equipment at all.</p>
+
+      <h2>7. Avoid These Common Lighting Mistakes</h2>
+      <p>Even experienced photographers fall into these traps. Watch out for each one during your next shoot.</p>
+      <ul>
+        <li><strong>Mixed colour temperatures:</strong> combining warm tungsten room lights with cool window light creates uneven skin tones that are hard to correct in post-processing. Turn off overhead lights and rely on a single type of source.</li>
+        <li><strong>Overhead-only lighting:</strong> ceiling lights cast deep shadows under the brow and nose, creating a tired, aged look. Always bring light to face level or slightly above.</li>
+        <li><strong>Too many lights:</strong> each additional light adds complexity and another set of shadows. For headshots, one key light plus a reflector is enough in most cases. Add more only if you have a specific reason.</li>
+        <li><strong>Ignoring the background colour bounce:</strong> a brightly coloured wall behind or beside the subject can reflect that colour onto the skin. A red wall creates a warm cast; a green wall can make skin look sickly. Use neutral walls or hang a grey fabric to block colour spill.</li>
+        <li><strong>Forgetting to adjust for glasses:</strong> subjects wearing glasses need the light raised slightly or angled to avoid reflections on the lenses. Tilting the glasses very slightly downward also helps. Take a test shot and zoom in to check.</li>
+      </ul>
+
+      <h2>Putting It All Together</h2>
+      <p>A reliable headshot lighting setup does not need to be complicated. Start with one large, soft source at about 40 degrees and slightly above eye level. Add a white reflector on the opposite side for fill. Place the subject a few feet from a clean background. Check for catchlights, adjust the fill distance until the shadow ratio looks natural, and shoot.</p>
+      <p>If you are pressed for time or do not have access to any lighting equipment, try the <a href="/free-headshot-generator">TailorPic free headshot generator</a>. Upload a few clear selfies taken in decent light and the AI handles the rest, applying professional lighting, background and retouching to produce a set of polished portraits you can use immediately.</p>
+      <p>Explore the full range of <a href="/styles">headshot styles</a> to find a look that matches your industry, or fine-tune an existing photo in the <a href="/editor">photo editor</a>. Good lighting makes a real difference, and once you understand these seven principles you will notice the improvement in every portrait you take.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-04-15',
+    tags: ['Photography', 'Lighting', 'Tips'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'ai-headshots-vs-studio-photography-2025',
+    title: 'AI Headshots vs Traditional Photography: Complete 2025 Comparison',
+    description:
+      'A thorough 2025 comparison of AI headshot generators and traditional studio photography covering cost, quality, turnaround, consistency, and when to choose each option.',
+    content: `
+      <p>Five years ago, the only way to get a professional headshot was to book a photographer, show up at a studio and wait for edited files. Today, AI headshot services can produce polished portraits from a handful of selfies in under an hour. But does faster and cheaper automatically mean better? This guide compares AI-generated headshots and traditional photography across every dimension that matters so you can decide which approach fits your situation.</p>
+
+      <h2>How AI Headshots Work in 2025</h2>
+      <p>Modern AI headshot generators use machine learning models trained on millions of professional portraits. You upload several casual photos of yourself, the AI learns your facial features, and then it generates new images of you in studio-quality settings, complete with professional lighting, clean backgrounds and business-appropriate attire.</p>
+      <p>Services like <a href="/">TailorPic</a> have refined this process to the point where the output is nearly indistinguishable from a real studio photograph. The AI handles everything from skin retouching to background selection, producing multiple variations you can choose from. The whole process takes minutes rather than hours.</p>
+
+      <h2>Cost Comparison</h2>
+      <p>This is where the gap is most dramatic. Traditional headshot photography typically costs between $150 and $500 for an individual session in a major city. That usually includes the photographer's time, studio rental, basic retouching of a few selected images and digital delivery. Premium photographers or those in expensive markets can charge $500 to $1,000 or more.</p>
+      <p>AI headshot services range from free basic options to around $50 for premium packages. <a href="/pricing">TailorPic's headshot package</a> starts at $9.90 and includes multiple finished images across different styles. For teams, the savings multiply quickly: a 20-person company might spend $4,000 to $10,000 on traditional photography compared to a few hundred dollars with an AI service.</p>
+
+      <h3>Hidden Costs to Consider</h3>
+      <ul>
+        <li><strong>Traditional:</strong> travel time, time away from work, wardrobe preparation, additional retouching fees for extra images, reshoots if results are unsatisfying.</li>
+        <li><strong>AI:</strong> potential need to purchase additional style packs, time spent selecting from generated options, occasional need for manual touch-ups on specific details.</li>
+      </ul>
+
+      <h2>Quality and Realism</h2>
+      <p>This is the area where traditional photography still holds an edge, though the gap narrows every year. A skilled photographer working with professional lighting, lenses and direction can capture nuances of expression and personality that AI sometimes misses. The subtle way someone's eyes crinkle when they genuinely smile, the exact fall of their hair, the precise fit of their jacket: these details are captured perfectly in a real photograph.</p>
+      <p>AI-generated headshots in 2025, however, have reached a level where most viewers cannot tell the difference. The technology handles skin texture, eye detail, hair and clothing with impressive accuracy. Where AI occasionally stumbles is with unusual accessories like distinctive jewellery, very complex hairstyles, or extremely specific clothing that was not well-represented in the training data.</p>
+      <p>For the vast majority of professional uses, such as LinkedIn profiles, company websites, email signatures and conference badges, AI headshots are more than good enough. For high-end editorial work, magazine covers, or situations where the photo will be printed at very large sizes, traditional photography still makes more sense.</p>
+
+      <h2>Turnaround Time</h2>
+      <p>Traditional photography requires scheduling a session (often days or weeks out), the shoot itself (30 minutes to two hours), and then waiting for edited images (typically three to fourteen business days). Rush delivery is sometimes available at an additional cost.</p>
+      <p>AI headshot generation is measured in minutes. Upload your selfies, wait for the model to process, and receive your finished images. With TailorPic, you can have professional headshots ready in under an hour from the moment you start. This speed advantage is especially valuable for last-minute needs: a job application due tomorrow, a conference badge photo needed today, or a new hire who starts on Monday.</p>
+
+      <h2>Consistency Across Teams</h2>
+      <p>When a company needs headshots for its entire team, consistency becomes critical. Everyone should have similar lighting, background, framing and overall feel. Traditional photography achieves this by shooting everyone in the same session with the same setup, but this requires coordinating schedules, which is difficult for remote and distributed teams.</p>
+      <p>AI services excel at consistency. Every headshot is generated with the same style parameters, producing a uniform look regardless of when or where each person's selfies were taken. A team member in London and another in Tokyo can both get matching headshots without anyone travelling. For growing companies that add new employees regularly, AI maintains the same look months or years later, while rebooking a photographer may produce subtly different results.</p>
+      <p>Check out our <a href="/for-teams">team headshot solutions</a> to see how TailorPic handles team-wide consistency.</p>
+
+      <h2>Convenience and Accessibility</h2>
+      <p>Traditional photography requires physical presence. You need to travel to a studio or arrange for a photographer to come to you. For people with disabilities, those in remote locations, or anyone with tight schedules, this can be a significant barrier.</p>
+      <p>AI headshots only require a smartphone and an internet connection. You can generate professional portraits from your living room at midnight if that is when it suits you. There is no need to coordinate with another person's availability, no travel, and no pressure to perform on camera in a single session. If you are camera-shy, AI removes the social pressure of posing in front of a stranger.</p>
+
+      <h2>Creative Control and Variety</h2>
+      <p>A traditional photo session typically produces 20 to 100 raw images, from which you select and the photographer retouches a handful. Changing the background, outfit or lighting style after the shoot usually means rebooking.</p>
+      <p>AI headshot services let you experiment with multiple backgrounds, outfits and styles from a single set of uploads. Want to see yourself in a navy suit against a grey background and also in business casual against a blurred outdoor setting? Both are available in minutes. Browse the <a href="/styles">TailorPic style gallery</a> to see the range of options available.</p>
+
+      <h2>Privacy and Data Handling</h2>
+      <p>With traditional photography, your images are typically stored on the photographer's equipment and cloud storage. Policies vary widely: some photographers delete files after delivery, while others retain them indefinitely for portfolio use.</p>
+      <p>Reputable AI headshot services publish clear data handling policies. TailorPic, for example, processes your selfies to create the AI model and then allows you to delete your uploaded photos at any time. Before choosing any service, review their privacy policy and understand how long your images are retained and whether they are used for training.</p>
+
+      <h2>When to Choose Traditional Photography</h2>
+      <ul>
+        <li>Executive portraits for annual reports or board pages where maximum fidelity matters.</li>
+        <li>Creative or editorial shoots with specific artistic direction.</li>
+        <li>Situations where the photographer can also direct body language, posture and expression for brand-specific messaging.</li>
+        <li>When you genuinely enjoy the experience of a professional shoot and value the human interaction.</li>
+      </ul>
+
+      <h2>When to Choose AI Headshots</h2>
+      <ul>
+        <li>Budget is a primary concern and you need professional quality at a fraction of the cost.</li>
+        <li>You need headshots quickly, without scheduling delays.</li>
+        <li>Your team is distributed across multiple locations or time zones.</li>
+        <li>You want to experiment with multiple styles before committing.</li>
+        <li>You need consistent headshots for a growing team over time.</li>
+        <li>You are camera-shy and prefer the comfort of taking selfies at home.</li>
+      </ul>
+
+      <h2>The Verdict</h2>
+      <p>For most professionals in 2025, AI headshots deliver the best combination of quality, speed and value. The technology has matured to the point where the output satisfies the requirements of LinkedIn, corporate websites, email signatures and most other professional contexts. Traditional photography remains the superior choice for high-stakes creative work and executive branding, but it is no longer the only path to a polished professional image.</p>
+      <p>Ready to see the difference for yourself? Try the <a href="/free-headshot-generator">free headshot generator</a> and compare the results with what you would expect from a studio session. You might be surprised at how far AI has come.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-05-08',
+    tags: ['AI', 'Photography', 'Comparison'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'team-headshot-consistency-guide',
+    title: 'How to Achieve Consistent Team Headshots Without a Photographer',
+    description:
+      'A practical guide for companies that want visually consistent team headshots across their website and profiles without hiring a photographer for every new employee.',
+    content: `
+      <p>Your company's website features a team page. Some photos were taken in a well-lit studio, others are cropped from holiday snapshots, and a few look like they were captured with a laptop webcam in a dimly lit room. The inconsistency makes even a talented, professional team look disorganised. Achieving a consistent look across all team headshots used to require booking a photographer for a single coordinated session, but that approach breaks down as teams grow, go remote and add new members throughout the year.</p>
+
+      <h2>Why Consistency Matters More Than Individual Quality</h2>
+      <p>A set of headshots that all look like they belong together communicates something powerful: this is a team that pays attention to details. Consistency signals professionalism, organisation and brand awareness. Paradoxically, a mediocre-but-consistent set of headshots often looks more professional than a mix of individually excellent but stylistically different photos.</p>
+      <p>Consistency covers several elements: background colour and style, lighting direction and quality, framing and crop, colour grading, and apparent distance from the camera. When all of these align, the team page looks intentional rather than cobbled together.</p>
+
+      <h2>The Traditional Approach and Its Limits</h2>
+      <p>The conventional solution is to hire a photographer for a team shoot. Everyone gathers in the same place, sits in the same chair, under the same lights, against the same backdrop. It works beautifully when it works. The problems emerge quickly.</p>
+      <ul>
+        <li><strong>Scheduling:</strong> getting 15 or 50 people in the same room at the same time is a logistics challenge, especially with remote workers.</li>
+        <li><strong>New hires:</strong> someone who joins two months after the shoot gets a mismatched photo unless you rebook the photographer.</li>
+        <li><strong>Cost:</strong> team sessions typically run $1,000 to $5,000 or more depending on size and location, and every new batch of hires means another expense.</li>
+        <li><strong>Global teams:</strong> a photographer in New York cannot easily replicate the same setup for a colleague in Berlin or Singapore.</li>
+      </ul>
+
+      <h2>Define Your Visual Standard First</h2>
+      <p>Before you worry about execution, decide what your team headshots should look like. Create a simple brief that covers these five elements.</p>
+      <ul>
+        <li><strong>Background:</strong> solid colour (white, light grey, navy) or a soft gradient? Blurred office or outdoor setting?</li>
+        <li><strong>Framing:</strong> head and shoulders, or a wider crop that includes part of the torso? Centred or slightly off-centre?</li>
+        <li><strong>Expression:</strong> warm smile, neutral professional, or relaxed and approachable?</li>
+        <li><strong>Attire:</strong> formal business, smart casual, or industry-specific (scrubs, lab coat, etc.)?</li>
+        <li><strong>Colour treatment:</strong> natural tones, slightly warm, high contrast, or muted and editorial?</li>
+      </ul>
+      <p>Document this in a shared style guide. Include two or three example photos that capture the look you want. This guide becomes the reference that keeps things consistent whether you are onboarding one person or twenty.</p>
+
+      <h2>Use AI to Maintain the Standard</h2>
+      <p>AI headshot generators are particularly good at consistency because they apply the same style parameters to every image. There is no variation from one session to the next, no difference between a Tuesday morning and a Friday afternoon shoot. Every headshot gets the same lighting model, the same background treatment and the same crop.</p>
+      <p><a href="/for-teams">TailorPic's team features</a> let you select a single style and apply it across your entire team. Each person uploads their own selfies from wherever they are, and the AI produces headshots that match. The result is a cohesive team page that looks like everyone sat for the same photographer on the same day.</p>
+      <p>This is especially valuable for companies that are growing quickly. A new hire on their first day can have a matching headshot ready before their welcome email goes out. There is no waiting for the next group shoot or settling for a temporary placeholder photo.</p>
+
+      <h2>Selfie Guidelines for Your Team</h2>
+      <p>The quality of AI-generated headshots depends heavily on the input photos. Share these guidelines with your team to ensure consistent inputs.</p>
+      <ul>
+        <li>Use natural daylight facing a window, not overhead fluorescent lights.</li>
+        <li>Take photos at eye level, not from above or below.</li>
+        <li>Use a plain, uncluttered background.</li>
+        <li>Include your face and shoulders with some space around the edges.</li>
+        <li>Remove sunglasses and heavy filters; light makeup is fine.</li>
+        <li>Submit at least four photos with slightly different angles and expressions.</li>
+      </ul>
+
+      <h2>Review and Refine as a Batch</h2>
+      <p>Once your team's headshots are generated, review them together as a set before publishing. Open all the images side by side and check for consistency in skin tone rendering, background uniformity and overall brightness. Minor adjustments can be made in the <a href="/editor">TailorPic photo editor</a> to fine-tune individual images without breaking the overall consistency.</p>
+      <p>If one or two headshots look slightly different, it is usually because the input selfies had very different lighting or colour temperature. Ask those team members to retake their selfies following the guidelines and regenerate.</p>
+
+      <h2>Maintaining Consistency Over Time</h2>
+      <p>The real challenge is not the initial batch; it is keeping the standard as people come and go. Build headshot generation into your onboarding checklist. When a new person joins, they receive the selfie guidelines alongside their laptop setup instructions. Their headshot is generated using the same style template and added to the team page within their first week.</p>
+      <p>Set a reminder to refresh headshots annually. People change their hairstyle, start or stop wearing glasses, and generally evolve in appearance. A yearly update keeps the page current without making it a large project.</p>
+
+      <h2>Get Started</h2>
+      <p>Consistent team headshots are achievable without a photographer, a studio or a coordination nightmare. Define your style, share selfie guidelines, use AI to generate matching headshots and build the process into onboarding. Explore the <a href="/styles">available styles</a> and check the <a href="/pricing">pricing</a> to see how easily your team can present a unified, professional image.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-06-12',
+    tags: ['Teams', 'Business', 'Consistency'],
+    readingTime: '4 min read',
+  },
+  {
+    slug: 'best-headshot-backgrounds-by-industry',
+    title: 'Headshot Background Guide: Best Colors & Settings for Every Industry',
+    description:
+      'Choose the right headshot background for your profession with this industry-by-industry guide covering colours, textures, gradients and environmental settings.',
+    content: `
+      <p>The background of your headshot does more than fill space. It sets a tone, establishes context and either supports or undermines the impression you are trying to make. A corporate lawyer in front of a neon-painted wall sends a very different signal than the same person against a clean grey gradient. Choosing the right background is one of the simplest ways to elevate a headshot, and it is also one of the most commonly overlooked details.</p>
+
+      <h2>Solid Colour Backgrounds</h2>
+      <p>Solid backgrounds are the safest and most versatile choice. They keep attention on the face, work at any size from a tiny LinkedIn thumbnail to a full-page print, and never clash with company branding when used on websites or marketing materials.</p>
+      <h3>White and Off-White</h3>
+      <p>Clean, modern and universally professional. White backgrounds work for nearly every industry and are particularly popular in tech, healthcare and startups. The risk is that pure white can look stark or washed out if the subject has fair skin or light hair. An off-white or very light grey solves this by providing just enough contrast.</p>
+      <h3>Light Grey</h3>
+      <p>The most popular choice for corporate headshots and the default in many professional studios. Light grey is neutral enough to work everywhere but has more depth than white. It photographs well under most lighting conditions and rarely needs correction.</p>
+      <h3>Navy and Dark Blue</h3>
+      <p>Blue backgrounds convey trust, stability and authority. They are common in finance, law, consulting and government. Navy works especially well with lighter skin tones and creates a classic, traditional feel. Darker blues can absorb light, so ensure your lighting setup compensates.</p>
+      <h3>Charcoal and Dark Grey</h3>
+      <p>A darker background adds drama and sophistication. It is popular for executive portraits, creative professionals and anyone who wants their headshot to feel more editorial. Dark backgrounds demand good lighting to prevent the subject from disappearing, but when done well they produce striking results.</p>
+      <h3>Muted Earth Tones</h3>
+      <p>Warm greys, soft taupes and muted sage greens are gaining popularity, especially among personal brands, coaches and wellness professionals. These backgrounds feel approachable and modern without being distracting.</p>
+
+      <h2>Gradient and Textured Backgrounds</h2>
+      <p>Gradients add depth and visual interest without the distraction of a full scene. A light-to-dark gradient behind the head creates natural separation and draws the eye to the face. Textured backgrounds like lightly painted canvas or subtle fabric add warmth and character.</p>
+      <p>These options work well for creative industries, real estate agents, entrepreneurs and anyone whose brand leans toward personality rather than pure corporate formality. Avoid overly busy textures that compete with the subject's face for attention.</p>
+
+      <h2>Environmental and Blurred Backgrounds</h2>
+      <p>An environmental headshot shows a hint of the subject's world: a blurred office, a bookshelf, a city skyline or an outdoor setting. This style is less formal but highly effective for storytelling. It says something about who you are and where you work.</p>
+      <h3>Office and Workspace</h3>
+      <p>A blurred modern office background suggests professionalism and teamwork. It works for corporate websites, especially when you want a more approachable, less studio-formal feel. Ensure the blur is strong enough that no distracting details are visible.</p>
+      <h3>Outdoor and Nature</h3>
+      <p>Greenery, park settings or urban streetscapes create a relaxed, natural impression. These backgrounds suit industries like outdoor recreation, travel, wellness, sustainability and creative fields. Be cautious with strong sunlight, which can create harsh shadows and squinting.</p>
+      <h3>Architectural</h3>
+      <p>Clean modern architecture, brick walls or neutral building facades add character without clutter. This style is popular among real estate agents, architects, engineers and urban professionals. The key is finding surfaces with texture but not too much visual complexity.</p>
+
+      <h2>Industry-Specific Recommendations</h2>
+      <p>While personal preference matters, certain industries have developed strong norms around headshot backgrounds. Following these norms does not make you bland; it makes you instantly recognisable as part of your professional community.</p>
+      <ul>
+        <li><strong>Finance and Law:</strong> solid grey, navy blue or dark charcoal. Conservative and clean. Avoid casual or outdoor settings.</li>
+        <li><strong>Technology:</strong> white, light grey or modern gradient. Clean and forward-looking. Environmental office shots also work well.</li>
+        <li><strong>Healthcare:</strong> white or light blue. Clinical cleanliness reinforces trust. Avoid dark or dramatic backgrounds.</li>
+        <li><strong>Real Estate:</strong> blurred architectural settings, light grey or branded colour backgrounds. Approachability is key. See our <a href="/real-estate-agent-headshots">real estate headshot guide</a> for specific tips.</li>
+        <li><strong>Creative and Media:</strong> dark backgrounds, textured surfaces, environmental settings. More creative latitude is expected and welcomed.</li>
+        <li><strong>Education:</strong> warm neutrals, campus settings or library blurs. Approachable and academic.</li>
+        <li><strong>Consulting:</strong> solid grey or blue. Professional but not flashy. Match the tone of your client base.</li>
+        <li><strong>Startups and Entrepreneurs:</strong> anything from white to gradient to environmental. Choose based on the impression you want to make with investors and customers.</li>
+      </ul>
+
+      <h2>Colours to Avoid</h2>
+      <p>Some background colours create problems regardless of industry.</p>
+      <ul>
+        <li><strong>Bright red:</strong> too aggressive for professional use and can cast an unflattering warm tone on skin.</li>
+        <li><strong>Neon or electric colours:</strong> distracting and unprofessional for most contexts.</li>
+        <li><strong>Green:</strong> can cast a sickly hue on skin and interferes with green-screen techniques if you ever need to swap the background later.</li>
+        <li><strong>Patterns and busy prints:</strong> wallpaper patterns, complex textures or cluttered scenes pull attention away from the face.</li>
+      </ul>
+
+      <h2>How to Change Your Background Without a Reshoot</h2>
+      <p>If you already have a headshot but the background is not right, you do not necessarily need to start over. The <a href="/editor/background-changer">TailorPic background changer</a> lets you swap your existing background for a solid colour, gradient or blurred setting in minutes. This is especially useful when you need different backgrounds for different platforms: a white background for your company website, a navy background for a conference badge and a blurred office for LinkedIn.</p>
+      <p>For those creating new headshots, <a href="/">TailorPic</a> lets you select your preferred background style before generation. Browse the <a href="/styles">style gallery</a> to see which backgrounds are available and find the combination that best represents your profession and personal brand.</p>
+
+      <h2>Final Tips</h2>
+      <p>When in doubt, choose a solid light grey or off-white background. It works everywhere, never dates and keeps the focus on your face. If you want something more distinctive, match the background to your industry norms and personal brand. Whatever you choose, ensure enough contrast between your clothing, skin tone and the background so you stand out clearly. A dark-haired person in a dark suit against a dark background disappears; add contrast somewhere and the image comes alive.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-07-20',
+    tags: ['Backgrounds', 'Colors', 'Guide'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'social-media-profile-photo-guide',
+    title: 'Social Media Profile Photo Guide: Sizes, Tips & Best Practices for 2025',
+    description:
+      'Everything you need to know about profile photos for LinkedIn, Instagram, X, Facebook and more, including 2025 dimensions, formatting tips and strategies for standing out.',
+    content: `
+      <p>Your profile photo is one of the few elements that appears everywhere you interact on a social platform: in posts, comments, direct messages, search results and suggested connections. Despite its small size, it plays an outsized role in shaping how people perceive you. This guide covers the practical details, from exact pixel dimensions to composition strategies, for every major social platform in 2025.</p>
+
+      <h2>Why Your Profile Photo Matters More Than You Think</h2>
+      <p>People form impressions from profile photos in as little as one-tenth of a second. That snap judgement influences whether someone connects with you, trusts your comment or clicks through to your profile. A clear, high-quality photo increases engagement across every platform. Profiles with photos receive significantly more profile views, connection requests and message responses than those without.</p>
+      <p>The key insight is that your profile photo is not just a photo of you; it is a communication tool. It should tell the viewer, in a glance, who you are and what to expect from interacting with you.</p>
+
+      <h2>Platform-by-Platform Size Guide for 2025</h2>
+      <p>Each platform crops and displays profile photos differently. Upload the recommended size and your photo will look sharp everywhere it appears.</p>
+
+      <h3>LinkedIn</h3>
+      <ul>
+        <li><strong>Recommended upload size:</strong> 800 x 800 pixels</li>
+        <li><strong>Minimum:</strong> 400 x 400 pixels</li>
+        <li><strong>Display shape:</strong> circle</li>
+        <li><strong>Max file size:</strong> 8 MB</li>
+        <li><strong>Format:</strong> JPG or PNG</li>
+      </ul>
+      <p>LinkedIn is the most important platform for professional headshots. Your photo appears at various sizes across desktop and mobile, from large on your profile page to tiny in comment threads. Upload at 800 x 800 to ensure sharpness everywhere. See our <a href="/linkedin-headshots">LinkedIn headshot guide</a> for detailed tips on optimising your photo for this platform.</p>
+
+      <h3>Instagram</h3>
+      <ul>
+        <li><strong>Recommended upload size:</strong> 320 x 320 pixels (displays at 110 x 110)</li>
+        <li><strong>Display shape:</strong> circle</li>
+        <li><strong>Format:</strong> JPG or PNG</li>
+      </ul>
+      <p>Instagram compresses profile photos heavily, so start with a high-quality source image. The photo displays very small, which means your face should fill most of the frame. Detailed backgrounds or full-body shots will be unreadable at this size.</p>
+
+      <h3>X (formerly Twitter)</h3>
+      <ul>
+        <li><strong>Recommended upload size:</strong> 400 x 400 pixels</li>
+        <li><strong>Display shape:</strong> circle</li>
+        <li><strong>Max file size:</strong> 2 MB</li>
+        <li><strong>Format:</strong> JPG, PNG or GIF</li>
+      </ul>
+      <p>Your X profile photo appears in tweets, replies and the sidebar. Because it often sits next to text, contrast with the platform's background (white in light mode, dark in dark mode) matters. Test how your photo looks in both modes.</p>
+
+      <h3>Facebook</h3>
+      <ul>
+        <li><strong>Recommended upload size:</strong> 720 x 720 pixels</li>
+        <li><strong>Display shape:</strong> circle on most surfaces</li>
+        <li><strong>Format:</strong> JPG or PNG (PNG for logos or text overlays)</li>
+      </ul>
+      <p>Facebook displays your profile photo at several different sizes depending on context. A 720 x 720 pixel upload ensures good quality across all of them. For professional use on Facebook, apply the same principles as LinkedIn: clear face, good lighting, professional but approachable expression.</p>
+
+      <h3>TikTok</h3>
+      <ul>
+        <li><strong>Recommended upload size:</strong> 200 x 200 pixels minimum</li>
+        <li><strong>Display shape:</strong> circle</li>
+        <li><strong>Format:</strong> JPG or PNG (also supports short video)</li>
+      </ul>
+      <p>TikTok's profile photo is small and appears against a variety of backgrounds. Bright, high-contrast images perform best. TikTok also allows a short video clip as your profile photo, which can help you stand out but is not appropriate for all professional contexts.</p>
+
+      <h3>YouTube</h3>
+      <ul>
+        <li><strong>Recommended upload size:</strong> 800 x 800 pixels</li>
+        <li><strong>Display shape:</strong> circle</li>
+        <li><strong>Format:</strong> JPG, PNG, BMP or GIF (non-animated)</li>
+      </ul>
+
+      <h2>Composition Tips That Work Across All Platforms</h2>
+      <p>Regardless of platform, certain composition principles make your profile photo more effective.</p>
+      <h3>Fill the Frame with Your Face</h3>
+      <p>Profile photos display small. Your face should occupy roughly 60 to 70 per cent of the frame. A headshot cropped at the chest or shoulders is ideal. Full-body shots, group photos or wide environmental shots become unreadable blobs at profile-photo sizes.</p>
+      <h3>Use Consistent Lighting</h3>
+      <p>Even, front-facing light makes your features clear and recognisable. Avoid harsh overhead light, which creates shadows under the eyes, and backlight, which turns you into a silhouette. Natural light from a window is the simplest way to get flattering illumination.</p>
+      <h3>Choose a Clean Background</h3>
+      <p>Busy backgrounds compete with your face for attention at small sizes. A solid colour, soft gradient or heavily blurred setting keeps the focus where it belongs. This is one reason professional headshots perform so well as profile photos: the background is designed to be invisible.</p>
+      <h3>Maintain Eye Contact</h3>
+      <p>Looking directly at the camera creates a sense of connection. It makes the viewer feel as though you are looking at them, which builds trust and engagement. Candid sideways-glance photos can work in creative contexts but are less effective for professional networking.</p>
+
+      <h2>Common Mistakes to Avoid</h2>
+      <ul>
+        <li><strong>Using a group photo cropped down:</strong> even after cropping, remnants of other people's arms or shoulders are visible and look unprofessional.</li>
+        <li><strong>Outdated photos:</strong> if your photo is more than two or three years old, or if you have significantly changed your appearance, update it. People should recognise you when they meet you.</li>
+        <li><strong>Heavy filters:</strong> subtle adjustments are fine, but dramatic filters that change your skin colour, smooth away all texture or distort your features reduce trust.</li>
+        <li><strong>Sunglasses:</strong> your eyes are essential for connection. Remove sunglasses for any professional profile photo.</li>
+        <li><strong>Low resolution:</strong> a blurry or pixelated photo suggests a lack of care. Always upload at or above the recommended dimensions.</li>
+        <li><strong>Inconsistency across platforms:</strong> if someone finds you on LinkedIn and then checks your X profile, seeing the same or similar photo builds recognition and trust. Using wildly different photos across platforms is a missed branding opportunity.</li>
+      </ul>
+
+      <h2>One Photo, Multiple Platforms</h2>
+      <p>The most efficient approach is to create one excellent headshot and adapt it for each platform. Start with a high-resolution source image (at least 800 x 800 pixels) and crop or resize it to fit each platform's requirements. Because all major platforms now use circular crops, ensure important details like the top of your head and chin are not right at the edge of the frame.</p>
+      <p><a href="/">TailorPic</a> makes this easy by generating high-resolution headshots that work across all platforms. You can download your image and resize it for each use case, or use the <a href="/editor">photo editor</a> to create platform-specific versions with adjusted cropping. The <a href="/styles">style gallery</a> includes options designed specifically for professional social media use.</p>
+
+      <h2>When to Update Your Profile Photo</h2>
+      <p>Update your profile photo when your appearance changes noticeably (new hairstyle, glasses, significant weight change), when you change careers or industries, or at least once every one to two years even if nothing obvious has changed. A current photo shows that your profile is active and maintained.</p>
+      <p>Some professionals update their photo seasonally or with major career milestones (new job, promotion, speaking engagement). This is not necessary for everyone, but if your social media presence is a significant part of your professional identity, regular updates keep things fresh.</p>
+
+      <h2>Get Your Profile Photo Right</h2>
+      <p>A strong profile photo is one of the highest-impact, lowest-effort improvements you can make to your online presence. Start with a professional headshot, either from a photographer or from a service like <a href="/">TailorPic</a>. Upload it at the right size for each platform, ensure the composition works in a small circle, and keep it current. Try the <a href="/free-headshot-generator">free headshot generator</a> to see how a professional AI-generated headshot compares to what you are using now.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-08-14',
+    tags: ['Social Media', 'Profile Photos', 'Guide'],
+    readingTime: '5 min read',
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
