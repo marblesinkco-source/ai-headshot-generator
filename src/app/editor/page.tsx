@@ -5,11 +5,11 @@ import { Footer } from '@/components/marketing/footer';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
-import { Palette, Sun, Maximize2, ArrowRight, Shirt, Eye, History, Eraser, Sparkles, ScanFace, Scissors, Smile, Move, Pipette, Glasses } from 'lucide-react';
+import { Palette, Sun, Maximize2, ArrowRight, Shirt, Eye, History, Eraser, Sparkles, ScanFace, Scissors, Smile, Move, Pipette, Glasses, Heart, Clock } from 'lucide-react';
 
 const title = 'AI Photo Editor — Professional Headshot Editing Tools | TailorPic';
 const description =
-  'Explore TailorPic\'s 16 AI-powered photo editing tools: background changer, clothing changer, pose editor, makeup, color correction, glasses editor and more. Professional headshots without manual editing.';
+  'Explore TailorPic\'s 21 AI-powered photo editing tools: background changer, clothing changer, pose editor, makeup, skin smoother, expression editor, crop & resize and more. Professional headshots without manual editing.';
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -137,6 +137,41 @@ const tools = [
     description:
       'Subtle face contouring and jawline refinement for the most flattering headshot. Natural-looking enhancements that preserve your likeness.',
     href: '/editor/face-reshaping',
+  },
+  {
+    icon: Eye,
+    name: 'AI Red Eye Remover',
+    description:
+      'Instantly fix red-eye from flash photography. Restore natural eye color while preserving detail and catchlights.',
+    href: '/editor/red-eye-remover',
+  },
+  {
+    icon: Heart,
+    name: 'AI Skin Smoother',
+    description:
+      'Even out skin tone and reduce blemishes while keeping natural texture. Professional retouching that looks real, not filtered.',
+    href: '/editor/skin-smoother',
+  },
+  {
+    icon: Smile,
+    name: 'AI Expression Editor',
+    description:
+      'Fine-tune facial expressions in your headshots. Adjust smile intensity, eyebrow position and overall mood for the perfect look.',
+    href: '/editor/expression-editor',
+  },
+  {
+    icon: Maximize2,
+    name: 'AI Smart Crop & Resize',
+    description:
+      'Intelligently crop and resize headshots for any platform. LinkedIn, passport, ID badge and social media dimensions in one click.',
+    href: '/editor/crop-resize',
+  },
+  {
+    icon: Clock,
+    name: 'AI Age Filter',
+    description:
+      'Preview how you\'ll look years from now or rewind to a younger appearance. Fun, realistic age transformations powered by AI.',
+    href: '/editor/age-filter',
   },
 ];
 
