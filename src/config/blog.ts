@@ -1610,6 +1610,263 @@ export const blogPosts: BlogPost[] = [
     tags: ['Ethics', 'AI', 'Photography'],
     readingTime: '6 min read',
   },
+  {
+    slug: 'what-to-wear-for-headshots',
+    title: 'What to Wear for Professional Headshots: Complete Outfit Guide',
+    description:
+      'Not sure what to wear for your headshot? Learn which colors, cuts and accessories photograph well, with advice for corporate, creative and tech professionals.',
+    content: `
+      <p>Your outfit does a surprising amount of work in a professional headshot. The right clothing keeps attention on your face, fits the industry you work in and makes you look polished without looking staged. The wrong choice can distract viewers, date the photo or clash with the background. This guide walks through what to wear, what to avoid and how to adapt your look to your field.</p>
+
+      <h2>Start With Solid Colors</h2>
+      <p>Solid colors are the safest and most flattering choice for almost everyone. They keep the focus on your face and avoid visual noise that can look busy when the image is shrunk down to a small profile thumbnail. Good starting points include:</p>
+      <ul>
+        <li><strong>Navy, charcoal and black:</strong> Classic, authoritative and easy to pair with most backgrounds.</li>
+        <li><strong>Jewel tones:</strong> Deep blue, emerald or burgundy add richness and often flatter a wide range of skin tones.</li>
+        <li><strong>Soft neutrals:</strong> Gray, taupe and muted earth tones feel approachable and calm.</li>
+        <li><strong>White and cream:</strong> Work well when layered under a jacket, but can wash out in bright light on their own.</li>
+      </ul>
+      <p>Choose a color that suits your skin tone and that you feel confident in. If a shade makes you feel uncomfortable, it will show in your expression.</p>
+
+      <h2>Avoid Patterns and Distracting Details</h2>
+      <p>Busy patterns such as small checks, thin stripes and herringbone can create a shimmering effect on camera. Large logos, slogans and graphic prints pull the eye away from your face and can make the photo feel dated quickly. Skip anything that is wrinkled, stretched or ill-fitting, since cameras tend to exaggerate those flaws. Neutral, well-fitted basics nearly always beat trendy statement pieces.</p>
+
+      <h2>Fit and Neckline Matter</h2>
+      <p>A well-fitted garment makes you look sharper than an expensive one that hangs badly. Shoulders should sit cleanly, sleeves should not bunch and the collar should lie flat. Since headshots are framed from the chest up, the neckline is one of the most visible parts of your outfit. Crew necks, V-necks, open collars and structured collars all work. Try a few options in front of a mirror and pick the one that frames your face best.</p>
+
+      <h2>Corporate and Professional Services</h2>
+      <p>For law, finance, consulting and executive roles, lean toward traditional business attire. A tailored blazer or suit jacket in navy, charcoal or black over a simple shirt or blouse communicates reliability. A tie is optional and depends on your workplace culture. Keep colors conservative and lines clean. If you want to explore polished, boardroom-ready looks, browse our <a href="/styles">headshot styles</a> to see what suits your role.</p>
+
+      <h2>Creative Industries</h2>
+      <p>Designers, writers, marketers and artists have more room to show personality. A bold color, an interesting texture or a distinctive jacket can make you memorable, as long as it still looks intentional. Keep the silhouette simple and let one element stand out rather than layering several statement pieces. The goal is to look like the most confident version of your creative self, not like a costume.</p>
+
+      <h2>Tech and Startups</h2>
+      <p>Tech culture generally favors smart-casual. A crisp knit, a clean button-down, an unstructured blazer or a quality plain tee under an overshirt can all work. Avoid looking either underdressed in a hoodie or overdressed in a full suit unless that matches how you genuinely present at work. Approachable and competent is the tone to aim for.</p>
+
+      <h2>Accessories and Grooming</h2>
+      <p>Keep accessories minimal so they support your look rather than compete with it. Small earrings, a simple necklace or an understated watch are fine, while large, reflective or noisy pieces can distract. If you wear glasses, check for glare and consider cleaning the lenses well or angling your chin slightly to reduce reflections. For grooming, get a haircut a few days beforehand rather than the day before, tidy facial hair, and keep skin care simple and matte rather than shiny. Light makeup that evens skin tone looks natural on camera.</p>
+
+      <h2>Bring Options and Think About the Background</h2>
+      <p>If you are shooting in person, pack two or three outfits and compare them. Consider the backdrop too: a dark jacket will stand out against a light wall, while a mid-tone shirt can disappear into a similar background. If you are using AI, you can explore different wardrobe and background combinations without changing clothes at all. Take a look at our <a href="/headshots">professional headshots</a> page to see how different outfits and settings come across.</p>
+
+      <h2>Final Checklist</h2>
+      <ul>
+        <li>Choose a solid color that flatters you and fits your industry.</li>
+        <li>Make sure everything fits well and is wrinkle-free.</li>
+        <li>Keep accessories simple and avoid glare from glasses or jewelry.</li>
+        <li>Groom a few days ahead so you look fresh, not freshly cut.</li>
+        <li>Pick a look that feels like you on a good day.</li>
+      </ul>
+      <p>When you feel comfortable and appropriately dressed, it shows in your expression. Ready to see yourself in different outfits and settings? Explore TailorPic's <a href="/styles">headshot styles</a> or start from our <a href="/headshots">headshots page</a> to create a portrait you will be proud to use.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-03-12',
+    tags: ['Fashion', 'Headshots', 'Tips'],
+    readingTime: '7 min read',
+  },
+  {
+    slug: 'diy-headshots-at-home',
+    title: 'DIY Headshots at Home: Pro Tips for Self-Portraits',
+    description:
+      'Learn how to take professional-looking headshots at home with simple lighting, a clean background, smart camera settings, flattering poses and basic editing.',
+    content: `
+      <p>You do not need a studio to get a good headshot. With a window, a clean wall and a bit of preparation, you can take a portrait that looks polished and professional. This guide covers the setup, settings, posing and editing steps that make the biggest difference for self-portraits taken at home.</p>
+
+      <h2>Start With Good Light</h2>
+      <p>Light is the single most important factor in a headshot. The easiest source is a large window. Face the window so the light falls softly across your face, and avoid harsh direct sun, which creates squinting and hard shadows. An overcast day is ideal because clouds act as a giant diffuser. Some practical tips:</p>
+      <ul>
+        <li>Stand or sit facing the window, with the light coming from slightly to one side for gentle dimension.</li>
+        <li>Turn off overhead lights, which mix color temperatures and cast shadows under the eyes.</li>
+        <li>Use a white sheet, poster board or foam board opposite the window to bounce light back and soften shadows.</li>
+        <li>If you must shoot in the evening, use a lamp with a diffusing shade placed in front and slightly above your face.</li>
+      </ul>
+
+      <h2>Choose a Simple Background</h2>
+      <p>A distracting background pulls attention away from you. Plain walls in white, light gray or a soft neutral work well. Stand a few feet in front of the wall rather than leaning against it, which helps separate you from the background and avoids shadows. If you do not have a clean wall, hang a simple fabric or use a plain door. A bit of greenery or a tidy bookshelf can work for a more relaxed look, but keep it uncluttered and slightly out of focus.</p>
+
+      <h2>Set Up Your Camera</h2>
+      <p>Modern smartphones are more than capable of a great headshot. Use the rear camera if you can since it is higher quality than the selfie camera, and prop the phone on a stack of books or a small tripod at eye level. Use the timer or a remote shutter to avoid shaking the phone. A few settings help:</p>
+      <ul>
+        <li>Use portrait mode for a soft blurred background, but check that edges around your hair look natural.</li>
+        <li>If using a zoom lens or camera, a focal length around 50 to 85mm equivalent is flattering. On a phone, using the 2x option can reduce wide-angle distortion.</li>
+        <li>Tap to focus on your eyes and lock exposure so the image is not too dark or bright.</li>
+        <li>Turn off heavy beauty filters, which tend to make portraits look artificial.</li>
+      </ul>
+
+      <h2>Framing and Distance</h2>
+      <p>Keep the camera at eye level or just slightly above. Shooting from below is unflattering and shooting from far above can look odd. Frame from the chest up with a little room above your head, and leave some spare space around the edges so you can crop for different platforms later. Step back and zoom in slightly rather than holding the camera close, which reduces distortion.</p>
+
+      <h2>Posing and Expression</h2>
+      <p>Natural posing is learned, but a few tricks help quickly. Angle your shoulders slightly away from the camera and turn your face back toward it. Push your forehead slightly forward and chin gently down to define the jawline. Relax your shoulders, and avoid stiff arms. For your expression, think of something that genuinely makes you smile, or try a slight squint known as squinching to look confident rather than wide-eyed. Take plenty of shots and vary between a closed-mouth smile, a relaxed smile and a more serious look.</p>
+
+      <h2>Choose the Right Outfit</h2>
+      <p>Wear a solid color that suits your skin tone and your industry, with a neckline that frames your face. Avoid busy patterns and large logos. A quick steam or iron makes a bigger difference than most people expect.</p>
+
+      <h2>Basic Editing</h2>
+      <p>Light editing can polish your best shot without making it fake. Crop to a square or a 4:5 ratio, adjust brightness and contrast gently, and correct color cast so skin looks natural. Remove small distractions such as flyaway hairs or a stray blemish, but avoid over-smoothing skin or changing your features. The aim is a portrait that still looks like you when someone meets you in person.</p>
+
+      <h2>Common Mistakes to Avoid</h2>
+      <ul>
+        <li>Using the flash, which flattens features and creates harsh shadows.</li>
+        <li>Shooting with a window behind you, which turns you into a silhouette.</li>
+        <li>Holding the phone at arm's length, which distorts proportions.</li>
+        <li>Choosing the first photo instead of reviewing several options carefully.</li>
+      </ul>
+
+      <h2>A Faster Option With AI</h2>
+      <p>DIY headshots can look great, but they take time, equipment and trial and error. That is where TailorPic's AI makes the process easier. Instead of setting up lights and posing for dozens of shots, you upload a handful of selfies and receive polished, studio-style portraits in a range of outfits and backgrounds. You can even try it first with our <a href="/free-headshot-generator">free headshot generator</a>, then browse <a href="/headshots">professional headshots</a> and <a href="/styles">styles</a> to pick the look that suits you best.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-03-10',
+    tags: ['DIY', 'Photography', 'Tips'],
+    readingTime: '8 min read',
+  },
+  {
+    slug: 'actor-headshot-guide',
+    title: 'Actor Headshots: What Casting Directors Actually Want to See',
+    description:
+      'A practical guide to actor headshots: theatrical versus commercial looks, industry standards, expression tips and what helps your photo stand out in a stack.',
+    content: `
+      <p>For an actor, the headshot is the first audition. Casting directors and agents often scroll through many submissions quickly, and your photo has to communicate who you are, what roles you suit and that you are professional, all in a moment. This guide explains the types of headshots actors typically need, the standards to follow and how to make yours stand out.</p>
+
+      <h2>Theatrical vs Commercial Headshots</h2>
+      <p>Many actors maintain two types of headshots because they serve different markets. Understanding the difference helps you submit the right image for the right role.</p>
+      <ul>
+        <li><strong>Theatrical headshots:</strong> Used for film, television and stage. They tend to feel more serious, grounded and character-driven, with a natural, intense or thoughtful expression and subtle styling.</li>
+        <li><strong>Commercial headshots:</strong> Used for advertising and brand work. They are typically brighter and warmer, with an open, friendly smile and approachable, relatable energy.</li>
+      </ul>
+      <p>Your agent or representation can guide which look fits your market, and many actors bring both to auditions and submission platforms.</p>
+
+      <h2>Industry Standards</h2>
+      <p>While preferences vary by region, several conventions are widely followed. Headshots are commonly in portrait orientation, most often an 8 by 10 ratio, framed from roughly the chest or shoulders up. The image should be sharp, well lit and focused on the eyes. Keep backgrounds simple and unobtrusive, often a soft blurred outdoor setting or a plain neutral backdrop. Always check the submission requirements of the platform, agency or casting site you are using, since file sizes and formats differ.</p>
+
+      <h2>Look Like You, On a Good Day</h2>
+      <p>The most important rule is accuracy. Casting professionals expect you to walk into the room looking like your photo. Avoid heavy retouching, dramatic changes to your hair or features, or a photo from several years ago. Your headshot should reflect your current look, including hair length, color and facial hair. If you change your appearance significantly, update your photos.</p>
+
+      <h2>Expression Is Everything</h2>
+      <p>The eyes carry a headshot. Engaged, alive eyes suggest an actor who is present and thinking. To get there, think of a specific thought or a person you are speaking to rather than simply posing. A slight shift in intention changes the entire photo. Aim for expressions that suggest a point of view, such as warmth, curiosity, confidence or wit, rather than a blank stare. A genuine smile reaches the eyes, so practice relaxing your face between frames.</p>
+
+      <h2>Wardrobe and Styling</h2>
+      <p>Choose simple, solid-colored tops that do not compete with your face. Avoid logos, stripes and busy patterns. Colors that complement your eyes and skin tone work best, and layering with a jacket or textured knit adds depth without distraction. Keep makeup natural and grooming clean. You want the viewer to think about the person, not the outfit.</p>
+
+      <h2>What Makes a Headshot Stand Out</h2>
+      <ul>
+        <li><strong>A clear type:</strong> Your photo should suggest the kinds of roles you fit, such as the friendly neighbor, the professional or the intense lead.</li>
+        <li><strong>Strong eyes and focus:</strong> Sharp focus on the eyes is non-negotiable.</li>
+        <li><strong>Natural light and soft contrast:</strong> Flattering, realistic lighting beats heavy effects.</li>
+        <li><strong>Authenticity:</strong> Personality shows through when you are relaxed and confident.</li>
+        <li><strong>Consistency:</strong> Match your headshot to your reel, resume and online profiles.</li>
+      </ul>
+
+      <h2>Budget and Timing</h2>
+      <p>Traditional headshot sessions can be a significant investment, and actors often need to refresh photos regularly as their look evolves. Building a flexible, cost-conscious approach to new photos helps you stay current. AI tools can be a useful way to explore different looks, backgrounds and styles before investing in a full session, or to create supplemental images for online profiles and social media. Always check whether a casting platform or agency accepts AI-generated images before submitting them.</p>
+
+      <h2>Explore Looks With TailorPic</h2>
+      <p>If you want to see how different styles, lighting and settings might read on you, TailorPic makes it easy to experiment. Browse our <a href="/headshots">professional headshots</a> to see the range available, or explore the <a href="/styles/creative">creative style</a> for expressive, character-forward portraits that suit performers and artists. A strong, current headshot is one of the best investments in your career, so take the time to get it right.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-03-08',
+    tags: ['Acting', 'Headshots', 'Guide'],
+    readingTime: '7 min read',
+  },
+  {
+    slug: 'virtual-headshots-remote-teams',
+    title: 'Virtual Headshots for Remote Teams: A Complete Guide',
+    description:
+      'See how distributed teams can get consistent, professional headshots without gathering in one place, using AI-powered tools and a clear rollout plan.',
+    content: `
+      <p>Remote and hybrid teams face a simple problem: how do you get consistent, professional headshots when people live in different cities, countries and time zones? Flying a photographer around or asking everyone to take their own photo usually leads to mismatched lighting, backgrounds and quality. Virtual headshots offer a practical alternative. This guide explains how they work and how to roll them out across your team.</p>
+
+      <h2>Why Headshot Consistency Matters</h2>
+      <p>A team page, company directory or sales deck with mismatched photos looks uneven, even if every individual photo is fine. Consistent headshots signal that your company is cohesive and detail-oriented. They also help new hires and customers quickly put faces to names, which is especially valuable when people rarely meet in person. For remote-first companies, the headshot is often the main visual representation of each person.</p>
+
+      <h2>The Challenges of Remote Photo Collection</h2>
+      <p>Traditional approaches run into predictable obstacles:</p>
+      <ul>
+        <li><strong>Logistics:</strong> Coordinating a photographer across multiple locations is expensive and slow.</li>
+        <li><strong>Inconsistent quality:</strong> Self-submitted photos vary widely in lighting, framing and background.</li>
+        <li><strong>Scheduling:</strong> Time zones and busy calendars make group shoot days difficult.</li>
+        <li><strong>New hires:</strong> Each new team member means another photo to organize.</li>
+      </ul>
+
+      <h2>How AI-Powered Virtual Headshots Work</h2>
+      <p>With an AI headshot service, each team member uploads a handful of selfies taken with a phone. The AI then generates polished, studio-style portraits from those photos. Because every image is produced with the same style settings, backgrounds and framing can be matched across the whole team regardless of where people are located. There is no travel, no scheduled shoot and no need for special equipment. To learn more about the technology, read our overview of <a href="/blog/how-ai-headshots-work">how AI headshots work</a>.</p>
+
+      <h2>Achieving Brand Consistency</h2>
+      <p>Consistency comes from deciding on a shared look up front. Before anyone uploads a photo, agree on the essentials:</p>
+      <ul>
+        <li>A background style that fits your brand, such as a clean neutral tone or a soft office setting.</li>
+        <li>A general dress code, for example business casual or smart neutral colors.</li>
+        <li>Framing and crop, such as a consistent chest-up portrait in a square ratio.</li>
+        <li>Guidelines for retouching, so the results stay natural and recognizable.</li>
+      </ul>
+      <p>Documenting these choices in a short style guide keeps everyone aligned and makes it easy to match photos for future hires.</p>
+
+      <h2>Implementation Tips</h2>
+      <p>A smooth rollout usually follows a few steps. First, choose one person to own the project and communicate timelines. Second, send clear instructions on taking good source selfies, including good lighting, a neutral expression and a few angles. Third, give a deadline and a simple way to ask questions. Finally, collect the finished images in one shared location and update profiles across your website, email signatures and social pages together so the change feels cohesive. Make participation comfortable by letting people choose among results they like.</p>
+
+      <h2>Privacy and Employee Comfort</h2>
+      <p>Employees are sharing photos of their faces, so trust matters. Be transparent about how images are stored, who can access them and how long they are kept. Offer people the option to retake or opt out of certain uses where appropriate. You can read how TailorPic approaches these questions in our article on <a href="/blog/ai-headshot-privacy-security">AI headshot privacy and security</a>.</p>
+
+      <h2>Ongoing Maintenance</h2>
+      <p>Teams change, and so do people. Build a simple process for onboarding new hires with the same style settings, and set a reminder to refresh photos when appearances change significantly. Keeping your style guide and settings on file means a headshot added two years from now can still match the rest of the team.</p>
+
+      <h2>Get Started With TailorPic</h2>
+      <p>TailorPic makes it simple for distributed teams to look unified. Explore our <a href="/team-headshots">team headshots</a> solution to see how group orders work, or visit the <a href="/enterprise">enterprise page</a> to discuss larger rollouts, custom requirements and support for your organization.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-03-06',
+    tags: ['Remote Work', 'Teams', 'Virtual'],
+    readingTime: '6 min read',
+  },
+  {
+    slug: 'internship-headshot-guide',
+    title: 'Headshots for Internships: Stand Out in Your Applications',
+    description:
+      'Why a professional headshot helps your internship search, how to optimize your LinkedIn profile, budget-friendly options and what to wear.',
+    content: `
+      <p>Applying for internships is competitive, and recruiters often form a first impression in seconds. A clear, professional headshot will not replace strong grades or experience, but it helps you look prepared and credible across your application materials. This guide explains why a headshot matters, how to use it on LinkedIn and other platforms, and how to get a great one on a student budget.</p>
+
+      <h2>Why Headshots Matter for Internship Applications</h2>
+      <p>Recruiters and hiring managers frequently look up candidates online. A profile with a friendly, professional photo feels more complete and trustworthy than one with no photo, a cropped group shot or a casual party picture. For students with limited work history, your headshot is one of the few visual signals you control. It tells employers you take the process seriously and understand professional norms.</p>
+
+      <h2>Where to Use Your Headshot</h2>
+      <ul>
+        <li><strong>LinkedIn:</strong> The most important place for a professional photo.</li>
+        <li><strong>University career portals:</strong> Many schools and job boards include profile photos.</li>
+        <li><strong>Personal website or portfolio:</strong> A consistent photo builds a recognizable personal brand.</li>
+        <li><strong>Email signatures and networking platforms:</strong> Helps people remember you after events.</li>
+      </ul>
+      <p>Always check whether an application specifically asks for or discourages photos, since norms differ by country and employer.</p>
+
+      <h2>Optimizing Your LinkedIn Profile</h2>
+      <p>LinkedIn is where most internship searches happen, so set up your profile carefully. Use a recent headshot where your face fills a good portion of the frame, with a simple background. Write a headline that goes beyond your school name, for example your major and the areas you are interested in. Add a short summary, list relevant coursework, projects and activities, and ask classmates or professors for recommendations. For more detail on photos specifically, see our <a href="/linkedin-headshots">LinkedIn headshots</a> page.</p>
+
+      <h2>Budget-Friendly Options</h2>
+      <p>Students rarely have hundreds of dollars for a studio session, but there are good options at every price point:</p>
+      <ul>
+        <li><strong>Campus resources:</strong> Some career centers or student organizations host headshot days. Ask your career services office.</li>
+        <li><strong>Friends and a window:</strong> Natural light, a plain wall and a friend with a phone can produce a decent result.</li>
+        <li><strong>AI headshots:</strong> Upload a few selfies and get polished portraits without a photographer. Try our <a href="/free-headshot-generator">free headshot generator</a> to see what is possible before you decide.</li>
+      </ul>
+
+      <h2>What to Wear</h2>
+      <p>Dress one step above what you would wear in the internship. For most fields, that means a solid-colored top such as a blazer, button-down or simple knit in navy, gray or another flattering neutral. Avoid busy patterns, big logos and very casual items like hoodies. If you are applying in creative or startup environments, you can add personality with a bold color, but keep it clean and simple. Make sure everything is clean and pressed.</p>
+
+      <h2>Tips for a Natural Expression</h2>
+      <p>Nerves are normal. Take a breath, relax your shoulders and think of something that makes you smile. A warm, approachable expression helps more than a stiff pose. Take many shots and choose the one that feels most like you on a confident day, not the most posed one.</p>
+
+      <h2>Keep It Current</h2>
+      <p>Your photo should look like you today, not you from three years ago. As you move through your degree, gain experience and change your style, refresh your headshot. Recruiters appreciate being able to recognize you when you show up for an interview.</p>
+
+      <h2>Take the Next Step</h2>
+      <p>A strong headshot is a small investment that supports your whole search. Start with our <a href="/free-headshot-generator">free headshot generator</a> to see how you look, then optimize your profile with a polished photo from our <a href="/linkedin-headshots">LinkedIn headshots</a> options. Good luck with your applications.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-03-04',
+    tags: ['Students', 'Internships', 'Career'],
+    readingTime: '5 min read',
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

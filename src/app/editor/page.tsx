@@ -5,11 +5,11 @@ import { Footer } from '@/components/marketing/footer';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
-import { Palette, Sun, Maximize2, ArrowRight } from 'lucide-react';
+import { Palette, Sun, Maximize2, ArrowRight, Shirt, Eye, History, Eraser, Sparkles, ScanFace, Scissors, Smile } from 'lucide-react';
 
 const title = 'AI Photo Editor — Professional Headshot Editing Tools | TailorPic';
 const description =
-  'Explore TailorPic\'s AI-powered photo editing tools: background changer, photo enhancer, and image upscaler. Get professional headshots without manual editing.';
+  'Explore TailorPic\'s 12 AI-powered photo editing tools: background changer, clothing changer, photo enhancer, upscaler, magic eraser and more. Professional headshots without manual editing.';
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -46,6 +46,62 @@ const tools = [
     description:
       'Increase the resolution of your headshots while preserving sharpness. Get print-ready images from small originals with intelligent detail reconstruction.',
     href: '/editor/image-upscaler',
+  },
+  {
+    icon: Shirt,
+    name: 'AI Clothing Changer',
+    description:
+      'Change your outfit in AI-generated headshots to match industry standards — suits, scrubs, business casual and more.',
+    href: '/editor/clothing-changer',
+  },
+  {
+    icon: Eye,
+    name: 'AI Image Unblur',
+    description:
+      'Fix blurry, out-of-focus photos with AI-powered sharpening. Recover crisp detail from motion blur and soft focus.',
+    href: '/editor/unblur-image',
+  },
+  {
+    icon: History,
+    name: 'AI Photo Restoration',
+    description:
+      'Restore old, scratched and faded photos to like-new quality. Repair damage and bring vintage portraits back to life.',
+    href: '/editor/photo-restoration',
+  },
+  {
+    icon: Eraser,
+    name: 'AI Magic Eraser',
+    description:
+      'Remove unwanted objects, blemishes and distractions from your photos. Clean up backgrounds and fix imperfections.',
+    href: '/editor/magic-eraser',
+  },
+  {
+    icon: Sparkles,
+    name: 'AI Lighting Editor',
+    description:
+      'Perfect your portrait lighting with AI. Fix harsh shadows, balance exposure and add studio-quality illumination.',
+    href: '/editor/lighting-editor',
+  },
+  {
+    icon: ScanFace,
+    name: 'AI Realism Enhancer',
+    description:
+      'Make AI-generated photos look indistinguishable from real photography. Add natural skin texture and subtle imperfections.',
+    href: '/editor/realism-enhancer',
+  },
+  {
+    icon: Scissors,
+    name: 'AI Hair Editor',
+    description:
+      'Adjust hair styling in your headshots. Fix flyaways, add volume and ensure your hair looks polished and professional.',
+    href: '/editor/hair-editor',
+  },
+  {
+    icon: Smile,
+    name: 'AI Teeth Whitener',
+    description:
+      'Naturally whiten teeth and enhance your smile for a confident, camera-ready look in every headshot.',
+    href: '/editor/teeth-whitener',
   },
 ];
 

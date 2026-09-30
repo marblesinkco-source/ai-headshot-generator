@@ -252,6 +252,74 @@ export const photoStyles: PhotoStyle[] = [
       'remote-worker-headshot-guide',
     ],
   },
+  {
+    slug: 'old-money',
+    name: 'Old Money',
+    title: 'AI Old Money Headshots',
+    description:
+      'Timeless elegance inspired by classic wealth aesthetics — refined poses, rich tones and sophisticated backdrops that exude quiet luxury.',
+    metaDescription:
+      'Create old money style AI headshots with refined poses, rich tones and elegant backdrops. Timeless sophistication from a few selfies.',
+    heroText:
+      'Channel timeless sophistication with old money style portraits that combine refined poses, warm tones and classic backdrops for understated elegance.',
+    features: [
+      'Warm, muted color palettes in cream, camel, navy and forest green',
+      'Classic styling such as tailored blazers, knitwear and crisp collars',
+      'Refined, relaxed posing with an effortless, confident presence',
+      'Elegant backgrounds including libraries, estates and wood-paneled rooms',
+      'Soft, flattering lighting with a gentle, film-like glow',
+      'Understated accessories that signal quiet luxury without logos',
+    ],
+    idealFor: [
+      'Social media personal branding',
+      'Dating profiles that stand out with quiet confidence',
+      'Creative portfolios and editorial-style pages',
+      'Lifestyle and fashion content creators',
+    ],
+    tips: [
+      'Upload clear selfies in soft daylight for the most accurate likeness',
+      'Choose neutral, well-fitted clothing in earthy or navy tones',
+      'Keep accessories minimal and avoid visible logos for an authentic look',
+      'Include a calm, slight smile rather than a wide grin in your uploads',
+      'Pick a single backdrop style and repeat it across your profiles for consistency',
+    ],
+    relatedCategories: ['headshots', 'dating-photos', 'couple-engagement-photos'],
+    relatedBlogPosts: ['what-to-wear-for-headshots', 'headshot-trends-2025'],
+  },
+  {
+    slug: 'yearbook',
+    name: 'Yearbook',
+    title: 'AI Yearbook Photos',
+    description:
+      'Nostalgic yearbook-style portraits with that classic school photo look — clean backgrounds, centered framing and a warm, familiar feel.',
+    metaDescription:
+      'Create yearbook-style AI photos with classic school portrait aesthetics. Clean backgrounds and centered framing from a few selfies.',
+    heroText:
+      'Relive the charm of classic yearbook photos with AI-generated portraits featuring clean backgrounds, centered framing and warm, nostalgic styling.',
+    features: [
+      'Classic head-and-shoulders framing just like a school portrait',
+      'Clean, solid backgrounds in soft blue, grey and mottled studio tones',
+      'Vintage color grading with warm, slightly faded film tones',
+      'Centered composition with even, symmetrical alignment',
+      'Period-inspired hairstyles and wardrobe for an authentic retro feel',
+      'Friendly, natural smiles that capture the nostalgic mood',
+    ],
+    idealFor: [
+      'Social media nostalgia posts and throwback trends',
+      'Fun personal portraits to share with friends',
+      'Themed events, reunions and costume parties',
+      'Gift ideas for friends and family',
+    ],
+    tips: [
+      'Upload front-facing selfies with your full face clearly visible',
+      'Include a genuine smile to match the classic yearbook expression',
+      'Use even lighting and avoid strong shadows across your face',
+      'Try a few different looks to compare eras and color gradings',
+      'Generate a group of friends with the same settings for a matching set',
+    ],
+    relatedCategories: ['headshots', 'graduation-photos'],
+    relatedBlogPosts: ['headshot-trends-2025', 'social-media-profile-photo-sizes'],
+  },
 ];
 
 export function getPhotoStyle(slug: string): PhotoStyle | undefined {
