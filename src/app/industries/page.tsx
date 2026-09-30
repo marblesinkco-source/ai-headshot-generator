@@ -4,12 +4,12 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
-import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight, Heart, Monitor, GraduationCap, Camera, Clapperboard, SmilePlus, TrendingUp, Ruler, Target, Brain, Dumbbell, Music, PawPrint, Users, Handshake, Mic, Palette, Newspaper, Shield, Plane, Calendar, BookOpen, Leaf, Globe } from 'lucide-react';
+import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight, Heart, Monitor, GraduationCap, Camera, Clapperboard, SmilePlus, TrendingUp, Ruler, Target, Brain, Dumbbell, Music, PawPrint, Users, Handshake, Mic, Palette, Newspaper, Shield, Plane, Calendar, BookOpen, Leaf, Globe, BarChart3 } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'AI Photos by Industry | TailorPic',
   description:
-    'Professional AI-generated photos tailored for your industry. Real estate, legal, healthcare, nursing, engineering, education, consulting, accounting, photography, acting, dental, financial advisory, architecture, coaching, therapy, fitness, music, veterinary, pharmacy, aviation, event planning, marketing, writing, chiropractic, insurance, nutrition, social work, translation and more.',
+    'Professional AI-generated photos tailored for your industry. Real estate, legal, healthcare, nursing, engineering, education, consulting, accounting, photography, acting, dental, financial advisory, architecture, coaching, therapy, fitness, music, veterinary, pharmacy, aviation, event planning, marketing, writing, chiropractic, insurance, nutrition, social work, translation, psychology, real estate brokerage, cabin crew, graphic design, data science and more.',
 };
 
 const industries = [
@@ -284,6 +284,46 @@ const industries = [
       'Professional headshots for translators and interpreters. Marketplace-ready portraits for ProZ, LinkedIn and portfolio sites.',
     href: '/industries/translators',
     cta: 'For Translators',
+  },
+  {
+    icon: Brain,
+    name: "Psychologists",
+    description:
+      "Warm, credible headshots for clinical and counseling psychologists. Practice-website and directory ready.",
+    href: '/industries/psychologists',
+    cta: "For Psychologists",
+  },
+  {
+    icon: Building2,
+    name: "Real Estate Brokers",
+    description:
+      "Confident portraits for brokers and brokerage owners. Listings, signage and team pages.",
+    href: '/industries/real-estate-brokers',
+    cta: "For Brokers",
+  },
+  {
+    icon: Plane,
+    name: "Flight Attendants",
+    description:
+      "Polished, friendly headshots for cabin crew. Airline applications and LinkedIn ready.",
+    href: '/industries/flight-attendants',
+    cta: "For Cabin Crew",
+  },
+  {
+    icon: Palette,
+    name: "Graphic Designers",
+    description:
+      "Distinctive portraits for designers. Portfolio, Behance and LinkedIn ready.",
+    href: '/industries/graphic-designers',
+    cta: "For Designers",
+  },
+  {
+    icon: BarChart3,
+    name: "Data Scientists",
+    description:
+      "Sharp, approachable headshots for data scientists and ML engineers. LinkedIn, GitHub and conference bios.",
+    href: '/industries/data-scientists',
+    cta: "For Data Scientists",
   },
 ];
 

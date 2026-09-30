@@ -1166,6 +1166,176 @@ export const photoStyles: PhotoStyle[] = [
     relatedCategories: ['headshots', 'team-headshots'],
     relatedBlogPosts: ['startup-team-branding-photos', 'startup-founder-personal-branding-ai-photos', 'work-from-home-headshots'],
   },
+  {
+    slug: "black-and-white-classic",
+    name: "Black and White Classic Headshots",
+    title: "AI Black and White Classic Headshots",
+    description:
+      "Timeless monochrome portraits with rich tonal contrast and classic studio lighting. Created from a few selfies.",
+    metaDescription:
+      "Create AI black and white classic headshots with rich contrast and timeless studio lighting. Elegant monochrome portraits for any profession with TailorPic.",
+    heroText:
+      "Timeless and understated. Black and white classic headshots strip away color distractions and focus attention on your expression, with deep tones, soft highlights and a refined studio feel that never goes out of style.",
+    features: [
+      "Rich monochrome tones with smooth contrast",
+      "Classic studio lighting with soft shadows",
+      "Clean neutral backdrops",
+      "Focus on expression and character",
+      "Works in print and on screens",
+      "Pairs well with any outfit color"
+    ],
+    idealFor: [
+      "Authors, artists and creatives",
+      "Actors, musicians and speakers",
+      "Executives who want a distinguished look",
+      "Press kits and publications",
+      "Professionals who want a timeless profile photo"
+    ],
+    tips: [
+      "Wear solid textures and avoid busy patterns",
+      "Upload selfies with clear, even lighting",
+      "Choose a confident, natural expression",
+      "Pair with a color version for variety"
+    ],
+    relatedCategories: ['headshots','creative-portraits'],
+    relatedBlogPosts: ['what-to-wear-for-headshots','headshot-lighting-guide'],
+  },
+  {
+    slug: "gradient-backdrop",
+    name: "Gradient Backdrop Headshots",
+    title: "AI Gradient Backdrop Headshots",
+    description:
+      "Modern portraits against smooth color gradients that add depth without distraction. Made from a few selfies.",
+    metaDescription:
+      "Create AI gradient backdrop headshots with smooth, modern color transitions. Stylish, clean portraits for profiles and brands with TailorPic.",
+    heroText:
+      "Modern and polished. Gradient backdrop headshots place you against a smooth blend of color that adds depth and personality while keeping the focus squarely on you, a clean alternative to plain studio backgrounds.",
+    features: [
+      "Smooth color gradients in cool, warm and neutral tones",
+      "Clean, distraction-free composition",
+      "Colors that can complement your brand",
+      "Soft, even lighting on the face",
+      "Contemporary look for web and social",
+      "Consistent backdrops across a whole team"
+    ],
+    idealFor: [
+      "Tech and creative professionals",
+      "Brands and teams that want a cohesive look",
+      "Speakers and content creators",
+      "Website About and Team pages",
+      "LinkedIn and social profiles"
+    ],
+    tips: [
+      "Pick a gradient that complements your skin tone and outfit",
+      "Keep clothing in solid colors",
+      "Choose a consistent gradient across teammates",
+      "Upload selfies with clear, even lighting"
+    ],
+    relatedCategories: ['headshots','team-headshots'],
+    relatedBlogPosts: ['what-to-wear-for-headshots','headshot-trends-2025'],
+  },
+  {
+    slug: "natural-bokeh",
+    name: "Natural Bokeh Headshots",
+    title: "AI Natural Bokeh Headshots",
+    description:
+      "Portraits with softly blurred, natural backgrounds and gentle depth of field. Generated from a few selfies.",
+    metaDescription:
+      "Create AI natural bokeh headshots with softly blurred backgrounds and gentle depth of field. Warm, authentic portraits with TailorPic.",
+    heroText:
+      "Soft and natural. Natural bokeh headshots keep your face sharp while the background melts into a gentle, out-of-focus blur of light and color, giving the look of a portrait shot with a fast lens.",
+    features: [
+      "Soft, creamy background blur",
+      "Sharp focus on the eyes and face",
+      "Natural light and gentle color glow",
+      "Backdrops such as greenery, cafes and city lights",
+      "Warm, approachable feel",
+      "Depth that draws attention to you"
+    ],
+    idealFor: [
+      "Consultants, coaches and creators",
+      "Real estate and service professionals",
+      "Authors and speakers",
+      "LinkedIn and personal website photos",
+      "Anyone who wants a relaxed, authentic look"
+    ],
+    tips: [
+      "Choose clothing that contrasts with the background",
+      "Upload selfies in soft, natural light",
+      "Keep accessories simple",
+      "Pick a setting that matches your work"
+    ],
+    relatedCategories: ['headshots'],
+    relatedBlogPosts: ['headshot-lighting-guide','what-to-wear-for-headshots'],
+  },
+  {
+    slug: "magazine-cover",
+    name: "Magazine Cover Headshots",
+    title: "AI Magazine Cover Headshots",
+    description:
+      "Bold, polished portraits with editorial lighting and a glossy, high-impact look. Created from a few selfies.",
+    metaDescription:
+      "Create AI magazine cover headshots with editorial lighting and a bold, glossy look. High-impact portraits for personal brands with TailorPic.",
+    heroText:
+      "Bold and striking. Magazine cover headshots borrow from editorial photography, with dramatic but flattering lighting, crisp detail and a confident pose that makes your portrait feel like a feature story.",
+    features: [
+      "Editorial-style lighting with crisp detail",
+      "Confident, high-impact poses",
+      "Polished, glossy finish",
+      "Clean backdrops that let you stand out",
+      "Flattering contrast and color",
+      "Suited to hero images and press features"
+    ],
+    idealFor: [
+      "Personal brands and influencers",
+      "Authors, speakers and thought leaders",
+      "Founders and entrepreneurs",
+      "Press kits and media features",
+      "Website hero banners"
+    ],
+    tips: [
+      "Wear statement pieces in solid colors",
+      "Upload selfies with strong, even lighting",
+      "Practice a confident, direct expression",
+      "Use alongside a more neutral style for everyday profiles"
+    ],
+    relatedCategories: ['headshots','creative-portraits'],
+    relatedBlogPosts: ['headshot-trends-2025','headshot-lighting-guide'],
+  },
+  {
+    slug: "corporate-formal",
+    name: "Corporate Formal Headshots",
+    title: "AI Corporate Formal Headshots",
+    description:
+      "Fully formal portraits in tailored suits with traditional boardroom styling. Made from a few selfies.",
+    metaDescription:
+      "Create AI corporate formal headshots in tailored suits with traditional boardroom styling. Polished portraits for executives with TailorPic.",
+    heroText:
+      "Traditional and authoritative. Corporate formal headshots dress you in a tailored suit and crisp shirt or blouse against a refined neutral backdrop, projecting the seriousness expected in law, finance and leadership.",
+    features: [
+      "Tailored suits, ties and formal business attire",
+      "Refined neutral studio backdrops",
+      "Even, flattering lighting",
+      "Composed, confident expressions",
+      "Consistent framing across leadership teams",
+      "High resolution for print and web"
+    ],
+    idealFor: [
+      "Executives and board members",
+      "Lawyers, bankers and financial advisors",
+      "Annual reports and leadership pages",
+      "Conservative industries and formal settings",
+      "Anyone who needs the most traditional look"
+    ],
+    tips: [
+      "Wear a suit jacket or formal top in your selfies",
+      "Choose dark, solid colors",
+      "Keep accessories minimal",
+      "Use a less formal style for creative audiences"
+    ],
+    relatedCategories: ['headshots','team-headshots'],
+    relatedBlogPosts: ['what-to-wear-for-headshots','headshot-trends-2025'],
+  },
 ];
 
 export function getPhotoStyle(slug: string): PhotoStyle | undefined {
