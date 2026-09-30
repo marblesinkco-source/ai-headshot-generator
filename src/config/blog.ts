@@ -5722,6 +5722,459 @@ export const blogPosts: BlogPost[] = [
     tags: ['Fitness', 'Industry', 'Professional'],
     readingTime: '8 min read',
   },
+  {
+    slug: 'ai-headshot-for-consultants',
+    title: 'AI Headshots for Consultants: Build Credibility Faster',
+    description:
+      'Management consultants, independent advisors and boutique advisory firms sell trust before anything else. See how AI headshots deliver a credible, consistent professional image without a studio booking.',
+    content: `
+      <p>Consulting is a trust business. Before a prospective client reads a proposal, reviews a case study or joins an introductory call, they look you up. A profile photo is often the first thing they see, and it quietly answers a question they are already asking: does this person look like someone I can rely on with an important problem? For consultants, that first impression matters more than in many other professions because the product being sold is judgment, and judgment is hard to see.</p>
+      <p>This guide explains how management consultants, independent advisors and advisory firms can use AI headshots to present a credible, consistent image, and how to avoid the mistakes that make a portrait work against you.</p>
+
+      <h2>Why Photos Matter So Much in Consulting</h2>
+      <p>A consultant rarely sells a physical product. Clients buy expertise, pattern recognition and confidence that a difficult project will be handled well. Because these qualities are intangible, buyers look for small signals of professionalism, and your portrait is one of the easiest signals to control.</p>
+      <p>A dated, cropped-from-a-party or poorly lit photo can suggest that the rest of your work receives the same level of attention. A clean, current portrait suggests care and attention to detail, which are exactly the qualities clients hope to find in an advisor.</p>
+      <ul>
+        <li>Your LinkedIn profile is often reviewed before a first meeting</li>
+        <li>Conference programmes and speaker pages usually ask for a portrait</li>
+        <li>Proposals, pitch decks and team pages frequently include photos</li>
+        <li>Referral partners want a recognisable, professional image to forward to their contacts</li>
+      </ul>
+
+      <h2>Who Benefits Most</h2>
+      <p>Different kinds of consulting practice have slightly different needs, but all of them benefit from an image that feels credible and current.</p>
+      <ul>
+        <li><strong>Independent consultants.</strong> You are the brand. A strong portrait on your website and profiles helps a one-person practice feel established.</li>
+        <li><strong>Management consultants at larger firms.</strong> Internal directories, client proposals and thought leadership bylines all need a polished image that fits firm standards.</li>
+        <li><strong>Boutique advisory firms.</strong> A team page where every portrait matches in style and quality looks more cohesive and more trustworthy.</li>
+        <li><strong>Fractional executives and interim leaders.</strong> You move between organisations, so a portable, professional image supports every new engagement.</li>
+        <li><strong>Expert network members.</strong> Profiles on expert platforms are compared side by side, and a clear portrait helps you stand out.</li>
+      </ul>
+
+      <h2>What a Credible Consulting Portrait Looks Like</h2>
+      <p>The goal is not to look glamorous. It is to look capable, calm and approachable. Think of the impression you would like to make in the first minute of a meeting.</p>
+      <ul>
+        <li>A natural, relaxed expression that suggests confidence without arrogance</li>
+        <li>Business or business-casual clothing that matches your client base</li>
+        <li>A clean, uncluttered background in a neutral or muted tone</li>
+        <li>Even lighting that shows your face clearly without harsh shadows</li>
+        <li>A tight enough crop that your face is recognisable at small sizes</li>
+      </ul>
+
+      <h2>How AI Headshots Fit a Consultant's Schedule</h2>
+      <p>Consultants travel, work long hours and often have unpredictable calendars. Booking a photographer, arranging a location and taking time away from client work is a real cost, and many professionals put it off for years. The result is a portrait that no longer looks like them.</p>
+      <p>AI headshots change that workflow. You upload a set of clear photos of yourself, choose a style, and receive professional portraits you can review and choose from. There is no travel, no studio booking and no need to find a free morning. You can see the available looks on the <a href="/styles">styles page</a>, and when you are ready you can <a href="/auth/register">create an account</a> and get started.</p>
+
+      <h2>Choosing the Right Style</h2>
+      <p>The best style depends on your practice and the clients you want to attract. A strategy consultant who advises large corporations may prefer a formal look with a suit or blazer and a neutral background. An independent advisor working with start-ups or creative businesses might choose a smart-casual look that feels more approachable.</p>
+      <p>Whatever you choose, consistency matters. Use the same portrait, or a matching set, across your website, LinkedIn, proposals and speaker bios. A consistent image makes you easier to recognise and makes your practice look more organised.</p>
+      <p>Our <a href="/industries/consultants">consulting industry page</a> shows how professional portraits are typically used by advisors, and the <a href="/styles">styles page</a> lets you compare looks before you decide.</p>
+
+      <h2>Getting Good Results from Your Source Photos</h2>
+      <p>AI headshots are built from the photos you provide, so the quality of your input shapes the quality of the output. A few simple habits make a large difference.</p>
+      <ul>
+        <li>Use 10 to 20 recent photos taken in the last year</li>
+        <li>Include a mix of angles, but keep your face clearly visible in every image</li>
+        <li>Shoot in soft, natural light, such as near a window</li>
+        <li>Avoid sunglasses, hats and heavy filters</li>
+        <li>Use photos with different expressions and clothing, but all showing the real you</li>
+        <li>Avoid group photos where other people may confuse the result</li>
+      </ul>
+
+      <h2>Consistency Across a Firm</h2>
+      <p>If you lead or manage an advisory firm, you will know how awkward a team page can look when every photo is different. One person has a studio portrait, another has a cropped holiday photo, and a third has a low-resolution image from years ago. Visitors notice, even if they do not say so.</p>
+      <p>AI headshots make it practical to give everyone the same style, background and framing without scheduling a group photo day. New hires can have a matching portrait within days of joining, and colleagues who work remotely are included on equal terms. If you need portraits for a whole group, see our <a href="/pricing">pricing page</a> for plans that suit teams.</p>
+
+      <h2>Protecting Your Authenticity</h2>
+      <p>Credibility depends on honesty. A consultant whose portrait looks nothing like them in person creates a small but real moment of doubt when they meet a client. Choose results that look like you on a good day, not a different person.</p>
+      <p>Avoid heavy smoothing, dramatic changes to features or a look that is far from how you normally dress. The best AI headshots feel familiar to people who already know you. Keep your originals, and refresh your portrait when your appearance changes in a meaningful way, for example a new hairstyle or glasses.</p>
+
+      <h2>Where to Use Your New Portrait</h2>
+      <p>Once you have a portrait you like, update every place where clients, partners and colleagues might find you.</p>
+      <ul>
+        <li>LinkedIn profile photo and banner</li>
+        <li>Personal or firm website, including the about and team pages</li>
+        <li>Proposal and pitch deck cover pages and team slides</li>
+        <li>Conference speaker profiles and event programmes</li>
+        <li>Email signature and video call profile</li>
+        <li>Author bios for articles, white papers and guest posts</li>
+      </ul>
+
+      <h2>A Simple Plan to Get Started</h2>
+      <p>You do not need a large project to improve your image. A short, focused process is enough.</p>
+      <ul>
+        <li>Collect 10 to 20 clear, well-lit photos of yourself</li>
+        <li>Decide whether your clients expect formal or smart-casual</li>
+        <li>Review the <a href="/styles">available styles</a> and choose one or two</li>
+        <li>Generate your portraits and pick the one that looks most like you</li>
+        <li>Update your main profiles in one sitting so your image is consistent</li>
+      </ul>
+
+      <h2>The Bottom Line</h2>
+      <p>In consulting, small signals add up to trust. A professional, current and consistent portrait will not win a project by itself, but it removes a reason for a prospect to hesitate. AI headshots give independent consultants and advisory firms a fast, practical way to present that image without the time and expense of a studio session. Review the <a href="/pricing">pricing options</a>, choose a style that fits your practice, and give your clients a first impression that matches the quality of your work.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['Consultants', 'Professional', 'Business'],
+    readingTime: '8 min read',
+  },
+  {
+    slug: 'ai-headshot-lighting-tips-guide',
+    title: 'AI Headshot Lighting: How to Get the Perfect Selfie for AI Processing',
+    description:
+      'Lighting is the single biggest factor in the quality of your AI headshot input photos. Learn how to use natural light, avoid harsh shadows and capture source photos that produce better results.',
+    content: `
+      <p>If you want better AI headshots, the most effective thing you can do is improve the light in the photos you upload. AI headshot generators learn what your face looks like from your source images. When those images are clear, evenly lit and natural, the system has accurate information to work with. When they are dark, harsh or colour-shifted, the output can inherit those problems.</p>
+      <p>The good news is that you do not need a studio or special equipment. A window, a little patience and a few simple habits are enough. This guide covers how to use light well when taking photos for AI processing.</p>
+
+      <h2>Why Lighting Matters for AI Input Photos</h2>
+      <p>Light defines how a face appears in a photograph. It shows the shape of your cheekbones, the colour of your skin and eyes, and the texture of your hair. If the light is uneven, part of your face may be hidden in shadow, and the AI has less information about what is there.</p>
+      <p>Poor lighting can also distort colour. Yellow indoor bulbs can make skin look orange, and cool screens can make it look pale. If your source photos disagree with each other about your skin tone, the results may look inconsistent or unlike you.</p>
+      <p>Good lighting does the opposite. It gives the system a clear and consistent view of your features, which helps produce portraits that look natural and recognisable.</p>
+
+      <h2>The Best Light Source: A Window</h2>
+      <p>Natural window light is soft, flattering and free. It wraps gently around the face and avoids the hard shadows that come from a single bulb or a camera flash.</p>
+      <ul>
+        <li>Stand facing the window so the light falls on the front of your face</li>
+        <li>Keep the window at roughly eye level or slightly higher</li>
+        <li>Choose a bright day, or a window with indirect light, rather than direct hot sun</li>
+        <li>Stand about one to two metres from the glass</li>
+        <li>Turn off competing indoor lights so colours stay consistent</li>
+      </ul>
+
+      <h2>Time of Day and Weather</h2>
+      <p>The quality of natural light changes through the day. Early morning and late afternoon give warm, gentle light, but they can shift in colour quickly. Midday light is bright, but direct sun overhead can create dark eye sockets and strong shadows under the nose and chin.</p>
+      <p>A lightly overcast day is often ideal. Clouds act like a huge soft diffuser, spreading light evenly. If the sun is strong, move to a shaded spot near a doorway or sit beside a window with a thin curtain to soften the light.</p>
+
+      <h2>Shadows to Avoid</h2>
+      <p>Harsh shadows are the most common problem in source photos. Watch for these in particular.</p>
+      <ul>
+        <li><strong>Raccoon eyes.</strong> Overhead light creates dark shadows in the eye sockets. Face the light instead of standing under it.</li>
+        <li><strong>Half-lit faces.</strong> Light from only one side leaves the other half dark. Turn toward the light or add a simple reflector on the other side.</li>
+        <li><strong>Hard nose and chin shadows.</strong> These come from small, bright sources such as a bare bulb or direct sun. Use a larger, softer source.</li>
+        <li><strong>Flash glare.</strong> Direct flash flattens features and creates shiny patches. Turn it off and use natural light.</li>
+        <li><strong>Cast shadows from hats or hair.</strong> Keep your forehead and eyes clearly visible.</li>
+      </ul>
+
+      <h2>Simple Tricks to Soften and Balance Light</h2>
+      <p>You can improve a difficult setup with things you already have at home.</p>
+      <ul>
+        <li>Hang a white sheet or thin curtain over a bright window to diffuse it</li>
+        <li>Hold a piece of white card or foam board below your chin to bounce light upward</li>
+        <li>Place a white wall or large piece of paper on the shadow side of your face</li>
+        <li>Move closer to the window if your face looks dim, and farther away if it looks harsh</li>
+        <li>Wipe your phone lens for a clearer, sharper image</li>
+      </ul>
+
+      <h2>Watch Your Colour</h2>
+      <p>Colour cast is easy to overlook. Different bulbs produce different colours of light, and mixing them causes uneven skin tones.</p>
+      <p>Try to shoot in one type of light. Natural daylight is the safest choice. If you must use indoor lamps, use bulbs of the same type and avoid mixing them with window light. Check a test photo on your phone screen and look at your skin. If it looks noticeably orange, green or blue, change your setup and try again.</p>
+      <p>Our glossary explains related ideas such as <a href="/glossary">colour temperature and white balance</a> in plain language.</p>
+
+      <h2>Camera and Framing Tips</h2>
+      <p>Lighting works together with simple camera habits. A few small adjustments improve sharpness and consistency.</p>
+      <ul>
+        <li>Use the rear camera if you can, or ask a friend to take the photo</li>
+        <li>Hold the camera at eye level rather than looking up or down</li>
+        <li>Keep your face in focus by tapping it on the screen before shooting</li>
+        <li>Stay still and use a timer or tripod if you shoot alone</li>
+        <li>Avoid wide-angle distortion by stepping back and not holding the phone too close</li>
+        <li>Avoid beauty filters, portrait effects and heavy editing</li>
+      </ul>
+
+      <h2>Vary Your Photos, Not Your Light</h2>
+      <p>For best results, your source set should show variety in expression, angle and clothing while keeping the lighting quality consistently good. Take a few photos smiling, a few with a neutral expression, and a few turned slightly left and right. Change tops or layers between shots if you want the final result to have wardrobe variety.</p>
+      <p>What you should not vary is the quality of light. Ten photos in soft window light are far more useful than a mix of ten photos taken in a dark restaurant, a sunny park and a car.</p>
+
+      <h2>A Quick Checklist Before You Upload</h2>
+      <p>Before submitting your photos, go through this short list.</p>
+      <ul>
+        <li>Is your whole face clearly visible and evenly lit?</li>
+        <li>Are there any strong shadows across your eyes, nose or cheeks?</li>
+        <li>Does your skin tone look natural and similar across the set?</li>
+        <li>Are the images sharp, and not blurry or heavily compressed?</li>
+        <li>Are you the only person in each photo?</li>
+        <li>Have you avoided sunglasses, hats and filters?</li>
+      </ul>
+
+      <h2>Lighting and Your Final Style</h2>
+      <p>Many AI headshot styles are designed to imitate professional studio lighting, including soft, even setups similar to clamshell lighting. You do not need to recreate that yourself. Your job is simply to provide clean, honest source photos. The AI handles the polished look in the final result.</p>
+      <p>When your inputs are good, you can focus on choosing a style that matches your goals. Browse the <a href="/styles">styles</a> to see the range, and read the <a href="/pricing">pricing page</a> to choose the plan that suits you.</p>
+
+      <h2>The Bottom Line</h2>
+      <p>Great AI headshots start with great source photos, and great source photos start with good light. Face a window, avoid harsh shadows, keep your colours consistent and take a varied set of sharp, unfiltered images. These simple habits cost nothing and can noticeably improve your results. When you are ready, <a href="/auth/register">create your account</a> and upload your best photos.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['Tips', 'Guide', 'Lighting'],
+    readingTime: '8 min read',
+  },
+  {
+    slug: 'ai-headshot-for-coaches',
+    title: 'AI Headshots for Life Coaches & Business Coaches',
+    description:
+      'Life coaches, executive coaches and wellness coaches need photos that feel warm and approachable while still looking professional. Learn how AI headshots help you build trust with prospective clients.',
+    content: `
+      <p>Coaching is one of the most personal professions there is. People share goals, worries and ambitions with their coach, so before they book a first session they want to know one thing: do I feel comfortable with this person? Your photo is often the first answer they get. It needs to look professional enough to inspire confidence and warm enough to invite conversation.</p>
+      <p>This guide explains how life coaches, executive coaches and wellness coaches can use AI headshots to create approachable, professional portraits, and how to use them across every place a potential client might find you.</p>
+
+      <h2>The Balancing Act: Approachable and Professional</h2>
+      <p>Most professionals only need to look competent. Coaches need to look competent and kind. Too formal, and you may seem distant. Too casual, and you may not seem credible. The best coaching portraits sit in the middle, showing a real person who is clearly good at their work.</p>
+      <p>A genuine, relaxed expression matters more than anything else. Clients are looking for signs that you will listen without judgement. A slight, natural smile and open posture communicate that far better than a stiff pose.</p>
+
+      <h2>Different Kinds of Coaches, Different Needs</h2>
+      <p>The word coach covers a wide range of practices, and the right look varies with your audience.</p>
+      <ul>
+        <li><strong>Executive and leadership coaches.</strong> Your clients are senior professionals. A polished, business-ready portrait with a neutral background suits them well.</li>
+        <li><strong>Business and career coaches.</strong> Smart-casual clothing with a confident but friendly expression often works well for founders, freelancers and career changers.</li>
+        <li><strong>Life coaches.</strong> A warm, natural look with softer colours and a relaxed setting helps people feel at ease.</li>
+        <li><strong>Wellness and health coaches.</strong> A fresh, energetic appearance that feels calm and trustworthy fits this space.</li>
+        <li><strong>Group programme and course creators.</strong> A bold, recognisable portrait helps with marketing pages, sales pages and social media.</li>
+      </ul>
+
+      <h2>Where Coaches Need Photos</h2>
+      <p>Coaches often have more touchpoints for a portrait than other professionals, because their personal brand is the business.</p>
+      <ul>
+        <li>Website home and about pages</li>
+        <li>Booking and scheduling pages</li>
+        <li>LinkedIn, Instagram and other social profiles</li>
+        <li>Coaching directories and certification listings</li>
+        <li>Podcast guest pages and speaker profiles</li>
+        <li>Email newsletters and lead magnet landing pages</li>
+        <li>Online course and programme sales pages</li>
+        <li>Book covers and author bios, if you write</li>
+      </ul>
+
+      <h2>Why AI Headshots Suit Coaches</h2>
+      <p>Many coaches work independently, run their own marketing and manage a flexible schedule. A traditional photo session means finding a photographer, planning outfits, travelling and paying a fee, and then waiting for edits. Because coaches often refresh their branding as their practice grows, repeating that process can feel like a burden.</p>
+      <p>AI headshots give you a faster alternative. You upload clear photos of yourself, choose a style, and receive portraits you can use right away. You can produce a formal version for corporate work and a warmer version for life-coaching pages from the same set of source photos. Browse the <a href="/styles">available styles</a> to see what might fit your brand, or visit our <a href="/industries/coaches">coaching industry page</a> for more on how professionals in this field use portraits.</p>
+
+      <h2>Choosing a Look That Fits Your Brand</h2>
+      <p>Your portrait should match the personality of your coaching practice. Think about your brand colours, the tone of your website and the people you want to attract.</p>
+      <ul>
+        <li>If your brand is calm and reflective, choose soft, neutral backgrounds and relaxed clothing</li>
+        <li>If your brand is energetic and ambitious, choose a brighter background and a confident pose</li>
+        <li>If your clients are executives, choose a formal look with a blazer or shirt</li>
+        <li>If your clients are creatives or entrepreneurs, choose a smart-casual style</li>
+        <li>Keep clothing colours simple so your face remains the focus</li>
+      </ul>
+
+      <h2>Keep It Real</h2>
+      <p>Trust is the foundation of coaching, so authenticity matters more here than in almost any other field. A portrait that looks heavily edited or unlike you can create a disconnect the moment a client joins a video call.</p>
+      <p>Choose results that look like you on a good day. Avoid over-smoothed skin or dramatic changes. If the photo makes you look like someone else, pick another. It is better to use a portrait that feels slightly ordinary than one that feels artificial.</p>
+
+      <h2>Getting the Best Source Photos</h2>
+      <p>The quality of your AI headshots depends on the photos you provide. A little preparation goes a long way.</p>
+      <ul>
+        <li>Take 10 to 20 photos in soft natural light, near a window</li>
+        <li>Smile naturally in some photos and keep a calm expression in others</li>
+        <li>Wear the colours and styles you usually wear to meet clients</li>
+        <li>Keep your face unobstructed by hats, sunglasses or hair</li>
+        <li>Use recent photos so the result matches your current appearance</li>
+        <li>Avoid filters, heavy editing and group shots</li>
+      </ul>
+
+      <h2>Using Your Portrait Consistently</h2>
+      <p>Consistency helps prospective clients recognise you and remember you. Use the same portrait, or a matching set, across your website, social profiles, directory listings and marketing emails. When someone sees you on a podcast guest page and then finds your website, the recognition builds trust.</p>
+      <p>Refresh your image from time to time, particularly if your appearance changes or if you launch a new programme with a different audience.</p>
+
+      <h2>Coaching Teams and Practices</h2>
+      <p>If you run a coaching firm or lead a group of associate coaches, portraits for the whole team can be a challenge. Coaches are often scattered across locations and time zones, which makes a group photo session difficult.</p>
+      <p>AI headshots let each coach contribute their own source photos and receive matching portraits in a shared style. That gives your team page a consistent, professional look without any coordination headaches. See the <a href="/pricing">pricing page</a> for options that suit small teams and larger groups.</p>
+
+      <h2>A Simple Plan to Get Started</h2>
+      <ul>
+        <li>Decide what impression you want to give: calm, energetic, authoritative or friendly</li>
+        <li>Take a varied set of well-lit photos of yourself</li>
+        <li>Choose a style from the <a href="/styles">styles page</a> that fits your brand</li>
+        <li>Generate portraits and select the one that feels most like you</li>
+        <li>Update your website, booking page and social profiles together</li>
+      </ul>
+
+      <h2>The Bottom Line</h2>
+      <p>Clients choose a coach they feel they can trust. A warm, professional, honest portrait helps them take that first step. AI headshots give life coaches, executive coaches and wellness coaches a practical way to get that portrait without the cost and scheduling of a studio session. When you are ready, <a href="/auth/register">create your account</a> and build a portrait that reflects the kind of coach you are.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['Coaches', 'Professional', 'Industry'],
+    readingTime: '8 min read',
+  },
+  {
+    slug: 'ai-headshot-for-hr-teams',
+    title: 'AI Headshots for HR Teams: Streamline Employee Photo Programs',
+    description:
+      'HR managers often own the company-wide photo process, from onboarding to intranet directories. See how AI headshots simplify employee photo programs and keep every profile consistent.',
+    content: `
+      <p>Employee photos seem like a small task until you have to organise them. Someone needs to schedule a photographer, coordinate calendars across offices, chase remote staff, collect files and keep everything consistent as new people join. For many HR teams, the company photo programme becomes a recurring project that takes far more time than anyone expected.</p>
+      <p>This guide explains how HR managers and people operations teams can use AI headshots to simplify employee photo programmes, keep portraits consistent and improve the experience for new and existing employees.</p>
+
+      <h2>Why Employee Photos Matter</h2>
+      <p>Employee portraits appear in more places than most people realise. They are part of the way a company presents itself to customers, candidates and colleagues.</p>
+      <ul>
+        <li>Company website team and leadership pages</li>
+        <li>Internal directories and intranet profiles</li>
+        <li>Email signatures and collaboration tools</li>
+        <li>Badges and building access systems</li>
+        <li>Press releases, investor material and event programmes</li>
+        <li>Recruiting pages and employer branding content</li>
+        <li>Video call and chat profile images</li>
+      </ul>
+
+      <h2>The Traditional Photo Day Problem</h2>
+      <p>Conventional photo programmes involve a lot of logistics. A photographer visits one office on one day, and anyone who is away, on leave or working from another location misses out. New hires who start the week after the session wait months for the next one. People dislike being photographed in front of colleagues, and the results vary in quality.</p>
+      <p>Over time the directory becomes a patchwork. Some photos are professional studio portraits, some are cropped snapshots, and some people have no photo at all. For HR teams responsible for employer brand and internal culture, that inconsistency is a daily frustration.</p>
+
+      <h2>How AI Headshots Change the Workflow</h2>
+      <p>AI headshots remove the need for everyone to be in the same place at the same time. Each employee uploads a set of their own photos, chooses or is assigned a style, and receives professional portraits. The company defines the look, and the technology applies it consistently across every person.</p>
+      <p>That makes it practical to run a photo programme for distributed teams, hybrid workers and fast-growing organisations. Employees can take part in their own time, and HR does not need to book rooms, coordinate schedules or manage a photographer. You can review the <a href="/styles">available styles</a> to decide which look suits your brand, and see the <a href="/pricing">pricing page</a> for options suited to teams.</p>
+
+      <h2>Benefits for HR and People Teams</h2>
+      <ul>
+        <li><strong>Consistency.</strong> A shared style, framing and background gives every profile a matching, professional look.</li>
+        <li><strong>Inclusion.</strong> Remote staff, part-time employees and people on leave are included on equal terms.</li>
+        <li><strong>Speed for new hires.</strong> A new employee can have a professional portrait ready for their first week instead of waiting for the next photo day.</li>
+        <li><strong>Less coordination.</strong> No room bookings, photographer invoices or reminder emails.</li>
+        <li><strong>Comfort.</strong> Employees can take their own source photos privately, rather than posing in front of colleagues.</li>
+        <li><strong>Easy refreshes.</strong> Updating portraits when roles or appearances change is straightforward.</li>
+      </ul>
+
+      <h2>Using AI Headshots in Onboarding</h2>
+      <p>Onboarding is one of the best moments to introduce a portrait. New employees are already filling in profiles, joining chat tools and being introduced to teams. A clear portrait helps colleagues recognise and welcome them.</p>
+      <p>Consider adding a simple step to your onboarding checklist: send a short guide with tips for taking good source photos, along with a link to the company style. When the new hire submits their photos, they receive a portrait that matches the rest of the team, ready to use on internal and external profiles. Our <a href="/industries/hr-professionals">HR professionals page</a> has more on how people teams use portraits in their work.</p>
+
+      <h2>Designing Your Company Standard</h2>
+      <p>Before you launch a programme, decide what your company look should be. A clear standard prevents confusion and keeps the results consistent.</p>
+      <ul>
+        <li>Choose a background colour or style that fits your brand</li>
+        <li>Decide on the level of formality, for example business formal or smart casual</li>
+        <li>Set a consistent crop and framing for every portrait</li>
+        <li>Consider whether customer-facing roles need different styles from internal roles</li>
+        <li>Create a short written guide so everyone knows what to expect</li>
+        <li>Allow reasonable personal choices, such as glasses or head coverings</li>
+      </ul>
+
+      <h2>Helping Employees Take Good Source Photos</h2>
+      <p>The quality of the final portrait depends on the quality of the photos each person provides. A short, friendly guide saves time and improves results.</p>
+      <ul>
+        <li>Take 10 to 20 photos in soft natural light near a window</li>
+        <li>Face the light and avoid strong shadows across the face</li>
+        <li>Use recent photos that show your current appearance</li>
+        <li>Avoid sunglasses, hats, filters and group photos</li>
+        <li>Include a mix of expressions and slight angle changes</li>
+        <li>Use a plain background and keep the camera at eye level</li>
+      </ul>
+
+      <h2>Privacy, Consent and Trust</h2>
+      <p>Employee photos are personal data, so a responsible programme puts privacy and choice first. Participation should be voluntary wherever possible, and employees should understand how their images will be used and stored.</p>
+      <p>Work with your legal and IT teams to confirm that your programme follows applicable data protection rules and your internal policies. Be transparent about who can see the portraits, where they will appear and how long they will be kept. Give employees a clear way to ask questions, request changes or opt out. Trust in the process is just as important as the quality of the result.</p>
+
+      <h2>Keeping Your Directory Up to Date</h2>
+      <p>A photo programme is not a one-off project. People join, leave, change roles and change appearance. A light process keeps your directory current.</p>
+      <ul>
+        <li>Add portrait submission to new hire onboarding</li>
+        <li>Invite employees to refresh their portrait every year or two</li>
+        <li>Update leadership and customer-facing pages first when styles change</li>
+        <li>Archive portraits of departing employees according to your policy</li>
+        <li>Review your style guide annually to make sure it still fits the brand</li>
+      </ul>
+
+      <h2>A Simple Rollout Plan</h2>
+      <ul>
+        <li>Define your company look and write a short photo guide</li>
+        <li>Test the process with a small pilot group</li>
+        <li>Collect feedback and adjust the guide</li>
+        <li>Roll out to the wider company with clear deadlines and support</li>
+        <li>Add the step to onboarding for all new hires</li>
+      </ul>
+
+      <h2>The Bottom Line</h2>
+      <p>A consistent, professional set of employee portraits makes a company look organised and welcoming, but producing them should not consume weeks of HR time. AI headshots let you set a company standard, include everyone regardless of location and keep profiles up to date with very little coordination. Explore the <a href="/pricing">pricing options</a> for teams, review the <a href="/styles">styles</a>, and <a href="/auth/register">get started</a> with a pilot group.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['HR', 'Teams', 'Business'],
+    readingTime: '8 min read',
+  },
+  {
+    slug: 'best-ai-photo-apps-2026',
+    title: 'Best AI Photo Apps in 2026: Complete Guide for Professional Headshots',
+    description:
+      'A practical overview of the AI photo landscape in 2026: the main categories of apps, what to look for when choosing one for professional headshots, and where TailorPic fits.',
+    content: `
+      <p>The market for AI photo tools has grown quickly, and choosing between them can be confusing. Some apps focus on fun filters and avatars, some on editing existing photos, and some on creating professional headshots from selfies. They all use similar language, but they solve very different problems.</p>
+      <p>This guide gives an overview of the AI photo landscape in 2026, explains the main categories, and offers a practical checklist for choosing the right tool for professional headshots. We build TailorPic, so we have included it where it fits, but we have tried to keep the comparison fair and focused on what matters to you.</p>
+
+      <h2>The Main Categories of AI Photo Tools</h2>
+      <p>Before comparing individual apps, it helps to understand what kind of tool you actually need. Most products fall into one of the following groups.</p>
+      <ul>
+        <li><strong>AI headshot generators.</strong> These create new professional portraits from a set of your photos. They are designed for LinkedIn, company websites and business profiles. TailorPic belongs in this category.</li>
+        <li><strong>Photo editors with AI features.</strong> These improve an existing picture by retouching, removing backgrounds, adjusting light or enhancing sharpness. They are good when you already have a decent photo.</li>
+        <li><strong>Avatar and creative apps.</strong> These turn selfies into stylised art, fantasy characters or cartoons. They are entertaining but rarely suitable for professional use.</li>
+        <li><strong>Upscalers and restoration tools.</strong> These increase resolution and repair old or low-quality images.</li>
+        <li><strong>General image generators.</strong> These create images from text descriptions. They are flexible but are not built to produce accurate portraits of a specific real person.</li>
+      </ul>
+
+      <h2>What to Look For in a Headshot Tool</h2>
+      <p>If your goal is a professional portrait, a few criteria matter more than any feature list.</p>
+      <ul>
+        <li><strong>Likeness.</strong> The result should look like you, not a generic or idealised person. Test this carefully with the samples you receive.</li>
+        <li><strong>Natural finish.</strong> Good skin retouching preserves texture. Overly smooth skin looks artificial and can hurt credibility.</li>
+        <li><strong>Professional styles.</strong> Look for backgrounds and clothing options that suit business use, and check whether they fit your industry.</li>
+        <li><strong>Resolution and quality.</strong> Outputs should be sharp enough for websites and, where needed, print.</li>
+        <li><strong>Consistency for teams.</strong> If you are buying for a group, check whether the tool supports matching styles and simple management.</li>
+        <li><strong>Privacy and data handling.</strong> Read how your photos are stored, used and deleted.</li>
+        <li><strong>Clear pricing.</strong> Understand what is included, how many portraits you receive and whether there are extra fees.</li>
+      </ul>
+
+      <h2>How TailorPic Fits</h2>
+      <p>TailorPic is an AI headshot generator. You upload photos of yourself, choose from a range of professional styles, and receive portraits intended for business use. We focus on headshots specifically, rather than trying to be a general photo toy, so our styles are built around professional settings such as offices, studios and neutral backgrounds.</p>
+      <p>You can see the full range on the <a href="/styles">styles page</a>, compare plans on the <a href="/pricing">pricing page</a>, and read industry-specific guidance such as our pages for <a href="/industries/consultants">consultants</a> and <a href="/industries/coaches">coaches</a>.</p>
+      <p>Like any tool, it has a particular focus. If you need heavy creative editing, artistic avatars or restoration of old family photos, another category of app will suit you better. If you want professional portraits for work, a dedicated headshot generator is usually the right starting point.</p>
+
+      <h2>When an Editing App Is Enough</h2>
+      <p>You do not always need to generate a new portrait. If you already have a good, recent photo that simply needs a cleaner background or better lighting, an AI editor may be all you need. Editors are also useful for small fixes such as removing a stray object or evening out skin tone.</p>
+      <p>The limitation is that an editor can only improve what is already there. If your existing photos are dated, poorly framed or inconsistent, editing may not deliver the polished result you want. In that case a headshot generator can produce new options from your source photos.</p>
+
+      <h2>When to Avoid Avatar Apps</h2>
+      <p>Avatar apps are fun, and there is nothing wrong with using them for social media or games. But they are designed for entertainment, and their results often exaggerate features or apply strong artistic effects. Using one for a LinkedIn photo or company profile can look unserious or confusing to people who meet you in person.</p>
+
+      <h2>How to Test Any AI Photo App</h2>
+      <p>Whatever you choose, a short test will tell you more than any marketing page.</p>
+      <ul>
+        <li>Check sample results for people who look like you, not only idealised examples</li>
+        <li>Compare the output with a real photo of yourself for likeness</li>
+        <li>Look closely at hands, hair edges, teeth and eyes for visible errors</li>
+        <li>View the image at small size, as it would appear on a profile</li>
+        <li>Ask a friend or colleague whether it looks like you</li>
+        <li>Read the privacy policy and terms before uploading your photos</li>
+      </ul>
+
+      <h2>Red Flags to Watch For</h2>
+      <ul>
+        <li>Claims of guaranteed results or perfect accuracy</li>
+        <li>Ratings and user numbers that cannot be verified</li>
+        <li>Unclear pricing or hidden fees</li>
+        <li>Vague privacy terms about how your photos are used</li>
+        <li>Results that look too smooth, too young or unlike you</li>
+        <li>No way to delete your data</li>
+      </ul>
+
+      <h2>Trends in 2026</h2>
+      <p>Several broad trends continue to shape AI photo tools. Quality and realism keep improving, and the gap between AI results and traditional photography is narrowing for many everyday uses. Tools are becoming more specialised, with products aimed at specific needs such as headshots, product photos or social content. Teams and companies are also adopting AI headshots to standardise employee photos without organising photo days.</p>
+      <p>At the same time, users and employers are becoming more careful about authenticity, privacy and consent. Expect clear data policies and natural-looking results to matter more than novelty effects.</p>
+
+      <h2>Choosing the Right Tool for You</h2>
+      <p>The right app depends on your goal. If you want fun stylised images, choose an avatar app. If you want to improve a photo you already have, choose an editor. If you want professional portraits for work from ordinary selfies, choose a dedicated headshot generator and test it carefully.</p>
+      <p>Whichever you choose, start with good source photos. Soft natural light, clear faces and recent images make a real difference to results in every category of tool.</p>
+
+      <h2>The Bottom Line</h2>
+      <p>The AI photo landscape is broad, and the best tool is the one that matches your purpose. For professional headshots, prioritise likeness, a natural finish, suitable styles and clear privacy practices. If that sounds like what you need, you can explore TailorPic's <a href="/styles">styles</a>, review the <a href="/pricing">pricing</a>, and <a href="/auth/register">create an account</a> to try it for yourself.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['Guide', 'Tools', 'Comparison'],
+    readingTime: '8 min read',
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

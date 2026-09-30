@@ -996,6 +996,176 @@ export const photoStyles: PhotoStyle[] = [
     relatedCategories: ['headshots', 'team-headshots'],
     relatedBlogPosts: ['what-to-wear-for-headshots', 'corporate-headshot-dress-code'],
   },
+  {
+    slug: 'neon-glow',
+    name: 'Neon Glow Headshots',
+    title: 'AI Neon Glow Headshots',
+    description:
+      'Modern portraits lit with vivid neon color accents for a bold, attention-grabbing look. Created from a few selfies, no studio required.',
+    metaDescription:
+      'Create AI neon glow headshots with vivid colored lighting and a modern, high-contrast look. Stand out on social media, music and creative profiles with TailorPic.',
+    heroText:
+      'Turn heads with portraits lit in electric pink, blue and violet. Neon glow headshots use colored rim light and deep, moody backgrounds to give your profile a modern, cinematic edge that stops the scroll and makes you instantly memorable.',
+    features: [
+      'Vivid neon rim lighting in pink, cyan, purple and blue',
+      'Deep dark backgrounds that make colors pop',
+      'High-contrast, cinematic color grading',
+      'Sharp facial detail with natural skin tones preserved',
+      'Crops tuned for avatars, banners and cover art',
+      'Multiple color palettes to match your personal brand',
+    ],
+    idealFor: [
+      'Musicians, DJs and performers',
+      'Gamers, streamers and content creators',
+      'Nightlife, events and entertainment brands',
+      'Designers and creative directors',
+      'Social media profiles that need to stand out',
+    ],
+    tips: [
+      'Pick one or two neon colors that match your brand',
+      'Wear dark, simple clothing so the light stays the focus',
+      'Upload selfies with clear, even lighting for accurate features',
+      'Keep a more neutral style for formal profiles such as LinkedIn',
+    ],
+    relatedCategories: ['headshots'],
+    relatedBlogPosts: ['headshot-trends-2025', 'headshot-lighting-guide'],
+  },
+  {
+    slug: 'film-noir',
+    name: 'Film Noir Headshots',
+    title: 'AI Film Noir Headshots',
+    description:
+      'Dramatic black-and-white portraits with deep shadows and classic cinema atmosphere. A timeless look made from a few selfies.',
+    metaDescription:
+      'Create AI film noir headshots in dramatic black and white with moody shadows and classic cinema style. Timeless portraits for creatives and leaders with TailorPic.',
+    heroText:
+      'Shadow, contrast and mystery. Film noir headshots borrow the lighting of classic cinema, with crisp black-and-white tones and sculpted shadows that give your portrait gravitas and a timeless, editorial feel.',
+    features: [
+      'Rich black-and-white tonality with deep contrast',
+      'Directional, sculpted lighting with dramatic shadows',
+      'Classic cinema framing and atmosphere',
+      'Fine grain and texture for a film-like finish',
+      'Timeless look that never feels dated',
+      'Sharp detail in eyes and facial structure',
+    ],
+    idealFor: [
+      'Actors, directors and filmmakers',
+      'Authors, speakers and podcasters',
+      'Photographers and visual artists',
+      'Executives who want a bold, serious tone',
+      'Personal brands built on mystery and authority',
+    ],
+    tips: [
+      'Wear structured clothing such as collared shirts or blazers',
+      'Upload selfies with clear lighting so features are captured',
+      'Keep your expression calm and direct',
+      'Use a lighter style alongside it for everyday profiles',
+    ],
+    relatedCategories: ['headshots'],
+    relatedBlogPosts: ['headshot-lighting-guide', 'headshot-trends-2025'],
+  },
+  {
+    slug: 'pastel-soft',
+    name: 'Pastel Soft Headshots',
+    title: 'AI Pastel Soft Headshots',
+    description:
+      'Light, airy portraits in gentle pastel tones for a soft, elegant and approachable feel. Made from a few selfies.',
+    metaDescription:
+      'Create AI pastel soft headshots with gentle tones, airy light and an elegant, approachable look. Perfect for wellness, beauty and creative brands with TailorPic.',
+    heroText:
+      'Gentle, bright and welcoming. Pastel soft headshots use blush, mint, lavender and cream tones with diffused light to create a calm, graceful portrait that feels warm and approachable without losing polish.',
+    features: [
+      'Soft pastel backgrounds in blush, sage, lavender and cream',
+      'Diffused, flattering light with minimal shadow',
+      'Airy, gently lifted color grading',
+      'Natural, smooth skin tones without over-retouching',
+      'Relaxed, friendly expressions',
+      'Crops suited to websites, social media and print',
+    ],
+    idealFor: [
+      'Wellness practitioners, coaches and therapists',
+      'Beauty, fashion and lifestyle brands',
+      'Teachers and childcare professionals',
+      'Bloggers, influencers and small business owners',
+      'Anyone who wants a friendly, gentle presence',
+    ],
+    tips: [
+      'Wear light or soft-toned clothing that harmonizes with pastels',
+      'Avoid busy patterns that compete with the soft palette',
+      'Upload bright, evenly lit selfies',
+      'Pick a background color that echoes your brand palette',
+    ],
+    relatedCategories: ['headshots'],
+    relatedBlogPosts: ['what-to-wear-for-headshots', 'headshot-trends-2025'],
+  },
+  {
+    slug: 'rustic-outdoor',
+    name: 'Rustic Outdoor Headshots',
+    title: 'AI Rustic Outdoor Headshots',
+    description:
+      'Natural portraits set among trees, fields and warm golden light for an organic, genuine feel. Created from a few selfies.',
+    metaDescription:
+      'Create AI rustic outdoor headshots with natural backgrounds, golden light and an authentic, organic feel. Ideal for outdoor, farm and lifestyle brands with TailorPic.',
+    heroText:
+      'Authentic and grounded. Rustic outdoor headshots place you in natural settings such as woodland paths, open fields and weathered wood, lit by warm golden-hour sun for a genuine, down-to-earth portrait that feels real.',
+    features: [
+      'Natural backdrops including forests, meadows and barns',
+      'Warm golden-hour lighting',
+      'Earth-tone color palette',
+      'Soft background blur that keeps focus on you',
+      'Casual textures such as denim, flannel and knitwear',
+      'Relaxed, genuine expressions',
+    ],
+    idealFor: [
+      'Farmers, ranchers and food producers',
+      'Outdoor guides, trainers and adventure brands',
+      'Craft makers, artisans and small shops',
+      'Authors and lifestyle creators',
+      'Real estate agents in rural and country markets',
+    ],
+    tips: [
+      'Wear natural fabrics and earth tones',
+      'Choose comfortable clothing so you look relaxed',
+      'Upload selfies taken in soft, natural light',
+      'Keep accessories simple so the setting stays the focus',
+    ],
+    relatedCategories: ['headshots', 'family-portraits'],
+    relatedBlogPosts: ['what-to-wear-for-headshots', 'headshot-lighting-guide'],
+  },
+  {
+    slug: 'tech-startup',
+    name: 'Tech Startup Headshots',
+    title: 'AI Tech Startup Headshots',
+    description:
+      'Modern, energetic portraits set in bright offices and open workspaces that reflect startup culture. Made from a few selfies.',
+    metaDescription:
+      'Create AI tech startup headshots in modern offices and bright workspaces. Approachable, innovative portraits for founders and teams with TailorPic.',
+    heroText:
+      'Modern, open and ready to build. Tech startup headshots place you in bright, contemporary workspaces with glass, plants and soft daylight, pairing smart-casual attire with a confident smile that signals innovation and approachability.',
+    features: [
+      'Bright modern office and co-working backgrounds',
+      'Smart-casual attire such as tees, hoodies and blazers',
+      'Soft natural daylight with gentle background blur',
+      'Confident, approachable expressions',
+      'Consistent look across entire teams',
+      'Crops tuned for LinkedIn, About pages and pitch decks',
+    ],
+    idealFor: [
+      'Founders and co-founders',
+      'Software engineers and product teams',
+      'Startup About and Team pages',
+      'Investor decks and press kits',
+      'Remote teams that need consistent photos',
+    ],
+    tips: [
+      'Choose smart-casual clothing that matches your company culture',
+      'Keep the whole team on the same style for consistency',
+      'Upload selfies with clear, even lighting',
+      'Use a more formal style for investor or enterprise audiences',
+    ],
+    relatedCategories: ['headshots', 'team-headshots'],
+    relatedBlogPosts: ['startup-team-branding-photos', 'startup-founder-personal-branding-ai-photos', 'work-from-home-headshots'],
+  },
 ];
 
 export function getPhotoStyle(slug: string): PhotoStyle | undefined {

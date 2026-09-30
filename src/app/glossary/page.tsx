@@ -72,6 +72,11 @@ const terms: Term[] = [
     link: { href: '/blog/headshot-lighting-guide', label: 'Headshot lighting guide' },
   },
   {
+    term: 'Clamshell Lighting',
+    definition:
+      'A portrait lighting technique using two lights positioned above and below the subject\'s face, creating soft, even illumination with minimal shadows. Popular in beauty and headshot photography, clamshell lighting produces flattering results that AI headshot generators often replicate for a polished, professional look.',
+  },
+  {
     term: 'Color Temperature',
     definition:
       'The warmth or coolness of light, measured in Kelvin (K). Lower values around 2700K look warm and orange, while higher values above 6000K look cool and blue. Matching color temperature keeps skin tones natural.',
@@ -152,6 +157,11 @@ const terms: Term[] = [
       'The creation of new pictures by an AI model from a text description, reference images or both. The results are newly produced images rather than edited copies of existing photos.',
   },
   {
+    term: 'Image Upscaling',
+    definition:
+      'The process of increasing an image\'s resolution beyond its original pixel count using algorithms or AI. In AI headshot generation, upscaling produces high-resolution outputs suitable for print, large displays and professional use from lower-resolution input photos.',
+  },
+  {
     term: 'Image Resolution',
     definition:
       'The total number of pixels an image contains, typically expressed as width by height. Higher image resolution preserves finer detail in skin texture, hair and eyes, which matters when headshots are printed large or cropped tightly.',
@@ -223,6 +233,11 @@ const terms: Term[] = [
     term: 'Retouching',
     definition:
       'Editing a portrait to fix small distractions such as blemishes, stray hairs or uneven skin tone. Good retouching keeps a person recognizable and looks natural rather than over-smoothed.',
+  },
+  {
+    term: 'Skin Retouching',
+    definition:
+      'The process of smoothing skin texture, reducing blemishes and evening out skin tone in portrait photographs. AI headshot generators automate skin retouching to produce polished results while preserving natural skin texture and avoiding an overly processed appearance.',
   },
   {
     term: 'Split Lighting',

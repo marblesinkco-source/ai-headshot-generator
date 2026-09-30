@@ -4,12 +4,12 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
-import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight, Heart, Monitor, GraduationCap, Camera, Clapperboard, SmilePlus, TrendingUp, Ruler, Target, Brain, Dumbbell, Music, PawPrint, Users, Handshake, Mic, Palette, Newspaper, Shield, Plane, Calendar, BookOpen } from 'lucide-react';
+import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight, Heart, Monitor, GraduationCap, Camera, Clapperboard, SmilePlus, TrendingUp, Ruler, Target, Brain, Dumbbell, Music, PawPrint, Users, Handshake, Mic, Palette, Newspaper, Shield, Plane, Calendar, BookOpen, Leaf, Globe } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'AI Photos by Industry | TailorPic',
   description:
-    'Professional AI-generated photos tailored for your industry. Real estate, legal, healthcare, nursing, engineering, education, consulting, accounting, photography, acting, dental, financial advisory, architecture, coaching, therapy, fitness, music, veterinary, pharmacy, aviation, event planning, marketing, writing and more.',
+    'Professional AI-generated photos tailored for your industry. Real estate, legal, healthcare, nursing, engineering, education, consulting, accounting, photography, acting, dental, financial advisory, architecture, coaching, therapy, fitness, music, veterinary, pharmacy, aviation, event planning, marketing, writing, chiropractic, insurance, nutrition, social work, translation and more.',
 };
 
 const industries = [
@@ -244,6 +244,46 @@ const industries = [
       'Author photos for novelists, nonfiction writers and bloggers. Book-jacket, Amazon author page and press kit ready.',
     href: '/industries/authors',
     cta: 'For Authors',
+  },
+  {
+    icon: Heart,
+    name: 'Chiropractors',
+    description:
+      'Professional headshots for chiropractors and clinics. Patient-friendly portraits for practice websites and Google profiles.',
+    href: '/industries/chiropractors',
+    cta: 'For Chiropractors',
+  },
+  {
+    icon: Shield,
+    name: 'Insurance Agents',
+    description:
+      'Trustworthy headshots for insurance agents and brokers. Agency-ready portraits for websites, cards and LinkedIn.',
+    href: '/industries/insurance-agents',
+    cta: 'For Agents',
+  },
+  {
+    icon: Leaf,
+    name: 'Nutritionists',
+    description:
+      'Fresh, approachable headshots for nutritionists and dietitians. Ideal for practice sites, telehealth and social media.',
+    href: '/industries/nutritionists',
+    cta: 'For Nutritionists',
+  },
+  {
+    icon: Users,
+    name: 'Social Workers',
+    description:
+      'Warm, credible headshots for social workers and case managers. Polished for LinkedIn, agency pages and practice profiles.',
+    href: '/industries/social-workers',
+    cta: 'For Social Workers',
+  },
+  {
+    icon: Globe,
+    name: 'Translators',
+    description:
+      'Professional headshots for translators and interpreters. Marketplace-ready portraits for ProZ, LinkedIn and portfolio sites.',
+    href: '/industries/translators',
+    cta: 'For Translators',
   },
 ];
 
