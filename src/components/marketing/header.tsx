@@ -17,26 +17,14 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-gray-100 bg-white/80 backdrop-blur-lg">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-brand-200/40 bg-tailor-cream/80 backdrop-blur-lg">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600">
-            <svg
-              className="h-5 w-5 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
-              />
-            </svg>
+        <Link href="/" className="flex items-center gap-2.5">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-tailor-black">
+            <span className="text-base font-bold text-tailor-gold tracking-tight">T</span>
           </div>
-          <span className="text-lg font-bold text-gray-900">{siteConfig.name}</span>
+          <span className="text-lg font-bold text-tailor-black tracking-tight">{siteConfig.name}</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -45,7 +33,7 @@ export function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-gray-600 transition-colors hover:text-brand-600"
+              className="text-sm font-medium text-gray-600 transition-colors hover:text-tailor-gold"
             >
               {link.label}
             </a>
@@ -61,7 +49,7 @@ export function Header() {
 
         {/* Mobile Toggle */}
         <button
-          className="inline-flex items-center justify-center rounded-lg p-2 text-gray-600 hover:bg-gray-100 md:hidden"
+          className="inline-flex items-center justify-center rounded-lg p-2 text-gray-600 hover:bg-brand-100 md:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -72,7 +60,7 @@ export function Header() {
       {/* Mobile Menu */}
       <div
         className={cn(
-          'overflow-hidden border-t border-gray-100 bg-white transition-all duration-300 md:hidden',
+          'overflow-hidden border-t border-brand-200/40 bg-tailor-cream transition-all duration-300 md:hidden',
           mobileOpen ? 'max-h-64' : 'max-h-0 border-t-0'
         )}
       >
@@ -81,7 +69,7 @@ export function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="rounded-lg px-3 py-2.5 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-50 hover:text-brand-600"
+              className="rounded-lg px-3 py-2.5 text-sm font-medium text-gray-600 transition-colors hover:bg-brand-100 hover:text-brand-700"
               onClick={() => setMobileOpen(false)}
             >
               {link.label}

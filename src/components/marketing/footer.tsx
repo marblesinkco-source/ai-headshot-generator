@@ -9,27 +9,15 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-gray-100 bg-white">
+    <footer className="border-t border-brand-200/40 bg-tailor-black">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
           {/* Logo + copyright */}
-          <div className="flex items-center gap-2">
-            <div className="flex h-7 w-7 items-center justify-center rounded-md bg-brand-600">
-              <svg
-                className="h-4 w-4 text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
-                />
-              </svg>
+          <div className="flex items-center gap-2.5">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-tailor-gold/10 ring-1 ring-tailor-gold/20">
+              <span className="text-sm font-bold text-tailor-gold">T</span>
             </div>
-            <span className="text-sm text-gray-500">
+            <span className="text-sm text-gray-400">
               &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
             </span>
           </div>
@@ -40,12 +28,17 @@ export function Footer() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-sm text-gray-500 transition-colors hover:text-brand-600"
+                className="text-sm text-gray-400 transition-colors hover:text-tailor-gold"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
+        </div>
+
+        {/* Tagline */}
+        <div className="mt-8 text-center">
+          <p className="text-xs text-gray-500">{siteConfig.tagline}</p>
         </div>
       </div>
     </footer>

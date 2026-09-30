@@ -8,11 +8,11 @@ const STATUS_CONFIG: Record<OrderStatus, { label: string; className: string; pul
   },
   paid: {
     label: 'Paid',
-    className: 'bg-blue-100 text-blue-700',
+    className: 'bg-brand-100 text-brand-700',
   },
   uploading: {
     label: 'Uploading',
-    className: 'bg-blue-100 text-blue-700',
+    className: 'bg-brand-100 text-brand-700',
   },
   processing: {
     label: 'Processing',

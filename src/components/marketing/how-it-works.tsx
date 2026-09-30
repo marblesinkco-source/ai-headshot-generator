@@ -26,18 +26,18 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative py-24 sm:py-32">
+    <section id="how-it-works" className="relative py-24 sm:py-32 bg-tailor-cream/50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
+          <p className="text-sm font-semibold uppercase tracking-widest text-brand-500">
             Simple Process
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-tailor-black sm:text-4xl">
             How it Works
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            Get professional headshots in three easy steps. No studio visit required.
+            Get professional photos in three easy steps. No studio visit required.
           </p>
         </div>
 
@@ -51,7 +51,7 @@ export function HowItWorks() {
               )}
 
               {/* Icon */}
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-50 text-brand-600 ring-1 ring-brand-100">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-tailor-black text-tailor-gold ring-1 ring-brand-400/20">
                 <step.icon className="h-7 w-7" strokeWidth={1.5} />
               </div>
 
@@ -60,7 +60,7 @@ export function HowItWorks() {
                 Step {step.step}
               </span>
 
-              <h3 className="mt-2 text-xl font-semibold text-gray-900">{step.title}</h3>
+              <h3 className="mt-2 text-xl font-semibold text-tailor-black">{step.title}</h3>
               <p className="mt-3 text-base leading-relaxed text-gray-600">{step.description}</p>
             </div>
           ))}

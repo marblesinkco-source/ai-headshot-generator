@@ -39,32 +39,38 @@ const config: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        // TailorPic brand palette — premium luxury
         brand: {
-          50: '#eef2ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
-          800: '#3730a3',
-          900: '#312e81',
-          950: '#1e1b4b',
+          50: '#faf8f5',    // lightest warm off-white
+          100: '#f3efe8',   // soft cream
+          200: '#e5ddd0',   // warm beige light
+          300: '#dccdbb',   // Warm Beige
+          400: '#c9a98a',   // Bronze / Tailoring Gold
+          500: '#b8946e',   // deeper gold
+          600: '#a07a52',   // rich bronze
+          700: '#876440',   // dark bronze
+          800: '#6e5035',   // deep espresso bronze
+          900: '#5a4130',   // very dark
+          950: '#2d1f16',   // near-black warm
         },
         accent: {
-          50: '#f5f3ff',
-          100: '#ede9fe',
-          200: '#ddd6fe',
-          300: '#c4b5fd',
-          400: '#a78bfa',
-          500: '#8b5cf6',
-          600: '#7c3aed',
-          700: '#6d28d9',
-          800: '#5b21b6',
-          900: '#4c1d95',
-          950: '#2e1065',
+          50: '#faf8f5',
+          100: '#f8f5ef',   // Soft Off-White
+          200: '#e8e2d8',
+          300: '#dccdbb',   // Warm Beige
+          400: '#c9a98a',   // Bronze
+          500: '#b8946e',
+          600: '#a07a52',
+          700: '#876440',
+          800: '#6e5035',
+          900: '#0b0b0b',   // Tailoring Black
+          950: '#050505',
         },
+        // Named semantic brand tokens
+        'tailor-black': '#0b0b0b',
+        'tailor-gold': '#c9a98a',
+        'tailor-beige': '#dccdbb',
+        'tailor-cream': '#f8f5ef',
       },
       borderRadius: {
         lg: 'var(--radius)',

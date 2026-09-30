@@ -31,10 +31,10 @@ export function Testimonials() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
+          <p className="text-sm font-semibold uppercase tracking-widest text-brand-500">
             Testimonials
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-tailor-black sm:text-4xl">
             Loved by Professionals
           </h2>
           <p className="mt-4 text-lg text-gray-600">
@@ -45,14 +45,14 @@ export function Testimonials() {
         {/* Cards */}
         <div className="mt-16 grid gap-8 sm:mt-20 md:grid-cols-3">
           {testimonials.map((t) => (
-            <Card key={t.name} className="flex flex-col hover:shadow-md">
+            <Card key={t.name} className="flex flex-col hover:shadow-md transition-shadow">
               <CardContent className="flex flex-1 flex-col p-6">
                 {/* Stars */}
                 <div className="flex gap-0.5">
                   {Array.from({ length: t.rating }).map((_, i) => (
                     <Star
                       key={i}
-                      className="h-4 w-4 fill-amber-400 text-amber-400"
+                      className="h-4 w-4 fill-brand-400 text-brand-400"
                     />
                   ))}
                 </div>
@@ -63,15 +63,15 @@ export function Testimonials() {
                 </blockquote>
 
                 {/* Author */}
-                <div className="mt-6 flex items-center gap-3 border-t border-gray-100 pt-5">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-100 text-sm font-semibold text-brand-600">
+                <div className="mt-6 flex items-center gap-3 border-t border-brand-200/50 pt-5">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-tailor-black text-sm font-semibold text-tailor-gold">
                     {t.name
                       .split(' ')
                       .map((n) => n[0])
                       .join('')}
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-gray-900">{t.name}</p>
+                    <p className="text-sm font-semibold text-tailor-black">{t.name}</p>
                     <p className="text-xs text-gray-500">{t.role}</p>
                   </div>
                 </div>

@@ -38,7 +38,7 @@ const TEMPLATES: Record<string, TemplateDefinition> = {
           <p style="margin: 8px 0 0;"><strong>Photos:</strong> ${data.headshotCount}</p>
         </div>
         <p><strong>Next step:</strong> Upload your photos so our AI can learn your look and create personalized images.</p>
-        <a href="${data.uploadUrl}" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; margin-top: 16px;">
+        <a href="${data.uploadUrl}" style="display: inline-block; background: #0b0b0b; color: #c9a98a; padding: 12px 24px; border-radius: 6px; text-decoration: none; margin-top: 16px;">
           Upload Photos
         </a>
         <p style="color: #999; font-size: 12px; margin-top: 32px;">TailorPic — AI-powered photos for every occasion</p>
@@ -56,7 +56,7 @@ const TEMPLATES: Record<string, TemplateDefinition> = {
         <p>Hi ${data.name},</p>
         <p>You haven't uploaded your photos yet for order <strong>${data.orderId}</strong>.</p>
         <p>Upload your photos and our AI will create a personalized model trained on your look. Your custom photos will be ready in about 20 minutes!</p>
-        <a href="${data.uploadUrl}" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; margin-top: 16px;">
+        <a href="${data.uploadUrl}" style="display: inline-block; background: #0b0b0b; color: #c9a98a; padding: 12px 24px; border-radius: 6px; text-decoration: none; margin-top: 16px;">
           Upload Now
         </a>
         <p style="color: #666; font-size: 14px; margin-top: 24px;">
@@ -78,7 +78,7 @@ const TEMPLATES: Record<string, TemplateDefinition> = {
         <p>Hi ${data.name},</p>
         <p>Great news! We've finished generating <strong>${data.headshotCount} AI-powered photos</strong> for you.</p>
         <p>Head to your dashboard to view, download, and share them.</p>
-        <a href="${data.dashboardUrl}" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; margin-top: 16px;">
+        <a href="${data.dashboardUrl}" style="display: inline-block; background: #0b0b0b; color: #c9a98a; padding: 12px 24px; border-radius: 6px; text-decoration: none; margin-top: 16px;">
           View Your Photos
         </a>
         <p style="color: #666; font-size: 14px; margin-top: 24px;">

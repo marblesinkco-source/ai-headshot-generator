@@ -24,14 +24,14 @@ export function Pricing() {
   const packages = activeCategory.packages;
 
   return (
-    <section id="pricing" className="relative bg-gray-50/50 py-24 sm:py-32">
+    <section id="pricing" className="relative bg-tailor-cream/40 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
+          <p className="text-sm font-semibold uppercase tracking-widest text-brand-500">
             Pricing
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-tailor-black sm:text-4xl">
             Choose Your Plan
           </h2>
           <p className="mt-4 text-lg text-gray-600">
@@ -48,8 +48,8 @@ export function Pricing() {
               className={cn(
                 'rounded-full px-4 py-2 text-sm font-medium transition-all',
                 activeCategory.id === cat.id
-                  ? 'bg-brand-600 text-white shadow-md'
-                  : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
+                  ? 'bg-tailor-black text-tailor-gold shadow-md'
+                  : 'bg-white text-gray-600 hover:bg-brand-50 border border-brand-200/60'
               )}
             >
               {cat.icon} {cat.name}
@@ -57,9 +57,9 @@ export function Pricing() {
           ))}
           <Link
             href="/#categories"
-            className="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-500 transition-all hover:bg-gray-100"
+            className="rounded-full border border-brand-200/60 bg-white px-4 py-2 text-sm font-medium text-gray-500 transition-all hover:bg-brand-50"
           >
-            All Categories →
+            All Categories &rarr;
           </Link>
         </div>
 
@@ -77,7 +77,7 @@ export function Pricing() {
                 className={cn(
                   'relative flex flex-col',
                   isPopular &&
-                    'border-brand-300 shadow-lg shadow-brand-500/10 ring-1 ring-brand-200 scale-[1.02] lg:scale-105'
+                    'border-brand-400/50 shadow-lg shadow-brand-400/10 ring-1 ring-brand-400/30 scale-[1.02] lg:scale-105'
                 )}
               >
                 {isPopular && (
@@ -87,12 +87,12 @@ export function Pricing() {
                 )}
 
                 <CardHeader className="pb-4">
-                  <CardTitle className="text-lg font-semibold text-gray-900">
+                  <CardTitle className="text-lg font-semibold text-tailor-black">
                     {pkg.name}
                   </CardTitle>
 
                   <div className="mt-4 flex items-baseline gap-1">
-                    <span className="text-4xl font-extrabold tracking-tight text-gray-900">
+                    <span className="text-4xl font-extrabold tracking-tight text-tailor-black">
                       {formatPrice(pkg.price)}
                     </span>
                     <span className="text-sm text-gray-500">one-time</span>
@@ -101,18 +101,18 @@ export function Pricing() {
 
                 <CardContent className="flex-1 space-y-4">
                   {/* Key stats */}
-                  <div className="rounded-xl bg-gray-50 p-4 text-sm">
+                  <div className="rounded-xl bg-brand-50 p-4 text-sm">
                     <div className="flex justify-between py-1">
                       <span className="text-gray-500">{activeCategory.outputLabel}</span>
-                      <span className="font-semibold text-gray-900">{pkg.outputCount}+</span>
+                      <span className="font-semibold text-tailor-black">{pkg.outputCount}+</span>
                     </div>
-                    <div className="flex justify-between border-t border-gray-100 py-1 pt-2">
+                    <div className="flex justify-between border-t border-brand-200/50 py-1 pt-2">
                       <span className="text-gray-500">AI Training</span>
-                      <span className="font-semibold text-gray-900">Personalized</span>
+                      <span className="font-semibold text-tailor-black">Personalized</span>
                     </div>
-                    <div className="flex justify-between border-t border-gray-100 py-1 pt-2">
+                    <div className="flex justify-between border-t border-brand-200/50 py-1 pt-2">
                       <span className="text-gray-500">Resolution</span>
-                      <span className="font-semibold uppercase text-gray-900">HD</span>
+                      <span className="font-semibold uppercase text-tailor-black">HD</span>
                     </div>
                   </div>
 

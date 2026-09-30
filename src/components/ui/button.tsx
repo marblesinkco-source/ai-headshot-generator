@@ -3,16 +3,16 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  'inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
         primary:
-          'bg-brand-600 text-white shadow-md shadow-brand-500/25 hover:bg-brand-700 hover:shadow-lg hover:shadow-brand-500/30 active:bg-brand-800',
+          'bg-tailor-black text-tailor-gold shadow-md shadow-black/15 hover:bg-gray-900 hover:shadow-lg active:bg-gray-800',
         secondary:
-          'bg-brand-50 text-brand-700 hover:bg-brand-100 active:bg-brand-200',
+          'bg-brand-100 text-brand-700 hover:bg-brand-200 active:bg-brand-300',
         outline:
-          'border-2 border-brand-200 bg-transparent text-brand-700 hover:bg-brand-50 hover:border-brand-300 active:bg-brand-100',
+          'border-2 border-brand-300 bg-transparent text-brand-700 hover:bg-brand-50 hover:border-brand-400 active:bg-brand-100',
         ghost:
           'bg-transparent text-gray-700 hover:bg-gray-100 active:bg-gray-200',
         destructive:
