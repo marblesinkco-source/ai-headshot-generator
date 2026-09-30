@@ -211,8 +211,8 @@ function UploadContent() {
   return (
     <div className="mx-auto max-w-5xl space-y-8">
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">Create New Photos</h1>
-        <p className="mt-1 text-sm text-gray-500">Choose a category, pick your package, upload photos, and let AI do the magic.</p>
+        <h1 className="text-2xl font-bold text-tp-black">Create New Photos</h1>
+        <p className="mt-1 text-sm text-tp-muted">Choose a category, pick your package, upload photos, and let AI do the magic.</p>
       </div>
 
       {/* Step Indicator */}
@@ -224,7 +224,7 @@ function UploadContent() {
                 className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-medium transition-colors ${
                   currentStep >= step.num
                     ? 'bg-tp-black text-tp-bronze'
-                    : 'bg-gray-200 text-gray-500'
+                    : 'bg-tp-beige/50 text-tp-muted'
                 }`}
               >
                 {currentStep > step.num ? (
@@ -237,7 +237,7 @@ function UploadContent() {
               </div>
               <span
                 className={`hidden text-sm font-medium sm:block ${
-                  currentStep >= step.num ? 'text-tp-bronze-ink' : 'text-gray-400'
+                  currentStep >= step.num ? 'text-tp-bronze-ink' : 'text-tp-muted'
                 }`}
               >
                 {step.label}
@@ -246,7 +246,7 @@ function UploadContent() {
             {idx < STEPS.length - 1 && (
               <div
                 className={`mx-4 h-0.5 flex-1 transition-colors ${
-                  currentStep > step.num ? 'bg-tp-black' : 'bg-gray-200'
+                  currentStep > step.num ? 'bg-tp-black' : 'bg-tp-line'
                 }`}
               />
             )}
@@ -257,7 +257,7 @@ function UploadContent() {
       {/* Step 1: Category Selection */}
       {currentStep === 1 && (
         <div className="space-y-6">
-          <h2 className="text-lg font-semibold text-gray-900">What would you like to create?</h2>
+          <h2 className="text-lg font-semibold text-tp-black">What would you like to create?</h2>
 
           {CATEGORY_GROUPS.map((group) => {
             const groupCategories = activeCategories.filter((c) =>
@@ -267,7 +267,7 @@ function UploadContent() {
 
             return (
               <div key={group.title} className="space-y-3">
-                <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wider">
+                <h3 className="text-sm font-medium text-tp-muted uppercase tracking-wider">
                   {group.title}
                 </h3>
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -278,16 +278,16 @@ function UploadContent() {
                       className={`group relative rounded-xl border-2 bg-white p-5 text-left shadow-sm transition-all hover:shadow-md hover:border-tp-line ${
                         selectedCategory === cat.id
                           ? 'border-tp-black ring-2 ring-tp-beige/30'
-                          : 'border-gray-200'
+                          : 'border-tp-line'
                       }`}
                     >
                       <div className="flex items-start gap-3">
                         <span className="text-2xl">{cat.icon}</span>
                         <div className="min-w-0 flex-1">
-                          <h4 className="font-semibold text-gray-900 group-hover:text-tp-bronze-ink transition-colors">
+                          <h4 className="font-semibold text-tp-ink group-hover:text-tp-bronze-ink transition-colors">
                             {cat.name}
                           </h4>
-                          <p className="mt-1 text-xs text-gray-500 line-clamp-2">
+                          <p className="mt-1 text-xs text-tp-muted line-clamp-2">
                             {cat.tagline}
                           </p>
                           <p className="mt-2 text-xs font-medium text-tp-bronze-ink">
@@ -310,7 +310,7 @@ function UploadContent() {
           <div className="flex items-center gap-3">
             <button
               onClick={() => setCurrentStep(1)}
-              className="text-sm text-gray-500 hover:text-tp-bronze-ink transition-colors flex items-center gap-1"
+              className="text-sm text-tp-muted hover:text-tp-bronze-ink transition-colors flex items-center gap-1"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -318,12 +318,18 @@ function UploadContent() {
               Back
             </button>
             <span className="text-2xl">{category.icon}</span>
-            <h2 className="text-lg font-semibold text-gray-900">
+            <h2 className="text-lg font-semibold text-tp-black">
               {category.name} — Choose Your Package
             </h2>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div className={`grid gap-4 ${
+            categoryPackages.length >= 4
+              ? 'sm:grid-cols-2 lg:grid-cols-4'
+              : categoryPackages.length === 3
+                ? 'sm:grid-cols-3'
+                : 'sm:grid-cols-2'
+          }`}>
             {categoryPackages.map((pkg) => (
               <div
                 key={pkg.id}
@@ -332,7 +338,7 @@ function UploadContent() {
                     ? 'border-tp-black ring-2 ring-tp-beige/30'
                     : pkg.recommended
                     ? 'border-tp-line'
-                    : 'border-gray-200'
+                    : 'border-tp-line'
                 }`}
                 onClick={() => setSelectedPackage(pkg.id)}
               >
@@ -341,11 +347,11 @@ function UploadContent() {
                     Recommended
                   </span>
                 )}
-                <h3 className="text-lg font-semibold text-gray-900">{pkg.name}</h3>
-                <p className="mt-2 text-3xl font-bold text-gray-900">
+                <h3 className="text-lg font-semibold text-tp-ink">{pkg.name}</h3>
+                <p className="mt-2 text-3xl font-bold text-tp-black">
                   {formatPrice(pkg.price, pkg.currency)}
                 </p>
-                <ul className="mt-4 space-y-2 text-sm text-gray-600">
+                <ul className="mt-4 space-y-2 text-sm text-tp-muted">
                   <li className="flex items-center gap-2">
                     <svg className="h-4 w-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
@@ -387,8 +393,8 @@ function UploadContent() {
       {currentStep === 3 && orderId && (
         <div className="space-y-6">
           <div>
-            <h2 className="text-lg font-semibold text-gray-900">Upload Your Photos</h2>
-            <p className="mt-1 text-sm text-gray-500">
+            <h2 className="text-lg font-semibold text-tp-black">Upload Your Photos</h2>
+            <p className="mt-1 text-sm text-tp-muted">
               {category?.uploadInstructions ||
                 'Upload 4-10 clear photos. Include different angles and expressions for best results.'}
             </p>
@@ -417,7 +423,7 @@ function UploadContent() {
 
       {/* Step 4: Generate */}
       {currentStep === 4 && (
-        <div className="rounded-xl border border-gray-200 bg-white p-8 text-center shadow-sm">
+        <div className="rounded-xl border border-tp-line bg-white p-8 text-center shadow-sm">
           {generationStatus ? (
             <div className="space-y-6">
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-tp-paper">
@@ -433,7 +439,7 @@ function UploadContent() {
                 )}
               </div>
 
-              <h3 className="text-lg font-semibold text-gray-900">
+              <h3 className="text-lg font-semibold text-tp-black">
                 {progressPhase === 'training'
                   ? 'Training AI on Your Photos'
                   : progressPhase === 'generating'
@@ -445,11 +451,11 @@ function UploadContent() {
 
               {/* Progress bar */}
               <div className="mx-auto max-w-md">
-                <div className="flex items-center justify-between text-xs text-gray-500 mb-1">
+                <div className="flex items-center justify-between text-xs text-tp-muted mb-1">
                   <span>{progressPhase === 'training' ? 'Training model...' : progressPhase === 'generating' ? `${generationStats.completed}/${generationStats.total} photos` : ''}</span>
                   <span>{progressPercent}%</span>
                 </div>
-                <div className="h-3 overflow-hidden rounded-full bg-gray-100">
+                <div className="h-3 overflow-hidden rounded-full bg-tp-paper">
                   <div
                     className="h-full rounded-full bg-gradient-to-r from-tp-bronze to-tp-bronze-ink transition-all duration-1000 ease-out"
                     style={{ width: `${progressPercent}%` }}
@@ -459,7 +465,7 @@ function UploadContent() {
 
               {/* Phase indicators */}
               <div className="mx-auto flex max-w-sm items-center justify-center gap-6 text-xs">
-                <div className={`flex items-center gap-1.5 ${progressPhase === 'training' ? 'text-tp-bronze font-medium' : progressPercent > 50 ? 'text-green-600' : 'text-gray-400'}`}>
+                <div className={`flex items-center gap-1.5 ${progressPhase === 'training' ? 'text-tp-bronze font-medium' : progressPercent > 50 ? 'text-green-600' : 'text-tp-muted'}`}>
                   {progressPercent > 50 ? (
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
@@ -467,12 +473,12 @@ function UploadContent() {
                   ) : progressPhase === 'training' ? (
                     <div className="h-2 w-2 rounded-full bg-tp-bronze animate-pulse" />
                   ) : (
-                    <div className="h-2 w-2 rounded-full bg-gray-300" />
+                    <div className="h-2 w-2 rounded-full bg-tp-line" />
                   )}
                   AI Training
                 </div>
-                <div className="h-px w-8 bg-gray-200" />
-                <div className={`flex items-center gap-1.5 ${progressPhase === 'generating' ? 'text-tp-bronze font-medium' : progressPhase === 'completed' ? 'text-green-600' : 'text-gray-400'}`}>
+                <div className="h-px w-8 bg-tp-line" />
+                <div className={`flex items-center gap-1.5 ${progressPhase === 'generating' ? 'text-tp-bronze font-medium' : progressPhase === 'completed' ? 'text-green-600' : 'text-tp-muted'}`}>
                   {progressPhase === 'completed' ? (
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
@@ -480,14 +486,14 @@ function UploadContent() {
                   ) : progressPhase === 'generating' ? (
                     <div className="h-2 w-2 rounded-full bg-tp-bronze animate-pulse" />
                   ) : (
-                    <div className="h-2 w-2 rounded-full bg-gray-300" />
+                    <div className="h-2 w-2 rounded-full bg-tp-line" />
                   )}
                   Photo Generation
                 </div>
               </div>
 
-              <p className="text-sm text-gray-500">{generationStatus}</p>
-              <p className="text-xs text-gray-400">You can close this page. We&apos;ll email you when your photos are ready.</p>
+              <p className="text-sm text-tp-muted">{generationStatus}</p>
+              <p className="text-xs text-tp-muted">You can close this page. We&apos;ll email you when your photos are ready.</p>
             </div>
           ) : (
             <div className="space-y-4">
@@ -496,8 +502,8 @@ function UploadContent() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900">Ready to Generate</h3>
-              <p className="text-sm text-gray-500">
+              <h3 className="text-lg font-semibold text-tp-black">Ready to Generate</h3>
+              <p className="text-sm text-tp-muted">
                 {uploadedCount} photos uploaded. Our AI will train a personalized model on your photos, then generate your {category?.outputLabel || 'AI photos'}. This takes about 15-20 minutes.
               </p>
               {error && (

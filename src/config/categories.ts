@@ -68,8 +68,8 @@ export const CATEGORIES: Record<CategoryId, Category> = {
         name: 'Express',
         price: 990,
         currency: 'usd',
-        outputCount: 4,
-        features: ['1 background', '1 style', 'HD resolution', 'Try before you commit'],
+        outputCount: 5,
+        features: ['1 background', '1 style', 'HD resolution', '24-hour delivery'],
       },
       {
         id: 'headshots-starter',
@@ -124,8 +124,8 @@ export const CATEGORIES: Record<CategoryId, Category> = {
         name: 'Express',
         price: 990,
         currency: 'usd',
-        outputCount: 4,
-        features: ['1 scene style', 'Natural lighting', 'HD resolution', 'Try before you commit'],
+        outputCount: 5,
+        features: ['1 scene style', 'Natural lighting', 'HD resolution', '24-hour delivery'],
       },
       {
         id: 'dating-basic',
@@ -178,9 +178,9 @@ export const CATEGORIES: Record<CategoryId, Category> = {
       {
         id: 'pet-express',
         name: 'Express',
-        price: 790,
+        price: 990,
         currency: 'usd',
-        outputCount: 4,
+        outputCount: 5,
         features: ['1 art style', 'Digital delivery', 'HD resolution', 'Try before you commit'],
       },
       {
@@ -282,10 +282,10 @@ export const CATEGORIES: Record<CategoryId, Category> = {
       {
         id: 'babyshower-express',
         name: 'Express',
-        price: 790,
+        price: 990,
         currency: 'usd',
-        outputCount: 4,
-        features: ['1 design theme', 'Digital download', 'HD resolution', 'Try before you commit'],
+        outputCount: 5,
+        features: ['1 design theme', 'Digital download', 'HD resolution', '24-hour delivery'],
       },
       {
         id: 'babyshower-basic',
@@ -340,8 +340,8 @@ export const CATEGORIES: Record<CategoryId, Category> = {
         name: 'Express',
         price: 990,
         currency: 'usd',
-        outputCount: 4,
-        features: ['1 academic setting', 'Cap & gown', 'HD resolution', 'Try before you commit'],
+        outputCount: 5,
+        features: ['1 academic setting', 'Cap & gown', 'HD resolution', '24-hour delivery'],
       },
       {
         id: 'grad-basic',
@@ -392,6 +392,14 @@ export const CATEGORIES: Record<CategoryId, Category> = {
     outputLabel: 'designs',
     packages: [
       {
+        id: 'holiday-express',
+        name: 'Express',
+        price: 990,
+        currency: 'usd',
+        outputCount: 5,
+        features: ['1 holiday theme', 'Digital download', 'HD resolution', '24-hour delivery'],
+      },
+      {
         id: 'holiday-basic',
         name: 'Basic',
         price: 1400,
@@ -439,6 +447,14 @@ export const CATEGORIES: Record<CategoryId, Category> = {
     maxPhotos: 10,
     outputLabel: 'portraits',
     packages: [
+      {
+        id: 'family-express',
+        name: 'Express',
+        price: 990,
+        currency: 'usd',
+        outputCount: 5,
+        features: ['1 portrait style', 'Standard resolution', 'Digital delivery', '24-hour delivery'],
+      },
       {
         id: 'family-basic',
         name: 'Basic',
@@ -492,8 +508,8 @@ export const CATEGORIES: Record<CategoryId, Category> = {
         name: 'Express',
         price: 990,
         currency: 'usd',
-        outputCount: 4,
-        features: ['1 romantic setting', 'HD resolution', 'Digital delivery', 'Try before you commit'],
+        outputCount: 5,
+        features: ['1 romantic setting', 'HD resolution', 'Digital delivery', '24-hour delivery'],
       },
       {
         id: 'couple-basic',
@@ -544,6 +560,14 @@ export const CATEGORIES: Record<CategoryId, Category> = {
     outputLabel: 'staged photos',
     packages: [
       {
+        id: 'realestate-express',
+        name: 'Express',
+        price: 990,
+        currency: 'usd',
+        outputCount: 5,
+        features: ['1 furniture style', 'Living room only', 'HD resolution', '24-hour delivery'],
+      },
+      {
         id: 'realestate-basic',
         name: 'Basic',
         price: 2400,
@@ -591,6 +615,14 @@ export const CATEGORIES: Record<CategoryId, Category> = {
     maxPhotos: 8,
     outputLabel: 'product photos',
     packages: [
+      {
+        id: 'product-express',
+        name: 'Express',
+        price: 990,
+        currency: 'usd',
+        outputCount: 5,
+        features: ['White background', '1 lifestyle scene', 'HD resolution', '24-hour delivery'],
+      },
       {
         id: 'product-basic',
         name: 'Basic',

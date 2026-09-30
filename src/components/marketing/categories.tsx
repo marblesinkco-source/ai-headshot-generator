@@ -123,7 +123,7 @@ export function Categories() {
                         </p>
                         <div className="mt-auto pt-2 sm:pt-3 flex items-center justify-between">
                           <span className="text-[12px] sm:text-[13px] font-semibold text-tp-bronze-ink">
-                            From ${((cat.packages[0]?.price || 0) / 100).toFixed(0)}
+                            From ${((cat.packages[0]?.price || 0) / 100).toFixed(2).replace(/\.00$/, '')}
                           </span>
                           <span className="text-tp-bronze text-xs font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-0 group-hover:translate-x-0.5">
                             Explore &rarr;
