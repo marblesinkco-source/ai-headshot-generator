@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { createClient } from '@/lib/supabase/client';
-import { siteConfig } from '@/config/site';
 import { Button } from '@/components/ui/button';
 
 export default function ForgotPasswordPage() {
@@ -34,19 +34,23 @@ export default function ForgotPasswordPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4 py-12">
+    <div className="flex min-h-screen items-center justify-center bg-tp-paper px-4 py-12">
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="mb-8 text-center">
-          <Link href="/" className="inline-flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-tp-black text-tp-bronze font-bold text-lg">
-              AI
-            </div>
-            <span className="text-xl font-bold text-gray-900">{siteConfig.name}</span>
+          <Link href="/" aria-label="TailorPic home">
+            <Image
+              src="/brand/tailorpic/logo/tailorpic-horizontal-bronze.svg"
+              alt="TailorPic"
+              width={180}
+              height={42}
+              className="h-9 w-auto mx-auto"
+              priority
+            />
           </Link>
         </div>
 
-        <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+        <div className="rounded-2xl border border-tp-line/60 bg-white p-8 shadow-sm">
           {sent ? (
             <div className="text-center">
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-green-100">
@@ -54,8 +58,8 @@ export default function ForgotPasswordPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                 </svg>
               </div>
-              <h2 className="mt-4 text-lg font-semibold text-gray-900">Check your email</h2>
-              <p className="mt-2 text-sm text-gray-500">
+              <h2 className="mt-4 text-lg font-semibold text-tp-black">Check your email</h2>
+              <p className="mt-2 text-sm text-tp-muted">
                 We sent a password reset link to <strong>{email}</strong>.
                 Click the link in the email to reset your password.
               </p>
@@ -68,14 +72,14 @@ export default function ForgotPasswordPage() {
             </div>
           ) : (
             <>
-              <h2 className="text-lg font-semibold text-gray-900">Reset your password</h2>
-              <p className="mt-1 text-sm text-gray-500">
+              <h2 className="text-lg font-semibold text-tp-black">Reset your password</h2>
+              <p className="mt-1 text-sm text-tp-muted">
                 Enter your email address and we&apos;ll send you a link to reset your password.
               </p>
 
               <form onSubmit={handleSubmit} className="mt-6 space-y-4">
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="email" className="block text-sm font-medium text-tp-ink mb-1">
                     Email address
                   </label>
                   <input
@@ -84,7 +88,7 @@ export default function ForgotPasswordPage() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="block w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
+                    className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-tp-ink placeholder-gray-400 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
                     placeholder="you@example.com"
                   />
                 </div>
@@ -109,7 +113,7 @@ export default function ForgotPasswordPage() {
           )}
         </div>
 
-        <p className="mt-6 text-center text-sm text-gray-500">
+        <p className="mt-6 text-center text-sm text-tp-muted">
           Remember your password?{' '}
           <Link href="/auth/login" className="font-medium text-tp-bronze-ink hover:text-tp-bronze transition-colors">
             Sign in

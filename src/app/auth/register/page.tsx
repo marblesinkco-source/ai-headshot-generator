@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { createClient } from '@/lib/supabase/client';
 import { siteConfig } from '@/config/site';
 import { Button } from '@/components/ui/button';
@@ -81,11 +82,15 @@ export default function RegisterPage() {
       <div className="flex min-h-screen items-center justify-center bg-tp-paper px-4 py-12">
         <div className="w-full max-w-md">
           <div className="mb-8 text-center">
-            <Link href="/" className="inline-flex items-center gap-2.5">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-tp-black">
-                <span className="text-xl font-bold text-tp-bronze">T</span>
-              </div>
-              <span className="text-xl font-bold text-tp-black">{siteConfig.name}</span>
+            <Link href="/" aria-label="TailorPic home">
+              <Image
+                src="/brand/tailorpic/logo/tailorpic-horizontal-bronze.svg"
+                alt="TailorPic"
+                width={180}
+                height={42}
+                className="h-9 w-auto mx-auto"
+                priority
+              />
             </Link>
           </div>
           <div className="rounded-2xl border border-tp-line/60 bg-white p-8 shadow-sm text-center">
@@ -116,13 +121,17 @@ export default function RegisterPage() {
       <div className="w-full max-w-md">
         {/* Logo / Brand */}
         <div className="mb-8 text-center">
-          <Link href="/" className="inline-flex items-center gap-2.5">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-tp-black">
-              <span className="text-xl font-bold text-tp-bronze">T</span>
-            </div>
-            <span className="text-xl font-bold text-tp-black">{siteConfig.name}</span>
+          <Link href="/" aria-label="TailorPic home">
+            <Image
+              src="/brand/tailorpic/logo/tailorpic-horizontal-bronze.svg"
+              alt="TailorPic"
+              width={180}
+              height={42}
+              className="h-9 w-auto mx-auto"
+              priority
+            />
           </Link>
-          <p className="mt-2 text-sm text-gray-500">Create your account</p>
+          <p className="mt-3 text-sm text-tp-muted">Create your account</p>
         </div>
 
         {/* Card */}
@@ -248,8 +257,11 @@ export default function RegisterPage() {
             </Button>
           </form>
 
-          <p className="mt-4 text-center text-xs text-gray-400">
-            By signing up, you agree to our Terms of Service and Privacy Policy.
+          <p className="mt-4 text-center text-xs text-tp-muted">
+            By signing up, you agree to our{' '}
+            <Link href="/terms" className="underline hover:text-tp-bronze-ink">Terms of Service</Link>
+            {' '}and{' '}
+            <Link href="/privacy" className="underline hover:text-tp-bronze-ink">Privacy Policy</Link>.
           </p>
         </div>
 

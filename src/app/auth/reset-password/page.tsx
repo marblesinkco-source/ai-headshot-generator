@@ -3,8 +3,8 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { createClient } from '@/lib/supabase/client';
-import { siteConfig } from '@/config/site';
 import { Button } from '@/components/ui/button';
 
 export default function ResetPasswordPage() {
@@ -83,19 +83,23 @@ function ResetPasswordContent() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4 py-12">
+    <div className="flex min-h-screen items-center justify-center bg-tp-paper px-4 py-12">
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="mb-8 text-center">
-          <Link href="/" className="inline-flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-tp-black text-tp-bronze font-bold text-lg">
-              AI
-            </div>
-            <span className="text-xl font-bold text-gray-900">{siteConfig.name}</span>
+          <Link href="/" aria-label="TailorPic home">
+            <Image
+              src="/brand/tailorpic/logo/tailorpic-horizontal-bronze.svg"
+              alt="TailorPic"
+              width={180}
+              height={42}
+              className="h-9 w-auto mx-auto"
+              priority
+            />
           </Link>
         </div>
 
-        <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+        <div className="rounded-2xl border border-tp-line/60 bg-white p-8 shadow-sm">
           {success ? (
             <div className="text-center">
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-green-100">
@@ -103,16 +107,16 @@ function ResetPasswordContent() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h2 className="mt-4 text-lg font-semibold text-gray-900">Password updated!</h2>
-              <p className="mt-2 text-sm text-gray-500">
+              <h2 className="mt-4 text-lg font-semibold text-tp-black">Password updated!</h2>
+              <p className="mt-2 text-sm text-tp-muted">
                 Your password has been reset. Redirecting you to the dashboard...
               </p>
             </div>
           ) : !sessionReady ? (
             <div className="text-center">
               <div className="mx-auto h-8 w-8 animate-spin rounded-full border-2 border-tp-black border-t-transparent" />
-              <p className="mt-4 text-sm text-gray-500">Verifying your reset link...</p>
-              <p className="mt-2 text-xs text-gray-400">
+              <p className="mt-4 text-sm text-tp-muted">Verifying your reset link...</p>
+              <p className="mt-2 text-xs text-tp-muted">
                 If this takes too long, try{' '}
                 <Link href="/auth/forgot-password" className="text-tp-bronze-ink hover:text-tp-bronze">
                   requesting a new link
@@ -122,14 +126,14 @@ function ResetPasswordContent() {
             </div>
           ) : (
             <>
-              <h2 className="text-lg font-semibold text-gray-900">Set new password</h2>
-              <p className="mt-1 text-sm text-gray-500">
+              <h2 className="text-lg font-semibold text-tp-black">Set new password</h2>
+              <p className="mt-1 text-sm text-tp-muted">
                 Enter your new password below.
               </p>
 
               <form onSubmit={handleSubmit} className="mt-6 space-y-4">
                 <div>
-                  <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="password" className="block text-sm font-medium text-tp-ink mb-1">
                     New password
                   </label>
                   <input
@@ -139,13 +143,13 @@ function ResetPasswordContent() {
                     minLength={8}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="block w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
+                    className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-tp-ink placeholder-gray-400 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
                     placeholder="At least 8 characters"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="confirm" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="confirm" className="block text-sm font-medium text-tp-ink mb-1">
                     Confirm password
                   </label>
                   <input
@@ -155,7 +159,7 @@ function ResetPasswordContent() {
                     minLength={8}
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
-                    className="block w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
+                    className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-tp-ink placeholder-gray-400 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
                     placeholder="Repeat your password"
                   />
                 </div>
