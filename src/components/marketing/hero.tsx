@@ -124,7 +124,16 @@ export function Hero() {
               className="flex items-center gap-3 border border-tp-line bg-[#FEFCF8] rounded-xl min-h-[70px] sm:min-h-[84px] p-3 text-left hover:border-tp-bronze-ink transition-colors"
               onClick={() => categoryDialog.current?.close()}
             >
-              <span className="text-3xl flex-shrink-0">{cat.icon}</span>
+              <div className="w-[52px] h-[52px] sm:w-[60px] sm:h-[60px] rounded-lg overflow-hidden flex-shrink-0 bg-gradient-to-br from-tp-beige to-tp-line">
+                <Image
+                  src={`/images/categories/${cat.id}.jpg`}
+                  alt={cat.name}
+                  width={120}
+                  height={120}
+                  className="w-full h-full object-cover"
+                  sizes="60px"
+                />
+              </div>
               <span>
                 <strong className="block text-[13px]">{cat.name}</strong>
                 <small className="text-[10px] sm:text-[11px] text-tp-muted">{cat.tagline}</small>
@@ -171,26 +180,16 @@ function QuickCategories({
             href={`/${cat.slug}`}
             className="group border border-tp-line bg-[#FEFCF8] rounded-xl overflow-hidden flex flex-row lg:flex-col min-h-[69px] lg:min-h-0 items-stretch transition-all duration-150 hover:-translate-y-[3px] hover:border-tp-bronze-ink"
           >
-            {/* Category thumbnail - shows brand asset if available, else gradient placeholder */}
+            {/* Category thumbnail */}
             <div className="w-[59px] lg:w-full h-[69px] lg:h-[98px] bg-gradient-to-br from-tp-beige to-tp-line flex-shrink-0 overflow-hidden">
-              {cat.id === 'headshots' && (
-                <Image src="/brand/tailorpic/categories/thumb-headshots.webp" alt="" width={800} height={600} className="w-full h-full object-cover object-[50%_58%]" />
-              )}
-              {cat.id === 'linkedin-team' && (
-                <Image src="/brand/tailorpic/categories/thumb-corporate-team.webp" alt="" width={800} height={600} className="w-full h-full object-cover object-[50%_58%]" />
-              )}
-              {cat.id === 'dating' && (
-                <Image src="/brand/tailorpic/categories/thumb-dating.webp" alt="" width={800} height={600} className="w-full h-full object-cover object-[50%_58%]" />
-              )}
-              {cat.id === 'pet-portraits' && (
-                <Image src="/brand/tailorpic/categories/thumb-pets.webp" alt="" width={800} height={600} className="w-full h-full object-cover object-[50%_58%]" />
-              )}
-              {cat.id === 'ecommerce-product' && (
-                <Image src="/brand/tailorpic/categories/thumb-product-photography.webp" alt="" width={800} height={600} className="w-full h-full object-cover object-[50%_58%]" />
-              )}
-              {cat.id === 'family-portraits' && (
-                <Image src="/brand/tailorpic/categories/thumb-family.webp" alt="" width={800} height={600} className="w-full h-full object-cover object-[50%_58%]" />
-              )}
+              <Image
+                src={`/images/categories/${cat.id}.jpg`}
+                alt={cat.name}
+                width={800}
+                height={600}
+                className="w-full h-full object-cover"
+                sizes="(max-width: 1024px) 59px, 16vw"
+              />
             </div>
             <span className="flex items-center justify-between gap-1.5 px-2 py-2 lg:px-3 lg:py-3 text-[11px] font-semibold flex-1 min-h-0 lg:min-h-[52px]">
               <span className="max-w-[calc(100%-16px)]">{cat.shortName}</span>
