@@ -103,6 +103,14 @@ export function Footer() {
             </h3>
             <ul className="space-y-2.5">
               <li>
+                <Link
+                  href="/about"
+                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
                 <a
                   href="/#how-it-works"
                   className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
@@ -119,12 +127,20 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href={`mailto:${siteConfig.supportEmail}`}
+                <Link
+                  href="/blog"
+                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
                   className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
                 >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
