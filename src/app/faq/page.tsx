@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { FAQ } from '@/components/marketing/faq';
+import { FAQ, faqs } from '@/components/marketing/faq';
 import { siteConfig } from '@/config/site';
 import { FAQSchema } from '@/components/structured-data';
 
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function FAQPage() {
   return (
     <main className="min-h-screen">
-      <FAQSchema />
+      <FAQSchema items={faqs.map(f => ({ question: f.question, answer: f.answer }))} />
       <Header />
 
       {/* Hero */}

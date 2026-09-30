@@ -9,7 +9,7 @@ const navLinks = [
   { label: 'Photo Types', href: '/#categories', isButton: true },
   { label: 'How It Works', href: '/#how-it-works' },
   { label: 'Examples', href: '/#examples' },
-  { label: 'Pricing', href: '/#pricing' },
+  { label: 'Pricing', href: '/pricing' },
 ];
 
 export function Header() {
