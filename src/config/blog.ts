@@ -3595,6 +3595,186 @@ export const blogPosts: BlogPost[] = [
     tags: ['Nonprofit', 'Budget', 'Guide'],
     readingTime: '6 min read',
   },
+  {
+    slug: 'attorney-law-firm-headshots',
+    title: 'Professional Headshots for Lawyers & Attorneys',
+    description: 'How lawyers and attorneys can get polished, trustworthy headshots for firm bios, LinkedIn and directories, with practical tips and AI options.',
+    content: `
+      <h2>Why Headshots Matter in Legal Practice</h2>
+      <p>Clients choose attorneys largely on trust. Before anyone calls your office, they have usually viewed your firm bio, Avvo or Martindale profile and LinkedIn page. Your headshot is the first signal of competence, approachability and judgment.</p>
+      <p>An outdated or casual photo can quietly undermine a strong track record. A current, professional portrait tells prospective clients that you pay attention to detail, which is exactly what they want from counsel.</p>
+
+      <h2>What a Great Lawyer Headshot Looks Like</h2>
+      <p>The best legal headshots balance authority with warmth. Aim for a confident, relaxed expression, a slight smile and eye contact with the camera. Avoid stern, arms-crossed poses that feel intimidating, especially for family law, estate planning or personal injury practices.</p>
+      <ul>
+        <li>Wear a well-fitted suit or blazer in a solid, muted color</li>
+        <li>Choose a neutral or softly blurred office background</li>
+        <li>Keep lighting even, with no harsh shadows across the face</li>
+        <li>Crop from mid-chest up so your face stays clear at thumbnail size</li>
+      </ul>
+
+      <h2>Matching Your Photo to Your Practice Area</h2>
+      <p>A corporate litigator and a child advocacy attorney may want different tones. Corporate and finance lawyers usually lean formal with dark suits and neutral backgrounds. Public interest, immigration and family lawyers often benefit from warmer tones and a more approachable expression.</p>
+      <p>Our guide to <a href="/blog/best-headshot-backgrounds-by-industry">backgrounds by industry</a> and the <a href="/blog/what-to-wear-for-headshots">what to wear guide</a> can help you decide.</p>
+
+      <h2>Keeping the Whole Firm Consistent</h2>
+      <p>Firm websites look unprofessional when attorney photos vary wildly in lighting, framing and color. Partners, associates and staff should share the same background style and crop. This is where AI headshots shine, since everyone can submit selfies and receive matching results without scheduling a shoot around court calendars.</p>
+      <p>Read our <a href="/blog/team-headshot-consistency-guide">team consistency guide</a> for a simple framework.</p>
+
+      <h2>Getting Yours Done Quickly</h2>
+      <p>Traditional sessions can cost several hundred dollars per attorney and take weeks to deliver. With the <a href="/editor">TailorPic AI Photo Editor</a>, upload a few clear selfies, choose a professional style and receive polished portraits within hours. Review the results carefully to make sure they remain an accurate likeness, since honesty matters in legal marketing.</p>
+      <p>Update your firm bio, LinkedIn and bar association directory listings at the same time so your professional image is consistent everywhere. Learn more on our <a href="/">homepage</a>.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-01-22',
+    tags: ['Legal', 'Professional', 'Guide'],
+    readingTime: '7 min read',
+  },
+  {
+    slug: 'startup-team-photos',
+    title: 'Building Your Startup Team Page: Headshot Guide',
+    description: 'Create a startup team page that builds investor and customer trust with consistent, authentic headshots, without a costly photo shoot or delays.',
+    content: `
+      <h2>Your Team Page Is a Trust Signal</h2>
+      <p>Investors, candidates and early customers all check your team page. For a young company with limited track record, the people are the product. Clear, consistent headshots show that there is a real, capable team behind the idea.</p>
+      <p>Mismatched selfies, cropped vacation photos and missing images do the opposite. They suggest a company that has not sweated the details.</p>
+
+      <h2>Pick a Visual Style That Fits Your Brand</h2>
+      <p>Decide on the personality of your brand first. A fintech startup may want clean, neutral backgrounds and business casual attire. A creative or consumer brand can use brighter colors and relaxed expressions. What matters is that every photo follows the same rules.</p>
+      <ul>
+        <li>One background color or treatment for everyone</li>
+        <li>Same crop and framing, with faces at a similar size</li>
+        <li>A shared dress guideline such as smart casual, solid colors</li>
+        <li>Consistent lighting direction and warmth</li>
+      </ul>
+
+      <h2>Handling a Fast-Growing Team</h2>
+      <p>Startups hire constantly, and traditional photo shoots do not keep pace. By the time you book a photographer, two new hires have joined and one person has left. AI headshots let each person contribute selfies on their own schedule while still matching the existing look.</p>
+      <p>See our <a href="/blog/startup-team-branding-photos">startup branding photos article</a> and <a href="/blog/startup-founder-personal-branding-ai-photos">founder personal branding guide</a> for more ideas.</p>
+
+      <h2>Founders and Leadership Need Extra Polish</h2>
+      <p>Founder photos appear in press kits, pitch decks, podcast listings and conference programs. They deserve a little more care than the rest of the team. Pair them with a strong bio and make sure the same image is used across LinkedIn, Crunchbase and your website.</p>
+      <p>Our <a href="/blog/executive-headshot-guide">executive headshot guide</a> covers posing and wardrobe in detail.</p>
+
+      <h2>A Practical Rollout Plan</h2>
+      <p>Send a short instruction sheet asking everyone for three to five well-lit selfies with a plain background. Have each person upload them to the <a href="/editor">TailorPic editor</a>, choose the agreed style and share their favorite result. Collect the finals in a shared folder and update your site, deck and social profiles in one go.</p>
+      <p>Repeat the process for each new hire during onboarding so your team page never falls out of date. Start at <a href="/">tailorpic.com</a>.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-01-24',
+    tags: ['Startup', 'Teams', 'Branding'],
+    readingTime: '6 min read',
+  },
+  {
+    slug: 'headshot-mistakes-to-avoid',
+    title: "Headshot Dos and Don'ts: Common Mistakes to Avoid",
+    description: 'Avoid the most common headshot mistakes, from bad lighting to over-retouching, and follow simple dos that make your photo look professional.',
+    content: `
+      <h2>Why Small Mistakes Cost You</h2>
+      <p>People form an impression from a profile photo in a fraction of a second. A single distracting detail, such as a cluttered background or a forced expression, can change how recruiters, clients and colleagues perceive you. The good news is that most mistakes are easy to fix.</p>
+
+      <h2>The Dos</h2>
+      <p>Start with the fundamentals. Good headshots share a handful of traits regardless of industry, and getting these right matters more than expensive equipment.</p>
+      <ul>
+        <li>Do use soft, even light, ideally facing a window</li>
+        <li>Do keep the background simple and uncluttered</li>
+        <li>Do wear solid colors that contrast with the background</li>
+        <li>Do look at the camera with a relaxed, genuine expression</li>
+        <li>Do update your photo every two to three years</li>
+      </ul>
+
+      <h2>The Don'ts</h2>
+      <p>The most frequent errors are avoidable. Cropped-out friends, sunglasses, group photo crops, harsh flash and heavy filters all make a profile look careless.</p>
+      <ul>
+        <li>Don't use selfies taken at arm's length with wide-angle distortion</li>
+        <li>Don't wear busy patterns, large logos or distracting jewelry</li>
+        <li>Don't over-retouch to the point you no longer look like yourself</li>
+        <li>Don't use a photo where you are clearly cropped from a larger shot</li>
+      </ul>
+
+      <h2>Expression and Posing Pitfalls</h2>
+      <p>A stiff, tense face is the top complaint people have about their own headshots. Relax your shoulders, angle your body slightly and think of something genuinely pleasant right before the shot. A gentle smile that reaches the eyes reads as confident and approachable.</p>
+      <p>Our <a href="/blog/headshot-poses-guide">poses guide</a> shows angles that flatter most face shapes.</p>
+
+      <h2>Editing Without Going Overboard</h2>
+      <p>Light cleanup is fine, but avoid airbrushed skin, reshaped features or dramatic color shifts. Clients who meet you in person should recognize you immediately. Read our take on <a href="/blog/headshot-retouching-ethics">retouching ethics</a> and <a href="/blog/headshot-retouching-guide">how to retouch naturally</a>.</p>
+      <p>If you want reliable results without a studio, try the <a href="/editor">TailorPic AI Photo Editor</a>. Upload clear selfies, pick a style and review several options so you can choose the most authentic one. More tips are on our <a href="/">homepage</a>.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-01-26',
+    tags: ['Tips', 'Mistakes', 'Guide'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'ai-headshot-for-actors',
+    title: 'AI Headshots for Actors: What Casting Directors Think',
+    description: 'Can actors use AI headshots? Learn what casting directors expect, where AI helps, and where a traditional session still matters for auditions.',
+    content: `
+      <h2>The Actor's Headshot Is a Business Card</h2>
+      <p>For actors, a headshot is often the only thing a casting director sees before deciding whether to bring you in. Casting professionals may scan hundreds of submissions in minutes, so your photo must look like you, show your essence and suggest the types of roles you can play.</p>
+      <p>That is a high bar, and it is why the question of AI-generated headshots is so sensitive in the acting community.</p>
+
+      <h2>What Casting Directors Care About</h2>
+      <p>The overwhelming message from casting professionals is honesty. They need to know the person who walks into the room matches the picture. Over-processed images, altered features or results that do not resemble your current look are a quick route to lost trust.</p>
+      <ul>
+        <li>The photo must look like you today, not five years ago</li>
+        <li>Eyes should be sharp and expressive</li>
+        <li>Natural skin texture is preferred over heavy retouching</li>
+        <li>Wardrobe and background should not distract from your face</li>
+      </ul>
+
+      <h2>Where AI Headshots Can Help Actors</h2>
+      <p>AI tools are useful for actors in several practical ways. They are a low-cost way to refresh a profile on casting platforms, create social media and website images, or test different looks before investing in a full studio session. Emerging actors on tight budgets can benefit most.</p>
+      <p>See our <a href="/blog/actor-headshot-guide">actor headshot guide</a> for the basics of what makes a strong submission photo.</p>
+
+      <h2>Where a Traditional Session Still Wins</h2>
+      <p>For your primary theatrical or commercial headshot, many casting directors still prefer a session with a photographer who can direct your expression and capture genuine emotion. A skilled photographer draws out subtle character that is hard to reproduce synthetically. Some platforms and unions also have rules about image authenticity, so check the requirements before submitting.</p>
+      <p>A sensible approach is to use both. Invest in a session for your core audition headshot and use AI for supporting images. Our <a href="/blog/ai-headshots-vs-traditional-photography">AI versus traditional photography comparison</a> explains the trade-offs.</p>
+
+      <h2>Tips for Using AI Responsibly</h2>
+      <p>If you use AI for any professional image, upload clear, recent photos and review results critically. Choose the output that most closely reflects how you look in person, and reject anything that changes your features, age or build. Our <a href="/blog/ai-photography-ethics-guide">AI photography ethics guide</a> covers where to draw the line.</p>
+      <p>You can experiment with styles in the <a href="/editor">TailorPic editor</a> at very low cost, and learn more at <a href="/">tailorpic.com</a>.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-01-28',
+    tags: ['Acting', 'Casting', 'AI'],
+    readingTime: '7 min read',
+  },
+  {
+    slug: 'remote-team-headshot-coordination',
+    title: 'Coordinating Headshots for Remote & Hybrid Teams',
+    description: 'A practical playbook for getting consistent, professional headshots from distributed teams without travel, scheduling chaos or inconsistent results.',
+    content: `
+      <h2>The Challenge of Distributed Teams</h2>
+      <p>When your team is spread across cities and time zones, a traditional photo shoot is impractical. Flights are expensive, schedules clash and someone always misses the day. The result is often a patchwork of selfies, old photos and missing faces on your team page and company directory.</p>
+      <p>The good news is that remote-friendly options make consistency achievable for any size of team.</p>
+
+      <h2>Set Clear Standards First</h2>
+      <p>Before anyone takes a photo, publish a one-page guideline. Specify background, framing, attire and file format. The clearer you are, the fewer revisions you will need later.</p>
+      <ul>
+        <li>Preferred style and background for the final images</li>
+        <li>Dress guideline, such as solid colors and no large logos</li>
+        <li>Instructions for source photos: natural light, plain wall, eye level</li>
+        <li>Deadline and where to submit results</li>
+      </ul>
+
+      <h2>Pick a Workflow That Scales</h2>
+      <p>There are three common approaches: local photographers in each city, a virtual photo session over video, or AI headshots generated from selfies. Local photographers give good results but vary in style and are costly to manage. Virtual sessions are cheaper but depend on each person's camera and lighting.</p>
+      <p>AI headshots offer the most control. Everyone uploads selfies once and receives results in the same style. Read about <a href="/blog/virtual-headshots-remote-teams">virtual headshots for remote teams</a> and <a href="/blog/ai-headshots-for-teams-enterprise">enterprise AI headshots</a> for a deeper comparison.</p>
+
+      <h2>Keep Everyone Involved and On Time</h2>
+      <p>Assign one coordinator, typically someone in HR, operations or marketing. Announce the project with a deadline, send reminders and offer a short help channel for questions. Make participation easy, and let people choose between a few approved options for the final image.</p>
+      <p>Be mindful of comfort and privacy. Some employees may prefer not to share photos, so provide an opt-out and explain how images will be used. Our <a href="/blog/ai-headshot-privacy-security">privacy and security guide</a> covers what to ask any provider.</p>
+
+      <h2>Onboarding and Ongoing Updates</h2>
+      <p>Headshots should not be a one-time project. Add a photo step to your onboarding checklist so every new hire receives the same instructions and style from day one. Refresh photos every couple of years, or whenever your branding changes.</p>
+      <p>With the <a href="/editor">TailorPic editor</a>, teammates anywhere can upload selfies and get consistent, professional portraits within hours. For more on keeping a unified look, see our <a href="/blog/team-headshot-consistency-guide">consistency guide</a> and <a href="/">home page</a>.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-01-30',
+    tags: ['Remote Work', 'Teams', 'Coordination'],
+    readingTime: '6 min read',
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
