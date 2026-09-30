@@ -2,12 +2,13 @@ import type { Metadata } from 'next';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Pricing } from '@/components/marketing/pricing';
+import { CreditPackages } from '@/components/marketing/credit-packages';
 import { FAQ } from '@/components/marketing/faq';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
   title: 'Pricing',
-  description: `${siteConfig.name} pricing plans — professional AI photos starting under $30. Choose from 11 categories with packages to fit every budget.`,
+  description: `${siteConfig.name} pricing plans — AI photos from $7.90. Choose single packages across 11 categories or save up to 52% with annual credit packs.`,
   alternates: { canonical: '/pricing' },
   openGraph: {
     title: `Pricing | ${siteConfig.name}`,
@@ -41,6 +42,17 @@ export default function PricingPage() {
       </section>
 
       <Pricing />
+
+      {/* Divider */}
+      <div className="mx-auto max-w-5xl px-4">
+        <div className="flex items-center gap-4">
+          <div className="h-px flex-1 bg-tp-line" />
+          <span className="text-sm font-medium text-tp-muted">or save with credits</span>
+          <div className="h-px flex-1 bg-tp-line" />
+        </div>
+      </div>
+
+      <CreditPackages />
 
       {/* Money-back guarantee */}
       <section className="py-12">

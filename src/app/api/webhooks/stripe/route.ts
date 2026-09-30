@@ -6,6 +6,7 @@ import { stripe } from '@/lib/stripe';
 import { PACKAGES, type PackageId } from '@/config/packages';
 import { getCategoryById, getPackageById, type CategoryId } from '@/config/categories';
 import { siteConfig } from '@/config/site';
+import { buildOrderConfirmationEmail } from '@/lib/emails';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
@@ -89,20 +90,20 @@ export async function POST(request: NextRequest) {
 
         if (customerEmail) {
           try {
+            const { subject, html } = buildOrderConfirmationEmail({
+              categoryName,
+              packageName: pkgName,
+              outputCount,
+              outputLabel,
+              features,
+              orderId,
+            });
+
             await resend.emails.send({
               from: `${siteConfig.name} <noreply@${new URL(siteConfig.url).hostname}>`,
               to: customerEmail,
-              subject: `Order confirmed — ${categoryName} ${pkgName} Package`,
-              html: `
-                <h2>Thank you for your purchase!</h2>
-                <p>Your <strong>${categoryName} — ${pkgName}</strong> package has been confirmed.</p>
-                <p>You can now upload your photos to start generating your ${outputLabel}.</p>
-                <ul>
-                  <li>${outputCount} ${outputLabel}</li>
-                  ${features.map((f) => `<li>${f}</li>`).join('')}
-                </ul>
-                <p><a href="${siteConfig.url}/dashboard/upload?orderId=${orderId}">Upload your photos now</a></p>
-              `,
+              subject,
+              html,
             });
           } catch (emailError) {
             console.error('Failed to send confirmation email:', emailError);

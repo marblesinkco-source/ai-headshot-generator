@@ -64,6 +64,14 @@ export const CATEGORIES: Record<CategoryId, Category> = {
     outputLabel: 'headshots',
     packages: [
       {
+        id: 'headshots-express',
+        name: 'Express',
+        price: 990,
+        currency: 'usd',
+        outputCount: 4,
+        features: ['1 background', '1 style', 'HD resolution', 'Try before you commit'],
+      },
+      {
         id: 'headshots-starter',
         name: 'Starter',
         price: 2900,
@@ -112,6 +120,14 @@ export const CATEGORIES: Record<CategoryId, Category> = {
     outputLabel: 'photos',
     packages: [
       {
+        id: 'dating-express',
+        name: 'Express',
+        price: 990,
+        currency: 'usd',
+        outputCount: 4,
+        features: ['1 scene style', 'Natural lighting', 'HD resolution', 'Try before you commit'],
+      },
+      {
         id: 'dating-basic',
         name: 'Basic',
         price: 1900,
@@ -159,6 +175,14 @@ export const CATEGORIES: Record<CategoryId, Category> = {
     maxPhotos: 10,
     outputLabel: 'portraits',
     packages: [
+      {
+        id: 'pet-express',
+        name: 'Express',
+        price: 790,
+        currency: 'usd',
+        outputCount: 4,
+        features: ['1 art style', 'Digital delivery', 'HD resolution', 'Try before you commit'],
+      },
       {
         id: 'pet-basic',
         name: 'Basic',
@@ -213,7 +237,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
         price: 9900,
         currency: 'usd',
         outputCount: 200,
-        features: ['Up to 5 members', '40 headshots each', 'Consistent style', 'HD resolution'],
+        features: ['Up to 5 members', '~$19/person', '40 headshots each', 'Consistent style', 'HD resolution'],
       },
       {
         id: 'team-medium',
@@ -221,7 +245,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
         price: 24900,
         currency: 'usd',
         outputCount: 600,
-        features: ['Up to 15 members', '40 headshots each', 'Brand color matching', '4K resolution'],
+        features: ['Up to 15 members', '~$16/person', '40 headshots each', 'Brand color matching', '4K resolution'],
         recommended: true,
       },
       {
@@ -230,7 +254,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
         price: 59900,
         currency: 'usd',
         outputCount: 2000,
-        features: ['Up to 50 members', '40 headshots each', 'Brand kit integration', '4K resolution', 'Account manager'],
+        features: ['Up to 50 members', '~$12/person', '40 headshots each', 'Brand kit integration', '4K resolution', 'Account manager'],
       },
     ],
     promptTemplate: 'A professional corporate headshot photograph with consistent {background_prompt}. {style_prompt}. Uniform lighting, matching color tone and style across all portraits.',
@@ -255,6 +279,14 @@ export const CATEGORIES: Record<CategoryId, Category> = {
     maxPhotos: 3,
     outputLabel: 'designs',
     packages: [
+      {
+        id: 'babyshower-express',
+        name: 'Express',
+        price: 790,
+        currency: 'usd',
+        outputCount: 4,
+        features: ['1 design theme', 'Digital download', 'HD resolution', 'Try before you commit'],
+      },
       {
         id: 'babyshower-basic',
         name: 'Basic',
@@ -303,6 +335,14 @@ export const CATEGORIES: Record<CategoryId, Category> = {
     maxPhotos: 8,
     outputLabel: 'photos',
     packages: [
+      {
+        id: 'grad-express',
+        name: 'Express',
+        price: 990,
+        currency: 'usd',
+        outputCount: 4,
+        features: ['1 academic setting', 'Cap & gown', 'HD resolution', 'Try before you commit'],
+      },
       {
         id: 'grad-basic',
         name: 'Basic',
@@ -447,6 +487,14 @@ export const CATEGORIES: Record<CategoryId, Category> = {
     maxPhotos: 10,
     outputLabel: 'photos',
     packages: [
+      {
+        id: 'couple-express',
+        name: 'Express',
+        price: 990,
+        currency: 'usd',
+        outputCount: 4,
+        features: ['1 romantic setting', 'HD resolution', 'Digital delivery', 'Try before you commit'],
+      },
       {
         id: 'couple-basic',
         name: 'Basic',

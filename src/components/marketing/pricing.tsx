@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Check } from 'lucide-react';
+import { Check, Zap } from 'lucide-react';
 import { getActiveCategories, type Category } from '@/config/categories';
 import { formatPrice } from '@/lib/utils';
 import { cn } from '@/lib/utils';
@@ -13,7 +13,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 const categories = getActiveCategories();
 
 // Show a curated set of categories as tabs, defaulting to headshots
-const FEATURED_CATEGORIES = ['headshots', 'linkedin', 'dating', 'pets', 'family'];
+const FEATURED_CATEGORIES = ['headshots', 'linkedin-team', 'dating', 'pet-portraits', 'family-portraits'];
 
 export function Pricing() {
   const featured = categories.filter((c) => FEATURED_CATEGORIES.includes(c.id));
@@ -22,6 +22,7 @@ export function Pricing() {
   );
 
   const packages = activeCategory.packages;
+  const hasExpress = packages.length >= 4;
 
   return (
     <section id="pricing" className="relative bg-tp-paper/40 py-24 sm:py-32">
@@ -65,24 +66,41 @@ export function Pricing() {
 
         {/* Cards */}
         <div className={cn(
-          'mt-12 grid gap-8',
-          packages.length === 3 ? 'lg:grid-cols-3' : packages.length === 2 ? 'lg:grid-cols-2 max-w-3xl mx-auto' : 'max-w-md mx-auto'
+          'mt-12 grid gap-6',
+          packages.length >= 4
+            ? 'lg:grid-cols-4'
+            : packages.length === 3
+              ? 'lg:grid-cols-3'
+              : packages.length === 2
+                ? 'lg:grid-cols-2 max-w-3xl mx-auto'
+                : 'max-w-md mx-auto'
         )}>
-          {packages.map((pkg, index) => {
-            const isPopular = index === 1 && packages.length >= 3;
+          {packages.map((pkg) => {
+            const isRecommended = pkg.recommended === true;
+            const isExpress = pkg.name === 'Express';
 
             return (
               <Card
                 key={pkg.id}
                 className={cn(
                   'relative flex flex-col',
-                  isPopular &&
-                    'border-tp-bronze/50 shadow-lg shadow-tp-bronze/10 ring-1 ring-tp-bronze/30 scale-[1.02] lg:scale-105'
+                  isRecommended &&
+                    'border-tp-bronze/50 shadow-lg shadow-tp-bronze/10 ring-1 ring-tp-bronze/30 scale-[1.02] lg:scale-105',
+                  isExpress &&
+                    'border-dashed border-tp-bronze/30'
                 )}
               >
-                {isPopular && (
+                {isRecommended && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                     <Badge>Most Popular</Badge>
+                  </div>
+                )}
+                {isExpress && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <Badge variant="outline" className="border-tp-bronze/50 bg-white text-tp-bronze-ink">
+                      <Zap className="mr-1 h-3 w-3" />
+                      Quick Try
+                    </Badge>
                   </div>
                 )}
 
@@ -92,7 +110,10 @@ export function Pricing() {
                   </CardTitle>
 
                   <div className="mt-4 flex items-baseline gap-1">
-                    <span className="text-4xl font-extrabold tracking-tight text-tp-black">
+                    <span className={cn(
+                      'font-extrabold tracking-tight text-tp-black',
+                      isExpress ? 'text-3xl' : 'text-4xl'
+                    )}>
                       {formatPrice(pkg.price)}
                     </span>
                     <span className="text-sm text-tp-muted">one-time</span>
@@ -132,10 +153,10 @@ export function Pricing() {
                 <CardFooter>
                   <Link href={`/auth/login?redirect=/${activeCategory.slug}`} className="w-full">
                     <Button
-                      variant={isPopular ? 'primary' : 'outline'}
-                      className="w-full"
+                      variant={isRecommended ? 'primary' : 'outline'}
+                      className={cn('w-full', isExpress && 'border-tp-bronze/50 text-tp-bronze-ink hover:bg-tp-bronze/5')}
                     >
-                      Get Started
+                      {isExpress ? 'Try It' : 'Get Started'}
                     </Button>
                   </Link>
                 </CardFooter>
@@ -144,8 +165,16 @@ export function Pricing() {
           })}
         </div>
 
+        {/* Express upsell hint */}
+        {hasExpress && (
+          <p className="mt-6 text-center text-sm text-tp-muted">
+            <Zap className="mr-1 inline h-3.5 w-3.5 text-tp-bronze" />
+            Start with Express to preview your results, then upgrade anytime.
+          </p>
+        )}
+
         {/* Trust line */}
-        <p className="mt-12 text-center text-sm text-tp-muted">
+        <p className="mt-8 text-center text-sm text-tp-muted">
           Secure payment via Stripe. 100% satisfaction guaranteed or your money back.
         </p>
       </div>
