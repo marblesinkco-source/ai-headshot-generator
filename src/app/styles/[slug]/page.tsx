@@ -17,6 +17,9 @@ import { BreadcrumbSchema } from '@/components/structured-data';
 import { getPhotoStyle, getAllPhotoStyles } from '@/config/styles';
 import { getCategoryBySlug } from '@/config/categories';
 import { getBlogPost } from '@/config/blog';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { RelatedLinks } from '@/components/related-links';
+import { getRelatedStyles } from '@/lib/internal-links';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -36,13 +39,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description: style.metaDescription,
     alternates: { canonical: `/styles/${style.slug}` },
-    openGraph: {
-      title,
+    openGraph: generateOGMetadata({
+      title: style.name,
       description: style.metaDescription,
-      url: `${siteConfig.url}/styles/${style.slug}`,
-      siteName: siteConfig.name,
-      type: 'website',
-    },
+      type: 'style',
+      path: `/styles/${style.slug}`,
+    }),
+    twitter: generateTwitterMetadata({
+      title: style.name,
+      description: style.metaDescription,
+      type: 'style',
+    }),
   };
 }
 
@@ -57,6 +64,8 @@ export default async function StylePage({ params }: Props) {
   const posts = style.relatedBlogPosts
     .map((s) => getBlogPost(s))
     .filter((p): p is NonNullable<typeof p> => Boolean(p));
+
+  const relatedStyles = getRelatedStyles(slug);
 
   const productJsonLd = {
     '@context': 'https://schema.org',
@@ -262,6 +271,10 @@ export default async function StylePage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {relatedStyles.length > 0 && (
+        <RelatedLinks links={relatedStyles} title="Explore More Styles" />
+      )}
 
       <Footer />
     </main>

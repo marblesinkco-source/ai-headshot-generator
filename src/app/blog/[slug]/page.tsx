@@ -6,6 +6,7 @@ import { Footer } from '@/components/marketing/footer';
 import { siteConfig } from '@/config/site';
 import { getBlogPost, getAllBlogPosts } from '@/config/blog';
 import { ArticleSchema, BreadcrumbSchema } from '@/components/structured-data';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 function getRelatedPosts(currentSlug: string, currentTags: string[], count = 3) {
@@ -39,15 +40,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: post.title,
     description: post.description,
     alternates: { canonical: `/blog/${post.slug}` },
-    openGraph: {
-      title: `${post.title} | ${siteConfig.name}`,
+    openGraph: generateOGMetadata({
+      title: post.title,
       description: post.description,
-      url: `${siteConfig.url}/blog/${post.slug}`,
-      type: 'article',
-      publishedTime: post.publishedAt,
-      modifiedTime: post.updatedAt || post.publishedAt,
-      authors: [post.author],
-    },
+      type: 'blog',
+      path: `/blog/${post.slug}`,
+    }),
+    twitter: generateTwitterMetadata({
+      title: post.title,
+      description: post.description,
+      type: 'blog',
+    }),
   };
 }
 

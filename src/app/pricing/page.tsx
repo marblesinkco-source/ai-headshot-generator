@@ -4,18 +4,30 @@ import { Footer } from '@/components/marketing/footer';
 import { Pricing } from '@/components/marketing/pricing';
 import { CreditPackages } from '@/components/marketing/credit-packages';
 import { FAQ } from '@/components/marketing/faq';
+import { TrustBar } from '@/components/marketing/trust-bar';
+import { CostCalculator } from '@/components/marketing/cost-calculator';
+import { PricingPsychology } from '@/components/marketing/pricing-psychology';
+import { GuaranteeBadge } from '@/components/marketing/guarantee-badge';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
+
+const OG_DESCRIPTION =
+  'Affordable AI photo packages for every need. Professional headshots, dating photos, pet portraits and more.';
 
 export const metadata: Metadata = {
   title: 'Pricing',
   description: `${siteConfig.name} pricing plans — AI photos from $9.90. Choose single packages across 11 categories or save up to 52% with annual credit packs.`,
   alternates: { canonical: '/pricing' },
-  openGraph: {
+  openGraph: generateOGMetadata({
     title: `Pricing | ${siteConfig.name}`,
-    description: `Affordable AI photo packages for every need. Professional headshots, dating photos, pet portraits and more.`,
-    url: `${siteConfig.url}/pricing`,
-  },
+    description: OG_DESCRIPTION,
+    path: '/pricing',
+  }),
+  twitter: generateTwitterMetadata({
+    title: `Pricing | ${siteConfig.name}`,
+    description: OG_DESCRIPTION,
+  }),
 };
 
 export default function PricingPage() {
@@ -48,6 +60,8 @@ export default function PricingPage() {
         </div>
       </section>
 
+      <TrustBar />
+
       <Pricing />
 
       {/* Divider */}
@@ -61,16 +75,18 @@ export default function PricingPage() {
 
       <CreditPackages />
 
+      <CostCalculator />
+
+      <section className="pb-8">
+        <div className="mx-auto max-w-sm px-4 sm:px-6 lg:px-8">
+          <PricingPsychology mostPopular={true} />
+        </div>
+      </section>
+
       {/* Money-back guarantee */}
       <section className="py-12">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="rounded-2xl border border-green-200 bg-green-50/50 p-8">
-            <p className="text-lg font-semibold text-tp-black">100% Money-Back Guarantee</p>
-            <p className="mt-2 text-sm text-tp-muted">
-              Not happy with your photos? Get a full refund within 14 days, no questions asked.
-              We are confident you will love the results.
-            </p>
-          </div>
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <GuaranteeBadge variant="card" />
         </div>
       </section>
 
