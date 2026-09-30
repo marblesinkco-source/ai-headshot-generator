@@ -1,7 +1,7 @@
 /**
  * TailorPic - Supabase Database type definitions.
  *
- * These types mirror the schema defined in migrations 001–003.
+ * These types mirror the schema defined in migrations 001–004.
  *
  * To regenerate from a live database, run:
  *   npx supabase gen types typescript --project-id <ref> > src/types/database.ts
@@ -75,12 +75,15 @@ export interface Database {
           trigger_word: string | null;
           lora_url: string | null;
           started_at: string | null;
+          // Migration 004 — Credits system
+          upgrade_email_sent: string | null;
+          order_type: 'category' | 'credits';
         };
         Insert: {
           id: string;
           user_id: string;
           package_id: string;
-          category_id: CategoryId;
+          category_id: CategoryId | 'credits';
           status?: OrderStatus;
           stripe_session_id?: string | null;
           stripe_payment_intent?: string | null;
@@ -95,12 +98,14 @@ export interface Database {
           trigger_word?: string | null;
           lora_url?: string | null;
           started_at?: string | null;
+          upgrade_email_sent?: string | null;
+          order_type?: 'category' | 'credits';
         };
         Update: {
           id?: string;
           user_id?: string;
           package_id?: string;
-          category_id?: CategoryId;
+          category_id?: CategoryId | 'credits';
           status?: OrderStatus;
           stripe_session_id?: string | null;
           stripe_payment_intent?: string | null;
@@ -115,6 +120,8 @@ export interface Database {
           trigger_word?: string | null;
           lora_url?: string | null;
           started_at?: string | null;
+          upgrade_email_sent?: string | null;
+          order_type?: 'category' | 'credits';
         };
       };
       uploaded_photos: {
@@ -143,6 +150,83 @@ export interface Database {
           original_filename?: string;
           file_size?: number;
           mime_type?: string;
+          created_at?: string;
+        };
+      };
+      user_credits: {
+        Row: {
+          id: string;
+          user_id: string;
+          order_id: string;
+          package_id: string;
+          total_credits: number;
+          used_credits: number;
+          remaining_credits: number; // generated column
+          purchased_at: string;
+          expires_at: string;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id: string;
+          user_id: string;
+          order_id: string;
+          package_id: string;
+          total_credits: number;
+          used_credits?: number;
+          purchased_at?: string;
+          expires_at: string;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          order_id?: string;
+          package_id?: string;
+          total_credits?: number;
+          used_credits?: number;
+          purchased_at?: string;
+          expires_at?: string;
+          created_at?: string;
+          updated_at?: string;
+        };
+      };
+      credit_transactions: {
+        Row: {
+          id: string;
+          user_id: string;
+          credit_id: string;
+          order_id: string | null;
+          type: 'purchase' | 'use' | 'refund' | 'expire';
+          amount: number;
+          balance_after: number;
+          category_id: string | null;
+          description: string | null;
+          created_at: string;
+        };
+        Insert: {
+          id: string;
+          user_id: string;
+          credit_id: string;
+          order_id?: string | null;
+          type: 'purchase' | 'use' | 'refund' | 'expire';
+          amount: number;
+          balance_after: number;
+          category_id?: string | null;
+          description?: string | null;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          credit_id?: string;
+          order_id?: string | null;
+          type?: 'purchase' | 'use' | 'refund' | 'expire';
+          amount?: number;
+          balance_after?: number;
+          category_id?: string | null;
+          description?: string | null;
           created_at?: string;
         };
       };

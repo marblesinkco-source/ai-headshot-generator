@@ -5,8 +5,10 @@ import { Resend } from 'resend';
 import { stripe } from '@/lib/stripe';
 import { PACKAGES, type PackageId } from '@/config/packages';
 import { getCategoryById, getPackageById, type CategoryId } from '@/config/categories';
+import { CREDIT_PACKAGES } from '@/config/credits';
 import { siteConfig } from '@/config/site';
 import { buildOrderConfirmationEmail } from '@/lib/emails';
+import { nanoid } from 'nanoid';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
@@ -76,11 +78,84 @@ export async function POST(request: NextRequest) {
           );
         }
 
+        const orderType = session.metadata?.orderType;
         const categoryId = (session.metadata?.categoryId || 'headshots') as CategoryId;
+        const customerEmail = session.customer_email || session.customer_details?.email;
+
+        // ── Credit package purchase ──────────────────────────────────
+        if (orderType === 'credits') {
+          const creditCount = parseInt(session.metadata?.creditCount || '0', 10);
+          const validityDays = parseInt(session.metadata?.validityDays || '365', 10);
+          const creditPkg = CREDIT_PACKAGES.find((p) => p.id === packageId);
+
+          if (creditCount > 0) {
+            const creditId = nanoid();
+            const expiresAt = new Date(Date.now() + validityDays * 24 * 60 * 60 * 1000).toISOString();
+
+            // Create credit balance
+            const { error: creditError } = await supabase
+              .from('user_credits')
+              .insert({
+                id: creditId,
+                user_id: userId,
+                order_id: orderId,
+                package_id: packageId,
+                total_credits: creditCount,
+                used_credits: 0,
+                purchased_at: new Date().toISOString(),
+                expires_at: expiresAt,
+              });
+
+            if (creditError) {
+              console.error('Failed to create credits:', creditError);
+            }
+
+            // Record purchase transaction
+            await supabase
+              .from('credit_transactions')
+              .insert({
+                id: nanoid(),
+                user_id: userId,
+                credit_id: creditId,
+                order_id: orderId,
+                type: 'purchase',
+                amount: creditCount,
+                balance_after: creditCount,
+                description: `Purchased ${creditPkg?.name || packageId}`,
+              });
+          }
+
+          // Send confirmation email for credits
+          if (customerEmail) {
+            try {
+              const pkgName = creditPkg?.name || 'Credit Pack';
+              const { subject, html } = buildOrderConfirmationEmail({
+                categoryName: 'Credit Pack',
+                packageName: pkgName,
+                outputCount: creditCount,
+                outputLabel: 'credits',
+                features: creditPkg?.features || [`${creditCount} credits`, 'All categories', '12 months validity'],
+                orderId,
+              });
+
+              await resend.emails.send({
+                from: `${siteConfig.name} <noreply@${new URL(siteConfig.url).hostname}>`,
+                to: customerEmail,
+                subject,
+                html,
+              });
+            } catch (emailError) {
+              console.error('Failed to send credit confirmation email:', emailError);
+            }
+          }
+
+          break;
+        }
+
+        // ── Category package purchase ────────────────────────────────
         const category = getCategoryById(categoryId);
         const catPkg = category ? getPackageById(categoryId, packageId) : null;
         const legacyPkg = PACKAGES[packageId as PackageId];
-        const customerEmail = session.customer_email || session.customer_details?.email;
 
         const pkgName = catPkg?.name || legacyPkg?.name || packageId;
         const categoryName = category?.name || 'AI Photos';

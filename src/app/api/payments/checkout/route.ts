@@ -5,10 +5,18 @@ import { createClient } from '@/lib/supabase/server';
 import { stripe } from '@/lib/stripe';
 import { PACKAGES, type PackageId } from '@/config/packages';
 import { getCategoryById, getPackageById, type CategoryId } from '@/config/categories';
+import { CREDIT_PACKAGES } from '@/config/credits';
 import { siteConfig } from '@/config/site';
 
-// Support both legacy package-only checkout and new category+package checkout
+// Support category checkout, legacy checkout, and credit package checkout
 const checkoutSchema = z.union([
+  // Credit package checkout
+  z.object({
+    type: z.literal('credits'),
+    creditPackageId: z.string(),
+    successUrl: z.string().url().optional(),
+    cancelUrl: z.string().url().optional(),
+  }),
   // New category-based checkout
   z.object({
     categoryId: z.string(),
@@ -36,10 +44,101 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { packageId, successUrl, cancelUrl } = parsed.data;
-    const categoryId = 'categoryId' in parsed.data ? parsed.data.categoryId : 'headshots';
+    // Auth check
+    const supabase = await createClient();
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser();
 
-    // Resolve package — try new category system first, fall back to legacy
+    if (authError || !user) {
+      return NextResponse.json(
+        { error: 'Authentication required' },
+        { status: 401 }
+      );
+    }
+
+    const baseUrl = siteConfig.url;
+
+    // ─── Credit package checkout ───────────────────────────────────────
+    if ('type' in parsed.data && parsed.data.type === 'credits') {
+      const { creditPackageId, successUrl, cancelUrl } = parsed.data;
+
+      const creditPkg = CREDIT_PACKAGES.find((p) => p.id === creditPackageId);
+      if (!creditPkg) {
+        return NextResponse.json(
+          { error: 'Credit package not found' },
+          { status: 404 }
+        );
+      }
+
+      const orderId = nanoid();
+      const { error: orderError } = await supabase
+        .from('orders')
+        .insert({
+          id: orderId,
+          user_id: user.id,
+          package_id: creditPkg.id,
+          category_id: 'credits',
+          order_type: 'credits',
+          amount: creditPkg.price,
+          currency: creditPkg.currency,
+          headshot_count: creditPkg.credits,
+          output_count: creditPkg.credits,
+          status: 'pending',
+        })
+        .select('id')
+        .single();
+
+      if (orderError) {
+        console.error('Failed to create credit order:', orderError);
+        return NextResponse.json(
+          { error: 'Failed to create order' },
+          { status: 500 }
+        );
+      }
+
+      const checkoutSession = await stripe.checkout.sessions.create({
+        mode: 'payment',
+        customer_email: user.email,
+        line_items: [
+          {
+            price_data: {
+              currency: creditPkg.currency,
+              product_data: {
+                name: `${siteConfig.name} — ${creditPkg.name}`,
+                description: `${creditPkg.credits} credits — use across all categories. Valid for 12 months.`,
+              },
+              unit_amount: creditPkg.price,
+            },
+            quantity: 1,
+          },
+        ],
+        metadata: {
+          orderId,
+          packageId: creditPkg.id,
+          categoryId: 'credits',
+          userId: user.id,
+          orderType: 'credits',
+          creditCount: String(creditPkg.credits),
+          validityDays: String(creditPkg.validityDays),
+        },
+        success_url: successUrl || `${baseUrl}/dashboard/credits?status=success&orderId=${orderId}`,
+        cancel_url: cancelUrl || `${baseUrl}/pricing?status=cancelled`,
+      });
+
+      return NextResponse.json({ url: checkoutSession.url });
+    }
+
+    // ─── Category / Legacy checkout ────────────────────────────────────
+    const { packageId, successUrl, cancelUrl } = parsed.data as {
+      packageId: string;
+      successUrl?: string;
+      cancelUrl?: string;
+      categoryId?: string;
+    };
+    const categoryId = 'categoryId' in parsed.data ? (parsed.data as { categoryId: string }).categoryId : 'headshots';
+
     let pkgName: string;
     let pkgPrice: number;
     let pkgCurrency: string;
@@ -62,7 +161,6 @@ export async function POST(request: NextRequest) {
       outputCount = catPkg.outputCount;
       productDescription = `${catPkg.outputCount} ${category.outputLabel} — ${catPkg.features.slice(0, 3).join(', ')}`;
     } else {
-      // Legacy fallback for old headshot packages
       const legacyPkg = PACKAGES[packageId as PackageId];
       if (!legacyPkg) {
         return NextResponse.json(
@@ -75,19 +173,6 @@ export async function POST(request: NextRequest) {
       pkgCurrency = legacyPkg.currency;
       outputCount = legacyPkg.headshots;
       productDescription = `${legacyPkg.headshots} AI headshots, ${legacyPkg.backgrounds} backgrounds, ${legacyPkg.styles} styles`;
-    }
-
-    const supabase = await createClient();
-    const {
-      data: { user },
-      error: authError,
-    } = await supabase.auth.getUser();
-
-    if (authError || !user) {
-      return NextResponse.json(
-        { error: 'Authentication required' },
-        { status: 401 }
-      );
     }
 
     const orderId = nanoid();
@@ -115,7 +200,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const baseUrl = siteConfig.url;
     const categoryLabel = category ? category.name : 'AI Headshots';
 
     const checkoutSession = await stripe.checkout.sessions.create({
