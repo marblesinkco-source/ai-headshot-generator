@@ -26,7 +26,7 @@ interface TemplateDefinition {
 
 const TEMPLATES: Record<string, TemplateDefinition> = {
   "order-confirmation": {
-    subject: () => "Your headshot order has been received!",
+    subject: () => "Your TailorPic order has been received!",
     html: (data) => `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
         <h1 style="color: #1a1a1a;">Order Confirmed</h1>
@@ -35,74 +35,78 @@ const TEMPLATES: Record<string, TemplateDefinition> = {
         <div style="background: #f5f5f5; padding: 16px; border-radius: 8px; margin: 24px 0;">
           <p style="margin: 0;"><strong>Order ID:</strong> ${data.orderId}</p>
           <p style="margin: 8px 0 0;"><strong>Package:</strong> ${data.packageName}</p>
-          <p style="margin: 8px 0 0;"><strong>Headshots:</strong> ${data.headshotCount}</p>
+          <p style="margin: 8px 0 0;"><strong>Photos:</strong> ${data.headshotCount}</p>
         </div>
-        <p><strong>Next step:</strong> Upload your photos so we can start generating your headshots.</p>
+        <p><strong>Next step:</strong> Upload your photos so our AI can learn your look and create personalized images.</p>
         <a href="${data.uploadUrl}" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; margin-top: 16px;">
           Upload Photos
         </a>
+        <p style="color: #999; font-size: 12px; margin-top: 32px;">TailorPic — AI-powered photos for every occasion</p>
       </div>
     `,
     text: (data) =>
-      `Hi ${data.name},\n\nYour order (${data.orderId}) has been confirmed! Package: ${data.packageName} (${data.headshotCount} headshots).\n\nNext step: Upload your photos at ${data.uploadUrl}`,
+      `Hi ${data.name},\n\nYour order (${data.orderId}) has been confirmed! Package: ${data.packageName} (${data.headshotCount} photos).\n\nNext step: Upload your photos at ${data.uploadUrl}\n\n— TailorPic`,
   },
 
   "upload-reminder": {
     subject: () => "Don't forget to upload your photos!",
     html: (data) => `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
-        <h1 style="color: #1a1a1a;">Your Headshots Are Waiting</h1>
+        <h1 style="color: #1a1a1a;">Your AI Photos Are Waiting</h1>
         <p>Hi ${data.name},</p>
         <p>You haven't uploaded your photos yet for order <strong>${data.orderId}</strong>.</p>
-        <p>Upload 5-10 clear photos of yourself and we'll generate your professional headshots in minutes.</p>
+        <p>Upload your photos and our AI will create a personalized model trained on your look. Your custom photos will be ready in about 20 minutes!</p>
         <a href="${data.uploadUrl}" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; margin-top: 16px;">
           Upload Now
         </a>
         <p style="color: #666; font-size: 14px; margin-top: 24px;">
           Need help? Reply to this email and we'll assist you.
         </p>
+        <p style="color: #999; font-size: 12px; margin-top: 32px;">TailorPic — AI-powered photos for every occasion</p>
       </div>
     `,
     text: (data) =>
-      `Hi ${data.name},\n\nYou haven't uploaded your photos yet for order ${data.orderId}. Upload them at ${data.uploadUrl} to get started!`,
+      `Hi ${data.name},\n\nYou haven't uploaded your photos yet for order ${data.orderId}. Upload them at ${data.uploadUrl} to get started!\n\n— TailorPic`,
   },
 
   "headshots-ready": {
     subject: (data) =>
-      `Your ${data.headshotCount} headshots are ready!`,
+      `Your ${data.headshotCount} AI photos are ready!`,
     html: (data) => `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
-        <h1 style="color: #1a1a1a;">Your Headshots Are Ready!</h1>
+        <h1 style="color: #1a1a1a;">Your Photos Are Ready!</h1>
         <p>Hi ${data.name},</p>
-        <p>Great news! We've finished generating <strong>${data.headshotCount} professional headshots</strong> for you.</p>
+        <p>Great news! We've finished generating <strong>${data.headshotCount} AI-powered photos</strong> for you.</p>
         <p>Head to your dashboard to view, download, and share them.</p>
         <a href="${data.dashboardUrl}" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; margin-top: 16px;">
-          View Your Headshots
+          View Your Photos
         </a>
         <p style="color: #666; font-size: 14px; margin-top: 24px;">
-          Love your headshots? Share the love and tell a friend!
+          Love your photos? Share TailorPic with a friend!
         </p>
+        <p style="color: #999; font-size: 12px; margin-top: 32px;">TailorPic — AI-powered photos for every occasion</p>
       </div>
     `,
     text: (data) =>
-      `Hi ${data.name},\n\nYour ${data.headshotCount} headshots are ready! View them at ${data.dashboardUrl}`,
+      `Hi ${data.name},\n\nYour ${data.headshotCount} AI photos are ready! View them at ${data.dashboardUrl}\n\n— TailorPic`,
   },
 
   "order-failed": {
-    subject: () => "Issue with your headshot order",
+    subject: () => "Issue with your TailorPic order",
     html: (data) => `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
         <h1 style="color: #1a1a1a;">We Hit a Snag</h1>
         <p>Hi ${data.name},</p>
-        <p>Unfortunately, we encountered an issue processing your headshot order <strong>${data.orderId}</strong>.</p>
-        <p>Our team has been notified and we'll look into it right away. You don't need to do anything -- we'll reach out with an update soon.</p>
+        <p>Unfortunately, we encountered an issue processing your order <strong>${data.orderId}</strong>.</p>
+        <p>Our team has been notified and we'll look into it right away. You don't need to do anything — we'll reach out with an update soon.</p>
         <p style="color: #666; font-size: 14px; margin-top: 24px;">
           If you have questions, just reply to this email.
         </p>
+        <p style="color: #999; font-size: 12px; margin-top: 32px;">TailorPic — AI-powered photos for every occasion</p>
       </div>
     `,
     text: (data) =>
-      `Hi ${data.name},\n\nWe hit a snag with your order ${data.orderId}. Our team has been notified and we'll follow up shortly.`,
+      `Hi ${data.name},\n\nWe hit a snag with your order ${data.orderId}. Our team has been notified and we'll follow up shortly.\n\n— TailorPic`,
   },
 };
 
@@ -120,7 +124,7 @@ export class ResendProvider implements EmailProvider {
     this.fromAddress =
       fromAddress ??
       process.env.EMAIL_FROM ??
-      "AI Headshots <noreply@aiheadshots.com>";
+      "TailorPic <noreply@tailorpic.com>";
   }
 
   async send(options: SendOptions): Promise<SendResult> {
