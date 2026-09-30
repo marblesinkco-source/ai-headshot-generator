@@ -272,7 +272,7 @@ function TypeBadge({ type }: { type: string }) {
   return (
     <span
       className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${
-        styles[type] || 'bg-gray-50 text-gray-700'
+        styles[type] || 'bg-tp-paper text-tp-muted'
       }`}
     >
       {labels[type] || type}

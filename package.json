@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/download-category-images.mjs && next build",
+    "build": "next build",
     "download-images": "node scripts/download-category-images.mjs",
     "start": "next start",
     "lint": "next lint",

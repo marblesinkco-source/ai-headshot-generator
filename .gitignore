@@ -44,8 +44,7 @@ Thumbs.db
 # Testing
 coverage/
 
-# Build-time downloaded category images (fetched during Vercel build)
-public/images/categories/
+# Category images are now committed to the repo for reliable builds
 
 # Misc
 *.pem
