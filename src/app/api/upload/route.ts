@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
-import { createClient } from '@/lib/supabase/server';
+import { createClient, createAdminClient } from '@/lib/supabase/server';
 import { nanoid } from 'nanoid';
 
 const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
@@ -106,7 +106,9 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Upload files to storage and create records
+    // Upload files to storage using admin client (bypasses storage RLS)
+    // Auth is already verified above via the user client
+    const adminClient = createAdminClient();
     const uploadedPhotos: Array<{ id: string; fileName: string; storagePath: string }> = [];
 
     for (const file of files) {
@@ -116,7 +118,7 @@ export async function POST(request: NextRequest) {
 
       const buffer = Buffer.from(await file.arrayBuffer());
 
-      const { error: uploadError } = await supabase.storage
+      const { error: uploadError } = await adminClient.storage
         .from('uploads')
         .upload(storagePath, buffer, {
           contentType: file.type,

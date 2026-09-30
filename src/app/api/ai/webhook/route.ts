@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import Replicate from 'replicate';
-import { createClient } from '@/lib/supabase/server';
+import { createAdminClient } from '@/lib/supabase/server';
 import { getCategoryById, type CategoryId } from '@/config/categories';
 import { BACKGROUNDS, STYLES, NEGATIVE_PROMPT, QUALITY_SETTINGS } from '@/config/ai';
 import { Resend } from 'resend';
@@ -25,12 +25,27 @@ const replicateWebhookSchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
+    // Validate Replicate webhook signature if signing key is configured
+    const webhookSecret = process.env.REPLICATE_WEBHOOK_SECRET;
+    const body = await request.text();
+
+    if (webhookSecret) {
+      const isValid = await replicate.webhooks.default.verify(
+        body,
+        Object.fromEntries(request.headers) as Record<string, string>
+      ).catch(() => false);
+
+      if (!isValid) {
+        console.error('Invalid Replicate webhook signature');
+        return NextResponse.json({ error: 'Invalid signature' }, { status: 401 });
+      }
+    }
+
     const url = new URL(request.url);
     const type = url.searchParams.get('type'); // 'training' or null (generation)
     const orderId = url.searchParams.get('orderId');
 
-    const body = await request.json();
-    const parsed = replicateWebhookSchema.safeParse(body);
+    const parsed = replicateWebhookSchema.safeParse(JSON.parse(body));
 
     if (!parsed.success) {
       console.error('Invalid webhook payload:', parsed.error.flatten());
@@ -66,7 +81,7 @@ async function handleTrainingComplete(
   error: string | null | undefined,
   orderId: string | null
 ) {
-  const supabase = await createClient();
+  const supabase = createAdminClient();
 
   if (!orderId) {
     console.error('Training webhook missing orderId');
@@ -282,7 +297,7 @@ async function handleGenerationComplete(
   output: unknown,
   predictionError: string | null | undefined
 ) {
-  const supabase = await createClient();
+  const supabase = createAdminClient();
 
   // Look up the generation record
   const { data: headshot, error: lookupError } = await supabase
@@ -440,7 +455,7 @@ function buildCategoryPrompt(
 }
 
 async function sendCompletionEmail(
-  supabase: Awaited<ReturnType<typeof createClient>>,
+  supabase: ReturnType<typeof createAdminClient>,
   orderId: string,
   userId: string,
   count: number
@@ -478,7 +493,7 @@ async function sendCompletionEmail(
 }
 
 async function sendFailureEmail(
-  supabase: Awaited<ReturnType<typeof createClient>>,
+  supabase: ReturnType<typeof createAdminClient>,
   orderId: string,
   errorMessage: string
 ) {

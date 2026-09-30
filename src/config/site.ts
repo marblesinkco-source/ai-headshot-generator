@@ -5,8 +5,9 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
   ogImage: '/brand/tailorpic/web/og-tailorpic-1200x630.jpg',
   links: {
-    twitter: '',
-    linkedin: '',
+    twitter: 'https://x.com/tailorpic',
+    linkedin: 'https://www.linkedin.com/company/tailorpic',
+    instagram: 'https://www.instagram.com/tailorpic',
   },
   creator: 'TailorPic',
   supportEmail: 'support@tailorpic.com',
