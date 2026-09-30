@@ -5,7 +5,6 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { createClient } from '@/lib/supabase/client';
-import { siteConfig } from '@/config/site';
 import { Button } from '@/components/ui/button';
 
 export default function LoginPage() {
@@ -93,7 +92,7 @@ function LoginContent() {
           <Button
             variant="outline"
             size="md"
-            className="w-full border-tp-line text-gray-700 hover:bg-tp-paper"
+            className="w-full border-tp-line text-tp-ink hover:bg-tp-paper"
             onClick={handleGoogleLogin}
             loading={oauthLoading}
             disabled={loading}
@@ -125,14 +124,14 @@ function LoginContent() {
               <div className="w-full border-t border-tp-line/50" />
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="bg-white px-3 text-gray-400">or continue with email</span>
+              <span className="bg-white px-3 text-tp-muted">or continue with email</span>
             </div>
           </div>
 
           {/* Email/Password Form */}
           <form onSubmit={handleEmailLogin} className="space-y-4">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="email" className="block text-sm font-medium text-tp-ink mb-1">
                 Email address
               </label>
               <input
@@ -141,14 +140,14 @@ function LoginContent() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
+                className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-tp-ink placeholder-tp-muted/60 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
                 placeholder="you@example.com"
               />
             </div>
 
             <div>
               <div className="flex items-center justify-between mb-1">
-                <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="password" className="block text-sm font-medium text-tp-ink">
                   Password
                 </label>
                 <Link
@@ -164,7 +163,7 @@ function LoginContent() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
+                className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-tp-ink placeholder-tp-muted/60 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
                 placeholder="Enter your password"
               />
             </div>
@@ -189,7 +188,7 @@ function LoginContent() {
         </div>
 
         {/* Register link */}
-        <p className="mt-6 text-center text-sm text-gray-500">
+        <p className="mt-6 text-center text-sm text-tp-muted">
           Don&apos;t have an account?{' '}
           <Link href="/auth/register" className="font-medium text-tp-bronze-ink hover:text-tp-bronze transition-colors">
             Create one

@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { createClient } from '@/lib/supabase/client';
-import { siteConfig } from '@/config/site';
 import { Button } from '@/components/ui/button';
 
 export default function RegisterPage() {
@@ -99,9 +98,9 @@ export default function RegisterPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
               </svg>
             </div>
-            <h2 className="text-lg font-semibold text-gray-900 mb-2">Check your email</h2>
-            <p className="text-sm text-gray-500 mb-6">
-              We&apos;ve sent a confirmation link to <strong className="text-gray-700">{email}</strong>.
+            <h2 className="text-lg font-semibold text-tp-black mb-2">Check your email</h2>
+            <p className="text-sm text-tp-muted mb-6">
+              We&apos;ve sent a confirmation link to <strong className="text-tp-ink">{email}</strong>.
               Click the link to activate your account.
             </p>
             <Link
@@ -140,7 +139,7 @@ export default function RegisterPage() {
           <Button
             variant="outline"
             size="md"
-            className="w-full border-tp-line text-gray-700 hover:bg-tp-paper"
+            className="w-full border-tp-line text-tp-ink hover:bg-tp-paper"
             onClick={handleGoogleSignUp}
             loading={oauthLoading}
             disabled={loading}
@@ -172,14 +171,14 @@ export default function RegisterPage() {
               <div className="w-full border-t border-tp-line/50" />
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="bg-white px-3 text-gray-400">or register with email</span>
+              <span className="bg-white px-3 text-tp-muted">or register with email</span>
             </div>
           </div>
 
           {/* Registration Form */}
           <form onSubmit={handleRegister} className="space-y-4">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="name" className="block text-sm font-medium text-tp-ink mb-1">
                 Full name
               </label>
               <input
@@ -188,13 +187,13 @@ export default function RegisterPage() {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
+                className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-tp-black placeholder-tp-muted/60 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
                 placeholder="John Doe"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="email" className="block text-sm font-medium text-tp-ink mb-1">
                 Email address
               </label>
               <input
@@ -203,13 +202,13 @@ export default function RegisterPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
+                className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-tp-black placeholder-tp-muted/60 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
                 placeholder="you@example.com"
               />
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="password" className="block text-sm font-medium text-tp-ink mb-1">
                 Password
               </label>
               <input
@@ -219,13 +218,13 @@ export default function RegisterPage() {
                 minLength={8}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
+                className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-tp-black placeholder-tp-muted/60 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
                 placeholder="Min. 8 characters"
               />
             </div>
 
             <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="confirmPassword" className="block text-sm font-medium text-tp-ink mb-1">
                 Confirm password
               </label>
               <input
@@ -234,7 +233,7 @@ export default function RegisterPage() {
                 required
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
+                className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-tp-black placeholder-tp-muted/60 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
                 placeholder="Repeat your password"
               />
             </div>
@@ -266,7 +265,7 @@ export default function RegisterPage() {
         </div>
 
         {/* Login link */}
-        <p className="mt-6 text-center text-sm text-gray-500">
+        <p className="mt-6 text-center text-sm text-tp-muted">
           Already have an account?{' '}
           <Link href="/auth/login" className="font-medium text-tp-bronze-ink hover:text-tp-bronze transition-colors">
             Sign in
