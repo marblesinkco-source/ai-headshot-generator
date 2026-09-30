@@ -3969,6 +3969,305 @@ export const blogPosts: BlogPost[] = [
     tags: ['Trends', 'Photography', 'AI'],
     readingTime: '7 min read',
   },
+  {
+    slug: 'can-recruiters-tell-ai-headshots',
+    title: 'Can Recruiters Tell If Your LinkedIn Photo Is AI-Generated?',
+    excerpt: 'We examine whether hiring managers and recruiters can spot AI headshots, what research says, and how to make yours look completely natural.',
+    coverImage: '/images/blog/placeholder.svg',
+    content: `
+      <h2>The AI Headshot Detection Question</h2>
+      <p>With millions of professionals now using AI-generated headshots on LinkedIn, a pressing question has emerged: can recruiters actually tell the difference? The answer depends on the quality of the tool you use and how well the photo represents you.</p>
+
+      <h2>What Research Shows</h2>
+      <p>Studies on AI image detection have found that high-quality AI-generated portraits are increasingly difficult to distinguish from studio photographs. When a model is fine-tuned on your own photos, the result captures your actual features, lighting preferences and natural expressions rather than producing a generic output.</p>
+      <p>Most people, including experienced recruiters, cannot reliably identify a well-made AI headshot. The tell-tale signs of earlier generators, such as warped ears, misaligned glasses and unnatural skin textures, have largely been resolved by modern fine-tuning approaches like LoRA.</p>
+
+      <h2>Common Giveaways to Avoid</h2>
+      <ul>
+        <li><strong>Over-smoothed skin:</strong> Some tools remove all texture, creating a plastic look</li>
+        <li><strong>Inconsistent lighting:</strong> Shadows that do not match the light source direction</li>
+        <li><strong>Background artifacts:</strong> Blurred shapes or repeating patterns behind the subject</li>
+        <li><strong>Mismatched accessories:</strong> Jewellery, collars or glasses that look slightly off</li>
+        <li><strong>Too-perfect symmetry:</strong> Real faces have natural asymmetry that some tools erase</li>
+      </ul>
+
+      <h2>How TailorPic Avoids These Issues</h2>
+      <p>TailorPic trains a personal LoRA model on your own selfies, which means the output reflects your real bone structure, skin tone and natural proportions. The result is a photo that looks like you sat for a professional photographer, not like a filter was applied.</p>
+
+      <h2>Should You Tell People It Is AI?</h2>
+      <p>There is no professional obligation to disclose that a headshot is AI-generated, just as you would not disclose that a traditional headshot was retouched. What matters is that the photo accurately represents your current appearance. If you show up to an interview and look like your photo, you have done your job.</p>
+
+      <h2>Tips for a Natural Result</h2>
+      <ul>
+        <li>Upload clear, well-lit selfies with varied angles</li>
+        <li>Choose a style that matches your industry norms</li>
+        <li>Select a photo where your expression feels genuine</li>
+        <li>Use a background that suits your field</li>
+      </ul>
+
+      <h2>The Bottom Line</h2>
+      <p>Quality AI headshots are virtually undetectable. Focus on choosing a tool that trains on your real photos and produces natural results. <a href="/auth/register">Try TailorPic</a> for 40+ professional photos that look like you.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-02-20',
+    tags: ['LinkedIn', 'AI Detection', 'Hiring'],
+    readingTime: '6 min read',
+  },
+  {
+    slug: 'professional-profile-picture-examples',
+    title: '50 Professional Profile Picture Ideas by Industry',
+    excerpt: 'Inspiration and examples for the perfect professional profile photo across tech, finance, healthcare, creative and other industries.',
+    coverImage: '/images/blog/placeholder.svg',
+    content: `
+      <h2>Why Your Industry Matters</h2>
+      <p>A great headshot for a creative director looks very different from one for a financial advisor. Your profile photo should signal competence within your specific field while remaining approachable. Here are ideas organised by industry to help you choose the right look.</p>
+
+      <h2>Technology and Engineering</h2>
+      <ul>
+        <li>Clean, minimal backgrounds in white or light grey</li>
+        <li>Smart casual attire — a solid-colour crew neck or blazer without a tie</li>
+        <li>Natural lighting with a slight smile</li>
+        <li>Consider a dark background for a modern, editorial feel</li>
+        <li>GitHub and portfolio photos can be slightly more relaxed than LinkedIn</li>
+      </ul>
+
+      <h2>Finance and Consulting</h2>
+      <ul>
+        <li>Traditional studio headshot with a navy or charcoal blazer</li>
+        <li>Neutral, solid background in grey or muted blue</li>
+        <li>Confident, direct eye contact with a composed expression</li>
+        <li>Minimal jewellery and conservative styling</li>
+        <li>High-resolution crop suitable for company directory listings</li>
+      </ul>
+
+      <h2>Healthcare and Medical</h2>
+      <ul>
+        <li>White coat photos remain the standard for physicians</li>
+        <li>Warm, approachable smile to build patient trust</li>
+        <li>Clean, clinical background or a subtle out-of-focus medical setting</li>
+        <li>Scrubs are appropriate for nurses and surgical staff</li>
+        <li>Dental professionals benefit from bright, warm-toned lighting</li>
+      </ul>
+
+      <h2>Creative and Design</h2>
+      <ul>
+        <li>More freedom with colour, styling and background</li>
+        <li>Environmental portraits in a studio or workspace</li>
+        <li>Bold colour backgrounds for photographers and artists</li>
+        <li>Black-and-white or monochrome for a timeless editorial look</li>
+        <li>Personality-forward expressions that match your brand</li>
+      </ul>
+
+      <h2>Legal</h2>
+      <ul>
+        <li>Dark suit with a neutral tie on a solid background</li>
+        <li>Serious but approachable expression</li>
+        <li>Consistent styling across all attorneys in a firm</li>
+        <li>Library or office backdrop for a traditional feel</li>
+      </ul>
+
+      <h2>Education</h2>
+      <ul>
+        <li>Warm, friendly expression that puts students at ease</li>
+        <li>Business casual or smart casual attire</li>
+        <li>Bright, natural lighting</li>
+        <li>Suitable for school websites, conference bios and academic profiles</li>
+      </ul>
+
+      <h2>Real Estate</h2>
+      <ul>
+        <li>Polished, trustworthy look with a genuine smile</li>
+        <li>Professional attire that matches your market</li>
+        <li>Consistent branding if you are part of a team</li>
+        <li>MLS-ready dimensions and resolution</li>
+      </ul>
+
+      <h2>How to Get Your Perfect Industry Headshot</h2>
+      <p>TailorPic offers 11 photo categories including business, creative, dating and more. Upload a few selfies and receive 40+ professional photos tailored to your needs. <a href="/auth/register">Get started for $9.90</a>.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-02-22',
+    tags: ['Examples', 'Inspiration', 'Profile Photo'],
+    readingTime: '8 min read',
+  },
+  {
+    slug: 'take-professional-headshot-with-phone',
+    title: 'How to Take a Professional Headshot With Your Phone',
+    excerpt: 'Step-by-step guide to capturing quality selfies for AI headshot generation using just your smartphone.',
+    coverImage: '/images/blog/placeholder.svg',
+    content: `
+      <h2>Your Phone Is Enough</h2>
+      <p>You do not need a DSLR camera or a professional studio to get great input photos for an AI headshot generator. Modern smartphones have more than enough resolution and quality. The key is knowing how to use them well.</p>
+
+      <h2>Step 1: Find Good Lighting</h2>
+      <p>Natural window light is your best friend. Stand facing a large window during the day, with the light falling evenly on your face. Avoid direct sunlight, which creates harsh shadows, and overhead lighting, which casts unflattering shadows under your eyes and chin.</p>
+      <ul>
+        <li>Overcast days provide the softest, most even light</li>
+        <li>Golden hour (the hour before sunset) adds a warm, flattering glow</li>
+        <li>If indoors, turn off overhead lights and use only the window</li>
+      </ul>
+
+      <h2>Step 2: Set Up Your Background</h2>
+      <p>A plain wall works well. White, light grey and cream are safe choices. Make sure there are no distracting objects, picture frames or light switches in the frame. Stand about a metre away from the wall to create a subtle depth separation.</p>
+
+      <h2>Step 3: Position Your Phone</h2>
+      <ul>
+        <li>Use the rear camera for higher quality — a small tripod or phone mount helps</li>
+        <li>Set the camera at eye level or slightly above</li>
+        <li>Use the timer or a remote shutter so you are not reaching for the phone</li>
+        <li>Frame from the chest up, leaving some space above your head</li>
+      </ul>
+
+      <h2>Step 4: Pose and Expression</h2>
+      <p>Angle your body slightly (about 15 degrees) rather than facing the camera head-on. This creates a more dynamic, flattering composition. Look directly at the lens and think of something that makes you genuinely happy — a real smile is always more convincing than a forced one.</p>
+
+      <h2>Step 5: Take Multiple Shots</h2>
+      <p>Take at least 10 to 15 photos with slight variations in angle, expression and posture. This gives your AI headshot generator more material to work with and ensures you have options to choose from.</p>
+
+      <h2>Common Mistakes to Avoid</h2>
+      <ul>
+        <li>Bathroom selfies with visible mirrors and tiles</li>
+        <li>Heavy filters that distort your features</li>
+        <li>Low-light photos with visible grain</li>
+        <li>Sunglasses or hats that obscure your face</li>
+        <li>Group photos cropped down to just you</li>
+      </ul>
+
+      <h2>Upload and Let AI Do the Rest</h2>
+      <p>Once you have 5 to 10 good selfies, upload them to <a href="/auth/register">TailorPic</a>. The LoRA model trains on your unique features and generates 40+ professional headshots across 11 categories, all for a one-time $9.90.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-02-24',
+    tags: ['DIY', 'Smartphone', 'Tips'],
+    readingTime: '6 min read',
+  },
+  {
+    slug: 'headshot-size-resolution-guide',
+    title: 'Headshot Size and Resolution Guide for Every Platform',
+    excerpt: 'The exact dimensions, aspect ratios and file sizes you need for LinkedIn, Google, Zoom, MLS listings and more.',
+    coverImage: '/images/blog/placeholder.svg',
+    content: `
+      <h2>Why Size and Resolution Matter</h2>
+      <p>Every platform has different requirements for profile photos. Upload an image that is too small and it looks pixelated. Too large and it may be cropped awkwardly or rejected. This guide covers the specifications for every major platform so you can get it right the first time.</p>
+
+      <h2>LinkedIn</h2>
+      <ul>
+        <li><strong>Recommended size:</strong> 400 × 400 px (minimum), up to 7680 × 4320 px</li>
+        <li><strong>Aspect ratio:</strong> 1:1 (square)</li>
+        <li><strong>File format:</strong> JPG, PNG or GIF</li>
+        <li><strong>Max file size:</strong> 8 MB</li>
+        <li><strong>Tip:</strong> Upload at least 800 × 800 px for a sharp display on retina screens</li>
+      </ul>
+
+      <h2>Google Workspace (Gmail, Meet)</h2>
+      <ul>
+        <li><strong>Recommended size:</strong> 250 × 250 px (minimum)</li>
+        <li><strong>Aspect ratio:</strong> 1:1 (displayed as a circle)</li>
+        <li><strong>Tip:</strong> Keep your face centred since the edges will be cropped into a circle</li>
+      </ul>
+
+      <h2>Zoom</h2>
+      <ul>
+        <li><strong>Recommended size:</strong> 150 × 150 px (minimum)</li>
+        <li><strong>Max file size:</strong> 2 MB</li>
+        <li><strong>Note:</strong> The photo is shown when your camera is off, so make it count</li>
+      </ul>
+
+      <h2>Microsoft Teams</h2>
+      <ul>
+        <li><strong>Recommended size:</strong> 648 × 648 px</li>
+        <li><strong>Aspect ratio:</strong> 1:1</li>
+        <li><strong>File format:</strong> JPG, PNG, GIF or BMP</li>
+        <li><strong>Max file size:</strong> 4 MB</li>
+      </ul>
+
+      <h2>Slack</h2>
+      <ul>
+        <li><strong>Recommended size:</strong> 512 × 512 px</li>
+        <li><strong>Aspect ratio:</strong> 1:1</li>
+        <li><strong>Max file size:</strong> 1 MB</li>
+      </ul>
+
+      <h2>MLS Real Estate Listings</h2>
+      <ul>
+        <li><strong>Common size:</strong> 300 × 300 px to 500 × 500 px (varies by MLS board)</li>
+        <li><strong>Aspect ratio:</strong> 1:1 or 2:3</li>
+        <li><strong>Tip:</strong> Check your local MLS board for exact requirements</li>
+      </ul>
+
+      <h2>GitHub</h2>
+      <ul>
+        <li><strong>Recommended size:</strong> 460 × 460 px</li>
+        <li><strong>Aspect ratio:</strong> 1:1 (displayed as a circle)</li>
+        <li><strong>Max file size:</strong> 1 MB</li>
+      </ul>
+
+      <h2>General Best Practices</h2>
+      <ul>
+        <li>Always upload the largest version available — platforms downscale automatically</li>
+        <li>Use JPG for photos (smaller file size) and PNG when you need transparency</li>
+        <li>Keep your face in the centre third of the frame for circular crop safety</li>
+        <li>Aim for at least 300 DPI for any photo that might be printed</li>
+      </ul>
+
+      <h2>Get Platform-Ready Photos Instantly</h2>
+      <p>TailorPic delivers high-resolution photos that work across all platforms. Each image is generated at a resolution suitable for print and digital use. <a href="/auth/register">Get 40+ photos for $9.90</a>.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-02-26',
+    tags: ['Sizes', 'Resolution', 'Technical'],
+    readingTime: '7 min read',
+  },
+  {
+    slug: 'ai-headshot-prompts-guide',
+    title: 'AI Headshot Prompts: How to Get the Best Results',
+    excerpt: 'Learn how to write effective prompts and choose the right settings for AI headshot generators to get professional results every time.',
+    coverImage: '/images/blog/placeholder.svg',
+    content: `
+      <h2>The Role of Prompts in AI Headshots</h2>
+      <p>Most AI headshot generators use some form of prompt or setting selection to guide the output. Understanding how these work helps you get photos that match your vision rather than leaving the result to chance.</p>
+
+      <h2>How TailorPic Is Different</h2>
+      <p>Unlike general-purpose AI image tools that require you to write detailed text prompts, TailorPic uses a category-based system. You choose from 11 pre-built categories — business, dating, creative, pet portraits and more — and the system handles the technical prompting behind the scenes. This means you get professional results without needing to learn prompt engineering.</p>
+
+      <h2>If You Use a Prompt-Based Tool</h2>
+      <p>Some AI tools do ask you to write prompts. Here are tips for getting better results:</p>
+      <ul>
+        <li><strong>Be specific about lighting:</strong> "soft studio lighting" or "natural window light" gives better results than just "good lighting"</li>
+        <li><strong>Describe the background:</strong> "plain white background" or "blurred office setting" is more useful than "professional background"</li>
+        <li><strong>Mention attire:</strong> "wearing a navy blazer" is more precise than "professional clothing"</li>
+        <li><strong>Specify the framing:</strong> "head and shoulders portrait" or "close-up headshot"</li>
+        <li><strong>Include the mood:</strong> "confident and approachable" or "warm and friendly"</li>
+      </ul>
+
+      <h2>What to Avoid in Prompts</h2>
+      <ul>
+        <li>Celebrity names or references to specific people</li>
+        <li>Overly complex descriptions with conflicting elements</li>
+        <li>Negative prompts that confuse the model</li>
+        <li>Requests for unrealistic features that do not match your uploaded photos</li>
+      </ul>
+
+      <h2>The Best Input Photos</h2>
+      <p>Regardless of the tool, your input photos matter most. Upload clear, well-lit selfies from multiple angles. Avoid heavy filters, sunglasses and group photos. The better your inputs, the more accurate and natural the output.</p>
+
+      <h2>Category Selection Tips</h2>
+      <p>When using TailorPic, think about where you will use the photos:</p>
+      <ul>
+        <li><strong>Business:</strong> LinkedIn, resumes, company directories</li>
+        <li><strong>Dating:</strong> Tinder, Hinge, Bumble profiles</li>
+        <li><strong>Creative:</strong> Portfolio sites, personal branding</li>
+        <li><strong>E-commerce:</strong> Product listings, seller profiles</li>
+      </ul>
+
+      <h2>Get Started Without Prompting</h2>
+      <p>Skip the prompt engineering. <a href="/auth/register">TailorPic</a> handles everything — upload your selfies, pick your categories, and receive 40+ professional photos within 24 hours for just $9.90.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-02-28',
+    tags: ['Prompts', 'Tips', 'AI'],
+    readingTime: '6 min read',
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
