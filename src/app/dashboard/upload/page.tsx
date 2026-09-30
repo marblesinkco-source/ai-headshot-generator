@@ -117,12 +117,65 @@ function UploadContent() {
     }
   }
 
+  // Training/generation progress tracking
+  const [progressPhase, setProgressPhase] = useState<string>('');
+  const [progressPercent, setProgressPercent] = useState(0);
+  const [generationStats, setGenerationStats] = useState({ total: 0, completed: 0 });
+
+  // Poll for AI processing status
+  useEffect(() => {
+    if (!generating || !orderId) return;
+
+    const interval = setInterval(async () => {
+      try {
+        const res = await fetch(`/api/ai/status?orderId=${orderId}`);
+        if (!res.ok) return;
+
+        const data = await res.json();
+
+        setProgressPhase(data.phase);
+        setProgressPercent(data.progress);
+        setGenerationStats({
+          total: data.generation.total,
+          completed: data.generation.completed,
+        });
+
+        if (data.phase === 'training') {
+          setGenerationStatus(
+            `Training AI model on your photos... ${data.estimatedMinutesRemaining ? `~${data.estimatedMinutesRemaining} min remaining` : ''}`
+          );
+        } else if (data.phase === 'generating') {
+          setGenerationStatus(
+            `Generating your ${category?.outputLabel || 'photos'}... ${data.generation.completed}/${data.generation.total} complete`
+          );
+        } else if (data.phase === 'completed') {
+          setGenerationStatus('All done! Redirecting to your gallery...');
+          clearInterval(interval);
+          setTimeout(() => {
+            router.push(`/dashboard/orders/${orderId}`);
+          }, 2000);
+        } else if (data.phase === 'failed') {
+          setGenerationStatus(null);
+          setError('Generation failed. Please contact support.');
+          setGenerating(false);
+          clearInterval(interval);
+        }
+      } catch {
+        // Silently ignore polling errors
+      }
+    }, 10000); // Poll every 10 seconds
+
+    return () => clearInterval(interval);
+  }, [generating, orderId, category, router]);
+
   async function handleGenerate() {
     if (!orderId) return;
 
     setGenerating(true);
-    setGenerationStatus('Starting generation...');
+    setGenerationStatus('Starting AI training on your photos...');
     setError(null);
+    setProgressPhase('training');
+    setProgressPercent(5);
 
     try {
       const response = await fetch('/api/ai/generate', {
@@ -137,13 +190,8 @@ function UploadContent() {
         throw new Error(data.error || 'Failed to start generation');
       }
 
-      setGenerationStatus('Your photos are being generated. This may take 10-20 minutes.');
+      setGenerationStatus(data.message || 'Training AI model on your photos...');
       setCurrentStep(4);
-
-      // Poll for completion or redirect to gallery
-      setTimeout(() => {
-        router.push(`/dashboard/gallery/${orderId}`);
-      }, 3000);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Generation failed');
       setGenerating(false);
@@ -362,18 +410,75 @@ function UploadContent() {
       {currentStep === 4 && (
         <div className="rounded-xl border border-gray-200 bg-white p-8 text-center shadow-sm">
           {generationStatus ? (
-            <div className="space-y-4">
+            <div className="space-y-6">
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-50">
-                <svg className="h-8 w-8 animate-spin text-brand-600" fill="none" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                </svg>
+                {progressPhase === 'completed' ? (
+                  <svg className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                ) : (
+                  <svg className="h-8 w-8 animate-spin text-brand-600" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                  </svg>
+                )}
               </div>
+
               <h3 className="text-lg font-semibold text-gray-900">
-                Generating Your {category?.name || 'Photos'}
+                {progressPhase === 'training'
+                  ? 'Training AI on Your Photos'
+                  : progressPhase === 'generating'
+                    ? `Generating Your ${category?.name || 'Photos'}`
+                    : progressPhase === 'completed'
+                      ? 'All Done!'
+                      : `Creating Your ${category?.name || 'Photos'}`}
               </h3>
+
+              {/* Progress bar */}
+              <div className="mx-auto max-w-md">
+                <div className="flex items-center justify-between text-xs text-gray-500 mb-1">
+                  <span>{progressPhase === 'training' ? 'Training model...' : progressPhase === 'generating' ? `${generationStats.completed}/${generationStats.total} photos` : ''}</span>
+                  <span>{progressPercent}%</span>
+                </div>
+                <div className="h-3 overflow-hidden rounded-full bg-gray-100">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-brand-500 to-brand-600 transition-all duration-1000 ease-out"
+                    style={{ width: `${progressPercent}%` }}
+                  />
+                </div>
+              </div>
+
+              {/* Phase indicators */}
+              <div className="mx-auto flex max-w-sm items-center justify-center gap-6 text-xs">
+                <div className={`flex items-center gap-1.5 ${progressPhase === 'training' ? 'text-brand-600 font-medium' : progressPercent > 50 ? 'text-green-600' : 'text-gray-400'}`}>
+                  {progressPercent > 50 ? (
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                  ) : progressPhase === 'training' ? (
+                    <div className="h-2 w-2 rounded-full bg-brand-600 animate-pulse" />
+                  ) : (
+                    <div className="h-2 w-2 rounded-full bg-gray-300" />
+                  )}
+                  AI Training
+                </div>
+                <div className="h-px w-8 bg-gray-200" />
+                <div className={`flex items-center gap-1.5 ${progressPhase === 'generating' ? 'text-brand-600 font-medium' : progressPhase === 'completed' ? 'text-green-600' : 'text-gray-400'}`}>
+                  {progressPhase === 'completed' ? (
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                  ) : progressPhase === 'generating' ? (
+                    <div className="h-2 w-2 rounded-full bg-brand-600 animate-pulse" />
+                  ) : (
+                    <div className="h-2 w-2 rounded-full bg-gray-300" />
+                  )}
+                  Photo Generation
+                </div>
+              </div>
+
               <p className="text-sm text-gray-500">{generationStatus}</p>
-              <p className="text-xs text-gray-400">You can close this page. We&apos;ll notify you when they&apos;re ready.</p>
+              <p className="text-xs text-gray-400">You can close this page. We&apos;ll email you when your photos are ready.</p>
             </div>
           ) : (
             <div className="space-y-4">
@@ -384,7 +489,7 @@ function UploadContent() {
               </div>
               <h3 className="text-lg font-semibold text-gray-900">Ready to Generate</h3>
               <p className="text-sm text-gray-500">
-                {uploadedCount} photos uploaded. Click below to start generating your {category?.outputLabel || 'AI photos'}.
+                {uploadedCount} photos uploaded. Our AI will train a personalized model on your photos, then generate your {category?.outputLabel || 'AI photos'}. This takes about 15-20 minutes.
               </p>
               {error && (
                 <div className="rounded-lg bg-red-50 border border-red-200 p-3 text-sm text-red-700">{error}</div>

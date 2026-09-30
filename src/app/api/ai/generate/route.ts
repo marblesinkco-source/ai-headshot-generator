@@ -2,19 +2,22 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import Replicate from 'replicate';
 import { createClient } from '@/lib/supabase/server';
-import { PACKAGES, type PackageId } from '@/config/packages';
-import { BACKGROUNDS, STYLES, buildGenerationPrompt, NEGATIVE_PROMPT, QUALITY_SETTINGS } from '@/config/ai';
+import { getCategoryById, getPackageById, type CategoryId } from '@/config/categories';
 import { siteConfig } from '@/config/site';
 
 const replicate = new Replicate({
   auth: process.env.REPLICATE_API_TOKEN!,
 });
 
-const generateSchema = z.object({
-  orderId: z.string().uuid(),
-});
+/** Flux LoRA trainer model on Replicate */
+const FLUX_TRAIN_MODEL_OWNER = 'ostris';
+const FLUX_TRAIN_MODEL_NAME = 'flux-dev-lora-trainer';
+const FLUX_TRAIN_MODEL_VERSION =
+  'd995297071a44dcb72244e6c19462f9670254b7e4a3679476e6ffb8a503aaec1';
 
-const MIN_PHOTOS_REQUIRED = 4;
+const generateSchema = z.object({
+  orderId: z.string(),
+});
 
 export async function POST(request: NextRequest) {
   try {
@@ -46,7 +49,7 @@ export async function POST(request: NextRequest) {
     // Verify order belongs to user and has correct status
     const { data: order, error: orderError } = await supabase
       .from('orders')
-      .select('id, status, package_id, user_id')
+      .select('id, status, package_id, category_id, user_id, output_count')
       .eq('id', orderId)
       .eq('user_id', user.id)
       .single();
@@ -60,7 +63,26 @@ export async function POST(request: NextRequest) {
 
     if (order.status !== 'uploading') {
       return NextResponse.json(
-        { error: `Cannot generate headshots for order with status "${order.status}"` },
+        { error: `Cannot generate for order with status "${order.status}"` },
+        { status: 400 }
+      );
+    }
+
+    // Resolve category and package from the new category-based config
+    const categoryId = (order.category_id || 'headshots') as CategoryId;
+    const category = getCategoryById(categoryId);
+
+    if (!category) {
+      return NextResponse.json(
+        { error: 'Invalid category' },
+        { status: 400 }
+      );
+    }
+
+    const pkg = getPackageById(categoryId, order.package_id);
+    if (!pkg) {
+      return NextResponse.json(
+        { error: 'Invalid package configuration' },
         { status: 400 }
       );
     }
@@ -71,125 +93,99 @@ export async function POST(request: NextRequest) {
       .select('id', { count: 'exact', head: true })
       .eq('order_id', orderId);
 
-    if (!photoCount || photoCount < MIN_PHOTOS_REQUIRED) {
+    if (!photoCount || photoCount < category.minPhotos) {
       return NextResponse.json(
         {
-          error: `At least ${MIN_PHOTOS_REQUIRED} photos required. Currently uploaded: ${photoCount || 0}`,
+          error: `At least ${category.minPhotos} photos required. Currently uploaded: ${photoCount || 0}`,
         },
         { status: 400 }
       );
     }
 
-    // Update order status to processing
-    const { error: statusError } = await supabase
-      .from('orders')
-      .update({ status: 'processing', started_at: new Date().toISOString() })
-      .eq('id', orderId);
-
-    if (statusError) {
-      console.error('Failed to update order status:', statusError);
-      return NextResponse.json(
-        { error: 'Failed to start generation' },
-        { status: 500 }
-      );
-    }
-
-    // Get package config for this order
-    const pkg = PACKAGES[order.package_id as PackageId];
-    if (!pkg) {
-      return NextResponse.json(
-        { error: 'Invalid package configuration' },
-        { status: 500 }
-      );
-    }
-
-    const quality = QUALITY_SETTINGS[pkg.resolution] || QUALITY_SETTINGS.standard;
-    const selectedBackgrounds = BACKGROUNDS.slice(0, pkg.backgrounds);
-    const selectedStyles = STYLES.slice(0, pkg.styles);
-
-    // Get uploaded photo storage paths for training data
+    // Get signed URLs for uploaded photos (these will be used for LoRA training)
     const { data: photos } = await supabase
       .from('uploaded_photos')
       .select('storage_path')
       .eq('order_id', orderId);
 
-    const trainingImageUrls = await Promise.all(
-      (photos || []).map(async (photo) => {
-        const { data } = await supabase.storage
-          .from('uploads')
-          .createSignedUrl(photo.storage_path, 3600);
-        return data?.signedUrl;
-      })
-    );
+    const trainingImageUrls = (
+      await Promise.all(
+        (photos || []).map(async (photo) => {
+          const { data } = await supabase.storage
+            .from('uploads')
+            .createSignedUrl(photo.storage_path, 3600);
+          return data?.signedUrl;
+        })
+      )
+    ).filter(Boolean) as string[];
 
-    const validUrls = trainingImageUrls.filter(Boolean) as string[];
-
-    // Kick off generation pipeline (async - don't await full completion)
-    const webhookUrl = `${siteConfig.url}/api/ai/webhook`;
-
-    // Generate combinations of style x background up to the headshot limit
-    const generations: Array<{ styleId: string; backgroundId: string }> = [];
-    let count = 0;
-    for (const style of selectedStyles) {
-      for (const bg of selectedBackgrounds) {
-        if (count >= pkg.headshots) break;
-        generations.push({ styleId: style.id, backgroundId: bg.id });
-        count++;
-      }
-      if (count >= pkg.headshots) break;
+    if (trainingImageUrls.length < category.minPhotos) {
+      return NextResponse.json(
+        { error: 'Failed to retrieve uploaded photos' },
+        { status: 500 }
+      );
     }
 
-    // Fire off Replicate predictions without awaiting completion
-    const launchPromises = generations.map(async ({ styleId, backgroundId }) => {
-      const prompt = buildGenerationPrompt(
-        styleId as (typeof STYLES)[number]['id'],
-        backgroundId as (typeof BACKGROUNDS)[number]['id']
-      );
+    // Update order status to training
+    await supabase
+      .from('orders')
+      .update({
+        status: 'processing',
+        started_at: new Date().toISOString(),
+      })
+      .eq('id', orderId);
 
-      try {
-        const prediction = await replicate.predictions.create({
-          model: 'stability-ai/sdxl',
+    // Start LoRA fine-tuning via Replicate
+    const triggerWord = `sks${orderId.replace(/[^a-zA-Z0-9]/g, '').slice(0, 8)}`;
+    const webhookUrl = `${siteConfig.url}/api/ai/webhook?type=training&orderId=${orderId}&categoryId=${categoryId}&packageId=${order.package_id}&triggerWord=${triggerWord}`;
+
+    try {
+      const training = await replicate.trainings.create(
+        FLUX_TRAIN_MODEL_OWNER,
+        FLUX_TRAIN_MODEL_NAME,
+        FLUX_TRAIN_MODEL_VERSION,
+        {
           input: {
-            prompt,
-            negative_prompt: NEGATIVE_PROMPT,
-            width: quality.width,
-            height: quality.height,
-            num_inference_steps: quality.steps,
-            guidance_scale: quality.guidanceScale,
-            num_outputs: 1,
+            input_images: trainingImageUrls.join('\n'),
+            trigger_word: triggerWord,
+            steps: 1200,
+            learning_rate: 1e-4,
+            resolution: '512,512',
           },
           webhook: webhookUrl,
           webhook_events_filter: ['completed'],
-        });
+        }
+      );
 
-        // Record generation in DB
-        await supabase.from('generated_headshots').insert({
-          order_id: orderId,
-          user_id: user.id,
-          prediction_id: prediction.id,
-          style_id: styleId,
-          background_id: backgroundId,
-          status: 'processing',
-          prompt,
-        });
+      // Store training ID in order metadata
+      await supabase
+        .from('orders')
+        .update({
+          training_id: training.id,
+          trigger_word: triggerWord,
+        })
+        .eq('id', orderId);
 
-        return prediction.id;
-      } catch (err) {
-        console.error(`Failed to create prediction for ${styleId}/${backgroundId}:`, err);
-        return null;
-      }
-    });
+      return NextResponse.json({
+        status: 'training',
+        message: `Training AI model on your ${category.outputLabel}. This takes 10-20 minutes.`,
+        trainingId: training.id,
+        estimatedMinutes: 15,
+      });
+    } catch (trainError) {
+      console.error('Failed to start training:', trainError);
 
-    // Start all predictions but don't wait for them to complete
-    Promise.allSettled(launchPromises).catch((err) => {
-      console.error('Error launching generation pipeline:', err);
-    });
+      // Revert order status
+      await supabase
+        .from('orders')
+        .update({ status: 'uploading' })
+        .eq('id', orderId);
 
-    return NextResponse.json({
-      status: 'processing',
-      message: 'Your headshots are being generated',
-      totalGenerations: generations.length,
-    });
+      return NextResponse.json(
+        { error: 'Failed to start AI training. Please try again.' },
+        { status: 500 }
+      );
+    }
   } catch (error) {
     console.error('Generation error:', error);
     return NextResponse.json(

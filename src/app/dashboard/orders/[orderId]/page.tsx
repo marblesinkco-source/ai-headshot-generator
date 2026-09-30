@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { createClient } from '@/lib/supabase/client';
@@ -22,6 +22,14 @@ interface OrderDetail {
   updated_at: string;
 }
 
+interface PipelineStatus {
+  phase: 'pending' | 'training' | 'generating' | 'completed' | 'failed';
+  progress: number;
+  estimatedMinutesRemaining?: number;
+  training: { id: string | null; hasStarted: boolean };
+  generation: { total: number; completed: number; failed: number };
+}
+
 export default function OrderDetailPage() {
   const params = useParams();
   const orderId = params.orderId as string;
@@ -29,8 +37,10 @@ export default function OrderDetailPage() {
   const [order, setOrder] = useState<OrderDetail | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [pipeline, setPipeline] = useState<PipelineStatus | null>(null);
 
-  const supabase = createClient();
+  const supabaseRef = useRef(createClient());
+  const supabase = supabaseRef.current;
 
   const fetchOrder = useCallback(async () => {
     try {
@@ -57,16 +67,35 @@ export default function OrderDetailPage() {
     }
   }, [orderId, supabase]);
 
+  // Fetch pipeline status for processing orders
+  const fetchPipelineStatus = useCallback(async () => {
+    try {
+      const res = await fetch(`/api/ai/status?orderId=${orderId}`);
+      if (res.ok) {
+        const data = await res.json();
+        setPipeline(data);
+        // Also refresh order when pipeline completes or fails
+        if (data.phase === 'completed' || data.phase === 'failed') {
+          fetchOrder();
+        }
+      }
+    } catch {
+      // Silently fail — will retry on next poll
+    }
+  }, [orderId, fetchOrder]);
+
   useEffect(() => {
     fetchOrder();
-
-    // Poll for status updates if order is processing
-    const interval = setInterval(() => {
-      fetchOrder();
-    }, 10000);
-
-    return () => clearInterval(interval);
   }, [fetchOrder]);
+
+  // Poll pipeline status when order is processing
+  useEffect(() => {
+    if (!order || order.status !== 'processing') return;
+
+    fetchPipelineStatus();
+    const interval = setInterval(fetchPipelineStatus, 10000);
+    return () => clearInterval(interval);
+  }, [order?.status, fetchPipelineStatus]);
 
   if (loading) {
     return (
@@ -115,8 +144,10 @@ export default function OrderDetailPage() {
       icon: '📤',
     },
     processing: {
-      title: 'Generating Your Photos',
-      description: 'Our AI is working on your photos. This typically takes 1-2 hours. We\'ll email you when they\'re ready.',
+      title: pipeline?.phase === 'generating' ? 'Generating Your Photos' : 'Training AI Model',
+      description: pipeline?.phase === 'generating'
+        ? `Creating your personalized AI photos (${pipeline.generation.completed}/${pipeline.generation.total} done).`
+        : 'Our AI is learning from your uploaded photos to create a personalized model. This takes about 15 minutes.',
       icon: '🤖',
     },
     completed: {
@@ -159,6 +190,72 @@ export default function OrderDetailPage() {
         <div className="mt-4">
           <OrderStatusBadge status={order.status} />
         </div>
+
+        {/* Pipeline Progress */}
+        {order.status === 'processing' && pipeline && (
+          <div className="mt-6 mx-auto max-w-md space-y-4">
+            {/* Progress Bar */}
+            <div>
+              <div className="flex items-center justify-between text-xs text-gray-500 mb-1.5">
+                <span>{pipeline.progress}% complete</span>
+                {pipeline.estimatedMinutesRemaining && (
+                  <span>~{pipeline.estimatedMinutesRemaining} min remaining</span>
+                )}
+              </div>
+              <div className="h-2.5 rounded-full bg-gray-100 overflow-hidden">
+                <div
+                  className="h-full rounded-full bg-gradient-to-r from-brand-500 to-brand-600 transition-all duration-1000 ease-out"
+                  style={{ width: `${pipeline.progress}%` }}
+                />
+              </div>
+            </div>
+
+            {/* Phase Steps */}
+            <div className="flex items-center justify-center gap-3 text-xs">
+              <div className={`flex items-center gap-1.5 ${
+                pipeline.phase === 'training' ? 'text-brand-600 font-medium' :
+                pipeline.progress > 50 ? 'text-green-600' : 'text-gray-400'
+              }`}>
+                {pipeline.progress > 50 ? (
+                  <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                ) : pipeline.phase === 'training' ? (
+                  <div className="h-3.5 w-3.5 rounded-full border-2 border-brand-500 border-t-transparent animate-spin" />
+                ) : (
+                  <div className="h-3 w-3 rounded-full border-2 border-gray-300" />
+                )}
+                AI Training
+              </div>
+              <svg className="h-3 w-3 text-gray-300" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+              <div className={`flex items-center gap-1.5 ${
+                pipeline.phase === 'generating' ? 'text-brand-600 font-medium' :
+                pipeline.phase === 'completed' ? 'text-green-600' : 'text-gray-400'
+              }`}>
+                {pipeline.phase === 'completed' ? (
+                  <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                ) : pipeline.phase === 'generating' ? (
+                  <div className="h-3.5 w-3.5 rounded-full border-2 border-brand-500 border-t-transparent animate-spin" />
+                ) : (
+                  <div className="h-3 w-3 rounded-full border-2 border-gray-300" />
+                )}
+                Photo Generation
+              </div>
+            </div>
+
+            {/* Generation Stats */}
+            {pipeline.phase === 'generating' && pipeline.generation.total > 0 && (
+              <p className="text-xs text-gray-400">
+                {pipeline.generation.completed} of {pipeline.generation.total} photos generated
+                {pipeline.generation.failed > 0 && ` (${pipeline.generation.failed} failed)`}
+              </p>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Order Summary */}
