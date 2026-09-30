@@ -6,7 +6,19 @@ import { Footer } from '@/components/marketing/footer';
 import { siteConfig } from '@/config/site';
 import { getBlogPost, getAllBlogPosts } from '@/config/blog';
 import { ArticleSchema, BreadcrumbSchema } from '@/components/structured-data';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
+
+function getRelatedPosts(currentSlug: string, currentTags: string[], count = 3) {
+  const allPosts = getAllBlogPosts();
+  return allPosts
+    .filter((p) => p.slug !== currentSlug)
+    .map((p) => ({
+      ...p,
+      relevance: p.tags.filter((t) => currentTags.includes(t)).length,
+    }))
+    .sort((a, b) => b.relevance - a.relevance || new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+    .slice(0, count);
+}
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -115,6 +127,46 @@ export default async function BlogPostPage({ params }: Props) {
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </div>
+
+        {/* Related Posts */}
+        {(() => {
+          const related = getRelatedPosts(post.slug, post.tags);
+          if (related.length === 0) return null;
+          return (
+            <div className="border-t border-tp-line bg-white py-16">
+              <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+                <h2 className="text-xl font-bold text-tp-ink mb-8">You might also like</h2>
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {related.map((rp) => (
+                    <Link
+                      key={rp.slug}
+                      href={`/blog/${rp.slug}`}
+                      className="group rounded-tp-card border border-tp-line bg-white p-5 transition-all hover:border-tp-bronze/40 hover:shadow-md"
+                    >
+                      <div className="flex flex-wrap gap-1.5 mb-3">
+                        {rp.tags.slice(0, 2).map((t) => (
+                          <span
+                            key={t}
+                            className="rounded-full bg-tp-paper border border-tp-line px-2.5 py-0.5 text-[10px] font-medium text-tp-bronze-ink"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                      <h3 className="text-sm font-bold text-tp-ink group-hover:text-tp-bronze-ink transition-colors line-clamp-2">
+                        {rp.title}
+                      </h3>
+                      <p className="mt-2 text-xs text-tp-muted line-clamp-2">{rp.description}</p>
+                      <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-tp-bronze-ink group-hover:text-tp-bronze transition-colors">
+                        Read more <ArrowRight className="h-3 w-3" />
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          );
+        })()}
 
         {/* CTA */}
         <div className="border-t border-gray-200 bg-gray-50 py-16">

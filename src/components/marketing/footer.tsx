@@ -221,6 +221,30 @@ export function Footer() {
                   Glossary
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/tools/email-signature-generator"
+                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
+                >
+                  Signature Generator
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/free-headshot-generator"
+                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
+                >
+                  Free Headshots
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/linkedin-headshots"
+                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
+                >
+                  LinkedIn Headshots
+                </Link>
+              </li>
             </ul>
           </div>
 

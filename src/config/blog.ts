@@ -1051,6 +1051,272 @@ export const blogPosts: BlogPost[] = [
     tags: ['Personal Branding', 'Startups', 'Tips'],
     readingTime: '5 min read',
   },
+  {
+    slug: 'remote-worker-headshot-guide',
+    title: 'Remote Worker Headshots: Look Professional on Every Video Call',
+    description:
+      'Working remotely means your photo and your video feed are your first impression. Learn how to look polished on calls, in team directories and on LinkedIn.',
+    content: `
+      <p>When your colleagues, clients and hiring managers never meet you in person, your digital presence does all the talking. For remote workers, a profile photo is not a small detail. It appears in chat apps, calendar invites, email signatures, company directories and every video call where your camera happens to be off. A strong visual identity helps people trust you before you have said a word.</p>
+
+      <h2>Why Remote Workers Need Professional Photos</h2>
+      <p>In an office, people form impressions through small, repeated interactions in hallways and meeting rooms. Remote teams lose most of those moments, so the few visual cues that remain carry more weight. A clear, friendly and professional photo signals that you take your role seriously and that you are easy to work with.</p>
+      <ul>
+        <li><strong>Trust at a distance:</strong> A real, well-lit face builds familiarity faster than an initial in a colored circle.</li>
+        <li><strong>Consistency:</strong> The same photo across Slack, Teams, email and LinkedIn makes you instantly recognizable.</li>
+        <li><strong>Opportunity:</strong> Recruiters, clients and collaborators often decide whether to reach out based on a thumbnail.</li>
+      </ul>
+
+      <h2>Looking Polished on Camera</h2>
+      <p>Your photo is only half the story. The other half is your live video feed, and a few simple adjustments make a large difference.</p>
+      <ul>
+        <li><strong>Raise the camera to eye level.</strong> Stack books under a laptop or use a stand so you are not looking up or down at the lens.</li>
+        <li><strong>Face your light source.</strong> A window in front of you, or a soft lamp just behind the screen, beats overhead lighting every time. Avoid sitting with a bright window behind you.</li>
+        <li><strong>Frame from mid-chest up.</strong> Leave a little space above your head and keep your eyes roughly a third of the way down the frame.</li>
+        <li><strong>Choose solid, calm colors.</strong> Busy patterns can shimmer on compressed video, and colors that match your background can make you disappear.</li>
+        <li><strong>Look at the lens when you speak.</strong> It feels strange at first, but it reads as eye contact to everyone else on the call.</li>
+      </ul>
+
+      <h2>Zoom and Teams Backgrounds</h2>
+      <p>A tidy real background usually looks better than a virtual one. A bookshelf, a plain wall or a simple plant behind you appears natural and avoids the glitchy edges that virtual backgrounds can produce around hair and shoulders. If your space is cluttered or shared, a subtle blur is a safer choice than a dramatic scene. Skip beaches and cartoon offices for client-facing calls, as they tend to distract from what you are saying.</p>
+      <p>The same principles apply to your still photo. Our <a href="/blog/headshot-background-guide">headshot background guide</a> explains which colors and textures work best for different roles, and most of the advice carries over directly to your video setup.</p>
+
+      <h2>AI Headshots for Remote Teams</h2>
+      <p>One of the hardest parts of a distributed team is getting everyone to have a matching, professional photo. You cannot book a single photographer for people in six time zones, and self-taken photos vary wildly in quality. AI headshots solve this neatly. Each person uploads a few selfies from wherever they live, and receives polished, consistent portraits without anyone traveling or scheduling a shoot.</p>
+      <p>For employers, that means a uniform look on the company website, in the internal directory and on press pages. For individuals, it means studio-quality results without the cost of a session. If you are weighing the trade-offs, our comparison of <a href="/blog/ai-headshots-vs-traditional-photography">AI headshots versus traditional photography</a> covers cost, speed and quality in detail, and the <a href="/team-headshots">team headshots page</a> explains how group orders work.</p>
+
+      <h2>LinkedIn Matters More When You Work Remotely</h2>
+      <p>For remote job seekers, LinkedIn is effectively your office door. Recruiters hiring for distributed roles often have hundreds of candidates they will never meet, and they lean on your profile to judge professionalism and communication style. Profiles with a clear photo consistently receive more views and more messages than those without one.</p>
+      <p>Pick a photo where your face fills a good portion of the frame, your expression is warm and natural, and the background is uncluttered. It should still be recognizable when shrunk to a tiny circle. For a deeper walkthrough, read our guide to the <a href="/blog/best-headshot-for-linkedin-profile">best headshot for your LinkedIn profile</a>.</p>
+
+      <h2>A Simple Remote Professional Checklist</h2>
+      <ul>
+        <li>One current, professional headshot used on every platform.</li>
+        <li>Camera at eye level, with light in front of you.</li>
+        <li>A calm, tidy background or a gentle blur.</li>
+        <li>Solid, flattering clothing that contrasts with your backdrop.</li>
+        <li>A refresh of your photo at least every couple of years.</li>
+      </ul>
+
+      <h2>Get Your Remote-Ready Headshot With TailorPic</h2>
+      <p>You do not need a studio to look professional from your home office. With TailorPic, you upload a handful of selfies and receive a set of polished portraits, typically within a couple of hours. Your uploads are deleted automatically after 30 days, and there is a 14-day money-back guarantee. When you are ready, <a href="/dashboard/upload">upload your selfies</a> or browse <a href="/headshots">headshot styles</a> to find the look that suits your role.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-11-15',
+    tags: ['Remote Work', 'Professional', 'Headshots'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'medical-residency-headshot-requirements',
+    title: 'Medical Residency Headshot Requirements: What Programs Expect',
+    description:
+      'Applying for residency through ERAS? Learn what photo requirements apply, what to wear, how to handle lighting and backgrounds, and the mistakes to avoid.',
+    content: `
+      <p>Residency applications are competitive, and every element of your file is read closely, including your photo. While the picture will never outweigh your scores, letters and experience, a professional image helps programs see you as a polished, approachable future colleague. Here is what to know before you upload.</p>
+
+      <h2>ERAS Photo Requirements</h2>
+      <p>The Electronic Residency Application Service allows applicants to attach a photo to their application, and most applicants choose to do so. Requirements can change from one application cycle to the next, so always check the current instructions from ERAS and the AAMC before you submit. In general, expect the following:</p>
+      <ul>
+        <li>A digital image in a common format such as JPEG, within a stated file size limit.</li>
+        <li>A recent photo that clearly shows your face and looks like you on interview day.</li>
+        <li>A head-and-shoulders or upper-chest framing rather than a full-body or group shot.</li>
+        <li>No filters, heavy retouching or decorative borders.</li>
+      </ul>
+      <p>Treat the official guidelines as the final word. Anything in this article is general advice and does not replace them.</p>
+
+      <h2>What to Wear: White Coat or Business Attire?</h2>
+      <p>Both options are widely accepted, and there is no single correct answer. A white coat over professional clothing signals your identity as a medical student and can look natural for clinical specialties. Business attire, meaning a dark suit jacket or blazer with a collared shirt or blouse, presents you as a polished professional and avoids any concern about wearing a coat you have not yet fully earned.</p>
+      <ul>
+        <li>Choose solid, conservative colors such as navy, charcoal or black.</li>
+        <li>Avoid busy patterns, large logos and flashy jewelry.</li>
+        <li>Make sure your collar sits flat and your clothes fit well through the shoulders.</li>
+        <li>If you wear a white coat, make sure it is clean, pressed and free of clutter such as pens or badges.</li>
+      </ul>
+
+      <h2>Background Standards</h2>
+      <p>The safest background is plain, neutral and uncluttered. Soft gray, light blue or off-white tones keep attention on your face and reproduce reliably at small sizes. Avoid outdoor scenes, hospital corridors with visible patients or equipment, and anything that could raise a privacy concern. Our <a href="/blog/headshot-background-guide">headshot background guide</a> explores which colors suit which professions.</p>
+
+      <h2>Lighting Tips</h2>
+      <p>Good lighting is the difference between a photo that looks professional and one that looks like a driver's license. Soft, even light from the front, such as a large window or a diffused lamp, flatters most faces. Avoid harsh overhead light, which creates shadows under the eyes, and avoid a bright window directly behind you, which darkens your face. If you are taking the photo yourself, turn slightly toward the light and check that both sides of your face are evenly lit.</p>
+
+      <h2>Common Mistakes to Avoid</h2>
+      <ul>
+        <li><strong>Casual or cropped photos.</strong> Cropping yourself out of a vacation or party picture is very easy to spot.</li>
+        <li><strong>Outdated images.</strong> Your photo should look like the person who walks into the interview.</li>
+        <li><strong>Heavy filters or editing.</strong> Over-smoothed skin and dramatic color grading look unnatural.</li>
+        <li><strong>Distracting expressions.</strong> A relaxed, genuine smile reads as warm and confident. A stiff or overly serious face can look cold.</li>
+        <li><strong>Low resolution.</strong> A blurry or pixelated image suggests carelessness.</li>
+      </ul>
+
+      <h2>How AI Can Help Medical Students</h2>
+      <p>Between clerkships, exams and away rotations, few students have the time or budget for a studio session. AI headshots offer a practical alternative. You upload a few clear selfies, and the system generates professional portraits with clean backgrounds, even lighting and your choice of attire. The result should look like you on a good day, not like a different person. Read our overview of <a href="/blog/how-ai-headshots-work">how AI headshots work</a> to understand the process, and review the <a href="/blog/professional-headshot-tips-2025">professional headshot tips</a> for guidance on expressions and posing.</p>
+      <p>Whatever method you choose, choose a result that honestly represents your appearance. Programs value authenticity, and you will meet them in person soon enough.</p>
+
+      <h2>Prepare Your Residency Photo With TailorPic</h2>
+      <p>TailorPic helps students and physicians create polished, natural headshots in about an hour or two, with no photographer required. Your uploads are deleted after 30 days and every order includes a 14-day money-back guarantee. <a href="/dashboard/upload">Upload your selfies</a> to get started, or see <a href="/pricing">pricing</a> for current plans.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-11-28',
+    tags: ['Medical', 'Residency', 'Headshots'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'executive-headshot-guide',
+    title: 'Executive Headshots: How C-Suite Leaders Build Visual Authority',
+    description:
+      'Executives are judged on presence long before they speak. Learn how premium headshots convey confidence, approachability and consistency across every platform.',
+    content: `
+      <p>For a chief executive, founder or board member, a headshot is rarely just a profile picture. It appears on the company website, in investor presentations, in annual reports, in press coverage and on conference programs. It becomes shorthand for the person and the organization they lead. Getting it right is a small investment with an outsized return on trust.</p>
+
+      <h2>Why Executives Need Premium Headshots</h2>
+      <p>Leaders are evaluated quickly by investors, candidates, journalists and customers. Research on first impressions consistently shows that people form judgments about competence and trustworthiness within seconds of seeing a face. An outdated or casual photo can quietly undermine an otherwise strong reputation, while a polished one reinforces the credibility you have already earned.</p>
+      <ul>
+        <li><strong>Investors and boards</strong> look for signs of composure and seriousness.</li>
+        <li><strong>Prospective hires</strong> look for leaders they would enjoy working for.</li>
+        <li><strong>Media and event organizers</strong> need a high-quality image they can use immediately.</li>
+      </ul>
+
+      <h2>Confidence and Approachability</h2>
+      <p>The best executive portraits balance two qualities that can seem to conflict. Authority comes from posture, a steady gaze and well-fitted clothing. Approachability comes from a relaxed expression and a hint of warmth around the eyes. Too much of the first and you look distant, too much of the second and you may look informal.</p>
+      <ul>
+        <li>Angle your shoulders slightly away from the camera and turn your face back toward it.</li>
+        <li>Lean a little forward from the waist, which defines the jawline and signals engagement.</li>
+        <li>Think of a genuine moment, such as greeting a colleague, rather than forcing a smile.</li>
+        <li>Keep the chin level or very slightly lowered, never tilted up.</li>
+      </ul>
+
+      <h2>Industry-Appropriate Styling</h2>
+      <p>Expectations vary by sector. A banker or attorney is usually expected to appear in a dark suit and tie or an equally formal equivalent. A technology founder or creative director can often wear a refined open collar or a tailored blazer without a tie. Healthcare leaders may choose professional attire or a clean white coat, depending on their role. The guiding principle is to dress one step above your typical audience, and to choose solid colors that flatter your skin tone. Our <a href="/blog/lawyer-headshot-guide">lawyer headshot guide</a> shows how a conservative industry approaches this question in detail.</p>
+      <p>Backgrounds follow the same logic. Neutral studio tones are timeless, while a softly blurred office or city setting can add context. Whichever you choose, avoid anything that competes with your face. See the <a href="/blog/headshot-background-guide">headshot background guide</a> for examples.</p>
+
+      <h2>Updating Across Platforms</h2>
+      <p>Many leaders have a great photo on the company website and an old, mismatched one on LinkedIn or a conference page. Inconsistency makes the brand feel unmanaged. Build a simple checklist and update every place your face appears:</p>
+      <ul>
+        <li>Company website leadership page and press kit</li>
+        <li>LinkedIn and other professional networks</li>
+        <li>Email signature and calendar profile</li>
+        <li>Speaker bios for conferences and podcasts</li>
+        <li>Investor decks, annual reports and board portals</li>
+      </ul>
+      <p>Keep both a square crop for social profiles and a larger, high-resolution version for print and press. For platform-specific advice, see our guide to the <a href="/blog/best-headshot-for-linkedin-profile">best headshot for your LinkedIn profile</a>.</p>
+
+      <h2>Consistency for Board Bios and Press</h2>
+      <p>When a journalist or event organizer requests your photo, they should receive the same image you use everywhere else. A consistent portrait, paired with a matching bio, makes you easy to cover and easy to remember. It also ensures that an older, less flattering image does not circulate in your place. If your leadership team appears together on the website, aim for a matching style, background and framing, so the group looks cohesive. The <a href="/blog/corporate-team-photos-guide">corporate team photos guide</a> explains how to achieve this across a whole team.</p>
+
+      <h2>A Practical Option for Busy Leaders</h2>
+      <p>Executive calendars rarely leave room for a half-day studio session, which is why many leaders now consider AI as a complement or alternative. You can read an honest comparison in our article on <a href="/blog/ai-headshots-vs-traditional-photography">AI headshots versus traditional photography</a>. For many executives, the flexibility of refreshing a photo from home, whenever a role or look changes, outweighs the ritual of a traditional shoot.</p>
+
+      <h2>Build Your Visual Authority With TailorPic</h2>
+      <p>TailorPic turns a handful of selfies into polished, professional portraits in about an hour or two, with your uploads deleted after 30 days and a 14-day money-back guarantee. If you manage a leadership team, explore <a href="/team-headshots">team headshots</a> or talk to us about our <a href="/enterprise">enterprise options</a>. To begin, <a href="/dashboard/upload">upload your selfies</a> today.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-12-05',
+    tags: ['Executive', 'Leadership', 'Photography'],
+    readingTime: '6 min read',
+  },
+  {
+    slug: 'startup-team-branding-photos',
+    title: 'Startup Team Photos: Building Brand Identity on a Budget',
+    description:
+      'Early-stage teams need consistent, professional photos for their website, LinkedIn and pitch decks. Learn how to do it affordably and keep it consistent as you grow.',
+    content: `
+      <p>In the early days of a startup, every dollar and every hour counts. Yet first impressions matter enormously. Investors, customers and candidates will look at your website and your team before they commit to anything. A set of consistent, professional team photos is one of the cheapest ways to make a young company look established and trustworthy.</p>
+
+      <h2>Where Early-Stage Teams Need Photos</h2>
+      <ul>
+        <li><strong>The About or Team page:</strong> Often one of the most visited pages on a startup site, because people want to know who is behind the product.</li>
+        <li><strong>LinkedIn profiles:</strong> Investors and prospects will check founders and early hires, and matching company branding strengthens the story.</li>
+        <li><strong>Pitch decks:</strong> A team slide with clear, professional photos tells investors that you are organized and credible.</li>
+        <li><strong>Press kits and launch announcements:</strong> Journalists need usable images quickly.</li>
+        <li><strong>Job postings and recruiting pages:</strong> Candidates want to see the people they might work alongside.</li>
+      </ul>
+
+      <h2>Consistent Style on a Budget</h2>
+      <p>Consistency matters more than expensive production. A mismatched gallery, with one photo taken outdoors, another in an office and a third cropped from a wedding picture, makes a team look disconnected. A uniform set looks intentional, even if the budget was modest. To achieve it, agree on a few basics before anyone has their picture taken:</p>
+      <ul>
+        <li><strong>One background:</strong> A neutral tone or a soft brand color for everyone.</li>
+        <li><strong>One framing:</strong> Head and shoulders, with the face taking the same share of the frame.</li>
+        <li><strong>One dress code:</strong> For example, smart casual with solid colors.</li>
+        <li><strong>One mood:</strong> Friendly and confident, matched to your brand voice.</li>
+      </ul>
+      <p>Our <a href="/blog/corporate-team-photos-guide">corporate team photos guide</a> goes into more detail about setting these standards for a group.</p>
+
+      <h2>AI Versus a Studio for Growing Teams</h2>
+      <p>A traditional studio or photographer produces excellent results, but the logistics add up quickly. You pay for the session, coordinate schedules, handle retakes for absent teammates and repeat the process every time someone joins. For a team of five, that is manageable. For a team that grows from five to fifty in a year, it becomes a recurring cost and a scheduling headache.</p>
+      <p>AI headshots flip the equation. Each person uploads selfies from anywhere, and everyone receives portraits in the same style, at a predictable per-person price. That makes it especially helpful for remote or hybrid startups. We compare both options honestly in <a href="/blog/ai-headshots-vs-traditional-photography">AI headshots versus traditional photography</a>, and you can estimate your own numbers with the <a href="/tools/headshot-cost-calculator">headshot cost calculator</a>.</p>
+      <p>A studio still makes sense for certain occasions, such as a hero image for a launch campaign or a team group shot. Many startups sensibly combine both, using AI for individual portraits and a one-off shoot for a team picture.</p>
+
+      <h2>Maintaining Consistency as the Team Grows</h2>
+      <p>The real test of a photo strategy comes at hire number twenty. Without a plan, each new person ends up with a slightly different look, and the team page slowly becomes a patchwork. A few habits prevent this:</p>
+      <ul>
+        <li><strong>Write a short photo guide.</strong> One page with background, framing, dress and file requirements is enough.</li>
+        <li><strong>Add it to onboarding.</strong> Make the headshot a standard first-week task, just like setting up email.</li>
+        <li><strong>Keep your style settings.</strong> Save the choices you made for the first batch, so later hires match.</li>
+        <li><strong>Refresh together.</strong> Every year or two, update the whole team at once to keep things current.</li>
+      </ul>
+      <p>For a real-world example of how a company approached a full switch, read how a <a href="/blog/how-50-person-company-switched-to-ai-headshots">50-person company switched to AI headshots</a>. Founders may also enjoy our piece on <a href="/blog/startup-founder-personal-branding-ai-photos">personal branding with AI photos</a>.</p>
+
+      <h2>Start Building Your Team Brand With TailorPic</h2>
+      <p>TailorPic gives startups a simple way to give every teammate a matching, professional portrait without booking a photographer. Uploads are deleted after 30 days, and every order comes with a 14-day money-back guarantee. Explore <a href="/team-headshots">team headshots</a>, check <a href="/pricing">pricing</a> or <a href="/dashboard/upload">upload your selfies</a> to get started.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-12-20',
+    tags: ['Startup', 'Teams', 'Branding'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'headshot-trends-2025',
+    title: "Headshot Trends 2025: What's Changing in Professional Photography",
+    description:
+      'From AI adoption to natural, authentic portraits and environmental settings, here are the trends reshaping how professionals present themselves in 2025.',
+    content: `
+      <p>Professional headshots are changing faster than at any time in recent memory. New technology, shifting workplace culture and the growing importance of personal branding are all influencing what a good portrait looks like. Here are the trends worth understanding if you are planning a new photo in 2025.</p>
+
+      <h2>AI Is Becoming Mainstream</h2>
+      <p>The biggest shift is the rapid adoption of AI in portrait photography. What once seemed experimental is now a practical option for individuals and companies of every size. Instead of scheduling a studio session, professionals can upload a few selfies and receive polished portraits in hours. Teams spread across several cities can achieve a consistent look without coordinating travel.</p>
+      <p>This does not mean traditional photographers are disappearing. Many are using AI tools for retouching and backgrounds, and many clients still choose a studio for special projects. The real trend is choice: people can now match the method to the need, budget and timeline. Our article on <a href="/blog/ai-headshots-vs-traditional-photography">AI headshots versus traditional photography</a> helps you weigh the options, and <a href="/blog/how-ai-headshots-work">how AI headshots work</a> explains the technology.</p>
+
+      <h2>Natural and Authentic Over Formal</h2>
+      <p>The stiff, heavily retouched corporate portrait is fading. Audiences increasingly respond to images that feel real: soft natural lighting, relaxed expressions and minimal retouching. Skin keeps its texture, smiles look spontaneous and posture is comfortable instead of rigid.</p>
+      <ul>
+        <li>Soft, directional light replaces flat, high-contrast studio flash.</li>
+        <li>Genuine smiles and candid expressions replace rehearsed ones.</li>
+        <li>Light retouching removes distractions without erasing character.</li>
+        <li>Slightly looser framing gives the subject room to breathe.</li>
+      </ul>
+      <p>The goal is a photo that looks like you on your best day, which is exactly what people expect when they meet you after seeing your profile. Our <a href="/blog/headshot-dos-and-donts">headshot dos and don'ts</a> reinforce why authenticity beats perfection.</p>
+
+      <h2>The Rise of Environmental Portraits</h2>
+      <p>Plain backdrops are still the standard for many roles, but environmental portraits are gaining ground. These place the subject in a setting that says something about their work: a designer in a bright studio, a chef in a kitchen, a consultant in a modern office with a softly blurred background. The setting adds context and personality while the subject remains the focus.</p>
+      <p>The key is restraint. Keep the background softly out of focus, choose settings that match your profession and avoid elements that compete with your face. For help choosing, see the <a href="/blog/headshot-background-guide">headshot background guide</a>.</p>
+
+      <h2>Personal Branding Takes Center Stage</h2>
+      <p>More people now think of themselves as a brand, whether they are freelancers, founders or employees building a reputation in their field. A headshot is no longer a one-time purchase, but a visual asset used consistently across LinkedIn, personal websites, newsletters, podcasts and speaking engagements. Professionals are also updating photos more often, sometimes every year, to stay current.</p>
+      <p>That emphasis on consistency is changing how people shop for photos. They want a set of variations, such as different backgrounds and outfits, all clearly the same person and style. Founders in particular benefit, as described in our guide to <a href="/blog/startup-founder-personal-branding-ai-photos">personal branding with AI photos</a>.</p>
+
+      <h2>Industry-Specific Trends</h2>
+      <ul>
+        <li><strong>Legal and finance:</strong> Conservative attire and neutral backgrounds remain standard, but with warmer expressions and softer lighting. See the <a href="/blog/lawyer-headshot-guide">lawyer headshot guide</a>.</li>
+        <li><strong>Real estate:</strong> Approachable, friendly portraits with on-brand colors help agents stand out on signs and listings. Read more in our <a href="/blog/real-estate-agent-headshots">real estate agent headshots</a> article.</li>
+        <li><strong>Technology and startups:</strong> Relaxed, smart-casual looks, often with simple or lightly textured backgrounds.</li>
+        <li><strong>Healthcare:</strong> Clean, trustworthy imagery, with white coats or scrubs depending on the role.</li>
+        <li><strong>Creative fields:</strong> Bolder color, distinctive settings and more personality.</li>
+      </ul>
+
+      <h2>Teams Want Consistency, Not Uniformity</h2>
+      <p>Companies increasingly want team pages that feel cohesive without looking robotic. Shared backgrounds and framing tie everyone together, while individual expressions and outfits keep personalities visible. Remote and hybrid workforces have accelerated this demand, since gathering everyone for a single shoot is often impractical. Explore our <a href="/blog/corporate-team-photos-guide">corporate team photos guide</a> for practical steps.</p>
+
+      <h2>What This Means for You</h2>
+      <p>If your current photo is more than two or three years old, is poorly lit or does not reflect your current role, 2025 is a good time to refresh it. Aim for natural light, a relaxed expression, a clean background and a look that fits your industry. Then use the same image consistently everywhere you appear online.</p>
+
+      <h2>Refresh Your Headshot With TailorPic</h2>
+      <p>TailorPic brings these trends together, offering natural-looking, professional portraits from just a few selfies, usually in an hour or two. Uploads are deleted after 30 days, and there is a 14-day money-back guarantee. Browse <a href="/headshots">headshot styles</a>, see <a href="/pricing">pricing</a> or <a href="/dashboard/upload">upload your selfies</a> to begin.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-01-15',
+    tags: ['Trends', 'Photography', 'AI'],
+    readingTime: '6 min read',
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
