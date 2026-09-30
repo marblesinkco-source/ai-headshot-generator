@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import { Mail, MessageSquare, Clock, MapPin } from 'lucide-react';
 
@@ -73,6 +74,10 @@ const faqs = [
 export default function ContactPage() {
   return (
     <main className="min-h-screen">
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: siteConfig.url },
+        { name: 'Contact', url: `${siteConfig.url}/contact` },
+      ]} />
       <Header />
 
       {/* Hero */}

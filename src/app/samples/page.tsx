@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { BreadcrumbSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import {
@@ -105,6 +106,10 @@ export default function SamplesPage() {
 
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: siteConfig.url },
+        { name: 'Samples', url: `${siteConfig.url}/samples` },
+      ]} />
       <Header />
       <main className="min-h-screen bg-white">
         {/* ── Hero ─────────────────────────────────────── */}

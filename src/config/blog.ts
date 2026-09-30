@@ -849,6 +849,208 @@ export const blogPosts: BlogPost[] = [
     tags: ['Headshots', 'Tips', 'Career'],
     readingTime: '7 min read',
   },
+  {
+    slug: 'how-50-person-company-switched-to-ai-headshots',
+    title: 'How a 50-Person Company Switched to AI Headshots and Saved $12,000',
+    description:
+      'A realistic scenario of a mid-sized company replacing a traditional photographer with AI headshots: the cost comparison, the process, and the results for the team page and onboarding.',
+    content: `
+      <p>This article walks through a realistic, illustrative scenario: a mid-sized marketing agency with about 50 employees that needs current, consistent headshots for its website, proposals and LinkedIn profiles. It is not a report about a named client. It is a worked example built on typical market prices, so you can adapt the numbers to your own company.</p>
+
+      <h2>The Problem With Traditional Team Photo Days</h2>
+      <p>Most growing companies know the pattern. The team page has a mix of photos: a few polished studio portraits from three years ago, some cropped vacation pictures, a couple of phone selfies and several gray placeholder silhouettes for people who joined after the last photo day. Clients notice this kind of inconsistency, even if they never mention it.</p>
+      <p>The obvious fix is to hire a photographer. That is a reasonable choice, but it comes with hidden costs that add up quickly for a company with 50 people:</p>
+      <ul>
+        <li><strong>Coordination.</strong> Someone has to pick a date, book a room, build a schedule and chase people who are traveling, on leave or working remotely.</li>
+        <li><strong>Lost working time.</strong> Each person spends 15 to 30 minutes on the shoot, plus time to get ready and walk to the room. Across 50 people, that is a full working day or more of combined time.</li>
+        <li><strong>Remote staff.</strong> Anyone who cannot attend ends up with a different photo, taken by a different person, in different light.</li>
+        <li><strong>Waiting.</strong> Editing and delivery often take one to two weeks, and there are usually rounds of feedback on retouching.</li>
+        <li><strong>Price.</strong> Professional corporate headshot sessions commonly cost somewhere between $200 and $300 per person once you include retouching, although rates vary by city and photographer.</li>
+      </ul>
+
+      <h2>The Cost Comparison</h2>
+      <p>Let us use a mid-point estimate of about $250 per person for a traditional photographer. For 50 people, that comes to roughly $12,500. This figure does not include the time employees spend away from their work or the cost of rebooking the photographer when new people join.</p>
+      <p>Now compare that with AI headshots. TailorPic plans start at $9.90 per person. For 50 people, that is about $495. The difference between the two is close to $12,000, which is where the title of this article comes from.</p>
+      <table>
+        <thead>
+          <tr><th>Item</th><th>Traditional photographer</th><th>AI headshots</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Cost per person (estimate)</td><td>about $250</td><td>from $9.90</td></tr>
+          <tr><td>Cost for 50 people</td><td>about $12,500</td><td>about $495</td></tr>
+          <tr><td>Approximate saving</td><td colspan="2">about $12,000</td></tr>
+        </tbody>
+      </table>
+      <p>These are planning estimates, not guarantees. If your local photographer charges $150 per person, your saving will be smaller. If you are in a high-cost city and pay $350 or more, it will be larger. Our <a href="/tools/headshot-cost-calculator">headshot cost calculator</a> lets you enter your own numbers. For a broader view of the trade-offs, see our <a href="/blog/ai-headshots-vs-traditional-photography">comparison of AI and traditional photography</a>.</p>
+
+      <h2>The Process: Before and After</h2>
+      <p>The financial difference is easy to see. The difference in effort is just as important, so here is how the two processes compare step by step.</p>
+
+      <h3>The traditional process</h3>
+      <ol>
+        <li><strong>Planning.</strong> Get quotes from two or three photographers, choose one, agree on a backdrop and dress guidelines, and book a date.</li>
+        <li><strong>Scheduling.</strong> Create time slots for 50 people, send reminders and handle reschedules.</li>
+        <li><strong>The shoot.</strong> Hold one or two days of sessions. Some people are nervous in front of a camera, so a few sessions run long.</li>
+        <li><strong>Editing.</strong> Wait for the photographer to select, retouch and deliver the files, then request corrections.</li>
+        <li><strong>Distribution.</strong> Rename files, crop them to a consistent size and upload them to the website and other systems.</li>
+      </ol>
+
+      <h3>The AI process</h3>
+      <ol>
+        <li><strong>Upload.</strong> Each employee uploads a handful of clear selfies from their phone, whenever it suits them. There is no room to book.</li>
+        <li><strong>Wait.</strong> The AI trains on each person and generates their portraits. This typically takes a couple of hours, and people can get on with their day in the meantime.</li>
+        <li><strong>Download.</strong> Each person picks the images they like best and downloads them.</li>
+      </ol>
+      <p>The most noticeable change is that the coordination work almost disappears. A team lead shares a short set of instructions: use even daylight, face the light, avoid hats and sunglasses, and send a few different expressions. Our guide to <a href="/blog/corporate-team-photos-guide">corporate team photos</a> has a checklist that works well as a template for this message.</p>
+      <p>Because each person gets to choose among several results, there are also fewer awkward conversations about retouching. People see several options and pick the one that feels most like them.</p>
+
+      <h2>The Results: A Consistent Team Page and Faster Onboarding</h2>
+      <p>The benefits of the switch go beyond saving money. In this scenario, three practical results stand out.</p>
+      <p><strong>A consistent team page.</strong> When every headshot is generated with the same style settings, the team page looks like one set of photos rather than a collage. Backgrounds, lighting and framing match across the whole company. This is especially helpful for remote and hybrid teams, where people would otherwise be photographed in very different conditions. You can read more about matching styles in our <a href="/blog/headshot-background-guide">headshot background guide</a>.</p>
+      <p><strong>Faster onboarding.</strong> With a photographer, new hires often wait months for the next photo day, and the team page shows a placeholder in the meantime. With AI headshots, a new employee can upload selfies in their first week and have a matching portrait by the end of the day. The same process is available whenever someone changes roles or wants an update.</p>
+      <p><strong>Better use of time.</strong> A photo day that might have taken a full day of combined staff time becomes a few minutes per person. That time goes back to client work.</p>
+      <p>There are also things to consider honestly. AI headshots are not the right tool for every situation. If your company needs a photo of the leadership team in the office for a press feature, or a candid lifestyle shoot with a real setting, a photographer is still the better choice. Many companies use both: a photographer for a small number of hero images, and AI headshots for everyday profile use. Privacy is another point worth checking. TailorPic encrypts uploads and deletes them automatically 30 days after delivery, and you can read the details in our article on <a href="/blog/ai-headshot-privacy-security">AI headshot privacy and security</a>.</p>
+
+      <h3>Tips for a Smooth Rollout</h3>
+      <p>A few small decisions make the switch easier. First, agree on the style before anyone uploads: background, clothing tone and whether photos are smiling or neutral. Second, give people a simple deadline, such as one week, so the project does not drag on. Third, let employees choose their own final image from the results, because people are more comfortable with a photo they picked themselves. Finally, store the approved images in a shared folder with a clear naming convention, so that marketing, recruiting and sales can all find the same file. Repeating this process once a year keeps the team page current without another large budget request.</p>
+
+      <h2>Bring Consistent Headshots to Your Team With TailorPic</h2>
+      <p>If your company has a similar mix of outdated and missing photos, the process above is easy to try. Start with one or two people as a pilot, compare the results with your current photos, and then roll it out to everyone once you are comfortable with the quality.</p>
+      <p>For larger teams, our <a href="/enterprise">enterprise page</a> explains team plans, consistent styling and centralized ordering. If you just want to see what you get, you can <a href="/dashboard/upload">upload your selfies</a> and have your own headshot in a couple of hours. Every order is backed by a 14-day money-back guarantee, so it is easy to test with no real risk.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-08-01',
+    tags: ['Case Study', 'Corporate', 'Enterprise'],
+    readingTime: '6 min read',
+  },
+  {
+    slug: 'real-estate-team-ai-headshots-roi',
+    title: 'ROI of AI Headshots for Real Estate Teams: Time, Cost, and Consistency',
+    description:
+      'A practical look at the return on investment of AI headshots for a real estate team: onboarding new agents, cost per agent, time saved, and a consistent brand across listings and marketing.',
+    content: `
+      <p>Real estate is a business where people buy from people. A buyer or seller will often look at an agent's photo before they read a single word of the bio, and brokerages know this. That is why consistent, professional headshots matter so much for real estate teams. This article works through a generic scenario: a team of about 15 agents that adds several new agents each year. It does not describe a specific brokerage, and the figures are planning estimates you can replace with your own.</p>
+
+      <h2>Why Real Estate Teams Need a Consistent Look</h2>
+      <p>A real estate team sells a shared brand. The same faces appear on yard signs, flyers, listing pages, email signatures, social media and the team website. When those photos are taken at different times, in different places and by different people, the team looks less like one organization and more like a group of independent individuals.</p>
+      <p>Inconsistent photos cause a few specific problems:</p>
+      <ul>
+        <li><strong>Weaker trust signals.</strong> A blurry or outdated picture next to a polished one makes the whole team look less careful.</li>
+        <li><strong>Mismatched marketing materials.</strong> Printed pieces need high-resolution images with matching backgrounds and sizes.</li>
+        <li><strong>Out-of-date faces.</strong> A photo from ten years ago can be awkward when a client meets you in person.</li>
+        <li><strong>A slow start for new agents.</strong> A new agent with no photo, or a casual snapshot, is at a disadvantage in the first weeks, which is when they are building their network.</li>
+      </ul>
+      <p>For a more detailed look at what works in this industry, see our guide to <a href="/blog/real-estate-agent-headshots">real estate agent headshots</a>.</p>
+
+      <h2>Onboarding a New Agent: Traditional vs AI</h2>
+      <p>Onboarding is where the difference between the two approaches is easiest to see. Suppose a new agent joins your team on the first of the month.</p>
+
+      <h3>With a traditional photographer</h3>
+      <p>You can either book a one-off session for one person, which is usually the most expensive way to buy photography, or wait until you have several new agents and schedule a group day. A single session often costs $200 to $300 or more, and the agent still needs time to travel, get ready and wait for the edited files. If you wait for a group day, the new agent may go weeks with no professional photo at all. Either way, the photographer's background and lighting may be different from the last time, so the new photo may not match the rest of the team page.</p>
+
+      <h3>With AI headshots</h3>
+      <p>The new agent uploads a few selfies on their first day, following a short checklist you keep for this purpose. A couple of hours later, they have a set of portraits generated in the same style as the rest of the team. They can pick their favorites and start using them in email signatures, social profiles and the team website that same afternoon. There is no scheduling, no travel and no dependence on someone else's calendar.</p>
+      <p>This matters in real estate because the first 30 to 90 days often set the pattern for an agent's whole year. Being able to put a professional face on every piece of outreach from day one is a small but real advantage.</p>
+
+      <h2>Calculating the ROI: Time, Cost and Consistency</h2>
+      <p>ROI is usually reported in money, but for a team like this there are three separate things to measure. Here is a simple framework that uses only assumptions you can check yourself.</p>
+
+      <h3>1. Cost</h3>
+      <p>Assume a traditional session costs about $250 per agent, which is a mid-range figure. AI headshots from TailorPic start at $9.90 per agent. For a team of 15, the traditional cost is about $3,750 and the AI cost is about $149. If you add four new agents in a year and need to repeat the process for each, the traditional route adds roughly another $1,000, whereas the AI route adds about $40. Over a year, the gap is easily more than $4,000 for a team of this size. The exact figure depends on your local rates, and you can test different values in our <a href="/tools/headshot-cost-calculator">headshot cost calculator</a>.</p>
+
+      <h3>2. Time</h3>
+      <p>Count the hours as well as the dollars. A traditional session means travel, preparation and waiting, and it may take half a day of an agent's time. An AI headshot takes perhaps ten minutes to prepare and upload. For an agent whose time is spent showing homes and meeting clients, even two or three saved hours per person are worth something, because they go back to income-producing activity. You do not need to put an exact dollar value on it. Simply ask how many hours you would need to recover for the saving to matter, and you will usually find the answer is very few.</p>
+
+      <h3>3. Consistency</h3>
+      <p>Consistency is harder to measure, but it is often the most valuable part. When every photo uses the same style, your team page, brochures and social profiles look organized and intentional. It is hard to prove that this produces a specific number of extra leads, and we would not claim it does. What you can say is that a cohesive look removes a reason for a potential client to hesitate, and it costs very little to achieve.</p>
+      <p>A simple way to judge the return yourself is to track two numbers over a quarter: how many days it takes from a new agent's start date to having a full set of professional photos, and how much you spend per agent on photography. With AI headshots, both of those numbers shrink.</p>
+
+      <h3>Where AI headshots fall short</h3>
+      <p>To be fair, there are cases where a photographer is still a better choice. If you want photos of agents in front of a specific property, at a closing table or with clients, those have to be taken in real life. Many teams combine both approaches: AI headshots for day-to-day profiles and a yearly photographer visit for a small number of lifestyle and team images. You can also see our general <a href="/blog/ai-headshots-vs-traditional-photography">AI vs traditional photography</a> comparison for more detail.</p>
+
+      <h2>Getting Started: A Practical Plan for Your Team</h2>
+      <p>If you want to try this with your own team, here is a low-risk way to begin:</p>
+      <ol>
+        <li><strong>Choose a style.</strong> Decide on the background, clothing and overall mood you want for the team, for example a neutral background and business casual clothing.</li>
+        <li><strong>Write a short checklist.</strong> Ask agents to use natural daylight, face a window and send a few clear selfies with different expressions.</li>
+        <li><strong>Start with a pilot.</strong> Have two or three agents try it, review the results together and adjust your instructions.</li>
+        <li><strong>Roll it out.</strong> Once you are happy, ask everyone to follow the same process and keep the checklist for future hires.</li>
+        <li><strong>Document it.</strong> Add a line to your new agent onboarding document so the photo step happens in week one.</li>
+      </ol>
+      <p>This process works well alongside a good online presence. For related advice, see our articles on <a href="/blog/best-photos-for-linkedin">the best photos for LinkedIn</a> and <a href="/blog/professional-headshot-tips-2025">professional headshot tips</a>.</p>
+
+      <h2>Try TailorPic for Your Real Estate Team</h2>
+      <p>TailorPic generates professional headshots from a few selfies, typically within a couple of hours, starting at $9.90. Your uploads are deleted automatically after 30 days and every order comes with a 14-day money-back guarantee. To see how we approach this industry, visit our <a href="/industries/real-estate">real estate headshots page</a>. When you are ready to try it yourself, <a href="/dashboard/upload">upload your selfies</a> and see what your next agent photo could look like.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-08-15',
+    tags: ['Real Estate', 'ROI', 'Case Study'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'startup-founder-personal-branding-ai-photos',
+    title: 'Personal Branding for Startup Founders: How AI Photos Build Credibility Fast',
+    description:
+      'How startup founders can use AI-generated photos for LinkedIn, AngelList, the company website and press kits, with fast iteration, different styles per platform, and low cost.',
+    content: `
+      <p>When you are a startup founder, you are the first face of your company. Investors look you up before a meeting, journalists need an image for a story, candidates check your profile before they accept an offer, and customers want to know who is behind the product. Your photo is part of that first impression, and you usually have very little time and money to get it right. This article explains how founders can use AI photos to build credibility quickly, and where the approach works best.</p>
+
+      <h2>Why Founders Need More Than One Photo</h2>
+      <p>Most people think of a headshot as a single image. A founder actually needs a small set of images for different purposes, because each place where you appear has its own expectations.</p>
+      <ul>
+        <li><strong>LinkedIn.</strong> This is often the first place investors, partners and candidates look. A friendly, professional, well-lit portrait works best. See our guide on <a href="/blog/best-headshot-for-linkedin-profile">the best headshot for a LinkedIn profile</a> for details.</li>
+        <li><strong>AngelList and investor platforms.</strong> These profiles are read by people deciding whether to back you. A confident, clear image that looks like a real person matters more than a stylish one.</li>
+        <li><strong>Your company website.</strong> The about page and team section usually call for a consistent look across all cofounders and early hires.</li>
+        <li><strong>Press kit.</strong> Journalists and event organizers need high-resolution images, often in both a formal and a more relaxed version, and they need them quickly.</li>
+        <li><strong>Speaker bios, podcasts and social media.</strong> These often benefit from a slightly warmer, more approachable style.</li>
+      </ul>
+      <p>Hiring a photographer to cover all of these cases is possible, but early-stage budgets are tight and calendars are full. That is exactly where AI photos are useful.</p>
+
+      <h2>Speed: Iterating as Your Company Changes</h2>
+      <p>A startup changes fast. Your product pivots, your title changes, you raise a round, and you appear at a conference you did not plan on attending. The photo you took a year ago may no longer fit. With a traditional session, every refresh means finding a photographer, booking a time and waiting for edits. Many founders simply put it off, and end up with an outdated image on important profiles.</p>
+      <p>AI photos change that equation. You can upload a handful of selfies in the evening and have a set of portraits ready within a couple of hours. If you need a different look for a pitch deck, a new website or a press announcement next week, you can create it without rearranging your schedule.</p>
+      <p>This speed also makes it easier to experiment. You can try a few different styles, see which one feels most like you and then test them on your profiles. Nothing locks you into a single choice, and a bad result costs very little.</p>
+
+      <h2>Different Styles for Different Platforms</h2>
+      <p>Matching the image to its context is one of the easiest ways to look more credible. Here is a simple way to think about it.</p>
+
+      <h3>The formal portrait</h3>
+      <p>Use this on investor profiles, pitch materials and formal press features. It typically means a clean neutral or softly blurred background, a jacket or a smart shirt, and a calm, confident expression. It says that you are serious, prepared and easy to work with.</p>
+
+      <h3>The approachable portrait</h3>
+      <p>For LinkedIn, your website and social media, a slightly warmer look often works better. A natural smile, relaxed posture and softer lighting help people feel they could have a conversation with you. This matters if you are hiring, because candidates respond to founders who appear accessible.</p>
+
+      <h3>The brand-aligned portrait</h3>
+      <p>Some founders choose a background color or clothing that echoes the company's brand, which ties the person and the product together. This can work well on a website or a press kit, as long as the result still looks natural. Our <a href="/blog/headshot-background-guide">headshot background guide</a> explains how different backgrounds change the impression a photo gives.</p>
+      <p>A useful rule is to keep your face, hair and general appearance consistent across every image, while changing the framing, background and clothing to suit the platform. People should recognize you immediately wherever they find you. The image also has to look like you on a normal day. A heavily stylized result that does not resemble you in person can hurt trust rather than build it.</p>
+
+      <h2>The Advantages of AI: Speed, Cost and Variety</h2>
+      <p>For founders, three advantages stand out.</p>
+      <p><strong>Speed.</strong> There is no scheduling, no commute and no waiting for editing rounds. You can go from selfies to finished portraits in roughly an afternoon, which matters when a press opportunity or investor meeting comes up at short notice.</p>
+      <p><strong>Cost.</strong> A traditional studio session commonly costs $200 to $300 or more per person, and each repeat session costs the same again. TailorPic starts at $9.90, so you can refresh your look whenever your situation changes without worrying about the budget. The money you save can go towards product, hiring or marketing. If you want to compare the numbers for your own case, try the <a href="/tools/headshot-cost-calculator">headshot cost calculator</a>.</p>
+      <p><strong>Variety.</strong> You can produce several styles in one go, such as formal, casual and brand-aligned, rather than paying for each setup separately. That variety lets you match the image to the platform instead of using one photo everywhere.</p>
+      <p>There are limits to be honest about. If you are being photographed for a magazine cover or a documentary-style feature, a real photographer and a real location are the right choice. AI photos are best treated as a fast, affordable way to cover the everyday needs of a founder's online presence. For tips on getting good results from your selfies, read our <a href="/blog/professional-headshot-tips-2025">professional headshot tips</a>, and if you are concerned about how your images are handled, see our article on <a href="/blog/ai-headshot-privacy-security">privacy and security</a>.</p>
+
+      <h3>A quick checklist before you publish</h3>
+      <ul>
+        <li>Does the photo look like you today, not a heavily altered version?</li>
+        <li>Is your face clearly visible and well lit at small sizes, such as a LinkedIn thumbnail?</li>
+        <li>Is the style consistent across your website, LinkedIn and investor profiles?</li>
+        <li>Do your cofounders and early team members have a similar look on the team page?</li>
+        <li>Have you saved a high-resolution version for your press kit?</li>
+      </ul>
+
+      <h3>Keeping Your Photos Current</h3>
+      <p>Founders often treat a photo as a one-time task, but your appearance and role keep changing. A good habit is to review your profiles every six months, or whenever something significant happens, such as a funding announcement, a new product launch or a change of title. Replace the image on the profiles that matter most first, then update the rest. Keep the original selfies and style notes you used, so the next refresh is quick and looks consistent with the last one. Small, regular updates signal that you are active and engaged, which is a quiet form of credibility in itself.</p>
+
+      <h2>Build Your Founder Brand With TailorPic</h2>
+      <p>Your photo will never replace a good product or a clear story, but it can remove one small obstacle between you and the people you want to reach. With TailorPic, you upload a few selfies and receive professional portraits, typically within a couple of hours. Your uploads are deleted automatically after 30 days, and every order comes with a 14-day money-back guarantee. When you are ready, <a href="/dashboard/upload">upload your selfies</a> and create a set of photos for every platform you use.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-09-01',
+    tags: ['Personal Branding', 'Startups', 'Tips'],
+    readingTime: '5 min read',
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

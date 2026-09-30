@@ -213,6 +213,14 @@ export function Footer() {
                   Photo Analyzer
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/glossary"
+                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
+                >
+                  Glossary
+                </Link>
+              </li>
             </ul>
           </div>
 

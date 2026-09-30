@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { BreadcrumbSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { Star, Camera, Users, Award, ThumbsUp, Quote } from 'lucide-react';
@@ -131,6 +132,10 @@ const categoryColors: Record<string, string> = {
 export default function ReviewsPage() {
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: siteConfig.url },
+        { name: 'Reviews', url: `${siteConfig.url}/reviews` },
+      ]} />
       <Header />
       <main className="min-h-screen">
         {/* ── Hero Section ── */}

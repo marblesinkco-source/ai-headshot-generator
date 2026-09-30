@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { BreadcrumbSchema } from '@/components/structured-data';
+import { siteConfig } from '@/config/site';
 import {
   Building2, Users, Shield, Clock, CreditCard, Palette,
   ArrowRight, CheckCircle, Lock, BarChart3, Headphones, Globe,
@@ -20,6 +22,10 @@ export const metadata: Metadata = {
 export default function EnterprisePage() {
   return (
     <main className="min-h-screen">
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: siteConfig.url },
+        { name: 'Enterprise', url: `${siteConfig.url}/enterprise` },
+      ]} />
       <Header />
 
       {/* Hero */}

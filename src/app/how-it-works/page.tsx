@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { HowToSchema } from '@/components/structured-data';
+import { HowToSchema, BreadcrumbSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import {
@@ -146,6 +146,10 @@ const faqs = [
 export default function HowItWorksPage() {
   return (
     <main className="min-h-screen">
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: siteConfig.url },
+        { name: 'How It Works', url: `${siteConfig.url}/how-it-works` },
+      ]} />
       <Header />
       <HowToSchema />
 

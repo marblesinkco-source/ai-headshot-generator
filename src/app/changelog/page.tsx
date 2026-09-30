@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
@@ -115,6 +116,10 @@ const changelog: ChangelogMonth[] = [
 export default function ChangelogPage() {
   return (
     <main className="min-h-screen">
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: siteConfig.url },
+        { name: 'Changelog', url: `${siteConfig.url}/changelog` },
+      ]} />
       <Header />
 
       {/* Hero */}

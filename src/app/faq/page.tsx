@@ -5,7 +5,7 @@ import { Footer } from '@/components/marketing/footer';
 import { FAQ } from '@/components/marketing/faq';
 import { faqs } from '@/config/faqs';
 import { siteConfig } from '@/config/site';
-import { FAQSchema } from '@/components/structured-data';
+import { FAQSchema, BreadcrumbSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions',
@@ -22,6 +22,10 @@ export default function FAQPage() {
   return (
     <main className="min-h-screen">
       <FAQSchema items={faqs.map(f => ({ question: f.question, answer: f.answer }))} />
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: siteConfig.url },
+        { name: 'FAQ', url: `${siteConfig.url}/faq` },
+      ]} />
       <Header />
 
       {/* Hero */}

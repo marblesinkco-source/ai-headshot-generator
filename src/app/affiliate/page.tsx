@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
   ArrowRight,
@@ -138,6 +139,10 @@ const faqs = [
 export default function AffiliatePage() {
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: siteConfig.url },
+        { name: 'Affiliate Program', url: `${siteConfig.url}/affiliate` },
+      ]} />
       <Header />
       <main>
         {/* ── Hero ─────────────────────────────────────────────── */}

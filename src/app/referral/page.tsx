@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { BreadcrumbSchema } from '@/components/structured-data';
+import { siteConfig } from '@/config/site';
 import {
   Gift, Share2, CreditCard, ArrowRight, Users, Heart,
   CheckCircle, Sparkles,
@@ -16,6 +18,10 @@ export const metadata: Metadata = {
 export default function ReferralPage() {
   return (
     <main className="min-h-screen">
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: siteConfig.url },
+        { name: 'Referral Program', url: `${siteConfig.url}/referral` },
+      ]} />
       <Header />
 
       {/* Hero */}

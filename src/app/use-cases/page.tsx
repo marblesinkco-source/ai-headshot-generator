@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { BreadcrumbSchema } from '@/components/structured-data';
+import { siteConfig } from '@/config/site';
 import {
   Briefcase, Heart, Dog, Users, Baby, GraduationCap,
   PartyPopper, Home as HomeIcon, Sparkles, Building2, ShoppingBag, ArrowRight,
@@ -96,6 +98,10 @@ const useCases = [
 export default function UseCasesPage() {
   return (
     <main className="min-h-screen">
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: siteConfig.url },
+        { name: 'Use Cases', url: `${siteConfig.url}/use-cases` },
+      ]} />
       <Header />
 
       <section className="py-20 sm:py-28">
