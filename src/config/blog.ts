@@ -1317,6 +1317,299 @@ export const blogPosts: BlogPost[] = [
     tags: ['Trends', 'Photography', 'AI'],
     readingTime: '6 min read',
   },
+  {
+    slug: 'ai-headshots-for-teams-enterprise',
+    title: 'AI Headshots for Teams: How Companies Save Time and Budget',
+    description:
+      'Why more companies are replacing photo-day shoots with AI headshots, and how teams save money, stay consistent and onboard new hires faster.',
+    content: `
+      <p>For most companies, the team headshot is an afterthought that becomes a headache. Someone has to book a photographer, coordinate calendars, chase remote employees and then wait weeks for retouched files. By the time the last photo arrives, two more people have joined and three have changed roles. More organizations are solving this problem with AI headshots.</p>
+
+      <h2>Why Companies Are Switching</h2>
+      <p>Traditional team photography was designed for a world where everyone worked in the same building. Today, teams are distributed across cities and time zones, and headcount changes constantly. A single shoot day no longer fits how companies actually operate.</p>
+      <p>AI headshots flip the model. Each person uploads a handful of selfies from wherever they are, and receives a set of polished, professional portraits within a couple of hours. There is no travel, no scheduling and no awkward studio time. If you are curious about the underlying process, read <a href="/blog/how-ai-headshots-work">how AI headshots work</a>.</p>
+
+      <h2>The Cost Savings Add Up Quickly</h2>
+      <p>A typical photographer visit involves a day rate or per-person fee, plus retouching charges, plus the hidden cost of employees spending an hour or more away from their work. Multiply that across a growing team and repeat it every time you hire or rebrand.</p>
+      <ul>
+        <li><strong>Direct costs:</strong> Per-person pricing with AI is usually a fraction of a studio session, and there are no travel or rental fees.</li>
+        <li><strong>Time costs:</strong> Each employee spends minutes uploading selfies instead of hours traveling and posing.</li>
+        <li><strong>Reshoot costs:</strong> New hires and promotions are handled on demand, without waiting for the next photo day.</li>
+        <li><strong>Coordination costs:</strong> HR and marketing no longer need to manage a day-long logistics project.</li>
+      </ul>
+      <p>You can model your own numbers with our <a href="/tools/headshot-cost-calculator">headshot cost calculator</a>, and see a side-by-side breakdown in <a href="/blog/ai-headshots-vs-traditional-photography">AI headshots vs traditional photography</a>.</p>
+
+      <h2>Consistency Across Every Team Member</h2>
+      <p>Anyone who has looked at a team page with mismatched photos knows how unpolished it feels. One person is photographed outdoors, another in a dark office, a third cropped from a wedding picture. Visitors notice, and it quietly undermines trust.</p>
+      <p>With AI, a company can choose a shared background, framing and style, then apply it to everyone. The result is cohesive without being robotic: matching backdrops and lighting, but individual expressions and outfits. For guidance on picking a look that fits your brand, see the <a href="/blog/headshot-background-guide">headshot background guide</a> and our <a href="/blog/corporate-team-photos-guide">corporate team photos guide</a>.</p>
+
+      <h2>Faster Onboarding</h2>
+      <p>New hires often start without a company-approved photo. That means blank avatars in Slack, placeholder images on the website and awkward gaps in email signatures and press materials. With AI headshots, a new team member can upload selfies on day one and have a professional portrait ready before the end of their first week.</p>
+      <p>This matters most for remote-first teams, where a profile picture is often the only visual introduction colleagues and customers get. Our <a href="/blog/remote-worker-headshot-guide">remote worker headshot guide</a> covers this in more detail.</p>
+
+      <h2>Real-World Results</h2>
+      <p>Companies that have made the switch tend to describe the same benefits: less coordination, faster turnaround and more consistent results. Read how one organization handled the change in <a href="/blog/how-50-person-company-switched-to-ai-headshots">how a 50-person company switched to AI headshots</a>, or see how a sales-driven group approached it in our <a href="/blog/real-estate-team-ai-headshots-roi">real estate team ROI</a> case study.</p>
+
+      <h2>Privacy and Governance Matter</h2>
+      <p>Before rolling out AI headshots company-wide, it is reasonable to ask how employee photos are handled. Look for clear data retention policies, transparent consent and the ability for employees to opt out or request deletion. TailorPic deletes uploads after 30 days, and you can learn more in our <a href="/blog/ai-headshot-privacy-security">privacy and security overview</a>.</p>
+
+      <h2>The Case for an Enterprise Plan</h2>
+      <p>Once a team grows beyond a handful of people, individual purchases become hard to manage. A team or enterprise arrangement typically offers:</p>
+      <ul>
+        <li>Centralized billing instead of expense reports</li>
+        <li>Shared style settings so everyone matches</li>
+        <li>Volume pricing as headcount grows</li>
+        <li>A simple process for onboarding new members</li>
+        <li>A single point of contact for questions</li>
+      </ul>
+      <p>If that sounds like your situation, explore <a href="/team-headshots">team headshots</a> or the <a href="/enterprise">enterprise page</a> to see what fits.</p>
+
+      <h2>Getting Started</h2>
+      <p>Start small. Pick a pilot group, choose one background and style, and compare the results to your current photos. Most teams find the decision easy once they see a consistent set side by side. When you are ready, review <a href="/pricing">pricing</a> and let your team <a href="/dashboard/upload">upload their selfies</a> to get started with TailorPic.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-01-20',
+    tags: ['Enterprise', 'Teams', 'AI'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'best-photo-editing-apps-2025',
+    title: 'Best Photo Editing Apps 2025: From Basic Edits to AI Headshots',
+    description:
+      'A practical overview of the best photo editing apps in 2025, including Snapseed, Lightroom, VSCO, Canva, Fotor and Remini, and how they compare to dedicated AI headshot generators.',
+    content: `
+      <p>Photo editing apps have never been more capable or more varied. Some are built for quick touch-ups, others for professional color work, and a growing number use AI to generate or enhance images. Choosing the right one depends on what you actually want to do with your photos. Here is a practical look at the most popular options.</p>
+
+      <h2>Snapseed: Free and Surprisingly Powerful</h2>
+      <p>Snapseed is a free mobile editor with a clean interface and a strong set of tools. Selective adjustments, healing, curves and perspective correction give you real control without a subscription. It is an excellent choice if you want to fix exposure or straighten a photo quickly. Its limitation is that it edits what you already have: it cannot fix a poorly composed or badly lit shot.</p>
+
+      <h2>Adobe Lightroom: The Photographer's Standard</h2>
+      <p>Lightroom remains the go-to for people who shoot regularly and want consistent color across many images. Presets, batch editing and cloud syncing make it efficient for large libraries. The trade-offs are a subscription and a learning curve. For a single profile photo, it can be more tool than you need.</p>
+
+      <h2>VSCO: Style and Film-Inspired Looks</h2>
+      <p>VSCO is known for its filters, which emulate classic film stocks, and for its community-driven aesthetic. It is ideal for lifestyle and social content where mood matters. It is less suited to professional portraits, where natural skin tones and a neutral look usually work better.</p>
+
+      <h2>Canva: Design First, Editing Second</h2>
+      <p>Canva combines basic photo editing with templates for social posts, presentations and branding materials. If you need to drop a photo into a banner or a team announcement, it is hard to beat for convenience. Its photo adjustments are straightforward rather than deep, but for marketing teams that is often enough.</p>
+
+      <h2>Fotor: One-Click Enhancements</h2>
+      <p>Fotor offers one-tap enhancements, collage tools and a range of AI-assisted features such as background removal. It is approachable for beginners who want quick improvements without learning manual controls.</p>
+
+      <h2>Remini: AI Enhancement</h2>
+      <p>Remini popularized AI photo enhancement, sharpening blurry or low-resolution images and restoring old pictures. It can be impressive on faces, but enhancement is not the same as creation. It improves the source photo rather than producing a new, professional portrait.</p>
+
+      <h2>Quick Comparison</h2>
+      <ul>
+        <li><strong>Snapseed:</strong> best for free, precise mobile edits</li>
+        <li><strong>Lightroom:</strong> best for serious photographers and batch work</li>
+        <li><strong>VSCO:</strong> best for stylized, film-inspired social content</li>
+        <li><strong>Canva:</strong> best for design layouts that include photos</li>
+        <li><strong>Fotor:</strong> best for quick, beginner-friendly fixes</li>
+        <li><strong>Remini:</strong> best for sharpening and restoring existing faces</li>
+      </ul>
+
+      <h2>How Dedicated AI Headshot Generators Differ</h2>
+      <p>All of the apps above share one trait: they start with a photo and adjust it. If your original selfie has harsh shadows, a cluttered room or an awkward angle, editing can only do so much. A dedicated AI headshot generator works differently. It learns your features from several photos and then generates entirely new portraits with professional lighting, backgrounds and attire.</p>
+      <p>TailorPic is built for exactly this purpose. Instead of giving you sliders and filters, it delivers finished, natural-looking headshots suited to LinkedIn, resumes and company pages. You can read the full explanation in <a href="/blog/how-ai-headshots-work">how AI headshots work</a> and compare the approach with a studio in <a href="/blog/ai-headshots-vs-traditional-photography">AI headshots vs traditional photography</a>.</p>
+
+      <h2>Which Should You Use?</h2>
+      <p>The best answer is often a combination. Use a general editor for everyday photos, and a specialist for the one image that represents you professionally. If you are choosing a photo for a job search or business profile, our guides on <a href="/blog/best-headshot-for-linkedin-profile">the best headshot for a LinkedIn profile</a> and <a href="/blog/professional-headshot-tips-2025">professional headshot tips</a> will help you decide what to aim for.</p>
+      <p>When you are ready to skip the editing and get a finished result, browse <a href="/headshots">headshot styles</a> or <a href="/dashboard/upload">upload your selfies to TailorPic</a>.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-02-03',
+    tags: ['Apps', 'Editing', 'Photography'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'headshot-lighting-guide',
+    title: 'Headshot Lighting Guide: Natural vs Studio vs AI-Generated',
+    description:
+      'Learn how lighting shapes a great headshot, how to use natural and studio light, and how AI-generated headshots handle lighting automatically.',
+    content: `
+      <p>Lighting is the single biggest factor separating a flattering headshot from a forgettable one. It shapes your face, affects skin tone and sets the mood of the whole image. The good news is that you can get great lighting in several different ways. This guide compares natural light, studio setups and AI-generated portraits.</p>
+
+      <h2>Why Lighting Matters So Much</h2>
+      <p>Good lighting does three things. It reveals your features with soft, gentle shadows, it keeps skin tones natural, and it puts a small catchlight in your eyes that makes you look alert and engaged. Poor lighting does the opposite: harsh shadows under the eyes and nose, blown-out highlights, or a flat, muddy look that makes you seem tired.</p>
+
+      <h2>Natural Light Techniques</h2>
+      <p>Natural light is free and flattering when used well. Try these techniques:</p>
+      <ul>
+        <li><strong>Face a window:</strong> Stand a few feet away, facing the window, so light falls evenly across your face.</li>
+        <li><strong>Choose soft light:</strong> An overcast day or a window with sheer curtains diffuses light beautifully.</li>
+        <li><strong>Avoid direct midday sun:</strong> It creates squinting and harsh shadows. Shade or early morning and late afternoon are better.</li>
+        <li><strong>Use a simple reflector:</strong> A white poster board held below your chin bounces light upward and softens shadows.</li>
+        <li><strong>Watch your background:</strong> Bright windows behind you will turn your face dark.</li>
+      </ul>
+      <p>Natural light is convenient, but it changes constantly and depends on weather and time of day, which makes consistency difficult.</p>
+
+      <h2>Studio Lighting Basics</h2>
+      <p>Professional photographers control light completely, which is why studio results look so consistent. A basic portrait setup often includes:</p>
+      <ul>
+        <li><strong>Key light:</strong> The main light, usually placed to one side and slightly above eye level.</li>
+        <li><strong>Fill light or reflector:</strong> Softens the shadows created by the key light.</li>
+        <li><strong>Hair or rim light:</strong> Separates you from the background with a subtle edge of light.</li>
+        <li><strong>Softboxes or umbrellas:</strong> Diffuse the light so it wraps around your face.</li>
+      </ul>
+      <p>Studio lighting delivers polished results, but it requires equipment, expertise and usually a paid session. For a realistic look at what that costs, see our <a href="/tools/headshot-cost-calculator">headshot cost calculator</a>.</p>
+
+      <h2>How AI Handles Lighting Automatically</h2>
+      <p>AI-generated headshots take a different approach. Instead of capturing light in a room, the model learns your facial features and renders new portraits with professionally balanced lighting already built in. You do not need a window, a reflector or a softbox. Your source selfies can be taken in ordinary rooms, and the final images still show soft, even light, natural skin tones and flattering catchlights.</p>
+      <p>That said, good input still helps. Selfies with clear, even light give the model better information about your face, so take them near a window and avoid strong shadows. Our <a href="/blog/professional-headshot-tips-2025">professional headshot tips</a> explain how to prepare, and <a href="/blog/how-ai-headshots-work">how AI headshots work</a> goes deeper on the technology.</p>
+
+      <h2>Comparing the Three Approaches</h2>
+      <ul>
+        <li><strong>Natural light:</strong> Free and authentic, but variable and dependent on conditions.</li>
+        <li><strong>Studio light:</strong> Highly controllable and polished, but costly and time-consuming.</li>
+        <li><strong>AI-generated:</strong> Fast, consistent and affordable, with lighting handled for you.</li>
+      </ul>
+      <p>For a broader comparison of cost, speed and quality, read <a href="/blog/ai-headshots-vs-traditional-photography">AI headshots vs traditional photography</a>.</p>
+
+      <h2>Lighting and Backgrounds Work Together</h2>
+      <p>Light interacts with whatever is behind you. A soft, slightly blurred background keeps attention on your face, while a busy one competes with it. Our <a href="/blog/headshot-background-guide">headshot background guide</a> shows which combinations work best.</p>
+
+      <h2>Choosing What Is Right for You</h2>
+      <p>If you enjoy photography and have time, natural light can produce lovely results. If you need a high-end campaign image, a studio is worth it. If you simply want a professional, well-lit headshot without the logistics, AI is the most practical option. To see the results for yourself, browse <a href="/headshots">headshot styles</a> or <a href="/dashboard/upload">upload your selfies</a> to TailorPic.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-02-14',
+    tags: ['Lighting', 'Photography', 'Guide'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'social-media-profile-photo-sizes',
+    title: 'Social Media Profile Photo Sizes 2025: Complete Guide for Every Platform',
+    description:
+      'Profile photo dimensions and requirements for LinkedIn, X (Twitter), Instagram, Facebook, TikTok and YouTube, plus optimization tips and how AI creates platform-ready photos.',
+    content: `
+      <p>Nothing undermines a good photo like awkward cropping. Every platform displays profile pictures slightly differently, and the wrong size can leave your face blurry, cut off or tiny. This guide summarizes the recommended dimensions for each major platform. Sizes change from time to time, so treat these as current best practice and double-check the platform's help page if something looks off.</p>
+
+      <h2>LinkedIn</h2>
+      <ul>
+        <li><strong>Recommended size:</strong> 400 x 400 pixels or larger, square</li>
+        <li><strong>Formats:</strong> JPG or PNG</li>
+        <li><strong>Display:</strong> Circular crop</li>
+      </ul>
+      <p>LinkedIn is where your photo matters most professionally. Keep your face centered and filling roughly 60 percent of the frame. For advice on what to wear and how to pose, see our guide to the <a href="/blog/best-headshot-for-linkedin-profile">best headshot for a LinkedIn profile</a>.</p>
+
+      <h2>X (Twitter)</h2>
+      <ul>
+        <li><strong>Recommended size:</strong> 400 x 400 pixels, square</li>
+        <li><strong>Formats:</strong> JPG, PNG or GIF</li>
+        <li><strong>Display:</strong> Circular crop</li>
+      </ul>
+      <p>The profile image is small in timelines, so a tight crop with a clear face reads best.</p>
+
+      <h2>Instagram</h2>
+      <ul>
+        <li><strong>Recommended size:</strong> At least 320 x 320 pixels, though uploading larger is better</li>
+        <li><strong>Display:</strong> Circular crop</li>
+      </ul>
+      <p>Instagram shows your photo at a very small size in most places, so avoid wide shots. A close, well-lit face with a simple background stands out.</p>
+
+      <h2>Facebook</h2>
+      <ul>
+        <li><strong>Recommended size:</strong> At least 320 x 320 pixels, square</li>
+        <li><strong>Display:</strong> Circular on most views, and it appears smaller on mobile</li>
+      </ul>
+      <p>Leave a little breathing room around your head, since the circular mask can clip the corners of a tightly cropped photo.</p>
+
+      <h2>TikTok</h2>
+      <ul>
+        <li><strong>Recommended size:</strong> 200 x 200 pixels minimum, square</li>
+        <li><strong>Formats:</strong> JPG or PNG</li>
+        <li><strong>Display:</strong> Circular crop</li>
+      </ul>
+      <p>TikTok is informal, so a friendly, expressive photo often performs better than a stiff corporate one.</p>
+
+      <h2>YouTube</h2>
+      <ul>
+        <li><strong>Recommended size:</strong> 800 x 800 pixels, square</li>
+        <li><strong>Formats:</strong> JPG, PNG or GIF (non-animated)</li>
+        <li><strong>Display:</strong> Circular crop, shown quite small beside comments and videos</li>
+      </ul>
+      <p>Because YouTube shows your image at a tiny size, high contrast and a clear face matter more than fine detail.</p>
+
+      <h2>Optimization Tips for Every Platform</h2>
+      <ul>
+        <li><strong>Start big:</strong> Upload at 1000 x 1000 pixels or more, and let the platform scale it down.</li>
+        <li><strong>Center your face:</strong> Circular crops remove the corners, so keep important details in the middle.</li>
+        <li><strong>Keep the background simple:</strong> Busy backgrounds turn into noise at small sizes. See the <a href="/blog/headshot-background-guide">headshot background guide</a>.</li>
+        <li><strong>Use good lighting:</strong> Soft, even light survives compression better than harsh contrast.</li>
+        <li><strong>Stay consistent:</strong> Using the same photo across platforms makes you recognizable and builds trust.</li>
+        <li><strong>Avoid heavy filters:</strong> Natural images look more credible and compress more cleanly.</li>
+      </ul>
+
+      <h2>How AI Generates Platform-Ready Photos</h2>
+      <p>Cropping and resizing a single photo for six platforms is tedious, and a selfie taken at arm's length rarely fits all of them. With an AI headshot generator, you get a set of high-resolution portraits already framed with your face centered and a clean background, so they crop gracefully into a square or circle. You can then use one consistent image everywhere, from LinkedIn to YouTube.</p>
+      <p>TailorPic delivers natural-looking, professional results from a few selfies, which gives you plenty of high-quality options to choose from. Learn more in <a href="/blog/how-ai-headshots-work">how AI headshots work</a>, or take a look at our <a href="/blog/best-photos-for-linkedin">best photos for LinkedIn</a> guide.</p>
+
+      <h2>Get One Photo That Works Everywhere</h2>
+      <p>A consistent, high-quality profile picture is one of the simplest ways to look credible online. Browse <a href="/headshots">headshot styles</a>, check <a href="/pricing">pricing</a> or <a href="/dashboard/upload">upload your selfies</a> to create yours with TailorPic.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-03-01',
+    tags: ['Social Media', 'Profile', 'Guide'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'ai-photography-ethics-guide',
+    title: 'The Ethics of AI Photography: What You Need to Know',
+    description:
+      'A thoughtful look at authenticity, disclosure, privacy and industry standards in AI photography, and how TailorPic approaches ethical AI headshots.',
+    content: `
+      <p>AI photography raises real questions. Is an AI-generated headshot honest? Should you tell people? What happens to your photos after you upload them? These are fair questions, and the answers are still evolving. This guide lays out the main considerations so you can use AI photography thoughtfully.</p>
+
+      <h2>Authenticity: What Makes a Photo Honest?</h2>
+      <p>The core ethical question is whether a photo represents you accurately. Photographers have retouched portraits for decades, smoothing skin, adjusting color and removing stray hairs. Nobody considers that dishonest as long as the person remains recognizable.</p>
+      <p>The same standard applies to AI. A headshot generated from your own photos that looks like you, with your real features, age and appearance, is a professionally styled portrait. A photo that makes you look decades younger, changes your features or presents a different person entirely is misleading. The test is simple: would someone meeting you in person recognize you from the picture?</p>
+
+      <h2>Disclosure Best Practices</h2>
+      <p>There is no universal rule requiring you to label an AI headshot, but transparency is a good habit in some settings. Consider these guidelines:</p>
+      <ul>
+        <li><strong>Professional profiles:</strong> Disclosure is generally not expected when the image accurately represents you, much as people do not disclose that a photographer retouched their portrait.</li>
+        <li><strong>Regulated or verified contexts:</strong> If an employer, publication, licensing body or platform requires an unaltered photo, follow their rules.</li>
+        <li><strong>If someone asks:</strong> Answer honestly. Being open builds trust.</li>
+        <li><strong>Avoid deception:</strong> Never use AI imagery to misrepresent your identity, credentials or appearance.</li>
+      </ul>
+
+      <h2>When AI Photos Are Appropriate</h2>
+      <p>AI headshots work well for professional profiles, company pages, portfolios, speaker bios and personal branding. They are especially helpful for remote workers and distributed teams who cannot easily schedule a shoot, as covered in our <a href="/blog/remote-worker-headshot-guide">remote worker headshot guide</a>.</p>
+      <p>They are less appropriate where authenticity of the moment is the point, such as photojournalism, legal evidence, identity documents or any setting that explicitly requires an unedited photograph. Some fields have specific expectations too. For example, our article on <a href="/blog/medical-residency-headshot-requirements">medical residency headshot requirements</a> shows how strict certain applications can be, and it is wise to check before you submit.</p>
+      <p>Dating is another sensitive area. Photos there should reflect how you actually look, which is why our <a href="/blog/dating-profile-photo-tips">dating profile photo tips</a> emphasize accuracy.</p>
+
+      <h2>Privacy Considerations</h2>
+      <p>Your face is personal data, and any service that processes it carries responsibility. Before you upload photos to any AI tool, look for answers to these questions:</p>
+      <ul>
+        <li>How long are my photos and the trained model kept?</li>
+        <li>Will my images be used to train models for other people?</li>
+        <li>Can I request deletion at any time?</li>
+        <li>Is data encrypted in transit and at rest?</li>
+        <li>Who can access my images?</li>
+      </ul>
+      <p>We cover how TailorPic handles these topics in our <a href="/blog/ai-headshot-privacy-security">AI headshot privacy and security</a> article, and you can find quick answers in the <a href="/faq">FAQ</a>.</p>
+
+      <h2>Industry Standards Are Still Evolving</h2>
+      <p>Regulators, platforms and professional organizations are still defining norms for synthetic imagery. Some platforms are introducing labels and content credentials to indicate how an image was made, and several regions are drafting rules on transparency and consent. Expect these standards to keep changing. The safest approach is to stay informed, follow the rules of each platform or organization you deal with, and choose providers that publish clear policies.</p>
+
+      <h2>TailorPic's Approach to Ethical AI</h2>
+      <p>We believe AI headshots should help people present the best, true version of themselves. In practice, that means several commitments:</p>
+      <ul>
+        <li><strong>You own your likeness:</strong> Headshots are generated from your own photos, of you and only you.</li>
+        <li><strong>Short retention:</strong> Uploads are deleted after 30 days.</li>
+        <li><strong>Realistic results:</strong> We aim for natural, recognizable portraits, not exaggerated transformations.</li>
+        <li><strong>Transparency:</strong> We explain how the technology works in <a href="/blog/how-ai-headshots-work">how AI headshots work</a> and on our <a href="/about">about page</a>.</li>
+        <li><strong>Buyer protection:</strong> A 14-day money-back guarantee if you are not satisfied.</li>
+      </ul>
+
+      <h2>Using AI Responsibly</h2>
+      <p>Ethical AI photography comes down to honesty, consent and care with data. Use images that genuinely look like you, respect the rules of the places you post them and choose services that treat your photos with respect. If you are ready to create a professional portrait the responsible way, explore <a href="/headshots">headshot styles</a> or <a href="/dashboard/upload">upload your selfies</a> to get started with TailorPic.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-03-15',
+    tags: ['Ethics', 'AI', 'Photography'],
+    readingTime: '6 min read',
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

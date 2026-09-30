@@ -245,6 +245,22 @@ export function Footer() {
                   LinkedIn Headshots
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/styles"
+                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
+                >
+                  Photo Styles
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/editor"
+                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
+                >
+                  AI Photo Editor
+                </Link>
+              </li>
             </ul>
           </div>
 
