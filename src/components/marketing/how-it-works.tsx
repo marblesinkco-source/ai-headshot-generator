@@ -1,70 +1,49 @@
-import { Upload, Sparkles, Download } from 'lucide-react';
-
 const steps = [
   {
-    icon: Upload,
-    title: 'Upload 4-10 Selfies',
-    description:
-      'Take or upload a few casual photos of yourself. Different angles and lighting work best -- no need for anything fancy.',
-    step: '01',
+    number: '01',
+    title: 'Choose a category',
+    description: 'Find the photo direction you need.',
   },
   {
-    icon: Sparkles,
-    title: 'AI Creates Your Model',
-    description:
-      'Our AI learns your unique features and generates a custom model trained specifically on you. This takes about 30 minutes.',
-    step: '02',
+    number: '02',
+    title: 'Choose a package',
+    description: 'Review the available options.',
   },
   {
-    icon: Download,
-    title: 'Download 120+ Headshots',
-    description:
-      'Choose from over 120 studio-quality headshots with different backgrounds, styles, and outfits. Ready in about 2 hours.',
-    step: '03',
+    number: '03',
+    title: 'Upload your photos',
+    description: 'Follow the category guidelines.',
+  },
+  {
+    number: '04',
+    title: 'Create and download',
+    description: 'Keep the results you love.',
   },
 ];
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative py-24 sm:py-32 bg-tailor-cream/50">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section header */}
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-brand-500">
-            Simple Process
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-tailor-black sm:text-4xl">
-            How it Works
-          </h2>
-          <p className="mt-4 text-lg text-gray-600">
-            Get professional photos in three easy steps. No studio visit required.
-          </p>
-        </div>
+    <section id="how-it-works" className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 py-10 lg:py-[68px]">
+      <div className="flex justify-between items-center gap-4 mb-5 lg:mb-[30px]">
+        <h2 className="font-display text-[25px] lg:text-[33px] leading-tight tracking-[-0.03em] font-normal">
+          A clearer way to create.
+        </h2>
+      </div>
 
-        {/* Steps */}
-        <div className="mt-16 grid gap-8 sm:mt-20 lg:grid-cols-3 lg:gap-12">
-          {steps.map((step, i) => (
-            <div key={step.step} className="relative text-center">
-              {/* Connector line (desktop only) */}
-              {i < steps.length - 1 && (
-                <div className="absolute left-full top-12 hidden h-px w-full -translate-x-1/2 bg-gradient-to-r from-brand-300 to-transparent lg:block" />
-              )}
-
-              {/* Icon */}
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-tailor-black text-tailor-gold ring-1 ring-brand-400/20">
-                <step.icon className="h-7 w-7" strokeWidth={1.5} />
-              </div>
-
-              {/* Step number */}
-              <span className="mt-4 block text-xs font-bold uppercase tracking-widest text-brand-400">
-                Step {step.step}
-              </span>
-
-              <h3 className="mt-2 text-xl font-semibold text-tailor-black">{step.title}</h3>
-              <p className="mt-3 text-base leading-relaxed text-gray-600">{step.description}</p>
-            </div>
-          ))}
-        </div>
+      <div className="grid grid-cols-2 gap-5 lg:grid-cols-4 lg:gap-7">
+        {steps.map((step) => (
+          <article key={step.number} className="border-t border-[#B8A795] pt-5">
+            <span className="block text-tp-bronze-ink text-xs tracking-[0.18em]">
+              {step.number}
+            </span>
+            <h3 className="text-[13px] lg:text-base mt-3 lg:mt-[17px] mb-2 lg:mb-[9px] font-semibold">
+              {step.title}
+            </h3>
+            <p className="text-[11px] lg:text-[13px] text-tp-muted leading-[1.7] m-0">
+              {step.description}
+            </p>
+          </article>
+        ))}
       </div>
     </section>
   );

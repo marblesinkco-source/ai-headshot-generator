@@ -1,5 +1,6 @@
 import { Header } from '@/components/marketing/header';
 import { Hero } from '@/components/marketing/hero';
+import { TrustStrip } from '@/components/marketing/trust-strip';
 import { Categories } from '@/components/marketing/categories';
 import { HowItWorks } from '@/components/marketing/how-it-works';
 import { Pricing } from '@/components/marketing/pricing';
@@ -12,8 +13,9 @@ export default function LandingPage() {
     <main className="min-h-screen">
       <Header />
       <Hero />
-      <Categories />
       <HowItWorks />
+      <TrustStrip />
+      <Categories />
       <Pricing />
       <Testimonials />
       <FAQ />

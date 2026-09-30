@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: 'TailorPic',
-  description: 'A Better Fit for Every Picture — AI-powered professional photos tailored to you',
+  description: 'Your Best Photo, Tailored by AI — Professional, personal and creative AI photos shaped around you.',
   tagline: 'A Better Fit for Every Picture',
   url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
-  ogImage: '/images/og.png',
+  ogImage: '/brand/tailorpic/web/og-tailorpic-1200x630.jpg',
   links: {
     twitter: '',
     linkedin: '',

@@ -71,6 +71,14 @@ const config: Config = {
         'tailor-gold': '#c9a98a',
         'tailor-beige': '#dccdbb',
         'tailor-cream': '#f8f5ef',
+        'tp-black': '#0B0B0B',
+        'tp-ink': '#171613',
+        'tp-bronze': '#C9A98A',
+        'tp-bronze-ink': '#76563D',
+        'tp-paper': '#F8F5EF',
+        'tp-beige': '#DCCDBB',
+        'tp-muted': '#5F5A54',
+        'tp-line': '#DFD6CC',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -78,8 +86,9 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        heading: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-manrope)', 'Inter', 'Arial', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-manrope)', 'Inter', 'Arial', 'sans-serif'],
+        display: ['"Instrument Serif"', 'Georgia', '"Times New Roman"', 'serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

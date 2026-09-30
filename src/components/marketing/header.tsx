@@ -1,89 +1,120 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 import { siteConfig } from '@/config/site';
-import { cn } from '@/lib/utils';
 
 const navLinks = [
-  { label: 'How it Works', href: '#how-it-works' },
+  { label: 'Photo Types', href: '#categories', isButton: true },
+  { label: 'How It Works', href: '#how-it-works' },
+  { label: 'Examples', href: '#examples' },
   { label: 'Pricing', href: '#pricing' },
-  { label: 'FAQ', href: '#faq' },
 ];
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const mobileDialog = useRef<HTMLDialogElement>(null);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-brand-200/40 bg-tailor-cream/80 backdrop-blur-lg">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-tailor-black">
-            <span className="text-base font-bold text-tailor-gold tracking-tight">T</span>
-          </div>
-          <span className="text-lg font-bold text-tailor-black tracking-tight">{siteConfig.name}</span>
+    <header className="sticky top-0 z-50 border-b border-tp-line/40 bg-tp-paper/95 backdrop-blur-md">
+      <div className="mx-auto flex h-20 max-w-[1320px] items-center justify-between px-4 sm:px-7 lg:px-14">
+        {/* Real SVG Logo */}
+        <Link href="/" className="flex-shrink-0" aria-label="TailorPic home">
+          <Image
+            src="/brand/tailorpic/logo/tailorpic-horizontal-bronze.svg"
+            alt="TailorPic registered logo"
+            width={212}
+            height={49}
+            className="h-8 w-auto sm:h-9"
+            priority
+          />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-gray-600 transition-colors hover:text-tailor-gold"
+              className="text-[13px] font-semibold text-tp-ink transition-colors hover:text-tp-bronze-ink whitespace-nowrap"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:block">
-          <Link href="/auth/login">
-            <Button size="sm">Get Started</Button>
+        {/* Desktop Account */}
+        <div className="hidden items-center gap-5 md:flex">
+          <Link
+            href="/auth/login"
+            className="text-[13px] font-medium text-tp-ink transition-colors hover:text-tp-bronze-ink"
+          >
+            Sign In
+          </Link>
+          <Link
+            href="/auth/login"
+            className="inline-flex items-center gap-5 rounded-xl border border-tp-black bg-tp-black px-6 py-3 text-sm font-semibold text-tp-paper transition-all hover:-translate-y-0.5 hover:shadow-lg"
+          >
+            Get Started <span aria-hidden="true" className="text-lg leading-none">&#8599;</span>
           </Link>
         </div>
 
-        {/* Mobile Toggle */}
-        <button
-          className="inline-flex items-center justify-center rounded-lg p-2 text-gray-600 hover:bg-brand-100 md:hidden"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        {/* Mobile: Sign In + Menu */}
+        <div className="flex items-center gap-3 md:hidden">
+          <Link
+            href="/auth/login"
+            className="text-[11px] font-medium text-tp-ink min-h-[44px] flex items-center"
+          >
+            Sign In
+          </Link>
+          <button
+            className="flex h-[46px] w-[46px] items-center justify-center rounded-[10px] border border-tp-line bg-transparent"
+            onClick={() => mobileDialog.current?.showModal()}
+            aria-label="Open navigation menu"
+          >
+            <svg className="h-[22px] w-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+              <path d="M4 6H20M4 12H20M4 18H20" />
+            </svg>
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Menu */}
-      <div
-        className={cn(
-          'overflow-hidden border-t border-brand-200/40 bg-tailor-cream transition-all duration-300 md:hidden',
-          mobileOpen ? 'max-h-64' : 'max-h-0 border-t-0'
-        )}
+      {/* Mobile Nav Dialog */}
+      <dialog
+        ref={mobileDialog}
+        className="rounded-[20px] border border-tp-line bg-tp-paper p-5 text-tp-ink w-[min(760px,calc(100vw-28px))] max-h-[85vh] overflow-auto backdrop:bg-tp-black/56"
       >
-        <nav className="flex flex-col gap-1 px-4 py-3">
+        <div className="flex items-center justify-between gap-5 mb-5">
+          <h2 className="font-display text-[29px] font-normal leading-tight">{siteConfig.name}</h2>
+          <button
+            className="h-11 w-11 rounded-full border border-tp-line bg-transparent text-[23px] flex-shrink-0 flex items-center justify-center"
+            aria-label="Close menu"
+            onClick={() => mobileDialog.current?.close()}
+          >
+            &#215;
+          </button>
+        </div>
+        <nav className="grid gap-2.5" aria-label="Mobile navigation">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="rounded-lg px-3 py-2.5 text-sm font-medium text-gray-600 transition-colors hover:bg-brand-100 hover:text-brand-700"
-              onClick={() => setMobileOpen(false)}
+              className="p-3 text-[17px] min-h-[46px] text-left"
+              onClick={() => mobileDialog.current?.close()}
             >
               {link.label}
             </a>
           ))}
-          <div className="mt-2 px-3 pb-1">
-            <Link href="/auth/login" className="w-full">
-              <Button size="sm" className="w-full">
-                Get Started
-              </Button>
-            </Link>
-          </div>
+          <Link
+            href="/auth/login"
+            className="p-3 text-[17px] min-h-[46px] text-left"
+            onClick={() => mobileDialog.current?.close()}
+          >
+            Sign In
+          </Link>
         </nav>
-      </div>
+      </dialog>
     </header>
   );
 }

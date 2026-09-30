@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -70,5 +72,74 @@
 
   .bg-grid {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(201 169 138 / 0.06)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+  }
+
+  /* Gold shimmer line effect */
+  .gold-line {
+    @apply h-px bg-gradient-to-r from-transparent via-brand-400/60 to-transparent;
+  }
+
+  /* Gold swoosh decorative element */
+  .gold-swoosh {
+    background: linear-gradient(135deg, #c9a98a 0%, #d4b896 50%, #a07a52 100%);
+  }
+
+  /* Luxury card hover lift */
+  .card-luxury {
+    @apply transition-all duration-300;
+  }
+  .card-luxury:hover {
+    @apply -translate-y-1 shadow-xl shadow-brand-400/10;
+  }
+
+  /* Brand pillars letter spacing */
+  .tracking-brand {
+    letter-spacing: 0.25em;
+  }
+
+  /* Gold border glow on hover */
+  .border-glow {
+    @apply transition-all duration-300;
+  }
+  .border-glow:hover {
+    box-shadow: 0 0 20px rgba(201, 169, 138, 0.15);
+  }
+
+  /* Floating animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  /* Subtle rotation for decorative elements */
+  @keyframes float-rotate {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-6px) rotate(2deg); }
+  }
+  .animate-float-rotate {
+    animation: float-rotate 5s ease-in-out infinite;
+  }
+}
+
+@layer components {
+  /* Premium pill button */
+  .btn-pill {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-tailor-black px-8 py-4 text-base font-semibold text-tailor-gold transition-all duration-300;
+    box-shadow: inset 0 0 0 1px rgba(201, 169, 138, 0.3);
+  }
+  .btn-pill:hover {
+    box-shadow: inset 0 0 0 1px rgba(201, 169, 138, 0.6), 0 8px 30px rgba(11, 11, 11, 0.3);
+    @apply -translate-y-0.5;
+  }
+
+  /* Gold circle icon container */
+  .icon-circle {
+    @apply flex h-12 w-12 items-center justify-center rounded-full border border-brand-300/60 bg-brand-50/80 text-brand-600;
+  }
+  .icon-circle-lg {
+    @apply flex h-16 w-16 items-center justify-center rounded-full border border-brand-300/60 bg-brand-50/80 text-brand-600;
   }
 }
