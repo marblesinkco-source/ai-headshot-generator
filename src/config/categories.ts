@@ -93,7 +93,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
         name: 'Executive',
         price: 7900,
         currency: 'usd',
-        outputCount: 120,
+        outputCount: 140,
         features: ['15 backgrounds', '10 styles', '4K resolution', 'LinkedIn banner', 'Email signature', 'Priority support'],
       },
     ],
@@ -572,7 +572,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
         name: 'Basic',
         price: 2400,
         currency: 'usd',
-        outputCount: 10,
+        outputCount: 15,
         features: ['5 furniture styles', 'Standard resolution', 'Living room & bedroom'],
       },
       {
