@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Manrope } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import { siteConfig } from '@/config/site';
 
@@ -52,7 +53,16 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={manrope.variable} suppressHydrationWarning>
-      <body className="min-h-screen bg-tp-paper font-sans antialiased text-tp-ink">{children}</body>
+      <body className="min-h-screen bg-tp-paper font-sans antialiased text-tp-ink">
+        {children}
+        {/* Vercel Analytics — only loads when NEXT_PUBLIC_VERCEL_ANALYTICS_ID is set */}
+        {process.env.NEXT_PUBLIC_VERCEL_ANALYTICS_ID && (
+          <Script
+            src="/_vercel/insights/script.js"
+            strategy="afterInteractive"
+          />
+        )}
+      </body>
     </html>
   );
 }

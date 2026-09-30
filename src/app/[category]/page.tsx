@@ -11,6 +11,7 @@ import {
 } from '@/config/categories';
 import { siteConfig } from '@/config/site';
 import { formatPrice } from '@/lib/utils';
+import { ProductSchema } from '@/components/structured-data';
 
 interface Props {
   params: Promise<{ category: string }>;
@@ -48,8 +49,17 @@ export default async function CategoryPage({ params }: Props) {
     notFound();
   }
 
+  const lowestPrice = Math.min(...cat.packages.map((p) => p.price));
+
   return (
     <main className="min-h-screen">
+      <ProductSchema
+        name={cat.name}
+        description={cat.seoDescription}
+        price={lowestPrice}
+        category="AI Photo Generation"
+        slug={cat.slug}
+      />
       <Header />
 
       {/* Hero */}
