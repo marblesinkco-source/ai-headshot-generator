@@ -6,10 +6,10 @@ import Image from 'next/image';
 import { siteConfig } from '@/config/site';
 
 const navLinks = [
-  { label: 'Photo Types', href: '#categories', isButton: true },
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Examples', href: '#examples' },
-  { label: 'Pricing', href: '#pricing' },
+  { label: 'Photo Types', href: '/#categories', isButton: true },
+  { label: 'How It Works', href: '/#how-it-works' },
+  { label: 'Examples', href: '/#examples' },
+  { label: 'Pricing', href: '/#pricing' },
 ];
 
 export function Header() {
@@ -33,13 +33,13 @@ export function Header() {
         {/* Desktop Nav */}
         <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="text-[13px] font-semibold text-tp-ink transition-colors hover:text-tp-bronze-ink whitespace-nowrap"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -96,14 +96,14 @@ export function Header() {
         </div>
         <nav className="grid gap-2.5" aria-label="Mobile navigation">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="p-3 text-[17px] min-h-[46px] text-left"
               onClick={() => mobileDialog.current?.close()}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <Link
             href="/auth/login"
