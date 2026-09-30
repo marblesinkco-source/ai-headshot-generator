@@ -1,8 +1,7 @@
 /**
  * TailorPic - Supabase Database type definitions.
  *
- * These types mirror the schema defined in migrations/001_initial.sql
- * and migrations/002_add_categories.sql.
+ * These types mirror the schema defined in migrations 001–003.
  *
  * To regenerate from a live database, run:
  *   npx supabase gen types typescript --project-id <ref> > src/types/database.ts
@@ -71,6 +70,11 @@ export interface Database {
           created_at: string;
           updated_at: string;
           completed_at: string | null;
+          // Migration 003 — AI training pipeline
+          training_id: string | null;
+          trigger_word: string | null;
+          lora_url: string | null;
+          started_at: string | null;
         };
         Insert: {
           id: string;
@@ -87,6 +91,10 @@ export interface Database {
           created_at?: string;
           updated_at?: string;
           completed_at?: string | null;
+          training_id?: string | null;
+          trigger_word?: string | null;
+          lora_url?: string | null;
+          started_at?: string | null;
         };
         Update: {
           id?: string;
@@ -103,6 +111,10 @@ export interface Database {
           created_at?: string;
           updated_at?: string;
           completed_at?: string | null;
+          training_id?: string | null;
+          trigger_word?: string | null;
+          lora_url?: string | null;
+          started_at?: string | null;
         };
       };
       uploaded_photos: {
@@ -138,38 +150,63 @@ export interface Database {
         Row: {
           id: string;
           order_id: string;
-          storage_path: string;
+          storage_path: string | null;
           thumbnail_path: string | null;
           category_id: CategoryId | null;
-          style: string;
-          background: string;
+          style: string | null;
+          background: string | null;
           resolution: string;
           is_favorite: boolean;
           created_at: string;
+          // Migration 003 — generation pipeline
+          prediction_id: string | null;
+          user_id: string | null;
+          style_id: string | null;
+          background_id: string | null;
+          status: string;
+          error: string | null;
+          prompt: string | null;
+          completed_at: string | null;
         };
         Insert: {
           id?: string;
           order_id: string;
-          storage_path: string;
+          storage_path?: string | null;
           thumbnail_path?: string | null;
           category_id?: CategoryId | null;
-          style: string;
-          background: string;
+          style?: string | null;
+          background?: string | null;
           resolution?: string;
           is_favorite?: boolean;
           created_at?: string;
+          prediction_id?: string | null;
+          user_id?: string | null;
+          style_id?: string | null;
+          background_id?: string | null;
+          status?: string;
+          error?: string | null;
+          prompt?: string | null;
+          completed_at?: string | null;
         };
         Update: {
           id?: string;
           order_id?: string;
-          storage_path?: string;
+          storage_path?: string | null;
           thumbnail_path?: string | null;
           category_id?: CategoryId | null;
-          style?: string;
-          background?: string;
+          style?: string | null;
+          background?: string | null;
           resolution?: string;
           is_favorite?: boolean;
           created_at?: string;
+          prediction_id?: string | null;
+          user_id?: string | null;
+          style_id?: string | null;
+          background_id?: string | null;
+          status?: string;
+          error?: string | null;
+          prompt?: string | null;
+          completed_at?: string | null;
         };
       };
     };

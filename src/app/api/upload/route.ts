@@ -2,11 +2,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { createClient, createAdminClient } from '@/lib/supabase/server';
 import { nanoid } from 'nanoid';
+import { getCategoryById, type CategoryId } from '@/config/categories';
 
 const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 const MAX_FILES = 10;
-const MIN_PHOTOS_REQUIRED = 4;
+const DEFAULT_MIN_PHOTOS = 4;
 
 const uploadMetaSchema = z.object({
   orderId: z.string().uuid(),
@@ -41,7 +42,7 @@ export async function POST(request: NextRequest) {
     // Verify order exists, belongs to user, and has valid status
     const { data: order, error: orderError } = await supabase
       .from('orders')
-      .select('id, status, package_id')
+      .select('id, status, package_id, category_id')
       .eq('id', metaParsed.data.orderId)
       .eq('user_id', user.id)
       .single();
@@ -170,12 +171,15 @@ export async function POST(request: NextRequest) {
       .select('id', { count: 'exact', head: true })
       .eq('order_id', order.id);
 
-    const ready = (newTotalCount || 0) >= MIN_PHOTOS_REQUIRED;
+    // Use category-specific minimum or fallback to default
+    const category = getCategoryById(order.category_id as CategoryId);
+    const minRequired = category?.minPhotos || DEFAULT_MIN_PHOTOS;
+    const ready = (newTotalCount || 0) >= minRequired;
 
     return NextResponse.json({
       uploaded: uploadedPhotos.length,
       totalPhotos: newTotalCount || 0,
-      minRequired: MIN_PHOTOS_REQUIRED,
+      minRequired,
       ready,
     });
   } catch (error) {
