@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { FAQ, faqs } from '@/components/marketing/faq';
+import { FAQ } from '@/components/marketing/faq';
+import { faqs } from '@/config/faqs';
 import { siteConfig } from '@/config/site';
 import { FAQSchema } from '@/components/structured-data';
 
@@ -28,13 +29,13 @@ export default function FAQPage() {
         <div className="pointer-events-none absolute inset-0 bg-grid" />
         <div className="pointer-events-none absolute -top-24 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-tp-bronze/10 blur-3xl" />
         <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 sm:py-24 lg:px-8">
-          <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+          <h1 className="text-4xl font-extrabold tracking-tight text-tp-black sm:text-5xl">
             Frequently Asked{' '}
             <span className="bg-gradient-to-r from-tp-bronze-ink to-tp-bronze bg-clip-text text-transparent">
               Questions
             </span>
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-600">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-muted">
             Everything you need to know about {siteConfig.name} and AI-powered photo generation.
           </p>
         </div>
@@ -45,8 +46,8 @@ export default function FAQPage() {
       {/* Still have questions CTA */}
       <section className="py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900">Still Have Questions?</h2>
-          <p className="mt-4 text-gray-600">
+          <h2 className="text-2xl font-bold text-tp-black">Still Have Questions?</h2>
+          <p className="mt-4 text-tp-muted">
             Our support team is happy to help. Reach out and we will get back to you within hours.
           </p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
@@ -58,7 +59,7 @@ export default function FAQPage() {
             </Link>
             <Link
               href="/dashboard/upload"
-              className="inline-flex items-center justify-center rounded-xl border border-tp-line px-8 py-3 text-sm font-semibold text-tp-ink transition-all hover:bg-gray-50"
+              className="inline-flex items-center justify-center rounded-xl border border-tp-line px-8 py-3 text-sm font-semibold text-tp-ink transition-all hover:bg-tp-paper"
             >
               Get Started
             </Link>
