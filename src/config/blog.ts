@@ -3213,6 +3213,218 @@ export const blogPosts: BlogPost[] = [
     tags: ['Family Photos', 'Headshots', 'Comparison'],
     readingTime: '5 min read',
   },
+  {
+    slug: 'headshot-for-resume',
+    title: 'Should You Put a Headshot on Your Resume? Complete 2025 Guide',
+    description:
+      'A practical guide to whether you should include a headshot on your resume, covering regional norms, industry expectations, formatting tips and how to get it right.',
+    content: `
+      <p>The question of whether to include a headshot on your resume comes up constantly, and the answer depends on where you live, what industry you work in and how you plan to submit your application. In some countries a photo is expected. In others it can hurt your chances. This guide breaks down the norms, the exceptions and the practical steps to follow if you decide a photo is the right move.</p>
+
+      <h2>Regional Norms and Expectations</h2>
+      <p>In much of continental Europe, Latin America and parts of Asia, a professional headshot on a resume is standard practice. Recruiters in Germany, France, Spain and Japan often expect to see a photo at the top of the page. In the United States, Canada, the United Kingdom and Australia, the opposite is true. Most employers prefer resumes without photos to avoid any appearance of bias in the hiring process. If you are applying internationally, research the specific country's norms before deciding.</p>
+
+      <h2>Industry-Specific Considerations</h2>
+      <p>Even in countries where resume photos are uncommon, certain industries expect them. Acting, modelling, broadcasting and public-facing roles in hospitality and real estate often require a headshot alongside your application. Creative fields such as design, fashion and photography may also benefit from a polished photo that reinforces your personal brand. For roles in law, finance, engineering and most corporate environments, a resume photo is generally unnecessary and sometimes discouraged.</p>
+
+      <h2>How Applicant Tracking Systems Handle Photos</h2>
+      <p>Many large companies use applicant tracking systems to parse and rank resumes. These systems are designed to extract text, not images. A photo embedded in your resume file can confuse the parser, causing formatting errors or pushing your content out of alignment. If your resume will pass through an ATS, keeping it text-focused and photo-free is the safer approach. You can still include a professional headshot on your LinkedIn profile, which recruiters will check separately.</p>
+
+      <h2>Legal and Bias Concerns</h2>
+      <p>In the United States and several other countries, employers are legally required to make hiring decisions without considering characteristics such as age, race, gender and appearance. Including a photo can inadvertently introduce bias into the screening process, and some HR departments will reject resumes with photos outright to protect the company from discrimination claims. Even if you feel confident about your photo, consider whether including it creates unnecessary risk for your application.</p>
+
+      <h2>When a Photo Adds Value</h2>
+      <p>There are situations where a resume photo genuinely helps. If you are applying for a role where your appearance is directly relevant, such as a brand ambassador position or a client-facing consulting role in a market where photos are customary, a well-chosen headshot signals professionalism and preparation. Networking resumes, one-pagers handed out at conferences and personal websites also benefit from a photo because they help people remember who you are after a brief meeting.</p>
+
+      <h2>Choosing the Right Photo</h2>
+      <p>If you decide to include a headshot, the photo should look polished, current and appropriate for your industry. Use a high-resolution image with a clean background, good lighting and a natural expression. Avoid selfies, group crops and holiday snapshots. The image should be recent, ideally taken within the last two years, so the person who walks into the interview matches the person on the page. AI headshot tools like <a href="/">TailorPic</a> let you generate a studio-quality portrait from a few selfies, which is a fast and affordable option if you do not have a professional photo on hand.</p>
+
+      <h2>Formatting and Placement Tips</h2>
+      <p>If your resume includes a photo, place it in the top corner of the first page, usually the right side. Keep it small, roughly passport size, so it does not dominate the layout. Use a square or slightly vertical crop and make sure the resolution is high enough to look sharp in print and on screen. Avoid decorative borders, filters or heavy retouching. The photo should complement the resume, not distract from the content.</p>
+
+      <h2>The LinkedIn Alternative</h2>
+      <p>For applicants in markets where resume photos are unusual, LinkedIn serves as the ideal place for your professional headshot. Recruiters routinely check LinkedIn profiles after reviewing a resume, so a strong photo there gives you the benefit of a visual first impression without the risk of bias in the initial screening. Make sure your LinkedIn photo is consistent with the professional image you want to project. Browse <a href="/styles">headshot styles</a> to find a look that suits your field.</p>
+
+      <h2>Final Recommendation</h2>
+      <p>Check the norms for your target country and industry before adding a photo. If a headshot is expected, invest in a polished, professional image and format it neatly. If it is not, skip the photo on the resume and put your best portrait on LinkedIn instead. Either way, having a high-quality headshot ready gives you flexibility. You can generate one quickly with <a href="/">TailorPic</a> and use it wherever it makes the strongest impression.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-10-08',
+    tags: ['Resume', 'Career', 'Guide'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'business-card-headshot-tips',
+    title: 'Adding a Headshot to Your Business Card: Design Tips & Best Practices',
+    description:
+      'Learn how to add a professional headshot to your business card with practical advice on photo selection, placement, sizing, print quality and design balance.',
+    content: `
+      <p>A business card with a headshot does something a plain card cannot: it helps people remember you. After a conference, a networking event or a quick introduction, a face on the card connects the conversation to the person. But adding a photo to a small piece of card stock requires careful design choices. Done well, it looks polished and memorable. Done poorly, it looks cluttered or amateurish. This guide covers how to get it right.</p>
+
+      <h2>Why Add a Headshot to Your Business Card</h2>
+      <p>People remember faces more easily than names. A card with your photo helps contacts recall who gave it to them, especially when they collect several cards at one event. It also signals confidence and personal branding. Real estate agents, consultants, financial advisors, sales professionals and anyone in a relationship-driven business can benefit from the added recognition a headshot provides.</p>
+
+      <h2>Choosing the Right Photo</h2>
+      <p>The photo on your business card should be a professional headshot, not a casual snapshot. Use a high-resolution image with a clean or neutral background, even lighting and a natural, approachable expression. The image will be printed small, so simplicity matters. Avoid busy backgrounds, heavy shadows or complex compositions that lose clarity when scaled down. If your current headshot is outdated or low quality, generate a fresh one with <a href="/">TailorPic</a> from a few selfies. Choose a style that matches your industry from the <a href="/styles">available options</a>.</p>
+
+      <h2>Photo Placement and Layout</h2>
+      <p>The most common placement is a small headshot on the left or right side of the card, with your name, title and contact details on the opposite side. This creates a clean, balanced layout. Some designs place the photo as a background element with a slight overlay, but this can reduce legibility. Others use the back of the card for a larger photo, keeping the front text-only. Whichever layout you choose, make sure the text remains easy to read and the photo does not compete with essential information.</p>
+
+      <h2>Sizing and Cropping</h2>
+      <p>A standard business card is 3.5 by 2 inches or 85 by 55 millimetres. At that size, your headshot needs to be tightly cropped to your face and shoulders. A full-body shot or a wide environmental portrait will not read well at business card scale. Crop to a head-and-shoulders frame and leave enough padding around the face so it does not feel cramped. A square or vertical rectangle works best for most layouts. Ensure the image resolution is at least 300 DPI at print size to avoid pixelation.</p>
+
+      <h2>Background and Color Coordination</h2>
+      <p>The background in your headshot should complement the card's design palette. A photo with a neutral grey, white or soft blue background integrates easily with most card designs. If your brand uses bold colors, consider a headshot style with a matching or complementary backdrop. Avoid clashing tones between the photo background and the card background, as this creates a disjointed look. Using a <a href="/editor/background-changer">background changer</a> can help you match the photo to your card design.</p>
+
+      <h2>Print Quality Essentials</h2>
+      <p>Business cards are physical objects, so print quality matters more than screen quality. Start with an image that is at least 600 by 600 pixels for a small placement and higher for a larger one. Use CMYK color mode for print files, as RGB colors can shift during printing. Request a proof from your printer before committing to a full run. Matte card stock often reproduces photos more naturally than glossy stock, which can create glare under certain lighting. If you are using an online printing service, follow their template guidelines for bleed areas and safe zones.</p>
+
+      <h2>Design Balance and Readability</h2>
+      <p>The photo should enhance the card, not overwhelm it. Keep your name, title, phone number, email and website clearly legible. Use a font size no smaller than eight points for body text and ensure there is enough contrast between text and background. White space is your friend. A card that feels crowded with a large photo and dense text will look unprofessional. If the layout feels tight, consider a two-sided design with the photo on one side and contact details on the other.</p>
+
+      <h2>Digital Business Cards</h2>
+      <p>Digital business cards and virtual contact cards are increasingly popular, and they remove the resolution and size constraints of print. A digital card can feature a larger, higher-quality headshot alongside clickable links to your website, LinkedIn and portfolio. If you use a digital card platform, upload the highest resolution version of your headshot and make sure it looks good on both phone screens and desktop browsers.</p>
+
+      <h2>Common Mistakes to Avoid</h2>
+      <p>Using a low-resolution or pixelated photo is the most common mistake and the easiest to fix. Other pitfalls include using an outdated photo that no longer looks like you, choosing a casual or humorous image that clashes with a professional card design, overcrowding the layout so neither the photo nor the text has room to breathe, and skipping a test print to check color accuracy and crop. Take the time to get these details right, because a business card is often the first tangible impression someone has of your brand.</p>
+
+      <h2>Getting Started</h2>
+      <p>Start with a great headshot. If you do not have one that is current, high resolution and professionally styled, create one with <a href="/">TailorPic</a> in minutes. Then work with a designer or use a card template that accommodates a photo without sacrificing readability. Print a small test batch, hand out a few and ask for honest feedback. A well-designed card with a strong headshot is a small investment that pays off every time someone remembers your face along with your name.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-10-20',
+    tags: ['Business Cards', 'Design', 'Tips'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'headshot-retouching-ethics',
+    title: 'The Ethics of AI Headshot Retouching: Where to Draw the Line',
+    description:
+      'Explore the ethical considerations of AI headshot retouching, from acceptable enhancements to misleading alterations, and how to maintain authenticity.',
+    content: `
+      <p>AI headshot tools can do remarkable things. They smooth skin, even out lighting, swap backgrounds and generate entirely new portraits from a handful of selfies. But the ease and power of these tools raise an important question: how much retouching is acceptable before a photo stops representing who you actually are? This article explores where the line sits and how to stay on the right side of it.</p>
+
+      <h2>The Spectrum of Retouching</h2>
+      <p>Retouching exists on a spectrum. At one end are minor corrections that every photographer has always made: removing a temporary blemish, adjusting white balance, softening a harsh shadow. These changes make the photo technically better without altering how you look. At the other end are transformations that change your apparent age, body shape, skin tone or facial structure so significantly that the person in the photo could not be recognized in real life. Most retouching falls somewhere between these extremes, and the ethical questions live in the middle ground.</p>
+
+      <h2>What Counts as Acceptable Enhancement</h2>
+      <p>Acceptable retouching improves the quality of the image without misrepresenting the subject. This includes correcting uneven lighting, removing temporary skin issues like a fresh scratch or a sunburn, cleaning up flyaway hairs, adjusting color balance for a natural look and swapping a distracting background for a clean one. These are the digital equivalents of good lighting and a tidy setting, things a skilled photographer would handle in the studio. AI tools like <a href="/">TailorPic</a> automate these adjustments, making professional-grade corrections accessible to everyone.</p>
+
+      <h2>Where Retouching Becomes Misleading</h2>
+      <p>Retouching crosses an ethical line when it creates a false impression. Dramatically smoothing wrinkles to look twenty years younger, reshaping your jawline or nose, lightening or darkening your skin tone, significantly slimming your body or adding features you do not have are all changes that misrepresent who you are. If someone who has only seen your headshot would not recognize you in person, the retouching has gone too far. This matters most in professional contexts where trust and authenticity are essential, such as job applications, client-facing roles and public speaking.</p>
+
+      <h2>The Professional Context Matters</h2>
+      <p>The acceptable level of enhancement varies by context. A headshot for a corporate directory or LinkedIn profile should look like you on a good day, well-rested, well-lit and well-groomed, but unmistakably you. A photo for a creative portfolio, an acting composite or a fashion lookbook may allow more stylistic latitude because the audience understands that those images are part of a visual narrative. The key is to match the level of retouching to the expectations of the audience and the purpose of the image.</p>
+
+      <h2>AI-Generated vs AI-Enhanced</h2>
+      <p>There is an important distinction between AI-enhanced photos and AI-generated photos. Enhancement takes an existing photo and improves it. Generation creates a new image from training data, which may be a composite of your uploaded selfies. Both can produce authentic-looking results, but generation introduces more room for deviation from reality because the AI is constructing the image rather than adjusting one. When using generative tools, review the output critically. Does it look like you? Would your colleagues or clients recognize you? If the answer is yes, the result is probably fine. If not, regenerate or choose a different output.</p>
+
+      <h2>Disclosure and Transparency</h2>
+      <p>Some professionals wonder whether they need to disclose that their headshot was AI-generated or retouched. In most contexts, there is no legal requirement to do so, just as there is no requirement to disclose that a traditional photographer used Photoshop. However, transparency builds trust. If someone asks how you got your photo, being honest about using an AI tool is better than implying you hired a photographer. As AI headshots become more common, the stigma around using them is fading quickly.</p>
+
+      <h2>Industry Standards and Guidelines</h2>
+      <p>Some industries have started establishing guidelines around photo manipulation. Journalism and news organizations generally prohibit altering photos beyond basic cropping and exposure correction. Real estate has rules about accurately representing properties, and similar principles are beginning to extend to agent photos. Medical and legal professionals are expected to present themselves authentically. If your industry has specific guidelines, follow them. If it does not, use your judgment and err on the side of authenticity.</p>
+
+      <h2>The Impact on Self-Image</h2>
+      <p>Beyond professional ethics, there is a personal dimension to consider. Over-retouching can create a gap between how you see yourself in photos and how you look in real life, which can affect confidence and self-perception over time. A headshot that looks like the best natural version of you, the version that shows up on a day when the light is right and you feel good, is more sustainable than one that sets an unrealistic standard you feel pressure to live up to.</p>
+
+      <h2>Practical Guidelines for Ethical Retouching</h2>
+      <p>Keep these principles in mind when reviewing AI-generated or retouched headshots. The photo should be recognizable as you by anyone who has met you. Skin texture should look natural, not artificially smoothed to the point of looking synthetic. Your body proportions, facial features and skin tone should be accurate. The setting and attire should be plausible, something you would actually wear and somewhere you might actually be. If you are unsure, show the photo to a trusted friend or colleague and ask if it looks like you.</p>
+
+      <h2>Finding the Balance</h2>
+      <p>The goal of a professional headshot is to present yourself at your best, not to present someone else. AI tools make it easy to cross that line without realizing it, which is why intentionality matters. Choose a <a href="/styles">headshot style</a> that fits your profession, review the output honestly and pick the image that looks like you on a great day. That is the photo that builds trust, opens doors and still feels right when you meet someone who has seen it for the first time.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-11-03',
+    tags: ['Ethics', 'AI', 'Retouching'],
+    readingTime: '6 min read',
+  },
+  {
+    slug: 'group-headshot-session-tips',
+    title: 'How to Organize a Group Headshot Session: Complete Planning Guide',
+    description:
+      'A step-by-step guide to planning and running a group headshot session for your team, covering scheduling, styling, setup, coordination and delivery.',
+    content: `
+      <p>Getting headshots for an entire team is one of those tasks that sounds simple until you start coordinating schedules, outfits, locations and preferences across a dozen or more people. Whether you are updating your company website, refreshing LinkedIn profiles or building a consistent brand presence, a well-organized group session saves time, reduces stress and produces better results. This guide walks you through the planning process from start to finish.</p>
+
+      <h2>Define the Purpose and Style</h2>
+      <p>Before you schedule anything, clarify why you need the photos and how they will be used. Headshots for a corporate website have different requirements than photos for a casual startup team page. Decide on the style: formal with suits and neutral backgrounds, business casual with a modern office feel, or relaxed and creative. Choosing a consistent style upfront prevents mismatched results and avoids the need for reshoots. Browse <a href="/styles">headshot styles</a> to see options and pick one direction for the entire team.</p>
+
+      <h2>Set a Realistic Timeline</h2>
+      <p>Group sessions require more lead time than individual shoots. Start planning at least three to four weeks before your target date. Send an initial announcement two weeks ahead with the date, time, location and what people should wear. Follow up one week before with a reminder and any last-minute details. On the day, allow ten to fifteen minutes per person for setup, shooting and reviewing. For a team of twenty, that means a full day of shooting. Build in buffer time for breaks and late arrivals.</p>
+
+      <h2>Choose the Right Location</h2>
+      <p>The location should support the style you have chosen. A conference room with a portable backdrop works for formal corporate headshots. A well-lit common area or lounge works for business casual shots. An outdoor courtyard or rooftop can work for creative teams, weather permitting. Make sure the space has consistent lighting, enough room for a simple setup and a private area where people can check their appearance before stepping in front of the camera. If you are using a professional photographer, ask them to visit the space in advance or share photos so they can plan their lighting.</p>
+
+      <h2>Create a Style Guide</h2>
+      <p>Send everyone a simple style guide with specific dos and don'ts. Include guidance on clothing colors that work well together, patterns to avoid such as narrow stripes and small checks that can cause visual distortion, grooming suggestions and accessory recommendations. Be specific but not prescriptive. Telling people to wear solid colors in navy, grey, white or jewel tones gives enough direction without making everyone feel constrained. Include example photos so people can see the target look. This single step eliminates most of the inconsistency problems that plague group sessions.</p>
+
+      <h2>Schedule Individual Time Slots</h2>
+      <p>Do not ask everyone to show up at the same time and wait. Create a schedule with individual time slots and share it in advance. Let people choose their preferred slot when possible, and accommodate those with tight meeting schedules first. A shared calendar link or sign-up sheet works well. Send a confirmation the day before with each person's time, the location and a reminder about the style guide. Staggering arrivals keeps the process smooth and prevents a waiting-room atmosphere that makes people anxious.</p>
+
+      <h2>Prepare the Setup</h2>
+      <p>On the day, arrive early and set everything up before the first person's slot. Test the lighting, check the background and take a few test shots to verify exposure and framing. Have a mirror, a lint roller and a few basic grooming supplies available. If you are using a portable backdrop, make sure it is wrinkle-free and securely mounted. Keep the setup consistent throughout the day so every team member gets the same look. If you are using an AI tool like <a href="/">TailorPic</a> instead of a photographer, set up a selfie station with good lighting and a clean background, and have clear instructions posted for how to take the source photos.</p>
+
+      <h2>Direct and Encourage</h2>
+      <p>Most people are uncomfortable in front of a camera. The person running the session needs to be encouraging, patient and clear about what to do. Give simple directions: where to look, how to angle the shoulders, when to smile and when to relax. Take multiple shots per person so there are options to choose from. A light conversation helps people loosen up, and genuine laughter often produces the most natural expressions. If someone is particularly nervous, let them see a few of their shots on screen to build confidence.</p>
+
+      <h2>Review and Select Efficiently</h2>
+      <p>After the session, narrow down the images quickly. For each person, select three to five of the best shots and share them for review. Give people a deadline to choose their preferred image, typically three to five business days. If someone does not respond, choose the strongest option on their behalf. Waiting for everyone to reply can delay the entire project by weeks. Have one person with design or brand authority make the final call on consistency across the set.</p>
+
+      <h2>The AI Alternative for Teams</h2>
+      <p>Coordinating a group session is logistically complex, especially for remote or distributed teams. An AI approach simplifies the process significantly. Each team member uploads their own selfies on their own time, and the AI generates consistent, styled headshots without anyone needing to be in the same place. This eliminates scheduling conflicts, travel requirements and the stress of a live photo session. The results can be reviewed and regenerated individually, and the whole project can be completed in days rather than weeks.</p>
+
+      <h2>Delivery and Usage</h2>
+      <p>Deliver the final images in multiple formats: a high-resolution version for print and website use, a square crop for social media profiles and a small web-optimized version for email signatures. Name the files consistently using each person's name and the intended use. Store the full set in a shared drive so the marketing or HR team can access them as needed. Plan to refresh the photos every one to two years, or whenever the team changes significantly, to keep your public-facing image current and cohesive.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-11-12',
+    tags: ['Groups', 'Planning', 'Guide'],
+    readingTime: '6 min read',
+  },
+  {
+    slug: 'headshot-for-website-about-page',
+    title: 'Your Website About Page Headshot: First Impressions That Convert',
+    description:
+      'How to choose and present a headshot on your website about page that builds trust, communicates professionalism and helps convert visitors into clients.',
+    content: `
+      <p>Your website's about page is one of the most visited pages on your site, and the headshot on it does more work than you might think. It is the visual handshake that tells visitors who is behind the brand, whether they can trust you and whether they want to work with you. A strong about page headshot builds credibility and connection. A weak one, or a missing one, creates doubt. This guide covers how to get your about page photo right.</p>
+
+      <h2>Why Your About Page Headshot Matters for Conversion</h2>
+      <p>Visitors land on your about page because they want to know who they are buying from, hiring or partnering with. Research consistently shows that pages with human faces generate more trust and engagement than pages without them. A professional headshot tells visitors that you take your work seriously, that you are a real person and that you are confident enough to put yourself forward. For service-based businesses, freelancers and consultants, this trust signal directly influences whether a visitor becomes a client.</p>
+
+      <h2>What Makes an Effective About Page Headshot</h2>
+      <p>An effective about page headshot has several qualities. It is current, meaning it looks like you right now, not five years ago. It is professionally lit and composed, with a clean background that does not distract from your face. Your expression is approachable and confident, the kind of look that says you are competent and easy to work with. The style matches your brand and industry. A corporate consultant needs a different look than a yoga instructor or a graphic designer. The photo should feel intentional, not like an afterthought cropped from a group picture at a conference.</p>
+
+      <h2>Choosing the Right Style for Your Brand</h2>
+      <p>Your headshot style should align with the overall tone of your website and brand. If your site is clean, modern and minimal, your headshot should match with a simple background and polished look. If your brand is warm, personal and approachable, a natural-light portrait with soft tones will feel more authentic. If you work in a creative field, a more expressive or editorial-style photo can reinforce your creative identity. Browse <a href="/styles">TailorPic's headshot styles</a> to find a direction that fits, and generate options that match your site's visual language.</p>
+
+      <h2>Technical Requirements for Web</h2>
+      <p>Your about page headshot needs to look sharp on all devices without slowing down your site. Use an image that is at least 800 pixels wide for a half-page layout or 1200 pixels for a full-width hero placement. Compress the file to keep page load times fast, aiming for under 200 kilobytes for a JPEG. Use modern image formats like WebP where your site platform supports them. Make sure the image has proper alt text that describes you and your role for accessibility and search engine optimization. Test how the photo looks on mobile, tablet and desktop, since many visitors will see your about page on a phone first.</p>
+
+      <h2>Placement and Layout Best Practices</h2>
+      <p>The most effective about page layouts place the headshot prominently, either as a large hero image at the top of the page or as a substantial element next to your introductory text. Avoid burying the photo below several paragraphs of text. Visitors should see your face within the first screen of content. If you have a team, feature your own headshot most prominently and include team photos below. Use consistent styling across all team headshots for a cohesive, professional appearance.</p>
+
+      <h2>The Story Behind the Photo</h2>
+      <p>Your headshot works best when it is paired with compelling copy. The photo draws the eye, and the text next to it should tell your story in a way that connects with your ideal client. Use the space beside or below your photo to explain who you are, what you do, why you do it and what makes you the right choice. The photo and the text should reinforce each other. A warm, approachable photo paired with stiff, corporate language creates a disconnect. A professional photo next to a casual, friendly bio creates alignment and trust.</p>
+
+      <h2>Common About Page Photo Mistakes</h2>
+      <p>The most common mistakes are easy to avoid. Using an outdated photo that no longer looks like you undermines trust the moment a client meets you in person or on video. Using a low-resolution or poorly lit image makes your entire site look unprofessional. Using a casual selfie or a cropped group photo suggests you did not invest in your business. Having no photo at all is perhaps the biggest missed opportunity, as it removes the human element that drives connection and trust. If any of these describe your current about page, updating your headshot is one of the highest-impact changes you can make.</p>
+
+      <h2>Updating and Testing</h2>
+      <p>Your about page headshot should be refreshed every one to two years, or whenever your appearance changes significantly. When you update the photo, consider running a simple test. Show two versions of your about page to a small group, one with the old photo and one with the new, and ask which person they would rather work with. You can also track conversion metrics like contact form submissions and consultation bookings before and after the update to see if the new photo has a measurable impact.</p>
+
+      <h2>Getting a Great Headshot Quickly</h2>
+      <p>You do not need to book a photographer and wait weeks for edited files. With <a href="/">TailorPic</a>, you can upload a few clear selfies and receive polished, professional headshots in minutes. Choose a style that matches your brand, review the options and download a web-ready file that looks sharp on any device. Your about page is too important to leave without a strong photo, and updating it has never been easier.</p>
+
+      <h2>Making the Investment Count</h2>
+      <p>A professional about page headshot is not vanity. It is a business tool. It builds the trust that moves visitors from browsing to buying, from considering to contacting. Every day your about page runs without a strong photo is a day you are leaving conversions on the table. Take twenty minutes to generate a new headshot, update your page and let your first impression do the work it is supposed to do.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-11-24',
+    tags: ['Website', 'About Page', 'Conversion'],
+    readingTime: '6 min read',
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

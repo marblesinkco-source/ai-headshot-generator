@@ -463,6 +463,45 @@ export const photoStyles: PhotoStyle[] = [
       'social-media-profile-photo-sizes',
     ],
   },
+  {
+    slug: 'high-contrast',
+    name: 'High-Contrast Headshots',
+    title: 'AI High-Contrast Headshots',
+    description:
+      'Dramatic high-contrast headshots with deep shadows, bold highlights and a striking, cinematic presence.',
+    metaDescription:
+      'Create AI high-contrast headshots with deep shadows, bold highlights and dramatic flair. Striking, cinematic portraits for professionals and creatives with TailorPic.',
+    heroText:
+      'Make a statement with light and shadow. High-contrast headshots use bold tonal separation, deep blacks and bright highlights to deliver portraits with unmistakable presence and an edge that demands attention.',
+    features: [
+      'Strong directional lighting with pronounced shadow play',
+      'Deep blacks and crisp highlights for maximum tonal impact',
+      'Cinematic, moody color grading in rich tones',
+      'Minimalist dark backdrops that keep all focus on the subject',
+      'Chiseled, sculpted look that enhances facial structure',
+      'Black-and-white and color variants for different uses',
+    ],
+    idealFor: [
+      'Actors, musicians and performing artists',
+      'Photographers and visual creatives',
+      'Authors and speakers wanting a bold book jacket or event photo',
+      'Fitness professionals and athletes',
+      'Anyone who wants a powerful, attention-grabbing portrait',
+    ],
+    tips: [
+      'Upload sharp selfies with clear, even lighting so the AI has strong detail to work with',
+      'Try both color and black-and-white outputs to see which suits your brand',
+      'Choose dark, solid clothing to complement the dramatic shadows',
+      'Avoid busy patterns or bright accessories that compete with the lighting',
+      'Pair a high-contrast image with a softer one for versatility across platforms',
+    ],
+    relatedCategories: ['headshots', 'team-headshots'],
+    relatedBlogPosts: [
+      'headshot-trends-2025',
+      'professional-headshot-tips-2025',
+      'headshot-background-guide',
+    ],
+  },
 ];
 
 export function getPhotoStyle(slug: string): PhotoStyle | undefined {
