@@ -9,6 +9,7 @@ import { ArrowRight } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Blog',
   description: `Tips, guides, and insights about AI photography from ${siteConfig.name}. Learn how to get the most from AI-generated photos.`,
+  alternates: { canonical: '/blog' },
   openGraph: {
     title: `Blog | ${siteConfig.name}`,
     description: `Tips, guides, and insights about AI photography from ${siteConfig.name}.`,

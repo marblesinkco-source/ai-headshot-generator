@@ -3,6 +3,7 @@ import { Manrope } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
 import { siteConfig } from '@/config/site';
+import { ToastProvider } from '@/components/ui/toaster';
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -44,6 +45,9 @@ export const metadata: Metadata = {
     images: ['/brand/tailorpic/web/og-tailorpic-1200x630.jpg'],
     creator: siteConfig.links.twitter || undefined,
   },
+  alternates: {
+    canonical: '/',
+  },
   robots: {
     index: true,
     follow: true,
@@ -54,7 +58,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={manrope.variable} suppressHydrationWarning>
       <body className="min-h-screen bg-tp-paper font-sans antialiased text-tp-ink">
-        {children}
+        <ToastProvider>
+          {children}
+        </ToastProvider>
         {/* Vercel Analytics — only loads when NEXT_PUBLIC_VERCEL_ANALYTICS_ID is set */}
         {process.env.NEXT_PUBLIC_VERCEL_ANALYTICS_ID && (
           <Script

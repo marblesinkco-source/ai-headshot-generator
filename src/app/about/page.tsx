@@ -9,6 +9,7 @@ import { Shield, Zap, Users, Lock, Heart, Globe } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'About Us',
   description: `Learn about ${siteConfig.name} — the AI photo platform that creates stunning, personalized photos in minutes. Our mission, values, and commitment to privacy.`,
+  alternates: { canonical: '/about' },
   openGraph: {
     title: `About | ${siteConfig.name}`,
     description: `Learn about ${siteConfig.name} and our mission to make professional photography accessible to everyone.`,

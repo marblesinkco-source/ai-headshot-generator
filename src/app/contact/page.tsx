@@ -8,6 +8,7 @@ import { Mail, MessageSquare, Clock, MapPin } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Contact Us',
   description: `Get in touch with ${siteConfig.name}. We're here to help with questions about AI photo generation, orders, and more.`,
+  alternates: { canonical: '/contact' },
   openGraph: {
     title: `Contact Us | ${siteConfig.name}`,
     description: `Have questions? Reach out to the ${siteConfig.name} team. We respond within hours.`,

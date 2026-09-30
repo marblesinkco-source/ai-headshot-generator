@@ -119,12 +119,20 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href="/#pricing"
+                <Link
+                  href="/pricing"
                   className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
                 >
                   Pricing
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/faq"
+                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
+                >
+                  FAQ
+                </Link>
               </li>
               <li>
                 <Link

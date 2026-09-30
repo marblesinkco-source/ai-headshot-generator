@@ -31,6 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: cat.seoTitle,
     description: cat.seoDescription,
+    alternates: { canonical: `/${cat.slug}` },
     openGraph: {
       title: `${cat.seoTitle} | ${siteConfig.name}`,
       description: cat.seoDescription,
