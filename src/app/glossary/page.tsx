@@ -276,6 +276,11 @@ const terms: Term[] = [
       'The standard lighting setup in portrait and studio photography, consisting of a key light (main illumination), a fill light (softens shadows on the opposite side) and a back light or rim light (separates the subject from the background). AI headshot generators simulate three-point lighting to produce balanced, professional-looking results.',
   },
   {
+    term: 'Vignette',
+    definition:
+      'A gradual darkening or lightening toward the edges of an image that draws the eye to the center. A subtle vignette can focus attention on the face in a headshot, while a heavy one looks dated.',
+  },
+  {
     term: 'Upscaling',
     definition:
       'Increasing the pixel dimensions of an image while trying to preserve or rebuild detail. AI upscalers predict the missing detail, which usually gives cleaner results than simple enlargement.',

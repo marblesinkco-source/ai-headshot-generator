@@ -6977,6 +6977,425 @@ export const blogPosts: BlogPost[] = [
     tags: ['Tips', 'Etiquette', 'Guide'],
     readingTime: '8 min read',
   },
+  {
+    slug: 'ai-headshot-for-therapists',
+    title: 'AI Headshots for Therapists: Warm, Trustworthy Profile Photos',
+    description:
+      'How therapists, counsellors and psychologists can use AI headshots to build warm, credible profile photos for directories, websites and LinkedIn without a studio shoot.',
+    content: `
+      <p>For therapists, counsellors and psychologists, a profile photo does a job that few other professionals face. Before a prospective client ever books a consultation, they look at your picture and quietly ask one question: "Could I feel safe talking to this person?" A photo cannot answer that completely, but it can certainly make the answer harder or easier. In this guide we explain how AI headshots can help therapists build a warm, credible and consistent image without the cost and awkwardness of a traditional photo session.</p>
+
+      <p>If you want to jump straight in, you can <a href="/headshots">create your AI headshots</a> in a few minutes. Keep reading if you want to understand what makes a great therapist headshot and how to avoid the common pitfalls.</p>
+
+      <h2>Why Your Photo Matters More in Mental Health</h2>
+      <p>Choosing a therapist is a vulnerable decision. People often search late at night, scroll through directories such as Psychology Today or your clinic website, and narrow down a shortlist within seconds. Research on first impressions consistently shows that people form judgments about warmth and trustworthiness in a fraction of a second. For a therapist, those impressions influence whether a worried person picks up the phone or keeps scrolling.</p>
+      <p>A good headshot does three things for a therapist. It signals <strong>approachability</strong>, so a nervous client feels welcome. It signals <strong>professionalism</strong>, so they trust your training and boundaries. And it signals <strong>presence</strong>, meaning you are a real person who will show up for them. Your photo is not a clinical credential, but it is often the first piece of evidence a client weighs.</p>
+
+      <h2>The Challenges of Traditional Headshots for Therapists</h2>
+      <p>Many therapists work in private practice or small group practices, which means there is no marketing department to organise a photo day. A local photographer can charge several hundred dollars, and the session may feel uncomfortable for people who spend their days in the listening chair rather than in front of a lens. Many therapists also update their look infrequently, so directory photos end up years out of date.</p>
+      <p>There is also a practical problem: consistency. If you practise across a website, a directory listing, a podcast guest page, a LinkedIn profile and a newsletter, you want the same friendly face everywhere. Organising one shoot and reusing it for years is difficult when your hair, glasses or style change.</p>
+
+      <h2>How AI Headshots Work for Therapists</h2>
+      <p>With TailorPic you upload several clear selfies, the AI learns your features and then generates polished portraits in the settings you choose. You can view the available <a href="/styles">headshot styles</a> before you begin, pick a setting that suits your practice and download high resolution files. The whole process takes minutes rather than weeks, and you can do it from your living room. You can learn more about the process on our <a href="/how-it-works">how it works</a> page and see the <a href="/pricing">pricing</a> before you start.</p>
+
+      <h2>What Makes a Great Therapist Headshot</h2>
+      <h3>A warm, genuine expression</h3>
+      <p>Clients respond to a soft, relaxed smile or a calm, open expression. A wide, salesy grin can feel performative, and a stern look can feel cold. Aim for the expression you would wear when greeting a client at the door: attentive, kind and unhurried.</p>
+      <h3>Soft, natural lighting</h3>
+      <p>Harsh shadows create a clinical or intimidating mood. Soft, even light, similar to window light, flatters the face and feels inviting. Our <a href="/styles/natural-light">natural light style</a> is a popular choice for counsellors and coaches because it feels gentle and unposed.</p>
+      <h3>A calm, uncluttered background</h3>
+      <p>Neutral or softly blurred backgrounds keep the focus on you. Muted greens, warm greys, creamy beiges and soft blues feel calm and grounding, which suits a therapeutic setting. Avoid busy backgrounds, loud colours or anything that could distract from your face.</p>
+      <h3>Clothing that feels professional but approachable</h3>
+      <p>A soft blazer, a knit sweater, a simple collared shirt or a plain blouse all work well. Choose solid colours in muted tones. Very formal suits can create distance, while very casual clothing may undermine confidence in your credentials. Think of it as dressing for a first session with a new client.</p>
+
+      <h2>Choosing the Right Style for Your Practice</h2>
+      <p>Different specialisms suit different looks. A psychologist who works with executives may prefer a polished, business-oriented portrait, while a play therapist or art therapist might choose something warmer and more colourful.</p>
+      <ul>
+        <li><strong>Private practice counsellors:</strong> Soft natural light with a neutral background feels welcoming and personal.</li>
+        <li><strong>Clinical psychologists and psychiatrists:</strong> A slightly more formal <a href="/styles/professional-linkedin">professional portrait</a> reinforces credentials.</li>
+        <li><strong>Couples and family therapists:</strong> A warm, smiling portrait in a relaxed setting helps couples feel at ease.</li>
+        <li><strong>Trauma and youth specialists:</strong> Gentle lighting and calm colours communicate safety.</li>
+        <li><strong>Group practices:</strong> Consistent backdrops and framing across clinicians look cohesive. Our <a href="/styles/corporate-team">corporate team style</a> is designed for exactly this.</li>
+      </ul>
+      <p>For more profession-specific advice, visit our pages for <a href="/industries/therapists">therapists</a>, <a href="/industries/psychologists">psychologists</a> and <a href="/industries/social-workers">social workers</a>.</p>
+
+      <h2>Where Therapists Use Their Headshots</h2>
+      <p>Your portrait will appear in more places than you might expect. Plan for each of them so your image stays consistent.</p>
+      <ul>
+        <li><strong>Practice website:</strong> The About page is usually one of the most visited pages on a therapist's site. A warm photo next to your story builds trust before the first call.</li>
+        <li><strong>Therapist directories:</strong> Listings on directories are often the first touchpoint. A clear, friendly face at thumbnail size can improve the number of enquiries you receive.</li>
+        <li><strong>LinkedIn:</strong> Referrals from GPs, physicians and other professionals often begin with a LinkedIn search. See our guide to <a href="/use-cases/linkedin">LinkedIn profile photos</a>.</li>
+        <li><strong>Email signatures and newsletters:</strong> A small portrait humanises every message. See the <a href="/use-cases/email-signature">email signature</a> guide.</li>
+        <li><strong>Speaking and podcasts:</strong> Workshops, webinars and media appearances need a press-ready image. Read about <a href="/use-cases/speaking-engagement">speaking engagement photos</a>.</li>
+      </ul>
+
+      <h2>Ethics, Honesty and Professional Boundaries</h2>
+      <p>Therapists work within codes of ethics that emphasise honesty, and it is natural to ask whether an AI headshot fits. The key principle is that your photo should be a truthful representation of you. The purpose of a headshot is recognisability: a client who meets you should immediately recognise the person in the photo.</p>
+      <p>Avoid heavy retouching that changes your age, face shape or features. Do not use an image that looks dramatically different from how you appear in session. Because TailorPic builds portraits from your own selfies, the result should look like you on a good day. If anything looks off, regenerate or choose a different image. Our article on <a href="/blog/ai-photography-ethics-guide">AI photography ethics</a> explores the wider question, and our <a href="/security">security</a> page explains how we handle uploaded photos, which matters to anyone in a confidentiality-focused profession.</p>
+
+      <h2>Tips for Taking Your Source Selfies</h2>
+      <ol>
+        <li>Use natural daylight near a window, facing the light.</li>
+        <li>Take at least eight to ten photos with different angles and expressions.</li>
+        <li>Include both smiling and softly neutral looks.</li>
+        <li>Wear the kind of clothing you would wear to see clients.</li>
+        <li>Keep your hair and glasses as you usually wear them.</li>
+        <li>Avoid filters, sunglasses, hats and group photos.</li>
+        <li>Use a plain background so the AI can focus on your face.</li>
+      </ol>
+      <p>More detailed advice is in our guide on <a href="/blog/how-to-prepare-photos-for-ai-headshot">how to prepare photos for an AI headshot</a>.</p>
+
+      <h2>A Simple Checklist Before You Publish</h2>
+      <ul>
+        <li>Does the photo look like me today?</li>
+        <li>Would a nervous client feel welcomed by this expression?</li>
+        <li>Is the background calm and uncluttered?</li>
+        <li>Does the image still read clearly at thumbnail size?</li>
+        <li>Is it consistent with my website, directory and LinkedIn images?</li>
+        <li>Do I feel comfortable with how I am presented?</li>
+      </ul>
+
+      <h2>Final Thoughts</h2>
+      <p>A therapist's headshot is a small gesture of welcome. It tells a prospective client that there is a real, kind and qualified person on the other side of the screen. AI headshots make it easy to achieve that look without a studio booking, a large invoice or the discomfort of posing for a stranger. When you are ready, <a href="/headshots">create your headshots with TailorPic</a>, browse our <a href="/styles">styles</a> and pick the one that feels most like the way you greet your clients.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['Industry', 'Therapists', 'Healthcare'],
+    readingTime: '7 min read',
+  },
+  {
+    slug: 'ai-headshot-background-guide',
+    title: 'AI Headshot Background Guide: How to Choose the Right Backdrop',
+    description:
+      'Learn how to choose the best headshot background for your industry, brand and platform, from neutral studio backdrops to gradients, colour and blurred offices.',
+    content: `
+      <p>When people think about a great headshot, they usually think about the face. But the background quietly does half of the work. It sets the mood, influences how sharp your features look, and tells viewers what kind of professional you are before they read a single word of your bio. With AI headshots you can choose your background in seconds, which makes the decision both easier and more important. This guide walks through how to pick the right one for your industry, your brand and every platform where your photo will appear.</p>
+      <p>Ready to try it? You can <a href="/headshots">generate your AI headshots</a> and experiment with different backdrops in minutes.</p>
+
+      <h2>Why the Background Matters</h2>
+      <p>A background has three jobs. First, it should <strong>separate you from the scene</strong>, creating enough contrast that your face stands out, even at thumbnail size on LinkedIn or an email signature. Second, it should <strong>set the tone</strong>: a soft grey suggests calm competence, a bright colour suggests energy, and an office suggests a corporate setting. Third, it should <strong>stay out of the way</strong>. A distracting background pulls attention from your face and can make the photo feel amateur.</p>
+
+      <h2>The Main Types of Headshot Backgrounds</h2>
+      <h3>1. Solid neutral studio backdrops</h3>
+      <p>Grey, white, off-white and charcoal are the classics. They are timeless, flattering and suitable for almost every industry. They also make a team look consistent, which is why they are so common on company About pages. Our <a href="/styles/studio-classic">studio classic style</a> uses this approach.</p>
+      <h3>2. Gradient backdrops</h3>
+      <p>A gradient adds depth without adding clutter. A subtle shift from light to dark behind your shoulders makes you appear to lift off the background. This is a good option when a flat backdrop feels too plain.</p>
+      <h3>3. Coloured backdrops</h3>
+      <p>Blues, teals, greens and warm tones add personality and can match your brand palette. Keep the colour muted for professional settings. Brighter colours suit creatives, coaches and founders who want to stand out.</p>
+      <h3>4. Blurred office and workplace settings</h3>
+      <p>A softly blurred office, co-working space or boardroom suggests a real working environment. It feels modern and approachable. Make sure the blur is strong enough that no details compete with your face. See <a href="/styles/environmental">environmental portraits</a> for this look.</p>
+      <h3>5. Outdoor and natural backgrounds</h3>
+      <p>Greenery, city streets and natural light create a relaxed, human feel. They suit real estate agents, coaches, writers and anyone in a people-facing role. Try <a href="/styles/outdoor">outdoor</a> or <a href="/styles/natural-light">natural light</a> styles.</p>
+      <h3>6. Textured and dark backgrounds</h3>
+      <p>Brick, wood and dark moody backdrops add drama. They work for photographers, musicians, chefs and other creative fields, but they can feel too heavy for conservative professions. Explore <a href="/styles/dark-moody">dark moody</a> for this effect.</p>
+
+      <h2>Choosing a Background by Industry</h2>
+      <ul>
+        <li><strong>Law, finance and consulting:</strong> Neutral grey, navy or a subtle office blur. Read our <a href="/industries/lawyers">lawyers</a> and <a href="/industries/financial-advisors">financial advisors</a> pages.</li>
+        <li><strong>Healthcare:</strong> Clean white, light grey or soft blue conveys hygiene and calm. See <a href="/industries/doctors">doctors</a> and <a href="/industries/nurses">nurses</a>.</li>
+        <li><strong>Technology and startups:</strong> Modern office, light grey or a brand colour. See <a href="/industries/engineers">engineers</a>.</li>
+        <li><strong>Creative and media:</strong> Colour, texture or environmental settings. See <a href="/industries/graphic-designers">graphic designers</a> and <a href="/industries/photographers">photographers</a>.</li>
+        <li><strong>Real estate and sales:</strong> Bright, warm and outdoor-friendly backgrounds. See <a href="/industries/real-estate">real estate</a>.</li>
+        <li><strong>Education and coaching:</strong> Warm, soft and approachable backdrops. See <a href="/industries/teachers">teachers</a> and <a href="/industries/coaches">coaches</a>.</li>
+      </ul>
+
+      <h2>Colour Psychology in Brief</h2>
+      <p>Colour influences perception, although cultural context matters and individual reactions vary. As a general guide:</p>
+      <ul>
+        <li><strong>Blue:</strong> trust, stability and competence.</li>
+        <li><strong>Grey:</strong> neutrality, sophistication and balance.</li>
+        <li><strong>Green:</strong> calm, growth and health.</li>
+        <li><strong>Warm beige and cream:</strong> approachability and warmth.</li>
+        <li><strong>Black and charcoal:</strong> authority, drama and luxury.</li>
+        <li><strong>Bright colours:</strong> energy, creativity and confidence.</li>
+      </ul>
+      <p>For a deeper look, read our article on <a href="/blog/headshot-background-color-psychology">headshot background colour psychology</a>.</p>
+
+      <h2>Matching Your Clothing to the Background</h2>
+      <p>Clothing and background need to work together. A dark suit on a dark background makes you disappear, while a white shirt on a white wall has the same effect. Aim for contrast: light clothing against mid or dark backgrounds, darker clothing against light backgrounds. Avoid colours that clash with your skin tone or blend into the backdrop. Our guide on <a href="/blog/what-to-wear-for-headshots">what to wear for headshots</a> covers this in detail.</p>
+
+      <h2>Choosing a Background by Platform</h2>
+      <h3>LinkedIn</h3>
+      <p>LinkedIn shows your photo in a small circle, so a clean contrast matters most. A neutral or softly blurred background works best. Read our <a href="/use-cases/linkedin">LinkedIn photo guide</a>.</p>
+      <h3>Company website and team pages</h3>
+      <p>Consistency beats creativity here. Use the same backdrop for everyone. See the <a href="/use-cases/website-team-page">website team page</a> guide and our <a href="/styles/corporate-team">corporate team style</a>.</p>
+      <h3>Email signatures and business cards</h3>
+      <p>Small sizes need simple, high-contrast backgrounds. See <a href="/use-cases/email-signature">email signature photos</a>.</p>
+      <h3>Speaker bios and press kits</h3>
+      <p>Choose a polished, high-resolution image that looks good in print and on stage screens. See <a href="/use-cases/press-kit">press kit photos</a>.</p>
+      <h3>Social media</h3>
+      <p>You can be more playful here. A bright background can help your image stand out in a crowded feed. See <a href="/use-cases/social-media">social media profile photos</a>.</p>
+
+      <h2>Common Background Mistakes</h2>
+      <ol>
+        <li><strong>Clutter:</strong> Shelves, posters and windows compete for attention.</li>
+        <li><strong>Busy patterns:</strong> Wallpaper and stripes create visual noise.</li>
+        <li><strong>Low contrast:</strong> Clothing that matches the background flattens the image.</li>
+        <li><strong>Harsh colours:</strong> Neon tones can cast unflattering colour onto skin.</li>
+        <li><strong>Inconsistency:</strong> Different backgrounds across team members look unplanned.</li>
+        <li><strong>Trend chasing:</strong> A very trendy backdrop can date quickly.</li>
+      </ol>
+
+      <h2>How to Choose With AI Headshots</h2>
+      <p>One advantage of AI is that you do not have to commit to a single backdrop before the shoot. Generate a few options, compare them at thumbnail size and pick the one that flatters you most. For personal use, choose what feels like you. For teams, agree on a single background and apply it to everyone.</p>
+      <p>A useful test is to shrink each option to the size of a LinkedIn thumbnail. If your face is still clear and the image still feels professional, it passes. You can also ask a colleague or friend which one looks most like the person they know. Finally, check how the image looks against both light and dark website themes.</p>
+
+      <h2>Quick Decision Guide</h2>
+      <ul>
+        <li>Not sure? Choose a soft grey or off-white studio backdrop.</li>
+        <li>Want warmth? Choose a warm neutral or natural light setting.</li>
+        <li>Want authority? Choose a deep blue, charcoal or office blur.</li>
+        <li>Want personality? Choose a muted brand colour or environmental scene.</li>
+        <li>Managing a team? Choose one backdrop and use it for everyone.</li>
+      </ul>
+
+      <h2>Final Thoughts</h2>
+      <p>The best headshot background is the one you stop noticing, because it makes you look confident, clear and credible. Start with your industry, consider each platform and keep the backdrop simple. When you are ready to see your options, explore our <a href="/styles">styles</a>, compare <a href="/pricing">pricing</a> and <a href="/headshots">create your headshots</a> today.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['Guide', 'Backgrounds', 'Tips'],
+    readingTime: '7 min read',
+  },
+  {
+    slug: 'professional-headshot-trends-2026',
+    title: 'Professional Headshot Trends 2026: What\'s In and What\'s Out',
+    description:
+      'Discover the professional headshot trends shaping 2026, from natural light and warm tones to consistent team imagery, and how to apply them to your own profile.',
+    content: `
+      <p>Every year, professional headshots shift a little. Lighting gets softer, backgrounds get simpler, and expectations about authenticity change. In 2026 the biggest change is not a colour or a pose but an attitude: people want portraits that look real, feel human and still look polished. This guide covers the headshot trends shaping 2026, what is fading out, and how to apply each trend to your own profile whether you are an executive, freelancer or new graduate.</p>
+      <p>Want to try these looks yourself? You can <a href="/headshots">create AI headshots</a> in a few minutes and explore every trend below in our <a href="/styles">style library</a>.</p>
+
+      <h2>Trend 1: Authentic Over Airbrushed</h2>
+      <p>Heavily retouched portraits with glassy skin and perfectly symmetrical faces are losing credibility. Recruiters, clients and colleagues now look for a photo that resembles the person they will meet on a video call. In 2026 the preferred look keeps natural skin texture, visible character lines and realistic hair. Retouching is subtle: it removes distractions such as a blemish or a stray hair, not personality.</p>
+      <p>This matters for AI headshots too. The best results look like you on your best day, not like a different person. Our article on <a href="/blog/headshot-retouching-ethics">headshot retouching ethics</a> explains where to draw the line.</p>
+
+      <h2>Trend 2: Soft, Natural Light</h2>
+      <p>Window-style light continues to dominate. It flatters skin, avoids harsh shadows and feels friendly. Instead of dramatic studio lighting, professionals choose gentle, directional light that sculpts the face quietly. <a href="/styles/natural-light">Natural light</a> and <a href="/styles/soft-focus">soft focus</a> styles are increasingly popular, particularly for coaches, consultants and healthcare professionals. For a deeper technical look, read our <a href="/blog/headshot-lighting-guide">headshot lighting guide</a>.</p>
+
+      <h2>Trend 3: Warm, Golden Tones</h2>
+      <p>Cool, clinical colour grading is giving way to warmer tones. Golden-hour colours, honey highlights and peachy skin tones feel welcoming and optimistic. The <a href="/styles/warm-golden">warm golden</a> and <a href="/styles/sunset-golden">sunset golden</a> styles capture this mood, which suits creators, wellness professionals and personal brands. For conservative industries, a lightly warm neutral keeps the benefit without looking too casual.</p>
+
+      <h2>Trend 4: The Smart-Casual Shift</h2>
+      <p>Remote and hybrid work has changed what professional means. Suits are no longer the default for many industries, and knitwear, open collars, soft blazers and plain tops are common in technology, marketing and creative fields. The <a href="/styles/business-casual">business casual</a> style reflects this trend. Formal attire still has its place in law, finance and government, so choose according to your audience. See our guide on <a href="/blog/corporate-headshot-dress-code">corporate headshot dress codes</a>.</p>
+
+      <h2>Trend 5: Simple, Clean Backgrounds With Depth</h2>
+      <p>Backgrounds are simple but no longer flat. Subtle gradients, soft blur and gentle colour create depth without distraction. Muted blues, sage greens, warm greys and creamy neutrals are popular. Busy offices and stock-photo boardrooms are fading. For help choosing, see our <a href="/blog/ai-headshot-background-guide">AI headshot background guide</a> and the <a href="/styles/gradient-backdrop">gradient backdrop</a> style.</p>
+
+      <h2>Trend 6: Consistent Team Imagery</h2>
+      <p>Remote teams now treat headshots as brand assets. Rather than a mix of selfies, old conference photos and studio portraits, companies want the same lighting, crop and backdrop for every employee. AI makes this realistic for distributed teams, because everyone can upload selfies from home and receive matching results. The <a href="/styles/corporate-team">corporate team style</a> was built for this, and our <a href="/use-cases/corporate-teams">corporate teams</a> page explains how to roll it out. Read also the <a href="/blog/team-headshot-consistency-guide">team headshot consistency guide</a>.</p>
+
+      <h2>Trend 7: Expression Over Pose</h2>
+      <p>Stiff, arms-crossed poses are out. The 2026 headshot is about expression: a relaxed smile, a slightly raised eyebrow, a look that suggests the person is about to say something. Slight head tilts, open shoulders and eye contact with the camera create approachability. Our <a href="/blog/headshot-poses-guide">headshot poses guide</a> offers practical examples.</p>
+
+      <h2>Trend 8: Personality-Led Portraits for Creators and Founders</h2>
+      <p>Founders, creators and freelancers increasingly use more distinctive portraits: bolder colour, editorial lighting and confident framing. Styles such as <a href="/styles/fashion-editorial">fashion editorial</a>, <a href="/styles/bold-color">bold colour</a> and <a href="/styles/editorial">editorial</a> help a person stand out in a crowded feed. The key is to match the image to the audience. A designer can be playful, but a wealth manager should still signal trust.</p>
+
+      <h2>Trend 9: Artistic Portraits as a Second Image</h2>
+      <p>More people now keep two images: a realistic professional headshot and a creative portrait for social media, newsletters or podcasts. Styles such as <a href="/styles/pop-art">pop art</a> and <a href="/styles/watercolor">watercolor</a> are popular for avatars, gifts and artwork. They are not a replacement for a professional portrait on LinkedIn, but they add personality where formality is unnecessary.</p>
+
+      <h2>Trend 10: Tighter Crops and Mobile-First Framing</h2>
+      <p>Most people first see your photo on a phone, in a small circle. Tighter crops with the face filling more of the frame perform better. Clear eyes, good contrast and a clean background matter more than a full torso. Test every image at thumbnail size before publishing. See our <a href="/blog/headshot-size-resolution-guide">size and resolution guide</a> and the <a href="/use-cases/linkedin">LinkedIn photo page</a>.</p>
+
+      <h2>What Is Fading Out</h2>
+      <ul>
+        <li>Heavy skin smoothing and unnatural symmetry.</li>
+        <li>Crossed-arms power poses.</li>
+        <li>Generic stock-photo offices.</li>
+        <li>Very cold, blue-grey colour grading.</li>
+        <li>Over-filtered beauty effects.</li>
+        <li>Photos more than three years old.</li>
+      </ul>
+
+      <h2>How the Trends Apply to Different Professions</h2>
+      <ul>
+        <li><strong>Executives:</strong> Natural light, neutral backdrop, refined attire. See <a href="/industries/executives">executives</a> and our <a href="/styles/executive">executive style</a>.</li>
+        <li><strong>Consultants and advisors:</strong> Warm, credible and approachable. See <a href="/industries/consultants">consultants</a>.</li>
+        <li><strong>Marketing and creative professionals:</strong> Bolder colour and personality. See <a href="/industries/marketing-professionals">marketing professionals</a>.</li>
+        <li><strong>Healthcare workers:</strong> Clean, soft and reassuring. See <a href="/industries/doctors">doctors</a>.</li>
+        <li><strong>Job seekers:</strong> Clear, friendly and current. See <a href="/use-cases/resume">resume photos</a>.</li>
+      </ul>
+
+      <h2>How to Use These Trends Without Chasing Fashion</h2>
+      <p>Trends are useful only if they serve you. A few principles keep your image timeless:</p>
+      <ol>
+        <li><strong>Prioritise recognisability.</strong> If people cannot recognise you, the trend has failed.</li>
+        <li><strong>Choose one trend, not five.</strong> A warm tone with soft light is enough.</li>
+        <li><strong>Match the platform.</strong> LinkedIn rewards classic, while Instagram tolerates creative.</li>
+        <li><strong>Refresh regularly.</strong> Update your photo every one to two years.</li>
+        <li><strong>Stay consistent.</strong> Use the same image across profiles.</li>
+      </ol>
+
+      <h2>AI Headshots and the 2026 Landscape</h2>
+      <p>AI has made it easier to keep up with trends. Instead of booking a new shoot each time tastes change, you can regenerate portraits in a new style for a fraction of the cost. You can check <a href="/pricing">pricing</a> before you begin and review our look at <a href="/blog/headshot-trends-2026">headshot trends</a> and <a href="/blog/ai-headshot-statistics-2026">AI headshot statistics</a> for background on adoption. Privacy is also a growing concern, so review how we handle data on our <a href="/security">security</a> page.</p>
+
+      <h2>Final Thoughts</h2>
+      <p>The defining trend of 2026 is honest polish: natural light, warm tones, simple backgrounds and an expression that feels real. Whichever direction you choose, keep the focus on looking like the best, most approachable version of yourself. When you are ready to update your image, explore our <a href="/styles">styles</a> and <a href="/headshots">generate your headshots</a> today.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['Trends', '2026', 'Guide'],
+    readingTime: '7 min read',
+  },
+  {
+    slug: 'ai-headshot-for-startup-founders',
+    title: 'AI Headshots for Startup Founders: Investor-Ready Photos Fast',
+    description:
+      'How startup founders can use AI headshots to get credible, consistent photos for pitch decks, LinkedIn, press and team pages, quickly and affordably.',
+    content: `
+      <p>A startup founder sells a product, a vision and, above all, themselves. Investors back people, candidates join teams led by people they trust, and customers follow founders they feel they know. In that world, your headshot is not a vanity item. It is a small piece of infrastructure that appears on your pitch deck, your LinkedIn, your website, Crunchbase, press coverage and the speaker page of every conference you attend. This guide explains how AI headshots help founders get a credible, consistent and affordable image while moving at startup speed.</p>
+      <p>If you are ready to start, you can <a href="/headshots">generate your AI headshots</a> in minutes and use them the same day.</p>
+
+      <h2>Why Founders Need a Strong Headshot</h2>
+      <p>Early-stage companies have few trust signals. There may be no revenue history, no big-name customers and a brand-new domain. The founder's face and story fill that gap. A polished, approachable photo signals that you take the company seriously and that you are someone people can follow.</p>
+      <ul>
+        <li><strong>Investors</strong> look up founders on LinkedIn and Crunchbase before meetings. A weak or missing photo can create doubt in the first ten seconds.</li>
+        <li><strong>Candidates</strong> research the team and judge the company partly by the leadership photos.</li>
+        <li><strong>Customers and partners</strong> prefer to buy from a real person, not a faceless logo.</li>
+        <li><strong>Journalists</strong> need a press-ready image when they feature you, and they rarely wait.</li>
+      </ul>
+
+      <h2>The Problem With Traditional Headshots for Founders</h2>
+      <p>Founders are short on time and cash. A studio session means finding a photographer, booking a slot, travelling, posing and waiting days for retouched files. It costs money you would rather spend on product, and it rarely gets repeated when the business changes. Many founders end up with a cropped wedding photo or a five-year-old conference snap on their profiles.</p>
+      <p>Startups also change quickly. A new hire, a new round or a new product line may require fresh team images within days. Waiting weeks for a shoot does not fit that pace. For a broader comparison, see <a href="/blog/ai-headshots-vs-traditional-photography">AI headshots vs traditional photography</a>.</p>
+
+      <h2>How AI Headshots Work for Founders</h2>
+      <p>You upload a set of clear selfies, TailorPic builds a personal model, and you receive professional portraits in the styles you choose. There is no scheduling and no travelling. You can view the <a href="/pricing">pricing</a>, explore the <a href="/styles">styles</a> and finish the process between meetings. The portraits are high resolution, suitable for decks, websites and print. For a detailed explanation, visit <a href="/how-it-works">how it works</a>.</p>
+
+      <h2>Choosing the Right Style for Your Founder Image</h2>
+      <h3>The investor-ready portrait</h3>
+      <p>For fundraising, choose a clean, confident image: soft light, neutral background, smart-casual or blazer attire and a calm, direct expression. The <a href="/styles/startup-founder">startup founder style</a> is built for this. Keep it classic, because investors want to see competence, not a costume.</p>
+      <h3>The modern tech founder</h3>
+      <p>For product-led and developer-focused companies, a relaxed, modern look works well. Try <a href="/styles/tech-startup">tech startup</a> or <a href="/styles/business-casual">business casual</a>. A hoodie or plain tee can work if it fits your brand, but keep it clean and intentional.</p>
+      <h3>The personality-led creator-founder</h3>
+      <p>If you build in public and have a strong personal brand, you can go bolder. Consider <a href="/styles/editorial">editorial</a>, <a href="/styles/fashion-editorial">fashion editorial</a> or <a href="/styles/bold-color">bold colour</a> for social media, while keeping a classic version for LinkedIn and formal materials.</p>
+      <h3>The team portrait</h3>
+      <p>As your team grows, consistency becomes valuable. The <a href="/styles/corporate-team">corporate team style</a> gives every member the same backdrop and lighting, which makes your About page look established even when the company is small.</p>
+
+      <h2>Where Founders Use Their Headshots</h2>
+      <ul>
+        <li><strong>Pitch deck:</strong> The team slide is one of the most viewed in any deck. See <a href="/use-cases/investor-pitch">investor pitch photos</a>.</li>
+        <li><strong>LinkedIn:</strong> Your profile is often the first stop for investors and candidates. See <a href="/use-cases/linkedin">LinkedIn photos</a>.</li>
+        <li><strong>Company website:</strong> The About and Team pages build trust. See <a href="/use-cases/website-team-page">website team pages</a>.</li>
+        <li><strong>Press kit:</strong> Journalists need an image ready to use. See <a href="/use-cases/press-kit">press kits</a>.</li>
+        <li><strong>Speaking events:</strong> Conferences ask for a speaker photo. See <a href="/use-cases/conference-speaker">conference speaker photos</a>.</li>
+        <li><strong>Social media:</strong> X, Instagram and YouTube all reward a recognisable face. See <a href="/use-cases/twitter">Twitter and X photos</a>.</li>
+        <li><strong>Email signature:</strong> Every outreach email is a small brand impression. See <a href="/use-cases/email-signature">email signatures</a>.</li>
+      </ul>
+      <p>For role-specific advice, visit our pages for <a href="/industries/executives">executives</a> and <a href="/industries/consultants">consultants</a>, and read our article on <a href="/blog/startup-founder-personal-branding-ai-photos">founder personal branding</a>.</p>
+
+      <h2>Building a Personal Brand Around Your Headshot</h2>
+      <p>A headshot is the visual anchor of a founder's personal brand. Use the same image, or a close family of images, across every platform so people recognise you instantly. Pair it with a consistent name, bio and colour accent. Over time, that recognition compounds: a follower who sees your face on X, in a newsletter and on a conference line-up begins to treat you as a known figure.</p>
+      <p>Decide what you want to communicate. Approachable and warm? Sharp and analytical? Bold and visionary? Then choose the lighting, backdrop and attire that support it. Our guide on <a href="/blog/personal-brand-headshot-strategy">personal brand headshot strategy</a> walks through this process.</p>
+
+      <h2>A Founder's Photo Preparation Checklist</h2>
+      <ol>
+        <li>Take selfies in soft daylight, facing a window.</li>
+        <li>Capture 8 to 12 photos from different angles.</li>
+        <li>Include both smiling and confident neutral expressions.</li>
+        <li>Wear the kind of clothes you would wear to an investor meeting.</li>
+        <li>Keep your hair, glasses and facial hair as you usually have them.</li>
+        <li>Avoid filters, hats, sunglasses and group shots.</li>
+        <li>Use a plain background.</li>
+      </ol>
+      <p>More detailed instructions are in our guide on <a href="/blog/how-to-prepare-photos-for-ai-headshot">how to prepare photos for an AI headshot</a>.</p>
+
+      <h2>Common Mistakes Founders Make</h2>
+      <ul>
+        <li><strong>Looking too casual:</strong> A selfie taken in a car or kitchen can undermine credibility with investors.</li>
+        <li><strong>Looking too formal:</strong> A rigid corporate suit can feel out of touch in a modern startup.</li>
+        <li><strong>Inconsistency:</strong> Different photos across LinkedIn, the website and Crunchbase make a brand feel unfinished.</li>
+        <li><strong>Outdated images:</strong> If you look different in person, trust takes a small hit.</li>
+        <li><strong>Over-editing:</strong> Heavy retouching makes a founder look less authentic.</li>
+        <li><strong>Forgetting the team:</strong> Founders with polished photos next to mismatched team photos look uneven.</li>
+      </ul>
+
+      <h2>Cost and Speed: The Startup Case for AI</h2>
+      <p>For a bootstrapped or pre-seed company, every expense is scrutinised. A traditional shoot for a two- or three-person founding team can cost several hundred dollars and days of coordination. AI headshots reduce that to a small fee and a short wait, and you can repeat the process whenever you hire or rebrand. That matters when the team changes every quarter. Read our comparison of <a href="/blog/ai-headshot-vs-professional-photographer-cost">AI headshot vs professional photographer cost</a> for the numbers.</p>
+
+      <h2>Privacy and Trust</h2>
+      <p>Founders handle sensitive information and care about how their images are used. Review how we treat your data on the <a href="/security">security</a> page and in our guide to <a href="/blog/ai-headshot-privacy-security-guide">AI headshot privacy and security</a>. Always check the terms of any service you use before uploading photos.</p>
+
+      <h2>A Simple Rollout Plan</h2>
+      <ol>
+        <li><strong>Day one:</strong> Generate your own headshots and choose a primary image.</li>
+        <li><strong>Day two:</strong> Update LinkedIn, your website, Crunchbase and email signature.</li>
+        <li><strong>Day three:</strong> Generate matching portraits for co-founders and early hires.</li>
+        <li><strong>Ongoing:</strong> Add new hires using the same style settings so the team stays consistent.</li>
+        <li><strong>Yearly:</strong> Refresh your image so it always reflects how you look.</li>
+      </ol>
+
+      <h2>Final Thoughts</h2>
+      <p>As a founder you will spend countless hours on product, fundraising and hiring. Your headshot should not take more than a few minutes of that time. A clear, confident and consistent image helps investors, candidates and customers trust you from the first impression. When you are ready, browse our <a href="/styles">styles</a> and <a href="/headshots">create your founder headshots</a> with TailorPic today.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['Industry', 'Startups', 'Founders'],
+    readingTime: '8 min read',
+  },
+  {
+    slug: 'podcast-host-headshot-branding-guide',
+    title: 'Podcast Host Headshot & Branding Guide: Build Visual Authority',
+    description: 'How podcast hosts and audio creators can use AI headshots to build a strong visual brand across platforms, directories, and social media.',
+    content: `
+      <h2>Why Podcast Hosts Need a Professional Headshot</h2>
+      <p>In the audio-first world, your voice carries the show — but your face carries the brand. Whether listeners find you on Apple Podcasts, Spotify, or YouTube, your host photo is often the first visual impression they get. A polished, recognizable headshot builds trust before someone presses play.</p>
+      <p>Yet many podcast creators treat their profile photo as an afterthought: a cropped vacation snap, a dimly lit selfie, or worse, no photo at all. In a directory with thousands of shows, that visual gap is a missed opportunity to stand out and signal quality.</p>
+
+      <h2>Where Your Headshot Shows Up</h2>
+      <p>A podcast host's headshot appears in more places than most creators realize:</p>
+      <p><strong>Podcast directories</strong> — Apple Podcasts, Spotify, Google Podcasts, and Amazon Music all display host photos alongside show art. A clear, well-lit headshot next to your cover art signals professionalism.</p>
+      <p><strong>Guest bios and show notes</strong> — When you appear on other shows, the host will often feature your headshot in the episode page. Consistent photos across appearances build recognition.</p>
+      <p><strong>Social media profiles</strong> — Your Twitter/X, LinkedIn, Instagram, and YouTube channel photos should align with your podcast brand. Listeners who discover you on social want to recognize the same face from the show.</p>
+      <p><strong>Press kits and media pages</strong> — Journalists and event organizers pull headshots from your media page. Having a downloadable, high-resolution option saves back-and-forth emails.</p>
+      <p><strong>Newsletter headers and email signatures</strong> — Many podcasters grow their audience through email. A headshot in your newsletter or signature personalizes the communication.</p>
+
+      <h2>What Makes a Good Podcast Host Headshot</h2>
+      <p>The best podcast headshots share several qualities: they're well-lit, they reflect your show's tone, and they present you as approachable yet professional. Here's what to aim for:</p>
+      <p><strong>Warm, inviting expression</strong> — You're inviting people to spend 30–60 minutes listening to your voice. A genuine smile or relaxed, confident expression sets the right tone. Avoid overly formal or stern looks unless your content calls for it.</p>
+      <p><strong>Clean background</strong> — A simple, uncluttered background keeps the focus on you. Solid colors, soft gradients, or lightly blurred environments work well. If your podcast has a signature color, consider using it as the backdrop.</p>
+      <p><strong>Consistent with your cover art</strong> — Your headshot should feel like it belongs in the same visual universe as your show's cover art. If your branding is bold and colorful, a muted, corporate headshot will feel disjointed.</p>
+      <p><strong>High resolution</strong> — Podcast directories display images at various sizes. Start with a high-res image (at least 1400×1400 for cover art contexts) so it looks crisp everywhere from a phone screen to a desktop browser.</p>
+
+      <h2>How AI Headshots Help Podcast Creators</h2>
+      <p>Traditional headshot sessions can cost $200–$500 and require scheduling, travel, and wardrobe planning — a significant investment for independent podcasters who may be bootstrapping their show. <a href="/headshots">AI headshot generators</a> like TailorPic offer a practical alternative.</p>
+      <p>With TailorPic, you upload a few selfies and receive studio-quality headshots in multiple styles within hours. This is especially useful for podcasters because:</p>
+      <p><strong>Multiple styles for multiple platforms</strong> — You can get a casual shot for Instagram, a polished one for LinkedIn, and a creative option for your podcast cover, all from the same session.</p>
+      <p><strong>Easy updates</strong> — When you rebrand, launch a new season, or simply want a fresh look, generating new headshots takes minutes instead of scheduling another photo session.</p>
+      <p><strong>Budget-friendly</strong> — Starting at <a href="/pricing">$9.90</a>, AI headshots are a fraction of the cost of a studio shoot. For podcasters investing their budget in equipment and production, this matters.</p>
+      <p><strong>Consistency across co-hosts</strong> — If your show has multiple hosts, you can create matching headshot styles so your team page and show notes look cohesive without coordinating everyone's schedule.</p>
+
+      <h2>Matching Your Headshot to Your Podcast Genre</h2>
+      <p>Different podcast genres call for different visual approaches:</p>
+      <p><strong>Business and professional</strong> — A clean, corporate-adjacent headshot with neutral background and professional attire. Consider TailorPic's <a href="/styles/corporate">corporate style</a> or <a href="/styles/professional-linkedin">professional LinkedIn style</a>.</p>
+      <p><strong>True crime and storytelling</strong> — A moody, dramatic look with darker backgrounds and intentional lighting. The <a href="/styles/dark-moody">dark moody style</a> or <a href="/styles/cinematic">cinematic style</a> works well here.</p>
+      <p><strong>Comedy and entertainment</strong> — A bright, energetic headshot with a natural smile and colorful or playful background. Try the <a href="/styles/bold-color">bold color style</a> or <a href="/styles/creative">creative style</a>.</p>
+      <p><strong>Health and wellness</strong> — A warm, approachable headshot with natural lighting and soft tones. The <a href="/styles/natural-light">natural light style</a> or <a href="/styles/warm-portrait">warm portrait style</a> fits this category.</p>
+      <p><strong>Tech and startup</strong> — A modern, clean look that signals innovation. The <a href="/styles/tech-startup">tech startup style</a> captures this energy.</p>
+
+      <h2>Technical Tips for Podcast Platform Photos</h2>
+      <p>Each platform has its own requirements, but these guidelines cover most situations:</p>
+      <p>Apple Podcasts recommends show artwork at 3000×3000 pixels but host photos display much smaller. Make sure your face is recognizable even as a small thumbnail.</p>
+      <p>Spotify displays host photos in circular frames on some views, so keep your face centered and avoid important details near the edges.</p>
+      <p>YouTube podcast channels need both a profile photo and a banner image. Your headshot works as the profile; consider creating a banner that features you alongside your show branding.</p>
+      <p>For cross-platform consistency, save your headshot in multiple crops: square (1:1) for most directories, landscape (16:9) for YouTube banners, and a tight crop for social media avatars.</p>
+
+      <h2>Building a Visual Brand Beyond the Headshot</h2>
+      <p>Your headshot is just one piece of your podcast's visual identity. To build a cohesive brand:</p>
+      <p>Use the same headshot (or variations of it) across all platforms where you appear. Recognition compounds — every time a listener sees your face, they're more likely to remember your show.</p>
+      <p>Create a <a href="/use-cases/press-kit">press kit</a> with downloadable headshots so guest appearances, interviews, and media coverage always use your preferred image.</p>
+      <p>When guesting on other shows, send your host a high-res headshot proactively. It looks professional and ensures they use a photo you're happy with.</p>
+      <p>Consider seasonal or show-specific headshot updates. A new season launch is a natural moment to refresh your visual presence.</p>
+      <p>For shows with teams, a unified set of <a href="/use-cases/website-team-page">team headshots</a> on your show's website reinforces your brand and makes the team behind the voices feel real to listeners.</p>
+
+      <h2>Get Started</h2>
+      <p>A strong visual brand starts with a strong headshot. Whether you're launching your first podcast or refreshing an established show, <a href="/headshots">TailorPic's AI headshot generator</a> gives you studio-quality results from your phone — no photographer, no studio, no scheduling hassle. Try it today and give your audience a face to remember.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['Podcasters', 'Branding', 'Content Creators'],
+    readingTime: '7 min read',
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

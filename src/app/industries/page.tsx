@@ -365,6 +365,46 @@ const industries = [
     href: '/industries/data-scientists',
     cta: "For Data Scientists",
   },
+  {
+    icon: Lightbulb,
+    name: 'Scientists',
+    description:
+      'Professional headshots for scientists and researchers. Polished portraits for lab pages, grant applications and conference bios.',
+    href: '/industries/scientists',
+    cta: 'For Scientists',
+  },
+  {
+    icon: Handshake,
+    name: 'Politicians',
+    description:
+      'Professional headshots for politicians and candidates. Trustworthy portraits for campaign sites, official profiles and press kits.',
+    href: '/industries/politicians',
+    cta: 'For Politicians',
+  },
+  {
+    icon: Heart,
+    name: 'Chefs',
+    description:
+      'Professional headshots for chefs and culinary professionals. Portraits for restaurant sites, press features and social media.',
+    href: '/industries/chefs',
+    cta: 'For Chefs',
+  },
+  {
+    icon: Camera,
+    name: 'Models',
+    description:
+      'Professional headshots for models and talent. Clean portraits for agency submissions, portfolios and comp cards.',
+    href: '/industries/models',
+    cta: 'For Models',
+  },
+  {
+    icon: Dumbbell,
+    name: 'Personal Trainers',
+    description:
+      'Professional headshots for personal trainers. Energetic portraits for gym profiles, booking pages and social media.',
+    href: '/industries/personal-trainers',
+    cta: 'For Trainers',
+  },
 ];
 
 export default function IndustriesPage() {

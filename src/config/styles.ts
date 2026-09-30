@@ -1336,6 +1336,181 @@ export const photoStyles: PhotoStyle[] = [
     relatedCategories: ['headshots','team-headshots'],
     relatedBlogPosts: ['what-to-wear-for-headshots','headshot-trends-2025'],
   },
+  {
+    slug: 'sunset-golden',
+    name: 'Sunset Golden Portraits',
+    title: 'AI Sunset Golden Portraits',
+    description:
+      'Warm portraits lit by low, golden-hour sunlight with a glowing rim of light and soft amber tones. Made from a few selfies.',
+    metaDescription:
+      'Create AI sunset golden portraits with warm golden-hour light, glowing rim highlights and soft amber tones. Friendly, radiant photos from a few selfies with TailorPic.',
+    heroText:
+      'Golden hour makes everyone look good. Sunset golden portraits wrap you in low, warm light with a soft glow around your hair and shoulders, giving your photos an approachable, radiant feel without waiting for the perfect evening.',
+    features: [
+      'Low-angle golden-hour sunlight with a glowing rim light',
+      'Warm amber, peach and honey color grading',
+      'Softly blurred outdoor backgrounds with gentle lens flare',
+      'Flattering skin tones with natural warmth',
+      'Relaxed, smiling expressions that feel genuine',
+      'High resolution files for social, web and print',
+    ],
+    idealFor: [
+      'Personal brands, coaches and creators',
+      'Social media and dating profile photos',
+      'Wellness, lifestyle and hospitality professionals',
+      'Authors and speakers who want an approachable look',
+      'Website About pages with a warm tone',
+    ],
+    tips: [
+      'Upload selfies taken in soft, even light so the AI captures true skin tone',
+      'Choose solid, earthy clothing such as cream, olive, rust or denim',
+      'Include a few smiling and a few relaxed expressions',
+      'Pair with a neutral style for formal profiles such as LinkedIn',
+      'Avoid heavy patterns that can clash with the warm color grade',
+    ],
+    relatedCategories: ['headshots', 'dating-photos'],
+    relatedBlogPosts: ['headshot-lighting-guide', 'headshot-trends-2026', 'personal-brand-headshot-strategy'],
+  },
+  {
+    slug: 'pop-art',
+    name: 'Pop Art Portraits',
+    title: 'AI Pop Art Portraits',
+    description:
+      'Bold Andy Warhol-inspired portraits with flat saturated colors, strong outlines and a graphic, screen-printed look.',
+    metaDescription:
+      'Turn your selfies into AI pop art portraits inspired by Andy Warhol. Bold colors, graphic outlines and a screen-print look for avatars, posters and fun profiles with TailorPic.',
+    heroText:
+      'Be the art. Pop art portraits turn your face into a bold, screen-printed graphic with flat saturated color, punchy contrast and a playful attitude that stops the scroll on any feed.',
+    features: [
+      'Flat, high-saturation color blocks in hot pink, cyan, yellow and red',
+      'Strong outlines and halftone dot textures',
+      'Warhol-style grids and repeated panels',
+      'Graphic, poster-ready compositions',
+      'Recognisable likeness preserved under the stylisation',
+      'High resolution files suitable for prints and merchandise',
+    ],
+    idealFor: [
+      'Social media avatars and creators',
+      'Musicians, DJs and performers',
+      'Gifts, posters and wall art',
+      'Podcast and newsletter artwork',
+      'Creative agencies and studios with a bold brand',
+    ],
+    tips: [
+      'Upload a clear, front-facing selfie with simple lighting',
+      'Strong expressions translate best into graphic styles',
+      'Keep glasses and accessories visible if they define your look',
+      'Use pop art for personality, and a classic style for formal profiles',
+      'Try different color palettes to match your brand colors',
+    ],
+    relatedCategories: ['headshots', 'pet-portraits'],
+    relatedBlogPosts: ['social-media-profile-photo-guide', 'personal-brand-headshot-strategy', 'headshot-trends-2026'],
+  },
+  {
+    slug: 'watercolor',
+    name: 'Watercolor Portraits',
+    title: 'AI Watercolor Portraits',
+    description:
+      'Soft, artistic portraits with flowing washes of color, delicate edges and the texture of hand-painted paper.',
+    metaDescription:
+      'Create AI watercolor portraits with flowing color washes, soft edges and paper texture. Artistic portraits for authors, creatives and gifts, made from a few selfies with TailorPic.',
+    heroText:
+      'Painted, not photographed. Watercolor portraits blend your likeness with flowing washes of color, soft bleeding edges and the gentle texture of paper for a dreamy, artistic result.',
+    features: [
+      'Translucent color washes with soft bleeding edges',
+      'Visible paper grain and delicate brush texture',
+      'Muted, harmonious palettes with optional accent colors',
+      'Loose, painterly backgrounds that fade to white',
+      'Faithful facial likeness in a hand-painted style',
+      'High resolution files suitable for framing and print',
+    ],
+    idealFor: [
+      'Authors, poets and illustrators',
+      'Artists, teachers and creative professionals',
+      'Gifts, invitations and keepsakes',
+      'Blog, newsletter and book author pages',
+      'Therapists and wellness brands with a gentle tone',
+    ],
+    tips: [
+      'Upload selfies with soft, even lighting for smooth washes',
+      'Pick a pale or plain background in your source photos',
+      'Wear solid colors so the painting stays harmonious',
+      'Generate several palettes and choose the one that fits your brand',
+      'Use it alongside a realistic headshot for formal platforms',
+    ],
+    relatedCategories: ['headshots', 'family-portraits'],
+    relatedBlogPosts: ['ai-photography-ethics-guide', 'headshot-trends-2026', 'personal-brand-headshot-strategy'],
+  },
+  {
+    slug: 'corporate-team',
+    name: 'Corporate Team Photos',
+    title: 'AI Corporate Team Photos',
+    description:
+      'Consistent, matching team portraits with uniform lighting, framing and backdrop so every person looks part of the same company.',
+    metaDescription:
+      'Create consistent AI corporate team photos with matching lighting, backdrops and framing for every employee. Fast, affordable team headshots for websites and directories with TailorPic.',
+    heroText:
+      'One team, one look. Corporate team photos give every person on your About page the same lighting, framing and backdrop, even when your people work in different cities and time zones.',
+    features: [
+      'Identical backdrop, lighting and crop across the whole team',
+      'Brand-matched background colors',
+      'Business and smart-casual attire options',
+      'Natural, approachable expressions',
+      'Easy onboarding for new hires without a new photo shoot',
+      'High resolution files for websites, decks and directories',
+    ],
+    idealFor: [
+      'Company About and Team pages',
+      'Remote and distributed teams',
+      'HR and people operations teams',
+      'Growing startups adding new hires regularly',
+      'Professional services firms and agencies',
+    ],
+    tips: [
+      'Ask every team member to upload selfies using the same guidelines',
+      'Choose one background color and use it for everyone',
+      'Agree on a dress code such as blazers or smart casual before generating',
+      'Keep the same style settings when new hires join',
+      'Review the full team grid together before publishing',
+    ],
+    relatedCategories: ['headshots', 'team-headshots'],
+    relatedBlogPosts: ['corporate-team-photos-guide', 'team-headshot-consistency-guide', 'virtual-headshots-remote-teams'],
+  },
+  {
+    slug: 'fashion-editorial',
+    name: 'Fashion Editorial Portraits',
+    title: 'AI Fashion Editorial Portraits',
+    description:
+      'High-fashion magazine portraits with dramatic lighting, confident poses and sophisticated styling.',
+    metaDescription:
+      'Create AI fashion editorial portraits with dramatic lighting, bold styling and magazine-quality composition. Stand-out portraits for models, creatives and brands with TailorPic.',
+    heroText:
+      'Step onto the page. Fashion editorial portraits bring magazine-style lighting, bold styling and confident posing to your photos, for people who want to be remembered at first glance.',
+    features: [
+      'Dramatic studio lighting with sculpted highlights',
+      'Runway-inspired styling and statement garments',
+      'Confident, expressive poses and angles',
+      'Clean, high-contrast backdrops in neutral or bold colors',
+      'Magazine-style composition and crop',
+      'High resolution files for portfolios and print',
+    ],
+    idealFor: [
+      'Models, stylists and fashion creatives',
+      'Influencers and content creators',
+      'Designers, photographers and art directors',
+      'Press kits and brand campaigns',
+      'Creative agencies and boutiques',
+    ],
+    tips: [
+      'Upload selfies with varied angles so the model can capture your features',
+      'Wear fitted, structured clothing in strong solid colors',
+      'Practice a confident, slightly serious expression',
+      'Pair with a corporate style for conservative platforms',
+      'Keep makeup and hair consistent with your everyday look for accurate results',
+    ],
+    relatedCategories: ['headshots'],
+    relatedBlogPosts: ['headshot-trends-2026', 'headshot-poses-guide', 'personal-brand-headshot-strategy'],
+  },
 ];
 
 export function getPhotoStyle(slug: string): PhotoStyle | undefined {

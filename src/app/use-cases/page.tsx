@@ -236,6 +236,41 @@ const useCases = [
     href: '/use-cases/membership-directory',
     tag: 'Community',
   },
+  {
+    icon: HomeIcon,
+    title: 'Real Estate Listing Photos',
+    description: 'Agent headshots for listings, flyers and property pages that build trust with buyers.',
+    href: '/use-cases/real-estate-listing',
+    tag: 'Professional',
+  },
+  {
+    icon: Heart,
+    title: 'Nonprofit Fundraising',
+    description: 'Approachable portraits for donor pages, appeals and board and staff bios.',
+    href: '/use-cases/nonprofit-fundraising',
+    tag: 'Community',
+  },
+  {
+    icon: Users,
+    title: 'Event Badge Photos',
+    description: 'Clean, consistent portraits for conference badges, attendee profiles and speaker cards.',
+    href: '/use-cases/event-badge',
+    tag: 'Events',
+  },
+  {
+    icon: BookOpen,
+    title: 'Author Bio Photos',
+    description: 'Polished author portraits for book jackets, publisher pages and Amazon profiles.',
+    href: '/use-cases/author-bio',
+    tag: 'Professional',
+  },
+  {
+    icon: Briefcase,
+    title: 'Job Application Photos',
+    description: 'Professional portraits for applications, portfolios and career sites that help you stand out.',
+    href: '/use-cases/job-application',
+    tag: 'Career',
+  },
 ];
 
 export default function UseCasesPage() {
