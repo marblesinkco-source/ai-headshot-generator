@@ -177,6 +177,11 @@ const terms: Term[] = [
       'A compressed, internal representation in which an AI model works with the essential features of images rather than raw pixels. Moving through this space is how models blend and vary concepts such as pose, style and lighting.',
   },
   {
+    term: 'Loop Lighting',
+    definition:
+      'A portrait lighting technique where the light source is positioned slightly above and to one side of the subject, creating a small shadow (or loop) on the opposite side of the nose. Loop lighting is one of the most versatile and flattering patterns for headshot photography, producing dimension without harsh shadows.',
+  },
+  {
     term: 'LoRA',
     definition:
       'Short for Low-Rank Adaptation, a lightweight fine-tuning technique that adds a small set of extra trainable weights to a model instead of changing the whole thing. It makes personalization fast and needs only a few photos.',
@@ -249,6 +254,11 @@ const terms: Term[] = [
     definition:
       'Artificial, controllable light sources such as strobes or continuous lamps, often with softboxes or umbrellas. They give a photographer precise and repeatable control over how a face is lit.',
     link: { href: '/blog/ai-headshots-vs-traditional-photography', label: 'AI vs traditional photography' },
+  },
+  {
+    term: 'Three-Point Lighting',
+    definition:
+      'The standard lighting setup in portrait and studio photography, consisting of a key light (main illumination), a fill light (softens shadows on the opposite side) and a back light or rim light (separates the subject from the background). AI headshot generators simulate three-point lighting to produce balanced, professional-looking results.',
   },
   {
     term: 'Upscaling',

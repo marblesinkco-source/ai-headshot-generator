@@ -8,7 +8,7 @@ import {
   Briefcase, Heart, Dog, Users, Baby, GraduationCap,
   PartyPopper, Home as HomeIcon, Sparkles, Building2, ShoppingBag, ArrowRight,
   Presentation, FileText, Monitor, Target,
-  Mic, CreditCard, Mail,
+  Mic, CreditCard, Mail, BookOpen, TrendingUp, Shirt,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -163,6 +163,41 @@ const useCases = [
     title: "Annual Reports & Corporate Docs",
     description: "Consistent executive headshots for annual reports and investor materials.",
     href: '/use-cases/annual-report',
+    tag: 'Business',
+  },
+  {
+    icon: Heart,
+    title: "Dating Profile Pictures",
+    description: "Natural, flattering photos for Tinder, Hinge, and Bumble profiles.",
+    href: '/use-cases/dating-profile-photo',
+    tag: 'Personal',
+  },
+  {
+    icon: GraduationCap,
+    title: "Graduation Photo Headshots",
+    description: "Polished portraits for graduation announcements and your first job search.",
+    href: '/use-cases/graduation-photo',
+    tag: 'Milestone',
+  },
+  {
+    icon: Shirt,
+    title: "Wedding & Event Guests",
+    description: "Dressed-up portraits for weddings, parties, and celebrations.",
+    href: '/use-cases/wedding-guest',
+    tag: 'Events',
+  },
+  {
+    icon: BookOpen,
+    title: "Author Photos for Book Covers",
+    description: "Author portraits for book jackets, Amazon author pages, and press.",
+    href: '/use-cases/book-cover',
+    tag: 'Creators',
+  },
+  {
+    icon: TrendingUp,
+    title: "Investor Pitch Decks",
+    description: "Credible founder and team headshots for fundraising decks.",
+    href: '/use-cases/investor-pitch',
     tag: 'Business',
   },
 ];
