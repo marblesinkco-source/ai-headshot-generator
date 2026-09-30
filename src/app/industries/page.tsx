@@ -4,7 +4,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
-import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight, Heart, Monitor, GraduationCap, Camera, Clapperboard, SmilePlus, TrendingUp, Ruler, Target, Brain, Dumbbell, Music, PawPrint } from 'lucide-react';
+import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight, Heart, Monitor, GraduationCap, Camera, Clapperboard, SmilePlus, TrendingUp, Ruler, Target, Brain, Dumbbell, Music, PawPrint, Users, Handshake, Mic, Palette, Newspaper } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'AI Photos by Industry | TailorPic',
@@ -164,6 +164,46 @@ const industries = [
       'Trustworthy headshots for veterinarians and animal care professionals. Warm, approachable portraits for clinic websites and directories.',
     href: '/industries/veterinarians',
     cta: 'For Vets',
+  },
+  {
+    icon: Users,
+    name: 'HR Professionals',
+    description:
+      'Professional headshots for HR managers and recruiters. Build trust with candidates and colleagues through polished, approachable portraits.',
+    href: '/industries/hr-professionals',
+    cta: 'For HR',
+  },
+  {
+    icon: Handshake,
+    name: 'Sales Professionals',
+    description:
+      'Confident, trustworthy headshots for sales teams. Close more deals with professional portraits that build instant credibility.',
+    href: '/industries/sales-professionals',
+    cta: 'For Sales',
+  },
+  {
+    icon: Mic,
+    name: 'Podcasters',
+    description:
+      'Eye-catching headshots for podcasters and content creators. Perfect for show art, guest bios and social media promotion.',
+    href: '/industries/podcasters',
+    cta: 'For Podcasters',
+  },
+  {
+    icon: Palette,
+    name: 'Interior Designers',
+    description:
+      'Creative, polished headshots for interior designers. Portfolio-ready portraits for firm websites and design publications.',
+    href: '/industries/interior-designers',
+    cta: 'For Designers',
+  },
+  {
+    icon: Newspaper,
+    name: 'Journalists',
+    description:
+      'Professional headshots for journalists and media professionals. Byline-ready portraits for articles, broadcasts and press credentials.',
+    href: '/industries/journalists',
+    cta: 'For Journalists',
   },
 ];
 

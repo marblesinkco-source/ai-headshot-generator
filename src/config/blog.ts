@@ -4640,6 +4640,293 @@ export const blogPosts: BlogPost[] = [
     tags: ['Comparison', 'Guide', 'AI'],
     readingTime: '7 min read',
   },
+  {
+    slug: 'personal-brand-headshot-strategy',
+    title: 'How to Build a Personal Brand with Professional Headshots',
+    description:
+      'Your headshot is the face of your personal brand. Learn how to choose consistent, strategic photos that build recognition and trust across every platform.',
+    coverImage: '/images/blog/placeholder.svg',
+    content: `
+      <p>People form an impression of you in a fraction of a second, and in most cases that impression comes from a photo. A personal brand is the promise you make about who you are and what you do, and your headshot is the visual signature of that promise. Treating it as a strategic asset rather than an afterthought pays off in recognition, trust and opportunity.</p>
+
+      <h2>Why Your Headshot Is the Anchor of Your Brand</h2>
+      <p>Your name, your bio and your work samples all tell a story, but a photo is the first thing people see. It appears on search results, social profiles, conference pages, email signatures and podcast guest listings. When the same face appears in the same style everywhere, people start to recognize you, and <strong>recognition is the foundation of trust</strong>.</p>
+
+      <h2>Start With Your Brand Positioning</h2>
+      <p>Before you take or generate a single photo, decide what you want people to feel when they see you. A few useful questions:</p>
+      <ul>
+        <li><strong>Who is your audience?</strong> Clients, recruiters, investors and followers respond to different cues.</li>
+        <li><strong>What three words describe you?</strong> For example approachable, expert and modern.</li>
+        <li><strong>What is your industry norm?</strong> A lawyer and a creative director should not look identical.</li>
+      </ul>
+      <p>Browse our <a href="/industries">industry guides</a> to see what typically works in your field, then decide where you want to match the norm and where you want to stand out.</p>
+
+      <h2>Choose a Consistent Visual Style</h2>
+      <p>Consistency matters more than perfection. Pick a background color, a clothing palette and a level of formality, then keep them stable across platforms. A warm neutral background with a navy jacket, for instance, becomes instantly associated with you. You can explore options in our <a href="/styles">styles library</a> and pick one that reflects your positioning.</p>
+      <ul>
+        <li><strong>Background:</strong> solid or softly blurred, never distracting.</li>
+        <li><strong>Wardrobe:</strong> solid colors that complement your skin tone and your brand palette.</li>
+        <li><strong>Expression:</strong> a genuine, relaxed smile usually reads as confident and warm.</li>
+        <li><strong>Framing:</strong> head and shoulders, with your eyes in the upper third of the frame.</li>
+      </ul>
+
+      <h2>Build a Small Set, Not a Single Photo</h2>
+      <p>Most professionals benefit from three or four variations that share the same style:</p>
+      <ul>
+        <li><strong>The primary headshot</strong> for LinkedIn, your website and your email signature.</li>
+        <li><strong>A warmer, casual version</strong> for social media and newsletters.</li>
+        <li><strong>A wider crop</strong> for speaker bios, articles and press kits.</li>
+        <li><strong>A serious option</strong> for formal settings such as proposals and board materials.</li>
+      </ul>
+      <p>Because they share lighting and background, the set feels cohesive even though each photo has a different job.</p>
+
+      <h2>Use AI to Make Consistency Affordable</h2>
+      <p>Traditional photo shoots are expensive, and matching a previous shoot a year later is nearly impossible. AI headshot generation removes that problem. You upload selfies once, choose a style, and get a consistent set that you can refresh whenever your look changes. <a href="/auth/register">Create a free TailorPic account</a> and try it in the <a href="/editor">editor</a> to see how quickly you can produce a brand-ready set.</p>
+
+      <h2>Keep the Photo Honest</h2>
+      <p>A strong brand is built on authenticity. Your headshot should look like you on a good day, not like a different person. Avoid heavy retouching, outdated photos and dramatic filters. If someone meets you after seeing your profile, they should recognize you immediately. That alignment between image and reality is what turns a good first impression into a lasting relationship.</p>
+
+      <h2>Roll It Out Everywhere</h2>
+      <p>Once you have your photos, update every touchpoint in one sweep so the change feels intentional:</p>
+      <ul>
+        <li>LinkedIn, X, Instagram and other social profiles</li>
+        <li>Your website about page and author bios</li>
+        <li>Email signature and calendar invitations</li>
+        <li>Speaker profiles, podcast guest pages and directories</li>
+        <li>Company team pages and press kits</li>
+      </ul>
+      <p>Use the same crop and file naming so that profiles look aligned, and keep the original high-resolution files in a shared folder for easy reuse.</p>
+
+      <h2>Refresh on a Schedule</h2>
+      <p>Plan to update your headshot every one to two years, or sooner after a significant change in appearance or role. A regular refresh signals that you are current and active, and with AI tools it takes minutes instead of weeks.</p>
+
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li>Define your positioning before choosing a style.</li>
+        <li>Stay consistent across platforms to build recognition.</li>
+        <li>Create a small set of variations for different uses.</li>
+        <li>Keep it authentic and refresh regularly.</li>
+      </ul>
+      <p>Ready to start? <a href="/auth/register">Sign up for TailorPic</a> and build a personal brand your audience will remember.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-03-24',
+    tags: ['Branding', 'Strategy', 'Professional'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'ai-headshot-for-real-estate',
+    title: 'AI Headshots for Real Estate Agents: The Complete Guide',
+    description:
+      'Everything real estate agents need to know about using AI headshots for listings, MLS profiles, signage and marketing, including style tips and common mistakes.',
+    coverImage: '/images/blog/placeholder.svg',
+    content: `
+      <p>In real estate, you are the product. Buyers and sellers choose an agent they trust long before they tour a home, and your photo is often the first thing they see on a listing, a yard sign or a Zillow profile. A polished headshot helps you look approachable, credible and local. AI headshots make that professional image available without the cost and scheduling hassle of a studio session.</p>
+
+      <h2>Where Real Estate Agents Use Headshots</h2>
+      <p>Agents need more headshot placements than almost any other profession:</p>
+      <ul>
+        <li><strong>MLS and brokerage profiles</strong> where consistency and clarity are often required.</li>
+        <li><strong>Listing flyers, postcards and open house signs</strong> that put your face in front of a neighborhood.</li>
+        <li><strong>Portal profiles</strong> such as Zillow, Realtor.com and Redfin.</li>
+        <li><strong>Social media</strong> including Facebook business pages, Instagram and LinkedIn.</li>
+        <li><strong>Email signatures, websites and video thumbnails.</strong></li>
+      </ul>
+      <p>Using the same strong image everywhere builds the local name recognition that drives referrals.</p>
+
+      <h2>What Makes a Great Real Estate Headshot</h2>
+      <p>Clients want someone who is both professional and friendly. The best agent photos share a few traits:</p>
+      <ul>
+        <li><strong>A warm, natural smile</strong> that communicates approachability.</li>
+        <li><strong>Polished business attire</strong> that matches your market. A blazer works in most areas, while a crisp shirt can suit casual coastal markets.</li>
+        <li><strong>A clean background</strong> that keeps the focus on your face.</li>
+        <li><strong>Good eye contact</strong> that feels confident and trustworthy.</li>
+        <li><strong>Brand-aligned colors</strong> that complement your brokerage logo.</li>
+      </ul>
+
+      <h2>Follow Your MLS and Brokerage Rules</h2>
+      <p>Many MLS systems and brokerages have photo requirements, such as a minimum resolution, a square crop, a recent photo and a plain background. Check your local rules first and choose a style that complies. Our <a href="/industries">industry pages</a> include guidance on what tends to work for agents, and our <a href="/styles">styles library</a> has clean, neutral options that suit most MLS requirements.</p>
+
+      <h2>How AI Headshots Work for Agents</h2>
+      <p>The process is simple. You upload several clear selfies, pick a style, and the AI generates a set of professional portraits that look like you. There is no need to book a photographer, travel to a studio or iron a blazer. For a busy agent juggling showings and closings, that convenience is a real advantage.</p>
+      <ul>
+        <li><strong>Speed:</strong> results in minutes rather than days.</li>
+        <li><strong>Cost:</strong> a fraction of a traditional shoot, which matters when you update photos regularly.</li>
+        <li><strong>Variety:</strong> several outfits and backgrounds from one upload.</li>
+        <li><strong>Consistency:</strong> easy to match your look across a whole brokerage team.</li>
+      </ul>
+
+      <h2>Tips for Better Source Selfies</h2>
+      <p>The quality of your selfies shapes the quality of the results. For the best outcome:</p>
+      <ul>
+        <li>Shoot in soft, natural window light rather than harsh overhead light.</li>
+        <li>Use a mix of angles and expressions, with and without a smile.</li>
+        <li>Keep glasses, hats and heavy filters out of your uploads unless you always wear them.</li>
+        <li>Use a simple background and avoid group photos.</li>
+        <li>Upload recent photos so the result matches how clients will meet you.</li>
+      </ul>
+
+      <h2>Common Mistakes to Avoid</h2>
+      <ul>
+        <li><strong>Using an outdated photo.</strong> Clients notice when you look different in person.</li>
+        <li><strong>Over-retouching.</strong> A plastic look undermines trust.</li>
+        <li><strong>Using a selfie or cropped vacation photo.</strong> It signals low effort.</li>
+        <li><strong>Inconsistent images.</strong> Different photos on each platform weaken recognition.</li>
+        <li><strong>Busy backgrounds</strong> that distract from you.</li>
+      </ul>
+
+      <h2>Getting Your Brokerage Team on Board</h2>
+      <p>If you lead a team, consistent headshots make the whole group look more established. Have each agent upload selfies, choose the same style, and you will have a cohesive set without a shoot day. Everything is managed from the <a href="/editor">editor</a>, and you can start with a free account.</p>
+
+      <h2>Get Started Today</h2>
+      <p>A great headshot will not close a deal on its own, but it opens the door by earning trust before the first conversation. <a href="/auth/register">Create your TailorPic account</a>, upload your selfies and generate a real estate headshot that works on every platform where clients find you.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-03-28',
+    tags: ['Real Estate', 'Guide', 'MLS'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'group-team-headshot-coordination',
+    title: 'How to Coordinate Team Headshots Without a Group Photo Session',
+    description:
+      'Learn how to get matching, professional headshots for your whole team, including remote and hybrid staff, without scheduling a photographer or a single group session.',
+    coverImage: '/images/blog/placeholder.svg',
+    content: `
+      <p>Every company needs consistent team photos for its website, LinkedIn pages, pitch decks and press kits. Yet organizing a traditional photo day is painful. Schedules clash, remote employees cannot attend, new hires arrive after the shoot, and the results rarely match a year later. The good news is that you can get a cohesive set of team headshots without ever gathering everyone in one room.</p>
+
+      <h2>Why Traditional Team Shoots Fall Short</h2>
+      <ul>
+        <li><strong>Scheduling:</strong> finding a day that works for every person is nearly impossible.</li>
+        <li><strong>Remote staff:</strong> distributed teams cannot travel for a single photo.</li>
+        <li><strong>Cost:</strong> photographers charge per person or per hour, and retakes add up.</li>
+        <li><strong>New hires:</strong> photos taken later rarely match the original lighting and background.</li>
+        <li><strong>Turnaround:</strong> editing and delivery can take weeks.</li>
+      </ul>
+
+      <h2>A Step-by-Step Coordination Plan</h2>
+
+      <h2>Step 1: Decide on a Shared Style</h2>
+      <p>Consistency is what makes a team page look professional. Choose one background, one framing and one level of formality for everyone. Browse our <a href="/styles">styles</a> and pick an option that fits your brand colors. If your company spans different functions, check the <a href="/industries">industry guides</a> for appropriate wardrobe and tone.</p>
+
+      <h2>Step 2: Write Clear Guidelines</h2>
+      <p>People take better selfies when they know what to do. Send a short guide that covers:</p>
+      <ul>
+        <li><strong>Lighting:</strong> face a window in soft daylight, avoiding strong shadows.</li>
+        <li><strong>Angles:</strong> a few shots from the front and slightly to each side.</li>
+        <li><strong>Expressions:</strong> some smiling, some neutral.</li>
+        <li><strong>Clothing:</strong> solid colors, no busy patterns or logos.</li>
+        <li><strong>Extras:</strong> no sunglasses, hats or filters.</li>
+      </ul>
+
+      <h2>Step 3: Collect Selfies Asynchronously</h2>
+      <p>Give everyone a deadline of a week or so and let them upload in their own time. No one has to take time off, travel or dress up on a specific day. Team members in different time zones participate equally, and people who feel awkward in front of a camera can take as many tries as they need.</p>
+
+      <h2>Step 4: Generate Headshots With AI</h2>
+      <p>Each person uploads their selfies to TailorPic and the AI creates professional portraits in the shared style. Because the same style is applied to everyone, the final images match in lighting, background and tone. <a href="/auth/register">Create an account</a> to try it with your own photos, then review the results in the <a href="/editor">editor</a>.</p>
+
+      <h2>Step 5: Review and Approve</h2>
+      <p>Assign one person, such as someone in marketing or HR, to review the results. Look for consistent framing, natural expressions and a good likeness. Let each team member choose their favorite from a few options so they feel ownership of the final image.</p>
+
+      <h2>Step 6: Standardize and Distribute</h2>
+      <p>Save final files with a consistent naming format such as firstname-lastname and store them in a shared folder. Export standard sizes for your website, LinkedIn and email signatures. Encourage everyone to update their own profiles the same week so that the launch feels coordinated.</p>
+
+      <h2>Handling Common Challenges</h2>
+      <ul>
+        <li><strong>Camera-shy team members:</strong> explain that they choose which photo is used, which reduces anxiety.</li>
+        <li><strong>Different skin tones and hair:</strong> AI styles adapt to each person, so nobody needs special treatment.</li>
+        <li><strong>Poor selfie quality:</strong> offer a quick reshoot rather than accepting blurry or dark photos.</li>
+        <li><strong>Privacy concerns:</strong> explain how photos are used and that uploads can be deleted.</li>
+      </ul>
+
+      <h2>Onboarding New Hires</h2>
+      <p>The biggest advantage of this approach is how easily it scales. When someone joins, they upload selfies in their first week and receive a headshot that matches the rest of the team. There is no waiting for the next photo day and no awkward mismatch on the team page.</p>
+
+      <h2>Keep It Fresh</h2>
+      <p>Review team photos once a year. People change their hair, glasses and roles, and refreshing the set keeps your website and social pages accurate. Because the process is digital, updates are quick and inexpensive.</p>
+
+      <h2>Summary</h2>
+      <p>You do not need a photographer, a conference room or a perfect Tuesday to get great team headshots. Agree on a style, share clear guidelines, collect selfies on each person's schedule and let AI handle the rest. <a href="/auth/register">Get started with TailorPic</a> and give your whole team a consistent, professional look.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-04-02',
+    tags: ['Teams', 'Coordination', 'Business'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'linkedin-profile-optimization-photo',
+    title: 'LinkedIn Profile Photo Optimization: What the Algorithm Wants',
+    description:
+      'Discover how your LinkedIn profile photo affects views, connection requests and search visibility, and how to optimize it for both the algorithm and real people.',
+    coverImage: '/images/blog/placeholder.svg',
+    content: `
+      <p>LinkedIn has said that profiles with a photo receive far more views and connection requests than those without one. But the platform does not simply reward having any photo. The algorithm responds to the behavior your profile generates, and a strong headshot drives that behavior. Here is how to optimize your photo for both the algorithm and the people behind it.</p>
+
+      <h2>How the Photo Influences Visibility</h2>
+      <p>LinkedIn does not publish a formula, but the general logic is clear. The platform favors profiles that look complete, authentic and engaging. Your photo affects several signals:</p>
+      <ul>
+        <li><strong>Profile completeness:</strong> a photo is a core part of the profile strength meter.</li>
+        <li><strong>Click-through rate:</strong> in search results and comment threads, an inviting photo gets more clicks.</li>
+        <li><strong>Connection acceptance:</strong> people are more likely to accept requests from a recognizable face.</li>
+        <li><strong>Trust and spam filtering:</strong> real, clear photos help distinguish you from fake accounts.</li>
+        <li><strong>Engagement:</strong> your photo appears next to every post and comment, which shapes how people respond.</li>
+      </ul>
+
+      <h2>Technical Specifications That Matter</h2>
+      <p>A technically clean image avoids compression problems and awkward cropping:</p>
+      <ul>
+        <li><strong>Size:</strong> at least 400 x 400 pixels, with 800 x 800 or larger being better.</li>
+        <li><strong>Format:</strong> JPG or PNG, under the file size limit.</li>
+        <li><strong>Aspect ratio:</strong> square, because LinkedIn crops to a circle.</li>
+        <li><strong>Face size:</strong> your face should fill roughly 60 percent of the frame.</li>
+        <li><strong>File name:</strong> use your real name, which can help with image search.</li>
+      </ul>
+
+      <h2>What Viewers Judge in Seconds</h2>
+      <p>The algorithm ultimately follows human reactions, so optimize for the quick judgments people make:</p>
+      <ul>
+        <li><strong>Likeability:</strong> a genuine smile conveys warmth.</li>
+        <li><strong>Competence:</strong> sharp focus, good lighting and tidy attire.</li>
+        <li><strong>Trustworthiness:</strong> direct eye contact and a natural expression.</li>
+        <li><strong>Relevance:</strong> dress that fits your industry. Our <a href="/industries">industry guides</a> show what works in different fields.</li>
+      </ul>
+
+      <h2>Choose the Right Background</h2>
+      <p>A simple, uncluttered background keeps attention on your face, and it also helps the image remain readable at thumbnail size. Soft neutral tones, gentle blue or a blurred office all work well. Avoid busy scenes, group photos and anything that pulls focus. You can preview options in our <a href="/styles">styles library</a>.</p>
+
+      <h2>Build a Cohesive Profile Around the Photo</h2>
+      <p>The photo works best when everything else supports it:</p>
+      <ul>
+        <li><strong>Banner image:</strong> choose colors and a message that complement your headshot.</li>
+        <li><strong>Headline:</strong> state the value you offer, not just your job title.</li>
+        <li><strong>About section:</strong> write in a voice that matches the friendly, professional impression of your photo.</li>
+        <li><strong>Featured content:</strong> show proof of your work.</li>
+      </ul>
+
+      <h2>Common Mistakes That Hurt Your Profile</h2>
+      <ul>
+        <li><strong>No photo or a placeholder:</strong> this signals an inactive or untrustworthy account.</li>
+        <li><strong>A cropped social photo</strong> with someone else's arm or a cocktail visible.</li>
+        <li><strong>Overly filtered images</strong> that look unnatural.</li>
+        <li><strong>Outdated photos</strong> from a decade ago.</li>
+        <li><strong>Low resolution</strong> that looks blurry in feeds.</li>
+        <li><strong>Sunglasses or hats</strong> that hide your face.</li>
+      </ul>
+
+      <h2>Test and Refresh</h2>
+      <p>Treat your photo as something you can improve. Change it, then watch profile views, search appearances and connection acceptance over a few weeks. If the numbers rise, you are on the right track. Refresh your photo every year or two to keep your profile current.</p>
+
+      <h2>Get a Headshot Built for LinkedIn</h2>
+      <p>You do not need a studio appointment to have a LinkedIn-ready photo. With TailorPic you upload a few selfies and receive polished, professional portraits sized for the platform. <a href="/auth/register">Sign up free</a>, choose a style, and fine-tune your result in the <a href="/editor">editor</a>.</p>
+
+      <h2>Final Thoughts</h2>
+      <p>The algorithm wants profiles that look real, complete and engaging, and people want to connect with someone they can trust at a glance. A sharp, genuine, well-framed headshot satisfies both. Make the update today and let your profile work harder for you.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-04-07',
+    tags: ['LinkedIn', 'Algorithm', 'Optimization'],
+    readingTime: '5 min read',
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
