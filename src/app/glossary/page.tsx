@@ -66,6 +66,24 @@ const terms: Term[] = [
       'A lighting pattern in which the main light sits high and directly in front of the subject, creating a small butterfly-shaped shadow beneath the nose. It is often used in beauty and glamour portraits.',
   },
   {
+    term: 'Catch Light',
+    definition:
+      'The small reflection of a light source visible in the eyes of a subject. Catch lights make eyes look bright and alive, and their shape and position hint at the lighting setup used.',
+    link: { href: '/blog/headshot-lighting-guide', label: 'Headshot lighting guide' },
+  },
+  {
+    term: 'Color Temperature',
+    definition:
+      'The warmth or coolness of light, measured in Kelvin (K). Lower values around 2700K look warm and orange, while higher values above 6000K look cool and blue. Matching color temperature keeps skin tones natural.',
+    link: { href: '/blog/headshot-lighting-guide', label: 'Headshot lighting guide' },
+  },
+  {
+    term: 'Rim Lighting',
+    definition:
+      'A technique where light placed behind the subject outlines the edges of the head and shoulders with a thin glow. It separates the subject from the background and adds depth and drama.',
+    link: { href: '/blog/headshot-lighting-guide', label: 'Headshot lighting guide' },
+  },
+  {
     term: 'Color Grading',
     definition:
       'Adjusting the colors and tones of an image to achieve a consistent mood or look. In headshots, it helps skin tones look natural and keeps a set of photos visually matched.',

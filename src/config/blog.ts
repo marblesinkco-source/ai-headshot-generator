@@ -5111,6 +5111,162 @@ export const blogPosts: BlogPost[] = [
     tags: ['ChatGPT', 'AI Headshots', 'Comparison', 'Professional Photos'],
     readingTime: '6 min read',
   },
+  {
+    slug: 'ai-headshot-for-event-speakers',
+    title: 'AI Headshots for Event Speakers: From CFP to Conference Stage',
+    description:
+      'How event speakers can use AI headshots for call-for-proposals submissions, conference websites, and speaker bio pages without booking a photographer.',
+    content: `
+      <p>Speaking at conferences, meetups, and corporate events is one of the best ways to build professional visibility. But every event requires a headshot — for the speaker page, the programme, social media promotion, and sometimes even the slide deck intro. If your photo is outdated, inconsistent, or missing, the opportunity loses impact before you step on stage.</p>
+
+      <h2>Why Speakers Need Multiple Headshots</h2>
+      <p>Different events have different visual standards. A tech conference might want a casual shot, while a finance summit expects a formal portrait. Having a range of professional photos lets you match the tone of every event without scheduling a new shoot each time. With TailorPic, a single upload gives you <a href="/styles">multiple styles</a> to choose from.</p>
+
+      <h2>The Call-for-Proposals Problem</h2>
+      <p>When submitting a CFP, you typically need a headshot and a bio. Many speakers use the same photo for years because updating it means booking a photographer. An AI headshot generator lets you refresh your photo in hours, so your submission looks current and professional. Our <a href="/use-cases/conference-speaker">conference speaker use case</a> covers this workflow in detail.</p>
+
+      <h2>Consistency Across Events</h2>
+      <p>If you speak at multiple events per year, attendees may see your face on several different websites. Using a consistent, high-quality headshot builds recognition and strengthens your personal brand. AI-generated photos make this easy because you can produce a cohesive set all at once.</p>
+
+      <h2>Quick Turnaround for Last-Minute Invitations</h2>
+      <p>Sometimes you get invited to speak with days or even hours of notice. The organiser needs a headshot immediately. Having AI-generated photos ready — or being able to generate new ones within hours — means you never hold up the event marketing. TailorPic delivers in about 2 hours.</p>
+
+      <h2>What Makes a Good Speaker Headshot</h2>
+      <p>The best speaker photos are well-lit, clearly framed around the face and shoulders, and convey approachability. Avoid overly formal poses unless the event calls for it. A natural smile and clean background work across most contexts. The <a href="/blog/professional-headshot-tips-2025">headshot tips guide</a> has more specific advice.</p>
+
+      <h2>Getting Started</h2>
+      <p>Upload a few selfies to <a href="/auth/register">TailorPic</a>, choose styles that match the events you typically attend, and keep the results in a folder you can send to any organiser at a moment's notice. At $9.90 for 40+ photos, it costs less than a single stock image.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-04-20',
+    tags: ['Speakers', 'Events', 'Conference', 'AI Headshots'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'ai-headshot-for-authors',
+    title: 'AI Headshots for Authors: Book Jackets, Bios & Media Kits',
+    description:
+      'How authors and writers can use AI-generated headshots for book covers, author bios, media kits, and speaking engagements without a professional photo shoot.',
+    content: `
+      <p>Every published book needs an author photo. So does every guest post byline, podcast appearance, media kit, and book signing event page. For authors, a professional headshot is not vanity — it is a business requirement that follows you across every platform where your work appears.</p>
+
+      <h2>Where Authors Need Headshots</h2>
+      <p>The list is longer than most writers expect: the back cover or dust jacket of your book, your Amazon author page, Goodreads, your personal website, newsletter, social media profiles, literary agent queries, publisher marketing materials, bookstore event pages, and press features. Each of these benefits from a polished, recognisable photo.</p>
+
+      <h2>The Problem with Traditional Author Photos</h2>
+      <p>A professional author photo shoot typically costs $200–$500, requires scheduling, and produces a handful of images in one style. If you want different looks for different contexts — formal for the book jacket, casual for your blog — you pay more and wait longer. Many authors use the same photo for a decade because updating it feels like a hassle.</p>
+
+      <h2>How AI Headshots Help</h2>
+      <p>With TailorPic, you upload a few selfies and receive 40+ professional portraits in multiple styles within hours. You can choose a classic, bookish look for your dust jacket, a friendly shot for your newsletter, and a confident portrait for media kits — all from the same upload, for <a href="/pricing">$9.90</a>.</p>
+
+      <h2>Matching Your Genre</h2>
+      <p>Your headshot should match the tone of your work. A thriller writer might want a dark, moody portrait. A romance author might prefer warm, approachable lighting. A business book author needs a corporate look. Browse the <a href="/styles">available styles</a> to find one that fits your brand.</p>
+
+      <h2>Self-Published Authors</h2>
+      <p>If you are self-publishing, you are also your own marketing department. A professional author photo adds credibility and makes your book look as polished as traditionally published titles. It is one of the easiest ways to level up your presentation without a large budget.</p>
+
+      <h2>Getting Started</h2>
+      <p>Take 6–10 clear selfies in good light, <a href="/auth/register">sign up for TailorPic</a>, and have your new author photos ready before your next manuscript deadline. Keep them in a media kit folder so you can respond instantly when a publisher, podcast host, or bookstore asks for your photo.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-04-22',
+    tags: ['Authors', 'Writers', 'Book Cover', 'AI Headshots'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'ai-headshot-for-remote-workers',
+    title: 'AI Headshots for Remote Workers: Look Professional from Anywhere',
+    description:
+      'Remote workers need professional photos for Slack, Zoom, company directories, and LinkedIn without access to a studio. AI headshots solve this.',
+    content: `
+      <p>Remote work has made the professional headshot both more important and harder to get. Your photo represents you in every Slack message, Zoom meeting, email signature, and internal directory. But when you work from home, a coworking space, or a different city from your company's office, booking a professional photographer is not straightforward.</p>
+
+      <h2>Why Remote Workers Need Better Photos</h2>
+      <p>In a remote environment, your colleagues and clients form impressions from your profile photo before they ever hear your voice. A blurry selfie, an outdated photo, or a blank avatar sends an unintended message about your professionalism. A polished headshot signals that you take your role seriously, even if your office is your kitchen table.</p>
+
+      <h2>The Logistics Problem</h2>
+      <p>Office-based employees sometimes get headshots through company-organised photo days. Remote workers rarely have this option. Flying to headquarters for a photo is impractical, and local photographers may not match the style the company uses. AI headshots eliminate the logistics entirely: upload selfies from wherever you are, and receive consistent, professional photos.</p>
+
+      <h2>Matching Your Team</h2>
+      <p>Companies with both office and remote employees often struggle with visual consistency. AI headshot tools solve this by applying the same style, background, and lighting to everyone's photo, regardless of where they uploaded their selfies. For team coordination, see our <a href="/use-cases/website-team-page">team page use case</a>.</p>
+
+      <h2>Multiple Platforms, One Upload</h2>
+      <p>Remote workers typically need photos for Slack, Microsoft Teams, Zoom, Google Meet, LinkedIn, the company website, and sometimes client-facing portals. TailorPic generates 40+ photos across multiple styles from a single upload, so you can use a different crop or look for each platform while maintaining a consistent identity. See our guides for <a href="/use-cases/zoom">Zoom</a> and <a href="/use-cases/microsoft-teams">Microsoft Teams</a>.</p>
+
+      <h2>Cost and Convenience</h2>
+      <p>A traditional headshot session costs $150–$500 plus travel time. TailorPic costs <a href="/pricing">$9.90</a> and delivers in about 2 hours. For remote workers who are already saving their company money on office space, the AI headshot is a practical, low-cost way to maintain a professional image.</p>
+
+      <h2>Getting Started</h2>
+      <p>Take a few selfies near a window for good natural light, <a href="/auth/register">upload them to TailorPic</a>, and update every profile in one afternoon. No commute, no appointment, no waiting.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-04-24',
+    tags: ['Remote Work', 'AI Headshots', 'Professional Photos', 'WFH'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'headshot-trends-ai-vs-traditional-2026',
+    title: 'Headshot Trends 2026: AI vs Traditional Photography',
+    description:
+      'How AI headshot generators are changing the professional photography landscape in 2026, and when traditional photographers still have the edge.',
+    content: `
+      <p>The professional headshot industry is in the middle of a significant shift. AI-powered generators are now producing photos that rival traditional studio work for many common use cases, while photographers are adapting by focusing on what AI cannot replicate. Here is where things stand in 2026.</p>
+
+      <h2>The Rise of AI Headshots</h2>
+      <p>AI headshot tools have moved from novelty to mainstream in under three years. The technology has improved dramatically: modern tools use LoRA fine-tuning to train personal models on individual faces, producing results that are nearly indistinguishable from studio photography. Prices have dropped to as low as <a href="/pricing">$9.90</a> per set, making professional headshots accessible to anyone with a smartphone.</p>
+
+      <h2>What AI Does Well</h2>
+      <p>AI excels at producing clean, consistent, professional-looking portraits for standard use cases. LinkedIn profiles, company team pages, conference bios, and social media avatars are all well-served by AI. The technology handles lighting, background, and framing automatically, producing results that would require a skilled photographer and a proper studio to match. The speed is also a major advantage: most orders are delivered within hours, not weeks.</p>
+
+      <h2>Where Traditional Photography Still Wins</h2>
+      <p>Photographers maintain an edge in several areas. Creative direction is one: a skilled photographer can work with you in real time to capture a specific mood, interaction, or narrative that AI cannot improvise. Environmental portraits — you at your desk, in your workshop, or at a landmark — require real-world context that AI generates rather than captures. And for high-profile uses like book covers, magazine features, or large-format prints, the subtle detail and intentionality of a professional shoot still shows.</p>
+
+      <h2>The Hybrid Approach</h2>
+      <p>Many professionals are adopting a hybrid strategy: using AI headshots for day-to-day needs (profiles, directories, proposals) and booking a photographer for special occasions (a new book, a major promotion, a brand refresh). This keeps costs low while ensuring that high-stakes photos receive the attention they deserve.</p>
+
+      <h2>What to Expect Next</h2>
+      <p>AI headshot quality will continue to improve, and the line between AI and traditional photography will blur further. Video is the next frontier: some tools are already experimenting with AI-generated video introductions. For now, the practical advice is simple: use the right tool for each job. For most professional photo needs, AI is already there. <a href="/auth/register">Try TailorPic</a> to see the current state of the art.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-04-26',
+    tags: ['Trends', 'AI vs Traditional', 'Photography', 'AI Headshots'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'ai-headshot-privacy-security-guide',
+    title: 'AI Headshot Privacy & Security: What You Need to Know',
+    description:
+      'A practical guide to privacy and data security when using AI headshot generators. What happens to your photos, how to evaluate providers, and what to ask.',
+    content: `
+      <p>Uploading selfies to an AI headshot tool means sharing personal biometric data with a third party. That is a reasonable concern, and it deserves a straightforward answer. This guide explains what to look for, what questions to ask, and how to evaluate the privacy practices of any AI headshot service.</p>
+
+      <h2>What Happens to Your Photos</h2>
+      <p>When you upload selfies to an AI headshot generator, the service uses them to train a temporary model that learns your facial features. This model generates your headshots, and then — depending on the provider — it may be deleted immediately, kept for a period, or retained indefinitely. The difference matters.</p>
+
+      <h2>Questions to Ask Any Provider</h2>
+      <p>Before uploading, check the provider's privacy policy for answers to these questions:</p>
+      <p><strong>How long are my uploaded photos stored?</strong> Some providers delete uploads within 24–48 hours. Others keep them for months. Shorter retention is generally better for privacy.</p>
+      <p><strong>Is my trained model deleted after generation?</strong> The model contains a compressed representation of your face. If it is not deleted, it could theoretically be used to generate additional images without your knowledge.</p>
+      <p><strong>Are my photos used to train other models?</strong> Some services use customer photos to improve their general AI. If this concerns you, look for providers that explicitly opt you out of this.</p>
+      <p><strong>Where is my data stored?</strong> Data residency matters for compliance and for understanding which jurisdiction's laws apply to your information.</p>
+
+      <h2>Red Flags</h2>
+      <p>Be cautious of services that have no privacy policy, that claim to own your generated images, that require you to waive rights to your likeness, or that do not specify data retention timelines. Free services sometimes monetise user data in ways that paid services do not.</p>
+
+      <h2>What TailorPic Does</h2>
+      <p>TailorPic processes your photos to generate headshots and does not use your images to train models for other users. You own the generated headshots with full commercial rights. For current details, check the <a href="/privacy">privacy policy</a> on the website.</p>
+
+      <h2>Best Practices for Users</h2>
+      <p>Regardless of which service you use: read the privacy policy before uploading; use a service that clearly states data deletion timelines; avoid uploading photos that contain sensitive background information (documents, screens, addresses); and use a dedicated email if you prefer to keep the account separate from your main identity.</p>
+
+      <h2>The Bottom Line</h2>
+      <p>Privacy is a legitimate concern with any AI service that processes biometric data. The good news is that reputable providers take it seriously and are transparent about their practices. Do your due diligence, ask the right questions, and you can get professional headshots without compromising your privacy. <a href="/auth/register">Try TailorPic</a> to see how it works.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-04-28',
+    tags: ['Privacy', 'Security', 'AI Headshots', 'Data Protection'],
+    readingTime: '6 min read',
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

@@ -4,12 +4,12 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
-import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight, Heart, Monitor, GraduationCap, Camera, Clapperboard, SmilePlus, TrendingUp, Ruler, Target, Brain, Dumbbell, Music, PawPrint, Users, Handshake, Mic, Palette, Newspaper } from 'lucide-react';
+import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight, Heart, Monitor, GraduationCap, Camera, Clapperboard, SmilePlus, TrendingUp, Ruler, Target, Brain, Dumbbell, Music, PawPrint, Users, Handshake, Mic, Palette, Newspaper, Shield, Plane, Calendar, BookOpen } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'AI Photos by Industry | TailorPic',
   description:
-    'Professional AI-generated photos tailored for your industry. Real estate, legal, healthcare, nursing, engineering, education, consulting, accounting, photography, acting, dental, financial advisory, architecture, coaching, therapy, fitness, music, veterinary and more.',
+    'Professional AI-generated photos tailored for your industry. Real estate, legal, healthcare, nursing, engineering, education, consulting, accounting, photography, acting, dental, financial advisory, architecture, coaching, therapy, fitness, music, veterinary, pharmacy, aviation, event planning, marketing, writing and more.',
 };
 
 const industries = [
@@ -204,6 +204,46 @@ const industries = [
       'Professional headshots for journalists and media professionals. Byline-ready portraits for articles, broadcasts and press credentials.',
     href: '/industries/journalists',
     cta: 'For Journalists',
+  },
+  {
+    icon: Shield,
+    name: 'Pharmacists',
+    description:
+      'Trustworthy headshots for pharmacists and pharmacy teams. Patient-friendly portraits for pharmacy websites, directories and LinkedIn.',
+    href: '/industries/pharmacists',
+    cta: 'For Pharmacists',
+  },
+  {
+    icon: Plane,
+    name: 'Pilots & Aviation',
+    description:
+      'Confident headshots for pilots and aviation professionals. Sharp portraits for airline applications, crew profiles and LinkedIn.',
+    href: '/industries/pilots',
+    cta: 'For Pilots',
+  },
+  {
+    icon: Calendar,
+    name: 'Event Planners',
+    description:
+      'Polished, personable headshots for event and wedding planners. Win clients with portraits for your website, proposals and vendor listings.',
+    href: '/industries/event-planners',
+    cta: 'For Planners',
+  },
+  {
+    icon: TrendingUp,
+    name: 'Marketing Professionals',
+    description:
+      'Modern headshots for marketers and brand leaders. Build your personal brand on LinkedIn, speaker pages and agency sites.',
+    href: '/industries/marketing-professionals',
+    cta: 'For Marketers',
+  },
+  {
+    icon: BookOpen,
+    name: 'Authors & Writers',
+    description:
+      'Author photos for novelists, nonfiction writers and bloggers. Book-jacket, Amazon author page and press kit ready.',
+    href: '/industries/authors',
+    cta: 'For Authors',
   },
 ];
 

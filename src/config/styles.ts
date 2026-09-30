@@ -821,6 +821,181 @@ export const photoStyles: PhotoStyle[] = [
     relatedCategories: ['headshots'],
     relatedBlogPosts: ['headshot-trends-2025', 'professional-headshot-tips-2025'],
   },
+  {
+    slug: 'urban-street',
+    name: 'Urban Street Headshots',
+    title: 'AI Urban Street Headshots',
+    description:
+      'Street-photography style portraits with city backdrops and an authentic, modern edge.',
+    metaDescription:
+      'Create AI urban street headshots with city backdrops, natural light and a candid edge. Modern portraits for creatives and professionals with TailorPic.',
+    heroText:
+      'Bring the energy of the city to your profile. Urban street headshots pair a sharp, candid look with blurred skylines, brick walls and city light for a modern, confident feel.',
+    features: [
+      'City backdrops such as brick walls, skylines and quiet side streets',
+      'Natural, directional daylight with authentic shadows',
+      'Shallow depth of field that keeps focus on you',
+      'Candid, in-the-moment expressions and poses',
+      'Modern, slightly editorial color palette',
+      'Framing that works for both vertical and square crops',
+    ],
+    idealFor: [
+      'Creatives, designers and photographers',
+      'Musicians, influencers and content creators',
+      'Tech and startup professionals',
+      'Social media and dating profiles',
+      'Personal brands with a modern voice',
+    ],
+    tips: [
+      'Upload selfies with varied angles and natural expressions',
+      'Wear layers such as jackets or denim for texture',
+      'Choose solid colors that stand out against city tones',
+      'Avoid busy patterns that compete with the backdrop',
+      'Pair with a corporate style for more formal uses',
+    ],
+    relatedCategories: ['headshots', 'dating'],
+    relatedBlogPosts: ['headshot-trends-2025', 'headshot-poses-guide'],
+  },
+  {
+    slug: 'professional-linkedin',
+    name: 'Professional LinkedIn Headshots',
+    title: 'AI Professional LinkedIn Headshots',
+    description:
+      'Headshots tuned for LinkedIn: friendly, credible and clear at every profile size.',
+    metaDescription:
+      'Create AI professional LinkedIn headshots optimized for profile crops and small thumbnails. Credible, approachable photos from a few selfies with TailorPic.',
+    heroText:
+      'Your LinkedIn photo is your first impression. This style is built around how the platform displays your picture, with a clear face, trustworthy expression and clean background.',
+    features: [
+      'Framing optimized for LinkedIn circular profile crops',
+      'Clean, neutral or softly blurred backgrounds',
+      'Approachable expression that signals credibility',
+      'Even, flattering lighting with natural skin tones',
+      'Professional attire suited to your industry',
+      'Sharp detail that holds up as a small thumbnail',
+    ],
+    idealFor: [
+      'Job seekers and career changers',
+      'Sales, recruiting and business development professionals',
+      'Consultants, freelancers and founders',
+      'Anyone refreshing an outdated profile photo',
+      'Thought leaders and LinkedIn creators',
+    ],
+    tips: [
+      'Choose a photo where your face fills about 60 percent of the frame',
+      'Use a genuine smile that reaches your eyes',
+      'Pick a background color that contrasts with your clothing',
+      'Test the crop at thumbnail size before publishing',
+      'Update your photo every one to two years',
+    ],
+    relatedCategories: ['headshots', 'team-headshots'],
+    relatedBlogPosts: ['linkedin-headshot-optimization', 'best-headshot-for-linkedin-profile'],
+  },
+  {
+    slug: 'warm-portrait',
+    name: 'Warm Portrait Headshots',
+    title: 'AI Warm Portrait Headshots',
+    description:
+      'Friendly, golden-toned portraits that feel welcoming, genuine and approachable.',
+    metaDescription:
+      'Create AI warm portrait headshots with golden tones and soft light. Friendly, approachable photos for coaches, creators and professionals with TailorPic.',
+    heroText:
+      'Look as warm as you are. Warm portrait headshots use soft, golden-toned light and relaxed expressions to make a great first impression that feels human.',
+    features: [
+      'Warm color palette with gentle golden highlights',
+      'Soft, diffused light that flatters skin',
+      'Relaxed, genuine smiles and open body language',
+      'Creamy, softly blurred backgrounds',
+      'Cozy, inviting environments and neutral tones',
+      'Consistent warmth across every image',
+    ],
+    idealFor: [
+      'Coaches, therapists and wellness professionals',
+      'Teachers, nonprofit and community leaders',
+      'Real estate agents and client-facing roles',
+      'Small business owners and creators',
+      'Dating and social profiles',
+    ],
+    tips: [
+      'Upload selfies taken in soft window light',
+      'Wear earthy or muted colors that complement warm tones',
+      'Skip heavy filters on your input photos',
+      'Keep expressions natural rather than posed',
+      'Choose a cooler style for formal corporate needs',
+    ],
+    relatedCategories: ['headshots', 'dating'],
+    relatedBlogPosts: ['professional-headshot-tips-2025', 'dating-profile-photo-tips'],
+  },
+  {
+    slug: 'dark-moody',
+    name: 'Dark and Moody Headshots',
+    title: 'AI Dark and Moody Headshots',
+    description:
+      'Dramatic, low-key portraits with deep shadows and dark backgrounds.',
+    metaDescription:
+      'Create AI dark and moody headshots with dramatic low-key lighting and deep backgrounds. Bold, high-impact portraits from a few selfies with TailorPic.',
+    heroText:
+      'Step out of the light. Dark and moody headshots use low-key lighting, deep shadows and rich dark backdrops to create a striking, confident portrait.',
+    features: [
+      'Low-key lighting with deep, controlled shadows',
+      'Dark charcoal, black or deep-toned backgrounds',
+      'Dramatic contrast that sculpts the face',
+      'Subtle rim light to separate you from the background',
+      'Rich, desaturated color grading',
+      'Serious, confident expressions',
+    ],
+    idealFor: [
+      'Authors, speakers and podcasters',
+      'Musicians, actors and artists',
+      'Executives who want a bold look',
+      'Photographers and creative directors',
+      'Personal brands with a distinct identity',
+    ],
+    tips: [
+      'Wear dark or solid clothing for a cohesive look',
+      'Upload selfies with clear, even lighting so features are captured',
+      'Keep your expression calm and direct',
+      'Avoid this style for roles that call for a bright, open feel',
+      'Pair with a lighter style for everyday profiles',
+    ],
+    relatedCategories: ['headshots'],
+    relatedBlogPosts: ['headshot-lighting-guide', 'headshot-trends-2025'],
+  },
+  {
+    slug: 'business-casual',
+    name: 'Business Casual Headshots',
+    title: 'AI Business Casual Headshots',
+    description:
+      'Smart-casual portraits that balance professional polish with a relaxed, modern feel.',
+    metaDescription:
+      'Create AI business casual headshots that sit between corporate and casual. Polished yet approachable photos with smart-casual attire using TailorPic.',
+    heroText:
+      'Professional without the stiffness. Business casual headshots pair smart-casual attire with soft, natural light for a look that works in modern workplaces.',
+    features: [
+      'Smart-casual attire such as open collars, knitwear and blazers without ties',
+      'Soft, natural-feeling lighting',
+      'Light office, studio or blurred neutral backgrounds',
+      'Relaxed but confident posture and smile',
+      'Balanced color palette that feels current',
+      'Versatile framing for web, email and social profiles',
+    ],
+    idealFor: [
+      'Tech, marketing and creative industry employees',
+      'Startup teams and remote workers',
+      'Consultants and freelancers',
+      'Company About pages with a modern culture',
+      'Professionals who want to look approachable',
+    ],
+    tips: [
+      'Choose well-fitted, wrinkle-free smart-casual clothing',
+      'Stick to solid colors or subtle textures',
+      'Match the formality to your industry and audience',
+      'Keep accessories simple and minimal',
+      'Use a consistent look across your whole team',
+    ],
+    relatedCategories: ['headshots', 'team-headshots'],
+    relatedBlogPosts: ['what-to-wear-for-headshots', 'corporate-headshot-dress-code'],
+  },
 ];
 
 export function getPhotoStyle(slug: string): PhotoStyle | undefined {
