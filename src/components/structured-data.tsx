@@ -161,12 +161,7 @@ export function SoftwareApplicationSchema() {
       price: '9.90',
       priceCurrency: 'USD',
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      ratingCount: '500',
-      bestRating: '5',
-    },
+    // aggregateRating removed — do not add without real verified review data
   };
 
   return (

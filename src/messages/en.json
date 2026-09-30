@@ -1,0 +1,48 @@
+{
+  "common": {
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "readMore": "Read More",
+    "backTo": "Back to",
+    "home": "Home",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact",
+    "login": "Log In",
+    "signup": "Sign Up",
+    "dashboard": "Dashboard"
+  },
+  "hero": {
+    "title": "Professional AI Headshots",
+    "subtitle": "Transform your selfie into a stunning professional headshot with AI",
+    "cta": "Create Your Headshot",
+    "trustedBy": "Professionals trust TailorPic"
+  },
+  "pricing": {
+    "title": "Simple, Transparent Pricing",
+    "subtitle": "Professional headshots at a fraction of the cost",
+    "express": "Express",
+    "expressDesc": "5 professional headshots",
+    "perHeadshot": "per headshot",
+    "delivery": "24-hour delivery",
+    "features": "What's included",
+    "moneyBack": "Money-back guarantee",
+    "getStarted": "Get Started Now"
+  },
+  "footer": {
+    "description": "AI-powered professional headshots for everyone",
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "refund": "Refund Policy",
+    "copyright": "All rights reserved"
+  },
+  "meta": {
+    "defaultTitle": "TailorPic — Professional AI Headshots",
+    "defaultDescription": "Transform your selfie into a professional headshot with AI. Ready in 24 hours."
+  }
+}

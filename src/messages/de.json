@@ -1,0 +1,48 @@
+{
+  "common": {
+    "getStarted": "Jetzt starten",
+    "learnMore": "Mehr erfahren",
+    "viewAll": "Alle ansehen",
+    "readMore": "Weiterlesen",
+    "backTo": "Zurück zu",
+    "home": "Startseite",
+    "pricing": "Preise",
+    "blog": "Blog",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "login": "Anmelden",
+    "signup": "Registrieren",
+    "dashboard": "Dashboard"
+  },
+  "hero": {
+    "title": "Professionelle KI-Bewerbungsfotos",
+    "subtitle": "Verwandle dein Selfie mit KI in ein beeindruckendes, professionelles Businessfoto",
+    "cta": "Dein Porträt erstellen",
+    "trustedBy": "Profis vertrauen TailorPic"
+  },
+  "pricing": {
+    "title": "Einfache, transparente Preise",
+    "subtitle": "Professionelle Porträts zu einem Bruchteil der Kosten",
+    "express": "Express",
+    "expressDesc": "5 professionelle Porträts",
+    "perHeadshot": "pro Foto",
+    "delivery": "Lieferung innerhalb von 24 Stunden",
+    "features": "Das ist enthalten",
+    "moneyBack": "Geld-zurück-Garantie",
+    "getStarted": "Jetzt loslegen"
+  },
+  "footer": {
+    "description": "KI-gestützte professionelle Porträts für alle",
+    "product": "Produkt",
+    "company": "Unternehmen",
+    "legal": "Rechtliches",
+    "privacy": "Datenschutzerklärung",
+    "terms": "Nutzungsbedingungen",
+    "refund": "Rückerstattungsrichtlinie",
+    "copyright": "Alle Rechte vorbehalten"
+  },
+  "meta": {
+    "defaultTitle": "TailorPic — Professionelle KI-Porträts",
+    "defaultDescription": "Verwandle dein Selfie mit KI in ein professionelles Porträt. In 24 Stunden fertig."
+  }
+}

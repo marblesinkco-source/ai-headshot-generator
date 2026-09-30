@@ -1,0 +1,48 @@
+{
+  "common": {
+    "getStarted": "Empezar",
+    "learnMore": "Saber más",
+    "viewAll": "Ver todo",
+    "readMore": "Leer más",
+    "backTo": "Volver a",
+    "home": "Inicio",
+    "pricing": "Precios",
+    "blog": "Blog",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "login": "Iniciar sesión",
+    "signup": "Registrarse",
+    "dashboard": "Panel"
+  },
+  "hero": {
+    "title": "Fotos de perfil profesionales con IA",
+    "subtitle": "Convierte tu selfie en una espectacular foto profesional con inteligencia artificial",
+    "cta": "Crea tu foto de perfil",
+    "trustedBy": "Profesionales que confían en TailorPic"
+  },
+  "pricing": {
+    "title": "Precios simples y transparentes",
+    "subtitle": "Fotos profesionales por una fracción del coste",
+    "express": "Express",
+    "expressDesc": "5 fotos de perfil profesionales",
+    "perHeadshot": "por foto",
+    "delivery": "Entrega en 24 horas",
+    "features": "Qué incluye",
+    "moneyBack": "Garantía de devolución del dinero",
+    "getStarted": "Empieza ahora"
+  },
+  "footer": {
+    "description": "Fotos de perfil profesionales con IA para todos",
+    "product": "Producto",
+    "company": "Empresa",
+    "legal": "Legal",
+    "privacy": "Política de privacidad",
+    "terms": "Términos del servicio",
+    "refund": "Política de reembolso",
+    "copyright": "Todos los derechos reservados"
+  },
+  "meta": {
+    "defaultTitle": "TailorPic — Fotos de perfil profesionales con IA",
+    "defaultDescription": "Convierte tu selfie en una foto de perfil profesional con IA. Lista en 24 horas."
+  }
+}

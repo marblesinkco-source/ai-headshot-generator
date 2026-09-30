@@ -1,0 +1,48 @@
+{
+  "common": {
+    "getStarted": "Commencer",
+    "learnMore": "En savoir plus",
+    "viewAll": "Tout voir",
+    "readMore": "Lire la suite",
+    "backTo": "Retour à",
+    "home": "Accueil",
+    "pricing": "Tarifs",
+    "blog": "Blog",
+    "about": "À propos",
+    "contact": "Contact",
+    "login": "Se connecter",
+    "signup": "S'inscrire",
+    "dashboard": "Tableau de bord"
+  },
+  "hero": {
+    "title": "Photos de profil professionnelles par IA",
+    "subtitle": "Transformez votre selfie en un portrait professionnel époustouflant grâce à l'IA",
+    "cta": "Créez votre portrait",
+    "trustedBy": "Les professionnels font confiance à TailorPic"
+  },
+  "pricing": {
+    "title": "Des tarifs simples et transparents",
+    "subtitle": "Des portraits professionnels à une fraction du prix",
+    "express": "Express",
+    "expressDesc": "5 portraits professionnels",
+    "perHeadshot": "par portrait",
+    "delivery": "Livraison en 24 heures",
+    "features": "Ce qui est inclus",
+    "moneyBack": "Garantie satisfait ou remboursé",
+    "getStarted": "Commencer maintenant"
+  },
+  "footer": {
+    "description": "Des portraits professionnels par IA pour tous",
+    "product": "Produit",
+    "company": "Entreprise",
+    "legal": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "refund": "Politique de remboursement",
+    "copyright": "Tous droits réservés"
+  },
+  "meta": {
+    "defaultTitle": "TailorPic — Portraits professionnels par IA",
+    "defaultDescription": "Transformez votre selfie en portrait professionnel grâce à l'IA. Prêt en 24 heures."
+  }
+}
