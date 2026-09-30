@@ -4,12 +4,12 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
-import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight, Heart, Monitor, GraduationCap, Camera, Clapperboard, SmilePlus, TrendingUp, Ruler } from 'lucide-react';
+import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight, Heart, Monitor, GraduationCap, Camera, Clapperboard, SmilePlus, TrendingUp, Ruler, Target, Brain, Dumbbell, Music, PawPrint } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'AI Photos by Industry | TailorPic',
   description:
-    'Professional AI-generated photos tailored for your industry. Real estate, legal, healthcare, nursing, engineering, education, consulting, accounting, photography, acting, dental, financial advisory, architecture and more.',
+    'Professional AI-generated photos tailored for your industry. Real estate, legal, healthcare, nursing, engineering, education, consulting, accounting, photography, acting, dental, financial advisory, architecture, coaching, therapy, fitness, music, veterinary and more.',
 };
 
 const industries = [
@@ -124,6 +124,46 @@ const industries = [
       'Professional headshots for architects and designers. Portfolio-ready imagery for firm websites and industry publications.',
     href: '/industries/architects',
     cta: 'For Architects',
+  },
+  {
+    icon: Target,
+    name: 'Coaches',
+    description:
+      'Professional headshots for life coaches and business consultants. Build credibility for your website, speaking engagements and social media.',
+    href: '/industries/coaches',
+    cta: 'For Coaches',
+  },
+  {
+    icon: Brain,
+    name: 'Therapists',
+    description:
+      'Warm, approachable headshots for therapists and counselors. Create trust before the first session with calming, professional portraits.',
+    href: '/industries/therapists',
+    cta: 'For Therapists',
+  },
+  {
+    icon: Dumbbell,
+    name: 'Fitness Trainers',
+    description:
+      'Dynamic headshots for personal trainers and fitness professionals. Energetic, confident portraits for gym profiles and social media.',
+    href: '/industries/fitness-trainers',
+    cta: 'For Trainers',
+  },
+  {
+    icon: Music,
+    name: 'Musicians',
+    description:
+      'Creative headshots for musicians and artists. Album-ready, press kit and social media portraits that capture your artistic identity.',
+    href: '/industries/musicians',
+    cta: 'For Musicians',
+  },
+  {
+    icon: PawPrint,
+    name: 'Veterinarians',
+    description:
+      'Trustworthy headshots for veterinarians and animal care professionals. Warm, approachable portraits for clinic websites and directories.',
+    href: '/industries/veterinarians',
+    cta: 'For Vets',
   },
 ];
 

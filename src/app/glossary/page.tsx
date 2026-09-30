@@ -213,6 +213,22 @@ const terms: Term[] = [
       'Increasing the pixel dimensions of an image while trying to preserve or rebuild detail. AI upscalers predict the missing detail, which usually gives cleaner results than simple enlargement.',
   },
   {
+    term: 'Depth of Field',
+    definition:
+      'The range of distance in a photo that appears acceptably sharp, controlled mainly by aperture, focal length and subject distance. A shallow depth of field keeps the face crisp while softening the background, which is a hallmark of professional portraits.',
+  },
+  {
+    term: 'Exposure',
+    definition:
+      'The amount of light that reaches the camera sensor when a photo is taken, set by aperture, shutter speed and ISO. Correct exposure keeps skin tones detailed, while overexposure blows out highlights and underexposure hides detail in shadows.',
+  },
+  {
+    term: 'Image Metadata',
+    definition:
+      'Information embedded in a photo file, most commonly EXIF data such as camera model, lens, exposure settings, date and sometimes GPS location. It is useful for organizing photos, but you may want to strip it before sharing images publicly for privacy.',
+    link: { href: '/blog/ai-headshot-privacy-security', label: 'Privacy and security' },
+  },
+  {
     term: 'White Balance',
     definition:
       'The setting that makes neutral colors, such as white or gray, appear truly neutral under different light sources. Incorrect white balance causes a yellow or blue color cast on skin.',

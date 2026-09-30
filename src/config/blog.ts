@@ -3775,6 +3775,200 @@ export const blogPosts: BlogPost[] = [
     tags: ['Remote Work', 'Teams', 'Coordination'],
     readingTime: '6 min read',
   },
+  {
+    slug: 'nurse-practitioner-headshot-guide',
+    title: 'Professional Headshots for Nurse Practitioners',
+    description:
+      'Learn how nurse practitioners can get a polished, approachable headshot for hospital bios, LinkedIn and patient portals, from attire to background to AI options.',
+    content: `
+      <p>Patients often look at a provider's photo before they ever book an appointment. For nurse practitioners, a good headshot signals competence and warmth at the same time, and it appears on clinic websites, hospital directories, patient portals and professional networks.</p>
+
+      <h2>What a Healthcare Headshot Needs to Convey</h2>
+      <p>The goal is trust. You want to look knowledgeable, calm and approachable. A natural, relaxed smile works better than a stiff pose, and direct eye contact with the camera creates a sense of connection.</p>
+
+      <h2>Choosing Attire</h2>
+      <ul>
+        <li>Wear a clean white coat or scrubs in a solid color if your employer expects clinical attire.</li>
+        <li>Choose a simple blouse, shirt or blazer if you prefer a more business look.</li>
+        <li>Avoid busy patterns, large jewelry and anything that distracts from your face.</li>
+        <li>Follow any style guide from your hospital or practice so your photo matches your colleagues.</li>
+      </ul>
+
+      <h2>Background and Lighting</h2>
+      <p>A soft neutral background such as light gray, blue or off-white keeps the focus on you. Soft, even lighting avoids harsh shadows and makes skin look natural. Our <a href="/blog/headshot-background-guide">headshot background guide</a> explains more options.</p>
+
+      <h2>Where You Will Use It</h2>
+      <ul>
+        <li>Clinic or hospital staff directories</li>
+        <li>LinkedIn and professional association profiles</li>
+        <li>Patient portals and telehealth platforms</li>
+        <li>Conference speaker pages and publications</li>
+      </ul>
+
+      <h2>Traditional Photographer or AI?</h2>
+      <p>Busy shift schedules make studio appointments hard to fit in. AI headshots let you upload a few selfies and receive polished portraits without leaving home. See how it compares in our article on <a href="/blog/ai-headshots-vs-traditional-photography">AI vs traditional photography</a>. If you are applying for training positions, also read the <a href="/blog/medical-residency-headshot-requirements">medical residency headshot requirements</a>.</p>
+
+      <h2>Get Yours Today</h2>
+      <p>Ready for a professional portrait that fits your schedule? Try the <a href="/editor">TailorPic editor</a> and get clinic-ready headshots in a short time.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-02-03',
+    tags: ['Healthcare', 'Nursing', 'Guide'],
+    readingTime: '6 min read',
+  },
+  {
+    slug: 'headshot-for-linkedin-banner',
+    title: 'How to Pair Your Headshot with a LinkedIn Banner',
+    description:
+      'Your LinkedIn headshot and banner work as a pair. Learn how to match colors, layout and message so your profile looks cohesive and memorable.',
+    content: `
+      <p>Your LinkedIn profile photo and banner sit right next to each other, and visitors see them together in a single glance. When they work as a pair, your profile looks intentional and professional. When they clash, it can feel unfinished.</p>
+
+      <h2>Start With Your Headshot</h2>
+      <p>Choose your headshot first, since it is the main element. A clear, well-lit portrait with a simple background works best. If you need one, see our guide to the <a href="/blog/best-headshot-for-linkedin-profile">best headshot for a LinkedIn profile</a>.</p>
+
+      <h2>Match Colors</h2>
+      <ul>
+        <li>Pick one or two colors from your clothing or background and use them in the banner.</li>
+        <li>Use a calm, solid or softly gradient banner if your headshot has a busy look.</li>
+        <li>Avoid neon or high-contrast colors that overpower your face.</li>
+      </ul>
+
+      <h2>Mind the Layout</h2>
+      <p>On desktop, your profile photo overlaps the lower left of the banner. Keep text and logos away from that area, and leave breathing room so nothing is hidden. On mobile the banner is cropped, so keep important elements near the center.</p>
+
+      <h2>Say Something With the Banner</h2>
+      <p>Use the banner to state what you do, such as your role, specialty or a short tagline. A clear message helps people understand your value before they read further.</p>
+
+      <h2>Recommended Sizes</h2>
+      <p>The banner is wide and short, commonly 1584 x 396 pixels, while the profile photo is displayed as a circle. Check our <a href="/blog/social-media-profile-photo-sizes">profile photo size guide</a> for current dimensions.</p>
+
+      <h2>Keep It Consistent Everywhere</h2>
+      <p>Use the same headshot across your email signature, website and other networks so people recognize you. With <a href="/editor">TailorPic</a> you can generate several matching portraits in one session and choose the one that fits your banner best.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-02-06',
+    tags: ['LinkedIn', 'Branding', 'Tips'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'freelancer-headshot-branding',
+    title: 'Building Your Freelancer Brand with the Right Headshot',
+    description:
+      'Clients hire people they trust. Discover how a strong headshot supports your freelance brand on your website, proposals and marketplace profiles.',
+    content: `
+      <p>As a freelancer, you are the brand. Potential clients rarely meet you before they hire you, so your photo is often the first impression of your work. A good headshot makes you look reliable and real, which matters when someone is deciding whether to trust you with a project.</p>
+
+      <h2>Match Your Headshot to Your Niche</h2>
+      <p>A designer might choose a creative, relaxed portrait, while a consultant or accountant may prefer a more formal look. Think about who your clients are and what they expect. Your photo should feel like it belongs to the work you do.</p>
+
+      <h2>Where Your Headshot Appears</h2>
+      <ul>
+        <li>Portfolio or personal website</li>
+        <li>Upwork, Fiverr and other marketplace profiles</li>
+        <li>LinkedIn and social media</li>
+        <li>Proposals, invoices and email signatures</li>
+        <li>Podcast and guest article author bios</li>
+      </ul>
+
+      <h2>Keep It Consistent</h2>
+      <p>Use the same photo everywhere so clients recognize you across platforms. Consistent colors, fonts and imagery build a stronger identity over time. Read more in our <a href="/blog/startup-founder-personal-branding-ai-photos">personal branding guide</a>.</p>
+
+      <h2>Practical Tips</h2>
+      <ul>
+        <li>Choose a clean background that does not distract.</li>
+        <li>Smile naturally and look at the camera.</li>
+        <li>Wear what you would wear to meet a client.</li>
+        <li>Update your photo every year or two so it still looks like you.</li>
+      </ul>
+
+      <h2>A Budget-Friendly Approach</h2>
+      <p>Freelancers often work with tight budgets. Hiring a photographer can be costly, while AI headshots offer a lower-cost path to professional results. See the comparison in <a href="/blog/remote-worker-headshot-guide">our remote worker guide</a>, then try the <a href="/editor">TailorPic editor</a> to create your own portraits.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-02-10',
+    tags: ['Freelance', 'Branding', 'Guide'],
+    readingTime: '6 min read',
+  },
+  {
+    slug: 'teacher-professor-headshot-guide',
+    title: 'Professional Headshots for Teachers & Professors',
+    description:
+      'A good headshot helps educators look approachable and credible on faculty pages, course sites and academic profiles. Here are simple tips to get it right.',
+    content: `
+      <p>Teachers and professors are often introduced to students, parents and colleagues through a photo. It appears on school websites, faculty directories, course platforms and academic profiles. A friendly, professional image helps people feel comfortable before they ever step into your classroom.</p>
+
+      <h2>Aim for Approachable and Credible</h2>
+      <p>Educators need to look both knowledgeable and welcoming. A warm smile, relaxed shoulders and direct eye contact communicate this well. Avoid overly stiff poses or heavy filters.</p>
+
+      <h2>What to Wear</h2>
+      <ul>
+        <li>Smart casual or business casual suits most school and university settings.</li>
+        <li>Solid colors work better than busy patterns on camera.</li>
+        <li>Follow any guidance from your institution.</li>
+        <li>Choose something you feel confident in.</li>
+      </ul>
+
+      <h2>Choose the Right Background</h2>
+      <p>A plain neutral backdrop is the safest choice and looks good everywhere. Some educators enjoy a softly blurred library or campus scene, which adds context without distraction. See our <a href="/blog/headshot-background-guide">background guide</a> for ideas.</p>
+
+      <h2>Where You Will Use It</h2>
+      <ul>
+        <li>Faculty and staff pages</li>
+        <li>Learning management systems and class websites</li>
+        <li>Google Scholar, ResearchGate and LinkedIn</li>
+        <li>Conference programs and book jacket bios</li>
+      </ul>
+
+      <h2>A Simple Way to Get One</h2>
+      <p>Schools rarely provide a photographer on demand, and many academics are pressed for time. AI headshots let you upload a few selfies and receive a polished result. Our <a href="/blog/headshot-dos-and-donts">headshot dos and don'ts</a> will help you take good source photos, and the <a href="/editor">TailorPic editor</a> handles the rest.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-02-14',
+    tags: ['Education', 'Academic', 'Guide'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'headshot-trends-2026',
+    title: 'Headshot Trends to Watch in 2026',
+    description:
+      'From natural, less-retouched looks to AI-generated portraits and brand-matched backgrounds, here are the headshot trends shaping professional photos in 2026.',
+    content: `
+      <p>Headshots keep evolving as workplaces change and technology improves. Here are the trends we expect to shape professional photos in 2026, and what they mean for you.</p>
+
+      <h2>1. Natural Over Perfect</h2>
+      <p>People are moving away from heavily airbrushed images. Viewers respond to portraits that look like a real person on a good day, with natural skin texture and expressions. Light retouching is in, and over-editing is out. Read our take on <a href="/blog/headshot-retouching-ethics">retouching ethics</a>.</p>
+
+      <h2>2. AI-Generated Portraits Go Mainstream</h2>
+      <p>AI headshots are now a common choice for individuals and companies. They are faster and more affordable than a studio session, and quality keeps improving. Learn the basics in <a href="/blog/how-ai-headshots-work">how AI headshots work</a>.</p>
+
+      <h2>3. Brand-Matched Backgrounds and Colors</h2>
+      <p>Teams increasingly want portraits that reflect company colors and style. Consistent backgrounds and lighting make a team page look cohesive. See our <a href="/blog/team-headshot-consistency-guide">team consistency guide</a>.</p>
+
+      <h2>4. Relaxed, Approachable Expressions</h2>
+      <p>Formal, unsmiling poses are giving way to warm, confident expressions. Candid-feeling smiles and slightly angled poses feel more human.</p>
+
+      <h2>5. Remote-First Workflows</h2>
+      <p>With distributed teams, more people need photos without visiting a studio. Virtual and selfie-based workflows let everyone participate from anywhere.</p>
+
+      <h2>6. Privacy and Transparency</h2>
+      <p>Users care about how their photos are stored and used. Clear policies and deletion options are becoming a deciding factor. Our <a href="/blog/ai-headshot-privacy-security">privacy and security guide</a> explains what to look for.</p>
+
+      <h2>7. Multiple Looks for Multiple Uses</h2>
+      <ul>
+        <li>A formal portrait for LinkedIn and résumés</li>
+        <li>A relaxed version for websites and speaking</li>
+        <li>A cropped, square version for social media</li>
+      </ul>
+
+      <h2>What to Do Next</h2>
+      <p>Refresh your photo if it is more than two years old, and aim for a natural, consistent look. You can create a full set of modern portraits with the <a href="/editor">TailorPic editor</a>.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-02-18',
+    tags: ['Trends', 'Photography', 'AI'],
+    readingTime: '7 min read',
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
