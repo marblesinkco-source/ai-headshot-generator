@@ -63,16 +63,3 @@ export interface HeadshotResult {
   createdAt: Date;
 }
 
-// ---------------------------------------------------------------------------
-// Provider interfaces are defined in their respective core modules:
-//   - AI:       @/core/ai/types
-//   - Storage:  @/core/storage/types
-//   - Payments: @/core/payments/types
-//   - Email:    @/core/email/types
-// ---------------------------------------------------------------------------
-
-// Re-export for convenience
-export type { AIProvider } from '@/core/ai/types';
-export type { StorageProvider } from '@/core/storage/types';
-export type { PaymentProvider } from '@/core/payments/types';
-export type { EmailProvider } from '@/core/email/types';

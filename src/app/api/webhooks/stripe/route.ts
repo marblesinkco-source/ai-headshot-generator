@@ -2,13 +2,10 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { createAdminClient } from '@/lib/supabase/server';
 import { Resend } from 'resend';
+import { stripe } from '@/lib/stripe';
 import { PACKAGES, type PackageId } from '@/config/packages';
 import { getCategoryById, getPackageById, type CategoryId } from '@/config/categories';
 import { siteConfig } from '@/config/site';
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2024-12-18.acacia' as Stripe.LatestApiVersion,
-});
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
@@ -130,6 +127,27 @@ export async function POST(request: NextRequest) {
 
           if (updateError) {
             console.error('Failed to update order status:', updateError);
+          }
+        }
+
+        break;
+      }
+
+      case 'checkout.session.expired': {
+        // Mark abandoned checkout sessions so pending orders don't stay forever
+        const expiredSession = event.data.object as Stripe.Checkout.Session;
+        const expiredOrderId = expiredSession.metadata?.orderId;
+
+        if (expiredOrderId) {
+          // Only mark as expired if still pending — never downgrade a paid order
+          const { error: updateError } = await supabase
+            .from('orders')
+            .update({ status: 'failed' })
+            .eq('id', expiredOrderId)
+            .eq('status', 'pending');
+
+          if (updateError) {
+            console.error('Failed to expire abandoned order:', updateError);
           }
         }
 
