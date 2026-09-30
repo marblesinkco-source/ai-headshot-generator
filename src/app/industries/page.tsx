@@ -4,7 +4,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
-import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight, Heart, Monitor, GraduationCap, Camera, Clapperboard, SmilePlus, TrendingUp, Ruler, Target, Brain, Dumbbell, Music, PawPrint, Users, Handshake, Mic, Palette, Newspaper, Shield, Plane, Calendar, BookOpen, Leaf, Globe, BarChart3 } from 'lucide-react';
+import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight, Heart, Monitor, GraduationCap, Camera, Clapperboard, SmilePlus, TrendingUp, Ruler, Target, Brain, Dumbbell, Music, PawPrint, Users, Handshake, Mic, Palette, Newspaper, Shield, Plane, Calendar, BookOpen, Leaf, Globe, BarChart3, Award, Briefcase, FileCheck, UserCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'AI Photos by Industry | TailorPic',
@@ -132,6 +132,46 @@ const industries = [
       'Professional headshots for life coaches and business consultants. Build credibility for your website, speaking engagements and social media.',
     href: '/industries/coaches',
     cta: 'For Coaches',
+  },
+  {
+    icon: BookOpen,
+    name: 'Professors',
+    description:
+      'Professional headshots for professors and academics. Polished portraits for faculty pages, conference bios and research profiles.',
+    href: '/industries/professors',
+    cta: 'For Professors',
+  },
+  {
+    icon: UserCheck,
+    name: 'Recruiters',
+    description:
+      'Approachable headshots for recruiters and talent professionals. Build candidate trust on LinkedIn and in every outreach message.',
+    href: '/industries/recruiters',
+    cta: 'For Recruiters',
+  },
+  {
+    icon: Award,
+    name: 'Public Speakers',
+    description:
+      'Media-kit-ready headshots for keynote speakers and trainers. Keep a polished portrait ready for event programs and speaker bureaus.',
+    href: '/industries/public-speakers',
+    cta: 'For Speakers',
+  },
+  {
+    icon: Briefcase,
+    name: 'Executives',
+    description:
+      'Authoritative headshots for C-suite executives. Leadership-page-ready portraits for investor materials, press and LinkedIn.',
+    href: '/industries/executives',
+    cta: 'For Executives',
+  },
+  {
+    icon: FileCheck,
+    name: 'Notaries',
+    description:
+      'Trustworthy headshots for notaries and legal professionals. Build client confidence on websites, directories and business cards.',
+    href: '/industries/notaries',
+    cta: 'For Notaries',
   },
   {
     icon: Brain,

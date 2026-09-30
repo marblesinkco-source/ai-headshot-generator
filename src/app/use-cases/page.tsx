@@ -9,6 +9,7 @@ import {
   PartyPopper, Home as HomeIcon, Sparkles, Building2, ShoppingBag, ArrowRight,
   Presentation, FileText, Monitor, Target,
   Mic, CreditCard, Mail, BookOpen, TrendingUp, Shirt,
+  Globe,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -199,6 +200,41 @@ const useCases = [
     description: "Credible founder and team headshots for fundraising decks.",
     href: '/use-cases/investor-pitch',
     tag: 'Business',
+  },
+  {
+    icon: Globe,
+    title: "Portfolio Websites",
+    description: "Professional portraits for your About page and personal site.",
+    href: '/use-cases/portfolio-website',
+    tag: 'Creators',
+  },
+  {
+    icon: GraduationCap,
+    title: "Alumni Directories",
+    description: "Recognizable profile photos for alumni networks and reunions.",
+    href: '/use-cases/alumni-directory',
+    tag: 'Community',
+  },
+  {
+    icon: Presentation,
+    title: "Speaking Engagements",
+    description: "Speaker-ready portraits for event pages, programs, and promo.",
+    href: '/use-cases/speaking-engagement',
+    tag: 'Professional',
+  },
+  {
+    icon: Building2,
+    title: "Company Intranets",
+    description: "Consistent employee portraits for intranets and directories.",
+    href: '/use-cases/company-intranet',
+    tag: 'Teams',
+  },
+  {
+    icon: Users,
+    title: "Membership Directories",
+    description: "Friendly, credible photos for associations and clubs.",
+    href: '/use-cases/membership-directory',
+    tag: 'Community',
   },
 ];
 

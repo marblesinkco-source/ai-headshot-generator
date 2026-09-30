@@ -6552,6 +6552,431 @@ export const blogPosts: BlogPost[] = [
     tags: ['Comparison', 'Cost', 'Guide'],
     readingTime: '8 min read',
   },
+  {
+    slug: 'ai-headshot-for-dentists',
+    title: 'AI Headshots for Dentists: Patient-Friendly Portraits',
+    description:
+      'How dentists and dental teams can use AI headshots to look approachable, ease patient anxiety and strengthen a practice website without a photo shoot.',
+    content: `
+      <p>Few professionals are judged on a first impression as quickly as dentists. Before a new patient ever sits in your chair, they have usually looked at your website, your Google listing and perhaps your social media. Many people feel some anxiety about dental visits, so a warm, professional photo does real work: it tells them who they will meet and whether that person seems kind and capable.</p>
+      <p>The challenge is practical. Practices are busy, schedules are tight, and organising a photographer for every dentist, hygienist and front-desk team member is hard. AI headshots offer a simpler route. This guide explains why portraits matter in dentistry and how to get the best results.</p>
+
+      <h2>Why Headshots Matter So Much in Dentistry</h2>
+      <p>Dentistry is a trust-based service. Patients are choosing someone who will work inside their mouth, often on a sensitive topic, so they look for signs of care and professionalism. A clear, friendly portrait helps in several ways:</p>
+      <ul>
+        <li><strong>It reduces uncertainty.</strong> Seeing the face of the person who will treat them makes the first visit feel less unknown.</li>
+        <li><strong>It signals professionalism.</strong> A polished image suggests a practice that pays attention to detail.</li>
+        <li><strong>It humanises the team.</strong> Patients often form loyalty to the whole team, not just the dentist.</li>
+        <li><strong>It supports local search.</strong> Profiles with real photos tend to feel more credible to people comparing nearby practices.</li>
+      </ul>
+
+      <h2>Where Dental Professionals Use Headshots</h2>
+      <p>A good portrait has more uses than most practices realise. Consider where your image appears:</p>
+      <ul>
+        <li>The About or Meet the Team page of your practice website.</li>
+        <li>Google Business Profile and other local directories.</li>
+        <li>Professional directories run by dental associations.</li>
+        <li>Social media, including Facebook and Instagram pages for the practice.</li>
+        <li>Patient emails, newsletters and appointment reminders.</li>
+        <li>Printed materials such as brochures, welcome packs and waiting-room displays.</li>
+        <li>LinkedIn and referral networks used by specialists and general dentists.</li>
+        <li>Conference and continuing education speaker listings.</li>
+      </ul>
+
+      <h2>The Case for AI Headshots in a Busy Practice</h2>
+      <p>A traditional photo session means closing rooms, coordinating staff and paying for a photographer, often for a single afternoon that becomes outdated when someone joins or leaves. AI headshots change the maths. Each team member uploads a handful of selfies and receives a set of polished portraits, usually within a couple of hours. No one needs to leave patient care for long, and new hires can be added at any time in the same style.</p>
+      <p>For a multi-dentist practice, consistency is especially valuable. When every page shows matching backgrounds and lighting, the team looks like a cohesive group rather than a collection of photos taken years apart. You can see how this works for different professions on our <a href="/industries/dentists">dentists</a> page.</p>
+
+      <h2>What Makes a Dental Headshot Work</h2>
+      <h3>A Genuine, Gentle Smile</h3>
+      <p>Smiling is natural in dentistry, and patients expect it. The best portraits show a relaxed, real smile rather than a forced grin. Aim for a soft expression that reaches the eyes. If you are comfortable showing teeth, keep the smile natural and avoid over-stretching.</p>
+      <h3>Clean, Bright Backgrounds</h3>
+      <p>Soft neutral or light backgrounds suit a clinical yet welcoming image. Pale greys, warm whites and gentle blues are common choices. Avoid busy backgrounds that compete with the face. Matching the background to your practice colours can tie the portrait into your brand.</p>
+      <h3>Appropriate Attire</h3>
+      <p>Decide whether your headshot shows scrubs, a white coat or smart-casual clothing. A white coat signals clinical authority, while scrubs feel approachable and practical. Whatever you choose, keep it consistent across the team and make sure it matches what patients will see in person.</p>
+      <h3>Natural Skin and Features</h3>
+      <p>Patients will meet you in real life, so portraits should look like you. Choose natural results over heavy smoothing. A realistic image builds trust, while an over-edited one can feel misleading.</p>
+
+      <h2>How to Get the Best Results From Your Selfies</h2>
+      <ol>
+        <li><strong>Use soft, even light.</strong> Face a window during the day and avoid harsh overhead lighting.</li>
+        <li><strong>Take a varied set.</strong> Include different angles and expressions, with some smiling and some neutral.</li>
+        <li><strong>Keep the background simple.</strong> A plain wall works well.</li>
+        <li><strong>Hold the camera at eye level.</strong> Looking up or down can distort proportions.</li>
+        <li><strong>Avoid glasses glare and heavy filters.</strong> Clear, unfiltered photos train the result more accurately.</li>
+      </ol>
+      <p>For a full walkthrough, read our guide on <a href="/blog/how-to-prepare-photos-for-ai-headshot">how to prepare your photos for the best AI headshot results</a>.</p>
+
+      <h2>Building a Consistent Team Page</h2>
+      <p>A strong Meet the Team page usually has a few things in common: the same crop, the same background style and a similar expression across every person. To achieve this with AI headshots, agree on a style before anyone uploads, then have each person choose that option. Include everyone from dentists and hygienists to assistants and reception staff, since patients interact with all of them.</p>
+      <p>Add a short line under each portrait, such as a role, years of experience or a friendly detail about the person. Pairing a photo with a short bio makes the page feel personal and memorable.</p>
+
+      <h2>Things to Keep in Mind</h2>
+      <ul>
+        <li><strong>Be honest.</strong> The portrait should look like the person patients will meet. Avoid changes that misrepresent age or appearance.</li>
+        <li><strong>Check your regulations.</strong> Professional bodies may have guidelines on advertising and use of images, so review the rules that apply to you.</li>
+        <li><strong>Do not use before-and-after claims.</strong> A headshot is a portrait, not a clinical result.</li>
+        <li><strong>Refresh periodically.</strong> Update your photo every couple of years, or sooner if your look changes.</li>
+      </ul>
+
+      <h2>When a Photographer Still Makes Sense</h2>
+      <p>AI headshots cover everyday needs well, but some situations call for a photographer: images of the clinic itself, treatment-room photography or candid shots of the team with patients. A common approach is to use AI headshots for individual portraits and a photographer for occasional practice-wide imagery.</p>
+
+      <h2>Getting Started</h2>
+      <p>Choose a consistent style, collect good selfies from each team member and generate the set. Once you have your images, update your website, Google profile and social pages together so your online presence feels unified. You can explore <a href="/styles">available styles</a>, compare plans on the <a href="/pricing">pricing</a> page and browse more <a href="/industries">industry examples</a> to see what fits your practice.</p>
+      <p>A friendly, professional portrait will not replace excellent care, but it can make the decision to book an appointment easier for a nervous patient. That alone makes it a worthwhile investment.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['Dentists', 'Healthcare', 'Industry'],
+    readingTime: '7 min read',
+  },
+  {
+    slug: 'ai-headshot-for-veterinarians',
+    title: 'AI Headshots for Veterinarians: Clinic Websites & Trust',
+    description:
+      'How veterinarians and clinic teams can use AI headshots to build pet-owner trust, update websites and present a consistent, caring image.',
+    content: `
+      <p>Pet owners treat their animals as family. When something goes wrong, or when they simply need a trusted vet for routine care, they search online and look for signs of compassion and competence. A clear, warm portrait of the veterinarian and the team is one of the fastest ways to show both.</p>
+      <p>Veterinary clinics are busy and often small, so a full photography day is not always realistic. AI headshots offer a quick way to get professional portraits for everyone on the team. This guide covers why photos matter for vets and how to get natural results.</p>
+
+      <h2>Why Trust Is Central to Veterinary Practice</h2>
+      <p>Choosing a vet is an emotional decision. Owners are handing over a pet who cannot speak for themselves, and they want to know that the person treating their animal is caring and skilled. Photos help because they:</p>
+      <ul>
+        <li><strong>Put a face to the name.</strong> Owners feel more comfortable when they recognise the vet at the first visit.</li>
+        <li><strong>Show warmth.</strong> A genuine expression communicates kindness before any conversation.</li>
+        <li><strong>Demonstrate professionalism.</strong> Consistent, high-quality images suggest an organised clinic.</li>
+        <li><strong>Help new residents.</strong> People moving to a new area often pick a vet based entirely on an online profile.</li>
+      </ul>
+
+      <h2>Where Veterinary Headshots Are Used</h2>
+      <ul>
+        <li>The Meet Our Vets page of your clinic website.</li>
+        <li>Google Business Profile and local directory listings.</li>
+        <li>Social media pages, where pet owners often engage most.</li>
+        <li>Newsletters, appointment reminders and client emails.</li>
+        <li>Printed materials, including brochures and waiting-room boards.</li>
+        <li>Professional association directories and referral networks.</li>
+        <li>Conference, webinar and continuing education profiles.</li>
+        <li>Job advertisements, where team photos help attract new staff.</li>
+      </ul>
+
+      <h2>Why AI Headshots Suit Vet Clinics</h2>
+      <p>Running a clinic means emergencies, surgeries and unpredictable days. Scheduling the whole team for a photographer can be nearly impossible, and staff turnover means portraits quickly go out of date. With AI headshots, each person uploads a few selfies at a convenient time and receives a set of portraits without leaving the clinic or disrupting patient care.</p>
+      <p>The approach also works for multi-site groups, where vets and nurses in different locations need matching images. Everyone can use the same style from wherever they are. Learn more on our <a href="/industries/veterinarians">veterinarians</a> page.</p>
+
+      <h2>What Makes a Good Veterinary Portrait</h2>
+      <h3>Warmth First</h3>
+      <p>Pet owners want to see empathy. A relaxed, natural smile and a soft gaze often work better than a stern, formal expression. You can still look professional while appearing approachable.</p>
+      <h3>Consider Including a Pet</h3>
+      <p>Some vets like to be photographed with an animal. This can be charming, but it is tricky for AI headshots, which work from your face. A simple approach is to use the AI portrait for your profile and add candid photos with animals separately, taken on a phone at the clinic.</p>
+      <h3>Appropriate Clothing</h3>
+      <p>Scrubs or a clinic-branded top signal where you work and feel approachable. A white coat suggests clinical authority. Choose what fits your clinic and keep it consistent across the team so the page feels unified.</p>
+      <h3>Neutral, Friendly Backgrounds</h3>
+      <p>Soft greens, warm neutrals and light blues often suit veterinary branding. Keep backgrounds simple so attention stays on the face. Matching the tone to your clinic logo is a nice touch.</p>
+
+      <h2>Step-by-Step: Getting Your Headshot</h2>
+      <ol>
+        <li><strong>Pick a consistent style</strong> for the whole team before anyone uploads.</li>
+        <li><strong>Take clear selfies</strong> in soft daylight, from varied angles and with different expressions.</li>
+        <li><strong>Upload the set</strong> and choose your preferred background and look.</li>
+        <li><strong>Review the results</strong> and pick the images that look most like you.</li>
+        <li><strong>Update every platform</strong> at the same time for a cohesive online presence.</li>
+      </ol>
+      <p>Our guide on <a href="/blog/how-to-prepare-photos-for-ai-headshot">preparing photos for AI headshots</a> goes into more detail about lighting and angles.</p>
+
+      <h2>Creating a Team Page Clients Remember</h2>
+      <p>Many clinics list only the vets, but nurses, technicians and reception staff are the people owners see most often. Including everyone makes the clinic feel like a close team. Add each person's role and a short, friendly line, such as a favourite breed or the pets they have at home. These small details help owners feel familiar with you before they arrive.</p>
+
+      <h2>Honesty and Good Practice</h2>
+      <ul>
+        <li><strong>Keep it realistic.</strong> Your portrait should look like you on a normal day.</li>
+        <li><strong>Follow professional guidelines.</strong> Check any advertising rules from your veterinary regulator or association.</li>
+        <li><strong>Avoid implying qualifications you do not hold.</strong> Attire and captions should match your actual role.</li>
+        <li><strong>Refresh regularly.</strong> Replace photos when your appearance changes or when staff join and leave.</li>
+      </ul>
+
+      <h2>Getting Value From Your New Photos</h2>
+      <p>Once you have your portraits, use them widely. Put them on your website, social profiles, email signatures and printed materials. Mention new team members on social media with their photo, which tends to get warm engagement from local pet owners. Consistent use across platforms reinforces familiarity.</p>
+
+      <h2>When to Hire a Photographer</h2>
+      <p>For candid shots of the clinic, treatment areas or events, a photographer adds genuine value. A sensible split is to use AI headshots for individual portraits and a photographer for occasional atmosphere imagery.</p>
+
+      <h2>Final Thoughts</h2>
+      <p>A kind, professional portrait helps pet owners feel at ease before they walk through the door. It costs little, takes little time and works every day across your website and profiles. To explore what is available, browse our <a href="/styles">styles</a>, see <a href="/pricing">pricing</a> and read about other professions on our <a href="/industries">industries</a> page.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['Veterinarians', 'Industry', 'Healthcare'],
+    readingTime: '7 min read',
+  },
+  {
+    slug: 'how-to-prepare-photos-for-ai-headshot',
+    title: 'How to Prepare Your Photos for the Best AI Headshot Results',
+    description:
+      'A practical guide to taking selfies that produce great AI headshots, covering lighting, angles, expressions, clothing, backgrounds and common mistakes.',
+    content: `
+      <p>The quality of an AI headshot depends heavily on the photos you provide. The technology is powerful, but it learns your appearance from the images you upload, so clear and varied input gives much better output. The good news is that you do not need a professional camera. A modern phone and a few minutes of preparation are enough.</p>
+      <p>This guide walks through exactly how to prepare, what to avoid and how to check your photos before uploading.</p>
+
+      <h2>Why Your Input Photos Matter</h2>
+      <p>AI headshot tools study your selfies to understand your face: its shape, proportions and features. If the photos are blurry, dark or all identical, the system has less reliable information and the results can look generic or slightly off. If they are sharp, well lit and varied, the AI captures your likeness far more accurately. Think of it as giving the system a good introduction to you.</p>
+
+      <h2>How Many Photos Should You Upload?</h2>
+      <p>A set of around six to ten good photos is typically enough. Quality matters more than quantity. Ten clear, varied selfies will outperform thirty near-duplicates. Follow the guidance shown in the upload step, since requirements can differ slightly by plan.</p>
+
+      <h2>Lighting: The Most Important Factor</h2>
+      <h3>Use Natural Window Light</h3>
+      <p>Stand facing a window during the day so the light falls softly on your face. Indirect daylight is ideal, for example on a bright overcast day or near a window without harsh sun.</p>
+      <h3>Avoid Harsh Shadows</h3>
+      <p>Direct midday sun creates strong shadows and squinting. Overhead lights can create dark eye sockets. If you only have indoor lighting, place a lamp in front of you rather than above.</p>
+      <h3>Keep Light Consistent</h3>
+      <p>Even lighting across the face helps the AI understand your features. Avoid lighting that leaves half your face in shadow unless you want that effect.</p>
+
+      <h2>Camera Setup and Angles</h2>
+      <ul>
+        <li><strong>Hold the camera at eye level.</strong> Shooting from below or above distorts your face.</li>
+        <li><strong>Use the rear camera if possible.</strong> It usually has higher quality than the front camera, and a timer or a friend can help.</li>
+        <li><strong>Keep a moderate distance.</strong> Very close selfies stretch features. Arm's length or a little further is better.</li>
+        <li><strong>Include variety.</strong> Take front-facing shots plus slight turns to each side.</li>
+        <li><strong>Keep the camera steady.</strong> Blurry photos reduce accuracy.</li>
+      </ul>
+
+      <h2>Expressions to Capture</h2>
+      <p>Variety helps the AI reproduce natural looks. Include several of each:</p>
+      <ul>
+        <li>A relaxed, closed-mouth smile.</li>
+        <li>A natural smile showing teeth, if that is your normal smile.</li>
+        <li>A calm, neutral expression.</li>
+        <li>A confident, slightly serious look.</li>
+      </ul>
+      <p>Avoid exaggerated faces, sunglasses or hands covering your face. You want the AI to learn your everyday appearance.</p>
+
+      <h2>What to Wear</h2>
+      <p>Wear what you would put on for an important meeting. Solid colours usually work best, and clothing with a clear neckline gives the AI a cleaner reference. Avoid busy patterns, large logos and very bright neon shades, which can distract. If your final headshot will show a suit, you can often choose the outfit in the style step, so the selfie outfit does not need to match exactly. Wearing something similar to your desired result can still help.</p>
+
+      <h2>Background and Setting</h2>
+      <p>A plain wall or simple background keeps the focus on you. Avoid cluttered rooms, other people in frame and strong patterns. Because the AI replaces the backdrop in most styles, a clean background mainly helps it identify your outline accurately.</p>
+
+      <h2>Glasses, Hair and Accessories</h2>
+      <ul>
+        <li><strong>Glasses:</strong> If you usually wear them, include some photos with and some without, and avoid glare on the lenses.</li>
+        <li><strong>Hair:</strong> Wear your hair as you typically do. Major changes between photos can confuse the result.</li>
+        <li><strong>Hats and headwear:</strong> Avoid anything that hides your hairline or forehead unless you always wear it.</li>
+        <li><strong>Jewellery:</strong> Small pieces are fine. Large or reflective items can cause artefacts.</li>
+        <li><strong>Makeup and grooming:</strong> Present yourself as you would like to appear, since the AI reflects what it sees.</li>
+      </ul>
+
+      <h2>Common Mistakes to Avoid</h2>
+      <ol>
+        <li><strong>Uploading near-identical photos.</strong> Repeats add little information.</li>
+        <li><strong>Using heavy filters.</strong> Beauty filters change your real features and lead to an unnatural likeness.</li>
+        <li><strong>Including group photos.</strong> Other faces can confuse the system.</li>
+        <li><strong>Choosing very old images.</strong> Use recent photos so the result matches how you look today.</li>
+        <li><strong>Low resolution or heavy compression.</strong> Screenshots and images from messaging apps often lose detail.</li>
+        <li><strong>Extreme angles or distance.</strong> Very wide or very tight shots distort proportions.</li>
+      </ol>
+
+      <h2>A Quick Pre-Upload Checklist</h2>
+      <ul>
+        <li>Are all photos sharp and in focus?</li>
+        <li>Is your face evenly lit with no harsh shadows?</li>
+        <li>Do you have a variety of angles and expressions?</li>
+        <li>Are you the only person in every picture?</li>
+        <li>Are the photos recent and unfiltered?</li>
+        <li>Do they show how you want to be represented?</li>
+      </ul>
+
+      <h2>Tips for Specific Situations</h2>
+      <p><strong>If you are camera-shy:</strong> Take photos with a friend or use a timer, and relax between shots. Natural expressions come when you are comfortable.</p>
+      <p><strong>If you have limited light:</strong> Move to a brighter room, face a window or use a lamp in front of you.</p>
+      <p><strong>If you wear glasses daily:</strong> Tilt your head slightly to reduce reflections and include a few photos without them.</p>
+      <p><strong>For teams:</strong> Share this checklist with everyone so the results are consistent. Our <a href="/team-headshots">team headshots</a> page explains how to coordinate groups.</p>
+
+      <h2>After You Upload</h2>
+      <p>Once your results arrive, review them at full size and pick the ones that look most like you. If some do not feel right, it often traces back to the input set, for example too few angles or a photo with heavy filtering. You can retake selfies and try again. Choose the style that suits where you will use the image, and keep a couple of alternatives for different platforms. Browse our <a href="/styles">styles</a> for ideas.</p>
+
+      <h2>Final Word</h2>
+      <p>Spending ten minutes on preparation can noticeably improve your AI headshot. Use soft light, keep the camera at eye level, vary your expressions and avoid filters. With good input, the result looks more like you and needs less retouching. When you are ready, check the <a href="/pricing">pricing</a> page and get started.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['Tips', 'Guide', 'Preparation'],
+    readingTime: '8 min read',
+  },
+  {
+    slug: 'ai-headshot-for-financial-advisors',
+    title: 'AI Headshots for Financial Advisors: Build Client Trust',
+    description:
+      'Why financial advisors need professional headshots, how to choose a trustworthy look, and how AI headshots help advisors and firms present a consistent image.',
+    content: `
+      <p>Clients hand financial advisors their savings, retirement plans and long-term goals. That is an enormous act of trust, and it often begins with a simple impression formed online. Before a prospect books a meeting, they will likely check your website and LinkedIn profile. A professional headshot is one of the first things they notice.</p>
+      <p>This guide explains why portraits matter in financial services, what a trustworthy image looks like and how AI headshots help advisors and firms get polished results quickly.</p>
+
+      <h2>Why Appearance Matters in Financial Advice</h2>
+      <p>Financial advice is an intangible service. Clients cannot inspect a product before buying, so they look for signals of reliability. A headshot is one of those signals. A professional, current photo suggests attention to detail, stability and respect for the client relationship. An outdated, casual or low-quality image can quietly raise doubts.</p>
+      <p>A strong portrait helps to:</p>
+      <ul>
+        <li><strong>Establish credibility</strong> in the first few seconds of a website visit.</li>
+        <li><strong>Humanise a complex field</strong> by giving clients a real person to connect with.</li>
+        <li><strong>Support referrals</strong> when a client shares your profile with family or friends.</li>
+        <li><strong>Improve recognition</strong> so clients know who they will meet.</li>
+      </ul>
+
+      <h2>Where Advisors Use Headshots</h2>
+      <ul>
+        <li>The firm website, including team and About pages.</li>
+        <li>LinkedIn, where many prospects and professional referrers search.</li>
+        <li>Email signatures and newsletters.</li>
+        <li>Client presentations, proposals and pitch decks.</li>
+        <li>Regulatory and industry directories.</li>
+        <li>Webinars, seminars and speaker listings.</li>
+        <li>Printed brochures and business cards.</li>
+        <li>Press mentions and expert commentary.</li>
+      </ul>
+
+      <h2>What a Trustworthy Advisor Portrait Looks Like</h2>
+      <h3>Polished but Approachable</h3>
+      <p>Clients want an advisor who is competent and also easy to talk to. Aim for a calm, friendly expression rather than a stern or overly casual one. A slight, natural smile often strikes the right balance.</p>
+      <h3>Conservative, Quality Clothing</h3>
+      <p>Finance tends to favour traditional dress. A well-fitted suit or blazer in navy, charcoal or grey works well, often with a crisp shirt or blouse. The exact formality depends on your market, so match what your typical clients expect.</p>
+      <h3>Clean, Neutral Backgrounds</h3>
+      <p>Soft greys, deep blues or a lightly blurred office setting all read as professional. Avoid distracting or trendy backdrops. A neutral background also makes it easy to match the portrait to firm branding.</p>
+      <h3>Natural Appearance</h3>
+      <p>Clients will meet you in person, so the photo should look like you. A natural result is more trustworthy than a heavily retouched one. This matters particularly in a field where honesty is essential.</p>
+
+      <h2>Advantages of AI Headshots for Advisors</h2>
+      <p>Independent advisors and small practices rarely have time or budget for regular photography, while larger firms face the challenge of coordinating many people across offices. AI headshots address both cases:</p>
+      <ul>
+        <li><strong>Speed.</strong> Upload selfies and receive portraits without scheduling a session.</li>
+        <li><strong>Consistency.</strong> Teams can share the same background and lighting style so a firm page looks unified.</li>
+        <li><strong>Easy updates.</strong> New hires and changes of appearance are simple to handle.</li>
+        <li><strong>Cost control.</strong> The price per person is typically far lower than a studio session.</li>
+        <li><strong>Flexibility.</strong> You can produce several looks for different uses, such as formal for regulatory profiles and relaxed for social media.</li>
+      </ul>
+      <p>See how other professions use them on our <a href="/industries/financial-advisors">financial advisors</a> page.</p>
+
+      <h2>How to Get the Best Result</h2>
+      <ol>
+        <li><strong>Choose your style first.</strong> Decide on formality, background and clothing before you upload.</li>
+        <li><strong>Take good selfies.</strong> Use soft daylight, keep the camera at eye level and vary your expressions.</li>
+        <li><strong>Wear professional attire.</strong> Wearing something close to your desired look helps.</li>
+        <li><strong>Review carefully.</strong> Select the image that feels most like you on your best professional day.</li>
+        <li><strong>Test in context.</strong> Look at the portrait at small sizes, such as a LinkedIn thumbnail, to be sure it still reads clearly.</li>
+      </ol>
+      <p>Our guide to <a href="/blog/how-to-prepare-photos-for-ai-headshot">preparing photos for AI headshots</a> covers the details.</p>
+
+      <h2>Compliance and Good Practice</h2>
+      <p>Financial services are regulated, and marketing materials can be subject to rules. While a headshot is usually straightforward, it is wise to keep a few points in mind:</p>
+      <ul>
+        <li><strong>Be accurate.</strong> Do not use imagery that misrepresents your appearance or credentials.</li>
+        <li><strong>Check firm policies.</strong> Some firms specify image standards for websites and profiles.</li>
+        <li><strong>Review regulator guidance.</strong> Advertising rules vary by jurisdiction, so confirm what applies to you.</li>
+        <li><strong>Keep captions factual.</strong> Titles and designations shown next to your photo should be ones you actually hold.</li>
+      </ul>
+
+      <h2>Consistency Across a Firm</h2>
+      <p>For wealth management groups and advisory firms, a consistent set of portraits communicates organisation and professionalism. Set a style guide covering background colour, crop, clothing level and expression, then have each team member generate their portrait against it. Include support staff as well, since clients deal with them regularly. The result is a team page that looks deliberate and confident. You can read more on our <a href="/team-headshots">team headshots</a> page.</p>
+
+      <h2>When a Photographer Is Worth It</h2>
+      <p>Some situations justify a photographer, such as a major rebrand, a book cover or a full-day brand shoot with office and lifestyle images. For everyday profile and website use, an AI headshot is often enough and far quicker.</p>
+
+      <h2>Bringing It Together</h2>
+      <p>A credible, friendly portrait will not replace sound advice, but it helps prospects feel comfortable taking the first step. Use your new image consistently across your website, LinkedIn and documents so the impression is cohesive. To explore options, view the <a href="/styles">styles</a>, compare <a href="/pricing">pricing</a> and browse other <a href="/industries">industries</a>.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['Finance', 'Professional', 'Industry'],
+    readingTime: '7 min read',
+  },
+  {
+    slug: 'headshot-etiquette-dos-and-donts',
+    title: "Professional Headshot Etiquette: The Complete Do's and Don'ts",
+    description:
+      'A complete guide to professional headshot etiquette covering expression, clothing, backgrounds, editing, updates and usage across LinkedIn, websites and teams.',
+    content: `
+      <p>A professional headshot seems simple, yet small choices can change how you are perceived. The wrong expression, an outdated photo or a distracting background can send a message you never intended. The right choices, on the other hand, make you look credible and approachable at a glance.</p>
+      <p>This guide gathers the most useful do's and don'ts, whether your headshot is taken by a photographer or generated with AI. Use it as a checklist before you publish your next portrait.</p>
+
+      <h2>Why Headshot Etiquette Matters</h2>
+      <p>People form impressions of a profile photo in a fraction of a second. Recruiters, clients and colleagues use it to judge professionalism and personality. Following a few simple conventions helps ensure that first impression works in your favour. Etiquette here is not about rigid rules. It is about avoiding distractions so that your face and your credentials do the talking.</p>
+
+      <h2>The Do's</h2>
+      <h3>Do Use a Recent Photo</h3>
+      <p>Your headshot should look like you today. If someone meets you after seeing your photo, they should recognise you immediately. A good rule is to refresh it every two to three years, or sooner after a significant change such as a new hairstyle or glasses.</p>
+      <h3>Do Keep Your Face Clearly Visible</h3>
+      <p>Frame your head and shoulders so your face fills a good portion of the image. At small sizes, such as on LinkedIn, a tiny face in a wide shot becomes hard to read. Keep the eyes sharp and well lit.</p>
+      <h3>Do Choose a Genuine Expression</h3>
+      <p>A natural, relaxed smile usually works best. Think of a friendly but confident look. If a broad smile feels forced, a soft smile or calm expression is better than a strained one.</p>
+      <h3>Do Dress for Your Audience</h3>
+      <p>Match clothing to your industry. Finance and law often lean formal, while creative fields and startups allow more relaxed styles. Choose solid colours and well-fitted pieces, and make sure the neckline is clean.</p>
+      <h3>Do Pick a Simple Background</h3>
+      <p>Neutral or softly blurred backgrounds keep attention on you. Colours that complement your skin tone and clothing tend to look best. Our <a href="/blog/headshot-background-guide">headshot background guide</a> explains your options.</p>
+      <h3>Do Use Good Lighting</h3>
+      <p>Soft, even light flatters faces. Natural window light or a soft studio setup avoids harsh shadows and makes your eyes look alive.</p>
+      <h3>Do Keep It Consistent</h3>
+      <p>Use the same portrait across LinkedIn, your website and email signature. Consistency builds recognition, and people can find you easily across platforms.</p>
+      <h3>Do Check How It Looks Small</h3>
+      <p>Preview your photo as a thumbnail. If the expression and framing still read clearly at a tiny size, it is working.</p>
+
+      <h2>The Don'ts</h2>
+      <h3>Don't Use Cropped Group or Social Photos</h3>
+      <p>A cropped wedding or party photo often shows part of another person and poor lighting. It signals that you did not invest time in your professional image.</p>
+      <h3>Don't Over-Edit</h3>
+      <p>Heavy filters, extreme smoothing and dramatic colour effects make you look unlike yourself. Light retouching is fine, but people should recognise you when you meet. This is especially important with AI results, so choose natural options.</p>
+      <h3>Don't Wear Distracting Clothing</h3>
+      <p>Bold patterns, large logos, slogans and very bright colours pull attention away from your face. The same goes for heavy jewellery or accessories that catch the light.</p>
+      <h3>Don't Wear Sunglasses or Hats</h3>
+      <p>Hiding your eyes reduces trust and makes you harder to recognise. Unless a hat or headwear is part of your professional or religious identity, leave it out.</p>
+      <h3>Don't Pick a Cluttered Background</h3>
+      <p>Messy rooms, busy scenes or identifiable private locations distract and can look unprofessional. Keep things clean.</p>
+      <h3>Don't Include Other People or Pets</h3>
+      <p>A headshot is about you alone. Save the family and pets for other photos.</p>
+      <h3>Don't Tilt the Camera Oddly</h3>
+      <p>Shooting from below or above distorts your features. Keep the camera near eye level for a natural result.</p>
+      <h3>Don't Let It Go Stale</h3>
+      <p>Using a photo from a decade ago can feel misleading. An up-to-date image shows honesty and attention to detail.</p>
+
+      <h2>Etiquette for AI Headshots</h2>
+      <p>AI headshots follow the same principles, with a few extra considerations:</p>
+      <ul>
+        <li><strong>Stay true to your appearance.</strong> Choose results that look like you, not an idealised stranger.</li>
+        <li><strong>Be mindful of context.</strong> Some platforms or employers have policies on AI-generated images, so check before using them in regulated or official settings.</li>
+        <li><strong>Give the AI good input.</strong> Clear, unfiltered selfies produce more faithful portraits. See our guide on <a href="/blog/how-to-prepare-photos-for-ai-headshot">preparing photos</a>.</li>
+        <li><strong>Review carefully.</strong> Look for small errors in hands, jewellery or text before publishing.</li>
+      </ul>
+
+      <h2>Etiquette for Team and Company Headshots</h2>
+      <p>When photographing a team, consistency is the goal. Agree on background colour, crop, lighting and dress code beforehand. Invite everyone to choose an expression they are comfortable with, and never pressure anyone into a style that feels wrong. Include everyone, from leadership to support staff, and update the page when people join or leave. Our <a href="/team-headshots">team headshots</a> page has more on coordination.</p>
+
+      <h2>Platform-Specific Notes</h2>
+      <ul>
+        <li><strong>LinkedIn:</strong> A friendly, professional portrait with a clear face and simple background works best.</li>
+        <li><strong>Company website:</strong> Match the firm style and keep all portraits consistent.</li>
+        <li><strong>Email signature:</strong> Use a small, clear crop where the face is easy to see.</li>
+        <li><strong>Speaker bios and press:</strong> Provide a high-resolution version suitable for print.</li>
+        <li><strong>Dating or social profiles:</strong> Keep these separate from your professional portrait.</li>
+      </ul>
+
+      <h2>A Quick Checklist</h2>
+      <ol>
+        <li>Is the photo recent and recognisable?</li>
+        <li>Is my face clearly visible and well lit?</li>
+        <li>Is my expression natural and friendly?</li>
+        <li>Is my clothing appropriate and free of distractions?</li>
+        <li>Is the background simple?</li>
+        <li>Does it look good at thumbnail size?</li>
+        <li>Is it consistent with my other profiles?</li>
+      </ol>
+
+      <h2>Final Thoughts</h2>
+      <p>Good headshot etiquette comes down to honesty, clarity and consistency. Show the real you at your professional best, remove distractions and keep your image current. Ready to update yours? Explore our <a href="/styles">styles</a>, view <a href="/pricing">pricing</a> and see how different professions approach portraits on our <a href="/industries">industries</a> page.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['Tips', 'Etiquette', 'Guide'],
+    readingTime: '8 min read',
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

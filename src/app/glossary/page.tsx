@@ -61,6 +61,11 @@ const terms: Term[] = [
       'The soft, blurred quality of out-of-focus areas in a photo, usually created by a wide aperture. In portraits, it separates the subject from the background and keeps attention on the face.',
   },
   {
+    term: 'Broad Lighting',
+    definition:
+      'A portrait lighting technique where the side of the face closest to the camera receives the most light, making the face appear wider. Often used in headshot photography to add dimension, broad lighting works well for subjects with narrow faces and is commonly simulated by AI headshot generators.',
+  },
+  {
     term: 'Butterfly Lighting',
     definition:
       'A lighting pattern in which the main light sits high and directly in front of the subject, creating a small butterfly-shaped shadow beneath the nose. It is often used in beauty and glamour portraits.',
@@ -123,6 +128,11 @@ const terms: Term[] = [
     term: 'Facial Recognition',
     definition:
       'Technology that identifies or verifies a specific person by analyzing the unique geometry of their face. Unlike face detection, which only finds where a face is, facial recognition matches it to a known identity and is used in security, device unlock and photo organization.',
+  },
+  {
+    term: 'Feathering',
+    definition:
+      'The technique of angling a light source so that only the edge of its beam illuminates the subject, creating softer, more gradual transitions between light and shadow. In portrait and headshot photography, feathering produces natural-looking illumination that flatters facial features.',
   },
   {
     term: 'Fill Light',
@@ -254,6 +264,11 @@ const terms: Term[] = [
     definition:
       'Artificial, controllable light sources such as strobes or continuous lamps, often with softboxes or umbrellas. They give a photographer precise and repeatable control over how a face is lit.',
     link: { href: '/blog/ai-headshots-vs-traditional-photography', label: 'AI vs traditional photography' },
+  },
+  {
+    term: 'Tethered Shooting',
+    definition:
+      'A workflow where a camera is connected directly to a computer or monitor during a photo session, allowing instant review of captured images on a larger screen. While traditional headshot studios use tethered shooting for real-time quality control, AI headshot services eliminate this requirement by working from uploaded selfies.',
   },
   {
     term: 'Three-Point Lighting',
