@@ -1,4 +1,7 @@
-import { Star } from 'lucide-react';
+'use client';
+
+import { useState } from 'react';
+import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const testimonials = [
@@ -23,9 +26,49 @@ const testimonials = [
       'Our entire team used this for our new website. The consistency across all our headshots is remarkable, and it cost a fraction of what a photographer would have charged for 15 people.',
     rating: 5,
   },
+  {
+    name: 'David Kim',
+    role: 'Real Estate Agent, Keller Williams',
+    quote:
+      'In real estate, your headshot is everything. TailorPic gave me photos that look expensive and professional. My clients always comment on how polished my marketing materials look now.',
+    rating: 5,
+  },
+  {
+    name: 'Ayşe Demir',
+    role: 'HR Director, SaaS Company',
+    quote:
+      'We onboard 20+ people per quarter. Getting everyone studio-quality headshots used to be a logistical nightmare. Now each new hire gets their photos on day one. Game changer.',
+    rating: 5,
+  },
+  {
+    name: 'James O\'Brien',
+    role: 'Attorney, O\'Brien & Partners',
+    quote:
+      'I needed a professional headshot for our firm\'s website urgently. TailorPic delivered multiple options within 2 hours. The quality exceeded what I got from my last $400 studio session.',
+    rating: 5,
+  },
+  {
+    name: 'Priya Patel',
+    role: 'UX Designer, Freelance',
+    quote:
+      'As a freelancer, my profile photo is my first impression. I tried three different categories and got an amazing creative shot that perfectly represents my personal brand.',
+    rating: 5,
+  },
+  {
+    name: 'Thomas Weber',
+    role: 'Sales Director, Enterprise SaaS',
+    quote:
+      'Our sales team of 30 all have consistent, professional headshots now. The ROI was immediate — our outbound response rates went up noticeably after updating our profiles.',
+    rating: 5,
+  },
 ];
 
 export function Testimonials() {
+  const [page, setPage] = useState(0);
+  const perPage = 3;
+  const totalPages = Math.ceil(testimonials.length / perPage);
+  const visible = testimonials.slice(page * perPage, page * perPage + perPage);
+
   return (
     <section id="results" className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -44,7 +87,7 @@ export function Testimonials() {
 
         {/* Cards */}
         <div className="mt-16 grid gap-8 sm:mt-20 md:grid-cols-3">
-          {testimonials.map((t) => (
+          {visible.map((t) => (
             <Card key={t.name} className="flex flex-col hover:shadow-md transition-shadow">
               <CardContent className="flex flex-1 flex-col p-6">
                 {/* Stars */}
@@ -79,6 +122,44 @@ export function Testimonials() {
             </Card>
           ))}
         </div>
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <div className="mt-10 flex items-center justify-center gap-3">
+            <button
+              onClick={() => setPage((p) => Math.max(0, p - 1))}
+              disabled={page === 0}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-tp-line bg-white text-tp-ink transition-colors hover:bg-tp-paper disabled:opacity-30 disabled:cursor-not-allowed"
+              aria-label="Previous testimonials"
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+
+            <div className="flex gap-1.5">
+              {Array.from({ length: totalPages }).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setPage(i)}
+                  className={`h-2 rounded-full transition-all ${
+                    i === page
+                      ? 'w-6 bg-tp-bronze-ink'
+                      : 'w-2 bg-tp-line hover:bg-tp-muted/40'
+                  }`}
+                  aria-label={`Page ${i + 1}`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
+              disabled={page === totalPages - 1}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-tp-line bg-white text-tp-ink transition-colors hover:bg-tp-paper disabled:opacity-30 disabled:cursor-not-allowed"
+              aria-label="Next testimonials"
+            >
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
