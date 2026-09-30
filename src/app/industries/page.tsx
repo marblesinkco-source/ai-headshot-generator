@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { Building2, Scale, ShoppingBag, ArrowRight } from 'lucide-react';
+import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'AI Photos by Industry | TailorPic',
   description:
-    'Professional AI-generated photos tailored for your industry. Real estate, legal, e-commerce, and more.',
+    'Professional AI-generated photos tailored for your industry. Real estate, legal, healthcare, consulting, accounting, e-commerce, and more.',
 };
 
 const industries = [
@@ -35,6 +35,30 @@ const industries = [
     href: '/industries/ecommerce',
     cta: 'For Sellers',
   },
+  {
+    icon: Stethoscope,
+    name: 'Healthcare',
+    description:
+      'Trustworthy headshots for doctors, dentists, and medical professionals. HIPAA-conscious, patient-friendly.',
+    href: '/industries/doctors',
+    cta: 'For Doctors',
+  },
+  {
+    icon: Lightbulb,
+    name: 'Consultants',
+    description:
+      'Executive portraits that convey expertise and credibility. Perfect for advisory firms and freelance consultants.',
+    href: '/industries/consultants',
+    cta: 'For Consultants',
+  },
+  {
+    icon: Calculator,
+    name: 'Accountants',
+    description:
+      'Professional headshots for CPAs and financial professionals. Build client trust with polished, consistent imagery.',
+    href: '/industries/accountants',
+    cta: 'For Accountants',
+  },
 ];
 
 export default function IndustriesPage() {
@@ -56,7 +80,7 @@ export default function IndustriesPage() {
             </p>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {industries.map((ind) => (
               <Link
                 key={ind.name}

@@ -27,6 +27,16 @@ export function Pricing() {
   return (
     <section id="pricing" className="relative bg-tp-paper/40 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Limited-time offer banner */}
+        <div className="mx-auto max-w-xl mb-10 rounded-2xl border border-tp-bronze/30 bg-gradient-to-r from-tp-bronze/10 via-tp-bronze/5 to-tp-bronze/10 p-4 text-center">
+          <p className="text-sm font-bold text-tp-bronze-ink">
+            🔥 Limited Time Offer — Save 20% on All Plans
+          </p>
+          <p className="text-xs text-tp-muted mt-1">
+            Professional photos at a fraction of studio prices. No code needed.
+          </p>
+        </div>
+
         {/* Section header */}
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">

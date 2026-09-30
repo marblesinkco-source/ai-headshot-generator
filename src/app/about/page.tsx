@@ -162,6 +162,51 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Team Credibility */}
+      <section className="border-t border-tp-line py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center text-3xl font-bold text-gray-900">
+            Built by a Team That Cares About Quality
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-gray-600">
+            Every detail of our platform is crafted with care, backed by deep expertise
+            in AI and a genuine commitment to our customers.
+          </p>
+          <div className="mt-12 grid gap-8 sm:grid-cols-3">
+            <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm text-center">
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
+                <Zap className="h-6 w-6 text-tp-bronze" />
+              </div>
+              <h3 className="mt-4 text-lg font-semibold text-gray-900">AI-First Approach</h3>
+              <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                We use cutting-edge generative AI models trained specifically for portrait
+                photography, delivering results that rival professional studios.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm text-center">
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
+                <Lock className="h-6 w-6 text-tp-bronze" />
+              </div>
+              <h3 className="mt-4 text-lg font-semibold text-gray-900">Privacy by Design</h3>
+              <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                Your photos are encrypted end-to-end and automatically deleted after 30 days.
+                Privacy is not an afterthought — it is built into every layer of our platform.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm text-center">
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
+                <Heart className="h-6 w-6 text-tp-bronze" />
+              </div>
+              <h3 className="mt-4 text-lg font-semibold text-gray-900">Customer Obsessed</h3>
+              <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                4.9/5 average rating with 98% satisfaction rate and a 14-day money-back
+                guarantee. Your happiness is our measure of success.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
