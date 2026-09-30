@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { BreadcrumbSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import {
@@ -135,6 +136,10 @@ export default function VsSectaPage() {
       <Header />
 
       <main className="min-h-screen">
+        <BreadcrumbSchema items={[
+          { name: 'Home', url: siteConfig.url },
+          { name: 'TailorPic vs Secta Labs', url: `${siteConfig.url}/vs/secta` },
+        ]} />
         {/* ---- Hero ---- */}
         <section className="bg-white py-20 md:py-28">
           <div className="mx-auto max-w-4xl px-4 text-center">

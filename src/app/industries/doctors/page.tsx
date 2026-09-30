@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { BreadcrumbSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import {
@@ -107,6 +108,11 @@ const stats = [
 export default function DoctorsIndustryPage() {
   return (
     <main className="min-h-screen">
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: siteConfig.url },
+        { name: 'Industries', url: `${siteConfig.url}/industries` },
+        { name: 'Doctors', url: `${siteConfig.url}/industries/doctors` },
+      ]} />
       <Header />
 
       {/* Hero */}

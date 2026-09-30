@@ -205,6 +205,14 @@ export function Footer() {
                   Cost Calculator
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/tools/linkedin-photo-analyzer"
+                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
+                >
+                  Photo Analyzer
+                </Link>
+              </li>
             </ul>
           </div>
 

@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { BreadcrumbSchema } from '@/components/structured-data';
+import { siteConfig } from '@/config/site';
 import {
   ShoppingBag, Camera, Clock, Shield, Star, ArrowRight,
   Users, Palette, Zap, TrendingUp, Package, CheckCircle,
@@ -21,6 +23,11 @@ export const metadata: Metadata = {
 export default function EcommerceLandingPage() {
   return (
     <main className="min-h-screen">
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: siteConfig.url },
+        { name: 'Industries', url: `${siteConfig.url}/industries` },
+        { name: 'E-Commerce', url: `${siteConfig.url}/industries/ecommerce` },
+      ]} />
       <Header />
 
       {/* Hero */}

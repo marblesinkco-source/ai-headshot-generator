@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { BreadcrumbSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import {
@@ -113,6 +114,11 @@ const useCases = [
 export default function RealEstateIndustryPage() {
   return (
     <main className="min-h-screen">
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: siteConfig.url },
+        { name: 'Industries', url: `${siteConfig.url}/industries` },
+        { name: 'Real Estate Agents', url: `${siteConfig.url}/industries/real-estate` },
+      ]} />
       <Header />
 
       {/* Hero */}

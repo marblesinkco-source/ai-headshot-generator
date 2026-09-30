@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { BreadcrumbSchema } from '@/components/structured-data';
+import { siteConfig } from '@/config/site';
 import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -64,6 +66,10 @@ const industries = [
 export default function IndustriesPage() {
   return (
     <main className="min-h-screen">
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: siteConfig.url },
+        { name: 'Industries', url: `${siteConfig.url}/industries` },
+      ]} />
       <Header />
 
       <section className="py-20 sm:py-28">

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
   Check,
@@ -132,6 +133,10 @@ function CellValue({ value, highlight }: { value: RowValue; highlight?: boolean 
 export default function VsHeadshotProPage() {
   return (
     <main className="min-h-screen bg-white">
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: siteConfig.url },
+        { name: 'TailorPic vs HeadshotPro', url: `${siteConfig.url}/vs/headshotpro` },
+      ]} />
       <Header />
 
       {/* ── Hero ──────────────────────────────────────────────────── */}
