@@ -8,6 +8,7 @@ import {
   Briefcase, Heart, Dog, Users, Baby, GraduationCap,
   PartyPopper, Home as HomeIcon, Sparkles, Building2, ShoppingBag, ArrowRight,
   Presentation, FileText, Monitor, Target,
+  Mic, CreditCard, Mail,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -127,6 +128,41 @@ const useCases = [
     title: 'Sales Decks & Proposals',
     description: 'Build trust on your pitch deck and proposal with a professional headshot.',
     href: '/use-cases/sales-deck',
+    tag: 'Business',
+  },
+  {
+    icon: Mic,
+    title: "Podcast Cover Art",
+    description: "Host portraits that stand out in Spotify and Apple Podcasts directories.",
+    href: '/use-cases/podcast-cover',
+    tag: 'Creators',
+  },
+  {
+    icon: CreditCard,
+    title: "Business Cards",
+    description: "Print-ready headshots for business cards and digital card profiles.",
+    href: '/use-cases/business-card',
+    tag: 'Business',
+  },
+  {
+    icon: GraduationCap,
+    title: "Online Course Instructors",
+    description: "Build student trust on Udemy, Teachable, and your own course site.",
+    href: '/use-cases/online-course',
+    tag: 'Creators',
+  },
+  {
+    icon: Mail,
+    title: "Newsletter Authors",
+    description: "Put a face to your writing on Substack, Beehiiv, and Ghost.",
+    href: '/use-cases/newsletter',
+    tag: 'Creators',
+  },
+  {
+    icon: FileText,
+    title: "Annual Reports & Corporate Docs",
+    description: "Consistent executive headshots for annual reports and investor materials.",
+    href: '/use-cases/annual-report',
     tag: 'Business',
   },
 ];

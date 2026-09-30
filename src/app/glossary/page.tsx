@@ -131,10 +131,20 @@ const terms: Term[] = [
     link: { href: '/blog/how-ai-headshots-work', label: 'How AI headshots work' },
   },
   {
+    term: 'Gaussian Blur',
+    definition:
+      "A smoothing filter that uses a Gaussian function to reduce image noise and detail. In portrait photography and AI headshot generation, Gaussian blur is commonly applied to backgrounds to create a pleasing bokeh-like effect that draws attention to the subject's face.",
+  },
+  {
     term: 'Headshot',
     definition:
       'A portrait, usually framed from the shoulders up, used to represent a person professionally on profiles, company pages and business materials. Its purpose is to show your face clearly and look approachable.',
     link: { href: '/headshots', label: 'Professional headshots' },
+  },
+  {
+    term: 'High Dynamic Range (HDR)',
+    definition:
+      'A technique that combines multiple exposures of the same scene to capture a wider range of light and shadow detail. In AI headshot generation, HDR processing helps produce images with balanced lighting, preserving detail in both bright highlights and dark shadows for a more natural, professional look.',
   },
   {
     term: 'Image Generation',
