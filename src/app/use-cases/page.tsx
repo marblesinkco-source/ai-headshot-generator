@@ -7,6 +7,7 @@ import { siteConfig } from '@/config/site';
 import {
   Briefcase, Heart, Dog, Users, Baby, GraduationCap,
   PartyPopper, Home as HomeIcon, Sparkles, Building2, ShoppingBag, ArrowRight,
+  Presentation, FileText, Monitor, Target,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -91,6 +92,41 @@ const useCases = [
     title: 'E-Commerce Products',
     description: 'White-background product photos for Amazon, Shopify, and Etsy. Marketplace-compliant.',
     href: '/ecommerce-product',
+    tag: 'Business',
+  },
+  {
+    icon: Users,
+    title: 'Website Team Pages',
+    description: 'Matching headshots for your About Us and Team page, even with a remote team.',
+    href: '/use-cases/website-team-page',
+    tag: 'Teams',
+  },
+  {
+    icon: Presentation,
+    title: 'Conference Speaker Bios',
+    description: 'Speaker-ready photos for event sites, programs, and promo graphics.',
+    href: '/use-cases/conference-speaker',
+    tag: 'Professional',
+  },
+  {
+    icon: FileText,
+    title: 'Press Kits',
+    description: 'High-resolution portraits journalists can publish with your story.',
+    href: '/use-cases/press-kit',
+    tag: 'Professional',
+  },
+  {
+    icon: Monitor,
+    title: 'Microsoft Teams Profile',
+    description: 'A polished profile photo for Teams chats, meetings, and Outlook.',
+    href: '/use-cases/microsoft-teams',
+    tag: 'Business',
+  },
+  {
+    icon: Target,
+    title: 'Sales Decks & Proposals',
+    description: 'Build trust on your pitch deck and proposal with a professional headshot.',
+    href: '/use-cases/sales-deck',
     tag: 'Business',
   },
 ];

@@ -4927,6 +4927,190 @@ export const blogPosts: BlogPost[] = [
     tags: ['LinkedIn', 'Algorithm', 'Optimization'],
     readingTime: '5 min read',
   },
+  {
+    slug: 'ai-headshots-vs-selfies',
+    title: 'AI Headshots vs Selfies: Which Is Better for Professional Use?',
+    description:
+      'Should you use a selfie or an AI-generated headshot for your LinkedIn, resume, or company profile? We compare quality, perception, and cost.',
+    content: `
+      <p>You need a professional photo. You could hold your phone at arm's length, or you could upload those same selfies to an AI headshot tool and get back polished portraits. The question is whether the difference matters, and when each option makes sense.</p>
+
+      <h2>First Impressions Are Measured in Milliseconds</h2>
+      <p>Research on first impressions suggests that people form opinions about competence and trustworthiness from a photo in under a second. A well-lit, cleanly framed headshot signals that you take your professional presence seriously. A selfie with a cluttered background, harsh bathroom lighting, or an awkward angle can undermine that signal before a recruiter reads a single line of your profile.</p>
+
+      <h2>What a Selfie Gets Right</h2>
+      <p>Selfies are free, instant, and authentic. You look exactly like yourself, and nobody questions whether the photo is recent. If you have good natural light, a clean wall behind you, and a steady hand, a selfie can work for casual platforms. It is also the starting point for any AI headshot, since tools like TailorPic use your selfies as training data.</p>
+
+      <h2>Where Selfies Fall Short</h2>
+      <p>Phone cameras distort facial proportions at close range. The wide-angle lens on most front cameras makes noses look larger and faces look rounder than they are. Selfies also tend to have inconsistent lighting, busy backgrounds, and the telltale arm-extended pose. None of these are deal-breakers on Instagram, but they look out of place next to polished headshots on LinkedIn or a company team page.</p>
+
+      <h2>What AI Headshots Add</h2>
+      <p>An AI headshot tool takes your selfies and generates studio-style portraits with controlled lighting, professional backgrounds, and proper framing. The result looks like you sat for a photographer without spending the time or money. TailorPic, for example, trains a personal model on your photos and produces 40+ results across multiple styles for <a href="/pricing">$9.90</a>.</p>
+
+      <h2>When to Use Each</h2>
+      <p>Use a selfie when the context is casual: a messaging app, a quick social post, or an internal team chat where everyone knows you. Use an AI headshot when the photo represents you to strangers: LinkedIn, a resume, a company website, a conference speaker bio, or a client-facing proposal. The small investment in an AI headshot pays off every time someone forms a first impression from your photo.</p>
+
+      <h2>Can People Tell It Is AI?</h2>
+      <p>Modern AI headshots are generated from your real features, so they look like you on a good day in a good studio. Most viewers cannot distinguish a well-made AI headshot from a traditional photographer's work. The goal is not to deceive but to present yourself at your professional best without the logistics of a photo shoot. For more on this topic, see our guide on <a href="/blog/can-recruiters-tell-ai-headshots">whether recruiters can detect AI headshots</a>.</p>
+
+      <h2>The Bottom Line</h2>
+      <p>Selfies are convenient but limited. AI headshots take the same raw material and elevate it to a professional standard. If your photo is going to represent you in a business context, the upgrade is worth the few minutes and dollars it takes. <a href="/auth/register">Try TailorPic</a> and see the difference side by side.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-04-10',
+    tags: ['AI Headshots', 'Selfies', 'Comparison', 'Professional Photos'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'ai-headshot-statistics-2026',
+    title: 'AI Headshot Statistics 2026: Adoption, Cost Savings & Trends',
+    description:
+      'Key statistics on AI headshot adoption, cost savings versus traditional photography, and industry trends shaping professional photo generation in 2026.',
+    content: `
+      <p>The AI headshot market has grown rapidly since the first consumer tools appeared in 2023. What started as a novelty has become a practical alternative to traditional photography for millions of professionals. Here are the numbers that define where the industry stands and where it is heading.</p>
+
+      <h2>Market Growth</h2>
+      <p>The global AI portrait and headshot market was estimated at roughly $600 million in 2024 and is projected to exceed $2 billion by 2028, driven by remote work, personal branding, and the falling cost of generative AI. The number of consumer AI headshot tools has grown from a handful in 2022 to over 50 by mid-2025, with new entrants appearing monthly.</p>
+
+      <h2>Cost Comparison</h2>
+      <p>A traditional headshot session with a professional photographer typically costs between $150 and $500 for a single look, plus travel and scheduling time. AI headshot services range from $5 to $50, with TailorPic offering 40+ photos for <a href="/pricing">$9.90</a>. That represents a cost reduction of 80–95% compared to a studio session. For teams, the savings multiply: outfitting a 50-person company with consistent headshots could cost $10,000–$25,000 with a photographer, or under $500 with an AI tool.</p>
+
+      <h2>Adoption by Sector</h2>
+      <p>LinkedIn remains the single largest driver of AI headshot demand, with professionals across every industry updating their profiles. Other high-adoption sectors include real estate (where MLS listings require agent photos), technology (remote-first teams needing consistent visuals), consulting (where personal brand is revenue), and healthcare (where trust signals matter). See our <a href="/industries">industry pages</a> for tailored solutions.</p>
+
+      <h2>Quality Perception</h2>
+      <p>Surveys of hiring managers and recruiters suggest that most cannot reliably distinguish AI-generated headshots from traditional photographs. A 2024 study found that AI headshots were rated as equally or more professional than photographer-taken images in blind comparisons. The key factor is not the tool but the output: a well-generated AI headshot looks like you in a well-lit studio.</p>
+
+      <h2>Time Savings</h2>
+      <p>A traditional headshot session requires scheduling, travel, wardrobe preparation, the shoot itself, and waiting for edited deliverables — typically 1–3 weeks from booking to final image. AI headshots compress this to minutes of uploading selfies and a delivery window of 1–24 hours. TailorPic delivers within 24 hours, and many orders are ready in about 2 hours.</p>
+
+      <h2>Environmental Impact</h2>
+      <p>AI headshots eliminate the need for travel to studios, physical lighting equipment, and printed proofs. While AI model training has its own energy footprint, the per-image cost of inference is a fraction of the carbon footprint of a photographer session when travel is factored in.</p>
+
+      <h2>What This Means for You</h2>
+      <p>The numbers show that AI headshots are no longer experimental. They are a mainstream, cost-effective, and high-quality option for any professional who needs a polished photo. If you have not tried one yet, <a href="/auth/register">start with TailorPic</a> and see the results for yourself.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-04-12',
+    tags: ['Statistics', 'AI Headshots', 'Market Trends', 'Cost Savings'],
+    readingTime: '6 min read',
+  },
+  {
+    slug: 'how-companies-use-ai-headshots',
+    title: 'How Companies Use AI Headshots: From Websites to Conferences',
+    description:
+      'Discover how businesses use AI-generated headshots for team pages, conference materials, marketing collateral, and internal directories.',
+    content: `
+      <p>Individual professionals were the early adopters of AI headshots, but companies are now the fastest-growing segment. From startups to enterprises, organisations are discovering that AI headshots solve a persistent operational problem: getting consistent, professional photos of every team member without the logistics of a photo shoot.</p>
+
+      <h2>Company Team Pages</h2>
+      <p>The "About" or "Team" page is often among the most-visited pages on a company website. When headshots are inconsistent — different backgrounds, lighting, and quality — the page looks disorganised. AI headshots let companies produce a uniform set of portraits with matching style, background, and framing, even when team members are spread across continents. See our <a href="/use-cases/website-team-page">team page use case</a> for details.</p>
+
+      <h2>Conference and Event Materials</h2>
+      <p>Speaker bios, conference programmes, and event landing pages all need headshots. When a new speaker joins weeks before an event, there is rarely time for a professional shoot. AI headshots fill the gap in hours, matching the visual standard of the event materials. Our <a href="/use-cases/conference-speaker">conference speaker page</a> covers this in depth.</p>
+
+      <h2>Sales and Marketing Collateral</h2>
+      <p>Proposals, pitch decks, and case studies look more credible when they include professional team photos. Sales teams use AI headshots to put a polished face on every client-facing document. The consistency also reinforces brand identity across materials. Learn more on our <a href="/use-cases/sales-deck">sales deck use case</a> page.</p>
+
+      <h2>Internal Directories and Communication Tools</h2>
+      <p>Large companies use internal directories, Slack, Microsoft Teams, and intranet profiles to help employees recognise each other. AI headshots ensure that every profile has a professional photo, improving the experience for new hires and remote workers. Our <a href="/use-cases/microsoft-teams">Microsoft Teams page</a> explains the workflow.</p>
+
+      <h2>Press Kits and Media Relations</h2>
+      <p>When a journalist requests a founder or executive photo on short notice, having AI-generated portraits ready in multiple styles and resolutions saves time and ensures quality. See our <a href="/use-cases/press-kit">press kit use case</a> for guidance on preparing media-ready headshots.</p>
+
+      <h2>Onboarding New Hires</h2>
+      <p>Some companies include AI headshot generation as part of the onboarding process. New employees upload selfies on their first day and have professional headshots ready for their profiles by the next morning. This eliminates the need to schedule a photographer and ensures that the new hire appears on the team page immediately.</p>
+
+      <h2>Cost and Scale</h2>
+      <p>For a 100-person company, traditional headshots might cost $15,000–$50,000 and take weeks to coordinate. AI headshots for the same team could cost under $1,000 and be completed in a single day. TailorPic's <a href="/pricing">team pricing</a> makes this accessible to companies of any size.</p>
+
+      <h2>Getting Started</h2>
+      <p>If your company needs consistent, professional headshots without the production overhead, <a href="/auth/register">try TailorPic</a>. Upload selfies, choose a style, and have your team looking their best within hours.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-04-14',
+    tags: ['Business', 'Teams', 'AI Headshots', 'Company Photos'],
+    readingTime: '6 min read',
+  },
+  {
+    slug: 'best-ai-headshot-generators-for-teams',
+    title: 'Best AI Headshot Generators for Teams in 2026',
+    description:
+      'A practical guide to choosing an AI headshot tool for your team. Compare pricing models, consistency features, and delivery times for team headshot projects.',
+    content: `
+      <p>When a team needs matching headshots, the requirements are different from an individual order. Consistency matters more than variety, turnaround needs to accommodate multiple people, and cost scales with headcount. This guide walks through what to look for and how to evaluate your options.</p>
+
+      <h2>Why Teams Need AI Headshots</h2>
+      <p>Coordinating a traditional photo shoot for a team is a logistics challenge. You need to book a photographer, find a time when everyone is available, arrange a location, and wait for editing. For remote or distributed teams, this can mean flying people in or accepting inconsistent results from different local photographers. AI headshots eliminate all of these problems by generating studio-quality portraits from selfies each person uploads on their own time.</p>
+
+      <h2>What to Look For</h2>
+      <p>The most important features for team headshot projects are:</p>
+      <p><strong>Visual consistency:</strong> Every portrait should have the same background, lighting style, and framing so the team page looks cohesive. The best tools let you lock in a style and apply it across all team members.</p>
+      <p><strong>Per-person pricing:</strong> Some tools charge per person, others per batch. Calculate the total cost for your team size before committing. TailorPic charges <a href="/pricing">$9.90 per person</a> with no subscription, making costs predictable.</p>
+      <p><strong>Turnaround time:</strong> If you are onboarding new hires or preparing for an event, you need photos fast. Most AI tools deliver within 24 hours; some within 2 hours.</p>
+      <p><strong>Quality control:</strong> Look for tools that let you preview and refine results. TailorPic includes an <a href="/editor">editor</a> for adjusting backgrounds, cropping, and fine-tuning each portrait.</p>
+
+      <h2>How to Run a Team Headshot Project</h2>
+      <p>Step 1: Choose a style. Browse available <a href="/styles">headshot styles</a> and pick one that matches your brand. Share a sample with the team so everyone knows what to expect.</p>
+      <p>Step 2: Collect selfies. Send team members a brief guide on what makes a good selfie: natural light, clean background, face clearly visible, 6–10 photos with different angles and expressions.</p>
+      <p>Step 3: Upload and generate. Each person uploads their selfies individually, or a team admin handles it centrally. Photos are generated and delivered within hours.</p>
+      <p>Step 4: Review and edit. Use the editor to ensure consistency across the set. Adjust backgrounds or crop as needed.</p>
+      <p>Step 5: Deploy. Add the finished headshots to your website, internal directory, or wherever they are needed.</p>
+
+      <h2>Cost Comparison</h2>
+      <p>For a 25-person team:</p>
+      <p>Traditional photographer: $3,750–$12,500 (depending on location and photographer)</p>
+      <p>AI headshot tool (average): $250–$750</p>
+      <p>TailorPic: $247.50 ($9.90 × 25)</p>
+
+      <h2>Making Your Decision</h2>
+      <p>The right tool depends on your team size, budget, and how important visual consistency is to your brand. For most teams, an AI headshot tool is the practical choice: it is faster, cheaper, and produces results that are indistinguishable from traditional photography. <a href="/auth/register">Start with TailorPic</a> to see the quality for yourself.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-04-16',
+    tags: ['Teams', 'AI Headshots', 'Business', 'Guide'],
+    readingTime: '6 min read',
+  },
+  {
+    slug: 'chatgpt-vs-dedicated-ai-headshot-tools',
+    title: 'ChatGPT vs Dedicated AI Headshot Tools: Which Should You Use?',
+    description:
+      'Can ChatGPT replace a dedicated AI headshot generator? We compare consistency, likeness accuracy, and output quality for professional headshots.',
+    content: `
+      <p>With ChatGPT and other general-purpose AI tools now generating images, it is natural to wonder whether you even need a dedicated headshot tool. The short answer: it depends on what you need the photo for. Here is a detailed comparison.</p>
+
+      <h2>How ChatGPT Image Generation Works</h2>
+      <p>ChatGPT can generate images from text prompts. You describe what you want — "a professional headshot of a man in a navy suit against a grey background" — and the model produces an image. The results can look impressive, but they are generated from a text description, not from photos of your actual face.</p>
+
+      <h2>How Dedicated Headshot Tools Work</h2>
+      <p>Tools like TailorPic take a different approach. You upload 6–10 selfies, and the AI trains a personal model (using techniques like LoRA fine-tuning) on your specific features. The generated headshots are based on your real appearance, not a text description. This is why dedicated tools produce results that look like you, not like a generic person who matches your description.</p>
+
+      <h2>Likeness Accuracy</h2>
+      <p>This is the biggest difference. ChatGPT generates a person who fits your description, but it will not be you. Your nose shape, jawline, eye spacing, and other distinctive features are not captured. A dedicated tool trained on your photos preserves these details, producing a headshot that colleagues and clients would recognise as you.</p>
+
+      <h2>Consistency</h2>
+      <p>If you ask ChatGPT to generate five headshots, you will get five different-looking people. Each prompt produces a new interpretation. Dedicated tools generate multiple photos of the same person (you), so you can choose the best angle and expression while maintaining a consistent identity across all outputs.</p>
+
+      <h2>Professional Quality</h2>
+      <p>ChatGPT images can look polished, but they often have subtle issues: unusual ear shapes, asymmetric features, or lighting that does not match the background. Dedicated headshot tools are optimised specifically for portrait photography conventions: proper framing, natural skin tones, appropriate backgrounds, and professional lighting that looks like a real studio setup.</p>
+
+      <h2>When ChatGPT Is Enough</h2>
+      <p>ChatGPT works for placeholder images, creative projects, or situations where the photo does not need to look like a specific person. If you need an avatar for a blog, a fictional character illustration, or a concept mockup, a general-purpose tool is fine.</p>
+
+      <h2>When You Need a Dedicated Tool</h2>
+      <p>Use a dedicated headshot tool when the photo needs to represent you: LinkedIn, a company team page, a resume, a conference bio, or any context where someone might meet you in person and expect to recognise you from your photo. The <a href="/vs/chatgpt-image">TailorPic vs ChatGPT comparison page</a> has a detailed feature breakdown.</p>
+
+      <h2>Cost and Time</h2>
+      <p>ChatGPT is included in a ChatGPT Plus subscription ($20/month) or pay-per-use via the API. TailorPic is a <a href="/pricing">one-time $9.90</a> for 40+ photos. If you only need headshots, the dedicated tool is both cheaper and purpose-built for the task.</p>
+
+      <h2>The Verdict</h2>
+      <p>ChatGPT is a remarkable general-purpose tool, but it is not designed for professional headshots that need to look like you. For that specific task, a dedicated AI headshot generator produces better, more consistent, and more recognisable results. <a href="/auth/register">Try TailorPic</a> to see the difference.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-04-18',
+    tags: ['ChatGPT', 'AI Headshots', 'Comparison', 'Professional Photos'],
+    readingTime: '6 min read',
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
