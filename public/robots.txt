@@ -1,0 +1,13 @@
+# TailorPic — AI Photo Generator
+# https://www.tailorpic.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.tailorpic.com/sitemap.xml
+
+# Disallow private/auth pages
+Disallow: /auth/
+Disallow: /dashboard/
+Disallow: /api/
