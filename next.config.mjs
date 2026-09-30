@@ -24,14 +24,6 @@ const nextConfig = {
         protocol: 'https',
         hostname: '**.replicate.delivery',
       },
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'plus.unsplash.com',
-      },
     ],
   },
   experimental: {

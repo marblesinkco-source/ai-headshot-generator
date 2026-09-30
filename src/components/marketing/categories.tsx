@@ -2,51 +2,51 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getActiveCategories, CATEGORY_GROUPS } from '@/config/categories';
 
-// Premium Unsplash photos — each category has a unique, high-impact image
-// All photos are free for commercial use (Unsplash License)
+// Category images — downloaded locally during build (see scripts/download-category-images.mjs)
+// All photos sourced from Unsplash (free for commercial use)
 const CATEGORY_IMAGES: Record<string, { src: string; alt: string }> = {
   headshots: {
-    src: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&h=600&fit=crop&crop=face&q=80',
+    src: '/images/categories/headshots.jpg',
     alt: 'Professional woman in business attire',
   },
   dating: {
-    src: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&h=600&fit=crop&crop=face&q=80',
+    src: '/images/categories/dating.jpg',
     alt: 'Confident woman smiling warmly',
   },
   'pet-portraits': {
-    src: 'https://images.unsplash.com/photo-1510771463146-e89e6e86560e?w=800&h=600&fit=crop&crop=entropy&q=80',
+    src: '/images/categories/pet-portraits.jpg',
     alt: 'Adorable golden retriever portrait',
   },
   'family-portraits': {
-    src: 'https://images.unsplash.com/photo-1598887048474-3e0be05bd11f?w=800&h=600&fit=crop&crop=faces&q=80',
+    src: '/images/categories/family-portraits.jpg',
     alt: 'Happy family portrait together',
   },
   'ecommerce-product': {
-    src: 'https://images.unsplash.com/photo-1611149974482-764b0c2a211a?w=800&h=600&fit=crop&crop=entropy&q=80',
+    src: '/images/categories/ecommerce-product.jpg',
     alt: 'Elegant product photography setup',
   },
   'linkedin-team': {
-    src: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop&crop=faces&q=80',
+    src: '/images/categories/linkedin-team.jpg',
     alt: 'Corporate team collaborating in modern office',
   },
   'couple-engagement': {
-    src: 'https://images.unsplash.com/photo-1556229868-7b2d4b56b909?w=800&h=600&fit=crop&crop=faces&q=80',
+    src: '/images/categories/couple-engagement.jpg',
     alt: 'Romantic couple engagement portrait',
   },
   graduation: {
-    src: 'https://images.unsplash.com/photo-1618355776464-8666794d2520?w=800&h=600&fit=crop&crop=face&q=80',
+    src: '/images/categories/graduation.jpg',
     alt: 'Proud graduate celebrating achievement',
   },
   'baby-shower': {
-    src: 'https://images.unsplash.com/photo-1580301762395-21ce84d00bc6?w=800&h=600&fit=crop&crop=entropy&q=80',
+    src: '/images/categories/baby-shower.jpg',
     alt: 'Sweet newborn baby portrait',
   },
   'holiday-cards': {
-    src: 'https://images.unsplash.com/photo-1544546491-1ecfecfcc75a?w=800&h=600&fit=crop&crop=faces&q=80',
+    src: '/images/categories/holiday-cards.jpg',
     alt: 'Warm family moment by the Christmas tree',
   },
   'real-estate': {
-    src: 'https://images.unsplash.com/photo-1724582586529-62622e50c0b3?w=800&h=600&fit=crop&crop=entropy&q=80',
+    src: '/images/categories/real-estate.jpg',
     alt: 'Luxurious modern living room interior',
   },
 };
@@ -102,7 +102,6 @@ export function Categories() {
                               height={600}
                               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                               sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
-                              unoptimized
                             />
                             {/* Subtle bottom gradient for text readability */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

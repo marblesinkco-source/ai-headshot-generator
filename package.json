@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/download-category-images.mjs && next build",
+    "download-images": "node scripts/download-category-images.mjs",
     "start": "next start",
     "lint": "next lint",
     "db:migrate": "tsx src/database/migrations/run.ts",
