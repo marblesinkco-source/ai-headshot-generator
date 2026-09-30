@@ -13,7 +13,7 @@ import { FAQ } from '@/components/marketing/faq';
 import { faqs } from '@/config/faqs';
 import { CTABanner } from '@/components/marketing/cta-banner';
 import { Footer } from '@/components/marketing/footer';
-import { OrganizationSchema, WebsiteSchema, FAQSchema } from '@/components/structured-data';
+import { OrganizationSchema, WebsiteSchema, FAQSchema, SoftwareApplicationSchema, HowToSchema } from '@/components/structured-data';
 
 export default function LandingPage() {
   return (
@@ -21,6 +21,8 @@ export default function LandingPage() {
       <OrganizationSchema />
       <WebsiteSchema />
       <FAQSchema items={faqs} />
+      <SoftwareApplicationSchema />
+      <HowToSchema />
       <Header />
       <Hero />
       <PressLogos />

@@ -119,3 +119,93 @@ export function FAQSchema({
     />
   );
 }
+
+export function BreadcrumbSchema({
+  items,
+}: {
+  items: { name: string; url: string }[];
+}) {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+export function SoftwareApplicationSchema() {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: siteConfig.name,
+    applicationCategory: 'PhotographyApplication',
+    operatingSystem: 'Web',
+    url: siteConfig.url,
+    description: siteConfig.description,
+    offers: {
+      '@type': 'Offer',
+      price: '9.90',
+      priceCurrency: 'USD',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      ratingCount: '500',
+      bestRating: '5',
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+export function HowToSchema() {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to Get AI Headshots with TailorPic',
+    description: 'Get studio-quality AI headshots in 3 simple steps.',
+    step: [
+      {
+        '@type': 'HowToStep',
+        position: 1,
+        name: 'Upload Your Selfies',
+        text: 'Upload 10-20 casual selfies. Our AI learns your unique features from different angles and lighting.',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 2,
+        name: 'AI Creates Your Photos',
+        text: 'Our AI model trains on your photos and generates 40+ professional headshots in various styles.',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 3,
+        name: 'Download & Use',
+        text: 'Browse your results, pick your favorites, and download in high resolution. Ready for LinkedIn, websites, and more.',
+      },
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
