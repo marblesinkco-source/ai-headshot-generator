@@ -1,4 +1,4 @@
-# 🚀 AI Headshot Generator — Hızlı Deploy Komutları
+# 🚀 TailorPic — Hızlı Deploy Komutları
 
 ## 1. Projeyi aç ve GitHub'a push et
 
@@ -42,7 +42,7 @@ NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY = (Stripe Dashboard → API keys → Publisha
 STRIPE_WEBHOOK_SECRET = (Stripe webhook kurduktan sonra eklenecek)
 REPLICATE_API_TOKEN = (Replicate Dashboard → API tokens)
 RESEND_API_KEY = (Resend Dashboard → API Keys)
-EMAIL_FROM = noreply@aiheadshotpro.com
+EMAIL_FROM = noreply@tailorpic.com
 NEXT_PUBLIC_APP_URL = https://SITEN.vercel.app
 ```
 

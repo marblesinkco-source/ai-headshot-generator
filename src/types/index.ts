@@ -1,5 +1,3 @@
-import type { PackageId } from '@/config/packages';
-
 // ---------------------------------------------------------------------------
 // Enums / Status types
 // ---------------------------------------------------------------------------
@@ -24,7 +22,7 @@ export interface User {
 export interface Order {
   id: string;
   userId: string;
-  packageId: PackageId;
+  packageId: string;
   status: OrderStatus;
   paymentIntentId: string | null;
   amount: number;
