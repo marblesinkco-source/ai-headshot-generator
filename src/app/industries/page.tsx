@@ -4,12 +4,12 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
-import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight } from 'lucide-react';
+import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight, Heart, Monitor, GraduationCap } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'AI Photos by Industry | TailorPic',
   description:
-    'Professional AI-generated photos tailored for your industry. Real estate, legal, healthcare, consulting, accounting, e-commerce, and more.',
+    'Professional AI-generated photos tailored for your industry. Real estate, legal, healthcare, nursing, engineering, education, consulting, accounting, e-commerce, and more.',
 };
 
 const industries = [
@@ -60,6 +60,30 @@ const industries = [
       'Professional headshots for CPAs and financial professionals. Build client trust with polished, consistent imagery.',
     href: '/industries/accountants',
     cta: 'For Accountants',
+  },
+  {
+    icon: Heart,
+    name: 'Nurses',
+    description:
+      'Professional headshots for nurses and healthcare staff. Hospital ID-ready, LinkedIn-polished, team-consistent.',
+    href: '/industries/nurses',
+    cta: 'For Nurses',
+  },
+  {
+    icon: Monitor,
+    name: 'Engineers',
+    description:
+      'Professional headshots for software, civil and mechanical engineers. Perfect for LinkedIn, GitHub and conference bios.',
+    href: '/industries/engineers',
+    cta: 'For Engineers',
+  },
+  {
+    icon: GraduationCap,
+    name: 'Teachers',
+    description:
+      'Professional headshots for teachers and educators. School websites, academic profiles and conference materials.',
+    href: '/industries/teachers',
+    cta: 'For Teachers',
   },
 ];
 

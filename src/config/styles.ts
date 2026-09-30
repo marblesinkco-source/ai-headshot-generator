@@ -320,6 +320,111 @@ export const photoStyles: PhotoStyle[] = [
     relatedCategories: ['headshots', 'graduation-photos'],
     relatedBlogPosts: ['headshot-trends-2025', 'social-media-profile-photo-sizes'],
   },
+  {
+    slug: 'minimalist',
+    name: 'Minimalist Headshots',
+    title: 'AI Minimalist Headshots',
+    description:
+      'Clean, simple portraits with minimal distractions, so your face and personality take center stage.',
+    metaDescription:
+      'Create AI minimalist headshots with clean backgrounds, simple styling and soft lighting. Modern, distraction-free portraits from a few selfies with TailorPic.',
+    heroText:
+      'Less noise, more you. Minimalist headshots use plain backdrops, simple wardrobe and calm lighting to deliver a modern, focused portrait that fits any profile or team page.',
+    features: [
+      'Plain, uncluttered backgrounds in white, soft grey and muted neutrals',
+      'Simple, solid-color wardrobe with clean lines and no busy patterns',
+      'Soft, even lighting that keeps attention on your face',
+      'Generous negative space and balanced, centered framing',
+      'Subtle, natural retouching that preserves your real look',
+      'Consistent results that scale across a whole team',
+    ],
+    idealFor: [
+      'Tech professionals and engineers',
+      'Designers and creative directors',
+      'Startup teams building a unified team page',
+      'Portfolio sites and personal landing pages',
+      'Anyone who prefers a modern, understated look',
+    ],
+    tips: [
+      'Upload selfies against a plain wall in soft, even daylight',
+      'Choose solid, neutral clothing without logos or bold patterns',
+      'Pick one background tone and use it for every team member',
+      'Include a relaxed, natural expression rather than a posed grin',
+      'Keep accessories minimal so the portrait stays clean',
+    ],
+    relatedCategories: ['headshots', 'team-headshots'],
+    relatedBlogPosts: ['professional-headshot-tips-2025', 'headshot-background-guide'],
+  },
+  {
+    slug: 'vintage',
+    name: 'Vintage Headshots',
+    title: 'AI Vintage Style Headshots',
+    description:
+      'Classic, timeless portraits with warm tones and a film-like quality inspired by photography of past decades.',
+    metaDescription:
+      'Get AI vintage style headshots with warm tones, soft film grain and classic studio looks. Timeless portraits for creatives and professionals with TailorPic.',
+    heroText:
+      'Some looks never go out of style. Vintage headshots pair warm tones, gentle film grain and classic studio lighting for portraits with character and a timeless feel.',
+    features: [
+      'Warm, sepia-leaning color grading with a nostalgic glow',
+      'Soft film grain and gentle contrast that mimic analog photography',
+      'Classic studio lighting inspired by mid-century portraiture',
+      'Period-inspired wardrobe such as tweed, knitwear and structured collars',
+      'Muted, textured backdrops in cream, brown and faded blue',
+      'Black-and-white and color variations to choose from',
+    ],
+    idealFor: [
+      'Actors and on-camera performers',
+      'Musicians and bands needing press photos',
+      'Authors and book jacket portraits',
+      'Creative professionals with a distinctive brand',
+      'Anyone drawn to a classic, nostalgic aesthetic',
+    ],
+    tips: [
+      'Upload clear, front-facing selfies in soft natural light',
+      'Try both color and black-and-white results to compare moods',
+      'Choose textured clothing like knits or tweed to suit the era',
+      'Keep your source photos free of heavy filters',
+      'Pair a vintage image with a modern one for different contexts',
+    ],
+    relatedCategories: ['headshots', 'graduation-photos'],
+    relatedBlogPosts: ['ai-headshots-vs-traditional-photography', 'headshot-trends-2025'],
+  },
+  {
+    slug: 'executive',
+    name: 'Executive Headshots',
+    title: 'AI Executive Headshots',
+    description:
+      'Premium, authority-projecting portraits for C-suite and senior leadership, created from a few selfies.',
+    metaDescription:
+      'Create premium AI executive headshots for CEOs, board members and senior leaders. Polished, authoritative portraits ready in minutes with TailorPic.',
+    heroText:
+      'Leadership is visible before you say a word. Executive headshots project authority, calm and credibility, with premium lighting and refined styling for the people who steer the company.',
+    features: [
+      'Premium tailored suits, structured blazers and polished collars',
+      'Refined studio backdrops in deep charcoal, navy and warm grey',
+      'Sculpted, directional lighting that conveys presence and authority',
+      'Composed, confident expressions with a steady gaze',
+      'Crops tuned for annual reports, press kits and board pages',
+      'Matching looks across the entire leadership team',
+    ],
+    idealFor: [
+      'CEOs, CFOs and other C-suite leaders',
+      'Board members and advisors',
+      'Managing partners at law, finance and consulting firms',
+      'VPs and senior directors',
+      'Speakers and executives in media-facing roles',
+    ],
+    tips: [
+      'Upload sharp selfies with a mix of straight-on and three-quarter angles',
+      'Choose dark, well-fitted attire in navy, charcoal or black',
+      'Keep expressions composed, with a slight smile for approachability',
+      'Generate the whole leadership team with the same settings for consistency',
+      'Select a neutral backdrop so the portrait stays current for years',
+    ],
+    relatedCategories: ['headshots', 'team-headshots'],
+    relatedBlogPosts: ['executive-headshot-guide', 'corporate-team-photos-guide'],
+  },
 ];
 
 export function getPhotoStyle(slug: string): PhotoStyle | undefined {

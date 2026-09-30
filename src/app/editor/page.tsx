@@ -5,11 +5,11 @@ import { Footer } from '@/components/marketing/footer';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
-import { Palette, Sun, Maximize2, ArrowRight, Shirt, Eye, History, Eraser, Sparkles, ScanFace, Scissors, Smile } from 'lucide-react';
+import { Palette, Sun, Maximize2, ArrowRight, Shirt, Eye, History, Eraser, Sparkles, ScanFace, Scissors, Smile, Move, Pipette, Glasses } from 'lucide-react';
 
 const title = 'AI Photo Editor — Professional Headshot Editing Tools | TailorPic';
 const description =
-  'Explore TailorPic\'s 12 AI-powered photo editing tools: background changer, clothing changer, photo enhancer, upscaler, magic eraser and more. Professional headshots without manual editing.';
+  'Explore TailorPic\'s 16 AI-powered photo editing tools: background changer, clothing changer, pose editor, makeup, color correction, glasses editor and more. Professional headshots without manual editing.';
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -102,6 +102,41 @@ const tools = [
     description:
       'Naturally whiten teeth and enhance your smile for a confident, camera-ready look in every headshot.',
     href: '/editor/teeth-whitener',
+  },
+  {
+    icon: Move,
+    name: 'AI Pose Editor',
+    description:
+      'Adjust head tilt, shoulder angle and body positioning in your headshots for the most flattering and confident look.',
+    href: '/editor/pose-editor',
+  },
+  {
+    icon: Palette,
+    name: 'AI Makeup Editor',
+    description:
+      'Add natural-looking professional makeup to your headshots. Subtle enhancements that keep you looking polished and camera-ready.',
+    href: '/editor/makeup-editor',
+  },
+  {
+    icon: Pipette,
+    name: 'AI Color Correction',
+    description:
+      'Fix white balance, color casts and saturation issues. Get natural, true-to-life skin tones and accurate colors in every headshot.',
+    href: '/editor/color-correction',
+  },
+  {
+    icon: Glasses,
+    name: 'AI Glasses Editor',
+    description:
+      'Add, remove or swap glasses frames in your headshots. Eliminate glare and reflections for a clean, professional look.',
+    href: '/editor/glasses-editor',
+  },
+  {
+    icon: ScanFace,
+    name: 'AI Face Reshaping',
+    description:
+      'Subtle face contouring and jawline refinement for the most flattering headshot. Natural-looking enhancements that preserve your likeness.',
+    href: '/editor/face-reshaping',
   },
 ];
 
