@@ -28,11 +28,11 @@ export default function LandingPage() {
       <FAQSchema items={faqItems} />
       <Header />
       <Hero />
-      <HowItWorks />
-      <TrustStrip />
       <Categories />
-      <TrustBadges />
+      <TrustStrip />
+      <HowItWorks />
       <Pricing />
+      <TrustBadges />
       <Testimonials />
       <FAQ />
       <CTABanner />

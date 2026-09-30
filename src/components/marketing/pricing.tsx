@@ -12,11 +12,11 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 
 const categories = getActiveCategories();
 
-// Show a curated set of categories as tabs, defaulting to headshots
-const FEATURED_CATEGORIES = ['headshots', 'linkedin-team', 'dating', 'pet-portraits', 'family-portraits'];
+// Show a curated set of categories as tabs — synced with config/categories.ts FEATURED_CATEGORIES
+import { FEATURED_CATEGORIES as FEATURED_IDS } from '@/config/categories';
 
 export function Pricing() {
-  const featured = categories.filter((c) => FEATURED_CATEGORIES.includes(c.id));
+  const featured = categories.filter((c) => FEATURED_IDS.includes(c.id));
   const [activeCategory, setActiveCategory] = useState<Category>(
     featured[0] || categories[0]
   );
@@ -133,7 +133,9 @@ export function Pricing() {
                     </div>
                     <div className="flex justify-between border-t border-tp-line/50 py-1 pt-2">
                       <span className="text-tp-muted">Resolution</span>
-                      <span className="font-semibold uppercase text-tp-black">HD</span>
+                      <span className="font-semibold uppercase text-tp-black">
+                        {isExpress ? 'Standard' : pkg.price >= 5000 ? '4K' : 'HD'}
+                      </span>
                     </div>
                   </div>
 

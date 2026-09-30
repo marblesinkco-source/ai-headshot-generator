@@ -1,24 +1,36 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { siteConfig } from '@/config/site';
+import { getActiveCategories, CATEGORY_GROUPS } from '@/config/categories';
+
+const categories = getActiveCategories();
 
 const navLinks = [
-  { label: 'Photo Types', href: '/#categories', isButton: true },
   { label: 'How It Works', href: '/#how-it-works' },
-  { label: 'Examples', href: '/#examples' },
+  { label: 'Results', href: '/#results' },
   { label: 'Pricing', href: '/pricing' },
 ];
 
 export function Header() {
   const mobileDialog = useRef<HTMLDialogElement>(null);
+  const [megaOpen, setMegaOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout>>();
+
+  function openMega() {
+    clearTimeout(closeTimer.current);
+    setMegaOpen(true);
+  }
+  function scheduleMegaClose() {
+    closeTimer.current = setTimeout(() => setMegaOpen(false), 200);
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-tp-line/40 bg-tp-paper/95 backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-[1320px] items-center justify-between px-4 sm:px-7 lg:px-14">
-        {/* Real SVG Logo */}
+        {/* Logo */}
         <Link href="/" className="flex-shrink-0" aria-label="TailorPic home">
           <Image
             src="/brand/tailorpic/logo/tailorpic-horizontal-bronze.svg"
@@ -31,7 +43,72 @@ export function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-7 md:flex" aria-label="Main navigation">
+          {/* Photo Types mega menu trigger */}
+          <div
+            className="relative"
+            onMouseEnter={openMega}
+            onMouseLeave={scheduleMegaClose}
+          >
+            <button
+              className="flex items-center gap-1 text-[13px] font-semibold text-tp-ink transition-colors hover:text-tp-bronze-ink whitespace-nowrap"
+              onClick={() => setMegaOpen((v) => !v)}
+              aria-expanded={megaOpen}
+              aria-haspopup="true"
+            >
+              Photo Types
+              <svg className={`h-3.5 w-3.5 transition-transform ${megaOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
+
+            {/* Mega dropdown */}
+            {megaOpen && (
+              <div
+                className="absolute left-1/2 top-full -translate-x-1/2 pt-3"
+                onMouseEnter={openMega}
+                onMouseLeave={scheduleMegaClose}
+              >
+                <div className="w-[640px] rounded-2xl border border-tp-line/60 bg-white p-5 shadow-xl shadow-tp-black/8">
+                  <div className="grid grid-cols-2 gap-x-5 gap-y-1.5">
+                    {categories.map((cat) => (
+                      <Link
+                        key={cat.id}
+                        href={`/${cat.slug}`}
+                        className="flex items-center gap-3 rounded-xl p-2.5 transition-colors hover:bg-tp-paper"
+                        onClick={() => setMegaOpen(false)}
+                      >
+                        <div className="h-10 w-10 flex-shrink-0 overflow-hidden rounded-lg bg-gradient-to-br from-tp-beige to-tp-line">
+                          <Image
+                            src={`/images/categories/${cat.id}.jpg`}
+                            alt={cat.name}
+                            width={80}
+                            height={80}
+                            className="h-full w-full object-cover"
+                            sizes="40px"
+                          />
+                        </div>
+                        <div className="min-w-0">
+                          <p className="text-[13px] font-semibold text-tp-ink">{cat.name}</p>
+                          <p className="truncate text-[11px] text-tp-muted">{cat.tagline}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                  <div className="mt-3 border-t border-tp-line/50 pt-3 text-center">
+                    <Link
+                      href="/pricing"
+                      className="text-[12px] font-semibold text-tp-bronze-ink hover:text-tp-black transition-colors"
+                      onClick={() => setMegaOpen(false)}
+                    >
+                      View All Pricing &rarr;
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -84,7 +161,7 @@ export function Header() {
         ref={mobileDialog}
         className="rounded-[20px] border border-tp-line bg-tp-paper p-5 text-tp-ink w-[min(760px,calc(100vw-28px))] max-h-[85vh] overflow-auto backdrop:bg-tp-black/56"
       >
-        <div className="flex items-center justify-between gap-5 mb-5">
+        <div className="flex items-center justify-between gap-5 mb-4">
           <h2 className="font-display text-[29px] font-normal leading-tight">{siteConfig.name}</h2>
           <button
             className="h-11 w-11 rounded-full border border-tp-line bg-transparent text-[23px] flex-shrink-0 flex items-center justify-center"
@@ -94,12 +171,39 @@ export function Header() {
             &#215;
           </button>
         </div>
-        <nav className="grid gap-2.5" aria-label="Mobile navigation">
+
+        {/* Mobile category grid */}
+        <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest text-tp-muted">Photo Types</p>
+        <div className="grid grid-cols-2 gap-1.5 mb-4">
+          {categories.map((cat) => (
+            <Link
+              key={cat.id}
+              href={`/${cat.slug}`}
+              className="flex items-center gap-2.5 rounded-lg border border-tp-line/60 bg-white p-2.5 min-h-[52px] transition-colors hover:border-tp-bronze-ink"
+              onClick={() => mobileDialog.current?.close()}
+            >
+              <div className="h-9 w-9 flex-shrink-0 overflow-hidden rounded-md bg-gradient-to-br from-tp-beige to-tp-line">
+                <Image
+                  src={`/images/categories/${cat.id}.jpg`}
+                  alt={cat.name}
+                  width={72}
+                  height={72}
+                  className="h-full w-full object-cover"
+                  sizes="36px"
+                />
+              </div>
+              <span className="text-[12px] font-semibold leading-tight">{cat.shortName}</span>
+            </Link>
+          ))}
+        </div>
+
+        {/* Other nav links */}
+        <nav className="grid gap-1 border-t border-tp-line/50 pt-3" aria-label="Mobile navigation">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="p-3 text-[17px] min-h-[46px] text-left"
+              className="p-3 text-[16px] min-h-[46px] text-left font-medium"
               onClick={() => mobileDialog.current?.close()}
             >
               {link.label}
@@ -107,10 +211,10 @@ export function Header() {
           ))}
           <Link
             href="/auth/login"
-            className="p-3 text-[17px] min-h-[46px] text-left"
+            className="mt-2 flex items-center justify-center gap-3 rounded-xl bg-tp-black px-6 py-3.5 text-sm font-semibold text-tp-paper"
             onClick={() => mobileDialog.current?.close()}
           >
-            Sign In
+            Get Started <span aria-hidden="true" className="text-lg leading-none">&#8599;</span>
           </Link>
         </nav>
       </dialog>

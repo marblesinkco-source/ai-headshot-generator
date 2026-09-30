@@ -1,6 +1,6 @@
 /**
  * TailorPic - Multi-Category AI Photo Platform
- * Category configuration for all 10 product categories
+ * Category configuration for all 11 product categories
  */
 
 export type CategoryId =
