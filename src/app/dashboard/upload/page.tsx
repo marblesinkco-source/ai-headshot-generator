@@ -256,9 +256,9 @@ function UploadContent() {
             if (groupCategories.length === 0) return null;
 
             return (
-              <div key={group.label} className="space-y-3">
+              <div key={group.title} className="space-y-3">
                 <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wider">
-                  {group.label}
+                  {group.title}
                 </h3>
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                   {groupCategories.map((cat) => (

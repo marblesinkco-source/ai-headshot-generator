@@ -13,8 +13,8 @@ import { updateSession } from "@/lib/supabase/middleware";
 /** Routes that require an authenticated user. */
 const PROTECTED_PREFIXES = ["/dashboard"];
 
-/** Routes that authenticated users should not see (login, signup). */
-const AUTH_ROUTES = ["/auth/login", "/auth/register"];
+/** Routes that authenticated users should not see (login, signup, etc.). */
+const AUTH_ROUTES = ["/auth/login", "/auth/register", "/auth/forgot-password", "/auth/reset-password"];
 
 export async function middleware(request: NextRequest) {
   const { user, response } = await updateSession(request);

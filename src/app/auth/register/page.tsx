@@ -17,6 +17,7 @@ export default function RegisterPage() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [oauthLoading, setOauthLoading] = useState(false);
+  const [emailSent, setEmailSent] = useState(false);
 
   const supabase = createClient();
 
@@ -53,8 +54,9 @@ export default function RegisterPage() {
       return;
     }
 
-    router.push('/dashboard');
-    router.refresh();
+    // If email confirmation is enabled, show a success message instead of redirecting
+    setEmailSent(true);
+    setLoading(false);
   }
 
   async function handleGoogleSignUp() {
@@ -72,6 +74,41 @@ export default function RegisterPage() {
       setError(oauthError.message);
       setOauthLoading(false);
     }
+  }
+
+  if (emailSent) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-tp-paper px-4 py-12">
+        <div className="w-full max-w-md">
+          <div className="mb-8 text-center">
+            <Link href="/" className="inline-flex items-center gap-2.5">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-tp-black">
+                <span className="text-xl font-bold text-tp-bronze">T</span>
+              </div>
+              <span className="text-xl font-bold text-tp-black">{siteConfig.name}</span>
+            </Link>
+          </div>
+          <div className="rounded-2xl border border-tp-line/60 bg-white p-8 shadow-sm text-center">
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-green-50">
+              <svg className="h-7 w-7 text-green-600" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+            </div>
+            <h2 className="text-lg font-semibold text-gray-900 mb-2">Check your email</h2>
+            <p className="text-sm text-gray-500 mb-6">
+              We&apos;ve sent a confirmation link to <strong className="text-gray-700">{email}</strong>.
+              Click the link to activate your account.
+            </p>
+            <Link
+              href="/auth/login"
+              className="text-sm font-medium text-tp-bronze-ink hover:text-tp-bronze transition-colors"
+            >
+              Back to sign in
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (

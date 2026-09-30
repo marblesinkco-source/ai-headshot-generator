@@ -48,6 +48,18 @@ export async function POST(request: NextRequest) {
           return NextResponse.json({ received: true }, { status: 200 });
         }
 
+        // Check current order status for idempotency — skip if already paid
+        const { data: existingOrder } = await supabase
+          .from('orders')
+          .select('status')
+          .eq('id', orderId)
+          .single();
+
+        if (existingOrder?.status === 'paid' || existingOrder?.status === 'uploading' || existingOrder?.status === 'processing' || existingOrder?.status === 'completed') {
+          // Already processed — don't update or send duplicate email
+          return NextResponse.json({ received: true }, { status: 200 });
+        }
+
         const { error: updateError } = await supabase
           .from('orders')
           .update({
