@@ -4,12 +4,12 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
-import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight, Heart, Zap, Monitor, GraduationCap, Camera, Clapperboard, SmilePlus, TrendingUp, Ruler, Target, Brain, Dumbbell, Music, PawPrint, Users, Handshake, Mic, Palette, Newspaper, Shield, Plane, Calendar, BookOpen, Leaf, Globe, BarChart3, Award, Briefcase, FileCheck, UserCheck } from 'lucide-react';
+import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight, Heart, Zap, Monitor, GraduationCap, Camera, Clapperboard, SmilePlus, TrendingUp, Ruler, Target, Brain, Dumbbell, Music, PawPrint, Users, Handshake, Mic, Palette, Newspaper, Shield, Plane, Calendar, BookOpen, Leaf, Globe, BarChart3, Award, Briefcase, FileCheck, UserCheck, Star } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'AI Photos by Industry | TailorPic',
   description:
-    'Professional AI-generated photos tailored for your industry. Real estate, legal, healthcare, nursing, engineering, education, consulting, accounting, photography, acting, dental, financial advisory, architecture, coaching, therapy, fitness, music, veterinary, pharmacy, aviation, event planning, marketing, writing, chiropractic, insurance, nutrition, social work, translation, psychology, real estate brokerage, cabin crew, graphic design, data science and more.',
+    'Professional AI-generated photos tailored for your industry. Real estate, legal, healthcare, nursing, engineering, education, consulting, accounting, photography, acting, dental, financial advisory, architecture, coaching, therapy, fitness, music, veterinary, pharmacy, aviation, event planning, marketing, writing, chiropractic, insurance, nutrition, social work, translation, psychology, real estate brokerage, cabin crew, graphic design, data science, barbering, floristry, bartending, tattooing, security and more.',
 };
 
 const industries = [
@@ -444,6 +444,46 @@ const industries = [
       'Professional headshots for plumbers and plumbing contractors. Friendly portraits for websites, local listings and quotes.',
     href: '/industries/plumbers',
     cta: 'For Plumbers',
+  },
+  {
+    icon: Users,
+    name: 'Barbers',
+    description:
+      'Professional headshots for barbers and barbershop owners. Sharp portraits for booking pages, shop websites and Instagram.',
+    href: '/industries/barbers',
+    cta: 'For Barbers',
+  },
+  {
+    icon: Heart,
+    name: 'Florists',
+    description:
+      'Professional headshots for florists and floral designers. Warm portraits for wedding inquiries, shop sites and social media.',
+    href: '/industries/florists',
+    cta: 'For Florists',
+  },
+  {
+    icon: Star,
+    name: 'Bartenders',
+    description:
+      'Professional headshots for bartenders and mixologists. Polished portraits for resumes, LinkedIn and event bookings.',
+    href: '/industries/bartenders',
+    cta: 'For Bartenders',
+  },
+  {
+    icon: Award,
+    name: 'Tattoo Artists',
+    description:
+      'Professional headshots for tattoo artists and studio owners. Confident portraits for portfolios, booking pages and social profiles.',
+    href: '/industries/tattoo-artists',
+    cta: 'For Tattoo Artists',
+  },
+  {
+    icon: Shield,
+    name: 'Security Guards',
+    description:
+      'Professional headshots for security guards and officers. Credible portraits for resumes, LinkedIn and company profiles.',
+    href: '/industries/security-guards',
+    cta: 'For Security Pros',
   },
 ];
 

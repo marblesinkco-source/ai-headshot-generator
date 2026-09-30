@@ -1686,6 +1686,201 @@ export const photoStyles: PhotoStyle[] = [
     relatedCategories: ['headshots'],
     relatedBlogPosts: ['ai-headshot-for-authors', 'podcast-host-headshot-branding-guide', 'choosing-right-headshot-style'],
   },
+  {
+    slug: 'glass-morphism',
+    name: 'Glass Morphism Portraits',
+    title: 'AI Glass Morphism Portraits',
+    description:
+      'Modern portraits with frosted-glass panels, soft translucent layers and luminous gradients for a sleek digital look.',
+    metaDescription:
+      'Create AI glass morphism portraits with frosted-glass panels, translucent layers and luminous gradients. Sleek, modern photos for tech and design with TailorPic.',
+    heroText:
+      'Clear, layered and unmistakably modern. Glass morphism portraits place you in front of frosted panels and soft gradients, for a polished look that feels at home in today\'s best interfaces.',
+    features: [
+      'Frosted-glass panels and translucent layered backdrops',
+      'Soft pastel and aurora-style gradients with subtle glow',
+      'Crisp, clean lighting that keeps the face sharp and bright',
+      'Modern smart-casual and minimal wardrobe options',
+      'Gentle background blur with light, airy depth',
+      'High resolution files sized for app UIs, decks and web hero sections',
+    ],
+    idealFor: [
+      'Product designers and UI/UX professionals',
+      'SaaS founders and tech marketers',
+      'App landing pages and pitch decks',
+      'Creative agencies and digital studios',
+      'Conference speaker profiles for design and technology events',
+    ],
+    tips: [
+      'Upload bright, evenly lit selfies so the glass effects blend naturally',
+      'Wear solid, simple tops so the layered background stays the focus',
+      'Pick a gradient that complements your brand colours',
+      'Use a neutral style such as studio classic for formal documents',
+      'Generate a square crop for app avatars and a wide crop for hero banners',
+    ],
+    relatedCategories: ['headshots'],
+    relatedBlogPosts: [
+      'headshot-trends-2026',
+      'choosing-right-headshot-style',
+      'ai-headshot-for-startup-founders',
+    ],
+  },
+  {
+    slug: 'vaporwave',
+    name: 'Vaporwave Portraits',
+    title: 'AI Vaporwave Portraits',
+    description:
+      'Retro-futuristic portraits with pink and cyan gradients, neon grids and nostalgic 80s and 90s digital aesthetics.',
+    metaDescription:
+      'Get AI vaporwave portraits with pink and cyan gradients, neon grids, palm silhouettes and nostalgic retro-futuristic vibes. Bold, playful photos with TailorPic.',
+    heroText:
+      'Turn up the nostalgia. Vaporwave portraits wrap you in pink and cyan sunsets, glowing grids and retro-futuristic scenery, for a dreamy look that stands out anywhere.',
+    features: [
+      'Pink, purple and cyan gradient skies and sunsets',
+      'Neon grid floors, palm silhouettes and retro computer motifs',
+      'Dreamy, slightly faded colour grading with soft glow',
+      'Casual, streetwear and retro-inspired outfits',
+      'Playful but flattering expressions',
+      'High resolution files for avatars, covers and posters',
+    ],
+    idealFor: [
+      'Musicians, DJs and electronic producers',
+      'Streamers, gamers and content creators',
+      'Album art, playlists and event posters',
+      'Social media avatars and Discord profiles',
+      'Themed parties and creative portfolios',
+    ],
+    tips: [
+      'Upload clear selfies with a relaxed or playful expression',
+      'Wear simple solid colours so the gradients pop',
+      'Avoid heavy filters on your source photos',
+      'Pair with a corporate or LinkedIn style for professional platforms',
+      'Try both a pink sunset and a cyan night variation',
+    ],
+    relatedCategories: ['headshots'],
+    relatedBlogPosts: [
+      'ai-headshot-for-musicians',
+      'social-media-profile-photo-guide',
+      'choosing-right-headshot-style',
+    ],
+  },
+  {
+    slug: 'black-tie',
+    name: 'Black Tie Portraits',
+    title: 'AI Black Tie Portraits',
+    description:
+      'Elegant gala portraits in tuxedos and evening gowns with refined lighting and formal, timeless styling.',
+    metaDescription:
+      'Create AI black tie portraits with tuxedos, evening gowns, refined lighting and timeless formal styling. Elegant gala and event photos with TailorPic.',
+    heroText:
+      'Dressed for the occasion. Black tie portraits put you in a tuxedo or evening gown with polished lighting and rich, formal backdrops, for photos that look ready for a gala.',
+    features: [
+      'Tuxedos, bow ties, evening gowns and formal accessories',
+      'Rich dark backdrops, ballroom and candlelit settings',
+      'Refined, directional lighting with elegant highlights',
+      'Timeless, sophisticated poses and expressions',
+      'Subtle warm grading that flatters every skin tone',
+      'High resolution files for programmes, invitations and press',
+    ],
+    idealFor: [
+      'Gala hosts, honourees and charity event speakers',
+      'Award nominees and awards-night profiles',
+      'Wedding and formal event invitations',
+      'Executives and board members at formal occasions',
+      'Program booklets, auction catalogues and press kits',
+    ],
+    tips: [
+      'Upload selfies with clear shoulders and neckline visible',
+      'Choose a solid dark or light top in your selfies to guide the attire',
+      'Keep your expression composed with a confident, subtle smile',
+      'Pair with an executive or corporate style for daily professional use',
+      'Generate both a tuxedo and an evening-wear variation to compare',
+    ],
+    relatedCategories: ['headshots', 'holiday-cards'],
+    relatedBlogPosts: [
+      'executive-headshot-guide',
+      'ai-headshot-for-nonprofit-leaders',
+      'choosing-right-headshot-style',
+    ],
+  },
+  {
+    slug: 'bohemian',
+    name: 'Bohemian Portraits',
+    title: 'AI Bohemian Portraits',
+    description:
+      'Relaxed boho portraits with flowing fabrics, earthy textures, warm light and free-spirited natural settings.',
+    metaDescription:
+      'Get AI bohemian portraits with flowing fabrics, earthy textures, warm light and free-spirited natural settings. Relaxed, creative photos with TailorPic.',
+    heroText:
+      'Free-spirited and effortlessly warm. Bohemian portraits bring flowing fabrics, earthy colours and golden light to your photos, for an easygoing look full of personality.',
+    features: [
+      'Flowing fabrics, layered jewellery and natural textures',
+      'Earthy palettes of terracotta, sage, cream and mustard',
+      'Warm, soft light with gentle golden tones',
+      'Plants, macramé, woven decor and garden backdrops',
+      'Relaxed, genuine expressions and unposed poses',
+      'High resolution files for websites, shops and social feeds',
+    ],
+    idealFor: [
+      'Artists, makers and Etsy sellers',
+      'Yoga teachers, wellness coaches and healers',
+      'Travel bloggers and lifestyle creators',
+      'Boutique owners and independent designers',
+      'Festival profiles and personal brand pages',
+    ],
+    tips: [
+      'Upload daylight selfies with a natural smile',
+      'Wear simple neutral or earthy tops for the AI to build on',
+      'Choose a close crop for profiles and a wider crop for banners',
+      'Pair with a business casual style for more formal platforms',
+      'Try a garden and an indoor plant-filled variation',
+    ],
+    relatedCategories: ['headshots', 'dating-photos'],
+    relatedBlogPosts: [
+      'freelancer-headshot-branding',
+      'personal-brand-headshot-strategy',
+      'choosing-right-headshot-style',
+    ],
+  },
+  {
+    slug: 'industrial',
+    name: 'Industrial Portraits',
+    title: 'AI Industrial Portraits',
+    description:
+      'Gritty, confident portraits set in warehouses, workshops and loft spaces with brick, steel and concrete textures.',
+    metaDescription:
+      'Create AI industrial portraits in warehouses, workshops and lofts with brick, steel and concrete textures. Confident, rugged photos with TailorPic.',
+    heroText:
+      'Built with character. Industrial portraits place you in raw loft spaces, workshops and factory floors, for a strong, grounded image with texture and attitude.',
+    features: [
+      'Exposed brick, steel beams, concrete and metal textures',
+      'Warehouse, workshop and converted loft settings',
+      'Moody, directional light with strong but flattering contrast',
+      'Work jackets, denim, rolled sleeves and utility wear',
+      'Confident, grounded poses and expressions',
+      'High resolution files for websites, signage and print',
+    ],
+    idealFor: [
+      'Engineers, builders and skilled tradespeople',
+      'Manufacturing and logistics leaders',
+      'Craft brewers, makers and workshop owners',
+      'Architects and design-build firms',
+      'Coworking spaces, gyms and loft-based businesses',
+    ],
+    tips: [
+      'Upload sharp selfies with even lighting on the face',
+      'Wear a work shirt, jacket or plain tee to match the setting',
+      'Keep a steady, confident expression',
+      'Use a corporate style for investor and formal documents',
+      'Try both a brick loft and a workshop scene',
+    ],
+    relatedCategories: ['headshots', 'team-headshots'],
+    relatedBlogPosts: [
+      'best-headshot-backgrounds-by-industry',
+      'team-headshot-consistency-guide',
+      'choosing-right-headshot-style',
+    ],
+  },
 ];
 
 export function getPhotoStyle(slug: string): PhotoStyle | undefined {

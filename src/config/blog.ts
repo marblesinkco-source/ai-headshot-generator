@@ -7803,6 +7803,310 @@ export const blogPosts: BlogPost[] = [
     tags: ['Students', 'Internships', 'LinkedIn'],
     readingTime: '7 min read',
   },
+  {
+    slug: 'corporate-headshot-best-practices',
+    title: 'Corporate Headshot Best Practices: A Complete Guide',
+    description:
+      'Learn the best practices for corporate headshots: consistency, attire, backgrounds, lighting, retouching and how AI helps teams stay cohesive.',
+    content: `
+      <p>A corporate headshot is one of the most widely seen images a company produces. It appears on the website team page, in investor decks, on conference badges, in press releases and in every email signature. Despite that reach, many organisations treat headshots as an afterthought and end up with a patchwork of mismatched photos taken years apart. This guide sets out the best practices that separate a credible, cohesive set of corporate portraits from a messy one, and explains how AI tools make those standards easy to meet.</p>
+
+      <h2>Start With the Purpose</h2>
+      <p>Before anyone picks a backdrop or a jacket, decide where the images will live. A photo for a leadership page needs a different crop than one for a tiny email avatar. Print materials such as annual reports need higher resolution than web thumbnails. List the destinations first, then work backwards: a <a href="/use-cases/website-team-page">website team page</a> benefits from a consistent square or portrait crop, while an <a href="/use-cases/annual-report">annual report</a> calls for a more formal, high-resolution file. Knowing the purpose prevents expensive reshoots later.</p>
+
+      <h2>Consistency Beats Perfection</h2>
+      <p>The single most important principle is consistency. A set of good photos that match will look more professional than a mix of brilliant and mediocre ones. Match the following across every person:</p>
+      <ul>
+        <li><strong>Background:</strong> use the same colour or gradient for everyone. Neutral greys, soft blues and warm off-whites are safe choices.</li>
+        <li><strong>Framing:</strong> keep the head at the same size within the frame and crop at the same point, usually mid-chest.</li>
+        <li><strong>Lighting direction:</strong> soft light from the same side gives a unified look.</li>
+        <li><strong>Colour grading:</strong> similar warmth and contrast prevent one person from looking oddly orange or cold.</li>
+        <li><strong>Expression:</strong> aim for a relaxed, confident smile rather than a mix of grins and stern looks.</li>
+      </ul>
+      <p>Our <a href="/blog/team-headshot-consistency-guide">team headshot consistency guide</a> goes deeper on how to keep a growing team looking cohesive as people join and leave.</p>
+
+      <h2>Choose the Right Style for Your Brand</h2>
+      <p>Corporate does not have to mean stiff. A law firm might choose the traditional <a href="/styles/corporate">corporate style</a>, while a technology company may prefer the relaxed, modern feel of the <a href="/styles/tech-startup">tech startup style</a>. Leadership pages often suit the authority of <a href="/styles/executive">executive portraits</a>, and a clean <a href="/styles/studio-classic">studio classic</a> look works almost anywhere. Pick one primary style and stick with it across the company so that visitors see a single, recognisable visual identity.</p>
+
+      <h2>Attire Guidelines That Actually Work</h2>
+      <p>Clear but flexible clothing guidance saves time. Ask people to wear solid colours in mid-tones, avoid tiny stripes or checks that can shimmer, and steer clear of large logos. A blazer or collared shirt is a safe default for conservative sectors. For creative or start-up environments, a neat knit or open-collar shirt is appropriate. With AI headshots, attire is selected as part of the style, so you can give each team member the same wardrobe category without asking anyone to bring outfits to a studio. If you need inspiration, see our <a href="/blog/corporate-headshot-dress-code">corporate headshot dress code</a> article.</p>
+
+      <h2>Backgrounds and Brand Colour</h2>
+      <p>The background frames the person and quietly signals your brand. Neutral tones are timeless and survive rebrands. If you want a subtle link to brand colour, choose a muted tint of it rather than a saturated block, which can overpower faces. Avoid busy office scenes that compete with the subject and date quickly. Our <a href="/blog/headshot-background-guide">headshot background guide</a> compares the most common options, and the <a href="/blog/headshot-background-color-psychology">background colour psychology</a> article explains how different hues are perceived.</p>
+
+      <h2>Lighting and Expression</h2>
+      <p>Good lighting is soft, slightly above eye level and free of harsh shadows under the eyes and nose. It should flatter every skin tone without blowing out highlights. For expression, the goal is approachable competence. A slight squint, a genuine smile and a relaxed jaw read as confident. A forced grin or blank stare reads as uncomfortable. When uploading selfies to an AI service, take them in natural daylight facing a window and include a few with a real smile, since the model learns your face from those references. See the <a href="/blog/headshot-lighting-guide">headshot lighting guide</a> for more.</p>
+
+      <h2>Inclusivity and Accessibility</h2>
+      <p>Corporate photography should work for everyone. Make sure lighting and retouching do not flatter some skin tones at the expense of others, and avoid heavy smoothing that erases natural features. Allow people to wear religious or cultural attire, glasses, hearing aids and mobility equipment as they normally would. Offer a choice of formality so that no one feels forced into a look that is not theirs. Add descriptive alt text to every headshot on your website so screen reader users can follow the page.</p>
+
+      <h2>Retouching With Restraint</h2>
+      <p>The best corporate retouching is invisible. Remove temporary distractions such as a stray hair or a blemish, but leave the features that make a person recognisable. Colleagues, clients and candidates should be able to recognise the person from the photo when they meet. Overly smooth skin or altered face shapes undermine trust. Our <a href="/blog/headshot-retouching-ethics">retouching ethics article</a> explains where to draw the line.</p>
+
+      <h2>File Formats, Sizes and Naming</h2>
+      <p>Keep a master version at full resolution, plus smaller exports for web and social use. Square crops suit most social platforms, while portrait crops suit team pages and press kits. Name files clearly, for example firstname-lastname-headshot-2024, and store them in a shared folder so marketing, HR and sales all use the same approved image. The <a href="/blog/headshot-size-resolution-guide">size and resolution guide</a> lists recommended dimensions for each platform.</p>
+
+      <h2>Keeping Headshots Current</h2>
+      <p>A photo that is more than three to five years old can make a first meeting awkward. Set a simple refresh cadence, and update immediately after major changes such as a new hairstyle, a promotion or a rebrand. New hires should receive their headshot during onboarding so that the website, email signature and <a href="/use-cases/company-intranet">company intranet</a> are complete from day one. Check your <a href="/use-cases/email-signature">email signature</a> too, since it is often the most frequently seen headshot of all.</p>
+
+      <h2>Why AI Works Well for Corporate Programmes</h2>
+      <p>Traditional shoots require scheduling, travel, studio hire and a lot of waiting around, and remote staff are frequently left out. AI headshots remove those obstacles. Each person uploads a handful of selfies, the same style settings are applied to everyone, and the results arrive in minutes. That makes it straightforward to keep a distributed team visually consistent. Learn more about how it fits into company workflows in our post on <a href="/blog/how-companies-use-ai-headshots">how companies use AI headshots</a>.</p>
+
+      <h2>A Practical Rollout Checklist</h2>
+      <ul>
+        <li>Define the destinations and required crops.</li>
+        <li>Choose one primary <a href="/styles">style</a> and a neutral background.</li>
+        <li>Publish simple selfie instructions and attire guidance.</li>
+        <li>Have each person generate and select a favourite, with a short approval step.</li>
+        <li>Export master and web versions, and store them centrally.</li>
+        <li>Update websites, profiles and signatures in one coordinated push.</li>
+        <li>Schedule a yearly check for changes and new joiners.</li>
+      </ul>
+
+      <h2>Common Mistakes to Avoid</h2>
+      <p>The most frequent errors are mixing photo styles, using old images, cropping inconsistently, choosing distracting backgrounds and skipping alt text. Another is leaving the decision to each individual with no guidance, which almost guarantees inconsistency. A short one-page brief solves most of these problems.</p>
+
+      <h2>Final Thoughts</h2>
+      <p>Excellent corporate headshots are not about expensive equipment. They come from clear purpose, strict consistency, flattering light, restrained retouching and regular updates. <a href="/headshots">Create your team headshots with TailorPic</a> and give your company a polished, unified face in minutes, whether your people sit in one office or across several time zones.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['Corporate', 'Teams', 'Best Practices'],
+    readingTime: '7 min read',
+  },
+  {
+    slug: 'ai-headshot-for-real-estate-agents',
+    title: 'AI Headshots for Real Estate Agents: Look Trustworthy Fast',
+    description:
+      'How real estate agents can use AI headshots for signs, listings, cards and social profiles with a warm, consistent and professional look.',
+    content: `
+      <p>In real estate, you are the product. Buyers and sellers choose an agent largely on trust, and trust begins with a face. Your photo appears on yard signs, listing portals, business cards, social posts, postcards and your website. A dated, blurry or overly casual image can cost you a call before the conversation even starts. This guide explains how real estate agents can use AI headshots to get a consistent, approachable, professional look without booking a studio.</p>
+
+      <h2>Why Your Headshot Matters in Real Estate</h2>
+      <p>Clients often meet you online first. They scroll through agent profiles, compare photos and decide who feels friendly and competent. Research on first impressions suggests people judge warmth and credibility within a fraction of a second. A strong headshot tells them you are approachable, organised and serious about your work. A weak one suggests the opposite. Because agents are in a relationship business, that first visual impression carries unusual weight. For more on the topic, read our article on <a href="/blog/real-estate-agent-headshots">real estate agent headshots</a>.</p>
+
+      <h2>Where Agents Use Their Photos</h2>
+      <p>Most agents need the same portrait in many places. Common uses include:</p>
+      <ul>
+        <li>Listing portals and your brokerage profile page</li>
+        <li>Yard signs, flyers, postcards and open house materials</li>
+        <li>Business cards and <a href="/use-cases/email-signature">email signatures</a></li>
+        <li>Your personal website and <a href="/use-cases/real-estate-listing">real estate listing pages</a></li>
+        <li><a href="/use-cases/linkedin">LinkedIn</a>, <a href="/use-cases/facebook">Facebook</a> and <a href="/use-cases/instagram">Instagram</a></li>
+        <li>Video thumbnails and community newsletters</li>
+      </ul>
+      <p>Using one consistent face across every touchpoint builds recognition. After a few weeks of seeing the same photo on signs, ads and social feeds, local buyers and sellers start to recognise you on sight.</p>
+
+      <h2>The Look That Works for Agents</h2>
+      <p>The best agent photos balance professionalism with warmth. You want to look like someone a family would happily invite into a stressful life decision. Aim for a genuine smile, relaxed shoulders and direct eye contact. Wear a blazer or smart shirt in a solid colour, and avoid anything too flashy. Our <a href="/styles/professional-linkedin">professional LinkedIn style</a> and <a href="/styles/business-casual">business casual style</a> both suit most agents, while the <a href="/styles/executive">executive style</a> may fit brokers and team leaders who want a more authoritative presence. If you are a luxury specialist, the polished <a href="/styles/studio-classic">studio classic</a> look can signal a premium service.</p>
+
+      <h2>Choosing a Background</h2>
+      <p>Backgrounds matter because they set the tone. Neutral studio tones keep the focus on your face and will not clash with brokerage branding. A softly blurred outdoor or home setting can add warmth, which suits agents who want to feel neighbourly. Avoid anything cluttered. If your brokerage requires a specific colour, choose a muted version so that you still look natural. See our <a href="/blog/headshot-background-guide">background guide</a> and the post on <a href="/blog/best-headshot-backgrounds-by-industry">backgrounds by industry</a> for more ideas.</p>
+
+      <h2>How to Take Good Selfies for AI</h2>
+      <p>The quality of your results depends on the photos you upload. Follow these simple rules:</p>
+      <ul>
+        <li>Shoot in soft daylight near a window, not under harsh overhead lights.</li>
+        <li>Upload around ten to fifteen images with varied angles and expressions.</li>
+        <li>Include both smiling and neutral looks, with some close-ups and some from the chest up.</li>
+        <li>Avoid sunglasses, heavy filters and hats.</li>
+        <li>Use recent photos that look like you today.</li>
+      </ul>
+      <p>Our guide on <a href="/blog/how-to-prepare-photos-for-ai-headshot">how to prepare photos for an AI headshot</a> has a full checklist.</p>
+
+      <h2>Agent, Team or Brokerage?</h2>
+      <p>Independent agents usually need one or two strong images. Teams need matching photos so the group looks like a single brand, and brokerages need consistent portraits for dozens or hundreds of agents. AI makes team consistency easy because the same style and background can be applied to everyone regardless of where they live. To see how teams benefit, read about <a href="/blog/ai-headshot-for-real-estate-teams">AI headshots for real estate teams</a> and the <a href="/blog/real-estate-team-ai-headshots-roi">ROI of real estate team headshots</a>. For role-specific ideas, browse our pages for <a href="/industries/real-estate">real estate professionals</a> and <a href="/industries/real-estate-brokers">real estate brokers</a>.</p>
+
+      <h2>Matching Your Photo to Your Market</h2>
+      <p>A downtown condo specialist may want a sleek, modern look, while a rural or family-home agent may prefer a warmer, more relaxed image. Consider your typical client. First-time buyers often respond to friendly and approachable photos, luxury buyers to refined and polished ones, and investors to confident, data-driven professionalism. Choosing a style that fits your niche shows that you understand your audience before you say a word.</p>
+
+      <h2>Mistakes Agents Often Make</h2>
+      <ul>
+        <li><strong>Using old photos:</strong> clients who meet you in person should recognise you instantly.</li>
+        <li><strong>Cropping a group or wedding photo:</strong> this usually looks low quality on signs and ads.</li>
+        <li><strong>Heavy filters:</strong> over-edited skin looks artificial and hurts trust.</li>
+        <li><strong>Inconsistent images:</strong> a different photo on every platform makes you harder to remember.</li>
+        <li><strong>Distracting backdrops:</strong> cars, cluttered rooms or sunsets behind you pull attention from your face.</li>
+      </ul>
+
+      <h2>Privacy and Compliance</h2>
+      <p>Check with your brokerage about branding rules, especially for colours, logos and approved photos on signage. Also review how any AI provider stores and deletes your images. Our <a href="/blog/ai-headshot-privacy-security-guide">privacy and security guide</a> explains what to look for, and every agent should be comfortable with those terms before uploading selfies.</p>
+
+      <h2>Using Your Headshot to Generate Leads</h2>
+      <p>A new photo is a good excuse to refresh your entire presence. Update your profile on every portal, swap your social avatars, reprint cards and refresh your email signature. Post a short note announcing your updated branding, which gives followers a reason to engage. Put the same image on your website beside a short bio and clear contact details. A coordinated refresh makes you look active and modern, which is exactly how buyers and sellers want their agent to feel.</p>
+
+      <h2>A Simple 30-Minute Plan</h2>
+      <ol>
+        <li>Take a dozen selfies near a window in a solid-colour top.</li>
+        <li>Upload them to TailorPic and choose a primary and a backup <a href="/styles">style</a>.</li>
+        <li>Select your two favourite results and download the full resolution files.</li>
+        <li>Update your listing portals, website, LinkedIn and social profiles.</li>
+        <li>Send your print files to your card and sign supplier.</li>
+        <li>Add the image to your email signature and newsletter header.</li>
+      </ol>
+
+      <h2>Cost Compared With a Photographer</h2>
+      <p>A local portrait session can cost several hundred dollars and requires scheduling, travel and waiting for edits. AI headshots deliver a similar professional result for a fraction of the price, and you can regenerate whenever you change your look. You can compare options in our <a href="/blog/ai-headshot-vs-professional-photographer-cost">cost comparison</a>. For agents who like to keep marketing spend under control, it is one of the most efficient investments available.</p>
+
+      <h2>Final Thoughts</h2>
+      <p>In real estate, people buy from agents they like and trust, and your photo is often the first step. A warm, consistent and professional portrait helps you stand out in crowded search results and stay memorable in your community. <a href="/headshots">Create your real estate agent headshot with TailorPic</a> and start every client relationship with a great first impression.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['Real Estate', 'Agents', 'Personal Branding'],
+    readingTime: '6 min read',
+  },
+  {
+    slug: 'headshot-color-psychology',
+    title: 'Headshot Color Psychology: Choosing Colors That Work',
+    description:
+      'How colour shapes first impressions in headshots. Learn what blue, grey, black, green and more say about you, and how to choose clothing and backdrops.',
+    content: `
+      <p>Colour changes how people feel about an image long before they consciously read the face in it. The shirt you wear, the backdrop behind you and the overall tone of the photo all send quiet signals about your personality and profession. Understanding colour psychology will not turn a bad photo into a good one, but it can help you make smarter choices about every decision that is within your control. This guide explains how common colours are perceived in headshots and how to use them with intent.</p>
+
+      <h2>Why Colour Matters in a Headshot</h2>
+      <p>Viewers form an impression of a profile photo in a moment. Colour contributes to that impression in three ways. First, it sets mood: warm colours feel friendly, cool colours feel calm and composed. Second, it affects contrast, which determines whether your face stands out or fades into the background. Third, it carries cultural and professional associations, such as navy suggesting reliability or green suggesting growth. Keep in mind that these associations are tendencies, not laws. Culture, context and personal taste all shape how colours are read. For the backdrop specifically, see our article on <a href="/blog/headshot-background-color-psychology">background colour psychology</a>.</p>
+
+      <h2>Blue: Trust and Stability</h2>
+      <p>Blue is the most popular colour in professional photography for a reason. It is widely associated with trust, competence and calm, which is why banks, insurers and technology companies rely on it. A navy jacket or a soft blue backdrop works well for <a href="/industries/lawyers">lawyers</a>, <a href="/industries/financial-advisors">financial advisors</a> and <a href="/industries/consultants">consultants</a>. Lighter blues feel more open and friendly, while deep navy feels authoritative. Blue is also flattering on most skin tones, making it a safe default.</p>
+
+      <h2>Grey and Charcoal: Neutral and Polished</h2>
+      <p>Grey is the neutral of the corporate world. A grey backdrop never competes with the face and ages well, which is why it is so common in company team pages. Charcoal clothing reads as serious and refined, while lighter greys feel modern and minimal. If you are unsure, a mid-grey background is nearly impossible to get wrong. You can see this effect in our <a href="/styles/corporate">corporate</a> and <a href="/styles/minimalist">minimalist</a> styles.</p>
+
+      <h2>Black: Authority and Sophistication</h2>
+      <p>Black conveys power, formality and elegance. It slims the silhouette and adds drama, which suits executives, creatives and luxury brands. However, a black top against a black background can make you disappear, and too much black can feel severe. Use it with good lighting and a touch of contrast, such as a light collar or a lighter backdrop. Our <a href="/styles/executive">executive style</a> often uses deep tones to great effect.</p>
+
+      <h2>White and Off-White: Clean and Approachable</h2>
+      <p>White feels fresh, honest and uncluttered. A bright backdrop gives a modern, airy look, popular with health professionals and start-ups. On clothing, white shirts look crisp but can reflect light onto the face or blow out highlights in bright settings. Off-white or cream is usually kinder to skin and looks warmer. A white coat or soft white top suits <a href="/industries/doctors">doctors</a> and <a href="/industries/nurses">nurses</a> well, as it signals cleanliness and care.</p>
+
+      <h2>Red: Energy and Confidence</h2>
+      <p>Red grabs attention and suggests passion, confidence and urgency. It can be powerful in small doses, such as a scarf, a tie or a lipstick shade, but a large block of red can distract or feel aggressive. Sales leaders and public speakers sometimes use it to project energy. If you choose red, keep the rest of the image simple so it remains a deliberate accent. Our <a href="/styles/bold-color">bold colour style</a> shows how saturated hues can work when they are the point of the image.</p>
+
+      <h2>Green: Growth and Calm</h2>
+      <p>Green is associated with growth, health, nature and balance. It feels restful and is popular with wellness professionals, sustainability brands and outdoor businesses. Muted greens such as olive or sage look refined, while bright greens can feel playful. A soft green or natural foliage backdrop pairs beautifully with the <a href="/styles/natural-light">natural light style</a> and suits <a href="/industries/nutritionists">nutritionists</a>, <a href="/industries/therapists">therapists</a> and coaches.</p>
+
+      <h2>Orange and Yellow: Warmth and Optimism</h2>
+      <p>Warm colours feel friendly, creative and energetic. Yellow in particular signals optimism, though it is difficult to wear well because it can wash out some skin tones. Orange suggests enthusiasm and approachability. They work best as accents or in warm lighting, like the golden tones of our <a href="/styles/warm-golden">warm golden style</a>, rather than as dominant clothing colours for conservative fields.</p>
+
+      <h2>Purple: Creativity and Distinction</h2>
+      <p>Purple has long been linked with creativity, imagination and a hint of luxury. It suits designers, artists, educators and entrepreneurs who want to appear original without being loud. Deep plum and aubergine look sophisticated, whereas bright violet is more playful. Pair it with neutral backgrounds for a balanced effect.</p>
+
+      <h2>Brown and Earth Tones: Reliable and Grounded</h2>
+      <p>Brown, tan and olive feel grounded, dependable and warm. They photograph beautifully in soft light and suit craftspeople, architects, real estate professionals and anyone seeking a humble, genuine tone. Earth tones also look natural against wood, stone or soft outdoor backdrops, such as in our <a href="/styles/rustic-outdoor">rustic outdoor style</a>.</p>
+
+      <h2>Matching Clothing Colour to Skin Tone</h2>
+      <p>The best colour is the one that makes your face look healthy. Generally, choose shades that contrast gently with your skin rather than matching it exactly. Fair skin often suits deep jewel tones and navy. Medium and olive skin tends to glow in earthy shades, teal and warm neutrals. Deep skin tones look striking in bright jewel colours, crisp white and rich pastels. Avoid anything that is close to your skin shade, since it can make you look washed out. Our <a href="/blog/what-to-wear-for-headshots">what to wear for headshots</a> guide goes into more detail.</p>
+
+      <h2>Contrast Between Clothing and Background</h2>
+      <p>Separation is as important as colour choice. If your clothing and background are similar in tone, you lose definition. A dark jacket works best on a lighter backdrop, and a light top looks best against a mid or dark one. The face should be the brightest, most saturated part of the image so that viewers look there first. Keep patterns minimal and logos hidden.</p>
+
+      <h2>Industry Guidance at a Glance</h2>
+      <ul>
+        <li><strong>Finance and law:</strong> navy, charcoal and grey suggest reliability.</li>
+        <li><strong>Healthcare:</strong> soft blues, teal and white communicate care and cleanliness.</li>
+        <li><strong>Technology:</strong> cool greys, blues and modern neutrals feel innovative.</li>
+        <li><strong>Creative fields:</strong> richer, bolder colours signal personality.</li>
+        <li><strong>Wellness and education:</strong> greens, warm neutrals and soft tones feel welcoming.</li>
+      </ul>
+
+      <h2>Colour Grading and Mood</h2>
+      <p>Beyond clothing and backdrop, the overall grade of the image matters. Warm grading feels inviting and personal. Cool grading feels crisp and professional. High contrast feels dramatic, while soft, low-contrast grading feels gentle and approachable. AI headshots let you explore these moods quickly, so you can generate a warm version and a cool version and compare. Our <a href="/blog/headshot-lighting-guide">lighting guide</a> explains how light and colour interact.</p>
+
+      <h2>Platform Considerations</h2>
+      <p>Remember that your photo shows at small sizes. On <a href="/use-cases/linkedin">LinkedIn</a>, a clean, well-lit face against a simple backdrop stands out in a feed full of tiny circles. Very busy colours or low-contrast images become unreadable at thumbnail size. Test your chosen image by shrinking it to a few dozen pixels and checking that the face is still clear.</p>
+
+      <h2>Final Thoughts</h2>
+      <p>Colour psychology is a guide, not a rulebook. Start with the impression you want to make, pick a palette that supports it, check contrast and skin tone, and then choose the result that looks most like you. <a href="/headshots">Create your headshot with TailorPic</a>, try a couple of colour directions side by side, and keep the one that feels right for your audience.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['Color Psychology', 'Style', 'Tips'],
+    readingTime: '7 min read',
+  },
+  {
+    slug: 'ai-headshot-for-educators',
+    title: 'AI Headshots for Educators: Teachers, Professors and Tutors',
+    description:
+      'A practical guide for teachers, professors and online educators to create a warm, credible AI headshot for staff pages, courses and profiles.',
+    content: `
+      <p>Teachers, professors, instructors and school leaders spend their days building trust with students, parents and colleagues. Yet many educators have no current professional photo at all. Their school directory shows a decade-old image, their online course page uses a cropped holiday snap, and their professional profiles have a placeholder silhouette. This guide explains how educators can create a warm, credible headshot with AI in minutes and where to use it.</p>
+
+      <h2>Why Educators Need a Good Headshot</h2>
+      <p>Education has become increasingly visible online. Parents look up teachers, students browse faculty pages, and prospective colleagues read staff bios. A friendly, professional photo helps people feel they already know you. It signals approachability to students, reliability to parents and professionalism to employers. For educators building an audience beyond the classroom, such as tutors, course creators and authors, a strong image is part of the brand. Our existing guides for <a href="/blog/teacher-headshot-guide">teachers</a> and <a href="/blog/teacher-professor-headshot-guide">teachers and professors</a> cover the basics, and this article expands on it for the wider education community.</p>
+
+      <h2>Who This Guide Is For</h2>
+      <p>Education covers many roles, each with slightly different needs:</p>
+      <ul>
+        <li><a href="/industries/teachers">Teachers</a> in primary and secondary schools</li>
+        <li><a href="/industries/professors">Professors</a> and university lecturers</li>
+        <li><a href="/industries/librarians">Librarians</a> and media specialists</li>
+        <li>School principals, deans and administrators</li>
+        <li>Private tutors and test-prep instructors</li>
+        <li>Online educators and <a href="/use-cases/online-course">course creators</a></li>
+        <li>Instructional designers and education consultants</li>
+      </ul>
+
+      <h2>Where Educators Use Their Photo</h2>
+      <p>Most educators need the same image in several places. School and university staff pages, learning management systems, faculty directories, conference programmes, research profiles and <a href="/use-cases/linkedin">LinkedIn</a> all ask for a photo. If you teach online, your course landing page, newsletter and social profiles need one too. Academics applying for grants or publishing books often need it for a <a href="/use-cases/speaking-engagement">speaking engagement</a> page or an <a href="/use-cases/author-bio">author bio</a>. Keeping one consistent photo across all of these helps colleagues and students recognise you.</p>
+
+      <h2>The Right Look for the Classroom</h2>
+      <p>Educators generally want to appear knowledgeable yet approachable. That usually means smart-casual clothing in solid, friendly colours, a genuine smile and a relaxed posture. Our <a href="/styles/business-casual">business casual style</a> and <a href="/styles/professional-linkedin">professional LinkedIn style</a> suit most teachers, while the <a href="/styles/natural-light">natural light style</a> adds warmth that helps early-years and primary educators feel welcoming. University faculty may prefer a slightly more formal <a href="/styles/studio-classic">studio classic</a> portrait, and leaders such as principals often choose the <a href="/styles/executive">executive style</a>.</p>
+
+      <h2>Choosing Colours and Backgrounds</h2>
+      <p>Warm but calm colours work best. Soft blues and greens feel trustworthy and relaxed, while deeper navy suggests authority. Avoid busy patterns, since they distract and can look odd on screen. A neutral or softly blurred background keeps attention on your face. Some educators like an unobtrusive library or classroom feel, but this can become cluttered, so keep it subtle. To understand how colours are perceived, read our article on <a href="/blog/headshot-color-psychology">headshot colour psychology</a>.</p>
+
+      <h2>Taking Selfies That Give Great AI Results</h2>
+      <p>You do not need a photographer. You only need a phone and a little daylight.</p>
+      <ol>
+        <li>Stand near a window and face the light.</li>
+        <li>Take ten to fifteen photos with different angles and expressions.</li>
+        <li>Include a real smile, a soft smile and a neutral look.</li>
+        <li>Avoid sunglasses, hats and heavy filters.</li>
+        <li>Keep the background plain and use recent photos.</li>
+      </ol>
+      <p>Our <a href="/blog/how-to-prepare-photos-for-ai-headshot">photo preparation guide</a> provides a longer checklist.</p>
+
+      <h2>Keeping It Appropriate and Authentic</h2>
+      <p>Educators are role models, and their photos are often seen by minors and parents. Choose a tasteful, modest and recognisable image. Avoid dramatic filters and stylised effects for official school profiles, and check your employer's policy on staff photos. AI should help you look like yourself on a good day, not like a different person. If a student or parent meets you the next morning, the photo should match. Read our <a href="/blog/headshot-retouching-ethics">retouching ethics guide</a> for more.</p>
+
+      <h2>Privacy Considerations for Teachers</h2>
+      <p>Teachers often have good reasons to be careful about their online presence. Before uploading, review how a service stores and deletes your images, and avoid images that reveal your home, your school's security details or students. Our <a href="/blog/ai-headshot-privacy-security-guide">privacy and security guide</a> explains the questions to ask. If your school provides a standard photo process, ask whether personal AI-generated images are acceptable for staff pages.</p>
+
+      <h2>Headshots for Online Educators and Course Creators</h2>
+      <p>If you sell courses or tutoring, your photo does real commercial work. Learners decide whether to trust a stranger with their time and money, and a friendly, credible portrait improves conversion on a landing page. Use the same image on your course page, your welcome video thumbnail, your newsletter and your social profiles. See our article on <a href="/blog/freelancer-headshot-branding">freelancer headshot branding</a> for ideas on building consistency, and consider a second, more casual shot for behind-the-scenes content.</p>
+
+      <h2>Headshots for Departments and Schools</h2>
+      <p>Schools and university departments often struggle with inconsistent staff photos. Some teachers have studio portraits, others have cropped selfies, and new staff have nothing at all. AI removes the cost and logistics of a photo day. Each staff member uploads selfies, a common style and background are chosen, and the department gets a uniform set for its <a href="/use-cases/website-team-page">team page</a>. For more on managing groups, read our <a href="/blog/team-headshot-consistency-guide">team consistency guide</a> and the post about <a href="/blog/group-team-headshot-coordination">group headshot coordination</a>.</p>
+
+      <h2>Common Mistakes Educators Make</h2>
+      <ul>
+        <li>Using a cropped group or wedding photo</li>
+        <li>Wearing busy patterns that look distracting on camera</li>
+        <li>Choosing a photo that is ten years out of date</li>
+        <li>Over-filtering, which reduces trust</li>
+        <li>Using a different image on every platform</li>
+      </ul>
+
+      <h2>A Quick Start Plan</h2>
+      <ol>
+        <li>Take a dozen selfies in daylight wearing a solid, friendly colour.</li>
+        <li>Upload them to TailorPic and choose a style from our <a href="/styles">style library</a>.</li>
+        <li>Pick the two results that look most like you.</li>
+        <li>Update your staff page, LMS profile, LinkedIn and email signature.</li>
+        <li>Keep a high-resolution copy for conference programmes and publications.</li>
+      </ol>
+
+      <h2>How Often to Update</h2>
+      <p>Refresh your photo every two to three years, or sooner if your appearance changes. Many educators choose to update at the start of the academic year, when staff pages and directories are already being revised. Doing it once a year keeps your profile current without much effort.</p>
+
+      <h2>Final Thoughts</h2>
+      <p>A good headshot helps students, parents and colleagues see you as the approachable professional you are. It costs little, takes minutes and lasts for years. <a href="/headshots">Create your educator headshot with TailorPic</a> and give every staff page, course listing and profile a friendly, professional face.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['Education', 'Teachers', 'Professors'],
+    readingTime: '6 min read',
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

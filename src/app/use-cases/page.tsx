@@ -306,6 +306,41 @@ const useCases = [
     href: '/use-cases/visa-application',
     tag: 'Career',
   },
+  {
+    icon: Users,
+    title: 'Church Directory Photos',
+    description: 'Warm, consistent portraits for church and congregation directories.',
+    href: '/use-cases/church-directory',
+    tag: 'Directory',
+  },
+  {
+    icon: Heart,
+    title: 'Medical Staff Directory',
+    description: 'Trustworthy headshots for hospital and clinic staff directories.',
+    href: '/use-cases/medical-staff-directory',
+    tag: 'Directory',
+  },
+  {
+    icon: GraduationCap,
+    title: 'School Yearbook Photos',
+    description: 'Clean, consistent portraits for school yearbooks and staff pages.',
+    href: '/use-cases/school-yearbook',
+    tag: 'Directory',
+  },
+  {
+    icon: Users,
+    title: 'Sports Team Roster',
+    description: 'Sharp, matching headshots for team rosters and league sites.',
+    href: '/use-cases/sports-team-roster',
+    tag: 'Directory',
+  },
+  {
+    icon: Globe,
+    title: 'Government ID Photos',
+    description: 'Clean portraits for government profiles. Always check official photo rules.',
+    href: '/use-cases/government-id-photo',
+    tag: 'Directory',
+  },
 ];
 
 export default function UseCasesPage() {

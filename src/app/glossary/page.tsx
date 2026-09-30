@@ -321,6 +321,21 @@ const terms: Term[] = [
     definition:
       'The setting that makes neutral colors, such as white or gray, appear truly neutral under different light sources. Incorrect white balance causes a yellow or blue color cast on skin.',
   },
+  {
+    term: 'Ambient Light',
+    definition:
+      'The existing, natural or artificial light in a scene that is not added by a dedicated flash or studio light. Soft ambient light from a window flatters skin, while harsh overhead ambient light creates unflattering shadows under the eyes and nose.',
+  },
+  {
+    term: 'Lens Flare',
+    definition:
+      'Streaks, haze or bright spots that appear when a strong light source hits the camera lens directly and scatters inside it. Used sparingly it can add warmth, but in a professional headshot it usually reduces contrast and is best avoided.',
+  },
+  {
+    term: 'Rule of Thirds',
+    definition:
+      'A composition guideline that divides the frame into a three-by-three grid and places key elements along the lines or intersections. In portraits, placing the eyes near the upper third line creates a balanced, natural-looking headshot.',
+  },
 ];
 
 const sortedTerms = [...terms].sort((a, b) =>
