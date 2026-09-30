@@ -2657,6 +2657,335 @@ export const blogPosts: BlogPost[] = [
     tags: ['Social Media', 'Profile Photos', 'Guide'],
     readingTime: '5 min read',
   },
+  {
+    slug: 'zoom-meeting-headshot-tips',
+    title: 'How to Look Professional in Zoom: Headshot & Camera Tips for 2025',
+    description:
+      'Practical tips to look professional on Zoom calls and video meetings, from camera setup and lighting to choosing the right profile photo and virtual background.',
+    content: `
+      <p>Video meetings are no longer a stopgap. For millions of professionals, Zoom, Teams and Google Meet are where deals happen, interviews take place and teams collaborate. Yet most people spend very little time thinking about how they appear on screen. A few intentional adjustments to your camera, lighting and profile photo can change how colleagues and clients perceive you, without spending a fortune on equipment.</p>
+
+      <h2>Why Your Zoom Appearance Matters</h2>
+      <p>Research on first impressions consistently shows that visual cues influence trust and competence judgements within seconds. On a video call, your face is the primary signal. A dark, grainy or awkwardly framed image makes you harder to read, and people tend to fill in the gaps unfavourably. A clear, well-lit frame does the opposite: it signals that you are prepared and attentive.</p>
+      <p>This does not mean you need a ring light and a backdrop from a television studio. It means paying attention to the basics and fixing the most common problems.</p>
+
+      <h2>Camera Position and Framing</h2>
+      <p>The single most impactful change is putting your camera at eye level. When a laptop sits on a desk, the camera looks up at your chin and nostrils, which is neither flattering nor authoritative. A simple laptop stand, a stack of books or an external webcam mounted on top of your monitor fixes this instantly.</p>
+      <p>Frame yourself so that your head and the top of your shoulders are visible. Leave a small amount of space above your head. Sitting too far from the camera makes you look disengaged; sitting too close feels overwhelming. Arm's length from the screen is a reasonable starting point.</p>
+
+      <h2>Lighting That Flatters</h2>
+      <p>Good lighting is the difference between a professional-looking feed and a murky one. Face a window whenever possible. Natural light from the front or at a slight angle is the most flattering source available, and it costs nothing. If you take calls at different times of day, a small LED desk lamp pointed at your face from behind the monitor provides consistent fill light.</p>
+      <p>Avoid backlighting at all costs. Sitting with a bright window behind you turns your face into a dark silhouette. If your only window is behind you, close the blinds and use a desk lamp instead. Overhead ceiling lights alone tend to cast shadows under the eyes; a front-facing source softens those.</p>
+
+      <h2>Background and Environment</h2>
+      <p>A tidy, neutral background is still the safest choice for professional calls. Bookshelves, a plain wall or a simple home office setup all work well. Avoid cluttered rooms, unmade beds and busy patterns that compete for attention.</p>
+      <p>Virtual backgrounds can look polished on newer hardware, but they often create visible artifacts around hair and moving hands. If you use one, test it beforehand and choose a subtle, realistic image rather than a novelty scene. A slightly blurred version of a real room usually looks more natural than a stock photo of a beach.</p>
+
+      <h2>Your Zoom Profile Photo</h2>
+      <p>When your camera is off, or before you join a meeting, your profile photo represents you. A dark selfie or a holiday snap does not set a professional tone. Use a clean, well-lit headshot that matches how you look on camera. If your appearance has changed since the photo was taken, update it.</p>
+      <p>If you do not have a professional headshot, an AI headshot service can generate one from a few selfies. The result gives you a consistent, polished image to use across Zoom, Slack, email and LinkedIn. Check our <a href="/styles">style gallery</a> to see what is available.</p>
+
+      <h2>Audio Matters Too</h2>
+      <p>While this guide focuses on the visual side, poor audio undermines even the best-looking setup. Use a headset or external microphone rather than your laptop's built-in mic, especially in noisy environments. Mute when you are not speaking in larger meetings. Clear audio and a clear image together create a much stronger impression than either alone.</p>
+
+      <h2>Clothing and Grooming</h2>
+      <p>Dress as you would for the context of the meeting. For client-facing calls, wear what you would wear in person. For internal standups, clean and presentable is enough. Solid colours tend to look best on camera; small patterns and thin stripes can create visual noise. Avoid very bright white tops, which can throw off your camera's auto-exposure and darken your face.</p>
+
+      <h2>Screen Sharing and Eye Contact</h2>
+      <p>When someone else is talking, look at the camera rather than at their video tile. This creates the impression of eye contact for the other person. It feels unnatural at first, but it significantly improves how engaged you appear. When presenting, position your notes near the camera so your gaze does not drift to the side.</p>
+
+      <h2>Quick Pre-Meeting Checklist</h2>
+      <ul>
+        <li>Camera at eye level and clean lens</li>
+        <li>Light source in front of you, not behind</li>
+        <li>Background tidy or virtual background tested</li>
+        <li>Audio device selected and tested</li>
+        <li>Profile photo up to date</li>
+        <li>Notifications silenced on your desktop</li>
+      </ul>
+
+      <h2>Tools That Help</h2>
+      <p>If your current profile photo is not up to standard, the quickest fix is to generate a new one. Our <a href="/">AI headshot generator</a> creates professional photos you can use across all your meeting platforms. For quick adjustments to an existing photo, the <a href="/editor">photo editor</a> lets you fix lighting, swap backgrounds and crop for different formats.</p>
+
+      <p>Looking professional on Zoom is not about perfection. It is about removing distractions so that your ideas, not your setup, are what people remember.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-08-20',
+    tags: ['Remote Work', 'Zoom', 'Tips'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'corporate-headshot-trends-2025',
+    title: 'Corporate Headshot Trends in 2025: What\'s In and What\'s Out',
+    description:
+      'A look at the corporate headshot trends shaping 2025, from relaxed expressions and natural lighting to AI-generated photos and inclusive styling.',
+    content: `
+      <p>The corporate headshot has evolved considerably over the past decade. What once meant a stiff pose against a grey backdrop in a rented studio has shifted toward something more human, more accessible and more reflective of how people actually work. In 2025, the trends point clearly toward authenticity, flexibility and smart use of technology.</p>
+      <p>Whether you are updating your own photo or planning headshots for an entire team, understanding these trends helps you make choices that will look current rather than dated.</p>
+
+      <h2>What Is In</h2>
+
+      <h3>1. Natural Expressions Over Forced Smiles</h3>
+      <p>The era of the rigid, teeth-baring corporate grin is fading. The trend in 2025 is toward relaxed, genuine expressions: a slight smile, a confident neutral look, or an engaged expression that reflects how you actually appear in conversation. People trust photos that look like the real person, and a forced smile often has the opposite effect.</p>
+
+      <h3>2. Soft, Natural Lighting</h3>
+      <p>Harsh studio flash with visible catchlights in the eyes is giving way to softer, more natural-looking light. Whether shot near a window or recreated with diffused studio lights, the goal is a result that looks like good light rather than obvious lighting equipment. This creates a warmer, more approachable feel that suits modern corporate cultures.</p>
+
+      <h3>3. Environmental and Lifestyle Backgrounds</h3>
+      <p>Pure white and solid grey backgrounds are not disappearing, but they are sharing space with more contextual settings. A slightly blurred office, a creative workspace, a building lobby or even an outdoor urban scene can add personality without becoming distracting. The background should hint at your professional world without overshadowing you.</p>
+
+      <h3>4. AI-Generated Headshots</h3>
+      <p>AI headshot services have matured significantly. In 2025, many companies are using AI-generated headshots for team pages, internal directories and onboarding, particularly for distributed teams where gathering everyone for a photo session is impractical. The technology now produces results that are difficult to distinguish from traditional photography, especially when trained on high-quality selfies.</p>
+      <p>This trend is driven by cost, speed and consistency. A traditional team shoot for fifty people involves scheduling, travel, a photographer and post-processing. An AI service handles the same need at a fraction of the cost and time. Our <a href="/pricing">pricing page</a> shows how this works in practice.</p>
+
+      <h3>5. Inclusive and Diverse Representation</h3>
+      <p>Companies are paying more attention to ensuring that their visual identity reflects the diversity of their team. This means headshot guidelines that accommodate different cultural norms around dress, hair and accessories, rather than enforcing a single look. The best corporate headshot programmes in 2025 give people room to look like themselves within a coherent visual framework.</p>
+
+      <h3>6. Consistency Across the Team</h3>
+      <p>While individual expression matters, visual consistency across a team page or directory is a growing priority. This means similar lighting, framing and background treatment for everyone, even if the photos are taken at different times. AI tools are particularly good at this because the same model and settings can be applied to every person. For guidance on achieving this, see our <a href="/blog/team-headshot-consistency-guide">team headshot consistency guide</a>.</p>
+
+      <h3>7. Wardrobe Flexibility</h3>
+      <p>The dark suit and tie is no longer the default. In 2025, corporate headshot wardrobes reflect the dress code of the actual workplace. Tech companies might favour smart casual; creative agencies might encourage colour and personality. The guiding principle is to dress one small step above your daily norm, so the photo feels aspirational but still authentic.</p>
+
+      <h2>What Is Out</h2>
+
+      <h3>1. Over-Retouched Skin</h3>
+      <p>Heavy skin smoothing that removes all texture and makes someone look like a wax figure is firmly out of favour. Light retouching that handles temporary blemishes or under-eye shadows is fine, but the result should still look like skin, not plastic. The <a href="/editor">photo editor</a> offers subtle adjustments that preserve natural texture.</p>
+
+      <h3>2. Arms-Crossed Power Poses</h3>
+      <p>The folded-arms stance was once seen as a sign of confidence. Today it reads as closed-off and defensive. A more open posture with hands at your sides, resting on a surface, or simply out of frame is more inviting and more in line with current expectations of approachable leadership.</p>
+
+      <h3>3. Outdated Photos</h3>
+      <p>Using a headshot from five or ten years ago is increasingly seen as misleading. If someone meets you and does not recognise you from your photo, it erodes trust. The ease and affordability of AI headshots means there is less excuse for letting your image go stale. Update at least every two years, or whenever your appearance changes significantly.</p>
+
+      <h3>4. Generic Stock-Photo Aesthetics</h3>
+      <p>Overly polished, generic-looking headshots that could belong to anyone are losing ground. People want to see the actual person behind the role, with their real features and personality. This is why personalised AI models, trained on your specific face, produce better results than one-size-fits-all filters.</p>
+
+      <h3>5. Ignoring Digital Requirements</h3>
+      <p>Headshots that only look good printed at eight by ten inches but fall apart as a tiny LinkedIn thumbnail are a problem. In 2025, your photo needs to work at every size and on every platform, from a ninety-six pixel Slack avatar to a full-width team page banner. Shoot or generate at high resolution and test the result at small sizes before committing.</p>
+
+      <h2>How to Apply These Trends</h2>
+      <p>Start by reviewing your current headshot against the points above. Is the expression natural? Is the lighting soft and flattering? Does the photo look like you right now? If it falls short on any of these, it is time for an update.</p>
+      <p>For individuals, generating a new AI headshot is the fastest path. Browse the <a href="/styles">available styles</a> and choose something that reflects both your industry and your personality. For teams, consider a coordinated approach: our <a href="/blog/corporate-team-photos-guide">corporate team photos guide</a> walks through the process of getting consistent results for groups of any size.</p>
+
+      <p>The bottom line for 2025 is simple: look like yourself, look current and make it easy for people to connect your face with your name. Everything else is detail.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-08-28',
+    tags: ['Trends', 'Corporate', 'Headshots'],
+    readingTime: '6 min read',
+  },
+  {
+    slug: 'headshot-poses-guide',
+    title: '15 Best Headshot Poses for Men and Women (With Examples)',
+    description:
+      'A practical guide to 15 headshot poses that work for men and women, covering angles, body position, hand placement and expressions for professional and creative looks.',
+    content: `
+      <p>A great headshot is not just about good lighting and a sharp camera. The pose you choose affects how approachable, confident and professional you look. Yet most people freeze in front of a camera because they do not know what to do with their face, hands or shoulders.</p>
+      <p>This guide covers fifteen proven poses that work across professional, creative and casual headshot styles. Each one is simple enough to try on your own, whether you are working with a photographer, using a phone or generating AI headshots from selfies.</p>
+
+      <h2>General Posing Principles</h2>
+      <p>Before diving into specific poses, a few universal rules apply to almost every headshot scenario.</p>
+      <ul>
+        <li><strong>Angle your body slightly:</strong> turning your shoulders about fifteen to thirty degrees from the camera is more flattering than facing it square-on. It slims the frame and adds dimension.</li>
+        <li><strong>Chin forward and slightly down:</strong> this defines the jawline and avoids the appearance of a double chin. Do not overdo it; a small movement is enough.</li>
+        <li><strong>Relax your shoulders:</strong> tension in the shoulders translates directly to tension in the photo. Drop them consciously before each shot.</li>
+        <li><strong>Engage your eyes:</strong> your eyes are the focal point of any headshot. Think of someone you genuinely like, or recall something mildly amusing, to create a natural, engaged look.</li>
+      </ul>
+
+      <h2>Professional Poses</h2>
+
+      <h3>1. The Classic Three-Quarter Turn</h3>
+      <p>Turn your body about forty-five degrees away from the camera and look back toward the lens. This is the most universally flattering headshot pose and works for virtually any professional context. It creates depth, slims the body and directs focus to the face.</p>
+
+      <h3>2. The Straight-On Confident</h3>
+      <p>Face the camera directly with your shoulders square and your chin level. This pose conveys authority and directness. It works best for executive portraits, leadership pages and industries where confidence is a key trait. Keep the expression warm to avoid looking confrontational.</p>
+
+      <h3>3. The Slight Lean Forward</h3>
+      <p>Lean slightly toward the camera from the waist, keeping your back straight. This subtle forward movement creates an impression of engagement and interest. It is excellent for consultants, coaches and anyone whose role involves connecting with people.</p>
+
+      <h3>4. The Head Tilt</h3>
+      <p>A gentle tilt of the head to one side softens the overall impression and makes the subject appear more approachable. The tilt should be slight, roughly five to ten degrees. This pose works well for creative professionals, therapists and educators.</p>
+
+      <h3>5. The Over-the-Shoulder</h3>
+      <p>Turn your body further away from the camera and look back over your shoulder. This creates a dynamic, editorial feel that works for creative industries, speakers and personal brands. It adds movement to what is otherwise a static format.</p>
+
+      <h2>Casual and Creative Poses</h2>
+
+      <h3>6. The Natural Laugh</h3>
+      <p>Instead of a posed smile, think of something genuinely funny and let the laugh happen naturally. Capture the moment just after the peak of the laugh, when the expression is warm and relaxed. This creates an inviting, personable image that works well for dating profiles, social media and approachable brand photography.</p>
+
+      <h3>7. The Thoughtful Look</h3>
+      <p>Look slightly away from the camera with a contemplative expression. This works well for writers, academics and creatives who want to convey depth and intellect. The key is to look genuinely engaged in thought rather than bored or distracted.</p>
+
+      <h3>8. The Chin Rest</h3>
+      <p>Rest your chin lightly on one hand, keeping the hand relaxed and natural. This adds an element of personality and works well for creative headshots. Avoid pressing too hard, which distorts the face, and keep the hand clean and well-groomed since it will be in the frame.</p>
+
+      <h3>9. The Casual Lean</h3>
+      <p>Lean against a wall, doorframe or piece of furniture with your body at an angle to the camera. This relaxed pose suits creative professionals, entrepreneurs and lifestyle brands. Keep your weight on the back foot and your front shoulder slightly forward.</p>
+
+      <h3>10. The Walking Shot</h3>
+      <p>A captured mid-stride pose adds energy and dynamism. Walk slowly toward or past the camera and look into the lens. This works particularly well for outdoor headshots and personal branding photography. The movement creates natural body positioning that is difficult to replicate when standing still.</p>
+
+      <h2>Poses That Work for Everyone</h2>
+
+      <h3>11. The Arms at Sides</h3>
+      <p>Simply let your arms hang naturally at your sides. This sounds basic, but it is one of the hardest poses to get right because most people tense up. Shake your arms out before the shot, then let them fall. This clean, uncluttered pose puts all focus on your face and works across every context.</p>
+
+      <h3>12. The Hand in Pocket</h3>
+      <p>Place one hand casually in a trouser or jacket pocket, leaving the thumb visible. This gives your hands something to do without creating a distraction. It conveys a relaxed confidence and works for both formal and casual settings.</p>
+
+      <h3>13. The Arms Loosely Crossed</h3>
+      <p>Unlike the tight, defensive arms-folded pose, a loose cross with visible hands and relaxed shoulders can look confident without being closed off. The key is keeping everything relaxed: no clenched fists, no gripping of the upper arms. This works for leadership headshots when you want to project quiet authority.</p>
+
+      <h3>14. The Seated Pose</h3>
+      <p>Sitting on a stool or the edge of a chair can create a relaxed, approachable headshot. Sit toward the front edge, angle your body slightly and lean forward just a little. Seated poses naturally lower the camera angle, which can be flattering, and they work well for longer photo sessions because they are comfortable.</p>
+
+      <h3>15. The Profile or Semi-Profile</h3>
+      <p>Turn your head so the camera captures your profile or a three-quarter view showing mostly one side of your face. This dramatic pose suits artistic headshots, speaker pages and personal branding where you want to stand out from the standard front-facing crop.</p>
+
+      <h2>Tips for Trying These Poses</h2>
+      <ul>
+        <li><strong>Practice in a mirror first:</strong> spend five minutes trying each pose so you know how it feels before getting in front of a camera.</li>
+        <li><strong>Take multiple shots:</strong> small variations between frames often produce the best results. Do not settle for the first attempt.</li>
+        <li><strong>Match the pose to the context:</strong> a relaxed chin rest works for a dating profile but might feel out of place on a law firm website. Choose accordingly.</li>
+        <li><strong>Watch your hands:</strong> hands near the face should be relaxed with fingers slightly separated. Clenched or rigid hands are distracting.</li>
+        <li><strong>Breathe:</strong> exhale just before the shot to release tension in your face and shoulders.</li>
+      </ul>
+
+      <h2>Using Poses With AI Headshots</h2>
+      <p>If you are generating AI headshots, the poses in your uploaded selfies influence the output. Providing a mix of angles and expressions, including some of the poses above, gives the AI model more variety to work with. The result is a broader set of final images across different looks and moods.</p>
+      <p>Browse the <a href="/styles">TailorPic style gallery</a> to see how different pose styles translate into AI-generated results, and use the <a href="/editor">photo editor</a> to fine-tune cropping and composition after generation.</p>
+
+      <p>The best pose is one that feels natural to you and suits the context where the photo will be used. Start with the classic three-quarter turn if you are unsure, and experiment from there. A few minutes of practice makes a noticeable difference in the final result.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-09-05',
+    tags: ['Poses', 'Guide', 'Photography'],
+    readingTime: '7 min read',
+  },
+  {
+    slug: 'ai-photo-editing-vs-photoshop',
+    title: 'AI Photo Editing vs Photoshop: Which Is Better for Headshots?',
+    description:
+      'A practical comparison of AI photo editing tools and Adobe Photoshop for headshot retouching, covering ease of use, speed, cost, quality and when to use each.',
+    content: `
+      <p>If you need to improve a headshot, you have two broad paths: use an AI-powered editing tool that automates most of the work, or open Adobe Photoshop and do it manually. Both can produce excellent results, but they suit very different people, budgets and timelines.</p>
+      <p>This comparison breaks down the practical differences so you can choose the right tool for your situation.</p>
+
+      <h2>What AI Photo Editing Does</h2>
+      <p>AI photo editing tools use machine learning models to handle tasks that traditionally required manual skill: background removal, skin retouching, lighting correction, colour grading and even pose adjustments. You upload a photo, choose what you want changed, and the tool processes it in seconds or minutes.</p>
+      <p>The key advantage is speed and accessibility. You do not need to know anything about layers, masks or curves. The AI makes decisions based on patterns it has learned from millions of images, and the result is usually good enough for professional use without any manual tweaking.</p>
+
+      <h2>What Photoshop Does</h2>
+      <p>Adobe Photoshop is the industry-standard image editing software, used by professional photographers and retouchers for decades. It offers pixel-level control over every aspect of an image: you can adjust individual skin tones, reshape features, composite elements from multiple photos, create complex masks and apply effects with surgical precision.</p>
+      <p>The trade-off is complexity. Photoshop has a steep learning curve, and even experienced users spend significant time on detailed retouching work. A professional headshot retouch in Photoshop can take thirty minutes to several hours depending on the level of detail required.</p>
+
+      <h2>Speed</h2>
+      <p>AI tools win decisively on speed. Background removal that takes fifteen minutes in Photoshop happens in under a second with AI. Skin retouching that requires careful manual work with the healing brush and frequency separation takes the AI a few seconds. For most headshot editing tasks, AI is ten to a hundred times faster.</p>
+      <p>This speed advantage compounds when you are editing multiple photos. Batch-processing twenty headshots for a team page might take an AI tool a few minutes versus an entire afternoon in Photoshop.</p>
+
+      <h2>Quality and Control</h2>
+      <p>Photoshop produces the highest-quality results when used by a skilled operator. A professional retoucher can make nuanced decisions about exactly how much to soften skin, which stray hairs to remove, how to shape light across the face and how to handle difficult edges around hair. The result is a photo that looks natural and polished in ways that automated tools sometimes miss.</p>
+      <p>AI tools have improved dramatically and now handle most standard headshot edits at a quality level that satisfies the majority of professional use cases. Where they fall short is on edge cases: unusual lighting, complex backgrounds, very specific creative directions or corrections that require understanding context the AI was not trained on.</p>
+
+      <h2>Cost</h2>
+      <p>Adobe Photoshop requires a Creative Cloud subscription, which costs around twenty to thirty US dollars per month depending on the plan. This gives you access to the full application, but you still need the skill to use it, which represents a significant investment of time if you are starting from scratch.</p>
+      <p>AI editing tools vary widely in pricing. Some offer free tiers with basic features, while premium tools charge per image or a monthly subscription that is typically cheaper than Photoshop. Our own <a href="/editor">photo editor</a> handles common headshot edits like <a href="/editor/background-changer">background changes</a> and <a href="/editor/lighting-editor">lighting adjustments</a> without requiring any design expertise.</p>
+
+      <h2>Learning Curve</h2>
+      <p>This is where the difference is starkest. A complete beginner can produce a usable result with an AI editing tool in their first session. Achieving the same result in Photoshop might take weeks or months of learning. For professionals who already know Photoshop, this point is less relevant, but for the vast majority of people who need a headshot edited, AI tools remove a significant barrier.</p>
+
+      <h2>When to Use AI Editing</h2>
+      <ul>
+        <li>You need a quick background swap or lighting fix</li>
+        <li>You are editing headshots for a team and need consistency at scale</li>
+        <li>You do not have Photoshop skills and do not want to hire a retoucher</li>
+        <li>The edits are standard: background, lighting, basic skin smoothing, cropping</li>
+        <li>Speed matters more than pixel-level precision</li>
+      </ul>
+
+      <h2>When to Use Photoshop</h2>
+      <ul>
+        <li>You need very specific creative edits that AI tools cannot handle</li>
+        <li>You are a professional retoucher working on high-end portraits</li>
+        <li>The photo has unusual problems that require manual problem-solving</li>
+        <li>You need to composite elements from multiple images</li>
+        <li>You want full control over every pixel in the final output</li>
+      </ul>
+
+      <h2>The Hybrid Approach</h2>
+      <p>Many professionals now use both. They run the photo through an AI tool first for the heavy lifting, such as background removal and initial colour correction, then bring it into Photoshop for fine-tuning. This combines the speed of AI with the precision of manual editing and can cut editing time by half or more.</p>
+
+      <h2>What About AI Headshot Generators?</h2>
+      <p>If you are starting without any usable photo at all, neither an editor nor Photoshop solves the underlying problem. An AI headshot generator creates the photo itself from your selfies, giving you a professional starting point. From there, you can use AI editing tools or Photoshop for any final adjustments. Explore the <a href="/styles">style gallery</a> to see the range of starting points available.</p>
+
+      <p>For most people editing headshots in 2025, AI tools offer the best balance of speed, cost and quality. Photoshop remains the superior tool for complex, creative or high-end work, but the gap is narrowing every year. Choose based on your specific needs, skills and timeline rather than on reputation alone.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-09-12',
+    tags: ['AI', 'Photoshop', 'Comparison'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'dating-app-photo-tips',
+    title: 'Dating Profile Photo Tips: Get More Matches With Better Photos',
+    description:
+      'Actionable tips for choosing and improving dating profile photos that attract more matches, from photo order and variety to lighting, expression and common mistakes.',
+    content: `
+      <p>Your dating profile photos are doing most of the work. Before someone reads your bio, your sense of humour or your list of interests, they have already made a decision based on your pictures. Research from dating platforms consistently shows that photos are the single biggest factor in whether someone swipes right or left.</p>
+      <p>This guide focuses on practical, evidence-informed tips for choosing, taking and improving dating profile photos. No gimmicks, no manipulation, just honest advice for presenting your best self.</p>
+
+      <h2>Why Photo Quality Matters More Than You Think</h2>
+      <p>Dating apps are visual-first platforms. Users spend an average of a few seconds on each profile before deciding. In that window, your photos need to communicate three things: what you look like, that you are a real person and that you have put some effort into presenting yourself. A blurry, poorly lit selfie fails on all three counts, regardless of how interesting you are in person.</p>
+      <p>This does not mean you need professional modelling shots. It means clear, well-lit, genuine photos that show you at your natural best.</p>
+
+      <h2>The Ideal Photo Lineup</h2>
+      <p>Most dating coaches and platform data suggest using five to six photos that together tell a visual story about who you are.</p>
+      <ul>
+        <li><strong>Photo 1 (lead photo):</strong> a clear headshot or head-and-shoulders shot with good lighting and a friendly expression. This is the photo that appears in the swipe stack, so it needs to work at thumbnail size and make someone want to see more.</li>
+        <li><strong>Photo 2:</strong> a full-body or three-quarter shot so people can see how you actually look. This builds trust and reduces the suspicion that you are hiding something.</li>
+        <li><strong>Photo 3:</strong> you doing something you enjoy, whether that is hiking, cooking, playing music or sitting in a cafe. This gives conversation starters and shows personality.</li>
+        <li><strong>Photo 4:</strong> a social photo with friends, proving you have a life outside of dating apps. Crop or blur other faces if they prefer not to be shown.</li>
+        <li><strong>Photo 5-6:</strong> additional variety. Travel, pets, a dressed-up occasion or another angle that adds depth to your profile.</li>
+      </ul>
+
+      <h2>Your Lead Photo: Getting It Right</h2>
+      <p>Your first photo is the most important. It should be a close-up or medium shot where your face is clearly visible, well lit and unobstructed by sunglasses, hats or other people. A genuine smile or a relaxed, friendly expression outperforms a serious or moody look in almost every study on the subject.</p>
+      <p>If you do not have a great lead photo, consider an AI headshot. It gives you a professional-quality portrait with good lighting and a clean background, which consistently performs well as a dating profile opener. The key is choosing a result that looks like you, not an idealised version. Browse <a href="/styles">available styles</a> that include natural, approachable looks suitable for dating profiles.</p>
+
+      <h2>Lighting Tips</h2>
+      <p>Natural light is your best friend. Photos taken outdoors or near a large window almost always look better than those taken under fluorescent office lights or in a dimly lit bar. The best times for outdoor photos are the hour after sunrise and the hour before sunset, when the light is warm and soft.</p>
+      <p>Avoid direct flash, which flattens your features and creates harsh shadows. If you are indoors, face a window and use it as your primary light source.</p>
+
+      <h2>Expression and Body Language</h2>
+      <p>Data from major dating platforms shows that photos with a genuine smile receive significantly more engagement than neutral or serious expressions. Eye contact with the camera creates a sense of connection. An open, relaxed posture signals confidence and approachability.</p>
+      <p>Avoid crossed arms, hands in pockets with hunched shoulders or looking away from the camera in every photo. One candid shot looking away can add variety, but your primary photos should show your face clearly and openly.</p>
+
+      <h2>Common Mistakes to Avoid</h2>
+      <ul>
+        <li><strong>Group photos where you cannot be identified:</strong> if someone has to guess which person you are, they will swipe past instead.</li>
+        <li><strong>Heavy filters:</strong> Instagram filters and Snapchat effects make you look less trustworthy and raise questions about what you actually look like.</li>
+        <li><strong>Old photos:</strong> use photos from the last year or two. Showing up to a date looking noticeably different is a poor start.</li>
+        <li><strong>Mirror selfies in messy rooms:</strong> the background matters. A cluttered or dirty environment reflects poorly even if the photo of you is fine.</li>
+        <li><strong>Every photo in the same setting:</strong> variety suggests an interesting life. Six selfies from the same angle in the same room do not.</li>
+        <li><strong>Photos with an ex cropped out:</strong> the awkward crop is always visible and raises questions.</li>
+      </ul>
+
+      <h2>How AI Can Help</h2>
+      <p>AI headshot generators and photo editors solve several common dating photo problems at once. A generated headshot gives you a polished lead photo with professional lighting and a clean background. The <a href="/editor/background-changer">background changer</a> can improve an existing photo by swapping a distracting backdrop for something cleaner. The <a href="/editor/lighting-editor">lighting editor</a> can rescue an underexposed or unevenly lit shot.</p>
+      <p>The goal is not to create a fake version of yourself. It is to present the real you in the best possible light, literally and figuratively.</p>
+
+      <h2>Testing and Iterating</h2>
+      <p>If your match rate is lower than you would like, your photos are the first thing to change. Try swapping your lead photo and observe the results over a week. Some apps offer built-in photo testing features. Use them. Small changes in photo order, lighting or expression can make a measurable difference.</p>
+
+      <p>Better dating photos are not about looking like someone else. They are about removing the barriers that prevent people from seeing the real you. Start with one great headshot, build a varied lineup and let your personality come through in every image.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2025-09-18',
+    tags: ['Dating', 'Photos', 'Tips'],
+    readingTime: '5 min read',
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
