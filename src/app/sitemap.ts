@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { getActiveCategories } from '@/config/categories';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://tailorpic.com';
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://www.tailorpic.com';
   const categories = getActiveCategories();
 
   const staticPages: MetadataRoute.Sitemap = [
