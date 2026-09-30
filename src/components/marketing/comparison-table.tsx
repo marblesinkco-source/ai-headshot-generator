@@ -2,45 +2,45 @@ import { Check, X, Clock, DollarSign, Camera, Sparkles, RefreshCw, Shield } from
 
 const rows = [
   {
-    feature: 'Maliyet',
+    feature: 'Cost',
     icon: DollarSign,
     traditional: '$200 – $500+',
-    tailorpic: '$9.90\'dan başlayan',
+    tailorpic: 'Starting at $9.90',
     winner: 'tailorpic' as const,
   },
   {
-    feature: 'Teslimat Süresi',
+    feature: 'Delivery Time',
     icon: Clock,
-    traditional: '1 – 2 hafta',
-    tailorpic: '2 saat içinde',
+    traditional: '1 – 2 weeks',
+    tailorpic: 'Under 2 hours',
     winner: 'tailorpic' as const,
   },
   {
-    feature: 'Fotoğraf Sayısı',
+    feature: 'Number of Photos',
     icon: Camera,
-    traditional: '5 – 15 fotoğraf',
-    tailorpic: '40+ fotoğraf',
+    traditional: '5 – 15 photos',
+    tailorpic: '40+ photos',
     winner: 'tailorpic' as const,
   },
   {
-    feature: 'Stil Çeşitliliği',
+    feature: 'Style Variety',
     icon: Sparkles,
-    traditional: '1 – 2 arka plan',
-    tailorpic: '11 farklı kategori',
+    traditional: '1 – 2 backgrounds',
+    tailorpic: '11 categories',
     winner: 'tailorpic' as const,
   },
   {
-    feature: 'Yeniden Çekim',
+    feature: 'Reshoots',
     icon: RefreshCw,
-    traditional: 'Ek ücret gerekir',
-    tailorpic: 'Sınırsız yenileme',
+    traditional: 'Extra charge required',
+    tailorpic: 'Unlimited regeneration',
     winner: 'tailorpic' as const,
   },
   {
-    feature: 'Gizlilik',
+    feature: 'Privacy',
     icon: Shield,
-    traditional: 'Fotoğrafçıya bağlı',
-    tailorpic: 'Şifreli, 30 gün silme',
+    traditional: 'Depends on photographer',
+    tailorpic: 'Encrypted, 30-day deletion',
     winner: 'tailorpic' as const,
   },
 ];
@@ -52,13 +52,13 @@ export function ComparisonTable() {
         {/* Header */}
         <div className="text-center mb-10 sm:mb-14">
           <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
-            Karşılaştırma
+            Comparison
           </p>
           <h2 className="mt-3 text-2xl font-bold tracking-tight text-tp-black sm:text-3xl">
-            AI Fotoğraf vs Geleneksel Stüdyo
+            AI Photos vs Traditional Studio
           </h2>
           <p className="mt-3 text-base text-tp-muted max-w-xl mx-auto">
-            Profesyonel fotoğraf çekimi artık saatler ve yüzlerce dolar gerektirmiyor.
+            Professional photos no longer require hours of your time and hundreds of dollars.
           </p>
         </div>
 
@@ -67,10 +67,10 @@ export function ComparisonTable() {
           {/* Table header */}
           <div className="grid grid-cols-[1fr_1fr_1fr] sm:grid-cols-[1.5fr_1fr_1fr] bg-tp-paper border-b border-tp-line">
             <div className="p-4 sm:p-5 text-xs font-semibold uppercase tracking-wider text-tp-muted">
-              Özellik
+              Feature
             </div>
             <div className="p-4 sm:p-5 text-xs font-semibold uppercase tracking-wider text-tp-muted text-center">
-              Geleneksel Stüdyo
+              Traditional Studio
             </div>
             <div className="p-4 sm:p-5 text-xs font-semibold uppercase tracking-wider text-tp-bronze-ink text-center">
               TailorPic AI
@@ -108,7 +108,7 @@ export function ComparisonTable() {
           {/* Bottom CTA row */}
           <div className="grid grid-cols-[1fr_1fr_1fr] sm:grid-cols-[1.5fr_1fr_1fr] bg-tp-paper border-t border-tp-line">
             <div className="p-4 sm:p-5">
-              <span className="text-xs text-tp-muted">Sonuç</span>
+              <span className="text-xs text-tp-muted">Result</span>
             </div>
             <div className="p-4 sm:p-5 flex justify-center">
               <X className="h-5 w-5 text-red-400/70" />
@@ -121,7 +121,7 @@ export function ComparisonTable() {
 
         {/* Bottom note */}
         <p className="mt-5 text-center text-xs text-tp-muted">
-          * Geleneksel stüdyo fiyatları ortalama piyasa değerlerini yansıtmaktadır.
+          * Traditional studio prices reflect average market rates.
         </p>
       </div>
     </section>
