@@ -12,6 +12,9 @@ const navLinks = [
   { label: 'How It Works', href: '/#how-it-works' },
   { label: 'Results', href: '/#results' },
   { label: 'Pricing', href: '/pricing' },
+  { label: 'Industries', href: '/industries' },
+  { label: 'Enterprise', href: '/enterprise' },
+  { label: 'Affiliate', href: '/affiliate' },
 ];
 
 export function Header() {
