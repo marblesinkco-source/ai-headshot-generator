@@ -502,6 +502,146 @@ export const photoStyles: PhotoStyle[] = [
       'headshot-background-guide',
     ],
   },
+  {
+    slug: 'soft-focus',
+    name: 'Soft Focus Portraits',
+    title: 'AI Soft Focus Portraits',
+    description:
+      'Dreamy, gentle portraits with softly diffused light and a romantic, flattering glow.',
+    metaDescription:
+      'Create AI soft focus portraits with diffused light and a dreamy glow. Flattering, gentle photos for profiles and personal brands with TailorPic.',
+    heroText:
+      'Soft, luminous and kind to every face. Soft focus portraits use diffused light and gentle blur to create a dreamy, approachable look that feels warm and personal.',
+    features: [
+      'Diffused lighting that softens texture and shadows',
+      'Gentle glow and highlights with a dreamy finish',
+      'Pastel and muted color grading',
+      'Shallow depth of field with smooth background blur',
+      'Flattering, natural skin rendering',
+      'Calm, relaxed expressions',
+    ],
+    idealFor: [
+      'Coaches, therapists and wellness professionals',
+      'Photographers, artists and creatives',
+      'Wedding and lifestyle brands',
+      'Personal brand profiles and blogs',
+      'Anyone wanting a gentle, romantic portrait',
+    ],
+    tips: [
+      'Upload selfies in soft, even daylight',
+      'Choose light, neutral or pastel clothing',
+      'Include a relaxed, natural smile',
+      'Avoid heavy filters on your input photos',
+      'Pick a simple background to keep the dreamy mood',
+    ],
+    relatedCategories: ['headshots', 'couple-engagement-photos'],
+    relatedBlogPosts: ['professional-headshot-tips-2025', 'headshot-trends-2025'],
+  },
+  {
+    slug: 'editorial',
+    name: 'Editorial Headshots',
+    title: 'AI Editorial Headshots',
+    description:
+      'Magazine-style portraits with bold composition, dramatic lighting and a confident, fashion-forward feel.',
+    metaDescription:
+      'Get AI editorial headshots with magazine-style composition and dramatic lighting. Bold, confident portraits for creatives and leaders with TailorPic.',
+    heroText:
+      'Look like the cover story. Editorial headshots borrow the composition, lighting and attitude of magazine photography to give your portrait real presence and personality.',
+    features: [
+      'Magazine-inspired framing and composition',
+      'Directional, dramatic lighting with depth',
+      'Confident, expressive poses',
+      'Refined wardrobe with strong silhouettes',
+      'Rich color grading with a polished finish',
+      'Backgrounds that add mood without distraction',
+    ],
+    idealFor: [
+      'Authors, speakers and thought leaders',
+      'Creative directors and designers',
+      'Founders and executives featured in press',
+      'Models, actors and performers',
+      'Personal brands wanting a standout image',
+    ],
+    tips: [
+      'Upload selfies with varied angles and expressions',
+      'Choose structured clothing with clean lines',
+      'Pick a background tone that contrasts with your outfit',
+      'Generate several variations and choose the boldest',
+      'Keep a conservative backup for formal use',
+    ],
+    relatedCategories: ['headshots'],
+    relatedBlogPosts: ['headshot-trends-2025', 'executive-headshot-guide'],
+  },
+  {
+    slug: 'bold-color',
+    name: 'Bold Color Pop Headshots',
+    title: 'AI Bold Color Pop Headshots',
+    description:
+      'Vibrant portraits with saturated color backdrops that make you stand out in any feed.',
+    metaDescription:
+      'Create AI bold color pop headshots with vibrant backdrops and saturated tones. Eye-catching portraits that stand out online, made with TailorPic.',
+    heroText:
+      'Stand out at a glance. Bold color pop headshots pair clean lighting with vivid backdrops so your profile photo catches the eye and sticks in memory.',
+    features: [
+      'Saturated, solid-color backdrops',
+      'Clean, bright lighting that keeps skin natural',
+      'Wardrobe that complements or contrasts the backdrop',
+      'Crisp detail with a modern, graphic feel',
+      'Consistent color for team and brand use',
+      'Confident, energetic expressions',
+    ],
+    idealFor: [
+      'Creative professionals and marketers',
+      'Social media creators and influencers',
+      'Startups with a bold visual brand',
+      'Event speakers and podcast hosts',
+      'Team pages that want a lively look',
+    ],
+    tips: [
+      'Choose a backdrop color that suits your brand palette',
+      'Wear a neutral or complementary outfit',
+      'Upload well-lit selfies without color filters',
+      'Keep the same color across a whole team',
+      'Test how the photo looks at small avatar sizes',
+    ],
+    relatedCategories: ['headshots', 'team-headshots'],
+    relatedBlogPosts: ['headshot-trends-2025', 'headshot-background-guide'],
+  },
+  {
+    slug: 'monochrome',
+    name: 'Monochrome Black & White Headshots',
+    title: 'AI Monochrome Black and White Headshots',
+    description:
+      'Timeless black and white portraits with rich tone, contrast and classic character.',
+    metaDescription:
+      'Create AI monochrome black and white headshots with rich contrast and classic tone. Timeless, elegant portraits for any profile with TailorPic.',
+    heroText:
+      'Timeless by design. Monochrome headshots remove color to focus on expression, tone and texture, for a classic portrait that never goes out of style.',
+    features: [
+      'Rich black and white tonal range',
+      'Strong contrast with smooth gradations',
+      'Classic studio lighting for depth and shape',
+      'Focus on expression and character',
+      'Works across light and dark backgrounds',
+      'Elegant, cohesive look across platforms',
+    ],
+    idealFor: [
+      'Actors, musicians and artists',
+      'Authors and public speakers',
+      'Lawyers, consultants and executives',
+      'Portfolio and press kit photos',
+      'Anyone wanting a classic, timeless look',
+    ],
+    tips: [
+      'Upload selfies with clear, directional light',
+      'Wear solid garments with good tonal contrast',
+      'Choose a background that separates from your hair and clothes',
+      'Keep a color version for places that need it',
+      'Use consistent black and white across profiles',
+    ],
+    relatedCategories: ['headshots'],
+    relatedBlogPosts: ['headshot-trends-2025', 'professional-headshot-tips-2025'],
+  },
 ];
 
 export function getPhotoStyle(slug: string): PhotoStyle | undefined {

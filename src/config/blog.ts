@@ -3425,6 +3425,176 @@ export const blogPosts: BlogPost[] = [
     tags: ['Website', 'About Page', 'Conversion'],
     readingTime: '6 min read',
   },
+  {
+    slug: 'passport-photo-requirements-guide',
+    title: 'Passport Photo Requirements: Complete Guide for 2025',
+    description:
+      'Learn the size, background, lighting and expression rules for passport photos in 2025, plus common rejection reasons and how to avoid them.',
+    content: `
+      <p>A rejected passport photo can delay your travel plans by weeks. Most rejections come down to a handful of avoidable issues such as a shadowed background, the wrong size or an expression that does not meet the rules. This guide walks through the requirements that apply in most countries, explains why they exist and shows how to prepare a compliant photo the first time.</p>
+
+      <h2>Why Passport Photo Rules Are So Strict</h2>
+      <p>Passport photos are used for identity verification, both by officers who compare your face to the document and by automated systems that scan biometric features. Because of this, the rules focus on making your face clear, unobstructed and consistent with everyone else's photo. Small deviations can cause a machine to fail to match your features, which is why agencies reject photos that might look fine on social media.</p>
+      <p>Requirements differ by country, so always confirm the official rules for the passport you are applying for. The principles below are common across many issuing authorities, but dimensions, print finishes and accepted file formats vary.</p>
+      <h2>Size, Dimensions and Format</h2>
+      <p>Photo size is one of the most common reasons for rejection. The United States requires a 2 by 2 inch photo with the head between 1 and 1 3/8 inches from chin to top of head. Many other countries use 35 by 45 millimeters, and some use 50 by 50 millimeters. Digital submissions usually require a specific pixel range, a JPEG format and a file size limit.</p>
+      <p>Check these items before submitting:</p>
+      <ul>
+        <li>Exact photo dimensions for your country's passport</li>
+        <li>Head size and position within the frame</li>
+        <li>Color photo, not black and white, unless stated otherwise</li>
+        <li>Print quality and paper finish if you are submitting a physical print</li>
+        <li>File format and maximum file size for online applications</li>
+      </ul>
+      <h2>Background, Lighting and Image Quality</h2>
+      <p>Most countries require a plain white or off-white background with no patterns, shadows or objects. Even lighting across your face is essential, since shadows on one side or glare on your forehead can lead to rejection. Stand a short distance from the wall to avoid casting a shadow behind you, and face a window or soft light source.</p>
+      <p>The photo must be sharp, in focus and free of filters, heavy retouching or red-eye. Avoid grainy images taken in dim light. A recent photo, usually taken within the last six months, should reflect how you currently look.</p>
+      <h2>Expression, Glasses and Clothing</h2>
+      <p>Look straight at the camera with a neutral expression and both eyes open. A slight, natural smile is accepted in some countries, but a broad grin is not. Keep your mouth closed and your head level, without tilting.</p>
+      <p>Glasses are generally no longer allowed in many countries, including for United States passport photos, because of glare and shadows. Remove hats and head coverings unless worn daily for religious or medical reasons, in which case a signed statement is usually required. Wear everyday clothing in a color that contrasts with the background, and avoid uniforms or camouflage.</p>
+      <h2>Common Rejection Reasons and How to Avoid Them</h2>
+      <p>The most frequent issues are shadows on the face or background, wrong dimensions, glare on glasses, hair covering the eyes and an expression that is not neutral. Photos that have been edited to smooth skin or change features are also rejected, since the image must be a true likeness.</p>
+      <p>If you want a compliant photo without the hassle, TailorPic offers <a href="/blog/passport-photo-ai">AI passport photo creation</a> that follows size and background standards for your country. You can also read our guides to <a href="/blog/professional-headshot-tips-2025">getting better photos from your phone</a> before you start.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-12-03',
+    tags: ['Passport', 'Requirements', 'Guide'],
+    readingTime: '8 min read',
+  },
+  {
+    slug: 'seasonal-headshot-updates',
+    title: 'Why You Should Update Your Headshot Every Season',
+    description:
+      'Your headshot should keep pace with your career and appearance. Learn why seasonal refreshes matter and how to keep your profile photos current.',
+    content: `
+      <p>Most people update their headshot only when they change jobs, which can mean years between photos. Yet your appearance, style and professional goals shift more often than that. Refreshing your headshot on a regular rhythm, even seasonally, keeps your personal brand current and makes every first impression count.</p>
+
+      <h2>Your Headshot Should Look Like You Today</h2>
+      <p>The biggest reason to update your photo is authenticity. If someone meets you after seeing your profile and does not recognize you, trust takes a small hit. Changes in hairstyle, facial hair, weight, glasses or even skin tone from the seasons can make an older photo feel out of date.</p>
+      <p>Keeping a current photo signals that you are active, attentive and invested in your professional presence.</p>
+      <h2>The Benefits of Seasonal Refreshes</h2>
+      <p>A seasonal update does not require a full photoshoot. It can be as simple as generating a new set of AI headshots with lighting, wardrobe and backgrounds that match the time of year. A fresh photo can also signal a new phase, such as a promotion, a launch or a new service offering.</p>
+      <p>Benefits of keeping your photos fresh include:</p>
+      <ul>
+        <li>Higher profile engagement when your photo looks current</li>
+        <li>Consistency between how you look online and in person</li>
+        <li>More options to match different campaigns or announcements</li>
+        <li>Better alignment with your personal brand as it evolves</li>
+      </ul>
+      <h2>What to Change Each Season</h2>
+      <p>You do not need a dramatic transformation. Small adjustments are enough to feel new. In spring and summer, brighter lighting, lighter colors and outdoor-inspired backgrounds work well. In autumn and winter, richer tones, layered clothing and cozy studio-style backgrounds can feel more fitting.</p>
+      <p>Keep the core elements stable, such as your general framing, expression and level of formality, so people recognize you across updates.</p>
+      <h2>Where to Update Your Photo</h2>
+      <p>When you refresh your headshot, update it everywhere at once. Start with LinkedIn, then your website, email signature, speaker bios, social profiles and any professional directories. Consistency across platforms strengthens recognition. See our <a href="/blog/social-media-profile-photo-sizes">social media profile photo size guide</a> for the right dimensions.</p>
+      <p>Keep your previous favorites archived so you can reuse them if you need a fallback.</p>
+      <h2>Make It Easy to Keep Up</h2>
+      <p>The barrier to regular updates used to be time and cost. With <a href="/">TailorPic</a>, you can create new headshots from a handful of selfies in minutes, so a seasonal refresh becomes a simple calendar reminder rather than a project. Set a reminder each quarter, review your current photos and generate a new set if anything feels stale.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-12-09',
+    tags: ['Tips', 'Branding', 'Updates'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'headshot-for-speakers-presenters',
+    title: 'Professional Headshots for Speakers & Presenters',
+    description:
+      'Speakers need headshots that work on stages, programs and promotional materials. Learn what to include, which formats to supply and how to stand out.',
+    content: `
+      <p>If you speak at conferences, webinars or corporate events, your headshot appears far beyond your own profiles. Organizers put it on programs, websites, slides and social posts, often at very different sizes. A strong speaker headshot makes you look credible, approachable and memorable before you even step on stage.</p>
+
+      <h2>Why Speaker Headshots Are Different</h2>
+      <p>A speaker headshot does more work than a typical profile photo. It needs to communicate authority while still feeling warm, since audiences decide quickly whether they want to hear from you. It also needs to reproduce well in print and on screen, sometimes cropped tightly and sometimes displayed large on a banner.</p>
+      <p>Event organizers frequently request a high-resolution photo with little notice, so having a ready-to-send file saves time and helps you look organized.</p>
+      <h2>What Makes a Great Speaker Photo</h2>
+      <p>Aim for an expression that reflects how you come across on stage: confident, engaged and friendly. A genuine half smile often works better than a stiff pose. Choose clothing that matches the tone of your topic and your typical audience, and avoid busy patterns that can look distracting when scaled down.</p>
+      <p>Key elements to focus on:</p>
+      <ul>
+        <li>A clean, uncluttered background that does not compete with your face</li>
+        <li>Bright, even lighting that looks good at small sizes</li>
+        <li>Eye contact with the camera for a direct connection</li>
+        <li>Solid colors that contrast with both light and dark event materials</li>
+      </ul>
+      <h2>Formats and Files to Have Ready</h2>
+      <p>Organizers will ask for different versions of your photo, so prepare several. A square crop works for social graphics, a vertical crop suits printed programs and a wider crop works for website banners. Provide a high-resolution file, typically at least 1500 pixels on the long side, along with a web-friendly smaller version.</p>
+      <p>Create a simple speaker kit folder that includes your headshots, short and long bios, your talk titles and your logo. This makes it easy to respond to organizers quickly.</p>
+      <h2>Keeping Your Look Consistent</h2>
+      <p>Use the same headshot across your speaker profile, LinkedIn, your website and event listings so audiences recognize you when they see you in person. Update the photo as your appearance changes, and refresh it whenever you notice it is starting to feel out of date. Our guide to <a href="/blog/executive-headshot-guide">executive headshots</a> offers more tips for projecting authority.</p>
+      <h2>Getting Speaker-Ready Photos Fast</h2>
+      <p>You do not need a studio session to get polished results. <a href="/">TailorPic</a> turns a few selfies into professional headshots in minutes, with options for different styles and outfits. Generate a few variations, pick the one that matches your speaking brand and download files ready for programs, slides and social promotion.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-12-14',
+    tags: ['Speakers', 'Events', 'Guide'],
+    readingTime: '6 min read',
+  },
+  {
+    slug: 'before-after-ai-headshot-transformation',
+    title: 'Before & After: Real AI Headshot Transformations',
+    description:
+      'See how casual selfies become polished professional headshots with AI, what changes, what stays the same and how to get the best possible results.',
+    content: `
+      <p>The most convincing way to understand AI headshots is to look at what changes between the input selfie and the final portrait. The transformation goes beyond a filter. Lighting, background, framing and wardrobe all change, while the things that make you recognizable stay intact. Here is what to expect.</p>
+
+      <h2>What Changes in an AI Headshot</h2>
+      <p>A typical input is a phone selfie taken indoors with mixed lighting, a cluttered background and an arm-length angle that distorts proportions. The resulting headshot has balanced studio-style lighting, a clean backdrop, flattering framing and professional attire.</p>
+      <p>The AI generates a new image informed by your facial features, so the result is not simply an edited version of your selfie. That is why the output can look polished even when the input is casual.</p>
+      <h2>What Stays the Same</h2>
+      <p>A good AI headshot keeps your identity intact. Your facial structure, skin tone, eye color, hair texture and general look should remain recognizable. The goal is to show the best version of how you actually look, not a different person.</p>
+      <p>If an image looks too smooth or does not resemble you, choose a different variation. A faithful likeness is what makes a headshot trustworthy in a professional setting.</p>
+      <h2>Common Transformations People Notice</h2>
+      <p>Across different users, the same improvements come up again and again:</p>
+      <ul>
+        <li>Harsh shadows and overhead lighting replaced by soft, even light</li>
+        <li>Busy kitchens, bedrooms and offices swapped for clean backgrounds</li>
+        <li>Casual clothing replaced by blazers, collared shirts and other professional wear</li>
+        <li>Awkward selfie angles corrected to natural, flattering framing</li>
+        <li>Tired or uneven lighting smoothed into a fresh, confident look</li>
+      </ul>
+      <h2>How to Get Better Results</h2>
+      <p>The quality of your input matters. Upload clear, well-lit selfies from several angles with different expressions, and avoid sunglasses, heavy filters or group photos. Use recent photos that look like you today. Our <a href="/blog/professional-headshot-tips-2025">professional headshot tips</a> explain how to prepare the best inputs.</p>
+      <p>Review several results and choose the one that best matches your real look and professional goals.</p>
+      <h2>See It for Yourself</h2>
+      <p>Reading about transformations is one thing, but trying it is better. <a href="/">Upload a few selfies to TailorPic</a> and compare the before and after yourself. In minutes you can have a set of polished headshots ready for LinkedIn, your website and more.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-12-20',
+    tags: ['AI', 'Results', 'Transformations'],
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'nonprofit-headshot-guide',
+    title: 'Professional Headshots for Nonprofits on a Budget',
+    description: 'How nonprofit teams can get polished, consistent headshots without studio costs using AI photo tools.',
+    content: `
+      <h2>Why Nonprofits Need Professional Headshots</h2>
+      <p>Donors, grant committees and volunteers form their first impression of your organization through your team page. Professional headshots signal credibility and transparency — qualities that directly affect fundraising and partnerships. Yet most nonprofits operate on tight budgets that leave professional photography off the table.</p>
+      <p>AI headshot generators bridge this gap. For a fraction of studio costs your entire team can have consistent, polished portraits that project the professionalism your mission deserves.</p>
+
+      <h2>Building Donor Trust Through Visuals</h2>
+      <p>Research shows that websites with real team photos receive more engagement than those with stock images. When a potential donor sees the faces behind the mission, they connect with your organization on a personal level. Consistent backgrounds and lighting across all team photos reinforce brand cohesion.</p>
+      <p>This is especially important for small nonprofits competing for grant funding. A polished online presence can be the deciding factor when a foundation evaluates your organizational capacity.</p>
+
+      <h2>Getting Your Team on Board</h2>
+      <p>Coordinating a photo shoot for a volunteer-heavy organization is challenging. Schedules conflict, remote team members cannot attend, and turnover means you are always playing catch-up. AI headshots solve this by letting each person submit selfies on their own time.</p>
+      <p>With <a href="/">TailorPic</a>, each team member uploads a few casual photos and receives professional results within hours. No studio appointments, no travel, no scheduling nightmares.</p>
+
+      <h2>Maintaining Consistency on a Shoestring</h2>
+      <p>A common problem is the "patchwork team page" — headshots taken at different times with different cameras and backgrounds. AI tools let you choose a consistent style and background so new hires match existing photos without re-shooting everyone.</p>
+      <p>Our <a href="/blog/team-headshot-consistency-guide">team consistency guide</a> walks you through setting up brand guidelines for headshots that scale as your staff and volunteer base grows.</p>
+
+      <h2>Cost Comparison</h2>
+      <p>A studio session for ten team members typically costs $1,500–$3,000 including travel and touchups. With AI headshots the same ten people can be photographed for under $100 total, freeing budget for your actual programs. As new people join, each additional headshot is the same low cost.</p>
+      <p>That savings compounds when you factor in the time staff spend organizing shoots, reviewing proofs and handling retakes.</p>
+
+      <h2>Getting Started</h2>
+      <p>Start by asking each team member for three to five clear selfies — natural light, plain background, no sunglasses. Upload them to TailorPic's <a href="/editor">AI Photo Editor</a>, pick a style that matches your brand and download the results. Update your website, social channels and annual report in a single afternoon.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-12-25',
+    tags: ['Nonprofit', 'Budget', 'Guide'],
+    readingTime: '6 min read',
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
