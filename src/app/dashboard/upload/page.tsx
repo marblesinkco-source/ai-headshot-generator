@@ -26,7 +26,7 @@ const STEPS = [
 
 export default function UploadPage() {
   return (
-    <Suspense fallback={<div className="flex min-h-screen items-center justify-center"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-600" /></div>}>
+    <Suspense fallback={<div className="flex min-h-screen items-center justify-center"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-tp-black" /></div>}>
       <UploadContent />
     </Suspense>
   );
@@ -213,7 +213,7 @@ function UploadContent() {
               <div
                 className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-medium transition-colors ${
                   currentStep >= step.num
-                    ? 'bg-brand-600 text-white'
+                    ? 'bg-tp-black text-tp-bronze'
                     : 'bg-gray-200 text-gray-500'
                 }`}
               >
@@ -227,7 +227,7 @@ function UploadContent() {
               </div>
               <span
                 className={`hidden text-sm font-medium sm:block ${
-                  currentStep >= step.num ? 'text-brand-700' : 'text-gray-400'
+                  currentStep >= step.num ? 'text-tp-bronze-ink' : 'text-gray-400'
                 }`}
               >
                 {step.label}
@@ -236,7 +236,7 @@ function UploadContent() {
             {idx < STEPS.length - 1 && (
               <div
                 className={`mx-4 h-0.5 flex-1 transition-colors ${
-                  currentStep > step.num ? 'bg-brand-600' : 'bg-gray-200'
+                  currentStep > step.num ? 'bg-tp-black' : 'bg-gray-200'
                 }`}
               />
             )}
@@ -265,22 +265,22 @@ function UploadContent() {
                     <button
                       key={cat.id}
                       onClick={() => handleCategorySelect(cat.id)}
-                      className={`group relative rounded-xl border-2 bg-white p-5 text-left shadow-sm transition-all hover:shadow-md hover:border-brand-300 ${
+                      className={`group relative rounded-xl border-2 bg-white p-5 text-left shadow-sm transition-all hover:shadow-md hover:border-tp-line ${
                         selectedCategory === cat.id
-                          ? 'border-brand-600 ring-2 ring-brand-100'
+                          ? 'border-tp-black ring-2 ring-tp-beige/30'
                           : 'border-gray-200'
                       }`}
                     >
                       <div className="flex items-start gap-3">
                         <span className="text-2xl">{cat.icon}</span>
                         <div className="min-w-0 flex-1">
-                          <h4 className="font-semibold text-gray-900 group-hover:text-brand-700 transition-colors">
+                          <h4 className="font-semibold text-gray-900 group-hover:text-tp-bronze-ink transition-colors">
                             {cat.name}
                           </h4>
                           <p className="mt-1 text-xs text-gray-500 line-clamp-2">
                             {cat.tagline}
                           </p>
-                          <p className="mt-2 text-xs font-medium text-brand-600">
+                          <p className="mt-2 text-xs font-medium text-tp-bronze-ink">
                             From {formatPrice(cat.packages[0]?.price || 0, cat.packages[0]?.currency || 'usd')}
                           </p>
                         </div>
@@ -300,7 +300,7 @@ function UploadContent() {
           <div className="flex items-center gap-3">
             <button
               onClick={() => setCurrentStep(1)}
-              className="text-sm text-gray-500 hover:text-brand-600 transition-colors flex items-center gap-1"
+              className="text-sm text-gray-500 hover:text-tp-bronze-ink transition-colors flex items-center gap-1"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -319,15 +319,15 @@ function UploadContent() {
                 key={pkg.id}
                 className={`relative rounded-xl border-2 bg-white p-6 shadow-sm transition-all cursor-pointer hover:shadow-md ${
                   selectedPackage === pkg.id
-                    ? 'border-brand-600 ring-2 ring-brand-100'
+                    ? 'border-tp-black ring-2 ring-tp-beige/30'
                     : pkg.recommended
-                    ? 'border-brand-200'
+                    ? 'border-tp-line'
                     : 'border-gray-200'
                 }`}
                 onClick={() => setSelectedPackage(pkg.id)}
               >
                 {pkg.recommended && (
-                  <span className="absolute -top-3 left-4 rounded-full bg-brand-600 px-3 py-0.5 text-xs font-medium text-white">
+                  <span className="absolute -top-3 left-4 rounded-full bg-tp-black px-3 py-0.5 text-xs font-medium text-tp-bronze">
                     Recommended
                   </span>
                 )}
@@ -410,13 +410,13 @@ function UploadContent() {
         <div className="rounded-xl border border-gray-200 bg-white p-8 text-center shadow-sm">
           {generationStatus ? (
             <div className="space-y-6">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-50">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-tp-paper">
                 {progressPhase === 'completed' ? (
                   <svg className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 ) : (
-                  <svg className="h-8 w-8 animate-spin text-brand-600" fill="none" viewBox="0 0 24 24">
+                  <svg className="h-8 w-8 animate-spin text-tp-bronze" fill="none" viewBox="0 0 24 24">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                   </svg>
@@ -441,7 +441,7 @@ function UploadContent() {
                 </div>
                 <div className="h-3 overflow-hidden rounded-full bg-gray-100">
                   <div
-                    className="h-full rounded-full bg-gradient-to-r from-brand-500 to-brand-600 transition-all duration-1000 ease-out"
+                    className="h-full rounded-full bg-gradient-to-r from-tp-bronze to-tp-bronze-ink transition-all duration-1000 ease-out"
                     style={{ width: `${progressPercent}%` }}
                   />
                 </div>
@@ -449,26 +449,26 @@ function UploadContent() {
 
               {/* Phase indicators */}
               <div className="mx-auto flex max-w-sm items-center justify-center gap-6 text-xs">
-                <div className={`flex items-center gap-1.5 ${progressPhase === 'training' ? 'text-brand-600 font-medium' : progressPercent > 50 ? 'text-green-600' : 'text-gray-400'}`}>
+                <div className={`flex items-center gap-1.5 ${progressPhase === 'training' ? 'text-tp-bronze font-medium' : progressPercent > 50 ? 'text-green-600' : 'text-gray-400'}`}>
                   {progressPercent > 50 ? (
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                   ) : progressPhase === 'training' ? (
-                    <div className="h-2 w-2 rounded-full bg-brand-600 animate-pulse" />
+                    <div className="h-2 w-2 rounded-full bg-tp-bronze animate-pulse" />
                   ) : (
                     <div className="h-2 w-2 rounded-full bg-gray-300" />
                   )}
                   AI Training
                 </div>
                 <div className="h-px w-8 bg-gray-200" />
-                <div className={`flex items-center gap-1.5 ${progressPhase === 'generating' ? 'text-brand-600 font-medium' : progressPhase === 'completed' ? 'text-green-600' : 'text-gray-400'}`}>
+                <div className={`flex items-center gap-1.5 ${progressPhase === 'generating' ? 'text-tp-bronze font-medium' : progressPhase === 'completed' ? 'text-green-600' : 'text-gray-400'}`}>
                   {progressPhase === 'completed' ? (
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                   ) : progressPhase === 'generating' ? (
-                    <div className="h-2 w-2 rounded-full bg-brand-600 animate-pulse" />
+                    <div className="h-2 w-2 rounded-full bg-tp-bronze animate-pulse" />
                   ) : (
                     <div className="h-2 w-2 rounded-full bg-gray-300" />
                   )}

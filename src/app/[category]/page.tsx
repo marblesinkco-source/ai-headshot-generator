@@ -59,7 +59,7 @@ export default async function CategoryPage({ params }: Props) {
 
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <div className="max-w-3xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-4 py-1.5 text-sm font-medium text-brand-700">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-tp-line bg-tp-paper px-4 py-1.5 text-sm font-medium text-tp-bronze-ink">
               <span className="text-lg">{cat.icon}</span>
               {cat.name}
             </div>
@@ -108,7 +108,7 @@ export default async function CategoryPage({ params }: Props) {
               },
             ].map((item) => (
               <div key={item.step} className="text-center">
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-600 text-lg font-bold text-white">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-tp-black text-lg font-bold text-tp-bronze">
                   {item.step}
                 </div>
                 <h3 className="mt-4 text-lg font-semibold text-gray-900">{item.title}</h3>
@@ -134,11 +134,11 @@ export default async function CategoryPage({ params }: Props) {
               <div
                 key={pkg.id}
                 className={`relative rounded-2xl border-2 bg-white p-8 shadow-sm transition-shadow hover:shadow-lg ${
-                  pkg.recommended ? 'border-brand-500 ring-2 ring-brand-100' : 'border-gray-200'
+                  pkg.recommended ? 'border-tp-bronze ring-2 ring-tp-beige/30' : 'border-gray-200'
                 }`}
               >
                 {pkg.recommended && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand-600 px-4 py-0.5 text-xs font-medium text-white whitespace-nowrap">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-tp-black px-4 py-0.5 text-xs font-medium text-tp-bronze whitespace-nowrap">
                     Most Popular
                   </span>
                 )}

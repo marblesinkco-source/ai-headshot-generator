@@ -40,7 +40,7 @@ export default function Error({
         <div className="mt-8 flex items-center justify-center gap-4">
           <button
             onClick={reset}
-            className="rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-700 transition-colors"
+            className="rounded-tp-button bg-tp-black px-5 py-2.5 text-sm font-semibold text-tp-bronze shadow-sm hover:bg-gray-900 transition-colors"
           >
             Try again
           </button>

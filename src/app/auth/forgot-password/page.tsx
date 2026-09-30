@@ -39,7 +39,7 @@ export default function ForgotPasswordPage() {
         {/* Logo */}
         <div className="mb-8 text-center">
           <Link href="/" className="inline-flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-600 text-white font-bold text-lg">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-tp-black text-tp-bronze font-bold text-lg">
               AI
             </div>
             <span className="text-xl font-bold text-gray-900">{siteConfig.name}</span>
@@ -61,7 +61,7 @@ export default function ForgotPasswordPage() {
               </p>
               <Link
                 href="/auth/login"
-                className="mt-6 inline-block text-sm font-medium text-brand-600 hover:text-brand-500 transition-colors"
+                className="mt-6 inline-block text-sm font-medium text-tp-bronze-ink hover:text-tp-bronze transition-colors"
               >
                 Back to sign in
               </Link>
@@ -84,7 +84,7 @@ export default function ForgotPasswordPage() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="block w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20 transition-colors"
+                    className="block w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
                     placeholder="you@example.com"
                   />
                 </div>
@@ -111,7 +111,7 @@ export default function ForgotPasswordPage() {
 
         <p className="mt-6 text-center text-sm text-gray-500">
           Remember your password?{' '}
-          <Link href="/auth/login" className="font-medium text-brand-600 hover:text-brand-500 transition-colors">
+          <Link href="/auth/login" className="font-medium text-tp-bronze-ink hover:text-tp-bronze transition-colors">
             Sign in
           </Link>
         </p>

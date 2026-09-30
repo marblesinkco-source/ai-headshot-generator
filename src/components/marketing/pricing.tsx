@@ -24,17 +24,17 @@ export function Pricing() {
   const packages = activeCategory.packages;
 
   return (
-    <section id="pricing" className="relative bg-tailor-cream/40 py-24 sm:py-32">
+    <section id="pricing" className="relative bg-tp-paper/40 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-brand-500">
+          <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
             Pricing
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-tailor-black sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-tp-black sm:text-4xl">
             Choose Your Plan
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-4 text-lg text-tp-muted">
             One-time payment. No subscription. Your photos are yours forever.
           </p>
         </div>
@@ -48,8 +48,8 @@ export function Pricing() {
               className={cn(
                 'rounded-full px-4 py-2 text-sm font-medium transition-all',
                 activeCategory.id === cat.id
-                  ? 'bg-tailor-black text-tailor-gold shadow-md'
-                  : 'bg-white text-gray-600 hover:bg-brand-50 border border-brand-200/60'
+                  ? 'bg-tp-black text-tp-bronze shadow-md'
+                  : 'bg-white text-tp-muted hover:bg-tp-paper border border-tp-line'
               )}
             >
               {cat.icon} {cat.name}
@@ -57,7 +57,7 @@ export function Pricing() {
           ))}
           <Link
             href="/#categories"
-            className="rounded-full border border-brand-200/60 bg-white px-4 py-2 text-sm font-medium text-gray-500 transition-all hover:bg-brand-50"
+            className="rounded-full border border-tp-line bg-white px-4 py-2 text-sm font-medium text-tp-muted transition-all hover:bg-tp-paper"
           >
             All Categories &rarr;
           </Link>
@@ -77,7 +77,7 @@ export function Pricing() {
                 className={cn(
                   'relative flex flex-col',
                   isPopular &&
-                    'border-brand-400/50 shadow-lg shadow-brand-400/10 ring-1 ring-brand-400/30 scale-[1.02] lg:scale-105'
+                    'border-tp-bronze/50 shadow-lg shadow-tp-bronze/10 ring-1 ring-tp-bronze/30 scale-[1.02] lg:scale-105'
                 )}
               >
                 {isPopular && (
@@ -87,32 +87,32 @@ export function Pricing() {
                 )}
 
                 <CardHeader className="pb-4">
-                  <CardTitle className="text-lg font-semibold text-tailor-black">
+                  <CardTitle className="text-lg font-semibold text-tp-black">
                     {pkg.name}
                   </CardTitle>
 
                   <div className="mt-4 flex items-baseline gap-1">
-                    <span className="text-4xl font-extrabold tracking-tight text-tailor-black">
+                    <span className="text-4xl font-extrabold tracking-tight text-tp-black">
                       {formatPrice(pkg.price)}
                     </span>
-                    <span className="text-sm text-gray-500">one-time</span>
+                    <span className="text-sm text-tp-muted">one-time</span>
                   </div>
                 </CardHeader>
 
                 <CardContent className="flex-1 space-y-4">
                   {/* Key stats */}
-                  <div className="rounded-xl bg-brand-50 p-4 text-sm">
+                  <div className="rounded-xl bg-tp-paper p-4 text-sm">
                     <div className="flex justify-between py-1">
-                      <span className="text-gray-500">{activeCategory.outputLabel}</span>
-                      <span className="font-semibold text-tailor-black">{pkg.outputCount}+</span>
+                      <span className="text-tp-muted">{activeCategory.outputLabel}</span>
+                      <span className="font-semibold text-tp-black">{pkg.outputCount}+</span>
                     </div>
-                    <div className="flex justify-between border-t border-brand-200/50 py-1 pt-2">
-                      <span className="text-gray-500">AI Training</span>
-                      <span className="font-semibold text-tailor-black">Personalized</span>
+                    <div className="flex justify-between border-t border-tp-line/50 py-1 pt-2">
+                      <span className="text-tp-muted">AI Training</span>
+                      <span className="font-semibold text-tp-black">Personalized</span>
                     </div>
-                    <div className="flex justify-between border-t border-brand-200/50 py-1 pt-2">
-                      <span className="text-gray-500">Resolution</span>
-                      <span className="font-semibold uppercase text-tailor-black">HD</span>
+                    <div className="flex justify-between border-t border-tp-line/50 py-1 pt-2">
+                      <span className="text-tp-muted">Resolution</span>
+                      <span className="font-semibold uppercase text-tp-black">HD</span>
                     </div>
                   </div>
 
@@ -120,8 +120,8 @@ export function Pricing() {
                   {pkg.features.length > 0 && (
                     <ul className="space-y-2.5 pt-2">
                       {pkg.features.map((f) => (
-                        <li key={f} className="flex items-center gap-2 text-sm text-gray-700">
-                          <Check className="h-4 w-4 shrink-0 text-brand-500" />
+                        <li key={f} className="flex items-center gap-2 text-sm text-tp-ink">
+                          <Check className="h-4 w-4 shrink-0 text-tp-bronze" />
                           {f}
                         </li>
                       ))}
@@ -145,7 +145,7 @@ export function Pricing() {
         </div>
 
         {/* Trust line */}
-        <p className="mt-12 text-center text-sm text-gray-500">
+        <p className="mt-12 text-center text-sm text-tp-muted">
           Secure payment via Stripe. 100% satisfaction guaranteed or your money back.
         </p>
       </div>

@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 
 export default function ResetPasswordPage() {
   return (
-    <Suspense fallback={<div className="flex min-h-screen items-center justify-center"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-600" /></div>}>
+    <Suspense fallback={<div className="flex min-h-screen items-center justify-center"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-tp-black" /></div>}>
       <ResetPasswordContent />
     </Suspense>
   );
@@ -88,7 +88,7 @@ function ResetPasswordContent() {
         {/* Logo */}
         <div className="mb-8 text-center">
           <Link href="/" className="inline-flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-600 text-white font-bold text-lg">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-tp-black text-tp-bronze font-bold text-lg">
               AI
             </div>
             <span className="text-xl font-bold text-gray-900">{siteConfig.name}</span>
@@ -110,11 +110,11 @@ function ResetPasswordContent() {
             </div>
           ) : !sessionReady ? (
             <div className="text-center">
-              <div className="mx-auto h-8 w-8 animate-spin rounded-full border-2 border-brand-600 border-t-transparent" />
+              <div className="mx-auto h-8 w-8 animate-spin rounded-full border-2 border-tp-black border-t-transparent" />
               <p className="mt-4 text-sm text-gray-500">Verifying your reset link...</p>
               <p className="mt-2 text-xs text-gray-400">
                 If this takes too long, try{' '}
-                <Link href="/auth/forgot-password" className="text-brand-600 hover:text-brand-500">
+                <Link href="/auth/forgot-password" className="text-tp-bronze-ink hover:text-tp-bronze">
                   requesting a new link
                 </Link>
                 .
@@ -139,7 +139,7 @@ function ResetPasswordContent() {
                     minLength={8}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="block w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20 transition-colors"
+                    className="block w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
                     placeholder="At least 8 characters"
                   />
                 </div>
@@ -155,7 +155,7 @@ function ResetPasswordContent() {
                     minLength={8}
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
-                    className="block w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20 transition-colors"
+                    className="block w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
                     placeholder="Repeat your password"
                   />
                 </div>

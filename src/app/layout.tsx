@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     ],
     apple: '/brand/tailorpic/icons/profile-dark-180.png',
   },
+  manifest: '/brand/tailorpic/icons/site.webmanifest',
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={manrope.variable} suppressHydrationWarning>
-      <body className="min-h-screen bg-background font-sans antialiased">{children}</body>
+      <body className="min-h-screen bg-tp-paper font-sans antialiased text-tp-ink">{children}</body>
     </html>
   );
 }

@@ -31,13 +31,13 @@ export function Testimonials() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-brand-500">
+          <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
             Testimonials
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-tailor-black sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-tp-black sm:text-4xl">
             Loved by Professionals
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-4 text-lg text-tp-muted">
             See why thousands of professionals trust us with their image.
           </p>
         </div>
@@ -52,27 +52,27 @@ export function Testimonials() {
                   {Array.from({ length: t.rating }).map((_, i) => (
                     <Star
                       key={i}
-                      className="h-4 w-4 fill-brand-400 text-brand-400"
+                      className="h-4 w-4 fill-tp-bronze text-tp-bronze"
                     />
                   ))}
                 </div>
 
                 {/* Quote */}
-                <blockquote className="mt-4 flex-1 text-base leading-relaxed text-gray-700">
+                <blockquote className="mt-4 flex-1 text-base leading-relaxed text-tp-ink">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
 
                 {/* Author */}
-                <div className="mt-6 flex items-center gap-3 border-t border-brand-200/50 pt-5">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-tailor-black text-sm font-semibold text-tailor-gold">
+                <div className="mt-6 flex items-center gap-3 border-t border-tp-line/50 pt-5">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-tp-black text-sm font-semibold text-tp-bronze">
                     {t.name
                       .split(' ')
                       .map((n) => n[0])
                       .join('')}
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-tailor-black">{t.name}</p>
-                    <p className="text-xs text-gray-500">{t.role}</p>
+                    <p className="text-sm font-semibold text-tp-black">{t.name}</p>
+                    <p className="text-xs text-tp-muted">{t.role}</p>
                   </div>
                 </div>
               </CardContent>

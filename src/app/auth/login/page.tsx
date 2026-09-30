@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 
 export default function LoginPage() {
   return (
-    <Suspense fallback={<div className="flex min-h-screen items-center justify-center bg-tailor-cream"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-400" /></div>}>
+    <Suspense fallback={<div className="flex min-h-screen items-center justify-center bg-tp-paper"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-tp-bronze" /></div>}>
       <LoginContent />
     </Suspense>
   );
@@ -66,26 +66,26 @@ function LoginContent() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-tailor-cream px-4 py-12">
+    <div className="flex min-h-screen items-center justify-center bg-tp-paper px-4 py-12">
       <div className="w-full max-w-md">
         {/* Logo / Brand */}
         <div className="mb-8 text-center">
           <Link href="/" className="inline-flex items-center gap-2.5">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-tailor-black">
-              <span className="text-xl font-bold text-tailor-gold">T</span>
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-tp-black">
+              <span className="text-xl font-bold text-tp-bronze">T</span>
             </div>
-            <span className="text-xl font-bold text-tailor-black">{siteConfig.name}</span>
+            <span className="text-xl font-bold text-tp-black">{siteConfig.name}</span>
           </Link>
           <p className="mt-2 text-sm text-gray-500">Sign in to your account</p>
         </div>
 
         {/* Card */}
-        <div className="rounded-2xl border border-brand-200/60 bg-white p-8 shadow-sm">
+        <div className="rounded-2xl border border-tp-line/60 bg-white p-8 shadow-sm">
           {/* Google OAuth */}
           <Button
             variant="outline"
             size="md"
-            className="w-full border-brand-200 text-gray-700 hover:bg-brand-50"
+            className="w-full border-tp-line text-gray-700 hover:bg-tp-paper"
             onClick={handleGoogleLogin}
             loading={oauthLoading}
             disabled={loading}
@@ -114,7 +114,7 @@ function LoginContent() {
           {/* Divider */}
           <div className="relative my-6">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-brand-200/50" />
+              <div className="w-full border-t border-tp-line/50" />
             </div>
             <div className="relative flex justify-center text-sm">
               <span className="bg-white px-3 text-gray-400">or continue with email</span>
@@ -133,7 +133,7 @@ function LoginContent() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="block w-full rounded-lg border border-brand-200 px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20 transition-colors"
+                className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
                 placeholder="you@example.com"
               />
             </div>
@@ -145,7 +145,7 @@ function LoginContent() {
                 </label>
                 <Link
                   href="/auth/forgot-password"
-                  className="text-xs font-medium text-brand-600 hover:text-brand-500 transition-colors"
+                  className="text-xs font-medium text-tp-bronze-ink hover:text-tp-bronze transition-colors"
                 >
                   Forgot password?
                 </Link>
@@ -156,7 +156,7 @@ function LoginContent() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="block w-full rounded-lg border border-brand-200 px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/20 transition-colors"
+                className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
                 placeholder="Enter your password"
               />
             </div>
@@ -183,7 +183,7 @@ function LoginContent() {
         {/* Register link */}
         <p className="mt-6 text-center text-sm text-gray-500">
           Don&apos;t have an account?{' '}
-          <Link href="/auth/register" className="font-medium text-brand-600 hover:text-brand-500 transition-colors">
+          <Link href="/auth/register" className="font-medium text-tp-bronze-ink hover:text-tp-bronze transition-colors">
             Create one
           </Link>
         </p>

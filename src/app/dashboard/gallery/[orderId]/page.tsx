@@ -138,7 +138,7 @@ export default function OrderGalleryPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-20">
-        <div className="h-8 w-8 animate-spin rounded-full border-2 border-brand-600 border-t-transparent" />
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-tp-black border-t-transparent" />
       </div>
     );
   }
@@ -231,7 +231,7 @@ export default function OrderGalleryPage() {
               <p className="text-sm text-gray-500">No favorites yet. Click the heart icon on any headshot to save it.</p>
               <button
                 onClick={() => setFilter('all')}
-                className="mt-3 text-sm font-medium text-brand-600 hover:text-brand-500"
+                className="mt-3 text-sm font-medium text-tp-bronze-ink hover:text-tp-bronze"
               >
                 Show all headshots
               </button>

@@ -45,35 +45,35 @@ export function FAQ() {
   };
 
   return (
-    <section id="faq" className="bg-tailor-cream/40 py-24 sm:py-32">
+    <section id="faq" className="bg-tp-paper/40 py-24 sm:py-32">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-brand-500">
+          <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
             FAQ
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-tailor-black sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-tp-black sm:text-4xl">
             Frequently Asked Questions
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-4 text-lg text-tp-muted">
             Everything you need to know about our AI photo service.
           </p>
         </div>
 
         {/* Accordion */}
-        <div className="mt-16 divide-y divide-brand-200/50 rounded-2xl border border-brand-200/60 bg-white">
+        <div className="mt-16 divide-y divide-tp-line/50 rounded-2xl border border-tp-line bg-white">
           {faqs.map((faq, i) => (
             <div key={i}>
               <button
-                className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-brand-50/50"
+                className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-tp-paper/50"
                 onClick={() => toggle(i)}
                 aria-expanded={openIndex === i}
               >
-                <span className="text-base font-medium text-tailor-black">{faq.question}</span>
+                <span className="text-base font-medium text-tp-black">{faq.question}</span>
                 <ChevronDown
                   className={cn(
-                    'h-5 w-5 shrink-0 text-brand-400 transition-transform duration-200',
-                    openIndex === i && 'rotate-180 text-brand-600'
+                    'h-5 w-5 shrink-0 text-tp-bronze transition-transform duration-200',
+                    openIndex === i && 'rotate-180 text-tp-bronze-ink'
                   )}
                 />
               </button>
@@ -84,7 +84,7 @@ export function FAQ() {
                 )}
               >
                 <div className="overflow-hidden">
-                  <p className="px-6 pb-5 text-base leading-relaxed text-gray-600">
+                  <p className="px-6 pb-5 text-base leading-relaxed text-tp-muted">
                     {faq.answer}
                   </p>
                 </div>

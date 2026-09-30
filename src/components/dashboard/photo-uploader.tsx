@@ -140,27 +140,27 @@ export function PhotoUploader({ orderId, onUploadComplete }: PhotoUploaderProps)
         className={cn(
           'relative cursor-pointer rounded-xl border-2 border-dashed p-8 text-center transition-colors',
           isDragActive
-            ? 'border-brand-500 bg-brand-50'
+            ? 'border-tp-bronze bg-tp-paper'
             : files.length >= MAX_FILES
             ? 'border-gray-200 bg-gray-50 cursor-not-allowed'
-            : 'border-gray-300 hover:border-brand-400 hover:bg-gray-50'
+            : 'border-gray-300 hover:border-tp-bronze hover:bg-gray-50'
         )}
       >
         <input {...getInputProps()} />
         <div className="flex flex-col items-center gap-2">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-50">
-            <svg className="h-6 w-6 text-brand-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-tp-paper">
+            <svg className="h-6 w-6 text-tp-bronze" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
             </svg>
           </div>
           {files.length >= MAX_FILES ? (
             <p className="text-sm text-gray-400">Maximum photos reached</p>
           ) : isDragActive ? (
-            <p className="text-sm font-medium text-brand-600">Drop your photos here</p>
+            <p className="text-sm font-medium text-tp-bronze">Drop your photos here</p>
           ) : (
             <>
               <p className="text-sm text-gray-600">
-                <span className="font-medium text-brand-600">Click to upload</span> or drag and drop
+                <span className="font-medium text-tp-bronze">Click to upload</span> or drag and drop
               </p>
               <p className="text-xs text-gray-400">JPG, PNG, or WebP. Max 10MB each.</p>
             </>

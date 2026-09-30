@@ -8,9 +8,9 @@ export default function LegalLayout({ children }: { children: React.ReactNode })
       <header className="border-b border-gray-100">
         <div className="mx-auto flex h-16 max-w-3xl items-center px-4">
           <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-tp-black">
               <svg
-                className="h-5 w-5 text-white"
+                className="h-5 w-5 text-tp-bronze"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

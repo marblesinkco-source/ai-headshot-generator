@@ -3,18 +3,18 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  'inline-flex items-center justify-center whitespace-nowrap rounded-tp-button text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
         primary:
-          'bg-tailor-black text-tailor-gold shadow-md shadow-black/15 hover:bg-gray-900 hover:shadow-lg active:bg-gray-800',
+          'bg-tp-black text-tp-bronze shadow-md shadow-black/15 hover:bg-gray-900 hover:shadow-lg active:bg-gray-800',
         secondary:
-          'bg-brand-100 text-brand-700 hover:bg-brand-200 active:bg-brand-300',
+          'bg-tp-beige/30 text-tp-bronze-ink hover:bg-tp-beige/50 active:bg-tp-beige/70',
         outline:
-          'border-2 border-brand-300 bg-transparent text-brand-700 hover:bg-brand-50 hover:border-brand-400 active:bg-brand-100',
+          'border-2 border-tp-line bg-transparent text-tp-bronze-ink hover:bg-tp-paper hover:border-tp-bronze active:bg-tp-beige/30',
         ghost:
-          'bg-transparent text-gray-700 hover:bg-gray-100 active:bg-gray-200',
+          'bg-transparent text-tp-ink hover:bg-gray-100 active:bg-gray-200',
         destructive:
           'bg-red-600 text-white shadow-sm hover:bg-red-700 active:bg-red-800',
       },

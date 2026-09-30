@@ -84,6 +84,9 @@ const config: Config = {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+        'tp-card': '18px',
+        'tp-button': '12px',
+        'tp-dialog': '20px',
       },
       fontFamily: {
         sans: ['var(--font-manrope)', 'Inter', 'Arial', 'system-ui', 'sans-serif'],

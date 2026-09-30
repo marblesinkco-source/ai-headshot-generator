@@ -100,7 +100,7 @@ export default function OrderDetailPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-20">
-        <div className="h-8 w-8 animate-spin rounded-full border-2 border-brand-600 border-t-transparent" />
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-tp-black border-t-transparent" />
       </div>
     );
   }
@@ -204,7 +204,7 @@ export default function OrderDetailPage() {
               </div>
               <div className="h-2.5 rounded-full bg-gray-100 overflow-hidden">
                 <div
-                  className="h-full rounded-full bg-gradient-to-r from-brand-500 to-brand-600 transition-all duration-1000 ease-out"
+                  className="h-full rounded-full bg-gradient-to-r from-tp-bronze to-tp-bronze-ink transition-all duration-1000 ease-out"
                   style={{ width: `${pipeline.progress}%` }}
                 />
               </div>
@@ -213,7 +213,7 @@ export default function OrderDetailPage() {
             {/* Phase Steps */}
             <div className="flex items-center justify-center gap-3 text-xs">
               <div className={`flex items-center gap-1.5 ${
-                pipeline.phase === 'training' ? 'text-brand-600 font-medium' :
+                pipeline.phase === 'training' ? 'text-tp-bronze font-medium' :
                 pipeline.progress > 50 ? 'text-green-600' : 'text-gray-400'
               }`}>
                 {pipeline.progress > 50 ? (
@@ -221,7 +221,7 @@ export default function OrderDetailPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                   </svg>
                 ) : pipeline.phase === 'training' ? (
-                  <div className="h-3.5 w-3.5 rounded-full border-2 border-brand-500 border-t-transparent animate-spin" />
+                  <div className="h-3.5 w-3.5 rounded-full border-2 border-tp-bronze border-t-transparent animate-spin" />
                 ) : (
                   <div className="h-3 w-3 rounded-full border-2 border-gray-300" />
                 )}
@@ -231,7 +231,7 @@ export default function OrderDetailPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
               </svg>
               <div className={`flex items-center gap-1.5 ${
-                pipeline.phase === 'generating' ? 'text-brand-600 font-medium' :
+                pipeline.phase === 'generating' ? 'text-tp-bronze font-medium' :
                 pipeline.phase === 'completed' ? 'text-green-600' : 'text-gray-400'
               }`}>
                 {pipeline.phase === 'completed' ? (
@@ -239,7 +239,7 @@ export default function OrderDetailPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                   </svg>
                 ) : pipeline.phase === 'generating' ? (
-                  <div className="h-3.5 w-3.5 rounded-full border-2 border-brand-500 border-t-transparent animate-spin" />
+                  <div className="h-3.5 w-3.5 rounded-full border-2 border-tp-bronze border-t-transparent animate-spin" />
                 ) : (
                   <div className="h-3 w-3 rounded-full border-2 border-gray-300" />
                 )}
