@@ -9,7 +9,7 @@ import {
   PartyPopper, Home as HomeIcon, Sparkles, Building2, ShoppingBag, ArrowRight,
   Presentation, FileText, Monitor, Target,
   Mic, CreditCard, Mail, BookOpen, TrendingUp, Shirt,
-  Globe,
+  Globe, Star, Camera, Award,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -339,6 +339,41 @@ const useCases = [
     title: 'Government ID Photos',
     description: 'Clean portraits for government profiles. Always check official photo rules.',
     href: '/use-cases/government-id-photo',
+    tag: 'Directory',
+  },
+  {
+    icon: Star,
+    title: 'Crowdfunding Campaigns',
+    description: 'Trustworthy founder portraits for Kickstarter, Indiegogo and campaign pages.',
+    href: '/use-cases/crowdfunding-campaign',
+    tag: 'Marketing',
+  },
+  {
+    icon: Camera,
+    title: 'Magazine Features',
+    description: 'Press-ready portraits for interviews, profiles and editorial features.',
+    href: '/use-cases/magazine-feature',
+    tag: 'Professional',
+  },
+  {
+    icon: Award,
+    title: 'Award Nominations',
+    description: 'Polished headshots for award submissions, finalist pages and ceremonies.',
+    href: '/use-cases/award-nomination',
+    tag: 'Professional',
+  },
+  {
+    icon: Users,
+    title: 'Mentorship Profiles',
+    description: 'Approachable photos for mentor and mentee matching platforms.',
+    href: '/use-cases/mentorship-profile',
+    tag: 'Community',
+  },
+  {
+    icon: Briefcase,
+    title: 'Professional Directories',
+    description: 'Consistent portraits for industry directories and member listings.',
+    href: '/use-cases/professional-directory',
     tag: 'Directory',
   },
 ];

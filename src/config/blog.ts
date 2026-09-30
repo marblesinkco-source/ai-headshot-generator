@@ -8107,6 +8107,475 @@ export const blogPosts: BlogPost[] = [
     tags: ['Education', 'Teachers', 'Professors'],
     readingTime: '6 min read',
   },
+  {
+    slug: 'ai-headshot-for-executives',
+    title: 'AI Headshots for Executives: A Practical Guide for Senior Leaders',
+    description:
+      'How senior leaders can use AI headshots to get polished, consistent executive portraits quickly, with tips on style, privacy and where to use them.',
+    content: `
+      <p>Senior leaders are photographed less often than they think they should be, and that is exactly the problem. A CEO, managing director or board member may have a portrait that is five years old, shot by a different photographer, in a style that no longer matches the company website. Booking a new session means coordinating calendars, travel and assistants, and the result often arrives weeks later. AI headshots offer a faster route: a handful of clear selfies, a few minutes of processing, and a set of studio-quality portraits that can be refreshed whenever you need them.</p>
+      <p>This guide explains how executives can use AI headshots well, what to look for in the output, and how to keep the result credible. If you want a broader view of traditional executive portraits first, our <a href="/blog/executive-headshot-guide">executive headshot guide</a> is a useful companion.</p>
+
+      <h2>Why Executives Are Turning to AI Headshots</h2>
+
+      <p>The appeal is mostly about time and control. An executive's schedule is rarely flexible, and a photo shoot can easily consume half a day once preparation, travel and wardrobe changes are included. With AI, you can generate portraits from your desk on a quiet evening. You also keep control of the look: you can test a navy suit against a charcoal one, a formal backdrop against a softer office setting, and choose the image that feels most like you.</p>
+      <p>Consistency is the second reason. Leadership pages, investor decks, conference programmes and press releases all use a headshot, and mismatched images across these materials make an organisation look less coordinated than it is. Generating the whole leadership group with the same style settings produces a uniform set. For organisations, the <a href="/enterprise">enterprise options</a> are worth a look.</p>
+
+      <h2>What a Strong Executive Headshot Looks Like</h2>
+
+      <p>Executive portraits carry a different weight from a typical profile photo. They need to communicate authority without coldness, and approachability without losing gravitas. A few qualities consistently separate the best from the merely acceptable:</p>
+
+      <ul>
+        <li><strong>Composure:</strong> a calm, direct gaze and a relaxed jaw. A slight smile reads as confident; a wide grin can feel casual for formal contexts.</li>
+        <li><strong>Simple, well-fitted attire:</strong> a tailored suit or blazer in navy, charcoal or black, with a crisp collar. Avoid busy patterns and heavy accessories.</li>
+        <li><strong>Clean background:</strong> neutral grey, deep blue or a softly blurred office. Nothing should compete with the face.</li>
+        <li><strong>Flattering light:</strong> soft, directional light with gentle contrast, never flat or harshly shadowed.</li>
+        <li><strong>Natural retouching:</strong> tidy, not erased. Skin should still look like skin.</li>
+      </ul>
+
+      <p>Our <a href="/styles/executive">executive style</a> is built around exactly these qualities, and the <a href="/styles/corporate">corporate style</a> works well when a whole leadership team needs a matching set.</p>
+
+      <h2>How to Get the Best Input Photos</h2>
+
+      <p>The quality of an AI headshot depends heavily on the selfies you provide, and this is where busy executives often cut corners. A few minutes of preparation pays off.</p>
+
+      <ol>
+        <li>Stand facing a window in soft daylight, or use a bright room with light in front of you rather than behind.</li>
+        <li>Take at least ten to fifteen photos with different expressions and slight head angles.</li>
+        <li>Wear what you would normally wear to a board meeting, since the AI uses it as a reference.</li>
+        <li>Keep glasses on if you wear them daily, and avoid sunglasses or hats.</li>
+        <li>Use a plain background and hold the phone at eye level to avoid distortion.</li>
+        <li>Skip heavy beauty filters, which can make results look artificial.</li>
+      </ol>
+
+      <p>If you have an assistant, ask them to take the photos. A second person holding the phone usually produces better angles and more natural expressions than a selfie at arm's length.</p>
+
+      <h2>Choosing the Right Look for Your Role</h2>
+
+      <p>Different leadership roles call for slightly different visual signals. A finance or legal leader typically benefits from a conservative, formal look. A technology or creative executive can afford a little more warmth and informality, such as an open collar or a softer backdrop. A founder addressing investors and customers may want both. Generating two or three variations and choosing based on where each will appear is sensible. You can explore the range in our <a href="/styles">style library</a>, including the more relaxed <a href="/styles/business-casual">business casual look</a> for internal and social use.</p>
+
+      <h2>Where to Use Your Executive Headshot</h2>
+
+      <ul>
+        <li>Company leadership and About pages</li>
+        <li>LinkedIn and other professional profiles (see our <a href="/blog/linkedin-headshot-optimization">LinkedIn headshot optimisation guide</a>)</li>
+        <li>Conference speaker pages and event programmes</li>
+        <li>Press kits, media interviews and podcast guest profiles</li>
+        <li>Annual reports, investor decks and email signatures</li>
+        <li>Board portals and internal directories</li>
+      </ul>
+
+      <p>Keep a high-resolution master copy as well as web-sized versions. Conference organisers and print publications often request larger files, and having one ready saves last-minute scrambling.</p>
+
+      <h2>Authenticity, Disclosure and Trust</h2>
+
+      <p>Executives are held to a higher standard of transparency, so it is worth thinking about authenticity. The goal of an AI headshot should be a faithful, flattering representation of how you actually look, not a reinvention. If a colleague would not recognise you from the portrait, it is a poor choice. Avoid changes to age, face shape or other defining features. The best test is simple: would you be comfortable if someone met you in person right after seeing the photo?</p>
+      <p>Some organisations choose to mention the use of AI tools in their brand guidelines, which is a sensible practice. It avoids any awkwardness and treats the technology as what it is, a convenient production tool. For more on this topic, see our article on <a href="/blog/ai-photography-ethics-guide">AI photography ethics</a>.</p>
+
+      <h2>Privacy and Data Considerations</h2>
+
+      <p>Executives often hold sensitive roles, so privacy matters. Before you upload anything, check how a provider stores your selfies, how long it keeps them, and whether they are used to train other models. Read the privacy policy, and look for clear deletion options. Our overview of <a href="/blog/ai-headshot-privacy-security-guide">AI headshot privacy and security</a> explains what questions to ask. If you are arranging photos for a whole team, confirm that each person consents to their images being processed.</p>
+
+      <h2>Common Mistakes to Avoid</h2>
+
+      <ul>
+        <li>Using an over-edited image that no longer looks like you</li>
+        <li>Choosing a trendy backdrop that will date quickly</li>
+        <li>Wearing a tie or jacket that does not fit well in the source photos</li>
+        <li>Letting different leaders pick wildly different styles, which breaks visual consistency</li>
+        <li>Forgetting to update old photos across every platform when a new one is chosen</li>
+      </ul>
+
+      <h2>How Often Should Executives Refresh Their Photo?</h2>
+
+      <p>A good rule is every two to three years, or after any significant change in appearance such as a new hairstyle, glasses or facial hair. A new role or a major company milestone is also a natural moment to refresh. Because AI headshots are quick and low cost, you can keep a current image on hand without the hassle of arranging a shoot, and you can update it ahead of a big speaking engagement or funding announcement.</p>
+
+      <h2>Final Thoughts</h2>
+
+      <p>For senior leaders, a headshot is part of the first impression that investors, hires, partners and the press form before a single conversation. AI makes it possible to produce a polished, consistent and timely portrait in minutes, provided you supply good source photos, pick a restrained style and stay faithful to your real appearance. Ready to try it? <a href="/pricing">See pricing</a> or <a href="/headshots">create your executive headshot with TailorPic</a> today.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['Executives', 'Leadership', 'AI Headshots'],
+    readingTime: '7 min read',
+  },
+  {
+    slug: 'ai-headshot-social-media-optimization',
+    title: 'Optimizing Your AI Headshot for Social Media: Sizes, Crops and Style Tips',
+    description:
+      'Learn how to size, crop and style your AI headshot for LinkedIn, Instagram, X, Facebook and more so it looks sharp and recognisable everywhere.',
+    content: `
+      <p>A great headshot can still look poor on social media if it is cropped badly, compressed too hard or simply wrong for the platform. Every network uses different dimensions, displays your photo at tiny sizes in some places, and has its own culture around what a good profile image looks like. The good news is that optimisation is mostly a matter of a few simple habits. This guide walks through how to prepare an AI headshot so it looks sharp, recognisable and appropriate on the platforms that matter most.</p>
+
+      <h2>Start With the Right Source Image</h2>
+
+      <p>Optimisation begins before you resize anything. Generate your AI headshot at the highest resolution available and keep that original file untouched. Every platform will shrink and compress your photo, so you want to start with as much detail as possible. Save a master copy, then create smaller versions from it rather than repeatedly editing a compressed one.</p>
+      <p>Choose an image where your face fills a good portion of the frame. A portrait that looks fine at full size can become a tiny, unreadable blur when displayed as a 40-pixel circle in a comment thread. Head and shoulders, with the face clearly dominant, is the safest composition. Our guide to <a href="/blog/headshot-size-resolution-guide">headshot size and resolution</a> covers the technical details.</p>
+
+      <h2>Know How Each Platform Crops Your Photo</h2>
+
+      <p>Most platforms display profile pictures inside a circle or rounded square, which means the corners of your image are cut off. Always leave breathing room around your head and keep your eyes near the upper third of the frame. Below is a quick reference. Platforms change their specifications from time to time, so treat these as a guide and check the current help page before uploading.</p>
+
+      <ul>
+        <li><strong>LinkedIn:</strong> square source image of at least 400 x 400 pixels, displayed as a circle. Face should fill roughly 60 percent of the frame.</li>
+        <li><strong>Instagram:</strong> displayed as a small circle, so a tight crop on the face works best. Upload at 320 x 320 pixels or larger.</li>
+        <li><strong>X (Twitter):</strong> circle display; a 400 x 400 pixel square is a safe choice.</li>
+        <li><strong>Facebook:</strong> circle on most screens; use at least 320 x 320 pixels, and a larger file for sharpness.</li>
+        <li><strong>YouTube and TikTok:</strong> circular avatars shown very small in some places, so choose high contrast and a simple background.</li>
+        <li><strong>Email and messaging apps:</strong> often tiny circles, so a close crop is essential.</li>
+      </ul>
+
+      <p>For exact numbers and more platforms, see our <a href="/blog/social-media-profile-photo-sizes">social media profile photo sizes</a> reference and the broader <a href="/blog/social-media-profile-photo-guide">social media profile photo guide</a>.</p>
+
+      <h2>Match the Style to the Platform</h2>
+
+      <p>A single headshot rarely suits every network equally well. Think about what people expect to see in each place.</p>
+
+      <p><strong>LinkedIn</strong> rewards a polished, professional look with neutral or softly blurred backgrounds, business attire and a friendly expression. This is where a studio or <a href="/styles/professional-linkedin">professional LinkedIn style</a> shines. For more guidance, read our <a href="/blog/linkedin-headshot-optimization">LinkedIn headshot optimisation article</a>.</p>
+      <p><strong>Instagram</strong> is more personal and visual. A warmer, more lifestyle look, such as <a href="/styles/natural-light">natural light</a> or <a href="/styles/warm-golden">warm golden tones</a>, often fits better than a formal studio portrait.</p>
+      <p><strong>X and Threads</strong> are conversational, so approachable and high-contrast images tend to stand out in fast-moving feeds.</p>
+      <p><strong>Facebook</strong> is usually a mix of personal and professional connections, so a friendly, natural portrait works well.</p>
+      <p><strong>YouTube and TikTok</strong> reward distinctive branding. A bold colour or creative style can help your avatar stand out among thumbnails.</p>
+
+      <h2>Use Consistency to Build Recognition</h2>
+
+      <p>People recognise you faster when your photo is similar across platforms. You do not need an identical file everywhere, but the same face, similar colours and a comparable expression help followers connect your accounts. If you are building a personal brand or business presence, consistency is a simple way to look established. Our <a href="/blog/personal-brand-headshot-strategy">personal brand headshot strategy</a> explains how to choose a look that supports your goals.</p>
+      <p>A practical approach is to pick one primary headshot and one or two variations: a formal version for professional networks, and a relaxed or creative version for personal and entertainment platforms. Keep the facial expression and general colour palette similar.</p>
+
+      <h2>Colour, Contrast and Background Choices</h2>
+
+      <p>Because social media avatars are small, colour and contrast matter more than fine detail. A background that contrasts gently with your hair and clothing makes you easier to spot. Very busy backgrounds turn into noise at small sizes, while plain or softly blurred backgrounds keep attention on your face. If you are unsure, our <a href="/blog/best-background-for-headshots">guide to the best background for headshots</a> offers simple rules.</p>
+      <p>Colour psychology plays a role too. Blues suggest trust and calm, warm tones feel friendly, and bold colours attract attention. Read more in <a href="/blog/headshot-color-psychology">headshot colour psychology</a>. Avoid clothing that blends into the background, since you will look like a floating head at small sizes.</p>
+
+      <h2>Expression and Framing Matter More Than You Think</h2>
+
+      <p>A genuine, relaxed expression outperforms a stiff one every time. At tiny sizes, eyes and the shape of a smile are what people read. Choose an image where you appear engaged and approachable. Slightly angling your shoulders and keeping your chin level usually looks natural. For inspiration, see our <a href="/blog/headshot-poses-guide">headshot poses guide</a>.</p>
+
+      <h2>File Format and Compression Tips</h2>
+
+      <ul>
+        <li>Upload JPEG or PNG; JPEG is usually smaller and fine for photographs.</li>
+        <li>Avoid saving the same JPEG multiple times, which gradually lowers quality.</li>
+        <li>Keep file size under each platform's limit, but do not compress so heavily that you see blocky artefacts.</li>
+        <li>Use the sRGB colour profile so colours appear consistently across devices.</li>
+        <li>Export a square version at 1080 x 1080 pixels as a flexible master for cropping.</li>
+      </ul>
+
+      <p>If you need to adjust the crop or background of an existing image, our <a href="/editor">photo editor</a> and <a href="/editor/background-changer">background changer</a> make it easy without starting from scratch.</p>
+
+      <h2>A Simple Optimisation Checklist</h2>
+
+      <ol>
+        <li>Generate your headshot at the highest resolution available and save the original.</li>
+        <li>Crop to a square with your face filling about 60 percent of the frame.</li>
+        <li>Preview the image as a small circle to check that your face is still clear.</li>
+        <li>Choose a style that fits each platform's culture.</li>
+        <li>Keep expression, colours and framing consistent across platforms.</li>
+        <li>Upload, then check how it looks on desktop and mobile.</li>
+        <li>Refresh your photo every year or two, or when your appearance changes.</li>
+      </ol>
+
+      <h2>Do Not Forget the Rest of Your Profile</h2>
+
+      <p>Your profile picture is only one part of the first impression. Banners, bios and pinned posts all contribute. Consider a banner image that complements your headshot, and keep the colours harmonious. Our guide to <a href="/blog/headshot-for-linkedin-banner">LinkedIn banners</a> is a good starting point.</p>
+
+      <h2>Final Thoughts</h2>
+
+      <p>Optimising an AI headshot for social media is less about technical wizardry and more about thoughtful choices: a high-quality source, a face-forward crop, a style suited to the platform and consistency across accounts. Do that, and your photo will look sharp and recognisable whether it appears as a huge profile image or a tiny comment avatar. Ready to create yours? Browse the <a href="/styles">style library</a> or <a href="/headshots">generate your AI headshot with TailorPic</a>.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['Social Media', 'Profile Photos', 'Optimization'],
+    readingTime: '7 min read',
+  },
+  {
+    slug: 'ai-headshot-for-couples',
+    title: 'AI Portraits for Couples: Creative Ideas, Styles and Tips',
+    description:
+      'Create romantic, stylish AI portraits for couples, from engagement and anniversary images to gifts and cards. Learn how to prepare photos and pick styles.',
+    content: `
+      <p>Couples photos are some of the most treasured images we own, yet they are also some of the hardest to get. Scheduling a photographer for two busy people, paying for a full session, and then waiting for edits can feel like a lot for something you want to enjoy. AI portraits offer a new option. With a handful of clear photos of each partner, you can create stylish portraits in settings and aesthetics that would be expensive or impossible to arrange in real life, from sunlit gardens and cosy cafes to classical artwork and cinematic evenings.</p>
+      <p>This guide covers the best ways to use AI portraits for couples, how to prepare your photos, which styles suit different occasions, and what to keep in mind so the results look like the two of you.</p>
+
+      <h2>Why Couples Are Trying AI Portraits</h2>
+
+      <p>The appeal is flexibility. You can create a romantic portrait for an anniversary, a fun image for a save-the-date, or a thoughtful gift for a partner, all without coordinating wardrobe, travel and weather. Couples who live in different cities can even prepare their own photos separately and combine the looks. For people who feel awkward in front of a camera, the lower pressure can be a real benefit: no photographer, no audience, and as many attempts as you like.</p>
+      <p>AI portraits are also a great complement to a traditional session. You might hire a photographer for your wedding day and use AI for engagement cards, birthday gifts and seasonal images throughout the year. See our overview of <a href="/blog/family-photo-vs-headshot">family photos versus headshots</a> for more on choosing the right type of image.</p>
+
+      <h2>Ideas for Couples Portraits</h2>
+
+      <ul>
+        <li><strong>Engagement and save-the-date images:</strong> soft, romantic portraits for invitations and websites.</li>
+        <li><strong>Anniversary gifts:</strong> a stylised portrait of the two of you, framed for the wall.</li>
+        <li><strong>Holiday and greeting cards:</strong> festive looks that feel more personal than a stock design. See our <a href="/holiday-cards">holiday cards</a> options.</li>
+        <li><strong>Dating and relationship announcements:</strong> tasteful images for sharing good news.</li>
+        <li><strong>Wedding signage and keepsakes:</strong> artwork for welcome signs or guest books.</li>
+        <li><strong>Fun themed portraits:</strong> vintage, film noir or fantasy looks for a playful project.</li>
+      </ul>
+
+      <p>For engagement-specific ideas, have a look at our <a href="/couple-engagement-photos">couple and engagement photos</a> category.</p>
+
+      <h2>Choosing a Style That Suits You Both</h2>
+
+      <p>The best couples portraits reflect the personality of the relationship. A few directions that work especially well:</p>
+
+      <ul>
+        <li><strong>Soft and romantic:</strong> try <a href="/styles/soft-focus">soft focus</a>, <a href="/styles/pastel-soft">pastel soft</a> or <a href="/styles/cottagecore">cottagecore</a> for dreamy, gentle images.</li>
+        <li><strong>Warm and natural:</strong> <a href="/styles/sunset-golden">sunset golden</a> and <a href="/styles/natural-light">natural light</a> deliver that glowing golden-hour feel.</li>
+        <li><strong>Elegant and timeless:</strong> <a href="/styles/black-tie">black tie</a> and <a href="/styles/old-money">old money</a> suit formal celebrations.</li>
+        <li><strong>Dramatic and cinematic:</strong> <a href="/styles/cinematic">cinematic</a> and <a href="/styles/film-noir">film noir</a> look striking for a bolder statement.</li>
+        <li><strong>Playful and artistic:</strong> <a href="/styles/watercolor">watercolor</a>, <a href="/styles/pop-art">pop art</a> or <a href="/styles/anime-portrait">anime portrait</a> for a fun, creative twist.</li>
+      </ul>
+
+      <p>It helps to agree on a direction together. One partner may love classic elegance while the other prefers something relaxed, and a blend such as warm natural light with smart casual clothing is often a happy compromise.</p>
+
+      <h2>How to Prepare Photos of Both Partners</h2>
+
+      <p>AI tools generally work from photos of each person. The quality of those source photos has a direct effect on how well the results resemble you, so it is worth taking a few minutes to do it properly.</p>
+
+      <ol>
+        <li>Each partner should take ten to fifteen clear photos in soft daylight, facing a window.</li>
+        <li>Include a variety of expressions, from gentle smiles to relaxed neutral faces.</li>
+        <li>Vary the angles slightly: straight on, a little to each side, and a few with the head tilted.</li>
+        <li>Avoid sunglasses, hats and heavy filters so the AI can see your actual features.</li>
+        <li>Wear simple clothing in solid colours rather than busy patterns.</li>
+        <li>Keep backgrounds plain and uncluttered.</li>
+        <li>If you have a few good photos together, keep them as a reference for the mood you want.</li>
+      </ol>
+
+      <p>Our article on <a href="/blog/ai-headshot-prompts-guide">AI headshot prompts</a> offers tips for describing the style and setting you want, which is useful when planning a couples look.</p>
+
+      <h2>Matching Outfits and Colour Palettes</h2>
+
+      <p>Coordinating what you wear makes a big difference to the final result. You do not need to match exactly, but complementary colours look polished. Pairing a navy jacket with a soft cream dress, for example, or two earthy tones, gives a harmonious look. Avoid clashing patterns or colours that compete, such as a bright red next to hot pink. If you are unsure, neutrals like white, beige, grey and navy almost always work. You can learn more about how colour affects mood in our <a href="/blog/headshot-color-psychology">colour psychology guide</a>.</p>
+
+      <h2>Getting Natural-Looking Results</h2>
+
+      <p>The most common complaint about AI couples images is that they can look overly perfect or slightly off. A few habits help. First, choose source photos with genuine expressions rather than stiff poses. Second, be realistic: results that stay close to how you actually look are more satisfying than heavily altered ones. Third, review several variations and pick the ones where both faces look natural. It is normal for one or two images out of a batch to feel better than the rest, and that is fine. For background on how the technology works, see <a href="/blog/how-ai-headshots-work">how AI headshots work</a>.</p>
+
+      <h2>Using AI Portraits as Gifts</h2>
+
+      <p>A personalised portrait makes a thoughtful gift for an anniversary, birthday or Valentine's Day. Consider printing your favourite on canvas or in a simple frame. Choose a high-resolution file so the print stays sharp, and make sure the size and aspect ratio suit your chosen frame. Adding a short note about why you chose that particular style makes the gift more meaningful.</p>
+
+      <h2>Privacy and Consent</h2>
+
+      <p>Always make sure both partners agree to their photos being uploaded and used. Check how a provider handles storage and deletion of your images, and choose one with a clear privacy policy. Our <a href="/blog/ai-headshot-privacy-security">privacy and security guide</a> explains what to look for.</p>
+
+      <h2>A Simple Plan to Get Started</h2>
+
+      <ol>
+        <li>Talk about the occasion and the mood you both want.</li>
+        <li>Browse the <a href="/styles">style library</a> and shortlist two or three looks.</li>
+        <li>Take your source photos separately in good light.</li>
+        <li>Generate your portraits and choose your favourites together.</li>
+        <li>Use the <a href="/editor">photo editor</a> for small tweaks such as cropping or background changes.</li>
+        <li>Print, share or send them as cards and gifts.</li>
+      </ol>
+
+      <h2>Final Thoughts</h2>
+
+      <p>AI portraits give couples a low-pressure, affordable way to create beautiful images that reflect their personality. Whether you want a romantic keepsake, a creative save-the-date or a playful gift, the key is good source photos, a style you both enjoy and realistic expectations. <a href="/pricing">Check pricing</a> or <a href="/headshots">start creating your couples portraits with TailorPic</a>.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['Couples', 'Portraits', 'Engagement'],
+    readingTime: '7 min read',
+  },
+  {
+    slug: 'ai-headshot-for-pet-owners',
+    title: 'AI Portraits for Pet Owners: Turn Your Best Friend Into Art',
+    description:
+      'Create charming AI portraits of you and your pet, from royal portraits to cosy scenes. Learn how to take great source photos and choose styles.',
+    content: `
+      <p>For many of us, a pet is a full member of the family, and we have the camera roll to prove it. But a folder of blurry snapshots is not the same as a portrait you would proudly hang on the wall. Professional pet photography can be expensive, and animals are famously bad at following instructions. AI portraits give pet owners a creative alternative: start with a few good photos and turn them into stylised pictures, from regal oil-painting-style portraits to cosy lifestyle scenes featuring both of you.</p>
+      <p>This guide explains how to get the best results, which styles work well with pets, and how to use your finished portraits.</p>
+
+      <h2>Why AI Portraits Work So Well for Pets</h2>
+
+      <p>Pets do not sit still, and studio sessions can be stressful for animals and owners alike. With AI, you can take photos at home, in your pet's comfort zone, and let the software handle the artistic part. You can also experiment with ideas that would be impossible in real life: your dog as a Renaissance nobleman, your cat in a sunlit garden or the two of you together in a cinematic scene. It is also a delightful way to remember a pet. Many owners create portraits of older animals or to honour a pet who has passed, turning everyday photos into a lasting tribute.</p>
+      <p>Our <a href="/pet-portraits">pet portraits</a> category shows the kind of results you can expect, and our <a href="/blog/ai-pet-portraits-guide">AI pet portraits guide</a> offers a deeper introduction.</p>
+
+      <h2>Taking Great Source Photos of Your Pet</h2>
+
+      <p>Good input makes a huge difference. Pets are not as predictable as people, so patience and a few tricks help.</p>
+
+      <ol>
+        <li>Use natural daylight. Sit near a window or go outside in the shade, and avoid harsh midday sun and flash.</li>
+        <li>Get down to eye level. Photographing from above makes pets look small and distorts proportions.</li>
+        <li>Take lots of photos. Burst mode is your friend, and you may need twenty shots to get three good ones.</li>
+        <li>Capture the face clearly, including eyes, nose and ears, without anything covering it.</li>
+        <li>Use treats or a favourite toy to get their attention and encourage an alert expression.</li>
+        <li>Choose a plain background such as a wall or grass so the animal stands out.</li>
+        <li>Include a variety of angles: front-on, three-quarter and a profile shot.</li>
+      </ol>
+
+      <p>For owner-and-pet portraits, add clear photos of yourself as well, following the same tips for lighting and expression described in our <a href="/blog/take-professional-headshot-with-phone">guide to taking a professional headshot with your phone</a>.</p>
+
+      <h2>Styles That Suit Pet Portraits</h2>
+
+      <p>Nearly any style can work, but some are especially charming with animals.</p>
+
+      <ul>
+        <li><strong>Classic and regal:</strong> <a href="/styles/renaissance">renaissance</a> and <a href="/styles/old-money">old money</a> styles create dignified, humorous portraits of pets in period clothing.</li>
+        <li><strong>Soft and sweet:</strong> <a href="/styles/pastel-soft">pastel soft</a>, <a href="/styles/watercolor">watercolor</a> and <a href="/styles/cottagecore">cottagecore</a> give a gentle, storybook feel.</li>
+        <li><strong>Warm and natural:</strong> <a href="/styles/natural-light">natural light</a> and <a href="/styles/sunset-golden">sunset golden</a> make cosy lifestyle portraits.</li>
+        <li><strong>Bold and fun:</strong> <a href="/styles/pop-art">pop art</a>, <a href="/styles/vaporwave">vaporwave</a> and <a href="/styles/anime-portrait">anime portrait</a> for playful colour.</li>
+        <li><strong>Dramatic:</strong> <a href="/styles/cinematic">cinematic</a> and <a href="/styles/dark-moody">dark moody</a> for striking, film-poster-style images.</li>
+        <li><strong>Sculptural:</strong> <a href="/styles/marble-bust">marble bust</a> for a classical, statue-like look that works surprisingly well with dignified cats and dogs.</li>
+      </ul>
+
+      <h2>Owner and Pet Portraits Together</h2>
+
+      <p>Some of the most popular images show the owner and pet together. These can be tricky, because the AI needs to represent both faces accurately. Provide strong source photos for each, and choose styles that suit both. A cosy, natural-light portrait of you holding your cat works well, as does a fun fantasy scene with your dog at your side. Matching colour palettes, such as a mustard sweater that echoes a golden retriever's coat, can make the final result feel cohesive.</p>
+
+      <h2>Breed Details and Accuracy</h2>
+
+      <p>Check the results carefully for accuracy. Markings, eye colour, ear shape and fur texture make your pet unique. If the AI smooths or alters distinctive features, try again with clearer, closer source photos or different lighting. Dark-coated pets in particular benefit from bright, even light so that facial details do not disappear. Choose the versions that capture your pet's personality as well as their appearance: the tilt of the head, the expression in the eyes and the look you know so well.</p>
+
+      <h2>Ways to Use Your Pet Portraits</h2>
+
+      <ul>
+        <li>Framed prints for the living room or office</li>
+        <li>Holiday cards and personalised invitations</li>
+        <li>Gifts for family members and fellow pet lovers</li>
+        <li>Social media profile pictures and accounts dedicated to your pet</li>
+        <li>Mugs, cushions, calendars and other custom products</li>
+        <li>Memorial pieces to celebrate a beloved companion</li>
+        <li>Branding for pet businesses, such as groomers, walkers and trainers</li>
+      </ul>
+
+      <p>If you run a pet-related business, portraits can also help with branding and trust. A warm image of the owner alongside an animal is very effective on a website. Pair it with a professional headshot, as described in <a href="/blog/freelancer-headshot-branding">our freelancer branding guide</a>.</p>
+
+      <h2>Printing Tips</h2>
+
+      <p>For printed portraits, choose the highest resolution available and check that the aspect ratio suits your frame or product. Matte paper suits soft, painterly styles, while glossy finishes bring out vivid colours in bold styles. Order a small print first to check colours, then scale up to larger sizes if you are happy. If you need to crop or adjust a picture, our <a href="/editor">photo editor</a> can help.</p>
+
+      <h2>Common Mistakes to Avoid</h2>
+
+      <ul>
+        <li>Using dark, blurry or distant photos that hide your pet's face</li>
+        <li>Photographing from above, which distorts proportions</li>
+        <li>Skipping variety in expressions and angles</li>
+        <li>Expecting perfect results from a single photo</li>
+        <li>Ignoring accuracy of markings and colours when choosing favourites</li>
+        <li>Forgetting consent when including other people in the photo</li>
+      </ul>
+
+      <h2>A Quick Start Plan</h2>
+
+      <ol>
+        <li>Take 10 to 20 photos of your pet in good daylight at eye level.</li>
+        <li>If you want to appear too, take fresh photos of yourself.</li>
+        <li>Browse the <a href="/styles">style library</a> and choose two or three looks.</li>
+        <li>Generate your portraits and compare them with real photos for accuracy.</li>
+        <li>Pick your favourites, tweak with the editor if needed, and print or share.</li>
+      </ol>
+
+      <h2>Final Thoughts</h2>
+
+      <p>AI portraits are a joyful way to celebrate the animals who share our homes. With patient, well-lit photos and a style that suits your companion's personality, you can create keepsakes that make you smile every day. <a href="/pricing">See pricing</a> or <a href="/pet-portraits">explore pet portraits with TailorPic</a> and give your best friend the portrait they deserve.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['Pets', 'Pet Portraits', 'Gifts'],
+    readingTime: '7 min read',
+  },
+  {
+    slug: 'how-to-choose-ai-headshot-generator',
+    title: 'How to Choose an AI Headshot Generator: 10 Things to Check Before You Buy',
+    description:
+      'A practical checklist for choosing an AI headshot generator, covering realism, price, privacy, styles, turnaround and support, so you pick the right tool.',
+    content: `
+      <p>There are now dozens of AI headshot generators, and they all promise professional photos in minutes. On the surface they look alike, but the differences in realism, price, privacy and flexibility can be significant. Choosing well saves money and avoids the frustration of paying for photos you cannot use. This guide gives you a practical checklist of ten things to evaluate before you commit, along with questions to ask and red flags to watch for.</p>
+
+      <h2>1. Realism and Likeness</h2>
+
+      <p>The most important question is whether the results look like you. A good generator should produce portraits that friends and colleagues recognise immediately, with natural skin texture, believable hands and consistent facial features. Be cautious of services whose sample galleries show flawless, plastic-looking faces; polished is fine, but artificial is not. Look at examples with real people of different ages, skin tones and hair types, not just a handful of models. Our article on <a href="/blog/can-recruiters-tell-ai-headshots">whether recruiters can tell AI headshots apart</a> explains why natural results matter.</p>
+
+      <h2>2. Price and True Cost Per Photo</h2>
+
+      <p>Headline prices can be misleading. Compare the cost per usable photo, not the package price. A cheap package that produces only a couple of decent images may cost more per good photo than a slightly more expensive one. Check whether there are extra fees for additional styles, higher resolution, retries or commercial use. Also look at whether the price is a one-time payment or a subscription. Our <a href="/blog/ai-headshot-cost-comparison">AI headshot cost comparison</a> breaks down typical price ranges, and our <a href="/pricing">pricing page</a> shows exactly what TailorPic includes.</p>
+
+      <h2>3. Style and Outfit Variety</h2>
+
+      <p>Think about where you will use the photos. A single corporate background may be fine for LinkedIn, but you may also want a relaxed look for social media or a creative image for a portfolio. Check how many styles are available, whether they are updated regularly and whether you can preview them before buying. A broad <a href="/styles">style library</a> gives you more choice and better value. Also check whether outfits and backgrounds can be adjusted rather than fixed.</p>
+
+      <h2>4. Privacy and Data Handling</h2>
+
+      <p>You are uploading photos of your face, so privacy is non-negotiable. Read the privacy policy and look for clear answers to these questions:</p>
+
+      <ul>
+        <li>How long are my uploaded selfies stored, and can I delete them?</li>
+        <li>Are my photos used to train models available to other customers?</li>
+        <li>Where is the data stored and who can access it?</li>
+        <li>Does the service comply with relevant regulations such as GDPR?</li>
+        <li>Is there a clear process for requesting deletion of my account and data?</li>
+      </ul>
+
+      <p>If these answers are vague or hard to find, treat it as a warning sign. Our <a href="/blog/ai-headshot-privacy-security-guide">guide to AI headshot privacy and security</a> goes into more detail, and you can see how we handle data on our <a href="/security">security page</a>.</p>
+
+      <h2>5. Turnaround Time</h2>
+
+      <p>Speed varies widely. Some tools deliver in minutes, while others take hours or even a day. If you need a photo for an interview or event, this matters. Check the stated turnaround and whether there are any extra costs for faster delivery. Be wary of unrealistic claims and look for reviews that mention actual experience.</p>
+
+      <h2>6. Input Requirements and Ease of Use</h2>
+
+      <p>Consider how many photos you need to upload and what the requirements are. Some services want a dozen selfies, while others need more. The process should be simple, with clear guidance on lighting, angles and expressions. Good instructions lead to better results, and a bad upload process can waste time. Our <a href="/blog/take-professional-headshot-with-phone">phone headshot guide</a> offers practical tips for taking source photos.</p>
+
+      <h2>7. Editing and Regeneration Options</h2>
+
+      <p>What happens if you do not like the results? The best services let you retry, adjust or edit without paying again from scratch. Look at whether you can change the background, fix small issues or regenerate particular images. A built-in <a href="/editor">photo editor</a> is a useful extra, letting you adjust crops, backgrounds and lighting quickly. Clarify refund and retry policies before buying, and read our <a href="/refund-policy">refund policy</a> to see how we handle it.</p>
+
+      <h2>8. Resolution and File Quality</h2>
+
+      <p>Check the resolution of delivered images. A photo that looks fine on a screen may be too small for print or a large website banner. Look for high-resolution downloads without watermarks, and ask about file formats. See our <a href="/blog/headshot-size-resolution-guide">headshot size and resolution guide</a> for recommended sizes for different uses.</p>
+
+      <h2>9. Team and Business Features</h2>
+
+      <p>If you are buying for a company, look for features that help consistency: matching styles across team members, bulk ordering, admin dashboards and invoicing. Consistency across a team is what makes a company website look professional, as we explain in our <a href="/blog/team-headshot-consistency-guide">team headshot consistency guide</a>. Also consider whether the tool can handle remote staff and what volume discounts exist. Our <a href="/enterprise">enterprise page</a> explains what is available.</p>
+
+      <h2>10. Reputation, Reviews and Support</h2>
+
+      <p>Finally, look at what other customers say. Read independent reviews, not just testimonials on the provider's own website. Look for specifics such as how accurate the photos were, how support responded and whether there were hidden charges. Check that there is a real way to contact the company, such as email or live chat, and test it before you buy if possible. Our <a href="/reviews">reviews page</a> and <a href="/faq">FAQ</a> are a good place to start when evaluating TailorPic.</p>
+
+      <h2>A Quick Comparison Table in Words</h2>
+
+      <ul>
+        <li><strong>If budget matters most:</strong> prioritise cost per usable photo and avoid subscriptions you do not need.</li>
+        <li><strong>If realism matters most:</strong> look closely at sample galleries and request examples that resemble you.</li>
+        <li><strong>If privacy matters most:</strong> choose the provider with the clearest deletion policy and data handling.</li>
+        <li><strong>If you need variety:</strong> look for a wide style library and editing options.</li>
+        <li><strong>If you need speed:</strong> check real-world turnaround, not just marketing claims.</li>
+        <li><strong>If you are buying for a team:</strong> focus on consistency, bulk features and admin tools.</li>
+      </ul>
+
+      <p>For a direct comparison of specific services, see our <a href="/blog/best-ai-headshot-generators-2025">best AI headshot generators</a> overview and our <a href="/blog/ai-headshot-comparison-guide">AI headshot comparison guide</a>.</p>
+
+      <h2>Red Flags to Watch For</h2>
+
+      <ul>
+        <li>No visible privacy policy or vague language about data use</li>
+        <li>Unrealistic promises such as flawless results every time</li>
+        <li>Hidden fees for downloads, resolution or commercial use</li>
+        <li>Sample images that look identical or unnaturally smooth</li>
+        <li>No contact information or support</li>
+        <li>Automatic subscription renewal with difficult cancellation</li>
+        <li>Pressure tactics such as fake countdown timers</li>
+      </ul>
+
+      <h2>Test Before You Commit</h2>
+
+      <p>Where possible, try before you buy. Some services offer free previews or money-back guarantees. Try our <a href="/free-headshot-generator">free headshot generator</a> to get a sense of how the process works. Upload the same set of selfies to two services if you can and compare the results side by side. Show them to a friend and ask which looks more like you.</p>
+
+      <h2>Final Thoughts</h2>
+
+      <p>The best AI headshot generator is the one that gives you natural, usable photos at a fair price while treating your data responsibly. Use the ten-point checklist above, compare real examples, and do not be swayed by marketing alone. When you are ready, <a href="/headshots">try TailorPic</a> and see whether it fits your needs.</p>
+    `,
+    author: 'TailorPic Team',
+    publishedAt: '2024-10-01',
+    tags: ['Buying Guide', 'AI Headshots', 'Comparison'],
+    readingTime: '8 min read',
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

@@ -485,6 +485,46 @@ const industries = [
     href: '/industries/security-guards',
     cta: 'For Security Pros',
   },
+  {
+    icon: Music,
+    name: 'DJs',
+    description:
+      'Professional headshots for DJs and producers. Press-kit ready portraits for booking pages, lineups and social profiles.',
+    href: '/industries/djs',
+    cta: 'For DJs',
+  },
+  {
+    icon: Palette,
+    name: 'Makeup Artists',
+    description:
+      'Professional headshots for makeup artists. Polished portraits for portfolios, booking pages and Instagram.',
+    href: '/industries/makeup-artists',
+    cta: 'For Makeup Artists',
+  },
+  {
+    icon: Globe,
+    name: 'Tour Guides',
+    description:
+      'Professional headshots for tour guides. Friendly portraits for booking platforms, guide profiles and websites.',
+    href: '/industries/tour-guides',
+    cta: 'For Tour Guides',
+  },
+  {
+    icon: Heart,
+    name: 'Life Coaches',
+    description:
+      'Professional headshots for life coaches. Warm, credible portraits for websites, programs and social media.',
+    href: '/industries/life-coaches',
+    cta: 'For Life Coaches',
+  },
+  {
+    icon: Leaf,
+    name: 'Yoga Instructors',
+    description:
+      'Professional headshots for yoga instructors. Calm, welcoming portraits for studio pages and class schedules.',
+    href: '/industries/yoga-instructors',
+    cta: 'For Yoga Instructors',
+  },
 ];
 
 export default function IndustriesPage() {

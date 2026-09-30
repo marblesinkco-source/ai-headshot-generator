@@ -1881,6 +1881,201 @@ export const photoStyles: PhotoStyle[] = [
       'choosing-right-headshot-style',
     ],
   },
+  {
+    slug: 'anime-portrait',
+    name: 'Anime Portraits',
+    title: 'AI Anime Portraits',
+    description:
+      'Stylised anime-inspired portraits with expressive eyes, clean line work and vivid colour, created from your selfies.',
+    metaDescription:
+      'Turn your selfies into AI anime portraits with expressive eyes, clean line art and vivid colour. Perfect for avatars and gaming profiles with TailorPic.',
+    heroText:
+      'Step into the frame of your own story. Anime portraits reimagine you with expressive eyes, crisp line work and colour-rich backgrounds, while keeping the features that make you recognisable.',
+    features: [
+      'Clean line art and cel-style shading inspired by anime and manga',
+      'Expressive eyes and softly stylised facial proportions that still resemble you',
+      'Vivid, saturated colour palettes with dramatic sky and city backgrounds',
+      'Hair highlights, wind effects and sparkle details for a cinematic feel',
+      'Choice of portrait framing from close-up avatar to waist-up scene',
+      'High resolution files suited to avatars, banners and prints',
+    ],
+    idealFor: [
+      'Gamers, streamers and VTuber-style avatars',
+      'Discord, Twitch and forum profile pictures',
+      'Content creators building a playful personal brand',
+      'Fans who want a unique gift or keepsake',
+      'Illustrators and artists who want a creative reference portrait',
+    ],
+    tips: [
+      'Upload clear, front-facing selfies with even lighting so your features translate well',
+      'Include a few smiling and neutral expressions for more variety',
+      'Avoid sunglasses and heavy filters in your source photos',
+      'Keep a separate professional headshot for LinkedIn and formal use',
+      'Try both a bright daytime scene and a moody night city variation',
+    ],
+    relatedCategories: ['headshots', 'dating-photos'],
+    relatedBlogPosts: [
+      'choosing-right-headshot-style',
+      'personal-brand-headshot-strategy',
+      'social-media-profile-photo-guide',
+    ],
+  },
+  {
+    slug: 'marble-bust',
+    name: 'Marble Bust Portraits',
+    title: 'AI Marble Bust Portraits',
+    description:
+      'Classical sculpture-style portraits that render you as a polished marble bust with dramatic museum lighting.',
+    metaDescription:
+      'Create an AI marble bust portrait in classical sculpture style with polished stone texture and museum lighting. A timeless, striking image from TailorPic.',
+    heroText:
+      'Carved for the ages. Marble bust portraits turn you into a classical sculpture, with smooth stone, sculpted drapery and gallery lighting that feels closer to a museum piece than a selfie.',
+    features: [
+      'Polished white and veined marble textures with subtle surface detail',
+      'Classical Greek and Roman sculpture framing with carved drapery',
+      'Dramatic museum lighting that highlights form and depth',
+      'Optional pedestal, gallery wall or dark backdrop settings',
+      'Timeless monochrome tones with gentle warm or cool grading',
+      'High resolution files suited to posters, prints and social media',
+    ],
+    idealFor: [
+      'Authors, historians and educators with a classical theme',
+      'Art collectors, galleries and museum-inspired brands',
+      'Anniversary, milestone and memorial gifts',
+      'Creators who want a bold, memorable avatar',
+      'Wall art and poster prints with a timeless look',
+    ],
+    tips: [
+      'Upload selfies with clear facial structure and soft, even light',
+      'Pull hair back or keep it simple so the sculpted shape reads well',
+      'Choose a neutral expression for the most statue-like result',
+      'Try a pedestal version and a tight close-up crop',
+      'Pair with a corporate style if you need a conventional photo as well',
+    ],
+    relatedCategories: ['headshots', 'family-portraits'],
+    relatedBlogPosts: [
+      'choosing-right-headshot-style',
+      'headshot-trends-2026',
+      'personal-brand-headshot-strategy',
+    ],
+  },
+  {
+    slug: 'holographic',
+    name: 'Holographic Portraits',
+    title: 'AI Holographic Portraits',
+    description:
+      'Futuristic iridescent portraits with shifting pastel gradients, foil textures and shimmering light effects.',
+    metaDescription:
+      'Create AI holographic portraits with iridescent gradients, foil textures and shimmering light. A futuristic, eye-catching look made with TailorPic.',
+    heroText:
+      'Light that changes as you look. Holographic portraits wrap you in iridescent gradients, foil reflections and prismatic glow for a futuristic image that stands out in every feed.',
+    features: [
+      'Iridescent pink, teal, violet and gold gradients that shift across the image',
+      'Foil and chrome textures on clothing and backgrounds',
+      'Prismatic light leaks and soft lens flare',
+      'Glossy, reflective surfaces with a clean futuristic finish',
+      'Options from subtle shimmer to full neon-holo styling',
+      'High resolution files suited to covers, posters and social media',
+    ],
+    idealFor: [
+      'Musicians, DJs and performers',
+      'Fashion, beauty and cosmetics creators',
+      'Tech and Web3 brands that want a futuristic look',
+      'Event posters, album art and playlist covers',
+      'Social media profile pictures that need to stand out',
+    ],
+    tips: [
+      'Upload well-lit selfies so the AI can keep your face natural under colourful light',
+      'Wear neutral or metallic clothing so gradients do not clash',
+      'Avoid heavy makeup filters in the source photos',
+      'Try a soft pastel version and a high-intensity version',
+      'Keep a classic studio style for professional profiles',
+    ],
+    relatedCategories: ['headshots', 'dating-photos'],
+    relatedBlogPosts: [
+      'headshot-trends-2026',
+      'social-media-profile-photo-guide',
+      'choosing-right-headshot-style',
+    ],
+  },
+  {
+    slug: 'cottagecore',
+    name: 'Cottagecore Portraits',
+    title: 'AI Cottagecore Portraits',
+    description:
+      'Soft pastoral portraits with wildflowers, linen, golden meadows and countryside cottage charm.',
+    metaDescription:
+      'Create dreamy AI cottagecore portraits with wildflowers, linen and meadow light. Soft, pastoral photos for profiles, prints and gifts from TailorPic.',
+    heroText:
+      'Slow living, beautifully captured. Cottagecore portraits place you in sunlit meadows, flower gardens and cosy cottage kitchens, with soft colour and an unhurried, romantic mood.',
+    features: [
+      'Wildflower meadows, herb gardens and stone cottage settings',
+      'Linen dresses, knit cardigans, straw hats and woven baskets',
+      'Warm, diffused sunlight with a soft film-like glow',
+      'Muted greens, creams, butter yellows and dusty pinks',
+      'Natural, relaxed poses and gentle smiles',
+      'High resolution files suited to prints, blogs and social media',
+    ],
+    idealFor: [
+      'Bakers, florists, gardeners and farm-to-table businesses',
+      'Handmade and craft shop owners on Etsy or Instagram',
+      'Lifestyle and slow-living bloggers',
+      'Wellness, yoga and herbal practitioners',
+      'Family keepsakes, gifts and seasonal cards',
+    ],
+    tips: [
+      'Upload natural-light selfies taken near a window or outdoors',
+      'Wear simple neutral tops so the AI can add period-style clothing',
+      'Keep makeup light for a fresh, natural result',
+      'Try a garden scene and a cosy interior variation',
+      'Use a business casual style for more formal platforms',
+    ],
+    relatedCategories: ['headshots', 'family-portraits'],
+    relatedBlogPosts: [
+      'choosing-right-headshot-style',
+      'freelancer-headshot-branding',
+      'personal-brand-headshot-strategy',
+    ],
+  },
+  {
+    slug: 'grunge',
+    name: 'Grunge Portraits',
+    title: 'AI Grunge Portraits',
+    description:
+      'Raw, alternative-rock portraits with gritty texture, faded tones, worn denim and moody club lighting.',
+    metaDescription:
+      'Create AI grunge portraits with gritty film texture, faded tones and moody club lighting. An edgy alternative rock look for profiles and posters from TailorPic.',
+    heroText:
+      'Turn it up. Grunge portraits capture the raw energy of a basement gig, with grainy texture, faded colour, worn denim and low, moody light that feels unpolished on purpose.',
+    features: [
+      'Gritty film grain, scratches and faded, desaturated colour',
+      'Flannel shirts, band tees, leather jackets and worn denim',
+      'Moody club, garage and graffiti-wall backdrops',
+      'Hard flash and low-key practical lighting for a raw look',
+      'Confident, unposed expressions with attitude',
+      'High resolution files suited to posters, covers and social media',
+    ],
+    idealFor: [
+      'Musicians, bands and promoters',
+      'Tattoo artists, barbers and alternative lifestyle brands',
+      'Photographers and designers with an edgy portfolio',
+      'Zine makers, record shops and venue owners',
+      'Anyone who wants a bold, non-corporate profile picture',
+    ],
+    tips: [
+      'Upload sharp selfies with clear, even light on the face',
+      'Wear simple dark or plain tops as a base for layered styling',
+      'Keep a natural, unsmiling or half-smiling expression',
+      'Try a hard-flash version and a dim club version',
+      'Use a professional style for LinkedIn and formal settings',
+    ],
+    relatedCategories: ['headshots', 'dating-photos'],
+    relatedBlogPosts: [
+      'choosing-right-headshot-style',
+      'headshot-trends-2026',
+      'personal-brand-headshot-strategy',
+    ],
+  },
 ];
 
 export function getPhotoStyle(slug: string): PhotoStyle | undefined {

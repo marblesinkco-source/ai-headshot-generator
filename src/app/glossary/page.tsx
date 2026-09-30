@@ -336,6 +336,21 @@ const terms: Term[] = [
     definition:
       'A composition guideline that divides the frame into a three-by-three grid and places key elements along the lines or intersections. In portraits, placing the eyes near the upper third line creates a balanced, natural-looking headshot.',
   },
+  {
+    term: 'Dynamic Range',
+    definition:
+      'The span between the darkest and brightest areas a camera or image can capture while keeping detail. In portraits, good dynamic range preserves texture in both shadows and highlights so faces are never crushed into darkness or blown out to pure white.',
+  },
+  {
+    term: 'Framing',
+    definition:
+      'How a subject is positioned and cropped within the edges of a photo. For headshots, good framing leaves comfortable space above the head, centers the eyes near the upper third, and crops at the chest or shoulders so the face stays the focus.',
+  },
+  {
+    term: 'Softbox',
+    definition:
+      'A fabric-covered light modifier that diffuses a bright source into a large, soft glow. It produces gentle shadows and flattering skin tones, which is why it is a staple of studio portrait lighting and the look AI headshots often emulate.',
+  },
 ];
 
 const sortedTerms = [...terms].sort((a, b) =>
