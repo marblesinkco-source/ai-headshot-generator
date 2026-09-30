@@ -8,12 +8,19 @@ import { getCategoryById, getPackageById, type CategoryId } from '@/config/categ
 import { CREDIT_PACKAGES } from '@/config/credits';
 import { siteConfig } from '@/config/site';
 
+// Known coupon codes mapped to Stripe coupon IDs
+// Create these in Stripe Dashboard: Dashboard → Products → Coupons
+const COUPON_MAP: Record<string, string> = {
+  UPGRADE25: 'UPGRADE25', // 25% off — Stripe coupon ID must match
+};
+
 // Support category checkout, legacy checkout, and credit package checkout
 const checkoutSchema = z.union([
   // Credit package checkout
   z.object({
     type: z.literal('credits'),
     creditPackageId: z.string(),
+    couponCode: z.string().optional(),
     successUrl: z.string().url().optional(),
     cancelUrl: z.string().url().optional(),
   }),
@@ -21,12 +28,14 @@ const checkoutSchema = z.union([
   z.object({
     categoryId: z.string(),
     packageId: z.string(),
+    couponCode: z.string().optional(),
     successUrl: z.string().url().optional(),
     cancelUrl: z.string().url().optional(),
   }),
   // Legacy checkout (backward compatible)
   z.object({
     packageId: z.enum(['starter', 'professional', 'executive'] as const),
+    couponCode: z.string().optional(),
     successUrl: z.string().url().optional(),
     cancelUrl: z.string().url().optional(),
   }),
@@ -62,7 +71,7 @@ export async function POST(request: NextRequest) {
 
     // ─── Credit package checkout ───────────────────────────────────────
     if ('type' in parsed.data && parsed.data.type === 'credits') {
-      const { creditPackageId, successUrl, cancelUrl } = parsed.data;
+      const { creditPackageId, couponCode: creditCoupon, successUrl, cancelUrl } = parsed.data;
 
       const creditPkg = CREDIT_PACKAGES.find((p) => p.id === creditPackageId);
       if (!creditPkg) {
@@ -98,6 +107,8 @@ export async function POST(request: NextRequest) {
         );
       }
 
+      const creditStripeCoupon = creditCoupon ? COUPON_MAP[creditCoupon.toUpperCase()] : undefined;
+
       const checkoutSession = await stripe.checkout.sessions.create({
         mode: 'payment',
         customer_email: user.email,
@@ -114,6 +125,7 @@ export async function POST(request: NextRequest) {
             quantity: 1,
           },
         ],
+        ...(creditStripeCoupon ? { discounts: [{ coupon: creditStripeCoupon }] } : {}),
         metadata: {
           orderId,
           packageId: creditPkg.id,
@@ -136,7 +148,9 @@ export async function POST(request: NextRequest) {
       successUrl?: string;
       cancelUrl?: string;
       categoryId?: string;
+      couponCode?: string;
     };
+    const couponCode = 'couponCode' in parsed.data ? (parsed.data as { couponCode?: string }).couponCode : undefined;
     const categoryId = 'categoryId' in parsed.data ? (parsed.data as { categoryId: string }).categoryId : 'headshots';
 
     let pkgName: string;
@@ -201,6 +215,7 @@ export async function POST(request: NextRequest) {
     }
 
     const categoryLabel = category ? category.name : 'AI Headshots';
+    const stripeCoupon = couponCode ? COUPON_MAP[couponCode.toUpperCase()] : undefined;
 
     const checkoutSession = await stripe.checkout.sessions.create({
       mode: 'payment',
@@ -218,6 +233,7 @@ export async function POST(request: NextRequest) {
           quantity: 1,
         },
       ],
+      ...(stripeCoupon ? { discounts: [{ coupon: stripeCoupon }] } : {}),
       metadata: {
         orderId: order.id,
         packageId,
