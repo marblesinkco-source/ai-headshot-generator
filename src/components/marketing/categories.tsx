@@ -17,27 +17,12 @@ const CATEGORY_THUMBNAILS: Record<string, string> = {
   'real-estate': '/brand/tailorpic/categories/category-real-estate-800x600.webp',
 };
 
-// Map category IDs to brand SVG icons
-const CATEGORY_ICONS: Record<string, string> = {
-  headshots: '/brand/tailorpic/categories/headshots-icon.svg',
-  'linkedin-team': '/brand/tailorpic/categories/corporate-team-icon.svg',
-  dating: '/brand/tailorpic/categories/dating-icon.svg',
-  'pet-portraits': '/brand/tailorpic/categories/pets-icon.svg',
-  'ecommerce-product': '/brand/tailorpic/categories/product-photography-icon.svg',
-  'family-portraits': '/brand/tailorpic/categories/family-icon.svg',
-  'couple-engagement': '/brand/tailorpic/categories/couple-icon.svg',
-  graduation: '/brand/tailorpic/categories/graduation-icon.svg',
-  'baby-shower': '/brand/tailorpic/categories/baby-shower-icon.svg',
-  'holiday-cards': '/brand/tailorpic/categories/holiday-icon.svg',
-  'real-estate': '/brand/tailorpic/categories/real-estate-icon.svg',
-};
-
 export function Categories() {
   const categories = getActiveCategories();
 
   return (
     <section id="categories" className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 py-10 lg:py-16">
-      <div className="text-center mb-10">
+      <div className="text-center mb-12">
         <p className="uppercase text-[10px] font-semibold tracking-[0.25em] text-tp-bronze-ink mb-3">
           Choose Your Photo Type
         </p>
@@ -49,7 +34,7 @@ export function Categories() {
         </p>
       </div>
 
-      <div className="space-y-12">
+      <div className="space-y-14">
         {CATEGORY_GROUPS.map((group) => {
           const groupCategories = categories.filter((c) =>
             group.categories.includes(c.id)
@@ -58,49 +43,54 @@ export function Categories() {
 
           return (
             <div key={group.title}>
-              <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-tp-bronze-ink">
+              <h3 className="mb-5 text-xs font-semibold uppercase tracking-[0.18em] text-tp-bronze-ink">
                 {group.title}
               </h3>
-              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {groupCategories.map((cat) => {
                   const thumbnail = CATEGORY_THUMBNAILS[cat.id];
-                  const icon = CATEGORY_ICONS[cat.id];
 
                   return (
                     <Link
                       key={cat.id}
                       href={`/${cat.slug}`}
-                      className="group flex items-center gap-3 border border-tp-line bg-[#FEFCF8] rounded-xl p-3 min-h-[84px] transition-all duration-150 hover:-translate-y-[3px] hover:border-tp-bronze-ink"
+                      className="group relative overflow-hidden rounded-2xl border border-tp-line bg-white transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-tp-bronze/10 hover:border-tp-bronze/40"
                     >
-                      {/* Thumbnail or icon */}
-                      {thumbnail ? (
-                        <div className="w-[60px] h-[60px] rounded-lg overflow-hidden flex-shrink-0 bg-tp-beige">
+                      {/* Image */}
+                      <div className="relative aspect-[4/3] w-full overflow-hidden bg-tp-beige/30">
+                        {thumbnail ? (
                           <Image
                             src={thumbnail}
-                            alt=""
+                            alt={cat.name}
                             width={800}
                             height={600}
-                            className="w-full h-full object-cover"
+                            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                           />
-                        </div>
-                      ) : icon ? (
-                        <div className="w-[40px] h-[40px] flex-shrink-0">
-                          <Image src={icon} alt="" width={96} height={96} className="w-full h-full" />
-                        </div>
-                      ) : (
-                        <span className="text-2xl flex-shrink-0">{cat.icon}</span>
-                      )}
+                        ) : (
+                          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-tp-paper to-tp-beige">
+                            <span className="text-5xl">{cat.icon}</span>
+                          </div>
+                        )}
+                        {/* Subtle gradient overlay at bottom for text readability */}
+                        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/20 to-transparent" />
+                      </div>
 
-                      <div className="flex-1 min-w-0">
-                        <h4 className="text-[13px] font-semibold text-tp-ink group-hover:text-tp-bronze-ink transition-colors truncate">
+                      {/* Text content */}
+                      <div className="p-4">
+                        <h4 className="text-[14px] font-semibold text-tp-ink group-hover:text-tp-bronze-ink transition-colors">
                           {cat.name}
                         </h4>
-                        <p className="text-[10px] text-tp-muted truncate mt-0.5">
+                        <p className="text-[12px] text-tp-muted mt-1 line-clamp-2 leading-relaxed">
                           {cat.tagline}
                         </p>
-                        <p className="text-[11px] font-medium text-tp-bronze-ink mt-1">
-                          From ${((cat.packages[0]?.price || 0) / 100).toFixed(0)} &rarr;
-                        </p>
+                        <div className="mt-3 flex items-center justify-between">
+                          <span className="text-[13px] font-semibold text-tp-bronze-ink">
+                            From ${((cat.packages[0]?.price || 0) / 100).toFixed(0)}
+                          </span>
+                          <span className="text-[11px] font-medium text-tp-bronze group-hover:translate-x-0.5 transition-transform">
+                            View &rarr;
+                          </span>
+                        </div>
                       </div>
                     </Link>
                   );
