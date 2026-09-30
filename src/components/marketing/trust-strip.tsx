@@ -2,7 +2,9 @@
 
 import { useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { getActiveCategories } from '@/config/categories';
+import { BeforeAfterSlider } from './before-after-slider';
 
 const categories = getActiveCategories();
 
@@ -22,7 +24,7 @@ export function TrustStrip() {
             <em className="text-tp-bronze not-italic font-display italic">Better Photo.</em>
           </h2>
           <p className="text-tp-beige text-sm leading-[1.7] mb-1">
-            Explore an illustrative transformation, then choose the direction for your own photos.
+            Drag the slider to see how AI transforms a casual selfie into a professional portrait.
           </p>
           <p className="text-[11px] text-tp-muted leading-[1.7] mb-6">
             AI-generated comparison. Not a verified customer result.
@@ -35,34 +37,16 @@ export function TrustStrip() {
           </button>
         </div>
 
-        {/* Before / After comparison */}
-        <div className="grid grid-cols-2 gap-3">
-          <div className="relative rounded-xl overflow-hidden">
-            <Image
-              src="/brand/tailorpic/web/portrait-man-before.webp"
-              alt="AI-generated casual portrait, illustrative before example"
-              width={433}
-              height={470}
-              className="w-full h-[213px] lg:h-[290px] object-cover"
-              loading="lazy"
-            />
-            <span className="absolute top-3 left-3 bg-tp-black/80 rounded-full px-3 py-1.5 text-[11px]">
-              Before
-            </span>
-          </div>
-          <div className="relative rounded-xl overflow-hidden">
-            <Image
-              src="/brand/tailorpic/web/portrait-man-after.webp"
-              alt="AI-generated professional portrait, illustrative after example"
-              width={528}
-              height={499}
-              className="w-full h-[213px] lg:h-[290px] object-cover"
-              loading="lazy"
-            />
-            <span className="absolute top-3 left-3 bg-tp-black/80 rounded-full px-3 py-1.5 text-[11px]">
-              After
-            </span>
-          </div>
+        {/* Interactive Before / After slider */}
+        <div className="w-full max-w-[520px] mx-auto lg:mx-0">
+          <BeforeAfterSlider
+            beforeSrc="/brand/tailorpic/web/portrait-man-before.webp"
+            afterSrc="/brand/tailorpic/web/portrait-man-after.webp"
+            beforeAlt="AI-generated casual portrait, illustrative before example"
+            afterAlt="AI-generated professional portrait, illustrative after example"
+            width={528}
+            height={499}
+          />
         </div>
       </div>
 
@@ -85,18 +69,27 @@ export function TrustStrip() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
           {categories.map((cat) => (
-            <a
+            <Link
               key={cat.id}
               href={`/${cat.slug}`}
               className="flex items-center gap-3 border border-tp-line bg-[#FEFCF8] rounded-xl min-h-[70px] p-3 text-left hover:border-tp-bronze-ink transition-colors"
               onClick={() => categoryDialog.current?.close()}
             >
-              <span className="text-3xl flex-shrink-0">{cat.icon}</span>
+              <div className="w-[52px] h-[52px] rounded-lg overflow-hidden flex-shrink-0 bg-gradient-to-br from-tp-beige to-tp-line">
+                <Image
+                  src={`/images/categories/${cat.id}.jpg`}
+                  alt={cat.name}
+                  width={120}
+                  height={120}
+                  className="w-full h-full object-cover"
+                  sizes="52px"
+                />
+              </div>
               <span>
                 <strong className="block text-[13px]">{cat.name}</strong>
                 <small className="text-[10px] text-tp-muted">{cat.tagline}</small>
               </span>
-            </a>
+            </Link>
           ))}
         </div>
       </dialog>
