@@ -69,6 +69,16 @@ function UploadContent() {
         setSelectedPackage(order.package_id);
         setOrderId(order.id);
 
+        // Fetch existing upload count so the UI shows the correct state on reload
+        const { count } = await supabase
+          .from('uploaded_photos')
+          .select('id', { count: 'exact', head: true })
+          .eq('order_id', order.id);
+
+        if (count && count > 0) {
+          setUploadedCount(count);
+        }
+
         if (order.status === 'processing' || order.status === 'completed') {
           setCurrentStep(4);
         } else {

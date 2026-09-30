@@ -102,18 +102,26 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Get signed URLs for uploaded photos (these will be used for LoRA training)
+    // Get signed URLs for uploaded photos and create a ZIP for LoRA training
     const { data: photos } = await supabase
       .from('uploaded_photos')
       .select('storage_path')
       .eq('order_id', orderId);
 
+    if (!photos || photos.length < category.minPhotos) {
+      return NextResponse.json(
+        { error: 'Failed to retrieve uploaded photos' },
+        { status: 500 }
+      );
+    }
+
+    // Create signed URLs with 24h expiry for training queue delays
     const trainingImageUrls = (
       await Promise.all(
-        (photos || []).map(async (photo) => {
+        photos.map(async (photo) => {
           const { data } = await supabase.storage
             .from('uploads')
-            .createSignedUrl(photo.storage_path, 3600);
+            .createSignedUrl(photo.storage_path, 86400); // 24 hours
           return data?.signedUrl;
         })
       )
@@ -122,6 +130,56 @@ export async function POST(request: NextRequest) {
     if (trainingImageUrls.length < category.minPhotos) {
       return NextResponse.json(
         { error: 'Failed to retrieve uploaded photos' },
+        { status: 500 }
+      );
+    }
+
+    // Build a ZIP archive of training images and upload to storage for Replicate
+    const { createAdminClient } = await import('@/lib/supabase/server');
+    const adminClient = createAdminClient();
+
+    // Download all images and create a zip file in memory
+    const JSZip = (await import('jszip')).default;
+    const zip = new JSZip();
+
+    for (let i = 0; i < trainingImageUrls.length; i++) {
+      try {
+        const imgRes = await fetch(trainingImageUrls[i]);
+        if (!imgRes.ok) continue;
+        const imgBuffer = await imgRes.arrayBuffer();
+        const ext = photos[i].storage_path.split('.').pop() || 'jpg';
+        zip.file(`photo_${i}.${ext}`, imgBuffer);
+      } catch {
+        console.error(`Failed to fetch training image ${i}`);
+      }
+    }
+
+    const zipBuffer = await zip.generateAsync({ type: 'nodebuffer' });
+    const zipPath = `${user.id}/${orderId}/training_images.zip`;
+
+    const { error: zipUploadError } = await adminClient.storage
+      .from('uploads')
+      .upload(zipPath, zipBuffer, {
+        contentType: 'application/zip',
+        upsert: true,
+      });
+
+    if (zipUploadError) {
+      console.error('Failed to upload training ZIP:', zipUploadError);
+      return NextResponse.json(
+        { error: 'Failed to prepare training images' },
+        { status: 500 }
+      );
+    }
+
+    // Create a signed URL for the ZIP file (24h expiry)
+    const { data: zipSignedUrl } = await adminClient.storage
+      .from('uploads')
+      .createSignedUrl(zipPath, 86400);
+
+    if (!zipSignedUrl?.signedUrl) {
+      return NextResponse.json(
+        { error: 'Failed to create training data URL' },
         { status: 500 }
       );
     }
@@ -146,14 +204,14 @@ export async function POST(request: NextRequest) {
         FLUX_TRAIN_MODEL_VERSION,
         {
           input: {
-            input_images: trainingImageUrls.join('\n'),
+            input_images: zipSignedUrl.signedUrl,
             trigger_word: triggerWord,
             steps: 1200,
             learning_rate: 1e-4,
             resolution: '512,512',
           },
           webhook: webhookUrl,
-          webhook_events_filter: ['completed'],
+          webhook_events_filter: ['completed', 'failed'],
         }
       );
 

@@ -11,7 +11,19 @@ import { createClient } from "@supabase/supabase-js";
 
 export const dynamic = "force-dynamic";
 
-export async function GET() {
+export async function GET(request: Request) {
+  // Protect setup route — only allow in development or with admin secret
+  const url = new URL(request.url);
+  const adminSecret = url.searchParams.get('secret');
+  const isLocalhost = url.hostname === 'localhost' || url.hostname === '127.0.0.1';
+
+  if (!isLocalhost && adminSecret !== process.env.SUPABASE_SERVICE_ROLE_KEY?.slice(-12)) {
+    return NextResponse.json(
+      { error: 'Unauthorized' },
+      { status: 401 }
+    );
+  }
+
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 

@@ -137,8 +137,7 @@ export async function POST(request: NextRequest) {
         .from('uploaded_photos')
         .insert({
           order_id: order.id,
-          user_id: user.id,
-          file_name: file.name,
+          original_filename: file.name,
           file_size: file.size,
           mime_type: file.type,
           storage_path: storagePath,

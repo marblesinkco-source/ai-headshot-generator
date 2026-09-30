@@ -111,29 +111,39 @@ async function handleTrainingComplete(
   const packageId = url.searchParams.get('packageId') || '';
   const triggerWord = url.searchParams.get('triggerWord') || 'sks';
 
-  // Get LoRA weights URL from training output
-  let loraUrl: string | null = null;
+  // Get the trained model version or LoRA weights URL from training output
+  // Replicate training output can be a version string, a weights URL, or an object with either
+  let trainedModelVersion: string | null = null;
+  let loraWeightsUrl: string | null = null;
 
   if (typeof output === 'string') {
-    loraUrl = output;
+    // Could be a model version (owner/model:version) or a URL
+    if (output.startsWith('http')) {
+      loraWeightsUrl = output;
+    } else {
+      trainedModelVersion = output;
+    }
   } else if (output && typeof output === 'object') {
     const outputObj = output as Record<string, unknown>;
-    loraUrl =
-      (outputObj.weights as string) ??
-      (outputObj.version as string) ??
-      null;
+    trainedModelVersion = (outputObj.version as string) ?? null;
+    loraWeightsUrl = (outputObj.weights as string) ?? null;
   }
 
-  if (!loraUrl) {
-    // Fetch training details to get the weights URL
+  // If we didn't get it from the webhook payload, fetch the training details
+  if (!trainedModelVersion && !loraWeightsUrl) {
     try {
       const training = await replicate.trainings.get(trainingId);
       if (training.output) {
         if (typeof training.output === 'string') {
-          loraUrl = training.output;
+          if (training.output.startsWith('http')) {
+            loraWeightsUrl = training.output;
+          } else {
+            trainedModelVersion = training.output;
+          }
         } else {
           const out = training.output as Record<string, unknown>;
-          loraUrl = (out.weights as string) ?? (out.version as string) ?? null;
+          trainedModelVersion = (out.version as string) ?? null;
+          loraWeightsUrl = (out.weights as string) ?? null;
         }
       }
     } catch (fetchErr) {
@@ -141,8 +151,8 @@ async function handleTrainingComplete(
     }
   }
 
-  if (!loraUrl) {
-    console.error('No LoRA weights URL found for training:', trainingId);
+  if (!trainedModelVersion && !loraWeightsUrl) {
+    console.error('No trained model version or LoRA weights found for training:', trainingId);
     await supabase
       .from('orders')
       .update({ status: 'failed' })
@@ -151,10 +161,10 @@ async function handleTrainingComplete(
     return NextResponse.json({ received: true });
   }
 
-  // Store LoRA URL in order
+  // Store LoRA URL/version in order
   await supabase
     .from('orders')
-    .update({ lora_url: loraUrl })
+    .update({ lora_url: loraWeightsUrl || trainedModelVersion })
     .eq('id', orderId);
 
   // Now start generating images using the trained model
@@ -233,21 +243,38 @@ async function handleTrainingComplete(
   const launchResults = await Promise.allSettled(
     generations.map(async ({ styleId, backgroundId, prompt }) => {
       try {
-        const prediction = await replicate.predictions.create({
-          model: FLUX_GENERATE_MODEL,
-          input: {
-            prompt,
-            negative_prompt: category.negativePrompt || NEGATIVE_PROMPT,
-            width: quality.width,
-            height: quality.height,
-            num_inference_steps: quality.steps,
-            guidance_scale: quality.guidanceScale,
-            num_outputs: 1,
-            lora_url: loraUrl,
-          },
+        // Use the trained model version if available (preferred),
+        // or pass lora weights URL to flux-dev
+        const predictionInput: Record<string, unknown> = {
+          prompt,
+          width: quality.width,
+          height: quality.height,
+          num_inference_steps: quality.steps,
+          guidance_scale: quality.guidanceScale,
+          num_outputs: 1,
+        };
+
+        // If we have a LoRA weights URL, pass it to flux-dev via extra_lora
+        if (loraWeightsUrl) {
+          predictionInput.extra_lora = loraWeightsUrl;
+          predictionInput.extra_lora_scale = 0.8;
+        }
+
+        const predictionOptions: Parameters<typeof replicate.predictions.create>[0] = {
+          input: predictionInput,
           webhook: webhookBaseUrl,
-          webhook_events_filter: ['completed'],
-        });
+          webhook_events_filter: ['completed', 'failed'],
+        };
+
+        // Use trained model version if available, otherwise use base flux-dev
+        if (trainedModelVersion) {
+          // Trained model version is a full version string
+          predictionOptions.version = trainedModelVersion;
+        } else {
+          predictionOptions.model = FLUX_GENERATE_MODEL;
+        }
+
+        const prediction = await replicate.predictions.create(predictionOptions);
 
         // Record in DB
         await supabase.from('generated_headshots').insert({
@@ -523,7 +550,7 @@ async function sendFailureEmail(
               Error: ${errorMessage}
             </p>
             <p style="color: #4a4a4a;">
-              If you need help, please contact us at support@tailorpic.com
+              If you need help, please contact us at ${siteConfig.supportEmail}
             </p>
           </div>
         `,
