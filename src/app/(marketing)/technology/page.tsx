@@ -4,6 +4,12 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import {
+  generateOGMetadata,
+  generateTwitterMetadata,
+} from '@/lib/og-metadata';
 import {
   Upload,
   ScanFace,
@@ -16,25 +22,29 @@ import {
   ArrowRight,
   ChevronDown,
   Cpu,
+  Lock,
+  Trash2,
+  Globe,
 } from 'lucide-react';
 
+const PAGE_TITLE = 'The Technology Behind Your AI Headshots | TailorPic';
+const PAGE_DESC =
+  'Learn how TailorPic turns your selfies into professional headshots: what the AI does, how your photos are handled, and what quality checks happen before delivery.';
+
 export const metadata: Metadata = {
-  title: 'The Technology Behind Your AI Headshots | TailorPic',
-  description:
-    'Learn how TailorPic turns your selfies into professional headshots: what the AI does, how your photos are handled, and what quality checks happen before delivery.',
+  title: PAGE_TITLE,
+  description: PAGE_DESC,
   alternates: { canonical: '/technology' },
-  openGraph: {
-    title: `The Technology Behind Your Headshots | ${siteConfig.name}`,
-    description:
-      'A transparent look at how TailorPic generates professional headshots from your selfies, and how your photos are protected.',
-    url: `${siteConfig.url}/technology`,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `The Technology Behind Your Headshots | ${siteConfig.name}`,
-    description:
-      'A transparent look at how TailorPic generates professional headshots from your selfies, and how your photos are protected.',
-  },
+  openGraph: generateOGMetadata({
+    title: 'The Technology Behind Your AI Headshots',
+    description: PAGE_DESC,
+    subtitle: 'How it works and how your photos are protected',
+    path: '/technology',
+  }),
+  twitter: generateTwitterMetadata({
+    title: 'The Technology Behind Your AI Headshots',
+    description: PAGE_DESC,
+  }),
 };
 
 /* ------------------------------------------------------------------ */
@@ -109,6 +119,29 @@ const technicalFeatures = [
   },
 ];
 
+const trustSignals = [
+  {
+    icon: Lock,
+    title: 'Encrypted',
+    desc: 'Photos travel over encrypted connections (TLS) and are encrypted at rest.',
+  },
+  {
+    icon: Trash2,
+    title: 'Automatic deletion',
+    desc: 'Your uploaded photos are deleted automatically after generation, and you can request deletion of your data at any time.',
+  },
+  {
+    icon: Globe,
+    title: 'GDPR and CCPA rights',
+    desc: 'We honor GDPR (EU) and CCPA (California) requests for access, correction, and deletion.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Never used for training',
+    desc: 'Your photos are used only to create your headshots, not to train our AI.',
+  },
+];
+
 const faqItems = [
   {
     q: 'Are my photos used to train the AI?',
@@ -145,6 +178,23 @@ export default function TechnologyPage() {
           { name: 'Technology', url: `${siteConfig.url}/technology` },
         ]}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'TechArticle',
+            headline: 'The Technology Behind Your AI Headshots',
+            description: PAGE_DESC,
+            url: `${siteConfig.url}/technology`,
+            inLanguage: 'en-US',
+            about: 'AI headshot generation',
+            author: { '@type': 'Organization', name: siteConfig.name },
+            publisher: { '@type': 'Organization', name: siteConfig.name, url: siteConfig.url },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': `${siteConfig.url}/technology` },
+          }).replace(/</g, '\\u003c'),
+        }}
+      />
       <FAQSchema
         items={faqItems.map((item) => ({ question: item.q, answer: item.a }))}
       />
@@ -160,7 +210,7 @@ export default function TechnologyPage() {
             <Cpu className="h-3.5 w-3.5" />
             Transparency
           </div>
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-white leading-tight tracking-tight">
+          <h1 className="font-display font-normal text-4xl sm:text-5xl lg:text-6xl text-white leading-tight tracking-tight">
             The Technology Behind Your Headshots
           </h1>
           <p className="mt-5 text-lg text-tp-beige/70 max-w-2xl mx-auto leading-relaxed">
@@ -178,16 +228,17 @@ export default function TechnologyPage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
               The Process
             </p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               How It Works
             </h2>
             <p className="mt-3 text-tp-muted max-w-xl mx-auto">
               Four stages take you from selfie to finished headshot.
             </p>
           </div>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="relative grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div aria-hidden className="pointer-events-none absolute left-[12.5%] right-[12.5%] top-7 hidden border-t border-dashed border-tp-bronze/50 lg:block" />
             {steps.map((s, i) => (
-              <div key={s.title} className="text-center">
+              <li key={s.title} className="relative text-center">
                 <div className="relative mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-tp-card bg-tp-black">
                   <s.icon className="h-6 w-6 text-tp-bronze" />
                   <span className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-tp-bronze text-xs font-semibold text-tp-black">
@@ -198,9 +249,9 @@ export default function TechnologyPage() {
                 <p className="mt-2 text-sm text-tp-muted leading-relaxed">
                   {s.desc}
                 </p>
-              </div>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
@@ -211,7 +262,7 @@ export default function TechnologyPage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
               Our Principles
             </p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               Our Approach
             </h2>
             <p className="mt-3 text-tp-muted max-w-xl mx-auto">
@@ -254,6 +305,39 @@ export default function TechnologyPage() {
         </div>
       </section>
 
+      {/* ── Trust ── */}
+      <section className="bg-tp-black py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
+              Data Protection
+            </p>
+            <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-white">
+              How We Protect Your Photos
+            </h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {trustSignals.map((t) => (
+              <div
+                key={t.title}
+                className="rounded-tp-card border border-tp-bronze/20 bg-tp-ink p-6"
+              >
+                <t.icon className="h-7 w-7 text-tp-bronze mb-4" />
+                <h3 className="text-base font-semibold text-white mb-2">{t.title}</h3>
+                <p className="text-sm text-tp-beige/70 leading-relaxed">{t.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-center text-sm text-tp-beige/60">
+            Full details on our{' '}
+            <Link href="/security" className="font-medium text-tp-bronze underline underline-offset-2">
+              Security page
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
+
       {/* ── Technical Details ── */}
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
@@ -261,7 +345,7 @@ export default function TechnologyPage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
               What You Get
             </p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               Technical Details
             </h2>
           </div>
@@ -289,7 +373,7 @@ export default function TechnologyPage() {
       <section className="bg-tp-paper py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               Technology FAQ
             </h2>
           </div>
@@ -315,7 +399,7 @@ export default function TechnologyPage() {
       {/* ── CTA ── */}
       <section className="bg-tp-black py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-3xl sm:text-4xl text-white">
+          <h2 className="font-display font-normal text-3xl sm:text-4xl text-white">
             Try It Yourself
           </h2>
           <p className="mt-4 text-tp-beige/60">
@@ -324,9 +408,12 @@ export default function TechnologyPage() {
           <div className="mt-8">
             <Link
               href="/auth/register"
-              className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:bg-tp-bronze/90"
+              className={cn(
+                buttonVariants({ size: 'lg' }),
+                'bg-tp-bronze text-tp-black hover:bg-tp-bronze/90 active:bg-tp-bronze/80 font-semibold'
+              )}
             >
-              Try It Yourself <ArrowRight className="h-4 w-4" />
+              Create Your Headshots <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>

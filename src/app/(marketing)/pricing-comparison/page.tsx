@@ -2,7 +2,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import { CATEGORIES } from '@/config/categories';
 import {
@@ -18,31 +21,25 @@ import {
   Users,
 } from 'lucide-react';
 
+const OG_TITLE = `Pricing Comparison | ${siteConfig.name}`;
+const OG_DESCRIPTION = `Compare AI headshot pricing: ${siteConfig.name} from $9.90 one-time vs traditional studios vs other AI services.`;
+
 export const metadata: Metadata = {
   title: `Pricing Comparison — ${siteConfig.name} vs Traditional Photography`,
   description: `Compare ${siteConfig.name} AI headshots with traditional photography studios and other AI services. See how you can save time and money while getting professional results.`,
   alternates: { canonical: '/pricing-comparison' },
-  openGraph: {
-    title: `Pricing Comparison | ${siteConfig.name}`,
-    description: `Compare AI headshot pricing: ${siteConfig.name} vs traditional studios vs other AI services. Find the best value for professional photos.`,
-    url: `${siteConfig.url}/pricing-comparison`,
-    siteName: siteConfig.name,
-    type: 'website',
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.name,
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `Pricing Comparison | ${siteConfig.name}`,
-    description: `Compare ${siteConfig.name} AI headshots with traditional studios and other AI services.`,
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({
+    title: OG_TITLE,
+    description: OG_DESCRIPTION,
+    type: 'vs',
+    subtitle: 'Studio vs other AI vs TailorPic',
+    path: '/pricing-comparison',
+  }),
+  twitter: generateTwitterMetadata({
+    title: OG_TITLE,
+    description: OG_DESCRIPTION,
+    type: 'vs',
+  }),
 };
 
 /* ------------------------------------------------------------------ */
@@ -169,6 +166,37 @@ const roiReasons = [
 ];
 
 /* ------------------------------------------------------------------ */
+/*  FAQ                                                                */
+/* ------------------------------------------------------------------ */
+
+const faqs = [
+  {
+    question: `How much does ${siteConfig.name} cost?`,
+    answer: `Individual orders start at $9.90 as a one-time payment, with no subscription. Larger packages add more headshots, backgrounds and styles. Team pricing is $39 per person for 5-15 people and $29 per person for 16-50 people, confirmed at checkout.`,
+  },
+  {
+    question: 'How does the price compare to a photography studio?',
+    answer: `Traditional studio sessions typically cost $150 to $500 or more and deliver a small number of retouched images. ${siteConfig.name} is a one-time payment starting at $9.90. Studio figures are rough, typical ranges and vary by provider and market.`,
+  },
+  {
+    question: 'Are there subscriptions or hidden fees?',
+    answer: `No. You pay once per order. Many other AI headshot services charge monthly or per-order fees that vary by provider, so check their current terms.`,
+  },
+  {
+    question: 'How fast will I get my headshots?',
+    answer: 'Most orders are completed within about 2 hours. A traditional studio typically takes one to two weeks including scheduling and retouching.',
+  },
+  {
+    question: 'Is there a money-back guarantee?',
+    answer: `Yes. If you are not satisfied, contact our support team and we will review your order for a refund. See our refund policy for the details.`,
+  },
+  {
+    question: 'Do you offer team or bulk pricing?',
+    answer: 'Yes. Team pricing lowers the per-person cost for groups of 5 to 50, and everyone gets a consistent professional style.',
+  },
+];
+
+/* ------------------------------------------------------------------ */
 /*  Cell renderer                                                      */
 /* ------------------------------------------------------------------ */
 
@@ -210,6 +238,7 @@ export default function PricingComparisonPage() {
       <Header />
 
       <main id="main-content">
+        <FAQSchema items={faqs} />
         <BreadcrumbSchema
           items={[
             { name: 'Home', url: siteConfig.url },
@@ -231,7 +260,7 @@ export default function PricingComparisonPage() {
             <span className="mb-4 inline-block rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-4 py-1.5 text-sm font-medium tracking-wide text-tp-bronze">
               Compare &amp; Save
             </span>
-            <h1 className="font-display text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
+            <h1 className="font-display text-4xl font-normal leading-tight text-white sm:text-5xl lg:text-6xl">
               {siteConfig.name} vs Traditional Photography
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige/80">
@@ -242,11 +271,33 @@ export default function PricingComparisonPage() {
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/pricing"
-                className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-8 py-3.5 text-base font-semibold text-tp-black transition hover:bg-tp-bronze/90"
+                className={cn(
+                  buttonVariants({ size: 'lg' }),
+                  'bg-tp-bronze text-tp-black hover:bg-tp-bronze/90',
+                )}
               >
-                View Our Plans
+                Start from $9.90
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
+            </div>
+            <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-tp-beige/80">
+              <li className="flex items-center gap-2">
+                <DollarSign className="h-4 w-4 text-tp-bronze" aria-hidden="true" />
+                $9.90 one-time
+              </li>
+              <li className="flex items-center gap-2">
+                <Clock className="h-4 w-4 text-tp-bronze" aria-hidden="true" />
+                Most orders in ~2 hours
+              </li>
+              <li className="flex items-center gap-2">
+                <Sparkles className="h-4 w-4 text-tp-bronze" aria-hidden="true" />
+                Many backgrounds &amp; styles
+              </li>
+              <li className="flex items-center gap-2">
+                <Shield className="h-4 w-4 text-tp-bronze" aria-hidden="true" />
+                Money-back guarantee
+              </li>
+            </ul>
             </div>
           </div>
         </section>
@@ -254,7 +305,7 @@ export default function PricingComparisonPage() {
         {/* ---- Side-by-Side Comparison Table ---- */}
         <section className="border-b border-tp-line bg-white py-20 sm:py-28">
           <div className="mx-auto max-w-5xl px-4 sm:px-6">
-            <h2 className="font-display text-center text-3xl text-tp-ink sm:text-4xl">
+            <h2 className="font-display text-center text-3xl font-normal text-tp-ink sm:text-4xl">
               How the Options Stack Up
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-tp-muted">
@@ -309,7 +360,7 @@ export default function PricingComparisonPage() {
                         $20 - $60
                       </span>
                     </th>
-                    <th className="px-6 py-4 text-sm font-semibold text-tp-ink">
+                    <th className="bg-tp-bronze/15 px-6 py-4 text-sm font-semibold text-tp-ink">
                       <div className="flex items-center gap-2">
                         <Shield
                           className="h-4 w-4 text-tp-bronze-ink"
@@ -345,7 +396,7 @@ export default function PricingComparisonPage() {
                       <td className="border-t border-tp-line px-6 py-4">
                         <StatusCell value={row.otherAI} />
                       </td>
-                      <td className="border-t border-tp-line px-6 py-4">
+                      <td className="border-t border-tp-line bg-tp-bronze/10 px-6 py-4">
                         <StatusCell value={row.tailorpic} />
                       </td>
                     </tr>
@@ -446,7 +497,7 @@ export default function PricingComparisonPage() {
         {/* ---- Cost Breakdown ---- */}
         <section className="bg-tp-paper py-20 sm:py-28">
           <div className="mx-auto max-w-5xl px-4 sm:px-6">
-            <h2 className="font-display text-center text-3xl text-tp-ink sm:text-4xl">
+            <h2 className="font-display text-center text-3xl font-normal text-tp-ink sm:text-4xl">
               Cost Per Photo Breakdown
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-tp-muted">
@@ -524,7 +575,7 @@ export default function PricingComparisonPage() {
         {/* ---- ROI Section ---- */}
         <section className="border-y border-tp-line bg-white py-20 sm:py-28">
           <div className="mx-auto max-w-5xl px-4 sm:px-6">
-            <h2 className="font-display text-center text-3xl text-tp-ink sm:text-4xl">
+            <h2 className="font-display text-center text-3xl font-normal text-tp-ink sm:text-4xl">
               Why Professionals Choose AI Headshots
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-tp-muted">
@@ -556,20 +607,50 @@ export default function PricingComparisonPage() {
           </div>
         </section>
 
+        {/* ---- FAQ ---- */}
+        <section className="bg-tp-paper py-20 sm:py-28">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6">
+            <h2 className="font-display text-center text-3xl font-normal text-tp-ink sm:text-4xl">
+              Pricing Questions
+            </h2>
+            <div className="mt-10 space-y-4">
+              {faqs.map((f) => (
+                <details
+                  key={f.question}
+                  className="group rounded-tp-card border border-tp-line bg-white p-5"
+                >
+                  <summary className="cursor-pointer list-none font-semibold text-tp-ink">
+                    {f.question}
+                  </summary>
+                  <p className="mt-3 text-sm leading-relaxed text-tp-muted">
+                    {f.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ---- CTA ---- */}
-        <section className="bg-tp-black py-20 sm:py-28">
-          <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
-            <h2 className="font-display text-3xl text-white sm:text-4xl">
-              Ready to See the Difference?
+        <section className="relative overflow-hidden bg-tp-black py-20 sm:py-28">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -bottom-40 left-1/2 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-tp-bronze/15 blur-[120px]"
+          />
+          <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6">
+            <h2 className="font-display text-3xl font-normal text-white sm:text-4xl">
+              Professional Headshots from $9.90
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige/80">
-              Browse our plans and pick the package that fits your needs.
-              Professional headshots delivered fast&mdash;starting at just{' '}
-              {formatPrice(expressPackage.price)}.
+              One-time payment, most orders ready in about 2 hours, and a
+              money-back guarantee. Pick the package that fits your needs.
             </p>
             <Link
               href="/pricing"
-              className="mt-8 inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-8 py-3.5 text-base font-semibold text-tp-black transition hover:bg-tp-bronze/90"
+              className={cn(
+                buttonVariants({ size: 'lg' }),
+                'mt-8 bg-tp-bronze text-tp-black shadow-lg shadow-tp-bronze/20 hover:bg-tp-bronze/90',
+              )}
             >
               View Pricing Plans
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
