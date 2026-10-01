@@ -22,7 +22,7 @@ export function StickyCTA({ href = '/auth/register' }: { href?: string }) {
         visible ? 'translate-y-0' : 'pointer-events-none translate-y-full'
       )}
     >
-      <p className="text-sm font-medium text-tp-paper">Professional headshots from $1.98</p>
+      <p className="text-sm font-medium text-tp-paper">Studio-quality photos from $9.90</p>
       <Link
         href={href}
         tabIndex={visible ? 0 : -1}

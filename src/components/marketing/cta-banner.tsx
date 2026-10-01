@@ -22,8 +22,8 @@ export function CTABanner() {
                 Ready for Your Best Photo?
               </h2>
               <p className="mt-4 text-tp-beige/70 text-base sm:text-lg max-w-xl mx-auto">
-                Join thousands of professionals who upgraded their image with AI.
-                Starting at just $19. 100% money-back guarantee.
+                40+ studio-quality portraits in under 2 hours.
+                Starting at just $9.90. 14-day money-back guarantee.
               </p>
 
               <div className="mt-8 flex flex-wrap justify-center gap-4">

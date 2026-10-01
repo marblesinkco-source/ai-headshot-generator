@@ -11,14 +11,14 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { icon: Camera, value: 50000, suffix: '+', label: 'Photos Generated' },
-  { icon: Users, value: 5000, suffix: '+', label: 'Happy Customers' },
-  { icon: Layers, value: 11, suffix: '', label: 'Photo Categories' },
+  { icon: Camera, value: 40, suffix: '+', label: 'Photos Per Session' },
+  { icon: Users, value: 11, suffix: '', label: 'Photo Categories' },
+  { icon: Layers, value: 2, suffix: ' hrs', label: 'Average Delivery' },
   { icon: ShieldCheck, value: 100, suffix: '%', label: 'Money-Back Guarantee' },
 ];
 
 function formatNumber(n: number): string {
-  if (n >= 1000) return `${(n / 1000).toFixed(n % 1000 === 0 ? 0 : 1)}K`;
+  if (n >= 10000) return `${(n / 1000).toFixed(n % 1000 === 0 ? 0 : 1)}K`;
   return n.toString();
 }
 

@@ -4,6 +4,7 @@ import Script from 'next/script';
 import './globals.css';
 import { siteConfig } from '@/config/site';
 import { ToastProvider } from '@/components/ui/toaster';
+import { CookieConsent } from '@/components/cookie-consent';
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -60,6 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen bg-tp-paper font-sans antialiased text-tp-ink">
         <ToastProvider>
           {children}
+          <CookieConsent />
         </ToastProvider>
         {/* Vercel Analytics — only loads when NEXT_PUBLIC_VERCEL_ANALYTICS_ID is set */}
         {process.env.NEXT_PUBLIC_VERCEL_ANALYTICS_ID && (

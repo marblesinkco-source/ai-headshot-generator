@@ -2,22 +2,26 @@ const steps = [
   {
     number: '01',
     title: 'Choose a category',
-    description: 'Find the photo direction you need.',
+    description:
+      'Browse 11 photo categories — from corporate headshots and LinkedIn portraits to dating profiles and creative editorial shots. Pick the style that fits your goal.',
   },
   {
     number: '02',
     title: 'Choose a package',
-    description: 'Review the available options.',
+    description:
+      'Start with Express for $9.90 to preview your results, or go all-in with a premium package for 120+ photos in 4K resolution. One-time payment, no subscription.',
   },
   {
     number: '03',
     title: 'Upload your photos',
-    description: 'Follow the category guidelines.',
+    description:
+      'Upload 8–12 clear selfies following our simple guidelines. Our AI trains a personalized model on your unique features — your photos are auto-deleted within 30 days.',
   },
   {
     number: '04',
-    title: 'Create and download',
-    description: 'Keep the results you love.',
+    title: 'Download your photos',
+    description:
+      'Receive 40–120+ studio-quality portraits in under 2 hours. Download them all, pick your favorites, and use them anywhere — LinkedIn, resumes, social media, or print.',
   },
 ];
 

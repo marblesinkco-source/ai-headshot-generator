@@ -8,8 +8,9 @@ const legalLinks = [
   { label: 'Terms of Service', href: '/terms' },
   { label: 'Cookie Policy', href: '/cookie-policy' },
   { label: 'Refund Policy', href: '/refund-policy' },
-  { label: 'Security', href: '/security' },
+  { label: 'KVKK Aydınlatma', href: '/kvkk' },
   { label: 'DPA', href: '/dpa' },
+  { label: 'Security', href: '/security' },
 ];
 
 const socialLinks = [

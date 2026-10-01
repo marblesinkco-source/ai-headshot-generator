@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Check, Zap, ShieldCheck } from 'lucide-react';
+import { Check, Zap, ShieldCheck, Lock } from 'lucide-react';
 import { getActiveCategories, type Category } from '@/config/categories';
 import { formatPrice } from '@/lib/utils';
 import { cn } from '@/lib/utils';
@@ -34,6 +34,9 @@ export function Pricing() {
           </p>
           <p className="text-xs text-tp-muted mt-1">
             Professional photos at a fraction of studio prices. No code needed.
+          </p>
+          <p className="text-xs font-medium text-tp-bronze-ink mt-1">
+            Offer ends soon — lock in your discount today.
           </p>
         </div>
 
@@ -177,6 +180,12 @@ export function Pricing() {
           })}
         </div>
 
+        {/* Secure payment note */}
+        <p className="mt-6 text-center text-xs text-tp-muted">
+          <Lock className="mr-1 inline h-3 w-3" />
+          Secure payment via Stripe
+        </p>
+
         {/* Express upsell hint */}
         {hasExpress && (
           <p className="mt-6 text-center text-sm text-tp-muted">
@@ -192,10 +201,10 @@ export function Pricing() {
           </div>
           <div>
             <p className="text-sm font-semibold text-green-900">
-              100% Money-Back Guarantee
+              Money-Back Guarantee
             </p>
             <p className="text-xs text-green-700 mt-0.5 leading-relaxed">
-              Not satisfied with your results? Get a full refund within 14 days. No questions asked. Secure payment powered by Stripe.
+              14-day money-back guarantee. No questions asked.
             </p>
           </div>
         </div>

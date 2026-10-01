@@ -13,6 +13,7 @@ import { FAQ } from '@/components/marketing/faq';
 import { faqs } from '@/config/faqs';
 import { CTABanner } from '@/components/marketing/cta-banner';
 import { Footer } from '@/components/marketing/footer';
+import { StickyCTA } from '@/components/marketing/sticky-cta';
 import { OrganizationSchema, WebsiteSchema, FAQSchema, SoftwareApplicationSchema, HowToSchema } from '@/components/structured-data';
 
 export default function LandingPage() {
@@ -37,6 +38,7 @@ export default function LandingPage() {
       <FAQ />
       <CTABanner />
       <Footer />
+      <StickyCTA />
     </main>
   );
 }
