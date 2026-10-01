@@ -99,10 +99,10 @@ const benefits = [
 ];
 
 const stats = [
-  { value: '85%', label: 'Faster than traditional photo sessions' },
-  { value: '70%', label: 'Lower cost than studio photography' },
+  { value: '40+', label: 'Photos per order' },
+  { value: '11+', label: 'Professional styles' },
   { value: '< 2hrs', label: 'From selfies to finished headshots' },
-  { value: '$29', label: 'Starting price vs. $500+ studios' },
+  { value: '$9.90', label: 'Starting price per person' },
 ];
 
 export default function DoctorsIndustryPage() {
@@ -134,7 +134,7 @@ export default function DoctorsIndustryPage() {
               competence, and approachability — without leaving your practice.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/headshots">
+              <Link href="/auth/register">
                 <Button size="lg" className="gap-2">
                   Get Your Medical Headshot
                   <ArrowRight className="h-4 w-4" />
@@ -167,7 +167,7 @@ export default function DoctorsIndustryPage() {
           </span>
           <span className="flex items-center gap-1.5">
             <CheckCircle className="h-4 w-4 text-tp-bronze" />
-            Money-Back Guarantee
+            14-Day Money-Back Guarantee
           </span>
         </div>
       </section>
@@ -285,7 +285,7 @@ export default function DoctorsIndustryPage() {
             Studio-quality headshots starting at just $9.90.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/headshots">
+            <Link href="/auth/register">
               <Button size="lg" className="gap-2">
                 Get Your Medical Headshot
                 <ArrowRight className="h-4 w-4" />

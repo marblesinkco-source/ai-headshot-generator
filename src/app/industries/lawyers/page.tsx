@@ -98,7 +98,7 @@ const benefits = [
 const stats = [
   { value: '73%', label: 'Of clients check attorney photos before hiring' },
   { value: '4x', label: 'More profile views with a professional headshot' },
-  { value: '$29', label: 'Starting price vs. $500+ for legal portrait studios' },
+  { value: '$9.90', label: 'Starting price per person' },
   { value: '< 2hrs', label: 'From selfies to finished headshots' },
 ];
 
@@ -142,7 +142,7 @@ export default function LawyersIndustryPage() {
               the qualities clients look for before they ever walk through your door.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/headshots">
+              <Link href="/auth/register">
                 <Button size="lg" className="gap-2">
                   Get Your Headshots
                   <ArrowRight className="h-4 w-4" />
@@ -175,7 +175,7 @@ export default function LawyersIndustryPage() {
           </span>
           <span className="flex items-center gap-1.5">
             <CheckCircle className="h-4 w-4 text-tp-bronze" />
-            Money-Back Guarantee
+            14-Day Money-Back Guarantee
           </span>
         </div>
       </section>
@@ -412,7 +412,7 @@ export default function LawyersIndustryPage() {
             Studio-quality headshots starting at just $9.90.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/headshots">
+            <Link href="/auth/register">
               <Button size="lg" className="gap-2">
                 Create Your Headshots Now
                 <ArrowRight className="h-4 w-4" />

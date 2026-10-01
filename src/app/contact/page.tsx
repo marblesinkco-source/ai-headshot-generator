@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     q: 'Can I get a refund if I am not satisfied?',
-    a: 'Yes. We offer a 100% money-back guarantee within 14 days of purchase. See our refund policy for details.',
+    a: 'Yes. We offer a 14-day money-back guarantee. See our refund policy for details.',
   },
   {
     q: 'How many photos do I need to upload?',

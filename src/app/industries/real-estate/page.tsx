@@ -96,7 +96,7 @@ const benefits = [
 const stats = [
   { value: '2x', label: 'More inquiries with professional photos' },
   { value: '75%', label: 'Of buyers judge agents by their headshot' },
-  { value: '$29', label: 'Starting price vs. $300+ for studios' },
+  { value: '$9.90', label: 'Starting price per person' },
   { value: '< 2hrs', label: 'From selfies to finished headshots' },
 ];
 
@@ -140,7 +140,7 @@ export default function RealEstateIndustryPage() {
               property marketing piece.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/headshots">
+              <Link href="/auth/register">
                 <Button size="lg" className="gap-2">
                   Get Your Headshots
                   <ArrowRight className="h-4 w-4" />
@@ -173,7 +173,7 @@ export default function RealEstateIndustryPage() {
           </span>
           <span className="flex items-center gap-1.5">
             <CheckCircle className="h-4 w-4 text-tp-bronze" />
-            Money-Back Guarantee
+            14-Day Money-Back Guarantee
           </span>
         </div>
       </section>
@@ -408,7 +408,7 @@ export default function RealEstateIndustryPage() {
             Studio-quality headshots starting at just $9.90.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/headshots">
+            <Link href="/auth/register">
               <Button size="lg" className="gap-2">
                 Create Your Headshots Now
                 <ArrowRight className="h-4 w-4" />

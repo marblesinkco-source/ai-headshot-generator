@@ -216,7 +216,7 @@ const faqs = [
   {
     question: 'What if I am not happy with the results?',
     answer:
-      'We offer a 100% money-back guarantee within 14 days of delivery. If you are not satisfied with your photos, contact our support team and we will make it right — either with a re-generation or a full refund.',
+      'We offer a 14-day money-back guarantee. If you are not satisfied with your photos, contact our support team and we will make it right — either with a re-generation or a full refund.',
   },
   {
     question: 'What do I need to get started?',

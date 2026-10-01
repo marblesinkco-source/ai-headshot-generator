@@ -186,8 +186,8 @@ export default function AboutPage() {
           </p>
           <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-tp-beige/70">
             We are a small, early-stage company, and we would rather be honest about that than
-            pretend otherwise. It means we listen closely, and real people read the messages
-            you send us.
+            pretend otherwise. It means we listen closely and every message you send us
+            gets a personal response.
           </p>
         </div>
       </section>
