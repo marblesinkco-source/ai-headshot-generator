@@ -95,6 +95,27 @@ export default function ContactPage() {
         { name: 'Contact', url: `${siteConfig.url}/contact` },
       ]} />
       <FAQSchema items={faqs.map((f) => ({ question: f.q, answer: f.a }))} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ContactPage',
+            name: `Contact ${siteConfig.name}`,
+            url: `${siteConfig.url}/contact`,
+            mainEntity: {
+              '@type': 'Organization',
+              name: siteConfig.name,
+              contactPoint: {
+                '@type': 'ContactPoint',
+                email: siteConfig.supportEmail,
+                contactType: 'customer support',
+                availableLanguage: ['English', 'Turkish'],
+              },
+            },
+          }),
+        }}
+      />
       <Header />
 
       {/* Hero */}
@@ -102,7 +123,7 @@ export default function ContactPage() {
         <div className="pointer-events-none absolute inset-0 bg-grid" />
         <div className="pointer-events-none absolute -top-24 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-tp-bronze/10 blur-3xl" />
         <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 sm:py-28 lg:px-8">
-          <h1 className="font-display text-5xl tracking-tight text-tp-ink sm:text-6xl">
+          <h1 className="font-display font-normal text-5xl tracking-tight text-tp-ink sm:text-6xl">
             Get in{' '}
             <span className="bg-gradient-to-r from-tp-bronze-ink to-tp-bronze bg-clip-text text-transparent">
               touch
@@ -132,7 +153,7 @@ export default function ContactPage() {
                   <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-black">
                     <Icon className="h-6 w-6 text-tp-bronze" aria-hidden="true" />
                   </div>
-                  <h2 className="mt-4 text-lg font-semibold text-tp-ink">{method.title}</h2>
+                  <h2 className="mt-4 font-display font-normal text-lg text-tp-ink">{method.title}</h2>
                   <p className="mt-1 text-sm text-tp-muted">{method.description}</p>
                   <p className="mt-3 text-sm font-medium text-tp-bronze-ink">{method.detail}</p>
                   {method.href && method.linkLabel && (
@@ -154,7 +175,7 @@ export default function ContactPage() {
       <section className="py-16">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 text-center">
-            <h2 className="font-display text-4xl text-tp-ink">Send us a message</h2>
+            <h2 className="font-display font-normal text-4xl text-tp-ink">Send us a message</h2>
             <p className="mt-3 text-tp-muted">
               Pick a topic so your message reaches the right team. Fields marked with * are required.
             </p>
@@ -184,7 +205,7 @@ export default function ContactPage() {
       {/* FAQ Section */}
       <section className="bg-tp-paper py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-4xl text-tp-ink">
+          <h2 className="text-center font-display font-normal text-4xl text-tp-ink">
             Frequently asked questions
           </h2>
           <p className="mt-4 text-center text-tp-muted">
@@ -213,7 +234,7 @@ export default function ContactPage() {
       {/* CTA */}
       <section className="py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="font-display text-4xl text-tp-ink">Ready to create your photos?</h2>
+          <h2 className="font-display font-normal text-4xl text-tp-ink">Ready to create your photos?</h2>
           <p className="mt-4 text-lg text-tp-muted">
             Upload your selfies and get studio-quality AI photos, backed by our money-back guarantee.
           </p>

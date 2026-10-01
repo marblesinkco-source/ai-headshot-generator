@@ -19,7 +19,7 @@ export function CreditPackages() {
             <Sparkles className="h-3.5 w-3.5" />
             New
           </div>
-          <h2 className="text-3xl font-bold tracking-tight text-tp-black sm:text-4xl">
+          <h2 className="font-display text-3xl font-normal tracking-tight text-tp-ink sm:text-4xl">
             Annual Credit Packs
           </h2>
           <p className="mt-4 text-lg text-tp-muted">

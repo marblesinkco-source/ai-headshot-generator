@@ -208,7 +208,7 @@ export default function FreeHeadshotGeneratorPage() {
           <p className="mb-4 text-sm font-medium uppercase tracking-wide text-tp-bronze-ink">
             Free AI Headshot Generator
           </p>
-          <h1 className="font-display text-4xl font-bold tracking-tight text-tp-ink sm:text-6xl">
+          <h1 className="font-display text-4xl font-normal tracking-tight text-tp-ink sm:text-6xl">
             Professional headshots from your selfies. No photoshoot needed.
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-muted">
@@ -251,7 +251,7 @@ export default function FreeHeadshotGeneratorPage() {
       {/* What you get */}
       <section className="px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl">
-          <h2 className="font-display text-center text-3xl font-bold text-tp-ink">What You Get</h2>
+          <h2 className="font-display text-center text-3xl font-normal text-tp-ink">What You Get</h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-tp-muted">
             One set of selfies, a range of looks. Pick the styles that fit where your photo will be used.
           </p>
@@ -272,7 +272,7 @@ export default function FreeHeadshotGeneratorPage() {
       {/* How it works */}
       <section className="bg-tp-paper px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl">
-          <h2 className="font-display text-center text-3xl font-bold text-tp-ink">How It Works</h2>
+          <h2 className="font-display text-center text-3xl font-normal text-tp-ink">How It Works</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {steps.map((step, i) => (
               <div key={step.title} className="rounded-tp-card border border-tp-line bg-white p-6">
@@ -291,7 +291,7 @@ export default function FreeHeadshotGeneratorPage() {
       {/* Features */}
       <section className="px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl">
-          <h2 className="font-display text-center text-3xl font-bold text-tp-ink">
+          <h2 className="font-display text-center text-3xl font-normal text-tp-ink">
             Everything You Need for a Great Headshot
           </h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -309,7 +309,7 @@ export default function FreeHeadshotGeneratorPage() {
       {/* Free trial vs full package */}
       <section className="bg-tp-paper px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl">
-          <h2 className="font-display text-center text-3xl font-bold text-tp-ink">
+          <h2 className="font-display text-center text-3xl font-normal text-tp-ink">
             Free Tools vs TailorPic
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-tp-muted">
@@ -354,7 +354,7 @@ export default function FreeHeadshotGeneratorPage() {
       {/* Comparison */}
       <section className="px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl">
-          <h2 className="font-display text-center text-3xl font-bold text-tp-ink">
+          <h2 className="font-display text-center text-3xl font-normal text-tp-ink">
             Traditional Photography vs AI Headshots
           </h2>
           <div className="mt-10 overflow-x-auto rounded-tp-card border border-tp-line bg-white">
@@ -383,7 +383,7 @@ export default function FreeHeadshotGeneratorPage() {
       {/* Sample styles */}
       <section className="bg-tp-paper px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl">
-          <h2 className="font-display text-center text-3xl font-bold text-tp-ink">Choose Your Style</h2>
+          <h2 className="font-display text-center text-3xl font-normal text-tp-ink">Choose Your Style</h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-tp-muted">
             Headshots are just the start. Explore the categories available on TailorPic.
           </p>
@@ -408,7 +408,7 @@ export default function FreeHeadshotGeneratorPage() {
       {/* Trust */}
       <section className="px-4 py-16">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-display text-3xl font-bold text-tp-ink">
+          <h2 className="font-display text-3xl font-normal text-tp-ink">
             Built for professionals who want to look their best
           </h2>
           <p className="mt-4 text-tp-muted">
@@ -429,7 +429,7 @@ export default function FreeHeadshotGeneratorPage() {
       {/* FAQ */}
       <section className="bg-tp-paper px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-3xl">
-          <h2 className="font-display text-center text-3xl font-bold text-tp-ink">
+          <h2 className="font-display text-center text-3xl font-normal text-tp-ink">
             Free AI Headshot FAQ
           </h2>
           <div className="mt-10 space-y-3">
@@ -451,7 +451,7 @@ export default function FreeHeadshotGeneratorPage() {
       {/* Final CTA */}
       <section className="px-4 py-20">
         <div className="mx-auto max-w-2xl rounded-tp-card bg-tp-ink px-6 py-12 text-center">
-          <h2 className="font-display text-3xl font-bold text-white">Try it risk-free</h2>
+          <h2 className="font-display text-3xl font-normal text-white">Try it risk-free</h2>
           <p className="mt-3 text-tp-beige">
             $9.90 one-time, secure Stripe checkout, and a 14-day money-back guarantee.
           </p>

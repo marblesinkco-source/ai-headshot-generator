@@ -203,7 +203,7 @@ export default function LinkedInHeadshotsPage() {
             <p className="mb-4 text-sm font-medium uppercase tracking-wide text-tp-bronze-ink">
               AI LinkedIn Headshots
             </p>
-            <h1 className="font-display text-4xl font-bold tracking-tight text-tp-ink sm:text-5xl">
+            <h1 className="font-display text-4xl font-normal tracking-tight text-tp-ink sm:text-5xl">
               Get More Profile Views With a LinkedIn Headshot That Stands Out
             </h1>
             <p className="mt-6 text-lg text-tp-muted">
@@ -243,7 +243,7 @@ export default function LinkedInHeadshotsPage() {
       {/* Why it matters */}
       <section className="px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-3xl">
-          <h2 className="font-display text-center text-3xl font-bold text-tp-ink">
+          <h2 className="font-display text-center text-3xl font-normal text-tp-ink">
             Why Your LinkedIn Photo Matters
           </h2>
           <ul className="mt-8 space-y-4">
@@ -260,7 +260,7 @@ export default function LinkedInHeadshotsPage() {
       {/* LinkedIn photo requirements & best practices */}
       <section className="bg-tp-paper px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl">
-          <h2 className="font-display text-center text-3xl font-bold text-tp-ink">
+          <h2 className="font-display text-center text-3xl font-normal text-tp-ink">
             LinkedIn Profile Photo Requirements and Best Practices
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-tp-muted">
@@ -289,7 +289,7 @@ export default function LinkedInHeadshotsPage() {
       {/* Checklist */}
       <section className="px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl">
-          <h2 className="font-display text-center text-3xl font-bold text-tp-ink">
+          <h2 className="font-display text-center text-3xl font-normal text-tp-ink">
             What Makes a Great LinkedIn Photo
           </h2>
           <div className="mt-10 grid gap-6 md:grid-cols-5">
@@ -322,7 +322,7 @@ export default function LinkedInHeadshotsPage() {
       {/* What you get */}
       <section className="bg-tp-paper px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl">
-          <h2 className="font-display text-center text-3xl font-bold text-tp-ink">What You Get</h2>
+          <h2 className="font-display text-center text-3xl font-normal text-tp-ink">What You Get</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((f) => (
               <div key={f.title} className="rounded-tp-card border border-tp-line bg-white p-6">
@@ -338,7 +338,7 @@ export default function LinkedInHeadshotsPage() {
       {/* Before / After */}
       <section className="px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl">
-          <h2 className="font-display text-center text-3xl font-bold text-tp-ink">
+          <h2 className="font-display text-center text-3xl font-normal text-tp-ink">
             From Everyday Selfie to Professional Headshot
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-tp-muted">
@@ -387,7 +387,7 @@ export default function LinkedInHeadshotsPage() {
       {/* Who benefits */}
       <section className="bg-tp-paper px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl">
-          <h2 className="font-display text-center text-3xl font-bold text-tp-ink">Who Benefits</h2>
+          <h2 className="font-display text-center text-3xl font-normal text-tp-ink">Who Benefits</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {personas.map((p) => (
               <div key={p.title} className="rounded-tp-card border border-tp-line bg-white p-6">
@@ -402,7 +402,7 @@ export default function LinkedInHeadshotsPage() {
       {/* Representative examples */}
       <section className="bg-tp-paper px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl">
-          <h2 className="font-display text-center text-3xl font-bold text-tp-ink">
+          <h2 className="font-display text-center text-3xl font-normal text-tp-ink">
             How People Use LinkedIn Headshots
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-tp-muted">
@@ -436,7 +436,7 @@ export default function LinkedInHeadshotsPage() {
       <section className="px-4 py-16">
         <div className="mx-auto max-w-2xl rounded-tp-card border border-tp-line bg-white p-8 text-center">
           <DollarSign className="mx-auto h-7 w-7 text-tp-bronze-ink" />
-          <h2 className="font-display mt-3 text-3xl font-bold text-tp-ink">Starting from $9.90</h2>
+          <h2 className="font-display mt-3 text-3xl font-normal text-tp-ink">Starting from $9.90</h2>
           <p className="mt-3 text-tp-muted">
             A fraction of the cost of a studio session, with no scheduling or travel.
           </p>
@@ -450,7 +450,7 @@ export default function LinkedInHeadshotsPage() {
       {/* Related tools */}
       <section className="bg-tp-paper px-4 py-16">
         <div className="mx-auto max-w-3xl">
-          <h2 className="font-display text-center text-2xl font-bold text-tp-ink">Free Tools</h2>
+          <h2 className="font-display text-center text-2xl font-normal text-tp-ink">Free Tools</h2>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {tools.map((t) => (
               <Link
@@ -472,7 +472,7 @@ export default function LinkedInHeadshotsPage() {
       {/* FAQ */}
       <section className="px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-3xl">
-          <h2 className="font-display text-center text-3xl font-bold text-tp-ink">LinkedIn Headshot FAQ</h2>
+          <h2 className="font-display text-center text-3xl font-normal text-tp-ink">LinkedIn Headshot FAQ</h2>
           <div className="mt-10 space-y-3">
             {faqs.map((faq) => (
               <details key={faq.question} className="rounded-tp-card border border-tp-line bg-white p-5">
@@ -489,7 +489,7 @@ export default function LinkedInHeadshotsPage() {
       {/* Final CTA */}
       <section className="px-4 pb-20">
         <div className="mx-auto max-w-2xl rounded-tp-card bg-tp-ink px-6 py-12 text-center">
-          <h2 className="font-display text-3xl font-bold text-white">Get Your LinkedIn Headshot Today</h2>
+          <h2 className="font-display text-3xl font-normal text-white">Get Your LinkedIn Headshot Today</h2>
           <p className="mt-3 text-tp-beige">
             Upload a few selfies and show up with a profile photo you are proud of.
           </p>

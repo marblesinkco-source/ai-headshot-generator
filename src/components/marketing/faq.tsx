@@ -20,7 +20,7 @@ export function FAQ() {
           <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
             FAQ
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-tp-black sm:text-4xl">
+          <h2 className="mt-3 font-display text-3xl font-normal tracking-tight text-tp-ink sm:text-4xl">
             Frequently Asked Questions
           </h2>
           <p className="mt-4 text-lg text-tp-muted">

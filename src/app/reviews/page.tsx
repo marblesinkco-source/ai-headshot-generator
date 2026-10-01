@@ -204,7 +204,7 @@ export default function ReviewsPage() {
             {categories.map((c) => (
               <div key={c.id} id={c.id} className="scroll-mt-28">
                 <div className="mb-5 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                  <h2 className="font-display text-2xl text-tp-ink md:text-3xl">{c.label}</h2>
+                  <h2 className="font-display text-2xl font-normal text-tp-ink md:text-3xl">{c.label}</h2>
                   <p className="text-sm text-tp-muted">{c.blurb}</p>
                 </div>
                 <div className="grid gap-6 md:grid-cols-2">
@@ -245,7 +245,7 @@ export default function ReviewsPage() {
           <div className="mx-auto max-w-3xl">
             <h2
               id="review-faq-heading"
-              className="text-center font-display text-3xl text-tp-ink md:text-4xl"
+              className="text-center font-display text-3xl font-normal text-tp-ink md:text-4xl"
             >
               About our reviews
             </h2>
@@ -271,7 +271,7 @@ export default function ReviewsPage() {
 
         <section className="px-4 pb-16 sm:px-6" aria-labelledby="leave-review-heading">
           <div className="mx-auto max-w-3xl rounded-tp-card border border-tp-line bg-white px-6 py-10 text-center sm:px-10">
-            <h2 id="leave-review-heading" className="font-display text-3xl text-tp-ink md:text-4xl">
+            <h2 id="leave-review-heading" className="font-display text-3xl font-normal text-tp-ink md:text-4xl">
               Leave a Review
             </h2>
             <p className="mx-auto mt-3 max-w-lg text-tp-muted">
@@ -289,7 +289,7 @@ export default function ReviewsPage() {
 
         <section className="px-4 pb-20 sm:px-6">
           <div className="mx-auto max-w-3xl rounded-tp-card border border-tp-line bg-tp-beige/30 px-6 py-12 text-center sm:px-10">
-            <h2 className="font-display text-3xl text-tp-ink md:text-4xl">
+            <h2 className="font-display text-3xl font-normal text-tp-ink md:text-4xl">
               Ready to see for yourself?
             </h2>
             <p className="mx-auto mt-3 max-w-lg text-tp-muted">

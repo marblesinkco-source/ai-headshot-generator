@@ -54,7 +54,7 @@ export function SampleGallery({ categoryId, categoryName, outputLabel }: SampleG
   return (
     <section className="py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center text-3xl font-bold text-tp-black">
+        <h2 className="text-center font-display text-3xl font-normal text-tp-ink">
           Example {categoryName}
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-center text-tp-muted">
