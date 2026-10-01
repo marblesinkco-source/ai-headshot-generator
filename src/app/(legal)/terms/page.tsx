@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
 
@@ -6,22 +7,10 @@ export const metadata: Metadata = {
   title: 'Terms of Service',
   description: 'TailorPic terms of service — the rules and guidelines for using our platform.',
   alternates: { canonical: '/terms' },
-  openGraph: {
-    title: 'Terms of Service',
-    description:
-      'TailorPic terms of service — the rules and guidelines for using our platform.',
-    url: `${siteConfig.url}/terms`,
-    siteName: siteConfig.name,
-    type: 'website',
-    images: [siteConfig.ogImage],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Terms of Service',
-    description:
-      'TailorPic terms of service — the rules and guidelines for using our platform.',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'Terms of Service', description: 
+      'TailorPic terms of service — the rules and guidelines for using our platform.', path: '/terms' }),
+  twitter: generateTwitterMetadata({ title: 'Terms of Service', description: 
+      'TailorPic terms of service — the rules and guidelines for using our platform.' }),
 };
 
 export default function TermsPage() {

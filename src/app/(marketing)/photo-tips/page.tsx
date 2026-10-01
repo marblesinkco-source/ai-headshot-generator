@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
@@ -20,27 +21,8 @@ export const metadata: Metadata = {
   title: `Photo Tips for AI Headshots | ${siteConfig.name}`,
   description: `Learn how to take the right selfies for AI headshots. Practical tips on lighting, clothing, backgrounds, and camera settings to help ${siteConfig.name} create more natural results.`,
   alternates: { canonical: '/photo-tips' },
-  openGraph: {
-    title: `How to Take the Perfect Photo for AI Headshots | ${siteConfig.name}`,
-    description: `Simple, practical guidance on lighting, clothing, backgrounds, and camera settings for better AI headshot results.`,
-    url: `${siteConfig.url}/photo-tips`,
-    siteName: siteConfig.name,
-    type: 'website',
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.name,
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `How to Take the Perfect Photo for AI Headshots | ${siteConfig.name}`,
-    description: `Simple, practical guidance on lighting, clothing, backgrounds, and camera settings for better AI headshot results.`,
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: `How to Take the Perfect Photo for AI Headshots | ${siteConfig.name}`, description: `Simple, practical guidance on lighting, clothing, backgrounds, and camera settings for better AI headshot results.`, path: '/photo-tips' }),
+  twitter: generateTwitterMetadata({ title: `How to Take the Perfect Photo for AI Headshots | ${siteConfig.name}`, description: `Simple, practical guidance on lighting, clothing, backgrounds, and camera settings for better AI headshot results.` }),
 };
 
 /* ------------------------------------------------------------------ */

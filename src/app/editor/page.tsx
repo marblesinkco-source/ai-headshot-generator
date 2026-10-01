@@ -5,7 +5,7 @@ import { Footer } from '@/components/marketing/footer';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
-import { generateTwitterMetadata } from '@/lib/og-metadata';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { Palette, Sun, Maximize2, ArrowRight, Shirt, Eye, History, Eraser, Sparkles, ScanFace, Scissors, Smile, Move, Pipette, Glasses, Heart, Clock } from 'lucide-react';
 
 const title = 'AI Photo Editor — Professional Headshot Editing Tools | TailorPic';
@@ -16,21 +16,8 @@ export const metadata: Metadata = {
   title: { absolute: title },
   description,
   alternates: { canonical: '/editor' },
-  openGraph: {
-    title,
-    description,
-    url: `${siteConfig.url}/editor`,
-    siteName: siteConfig.name,
-    type: 'website',
-    images: [siteConfig.ogImage],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title,
-    description,
-    images: [siteConfig.ogImage],
-  },
-  twitter: generateTwitterMetadata({ title, description }),
+  openGraph: generateOGMetadata({ title, description, path: '/editor', type: 'default' }),
+  twitter: generateTwitterMetadata({ title, description, type: 'default' }),
 };
 
 const tools = [

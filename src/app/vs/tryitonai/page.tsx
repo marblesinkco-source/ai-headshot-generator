@@ -16,22 +16,15 @@ import {
   BadgeDollarSign,
   Target,
 } from 'lucide-react';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 export const metadata: Metadata = {
   title: 'TailorPic vs Try It On AI — AI Headshot Generator Comparison',
   description:
     'Compare TailorPic vs Try It On AI for AI-generated photos. See pricing, features, categories, and delivery time side by side. TailorPic starts at $9.90 with 40+ photos.',
   alternates: { canonical: '/vs/tryitonai' },
-  openGraph: {
-    title: 'TailorPic vs Try It On AI — AI Headshot Generator Comparison',
-    description:
-      'Compare TailorPic and Try It On AI. Pricing, categories, features, and delivery — see which AI photo generator is right for you.',
-    url: `${siteConfig.url}/vs/tryitonai`,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'TailorPic vs Try It On AI — AI Headshot Generator Comparison', description: 'Compare TailorPic and Try It On AI. Pricing, categories, features, and delivery — see which AI photo generator is right for you.', path: '/vs/tryitonai', type: 'vs' }),
+  twitter: generateTwitterMetadata({ title: 'TailorPic vs Try It On AI — AI Headshot Generator Comparison', description: 'Compare TailorPic and Try It On AI. Pricing, categories, features, and delivery — see which AI photo generator is right for you.', type: 'vs' }),
 };
 
 /* ------------------------------------------------------------------ */

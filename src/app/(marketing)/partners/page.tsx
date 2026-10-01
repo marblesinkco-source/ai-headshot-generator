@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
@@ -22,27 +23,8 @@ export const metadata: Metadata = {
   title: `Partner Program | ${siteConfig.name}`,
   description: `Partner with ${siteConfig.name} as a technology, agency, or reseller partner. Integrate AI headshots, offer them to your clients, or white-label our technology.`,
   alternates: { canonical: '/partners' },
-  openGraph: {
-    title: `Partner With ${siteConfig.name}`,
-    description: `Technology, agency, and reseller partnerships. Grow together with ${siteConfig.name}.`,
-    url: `${siteConfig.url}/partners`,
-    siteName: siteConfig.name,
-    type: 'website',
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.name,
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `Partner With ${siteConfig.name}`,
-    description: `Technology, agency, and reseller partnerships. Grow together with ${siteConfig.name}.`,
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: `Partner With ${siteConfig.name}`, description: `Technology, agency, and reseller partnerships. Grow together with ${siteConfig.name}.`, path: '/partners' }),
+  twitter: generateTwitterMetadata({ title: `Partner With ${siteConfig.name}`, description: `Technology, agency, and reseller partnerships. Grow together with ${siteConfig.name}.` }),
 };
 
 const partnerTypes = [

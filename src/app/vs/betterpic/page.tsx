@@ -16,22 +16,15 @@ import {
   BadgeDollarSign,
   Target,
 } from 'lucide-react';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 export const metadata: Metadata = {
   title: 'TailorPic vs BetterPic — AI Headshot Generator Comparison',
   description:
     'Compare TailorPic vs BetterPic for AI-generated professional headshots. See pricing, photo count, delivery time, and features side by side. TailorPic starts at $9.90 with 40+ photos.',
   alternates: { canonical: '/vs/betterpic' },
-  openGraph: {
-    title: 'TailorPic vs BetterPic — AI Headshot Generator Comparison',
-    description:
-      'Compare TailorPic and BetterPic for AI headshots. Pricing, photo count, features, and delivery — see which AI headshot generator is right for you.',
-    url: `${siteConfig.url}/vs/betterpic`,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'TailorPic vs BetterPic — AI Headshot Generator Comparison', description: 'Compare TailorPic and BetterPic for AI headshots. Pricing, photo count, features, and delivery — see which AI headshot generator is right for you.', path: '/vs/betterpic', type: 'vs' }),
+  twitter: generateTwitterMetadata({ title: 'TailorPic vs BetterPic — AI Headshot Generator Comparison', description: 'Compare TailorPic and BetterPic for AI headshots. Pricing, photo count, features, and delivery — see which AI headshot generator is right for you.', type: 'vs' }),
 };
 
 /* ------------------------------------------------------------------ */

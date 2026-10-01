@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
 
@@ -6,22 +7,10 @@ export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'TailorPic privacy policy — how we collect, use, and protect your data.',
   alternates: { canonical: '/privacy' },
-  openGraph: {
-    title: 'Privacy Policy',
-    description:
-      'TailorPic privacy policy — how we collect, use, and protect your data.',
-    url: `${siteConfig.url}/privacy`,
-    siteName: siteConfig.name,
-    type: 'website',
-    images: [siteConfig.ogImage],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Privacy Policy',
-    description:
-      'TailorPic privacy policy — how we collect, use, and protect your data.',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'Privacy Policy', description: 
+      'TailorPic privacy policy — how we collect, use, and protect your data.', path: '/privacy' }),
+  twitter: generateTwitterMetadata({ title: 'Privacy Policy', description: 
+      'TailorPic privacy policy — how we collect, use, and protect your data.' }),
 };
 
 export default function PrivacyPage() {

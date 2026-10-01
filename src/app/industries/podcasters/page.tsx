@@ -8,6 +8,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Podcasters | TailorPic";
 const pageDescription =
   "Professional AI headshots for podcast hosts, guests, and audio creators. Put a polished face on your show site, media kit, and social profiles with a portrait delivered in about 2 hours.";
@@ -16,17 +17,9 @@ export const metadata: Metadata = {
   title: { absolute: pageTitle },
   description: pageDescription,
   alternates: { canonical: '/industries/podcasters' },
-  openGraph: {
-    title: pageTitle,
-    description: pageDescription,
-    url: `${siteConfig.url}/industries/podcasters`,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: pageTitle,
-    description: pageDescription,
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: pageTitle, description: pageDescription, path: '/industries/podcasters', type: 'industry' }),
+  
+  twitter: generateTwitterMetadata({ title: pageTitle, description: pageDescription, type: 'industry' }),
 };
 
 const benefits = [

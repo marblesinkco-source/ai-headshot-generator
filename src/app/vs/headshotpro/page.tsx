@@ -15,22 +15,15 @@ import {
   Sparkles,
   ArrowRight,
 } from 'lucide-react';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 export const metadata: Metadata = {
   title: 'TailorPic vs HeadshotPro — Compare AI Headshot Generators (2026)',
   description:
     'Compare TailorPic and HeadshotPro side by side. See pricing, photo quality, category variety, and features to find the best AI headshot generator for you.',
   alternates: { canonical: '/vs/headshotpro' },
-  openGraph: {
-    title: 'TailorPic vs HeadshotPro — AI Headshot Generator Comparison',
-    description:
-      'Detailed comparison of TailorPic and HeadshotPro. Compare pricing from $9.90 vs $29, photo categories, delivery speed, and more.',
-    url: `${siteConfig.url}/vs/headshotpro`,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'TailorPic vs HeadshotPro — AI Headshot Generator Comparison', description: 'Detailed comparison of TailorPic and HeadshotPro. Compare pricing from $9.90 vs $29, photo categories, delivery speed, and more.', path: '/vs/headshotpro', type: 'vs' }),
+  twitter: generateTwitterMetadata({ title: 'TailorPic vs HeadshotPro — AI Headshot Generator Comparison', description: 'Detailed comparison of TailorPic and HeadshotPro. Compare pricing from $9.90 vs $29, photo categories, delivery speed, and more.', type: 'vs' }),
 };
 
 /* ------------------------------------------------------------------ */

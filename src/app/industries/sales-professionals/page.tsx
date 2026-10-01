@@ -8,6 +8,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Sales Professionals | TailorPic";
 const pageDescription =
   "Professional AI headshots for sales reps, account executives, and sales leaders. Build trust on LinkedIn, email signatures, and proposals with a polished portrait delivered in about 2 hours.";
@@ -16,17 +17,9 @@ export const metadata: Metadata = {
   title: { absolute: pageTitle },
   description: pageDescription,
   alternates: { canonical: '/industries/sales-professionals' },
-  openGraph: {
-    title: pageTitle,
-    description: pageDescription,
-    url: `${siteConfig.url}/industries/sales-professionals`,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: pageTitle,
-    description: pageDescription,
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: pageTitle, description: pageDescription, path: '/industries/sales-professionals', type: 'industry' }),
+  
+  twitter: generateTwitterMetadata({ title: pageTitle, description: pageDescription, type: 'industry' }),
 };
 
 const benefits = [

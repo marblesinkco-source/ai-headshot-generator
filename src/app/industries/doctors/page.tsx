@@ -25,23 +25,15 @@ import {
   RefreshCw,
 } from 'lucide-react';
 
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: 'AI Headshots for Doctors & Healthcare Professionals | TailorPic',
   description:
     'Get professional headshots for doctors, physicians, and healthcare professionals. Hospital website ready, insurance panel photos, and white coat styles — delivered in 2 hours without disrupting patient care.',
   alternates: { canonical: '/industries/doctors' },
-  openGraph: {
-    title: `AI Headshots for Doctors & Healthcare Professionals | ${siteConfig.name}`,
-    description:
-      'AI-powered professional headshots for healthcare professionals. Privacy-conscious, hospital-ready photos delivered in hours.',
-    url: `${siteConfig.url}/industries/doctors`,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `AI Headshots for Doctors & Healthcare Professionals | ${siteConfig.name}`,
-    description: 'AI-powered professional headshots for healthcare professionals. Privacy-conscious, hospital-ready photos delivered in hours.',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'AI Headshots for Doctors & Healthcare Professionals | TailorPic', description: 'AI-powered professional headshots for healthcare professionals. Privacy-conscious, hospital-ready photos delivered in hours.', path: '/industries/doctors', type: 'industry' }),
+  
+  twitter: generateTwitterMetadata({ title: 'AI Headshots for Doctors & Healthcare Professionals | TailorPic', description: 'AI-powered professional headshots for healthcare professionals. Privacy-conscious, hospital-ready photos delivered in hours.', type: 'industry' }),
 };
 
 const painPoints = [

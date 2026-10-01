@@ -9,24 +9,15 @@ import {
   Users, Palette, Zap, TrendingUp, Package, CheckCircle,
 } from 'lucide-react';
 
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: 'AI Product Photography for E-Commerce | TailorPic',
   description:
     'Professional product photos for your online store. AI-powered, studio-quality images starting at $9.90. Perfect for Shopify, Amazon, Etsy, and more.',
   alternates: { canonical: '/industries/ecommerce' },
-  openGraph: {
-    title: 'AI Product Photography for E-Commerce | TailorPic',
-    description:
-      'Studio-quality product photos in 2 hours. No photographer needed.',
-    url: `${siteConfig.url}/industries/ecommerce`,
-    images: [siteConfig.ogImage],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'AI Product Photography for E-Commerce | TailorPic',
-    description: 'Studio-quality product photos in 2 hours. No photographer needed.',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'AI Product Photography for E-Commerce | TailorPic', description: 'Studio-quality product photos in 2 hours. No photographer needed.', path: '/industries/ecommerce', type: 'industry' }),
+  
+  twitter: generateTwitterMetadata({ title: 'AI Product Photography for E-Commerce | TailorPic', description: 'Studio-quality product photos in 2 hours. No photographer needed.', type: 'industry' }),
 };
 
 const faqs = [

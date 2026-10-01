@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
@@ -26,20 +27,8 @@ export const metadata: Metadata = {
   title: 'About Us',
   description: aboutDescription,
   alternates: { canonical: '/about' },
-  openGraph: {
-    type: 'website',
-    siteName: siteConfig.name,
-    title: `About | ${siteConfig.name}`,
-    description: `Learn about ${siteConfig.name} and our mission to make professional photography accessible to everyone.`,
-    url: `${siteConfig.url}/about`,
-    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: `${siteConfig.name} - About` }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `About | ${siteConfig.name}`,
-    description: `Learn about ${siteConfig.name} and our mission to make professional photography accessible to everyone.`,
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: `About | ${siteConfig.name}`, description: `Learn about ${siteConfig.name} and our mission to make professional photography accessible to everyone.`, path: '/about' }),
+  twitter: generateTwitterMetadata({ title: `About | ${siteConfig.name}`, description: `Learn about ${siteConfig.name} and our mission to make professional photography accessible to everyone.` }),
 };
 
 const differentiators = [

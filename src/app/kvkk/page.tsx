@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { siteConfig } from '@/config/site';
@@ -9,22 +10,10 @@ export const metadata: Metadata = {
   description:
     'TailorPic KVKK Aydınlatma Metni: 6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında işlenen kişisel veriler, işleme amaçları, yurt dışına aktarım, saklama süreleri ve ilgili kişi hakları.',
   alternates: { canonical: '/kvkk' },
-  openGraph: {
-    title: 'KVKK Aydınlatma Metni | TailorPic',
-    description:
-      '6698 sayılı KVKK kapsamında TailorPic tarafından işlenen kişisel veriler, amaçlar, aktarımlar, saklama süreleri ve haklarınız.',
-    url: `${siteConfig.url}/kvkk`,
-    type: 'website',
-    siteName: 'TailorPic',
-    locale: 'tr_TR',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'KVKK Aydınlatma Metni | TailorPic',
-    description:
-      '6698 sayılı KVKK kapsamında TailorPic tarafından işlenen kişisel veriler, amaçlar, aktarımlar, saklama süreleri ve haklarınız.',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'KVKK Aydınlatma Metni | TailorPic', description: 
+      '6698 sayılı KVKK kapsamında TailorPic tarafından işlenen kişisel veriler, amaçlar, aktarımlar, saklama süreleri ve haklarınız.', path: '/kvkk' }),
+  twitter: generateTwitterMetadata({ title: 'KVKK Aydınlatma Metni | TailorPic', description: 
+      '6698 sayılı KVKK kapsamında TailorPic tarafından işlenen kişisel veriler, amaçlar, aktarımlar, saklama süreleri ve haklarınız.' }),
 };
 
 const CONTACT = 'support@tailorpic.com';

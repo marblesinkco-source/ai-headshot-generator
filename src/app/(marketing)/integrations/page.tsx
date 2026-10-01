@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
@@ -27,27 +28,8 @@ export const metadata: Metadata = {
   title: `${pageTitle} | ${siteConfig.name}`,
   description: pageDescription,
   alternates: { canonical: '/integrations' },
-  openGraph: {
-    title: `${pageTitle} | ${siteConfig.name}`,
-    description: pageDescription,
-    url: `${siteConfig.url}/integrations`,
-    siteName: siteConfig.name,
-    type: 'website',
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.name,
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `${pageTitle} | ${siteConfig.name}`,
-    description: pageDescription,
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: `${pageTitle} | ${siteConfig.name}`, description: pageDescription, path: '/integrations' }),
+  twitter: generateTwitterMetadata({ title: `${pageTitle} | ${siteConfig.name}`, description: pageDescription }),
 };
 
 /* ------------------------------------------------------------------ */

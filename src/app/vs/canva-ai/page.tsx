@@ -17,22 +17,15 @@ import {
   Target,
   Camera,
 } from 'lucide-react';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 export const metadata: Metadata = {
   title: 'TailorPic vs Canva AI — AI Headshot Generator vs Design Platform',
   description:
     'Compare TailorPic vs Canva AI. Canva is a design platform with AI image tools; TailorPic creates photorealistic professional AI headshots. See pricing and features side by side. TailorPic starts at $9.90 one-time.',
   alternates: { canonical: '/vs/canva-ai' },
-  openGraph: {
-    title: 'TailorPic vs Canva AI — AI Headshot Generator vs Design Platform',
-    description:
-      'Compare TailorPic and Canva AI. Photorealistic AI headshots versus a general design platform — see which fits your needs.',
-    url: `${siteConfig.url}/vs/canva-ai`,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'TailorPic vs Canva AI — AI Headshot Generator vs Design Platform', description: 'Compare TailorPic and Canva AI. Photorealistic AI headshots versus a general design platform — see which fits your needs.', path: '/vs/canva-ai', type: 'vs' }),
+  twitter: generateTwitterMetadata({ title: 'TailorPic vs Canva AI — AI Headshot Generator vs Design Platform', description: 'Compare TailorPic and Canva AI. Photorealistic AI headshots versus a general design platform — see which fits your needs.', type: 'vs' }),
 };
 
 /* ------------------------------------------------------------------ */

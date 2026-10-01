@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
@@ -20,19 +21,8 @@ export const metadata: Metadata = {
   description:
     'Share TailorPic with friends and earn credits when they sign up. Our referral program rewards both you and the people you refer.',
   alternates: { canonical: '/referral' },
-  openGraph: {
-    title: `Referral Program | ${siteConfig.name}`,
-    description:
-      'Earn credits by sharing TailorPic with your network. Your friends get a discount, you get credits toward your next order.',
-    url: `${siteConfig.url}/referral`,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `Referral Program | ${siteConfig.name}`,
-    description:
-      'Earn credits by sharing TailorPic with your network. Your friends get a discount, you get credits toward your next order.',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: `Referral Program | ${siteConfig.name}`, description: 'Earn credits by sharing TailorPic with your network. Your friends get a discount, you get credits toward your next order.', path: '/referral' }),
+  twitter: generateTwitterMetadata({ title: `Referral Program | ${siteConfig.name}`, description: 'Earn credits by sharing TailorPic with your network. Your friends get a discount, you get credits toward your next order.' }),
 };
 
 /* ------------------------------------------------------------------ */

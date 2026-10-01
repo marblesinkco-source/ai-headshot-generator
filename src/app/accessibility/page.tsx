@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
@@ -10,21 +11,10 @@ export const metadata: Metadata = {
   description:
     'TailorPic is committed to making our website usable for everyone. Read about our WCAG 2.1 Level AA target, the accessibility features we have implemented, known limitations, and how to contact us.',
   alternates: { canonical: '/accessibility' },
-  openGraph: {
-    title: 'Accessibility Statement | TailorPic',
-    description:
-      'Our commitment to digital accessibility, our WCAG 2.1 Level AA target, known limitations, and how to report an accessibility issue.',
-    url: `${siteConfig.url}/accessibility`,
-    type: 'website',
-    siteName: 'TailorPic',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Accessibility Statement | TailorPic',
-    description:
-      'Our commitment to digital accessibility, our WCAG 2.1 Level AA target, known limitations, and how to report an accessibility issue.',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'Accessibility Statement | TailorPic', description: 
+      'Our commitment to digital accessibility, our WCAG 2.1 Level AA target, known limitations, and how to report an accessibility issue.', path: '/accessibility' }),
+  twitter: generateTwitterMetadata({ title: 'Accessibility Statement | TailorPic', description: 
+      'Our commitment to digital accessibility, our WCAG 2.1 Level AA target, known limitations, and how to report an accessibility issue.' }),
 };
 
 const features = [

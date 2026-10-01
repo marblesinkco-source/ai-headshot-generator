@@ -8,6 +8,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Recruiters | TailorPic";
 const pageDescription =
   "Professional AI headshots for recruiters and talent acquisition professionals. Build candidate trust on LinkedIn, job boards, and outreach emails with a polished portrait delivered in about 2 hours.";
@@ -16,17 +17,9 @@ export const metadata: Metadata = {
   title: { absolute: pageTitle },
   description: pageDescription,
   alternates: { canonical: '/industries/recruiters' },
-  openGraph: {
-    title: pageTitle,
-    description: pageDescription,
-    url: `${siteConfig.url}/industries/recruiters`,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: pageTitle,
-    description: pageDescription,
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: pageTitle, description: pageDescription, path: '/industries/recruiters', type: 'industry' }),
+  
+  twitter: generateTwitterMetadata({ title: pageTitle, description: pageDescription, type: 'industry' }),
 };
 
 const benefits = [

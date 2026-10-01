@@ -8,6 +8,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Tour Guides | TailorPic";
 const pageDescription =
   "Professional AI headshots for tour guides, travel hosts, and excursion leaders. Build traveler trust on booking platforms, licensing profiles, and your own website with a portrait delivered in about 2 hours.";
@@ -16,17 +17,9 @@ export const metadata: Metadata = {
   title: { absolute: pageTitle },
   description: pageDescription,
   alternates: { canonical: '/industries/tour-guides' },
-  openGraph: {
-    title: pageTitle,
-    description: pageDescription,
-    url: `${siteConfig.url}/industries/tour-guides`,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: pageTitle,
-    description: pageDescription,
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: pageTitle, description: pageDescription, path: '/industries/tour-guides', type: 'industry' }),
+  
+  twitter: generateTwitterMetadata({ title: pageTitle, description: pageDescription, type: 'industry' }),
 };
 
 const benefits = [

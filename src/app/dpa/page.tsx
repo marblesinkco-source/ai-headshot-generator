@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
@@ -10,21 +11,10 @@ export const metadata: Metadata = {
   description:
     'TailorPic Data Processing Agreement (DPA): how we process personal data on behalf of customers, our security measures, sub-processors, retention, breach notification, and GDPR obligations.',
   alternates: { canonical: '/dpa' },
-  openGraph: {
-    title: 'Data Processing Agreement | TailorPic',
-    description:
-      'How TailorPic processes personal data on behalf of customers: scope, security measures, sub-processors, retention and deletion, breach notification, and audit rights.',
-    url: `${siteConfig.url}/dpa`,
-    type: 'website',
-    siteName: 'TailorPic',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Data Processing Agreement | TailorPic',
-    description:
-      'How TailorPic processes personal data on behalf of customers: scope, security measures, sub-processors, retention and deletion, breach notification, and audit rights.',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'Data Processing Agreement | TailorPic', description: 
+      'How TailorPic processes personal data on behalf of customers: scope, security measures, sub-processors, retention and deletion, breach notification, and audit rights.', path: '/dpa' }),
+  twitter: generateTwitterMetadata({ title: 'Data Processing Agreement | TailorPic', description: 
+      'How TailorPic processes personal data on behalf of customers: scope, security measures, sub-processors, retention and deletion, breach notification, and audit rights.' }),
 };
 
 const definitions = [

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
@@ -11,20 +12,8 @@ export const metadata: Metadata = {
   title: 'Contact Us',
   description: `Contact ${siteConfig.name} for pre-sales questions, order support, team and enterprise pricing, press, or partnerships. We aim to respond within 1 business day.`,
   alternates: { canonical: '/contact' },
-  openGraph: {
-    title: `Contact Us | ${siteConfig.name}`,
-    description: `Questions about AI headshots, orders, teams or partnerships? Message the ${siteConfig.name} team. We aim to respond within 1 business day.`,
-    url: `${siteConfig.url}/contact`,
-    siteName: siteConfig.name,
-    type: 'website',
-    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: siteConfig.name }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `Contact Us | ${siteConfig.name}`,
-    description: `Message the ${siteConfig.name} team. We aim to respond within 1 business day.`,
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: `Contact Us | ${siteConfig.name}`, description: `Questions about AI headshots, orders, teams or partnerships? Message the ${siteConfig.name} team. We aim to respond within 1 business day.`, path: '/contact' }),
+  twitter: generateTwitterMetadata({ title: `Contact Us | ${siteConfig.name}`, description: `Message the ${siteConfig.name} team. We aim to respond within 1 business day.` }),
 };
 
 const contactMethods = [

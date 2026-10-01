@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { UploadCloud, Ruler } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
@@ -18,20 +19,8 @@ export const metadata: Metadata = {
   title: { absolute: title },
   description,
   alternates: { canonical: path },
-  openGraph: {
-    title,
-    description,
-    url: `${siteConfig.url}${path}`,
-    siteName: siteConfig.name,
-    type: 'website',
-    images: [siteConfig.ogImage],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title,
-    description,
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: title, description: description, path: '/tools/headshot-resizer' }),
+  twitter: generateTwitterMetadata({ title: title, description: description }),
 };
 
 const sizes = [

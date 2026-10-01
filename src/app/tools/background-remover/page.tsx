@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { UploadCloud, Zap, Sparkles, BadgeCheck } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
@@ -18,20 +19,8 @@ export const metadata: Metadata = {
   title: { absolute: title },
   description,
   alternates: { canonical: path },
-  openGraph: {
-    title,
-    description,
-    url: `${siteConfig.url}${path}`,
-    siteName: siteConfig.name,
-    type: 'website',
-    images: [siteConfig.ogImage],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title,
-    description,
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: title, description: description, path: '/tools/background-remover' }),
+  twitter: generateTwitterMetadata({ title: title, description: description }),
 };
 
 const faqs: { q: string; a: string }[] = [{"q": "Is the background remover really free?", "a": "Yes. You can get started for free with no credit card required."}, {"q": "What file formats are supported?", "a": "JPG, PNG and WEBP images up to 10MB work best."}, {"q": "Will it work on hair and fine details?", "a": "Our AI is designed to preserve fine details such as hair strands and glasses for natural-looking results."}, {"q": "Can I get a full professional headshot instead?", "a": "Yes. TailorPic generates studio-quality AI headshots with the background, lighting and attire already polished."}];

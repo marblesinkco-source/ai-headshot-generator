@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
@@ -25,17 +26,8 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: '/careers' },
-  openGraph: {
-    title: `Careers | ${siteConfig.name}`,
-    description,
-    url: `${siteConfig.url}/careers`,
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `Careers | ${siteConfig.name}`,
-    description,
-  },
+  openGraph: generateOGMetadata({ title: `Careers | ${siteConfig.name}`, description: description, path: '/careers' }),
+  twitter: generateTwitterMetadata({ title: `Careers | ${siteConfig.name}`, description: description }),
 };
 
 const values = [

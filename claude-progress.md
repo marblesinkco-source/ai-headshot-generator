@@ -69,6 +69,12 @@
 64. `43c596a` — Add FAQ sections to 9 vs/ pages, fix legal layout, add BreadcrumbSchema to legal pages
 65. `4ccf1ae` — Fix content integrity issues, add Twitter cards, fix CTA links
 66. `bc68fe5` — Fix video testimonials: remove 'Real reactions' claim, standardize disclaimer
+67. `2803c34` — Dalga 8: blog SEO (BlogPosting schema), enterprise conversion (trust bar, CTAs), team headshots (Service schema, savings comparison)
+68. `e791e29` — Dalga 9: affiliate page (30% commission, FAQ, trust strip), use-cases (CollectionPage schema, 3 new cases, broken link fixes), industries (CollectionPage schema, 65 industry ItemList)
+69. `7992a2d` — Dalga 10: pricing comparison (FAQ, hero benefits, bronze CTA), technology page (TechArticle schema, trust section, ordered steps)
+70. `661afcf` — Sitemap: remove duplicate /tools entry
+71. `3f51f0f` — OG metadata migration (5 pages to helpers) + error boundary improvements (auth/error, blog/error, global-error enhancements)
+72. `43a1adc` — Contact auto-reply email template, billing page improvements, mobile nav animation with keyboard a11y, security trust badges, samples testimonials, pricing heading fix
 
 ### Completed Features
 - [x] Exit-intent popup with WELCOME10 promo
@@ -294,6 +300,48 @@
 - [x] [category] page: 3 /dashboard/upload links → /auth/register
 - [x] 15 pages: Twitter card metadata added (use-cases hub, linkedin-headshots, tools, legal pages)
 - [x] Video testimonials: "Real reactions" → honest description, standardized disclaimer
+- [x] Blog posts: BlogPosting JSON-LD schema with author/publisher/datePublished
+- [x] Blog posts: BreadcrumbSchema for individual post pages
+- [x] BlogPostingSchema component exported from structured-data.tsx
+- [x] Enterprise page: Service JSON-LD schema with 3-tier pricing offers
+- [x] Enterprise page: trust bar (SSL/TLS, GDPR & CCPA, 30-Day Deletion, Priority Support)
+- [x] Enterprise page: bronze CTAs with hover lift + focus ring
+- [x] Enterprise page: encryption/GDPR FAQ entry
+- [x] Team-headshots: Service JSON-LD schema with per-person pricing
+- [x] Team-headshots: "Skip the Studio Day" savings comparison ($2K-$5K vs $390)
+- [x] Team-headshots: trust cards (consistent look, no studio day, predictable pricing)
+- [x] Affiliate page: prominent "Up to 30%" commission display
+- [x] Affiliate page: trust signal strip (cookie tracking, monthly payouts, dashboard)
+- [x] Affiliate page: 6-question FAQ with FAQSchema structured data
+- [x] Affiliate page: buttonVariants + bronze styling CTAs
+- [x] Use-cases page: CollectionPage + ItemList JSON-LD schema
+- [x] Use-cases page: lucide icons per card with hover effects
+- [x] Use-cases page: 3 new use cases (Graduation, Couple/Engagement, Holiday Cards)
+- [x] Use-cases page: broken links fixed (/dating → /dating-photos, /real-estate → /industries/real-estate)
+- [x] Industries page: CollectionPage + ItemList JSON-LD with all 65 industries
+- [x] Industries page: "Don't see your profession?" CTA section
+- [x] Pricing comparison: 6-question FAQ with FAQSchema
+- [x] Pricing comparison: hero benefit points (price, speed, styles, guarantee)
+- [x] Pricing comparison: highlighted TailorPic column with bronze tint
+- [x] Pricing comparison: bronze-styled bottom CTA with glow background
+- [x] Technology page: TechArticle JSON-LD structured data
+- [x] Technology page: "How We Protect Your Photos" trust section
+- [x] Technology page: ordered list with connecting dashed line
+- [x] OG metadata migration: guarantee, linkedin-headshots, free-headshot-generator, reviews, samples/layout → helper functions
+- [x] Error boundary: auth/error.tsx created with brand styling
+- [x] Error boundary: blog/error.tsx created with brand styling
+- [x] Error boundary: global-error.tsx enhanced with Google Fonts, error digest display
+- [x] Error boundary: error.tsx enhanced with error digest reference display
+- [x] Contact auto-reply: refactored to buildContactAutoReplyEmail in emails.ts
+- [x] Contact auto-reply: separate try/catch, graceful Resend key handling
+- [x] Billing page: "Your Plan" card showing one-time $9.90 payment info
+- [x] Mobile navigation: fade + slide animation with reduced-motion support
+- [x] Mobile navigation: "More" section (Reviews, Teams, FAQ, Security, About, Contact)
+- [x] Mobile navigation: Escape key handler + keyboard focus handling
+- [x] Mobile navigation: aria-controls/id for accessibility
+- [x] Security page: trust badge pills (AES-256, GDPR/CCPA, 30-day deletion)
+- [x] Samples page: Testimonials component integrated
+- [x] Pricing page: FAQ heading italic removed
 
 ### Backlog (Requires External Action)
 - [ ] Stripe: Create WELCOME10 promo code (10% off) — needs Stripe dashboard/API key

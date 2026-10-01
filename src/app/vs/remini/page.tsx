@@ -16,22 +16,15 @@ import {
   BadgeDollarSign,
   Target,
 } from 'lucide-react';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 export const metadata: Metadata = {
   title: 'TailorPic vs Remini — AI Headshot Generator vs Photo Enhancer',
   description:
     'Compare TailorPic vs Remini. Remini enhances and restores existing photos; TailorPic generates new professional AI headshots. See pricing, features, and styles side by side. TailorPic starts at $9.90 one-time.',
   alternates: { canonical: '/vs/remini' },
-  openGraph: {
-    title: 'TailorPic vs Remini — AI Headshot Generator vs Photo Enhancer',
-    description:
-      'Compare TailorPic and Remini. A purpose-built AI headshot generator versus a photo enhancer — see which fits your needs.',
-    url: `${siteConfig.url}/vs/remini`,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'TailorPic vs Remini — AI Headshot Generator vs Photo Enhancer', description: 'Compare TailorPic and Remini. A purpose-built AI headshot generator versus a photo enhancer — see which fits your needs.', path: '/vs/remini', type: 'vs' }),
+  twitter: generateTwitterMetadata({ title: 'TailorPic vs Remini — AI Headshot Generator vs Photo Enhancer', description: 'Compare TailorPic and Remini. A purpose-built AI headshot generator versus a photo enhancer — see which fits your needs.', type: 'vs' }),
 };
 
 /* ------------------------------------------------------------------ */

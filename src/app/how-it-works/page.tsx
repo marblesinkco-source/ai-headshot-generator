@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
@@ -37,22 +38,10 @@ export const metadata: Metadata = {
   title: 'How It Works',
   description: `Learn how ${siteConfig.name} creates professional AI photos in 3 simple steps. Upload selfies, let our AI train on your features, and download 40+ high-resolution photos in about 2 hours.`,
   alternates: { canonical: '/how-it-works' },
-  openGraph: {
-    type: 'website',
-    siteName: siteConfig.name,
-    title: `How It Works | ${siteConfig.name}`,
-    description:
-      'Upload your selfies, our AI trains a custom model on your features, and you get 40+ professional photos in about 2 hours.',
-    url: `${siteConfig.url}/how-it-works`,
-    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: `How ${siteConfig.name} works` }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `How It Works | ${siteConfig.name}`,
-    description:
-      'Upload selfies, let our AI train on your features, and download 40+ professional photos in about 2 hours.',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: `How It Works | ${siteConfig.name}`, description: 
+      'Upload your selfies, our AI trains a custom model on your features, and you get 40+ professional photos in about 2 hours.', path: '/how-it-works' }),
+  twitter: generateTwitterMetadata({ title: `How It Works | ${siteConfig.name}`, description: 
+      'Upload selfies, let our AI train on your features, and download 40+ professional photos in about 2 hours.' }),
 };
 
 const steps = [

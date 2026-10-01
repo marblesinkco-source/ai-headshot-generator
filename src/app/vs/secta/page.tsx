@@ -16,23 +16,15 @@ import {
   BadgeDollarSign,
   Target,
 } from 'lucide-react';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 export const metadata: Metadata = {
   title: 'TailorPic vs Secta Labs — AI Headshot Generator Comparison',
   description:
     'Compare TailorPic vs Secta Labs for AI headshots. TailorPic starts at $9.90 with 40+ photos, 11 categories, delivery in under 2 hours and a 14-day money-back guarantee.',
   alternates: { canonical: '/vs/secta' },
-  openGraph: {
-    title: 'TailorPic vs Secta Labs — AI Headshot Generator Comparison',
-    description:
-      'Compare TailorPic and Secta Labs for AI headshots. Pricing, categories, delivery, and guarantees side by side.',
-    url: `${siteConfig.url}/vs/secta`,
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'TailorPic vs Secta Labs — AI Headshot Generator Comparison', description: 'Compare TailorPic and Secta Labs for AI headshots. Pricing, categories, delivery, and guarantees side by side.', path: '/vs/secta', type: 'vs' }),
+  twitter: generateTwitterMetadata({ title: 'TailorPic vs Secta Labs — AI Headshot Generator Comparison', description: 'Compare TailorPic and Secta Labs for AI headshots. Pricing, categories, delivery, and guarantees side by side.', type: 'vs' }),
 };
 
 /* ------------------------------------------------------------------ */

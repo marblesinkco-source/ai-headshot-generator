@@ -25,23 +25,15 @@ import {
   Zap,
 } from 'lucide-react';
 
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: 'AI Headshots for Consultants & Advisors | TailorPic',
   description:
     'Get professional headshots for consultants, advisors, and independent professionals. Multiple styles for proposals, LinkedIn, and speaking engagements — delivered in 2 hours.',
   alternates: { canonical: '/industries/consultants' },
-  openGraph: {
-    title: `AI Headshots for Consultants & Advisors | ${siteConfig.name}`,
-    description:
-      'AI-powered professional headshots for consultants. Boardroom, casual professional, and speaker styles delivered in hours.',
-    url: `${siteConfig.url}/industries/consultants`,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `AI Headshots for Consultants & Advisors | ${siteConfig.name}`,
-    description: 'AI-powered professional headshots for consultants. Boardroom, casual professional, and speaker styles delivered in hours.',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'AI Headshots for Consultants & Advisors | TailorPic', description: 'AI-powered professional headshots for consultants. Boardroom, casual professional, and speaker styles delivered in hours.', path: '/industries/consultants', type: 'industry' }),
+  
+  twitter: generateTwitterMetadata({ title: 'AI Headshots for Consultants & Advisors | TailorPic', description: 'AI-powered professional headshots for consultants. Boardroom, casual professional, and speaker styles delivered in hours.', type: 'industry' }),
 };
 
 const painPoints = [

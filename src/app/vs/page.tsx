@@ -5,6 +5,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { VsDirectory, type VsGroup } from './vs-directory';
 
 const title = 'TailorPic vs Alternatives: Compare AI Headshot Tools';
@@ -15,19 +16,8 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: '/vs' },
-  openGraph: {
-    title,
-    description,
-    url: `${siteConfig.url}/vs`,
-    type: 'website',
-    images: [siteConfig.ogImage],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title,
-    description,
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title, description, path: '/vs', type: 'vs' }),
+  twitter: generateTwitterMetadata({ title, description, type: 'vs' }),
 };
 
 const groups: VsGroup[] = [

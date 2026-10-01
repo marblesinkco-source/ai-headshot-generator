@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
@@ -15,17 +16,8 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: '/success-stories' },
-  openGraph: {
-    title: `Success Stories | ${siteConfig.name}`,
-    description,
-    url: `${siteConfig.url}/success-stories`,
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `Success Stories | ${siteConfig.name}`,
-    description,
-  },
+  openGraph: generateOGMetadata({ title: `Success Stories | ${siteConfig.name}`, description: description, path: '/success-stories' }),
+  twitter: generateTwitterMetadata({ title: `Success Stories | ${siteConfig.name}`, description: description }),
 };
 
 /* ------------------------------------------------------------------ */

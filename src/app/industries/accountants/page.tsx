@@ -25,23 +25,16 @@ import {
   RefreshCw,
 } from 'lucide-react';
 
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+
 export const metadata: Metadata = {
   title: 'AI Headshots for Accountants & Financial Professionals | TailorPic',
   description:
     'Get professional headshots for accountants, CPAs, and financial professionals. Firm-wide consistency, CPA directory photos, and quick updates for new hires — delivered in 2 hours.',
   alternates: { canonical: '/industries/accountants' },
-  openGraph: {
-    title: `AI Headshots for Accountants & Financial Professionals | ${siteConfig.name}`,
-    description:
-      'AI-powered professional headshots for accounting and financial professionals. Firm-consistent, directory-ready photos delivered in hours.',
-    url: `${siteConfig.url}/industries/accountants`,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `AI Headshots for Accountants & Financial Professionals | ${siteConfig.name}`,
-    description: 'AI-powered professional headshots for accounting and financial professionals. Firm-consistent, directory-ready photos delivered in hours.',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'AI Headshots for Accountants & Financial Professionals | TailorPic', description: 'AI-powered professional headshots for accounting and financial professionals. Firm-consistent, directory-ready photos delivered in hours.', path: '/industries/accountants', type: 'industry' }),
+  
+  twitter: generateTwitterMetadata({ title: 'AI Headshots for Accountants & Financial Professionals | TailorPic', description: 'AI-powered professional headshots for accounting and financial professionals. Firm-consistent, directory-ready photos delivered in hours.', type: 'industry' }),
 };
 
 const painPoints = [

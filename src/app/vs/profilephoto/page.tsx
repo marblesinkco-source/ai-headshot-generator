@@ -16,23 +16,15 @@ import {
   BadgeDollarSign,
   Target,
 } from 'lucide-react';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 export const metadata: Metadata = {
   title: 'TailorPic vs ProfilePhoto.ai — AI Photo Generator Comparison',
   description:
     'Compare TailorPic vs ProfilePhoto.ai for AI photos. TailorPic starts at $9.90 with 40+ photos, 11 categories, delivery in under 2 hours and a 14-day money-back guarantee.',
   alternates: { canonical: '/vs/profilephoto' },
-  openGraph: {
-    title: 'TailorPic vs ProfilePhoto.ai — AI Photo Generator Comparison',
-    description:
-      'Compare TailorPic and ProfilePhoto.ai for AI photos. Pricing, styles, delivery, and guarantees side by side.',
-    url: `${siteConfig.url}/vs/profilephoto`,
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'TailorPic vs ProfilePhoto.ai — AI Photo Generator Comparison', description: 'Compare TailorPic and ProfilePhoto.ai for AI photos. Pricing, styles, delivery, and guarantees side by side.', path: '/vs/profilephoto', type: 'vs' }),
+  twitter: generateTwitterMetadata({ title: 'TailorPic vs ProfilePhoto.ai — AI Photo Generator Comparison', description: 'Compare TailorPic and ProfilePhoto.ai for AI photos. Pricing, styles, delivery, and guarantees side by side.', type: 'vs' }),
 };
 
 /* ------------------------------------------------------------------ */

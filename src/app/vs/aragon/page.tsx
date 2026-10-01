@@ -16,22 +16,15 @@ import {
   BadgeDollarSign,
   Target,
 } from 'lucide-react';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 export const metadata: Metadata = {
   title: 'TailorPic vs Aragon AI — Best AI Headshot Generator Comparison',
   description:
     'Compare TailorPic vs Aragon AI for AI-generated professional headshots. See pricing, features, photo quality, delivery time, and more side by side. TailorPic starts at $9.90 with 40+ photos.',
   alternates: { canonical: '/vs/aragon' },
-  openGraph: {
-    title: 'TailorPic vs Aragon AI — Best AI Headshot Generator Comparison',
-    description:
-      'Compare TailorPic and Aragon AI for AI headshots. Pricing, quality, features, and delivery — see which AI headshot generator is right for you.',
-    url: `${siteConfig.url}/vs/aragon`,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'TailorPic vs Aragon AI — Best AI Headshot Generator Comparison', description: 'Compare TailorPic and Aragon AI for AI headshots. Pricing, quality, features, and delivery — see which AI headshot generator is right for you.', path: '/vs/aragon', type: 'vs' }),
+  twitter: generateTwitterMetadata({ title: 'TailorPic vs Aragon AI — Best AI Headshot Generator Comparison', description: 'Compare TailorPic and Aragon AI for AI headshots. Pricing, quality, features, and delivery — see which AI headshot generator is right for you.', type: 'vs' }),
 };
 
 /* ------------------------------------------------------------------ */

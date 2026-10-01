@@ -22,23 +22,15 @@ import {
   Award,
 } from 'lucide-react';
 
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: 'Professional Headshots for Attorneys & Law Firms | TailorPic',
   description:
     'Get professional headshots for lawyers, attorneys, and law firms. Build client trust, maintain bar association compliance, and project authority — without expensive studio sessions.',
   alternates: { canonical: '/industries/lawyers' },
-  openGraph: {
-    title: `Attorney & Law Firm Headshots | ${siteConfig.name}`,
-    description:
-      'AI-powered professional headshots for legal professionals. Bar-compliant, firm-consistent team photos delivered in hours.',
-    url: `${siteConfig.url}/industries/lawyers`,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `Attorney & Law Firm Headshots | ${siteConfig.name}`,
-    description: 'AI-powered professional headshots for legal professionals. Bar-compliant, firm-consistent team photos delivered in hours.',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'Attorney & Law Firm Headshots | TailorPic', description: 'AI-powered professional headshots for legal professionals. Bar-compliant, firm-consistent team photos delivered in hours.', path: '/industries/lawyers', type: 'industry' }),
+  
+  twitter: generateTwitterMetadata({ title: 'Attorney & Law Firm Headshots | TailorPic', description: 'AI-powered professional headshots for legal professionals. Bar-compliant, firm-consistent team photos delivered in hours.', type: 'industry' }),
 };
 
 const painPoints = [

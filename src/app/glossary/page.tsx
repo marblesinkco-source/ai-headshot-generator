@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
@@ -11,24 +12,10 @@ export const metadata: Metadata = {
   description:
     '30+ AI photography terms explained in plain language: diffusion models, LoRA, fine-tuning, lighting setups, resolution, retouching and more.',
   alternates: { canonical: '/glossary' },
-  openGraph: {
-    title: `AI Photography Glossary | ${siteConfig.name}`,
-    description:
-      '30+ AI photography and headshot terms explained in plain language.',
-    url: `${siteConfig.url}/glossary`,
-    siteName: siteConfig.name,
-    type: 'website',
-    images: [
-      { url: siteConfig.ogImage, width: 1200, height: 630, alt: `${siteConfig.name} AI Photography Glossary` },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `AI Photography Glossary | ${siteConfig.name}`,
-    description:
-      '30+ AI photography and headshot terms explained in plain language.',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: `AI Photography Glossary | ${siteConfig.name}`, description: 
+      '30+ AI photography and headshot terms explained in plain language.', path: '/glossary', type: 'glossary' }),
+  twitter: generateTwitterMetadata({ title: `AI Photography Glossary | ${siteConfig.name}`, description: 
+      '30+ AI photography and headshot terms explained in plain language.' }),
 };
 
 interface Term {

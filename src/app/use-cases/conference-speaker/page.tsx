@@ -7,6 +7,7 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Conference Speaker Bios | TailorPic";
 const pageDescription =
@@ -16,17 +17,8 @@ export const metadata: Metadata = {
   title: { absolute: pageTitle },
   description: pageDescription,
   alternates: { canonical: 'https://www.tailorpic.com/use-cases/conference-speaker' },
-  openGraph: {
-    title: pageTitle,
-    description: pageDescription,
-    url: 'https://www.tailorpic.com/use-cases/conference-speaker',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: pageTitle,
-    description: pageDescription,
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: pageTitle, description: pageDescription, path: '/use-cases/conference-speaker', type: 'usecase' }),
+  twitter: generateTwitterMetadata({ title: pageTitle, description: pageDescription, type: 'usecase' }),
 };
 
 const productJsonLd = {

@@ -6,6 +6,7 @@ import { Footer } from '@/components/marketing/footer';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const title = 'AI Lighting Editor — Perfect Portrait Lighting | TailorPic';
 const description =
@@ -16,18 +17,8 @@ export const metadata: Metadata = {
   title: { absolute: title },
   description,
   alternates: { canonical: path },
-  openGraph: {
-    title,
-    description,
-    url: `${siteConfig.url}${path}`,
-    siteName: siteConfig.name,
-    type: 'website',
-    images: [siteConfig.ogImage],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title, description, path: path, type: 'default' }),
+  twitter: generateTwitterMetadata({ title, description, type: 'default' }),
 };
 
 const jsonLd = {

@@ -20,23 +20,15 @@ import {
   ArrowRight,
 } from 'lucide-react';
 
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: 'Professional Headshots for Real Estate Agents | TailorPic',
   description:
     'Get MLS-ready professional headshots for real estate agents and brokers. Build trust, win listings, and stand out in a competitive market — all without the studio hassle.',
   alternates: { canonical: '/industries/real-estate' },
-  openGraph: {
-    title: `Real Estate Agent Headshots | ${siteConfig.name}`,
-    description:
-      'AI-powered professional headshots built for real estate. MLS-ready, brand-consistent team photos delivered in hours.',
-    url: `${siteConfig.url}/industries/real-estate`,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `Real Estate Agent Headshots | ${siteConfig.name}`,
-    description: 'AI-powered professional headshots built for real estate. MLS-ready, brand-consistent team photos delivered in hours.',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'Real Estate Agent Headshots | TailorPic', description: 'AI-powered professional headshots built for real estate. MLS-ready, brand-consistent team photos delivered in hours.', path: '/industries/real-estate', type: 'industry' }),
+  
+  twitter: generateTwitterMetadata({ title: 'Real Estate Agent Headshots | TailorPic', description: 'AI-powered professional headshots built for real estate. MLS-ready, brand-consistent team photos delivered in hours.', type: 'industry' }),
 };
 
 const painPoints = [

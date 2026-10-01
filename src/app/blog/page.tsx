@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
@@ -13,21 +14,8 @@ export const metadata: Metadata = {
   authors: [{ name: `${siteConfig.name} Team` }],
   description: `Tips, guides, and insights about AI photography from ${siteConfig.name}. Learn how to get the most from AI-generated photos.`,
   alternates: { canonical: '/blog' },
-  openGraph: {
-    title: `Blog | ${siteConfig.name}`,
-    description: `Tips, guides, and insights about AI photography from ${siteConfig.name}.`,
-    url: `${siteConfig.url}/blog`,
-    siteName: siteConfig.name,
-    type: 'website',
-    locale: 'en_US',
-    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: siteConfig.name }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `Blog | ${siteConfig.name}`,
-    description: `Tips, guides, and insights about AI photography from ${siteConfig.name}.`,
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: `Blog | ${siteConfig.name}`, description: `Tips, guides, and insights about AI photography from ${siteConfig.name}.`, path: '/blog' }),
+  twitter: generateTwitterMetadata({ title: `Blog | ${siteConfig.name}`, description: `Tips, guides, and insights about AI photography from ${siteConfig.name}.` }),
 };
 
 export default function BlogPage() {

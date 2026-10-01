@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
@@ -10,21 +11,10 @@ export const metadata: Metadata = {
   description:
     'The third-party subprocessors TailorPic uses to process personal data on our behalf, including their purpose and data location.',
   alternates: { canonical: '/subprocessors' },
-  openGraph: {
-    title: 'Subprocessors | TailorPic',
-    description:
-      'The third-party subprocessors TailorPic uses to process personal data on our behalf, including their purpose and data location.',
-    url: `${siteConfig.url}/subprocessors`,
-    type: 'website',
-    siteName: 'TailorPic',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Subprocessors | TailorPic',
-    description:
-      'The third-party subprocessors TailorPic uses to process personal data on our behalf, including their purpose and data location.',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'Subprocessors | TailorPic', description: 
+      'The third-party subprocessors TailorPic uses to process personal data on our behalf, including their purpose and data location.', path: '/subprocessors' }),
+  twitter: generateTwitterMetadata({ title: 'Subprocessors | TailorPic', description: 
+      'The third-party subprocessors TailorPic uses to process personal data on our behalf, including their purpose and data location.' }),
 };
 
 const subprocessors = [

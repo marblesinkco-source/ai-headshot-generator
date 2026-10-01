@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
@@ -12,20 +13,10 @@ export const metadata: Metadata = {
   description:
     'Browse TailorPic headshot styles by category: professional, natural, creative, artistic and more. See what each style is best for and find the look that fits you.',
   alternates: { canonical: '/styles' },
-  openGraph: {
-    title: 'Photo Styles — Choose Your Perfect Headshot Style | TailorPic',
-    description:
-      'Browse AI headshot styles by category and see which use cases each one suits, from LinkedIn to creative portfolios.',
-    url: '/styles',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Photo Styles — Choose Your Perfect Headshot Style | TailorPic',
-    description:
-      'Browse AI headshot styles by category and see which use cases each one suits, from LinkedIn to creative portfolios.',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'Photo Styles — Choose Your Perfect Headshot Style | TailorPic', description: 
+      'Browse AI headshot styles by category and see which use cases each one suits, from LinkedIn to creative portfolios.', path: '/styles', type: 'style' }),
+  twitter: generateTwitterMetadata({ title: 'Photo Styles — Choose Your Perfect Headshot Style | TailorPic', description: 
+      'Browse AI headshot styles by category and see which use cases each one suits, from LinkedIn to creative portfolios.' }),
 };
 
 interface StyleCategory {

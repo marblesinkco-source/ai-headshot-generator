@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
@@ -12,19 +13,10 @@ export const metadata: Metadata = {
   description:
     'Our 14-day money-back guarantee ensures you love your AI-generated photos. Learn about our hassle-free refund process.',
   alternates: { canonical: '/refund-policy' },
-  openGraph: {
-    title: 'Refund Policy | TailorPic',
-    description:
-      'Our 14-day money-back guarantee ensures you love your AI-generated photos.',
-    url: `${siteConfig.url}/refund-policy`,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Refund Policy | TailorPic',
-    description:
-      'Our 14-day money-back guarantee ensures you love your AI-generated photos.',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'Refund Policy | TailorPic', description: 
+      'Our 14-day money-back guarantee ensures you love your AI-generated photos.', path: '/refund-policy' }),
+  twitter: generateTwitterMetadata({ title: 'Refund Policy | TailorPic', description: 
+      'Our 14-day money-back guarantee ensures you love your AI-generated photos.' }),
 };
 
 const faqs = [

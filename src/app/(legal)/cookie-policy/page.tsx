@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
 
@@ -7,19 +8,10 @@ export const metadata: Metadata = {
   description:
     'Learn how TailorPic uses cookies and local storage: essential session cookies, and analytics cookies that are only set with your consent.',
   alternates: { canonical: '/cookie-policy' },
-  openGraph: {
-    title: 'Cookie Policy | TailorPic',
-    description:
-      'Learn how TailorPic uses cookies. Analytics cookies are only set with your explicit consent.',
-    url: `${siteConfig.url}/cookie-policy`,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Cookie Policy | TailorPic',
-    description:
-      'Learn how TailorPic uses cookies. Analytics cookies are only set with your explicit consent.',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'Cookie Policy | TailorPic', description: 
+      'Learn how TailorPic uses cookies. Analytics cookies are only set with your explicit consent.', path: '/cookie-policy' }),
+  twitter: generateTwitterMetadata({ title: 'Cookie Policy | TailorPic', description: 
+      'Learn how TailorPic uses cookies. Analytics cookies are only set with your explicit consent.' }),
 };
 
 type CookieRow = {

@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { DollarSign, Clock, ShieldCheck, Trash2 } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
@@ -34,18 +35,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: cat.seoTitle,
     description: cat.seoDescription,
     alternates: { canonical: `/${cat.slug}` },
-    openGraph: {
-      title: `${cat.seoTitle} | ${siteConfig.name}`,
-      description: cat.seoDescription,
-      url: `${siteConfig.url}/${cat.slug}`,
-      siteName: siteConfig.name,
-      type: 'website',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: `${cat.seoTitle} | ${siteConfig.name}`,
-      description: cat.seoDescription,
-    },
+    openGraph: generateOGMetadata({ title: `${cat.seoTitle} | ${siteConfig.name}`, description: cat.seoDescription, path: `/${cat.slug}` }),
+    twitter: generateTwitterMetadata({ title: `${cat.seoTitle} | ${siteConfig.name}`, description: cat.seoDescription }),
   };
 }
 

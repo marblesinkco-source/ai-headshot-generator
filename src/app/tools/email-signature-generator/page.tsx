@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
@@ -15,20 +16,8 @@ export const metadata: Metadata = {
   title: { absolute: title },
   description,
   alternates: { canonical: '/tools/email-signature-generator' },
-  openGraph: {
-    title,
-    description,
-    url: `${siteConfig.url}/tools/email-signature-generator`,
-    siteName: siteConfig.name,
-    type: 'website',
-    images: [siteConfig.ogImage],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title,
-    description,
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: title, description: description, path: '/tools/email-signature-generator' }),
+  twitter: generateTwitterMetadata({ title: title, description: description }),
 };
 
 const jsonLd = {

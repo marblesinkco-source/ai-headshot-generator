@@ -6,6 +6,7 @@ import { Footer } from '@/components/marketing/footer';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const competitor = "Picsart";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
@@ -18,18 +19,8 @@ export const metadata: Metadata = {
   title: { absolute: title },
   description,
   alternates: { canonical: canonicalUrl },
-  openGraph: {
-    title,
-    description,
-    url: canonicalUrl,
-    siteName: siteConfig.name,
-    type: 'website',
-    images: [siteConfig.ogImage],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title, description, path: path, type: 'vs' }),
+  twitter: generateTwitterMetadata({ title, description, type: 'vs' }),
 };
 
 const productJsonLd = {

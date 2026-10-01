@@ -16,22 +16,15 @@ import {
   BadgeDollarSign,
   Target,
 } from 'lucide-react';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 export const metadata: Metadata = {
   title: 'TailorPic vs Fotor AI — AI Headshot Generator vs Photo Editor',
   description:
     'Compare TailorPic vs Fotor AI. Fotor is a broad photo editor with AI tools; TailorPic specializes in professional AI headshots. See pricing, features, and quality side by side. TailorPic starts at $9.90 one-time.',
   alternates: { canonical: '/vs/fotor' },
-  openGraph: {
-    title: 'TailorPic vs Fotor AI — AI Headshot Generator vs Photo Editor',
-    description:
-      'Compare TailorPic and Fotor AI. A specialized AI headshot generator versus a general photo editor — see which fits your needs.',
-    url: `${siteConfig.url}/vs/fotor`,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({ title: 'TailorPic vs Fotor AI — AI Headshot Generator vs Photo Editor', description: 'Compare TailorPic and Fotor AI. A specialized AI headshot generator versus a general photo editor — see which fits your needs.', path: '/vs/fotor', type: 'vs' }),
+  twitter: generateTwitterMetadata({ title: 'TailorPic vs Fotor AI — AI Headshot Generator vs Photo Editor', description: 'Compare TailorPic and Fotor AI. A specialized AI headshot generator versus a general photo editor — see which fits your needs.', type: 'vs' }),
 };
 
 /* ------------------------------------------------------------------ */
