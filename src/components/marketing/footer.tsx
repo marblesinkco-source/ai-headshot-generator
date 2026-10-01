@@ -11,6 +11,7 @@ const productLinks: FooterLink[] = [
   { label: 'How It Works', href: '/how-it-works' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Pricing Comparison', href: '/pricing-comparison' },
+  { label: 'AI Avatars', href: '/avatars' },
   { label: 'Samples', href: '/samples' },
   { label: 'Photo Styles', href: '/styles' },
   { label: 'Use Cases', href: '/use-cases' },

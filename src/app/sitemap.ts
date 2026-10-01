@@ -1434,6 +1434,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/avatars`,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
   ];
 
   const styles = getAllPhotoStyles();

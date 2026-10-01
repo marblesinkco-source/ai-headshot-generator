@@ -383,6 +383,41 @@ function UploadContent() {
               </div>
             ))}
           </div>
+          {/* Avatar Bundle Upsell */}
+          {selectedCategory === 'avatars' && selectedPackage === 'avatar-starter' && (
+            <div className="relative overflow-hidden rounded-xl border-2 border-purple-300 bg-gradient-to-r from-purple-50 to-fuchsia-50 p-5 shadow-sm">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex items-start gap-3">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-lg">🎁</span>
+                  <div>
+                    <h4 className="font-semibold text-tp-ink">
+                      Upgrade to 50 Avatars — Save 36%
+                    </h4>
+                    <p className="mt-0.5 text-sm text-tp-muted">
+                      Add <strong className="text-purple-700">20 more avatars</strong> with 5 extra style categories + 4K resolution for just <strong className="text-purple-700">$8.90 more</strong>
+                    </p>
+                    <p className="mt-1 text-xs text-tp-muted">
+                      Total: $24.80 instead of $39.80 if purchased separately
+                    </p>
+                  </div>
+                </div>
+                <Button
+                  variant="primary"
+                  size="md"
+                  className="whitespace-nowrap bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 border-0"
+                  loading={checkoutLoading === 'avatar-mega'}
+                  disabled={checkoutLoading !== null && checkoutLoading !== 'avatar-mega'}
+                  onClick={() => {
+                    setSelectedPackage('avatar-mega');
+                    handleCheckout('avatar-mega');
+                  }}
+                >
+                  Get 50 Avatars — $24.80
+                </Button>
+              </div>
+            </div>
+          )}
+
           {error && (
             <div className="rounded-lg bg-red-50 border border-red-200 p-3 text-sm text-red-700">{error}</div>
           )}

@@ -1,6 +1,6 @@
 /**
  * TailorPic - Multi-Category AI Photo Platform
- * Category configuration for all 11 product categories
+ * Category configuration for all 12 product categories
  */
 
 export type CategoryId =
@@ -14,7 +14,8 @@ export type CategoryId =
   | 'family-portraits'
   | 'couple-engagement'
   | 'real-estate'
-  | 'ecommerce-product';
+  | 'ecommerce-product'
+  | 'avatars';
 
 export interface CategoryPackage {
   id: string;
@@ -656,6 +657,62 @@ export const CATEGORIES: Record<CategoryId, Category> = {
     slug: 'product-photography',
     active: true,
   },
+
+  avatars: {
+    id: 'avatars',
+    name: 'AI Avatars',
+    shortName: 'Avatars',
+    description: 'Your face, 50 unique worlds. AI avatars so real they could fool your own mother — from fantasy warriors to cyberpunk heroes, anime legends to Renaissance masters.',
+    tagline: 'Your Face. Every Universe. Zero Limits.',
+    icon: '🎭',
+    color: 'purple',
+    gradient: 'from-purple-600 to-fuchsia-600',
+    uploadInstructions: 'Upload 10-20 clear selfies from different angles. Include front-facing, slight left/right turns, various lighting. No sunglasses, no heavy filters.',
+    minPhotos: 10,
+    maxPhotos: 20,
+    outputLabel: 'avatars',
+    packages: [
+      {
+        id: 'avatar-starter',
+        name: 'Avatar Pack',
+        price: 1590,
+        currency: 'usd',
+        outputCount: 30,
+        features: [
+          '30 unique avatars',
+          '10 style categories',
+          'HD resolution (1024×1024)',
+          'Your exact likeness preserved',
+          'Fantasy, Anime, Cyberpunk & more',
+          '24-hour delivery',
+        ],
+        recommended: true,
+      },
+      {
+        id: 'avatar-mega',
+        name: 'Mega Avatar Bundle',
+        price: 2480,
+        currency: 'usd',
+        outputCount: 50,
+        features: [
+          '50 unique avatars',
+          '15 style categories',
+          '4K resolution (2048×2048)',
+          'Your exact likeness preserved',
+          'ALL styles unlocked',
+          'Exclusive rare styles',
+          'Social media optimized sizes',
+          'Priority processing',
+        ],
+      },
+    ],
+    promptTemplate: 'A highly detailed {style_prompt} portrait of a person. {character_prompt}. Maintaining exact facial features and likeness. {background_prompt}. Cinematic quality, dramatic lighting, ultra-detailed, 8k resolution.',
+    negativePrompt: 'deformed, distorted, disfigured, poorly drawn face, bad anatomy, wrong anatomy, extra limb, missing limb, floating limbs, mutated hands, extra fingers, blurry, low quality, watermark, text, logo, different person, changed face, altered identity',
+    seoTitle: 'AI Avatars — Your Face in Every Universe | TailorPic',
+    seoDescription: 'Transform your selfies into 50 jaw-dropping AI avatars. Fantasy, anime, cyberpunk, renaissance and more — all with your exact likeness. Starting at $15.90.',
+    slug: 'avatars',
+    active: true,
+  },
 } as const;
 
 // Helper functions
@@ -682,6 +739,7 @@ export function getPackageById(categoryId: CategoryId, packageId: string): Categ
 // Featured categories for homepage
 export const FEATURED_CATEGORIES: CategoryId[] = [
   'headshots',
+  'avatars',
   'dating',
   'pet-portraits',
   'real-estate',
@@ -704,6 +762,6 @@ export const CATEGORY_GROUPS = [
   {
     title: 'Creative',
     description: 'Artistic designs and portraits',
-    categories: ['pet-portraits', 'baby-shower', 'holiday-cards'] as CategoryId[],
+    categories: ['avatars', 'pet-portraits', 'baby-shower', 'holiday-cards'] as CategoryId[],
   },
 ];
