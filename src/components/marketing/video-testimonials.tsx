@@ -39,7 +39,7 @@ export function VideoTestimonials() {
             Hear It Directly
           </h2>
           <p className="mt-4 text-lg text-tp-muted">
-            Real reactions from professionals who tried AI-generated headshots.
+            See how professionals can benefit from AI-generated headshots.
           </p>
           <p className="mt-2 text-sm text-tp-muted">
             Video testimonials coming soon
@@ -100,7 +100,7 @@ export function VideoTestimonials() {
 
         {/* Disclaimer */}
         <p className="mt-10 text-center text-xs text-tp-muted">
-          Representative examples written to illustrate anticipated video content.
+          * Illustrative testimonial for demonstration purposes.
           These are not verified customer reviews.
         </p>
       </div>
