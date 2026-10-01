@@ -354,8 +354,7 @@ export default function HowItWorksPage() {
             Ready to Get Started?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-tp-beige/60">
-            Join thousands of happy customers who have transformed their photos
-            with AI. Your new headshots are just a few selfies away.
+            Transform your photos with studio-quality AI headshots. Your new headshots are just a few selfies away.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/dashboard/upload">

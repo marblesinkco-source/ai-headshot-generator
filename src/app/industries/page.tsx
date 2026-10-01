@@ -42,7 +42,7 @@ const industries = [
     icon: Stethoscope,
     name: 'Healthcare',
     description:
-      'Trustworthy headshots for doctors, dentists, and medical professionals. HIPAA-conscious, patient-friendly.',
+      'Trustworthy headshots for doctors, dentists, and medical professionals. Privacy-conscious, patient-friendly.',
     href: '/industries/doctors',
     cta: 'For Doctors',
   },

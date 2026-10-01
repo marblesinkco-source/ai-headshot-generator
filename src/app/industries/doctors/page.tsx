@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `AI Headshots for Doctors & Healthcare Professionals | ${siteConfig.name}`,
     description:
-      'AI-powered professional headshots for healthcare professionals. HIPAA-friendly, hospital-ready photos delivered in hours.',
+      'AI-powered professional headshots for healthcare professionals. Privacy-conscious, hospital-ready photos delivered in hours.',
     url: `${siteConfig.url}/industries/doctors`,
   },
 };
@@ -68,7 +68,7 @@ const benefits = [
   },
   {
     icon: Shield,
-    title: 'HIPAA-Friendly Service',
+    title: 'Privacy-Conscious Service',
     description:
       'Our process only uses the selfies you upload — no patient data, no clinical settings. Your photos are processed securely and delivered directly to you.',
   },
@@ -155,7 +155,7 @@ export default function DoctorsIndustryPage() {
         <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-x-8 gap-y-3 px-4 text-sm text-tp-muted sm:px-6 lg:px-8">
           <span className="flex items-center gap-1.5">
             <CheckCircle className="h-4 w-4 text-tp-bronze" />
-            HIPAA-Friendly Process
+            Privacy-Conscious Process
           </span>
           <span className="flex items-center gap-1.5">
             <CheckCircle className="h-4 w-4 text-tp-bronze" />
@@ -281,7 +281,7 @@ export default function DoctorsIndustryPage() {
             Your Patients Are Looking You Up. Look Your Best.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            Join thousands of healthcare professionals who upgraded their image with TailorPic.
+            Upgrade your professional image with TailorPic.
             Studio-quality headshots starting at just $9.90.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">

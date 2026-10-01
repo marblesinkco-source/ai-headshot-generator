@@ -305,7 +305,7 @@ export default function LinkedInUseCasePage() {
             Upgrade Your LinkedIn Profile Today
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            Join thousands of professionals who boosted their LinkedIn presence with a TailorPic headshot. Starting at just $9.90.
+            Boost your LinkedIn presence with a studio-quality AI headshot. Starting at just $9.90.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

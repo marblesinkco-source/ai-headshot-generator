@@ -280,8 +280,8 @@ export default function VsHeadshotProPage() {
             Ready to Make the Switch?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-tp-muted">
-            Join thousands who chose TailorPic for better variety, lower prices, and
-            studio-quality AI photos delivered in hours.
+            Get better variety, lower prices, and studio-quality AI photos
+            delivered in hours with TailorPic.
           </p>
           <Link
             href="/pricing"

@@ -305,7 +305,7 @@ export default function InstagramUseCasePage() {
             Level Up Your Instagram Today
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            Join thousands of creators who transformed their Instagram presence with TailorPic photos. Starting at just $9.90.
+            Transform your Instagram presence with studio-quality AI photos. Starting at just $9.90.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

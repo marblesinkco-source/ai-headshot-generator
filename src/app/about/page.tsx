@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { Button } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { Shield, Zap, Wallet, Sparkles, Eye, Accessibility, Lightbulb, Cpu, Upload, Paintbrush, Download } from 'lucide-react';
@@ -159,9 +159,9 @@ export default function AboutPage() {
               return (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-tp-line bg-white p-6 shadow-sm"
+                  className="rounded-tp-card border border-tp-line bg-white p-6 shadow-sm"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-black">
                     <Icon className="h-6 w-6 text-tp-bronze" />
                   </div>
                   <h3 className="mt-4 font-display text-xl font-normal text-tp-ink">{item.title}</h3>
@@ -191,7 +191,7 @@ export default function AboutPage() {
               return (
                 <li
                   key={step.title}
-                  className="rounded-2xl border border-tp-line bg-tp-paper p-6"
+                  className="rounded-tp-card border border-tp-line bg-tp-paper p-6"
                 >
                   <div className="flex items-center gap-3">
                     <span className="font-display text-3xl text-tp-bronze-ink">{i + 1}</span>
@@ -225,9 +225,9 @@ export default function AboutPage() {
               return (
                 <div
                   key={value.title}
-                  className="flex gap-5 rounded-2xl border border-tp-line bg-white p-6 shadow-sm"
+                  className="flex gap-5 rounded-tp-card border border-tp-line bg-white p-6 shadow-sm"
                 >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-tp-black">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-tp-button bg-tp-black">
                     <Icon className="h-6 w-6 text-tp-bronze" />
                   </div>
                   <div>
@@ -251,13 +251,11 @@ export default function AboutPage() {
             Upload your photos, choose a style, and let {siteConfig.name} do the rest.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/dashboard/upload">
-              <Button size="lg">Create Your Photos</Button>
+            <Link href="/auth/register" className={buttonVariants({ size: 'lg' })}>
+              Create Your Photos
             </Link>
-            <Link href="/contact">
-              <Button variant="outline" size="lg">
-                Contact Us
-              </Button>
+            <Link href="/contact" className={buttonVariants({ variant: 'outline', size: 'lg' })}>
+              Contact Us
             </Link>
           </div>
         </div>

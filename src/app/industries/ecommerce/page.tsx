@@ -194,7 +194,7 @@ export default function EcommerceLandingPage() {
             Your Products Deserve Better Photos
           </h2>
           <p className="mt-4 text-lg text-tp-muted">
-            Join thousands of sellers who upgraded their product photography with AI.
+            Upgrade your product photography with AI.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link

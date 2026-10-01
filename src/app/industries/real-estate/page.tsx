@@ -404,7 +404,7 @@ export default function RealEstateIndustryPage() {
             Your Next Listing Deserves a Better Headshot
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            Join thousands of real estate professionals who upgraded their image with TailorPic.
+            Upgrade your professional image with TailorPic.
             Studio-quality headshots starting at just $9.90.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">

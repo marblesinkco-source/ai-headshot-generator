@@ -305,7 +305,7 @@ export default function TwitterUseCasePage() {
             Upgrade Your X Profile Today
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            Join thousands of professionals and creators who boosted their X presence with a TailorPic profile photo. Starting at just $9.90.
+            Boost your X presence with a studio-quality AI profile photo. Starting at just $9.90.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

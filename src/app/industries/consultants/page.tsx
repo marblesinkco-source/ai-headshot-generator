@@ -281,7 +281,7 @@ export default function ConsultantsIndustryPage() {
             Clients Judge the Book by Its Cover. Make Yours Count.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            Join thousands of consultants and advisors who upgraded their professional image with TailorPic.
+            Upgrade your professional image with TailorPic.
             Studio-quality headshots starting at just $9.90.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
