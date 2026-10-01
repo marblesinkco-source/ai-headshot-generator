@@ -13,7 +13,37 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import { getActiveCategories } from '@/config/categories';
 import { TrustBadges } from '@/components/marketing/trust-badges';
-import { BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
+import { ChevronDown } from 'lucide-react';
+import { PricingComparisonBar } from '@/components/marketing/pricing-comparison-bar';
+
+const pricingFaqs = [
+  {
+    question: 'Is there a subscription?',
+    answer:
+      'No. You pay once for the package you choose. There are no recurring charges and nothing to cancel.',
+  },
+  {
+    question: 'What payment methods do you accept?',
+    answer:
+      'We accept all major credit cards. Payments are processed securely through Stripe.',
+  },
+  {
+    question: 'Can I get a refund?',
+    answer:
+      'Yes. Every order is covered by our 14-day money-back guarantee. See our refund policy for the details.',
+  },
+  {
+    question: 'How many photos do I get?',
+    answer:
+      'You receive 40+ professional headshots in a variety of styles from a single upload.',
+  },
+  {
+    question: 'Do I need to upload many selfies?',
+    answer:
+      'Upload around 10-20 selfies from different angles for the best results. A minimum of 8 photos is required.',
+  },
+];
 
 const OG_DESCRIPTION =
   'Affordable AI photo packages for every need. Professional headshots, dating photos, pet portraits and more.';
@@ -134,7 +164,40 @@ export default function PricingPage() {
 
       <FAQ />
 
+      {/* Pricing FAQs */}
+      <section className="py-16 sm:py-20" aria-labelledby="pricing-faq-heading">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <h2
+            id="pricing-faq-heading"
+            className="text-center font-display text-3xl font-normal italic text-tp-ink sm:text-4xl"
+          >
+            Frequently Asked Questions
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-center text-base text-tp-muted">
+            Quick answers about pricing, payment and refunds.
+          </p>
+          <div className="mt-10 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white px-6">
+            {pricingFaqs.map((faq) => (
+              <details key={faq.question} className="group py-5">
+                <summary className="flex cursor-pointer items-center justify-between text-left">
+                  <span className="text-base font-medium text-tp-ink group-hover:text-tp-bronze-ink">
+                    {faq.question}
+                  </span>
+                  <ChevronDown className="ml-4 h-5 w-5 shrink-0 text-tp-muted transition-transform group-open:rotate-180" />
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">
+                  {faq.answer}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+      <FAQSchema items={pricingFaqs} />
+
       <Footer />
+
+      <PricingComparisonBar />
     </main>
   );
 }

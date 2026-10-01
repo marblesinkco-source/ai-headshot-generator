@@ -20,6 +20,10 @@ import {
   Check,
   X,
   ChevronDown,
+  BadgeCheck,
+  Timer,
+  LayoutGrid,
+  Undo2,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -103,6 +107,33 @@ const differentiators = [
     title: 'Money-Back Guarantee',
     description:
       'We stand behind our results with a 100% satisfaction guarantee. If you are not happy, we will make it right.',
+  },
+];
+
+const whyChooseUs = [
+  {
+    icon: BadgeCheck,
+    title: 'No Subscription Required',
+    description:
+      'Pay once for your package. There are no recurring charges and nothing to cancel.',
+  },
+  {
+    icon: Timer,
+    title: 'Fast Turnaround',
+    description:
+      'Your photos are ready in under 2 hours, with an email when they are done.',
+  },
+  {
+    icon: LayoutGrid,
+    title: '40+ Professional Styles',
+    description:
+      'Get a variety of looks from a single upload, from corporate to casual.',
+  },
+  {
+    icon: Undo2,
+    title: 'Money-Back Guarantee',
+    description:
+      'Covered by our 14-day money-back guarantee. See our refund policy for details.',
   },
 ];
 
@@ -222,6 +253,44 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
+      {/* Why Choose Us */}
+      <section className="bg-tp-paper py-20 sm:py-28" aria-labelledby="why-choose-us-heading">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2
+              id="why-choose-us-heading"
+              className="font-display text-3xl font-normal italic text-tp-ink sm:text-4xl"
+            >
+              Why Choose Us
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base text-tp-muted">
+              Simple terms and no surprises.
+            </p>
+          </div>
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {whyChooseUs.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={item.title}
+                  className="rounded-tp-card border border-tp-line bg-white p-6"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-beige">
+                    <Icon className="h-6 w-6 text-tp-bronze-ink" />
+                  </div>
+                  <h3 className="mt-4 text-lg font-semibold text-tp-ink">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-tp-muted">
+                    {item.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* What Makes Us Different */}
       <section className="border-y border-tp-line bg-tp-black py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -230,8 +299,8 @@ export default function HowItWorksPage() {
               What Makes Us Different
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base text-tp-beige/60">
-              TailorPic is not just another photo filter. Here is why thousands
-              of customers choose us.
+              TailorPic is not just another photo filter. Here is what sets
+              our approach apart.
             </p>
           </div>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
