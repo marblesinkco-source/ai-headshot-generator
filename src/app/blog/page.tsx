@@ -1,14 +1,15 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { siteConfig } from '@/config/site';
 import { getAllBlogPosts } from '@/config/blog';
-import { ArrowRight } from 'lucide-react';
+import { BlogListing } from '@/components/blog/blog-listing';
 import { BreadcrumbSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
-  title: 'Blog',
+  title: 'Blog: AI Headshot Tips, Guides & Comparisons',
+  keywords: ['AI headshots', 'LinkedIn headshot tips', 'AI photography guides', 'professional headshots', 'AI headshot alternatives'],
+  authors: [{ name: `${siteConfig.name} Team` }],
   description: `Tips, guides, and insights about AI photography from ${siteConfig.name}. Learn how to get the most from AI-generated photos.`,
   alternates: { canonical: '/blog' },
   openGraph: {
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
     url: `${siteConfig.url}/blog`,
     siteName: siteConfig.name,
     type: 'website',
+    locale: 'en_US',
     images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: siteConfig.name }],
   },
   twitter: {
@@ -28,10 +30,42 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-  const posts = getAllBlogPosts();
+  const allPosts = getAllBlogPosts();
+  // Strip the large HTML `content` field so it is not serialized to the client.
+  const posts = allPosts.map(({ slug, title, description, publishedAt, tags, readingTime }) => ({
+    slug,
+    title,
+    description,
+    publishedAt,
+    tags,
+    readingTime,
+  }));
+
+  const blogJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: `${siteConfig.name} Blog`,
+    url: `${siteConfig.url}/blog`,
+    description: `Tips, guides, and insights about AI photography from ${siteConfig.name}.`,
+    publisher: { '@type': 'Organization', name: siteConfig.name, url: siteConfig.url },
+    blogPost: allPosts.map((p) => ({
+      '@type': 'BlogPosting',
+      headline: p.title,
+      description: p.description,
+      url: `${siteConfig.url}/blog/${p.slug}`,
+      datePublished: p.publishedAt,
+      ...(p.updatedAt ? { dateModified: p.updatedAt } : {}),
+      author: { '@type': 'Organization', name: p.author },
+      keywords: p.tags.join(', '),
+    })),
+  };
 
   return (
     <main id="main-content" className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd).replace(/</g, '\\u003c') }}
+      />
       <BreadcrumbSchema items={[{ name: 'Home', url: siteConfig.url }, { name: 'Blog', url: siteConfig.url + '/blog' }]} />
       <Header />
 
@@ -39,8 +73,8 @@ export default function BlogPage() {
       <section className="relative overflow-hidden pt-16">
         <div className="pointer-events-none absolute inset-0 bg-grid" />
         <div className="pointer-events-none absolute -top-24 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-tp-bronze/10 blur-3xl" />
-        <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 sm:py-28 lg:px-8">
-          <h1 className="text-4xl font-extrabold tracking-tight text-tp-ink sm:text-5xl">
+        <div className="relative mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 sm:py-24 lg:px-8">
+          <h1 className="font-display text-4xl font-normal tracking-tight text-tp-ink sm:text-5xl">
             The{' '}
             <span className="bg-gradient-to-r from-tp-bronze-ink to-tp-bronze bg-clip-text text-transparent">
               TailorPic
@@ -54,59 +88,8 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Blog posts grid */}
       <section className="pb-20">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {posts.map((post) => (
-              <Link
-                key={post.slug}
-                href={`/blog/${post.slug}`}
-                className="group rounded-2xl border border-tp-line bg-white shadow-sm transition-all hover:shadow-lg hover:border-tp-bronze/40"
-              >
-                {/* Cover image placeholder */}
-                <div className="aspect-[16/9] rounded-t-2xl bg-gradient-to-br from-tp-paper via-tp-beige/30 to-tp-bronze/10 flex items-center justify-center">
-                  <span className="text-3xl opacity-30">📝</span>
-                </div>
-                <div className="p-5">
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-3">
-                    {post.tags.slice(0, 2).map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full bg-tp-paper px-2.5 py-0.5 text-[11px] font-medium text-tp-bronze-ink"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <h2 className="text-base font-semibold text-tp-ink group-hover:text-tp-bronze-ink transition-colors line-clamp-2">
-                    {post.title}
-                  </h2>
-                  <p className="mt-2 text-sm text-tp-muted line-clamp-2">
-                    {post.description}
-                  </p>
-                  <div className="mt-4 flex items-center justify-between">
-                    <span className="text-xs text-tp-muted">
-                      {new Date(post.publishedAt).toLocaleDateString('en-US', {
-                        month: 'short',
-                        day: 'numeric',
-                        year: 'numeric',
-                      })}
-                    </span>
-                    <span className="text-xs text-tp-muted">{post.readingTime}</span>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-
-          {posts.length === 0 && (
-            <p className="text-center text-tp-muted py-12">
-              No blog posts yet. Check back soon!
-            </p>
-          )}
-        </div>
+        <BlogListing posts={posts} />
       </section>
 
       <Footer />
