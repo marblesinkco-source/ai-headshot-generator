@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 
 type ConsentState = {
@@ -10,14 +10,16 @@ type ConsentState = {
   timestamp: string;
 };
 
+// NOTE: key is shared with google-analytics.tsx, exit-intent-popup.tsx and the cookie policy page.
 const CONSENT_KEY = 'tp_cookie_consent';
+// Dispatch `window.dispatchEvent(new Event('tp:open-cookie-settings'))` to let users re-open
+// the panel and withdraw/change consent at any time (GDPR Art. 7(3)).
+export const OPEN_COOKIE_SETTINGS_EVENT = 'tp:open-cookie-settings';
 
 function getStoredConsent(): ConsentState | null {
-  if (typeof window === 'undefined') return null;
   try {
     const raw = localStorage.getItem(CONSENT_KEY);
-    if (!raw) return null;
-    return JSON.parse(raw) as ConsentState;
+    return raw ? (JSON.parse(raw) as ConsentState) : null;
   } catch {
     return null;
   }
@@ -27,8 +29,62 @@ function storeConsent(consent: ConsentState) {
   try {
     localStorage.setItem(CONSENT_KEY, JSON.stringify(consent));
   } catch {
-    // silent fail
+    // storage unavailable: choice applies for this page view only
   }
+}
+
+function applyConsent(consent: ConsentState) {
+  if (typeof window === 'undefined' || typeof window.gtag !== 'function') return;
+  const analytics = consent.analytics ? 'granted' : 'denied';
+  const marketing = consent.marketing ? 'granted' : 'denied';
+  window.gtag('consent', 'update', {
+    analytics_storage: analytics,
+    ad_storage: marketing,
+    ad_user_data: marketing,
+    ad_personalization: marketing,
+  });
+}
+
+function Toggle({
+  checked,
+  onChange,
+  label,
+}: {
+  checked: boolean;
+  onChange: (v: boolean) => void;
+  label: string;
+}) {
+  return (
+    <button
+      type="button"
+      role="switch"
+      aria-checked={checked}
+      aria-label={label}
+      onClick={() => onChange(!checked)}
+      className={`relative h-6 w-10 flex-shrink-0 rounded-full transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2 ${
+        checked ? 'bg-tp-bronze-ink' : 'bg-tp-line'
+      }`}
+    >
+      <span
+        className={`absolute left-0.5 top-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform ${
+          checked ? 'translate-x-4' : 'translate-x-0'
+        }`}
+      />
+    </button>
+  );
+}
+
+/** Footer-friendly trigger so users can change/withdraw consent later. */
+export function CookieSettingsButton({ className }: { className?: string }) {
+  return (
+    <button
+      type="button"
+      className={className}
+      onClick={() => window.dispatchEvent(new Event(OPEN_COOKIE_SETTINGS_EVENT))}
+    >
+      Cookie Settings
+    </button>
+  );
 }
 
 export function CookieConsent() {
@@ -46,168 +102,147 @@ export function CookieConsent() {
     }
   }, []);
 
-  function acceptAll() {
-    const consent: ConsentState = {
-      essential: true,
-      analytics: true,
-      marketing: true,
-      timestamp: new Date().toISOString(),
+  // Allow re-opening to change or withdraw consent
+  useEffect(() => {
+    const open = () => {
+      const stored = getStoredConsent();
+      setAnalytics(!!stored?.analytics);
+      setMarketing(!!stored?.marketing);
+      setShowPreferences(true);
+      setVisible(true);
     };
-    storeConsent(consent);
-    setVisible(false);
-    applyConsent(consent);
-  }
+    window.addEventListener(OPEN_COOKIE_SETTINGS_EVENT, open);
+    return () => window.removeEventListener(OPEN_COOKIE_SETTINGS_EVENT, open);
+  }, []);
 
-  function rejectAll() {
+  const save = useCallback((a: boolean, m: boolean) => {
     const consent: ConsentState = {
       essential: true,
-      analytics: false,
-      marketing: false,
+      analytics: a,
+      marketing: m,
       timestamp: new Date().toISOString(),
     };
     storeConsent(consent);
-    setVisible(false);
     applyConsent(consent);
-  }
-
-  function savePreferences() {
-    const consent: ConsentState = {
-      essential: true,
-      analytics,
-      marketing,
-      timestamp: new Date().toISOString(),
-    };
-    storeConsent(consent);
     setVisible(false);
     setShowPreferences(false);
-    applyConsent(consent);
-  }
-
-  function applyConsent(consent: ConsentState) {
-    // Update Google consent mode if gtag is loaded
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('consent', 'update', {
-        analytics_storage: consent.analytics ? 'granted' : 'denied',
-        ad_storage: consent.marketing ? 'granted' : 'denied',
-        ad_user_data: consent.marketing ? 'granted' : 'denied',
-        ad_personalization: consent.marketing ? 'granted' : 'denied',
-      });
-    }
-  }
+  }, []);
 
   if (!visible) return null;
 
+  const primaryBtn =
+    'rounded-tp-button bg-tp-black px-4 py-2.5 text-sm font-medium text-tp-paper transition-colors hover:bg-tp-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2';
+  const secondaryBtn =
+    'rounded-tp-button border border-tp-line bg-white px-4 py-2.5 text-sm font-medium text-tp-ink transition-colors hover:bg-tp-paper focus:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2';
+
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-[9999] p-3 sm:p-4"
+      className="fixed inset-x-0 bottom-0 z-[9999] p-3 sm:p-4"
       role="dialog"
-      aria-label="Cookie consent"
+      aria-modal="false"
+      aria-labelledby="tp-cookie-title"
     >
-      <div className="mx-auto max-w-2xl rounded-2xl border border-tp-line/60 bg-white shadow-lg shadow-tp-black/8">
+      <div className="mx-auto max-w-3xl rounded-tp-card border border-tp-line bg-tp-paper shadow-lg shadow-tp-black/10">
         {!showPreferences ? (
-          /* ── Main banner ── */
-          <div className="p-4 sm:p-5">
-            <div className="flex items-start gap-3">
-              {/* Cookie icon */}
-              <span className="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-tp-beige/40 text-lg" aria-hidden="true">
-                🍪
-              </span>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm text-tp-ink leading-relaxed">
-                  We use cookies to improve your experience. Essential cookies are always active.
-                  You can choose to accept analytics and marketing cookies or customize your preferences.{' '}
-                  <Link href="/cookie-policy" className="underline text-tp-bronze-ink hover:text-tp-bronze transition-colors">
-                    Cookie Policy
-                  </Link>
-                </p>
-              </div>
+          <div className="flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:gap-6 sm:p-5">
+            <div className="min-w-0 flex-1">
+              <h2 id="tp-cookie-title" className="text-sm font-semibold text-tp-black">
+                We use cookies
+              </h2>
+              <p className="mt-1 text-sm leading-relaxed text-tp-muted">
+                We use essential cookies to keep you signed in and the site working. With your
+                consent we also use analytics and marketing cookies to understand usage and
+                measure our ads. You can change or withdraw your choice at any time.{' '}
+                <Link
+                  href="/cookie-policy"
+                  className="font-medium text-tp-bronze-ink underline underline-offset-2 hover:text-tp-ink"
+                >
+                  Cookie Policy
+                </Link>
+              </p>
             </div>
-
-            <div className="mt-4 flex flex-wrap items-center gap-2">
+            <div className="flex flex-col gap-2 sm:flex-shrink-0 sm:flex-row">
+              <button type="button" onClick={() => save(false, false)} className={secondaryBtn}>
+                Essential Only
+              </button>
               <button
-                onClick={acceptAll}
-                className="rounded-tp-button bg-tp-black px-4 py-2 text-sm font-medium text-white hover:bg-tp-ink transition-colors"
+                type="button"
+                onClick={() => {
+                  const stored = getStoredConsent();
+                  setAnalytics(!!stored?.analytics);
+                  setMarketing(!!stored?.marketing);
+                  setShowPreferences(true);
+                }}
+                className={secondaryBtn}
               >
+                Manage Preferences
+              </button>
+              <button type="button" onClick={() => save(true, true)} className={primaryBtn}>
                 Accept All
-              </button>
-              <button
-                onClick={rejectAll}
-                className="rounded-tp-button border border-tp-line bg-white px-4 py-2 text-sm font-medium text-tp-ink hover:bg-tp-paper transition-colors"
-              >
-                Reject All
-              </button>
-              <button
-                onClick={() => setShowPreferences(true)}
-                className="px-3 py-2 text-sm font-medium text-tp-muted hover:text-tp-ink transition-colors underline"
-              >
-                Customize
               </button>
             </div>
           </div>
         ) : (
-          /* ── Preferences panel ── */
           <div className="p-4 sm:p-5">
-            <h3 className="text-sm font-semibold text-tp-black mb-3">Cookie Preferences</h3>
+            <h2 id="tp-cookie-title" className="mb-1 text-sm font-semibold text-tp-black">
+              Cookie preferences
+            </h2>
+            <p className="mb-2 text-xs text-tp-muted">
+              Choose which cookies you allow. Nothing except essential cookies is set until you
+              opt in.{' '}
+              <Link
+                href="/cookie-policy"
+                className="font-medium text-tp-bronze-ink underline underline-offset-2"
+              >
+                Cookie Policy
+              </Link>
+            </p>
 
-            {/* Essential */}
-            <label className="flex items-center justify-between py-2.5 border-b border-tp-line/40">
+            <div className="flex items-center justify-between gap-4 border-b border-tp-line py-3">
               <div>
                 <span className="text-sm font-medium text-tp-ink">Essential</span>
-                <p className="text-xs text-tp-muted mt-0.5">Required for the site to function.</p>
+                <p className="mt-0.5 text-xs text-tp-muted">
+                  Sign-in, security and your cookie choice. Required for the site to work.
+                </p>
               </div>
-              <span className="text-xs font-medium text-tp-muted bg-tp-paper px-2 py-0.5 rounded">Always on</span>
-            </label>
+              <span className="flex-shrink-0 rounded bg-tp-line/50 px-2 py-0.5 text-xs font-medium text-tp-muted">
+                Always on
+              </span>
+            </div>
 
-            {/* Analytics */}
-            <label className="flex items-center justify-between py-2.5 border-b border-tp-line/40 cursor-pointer">
+            <div className="flex items-center justify-between gap-4 border-b border-tp-line py-3">
               <div>
                 <span className="text-sm font-medium text-tp-ink">Analytics</span>
-                <p className="text-xs text-tp-muted mt-0.5">Help us understand how you use the site.</p>
+                <p className="mt-0.5 text-xs text-tp-muted">
+                  Google Analytics: helps us understand how the site is used.
+                </p>
               </div>
-              <button
-                type="button"
-                role="switch"
-                aria-checked={analytics}
-                onClick={() => setAnalytics(!analytics)}
-                className={`relative h-6 w-10 rounded-full transition-colors ${analytics ? 'bg-tp-bronze' : 'bg-tp-line'}`}
-              >
-                <span
-                  className={`absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform ${analytics ? 'translate-x-4' : 'translate-x-0'}`}
-                />
-              </button>
-            </label>
+              <Toggle checked={analytics} onChange={setAnalytics} label="Analytics cookies" />
+            </div>
 
-            {/* Marketing */}
-            <label className="flex items-center justify-between py-2.5 cursor-pointer">
+            <div className="flex items-center justify-between gap-4 py-3">
               <div>
                 <span className="text-sm font-medium text-tp-ink">Marketing</span>
-                <p className="text-xs text-tp-muted mt-0.5">Personalized ads and remarketing.</p>
+                <p className="mt-0.5 text-xs text-tp-muted">
+                  Ad measurement, personalised ads and remarketing.
+                </p>
               </div>
+              <Toggle checked={marketing} onChange={setMarketing} label="Marketing cookies" />
+            </div>
+
+            <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:justify-end">
               <button
                 type="button"
-                role="switch"
-                aria-checked={marketing}
-                onClick={() => setMarketing(!marketing)}
-                className={`relative h-6 w-10 rounded-full transition-colors ${marketing ? 'bg-tp-bronze' : 'bg-tp-line'}`}
-              >
-                <span
-                  className={`absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform ${marketing ? 'translate-x-4' : 'translate-x-0'}`}
-                />
-              </button>
-            </label>
-
-            <div className="mt-4 flex items-center gap-2">
-              <button
-                onClick={savePreferences}
-                className="rounded-tp-button bg-tp-black px-4 py-2 text-sm font-medium text-white hover:bg-tp-ink transition-colors"
-              >
-                Save Preferences
-              </button>
-              <button
                 onClick={() => setShowPreferences(false)}
-                className="px-3 py-2 text-sm font-medium text-tp-muted hover:text-tp-ink transition-colors"
+                className="px-3 py-2 text-sm font-medium text-tp-muted hover:text-tp-ink"
               >
                 Back
+              </button>
+              <button type="button" onClick={() => save(false, false)} className={secondaryBtn}>
+                Essential Only
+              </button>
+              <button type="button" onClick={() => save(analytics, marketing)} className={primaryBtn}>
+                Save Preferences
               </button>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Manrope } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
@@ -6,6 +6,7 @@ import { siteConfig } from '@/config/site';
 import { ToastProvider } from '@/components/ui/toaster';
 import { CookieConsent } from '@/components/cookie-consent';
 import { ExitIntentPopup } from '@/components/marketing/exit-intent-popup';
+import { OrganizationSchema } from '@/components/structured-data';
 import { GoogleAnalytics } from '@/components/analytics/google-analytics';
 
 const manrope = Manrope({
@@ -31,7 +32,12 @@ export const metadata: Metadata = {
     ],
     apple: '/brand/tailorpic/icons/profile-dark-180.png',
   },
-  manifest: '/brand/tailorpic/icons/site.webmanifest',
+  // Manifest is served by src/app/manifest.ts (/manifest.webmanifest); Next auto-links it.
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: siteConfig.name,
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -55,6 +61,11 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+};
+
+// Next 14: themeColor must live in the viewport export (metadata.themeColor is deprecated).
+export const viewport: Viewport = {
+  themeColor: '#0B0B0B',
 };
 
 const FONT_CSS_URL =
@@ -86,6 +97,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:rounded-lg focus:bg-tp-black focus:px-4 focus:py-2 focus:text-tp-bronze focus:outline-none">
           Skip to content
         </a>
+        {/* Organization JSON-LD (site-wide) */}
+        <OrganizationSchema />
         {/* GA4 + Consent Mode v2 — only renders when NEXT_PUBLIC_GA_MEASUREMENT_ID is set */}
         <GoogleAnalytics />
         <ToastProvider>

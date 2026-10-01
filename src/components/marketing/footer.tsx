@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { siteConfig } from '@/config/site';
+import { CookieSettingsButton } from '@/components/cookie-consent';
 import { EmailCapture } from '@/components/marketing/email-capture';
 import { getActiveCategories, CATEGORY_GROUPS } from '@/config/categories';
 
@@ -292,6 +293,9 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <CookieSettingsButton className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze" />
+              </li>
             </ul>
           </div>
         </div>

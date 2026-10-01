@@ -7,7 +7,7 @@ export function OrganizationSchema() {
     '@type': 'Organization',
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/brand/tailorpic/logo/tailorpic-horizontal-bronze.svg`,
+    logo: `${siteConfig.url}${siteConfig.ogImage}`,
     description: siteConfig.description,
     sameAs: [
       siteConfig.links.twitter,

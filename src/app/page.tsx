@@ -11,7 +11,7 @@ import { Pricing } from '@/components/marketing/pricing';
 import { faqs } from '@/config/faqs';
 import { Footer } from '@/components/marketing/footer';
 import { StickyCTA } from '@/components/marketing/sticky-cta';
-import { OrganizationSchema, WebsiteSchema, FAQSchema, SoftwareApplicationSchema, HowToSchema } from '@/components/structured-data';
+import { WebsiteSchema, FAQSchema, SoftwareApplicationSchema, HowToSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
@@ -50,7 +50,6 @@ const CTABanner = dynamic(
 export default function LandingPage() {
   return (
     <main id="main-content" className="min-h-screen">
-      <OrganizationSchema />
       <WebsiteSchema />
       <FAQSchema items={faqs} />
       <SoftwareApplicationSchema />
