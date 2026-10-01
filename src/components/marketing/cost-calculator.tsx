@@ -1,3 +1,4 @@
+import { Check } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface CostLine {
@@ -61,19 +62,19 @@ export function CostCalculator({ className }: { className?: string }) {
           {/* TailorPic */}
           <div className="rounded-tp-card border border-tp-bronze bg-tp-ink p-6 text-tp-paper sm:p-8">
             <h3 className="text-lg font-semibold text-tp-bronze">TailorPic AI</h3>
-            <p className="mt-5 text-5xl font-extrabold tracking-tight">{fmt(EXPRESS_PRICE)}</p>
+            <p className="mt-5 font-display text-5xl font-normal tracking-tight">{fmt(EXPRESS_PRICE)}</p>
             <p className="mt-1 text-sm text-tp-beige">Express pack, one-time payment</p>
             <ul className="mt-6 space-y-3 text-sm">
               <li className="flex items-center gap-2">
-                <span className="text-tp-bronze" aria-hidden="true">✓</span>
+                <Check className="h-4 w-4 shrink-0 text-tp-bronze" aria-hidden="true" />
                 {EXPRESS_OUTPUTS} professional headshots
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-tp-bronze" aria-hidden="true">✓</span>
+                <Check className="h-4 w-4 shrink-0 text-tp-bronze" aria-hidden="true" />
                 Delivered in 24 hours
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-tp-bronze" aria-hidden="true">✓</span>
+                <Check className="h-4 w-4 shrink-0 text-tp-bronze" aria-hidden="true" />
                 No studio, no travel, no scheduling
               </li>
             </ul>

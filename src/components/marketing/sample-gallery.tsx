@@ -1,45 +1,77 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import { cn } from '@/lib/utils';
+import { Camera, User, Heart, PawPrint, Briefcase, Palette } from 'lucide-react';
 import type { CategoryId } from '@/config/categories';
 
-interface SampleImage {
-  src: string;
-  alt: string;
-  style: string;
+interface SampleStyle {
+  label: string;
+  gradient: string;
+  pattern: 'lines' | 'dots' | 'circles' | 'grid';
 }
 
-// Placeholder samples per category — replace with real generated examples
-const CATEGORY_SAMPLES: Partial<Record<CategoryId, SampleImage[]>> = {
+const CATEGORY_STYLES: Partial<Record<CategoryId, SampleStyle[]>> = {
   headshots: [
-    { src: '/samples/headshots/1.jpg', alt: 'Professional headshot — corporate style', style: 'Corporate' },
-    { src: '/samples/headshots/2.jpg', alt: 'Professional headshot — creative style', style: 'Creative' },
-    { src: '/samples/headshots/3.jpg', alt: 'Professional headshot — modern style', style: 'Modern' },
-    { src: '/samples/headshots/4.jpg', alt: 'Professional headshot — executive style', style: 'Executive' },
+    { label: 'Corporate', gradient: 'from-tp-beige/60 via-tp-paper to-tp-bronze/30', pattern: 'lines' },
+    { label: 'Creative', gradient: 'from-tp-bronze/20 via-tp-beige/30 to-tp-paper', pattern: 'dots' },
+    { label: 'Modern', gradient: 'from-tp-paper via-tp-beige/50 to-tp-bronze/20', pattern: 'circles' },
+    { label: 'Executive', gradient: 'from-tp-bronze/30 via-tp-paper to-tp-beige/40', pattern: 'grid' },
   ],
   dating: [
-    { src: '/samples/dating/1.jpg', alt: 'Dating profile photo — outdoor style', style: 'Outdoor' },
-    { src: '/samples/dating/2.jpg', alt: 'Dating profile photo — casual style', style: 'Casual' },
-    { src: '/samples/dating/3.jpg', alt: 'Dating profile photo — lifestyle style', style: 'Lifestyle' },
-    { src: '/samples/dating/4.jpg', alt: 'Dating profile photo — urban style', style: 'Urban' },
+    { label: 'Outdoor', gradient: 'from-emerald-50 via-tp-paper to-tp-beige/30', pattern: 'dots' },
+    { label: 'Casual', gradient: 'from-tp-beige/40 via-tp-paper to-sky-50', pattern: 'circles' },
+    { label: 'Lifestyle', gradient: 'from-amber-50 via-tp-paper to-tp-beige/30', pattern: 'lines' },
+    { label: 'Urban', gradient: 'from-slate-100 via-tp-paper to-tp-beige/20', pattern: 'grid' },
   ],
   'pet-portraits': [
-    { src: '/samples/pet-portraits/1.jpg', alt: 'Pet portrait — royal style', style: 'Royal' },
-    { src: '/samples/pet-portraits/2.jpg', alt: 'Pet portrait — watercolor style', style: 'Watercolor' },
-    { src: '/samples/pet-portraits/3.jpg', alt: 'Pet portrait — pop art style', style: 'Pop Art' },
-    { src: '/samples/pet-portraits/4.jpg', alt: 'Pet portrait — renaissance style', style: 'Renaissance' },
+    { label: 'Royal', gradient: 'from-tp-bronze/30 via-tp-paper to-purple-50', pattern: 'lines' },
+    { label: 'Watercolor', gradient: 'from-sky-50 via-tp-paper to-rose-50', pattern: 'dots' },
+    { label: 'Pop Art', gradient: 'from-amber-50 via-tp-paper to-pink-50', pattern: 'circles' },
+    { label: 'Renaissance', gradient: 'from-tp-beige/50 via-tp-paper to-tp-bronze/20', pattern: 'grid' },
   ],
 };
 
-// Generic samples for categories that don't have specific ones yet
-const GENERIC_SAMPLES: SampleImage[] = [
-  { src: '/samples/generic/1.jpg', alt: 'AI-generated photo example', style: 'Style 1' },
-  { src: '/samples/generic/2.jpg', alt: 'AI-generated photo example', style: 'Style 2' },
-  { src: '/samples/generic/3.jpg', alt: 'AI-generated photo example', style: 'Style 3' },
-  { src: '/samples/generic/4.jpg', alt: 'AI-generated photo example', style: 'Style 4' },
+const GENERIC_STYLES: SampleStyle[] = [
+  { label: 'Style A', gradient: 'from-tp-paper via-tp-beige/40 to-tp-bronze/20', pattern: 'lines' },
+  { label: 'Style B', gradient: 'from-tp-bronze/20 via-tp-paper to-tp-beige/30', pattern: 'dots' },
+  { label: 'Style C', gradient: 'from-tp-beige/40 via-tp-paper to-tp-bronze/15', pattern: 'circles' },
+  { label: 'Style D', gradient: 'from-tp-paper via-tp-bronze/15 to-tp-beige/30', pattern: 'grid' },
 ];
+
+const CATEGORY_ICONS: Partial<Record<CategoryId, typeof Camera>> = {
+  headshots: Briefcase,
+  dating: Heart,
+  'pet-portraits': PawPrint,
+};
+
+function PatternSVG({ pattern, className }: { pattern: string; className?: string }) {
+  return (
+    <svg className={cn('absolute inset-0 h-full w-full opacity-[0.08]', className)} xmlns="http://www.w3.org/2000/svg">
+      {pattern === 'lines' && (
+        <pattern id="p-lines" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path d="M0 10h20" stroke="#76563D" strokeWidth="0.5" fill="none" />
+        </pattern>
+      )}
+      {pattern === 'dots' && (
+        <pattern id="p-dots" width="16" height="16" patternUnits="userSpaceOnUse">
+          <circle cx="8" cy="8" r="1.5" fill="#76563D" />
+        </pattern>
+      )}
+      {pattern === 'circles' && (
+        <pattern id="p-circles" width="32" height="32" patternUnits="userSpaceOnUse">
+          <circle cx="16" cy="16" r="8" stroke="#76563D" strokeWidth="0.5" fill="none" />
+        </pattern>
+      )}
+      {pattern === 'grid' && (
+        <pattern id="p-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+          <path d="M24 0v24M0 24h24" stroke="#76563D" strokeWidth="0.3" fill="none" />
+        </pattern>
+      )}
+      <rect width="100%" height="100%" fill={`url(#p-${pattern})`} />
+    </svg>
+  );
+}
 
 interface SampleGalleryProps {
   categoryId: CategoryId;
@@ -48,8 +80,9 @@ interface SampleGalleryProps {
 }
 
 export function SampleGallery({ categoryId, categoryName, outputLabel }: SampleGalleryProps) {
-  const samples = CATEGORY_SAMPLES[categoryId] || GENERIC_SAMPLES;
+  const styles = CATEGORY_STYLES[categoryId] || GENERIC_STYLES;
   const [activeIndex, setActiveIndex] = useState(0);
+  const IconComponent = CATEGORY_ICONS[categoryId] || User;
 
   return (
     <section className="py-20">
@@ -63,33 +96,51 @@ export function SampleGallery({ categoryId, categoryName, outputLabel }: SampleG
 
         {/* Gallery grid */}
         <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
-          {samples.map((sample, i) => (
+          {styles.map((style, i) => (
             <button
-              key={i}
+              key={style.label}
               onClick={() => setActiveIndex(i)}
               className={cn(
-                'group relative aspect-[3/4] overflow-hidden rounded-tp-card border-2 transition-all',
+                'group relative aspect-[3/4] overflow-hidden rounded-tp-card border-2 transition-all duration-200',
                 activeIndex === i
                   ? 'border-tp-bronze ring-2 ring-tp-beige/40 shadow-lg scale-[1.02]'
                   : 'border-tp-line hover:border-tp-bronze/50 hover:shadow-md'
               )}
             >
-              {/* Placeholder — shows a styled gradient when no real image exists */}
-              <div className="absolute inset-0 bg-gradient-to-br from-tp-paper via-tp-beige/40 to-tp-bronze/20 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-4xl opacity-40">📸</div>
-                  <p className="mt-2 text-xs text-tp-muted/60 font-medium">{sample.style}</p>
-                </div>
+              {/* Generative background */}
+              <div className={cn('absolute inset-0 bg-gradient-to-br', style.gradient)} />
+              <PatternSVG pattern={style.pattern} />
+
+              {/* Centered icon */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+                <span className={cn(
+                  'flex h-14 w-14 items-center justify-center rounded-full transition-all duration-200',
+                  activeIndex === i
+                    ? 'bg-tp-black text-tp-bronze shadow-lg'
+                    : 'bg-tp-beige/50 text-tp-bronze-ink group-hover:bg-tp-black group-hover:text-tp-bronze'
+                )}>
+                  <IconComponent className="h-6 w-6" aria-hidden="true" />
+                </span>
+                <Palette className={cn(
+                  'h-3.5 w-3.5 transition-opacity duration-200',
+                  activeIndex === i ? 'text-tp-bronze-ink opacity-100' : 'text-tp-muted opacity-0 group-hover:opacity-60'
+                )} aria-hidden="true" />
               </div>
+
               {/* Style label */}
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/60 to-transparent p-3">
-                <span className="text-xs font-medium text-white">{sample.style}</span>
+              <div className={cn(
+                'absolute bottom-0 inset-x-0 p-3 text-center transition-all duration-200',
+                activeIndex === i
+                  ? 'bg-tp-black/80'
+                  : 'bg-tp-black/50 group-hover:bg-tp-black/70'
+              )}>
+                <span className="text-xs font-semibold tracking-wide text-white">{style.label}</span>
               </div>
             </button>
           ))}
         </div>
 
-        <p className="mt-8 text-center text-xs text-tp-muted/60">
+        <p className="mt-8 text-center text-xs text-tp-muted">
           These are AI-generated concept examples. Actual results vary based on your photos.
         </p>
       </div>

@@ -76,7 +76,7 @@ export function CreditPackages() {
                   </CardTitle>
 
                   <div className="mt-4 flex items-baseline gap-1">
-                    <span className="text-4xl font-extrabold tracking-tight text-tp-black">
+                    <span className="text-4xl font-display font-normal tracking-tight text-tp-black">
                       {formatPrice(pkg.price)}
                     </span>
                     <span className="text-sm text-tp-muted">/year</span>

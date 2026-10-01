@@ -59,17 +59,55 @@ export function ROICalculator({
                 {teamSize} {teamSize === 1 ? 'person' : 'people'}
               </span>
             </div>
-            <input
-              id="roi-team-size"
-              type="range"
-              min={MIN_TEAM}
-              max={MAX_TEAM}
-              step={1}
-              value={teamSize}
-              onChange={(e) => setTeamSize(Number(e.target.value))}
-              className="mt-3 h-2 w-full cursor-pointer appearance-auto rounded-full bg-tp-line"
-              style={{ accentColor: '#C9A98A' }}
-            />
+            <div className="relative mt-3">
+              <input
+                id="roi-team-size"
+                type="range"
+                min={MIN_TEAM}
+                max={MAX_TEAM}
+                step={1}
+                value={teamSize}
+                onChange={(e) => setTeamSize(Number(e.target.value))}
+                className="roi-slider h-2 w-full cursor-pointer appearance-none rounded-full bg-tp-line"
+              />
+              <style jsx>{`
+                .roi-slider::-webkit-slider-thumb {
+                  -webkit-appearance: none;
+                  appearance: none;
+                  width: 24px;
+                  height: 24px;
+                  border-radius: 50%;
+                  background: #0B0B0B;
+                  border: 3px solid #C9A98A;
+                  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+                  cursor: pointer;
+                  transition: transform 0.15s ease, box-shadow 0.15s ease;
+                }
+                .roi-slider::-webkit-slider-thumb:hover {
+                  transform: scale(1.15);
+                  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+                }
+                .roi-slider::-moz-range-thumb {
+                  width: 24px;
+                  height: 24px;
+                  border-radius: 50%;
+                  background: #0B0B0B;
+                  border: 3px solid #C9A98A;
+                  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+                  cursor: pointer;
+                }
+                .roi-slider::-webkit-slider-runnable-track {
+                  height: 8px;
+                  border-radius: 9999px;
+                  background: linear-gradient(to right, #C9A98A ${((teamSize - MIN_TEAM) / (MAX_TEAM - MIN_TEAM)) * 100}%, #DFD6CC ${((teamSize - MIN_TEAM) / (MAX_TEAM - MIN_TEAM)) * 100}%);
+                }
+                .roi-slider::-moz-range-track {
+                  height: 8px;
+                  border-radius: 9999px;
+                  background: linear-gradient(to right, #C9A98A ${((teamSize - MIN_TEAM) / (MAX_TEAM - MIN_TEAM)) * 100}%, #DFD6CC ${((teamSize - MIN_TEAM) / (MAX_TEAM - MIN_TEAM)) * 100}%);
+                }
+              `}</style>
+            </div>
             <div className="mt-1 flex justify-between text-xs text-tp-muted">
               <span>{MIN_TEAM}</span>
               <span>{MAX_TEAM}</span>

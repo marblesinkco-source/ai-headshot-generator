@@ -124,7 +124,7 @@ export function Pricing() {
 
                   <div className="mt-4 flex items-baseline gap-1">
                     <span className={cn(
-                      'font-extrabold tracking-tight text-tp-black',
+                      'font-display font-normal tracking-tight text-tp-black',
                       isExpress ? 'text-3xl' : 'text-4xl'
                     )}>
                       {formatPrice(pkg.price)}
