@@ -8,11 +8,13 @@ import { csrfGuard } from '@/lib/security';
 import { logger } from '@/lib/logger';
 import { EMAIL_RE } from '@/lib/utils';
 
+export const maxDuration = 10;
+
 
 export async function POST(request: Request) {
   const csrf = csrfGuard(request);
   if (csrf) return csrf;
-  const rl = rateLimit({
+  const rl = await rateLimit({
     key: `newsletter:${getClientIp(request)}`,
     limit: 5,
     windowMs: 60 * 60 * 1000,

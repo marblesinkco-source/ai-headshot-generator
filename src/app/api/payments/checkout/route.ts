@@ -11,6 +11,8 @@ import { rateLimit } from '@/lib/rate-limit';
 import { csrfGuard } from '@/lib/security';
 import { logger } from '@/lib/logger';
 
+export const maxDuration = 30;
+
 // Known coupon codes mapped to Stripe coupon IDs
 // Create these in Stripe Dashboard: Dashboard → Products → Coupons
 const COUPON_MAP: Record<string, string> = {
@@ -73,7 +75,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Rate limit: 15 requests per hour per user
-    const rl = rateLimit({
+    const rl = await rateLimit({
       key: `payments-checkout:${user.id}`,
       limit: 15,
       windowMs: 60 * 60 * 1000,

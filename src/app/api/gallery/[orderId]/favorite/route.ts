@@ -41,7 +41,7 @@ export async function POST(
       );
     }
 
-    if (!rateLimit({ key: `favorite:${user.id}`, limit: 60, windowMs: 60 * 1000 }).success) {
+    if (!(await rateLimit({ key: `favorite:${user.id}`, limit: 60, windowMs: 60 * 1000 })).success) {
       return tooManyRequests();
     }
 

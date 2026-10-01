@@ -12,10 +12,12 @@ import { createClient, createAdminClient } from '@/lib/supabase/server';
 import { rateLimit, getClientIp } from '@/lib/rate-limit';
 import { logger } from '@/lib/logger';
 
+export const maxDuration = 10;
+
 export async function GET(request: Request) {
   // Rate limit: 3 exports per hour per IP
   const ip = getClientIp(request);
-  const { success } = rateLimit({ key: `export:${ip}`, limit: 3, windowMs: 60 * 60 * 1000 });
+  const { success } = await rateLimit({ key: `export:${ip}`, limit: 3, windowMs: 60 * 60 * 1000 });
   if (!success) {
     return NextResponse.json({ error: 'Too many requests. Try again later.' }, { status: 429 });
   }

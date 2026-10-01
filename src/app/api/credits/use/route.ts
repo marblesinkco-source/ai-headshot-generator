@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    if (!rateLimit({ key: `credits-use:${user.id}`, limit: 20, windowMs: 60 * 1000 }).success) {
+    if (!(await rateLimit({ key: `credits-use:${user.id}`, limit: 20, windowMs: 60 * 1000 })).success) {
       return tooManyRequests();
     }
 

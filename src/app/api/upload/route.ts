@@ -7,6 +7,8 @@ import { rateLimit } from '@/lib/rate-limit';
 import { csrfGuard } from '@/lib/security';
 import { logger } from '@/lib/logger';
 
+export const maxDuration = 30;
+
 const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 const MAX_FILES = 10;
@@ -34,7 +36,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Rate limit: 30 requests per hour per user
-    const rl = rateLimit({
+    const rl = await rateLimit({
       key: `upload:${user.id}`,
       limit: 30,
       windowMs: 60 * 60 * 1000,

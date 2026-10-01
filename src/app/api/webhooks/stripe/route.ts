@@ -15,6 +15,8 @@ import {
 import { nanoid } from 'nanoid';
 import { logger } from '@/lib/logger';
 
+export const maxDuration = 30;
+
 // Resend throws on construction without a key — only create it when configured.
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
@@ -57,7 +59,35 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // ── Stripe event deduplication ────────────────────────────────────
     const supabase = createAdminClient();
+
+    // Check if we've already processed this event
+    const { data: existingEvent } = await supabase
+      .from('processed_stripe_events')
+      .select('event_id')
+      .eq('event_id', event.id)
+      .maybeSingle();
+
+    if (existingEvent) {
+      logger.info(`[stripe-webhook] Duplicate event ${event.id} (${event.type}) — skipping`);
+      return NextResponse.json({ received: true, duplicate: true }, { status: 200 });
+    }
+
+    // Record this event as being processed
+    const { error: dedupeError } = await supabase
+      .from('processed_stripe_events')
+      .insert({ event_id: event.id, event_type: event.type });
+
+    if (dedupeError) {
+      // UNIQUE violation means another instance already claimed it
+      if (dedupeError.code === '23505') {
+        logger.info(`[stripe-webhook] Race: event ${event.id} already claimed`);
+        return NextResponse.json({ received: true, duplicate: true }, { status: 200 });
+      }
+      logger.error('[stripe-webhook] Failed to record event:', dedupeError);
+      // Continue processing even if dedupe insert fails
+    }
 
     switch (event.type) {
       case 'checkout.session.completed': {

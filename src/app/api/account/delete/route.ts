@@ -16,6 +16,8 @@ import { rateLimit } from '@/lib/rate-limit';
 import { csrfGuard } from '@/lib/security';
 import { logger } from '@/lib/logger';
 
+export const maxDuration = 10;
+
 export async function POST(request: Request) {
   const csrf = csrfGuard(request);
   if (csrf) return csrf;
@@ -32,7 +34,7 @@ export async function POST(request: Request) {
   }
 
   // Rate limit: 3 requests per hour per user
-  const rl = rateLimit({
+  const rl = await rateLimit({
     key: `account-delete:${user.id}`,
     limit: 3,
     windowMs: 60 * 60 * 1000,

@@ -9,6 +9,8 @@ import { siteConfig } from '@/config/site';
 import { buildPhotosReadyEmail, buildGenerationFailedEmail } from '@/lib/emails';
 import { logger } from '@/lib/logger';
 
+export const maxDuration = 300;
+
 const replicate = new Replicate({
   auth: process.env.REPLICATE_API_TOKEN!,
 });

@@ -37,7 +37,7 @@ export async function GET(
       );
     }
 
-    if (!rateLimit({ key: `gallery:${user.id}`, limit: 60, windowMs: 60 * 1000 }).success) {
+    if (!(await rateLimit({ key: `gallery:${user.id}`, limit: 60, windowMs: 60 * 1000 })).success) {
       return tooManyRequests();
     }
 

@@ -32,7 +32,7 @@ export async function GET(
       );
     }
 
-    if (!rateLimit({ key: `invoice:${user.id}`, limit: 10, windowMs: 60 * 1000 }).success) {
+    if (!(await rateLimit({ key: `invoice:${user.id}`, limit: 10, windowMs: 60 * 1000 })).success) {
       return tooManyRequests();
     }
 

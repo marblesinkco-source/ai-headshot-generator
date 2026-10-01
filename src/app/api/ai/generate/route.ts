@@ -9,6 +9,8 @@ import { csrfGuard } from '@/lib/security';
 import { logger } from '@/lib/logger';
 import { MissingEnvError, requireEnvs } from '@/lib/env';
 
+export const maxDuration = 300;
+
 function getReplicate() {
   requireEnvs(['REPLICATE_API_TOKEN']);
   return new Replicate({ auth: process.env.REPLICATE_API_TOKEN });
@@ -59,7 +61,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Rate limit: 10 requests per hour per user
-    const rl = rateLimit({
+    const rl = await rateLimit({
       key: `ai-generate:${user.id}`,
       limit: 10,
       windowMs: 60 * 60 * 1000,

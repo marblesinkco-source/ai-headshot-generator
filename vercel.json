@@ -3,10 +3,24 @@
   "framework": "nextjs",
   "buildCommand": "npm run build",
   "regions": ["fra1"],
+  "functions": {
+    "src/app/api/ai/generate/route.ts": {
+      "memory": 1024,
+      "maxDuration": 300
+    },
+    "src/app/api/ai/webhook/route.ts": {
+      "memory": 1024,
+      "maxDuration": 300
+    }
+  },
   "crons": [
     {
       "path": "/api/emails/upgrade",
       "schedule": "0 0 * * *"
+    },
+    {
+      "path": "/api/cron/retry-stuck",
+      "schedule": "*/15 * * * *"
     }
   ]
 }

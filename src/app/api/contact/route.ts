@@ -8,13 +8,15 @@ import { csrfGuard } from '@/lib/security';
 import { logger } from '@/lib/logger';
 import { EMAIL_RE, escapeHtml } from '@/lib/utils';
 
+export const maxDuration = 10;
+
 const HOUR_MS = 60 * 60 * 1000;
 
 export async function POST(request: Request) {
   const csrf = csrfGuard(request);
   if (csrf) return csrf;
   const ip = getClientIp(request);
-  const rl = rateLimit({ key: `contact:${ip}`, limit: 3, windowMs: HOUR_MS });
+  const rl = await rateLimit({ key: `contact:${ip}`, limit: 3, windowMs: HOUR_MS });
   if (!rl.success) {
     return NextResponse.json(
       { error: 'Too many messages. Please try again later.' },

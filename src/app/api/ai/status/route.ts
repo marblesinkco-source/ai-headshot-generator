@@ -34,7 +34,7 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    if (!rateLimit({ key: `ai-status:${user.id}`, limit: 60, windowMs: 60 * 1000 }).success) {
+    if (!(await rateLimit({ key: `ai-status:${user.id}`, limit: 60, windowMs: 60 * 1000 })).success) {
       return tooManyRequests();
     }
 

@@ -33,7 +33,7 @@ export async function GET(
     }
 
     // Rate limit: 20 requests per hour per user
-    const rl = rateLimit({
+    const rl = await rateLimit({
       key: `gallery-download:${user.id}`,
       limit: 20,
       windowMs: 60 * 60 * 1000,
