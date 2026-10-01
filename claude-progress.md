@@ -81,6 +81,12 @@
 76. `49559cf` — Dalga 12: Technology, help center, why-tailorpic upgrades
 77. `2e723ba` — Real before/after images, dual hero portraits, blog placeholder SVG
 78. `5e6e3e8` — Visual polish: blog covers, trust badges, industry cards, toast & pricing
+79. `ce3f404` — Visual polish: contact form success state, developer-api/referral/students pages
+80. `7912888` — Visual polish: sample gallery, ROI slider, cost calculator, price typography
+81. `b09d190` — Remove orphaned image assets (icon-192.png, og.png)
+82. `52417d3` — Hero: reposition secondary portrait card for better composition
+83. `fc5e03c` — Hero: remove secondary portrait overlay
+84. `8f086c7` — Codebase health cleanup: dead code, unused assets, stale config (~9.3MB freed)
 
 ### Completed Features
 - [x] Exit-intent popup with WELCOME10 promo
@@ -355,6 +361,14 @@
 - [x] Cost calculator: emoji checkmarks → Lucide Check, font-extrabold → font-display
 - [x] Pricing + credit packages: font-extrabold → font-display on price displays
 - [x] Removed orphaned images: icon-192.png, og.png
+- [x] Hero: removed secondary portrait overlay (single clean hero image)
+- [x] Codebase health audit (3 parallel agents: dead code, unused assets, code quality)
+- [x] Deleted 4 orphan source files (sample-gallery, language-switcher, selfie-guide, lib/i18n)
+- [x] Cleaned 49 unused Lucide icon imports across 37 files
+- [x] Cleaned unused imports: getClientIp (4 API routes), NEGATIVE_PROMPT, CategoryPackage, CategoryId, useCallback
+- [x] Removed 'use client' from credit-packages.tsx and dashboard/not-found.tsx (no hooks)
+- [x] Deleted 156 unused public/brand/tailorpic/ assets (~9.3MB freed: ads, categories, feed, stories, social, ui, duplicate logos/icons/web images)
+- [x] Tailwind config cleanup: removed tailor-*, brand palette (50-950), 9 unused accent tones, 6 unused animations + keyframes, font-heading
 
 ### Backlog (Requires External Action)
 - [ ] Stripe: Create WELCOME10 promo code (10% off) — needs Stripe dashboard/API key
@@ -369,5 +383,6 @@
 - [ ] Sample images: gradient placeholders need real AI-generated examples
 
 ### Performance Backlog (Optional Improvements)
-- [ ] Consider converting 'use client' marketing components to server components where possible (trust-strip, cta-banner, faq)
+- [x] credit-packages.tsx: converted to server component (removed unnecessary 'use client')
+- [ ] Consider converting more 'use client' marketing components to server components (trust-strip, cta-banner, faq)
 - [ ] StickyCTA and TrustStrip could potentially be lazy-loaded if below fold
