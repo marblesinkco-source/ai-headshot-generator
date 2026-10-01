@@ -22,6 +22,18 @@ const navLinks = [
   { label: 'Blog', href: '/blog' },
 ];
 
+const groupedCategories = CATEGORY_GROUPS.map((group) => ({
+  ...group,
+  items: group.categories
+    .map((id) => categories.find((c) => c.id === id))
+    .filter((c): c is (typeof categories)[number] => Boolean(c)),
+})).filter((group) => group.items.length > 0);
+
+function isLinkActive(pathname: string | null, href: string) {
+  if (!pathname) return false;
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
 export function Header() {
   const router = useRouter();
   const pathname = usePathname();
@@ -120,61 +132,92 @@ export function Header() {
             </button>
 
             {/* Mega dropdown */}
-            {megaOpen && (
+            <div
+              className="absolute left-1/2 top-full -translate-x-1/2 pt-3"
+              onMouseEnter={openMega}
+              onMouseLeave={scheduleMegaClose}
+              aria-hidden={!megaOpen}
+            >
               <div
-                className="absolute left-1/2 top-full -translate-x-1/2 pt-3"
-                onMouseEnter={openMega}
-                onMouseLeave={scheduleMegaClose}
+                className={`w-[680px] rounded-tp-card border border-tp-line/60 bg-white p-5 shadow-xl shadow-tp-black/8 transition-all duration-200 ease-out ${
+                  megaOpen
+                    ? 'visible translate-y-0 opacity-100'
+                    : 'pointer-events-none invisible -translate-y-1.5 opacity-0'
+                }`}
               >
-                <div className="w-[640px] rounded-tp-card border border-tp-line/60 bg-white p-5 shadow-xl shadow-tp-black/8">
-                  <div className="grid grid-cols-2 gap-x-5 gap-y-1.5">
-                    {categories.map((cat) => (
-                      <Link
-                        key={cat.id}
-                        href={`/${cat.slug}`}
-                        className="flex items-center gap-3 rounded-xl p-2.5 transition-colors hover:bg-tp-paper"
-                        onClick={() => setMegaOpen(false)}
-                      >
-                        <div className="h-10 w-10 flex-shrink-0 overflow-hidden rounded-lg bg-gradient-to-br from-tp-beige to-tp-line">
-                          <Image
-                            src={`/images/categories/${cat.id}.jpg`}
-                            alt={cat.name}
-                            width={80}
-                            height={80}
-                            className="h-full w-full object-cover"
-                            sizes="40px"
-                          />
-                        </div>
-                        <div className="min-w-0">
-                          <p className="text-[13px] font-semibold text-tp-ink">{cat.name}</p>
-                          <p className="truncate text-[11px] text-tp-muted">{cat.tagline}</p>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                  <div className="mt-3 border-t border-tp-line/50 pt-3 text-center">
-                    <Link
-                      href="/pricing"
-                      className="text-[12px] font-semibold text-tp-bronze-ink hover:text-tp-black transition-colors"
-                      onClick={() => setMegaOpen(false)}
-                    >
-                      View All Pricing &rarr;
-                    </Link>
-                  </div>
+                <div className="space-y-4">
+                  {groupedCategories.map((group) => (
+                    <div key={group.title}>
+                      <div className="mb-1.5 flex items-baseline gap-2 px-2.5">
+                        <p className="text-[11px] font-semibold uppercase tracking-widest text-tp-bronze-ink">{group.title}</p>
+                        <p className="text-[11px] text-tp-muted">{group.description}</p>
+                      </div>
+                      <div className="grid grid-cols-2 gap-x-5 gap-y-1">
+                        {group.items.map((cat) => {
+                          const catActive = isLinkActive(pathname, `/${cat.slug}`);
+                          return (
+                            <Link
+                              key={cat.id}
+                              href={`/${cat.slug}`}
+                              aria-current={catActive ? 'page' : undefined}
+                              className={`flex items-center gap-3 rounded-xl p-2.5 transition-colors hover:bg-tp-paper ${catActive ? 'bg-tp-paper' : ''}`}
+                              onClick={() => setMegaOpen(false)}
+                            >
+                              <div className="h-10 w-10 flex-shrink-0 overflow-hidden rounded-lg bg-gradient-to-br from-tp-beige to-tp-line">
+                                <Image
+                                  src={`/images/categories/${cat.id}.jpg`}
+                                  alt={cat.name}
+                                  width={80}
+                                  height={80}
+                                  className="h-full w-full object-cover"
+                                  sizes="40px"
+                                />
+                              </div>
+                              <div className="min-w-0">
+                                <p className={`text-[13px] font-semibold ${catActive ? 'text-tp-bronze-ink' : 'text-tp-ink'}`}>{cat.name}</p>
+                                <p className="truncate text-[11px] text-tp-muted">{cat.tagline}</p>
+                              </div>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-3 border-t border-tp-line/50 pt-3 text-center">
+                  <Link
+                    href="/pricing"
+                    className="text-[12px] font-semibold text-tp-bronze-ink hover:text-tp-black transition-colors"
+                    onClick={() => setMegaOpen(false)}
+                  >
+                    View All Pricing &rarr;
+                  </Link>
                 </div>
               </div>
-            )}
+            </div>
           </div>
 
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-[13px] font-semibold text-tp-ink transition-colors hover:text-tp-bronze-ink whitespace-nowrap"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const active = isLinkActive(pathname, link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={active ? 'page' : undefined}
+                className={`relative text-[13px] font-semibold transition-colors hover:text-tp-bronze-ink whitespace-nowrap ${
+                  active ? 'text-tp-bronze-ink' : 'text-tp-ink'
+                }`}
+              >
+                {link.label}
+                <span
+                  aria-hidden="true"
+                  className={`absolute -bottom-1.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-tp-bronze-ink transition-opacity ${
+                    active ? 'opacity-100' : 'opacity-0'
+                  }`}
+                />
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Desktop Account */}
@@ -342,7 +385,10 @@ export function Header() {
             <Link
               key={cat.id}
               href={`/${cat.slug}`}
-              className="flex items-center gap-2.5 rounded-lg border border-tp-line/60 bg-white p-2.5 min-h-[52px] transition-colors hover:border-tp-bronze-ink"
+              aria-current={isLinkActive(pathname, `/${cat.slug}`) ? 'page' : undefined}
+              className={`flex items-center gap-2.5 rounded-lg border bg-white p-2.5 min-h-[52px] transition-colors hover:border-tp-bronze-ink ${
+                isLinkActive(pathname, `/${cat.slug}`) ? 'border-tp-bronze-ink text-tp-bronze-ink' : 'border-tp-line/60'
+              }`}
               onClick={() => mobileDialog.current?.close()}
             >
               <div className="h-9 w-9 flex-shrink-0 overflow-hidden rounded-md bg-gradient-to-br from-tp-beige to-tp-line">
@@ -362,16 +408,24 @@ export function Header() {
 
         {/* Other nav links */}
         <nav className="grid gap-1 border-t border-tp-line/50 pt-3" aria-label="Mobile navigation">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="p-3 text-[16px] min-h-[46px] text-left font-medium"
-              onClick={() => mobileDialog.current?.close()}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const active = isLinkActive(pathname, link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={active ? 'page' : undefined}
+                className={`flex items-center gap-2 rounded-tp-button border-l-2 p-3 text-[16px] min-h-[46px] text-left font-medium ${
+                  active
+                    ? 'border-tp-bronze-ink bg-white text-tp-bronze-ink'
+                    : 'border-transparent'
+                }`}
+                onClick={() => mobileDialog.current?.close()}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
           {user ? (
             <>
               <Link

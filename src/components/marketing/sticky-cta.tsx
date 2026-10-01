@@ -24,9 +24,15 @@ export function StickyCTA({ href = '/auth/register' }: { href?: string }) {
     >
       <div className="min-w-0">
         <p className="font-display text-sm font-medium leading-tight text-tp-paper">
-          Your best headshot, no studio needed
+          Skip the studio: <span className="text-tp-bronze">$9.90 one-time</span>
         </p>
-        <p className="mt-0.5 text-xs text-tp-beige/80">Starting from $9.90 &middot; one-time payment</p>
+        <p className="mt-0.5 flex items-center gap-1.5 text-xs text-tp-beige/80">
+          <svg aria-hidden="true" viewBox="0 0 20 20" className="h-3.5 w-3.5 shrink-0 text-tp-bronze" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M10 2l6 2.5v5c0 4-2.6 7-6 8.5-3.4-1.5-6-4.5-6-8.5v-5z" />
+            <path d="M7 10l2 2 4-4" />
+          </svg>
+          <span className="truncate">14-day money-back guarantee</span>
+        </p>
       </div>
       <Link
         href={href}

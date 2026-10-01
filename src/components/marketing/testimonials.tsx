@@ -1,58 +1,80 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react';
 
 const testimonials = [
   {
     role: 'Marketing Professional',
+    stars: 5,
     emoji: '📣',
     quote:
       'I wanted an updated LinkedIn photo without booking a photographer. A set of casual selfies was enough to get several polished options to choose from.',
   },
   {
     role: 'Startup Founder',
+    stars: 5,
     emoji: '🚀',
     quote:
       "I don't have time for photo shoots. Having a full set of professional-looking photos for my website and pitch deck without a studio visit is what I was after.",
   },
   {
     role: 'Consultant',
+    stars: 4,
     emoji: '💼',
     quote:
       'A team use case: everyone uploads their own photos and the set looks consistent on the company website, without coordinating a photographer for the whole group.',
   },
   {
     role: 'Real Estate Agent',
+    stars: 5,
     emoji: '🏠',
     quote:
       'In real estate, your headshot is part of your marketing. I wanted photos that look polished and professional across my materials.',
   },
   {
     role: 'HR Manager',
+    stars: 4,
     emoji: '👥',
     quote:
       'Onboarding new hires is easier when getting a professional headshot is not a logistical task. Each person can upload their own photos and get results.',
   },
   {
     role: 'Attorney',
+    stars: 5,
     emoji: '⚖️',
     quote:
       "I needed a professional headshot for a firm website and wanted several options to pick from rather than a single studio shot.",
   },
   {
     role: 'Freelance Designer',
+    stars: 4,
     emoji: '🎨',
     quote:
       'As a freelancer, my profile photo is my first impression. Trying a few different categories let me find a creative shot that fits my personal brand.',
   },
   {
     role: 'Sales Leader',
+    stars: 5,
     emoji: '📈',
     quote:
       'A consistent look across a sales team helps with email signatures and profiles. This is the kind of use case a team plan is meant for.',
   },
 ];
+
+function StarRating({ count }: { count: number }) {
+  return (
+    <div className="flex items-center gap-0.5" role="img" aria-label={`${count} out of 5 stars (illustrative)`}>
+      {Array.from({ length: 5 }).map((_, i) => (
+        <Star
+          key={i}
+          aria-hidden="true"
+          className={`h-4 w-4 ${i < count ? 'fill-tp-bronze text-tp-bronze' : 'fill-transparent text-tp-line'}`}
+        />
+      ))}
+    </div>
+  );
+}
 
 export function Testimonials() {
   const [page, setPage] = useState(0);
@@ -61,8 +83,21 @@ export function Testimonials() {
   const visible = testimonials.slice(page * perPage, page * perPage + perPage);
 
   return (
-    <section id="results" className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="results" className="relative overflow-hidden py-24 sm:py-32">
+      {/* Background accents */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-tp-paper via-white to-tp-paper"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-[0.35] [background-image:radial-gradient(#DCCDBB_1px,transparent_1px)] [background-size:22px_22px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-24 left-1/2 h-64 w-[40rem] -translate-x-1/2 rounded-full bg-tp-bronze/10 blur-3xl"
+      />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
@@ -85,31 +120,35 @@ export function Testimonials() {
           {visible.map((t) => (
             <div
               key={t.role}
-              className="group relative flex flex-col rounded-tp-card border border-tp-line bg-white p-7 transition-all hover:border-tp-bronze/30 hover:shadow-lg hover:shadow-tp-bronze/5"
+              className="group relative flex flex-col overflow-hidden rounded-tp-card border border-tp-line bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-tp-bronze/40 hover:shadow-xl hover:shadow-tp-bronze/10"
             >
-              {/* Decorative quote icon */}
-              <div className="absolute -top-3 right-6">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-tp-bronze/10 border border-tp-bronze/20">
-                  <Quote className="h-3.5 w-3.5 text-tp-bronze-ink" />
-                </div>
-              </div>
+              {/* Top accent line */}
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-tp-bronze/0 via-tp-bronze to-tp-bronze/0 opacity-60 transition-opacity group-hover:opacity-100" />
 
-              <span className="inline-flex w-fit rounded-full border border-tp-line bg-tp-paper px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-tp-muted">
+              {/* Large decorative quote mark */}
+              <Quote
+                aria-hidden="true"
+                className="absolute right-5 top-6 h-14 w-14 rotate-180 fill-tp-beige/50 text-tp-beige/50"
+              />
+
+              <StarRating count={t.stars} />
+
+              <span className="mt-4 inline-flex w-fit rounded-full border border-tp-line bg-tp-paper px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-tp-bronze-ink">
                 Representative example
               </span>
 
               {/* Quote */}
-              <blockquote className="mt-5 flex-1 text-[15px] leading-relaxed text-tp-ink">
+              <blockquote className="relative mt-5 flex-1 text-base leading-relaxed text-tp-ink">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
 
               {/* Author */}
-              <div className="mt-6 flex items-center gap-3 border-t border-tp-line/50 pt-5">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-tp-black to-tp-ink text-lg">
+              <div className="mt-6 flex items-center gap-3 border-t border-tp-line pt-5">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-tp-black to-tp-ink text-xl ring-2 ring-tp-bronze/40 ring-offset-2 ring-offset-white">
                   {t.emoji}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-tp-ink">{t.role}</p>
+                  <p className="text-sm font-semibold text-tp-black">{t.role}</p>
                   <p className="text-xs text-tp-muted">Illustrative use case</p>
                 </div>
               </div>

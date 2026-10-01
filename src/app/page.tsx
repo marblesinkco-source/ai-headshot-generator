@@ -72,6 +72,10 @@ const FAQ = dynamic(
   () => import('@/components/marketing/faq').then((m) => m.FAQ),
   { loading: () => <SectionSkeleton height="h-[560px]" /> }
 );
+const SavingsHighlight = dynamic(
+  () => import('@/components/marketing/savings-highlight').then((m) => m.SavingsHighlight),
+  { loading: () => <SectionSkeleton height="h-[400px]" /> }
+);
 const CTABanner = dynamic(
   () => import('@/components/marketing/cta-banner').then((m) => m.CTABanner),
   { loading: () => <SectionSkeleton height="h-64" /> }
@@ -95,6 +99,7 @@ export default function LandingPage() {
       <CompanyLogos />
       <HowItWorks />
       <ComparisonTable />
+      <SavingsHighlight />
       <Testimonials />
       <PrivacySection />
       <Pricing />

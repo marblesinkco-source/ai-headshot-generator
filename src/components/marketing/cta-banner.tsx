@@ -9,7 +9,11 @@ import { getActiveCategories } from '@/config/categories';
 
 const categories = getActiveCategories();
 
-const trustPoints = ['One-time payment', '14-day guarantee', '40+ styles'];
+const trustPoints = [
+  '$9.90 one-time, no subscription',
+  '14-day money-back guarantee',
+  '40+ styles, ready to download',
+];
 
 export function CTABanner() {
   const categoryDialog = useRef<HTMLDialogElement>(null);
@@ -31,12 +35,18 @@ export function CTABanner() {
             />
 
             <div className="relative z-10">
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-tp-paper leading-tight tracking-[-0.03em]">
-                No subscription. No studio visit. Just great headshots.
+              <span className="inline-flex items-center gap-2 rounded-full border border-tp-bronze/40 bg-tp-bronze/15 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-tp-bronze">
+                <svg aria-hidden="true" viewBox="0 0 20 20" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M10 2l2.4 5 5.6.7-4.1 3.8 1.1 5.5L10 14.4 5 17l1.1-5.5L2 7.7 7.6 7z" />
+                </svg>
+                Best value &middot; $9.90 one-time
+              </span>
+              <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-tp-paper leading-tight tracking-[-0.03em]">
+                Skip the studio. Get headshots you&rsquo;ll actually use.
               </h2>
               <p className="mt-4 text-tp-beige/70 text-base sm:text-lg max-w-xl mx-auto">
-                Upload a few selfies and get studio-quality portraits you&rsquo;ll be proud to use everywhere,
-                starting at just $9.90.
+                Upload a few selfies and get polished, studio-quality portraits for LinkedIn, your resume and
+                more. Pay $9.90 once. No subscription, and if you&rsquo;re not happy, get your money back within 14 days.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
