@@ -59,6 +59,11 @@
 54. `63254b5` — Replace rounded-2xl with rounded-tp-card across all public pages
 55. `04f2337` — Add twitter metadata to 5 pages, improve editor hub & tools pages
 56. `8ee91cd` — Add twitter metadata to 217 pages (use-cases, industries, vs, editor)
+57. `02f7533` — Fix broken CTA links, add font-display to 80 vs/ pages, update progress
+58. `829825c` — Add font-display to h2 headings in 80 vs/ pages, fix headshotpro CTA
+59. `70a4aa4` — Add structured data, FAQs, fix fabricated stats across 64 industry pages
+60. `2be76ef` — Replace font-extrabold with font-display on h1/h2 across 107 pages, fix stats and links
+61. `cc9218d` — Fix remaining content integrity issues (consultants stats, pricing claim, guarantee text)
 
 ### Completed Features
 - [x] Exit-intent popup with WELCOME10 promo
@@ -256,6 +261,22 @@
 - [x] 142 public pages: rounded-2xl → rounded-tp-card migration complete
 - [x] 217 pages: twitter metadata added (use-cases, industries, vs, editor sub-pages)
 - [x] 5 marketing pages: twitter metadata (affiliate, referral, guarantee, photo-tips, editor)
+- [x] 80 vs/ pages: font-display migration (h1 + h2), CTA fixes
+- [x] Blog links: 69 broken /headshots and /dashboard/upload links fixed in blog.ts
+- [x] 6 older industry pages: ProductSchema + FAQSchema + FAQ section added
+- [x] Fabricated stats removed: lawyers (73%, 4x, 200+), real-estate (2x, 75%, 50+), ecommerce (93%, 30%)
+- [x] Testimonial disclaimers added to lawyers + real-estate pages
+- [x] 64 industry pages: font-extrabold → font-display font-normal on h2 headings
+- [x] 91 use-cases + editor pages: font-extrabold → font-display font-normal on h1/h2
+- [x] 11 legal/tools/pricing/blog pages: font-extrabold → font-display on h1
+- [x] Marketing link fixes: /dashboard/upload → /auth/register in 3 components
+- [x] LinkedIn use-case: removed "21x more views" fabricated stat
+- [x] Instagram use-case: removed "38% more engagement" fabricated stat
+- [x] vs/headshotpro: removed "3x" multiplier claim
+- [x] vs/aragon: removed "60% less" unverified claim
+- [x] Consultants: corrected "3+" to "11+" styles
+- [x] Pricing meta: removed "52%" unverified savings claim
+- [x] How-it-works: "100% satisfaction" → "14-day money-back" guarantee alignment
 
 ### Backlog (Requires External Action)
 - [ ] Stripe: Create WELCOME10 promo code (10% off) — needs Stripe dashboard/API key
