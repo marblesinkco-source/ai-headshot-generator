@@ -4,29 +4,31 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight, Heart, Zap, Monitor, GraduationCap, Camera, Clapperboard, SmilePlus, TrendingUp, Ruler, Target, Brain, Dumbbell, Music, PawPrint, Users, Handshake, Mic, Palette, Newspaper, Shield, Plane, Calendar, BookOpen, Leaf, Globe, BarChart3, Award, Briefcase, FileCheck, UserCheck, Star } from 'lucide-react';
 
+const PAGE_TITLE = 'AI Photos by Industry | TailorPic';
+const PAGE_DESCRIPTION =
+  'Professional AI-generated photos tailored for your industry. Browse headshot guides for real estate, legal, healthcare, engineering, education, consulting, creative professions, skilled trades and more.';
+
 export const metadata: Metadata = {
-  title: 'AI Photos by Industry | TailorPic',
-  description:
-    'Professional AI-generated photos tailored for your industry. Real estate, legal, healthcare, nursing, engineering, education, consulting, accounting, photography, acting, dental, financial advisory, architecture, coaching, therapy, fitness, music, veterinary, pharmacy, aviation, event planning, marketing, writing, chiropractic, insurance, nutrition, social work, translation, psychology, real estate brokerage, cabin crew, graphic design, data science, barbering, floristry, bartending, tattooing, security and more.',
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   alternates: { canonical: '/industries' },
-  openGraph: {
-    title: 'AI Photos by Industry | TailorPic',
-    description:
-      'Professional AI-generated photos tailored for your industry. Real estate, legal, healthcare, nursing, engineering, education, consulting, accounting, photography, acting, dental, financial advisory, architecture, coaching, therapy, fitness, music, veterinary, pharmacy, aviation, event planning, marketing, writing, chiropractic, insurance, nutrition, social work, translation, psychology, real estate brokerage, cabin crew, graphic design, data science, barbering, floristry, bartending, tattooing, security and more.',
-    url: `${siteConfig.url}/industries`,
-    siteName: siteConfig.name,
-    type: 'website',
-    images: [siteConfig.ogImage],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'AI Photos by Industry | TailorPic',
-    description:
-      'Professional AI-generated photos tailored for your industry. Real estate, legal, healthcare, nursing, engineering, education, consulting, accounting, photography, acting, dental, financial advisory, architecture, coaching, therapy, fitness, music, veterinary, pharmacy, aviation, event planning, marketing, writing, chiropractic, insurance, nutrition, social work, translation, psychology, real estate brokerage, cabin crew, graphic design, data science, barbering, floristry, bartending, tattooing, security and more.',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    type: 'industry',
+    subtitle: 'AI photos for every profession',
+    path: '/industries',
+  }),
+  twitter: generateTwitterMetadata({
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    type: 'industry',
+  }),
 };
 
 const industries = [
@@ -544,9 +546,34 @@ const industries = [
   },
 ];
 
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${siteConfig.url}/industries#collection`,
+  name: 'AI Photos by Industry',
+  description: PAGE_DESCRIPTION,
+  url: `${siteConfig.url}/industries`,
+  isPartOf: { '@type': 'WebSite', name: siteConfig.name, url: siteConfig.url },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: industries.length,
+    itemListElement: industries.map((ind, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: ind.name,
+      description: ind.description,
+      url: `${siteConfig.url}${ind.href}`,
+    })),
+  },
+};
+
 export default function IndustriesPage() {
   return (
     <main id="main-content" className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+      />
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
         { name: 'Industries', url: `${siteConfig.url}/industries` },
@@ -559,7 +586,7 @@ export default function IndustriesPage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
               Industries
             </p>
-            <h1 className="mt-3 font-display text-4xl sm:text-5xl text-tp-ink tracking-tight">
+            <h1 className="mt-3 font-display font-normal text-4xl sm:text-5xl text-tp-ink tracking-tight">
               AI Photos for Every Industry
             </h1>
             <p className="mt-4 text-lg text-tp-muted max-w-2xl mx-auto">
@@ -572,12 +599,13 @@ export default function IndustriesPage() {
               <Link
                 key={ind.name}
                 href={ind.href}
-                className="group rounded-tp-card border border-tp-line bg-white p-7 transition-all hover:border-tp-bronze/40 hover:shadow-md hover:-translate-y-1"
+                aria-label={`${ind.name}: ${ind.cta}`}
+                className="group rounded-tp-card border border-tp-line bg-white p-7 transition-all hover:border-tp-bronze hover:shadow-md hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black mb-5">
+                <div className="flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-black mb-5 transition-colors group-hover:bg-tp-ink">
                   <ind.icon className="h-6 w-6 text-tp-bronze" />
                 </div>
-                <h2 className="text-xl font-semibold text-tp-ink">{ind.name}</h2>
+                <h2 className="font-display font-normal text-xl text-tp-ink">{ind.name}</h2>
                 <p className="mt-2 text-sm text-tp-muted leading-relaxed">
                   {ind.description}
                 </p>
@@ -586,6 +614,40 @@ export default function IndustriesPage() {
                 </span>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-20 sm:pb-28">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-tp-card bg-tp-black px-6 py-14 text-center sm:px-12">
+            <h2 className="font-display font-normal text-3xl sm:text-4xl text-tp-paper tracking-tight">
+              Don&apos;t see your profession?
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-base text-tp-beige">
+              TailorPic works for any role. Upload a few selfies and get professional photos
+              styled for your field, without the studio.
+            </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <Link
+                href="/auth/register"
+                className={cn(
+                  buttonVariants({ size: 'lg' }),
+                  'bg-tp-bronze text-tp-black shadow-none hover:bg-tp-beige'
+                )}
+              >
+                Create your photos <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/pricing"
+                className={cn(
+                  buttonVariants({ variant: 'outline', size: 'lg' }),
+                  'border-tp-bronze/60 text-tp-bronze hover:border-tp-bronze hover:bg-white/5'
+                )}
+              >
+                View pricing
+              </Link>
+            </div>
           </div>
         </div>
       </section>

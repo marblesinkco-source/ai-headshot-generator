@@ -2,7 +2,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import {
   Handshake,
@@ -12,33 +15,28 @@ import {
   ArrowRight,
   UserPlus,
   Share2,
+  CalendarClock,
+  Clock,
+  LayoutDashboard,
 } from 'lucide-react';
+
+const AFFILIATE_OG_TITLE = `Affiliate Program | ${siteConfig.name}`;
+const AFFILIATE_OG_DESCRIPTION = `Partner with ${siteConfig.name} and earn up to 30% commission promoting AI headshots. Referral tracking dashboard and monthly payouts.`;
 
 export const metadata: Metadata = {
   title: `Affiliate Program — Partner with ${siteConfig.name}`,
   description: `Join the ${siteConfig.name} affiliate program and earn commissions on every sale you refer. Competitive rates, marketing materials, and dedicated partner support.`,
   alternates: { canonical: '/affiliate' },
-  openGraph: {
-    title: `Affiliate Program | ${siteConfig.name}`,
-    description: `Partner with ${siteConfig.name} and earn commissions promoting AI headshots. Competitive rates, long cookie window, and monthly payouts.`,
-    url: `${siteConfig.url}/affiliate`,
-    siteName: siteConfig.name,
-    type: 'website',
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.name,
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `Affiliate Program | ${siteConfig.name}`,
-    description: `Partner with ${siteConfig.name} and earn commissions promoting AI headshots. Competitive rates, long cookie window, and monthly payouts.`,
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({
+    title: AFFILIATE_OG_TITLE,
+    description: AFFILIATE_OG_DESCRIPTION,
+    subtitle: 'Earn up to 30% commission per sale',
+    path: '/affiliate',
+  }),
+  twitter: generateTwitterMetadata({
+    title: AFFILIATE_OG_TITLE,
+    description: AFFILIATE_OG_DESCRIPTION,
+  }),
 };
 
 /* ------------------------------------------------------------------ */
@@ -76,14 +74,14 @@ const steps = [
   {
     icon: UserPlus,
     number: '1',
-    title: 'Apply',
+    title: 'Sign Up',
     description:
       'Fill out a short application through our contact form. We review every submission and respond within a few business days.',
   },
   {
     icon: Share2,
     number: '2',
-    title: 'Get Your Link & Assets',
+    title: 'Share Your Link',
     description:
       'Once approved, you receive a unique referral link, tracking dashboard, and a library of marketing materials to use across your channels.',
   },
@@ -93,6 +91,51 @@ const steps = [
     title: 'Earn Commissions',
     description:
       'Share your link with your audience. Every qualifying sale earns you a commission, tracked in real time and paid out monthly.',
+  },
+];
+
+const trustSignals = [
+  {
+    icon: Clock,
+    title: 'Cookie-based tracking',
+    description: 'Referrals are tracked with a cookie window so you are credited when customers return later.',
+  },
+  {
+    icon: CalendarClock,
+    title: 'Monthly payouts',
+    description: 'Approved commissions are paid out once a month after you reach the minimum threshold.',
+  },
+  {
+    icon: LayoutDashboard,
+    title: 'Dashboard access',
+    description: 'Follow clicks, referrals, and commissions in your affiliate tracking dashboard.',
+  },
+];
+
+const affiliateFaqs = [
+  {
+    question: 'How much commission can I earn?',
+    answer: 'You can earn up to 30% commission on every qualifying sale you refer. Your exact rate is confirmed when your application is approved.',
+  },
+  {
+    question: 'How and when do I get paid?',
+    answer: 'Commissions are tracked in your dashboard and paid out monthly once you reach the minimum payout threshold. Payout details are shared when you are approved.',
+  },
+  {
+    question: 'How long does the referral cookie last?',
+    answer: 'We use a cookie window so you are credited even if a customer returns later to purchase. The exact duration is confirmed in your affiliate agreement.',
+  },
+  {
+    question: 'Does it cost anything to join?',
+    answer: 'No. The affiliate program is free to join. Every application is reviewed by our team.',
+  },
+  {
+    question: 'Who is a good fit for the program?',
+    answer: 'Bloggers, career coaches, resume writers, recruiters, newsletter authors, and creators whose audience needs professional headshots.',
+  },
+  {
+    question: 'How do I track my referrals?',
+    answer: 'Once approved you receive a unique referral link and access to a tracking dashboard showing your referrals and commissions.',
   },
 ];
 
@@ -109,6 +152,7 @@ export default function AffiliatePage() {
           { name: 'Affiliate Program', url: `${siteConfig.url}/affiliate` },
         ]}
       />
+      <FAQSchema items={affiliateFaqs} />
       <Header />
       <main id="main-content">
         {/* ── Hero ─────────────────────────────────────────────── */}
@@ -121,7 +165,7 @@ export default function AffiliatePage() {
             <span className="mb-4 inline-block rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-4 py-1.5 text-sm font-medium tracking-wide text-tp-bronze">
               Partner Program
             </span>
-            <h1 className="font-display text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
+            <h1 className="font-display font-normal text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
               Partner with{' '}
               <span className="text-tp-bronze">{siteConfig.name}</span>
             </h1>
@@ -132,10 +176,10 @@ export default function AffiliatePage() {
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-8 py-3.5 text-base font-semibold text-tp-black transition hover:bg-tp-bronze/90"
+                href="/contact?subject=affiliate"
+                className={cn(buttonVariants({ size: 'lg' }), 'bg-tp-bronze text-tp-black shadow-lg shadow-tp-bronze/20 hover:bg-tp-bronze/90 active:bg-tp-bronze/80')}
               >
-                Apply Now
+                Join Affiliate Program
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -145,7 +189,7 @@ export default function AffiliatePage() {
         {/* ── Commission Structure ─────────────────────────────── */}
         <section className="border-b border-tp-line bg-white py-20 sm:py-28">
           <div className="mx-auto max-w-4xl px-4 text-center">
-            <h2 className="font-display text-3xl text-tp-ink sm:text-4xl">
+            <h2 className="font-display font-normal text-3xl text-tp-ink sm:text-4xl">
               Commission Structure
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-tp-muted">
@@ -155,7 +199,18 @@ export default function AffiliatePage() {
               real time and paid out monthly once you reach the minimum
               threshold.
             </p>
-            <div className="mx-auto mt-10 grid max-w-3xl gap-6 sm:grid-cols-3">
+            <div className="mx-auto mt-10 max-w-3xl rounded-tp-card bg-tp-black p-8 text-center sm:p-10">
+              <p className="text-sm font-medium uppercase tracking-widest text-tp-bronze">
+                Your commission
+              </p>
+              <p className="mt-3 font-display text-6xl text-tp-bronze sm:text-7xl">
+                Up to 30%
+              </p>
+              <p className="mt-3 text-tp-beige/80">
+                on every qualifying sale you refer. Your exact rate is confirmed on approval.
+              </p>
+            </div>
+            <div className="mx-auto mt-6 grid max-w-3xl gap-6 sm:grid-cols-3">
               <div className="rounded-tp-card border border-tp-line bg-tp-paper p-6 text-center">
                 <span className="font-display text-3xl text-tp-bronze-ink">
                   Up to 30%
@@ -184,10 +239,27 @@ export default function AffiliatePage() {
           </div>
         </section>
 
+        {/* ── Trust Signals ────────────────────────────────────── */}
+        <section className="border-b border-tp-line bg-tp-paper py-12">
+          <div className="mx-auto grid max-w-5xl gap-6 px-4 sm:grid-cols-3">
+            {trustSignals.map((t) => (
+              <div key={t.title} className="flex items-start gap-4">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-tp-bronze/10">
+                  <t.icon className="h-5 w-5 text-tp-bronze-ink" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-tp-ink">{t.title}</h3>
+                  <p className="mt-1 text-sm text-tp-muted">{t.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* ── Why Partner ──────────────────────────────────────── */}
         <section className="bg-tp-paper py-20 sm:py-28">
           <div className="mx-auto max-w-5xl px-4">
-            <h2 className="font-display text-center text-3xl text-tp-ink sm:text-4xl">
+            <h2 className="font-display font-normal text-center text-3xl text-tp-ink sm:text-4xl">
               Why Partner with Us
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-center text-tp-muted">
@@ -215,14 +287,14 @@ export default function AffiliatePage() {
           </div>
         </section>
 
-        {/* ── How to Apply ─────────────────────────────────────── */}
+        {/* ── How It Works ─────────────────────────────────────── */}
         <section className="border-y border-tp-line bg-white py-20 sm:py-28">
           <div className="mx-auto max-w-5xl px-4">
-            <h2 className="font-display text-center text-3xl text-tp-ink sm:text-4xl">
-              How to Apply
+            <h2 className="font-display font-normal text-center text-3xl text-tp-ink sm:text-4xl">
+              How It Works
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-center text-tp-muted">
-              Getting started is simple. Here is how it works:
+              Three simple steps from sign-up to your first commission.
             </p>
 
             <div className="mt-14 grid gap-10 sm:grid-cols-3">
@@ -230,7 +302,7 @@ export default function AffiliatePage() {
                 <div key={step.title} className="text-center">
                   <div className="relative mx-auto flex h-16 w-16 items-center justify-center rounded-tp-card bg-tp-bronze/10">
                     <step.icon className="h-7 w-7 text-tp-bronze-ink" />
-                    <span className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-tp-bronze text-xs font-bold text-tp-black">
+                    <span className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-tp-bronze text-xs font-semibold text-tp-black">
                       {step.number}
                     </span>
                   </div>
@@ -246,10 +318,30 @@ export default function AffiliatePage() {
           </div>
         </section>
 
+        {/* ── FAQ ──────────────────────────────────────────────── */}
+        <section className="bg-tp-paper py-20 sm:py-28">
+          <div className="mx-auto max-w-3xl px-4">
+            <h2 className="text-center font-display text-3xl font-normal text-tp-ink sm:text-4xl">
+              Affiliate FAQ
+            </h2>
+            <div className="mt-10 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
+              {affiliateFaqs.map((f) => (
+                <details key={f.question} className="group p-5">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-tp-ink">
+                    {f.question}
+                    <span className="text-tp-bronze-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                  </summary>
+                  <p className="mt-3 text-sm leading-relaxed text-tp-muted">{f.answer}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── CTA ──────────────────────────────────────────────── */}
         <section className="bg-tp-black py-20 sm:py-28">
           <div className="mx-auto max-w-3xl px-4 text-center">
-            <h2 className="font-display text-3xl text-white sm:text-4xl">
+            <h2 className="font-display font-normal text-3xl text-white sm:text-4xl">
               Ready to Start Earning?
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-tp-beige/70">
@@ -257,10 +349,10 @@ export default function AffiliatePage() {
               to join and we provide everything you need to get started.
             </p>
             <Link
-              href="/contact"
-              className="mt-8 inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-8 py-3.5 text-base font-semibold text-tp-black transition hover:bg-tp-bronze/90"
+              href="/contact?subject=affiliate"
+              className={cn(buttonVariants({ size: 'lg' }), 'mt-8 bg-tp-bronze text-tp-black shadow-lg shadow-tp-bronze/20 hover:bg-tp-bronze/90 active:bg-tp-bronze/80')}
             >
-              Apply Now
+              Join Affiliate Program
               <ArrowRight className="h-4 w-4" />
             </Link>
             <p className="mt-4 text-sm text-tp-beige/50">
