@@ -33,6 +33,12 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Affiliate Program | ${siteConfig.name}`,
+    description: `Partner with ${siteConfig.name} and earn commissions promoting AI headshots. Competitive rates, long cookie window, and monthly payouts.`,
+    images: [siteConfig.ogImage],
+  },
 };
 
 /* ------------------------------------------------------------------ */

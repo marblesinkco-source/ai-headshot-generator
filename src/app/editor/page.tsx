@@ -5,6 +5,7 @@ import { Footer } from '@/components/marketing/footer';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
+import { generateTwitterMetadata } from '@/lib/og-metadata';
 import { Palette, Sun, Maximize2, ArrowRight, Shirt, Eye, History, Eraser, Sparkles, ScanFace, Scissors, Smile, Move, Pipette, Glasses, Heart, Clock } from 'lucide-react';
 
 const title = 'AI Photo Editor — Professional Headshot Editing Tools | TailorPic';
@@ -23,6 +24,13 @@ export const metadata: Metadata = {
     type: 'website',
     images: [siteConfig.ogImage],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
+    images: [siteConfig.ogImage],
+  },
+  twitter: generateTwitterMetadata({ title, description }),
 };
 
 const tools = [
@@ -192,7 +200,7 @@ export default function EditorIndexPage() {
           <p className="text-sm font-semibold uppercase tracking-wide text-tp-bronze-ink">
             AI-Powered Editing
           </p>
-          <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-tp-ink sm:text-5xl">
+          <h1 className="mt-3 font-display text-4xl italic tracking-tight text-tp-ink sm:text-6xl">
             AI Photo Editor
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-tp-muted sm:text-lg">
@@ -212,10 +220,10 @@ export default function EditorIndexPage() {
                 href={tool.href}
                 className="group rounded-tp-card border border-tp-line bg-white p-6 transition-all hover:border-tp-bronze/40 hover:shadow-lg"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-paper text-tp-bronze-ink">
+                <div className="flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-paper text-tp-bronze-ink">
                   <Icon className="h-6 w-6" />
                 </div>
-                <h2 className="mt-4 text-lg font-bold text-tp-ink group-hover:text-tp-bronze-ink transition-colors">
+                <h2 className="mt-4 font-display text-xl text-tp-ink transition-colors group-hover:text-tp-bronze-ink">
                   {tool.name}
                 </h2>
                 <p className="mt-2 text-sm leading-relaxed text-tp-muted">{tool.description}</p>
@@ -230,7 +238,7 @@ export default function EditorIndexPage() {
 
       <section className="border-t border-tp-line bg-tp-paper">
         <div className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
-          <h2 className="text-2xl font-bold text-tp-ink sm:text-3xl">
+          <h2 className="font-display text-3xl text-tp-ink sm:text-4xl">
             Skip the editing — get AI headshots
           </h2>
           <p className="mt-3 text-tp-muted">
@@ -241,7 +249,7 @@ export default function EditorIndexPage() {
             href="/auth/register"
             className={buttonVariants({ size: 'lg', className: 'mt-6' })}
           >
-            Get Started
+            Create your AI headshots
           </Link>
         </div>
       </section>

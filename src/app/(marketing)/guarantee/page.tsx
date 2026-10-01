@@ -24,6 +24,13 @@ export const metadata: Metadata = {
       'Try TailorPic risk-free. If you are not happy with your AI headshots, request a full refund within 14 days of purchase.',
     url: `${siteConfig.url}/guarantee`,
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: `14-Day Money-Back Guarantee | ${siteConfig.name}`,
+    description:
+      'Try TailorPic risk-free. If you are not happy with your AI headshots, request a full refund within 14 days of purchase.',
+    images: [siteConfig.ogImage],
+  },
 };
 
 /* ------------------------------------------------------------------ */

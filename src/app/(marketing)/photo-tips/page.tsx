@@ -35,6 +35,12 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: `How to Take the Perfect Photo for AI Headshots | ${siteConfig.name}`,
+    description: `Simple, practical guidance on lighting, clothing, backgrounds, and camera settings for better AI headshot results.`,
+    images: [siteConfig.ogImage],
+  },
 };
 
 /* ------------------------------------------------------------------ */

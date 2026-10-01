@@ -26,6 +26,13 @@ export const metadata: Metadata = {
       'Earn credits by sharing TailorPic with your network. Your friends get a discount, you get credits toward your next order.',
     url: `${siteConfig.url}/referral`,
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Referral Program | ${siteConfig.name}`,
+    description:
+      'Earn credits by sharing TailorPic with your network. Your friends get a discount, you get credits toward your next order.',
+    images: [siteConfig.ogImage],
+  },
 };
 
 /* ------------------------------------------------------------------ */
