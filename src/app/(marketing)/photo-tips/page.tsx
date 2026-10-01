@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
   Camera,
@@ -135,6 +135,49 @@ const camera = [
   },
 ];
 
+const photoTipsFaqs = [
+  {
+    question: 'What kind of lighting works best for AI headshot photos?',
+    answer:
+      'Soft, even light works best, such as daylight from a window while you face it. Avoid harsh overhead light, direct midday sun, and mixing very different light sources in the same photo.',
+  },
+  {
+    question: 'What should I wear for my AI headshot photos?',
+    answer:
+      'Choose plain tops in solid colors you feel confident in, and avoid busy patterns or large logos. Wear a few different outfits across your photos so the AI has more variety to learn from.',
+  },
+  {
+    question: 'Can I use selfies taken with my phone?',
+    answer:
+      'Yes, a recent phone camera is enough. The rear camera captures more detail than the front-facing one, so use it if you can, with a friend or tripod to help.',
+  },
+  {
+    question: 'How many photos should I upload?',
+    answer:
+      'Upload a variety of sharp, high-resolution photos with different expressions, angles, outfits, and settings. Review them first and delete any that look blurry or heavily cropped.',
+  },
+  {
+    question: 'What backgrounds work best for AI headshots?',
+    answer:
+      'A plain wall or uncluttered space works best. Stand a little away from the wall to reduce shadows, take photos in two or three different spots, and make sure no one else appears in the frame.',
+  },
+  {
+    question: 'Should I use filters or beauty mode on my photos?',
+    answer:
+      'No. Turn off filters, beauty modes, and retouching apps and use your standard photo mode so the AI learns what you actually look like.',
+  },
+  {
+    question: 'What camera settings should I use for AI headshot photos?',
+    answer:
+      'No special settings are needed. Hold the camera at eye level, tap your face on the screen to focus, and hold still so the image is sharp.',
+  },
+  {
+    question: 'Should I wear sunglasses or hats in my photos?',
+    answer:
+      'No. Avoid sunglasses, hats, or anything covering your face, and do not upload group photos. Use photos that still look like you today.',
+  },
+];
+
 /* ------------------------------------------------------------------ */
 /*  Helpers                                                            */
 /* ------------------------------------------------------------------ */
@@ -194,6 +237,7 @@ export default function PhotoTipsPage() {
           { name: 'Photo Tips', url: `${siteConfig.url}/photo-tips` },
         ]}
       />
+      <FAQSchema items={photoTipsFaqs} />
       <Header />
 
       {/* ── Hero ── */}

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { VideoTestimonials } from '@/components/marketing/video-testimonials';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -273,6 +274,9 @@ export default function SamplesPage() {
             ))}
           </div>
         </section>
+
+        {/* ── Video Testimonials ───────────────────────── */}
+        <VideoTestimonials />
 
         {/* ── CTA ──────────────────────────────────────── */}
         <section className="border-t border-tp-line bg-tp-ink px-4 py-20 text-center">

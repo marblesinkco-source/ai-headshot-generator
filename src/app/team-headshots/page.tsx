@@ -7,6 +7,7 @@ import { siteConfig } from '@/config/site';
 import {
   Users, Sparkles, ArrowRight, CheckCircle, Palette,
   Download, LayoutDashboard, Image, Camera, Send,
+  Laptop, Scale, Building2, Stethoscope, GraduationCap, Landmark,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -62,13 +63,13 @@ export default function TeamHeadshotsPage() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
               href="/auth/register"
-              className="inline-flex items-center gap-2 rounded-xl bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:bg-tp-bronze/90"
+              className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:bg-tp-bronze/90"
             >
               Get Started <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-xl border border-tp-beige/20 px-6 py-3.5 text-sm font-semibold text-tp-beige transition-all hover:bg-white/5"
+              className="inline-flex items-center gap-2 rounded-tp-button border border-tp-beige/20 px-6 py-3.5 text-sm font-semibold text-tp-beige transition-all hover:bg-white/5"
             >
               Contact Sales
             </Link>
@@ -124,6 +125,169 @@ export default function TeamHeadshotsPage() {
         </div>
       </section>
 
+      {/* Volume Pricing */}
+      <section className="bg-tp-paper py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
+              Volume Pricing
+            </p>
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+              Built for Teams of Any Size
+            </h2>
+            <p className="mt-3 text-tp-muted max-w-xl mx-auto">
+              The more people on your plan, the lower the per-person price.
+            </p>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                name: 'Individual',
+                size: '1-4 people',
+                price: '$29.90',
+                unit: '/person',
+                features: ['Per-person ordering', 'Choose your style', 'High-resolution downloads'],
+                cta: 'Get Started',
+                href: '/auth/register',
+                featured: false,
+              },
+              {
+                name: 'Small Team',
+                size: '5-14 people',
+                price: '$24.90',
+                unit: '/person',
+                features: ['Everything in Individual', 'Consistent team background', 'Admin dashboard'],
+                cta: 'Get Started',
+                href: '/auth/register',
+                featured: false,
+              },
+              {
+                name: 'Business',
+                size: '15-49 people',
+                price: '$19.90',
+                unit: '/person',
+                features: ['Everything in Small Team', 'Brand guidelines applied', 'Bulk download'],
+                cta: 'Get Started',
+                href: '/auth/register',
+                featured: true,
+              },
+              {
+                name: 'Enterprise',
+                size: '50+ people',
+                price: 'Contact Sales',
+                unit: '',
+                features: ['Everything in Business', 'Custom volume pricing', 'Dedicated onboarding help'],
+                cta: 'Contact Sales',
+                href: '/contact',
+                featured: false,
+              },
+            ].map((tier) => (
+              <div
+                key={tier.name}
+                className={`flex flex-col rounded-tp-card border bg-white p-6 ${
+                  tier.featured ? 'border-tp-bronze' : 'border-tp-line'
+                }`}
+              >
+                <h3 className="font-display text-xl text-tp-ink">{tier.name}</h3>
+                <p className="mt-1 text-sm text-tp-muted">{tier.size}</p>
+                <p className="mt-5 font-display text-3xl text-tp-ink">
+                  {tier.price}
+                  {tier.unit && (
+                    <span className="ml-1 text-sm font-sans text-tp-muted">{tier.unit}</span>
+                  )}
+                </p>
+                <ul className="mt-5 mb-6 space-y-3 flex-1">
+                  {tier.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-tp-muted">
+                      <CheckCircle className="h-4 w-4 mt-0.5 text-tp-bronze-ink flex-shrink-0" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href={tier.href}
+                  className={`inline-flex items-center justify-center gap-2 rounded-tp-button px-5 py-3 text-sm font-semibold transition-all ${
+                    tier.featured
+                      ? 'bg-tp-black text-tp-bronze hover:-translate-y-0.5 hover:shadow-lg'
+                      : 'border border-tp-line text-tp-ink hover:bg-tp-paper'
+                  }`}
+                >
+                  {tier.cta} <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-center text-sm text-tp-ink">
+            All plans include 40+ headshots per person, commercial license, and 14-day money-back guarantee.
+          </p>
+          <p className="mt-2 text-center text-xs text-tp-muted">
+            Pricing shown is for illustration. Final pricing confirmed at checkout.
+          </p>
+        </div>
+      </section>
+
+      {/* Trusted by Teams */}
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
+              Use Cases
+            </p>
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+              Trusted by Teams
+            </h2>
+            <p className="mt-3 text-tp-muted max-w-xl mx-auto">
+              Consistent headshots work for any team that puts people front and center.
+            </p>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                icon: Laptop,
+                title: 'Tech Companies',
+                desc: 'Keep fast-growing and remote teams looking cohesive on your about page and product sites.',
+              },
+              {
+                icon: Scale,
+                title: 'Law Firms',
+                desc: 'Polished, credible attorney profiles that match across every partner and associate.',
+              },
+              {
+                icon: Building2,
+                title: 'Real Estate Teams',
+                desc: 'Uniform agent photos for listings, signage, and marketing materials.',
+              },
+              {
+                icon: Stethoscope,
+                title: 'Healthcare',
+                desc: 'Approachable, professional portraits for practitioners and clinic staff directories.',
+              },
+              {
+                icon: GraduationCap,
+                title: 'Education',
+                desc: 'Faculty and staff headshots for department pages and campus directories.',
+              },
+              {
+                icon: Landmark,
+                title: 'Finance',
+                desc: 'Trustworthy, consistent advisor and analyst photos for client-facing materials.',
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="rounded-tp-card border border-tp-line bg-white p-6 transition-colors hover:border-tp-bronze/30"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-tp-button bg-tp-black mb-4">
+                  <item.icon className="h-5 w-5 text-tp-bronze" />
+                </div>
+                <h3 className="font-display text-lg text-tp-ink">{item.title}</h3>
+                <p className="mt-2 text-sm text-tp-muted leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Features */}
       <section className="bg-tp-paper py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -160,9 +324,9 @@ export default function TeamHeadshotsPage() {
             ].map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-2xl border border-tp-line bg-white p-6 hover:border-tp-bronze/30 transition-colors"
+                className="rounded-tp-card border border-tp-line bg-white p-6 hover:border-tp-bronze/30 transition-colors"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-tp-black mb-4">
+                <div className="flex h-10 w-10 items-center justify-center rounded-tp-button bg-tp-black mb-4">
                   <feature.icon className="h-5 w-5 text-tp-bronze" />
                 </div>
                 <h3 className="text-base font-semibold text-tp-ink">{feature.title}</h3>
@@ -170,38 +334,6 @@ export default function TeamHeadshotsPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Pricing teaser */}
-      <section className="bg-tp-black py-16 sm:py-20">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-3xl sm:text-4xl text-white mb-4">
-            Team Pricing
-          </h2>
-          <p className="text-tp-beige/60 max-w-xl mx-auto mb-6">
-            Volume discounts are available for teams. The more people on your plan,
-            the lower the per-person cost.
-          </p>
-          <ul className="mx-auto max-w-md text-left space-y-3 mb-8">
-            {[
-              'Multiple headshot variations per person',
-              'Consistent style across the entire team',
-              'High-resolution downloads included',
-              'Admin tools for managing your team',
-            ].map((item) => (
-              <li key={item} className="flex items-center gap-2 text-sm text-tp-beige/70">
-                <CheckCircle className="h-3.5 w-3.5 text-tp-bronze flex-shrink-0" />
-                {item}
-              </li>
-            ))}
-          </ul>
-          <Link
-            href="/pricing"
-            className="inline-flex items-center gap-2 rounded-xl bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:bg-tp-bronze/90"
-          >
-            View Pricing Details <ArrowRight className="h-4 w-4" />
-          </Link>
         </div>
       </section>
 
@@ -219,13 +351,13 @@ export default function TeamHeadshotsPage() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
               href="/auth/register"
-              className="inline-flex items-center gap-2 rounded-xl bg-tp-black px-7 py-3.5 text-sm font-semibold text-tp-bronze transition-all hover:-translate-y-0.5 hover:shadow-lg"
+              className="inline-flex items-center gap-2 rounded-tp-button bg-tp-black px-7 py-3.5 text-sm font-semibold text-tp-bronze transition-all hover:-translate-y-0.5 hover:shadow-lg"
             >
               Get Started <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-xl border border-tp-line px-6 py-3.5 text-sm font-semibold text-tp-ink transition-all hover:bg-tp-paper"
+              className="inline-flex items-center gap-2 rounded-tp-button border border-tp-line px-6 py-3.5 text-sm font-semibold text-tp-ink transition-all hover:bg-tp-paper"
             >
               Contact Sales
             </Link>
