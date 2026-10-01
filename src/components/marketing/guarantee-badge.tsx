@@ -16,7 +16,7 @@ export function GuaranteeBadge({ variant = 'card', className }: GuaranteeBadgePr
         )}
       >
         <Shield className="h-4 w-4 text-tp-bronze" aria-hidden="true" />
-        100% Money-Back Guarantee
+        14-Day Money-Back Guarantee
       </div>
     );
   }
@@ -32,7 +32,7 @@ export function GuaranteeBadge({ variant = 'card', className }: GuaranteeBadgePr
         <ShieldCheck className="h-6 w-6" aria-hidden="true" />
       </span>
       <div>
-        <h3 className="font-display text-xl text-tp-ink">100% Money-Back Guarantee</h3>
+        <h3 className="font-display text-xl text-tp-ink">14-Day Money-Back Guarantee</h3>
         <p className="mt-1 text-sm text-tp-muted">Not satisfied? Get a full refund, no questions asked.</p>
       </div>
     </div>

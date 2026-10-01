@@ -18,7 +18,7 @@ export interface TrustBarProps {
 const DEFAULT_METRICS: TrustMetric[] = [
   { icon: '⚡', label: 'Ready in 24h' },
   { icon: '🔒', label: '256-bit Encrypted' },
-  { icon: '💰', label: 'Money-back Guarantee' },
+  { icon: '💰', label: '14-day Money-back Guarantee' },
 ];
 
 export function TrustBar({

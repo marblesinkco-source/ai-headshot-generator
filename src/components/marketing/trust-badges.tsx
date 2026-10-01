@@ -1,7 +1,7 @@
 import { Shield, Clock, Lock, CreditCard } from 'lucide-react';
 
 const badges = [
-  { icon: Shield, label: 'Money-Back Guarantee' },
+  { icon: Shield, label: '14-Day Money-Back Guarantee' },
   { icon: Clock, label: 'Photos in Hours' },
   { icon: Lock, label: 'Privacy-First' },
   { icon: CreditCard, label: 'No Subscription' },

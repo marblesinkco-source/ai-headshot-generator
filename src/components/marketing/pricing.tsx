@@ -202,7 +202,7 @@ export function Pricing() {
           </div>
           <div>
             <p className="text-sm font-semibold text-tp-ink">
-              Money-Back Guarantee
+              14-Day Money-Back Guarantee
             </p>
             <p className="text-xs text-tp-muted mt-0.5 leading-relaxed">
               14-day money-back guarantee. No questions asked.{' '}

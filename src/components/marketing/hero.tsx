@@ -101,7 +101,7 @@ export function Hero() {
                 <div className="w-px bg-tp-line/50" />
                 <div>
                   <p className="text-[22px] font-bold text-tp-ink tracking-tight">100%</p>
-                  <p className="text-[11px] text-tp-muted mt-0.5">Money-back guarantee</p>
+                  <p className="text-[11px] text-tp-muted mt-0.5">14-day money-back guarantee</p>
                 </div>
               </div>
             </div>

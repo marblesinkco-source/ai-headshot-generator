@@ -1,9 +1,26 @@
 import type { Metadata } from 'next';
+import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'TailorPic privacy policy — how we collect, use, and protect your data.',
   alternates: { canonical: '/privacy' },
+  openGraph: {
+    title: 'Privacy Policy',
+    description:
+      'TailorPic privacy policy — how we collect, use, and protect your data.',
+    url: `${siteConfig.url}/privacy`,
+    siteName: siteConfig.name,
+    type: 'website',
+    images: [siteConfig.ogImage],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy',
+    description:
+      'TailorPic privacy policy — how we collect, use, and protect your data.',
+    images: [siteConfig.ogImage],
+  },
 };
 
 export default function PrivacyPage() {

@@ -11,6 +11,22 @@ export const metadata: Metadata = {
   description:
     'Professional AI-generated photos tailored for your industry. Real estate, legal, healthcare, nursing, engineering, education, consulting, accounting, photography, acting, dental, financial advisory, architecture, coaching, therapy, fitness, music, veterinary, pharmacy, aviation, event planning, marketing, writing, chiropractic, insurance, nutrition, social work, translation, psychology, real estate brokerage, cabin crew, graphic design, data science, barbering, floristry, bartending, tattooing, security and more.',
   alternates: { canonical: '/industries' },
+  openGraph: {
+    title: 'AI Photos by Industry | TailorPic',
+    description:
+      'Professional AI-generated photos tailored for your industry. Real estate, legal, healthcare, nursing, engineering, education, consulting, accounting, photography, acting, dental, financial advisory, architecture, coaching, therapy, fitness, music, veterinary, pharmacy, aviation, event planning, marketing, writing, chiropractic, insurance, nutrition, social work, translation, psychology, real estate brokerage, cabin crew, graphic design, data science, barbering, floristry, bartending, tattooing, security and more.',
+    url: `${siteConfig.url}/industries`,
+    siteName: siteConfig.name,
+    type: 'website',
+    images: [siteConfig.ogImage],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Photos by Industry | TailorPic',
+    description:
+      'Professional AI-generated photos tailored for your industry. Real estate, legal, healthcare, nursing, engineering, education, consulting, accounting, photography, acting, dental, financial advisory, architecture, coaching, therapy, fitness, music, veterinary, pharmacy, aviation, event planning, marketing, writing, chiropractic, insurance, nutrition, social work, translation, psychology, real estate brokerage, cabin crew, graphic design, data science, barbering, floristry, bartending, tattooing, security and more.',
+    images: [siteConfig.ogImage],
+  },
 };
 
 const industries = [
