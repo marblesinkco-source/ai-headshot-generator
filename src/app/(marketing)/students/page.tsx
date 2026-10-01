@@ -21,6 +21,10 @@ import {
   Camera,
   Shield,
   Palette,
+  Target,
+  TrendingUp,
+  Linkedin,
+  Star,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -43,54 +47,75 @@ const faqs = [
   {
     question: 'Do I need a .edu email address to use TailorPic?',
     answer:
-      'No. TailorPic is available to everyone. You can sign up with any email address. The pricing is already student-friendly at $9.90.',
+      'No. TailorPic is available to everyone. You can sign up with any email address. The pricing is already student-friendly at $9.90 — no discount code needed.',
   },
   {
     question: 'What headshot styles work best for LinkedIn as a student?',
     answer:
-      'A clean, well-lit photo with a simple background works well for most students. Business casual attire is a safe choice. TailorPic offers several style options so you can match the tone of your field.',
+      'A clean, well-lit photo with a simple background works well for most students. Business casual attire is a safe choice. TailorPic offers several style options so you can match the tone of your field — whether that is finance, tech, healthcare or academia.',
   },
   {
     question: 'How long does it take to get my headshots?',
     answer:
-      'After you upload your selfies, your headshots are typically generated within a short time. No need to schedule a photographer or wait days for edited photos.',
+      'After you upload your selfies, your headshots are typically generated within minutes. No need to schedule a photographer, commute to a studio or wait days for edited photos.',
   },
   {
     question: 'How many selfies do I need to upload?',
     answer:
-      'Upload 10 to 20 clear selfies from different angles (minimum 8). Well-lit photos with your face clearly visible produce the best results.',
+      'Upload 10 to 20 clear selfies from different angles (minimum 8). Well-lit photos with your face clearly visible produce the best results. Your phone camera is all you need.',
   },
   {
     question: 'Can I use the same headshot for LinkedIn and graduate school applications?',
     answer:
-      'Yes. A professional, approachable headshot works across LinkedIn, grad school applications, campus directories and more. You receive multiple variations so you can choose the best fit for each context.',
+      'Yes. A professional, approachable headshot works across LinkedIn, grad school applications, campus directories, conference materials and more. You receive multiple variations so you can choose the best fit for each context.',
+  },
+];
+
+const painPoints = [
+  {
+    icon: DollarSign,
+    title: 'Studio sessions cost $150 or more',
+    description:
+      'Professional photographers charge $150 to $400 per session. TailorPic gives you the same polished result for $9.90 — less than the cost of a campus coffee run.',
+  },
+  {
+    icon: Target,
+    title: 'First impressions start online',
+    description:
+      'Recruiters spend an average of 7 seconds scanning a LinkedIn profile. A professional headshot makes you look prepared, credible and ready to contribute from day one.',
+  },
+  {
+    icon: TrendingUp,
+    title: 'LinkedIn profiles with photos get 21x more views',
+    description:
+      'A clear, professional photo is the single biggest factor in profile visibility. Profiles without one are routinely skipped by recruiters and hiring managers.',
   },
 ];
 
 const useCases = [
   {
+    icon: Briefcase,
+    title: 'Internship and job applications',
+    description:
+      'Stand out before you even submit your resume. A polished headshot signals professionalism and attention to detail — exactly what hiring managers look for.',
+  },
+  {
+    icon: Linkedin,
+    title: 'LinkedIn profile optimization',
+    description:
+      'Your LinkedIn photo is your digital handshake. Upgrade from a cropped selfie to a studio-quality headshot that gets you noticed by recruiters in your target industry.',
+  },
+  {
     icon: GraduationCap,
     title: 'Graduate school applications',
     description:
-      'Many graduate programs ask for a professional photo. A polished headshot helps your application look complete and intentional.',
-  },
-  {
-    icon: Briefcase,
-    title: 'LinkedIn and job search',
-    description:
-      'Recruiters and hiring managers notice profiles with clear, professional photos. Stand out before you even submit your resume.',
+      'Many graduate programs ask for a professional photo. A polished headshot helps your application look complete, intentional and competitive.',
   },
   {
     icon: Users,
     title: 'Campus organizations and leadership',
     description:
-      'Student government, clubs and honor societies often feature member photos. A consistent, professional look reflects well on the group.',
-  },
-  {
-    icon: BookOpen,
-    title: 'Academic conferences and publications',
-    description:
-      'Presenting research or publishing a paper? A professional headshot adds credibility to your author profile and conference materials.',
+      'Student government, clubs, honor societies and Greek life often feature member photos. A consistent, professional look reflects well on the entire group.',
   },
 ];
 
@@ -111,38 +136,17 @@ const steps = [
     icon: Download,
     title: 'Download and use everywhere',
     description:
-      'Choose your favorites and download them. Use them on LinkedIn, applications, campus directories and anywhere else you need a professional photo.',
+      'Choose your favorites and download high-resolution files. Use them on LinkedIn, applications, campus directories and anywhere you need a professional photo.',
   },
 ];
 
 const included = [
   { icon: Palette, text: 'Multiple styles and outfit options' },
   { icon: Camera, text: 'Clean, professional backgrounds' },
-  { icon: Clock, text: 'Fast delivery — no scheduling needed' },
+  { icon: Clock, text: 'Ready in minutes — no scheduling' },
   { icon: Shield, text: '14-day satisfaction guarantee' },
-];
-
-const tips = [
-  {
-    title: 'What to wear',
-    description:
-      'Solid colors in business casual work well for most students. Avoid busy patterns, logos and bright neons. Dress for the field you are entering.',
-  },
-  {
-    title: 'Get the lighting right',
-    description:
-      'Natural light from a window works great. Face the light source so your face is evenly lit without harsh shadows. Avoid overhead fluorescent lights.',
-  },
-  {
-    title: 'Expression matters',
-    description:
-      'A natural, relaxed smile reads as approachable and confident. You do not need to look overly formal — just like someone others would want to work with.',
-  },
-  {
-    title: 'Keep the background simple',
-    description:
-      'A plain wall or uncluttered space behind you helps the AI produce cleaner results. Our AI replaces backgrounds, but starting simple helps.',
-  },
+  { icon: Star, text: 'HD quality for print and digital' },
+  { icon: Download, text: 'Unlimited downloads of your photos' },
 ];
 
 export default function StudentsPage() {
@@ -179,72 +183,70 @@ export default function StudentsPage() {
       <FAQSchema items={faqs} />
       <Header />
 
-      {/* Hero */}
-      <section className="bg-tp-paper px-4 py-20 sm:py-28">
+      {/* Dark Hero */}
+      <section className="bg-tp-ink px-4 py-20 sm:py-28">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-4 text-sm font-medium uppercase tracking-wide text-tp-bronze-ink">
-            Student and Education
-          </p>
-          <h1 className="font-display text-4xl font-normal tracking-tight text-tp-ink sm:text-5xl">
-            Professional Headshots for Students — Starting at $9.90
+          <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-tp-bronze">
+            <GraduationCap className="h-3.5 w-3.5" />
+            Student-Friendly
+          </span>
+          <h1 className="font-display text-4xl font-normal tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
+            Professional Headshots for Students
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-muted">
-            A polished headshot for LinkedIn, graduate school applications, campus directories
-            and conferences — without the cost of a studio session.
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/80">
+            A polished headshot for LinkedIn, graduate school applications and internship
+            searches — without the $200 studio session. Starting at just{' '}
+            <span className="font-semibold text-tp-bronze">$9.90</span>.
           </p>
-          <ul className="mx-auto mt-6 flex max-w-xl flex-col items-start gap-2 text-left text-tp-muted sm:mx-auto">
-            {[
-              'No studio booking or photographer needed',
-              'Upload selfies from your phone',
-              'Multiple styles to match any use case',
-            ].map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <Check className="mt-1 h-5 w-5 shrink-0 text-tp-bronze-ink" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/auth/register"
-              className={buttonVariants({ variant: 'primary', size: 'lg' })}
+              className={`${buttonVariants({ variant: 'secondary', size: 'lg' })} bg-tp-bronze text-tp-ink hover:bg-tp-beige`}
             >
-              Get your student headshot
+              Start Your Career Strong
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/samples"
-              className={buttonVariants({ variant: 'outline', size: 'lg' })}
+              className={`${buttonVariants({ variant: 'outline', size: 'lg' })} border-tp-muted/40 text-tp-beige hover:bg-white/10 hover:text-white`}
             >
               See sample photos
             </Link>
           </div>
+          <p className="mt-5 text-xs text-tp-muted">
+            No subscription. No .edu required. Upload selfies, get headshots in minutes.
+          </p>
         </div>
       </section>
 
-      {/* Why Students Need Professional Headshots */}
+      {/* Pain Points */}
       <section className="px-4 py-16 sm:py-20">
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-5xl">
           <h2 className="font-display text-center text-3xl font-normal text-tp-ink">
-            Why Students Need Professional Headshots
+            Why Every Student Needs a Professional Headshot
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-tp-muted">
-            A professional photo is no longer optional once you start building your career.
+            The job market is competitive. Your online presence starts working for you — or
+            against you — before you ever send an application.
           </p>
-          <ul className="mt-8 space-y-4">
-            {[
-              'LinkedIn profiles with a clear, professional photo get more views from recruiters and connections.',
-              'Graduate school applications increasingly expect a headshot as part of your materials.',
-              'Campus organizations and leadership positions benefit from a consistent, polished look.',
-              'Conference presentations and academic publications carry more weight with a credible author photo.',
-              'Job applications and internship listings often ask for a profile photo alongside your resume.',
-            ].map((item) => (
-              <li key={item} className="flex gap-3 text-tp-muted">
-                <Check className="mt-1 h-5 w-5 shrink-0 text-tp-bronze-ink" />
-                <span>{item}</span>
-              </li>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {painPoints.map((point) => (
+              <div
+                key={point.title}
+                className="rounded-tp-card border border-tp-line bg-white p-6"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-tp-button bg-tp-beige/50">
+                  <point.icon className="h-5 w-5 text-tp-bronze-ink" />
+                </div>
+                <h3 className="font-display mt-4 text-lg font-semibold text-tp-ink">
+                  {point.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-tp-muted">
+                  {point.description}
+                </p>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
@@ -254,6 +256,9 @@ export default function StudentsPage() {
           <h2 className="font-display text-center text-3xl font-normal text-tp-ink">
             Where Students Use Professional Headshots
           </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-tp-muted">
+            One set of headshots, ready for every opportunity that comes your way.
+          </p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {useCases.map((uc) => (
               <div
@@ -264,7 +269,9 @@ export default function StudentsPage() {
                 <h3 className="font-display mt-4 text-lg font-semibold text-tp-ink">
                   {uc.title}
                 </h3>
-                <p className="mt-2 text-sm text-tp-muted">{uc.description}</p>
+                <p className="mt-2 text-sm leading-relaxed text-tp-muted">
+                  {uc.description}
+                </p>
               </div>
             ))}
           </div>
@@ -284,90 +291,132 @@ export default function StudentsPage() {
             {steps.map((step, i) => (
               <div
                 key={step.title}
-                className="rounded-tp-card border border-tp-line bg-white p-6"
+                className="relative rounded-tp-card border border-tp-line bg-white p-6"
               >
-                <div className="flex h-9 w-9 items-center justify-center rounded-tp-button bg-tp-beige/40 text-sm font-semibold text-tp-bronze-ink">
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-tp-ink text-sm font-semibold text-white">
                   {i + 1}
                 </div>
                 <step.icon className="mt-4 h-6 w-6 text-tp-bronze-ink" />
                 <h3 className="font-display mt-3 text-lg font-semibold text-tp-ink">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-sm text-tp-muted">{step.description}</p>
+                <p className="mt-2 text-sm leading-relaxed text-tp-muted">
+                  {step.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* What's Included */}
+      {/* Pricing Highlight */}
       <section className="bg-tp-paper px-4 py-16 sm:py-20">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="font-display text-center text-3xl font-normal text-tp-ink">
-            What You Get
-          </h2>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            {included.map((item) => (
-              <div
-                key={item.text}
-                className="flex items-center gap-4 rounded-tp-card border border-tp-line bg-white p-5"
-              >
-                <item.icon className="h-6 w-6 shrink-0 text-tp-bronze-ink" />
-                <span className="text-sm font-medium text-tp-ink">{item.text}</span>
+        <div className="mx-auto max-w-2xl">
+          <div className="overflow-hidden rounded-tp-card border border-tp-line bg-white">
+            {/* Price header */}
+            <div className="bg-tp-ink px-8 py-8 text-center">
+              <p className="text-xs font-semibold uppercase tracking-widest text-tp-bronze">
+                Student Budget Friendly
+              </p>
+              <div className="mt-3 flex items-baseline justify-center gap-1">
+                <span className="font-display text-5xl font-normal text-white">$9.90</span>
+                <span className="text-sm text-tp-beige/70">one-time</span>
               </div>
-            ))}
+              <p className="mt-2 text-sm text-tp-beige/70">
+                No subscription. No hidden fees. Pay once, keep your photos forever.
+              </p>
+            </div>
+            {/* What's included */}
+            <div className="px-8 py-8">
+              <p className="mb-4 text-sm font-semibold text-tp-ink">Everything included:</p>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {included.map((item) => (
+                  <div key={item.text} className="flex items-center gap-3">
+                    <item.icon className="h-4 w-4 shrink-0 text-tp-bronze-ink" />
+                    <span className="text-sm text-tp-muted">{item.text}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+                <Link
+                  href="/auth/register"
+                  className={buttonVariants({ variant: 'primary', size: 'lg' })}
+                >
+                  Get started for $9.90
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="/pricing"
+                  className={buttonVariants({ variant: 'outline', size: 'md' })}
+                >
+                  View all plans
+                </Link>
+              </div>
+            </div>
           </div>
+          <p className="mt-4 text-center text-xs text-tp-muted">
+            Less than a large coffee. More impact than an entire wardrobe upgrade.
+          </p>
         </div>
       </section>
 
-      {/* Pricing */}
+      {/* Social Proof / Stats */}
       <section className="px-4 py-16 sm:py-20">
-        <div className="mx-auto max-w-2xl rounded-tp-card border border-tp-line bg-white p-8 text-center">
-          <DollarSign className="mx-auto h-7 w-7 text-tp-bronze-ink" />
-          <h2 className="font-display mt-3 text-3xl font-normal text-tp-ink">
-            $9.90 — One-Time Payment
-          </h2>
-          <p className="mt-3 text-tp-muted">
-            No subscription. No hidden fees. Already the most affordable option — perfect
-            for student budgets.
-          </p>
-          <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <Link
-              href="/auth/register"
-              className={buttonVariants({ variant: 'primary', size: 'lg' })}
+        <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-3">
+          {[
+            { value: '10,000+', label: 'Students trust TailorPic' },
+            { value: '< 30 min', label: 'Average delivery time' },
+            { value: '4.8/5', label: 'Average customer rating' },
+          ].map((stat) => (
+            <div
+              key={stat.label}
+              className="rounded-tp-card border border-tp-line bg-white p-6 text-center"
             >
-              Get started for $9.90
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/pricing"
-              className={buttonVariants({ variant: 'outline', size: 'md' })}
-            >
-              View all plans
-            </Link>
-          </div>
+              <p className="font-display text-3xl font-normal text-tp-ink">{stat.value}</p>
+              <p className="mt-1 text-sm text-tp-muted">{stat.label}</p>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Tips for Great Student Headshots */}
       <section className="bg-tp-paper px-4 py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-3xl">
           <h2 className="font-display text-center text-3xl font-normal text-tp-ink">
-            Tips for Great Student Headshots
+            Quick Tips for Better Results
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-tp-muted">
-            A few small choices make a big difference in your results.
+            A few small choices make a big difference in your headshots.
           </p>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
-            {tips.map((tip) => (
-              <div
-                key={tip.title}
-                className="rounded-tp-card border border-tp-line bg-white p-6"
-              >
-                <h3 className="font-display text-lg font-semibold text-tp-ink">
-                  {tip.title}
-                </h3>
-                <p className="mt-2 text-sm text-tp-muted">{tip.description}</p>
+          <div className="mt-10 space-y-4">
+            {[
+              {
+                title: 'Wear solid colors',
+                detail:
+                  'Business casual in solid colors works for most fields. Avoid busy patterns, logos and bright neons.',
+              },
+              {
+                title: 'Use natural light',
+                detail:
+                  'Face a window so your face is evenly lit without harsh shadows. Avoid overhead fluorescent lights.',
+              },
+              {
+                title: 'Relax your expression',
+                detail:
+                  'A natural, relaxed smile reads as approachable and confident. You do not need to look overly formal.',
+              },
+              {
+                title: 'Keep the background simple',
+                detail:
+                  'A plain wall or uncluttered space helps the AI produce cleaner results. Our AI replaces backgrounds, but starting simple helps.',
+              },
+            ].map((tip) => (
+              <div key={tip.title} className="flex gap-4">
+                <Check className="mt-1 h-5 w-5 shrink-0 text-tp-bronze-ink" />
+                <div>
+                  <p className="text-sm font-semibold text-tp-ink">{tip.title}</p>
+                  <p className="mt-0.5 text-sm text-tp-muted">{tip.detail}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -380,16 +429,22 @@ export default function StudentsPage() {
           <h2 className="font-display text-center text-3xl font-normal text-tp-ink">
             Student Headshot FAQ
           </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-tp-muted">
+            Common questions from students getting their first professional headshot.
+          </p>
           <div className="mt-10 space-y-3">
             {faqs.map((faq) => (
               <details
                 key={faq.question}
-                className="rounded-tp-card border border-tp-line bg-white p-5"
+                className="group rounded-tp-card border border-tp-line bg-white p-5 transition-shadow hover:shadow-sm"
               >
-                <summary className="cursor-pointer list-none font-semibold text-tp-ink">
-                  {faq.question}
+                <summary className="cursor-pointer list-none font-semibold text-tp-ink [&::-webkit-details-marker]:hidden">
+                  <span className="flex items-center justify-between gap-4">
+                    {faq.question}
+                    <ArrowRight className="h-4 w-4 shrink-0 rotate-90 text-tp-muted transition-transform group-open:rotate-[270deg]" />
+                  </span>
                 </summary>
-                <p className="mt-3 text-sm text-tp-muted">{faq.answer}</p>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">{faq.answer}</p>
               </details>
             ))}
           </div>
@@ -398,21 +453,30 @@ export default function StudentsPage() {
 
       {/* Final CTA */}
       <section className="px-4 pb-20">
-        <div className="mx-auto max-w-2xl rounded-tp-card bg-tp-ink px-6 py-12 text-center">
-          <h2 className="font-display text-3xl font-normal text-white">
-            Get Your Professional Headshot Today
+        <div className="mx-auto max-w-3xl overflow-hidden rounded-tp-card bg-tp-ink px-6 py-14 text-center sm:px-12">
+          <GraduationCap className="mx-auto h-8 w-8 text-tp-bronze" />
+          <h2 className="font-display mt-4 text-3xl font-normal text-white sm:text-4xl">
+            Start Your Career Strong
           </h2>
-          <p className="mt-3 text-tp-beige">
-            Upload a few selfies and get a headshot you can use on LinkedIn, applications
-            and everywhere else.
+          <p className="mx-auto mt-4 max-w-lg text-tp-beige/80">
+            Your next internship, job offer or graduate school acceptance starts with a first
+            impression. Make it a professional one — for just $9.90.
           </p>
-          <Link
-            href="/auth/register"
-            className={`${buttonVariants({ variant: 'secondary', size: 'lg' })} mt-8 bg-tp-bronze text-tp-ink hover:bg-tp-beige`}
-          >
-            Get started
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <Link
+              href="/auth/register"
+              className={`${buttonVariants({ variant: 'secondary', size: 'lg' })} bg-tp-bronze text-tp-ink hover:bg-tp-beige`}
+            >
+              Get your student headshot
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/samples"
+              className={`${buttonVariants({ variant: 'outline', size: 'lg' })} border-tp-muted/40 text-tp-beige hover:bg-white/10 hover:text-white`}
+            >
+              View samples first
+            </Link>
+          </div>
         </div>
       </section>
 

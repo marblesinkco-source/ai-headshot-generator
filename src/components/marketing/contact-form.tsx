@@ -39,9 +39,12 @@ export function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div role="status" className="rounded-tp-card border border-tp-line bg-white p-8 text-center shadow-sm">
-        <h3 className="text-lg font-semibold text-tp-ink">Message sent</h3>
-        <p className="mt-2 text-sm text-tp-muted">Thanks for reaching out. We will get back to you by email.</p>
+      <div role="status" className="rounded-tp-card border border-tp-bronze/30 bg-gradient-to-br from-tp-paper to-tp-beige/20 p-10 text-center shadow-sm">
+        <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black text-tp-bronze">
+          <svg className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" /></svg>
+        </span>
+        <h3 className="mt-4 font-display text-xl font-normal text-tp-ink">Message sent</h3>
+        <p className="mt-2 text-sm text-tp-muted">Thanks for reaching out. We will get back to you by email within 24 hours.</p>
       </div>
     );
   }

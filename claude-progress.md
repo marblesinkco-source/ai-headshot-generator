@@ -75,6 +75,12 @@
 70. `661afcf` — Sitemap: remove duplicate /tools entry
 71. `3f51f0f` — OG metadata migration (5 pages to helpers) + error boundary improvements (auth/error, blog/error, global-error enhancements)
 72. `43a1adc` — Contact auto-reply email template, billing page improvements, mobile nav animation with keyboard a11y, security trust badges, samples testimonials, pricing heading fix
+73. `9607c61` — Dalga 9: Security, enterprise, reviews upgrades + cleanup
+74. `fa087de` — Dalga 10: Blog, changelog, success stories upgrades
+75. `e70f80e` — Dalga 11: Partners, careers, use-cases page upgrades
+76. `49559cf` — Dalga 12: Technology, help center, why-tailorpic upgrades
+77. `2e723ba` — Real before/after images, dual hero portraits, blog placeholder SVG
+78. `5e6e3e8` — Visual polish: blog covers, trust badges, industry cards, toast & pricing
 
 ### Completed Features
 - [x] Exit-intent popup with WELCOME10 promo

@@ -22,6 +22,8 @@ import {
   ShieldCheck,
   Check,
   Clock,
+  Terminal,
+  UsersRound,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -90,7 +92,7 @@ const steps = [
 const features = [
   {
     icon: Code2,
-    title: 'REST API',
+    title: 'RESTful API',
     description:
       'A clean, predictable REST interface that fits into any stack and works with the tools you already use.',
   },
@@ -102,9 +104,15 @@ const features = [
   },
   {
     icon: Boxes,
-    title: 'Batch Processing',
+    title: 'Bulk Processing',
     description:
       'Process photos for whole teams or large user bases in a single workflow.',
+  },
+  {
+    icon: UsersRound,
+    title: 'Team Management',
+    description:
+      'Organize headshot generation by team or department, with role-based access and usage tracking.',
   },
   {
     icon: Palette,
@@ -162,6 +170,26 @@ const plans = [
   },
 ];
 
+const codeExample = `// Generate a professional headshot
+const response = await fetch(
+  "https://api.example.com/v1/headshots",
+  {
+    method: "POST",
+    headers: {
+      "Authorization": "Bearer YOUR_API_KEY",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      image_url: "https://your-app.com/uploads/photo.jpg",
+      style: "corporate",
+      background: "studio-gray",
+      output_size: "1024x1024"
+    })
+  }
+);
+
+const { headshot_url, status } = await response.json();`;
+
 /* ------------------------------------------------------------------ */
 /*  Page                                                               */
 /* ------------------------------------------------------------------ */
@@ -172,48 +200,112 @@ export default function ApiPage() {
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
-          { name: 'API for Developers', url: `${siteConfig.url}/developer-api` },
+          { name: 'Developer API', url: `${siteConfig.url}/developer-api` },
         ]}
       />
       <Header />
       <main id="main-content">
-        {/* ── Hero ─────────────────────────────────────────────── */}
+        {/* -- Hero -------------------------------------------------- */}
         <section className="relative overflow-hidden bg-tp-black py-24 sm:py-32">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute -top-40 right-0 h-[500px] w-[500px] rounded-full bg-tp-bronze/10 blur-[120px]"
           />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute bottom-0 left-1/4 h-[300px] w-[400px] rounded-full bg-tp-bronze/5 blur-[100px]"
+          />
           <div className="relative mx-auto max-w-4xl px-4 text-center">
-            <span className="mb-4 inline-block rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-4 py-1.5 text-sm font-medium tracking-wide text-tp-bronze">
-              Coming Soon &middot; For Developers
+            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-4 py-1.5 text-sm font-medium tracking-wide text-tp-bronze">
+              <Terminal className="h-3.5 w-3.5" />
+              Developer API
             </span>
             <h1 className="font-display text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
-              AI Headshots <span className="text-tp-bronze">API</span>
+              Build with AI <span className="text-tp-bronze">Headshots</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige/80">
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/80">
               Integrate professional AI headshot generation into your own app,
-              platform, or workflow. Request early access to the upcoming{' '}
-              {siteConfig.name} API.
+              platform, or workflow. A simple REST API to automate team photos,
+              profile pictures, and more.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-8 py-3.5 text-base font-semibold text-tp-black transition hover:bg-tp-bronze/90"
               >
-                Request API Access
+                Get API Access
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href="/contact"
+                href="#code-example"
                 className="inline-flex items-center gap-2 rounded-tp-button border border-tp-beige/30 px-8 py-3.5 text-base font-semibold text-tp-beige transition hover:border-tp-bronze hover:text-tp-bronze"
               >
-                View Documentation
+                See Example
               </Link>
             </div>
           </div>
         </section>
 
-        {/* ── What You Can Build ───────────────────────────────── */}
+        {/* -- Code Example ------------------------------------------ */}
+        <section
+          id="code-example"
+          className="border-b border-tp-line bg-gradient-to-b from-tp-black via-tp-black to-[#1a1714] py-20 sm:py-28"
+        >
+          <div className="mx-auto max-w-5xl px-4">
+            <div className="grid items-center gap-12 lg:grid-cols-2">
+              <div>
+                <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-tp-bronze">
+                  Quick Start
+                </span>
+                <h2 className="font-display text-3xl text-white sm:text-4xl">
+                  A few lines of code
+                </h2>
+                <p className="mt-4 leading-relaxed text-tp-beige/70">
+                  Submit a photo, choose a style, and receive a polished
+                  headshot. The API handles the rest, from background removal
+                  to lighting adjustments.
+                </p>
+                <ul className="mt-8 space-y-4">
+                  {[
+                    'Simple JSON request and response',
+                    'Webhook or polling for async results',
+                    'Works with any language or framework',
+                  ].map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-center gap-3 text-sm text-tp-beige/80"
+                    >
+                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-tp-bronze/20">
+                        <Check className="h-3 w-3 text-tp-bronze" />
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="relative">
+                <div className="overflow-hidden rounded-tp-card border border-white/10 bg-[#0d0b09] shadow-2xl shadow-black/40">
+                  <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">
+                    <span className="h-3 w-3 rounded-full bg-white/10" />
+                    <span className="h-3 w-3 rounded-full bg-white/10" />
+                    <span className="h-3 w-3 rounded-full bg-white/10" />
+                    <span className="ml-3 text-xs text-white/30">
+                      generate-headshot.js
+                    </span>
+                  </div>
+                  <pre className="overflow-x-auto p-5 text-[13px] leading-relaxed text-tp-beige/70">
+                    <code>{codeExample}</code>
+                  </pre>
+                </div>
+                <p className="mt-3 text-center text-xs text-white/30">
+                  Illustrative example. Actual endpoint and parameters may differ.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* -- What You Can Build ------------------------------------- */}
         <section className="border-b border-tp-line bg-white py-20 sm:py-28">
           <div className="mx-auto max-w-6xl px-4">
             <div className="text-center">
@@ -228,9 +320,9 @@ export default function ApiPage() {
               {useCases.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-tp-card border border-tp-line bg-tp-paper p-6"
+                  className="group rounded-tp-card border border-tp-line bg-tp-paper p-6 transition-shadow hover:shadow-md hover:shadow-tp-black/5"
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-tp-button bg-tp-bronze/10">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-tp-button bg-tp-bronze/10 transition-colors group-hover:bg-tp-bronze/20">
                     <item.icon className="h-5 w-5 text-tp-bronze-ink" />
                   </div>
                   <h3 className="mt-5 font-display text-lg text-tp-ink">
@@ -245,7 +337,7 @@ export default function ApiPage() {
           </div>
         </section>
 
-        {/* ── How It Works ─────────────────────────────────────── */}
+        {/* -- How It Works ------------------------------------------- */}
         <section className="border-b border-tp-line bg-tp-paper py-20 sm:py-28">
           <div className="mx-auto max-w-6xl px-4">
             <div className="text-center">
@@ -257,11 +349,17 @@ export default function ApiPage() {
               </p>
             </div>
             <div className="mt-14 grid gap-8 md:grid-cols-3">
-              {steps.map((step) => (
+              {steps.map((step, i) => (
                 <div
                   key={step.number}
-                  className="rounded-tp-card border border-tp-line bg-white p-8 text-center"
+                  className="relative rounded-tp-card border border-tp-line bg-white p-8 text-center"
                 >
+                  {i < steps.length - 1 && (
+                    <div
+                      aria-hidden="true"
+                      className="absolute right-0 top-1/2 hidden h-px w-8 -translate-y-1/2 translate-x-full bg-tp-line md:block"
+                    />
+                  )}
                   <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black text-tp-bronze">
                     <step.icon className="h-6 w-6" />
                   </div>
@@ -280,7 +378,7 @@ export default function ApiPage() {
           </div>
         </section>
 
-        {/* ── API Features ─────────────────────────────────────── */}
+        {/* -- API Features ------------------------------------------- */}
         <section className="border-b border-tp-line bg-white py-20 sm:py-28">
           <div className="mx-auto max-w-6xl px-4">
             <div className="text-center">
@@ -296,24 +394,26 @@ export default function ApiPage() {
               {features.map((feature) => (
                 <div
                   key={feature.title}
-                  className="rounded-tp-card border border-tp-line bg-tp-paper p-6"
+                  className="group flex gap-4 rounded-tp-card border border-tp-line bg-tp-paper p-6 transition-shadow hover:shadow-md hover:shadow-tp-black/5"
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-tp-button bg-tp-bronze/10">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-tp-button bg-tp-bronze/10 transition-colors group-hover:bg-tp-bronze/20">
                     <feature.icon className="h-5 w-5 text-tp-bronze-ink" />
                   </div>
-                  <h3 className="mt-5 font-display text-lg text-tp-ink">
-                    {feature.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-tp-muted">
-                    {feature.description}
-                  </p>
+                  <div>
+                    <h3 className="font-display text-lg text-tp-ink">
+                      {feature.title}
+                    </h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-tp-muted">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ── Pricing Plans ────────────────────────────────────── */}
+        {/* -- Pricing Plans ------------------------------------------ */}
         <section className="border-b border-tp-line bg-tp-paper py-20 sm:py-28">
           <div className="mx-auto max-w-6xl px-4">
             <div className="text-center">
@@ -328,12 +428,17 @@ export default function ApiPage() {
               {plans.map((plan) => (
                 <div
                   key={plan.name}
-                  className={`rounded-tp-card border p-8 ${
+                  className={`relative rounded-tp-card border p-8 transition-shadow ${
                     plan.highlight
-                      ? 'border-tp-bronze bg-white shadow-sm'
-                      : 'border-tp-line bg-white'
+                      ? 'border-tp-bronze bg-white shadow-lg shadow-tp-bronze/10'
+                      : 'border-tp-line bg-white hover:shadow-md hover:shadow-tp-black/5'
                   }`}
                 >
+                  {plan.highlight && (
+                    <span className="absolute -top-3 left-6 rounded-full bg-tp-bronze px-3 py-1 text-xs font-semibold text-tp-black">
+                      Recommended
+                    </span>
+                  )}
                   <h3 className="font-display text-xl text-tp-ink">
                     {plan.name}
                   </h3>
@@ -364,11 +469,15 @@ export default function ApiPage() {
           </div>
         </section>
 
-        {/* ── CTA ──────────────────────────────────────────────── */}
-        <section className="bg-tp-black py-20 sm:py-28">
+        {/* -- CTA ---------------------------------------------------- */}
+        <section className="relative overflow-hidden bg-tp-black py-20 sm:py-28">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-tp-bronze/30 to-transparent"
+          />
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="font-display text-3xl text-white sm:text-4xl">
-              Get Early Access
+              Get API Access
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige/80">
               Tell us about what you are building and we will reach out as
@@ -379,14 +488,14 @@ export default function ApiPage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-8 py-3.5 text-base font-semibold text-tp-black transition hover:bg-tp-bronze/90"
               >
-                Get Early Access
+                Get API Access
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>
         </section>
 
-        {/* ── Coming Soon Notice ───────────────────────────────── */}
+        {/* -- Coming Soon Notice -------------------------------------- */}
         <section className="bg-tp-paper py-10">
           <div className="mx-auto flex max-w-3xl items-start justify-center gap-3 px-4 text-center">
             <Clock
