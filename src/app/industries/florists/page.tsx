@@ -126,7 +126,7 @@ const faqs = [
 
 export default function FloristsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Florists"}
         description={"AI-generated professional headshots for florists and floral designers for websites, wedding portfolios, and social media."}

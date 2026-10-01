@@ -126,7 +126,7 @@ const faqs = [
 
 export default function CoachesIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Coaches & Consultants"}
         description={"AI-generated professional headshots for coaches and consultants for websites, sales pages, LinkedIn, and speaker profiles."}

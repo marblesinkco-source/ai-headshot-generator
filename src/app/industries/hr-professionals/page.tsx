@@ -126,7 +126,7 @@ const faqs = [
 
 export default function HrProfessionalsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for HR Professionals"}
         description={"Professional AI headshots for HR managers, recruiters, and talent leaders."}

@@ -126,7 +126,7 @@ const faqs = [
 
 export default function EventPlannersIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Event Planners"}
         description={"AI-generated professional headshots for event planners for websites, proposals, vendor directories, LinkedIn, and social media."}

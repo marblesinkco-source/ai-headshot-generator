@@ -126,7 +126,7 @@ const faqs = [
 
 export default function PharmacistsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Pharmacists"}
         description={"AI-generated professional headshots for pharmacists for pharmacy websites, LinkedIn, clinical profiles, and professional directories."}

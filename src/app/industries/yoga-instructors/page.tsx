@@ -126,7 +126,7 @@ const faqs = [
 
 export default function YogaInstructorsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Yoga Instructors"}
         description={"AI-generated professional headshots for yoga instructors for studio websites, class schedules, teacher training pages, and social media."}

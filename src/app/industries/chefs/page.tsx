@@ -126,7 +126,7 @@ const faqs = [
 
 export default function ChefsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Chefs & Culinary Professionals"}
         description={"AI-generated professional headshots for chefs and culinary professionals for restaurant websites, press features, cookbooks, and social media."}

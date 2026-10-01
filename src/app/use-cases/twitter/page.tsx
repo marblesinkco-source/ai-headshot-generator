@@ -122,7 +122,7 @@ const faqs = [
 
 export default function TwitterUseCasePage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name="AI Profile Photos for X (Twitter)"
         description="AI-generated profile photos optimized for X (Twitter) profiles, personal branding, and online credibility."

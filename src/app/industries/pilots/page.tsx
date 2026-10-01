@@ -126,7 +126,7 @@ const faqs = [
 
 export default function PilotsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Pilots & Aviation Professionals"}
         description={"AI-generated professional headshots for pilots and aviation professionals for airline applications, crew profiles, LinkedIn, and flight school websites."}

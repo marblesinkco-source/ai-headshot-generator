@@ -83,7 +83,7 @@ export default function ToolsPage() {
           { name: 'Free Tools', url: `${siteConfig.url}/tools` },
         ]}
       />
-      <main className="min-h-screen bg-tp-paper">
+      <main id="main-content" className="min-h-screen bg-tp-paper">
         {/* Hero */}
         <section className="relative overflow-hidden border-b border-tp-line bg-tp-ink py-20 text-center">
           <div className="absolute inset-0 bg-grid opacity-30" />

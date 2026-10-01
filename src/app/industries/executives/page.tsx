@@ -126,7 +126,7 @@ const faqs = [
 
 export default function ExecutivesIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for C-Suite Executives"}
         description={"AI-generated professional headshots for C-suite executives for leadership pages, investor materials, press, and LinkedIn."}

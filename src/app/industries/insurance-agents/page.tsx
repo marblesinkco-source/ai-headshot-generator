@@ -126,7 +126,7 @@ const faqs = [
 
 export default function InsuranceAgentsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Insurance Agents"}
         description={"AI-generated professional headshots for insurance agents and brokers for agency websites, business cards, LinkedIn, and marketing."}

@@ -126,7 +126,7 @@ const faqs = [
 
 export default function DentistsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Dentists"}
         description={"AI-generated professional headshots for dentists, orthodontists, hygienists, and dental staff in white coat or business attire."}

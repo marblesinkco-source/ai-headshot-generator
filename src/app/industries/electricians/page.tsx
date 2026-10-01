@@ -127,7 +127,7 @@ const faqs = [
 
 export default function ElectriciansIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Electricians"}
         description={"AI-generated professional headshots for electricians and electrical contractors for websites, Google Business Profiles, estimates, and marketing."}

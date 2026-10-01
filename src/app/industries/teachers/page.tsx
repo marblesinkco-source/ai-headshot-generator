@@ -122,7 +122,7 @@ const faqs = [
 
 export default function TeachersIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Teachers"}
         description={"AI-generated professional headshots for teachers, professors, tutors, and school staff."}

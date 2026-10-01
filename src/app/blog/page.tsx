@@ -21,7 +21,7 @@ export default function BlogPage() {
   const posts = getAllBlogPosts();
 
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <Header />
 
       {/* Hero */}

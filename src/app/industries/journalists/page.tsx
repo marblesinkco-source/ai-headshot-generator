@@ -126,7 +126,7 @@ const faqs = [
 
 export default function JournalistsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Journalists"}
         description={"Professional AI headshots for journalists, reporters, and writers."}

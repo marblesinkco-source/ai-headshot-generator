@@ -127,7 +127,7 @@ const faqs = [
 
 export default function LibrariansIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Librarians"}
         description={"AI-generated professional headshots for librarians for staff directories, library websites, conference bios, and LinkedIn."}

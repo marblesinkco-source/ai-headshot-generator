@@ -126,7 +126,7 @@ const faqs = [
 
 export default function NutritionistsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Nutritionists & Dietitians"}
         description={"AI-generated professional headshots for nutritionists and dietitians for websites, social media, telehealth platforms, and media features."}

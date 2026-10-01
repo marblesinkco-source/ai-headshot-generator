@@ -126,7 +126,7 @@ const faqs = [
 
 export default function DataScientistsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Data Scientists"}
         description={"AI-generated professional headshots for data scientists for LinkedIn, GitHub, conference bios, publications, and personal websites."}

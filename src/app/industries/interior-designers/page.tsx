@@ -126,7 +126,7 @@ const faqs = [
 
 export default function InteriorDesignersIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Interior Designers"}
         description={"Professional AI headshots for interior designers, decorators, and home stylists."}

@@ -126,7 +126,7 @@ const faqs = [
 
 export default function TattooArtistsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Tattoo Artists"}
         description={"AI-generated professional headshots for tattoo artists and studio owners for portfolios, booking pages, and social media."}

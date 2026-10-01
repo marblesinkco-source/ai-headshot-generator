@@ -126,7 +126,7 @@ const faqs = [
 
 export default function PoliticiansIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Politicians & Candidates"}
         description={"AI-generated professional headshots for politicians, candidates, and public officials for campaign websites, press kits, and official profiles."}

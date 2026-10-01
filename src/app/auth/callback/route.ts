@@ -10,7 +10,16 @@ const resend = process.env.RESEND_API_KEY
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = new URL(request.url);
   const code = searchParams.get('code');
-  const redirectTo = searchParams.get('redirect') || '/dashboard';
+  const rawRedirect = searchParams.get('redirect');
+  // Prevent open redirects: only allow same-origin relative paths
+  const redirectTo =
+    rawRedirect &&
+    rawRedirect.startsWith('/') &&
+    !rawRedirect.startsWith('//') &&
+    !rawRedirect.includes('://') &&
+    !rawRedirect.includes('\\')
+      ? rawRedirect
+      : '/dashboard/overview';
 
   if (code) {
     const supabase = await createClient();

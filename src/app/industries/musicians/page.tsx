@@ -126,7 +126,7 @@ const faqs = [
 
 export default function MusiciansIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Musicians & Artists"}
         description={"AI-generated professional headshots for musicians, singers, producers, and artists for press kits, streaming profiles, and social media."}

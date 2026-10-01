@@ -135,7 +135,7 @@ export default function VsProfilePhotoPage() {
     <>
       <Header />
 
-      <main className="min-h-screen">
+      <main id="main-content" className="min-h-screen">
         <BreadcrumbSchema items={[
           { name: 'Home', url: siteConfig.url },
           { name: 'TailorPic vs ProfilePhoto.ai', url: `${siteConfig.url}/vs/profilephoto` },

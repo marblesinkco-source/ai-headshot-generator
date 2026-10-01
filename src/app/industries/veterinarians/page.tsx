@@ -126,7 +126,7 @@ const faqs = [
 
 export default function VeterinariansIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Veterinarians"}
         description={"AI-generated professional headshots for veterinarians, vet techs, and animal care teams for clinic websites, Google profiles, and directories."}

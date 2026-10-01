@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function ReferralPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
         { name: 'Referral Program', url: `${siteConfig.url}/referral` },

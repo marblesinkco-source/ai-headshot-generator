@@ -122,7 +122,7 @@ const faqs = [
 
 export default function TikTokUseCasePage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name="AI Photos for TikTok"
         description="AI-generated photos optimized for TikTok profiles, video thumbnails, and creator branding."

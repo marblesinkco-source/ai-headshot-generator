@@ -126,7 +126,7 @@ const faqs = [
 
 export default function EmailSignatureUseCasePage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name="AI Headshots for Email Signatures"
         description="AI-generated professional headshots sized and styled for email signatures in Gmail, Outlook, and more."

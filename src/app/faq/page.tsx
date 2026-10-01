@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function FAQPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <FAQSchema items={faqs.map(f => ({ question: f.question, answer: f.answer }))} />
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },

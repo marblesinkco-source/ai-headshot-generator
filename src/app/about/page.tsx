@@ -101,7 +101,7 @@ const values = [
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-tp-paper">
+    <main id="main-content" className="min-h-screen bg-tp-paper">
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },

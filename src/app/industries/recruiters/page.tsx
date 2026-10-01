@@ -126,7 +126,7 @@ const faqs = [
 
 export default function RecruitersIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Recruiters"}
         description={"AI-generated professional headshots for recruiters and talent acquisition professionals for LinkedIn, outreach, and agency websites."}

@@ -126,7 +126,7 @@ const faqs = [
 
 export default function GraphicDesignersIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Graphic Designers"}
         description={"AI-generated professional headshots for graphic designers for portfolios, Behance, Dribbble, LinkedIn, and client proposals."}

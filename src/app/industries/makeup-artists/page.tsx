@@ -126,7 +126,7 @@ const faqs = [
 
 export default function MakeupArtistsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Makeup Artists"}
         description={"AI-generated professional headshots for makeup artists for portfolios, booking pages, Instagram, and beauty industry profiles."}

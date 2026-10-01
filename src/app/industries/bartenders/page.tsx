@@ -126,7 +126,7 @@ const faqs = [
 
 export default function BartendersIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Bartenders"}
         description={"AI-generated professional headshots for bartenders and mixologists for resumes, LinkedIn, and social media."}

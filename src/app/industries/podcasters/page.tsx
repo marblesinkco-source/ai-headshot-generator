@@ -126,7 +126,7 @@ const faqs = [
 
 export default function PodcastersIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Podcasters"}
         description={"Professional AI headshots for podcast hosts, guests, and audio creators."}

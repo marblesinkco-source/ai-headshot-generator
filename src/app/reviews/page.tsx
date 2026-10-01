@@ -108,7 +108,7 @@ export default function ReviewsPage() {
         ]}
       />
       <Header />
-      <main className="min-h-screen bg-tp-paper">
+      <main id="main-content" className="min-h-screen bg-tp-paper">
         <section className="px-4 pb-10 pt-28 text-center sm:pt-32">
           <div className="mx-auto max-w-3xl">
             <h1 className="font-display text-4xl font-normal tracking-tight text-tp-ink sm:text-5xl md:text-6xl">

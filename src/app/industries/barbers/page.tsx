@@ -126,7 +126,7 @@ const faqs = [
 
 export default function BarbersIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Barbers"}
         description={"AI-generated professional headshots for barbers and barbershop owners for booking pages, Instagram, and shop websites."}

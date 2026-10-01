@@ -122,7 +122,7 @@ const faqs = [
 
 export default function PersonalBrandingUseCasePage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name="AI Photos for Personal Branding"
         description="AI-generated professional photos for personal branding, suitable for coaches, speakers, authors, entrepreneurs, and consultants."

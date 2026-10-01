@@ -122,7 +122,7 @@ const faqs = [
 
 export default function LinkedInUseCasePage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name="AI Headshots for LinkedIn"
         description="AI-generated professional headshots optimized for LinkedIn profiles, job applications, and professional networking."

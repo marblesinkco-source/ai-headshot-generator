@@ -122,7 +122,7 @@ const faqs = [
 
 export default function NursesIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Nurses"}
         description={"AI-generated professional headshots for nurses, nurse practitioners, nursing students, and healthcare staff, in scrubs or formal attire."}

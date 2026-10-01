@@ -127,7 +127,7 @@ const faqs = [
 
 export default function PlumbersIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Plumbers"}
         description={"AI-generated professional headshots for plumbers and plumbing contractors for websites, Google Business Profiles, quotes, and marketing."}

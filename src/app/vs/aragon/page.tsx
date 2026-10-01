@@ -134,7 +134,7 @@ export default function VsAragonPage() {
     <>
       <Header />
 
-      <main className="min-h-screen">
+      <main id="main-content" className="min-h-screen">
         <BreadcrumbSchema items={[
           { name: 'Home', url: siteConfig.url },
           { name: 'TailorPic vs Aragon AI', url: `${siteConfig.url}/vs/aragon` },

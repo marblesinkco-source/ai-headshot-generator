@@ -18,7 +18,7 @@ export default function StylesPage() {
   const styles = getAllPhotoStyles();
 
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },

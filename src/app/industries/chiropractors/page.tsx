@@ -126,7 +126,7 @@ const faqs = [
 
 export default function ChiropractorsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Chiropractors"}
         description={"AI-generated professional headshots for chiropractors for practice websites, Google Business profiles, and patient materials."}

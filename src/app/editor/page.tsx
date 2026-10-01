@@ -177,7 +177,7 @@ const tools = [
 
 export default function EditorIndexPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main-content" className="min-h-screen bg-white">
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },

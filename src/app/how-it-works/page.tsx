@@ -145,7 +145,7 @@ const faqs = [
 
 export default function HowItWorksPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
         { name: 'How It Works', url: `${siteConfig.url}/how-it-works` },

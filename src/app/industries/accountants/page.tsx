@@ -107,7 +107,7 @@ const stats = [
 
 export default function AccountantsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
         { name: 'Industries', url: `${siteConfig.url}/industries` },

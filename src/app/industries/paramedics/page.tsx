@@ -127,7 +127,7 @@ const faqs = [
 
 export default function ParamedicsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Paramedics & EMTs"}
         description={"AI-generated professional headshots for paramedics and EMTs for agency pages, credentialing, job applications, and LinkedIn."}

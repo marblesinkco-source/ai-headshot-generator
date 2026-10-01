@@ -53,7 +53,7 @@ export default async function CategoryPage({ params }: Props) {
   const lowestPrice = Math.min(...cat.packages.map((p) => p.price));
 
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={cat.name}
         description={cat.seoDescription}

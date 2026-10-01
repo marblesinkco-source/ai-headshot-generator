@@ -137,7 +137,7 @@ export default function VsCanvaAIPage() {
     <>
       <Header />
 
-      <main className="min-h-screen">
+      <main id="main-content" className="min-h-screen">
         <BreadcrumbSchema items={[
           { name: 'Home', url: siteConfig.url },
           { name: 'TailorPic vs Canva AI', url: `${siteConfig.url}/vs/canva-ai` },

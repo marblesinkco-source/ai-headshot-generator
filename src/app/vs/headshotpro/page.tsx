@@ -132,7 +132,7 @@ function CellValue({ value, highlight }: { value: RowValue; highlight?: boolean 
 
 export default function VsHeadshotProPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main-content" className="min-h-screen bg-white">
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
         { name: 'TailorPic vs HeadshotPro', url: `${siteConfig.url}/vs/headshotpro` },

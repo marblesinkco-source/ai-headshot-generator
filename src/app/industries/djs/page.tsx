@@ -126,7 +126,7 @@ const faqs = [
 
 export default function DJsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for DJs"}
         description={"AI-generated professional headshots for DJs for booking pages, press kits, festival lineups, and social media."}

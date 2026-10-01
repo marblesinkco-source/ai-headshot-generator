@@ -1,8 +1,21 @@
 import { NextResponse } from 'next/server';
+import { rateLimit, getClientIp } from '@/lib/rate-limit';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function POST(request: Request) {
+  const rl = rateLimit({
+    key: `newsletter:${getClientIp(request)}`,
+    limit: 5,
+    windowMs: 60 * 60 * 1000,
+  });
+  if (!rl.success) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again later.' },
+      { status: 429, headers: { 'Retry-After': '3600' } },
+    );
+  }
+
   let email: unknown;
   try {
     ({ email } = await request.json());

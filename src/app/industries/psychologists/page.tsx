@@ -126,7 +126,7 @@ const faqs = [
 
 export default function PsychologistsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Psychologists"}
         description={"AI-generated professional headshots for psychologists for practice websites, therapist directories, LinkedIn, and speaker profiles."}

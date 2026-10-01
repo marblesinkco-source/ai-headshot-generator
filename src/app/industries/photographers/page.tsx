@@ -126,7 +126,7 @@ const faqs = [
 
 export default function PhotographersIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Photographers"}
         description={"AI-generated professional headshots for photographers, videographers, and creative professionals for portfolios, websites, and social media."}

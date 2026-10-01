@@ -126,7 +126,7 @@ const faqs = [
 
 export default function SocialWorkersIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Social Workers"}
         description={"AI-generated professional headshots for social workers for LinkedIn, agency websites, private practice pages, and conference profiles."}

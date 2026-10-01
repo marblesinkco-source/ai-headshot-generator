@@ -29,7 +29,7 @@ export default function LegalLayout({ children }: { children: React.ReactNode })
       </header>
 
       {/* Content */}
-      <main className="mx-auto max-w-3xl px-4 py-12">
+      <main id="main-content" className="mx-auto max-w-3xl px-4 py-12">
         {children}
       </main>
 

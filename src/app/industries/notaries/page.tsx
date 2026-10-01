@@ -126,7 +126,7 @@ const faqs = [
 
 export default function NotariesIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Notaries & Legal Professionals"}
         description={"AI-generated professional headshots for notaries and legal professionals for websites, directories, and LinkedIn."}

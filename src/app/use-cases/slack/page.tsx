@@ -122,7 +122,7 @@ const faqs = [
 
 export default function SlackUseCasePage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name="AI Profile Photos for Slack & Teams"
         description="AI-generated professional headshots optimized for Slack, Microsoft Teams, Zoom, and workplace communication tools."

@@ -126,7 +126,7 @@ const faqs = [
 
 export default function RealEstateBrokersIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Real Estate Brokers"}
         description={"AI-generated professional headshots for real estate brokers for brokerage websites, listings, signage, and marketing materials."}

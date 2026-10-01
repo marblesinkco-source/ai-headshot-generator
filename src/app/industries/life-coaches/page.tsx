@@ -126,7 +126,7 @@ const faqs = [
 
 export default function LifeCoachesIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Life Coaches"}
         description={"AI-generated professional headshots for life coaches for websites, programs, discovery call pages, and social media."}

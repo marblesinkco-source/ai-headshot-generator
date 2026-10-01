@@ -126,7 +126,7 @@ const faqs = [
 
 export default function FacebookUseCasePage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name="AI Profile Photos for Facebook"
         description="AI-generated profile photos optimized for Facebook profiles, Pages, groups, and Marketplace."

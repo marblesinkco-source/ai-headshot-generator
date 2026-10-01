@@ -64,7 +64,7 @@ export default async function BlogPostPage({ params }: Props) {
   }
 
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ArticleSchema
         title={post.title}
         description={post.description}

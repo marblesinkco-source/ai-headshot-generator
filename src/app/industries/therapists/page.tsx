@@ -126,7 +126,7 @@ const faqs = [
 
 export default function TherapistsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Therapists & Counselors"}
         description={"AI-generated professional headshots for therapists, counselors, and mental health practitioners for directories, websites, and practice profiles."}

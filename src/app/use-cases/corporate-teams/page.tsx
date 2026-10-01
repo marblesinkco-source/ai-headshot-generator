@@ -122,7 +122,7 @@ const faqs = [
 
 export default function CorporateTeamsUseCasePage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name="AI Headshots for Corporate Teams"
         description="AI-generated consistent professional headshots for corporate teams, matching backgrounds and styles for company websites and directories."

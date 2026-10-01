@@ -126,7 +126,7 @@ const faqs = [
 
 export default function SalesProfessionalsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Sales Professionals"}
         description={"Professional AI headshots for sales reps, account executives, and sales leaders."}

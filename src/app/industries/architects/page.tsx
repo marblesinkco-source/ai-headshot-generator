@@ -126,7 +126,7 @@ const faqs = [
 
 export default function ArchitectsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Architects"}
         description={"AI-generated professional headshots for architects, interior designers, and design professionals for firm websites, proposals, and professional profiles."}

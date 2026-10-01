@@ -127,7 +127,7 @@ const faqs = [
 
 export default function FirefightersIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Firefighters"}
         description={"AI-generated professional headshots for firefighters and fire service leaders for department websites, promotion packets, and LinkedIn."}

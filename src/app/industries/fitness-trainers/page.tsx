@@ -126,7 +126,7 @@ const faqs = [
 
 export default function FitnessTrainersIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Fitness Trainers & Personal Coaches"}
         description={"AI-generated professional headshots for fitness trainers, personal coaches, and yoga instructors for social media, booking pages, and gym websites."}

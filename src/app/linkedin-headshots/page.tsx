@@ -14,7 +14,6 @@ import {
   Check,
   Star,
   Upload,
-  Wand2,
   Download,
 } from 'lucide-react';
 
@@ -112,7 +111,7 @@ export default function LinkedInHeadshotsPage() {
   };
 
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main-content" className="min-h-screen bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -206,7 +205,7 @@ export default function LinkedInHeadshotsPage() {
           </div>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-tp-muted">
             <span className="flex items-center gap-2"><Upload className="h-4 w-4 text-tp-bronze-ink" /> Upload selfies</span>
-            <span className="flex items-center gap-2"><Wand2 className="h-4 w-4 text-tp-bronze-ink" /> AI creates headshots</span>
+            <span className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-tp-bronze-ink" /> AI creates headshots</span>
             <span className="flex items-center gap-2"><Download className="h-4 w-4 text-tp-bronze-ink" /> Download and post</span>
           </div>
         </div>

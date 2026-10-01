@@ -122,7 +122,7 @@ const faqs = [
 
 export default function EngineersIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Engineers"}
         description={"AI-generated professional headshots for software engineers, civil and mechanical engineers, and tech professionals."}

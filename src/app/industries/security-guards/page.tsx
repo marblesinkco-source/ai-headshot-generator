@@ -126,7 +126,7 @@ const faqs = [
 
 export default function SecurityGuardsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Security Guards"}
         description={"AI-generated professional headshots for security guards and officers for resumes, LinkedIn, and company profiles."}

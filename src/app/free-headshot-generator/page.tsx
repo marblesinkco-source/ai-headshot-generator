@@ -14,7 +14,6 @@ import {
   Check,
   Star,
   Upload,
-  Wand2,
   Download,
 } from 'lucide-react';
 
@@ -39,7 +38,7 @@ const steps = [
       'Add a handful of casual selfies taken with your phone. Good light and a clear view of your face is all you need.',
   },
   {
-    icon: Wand2,
+    icon: Sparkles,
     title: 'AI generates your headshots',
     description:
       'Our AI learns your features and creates professional headshots in the styles and backgrounds you pick.',
@@ -124,7 +123,7 @@ export default function FreeHeadshotGeneratorPage() {
   };
 
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main-content" className="min-h-screen bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

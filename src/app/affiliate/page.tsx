@@ -144,7 +144,7 @@ export default function AffiliatePage() {
         { name: 'Affiliate Program', url: `${siteConfig.url}/affiliate` },
       ]} />
       <Header />
-      <main>
+      <main id="main-content">
         {/* ── Hero ─────────────────────────────────────────────── */}
         <section className="relative overflow-hidden bg-tp-black py-24 sm:py-32">
           {/* decorative bronze gradient */}

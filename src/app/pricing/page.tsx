@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function PricingPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },

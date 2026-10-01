@@ -126,7 +126,7 @@ const faqs = [
 
 export default function TourGuidesIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Tour Guides"}
         description={"AI-generated professional headshots for tour guides for booking platforms, tour company profiles, licensing pages, and travel websites."}

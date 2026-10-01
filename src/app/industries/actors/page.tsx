@@ -126,7 +126,7 @@ const faqs = [
 
 export default function ActorsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Actors"}
         description={"AI-generated professional headshots for actors, models, and performers for casting profiles, auditions, and talent agencies."}

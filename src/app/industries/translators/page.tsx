@@ -126,7 +126,7 @@ const faqs = [
 
 export default function TranslatorsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Translators & Interpreters"}
         description={"AI-generated professional headshots for translators and interpreters for freelance marketplaces, LinkedIn, portfolio sites, and agency profiles."}

@@ -122,7 +122,7 @@ const faqs = [
 
 export default function InstagramUseCasePage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name="AI Photos for Instagram"
         description="AI-generated photos optimized for Instagram profiles, feed posts, stories, and personal branding."

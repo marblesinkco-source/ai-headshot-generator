@@ -126,7 +126,7 @@ const faqs = [
 
 export default function AuthorsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Authors & Writers"}
         description={"AI-generated professional author headshots for book jackets, Amazon author pages, press kits, websites, and social media."}

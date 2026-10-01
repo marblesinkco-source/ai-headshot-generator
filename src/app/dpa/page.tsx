@@ -128,7 +128,7 @@ function SectionHeading({ number, children }: { number: number; children: React.
 
 export default function DpaPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main-content" className="min-h-screen bg-white">
       <Header />
 
       {/* Hero */}

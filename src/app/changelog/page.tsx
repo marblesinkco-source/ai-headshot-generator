@@ -115,7 +115,7 @@ const changelog: ChangelogMonth[] = [
 
 export default function ChangelogPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
         { name: 'Changelog', url: `${siteConfig.url}/changelog` },

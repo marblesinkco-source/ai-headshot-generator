@@ -126,7 +126,7 @@ const faqs = [
 
 export default function PublicSpeakersIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Public Speakers"}
         description={"AI-generated professional headshots for public speakers for event programs, speaker bureaus, media kits, and websites."}

@@ -126,7 +126,7 @@ const faqs = [
 
 export default function FlightAttendantsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Flight Attendants"}
         description={"AI-generated professional headshots for flight attendants and cabin crew for airline applications, LinkedIn, and personal branding."}

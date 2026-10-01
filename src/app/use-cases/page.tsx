@@ -380,7 +380,7 @@ const useCases = [
 
 export default function UseCasesPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
         { name: 'Use Cases', url: `${siteConfig.url}/use-cases` },

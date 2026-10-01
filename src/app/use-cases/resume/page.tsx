@@ -126,7 +126,7 @@ const faqs = [
 
 export default function ResumeUseCasePage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name="AI Headshots for Resumes & CVs"
         description="AI-generated professional headshots for resumes, CVs, job applications, and portfolios."

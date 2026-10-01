@@ -164,7 +164,7 @@ export function CalculatorForm() {
         {view === 'both' && (
           <div
             key={`${group}-${type}`}
-            className="flex animate-fade-in items-center gap-3 rounded-tp-card border border-emerald-200 bg-emerald-50 px-5 py-4"
+            className="flex items-center gap-3 rounded-tp-card border border-emerald-200 bg-emerald-50 px-5 py-4"
           >
             <TrendingDown className="h-6 w-6 shrink-0 text-emerald-700" aria-hidden="true" />
             <p className="text-sm text-emerald-900 sm:text-base">

@@ -126,7 +126,7 @@ const faqs = [
 
 export default function MarketingProfessionalsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Marketing Professionals"}
         description={"AI-generated professional headshots for marketing professionals for LinkedIn, speaker bios, agency websites, and bylines."}

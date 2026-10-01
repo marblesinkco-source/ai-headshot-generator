@@ -122,7 +122,7 @@ const faqs = [
 
 export default function FinancialAdvisorsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Financial Advisors"}
         description={"AI-generated professional headshots for financial advisors, wealth managers, CFPs, and financial planners for firm websites, LinkedIn, and client materials."}

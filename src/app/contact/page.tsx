@@ -4,6 +4,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
+import { ContactForm } from '@/components/marketing/contact-form';
 import { Mail, MessageSquare, Clock, MapPin } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -73,7 +74,7 @@ const faqs = [
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
         { name: 'Contact', url: `${siteConfig.url}/contact` },
@@ -127,6 +128,14 @@ export default function ContactPage() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section className="pb-16">
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+          <h2 className="mb-6 text-center text-2xl font-bold text-gray-900">Send us a message</h2>
+          <ContactForm />
         </div>
       </section>
 

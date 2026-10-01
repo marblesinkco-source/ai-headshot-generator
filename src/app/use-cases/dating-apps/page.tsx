@@ -122,7 +122,7 @@ const faqs = [
 
 export default function DatingAppsUseCasePage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name="AI Photos for Dating Apps"
         description="AI-generated natural-looking profile photos optimized for dating apps like Tinder, Hinge, and Bumble."

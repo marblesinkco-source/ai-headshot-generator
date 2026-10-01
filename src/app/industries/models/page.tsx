@@ -126,7 +126,7 @@ const faqs = [
 
 export default function ModelsIndustryPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name={"Professional Headshots for Models & Talent"}
         description={"AI-generated professional headshots for models and talent for agency submissions, portfolios, digital comp cards, and social media."}

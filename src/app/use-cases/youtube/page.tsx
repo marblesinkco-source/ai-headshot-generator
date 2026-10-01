@@ -126,7 +126,7 @@ const faqs = [
 
 export default function YouTubeUseCasePage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <ProductSchema
         name="AI Photos for YouTube Channels"
         description="AI-generated creator portraits for YouTube channel avatars, banners, thumbnails, and media kits."
