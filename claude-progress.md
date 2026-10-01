@@ -45,6 +45,13 @@
 40. `c2a2a2f` — Fix smart quote syntax errors across 5 files
 41. `9029521` — Blog index: featured post, category filters, newsletter CTA
 42. `5356093` — Free headshot generator + samples page improvements
+43. `f9c16fa` — Update progress tracker with commits 36-42
+44. `1e8fb99` — CTA improvements + /vs hub page overhaul
+45. `1a11377` — LinkedIn headshots + styles page improvements
+46. `cc7173a` — Reviews categorization, enterprise security/demo, remove duplicate SEO components
+47. `556458d` — Enterprise pricing fixes, pricing toggle, contact/about improvements, homepage $9.90
+48. `64fdc4b` — 14-day guarantee consistency, openGraph metadata, route conflict fix
+49. `68453f0` — Security page overhaul, FAQ categories, hero conversion optimization
 
 ### Completed Features
 - [x] Exit-intent popup with WELCOME10 promo
@@ -206,6 +213,27 @@
 - [x] Blog index: featured post card, category/tag filters, newsletter CTA, Blog JSON-LD
 - [x] Free headshot generator: style cards, trial vs paid comparison, FAQSchema, removed fabricated claim
 - [x] Samples: popular styles section, quality features, honest comparison table
+- [x] CTA banner: new headline, trust points, dual CTAs
+- [x] /vs hub: 80 competitors in 3 categories, search/filter, 5 differentiators
+- [x] LinkedIn headshots: photo requirements, checklist, before/after, 3 scenarios, expanded FAQ
+- [x] Styles page: 59 styles in 5 categories, anchor nav, most popular section
+- [x] Reviews: 4 category groups, anchor pill nav, FAQ section, "Leave a Review" CTA
+- [x] Enterprise: security & privacy section, implementation timeline, demo request CTA, visible FAQ
+- [x] Enterprise: ROI calculator tiered pricing fix ($39/$29/$19 matching pricing tiers)
+- [x] Enterprise: removed unsupported claims (unlimited members, real-time analytics, user-controlled retention)
+- [x] ROI calculator: optional ctaHref/ctaLabel props
+- [x] Deleted duplicate src/components/seo/ directory (unused)
+- [x] Pricing: individual/team toggle, "What's included" section, trust signals strip
+- [x] Contact: department selection, FAQ with schema, trust signals, response time
+- [x] About: mission statement, values, commitments section, improved OG metadata
+- [x] Homepage: $9.99 → $9.90 price fix, "100%" → "14-day" guarantee fix
+- [x] Guarantee text: "14-day" qualifier added site-wide (guarantee-badge, trust-bar, trust-badges, hero, pricing)
+- [x] OpenGraph + twitter metadata: industries, terms, privacy pages
+- [x] Deleted duplicate src/app/use-cases/page.tsx (route conflict with (marketing)/use-cases)
+- [x] Sitemap: added /for-teams route
+- [x] Security page: structured sections, FAQSchema, removed unverifiable claims
+- [x] FAQ page: category grouping with jump links, 5 new entries (17 total), FAQSchema
+- [x] Hero: clearer value prop, "Get My Headshots" CTA, 3-step mini how-it-works, trust signals
 
 ### Backlog (Requires External Action)
 - [ ] Stripe: Create WELCOME10 promo code (10% off) — needs Stripe dashboard/API key
