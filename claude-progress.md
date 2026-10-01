@@ -1,6 +1,6 @@
 # TailorPic — Progress Tracker
 
-## Last Session: 2026-10-01
+## Last Session: 2026-10-02
 
 ### Commits (this session)
 1. `178090a` — Exit-intent popup, email capture, upload guidelines
@@ -91,8 +91,14 @@
 86. `6e7f249` — Update progress tracker with full-stack audit results
 87. `97a7486` — Add comprehensive scaling plan for 10K, 100K, and 1M users
 88. `88a3b1b` — Phase 1 infrastructure upgrades: Upstash Redis rate limiting, maxDuration, retry utility, Stripe event dedup, stuck order cron (22 files, 431 insertions)
+89. `b9d925f` — Update progress tracker with Phase 1 infrastructure commits
+90. `4fe3ee2` — AI Avatars category: landing page, bundle upsell, nav integration (5 files, 622 insertions)
 
 ### Completed Features
+- [x] AI Avatars category (12th category) with 2 packages ($15.90/30 + $24.80/50)
+- [x] AI Avatars landing page (/avatars) — 9 sections, structured data, OG meta
+- [x] Avatar bundle upsell in checkout flow ($8.90 upgrade from 30→50 avatars)
+- [x] Footer + sitemap + header integration for avatars
 - [x] Exit-intent popup with WELCOME10 promo
 - [x] Email capture (card + banner variants)
 - [x] Newsletter API endpoint (rate limited + Resend welcome email + Supabase storage)
