@@ -319,8 +319,9 @@ export function Header() {
         ref={mobileDialog}
         className="rounded-[20px] border border-tp-line bg-tp-paper p-0 text-tp-ink w-[min(760px,calc(100vw-28px))] max-h-[85vh] overflow-visible backdrop:bg-tp-black/56"
       >
-        <div className="p-5 overflow-auto max-h-[85vh]">
-        <div className="flex items-center justify-between gap-5 mb-4">
+        <div className="overflow-auto max-h-[85vh] rounded-[20px]">
+        {/* Sticky header — always visible when scrolling */}
+        <div className="sticky top-0 z-10 flex items-center justify-between gap-5 bg-tp-paper px-5 pt-5 pb-3 rounded-t-[20px]">
           <h2 className="font-display text-[29px] font-normal leading-tight">{siteConfig.name}</h2>
           <button
             className="h-11 w-11 rounded-full border border-tp-line bg-transparent text-[23px] flex-shrink-0 flex items-center justify-center"
@@ -330,6 +331,7 @@ export function Header() {
             &#215;
           </button>
         </div>
+        <div className="px-5 pb-5">
 
         {/* Mobile category grid */}
         <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest text-tp-muted">Photo Types</p>
@@ -395,6 +397,7 @@ export function Header() {
             </Link>
           )}
         </nav>
+        </div>
         </div>
       </dialog>
     </header>

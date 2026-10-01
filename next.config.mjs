@@ -30,7 +30,7 @@ const nextConfig = {
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com https://accounts.google.com https://www.googletagmanager.com https://va.vercel-scripts.com",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
-              "img-src 'self' data: blob: https://*.supabase.co https://*.supabase.in https://replicate.delivery https://*.replicate.delivery https://images.unsplash.com https://lh3.googleusercontent.com",
+              "img-src 'self' data: blob: https://*.supabase.co https://*.supabase.in https://replicate.delivery https://*.replicate.delivery https://images.unsplash.com https://lh3.googleusercontent.com https://platform-lookaside.fbsbcdn.net https://graph.facebook.com",
               "connect-src 'self' https://*.supabase.co https://*.supabase.in https://api.stripe.com https://api.replicate.com https://replicate.delivery https://*.replicate.delivery https://www.google-analytics.com https://va.vercel-scripts.com https://vitals.vercel-insights.com",
               "frame-src 'self' https://js.stripe.com https://accounts.google.com",
               "object-src 'none'",
@@ -63,6 +63,18 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'platform-lookaside.fbsbcdn.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'graph.facebook.com',
       },
     ],
   },
