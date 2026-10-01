@@ -21,6 +21,12 @@ export const metadata: Metadata = {
     description: pageDescription,
     url: 'https://www.tailorpic.com/use-cases/business-card',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: pageTitle,
+    description: pageDescription,
+    images: [siteConfig.ogImage],
+  },
 };
 
 const productJsonLd = {

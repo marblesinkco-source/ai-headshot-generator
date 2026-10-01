@@ -33,6 +33,12 @@ export const metadata: Metadata = {
       'AI-powered professional headshots for legal professionals. Bar-compliant, firm-consistent team photos delivered in hours.',
     url: `${siteConfig.url}/industries/lawyers`,
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Attorney & Law Firm Headshots | ${siteConfig.name}`,
+    description: 'AI-powered professional headshots for legal professionals. Bar-compliant, firm-consistent team photos delivered in hours.',
+    images: [siteConfig.ogImage],
+  },
 };
 
 const painPoints = [

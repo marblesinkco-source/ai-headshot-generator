@@ -36,6 +36,12 @@ export const metadata: Metadata = {
       'AI-powered professional headshots for consultants. Boardroom, casual professional, and speaker styles delivered in hours.',
     url: `${siteConfig.url}/industries/consultants`,
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: `AI Headshots for Consultants & Advisors | ${siteConfig.name}`,
+    description: 'AI-powered professional headshots for consultants. Boardroom, casual professional, and speaker styles delivered in hours.',
+    images: [siteConfig.ogImage],
+  },
 };
 
 const painPoints = [

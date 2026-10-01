@@ -18,6 +18,12 @@ export const metadata: Metadata = {
     description:
       'Studio-quality product photos in 2 hours. No photographer needed.',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Product Photography for E-Commerce | TailorPic',
+    description: 'Studio-quality product photos in 2 hours. No photographer needed.',
+    images: [siteConfig.ogImage],
+  },
 };
 
 export default function EcommerceLandingPage() {

@@ -28,6 +28,10 @@ export const metadata: Metadata = {
       'Compare TailorPic and Aragon AI for AI headshots. Pricing, quality, features, and delivery — see which AI headshot generator is right for you.',
     url: `${siteConfig.url}/vs/aragon`,
   },
+  twitter: {
+    card: 'summary_large_image',
+    images: [siteConfig.ogImage],
+  },
 };
 
 /* ------------------------------------------------------------------ */

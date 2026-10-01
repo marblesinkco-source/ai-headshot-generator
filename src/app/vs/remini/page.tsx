@@ -28,6 +28,10 @@ export const metadata: Metadata = {
       'Compare TailorPic and Remini. A purpose-built AI headshot generator versus a photo enhancer — see which fits your needs.',
     url: `${siteConfig.url}/vs/remini`,
   },
+  twitter: {
+    card: 'summary_large_image',
+    images: [siteConfig.ogImage],
+  },
 };
 
 /* ------------------------------------------------------------------ */

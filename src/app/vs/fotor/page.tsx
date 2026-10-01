@@ -28,6 +28,10 @@ export const metadata: Metadata = {
       'Compare TailorPic and Fotor AI. A specialized AI headshot generator versus a general photo editor — see which fits your needs.',
     url: `${siteConfig.url}/vs/fotor`,
   },
+  twitter: {
+    card: 'summary_large_image',
+    images: [siteConfig.ogImage],
+  },
 };
 
 /* ------------------------------------------------------------------ */

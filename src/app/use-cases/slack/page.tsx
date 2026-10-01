@@ -21,6 +21,12 @@ export const metadata: Metadata = {
     description: pageDescription,
     url: `${siteConfig.url}/use-cases/slack`,
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: pageTitle,
+    description: pageDescription,
+    images: [siteConfig.ogImage],
+  },
 };
 
 const benefits = [

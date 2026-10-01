@@ -36,6 +36,12 @@ export const metadata: Metadata = {
       'AI-powered professional headshots for healthcare professionals. Privacy-conscious, hospital-ready photos delivered in hours.',
     url: `${siteConfig.url}/industries/doctors`,
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: `AI Headshots for Doctors & Healthcare Professionals | ${siteConfig.name}`,
+    description: 'AI-powered professional headshots for healthcare professionals. Privacy-conscious, hospital-ready photos delivered in hours.',
+    images: [siteConfig.ogImage],
+  },
 };
 
 const painPoints = [

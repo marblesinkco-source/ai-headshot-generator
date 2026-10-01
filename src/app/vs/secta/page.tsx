@@ -29,6 +29,10 @@ export const metadata: Metadata = {
     url: `${siteConfig.url}/vs/secta`,
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    images: [siteConfig.ogImage],
+  },
 };
 
 /* ------------------------------------------------------------------ */

@@ -21,6 +21,12 @@ export const metadata: Metadata = {
     description: pageDescription,
     url: `${siteConfig.url}/use-cases/dating-apps`,
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: pageTitle,
+    description: pageDescription,
+    images: [siteConfig.ogImage],
+  },
 };
 
 const benefits = [

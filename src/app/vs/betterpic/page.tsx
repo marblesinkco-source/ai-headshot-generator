@@ -28,6 +28,10 @@ export const metadata: Metadata = {
       'Compare TailorPic and BetterPic for AI headshots. Pricing, photo count, features, and delivery — see which AI headshot generator is right for you.',
     url: `${siteConfig.url}/vs/betterpic`,
   },
+  twitter: {
+    card: 'summary_large_image',
+    images: [siteConfig.ogImage],
+  },
 };
 
 /* ------------------------------------------------------------------ */

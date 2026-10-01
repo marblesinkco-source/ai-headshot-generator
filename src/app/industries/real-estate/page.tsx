@@ -31,6 +31,12 @@ export const metadata: Metadata = {
       'AI-powered professional headshots built for real estate. MLS-ready, brand-consistent team photos delivered in hours.',
     url: `${siteConfig.url}/industries/real-estate`,
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Real Estate Agent Headshots | ${siteConfig.name}`,
+    description: 'AI-powered professional headshots built for real estate. MLS-ready, brand-consistent team photos delivered in hours.',
+    images: [siteConfig.ogImage],
+  },
 };
 
 const painPoints = [

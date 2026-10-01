@@ -36,6 +36,12 @@ export const metadata: Metadata = {
       'AI-powered professional headshots for accounting and financial professionals. Firm-consistent, directory-ready photos delivered in hours.',
     url: `${siteConfig.url}/industries/accountants`,
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: `AI Headshots for Accountants & Financial Professionals | ${siteConfig.name}`,
+    description: 'AI-powered professional headshots for accounting and financial professionals. Firm-consistent, directory-ready photos delivered in hours.',
+    images: [siteConfig.ogImage],
+  },
 };
 
 const painPoints = [

@@ -29,6 +29,10 @@ export const metadata: Metadata = {
       'Compare TailorPic and Canva AI. Photorealistic AI headshots versus a general design platform — see which fits your needs.',
     url: `${siteConfig.url}/vs/canva-ai`,
   },
+  twitter: {
+    card: 'summary_large_image',
+    images: [siteConfig.ogImage],
+  },
 };
 
 /* ------------------------------------------------------------------ */

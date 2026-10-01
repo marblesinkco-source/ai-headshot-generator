@@ -28,6 +28,10 @@ export const metadata: Metadata = {
       'Compare TailorPic and Try It On AI. Pricing, categories, features, and delivery — see which AI photo generator is right for you.',
     url: `${siteConfig.url}/vs/tryitonai`,
   },
+  twitter: {
+    card: 'summary_large_image',
+    images: [siteConfig.ogImage],
+  },
 };
 
 /* ------------------------------------------------------------------ */

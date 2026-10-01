@@ -27,6 +27,10 @@ export const metadata: Metadata = {
       'Detailed comparison of TailorPic and HeadshotPro. Compare pricing from $9.90 vs $29, photo categories, delivery speed, and more.',
     url: `${siteConfig.url}/vs/headshotpro`,
   },
+  twitter: {
+    card: 'summary_large_image',
+    images: [siteConfig.ogImage],
+  },
 };
 
 /* ------------------------------------------------------------------ */
