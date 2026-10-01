@@ -24,6 +24,12 @@ export const metadata: Metadata = {
     type: 'website',
     images: [siteConfig.ogImage],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
+    images: [siteConfig.ogImage],
+  },
 };
 
 const jsonLd = {
