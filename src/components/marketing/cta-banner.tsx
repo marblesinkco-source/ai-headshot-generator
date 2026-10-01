@@ -2,11 +2,14 @@
 
 import { useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { getActiveCategories } from '@/config/categories';
 
 const categories = getActiveCategories();
+
+const trustPoints = ['One-time payment', '14-day guarantee', '40+ styles'];
 
 export function CTABanner() {
   const categoryDialog = useRef<HTMLDialogElement>(null);
@@ -17,7 +20,7 @@ export function CTABanner() {
         <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
           <div className="relative overflow-hidden rounded-tp-card bg-tp-black p-8 sm:p-12 lg:p-20 text-center">
             {/* Decorative gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-tp-bronze/20 via-transparent to-tp-bronze/10" />
+            <div className="absolute inset-0 bg-gradient-to-br from-tp-bronze/35 via-tp-black to-tp-bronze/20" />
             <div
               aria-hidden="true"
               className="absolute -top-24 left-1/2 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-tp-bronze/15 blur-3xl"
@@ -29,28 +32,42 @@ export function CTABanner() {
 
             <div className="relative z-10">
               <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-tp-paper leading-tight tracking-[-0.03em]">
-                From a few selfies to the photo you&rsquo;ll be proud to use everywhere.
+                No subscription. No studio visit. Just great headshots.
               </h2>
               <p className="mt-4 text-tp-beige/70 text-base sm:text-lg max-w-xl mx-auto">
-                Skip the studio and the scheduling. Get 40+ studio-quality portraits in under 2 hours,
+                Upload a few selfies and get studio-quality portraits you&rsquo;ll be proud to use everywhere,
                 starting at just $9.90.
               </p>
 
-              <div className="mt-8 flex flex-wrap justify-center gap-4">
-                <button
-                  onClick={() => categoryDialog.current?.showModal()}
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+                <Link
+                  href="/auth/register"
                   className={cn(
                     buttonVariants({ variant: 'primary', size: 'lg' }),
                     'h-14 gap-3 bg-tp-bronze px-10 text-base font-semibold text-tp-black shadow-lg shadow-tp-bronze/20 hover:-translate-y-0.5 hover:bg-tp-bronze hover:shadow-xl hover:shadow-tp-bronze/30'
                   )}
                 >
-                  Get Started Now <span aria-hidden="true" className="text-lg">&#8599;</span>
+                  Get my headshots <span aria-hidden="true" className="text-lg">&#8599;</span>
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => categoryDialog.current?.showModal()}
+                  className="text-sm font-medium text-tp-beige underline underline-offset-4 transition-colors hover:text-tp-paper"
+                >
+                  Browse categories
                 </button>
               </div>
 
-              <p className="mt-5 text-xs sm:text-sm text-tp-beige/80">
-                14-day money-back guarantee &middot; No subscription &middot; Pay once, own forever &middot; Secure Stripe payment
-              </p>
+              <ul className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-tp-beige/90">
+                {trustPoints.map((point) => (
+                  <li key={point} className="flex items-center gap-2">
+                    <svg aria-hidden="true" viewBox="0 0 20 20" className="h-4 w-4 text-tp-bronze" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M4 10.5l4 4 8-9" />
+                    </svg>
+                    {point}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

@@ -8,7 +8,7 @@ export function StickyCTA({ href = '/auth/register' }: { href?: string }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 300);
+    const onScroll = () => setVisible(window.scrollY > 500);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
@@ -22,13 +22,18 @@ export function StickyCTA({ href = '/auth/register' }: { href?: string }) {
         visible ? 'translate-y-0' : 'pointer-events-none translate-y-full'
       )}
     >
-      <p className="text-sm font-medium text-tp-paper">Studio-quality photos from $9.90</p>
+      <div className="min-w-0">
+        <p className="font-display text-sm font-medium leading-tight text-tp-paper">
+          Your best headshot, no studio needed
+        </p>
+        <p className="mt-0.5 text-xs text-tp-beige/80">Starting from $9.90 &middot; one-time payment</p>
+      </div>
       <Link
         href={href}
         tabIndex={visible ? 0 : -1}
         className="shrink-0 rounded-tp-button bg-tp-bronze px-4 py-2 text-sm font-semibold text-tp-black transition-colors hover:bg-tp-beige"
       >
-        Get Started
+        Get my headshots
       </Link>
     </div>
   );
