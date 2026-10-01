@@ -1,9 +1,9 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { siteConfig } from '@/config/site';
 import { getActiveCategories, CATEGORY_GROUPS } from '@/config/categories';
 import { createClient } from '@/lib/supabase/client';
@@ -22,6 +22,7 @@ const navLinks = [
 
 export function Header() {
   const router = useRouter();
+  const pathname = usePathname();
   const mobileDialog = useRef<HTMLDialogElement>(null);
   const [megaOpen, setMegaOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
@@ -29,6 +30,26 @@ export function Header() {
   const closeTimer = useRef<ReturnType<typeof setTimeout>>();
   const [user, setUser] = useState<User | null>(null);
   const [loggingOut, setLoggingOut] = useState(false);
+
+  // Close mobile dialog on route change
+  useEffect(() => {
+    mobileDialog.current?.close();
+  }, [pathname]);
+
+  // Handle backdrop click and ESC to close dialog
+  useEffect(() => {
+    const dialog = mobileDialog.current;
+    if (!dialog) return;
+
+    function handleClick(e: MouseEvent) {
+      if (e.target === dialog) {
+        dialog.close();
+      }
+    }
+
+    dialog.addEventListener('click', handleClick);
+    return () => dialog.removeEventListener('click', handleClick);
+  }, []);
 
   useEffect(() => {
     const supabase = createClient();
@@ -296,8 +317,9 @@ export function Header() {
       {/* Mobile Nav Dialog */}
       <dialog
         ref={mobileDialog}
-        className="rounded-[20px] border border-tp-line bg-tp-paper p-5 text-tp-ink w-[min(760px,calc(100vw-28px))] max-h-[85vh] overflow-auto backdrop:bg-tp-black/56"
+        className="rounded-[20px] border border-tp-line bg-tp-paper p-0 text-tp-ink w-[min(760px,calc(100vw-28px))] max-h-[85vh] overflow-visible backdrop:bg-tp-black/56"
       >
+        <div className="p-5 overflow-auto max-h-[85vh]">
         <div className="flex items-center justify-between gap-5 mb-4">
           <h2 className="font-display text-[29px] font-normal leading-tight">{siteConfig.name}</h2>
           <button
@@ -373,6 +395,7 @@ export function Header() {
             </Link>
           )}
         </nav>
+        </div>
       </dialog>
     </header>
   );
