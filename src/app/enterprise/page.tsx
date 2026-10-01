@@ -8,6 +8,7 @@ import { siteConfig } from '@/config/site';
 import {
   Building2, Users, Shield, Clock, CreditCard, Palette,
   ArrowRight, Check, CheckCircle, Lock, BarChart3, Headphones, Globe,
+  Trash2, FileCheck, ShieldCheck, Eye, MessageSquare, Settings, UserPlus, Rocket,
 } from 'lucide-react';
 
 const ROICalculator = dynamic(
@@ -100,13 +101,13 @@ export default function EnterprisePage() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-xl bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:bg-tp-bronze/90"
+              className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:bg-tp-bronze/90"
             >
               Contact Sales <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/pricing"
-              className="inline-flex items-center gap-2 rounded-xl border border-tp-beige/20 px-6 py-3.5 text-sm font-semibold text-tp-beige transition-all hover:bg-white/5"
+              className="inline-flex items-center gap-2 rounded-tp-button border border-tp-beige/20 px-6 py-3.5 text-sm font-semibold text-tp-beige transition-all hover:bg-white/5"
             >
               View Team Plans
             </Link>
@@ -159,7 +160,7 @@ export default function EnterprisePage() {
                 desc: 'Every new hire, every promotion, every rebrand means another round of expensive photo shoots.',
               },
             ].map((pain) => (
-              <div key={pain.title} className="rounded-2xl border border-tp-line bg-tp-paper/50 p-6">
+              <div key={pain.title} className="rounded-tp-card border border-tp-line bg-tp-paper/50 p-6">
                 <h3 className="text-lg font-semibold text-tp-ink">{pain.title}</h3>
                 <p className="mt-2 text-sm text-tp-muted leading-relaxed">{pain.desc}</p>
               </div>
@@ -207,8 +208,8 @@ export default function EnterprisePage() {
               { icon: Headphones, title: 'Dedicated Support', desc: 'Priority support with a dedicated account manager for enterprise clients.' },
               { icon: BarChart3, title: 'Usage Analytics', desc: 'Track adoption, photo quality scores, and team utilization in real-time.' },
             ].map((feature) => (
-              <div key={feature.title} className="rounded-2xl border border-tp-line p-6 hover:border-tp-bronze/30 transition-colors">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-tp-black mb-4">
+              <div key={feature.title} className="rounded-tp-card border border-tp-line p-6 hover:border-tp-bronze/30 transition-colors">
+                <div className="flex h-10 w-10 items-center justify-center rounded-tp-button bg-tp-black mb-4">
                   <feature.icon className="h-5 w-5 text-tp-bronze" />
                 </div>
                 <h3 className="text-base font-semibold text-tp-ink">{feature.title}</h3>
@@ -257,6 +258,53 @@ export default function EnterprisePage() {
         </div>
       </section>
 
+      {/* Security & privacy */}
+      <section id="security" className="py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
+              Security &amp; Privacy
+            </p>
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+              Your Team&apos;s Photos Stay Private
+            </h2>
+            <p className="mt-3 text-tp-muted max-w-xl mx-auto">
+              Employee photos are personal data. Here is how we handle them.
+            </p>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { icon: Lock, title: 'Encryption', desc: 'Data is encrypted at rest with AES-256 and in transit with TLS 1.3.' },
+              { icon: Trash2, title: 'Automatic Data Deletion', desc: 'Original uploads and training data are permanently deleted within 30 days of delivery.' },
+              { icon: FileCheck, title: 'GDPR & CCPA Requests', desc: 'Team members can request access, correction, or deletion of their personal data at any time.' },
+              { icon: Eye, title: 'No Selling or Sharing', desc: 'Photos are used only to generate your headshots. We never sell them or share them with third parties.' },
+              { icon: ShieldCheck, title: 'Data Processing Agreement', desc: 'Need paperwork for procurement or legal review? Review our DPA and subprocessor list.' },
+            ].map((item) => (
+              <div key={item.title} className="rounded-tp-card border border-tp-line p-6">
+                <div className="flex h-10 w-10 items-center justify-center rounded-tp-button bg-tp-black mb-4">
+                  <item.icon className="h-5 w-5 text-tp-bronze" />
+                </div>
+                <h3 className="text-base font-semibold text-tp-ink">{item.title}</h3>
+                <p className="mt-2 text-sm text-tp-muted leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+            <div className="rounded-tp-card border border-tp-bronze/30 bg-tp-paper p-6 flex flex-col justify-between">
+              <div>
+                <h3 className="text-base font-semibold text-tp-ink">Security review?</h3>
+                <p className="mt-2 text-sm text-tp-muted leading-relaxed">
+                  Read the details, or tell us what your security team needs.
+                </p>
+              </div>
+              <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold text-tp-bronze-ink">
+                <Link href="/security" className="underline underline-offset-4">Security</Link>
+                <Link href="/dpa" className="underline underline-offset-4">DPA</Link>
+                <Link href="/subprocessors" className="underline underline-offset-4">Subprocessors</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* How it works for teams */}
       <section className="bg-tp-paper py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -283,6 +331,50 @@ export default function EnterprisePage() {
         </div>
       </section>
 
+      {/* Implementation timeline */}
+      <section id="implementation" className="py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
+              Implementation
+            </p>
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+              From First Call to Team Launch
+            </h2>
+            <p className="mt-3 text-tp-muted max-w-xl mx-auto">
+              A simple four-step rollout. We agree on timing with you during the first conversation.
+            </p>
+          </div>
+          <ol className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { icon: MessageSquare, title: 'Contact', desc: 'Tell us your team size and needs. We reply with a plan and a quote that fits.' },
+              { icon: Settings, title: 'Setup', desc: 'We help configure your team account, brand guidelines, and billing.' },
+              { icon: UserPlus, title: 'Onboard', desc: 'Invite members by email. Each person uploads selfies, with guidance and support from us.' },
+              { icon: Rocket, title: 'Launch', desc: 'Review and download every headshot, then update your site, LinkedIn, and signatures.' },
+            ].map((s, i) => (
+              <li key={s.title} className="relative rounded-tp-card border border-tp-line bg-tp-paper/50 p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-tp-black font-display text-lg text-tp-bronze">
+                    {i + 1}
+                  </span>
+                  <s.icon className="h-5 w-5 text-tp-bronze" aria-hidden="true" />
+                </div>
+                <h3 className="text-base font-semibold text-tp-ink">{s.title}</h3>
+                <p className="mt-2 text-sm text-tp-muted leading-relaxed">{s.desc}</p>
+              </li>
+            ))}
+          </ol>
+          <div className="mt-8 text-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-tp-button bg-tp-ink px-6 py-3 text-sm font-semibold text-tp-paper transition-all hover:-translate-y-0.5 hover:shadow-lg"
+            >
+              Start the Conversation <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing tiers */}
       <section className="bg-tp-black py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
@@ -300,7 +392,7 @@ export default function EnterprisePage() {
             ].map((plan) => (
               <div
                 key={plan.name}
-                className={`rounded-2xl p-6 text-left ${
+                className={`rounded-tp-card p-6 text-left ${
                   plan.popular
                     ? 'border-2 border-tp-bronze bg-tp-bronze/5 ring-1 ring-tp-bronze/20'
                     : 'border border-tp-beige/10 bg-white/5'
@@ -327,7 +419,7 @@ export default function EnterprisePage() {
                 </ul>
                 <Link
                   href={plan.name === 'Enterprise' ? '/contact' : '/team-headshots'}
-                  className={`mt-6 block rounded-xl py-3 text-center text-sm font-semibold transition-all ${
+                  className={`mt-6 block rounded-tp-button py-3 text-center text-sm font-semibold transition-all ${
                     plan.popular
                       ? 'bg-tp-bronze text-tp-black hover:bg-tp-bronze/90'
                       : 'border border-tp-beige/20 text-tp-beige hover:bg-white/5'
@@ -342,28 +434,50 @@ export default function EnterprisePage() {
       </section>
 
       {/* ROI calculator */}
-      <ROICalculator />
-
-      {/* Final CTA */}
-      <section className="py-20 sm:py-24">
+      <section id="roi" className="pt-16 sm:pt-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <Globe className="h-10 w-10 text-tp-bronze mx-auto mb-4" />
-          <h2 className="font-display text-3xl sm:text-4xl text-tp-ink">
-            Ready to Upgrade Your Team&apos;s Image?
-          </h2>
-          <p className="mt-4 text-lg text-tp-muted">
-            Tell us about your team and we&apos;ll put together a plan that fits.
+          <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
+            ROI
           </p>
+          <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+            See What Your Team Could Save
+          </h2>
+          <p className="mt-3 text-tp-muted">
+            Compare traditional studio shoots with TailorPic for your headshot volume.
+          </p>
+        </div>
+      </section>
+      <ROICalculator ctaHref="/contact" ctaLabel="Get a Team Quote" />
+
+      {/* Request a demo CTA */}
+      <section className="bg-tp-black py-20 sm:py-24">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+          <Globe className="h-10 w-10 text-tp-bronze mx-auto mb-4" aria-hidden="true" />
+          <h2 className="font-display text-3xl sm:text-4xl text-white">
+            Request a Demo for Your Team
+          </h2>
+          <p className="mt-4 text-lg text-tp-beige/70">
+            Tell us about your organization and we&apos;ll walk you through the admin dashboard,
+            brand guidelines, and a rollout plan that fits.
+          </p>
+          <ul className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-tp-beige/70">
+            {['Walkthrough of the team dashboard', 'Custom quote for your team size', 'Answers for your security review'].map((t) => (
+              <li key={t} className="flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 text-tp-bronze" aria-hidden="true" />
+                {t}
+              </li>
+            ))}
+          </ul>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-xl bg-tp-black px-7 py-3.5 text-sm font-semibold text-tp-bronze transition-all hover:-translate-y-0.5 hover:shadow-lg"
+              className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:bg-tp-bronze/90"
             >
-              Talk to Sales <ArrowRight className="h-4 w-4" />
+              Request a Demo <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/team-headshots"
-              className="inline-flex items-center gap-2 rounded-xl border border-tp-line px-6 py-3.5 text-sm font-semibold text-tp-ink transition-all hover:bg-tp-paper"
+              className="inline-flex items-center gap-2 rounded-tp-button border border-tp-beige/20 px-6 py-3.5 text-sm font-semibold text-tp-beige transition-all hover:bg-white/5"
             >
               Start with Team Plan
             </Link>

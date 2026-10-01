@@ -16,7 +16,13 @@ function formatUSD(value: number): string {
   })}`;
 }
 
-export function ROICalculator() {
+export function ROICalculator({
+  ctaHref = '/auth/register',
+  ctaLabel = 'Get Started',
+}: {
+  ctaHref?: string;
+  ctaLabel?: string;
+} = {}) {
   const [teamSize, setTeamSize] = useState(10);
 
   const traditional = teamSize * TRADITIONAL_PER_PERSON;
@@ -92,10 +98,10 @@ export function ROICalculator() {
 
           <div className="mt-8 text-center">
             <Link
-              href="/auth/register"
+              href={ctaHref}
               className="inline-flex items-center gap-2 rounded-tp-button bg-tp-ink px-6 py-3 text-sm font-semibold text-tp-paper transition-all hover:-translate-y-0.5 hover:shadow-lg"
             >
-              Get Started <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              {ctaLabel} <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
 
