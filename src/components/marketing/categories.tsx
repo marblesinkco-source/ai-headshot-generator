@@ -55,6 +55,9 @@ const CATEGORY_IMAGES: Record<string, { src: string; alt: string }> = {
   },
 };
 
+// Top categories get a "Popular" badge
+const POPULAR_IDS = new Set<string>(['headshots', 'dating', 'pet-portraits']);
+
 export function Categories() {
   const categories = getActiveCategories();
 
@@ -64,7 +67,7 @@ export function Categories() {
         <p className="uppercase text-[10px] font-semibold tracking-[0.25em] text-tp-bronze-ink mb-3">
           Choose Your Photo Type
         </p>
-        <h2 className="font-display text-[33px] lg:text-[42px] leading-tight tracking-[-0.03em] font-normal">
+        <h2 className="font-display text-[33px] lg:text-[42px] leading-tight tracking-[-0.03em] font-normal text-tp-ink">
           AI Photos for Every Occasion
         </h2>
         <p className="mt-4 text-[15px] text-tp-muted max-w-lg mx-auto">
@@ -81,58 +84,77 @@ export function Categories() {
 
           return (
             <div key={group.title}>
-              <h3 className="mb-5 text-xs font-semibold uppercase tracking-[0.18em] text-tp-bronze-ink">
-                {group.title}
-              </h3>
+              <div className="mb-5 flex items-baseline justify-between gap-3 border-b border-tp-line pb-3">
+                <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-tp-bronze-ink">
+                  {group.title}
+                </h3>
+                <span className="hidden sm:block text-[12px] text-tp-muted">
+                  {group.description} &middot; {groupCategories.length}{' '}
+                  {groupCategories.length === 1 ? 'category' : 'categories'}
+                </span>
+              </div>
               {/* Mobile: 2-col, Tablet: 3-col, Desktop: 4-col */}
-              <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 xl:grid-cols-4">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
                 {groupCategories.map((cat) => {
                   const image = CATEGORY_IMAGES[cat.id];
+                  const popular = POPULAR_IDS.has(cat.id);
+                  const maxOutput = Math.max(0, ...cat.packages.map((p) => p.outputCount));
+                  const fromPrice = ((cat.packages[0]?.price || 0) / 100)
+                    .toFixed(2)
+                    .replace(/\.00$/, '');
 
                   return (
                     <Link
                       key={cat.id}
                       href={`/${cat.slug}`}
-                      className="group relative flex flex-col overflow-hidden rounded-tp-card border border-tp-line bg-white transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-tp-bronze/15 hover:border-tp-bronze/50"
+                      className="group relative flex flex-col overflow-hidden rounded-tp-card border border-tp-line bg-tp-paper transition-all duration-300 hover:-translate-y-1.5 hover:border-tp-bronze hover:shadow-xl hover:shadow-tp-bronze/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze motion-reduce:transition-none motion-reduce:hover:translate-y-0"
                     >
-                      {/* Image area with overlay gradient */}
-                      <div className="relative aspect-[4/3] w-full overflow-hidden bg-tp-paper">
+                      {/* Thumbnail area */}
+                      <div className="relative aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-tp-paper to-tp-beige">
                         {image ? (
-                          <>
-                            <Image
-                              src={image.src}
-                              alt={image.alt}
-                              width={800}
-                              height={600}
-                              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                              sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
-                              loading="lazy"
-                              placeholder="blur"
-                              blurDataURL={BLUR_DATA_URL}
-                            />
-                            {/* Subtle bottom gradient for text readability */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                          </>
+                          <Image
+                            src={image.src}
+                            alt={image.alt}
+                            width={800}
+                            height={600}
+                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                            sizes="(max-width: 767px) 50vw, (max-width: 1023px) 33vw, 25vw"
+                            loading="lazy"
+                            placeholder="blur"
+                            blurDataURL={BLUR_DATA_URL}
+                          />
                         ) : (
-                          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-tp-paper to-tp-beige">
-                            <span className="text-4xl sm:text-5xl">{cat.icon}</span>
+                          <div className="flex h-full w-full items-center justify-center">
+                            <span className="text-4xl sm:text-5xl" aria-hidden="true">{cat.icon}</span>
                           </div>
+                        )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-tp-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+                        {popular && (
+                          <span className="absolute left-2.5 top-2.5 rounded-full bg-tp-black px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-tp-bronze shadow-sm">
+                            Popular
+                          </span>
+                        )}
+                        {maxOutput > 0 && (
+                          <span className="absolute bottom-2.5 right-2.5 rounded-full bg-tp-paper/95 px-2.5 py-1 text-[10px] font-semibold text-tp-bronze-ink shadow-sm">
+                            Up to {maxOutput} {cat.outputLabel}
+                          </span>
                         )}
                       </div>
 
                       {/* Text content */}
                       <div className="flex flex-1 flex-col p-3 sm:p-4">
-                        <h4 className="text-[13px] sm:text-[14px] font-semibold text-tp-ink leading-tight group-hover:text-tp-bronze-ink transition-colors">
+                        <h4 className="text-[13px] sm:text-[15px] font-semibold text-tp-ink leading-tight transition-colors group-hover:text-tp-bronze-ink">
                           {cat.name}
                         </h4>
-                        <p className="hidden sm:block text-[11px] sm:text-[12px] text-tp-muted mt-1 line-clamp-2 leading-relaxed">
+                        <p className="mt-1 line-clamp-2 text-[11px] sm:text-[12px] leading-relaxed text-tp-muted">
                           {cat.tagline}
                         </p>
-                        <div className="mt-auto pt-2 sm:pt-3 flex items-center justify-between">
+                        <div className="mt-auto flex items-center justify-between pt-2 sm:pt-3">
                           <span className="text-[12px] sm:text-[13px] font-semibold text-tp-bronze-ink">
-                            From ${((cat.packages[0]?.price || 0) / 100).toFixed(2).replace(/\.00$/, '')}
+                            From ${fromPrice}
                           </span>
-                          <span className="text-tp-bronze text-xs font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-0 group-hover:translate-x-0.5">
+                          <span className="text-xs font-medium text-tp-bronze-ink opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100 group-focus-visible:opacity-100">
                             Explore &rarr;
                           </span>
                         </div>
@@ -144,6 +166,16 @@ export function Categories() {
             </div>
           );
         })}
+      </div>
+
+      <div className="mt-12 text-center">
+        <Link
+          href="/use-cases"
+          className="inline-flex items-center gap-2 rounded-tp-button border border-tp-ink px-6 py-3 text-sm font-semibold text-tp-ink transition-colors duration-200 hover:bg-tp-ink hover:text-tp-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze"
+        >
+          View all categories
+          <span aria-hidden="true">&rarr;</span>
+        </Link>
       </div>
     </section>
   );
