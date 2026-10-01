@@ -14,11 +14,11 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-tp-paper px-4">
+    <main id="main-content" className="flex min-h-screen flex-col items-center justify-center bg-tp-paper px-4">
       <div className="text-center">
-        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-tp-muted/10">
+        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-tp-beige/40">
           <svg
-            className="h-8 w-8 text-tp-muted"
+            className="h-8 w-8 text-tp-bronze-ink"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
@@ -31,27 +31,32 @@ export default function Error({
             />
           </svg>
         </div>
-        <h1 className="mt-6 text-3xl font-bold tracking-tight text-tp-ink">
+        <h1 className="mt-6 font-display text-4xl font-normal leading-tight text-tp-black">
           Something went wrong
         </h1>
         <p className="mt-3 text-base text-tp-muted">
-          An unexpected error occurred. Please try again.
+          We hit an unexpected problem on our side. Your photos and account are safe. Please try again, or head back home.
         </p>
         <div className="mt-8 flex items-center justify-center gap-4">
           <button
-            onClick={reset}
-            className="rounded-tp-button bg-tp-black px-5 py-2.5 text-sm font-semibold text-tp-bronze shadow-sm hover:bg-tp-ink transition-colors"
+            type="button"
+            onClick={() => reset()}
+            className="rounded-tp-button bg-tp-black px-5 py-2.5 text-sm font-semibold text-tp-bronze shadow-sm hover:bg-tp-ink transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2"
           >
             Try again
           </button>
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
           <a
             href="/"
-            className="rounded-lg border border-tp-line bg-white px-5 py-2.5 text-sm font-semibold text-tp-ink shadow-sm hover:bg-tp-paper transition-colors"
+            className="rounded-tp-button border border-tp-bronze bg-white px-5 py-2.5 text-sm font-semibold text-tp-bronze-ink shadow-sm hover:bg-tp-beige/40 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2"
           >
             Go home
           </a>
         </div>
+        {error.digest && (
+          <p className="mt-6 text-xs text-tp-muted">Reference: {error.digest}</p>
+        )}
       </div>
-    </div>
+    </main>
   );
 }

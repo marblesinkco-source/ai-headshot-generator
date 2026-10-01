@@ -27,6 +27,16 @@ export default function GlobalError({
 
   return (
     <html lang="en">
+      <head>
+        <title>Something went wrong | TailorPic</title>
+        <meta name="robots" content="noindex" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Manrope:wght@400;600;700&display=swap"
+        />
+      </head>
       <body
         style={{
           margin: 0,
@@ -115,9 +125,9 @@ export default function GlobalError({
                 href="/"
                 style={{
                   borderRadius: 12,
-                  border: `1px solid ${tp.line}`,
+                  border: `1px solid ${tp.bronze}`,
                   background: '#fff',
-                  color: tp.ink,
+                  color: tp.bronzeInk,
                   padding: '12px 22px',
                   fontSize: 14,
                   fontWeight: 600,
@@ -127,6 +137,9 @@ export default function GlobalError({
                 Go home
               </a>
             </div>
+            {error.digest && (
+              <p style={{ margin: '24px 0 0', fontSize: 12, color: tp.muted }}>Reference: {error.digest}</p>
+            )}
           </div>
         </main>
       </body>

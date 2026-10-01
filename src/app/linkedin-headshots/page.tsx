@@ -4,6 +4,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import {
   Camera,
@@ -26,17 +27,15 @@ export const metadata: Metadata = {
   description:
     'Get AI-generated LinkedIn headshots with clean backgrounds, natural expressions and professional lighting. A better LinkedIn profile photo without a photoshoot.',
   alternates: { canonical: '/linkedin-headshots' },
-  openGraph: {
+  openGraph: generateOGMetadata({
     title: 'LinkedIn Headshots | TailorPic',
     description: 'Professional AI-generated LinkedIn profile photos from your selfies.',
-    url: `${siteConfig.url}/linkedin-headshots`,
-  },
-  twitter: {
-    card: 'summary_large_image',
+    path: '/linkedin-headshots',
+  }),
+  twitter: generateTwitterMetadata({
     title: 'LinkedIn Headshots | TailorPic',
     description: 'Professional AI-generated LinkedIn profile photos from your selfies.',
-    images: [siteConfig.ogImage],
-  },
+  }),
 };
 
 const faqs = [

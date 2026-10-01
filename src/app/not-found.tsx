@@ -15,7 +15,7 @@ export default function NotFound() {
     >
       <div className="w-full max-w-xl text-center">
         <p className="text-sm font-bold uppercase tracking-[0.18em] text-tp-bronze-ink">Error 404</p>
-        <h1 className="mt-4 font-display text-5xl leading-tight text-tp-black">Page not found</h1>
+        <h1 className="mt-4 font-display text-5xl font-normal leading-tight text-tp-black">Page not found</h1>
         <p className="mt-4 text-base leading-relaxed text-tp-muted">
           The page you&apos;re looking for may have moved or no longer exists. Let&apos;s get you back on track.
         </p>
@@ -28,7 +28,7 @@ export default function NotFound() {
           </Link>
           <Link
             href="/dashboard"
-            className="rounded-tp-button border border-tp-line bg-white px-6 py-3 text-sm font-semibold text-tp-ink transition-colors hover:bg-tp-paper"
+            className="rounded-tp-button border border-tp-bronze bg-white px-6 py-3 text-sm font-semibold text-tp-bronze-ink transition-colors hover:bg-tp-beige/40"
           >
             Dashboard
           </Link>

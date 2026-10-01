@@ -4,6 +4,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import {
@@ -21,19 +22,17 @@ export const metadata: Metadata = {
   description:
     'TailorPic offers a 14-day money-back guarantee on all purchases. Not satisfied with your AI headshots? Request a full refund within 14 days — no hassle.',
   alternates: { canonical: '/guarantee' },
-  openGraph: {
+  openGraph: generateOGMetadata({
     title: `14-Day Money-Back Guarantee | ${siteConfig.name}`,
     description:
       'Try TailorPic risk-free. If you are not happy with your AI headshots, request a full refund within 14 days of purchase.',
-    url: `${siteConfig.url}/guarantee`,
-  },
-  twitter: {
-    card: 'summary_large_image',
+    path: '/guarantee',
+  }),
+  twitter: generateTwitterMetadata({
     title: `14-Day Money-Back Guarantee | ${siteConfig.name}`,
     description:
       'Try TailorPic risk-free. If you are not happy with your AI headshots, request a full refund within 14 days of purchase.',
-    images: [siteConfig.ogImage],
-  },
+  }),
 };
 
 /* ------------------------------------------------------------------ */

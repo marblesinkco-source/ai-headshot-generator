@@ -4,6 +4,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import {
   Camera,
@@ -33,21 +34,17 @@ export const metadata: Metadata = {
   description:
     'Looking for a free AI headshot generator? Try TailorPic risk-free: $9.90 one-time for 40+ studio-quality headshots, backed by a 14-day money-back guarantee.',
   alternates: { canonical: '/free-headshot-generator' },
-  openGraph: {
+  openGraph: generateOGMetadata({
     title: 'Free AI Headshot Generator | TailorPic',
     description:
       'Upload your selfies and get 40+ professional AI headshots from $9.90 one-time. Risk-free with a 14-day money-back guarantee.',
-    url: `${siteConfig.url}/free-headshot-generator`,
-    type: 'website',
-    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: siteConfig.name }],
-  },
-  twitter: {
-    card: 'summary_large_image',
+    path: '/free-headshot-generator',
+  }),
+  twitter: generateTwitterMetadata({
     title: 'Free AI Headshot Generator | TailorPic',
     description:
       'Professional AI headshots from your selfies. $9.90 one-time, 14-day money-back guarantee.',
-    images: [siteConfig.ogImage],
-  },
+  }),
 };
 
 const steps = [

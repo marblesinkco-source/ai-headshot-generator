@@ -5,6 +5,7 @@ import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ChevronDown, Quote } from 'lucide-react';
 
 const pageTitle = 'Customer Feedback & Representative Reviews';
@@ -22,20 +23,15 @@ export const metadata: Metadata = {
     'AI team headshots',
   ],
   alternates: { canonical: '/reviews' },
-  openGraph: {
+  openGraph: generateOGMetadata({
     title: `${pageTitle} | ${siteConfig.name}`,
     description: pageDescription,
-    url: `${siteConfig.url}/reviews`,
-    siteName: siteConfig.name,
-    type: 'website',
-    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: siteConfig.name }],
-  },
-  twitter: {
-    card: 'summary_large_image',
+    path: '/reviews',
+  }),
+  twitter: generateTwitterMetadata({
     title: `${pageTitle} | ${siteConfig.name}`,
     description: pageDescription,
-    images: [siteConfig.ogImage],
-  },
+  }),
 };
 
 /* ------------------------------------------------------------------ */
