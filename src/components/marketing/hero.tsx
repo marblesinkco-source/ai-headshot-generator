@@ -33,21 +33,21 @@ export function Hero() {
                 <em className="text-tp-bronze-ink not-italic font-normal font-display italic">Tailored</em> by AI.
               </h1>
 
-              <p className="text-[15px] text-tp-muted leading-[1.75] max-w-[485px] mb-4">
-                Get 40+ studio-quality photos in under 2 hours — no studio, no photographer, no scheduling hassle.
+              <p className="text-[16px] text-tp-ink/80 leading-[1.7] max-w-[485px] mb-4">
+                Upload a few selfies and get 40+ studio-quality headshots in about 2 hours. Pay once &mdash; no subscription, no studio, no scheduling.
               </p>
               <p className="text-[13px] text-tp-muted/70 leading-[1.6] max-w-[485px] mb-7">
-                <span className="line-through text-tp-muted/50">Traditional photoshoot: $200–$500</span>
-                {' '}→ Starting at <span className="font-semibold text-tp-bronze-ink">$9.90</span>
+                <span className="line-through text-tp-muted/50">Traditional photoshoot: $200&ndash;$500</span>
+                {' '}&rarr; <span className="font-semibold text-tp-bronze-ink">$9.90 one-time</span>
               </p>
 
               <div className="flex flex-wrap gap-3">
-                <button
-                  onClick={() => categoryDialog.current?.showModal()}
+                <Link
+                  href="/auth/register"
                   className="inline-flex items-center gap-5 rounded-tp-button border border-tp-black bg-tp-black px-8 py-4 text-[15px] font-semibold text-tp-paper shadow-md transition-all hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl hover:animate-cta-pulse motion-reduce:hover:animate-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze whitespace-nowrap"
                 >
-                  Create Your Photos <span aria-hidden="true" className="text-[22px] leading-none">&#8599;</span>
-                </button>
+                  Get My Headshots <span aria-hidden="true" className="text-[22px] leading-none">&#8599;</span>
+                </Link>
                 <a
                   href="#how-it-works"
                   className="inline-flex items-center gap-3 rounded-xl border border-[#B5A696] bg-transparent px-6 py-3.5 text-sm font-semibold text-tp-ink transition-all hover:bg-tp-beige/20 whitespace-nowrap"
@@ -56,23 +56,39 @@ export function Hero() {
                 </a>
               </div>
 
-              {/* Payment trust row */}
-              <div className="mt-4 flex flex-wrap items-center gap-2 text-[11px] text-tp-muted">
-                <span className="inline-flex items-center gap-1.5">
-                  <svg className="h-3.5 w-3.5 text-tp-bronze-ink" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" /></svg>
-                  Secure checkout via Stripe
-                </span>
-                <ul className="flex items-center gap-1.5" aria-label="Accepted cards">
-                  {['Visa', 'Mastercard', 'Amex'].map((brand) => (
-                    <li
-                      key={brand}
-                      className="rounded-md border border-tp-line bg-[#FEFCF8] px-2 py-0.5 text-[10px] font-semibold tracking-wide text-tp-ink"
-                    >
-                      {brand}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {/* Trust signals */}
+              <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-[12px] font-medium text-tp-ink" aria-label="Why buy with confidence">
+                {[
+                  { label: 'One-time $9.90, no subscription', d: 'M12 8c-1.7 0-3 .9-3 2s1.3 2 3 2 3 .9 3 2-1.3 2-3 2m0-8V6m0 12v-2m9-4a9 9 0 11-18 0 9 9 0 0118 0z' },
+                  { label: 'Delivered in about 2 hours', d: 'M12 6v6l4 2m5-2a9 9 0 11-18 0 9 9 0 0118 0z' },
+                  { label: '14-day money-back guarantee', d: 'M9 12l2 2 4-4m5.6-3a12 12 0 01-8.6 3.9A12 12 0 013.4 7 12 12 0 003 10c0 5.6 3.8 10.3 9 11.6 5.2-1.3 9-6 9-11.6 0-1-.1-2-.4-3z' },
+                ].map((t) => (
+                  <li key={t.label} className="inline-flex items-center gap-1.5">
+                    <svg className="h-4 w-4 text-tp-bronze-ink" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d={t.d} /></svg>
+                    {t.label}
+                  </li>
+                ))}
+              </ul>
+
+              {/* How it works mini-steps */}
+              <ol className="mt-7 flex max-w-[485px] items-start gap-2" aria-label="How it works">
+                {[
+                  { n: 'Upload', sub: 'A few selfies', d: 'M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 4v12m0-12L8 8m4-4l4 4' },
+                  { n: 'AI processes', sub: 'Tailored to you', d: 'M5 3v4M3 5h4M6 17v4M4 19h4M13 3l2.5 6.5L22 12l-6.5 2.5L13 21l-2.5-6.5L4 12l6.5-2.5L13 3z' },
+                  { n: 'Get photos', sub: '40+ in ~2 hours', d: 'M4 7h3l2-2h6l2 2h3a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V8a1 1 0 011-1zm8 9a3.5 3.5 0 100-7 3.5 3.5 0 000 7z' },
+                ].map((st, i) => (
+                  <li key={st.n} className="flex flex-1 items-start gap-2">
+                    <div className="flex flex-col items-center text-center flex-1">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-full border border-tp-line bg-[#FEFCF8] text-tp-bronze-ink">
+                        <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d={st.d} /></svg>
+                      </span>
+                      <span className="mt-2 text-[12px] font-semibold text-tp-ink">{i + 1}. {st.n}</span>
+                      <span className="text-[11px] text-tp-muted">{st.sub}</span>
+                    </div>
+                    {i < 2 && <span aria-hidden="true" className="mt-2 text-[18px] leading-none text-tp-line">&rarr;</span>}
+                  </li>
+                ))}
+              </ol>
 
               {/* Before / after (placeholder visuals) */}
               <div className="mt-7 flex max-w-[485px] items-center gap-3" aria-label="Selfie to AI headshot transformation">
@@ -85,36 +101,6 @@ export function Hero() {
                   <div className="aspect-[4/5] rounded-tp-card border border-tp-bronze bg-gradient-to-br from-tp-bronze via-tp-beige to-tp-paper" role="img" aria-label="Placeholder for an AI headshot" />
                   <figcaption className="mt-2 text-center text-[11px] font-semibold text-tp-bronze-ink">AI headshot</figcaption>
                 </figure>
-              </div>
-
-              {/* Social proof stats */}
-              <div className="hidden lg:flex gap-6 mt-8 pt-7 border-t border-tp-line/50">
-                <div>
-                  <p className="text-[22px] font-bold text-tp-ink tracking-tight">2 hrs</p>
-                  <p className="text-[11px] text-tp-muted mt-0.5">Average delivery</p>
-                </div>
-                <div className="w-px bg-tp-line/50" />
-                <div>
-                  <p className="text-[22px] font-bold text-tp-ink tracking-tight">{categories.length}</p>
-                  <p className="text-[11px] text-tp-muted mt-0.5">Photo categories</p>
-                </div>
-                <div className="w-px bg-tp-line/50" />
-                <div>
-                  <p className="text-[22px] font-bold text-tp-ink tracking-tight">100%</p>
-                  <p className="text-[11px] text-tp-muted mt-0.5">14-day money-back guarantee</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Mobile social proof */}
-            <div className="flex lg:hidden gap-4 mt-2 mb-4 order-2">
-              <div className="flex items-center gap-1.5 text-[11px] text-tp-muted">
-                <svg className="h-3.5 w-3.5 text-tp-bronze" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" /></svg>
-                <span>2hr delivery</span>
-              </div>
-              <div className="flex items-center gap-1.5 text-[11px] text-tp-muted">
-                <svg className="h-3.5 w-3.5 text-tp-bronze" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
-                <span>100% guarantee</span>
               </div>
             </div>
 
