@@ -15,6 +15,15 @@ export const metadata: Metadata = {
     title: `Contact Us | ${siteConfig.name}`,
     description: `Have questions? Reach out to the ${siteConfig.name} team. We respond within hours.`,
     url: `${siteConfig.url}/contact`,
+    siteName: siteConfig.name,
+    type: 'website',
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: siteConfig.name }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Contact Us | ${siteConfig.name}`,
+    description: `Have questions? Reach out to the ${siteConfig.name} team.`,
+    images: [siteConfig.ogImage],
   },
 };
 

@@ -14,6 +14,15 @@ export const metadata: Metadata = {
     title: `What Our Customers Say | ${siteConfig.name}`,
     description: `Representative testimonials across headshots, dating photos, team photos and pet portraits.`,
     url: `${siteConfig.url}/reviews`,
+    siteName: siteConfig.name,
+    type: 'website',
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: siteConfig.name }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `What Our Customers Say | ${siteConfig.name}`,
+    description: `Representative testimonials across headshots, dating photos, team photos and pet portraits.`,
+    images: [siteConfig.ogImage],
   },
 };
 

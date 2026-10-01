@@ -1,31 +1,56 @@
 import Link from 'next/link';
 
+const suggestions = [
+  { href: '/how-it-works', title: 'How it works', desc: 'See how TailorPic creates your headshot.' },
+  { href: '/pricing', title: 'Pricing', desc: 'Simple plans for every need.' },
+  { href: '/samples', title: 'Samples', desc: 'Browse example headshots.' },
+  { href: '/faq', title: 'FAQ', desc: 'Answers to common questions.' },
+];
+
 export default function NotFound() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-gray-50 px-4">
-      <div className="text-center">
-        <p className="text-7xl font-extrabold text-tp-bronze-ink">404</p>
-        <h1 className="mt-4 text-3xl font-bold tracking-tight text-gray-900">
-          Page not found
-        </h1>
-        <p className="mt-3 text-base text-gray-500">
-          Sorry, we couldn&apos;t find the page you&apos;re looking for.
+    <main
+      id="main-content"
+      className="flex min-h-screen flex-col items-center justify-center bg-tp-paper px-4 py-16"
+    >
+      <div className="w-full max-w-xl text-center">
+        <p className="text-sm font-bold uppercase tracking-[0.18em] text-tp-bronze-ink">Error 404</p>
+        <h1 className="mt-4 font-display text-5xl leading-tight text-tp-black">Page not found</h1>
+        <p className="mt-4 text-base leading-relaxed text-tp-muted">
+          The page you&apos;re looking for may have moved or no longer exists. Let&apos;s get you back on track.
         </p>
-        <div className="mt-8 flex items-center justify-center gap-4">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Link
             href="/"
-            className="rounded-tp-button bg-tp-black px-5 py-2.5 text-sm font-semibold text-tp-bronze shadow-sm hover:bg-gray-900 transition-colors"
+            className="rounded-tp-button bg-tp-black px-6 py-3 text-sm font-semibold text-tp-bronze transition-colors hover:bg-tp-ink"
           >
-            Go home
+            Back to Home
           </Link>
           <Link
             href="/dashboard"
-            className="rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 shadow-sm hover:bg-gray-50 transition-colors"
+            className="rounded-tp-button border border-tp-line bg-white px-6 py-3 text-sm font-semibold text-tp-ink transition-colors hover:bg-tp-paper"
           >
             Dashboard
           </Link>
         </div>
+
+        <div className="mt-12 text-left">
+          <p className="text-xs font-bold uppercase tracking-[0.14em] text-tp-muted">You might be looking for</p>
+          <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+            {suggestions.map((s) => (
+              <li key={s.href}>
+                <Link
+                  href={s.href}
+                  className="block h-full rounded-tp-card border border-tp-line bg-white p-4 transition-colors hover:border-tp-bronze"
+                >
+                  <span className="block text-sm font-semibold text-tp-black">{s.title}</span>
+                  <span className="mt-1 block text-sm text-tp-muted">{s.desc}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
+    </main>
   );
 }

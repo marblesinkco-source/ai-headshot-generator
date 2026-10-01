@@ -1,5 +1,19 @@
 'use client';
 
+import { useEffect } from 'react';
+
+// global-error replaces the root layout, so globals.css / Tailwind are NOT loaded here.
+// Brand styling is therefore applied with inline styles using TailorPic tokens.
+const tp = {
+  black: '#0B0B0B',
+  ink: '#171613',
+  bronze: '#C9A98A',
+  bronzeInk: '#76563D',
+  paper: '#F8F5EF',
+  muted: '#5F5A54',
+  line: '#DFD6CC',
+};
+
 export default function GlobalError({
   error,
   reset,
@@ -7,48 +21,114 @@ export default function GlobalError({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  useEffect(() => {
+    console.error('Global application error:', error);
+  }, [error]);
+
   return (
     <html lang="en">
-      <body className="bg-gray-50">
-        <div className="flex min-h-screen flex-col items-center justify-center px-4">
-          <div className="text-center">
-            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-red-100">
-              <svg
-                className="h-8 w-8 text-red-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
-                />
-              </svg>
-            </div>
-            <h1 className="mt-6 text-3xl font-bold tracking-tight text-gray-900">
+      <body
+        style={{
+          margin: 0,
+          background: tp.paper,
+          color: tp.ink,
+          fontFamily: 'Manrope, Inter, Arial, system-ui, sans-serif',
+        }}
+      >
+        <main
+          id="main-content"
+          style={{
+            minHeight: '100vh',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '24px',
+          }}
+        >
+          <div
+            style={{
+              maxWidth: 480,
+              width: '100%',
+              textAlign: 'center',
+              background: '#fff',
+              border: `1px solid ${tp.line}`,
+              borderRadius: 18,
+              padding: '48px 32px',
+            }}
+          >
+            <p
+              style={{
+                margin: 0,
+                fontSize: 13,
+                fontWeight: 700,
+                letterSpacing: '0.18em',
+                textTransform: 'uppercase',
+                color: tp.bronzeInk,
+              }}
+            >
+              TailorPic
+            </p>
+            <h1
+              style={{
+                margin: '20px 0 0',
+                fontFamily: '"Instrument Serif", Georgia, "Times New Roman", serif',
+                fontWeight: 400,
+                fontSize: 40,
+                lineHeight: 1.1,
+                color: tp.black,
+              }}
+            >
               Something went wrong
             </h1>
-            <p className="mt-3 text-base text-gray-500">
-              A critical error occurred. Please try refreshing the page.
+            <p style={{ margin: '14px 0 0', fontSize: 16, lineHeight: 1.6, color: tp.muted }}>
+              We hit an unexpected problem on our side. Your work is safe. Please try again, or head back home.
             </p>
-            <div className="mt-8 flex items-center justify-center gap-4">
+            <div
+              style={{
+                marginTop: 32,
+                display: 'flex',
+                gap: 12,
+                justifyContent: 'center',
+                flexWrap: 'wrap',
+              }}
+            >
               <button
-                onClick={reset}
-                className="rounded-lg bg-[#0B0B0B] px-5 py-2.5 text-sm font-semibold text-[#C9A98A] shadow-sm hover:bg-gray-900 transition-colors"
+                type="button"
+                onClick={() => reset()}
+                style={{
+                  cursor: 'pointer',
+                  border: 0,
+                  borderRadius: 12,
+                  background: tp.black,
+                  color: tp.bronze,
+                  padding: '12px 22px',
+                  fontSize: 14,
+                  fontWeight: 600,
+                  fontFamily: 'inherit',
+                }}
               >
                 Try again
               </button>
+              {/* Plain anchor on purpose: forces a full reload and a clean state. */}
+              {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
               <a
                 href="/"
-                className="rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 shadow-sm hover:bg-gray-50 transition-colors"
+                style={{
+                  borderRadius: 12,
+                  border: `1px solid ${tp.line}`,
+                  background: '#fff',
+                  color: tp.ink,
+                  padding: '12px 22px',
+                  fontSize: 14,
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                }}
               >
                 Go home
               </a>
             </div>
           </div>
-        </div>
+        </main>
       </body>
     </html>
   );

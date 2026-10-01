@@ -17,6 +17,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Enterprise AI Headshots for Teams | TailorPic',
     description: 'Scale professional headshots across your organization with AI.',
+    url: `${siteConfig.url}/enterprise`,
+    siteName: siteConfig.name,
+    type: 'website',
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: siteConfig.name }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Enterprise AI Headshots for Teams | TailorPic',
+    description: 'Scale professional headshots across your organization with AI.',
+    images: [siteConfig.ogImage],
   },
 };
 

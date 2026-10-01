@@ -1,6 +1,7 @@
 import { ImageResponse } from 'next/og';
 import { getActiveCategories } from '@/config/categories';
 import { siteConfig } from '@/config/site';
+import { loadManropeFonts } from '@/lib/og-font';
 
 export const runtime = 'edge';
 export const alt = `${siteConfig.name} AI photos`;
@@ -33,6 +34,8 @@ export default async function Image({ params }: Props) {
     ? formatStartingPrice(lowest.price, lowest.currency)
     : undefined;
 
+  const fonts = await loadManropeFonts();
+
   return new ImageResponse(
     (
       <div
@@ -46,7 +49,7 @@ export default async function Image({ params }: Props) {
           backgroundColor: '#0B0B0B',
           backgroundImage:
             'linear-gradient(135deg, #0B0B0B 0%, #171613 60%, #2a2118 100%)',
-          fontFamily: 'sans-serif',
+          fontFamily: 'Manrope, sans-serif',
           position: 'relative',
         }}
       >
@@ -147,6 +150,6 @@ export default async function Image({ params }: Props) {
         </div>
       </div>
     ),
-    { ...size }
+    { ...size, fonts }
   );
 }

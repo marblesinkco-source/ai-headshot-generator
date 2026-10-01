@@ -39,6 +39,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: siteConfig.name,
       type: 'website',
     },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${cat.seoTitle} | ${siteConfig.name}`,
+      description: cat.seoDescription,
+    },
   };
 }
 

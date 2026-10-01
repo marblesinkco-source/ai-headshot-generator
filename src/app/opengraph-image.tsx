@@ -1,5 +1,6 @@
 import { ImageResponse } from 'next/og';
 import { siteConfig } from '@/config/site';
+import { loadManropeFonts } from '@/lib/og-font';
 
 export const runtime = 'edge';
 export const alt = `${siteConfig.name} - ${siteConfig.tagline}`;
@@ -7,6 +8,8 @@ export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
 export default async function Image() {
+  const fonts = await loadManropeFonts();
+
   return new ImageResponse(
     (
       <div
@@ -20,7 +23,7 @@ export default async function Image() {
           backgroundColor: '#0B0B0B',
           backgroundImage:
             'linear-gradient(135deg, #0B0B0B 0%, #171613 60%, #2a2118 100%)',
-          fontFamily: 'sans-serif',
+          fontFamily: 'Manrope, sans-serif',
           position: 'relative',
         }}
       >
@@ -80,6 +83,6 @@ export default async function Image() {
         </div>
       </div>
     ),
-    { ...size }
+    { ...size, fonts }
   );
 }
