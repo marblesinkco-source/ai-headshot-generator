@@ -8,13 +8,12 @@ import { FAQSchema, BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
   Search,
-  Upload,
-  Camera,
+  Rocket,
+  ImageUp,
+  Images,
   CreditCard,
-  Download,
-  UserCog,
-  Shield,
   Users,
+  ShieldCheck,
   ChevronDown,
   Mail,
   ArrowRight,
@@ -41,14 +40,37 @@ const helpCategories: HelpCategory[] = [
   {
     id: 'getting-started',
     title: 'Getting Started',
-    description: 'Account setup, uploading photos, and your first headshot.',
-    icon: Upload,
+    description: 'Create your account and generate your first headshot.',
+    icon: Rocket,
     items: [
       {
         question: 'How do I get started with TailorPic?',
         answer:
           'Create an account, upload 10–20 selfies of yourself, choose a headshot style, and our AI will generate professional photos tailored to you. The whole process takes just a few minutes to set up.',
       },
+      {
+        question: 'Do I need to create an account?',
+        answer:
+          'Yes. A free account lets you upload photos and preview styles. You only pay when you are ready to generate your AI headshots.',
+      },
+      {
+        question: 'How much does TailorPic cost?',
+        answer:
+          'TailorPic starts at a one-time payment of $9.90. There are no subscriptions or recurring fees — you pay once and keep your photos forever.',
+      },
+      {
+        question: 'What packages are available?',
+        answer:
+          'We offer several packages with different numbers of generated headshots and style options. Visit our pricing page for the latest details on what each package includes.',
+      },
+    ],
+  },
+  {
+    id: 'photo-upload',
+    title: 'Photo Upload',
+    description: 'Requirements, tips, and what to avoid for best results.',
+    icon: ImageUp,
+    items: [
       {
         question: 'How do I upload my photos?',
         answer:
@@ -60,27 +82,9 @@ const helpCategories: HelpCategory[] = [
           'Upload clear selfies and photos of your face from different angles. Include a mix of front-facing and slight side angles. Good lighting, a neutral background, and no sunglasses or heavy filters work best.',
       },
       {
-        question: 'Do I need to create an account?',
-        answer:
-          'Yes. A free account lets you upload photos and preview styles. You only pay when you are ready to generate your AI headshots.',
-      },
-    ],
-  },
-  {
-    id: 'photo-guidelines',
-    title: 'Photo Guidelines',
-    description: 'Requirements, tips, and what to avoid for best results.',
-    icon: Camera,
-    items: [
-      {
         question: 'How many photos do I need to upload?',
         answer:
           'We require a minimum of 8 photos, but 10–20 photos produce the best results. More variety helps the AI learn your features accurately.',
-      },
-      {
-        question: 'What lighting works best?',
-        answer:
-          'Natural, even lighting is ideal. Face a window or use soft indoor lighting. Avoid harsh shadows, extreme backlighting, or dim environments.',
       },
       {
         question: 'What should I avoid in my photos?',
@@ -92,46 +96,13 @@ const helpCategories: HelpCategory[] = [
         answer:
           'Absolutely. Modern phone cameras are more than sufficient. Just make sure the photos are in focus and well-lit. Front-facing camera selfies work great.',
       },
-      {
-        question: 'Do all photos need to be recent?',
-        answer:
-          'We recommend using photos from the last 6 months so the AI captures your current appearance. Mixing old and new photos can confuse the model.',
-      },
     ],
   },
   {
-    id: 'ordering-pricing',
-    title: 'Ordering & Pricing',
-    description: 'Pricing details, packages, and team plans.',
-    icon: CreditCard,
-    items: [
-      {
-        question: 'How much does TailorPic cost?',
-        answer:
-          'TailorPic starts at a one-time payment of $9.90. There are no subscriptions or recurring fees — you pay once and keep your photos forever.',
-      },
-      {
-        question: 'What packages are available?',
-        answer:
-          'We offer several packages with different numbers of generated headshots and style options. Visit our pricing page for the latest details on what each package includes.',
-      },
-      {
-        question: 'Is there team or bulk pricing?',
-        answer:
-          'Yes. We offer discounted rates for teams and organizations that need headshots for multiple people. Contact us or visit our Enterprise page for custom team pricing.',
-      },
-      {
-        question: 'What payment methods do you accept?',
-        answer:
-          'We accept all major credit and debit cards (Visa, Mastercard, American Express) through our secure payment processor. All transactions are encrypted.',
-      },
-    ],
-  },
-  {
-    id: 'results-downloads',
-    title: 'Results & Downloads',
+    id: 'your-headshots',
+    title: 'Your Headshots',
     description: 'Turnaround time, formats, and re-generating photos.',
-    icon: Download,
+    icon: Images,
     items: [
       {
         question: 'How long does it take to get my headshots?',
@@ -158,8 +129,8 @@ const helpCategories: HelpCategory[] = [
   {
     id: 'account-billing',
     title: 'Account & Billing',
-    description: 'Managing your account, exporting data, and deletion.',
-    icon: UserCog,
+    description: 'Managing your account, payments, and data export.',
+    icon: CreditCard,
     items: [
       {
         question: 'How do I manage my account settings?',
@@ -167,19 +138,52 @@ const helpCategories: HelpCategory[] = [
           'Sign in and navigate to your account settings from the dashboard. There you can update your email, password, notification preferences, and profile information.',
       },
       {
+        question: 'What payment methods do you accept?',
+        answer:
+          'We accept all major credit and debit cards (Visa, Mastercard, American Express) through our secure payment processor. All transactions are encrypted.',
+      },
+      {
         question: 'Can I export my data?',
         answer:
           'Yes. You can request a full data export from your account settings. This includes your uploaded photos, generated headshots, and account information in a downloadable archive.',
+      },
+      {
+        question: 'What is your refund policy?',
+        answer:
+          'We offer a satisfaction guarantee. If you are not happy with the results, contact our support team and we will work with you to resolve the issue or process a refund.',
       },
       {
         question: 'How do I delete my account?',
         answer:
           'You can delete your account from the account settings page. Account deletion is permanent and will remove all your data, uploaded photos, and generated headshots from our servers.',
       },
+    ],
+  },
+  {
+    id: 'team-enterprise',
+    title: 'Team & Enterprise',
+    description: 'Bulk ordering, consistent team photos, and admin tools.',
+    icon: Users,
+    items: [
       {
-        question: 'What is your refund policy?',
+        question: 'How does team ordering work?',
         answer:
-          'We offer a satisfaction guarantee. If you are not happy with the results, contact our support team and we will work with you to resolve the issue or process a refund.',
+          'An admin creates a team workspace, invites members via email, and each member uploads their own photos. The admin can choose a consistent style so all team headshots look cohesive.',
+      },
+      {
+        question: 'Can we get consistent team photos?',
+        answer:
+          'Yes. Our team feature lets you select a unified background, lighting style, and dress code so every team member gets headshots that look like they were taken in the same session.',
+      },
+      {
+        question: 'Is there team or bulk pricing?',
+        answer:
+          'Yes. We offer discounted rates for teams and organizations that need headshots for multiple people. Contact us or visit our Enterprise page for custom team pricing.',
+      },
+      {
+        question: 'What admin features are available?',
+        answer:
+          'Team admins can manage members, track progress, set style guidelines, download all team photos in bulk, and manage billing from a central dashboard.',
       },
     ],
   },
@@ -187,7 +191,7 @@ const helpCategories: HelpCategory[] = [
     id: 'privacy-security',
     title: 'Privacy & Security',
     description: 'Data handling, GDPR compliance, and photo deletion.',
-    icon: Shield,
+    icon: ShieldCheck,
     items: [
       {
         question: 'How is my data handled?',
@@ -211,34 +215,6 @@ const helpCategories: HelpCategory[] = [
       },
     ],
   },
-  {
-    id: 'team-enterprise',
-    title: 'Team & Enterprise',
-    description: 'Bulk ordering, team photos, and admin features.',
-    icon: Users,
-    items: [
-      {
-        question: 'How does team ordering work?',
-        answer:
-          'An admin creates a team workspace, invites members via email, and each member uploads their own photos. The admin can choose a consistent style so all team headshots look cohesive.',
-      },
-      {
-        question: 'Can we get consistent team photos?',
-        answer:
-          'Yes. Our team feature lets you select a unified background, lighting style, and dress code so every team member gets headshots that look like they were taken in the same session.',
-      },
-      {
-        question: 'What admin features are available?',
-        answer:
-          'Team admins can manage members, track progress, set style guidelines, download all team photos in bulk, and manage billing from a central dashboard.',
-      },
-      {
-        question: 'Is there an API for enterprise integrations?',
-        answer:
-          'Yes. We offer a developer API for enterprise customers who want to integrate AI headshot generation into their own workflows. Visit our Developer API page for documentation.',
-      },
-    ],
-  },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -247,7 +223,6 @@ const helpCategories: HelpCategory[] = [
 
 export default function HelpCenterPage() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [openQuestions, setOpenQuestions] = useState<Set<string>>(new Set());
 
   // Flatten all Q&A for structured data
@@ -278,6 +253,8 @@ export default function HelpCenterPage() {
       .filter((cat) => cat.items.length > 0);
   }, [searchQuery]);
 
+  const totalResults = filteredCategories.reduce((sum, cat) => sum + cat.items.length, 0);
+
   const toggleQuestion = (key: string) => {
     setOpenQuestions((prev) => {
       const next = new Set(prev);
@@ -291,7 +268,6 @@ export default function HelpCenterPage() {
   };
 
   const scrollToCategory = (id: string) => {
-    setActiveCategory(id);
     setSearchQuery('');
     const el = document.getElementById(id);
     if (el) {
@@ -316,9 +292,9 @@ export default function HelpCenterPage() {
         <div className="pointer-events-none absolute -top-24 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-tp-bronze/10 blur-3xl" />
         <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 sm:py-24 lg:px-8">
           <h1 className="font-display font-normal text-4xl tracking-tight text-tp-black sm:text-5xl">
-            Help{' '}
+            How Can We{' '}
             <span className="bg-gradient-to-r from-tp-bronze-ink to-tp-bronze bg-clip-text text-transparent">
-              Center
+              Help?
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-muted">
@@ -365,9 +341,16 @@ export default function HelpCenterPage() {
                     <div className="flex h-10 w-10 items-center justify-center rounded-tp-button bg-tp-paper">
                       <Icon className="h-5 w-5 text-tp-bronze-ink" />
                     </div>
-                    <h3 className="mt-4 text-base font-semibold text-tp-black">{cat.title}</h3>
+                    <h3 className="mt-4 font-display font-normal text-lg text-tp-black">{cat.title}</h3>
                     <p className="mt-1.5 text-sm leading-relaxed text-tp-muted">{cat.description}</p>
-                    <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-tp-bronze-ink group-hover:gap-2 transition-all">
+                    <ul className="mt-3 space-y-1">
+                      {cat.items.slice(0, 4).map((item) => (
+                        <li key={item.question} className="text-[13px] leading-snug text-tp-ink/70">
+                          {item.question}
+                        </li>
+                      ))}
+                    </ul>
+                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-tp-bronze-ink transition-all group-hover:gap-2">
                       View answers <ArrowRight className="h-3.5 w-3.5" />
                     </span>
                   </button>
@@ -383,8 +366,7 @@ export default function HelpCenterPage() {
         <div className="bg-tp-paper/40 pt-8">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <p className="text-sm text-tp-muted">
-              {filteredCategories.reduce((sum, cat) => sum + cat.items.length, 0)} result
-              {filteredCategories.reduce((sum, cat) => sum + cat.items.length, 0) !== 1 ? 's' : ''} found
+              {totalResults} result{totalResults !== 1 ? 's' : ''} found
             </p>
           </div>
         </div>

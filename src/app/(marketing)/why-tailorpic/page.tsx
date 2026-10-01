@@ -12,21 +12,19 @@ import {
   CheckCircle2,
   Clock,
   DollarSign,
-  GraduationCap,
-  Layers,
+  Images,
   Lock,
   MinusCircle,
-  Palette,
-  Briefcase,
-  Rocket,
   Shield,
   Sparkles,
-  Upload,
   Users,
   XCircle,
   Camera,
-  Download,
-  CalendarOff,
+  Sofa,
+  RefreshCw,
+  Trash2,
+  FileCheck,
+  Quote,
 } from 'lucide-react';
 
 /* ------------------------------------------------------------------ */
@@ -55,45 +53,51 @@ export const metadata: Metadata = {
 };
 
 /* ------------------------------------------------------------------ */
-/*  Differentiator cards                                               */
+/*  Value proposition cards                                            */
 /* ------------------------------------------------------------------ */
 
-const differentiators = [
+const valueProps = [
   {
     icon: DollarSign,
-    title: 'Studio Quality at a Fraction of the Cost',
+    title: 'Unbeatable Price',
+    stat: '$9.90',
     description:
-      'Professional headshots starting at $9.90 as a one-time payment. Traditional studios typically charge $200 to $500 or more for fewer images.',
+      'One-time payment, no subscriptions. Traditional studios typically charge $200–$500 for a single session with far fewer photos.',
   },
   {
     icon: Clock,
-    title: 'Results in Hours, Not Weeks',
+    title: 'Ready in Hours',
+    stat: '~2 hours',
     description:
-      'Most orders are completed within about 2 hours. No waiting days for retouching or weeks for a studio appointment to open up.',
+      'Most orders are completed within about 2 hours. No waiting days for retouching or weeks for a studio appointment.',
   },
   {
-    icon: Palette,
-    title: 'Multiple Styles from One Photo Set',
+    icon: Images,
+    title: 'Massive Variety',
+    stat: '40+ photos',
     description:
-      'Upload 10-20 selfies and get headshots in a range of backgrounds, outfits, and styles. A single studio session rarely offers that variety.',
+      'Get headshots across multiple backgrounds, outfits, and styles from a single set of selfies. A studio session rarely offers that range.',
+  },
+  {
+    icon: Users,
+    title: 'Team Consistency',
+    stat: 'Matching styles',
+    description:
+      'Give every team member the same polished, professional look without coordinating schedules, locations, or photographers.',
+  },
+  {
+    icon: Sofa,
+    title: 'Total Convenience',
+    stat: 'No studio needed',
+    description:
+      'Skip the commute, the calendar juggling, and the awkward posing. Take your selfies at home and let the AI handle the rest.',
   },
   {
     icon: Shield,
-    title: '14-Day Money-Back Guarantee',
+    title: 'Money-Back Guarantee',
+    stat: '14 days',
     description:
       'Not satisfied with your results? Contact our support team within 14 days and we will review your order for a refund.',
-  },
-  {
-    icon: Lock,
-    title: 'Privacy-First Approach',
-    description:
-      'Your photos are automatically deleted after 30 days. We follow GDPR-compliant practices to keep your data safe.',
-  },
-  {
-    icon: CalendarOff,
-    title: 'No Scheduling, No Commute, No Retakes',
-    description:
-      'Skip the calendar juggling and travel. Take your selfies at home, upload them, and let the AI handle the rest.',
   },
 ];
 
@@ -113,14 +117,14 @@ interface ComparisonRow {
 const comparisonRows: ComparisonRow[] = [
   {
     feature: 'Starting price',
-    traditional: '$200 - $500+',
-    otherAI: '$20 - $60',
+    traditional: '$200–$500+',
+    otherAI: '$20–$60',
     tailorpic: '$9.90',
   },
   {
     feature: 'Turnaround time',
-    traditional: '1 - 2 weeks',
-    otherAI: '1 - 24 hours',
+    traditional: '1–2 weeks',
+    otherAI: '1–24 hours',
     tailorpic: 'Most orders ~2 hours',
   },
   {
@@ -162,67 +166,27 @@ const comparisonRows: ComparisonRow[] = [
 ];
 
 /* ------------------------------------------------------------------ */
-/*  How It Works steps                                                 */
+/*  Trust commitments                                                  */
 /* ------------------------------------------------------------------ */
 
-const steps = [
+const trustItems = [
   {
-    icon: Upload,
-    step: '1',
-    title: 'Upload Your Selfies',
+    icon: Lock,
+    title: 'Privacy-First',
     description:
-      'Take 10-20 casual photos of yourself following our simple guidelines. No professional equipment needed.',
+      'Your uploaded photos are processed securely and never shared with third parties. We follow GDPR-compliant practices.',
   },
   {
-    icon: Sparkles,
-    step: '2',
-    title: 'AI Generates Your Headshots',
+    icon: FileCheck,
+    title: 'Full Commercial Rights',
     description:
-      'Our AI creates professional headshots with different backgrounds, lighting, and styles tailored to you.',
+      'Every headshot you generate is yours to use however you want—LinkedIn, resumes, company websites, business cards.',
   },
   {
-    icon: Download,
-    step: '3',
-    title: 'Download and Use',
+    icon: Trash2,
+    title: 'Automatic Deletion',
     description:
-      'Review your headshots, pick your favorites, and download them in high resolution, ready for LinkedIn, your resume, or your website.',
-  },
-];
-
-/* ------------------------------------------------------------------ */
-/*  Who Uses TailorPic                                                 */
-/* ------------------------------------------------------------------ */
-
-const audiences = [
-  {
-    icon: Briefcase,
-    title: 'Professionals',
-    description:
-      'Update your LinkedIn, company bio, and business cards with a polished headshot that matches your role.',
-  },
-  {
-    icon: Rocket,
-    title: 'Job Seekers',
-    description:
-      'Make a strong first impression on recruiters with a professional photo, without the studio expense.',
-  },
-  {
-    icon: Layers,
-    title: 'Entrepreneurs',
-    description:
-      'Get consistent, professional imagery across your website, pitch decks, and social profiles.',
-  },
-  {
-    icon: Users,
-    title: 'Teams',
-    description:
-      'Give every team member the same professional look without coordinating schedules or locations.',
-  },
-  {
-    icon: GraduationCap,
-    title: 'Students',
-    description:
-      'Start your career with a polished headshot for internship applications and academic profiles.',
+      'Your source photos are automatically deleted from our servers after 30 days. You stay in control of your data.',
   },
 ];
 
@@ -286,14 +250,15 @@ export default function WhyTailorPicPage() {
           />
           <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
             <span className="mb-4 inline-block rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-4 py-1.5 text-sm font-medium tracking-wide text-tp-bronze">
-              Why {siteConfig.name}
+              The Smart Choice
             </span>
             <h1 className="font-display text-4xl font-normal leading-tight text-white sm:text-5xl lg:text-6xl">
-              Why Choose {siteConfig.name}
+              Why Choose {siteConfig.name}?
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige/80">
-              AI-powered professional headshots that look like they came from a
-              studio&mdash;delivered in hours, not weeks, starting at just $9.90.
+              Studio-quality professional headshots powered by AI&mdash;delivered
+              in hours, not weeks, starting at just $9.90. No photographer, no
+              appointment, no compromise.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link
@@ -306,55 +271,24 @@ export default function WhyTailorPicPage() {
                 Get Your Headshots
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
+              <Link
+                href="/pricing"
+                className={cn(
+                  buttonVariants({ variant: 'outline', size: 'lg' }),
+                  'border-tp-beige/30 text-tp-beige hover:bg-tp-beige/10 hover:text-white',
+                )}
+              >
+                View Pricing
+              </Link>
             </div>
           </div>
         </section>
 
-        {/* ---- The Problem ---- */}
-        <section className="border-b border-tp-line bg-white py-20 sm:py-28">
-          <div className="mx-auto max-w-4xl px-4 sm:px-6">
-            <h2 className="font-display text-center text-3xl font-normal text-tp-ink sm:text-4xl">
-              The Problem with Traditional Headshots
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-center text-tp-muted">
-              Getting a professional headshot has long meant paying too much,
-              waiting too long, and settling for too few options.
-            </p>
-
-            <div className="mx-auto mt-12 grid max-w-3xl gap-6 sm:grid-cols-3">
-              {[
-                {
-                  label: '$200 - $500+',
-                  detail: 'Typical cost for a single studio session with a handful of retouched photos.',
-                },
-                {
-                  label: '1 - 2 Weeks',
-                  detail: 'Average wait time for scheduling, shooting, and retouching at a traditional studio.',
-                },
-                {
-                  label: 'Limited Variety',
-                  detail: 'Most sessions deliver 3 to 10 final images with one background and one outfit.',
-                },
-              ].map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-tp-card border border-tp-line bg-tp-paper p-6 text-center"
-                >
-                  <p className="font-display text-2xl text-tp-ink">
-                    {item.label}
-                  </p>
-                  <p className="mt-2 text-sm text-tp-muted">{item.detail}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ---- How TailorPic Is Different ---- */}
+        {/* ---- Value Props (6 cards) ---- */}
         <section className="bg-tp-paper py-20 sm:py-28">
           <div className="mx-auto max-w-5xl px-4 sm:px-6">
             <h2 className="font-display text-center text-3xl font-normal text-tp-ink sm:text-4xl">
-              How {siteConfig.name} Is Different
+              Six Reasons to Choose {siteConfig.name}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-tp-muted">
               We built {siteConfig.name} to solve every pain point of the
@@ -362,22 +296,25 @@ export default function WhyTailorPicPage() {
             </p>
 
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {differentiators.map((d) => (
+              {valueProps.map((v) => (
                 <div
-                  key={d.title}
+                  key={v.title}
                   className="rounded-tp-card border border-tp-line bg-white p-6 transition hover:shadow-md"
                 >
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-tp-bronze/10">
-                    <d.icon
+                    <v.icon
                       className="h-5 w-5 text-tp-bronze-ink"
                       aria-hidden="true"
                     />
                   </div>
-                  <h3 className="mt-4 text-lg font-semibold text-tp-ink">
-                    {d.title}
+                  <p className="mt-4 font-display text-2xl text-tp-ink">
+                    {v.stat}
+                  </p>
+                  <h3 className="mt-1 text-lg font-semibold text-tp-ink">
+                    {v.title}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">
-                    {d.description}
+                    {v.description}
                   </p>
                 </div>
               ))}
@@ -385,11 +322,11 @@ export default function WhyTailorPicPage() {
           </div>
         </section>
 
-        {/* ---- Side-by-Side Comparison Table ---- */}
+        {/* ---- How We Compare ---- */}
         <section className="border-y border-tp-line bg-white py-20 sm:py-28">
           <div className="mx-auto max-w-5xl px-4 sm:px-6">
             <h2 className="font-display text-center text-3xl font-normal text-tp-ink sm:text-4xl">
-              Side-by-Side Comparison
+              How We Compare
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-tp-muted">
               See how {siteConfig.name} stacks up against traditional studios
@@ -545,89 +482,34 @@ export default function WhyTailorPicPage() {
           </div>
         </section>
 
-        {/* ---- How It Works ---- */}
+        {/* ---- Trust & Privacy ---- */}
         <section className="bg-tp-paper py-20 sm:py-28">
-          <div className="mx-auto max-w-4xl px-4 sm:px-6">
-            <h2 className="font-display text-center text-3xl font-normal text-tp-ink sm:text-4xl">
-              How It Works
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-center text-tp-muted">
-              Three simple steps from selfies to studio-quality headshots.
-            </p>
-
-            <div className="mt-12 grid gap-8 sm:grid-cols-3">
-              {steps.map((s) => (
-                <div key={s.step} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-bronze/10">
-                    <s.icon
-                      className="h-6 w-6 text-tp-bronze-ink"
-                      aria-hidden="true"
-                    />
-                  </div>
-                  <span className="mt-4 inline-block rounded-full bg-tp-ink px-3 py-0.5 text-xs font-semibold text-white">
-                    Step {s.step}
-                  </span>
-                  <h3 className="mt-3 text-lg font-semibold text-tp-ink">
-                    {s.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-tp-muted">
-                    {s.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ---- Who Uses TailorPic ---- */}
-        <section className="border-y border-tp-line bg-white py-20 sm:py-28">
           <div className="mx-auto max-w-5xl px-4 sm:px-6">
             <h2 className="font-display text-center text-3xl font-normal text-tp-ink sm:text-4xl">
-              Who Uses {siteConfig.name}
+              Your Privacy, Our Priority
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-tp-muted">
-              From corporate teams to recent graduates, {siteConfig.name} works
-              for anyone who needs a professional photo.
+              We take data protection seriously so you can focus on looking your
+              best.
             </p>
 
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {audiences.slice(0, 3).map((a) => (
+            <div className="mt-12 grid gap-6 sm:grid-cols-3">
+              {trustItems.map((t) => (
                 <div
-                  key={a.title}
-                  className="rounded-tp-card border border-tp-line bg-white p-6"
+                  key={t.title}
+                  className="rounded-tp-card border border-tp-line bg-white p-6 text-center"
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-tp-bronze/10">
-                    <a.icon
+                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-tp-bronze/10">
+                    <t.icon
                       className="h-5 w-5 text-tp-bronze-ink"
                       aria-hidden="true"
                     />
                   </div>
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">
-                    {a.title}
+                    {t.title}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">
-                    {a.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-6 grid gap-6 sm:grid-cols-2 sm:mx-auto sm:max-w-2xl lg:max-w-none lg:grid-cols-2">
-              {audiences.slice(3).map((a) => (
-                <div
-                  key={a.title}
-                  className="rounded-tp-card border border-tp-line bg-white p-6"
-                >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-tp-bronze/10">
-                    <a.icon
-                      className="h-5 w-5 text-tp-bronze-ink"
-                      aria-hidden="true"
-                    />
-                  </div>
-                  <h3 className="mt-4 text-lg font-semibold text-tp-ink">
-                    {a.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-tp-muted">
-                    {a.description}
+                    {t.description}
                   </p>
                 </div>
               ))}
@@ -635,19 +517,61 @@ export default function WhyTailorPicPage() {
           </div>
         </section>
 
-        {/* ---- CTA ---- */}
+        {/* ---- Illustrative Testimonial ---- */}
+        <section className="border-y border-tp-line bg-white py-20 sm:py-28">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6">
+            <div className="rounded-tp-card border border-tp-line bg-tp-paper p-8 sm:p-10">
+              <Quote
+                className="h-8 w-8 text-tp-bronze/40"
+                aria-hidden="true"
+              />
+              <blockquote className="mt-4 font-display text-xl leading-relaxed text-tp-ink sm:text-2xl">
+                &ldquo;I needed a professional headshot for a new role but
+                couldn&rsquo;t justify spending $300 at a studio. With{' '}
+                {siteConfig.name}, I uploaded a few selfies before lunch and had
+                dozens of polished options by the afternoon. My recruiter
+                actually asked which photographer I used.&rdquo;
+              </blockquote>
+              <div className="mt-6 flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-tp-bronze/20 text-sm font-semibold text-tp-bronze-ink">
+                  S.K.
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-tp-ink">
+                    Sarah K.
+                  </p>
+                  <p className="text-xs text-tp-muted">
+                    Marketing Manager
+                  </p>
+                </div>
+              </div>
+              <p className="mt-4 text-xs text-tp-muted italic">
+                This is an illustrative testimonial based on common customer
+                experiences. Individual results may vary.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ---- Final CTA ---- */}
         <section className="relative overflow-hidden bg-tp-black py-20 sm:py-28">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute -bottom-40 left-1/2 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-tp-bronze/15 blur-[120px]"
           />
           <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6">
+            <RefreshCw
+              className="mx-auto mb-4 h-8 w-8 text-tp-bronze/60"
+              aria-hidden="true"
+            />
             <h2 className="font-display text-3xl font-normal text-white sm:text-4xl">
-              Ready to Get Your Professional Headshot?
+              Ready to Upgrade Your Image?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige/80">
-              One-time payment starting at $9.90, most orders ready in about 2
-              hours, and a money-back guarantee if you are not satisfied.
+              Join thousands of professionals who have switched from expensive
+              studios to {siteConfig.name}. One-time payment, most orders ready
+              in about 2 hours, and a money-back guarantee if you are not
+              satisfied.
             </p>
             <Link
               href="/auth/register"
@@ -659,6 +583,9 @@ export default function WhyTailorPicPage() {
               Get Started Now
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
+            <p className="mt-4 text-sm text-tp-beige/60">
+              Starting at $9.90 &middot; No subscription required
+            </p>
           </div>
         </section>
       </main>
