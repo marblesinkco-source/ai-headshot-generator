@@ -11,6 +11,7 @@ import { PricingPsychology } from '@/components/marketing/pricing-psychology';
 import { GuaranteeBadge } from '@/components/marketing/guarantee-badge';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
+import { getActiveCategories } from '@/config/categories';
 import { TrustBadges } from '@/components/marketing/trust-badges';
 import { BreadcrumbSchema } from '@/components/structured-data';
 
@@ -32,9 +33,36 @@ export const metadata: Metadata = {
   }),
 };
 
+// Product + AggregateOffer built from the real package prices in config/categories.ts
+const allPackagePrices = getActiveCategories()
+  .flatMap((c) => c.packages)
+  .map((p) => p.price / 100);
+
+const pricingSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: `${siteConfig.name} AI Photo Packages`,
+  description: OG_DESCRIPTION,
+  url: `${siteConfig.url}/pricing`,
+  brand: { '@type': 'Brand', name: siteConfig.name },
+  offers: {
+    '@type': 'AggregateOffer',
+    priceCurrency: 'USD',
+    lowPrice: Math.min(...allPackagePrices).toFixed(2),
+    highPrice: Math.max(...allPackagePrices).toFixed(2),
+    offerCount: allPackagePrices.length,
+    availability: 'https://schema.org/InStock',
+    url: `${siteConfig.url}/pricing`,
+  },
+};
+
 export default function PricingPage() {
   return (
     <main id="main-content" className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingSchema) }}
+      />
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
