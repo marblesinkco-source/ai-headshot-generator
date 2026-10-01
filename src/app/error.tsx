@@ -14,7 +14,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-gray-50 px-4">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-tp-paper px-4">
       <div className="text-center">
         <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-red-100">
           <svg
@@ -31,10 +31,10 @@ export default function Error({
             />
           </svg>
         </div>
-        <h1 className="mt-6 text-3xl font-bold tracking-tight text-gray-900">
+        <h1 className="mt-6 text-3xl font-bold tracking-tight text-tp-ink">
           Something went wrong
         </h1>
-        <p className="mt-3 text-base text-gray-500">
+        <p className="mt-3 text-base text-tp-muted">
           An unexpected error occurred. Please try again.
         </p>
         <div className="mt-8 flex items-center justify-center gap-4">
@@ -46,7 +46,7 @@ export default function Error({
           </button>
           <a
             href="/"
-            className="rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 shadow-sm hover:bg-gray-50 transition-colors"
+            className="rounded-lg border border-tp-line bg-white px-5 py-2.5 text-sm font-semibold text-tp-ink shadow-sm hover:bg-tp-paper transition-colors"
           >
             Go home
           </a>

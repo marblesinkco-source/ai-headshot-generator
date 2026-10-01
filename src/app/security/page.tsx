@@ -78,10 +78,10 @@ export default function SecurityPage() {
           <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-tp-black">
             <ShieldCheck className="h-8 w-8 text-tp-bronze" />
           </div>
-          <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+          <h1 className="text-4xl font-extrabold tracking-tight text-tp-ink sm:text-5xl">
             Security & Data Protection
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-600">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-muted">
             Your privacy is not an afterthought — it is built into everything we
             do. Here is how we keep your data safe.
           </p>
@@ -97,15 +97,15 @@ export default function SecurityPage() {
               return (
                 <div
                   key={feature.title}
-                  className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm"
+                  className="rounded-2xl border border-tp-line bg-white p-8 shadow-sm"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-tp-black">
                     <Icon className="h-6 w-6 text-tp-bronze" />
                   </div>
-                  <h2 className="mt-4 text-xl font-semibold text-gray-900">
+                  <h2 className="mt-4 text-xl font-semibold text-tp-ink">
                     {feature.title}
                   </h2>
-                  <p className="mt-3 text-sm leading-relaxed text-gray-600">
+                  <p className="mt-3 text-sm leading-relaxed text-tp-muted">
                     {feature.description}
                   </p>
                 </div>
@@ -116,22 +116,22 @@ export default function SecurityPage() {
       </section>
 
       {/* Additional Policies */}
-      <section className="border-t border-tp-line bg-gray-50 py-20">
+      <section className="border-t border-tp-line bg-tp-paper py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-bold text-gray-900">
+          <h2 className="text-center text-3xl font-bold text-tp-ink">
             Our Commitments
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-center text-gray-600">
+          <p className="mx-auto mt-4 max-w-xl text-center text-tp-muted">
             Beyond technical safeguards, we hold ourselves to clear principles.
           </p>
 
           <div className="mt-12 space-y-6">
             {/* Data Processing Agreement */}
-            <div className="rounded-2xl border border-gray-200 bg-white p-6">
-              <h3 className="text-base font-semibold text-gray-900">
+            <div className="rounded-2xl border border-tp-line bg-white p-6">
+              <h3 className="text-base font-semibold text-tp-ink">
                 Data Processing Agreement
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-600">
+              <p className="mt-2 text-sm leading-relaxed text-tp-muted">
                 Enterprise and business customers can request a Data Processing
                 Agreement (DPA) that outlines how we handle your data, our
                 obligations as a data processor, and your rights as a data
@@ -147,11 +147,11 @@ export default function SecurityPage() {
             </div>
 
             {/* Responsible AI */}
-            <div className="rounded-2xl border border-gray-200 bg-white p-6">
-              <h3 className="text-base font-semibold text-gray-900">
+            <div className="rounded-2xl border border-tp-line bg-white p-6">
+              <h3 className="text-base font-semibold text-tp-ink">
                 Responsible AI
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-600">
+              <p className="mt-2 text-sm leading-relaxed text-tp-muted">
                 We do not sell facial data or biometric information to any third
                 party. Your photos are never shared outside our platform. Our AI
                 models are trained on diverse, ethically sourced datasets, and we
@@ -160,11 +160,11 @@ export default function SecurityPage() {
             </div>
 
             {/* Vulnerability Reporting */}
-            <div className="rounded-2xl border border-gray-200 bg-white p-6">
-              <h3 className="text-base font-semibold text-gray-900">
+            <div className="rounded-2xl border border-tp-line bg-white p-6">
+              <h3 className="text-base font-semibold text-tp-ink">
                 Vulnerability Reporting
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-600">
+              <p className="mt-2 text-sm leading-relaxed text-tp-muted">
                 If you discover a security vulnerability, please report it
                 responsibly to{' '}
                 <a
@@ -184,10 +184,10 @@ export default function SecurityPage() {
       {/* CTA */}
       <section className="py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900">
+          <h2 className="text-3xl font-bold text-tp-ink">
             Have Security Questions?
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-4 text-lg text-tp-muted">
             Our team is happy to discuss our security practices in detail.
           </p>
           <div className="mt-8">

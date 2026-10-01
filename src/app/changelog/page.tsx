@@ -127,7 +127,7 @@ export default function ChangelogPage() {
         <div className="pointer-events-none absolute inset-0 bg-grid" />
         <div className="pointer-events-none absolute -top-24 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-tp-bronze/10 blur-3xl" />
         <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 sm:py-28 lg:px-8">
-          <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+          <h1 className="text-4xl font-extrabold tracking-tight text-tp-ink sm:text-5xl">
             Changelog
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">

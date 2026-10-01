@@ -384,13 +384,13 @@ export default function GlossaryPage() {
         <div className="pointer-events-none absolute inset-0 bg-grid" />
         <div className="pointer-events-none absolute -top-24 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-tp-bronze/10 blur-3xl" />
         <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 sm:py-24 lg:px-8">
-          <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+          <h1 className="text-4xl font-extrabold tracking-tight text-tp-ink sm:text-5xl">
             AI Photography{' '}
             <span className="bg-gradient-to-r from-tp-bronze-ink to-tp-bronze bg-clip-text text-transparent">
               Glossary
             </span>
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-600">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-muted">
             {terms.length} key terms from AI image generation and portrait photography, explained in
             plain language. Whether you are curious about how {siteConfig.name} works or want to
             talk shop with a photographer, start here.
@@ -408,7 +408,7 @@ export default function GlossaryPage() {
             <li key={g.letter}>
               <a
                 href={`#letter-${g.letter}`}
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 text-sm font-semibold text-tp-bronze-ink transition-colors hover:bg-tp-black hover:text-tp-bronze"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-tp-line text-sm font-semibold text-tp-bronze-ink transition-colors hover:bg-tp-black hover:text-tp-bronze"
               >
                 {g.letter}
               </a>
@@ -429,10 +429,10 @@ export default function GlossaryPage() {
                 {g.items.map((t) => (
                   <div
                     key={t.term}
-                    className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
+                    className="rounded-2xl border border-tp-line bg-white p-6 shadow-sm"
                   >
-                    <dt className="text-lg font-bold text-gray-900">{t.term}</dt>
-                    <dd className="mt-2 text-sm leading-relaxed text-gray-600">
+                    <dt className="text-lg font-bold text-tp-ink">{t.term}</dt>
+                    <dd className="mt-2 text-sm leading-relaxed text-tp-muted">
                       {t.definition}
                       {t.link && (
                         <>

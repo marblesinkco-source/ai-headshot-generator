@@ -126,8 +126,8 @@ export function PhotoUploader({ orderId, onUploadComplete }: PhotoUploaderProps)
     <div className="space-y-4">
       {/* Counter */}
       <div className="flex items-center justify-between">
-        <p className="text-sm text-gray-500">
-          <span className="font-medium text-gray-900">{totalUploaded || files.filter((f) => f.status === 'done').length}</span> of {MAX_FILES} photos
+        <p className="text-sm text-tp-muted">
+          <span className="font-medium text-tp-ink">{totalUploaded || files.filter((f) => f.status === 'done').length}</span> of {MAX_FILES} photos
           {totalUploaded < 4 && (
             <span className="ml-2 text-amber-600">(minimum 4 required)</span>
           )}
@@ -142,8 +142,8 @@ export function PhotoUploader({ orderId, onUploadComplete }: PhotoUploaderProps)
           isDragActive
             ? 'border-tp-bronze bg-tp-paper'
             : files.length >= MAX_FILES
-            ? 'border-gray-200 bg-gray-50 cursor-not-allowed'
-            : 'border-gray-300 hover:border-tp-bronze hover:bg-gray-50'
+            ? 'border-tp-line bg-tp-paper cursor-not-allowed'
+            : 'border-tp-line hover:border-tp-bronze hover:bg-tp-paper'
         )}
       >
         <input {...getInputProps()} />
@@ -154,15 +154,15 @@ export function PhotoUploader({ orderId, onUploadComplete }: PhotoUploaderProps)
             </svg>
           </div>
           {files.length >= MAX_FILES ? (
-            <p className="text-sm text-gray-400">Maximum photos reached</p>
+            <p className="text-sm text-tp-muted">Maximum photos reached</p>
           ) : isDragActive ? (
             <p className="text-sm font-medium text-tp-bronze">Drop your photos here</p>
           ) : (
             <>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-tp-muted">
                 <span className="font-medium text-tp-bronze">Click to upload</span> or drag and drop
               </p>
-              <p className="text-xs text-gray-400">JPG, PNG, or WebP. Max 10MB each.</p>
+              <p className="text-xs text-tp-muted">JPG, PNG, or WebP. Max 10MB each.</p>
             </>
           )}
         </div>
@@ -172,7 +172,7 @@ export function PhotoUploader({ orderId, onUploadComplete }: PhotoUploaderProps)
       {files.length > 0 && (
         <div className="grid grid-cols-3 gap-3 sm:grid-cols-5">
           {files.map((file) => (
-            <div key={file.id} className="group relative aspect-square overflow-hidden rounded-lg border border-gray-200 bg-gray-100">
+            <div key={file.id} className="group relative aspect-square overflow-hidden rounded-lg border border-tp-line bg-tp-paper">
               <img
                 src={file.preview}
                 alt="Upload preview"
