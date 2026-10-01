@@ -32,8 +32,12 @@ const GATE_BYPASS_PREFIXES = [
   "/_next",         // Next.js internals
   "/favicon",       // favicon
   "/brand",         // brand assets
+  "/images",        // category images & static assets
+  "/samples",       // sample gallery images
   "/sitemap",       // sitemaps
   "/robots",        // robots.txt
+  "/icon",          // app icons
+  "/apple-icon",    // apple touch icons
 ];
 
 /** Routes that require an authenticated user. */
