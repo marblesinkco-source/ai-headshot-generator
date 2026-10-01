@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Camera, Users, Layers, ShieldCheck } from 'lucide-react';
+import { Camera, Layers, Clock, ShieldCheck } from 'lucide-react';
 
 interface Stat {
   icon: React.ElementType;
@@ -9,13 +9,14 @@ interface Stat {
   text?: string;
   suffix: string;
   label: string;
+  detail: string;
 }
 
 const stats: Stat[] = [
-  { icon: Camera, value: 40, suffix: '+', label: 'Photos Per Session' },
-  { icon: Users, value: 11, suffix: '', label: 'Photo Categories' },
-  { icon: Layers, value: 0, suffix: '', text: 'Fast', label: 'Turnaround' },
-  { icon: ShieldCheck, value: 100, suffix: '%', label: 'Money-Back Guarantee' },
+  { icon: Camera, value: 40, suffix: '+', label: 'Photos Per Session', detail: 'Up to 140 on larger plans' },
+  { icon: Layers, value: 11, suffix: '', label: 'Photo Categories', detail: 'Professional, dating, pets & more' },
+  { icon: Clock, value: 2, suffix: '', text: '<2 hrs', label: 'Delivery Time', detail: 'Most orders ready in under 2 hours' },
+  { icon: ShieldCheck, value: 14, suffix: '-day', label: 'Money-Back Guarantee', detail: 'Full refund, no questions asked' },
 ];
 
 function formatNumber(n: number): string {
@@ -67,33 +68,46 @@ function AnimatedNumber({ target, suffix }: { target: number; suffix: string }) 
 
 export function StatsCounter() {
   return (
-    <section className="relative py-14 sm:py-16 bg-tp-black overflow-hidden">
-      {/* Subtle background texture */}
-      <div className="absolute inset-0 opacity-[0.03]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,#C9A98A_0%,transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_50%,#C9A98A_0%,transparent_50%)]" />
+    <section className="relative py-16 sm:py-20 bg-tp-black overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute inset-0 opacity-[0.04]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,#C9A98A_0%,transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_50%,#C9A98A_0%,transparent_60%)]" />
       </div>
+      {/* Top highlight line */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 h-px w-1/2 bg-gradient-to-r from-transparent via-tp-bronze/30 to-transparent" />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4 lg:gap-4">
-          {stats.map((stat) => (
+        <div className="grid grid-cols-2 gap-8 sm:gap-10 lg:grid-cols-4 lg:gap-6">
+          {stats.map((stat, i) => (
             <div
               key={stat.label}
-              className="flex flex-col items-center text-center group"
+              className="group relative flex flex-col items-center text-center"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-tp-bronze/10 border border-tp-bronze/20 mb-3 group-hover:bg-tp-bronze/20 transition-colors">
-                <stat.icon className="h-5 w-5 text-tp-bronze" />
+              {/* Divider between items on large screens */}
+              {i > 0 && (
+                <div className="hidden lg:block absolute -left-3 top-1/2 -translate-y-1/2 h-16 w-px bg-tp-bronze/10" />
+              )}
+
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-tp-bronze/10 border border-tp-bronze/20 mb-4 group-hover:bg-tp-bronze/15 group-hover:border-tp-bronze/30 transition-all">
+                <stat.icon className="h-6 w-6 text-tp-bronze" />
               </div>
-              <p className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+              <p className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-display">
                 {stat.text ?? <AnimatedNumber target={stat.value} suffix={stat.suffix} />}
               </p>
-              <p className="mt-1.5 text-xs sm:text-sm text-tp-beige/60 font-medium">
+              <p className="mt-2 text-sm font-semibold text-tp-beige/80">
                 {stat.label}
+              </p>
+              <p className="mt-1 text-xs text-tp-beige/40 max-w-[180px]">
+                {stat.detail}
               </p>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Bottom highlight line */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-px w-1/2 bg-gradient-to-r from-transparent via-tp-bronze/30 to-transparent" />
     </section>
   );
 }

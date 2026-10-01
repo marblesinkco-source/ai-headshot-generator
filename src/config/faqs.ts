@@ -32,7 +32,7 @@ export const faqs = [
   {
     question: 'Can I get a refund if I am not satisfied?',
     answer:
-      'Yes. We offer a 100% money-back guarantee. If you are not happy with your photos, contact our support team within 14 days of delivery and we will issue a full refund -- no questions asked.',
+      'Yes. We offer a 100% money-back guarantee. If you are not happy with your photos, contact our support team within 14 days of your purchase and we will issue a full refund — no questions asked.',
   },
   {
     question: 'Is this a subscription? Are there hidden fees?',

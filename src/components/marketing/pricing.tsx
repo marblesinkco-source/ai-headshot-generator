@@ -196,17 +196,17 @@ export function Pricing() {
         )}
 
         {/* Money-back guarantee banner */}
-        <div className="mt-10 mx-auto max-w-2xl rounded-2xl border border-green-200 bg-green-50/60 p-5 sm:p-6 flex items-center gap-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-100 flex-shrink-0">
-            <ShieldCheck className="h-6 w-6 text-green-700" />
+        <div className="mt-10 mx-auto max-w-2xl rounded-tp-card border border-tp-line bg-tp-paper p-5 sm:p-6 flex items-center gap-4">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-tp-bronze/10 border border-tp-bronze/20 flex-shrink-0">
+            <ShieldCheck className="h-6 w-6 text-tp-bronze-ink" />
           </div>
           <div>
-            <p className="text-sm font-semibold text-green-900">
+            <p className="text-sm font-semibold text-tp-ink">
               Money-Back Guarantee
             </p>
-            <p className="text-xs text-green-700 mt-0.5 leading-relaxed">
+            <p className="text-xs text-tp-muted mt-0.5 leading-relaxed">
               14-day money-back guarantee. No questions asked.{' '}
-              <Link href="/refund-policy" className="font-medium underline underline-offset-2 hover:text-green-900">
+              <Link href="/refund-policy" className="font-medium text-tp-bronze-ink underline underline-offset-2 hover:text-tp-ink">
                 Read the refund policy
               </Link>
             </p>

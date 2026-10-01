@@ -22,6 +22,10 @@
 17. `3809389` — Complete gray-* to tp-* brand token migration site-wide
 18. `2c059f0` — Rate limiting on critical API routes (ai/generate, upload, checkout, delete, download)
 19. `d9dcfd9` — Competitor-driven improvements: nav, footer restructure, legal pages, conversion optimization
+20. `d6d4a53` — How-it-works, comparison table, CTA banner improvements
+21. `81ebf51` — Trust badges card grid + pricing Product schema
+22. `13335ae` — Samples, enterprise, reviews page improvements
+23. `4e27edb` — Fabricated claims removal (15 files) + about page improvements
 
 ### Completed Features
 - [x] Exit-intent popup with WELCOME10 promo
@@ -119,6 +123,21 @@
 - [x] Hero: CTA pulse animation, Stripe trust indicators, before/after placeholder
 - [x] Pricing: removed fake urgency banner, added per-card Stripe trust, refund policy links
 - [x] FAQ: 3 objection-handling entries (subscription, checkout security, likeness)
+- [x] How-it-works: large step numbers, time badge, accent border, CTA button
+- [x] Comparison table: 3-column rewrite (Studio vs AI vs TailorPic), bronze tint, mobile scroll
+- [x] CTA banner: new headline, trust line, bronze gradient + glow + dot pattern
+- [x] Trust badges: grid card layout (rounded-tp-card, border-tp-line, icon circles)
+- [x] Pricing: Product JSON-LD schema with AggregateOffer
+- [x] Samples: honest CTA, removed "Join thousands", added price info
+- [x] Enterprise: "Everything Your Team Needs" checklist, fixed fabricated encryption/SSO claims
+- [x] Reviews: brand tokens (rounded-tp-card, rounded-tp-button), improved CTA
+- [x] About: CTAs to /auth/register, brand radii
+- [x] Fabricated claims removed: 12× "Join thousands/hundreds" across industry/use-case/vs pages
+- [x] HIPAA claims removed: 3× replaced with "Privacy-conscious" (industries, doctors pages)
+- [x] FAQ refund wording: "14 days of delivery" → "14 days of your purchase" (matches refund policy)
+- [x] Pricing guarantee banner: green-* hardcoded classes → tp-* brand tokens
+- [x] Testimonials: enhanced card design (Quote icon, hover effects, emoji avatars, brand radii)
+- [x] Stats counter: enhanced visuals (dividers, detail text, highlight lines, larger icons)
 
 ### Backlog (Requires External Action)
 - [ ] Stripe: Create WELCOME10 promo code (10% off) — needs Stripe dashboard/API key
