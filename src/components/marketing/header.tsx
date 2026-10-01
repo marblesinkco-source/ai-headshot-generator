@@ -12,18 +12,18 @@ import type { User } from '@supabase/supabase-js';
 const categories = getActiveCategories();
 
 const navLinks = [
-  { label: 'How It Works', href: '/how-it-works' },
   { label: 'Pricing', href: '/pricing' },
-  { label: 'Free Tools', href: '/tools' },
+  { label: 'How It Works', href: '/#how-it-works' },
   { label: 'Samples', href: '/samples' },
-  { label: 'Enterprise', href: '/enterprise' },
-  { label: 'Industries', href: '/industries' },
-  { label: 'Compare', href: '/vs' },
   { label: 'Blog', href: '/blog' },
 ];
 
 // Secondary pages: reachable from the mobile menu (desktop keeps the nav compact; all are in the footer)
 const secondaryLinks = [
+  { label: 'Free Tools', href: '/tools' },
+  { label: 'Enterprise', href: '/enterprise' },
+  { label: 'Industries', href: '/industries' },
+  { label: 'Compare', href: '/vs' },
   { label: 'Reviews', href: '/reviews' },
   { label: 'For Teams', href: '/for-teams' },
   { label: 'FAQ', href: '/faq' },
@@ -40,7 +40,7 @@ const groupedCategories = CATEGORY_GROUPS.map((group) => ({
 })).filter((group) => group.items.length > 0);
 
 function isLinkActive(pathname: string | null, href: string) {
-  if (!pathname) return false;
+  if (!pathname || href.includes('#')) return false;
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
@@ -48,6 +48,7 @@ export function Header() {
   const router = useRouter();
   const pathname = usePathname();
   const mobileDialog = useRef<HTMLDialogElement>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const userMenuTimer = useRef<ReturnType<typeof setTimeout>>();
@@ -125,13 +126,13 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-tp-line/40 bg-tp-paper/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-tp-line/60 bg-tp-paper/85 backdrop-blur-md supports-[backdrop-filter]:bg-tp-paper/75">
       <div className="mx-auto flex h-20 max-w-[1320px] items-center justify-between px-4 sm:px-7 lg:px-14">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0" aria-label="TailorPic home">
           <Image
             src="/brand/tailorpic/logo/tailorpic-horizontal-bronze.svg"
-            alt="TailorPic registered logo"
+            alt="TailorPic"
             width={212}
             height={49}
             className="h-8 w-auto sm:h-9"
@@ -140,7 +141,7 @@ export function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden items-center gap-4 md:flex lg:gap-6 xl:gap-7" aria-label="Main navigation">
+        <nav className="hidden items-center gap-5 md:flex lg:gap-8" aria-label="Main navigation">
           {/* Photo Types mega menu trigger */}
           <div
             className="relative"
@@ -254,7 +255,7 @@ export function Header() {
         </nav>
 
         {/* Desktop Account */}
-        <div className="hidden items-center gap-5 md:flex">
+        <div className="hidden items-center gap-6 md:flex">
           {user ? (
             <div
               className="relative"
@@ -339,15 +340,18 @@ export function Header() {
             <>
               <Link
                 href="/auth/login"
-                className="text-[13px] font-medium text-tp-ink transition-colors hover:text-tp-bronze-ink"
+                className="text-[13px] font-semibold text-tp-ink transition-colors hover:text-tp-bronze-ink"
               >
                 Sign In
               </Link>
               <Link
                 href="/auth/register"
-                className="inline-flex items-center gap-5 rounded-xl border border-tp-black bg-tp-black px-6 py-3 text-sm font-semibold text-tp-paper transition-all hover:-translate-y-0.5 hover:shadow-lg"
+                className="group inline-flex items-center gap-3 rounded-tp-button border border-tp-black bg-tp-black py-2.5 pl-6 pr-3 text-sm font-semibold text-tp-paper shadow-md shadow-tp-black/15 transition-all hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
               >
-                Get Started <span aria-hidden="true" className="text-lg leading-none">&#8599;</span>
+                Get Started
+                <span className="rounded-lg bg-tp-bronze px-2.5 py-1 text-[12px] font-bold leading-none text-tp-black">
+                  $9.90
+                </span>
               </Link>
             </>
           )}
@@ -375,15 +379,18 @@ export function Header() {
           ) : (
             <Link
               href="/auth/login"
-              className="text-[11px] font-medium text-tp-ink min-h-[44px] flex items-center"
+              className="text-[13px] font-semibold text-tp-ink min-h-[44px] flex items-center"
             >
               Sign In
             </Link>
           )}
           <button
-            className="flex h-[46px] w-[46px] items-center justify-center rounded-[10px] border border-tp-line bg-transparent"
+            className="flex h-[46px] w-[46px] items-center justify-center rounded-tp-button border border-tp-line bg-transparent transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
             onClick={() => mobileDialog.current?.showModal()}
             aria-label="Open navigation menu"
+            aria-haspopup="dialog"
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-nav-dialog"
           >
             <svg className="h-[22px] w-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
               <path d="M4 6H20M4 12H20M4 18H20" />
@@ -395,6 +402,10 @@ export function Header() {
       {/* Mobile Nav Dialog */}
       <dialog
         ref={mobileDialog}
+        id="mobile-nav-dialog"
+        aria-label="Site navigation"
+        onToggle={(e) => setMobileOpen((e.currentTarget as HTMLDialogElement).open)}
+        onClose={() => setMobileOpen(false)}
         className="tp-nav-dialog rounded-[20px] border border-tp-line bg-tp-paper p-0 text-tp-ink w-[min(760px,calc(100vw-28px))] max-h-[85vh] overflow-visible backdrop:bg-tp-black/56"
       >
         <div className="overflow-auto max-h-[85vh] rounded-[20px]">
@@ -498,10 +509,11 @@ export function Header() {
           ) : (
             <Link
               href="/auth/register"
-              className="mt-2 flex items-center justify-center gap-3 rounded-xl bg-tp-black px-6 py-3.5 text-sm font-semibold text-tp-paper"
+              className="mt-2 flex items-center justify-center gap-3 rounded-tp-button bg-tp-black px-6 py-3.5 text-sm font-semibold text-tp-paper shadow-md shadow-tp-black/15"
               onClick={() => mobileDialog.current?.close()}
             >
-              Get Started <span aria-hidden="true" className="text-lg leading-none">&#8599;</span>
+              Get Started
+              <span className="rounded-lg bg-tp-bronze px-2.5 py-1 text-[12px] font-bold leading-none text-tp-black">$9.90</span>
             </Link>
           )}
         </nav>
