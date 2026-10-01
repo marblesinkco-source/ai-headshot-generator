@@ -20,11 +20,14 @@ const legalLinks = [
 const productLinks = [
   { label: 'How It Works', href: '/how-it-works' },
   { label: 'Pricing', href: '/pricing' },
+  { label: 'Pricing Comparison', href: '/pricing-comparison' },
   { label: 'Samples', href: '/samples' },
   { label: 'Reviews', href: '/reviews' },
   { label: 'Enterprise', href: '/enterprise' },
   { label: 'Team Headshots', href: '/team-headshots' },
+  { label: 'Use Cases', href: '/use-cases' },
   { label: 'Photo Styles', href: '/styles' },
+  { label: 'Guarantee', href: '/guarantee' },
 ];
 
 const freeToolLinks = [
@@ -41,6 +44,7 @@ const resourceLinks = [
   { label: 'Blog', href: '/blog' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Industries', href: '/industries' },
+  { label: 'Photo Tips', href: '/photo-tips' },
   { label: 'Glossary', href: '/glossary' },
   { label: 'Changelog', href: '/changelog' },
   { label: 'Contact', href: '/contact' },

@@ -28,6 +28,11 @@
 23. `4e27edb` — Fabricated claims removal (15 files) + about page improvements
 24. `a0a1e90` — Brand consistency, FAQ wording, testimonials & stats enhancements
 25. `f8d60fd` — Complete tp-* brand token migration across 26 files
+26. `c2c3ba4` — Brand token cleanup: error boundary + order status badge
+27. `9089bd3` — Auth page upgrades (split-screen, trust panel), referral & affiliate pages
+28. `0106ef2` — Invoice download API + video testimonials component
+29. `c64ae68` — Pricing comparison + money-back guarantee pages
+30. `705b056` — Use-cases hub page + homepage SEO optimization
 
 ### Completed Features
 - [x] Exit-intent popup with WELCOME10 promo
@@ -140,6 +145,28 @@
 - [x] Pricing guarantee banner: green-* hardcoded classes → tp-* brand tokens
 - [x] Testimonials: enhanced card design (Quote icon, hover effects, emoji avatars, brand radii)
 - [x] Stats counter: enhanced visuals (dividers, detail text, highlight lines, larger icons)
+- [x] Error boundary: brand token cleanup (bg-red-100 → tp-muted/10, hover:bg-gray-900 → hover:bg-tp-ink)
+- [x] Order status badge: pending/refunded gray-* → tp-paper/tp-muted tokens
+- [x] Auth login page: split-screen layout with trust panel, removed disabled OAuth buttons
+- [x] Auth register page: split-screen layout with trust panel, removed disabled OAuth buttons
+- [x] Auth forgot-password: rounded-2xl → rounded-tp-card
+- [x] Auth reset-password: rounded-2xl → rounded-tp-card
+- [x] /referral page: coming-soon waitlist, how-it-works, benefits cards, FAQ (marketing route group)
+- [x] /affiliate page: partner program, commission structure, how to apply (marketing route group)
+- [x] Invoice download API (/api/invoices/[orderId]) with branded HTML, XSS protection
+- [x] Dashboard billing: download invoice button per order
+- [x] Video testimonials component (placeholder, not yet integrated)
+- [x] /pricing-comparison page: 3-column comparison (Studio vs AI vs TailorPic), ROI section
+- [x] /guarantee page: 14-day money-back guarantee detail, coverage, exclusions, FAQ
+- [x] /use-cases hub page: 8 use-case cards linking to category pages
+- [x] Homepage SEO: full openGraph, twitter card, absolute canonical URL, optimized title/description
+- [x] /photo-tips page: do's/don'ts, lighting, clothing, background, camera tips
+- [x] Social proof toast component (generic messages, auto-dismissing, session-only)
+- [x] Before/after showcase component (gradient placeholders, 3 comparison cards)
+- [x] Social proof toast integrated into root layout
+- [x] Before/after showcase integrated into homepage
+- [x] Footer: added Photo Tips, Pricing Comparison, Use Cases, Guarantee links
+- [x] Sitemap: added /photo-tips route
 
 ### Backlog (Requires External Action)
 - [ ] Stripe: Create WELCOME10 promo code (10% off) — needs Stripe dashboard/API key

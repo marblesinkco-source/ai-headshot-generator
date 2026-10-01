@@ -11,6 +11,7 @@ import { faqs } from '@/config/faqs';
 import { Footer } from '@/components/marketing/footer';
 import { StickyCTA } from '@/components/marketing/sticky-cta';
 import { WebsiteSchema, FAQSchema, SoftwareApplicationSchema, HowToSchema } from '@/components/structured-data';
+import { BeforeAfterShowcase } from '@/components/marketing/before-after-showcase';
 
 export const metadata: Metadata = {
   title: 'TailorPic — AI Headshots & Professional Photos | From $9.99',
@@ -86,6 +87,7 @@ export default function LandingPage() {
       <Categories />
       <TrustBadges />
       <TrustStrip />
+      <BeforeAfterShowcase />
       <HowItWorks />
       <ComparisonTable />
       <Testimonials />
