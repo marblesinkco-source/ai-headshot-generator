@@ -7,6 +7,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
+import { HeadshotResizerDemo } from '@/components/tools/tool-demos';
 
 const title = "Free Headshot Resizer \u2014 LinkedIn, Passport & ID Sizes | TailorPic";
 const description = "Resize your headshot for LinkedIn, Facebook, Twitter, passport and corporate ID photos. Free size guide and tool by TailorPic.";
@@ -101,6 +102,8 @@ export default function Page() {
           <UploadZone />
         </div>
       </section>
+
+      <HeadshotResizerDemo />
 
       <section className="px-4 py-10 sm:px-6">
         <div className="mx-auto max-w-5xl">

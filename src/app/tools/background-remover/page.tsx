@@ -7,6 +7,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
+import { BackgroundRemoverDemo } from '@/components/tools/tool-demos';
 
 const title = "Free AI Background Remover \u2014 Remove Photo Backgrounds | TailorPic";
 const description = "Remove backgrounds from your photos instantly with AI. Perfect for professional headshots, product photos, and social media.";
@@ -93,6 +94,8 @@ export default function Page() {
           <UploadZone />
         </div>
       </section>
+
+      <BackgroundRemoverDemo />
 
       <section className="px-4 py-12 sm:px-6">
         <div className="mx-auto grid max-w-5xl gap-5 md:grid-cols-3">

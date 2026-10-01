@@ -7,6 +7,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
+import { ResumePhotoCheckerDemo } from '@/components/tools/tool-demos';
 
 const title = "Free Resume Photo Checker \u2014 Is Your Photo Professional? | TailorPic";
 const description = "Upload your photo to check if it's professional enough for your resume. Free checklist for lighting, background, attire, resolution and framing.";
@@ -101,6 +102,8 @@ export default function Page() {
           <UploadZone />
         </div>
       </section>
+
+      <ResumePhotoCheckerDemo />
 
       <section className="px-4 py-12 sm:px-6">
         <div className="mx-auto max-w-3xl">
