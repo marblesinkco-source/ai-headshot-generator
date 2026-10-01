@@ -298,8 +298,8 @@ export default function HowItWorksPage() {
             {/* DON'T */}
             <div className="rounded-2xl border border-tp-line bg-white p-6 sm:p-8">
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
-                  <X className="h-5 w-5 text-red-500" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-tp-muted/10">
+                  <X className="h-5 w-5 text-tp-muted" />
                 </div>
                 <h3 className="text-xl font-semibold text-tp-ink">
                   Don&apos;t
@@ -308,7 +308,7 @@ export default function HowItWorksPage() {
               <ul className="mt-6 space-y-4">
                 {dontList.map((item) => (
                   <li key={item.text} className="flex items-start gap-3">
-                    <X className="mt-0.5 h-5 w-5 shrink-0 text-red-400" />
+                    <X className="mt-0.5 h-5 w-5 shrink-0 text-tp-muted" />
                     <span className="text-sm leading-relaxed text-tp-muted">
                       {item.text}
                     </span>

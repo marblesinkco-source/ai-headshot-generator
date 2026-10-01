@@ -109,11 +109,11 @@ const advantages = [
 function CellValue({ value, highlight }: { value: RowValue; highlight?: boolean }) {
   if (typeof value === 'boolean') {
     return value ? (
-      <span className="inline-flex items-center justify-center rounded-full bg-green-100 p-1 text-green-700">
+      <span className="inline-flex items-center justify-center rounded-full bg-tp-bronze/10 p-1 text-tp-bronze-ink">
         <Check className="h-4 w-4" />
       </span>
     ) : (
-      <span className="inline-flex items-center justify-center rounded-full bg-red-100 p-1 text-red-400">
+      <span className="inline-flex items-center justify-center rounded-full bg-tp-paper p-1 text-tp-muted">
         <X className="h-4 w-4" />
       </span>
     );

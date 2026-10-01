@@ -29,7 +29,7 @@ export function FAQ() {
         </div>
 
         {/* Accordion */}
-        <div className="mt-16 divide-y divide-tp-line/50 rounded-2xl border border-tp-line bg-white">
+        <div className="mt-16 divide-y divide-tp-line/50 rounded-tp-card border border-tp-line bg-white">
           {faqs.map((faq, i) => (
             <div key={i}>
               <button

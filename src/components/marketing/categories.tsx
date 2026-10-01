@@ -93,7 +93,7 @@ export function Categories() {
                     <Link
                       key={cat.id}
                       href={`/${cat.slug}`}
-                      className="group relative flex flex-col overflow-hidden rounded-2xl border border-tp-line bg-white transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-tp-bronze/15 hover:border-tp-bronze/50"
+                      className="group relative flex flex-col overflow-hidden rounded-tp-card border border-tp-line bg-white transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-tp-bronze/15 hover:border-tp-bronze/50"
                     >
                       {/* Image area with overlay gradient */}
                       <div className="relative aspect-[4/3] w-full overflow-hidden bg-tp-paper">

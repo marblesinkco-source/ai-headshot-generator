@@ -37,7 +37,7 @@ export function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div role="status" className="rounded-2xl border border-tp-line bg-white p-8 text-center shadow-sm">
+      <div role="status" className="rounded-tp-cardborder border-tp-line bg-white p-8 text-center shadow-sm">
         <h3 className="text-lg font-semibold text-tp-ink">Message sent</h3>
         <p className="mt-2 text-sm text-tp-muted">Thanks for reaching out. We will get back to you by email.</p>
       </div>
@@ -45,7 +45,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-4 rounded-2xl border border-tp-line bg-white p-6 shadow-sm sm:p-8">
+    <form onSubmit={onSubmit} className="space-y-4 rounded-tp-card border border-tp-line bg-white p-6 shadow-sm sm:p-8">
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block text-sm font-medium text-tp-ink">
           Name

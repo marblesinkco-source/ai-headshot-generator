@@ -89,7 +89,7 @@ export function StatsCounter() {
                 <div className="hidden lg:block absolute -left-3 top-1/2 -translate-y-1/2 h-16 w-px bg-tp-bronze/10" />
               )}
 
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-tp-bronze/10 border border-tp-bronze/20 mb-4 group-hover:bg-tp-bronze/15 group-hover:border-tp-bronze/30 transition-all">
+              <div className="flex h-14 w-14 items-center justify-center rounded-tp-card bg-tp-bronze/10 border border-tp-bronze/20 mb-4 group-hover:bg-tp-bronze/15 group-hover:border-tp-bronze/30 transition-all">
                 <stat.icon className="h-6 w-6 text-tp-bronze" />
               </div>
               <p className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-display">

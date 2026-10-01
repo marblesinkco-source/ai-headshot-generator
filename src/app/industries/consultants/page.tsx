@@ -189,10 +189,10 @@ export default function ConsultantsIndustryPage() {
               return (
                 <div
                   key={point.title}
-                  className="rounded-2xl border border-red-100 bg-red-50/50 p-6"
+                  className="rounded-2xl border border-tp-line bg-tp-paper/50 p-6"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-red-100">
-                    <Icon className="h-6 w-6 text-red-600" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-muted/10">
+                    <Icon className="h-6 w-6 text-tp-muted" />
                   </div>
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{point.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{point.description}</p>

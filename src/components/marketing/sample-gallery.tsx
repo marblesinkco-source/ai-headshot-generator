@@ -68,7 +68,7 @@ export function SampleGallery({ categoryId, categoryName, outputLabel }: SampleG
               key={i}
               onClick={() => setActiveIndex(i)}
               className={cn(
-                'group relative aspect-[3/4] overflow-hidden rounded-2xl border-2 transition-all',
+                'group relative aspect-[3/4] overflow-hidden rounded-tp-card border-2 transition-all',
                 activeIndex === i
                   ? 'border-tp-bronze ring-2 ring-tp-beige/40 shadow-lg scale-[1.02]'
                   : 'border-tp-line hover:border-tp-bronze/50 hover:shadow-md'

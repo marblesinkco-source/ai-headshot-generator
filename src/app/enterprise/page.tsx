@@ -119,7 +119,7 @@ export default function EnterprisePage() {
                 desc: 'Every new hire, every promotion, every rebrand means another round of expensive photo shoots.',
               },
             ].map((pain) => (
-              <div key={pain.title} className="rounded-2xl border border-red-200/60 bg-red-50/30 p-6">
+              <div key={pain.title} className="rounded-2xl border border-tp-line bg-tp-paper/50 p-6">
                 <h3 className="text-lg font-semibold text-tp-ink">{pain.title}</h3>
                 <p className="mt-2 text-sm text-tp-muted leading-relaxed">{pain.desc}</p>
               </div>

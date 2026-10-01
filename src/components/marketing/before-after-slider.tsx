@@ -57,7 +57,7 @@ export function BeforeAfterSlider({
   return (
     <div
       ref={containerRef}
-      className="relative w-full overflow-hidden rounded-2xl select-none touch-none"
+      className="relative w-full overflow-hidden rounded-tp-card select-none touch-none"
       style={{ aspectRatio: `${width} / ${height}` }}
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}

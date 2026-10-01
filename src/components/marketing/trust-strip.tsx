@@ -31,7 +31,7 @@ export function TrustStrip() {
           </p>
           <button
             onClick={() => categoryDialog.current?.showModal()}
-            className="inline-flex items-center gap-5 rounded-xl border-transparent bg-tp-bronze px-6 py-3.5 text-sm font-semibold text-tp-black transition-all hover:-translate-y-0.5 hover:shadow-lg"
+            className="inline-flex items-center gap-5 rounded-tp-button border-transparent bg-tp-bronze px-6 py-3.5 text-sm font-semibold text-tp-black transition-all hover:-translate-y-0.5 hover:shadow-lg"
           >
             Explore Categories <span aria-hidden="true" className="text-[22px] leading-none">&#8599;</span>
           </button>
@@ -72,7 +72,7 @@ export function TrustStrip() {
             <Link
               key={cat.id}
               href={`/${cat.slug}`}
-              className="flex items-center gap-3 border border-tp-line bg-[#FEFCF8] rounded-xl min-h-[70px] p-3 text-left hover:border-tp-bronze-ink transition-colors"
+              className="flex items-center gap-3 border border-tp-line bg-[#FEFCF8] rounded-tp-button min-h-[70px] p-3 text-left hover:border-tp-bronze-ink transition-colors"
               onClick={() => categoryDialog.current?.close()}
             >
               <div className="w-[52px] h-[52px] rounded-lg overflow-hidden flex-shrink-0 bg-gradient-to-br from-tp-beige to-tp-line">

@@ -111,7 +111,7 @@ const whyCards = [
 function CellValue({ value }: { value: string | boolean }) {
   if (value === true) {
     return (
-      <span className="inline-flex items-center gap-1.5 text-green-600">
+      <span className="inline-flex items-center gap-1.5 text-tp-bronze-ink">
         <Check className="h-5 w-5" />
         <span className="sr-only">Yes</span>
       </span>
@@ -119,7 +119,7 @@ function CellValue({ value }: { value: string | boolean }) {
   }
   if (value === false) {
     return (
-      <span className="inline-flex items-center gap-1.5 text-red-500">
+      <span className="inline-flex items-center gap-1.5 text-tp-muted">
         <X className="h-5 w-5" />
         <span className="sr-only">No</span>
       </span>
