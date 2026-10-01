@@ -18,6 +18,13 @@ export const metadata: Metadata = {
       'Our 14-day money-back guarantee ensures you love your AI-generated photos.',
     url: `${siteConfig.url}/refund-policy`,
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Refund Policy | TailorPic',
+    description:
+      'Our 14-day money-back guarantee ensures you love your AI-generated photos.',
+    images: [siteConfig.ogImage],
+  },
 };
 
 const faqs = [

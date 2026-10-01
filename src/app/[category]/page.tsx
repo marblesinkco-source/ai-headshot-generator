@@ -92,7 +92,7 @@ export default async function CategoryPage({ params }: Props) {
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Link href={`/dashboard/upload?category=${cat.id}`}>
+              <Link href="/auth/register">
                 <Button size="lg" variant="primary">
                   Get Your {cat.outputLabel}
                 </Button>
@@ -200,7 +200,7 @@ export default async function CategoryPage({ params }: Props) {
                       </li>
                     ))}
                   </ul>
-                  <Link href={`/dashboard/upload?category=${cat.id}`} className="block mt-6">
+                  <Link href="/auth/register" className="block mt-6">
                     <Button
                       variant={pkg.recommended ? 'primary' : 'outline'}
                       size="md"
@@ -250,7 +250,7 @@ export default async function CategoryPage({ params }: Props) {
             Upload your photos and get AI-generated results in hours.
           </p>
           <div className="mt-8">
-            <Link href={`/dashboard/upload?category=${cat.id}`}>
+            <Link href="/auth/register">
               <Button size="lg" variant="primary">Get Started Now</Button>
             </Link>
           </div>

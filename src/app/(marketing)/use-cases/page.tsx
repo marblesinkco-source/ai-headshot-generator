@@ -28,6 +28,13 @@ export const metadata: Metadata = {
       'Explore all the ways you can use TailorPic to create stunning AI-generated photos for work, social, and personal projects.',
     url: `${siteConfig.url}/use-cases`,
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: `AI Photo Use Cases | ${siteConfig.name}`,
+    description:
+      'Explore all the ways you can use TailorPic to create stunning AI-generated photos for work, social, and personal projects.',
+    images: [siteConfig.ogImage],
+  },
 };
 
 /* ------------------------------------------------------------------ */

@@ -18,6 +18,13 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'TailorPic',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Data Processing Agreement | TailorPic',
+    description:
+      'How TailorPic processes personal data on behalf of customers: scope, security measures, sub-processors, retention and deletion, breach notification, and audit rights.',
+    images: [siteConfig.ogImage],
+  },
 };
 
 const definitions = [

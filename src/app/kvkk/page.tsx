@@ -18,6 +18,13 @@ export const metadata: Metadata = {
     siteName: 'TailorPic',
     locale: 'tr_TR',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'KVKK Aydınlatma Metni | TailorPic',
+    description:
+      '6698 sayılı KVKK kapsamında TailorPic tarafından işlenen kişisel veriler, amaçlar, aktarımlar, saklama süreleri ve haklarınız.',
+    images: [siteConfig.ogImage],
+  },
 };
 
 const CONTACT = 'support@tailorpic.com';

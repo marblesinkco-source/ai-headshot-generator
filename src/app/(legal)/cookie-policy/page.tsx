@@ -13,6 +13,13 @@ export const metadata: Metadata = {
       'Learn how TailorPic uses cookies. Analytics cookies are only set with your explicit consent.',
     url: `${siteConfig.url}/cookie-policy`,
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cookie Policy | TailorPic',
+    description:
+      'Learn how TailorPic uses cookies. Analytics cookies are only set with your explicit consent.',
+    images: [siteConfig.ogImage],
+  },
 };
 
 type CookieRow = {

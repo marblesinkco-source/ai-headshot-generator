@@ -469,7 +469,7 @@ export const blogPosts: BlogPost[] = [
     description:
       'Your LinkedIn photo is your first impression. Here are 7 expert tips for choosing a profile photo that gets you noticed by recruiters and clients.',
     content: `
-      <p>Your LinkedIn profile photo is often the first thing recruiters, clients, and colleagues see. Studies show that profiles with professional photos receive up to 21 times more views and 36 times more messages.</p>
+      <p>Your LinkedIn profile photo is often the first thing recruiters, clients, and colleagues see. Profiles with professional photos tend to receive significantly more views and engagement.</p>
 
       <h2>1. Use a High-Resolution Image</h2>
       <p>Blurry or pixelated photos send the wrong message. Make sure your headshot is at least 400x400 pixels, though higher resolution is always better.</p>
@@ -3588,7 +3588,7 @@ export const blogPosts: BlogPost[] = [
       <p>That savings compounds when you factor in the time staff spend organizing shoots, reviewing proofs and handling retakes.</p>
 
       <h2>Getting Started</h2>
-      <p>Start by asking each team member for three to five clear selfies — natural light, plain background, no sunglasses. Upload them to TailorPic's <a href="/editor">AI Photo Editor</a>, pick a style that matches your brand and download the results. Update your website, social channels and annual report in a single afternoon.</p>
+      <p>Start by asking each team member for 10 to 20 clear, well-lit selfies (minimum 8) — natural light, plain background, no sunglasses. Upload them to TailorPic's <a href="/editor">AI Photo Editor</a>, pick a style that matches your brand and download the results. Update your website, social channels and annual report in a single afternoon.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-12-25',
@@ -3657,7 +3657,7 @@ export const blogPosts: BlogPost[] = [
       <p>Our <a href="/blog/executive-headshot-guide">executive headshot guide</a> covers posing and wardrobe in detail.</p>
 
       <h2>A Practical Rollout Plan</h2>
-      <p>Send a short instruction sheet asking everyone for three to five well-lit selfies with a plain background. Have each person upload them to the <a href="/editor">TailorPic editor</a>, choose the agreed style and share their favorite result. Collect the finals in a shared folder and update your site, deck and social profiles in one go.</p>
+      <p>Send a short instruction sheet asking everyone for 10 to 20 clear, well-lit selfies (minimum 8) with a plain background. Have each person upload them to the <a href="/editor">TailorPic editor</a>, choose the agreed style and share their favorite result. Collect the finals in a shared folder and update your site, deck and social profiles in one go.</p>
       <p>Repeat the process for each new hire during onboarding so your team page never falls out of date. Start at <a href="/">tailorpic.com</a>.</p>
     `,
     author: 'TailorPic Team',
@@ -4973,7 +4973,7 @@ export const blogPosts: BlogPost[] = [
       <p>The global AI portrait and headshot market was estimated at roughly $600 million in 2024 and is projected to exceed $2 billion by 2028, driven by remote work, personal branding, and the falling cost of generative AI. The number of consumer AI headshot tools has grown from a handful in 2022 to over 50 by mid-2025, with new entrants appearing monthly.</p>
 
       <h2>Cost Comparison</h2>
-      <p>A traditional headshot session with a professional photographer typically costs between $150 and $500 for a single look, plus travel and scheduling time. AI headshot services range from $5 to $50, with TailorPic offering 40+ photos for <a href="/pricing">$9.90</a>. That represents a cost reduction of 80–95% compared to a studio session. For teams, the savings multiply: outfitting a 50-person company with consistent headshots could cost $10,000–$25,000 with a photographer, or under $500 with an AI tool.</p>
+      <p>A traditional headshot session with a professional photographer typically costs between $150 and $500 for a single look, plus travel and scheduling time. AI headshot services range from $5 to $50, with TailorPic offering 40+ photos for <a href="/pricing">$9.90</a>. That represents significant cost savings compared to a traditional studio session. For teams, the savings multiply: outfitting a 50-person company with consistent headshots could cost $10,000–$25,000 with a photographer, or under $500 with an AI tool.</p>
 
       <h2>Adoption by Sector</h2>
       <p>LinkedIn remains the single largest driver of AI headshot demand, with professionals across every industry updating their profiles. Other high-adoption sectors include real estate (where MLS listings require agent photos), technology (remote-first teams needing consistent visuals), consulting (where personal brand is revenue), and healthcare (where trust signals matter). See our <a href="/industries">industry pages</a> for tailored solutions.</p>
@@ -5549,7 +5549,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'how-ai-headshots-improve-conversion-rates',
-    title: 'How Professional AI Headshots Improve Conversion Rates by 40%',
+    title: 'How Professional AI Headshots Can Improve Your Conversion Rates',
     description:
       'Why a professional photo builds trust and can lift conversions on profiles, landing pages and sales outreach, and how to measure the impact of better headshots in your own business.',
     content: `

@@ -19,6 +19,13 @@ export const metadata: Metadata = {
     url: '/styles',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Photo Styles — Choose Your Perfect Headshot Style | TailorPic',
+    description:
+      'Browse AI headshot styles by category and see which use cases each one suits, from LinkedIn to creative portfolios.',
+    images: [siteConfig.ogImage],
+  },
 };
 
 interface StyleCategory {

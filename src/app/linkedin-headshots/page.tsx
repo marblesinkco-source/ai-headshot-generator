@@ -31,6 +31,12 @@ export const metadata: Metadata = {
     description: 'Professional AI-generated LinkedIn profile photos from your selfies.',
     url: `${siteConfig.url}/linkedin-headshots`,
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'LinkedIn Headshots | TailorPic',
+    description: 'Professional AI-generated LinkedIn profile photos from your selfies.',
+    images: [siteConfig.ogImage],
+  },
 };
 
 const faqs = [

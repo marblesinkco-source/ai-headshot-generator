@@ -18,6 +18,13 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'TailorPic',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Accessibility Statement | TailorPic',
+    description:
+      'Our commitment to digital accessibility, our WCAG 2.1 Level AA target, known limitations, and how to report an accessibility issue.',
+    images: [siteConfig.ogImage],
+  },
 };
 
 const features = [

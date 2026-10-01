@@ -18,6 +18,13 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'TailorPic',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Subprocessors | TailorPic',
+    description:
+      'The third-party subprocessors TailorPic uses to process personal data on our behalf, including their purpose and data location.',
+    images: [siteConfig.ogImage],
+  },
 };
 
 const subprocessors = [
