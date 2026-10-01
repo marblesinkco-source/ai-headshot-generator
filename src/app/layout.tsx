@@ -5,6 +5,7 @@ import './globals.css';
 import { siteConfig } from '@/config/site';
 import { ToastProvider } from '@/components/ui/toaster';
 import { CookieConsent } from '@/components/cookie-consent';
+import { GoogleAnalytics } from '@/components/analytics/google-analytics';
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -59,6 +60,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={manrope.variable} suppressHydrationWarning>
       <body className="min-h-screen bg-tp-paper font-sans antialiased text-tp-ink">
+        {/* GA4 + Consent Mode v2 — only renders when NEXT_PUBLIC_GA_MEASUREMENT_ID is set */}
+        <GoogleAnalytics />
         <ToastProvider>
           {children}
           <CookieConsent />
