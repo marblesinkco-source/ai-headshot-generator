@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { siteConfig } from '@/config/site';
+import { EmailCapture } from '@/components/marketing/email-capture';
 import { getActiveCategories, CATEGORY_GROUPS } from '@/config/categories';
 
 const legalLinks = [
@@ -284,6 +285,11 @@ export function Footer() {
             </ul>
           </div>
         </div>
+      </div>
+
+      {/* Newsletter */}
+      <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 pb-12 lg:pb-16">
+        <EmailCapture />
       </div>
 
       {/* Bottom bar */}

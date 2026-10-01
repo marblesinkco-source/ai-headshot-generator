@@ -5,6 +5,7 @@ import './globals.css';
 import { siteConfig } from '@/config/site';
 import { ToastProvider } from '@/components/ui/toaster';
 import { CookieConsent } from '@/components/cookie-consent';
+import { ExitIntentPopup } from '@/components/marketing/exit-intent-popup';
 import { GoogleAnalytics } from '@/components/analytics/google-analytics';
 
 const manrope = Manrope({
@@ -65,6 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ToastProvider>
           {children}
           <CookieConsent />
+          <ExitIntentPopup />
         </ToastProvider>
         {/* Vercel Analytics — only loads when NEXT_PUBLIC_VERCEL_ANALYTICS_ID is set */}
         {process.env.NEXT_PUBLIC_VERCEL_ANALYTICS_ID && (

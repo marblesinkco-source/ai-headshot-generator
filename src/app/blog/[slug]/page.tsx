@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { EmailCapture } from '@/components/marketing/email-capture';
 import { siteConfig } from '@/config/site';
 import { getBlogPost, getAllBlogPosts } from '@/config/blog';
 import { ArticleSchema, BreadcrumbSchema } from '@/components/structured-data';
@@ -129,6 +130,7 @@ export default async function BlogPostPage({ params }: Props) {
             className="prose prose-gray max-w-none prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-600 prose-p:leading-relaxed prose-a:text-tp-bronze-ink prose-a:underline prose-a:underline-offset-2 hover:prose-a:text-tp-bronze prose-strong:text-gray-900 prose-li:text-gray-600"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
+          <EmailCapture variant="banner" className="mt-12" />
         </div>
 
         {/* Related Posts */}

@@ -14,6 +14,7 @@ import {
 import { formatPrice } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { PhotoUploader } from '@/components/dashboard/photo-uploader';
+import { PhotoGuidelines, PhotoQuickTips } from '@/components/upload/photo-guidelines';
 
 type Step = 1 | 2 | 3 | 4;
 
@@ -399,6 +400,10 @@ function UploadContent() {
                 'Upload 4-10 clear photos. Include different angles and expressions for best results.'}
             </p>
           </div>
+
+          <PhotoGuidelines />
+
+          <PhotoQuickTips />
 
           <PhotoUploader
             orderId={orderId}
