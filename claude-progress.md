@@ -21,6 +21,7 @@
 16. `ccd8bea` — Sitemap, footer links, remaining gray-* token migration
 17. `3809389` — Complete gray-* to tp-* brand token migration site-wide
 18. `2c059f0` — Rate limiting on critical API routes (ai/generate, upload, checkout, delete, download)
+19. `d9dcfd9` — Competitor-driven improvements: nav, footer restructure, legal pages, conversion optimization
 
 ### Completed Features
 - [x] Exit-intent popup with WELCOME10 promo
@@ -107,6 +108,17 @@
 - [x] Sitemap: added /team-headshots route
 - [x] Footer: added enterprise, team-headshots, samples, industries links
 - [x] Rate limiting: /api/ai/generate (10/hr), /api/upload (30/hr), /api/payments/checkout (15/hr), /api/account/delete (3/hr), /api/gallery/download (20/hr)
+- [x] Footer restructured: 4 → 6 columns (Photo Types, Product, Free Tools, Resources, Legal, Brand)
+- [x] Header nav updated: added Free Tools (/tools), Compare (/vs), removed low-value links
+- [x] /accessibility page — WCAG 2.1 Level AA statement
+- [x] /subprocessors page — GDPR-compliant list of 7 services
+- [x] /vs hub page — comparison index for ~80 competitors
+- [x] /tools page improved — featured free headshot generator card + AI photo editor
+- [x] DPA synced: added 4 missing subprocessors + link to /subprocessors
+- [x] Sitemap: added /accessibility, /subprocessors, /vs, /tools
+- [x] Hero: CTA pulse animation, Stripe trust indicators, before/after placeholder
+- [x] Pricing: removed fake urgency banner, added per-card Stripe trust, refund policy links
+- [x] FAQ: 3 objection-handling entries (subscription, checkout security, likeness)
 
 ### Backlog (Requires External Action)
 - [ ] Stripe: Create WELCOME10 promo code (10% off) — needs Stripe dashboard/API key
