@@ -105,7 +105,7 @@ export default async function BlogPostPage({ params }: Props) {
             ))}
           </div>
 
-          <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
             {post.title}
           </h1>
 
@@ -127,7 +127,7 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Content */}
         <div className="mx-auto max-w-3xl px-4 pb-20 sm:px-6 lg:px-8">
           <div
-            className="prose prose-gray max-w-none prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-600 prose-p:leading-relaxed prose-a:text-tp-bronze-ink prose-a:underline prose-a:underline-offset-2 hover:prose-a:text-tp-bronze prose-strong:text-gray-900 prose-li:text-gray-600"
+            className="prose prose-gray max-w-none prose-headings:font-bold prose-headings:text-tp-ink prose-p:text-tp-muted prose-p:leading-relaxed prose-a:text-tp-bronze-ink prose-a:underline prose-a:underline-offset-2 hover:prose-a:text-tp-bronze prose-strong:text-tp-ink prose-li:text-tp-muted"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
           <EmailCapture variant="banner" className="mt-12" />
@@ -174,12 +174,12 @@ export default async function BlogPostPage({ params }: Props) {
         })()}
 
         {/* CTA */}
-        <div className="border-t border-gray-200 bg-gray-50 py-16">
+        <div className="border-t border-tp-line bg-tp-paper py-16">
           <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-gray-900">
+            <h2 className="text-2xl font-bold text-tp-ink">
               Ready to Try AI Photography?
             </h2>
-            <p className="mt-3 text-gray-600">
+            <p className="mt-3 text-tp-muted">
               Create professional-quality photos in minutes with TailorPic.
             </p>
             <Link

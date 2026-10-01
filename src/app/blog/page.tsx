@@ -40,14 +40,14 @@ export default function BlogPage() {
         <div className="pointer-events-none absolute inset-0 bg-grid" />
         <div className="pointer-events-none absolute -top-24 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-tp-bronze/10 blur-3xl" />
         <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 sm:py-28 lg:px-8">
-          <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+          <h1 className="text-4xl font-extrabold tracking-tight text-tp-ink sm:text-5xl">
             The{' '}
             <span className="bg-gradient-to-r from-tp-bronze-ink to-tp-bronze bg-clip-text text-transparent">
               TailorPic
             </span>{' '}
             Blog
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-600">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-muted">
             Tips, tutorials, and insights on AI-powered photography. Learn how to get
             the best results and stay ahead of the curve.
           </p>
@@ -62,7 +62,7 @@ export default function BlogPage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group rounded-2xl border border-gray-200 bg-white shadow-sm transition-all hover:shadow-lg hover:border-tp-bronze/40"
+                className="group rounded-2xl border border-tp-line bg-white shadow-sm transition-all hover:shadow-lg hover:border-tp-bronze/40"
               >
                 {/* Cover image placeholder */}
                 <div className="aspect-[16/9] rounded-t-2xl bg-gradient-to-br from-tp-paper via-tp-beige/30 to-tp-bronze/10 flex items-center justify-center">
@@ -80,10 +80,10 @@ export default function BlogPage() {
                       </span>
                     ))}
                   </div>
-                  <h2 className="text-base font-semibold text-gray-900 group-hover:text-tp-bronze-ink transition-colors line-clamp-2">
+                  <h2 className="text-base font-semibold text-tp-ink group-hover:text-tp-bronze-ink transition-colors line-clamp-2">
                     {post.title}
                   </h2>
-                  <p className="mt-2 text-sm text-gray-600 line-clamp-2">
+                  <p className="mt-2 text-sm text-tp-muted line-clamp-2">
                     {post.description}
                   </p>
                   <div className="mt-4 flex items-center justify-between">
@@ -102,7 +102,7 @@ export default function BlogPage() {
           </div>
 
           {posts.length === 0 && (
-            <p className="text-center text-gray-500 py-12">
+            <p className="text-center text-tp-muted py-12">
               No blog posts yet. Check back soon!
             </p>
           )}

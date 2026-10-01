@@ -164,6 +164,38 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/enterprise"
+                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
+                >
+                  Enterprise
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/team-headshots"
+                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
+                >
+                  Team Headshots
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/samples"
+                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
+                >
+                  Samples
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/industries"
+                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
+                >
+                  Industries
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/reviews"
                   className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
                 >
