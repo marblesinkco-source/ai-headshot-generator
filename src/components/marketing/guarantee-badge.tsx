@@ -24,11 +24,11 @@ export function GuaranteeBadge({ variant = 'card', className }: GuaranteeBadgePr
   return (
     <div
       className={cn(
-        'flex items-start gap-4 rounded-tp-card border border-tp-line bg-tp-paper p-6',
+        'group flex items-start gap-4 rounded-tp-card border border-tp-line bg-gradient-to-br from-tp-paper to-tp-beige/20 p-6 shadow-sm transition-all duration-200 hover:border-tp-bronze/40 hover:shadow-md',
         className
       )}
     >
-      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-tp-beige/40 text-tp-bronze-ink">
+      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-tp-black text-tp-bronze ring-2 ring-tp-bronze/30 ring-offset-2 ring-offset-white">
         <ShieldCheck className="h-6 w-6" aria-hidden="true" />
       </span>
       <div>

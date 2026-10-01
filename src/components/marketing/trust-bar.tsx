@@ -1,7 +1,10 @@
+import { Clock, Lock, ShieldCheck } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+
 import { cn } from '@/lib/utils';
 
 export interface TrustMetric {
-  icon: string;
+  icon: LucideIcon;
   label: string;
 }
 
@@ -14,11 +17,11 @@ export interface TrustBarProps {
 }
 
 // Defaults contain no invented user counts or ratings.
-// Pass a verified metric (e.g. { icon: '⭐', label: '4.9/5 Rating' }) via props when available.
+// Pass a verified metric (e.g. { icon: Star, label: '4.9/5 Rating' }) via props when available.
 const DEFAULT_METRICS: TrustMetric[] = [
-  { icon: '⚡', label: 'Ready in 24h' },
-  { icon: '🔒', label: '256-bit Encrypted' },
-  { icon: '💰', label: '14-day Money-back Guarantee' },
+  { icon: Clock, label: 'Ready in 24h' },
+  { icon: Lock, label: '256-bit Encrypted' },
+  { icon: ShieldCheck, label: '14-day Money-back Guarantee' },
 ];
 
 export function TrustBar({
@@ -37,9 +40,14 @@ export function TrustBar({
             {metrics.map((m) => (
               <li
                 key={m.label}
-                className="flex items-center justify-center gap-2 rounded-tp-button border border-tp-line bg-white px-3 py-3 text-center text-sm font-medium text-tp-ink"
+                className="flex items-center justify-center gap-2.5 rounded-tp-button border border-tp-line bg-white px-3 py-3 text-center text-sm font-medium text-tp-ink transition-colors duration-200 hover:border-tp-bronze/40 hover:bg-tp-paper"
               >
-                <span aria-hidden="true">{m.icon}</span>
+                <span
+                  aria-hidden="true"
+                  className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-tp-beige/50"
+                >
+                  <m.icon className="h-3.5 w-3.5 text-tp-bronze-ink" />
+                </span>
                 <span>{m.label}</span>
               </li>
             ))}

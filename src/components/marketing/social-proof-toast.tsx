@@ -5,9 +5,11 @@ import { X } from 'lucide-react';
 
 // Generic placeholder copy only. No real names, cities, or user data.
 const MESSAGES: ReadonlyArray<string> = [
-  'A professional just ordered headshots · 2 min ago',
-  'New headshots created · 5 min ago',
-  'Another happy customer · just now',
+  'A professional just ordered headshots',
+  'New headshot pack created',
+  'Team headshots delivered',
+  'Corporate headshots completed',
+  'LinkedIn headshots just delivered',
 ];
 
 const INITIALS = 'ABCDEFGHIJKLMNOPRSTW';
@@ -25,6 +27,7 @@ export function SocialProofToast() {
   const [visible, setVisible] = useState(false);
   const [messageIndex, setMessageIndex] = useState(0);
   const [initial, setInitial] = useState('A');
+  const [minutesAgo, setMinutesAgo] = useState(2);
 
   useEffect(() => {
     if (dismissed) return;
@@ -40,6 +43,7 @@ export function SocialProofToast() {
           return next === prev ? (next + 1) % MESSAGES.length : next;
         });
         setInitial(INITIALS.charAt(randomBetween(0, INITIALS.length - 1)));
+        setMinutesAgo(randomBetween(1, 12));
         setVisible(true);
 
         hideTimer = setTimeout(() => {
@@ -73,13 +77,18 @@ export function SocialProofToast() {
       <div className="flex items-center gap-3 p-3 pr-9">
         <div
           aria-hidden="true"
-          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-tp-beige text-sm font-semibold text-tp-bronze-ink"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-tp-black text-sm font-semibold text-tp-bronze ring-2 ring-tp-bronze/30 ring-offset-1 ring-offset-white"
         >
           {initial}
         </div>
-        <p className="text-sm leading-snug text-tp-ink">
-          {MESSAGES[messageIndex]}
-        </p>
+        <div>
+          <p className="text-sm font-medium leading-snug text-tp-ink">
+            {MESSAGES[messageIndex]}
+          </p>
+          <p className="text-[11px] text-tp-muted mt-0.5">
+            {minutesAgo} min ago
+          </p>
+        </div>
       </div>
 
       <button

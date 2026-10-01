@@ -16,10 +16,10 @@ export function TrustBadges() {
           {badges.map((badge) => (
             <li
               key={badge.label}
-              className="flex min-h-[88px] flex-col items-center justify-center gap-2.5 rounded-tp-card border border-tp-line bg-tp-paper px-3 py-4 text-center last:col-span-2 lg:last:col-span-1"
+              className="group flex min-h-[88px] flex-col items-center justify-center gap-2.5 rounded-tp-card border border-tp-line bg-gradient-to-b from-tp-paper to-tp-beige/30 px-3 py-4 text-center shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-tp-bronze hover:shadow-md last:col-span-2 lg:last:col-span-1"
             >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-tp-line bg-tp-beige">
-                <badge.icon className="h-[18px] w-[18px] text-tp-bronze-ink" aria-hidden="true" />
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-tp-beige bg-gradient-to-br from-tp-beige/60 to-tp-bronze/20 shadow-inner transition-colors duration-200 group-hover:border-tp-bronze group-hover:from-tp-beige group-hover:to-tp-bronze/30">
+                <badge.icon className="h-5 w-5 text-tp-bronze-ink" aria-hidden="true" />
               </span>
               <span className="text-[13px] font-semibold leading-snug text-tp-ink">
                 {badge.label}

@@ -1,3 +1,4 @@
+import { Coffee } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export interface PricingPsychologyProps {
@@ -34,12 +35,15 @@ export function PricingPsychology({
         </span>
       )}
       <p className="text-sm font-semibold text-tp-bronze-ink">{planName}</p>
-      <p className="mt-2 text-4xl font-extrabold tracking-tight text-tp-black">${price.toFixed(2)}</p>
+      <p className="mt-2 font-display text-4xl font-normal tracking-tight text-tp-black">${price.toFixed(2)}</p>
       <p className="mt-3 text-sm text-tp-muted">
         ${price.toFixed(2)} ÷ {outputs} ={' '}
         <span className="font-semibold text-tp-ink">${perHeadshot} per headshot</span>
       </p>
-      <p className="mt-2 text-sm font-medium text-tp-ink">That&apos;s less than a coffee ☕</p>
+      <p className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-tp-ink">
+        That&apos;s less than a coffee
+        <Coffee className="h-4 w-4 text-tp-bronze-ink" aria-hidden="true" />
+      </p>
     </div>
   );
 }
