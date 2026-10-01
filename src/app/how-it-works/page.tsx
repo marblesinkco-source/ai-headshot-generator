@@ -123,7 +123,7 @@ const differentiators = [
     icon: ShieldCheck,
     title: 'Money-Back Guarantee',
     description:
-      'We stand behind our results with a 100% satisfaction guarantee. If you are not happy, we will make it right.',
+      'We stand behind our results with a 14-day money-back guarantee. If you are not happy, we will make it right.',
   },
 ];
 

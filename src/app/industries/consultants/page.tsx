@@ -108,7 +108,7 @@ const stats = [
   { value: '40+', label: 'Photos per order' },
   { value: '11+', label: 'Professional styles' },
   { value: '< 2hrs', label: 'From selfies to finished headshots' },
-  { value: '3+', label: 'Professional styles per order' },
+  { value: '11+', label: 'Professional styles available' },
 ];
 
 const faqs = [
