@@ -64,6 +64,11 @@
 59. `70a4aa4` — Add structured data, FAQs, fix fabricated stats across 64 industry pages
 60. `2be76ef` — Replace font-extrabold with font-display on h1/h2 across 107 pages, fix stats and links
 61. `cc9218d` — Fix remaining content integrity issues (consultants stats, pricing claim, guarantee text)
+62. `748c25c` — Update progress tracker with commits 57-61 and 17 completed features
+63. `b85b068` — Add FAQSchema to 37 pages, BreadcrumbSchema to 5 pages, fix ecommerce metadata
+64. `43c596a` — Add FAQ sections to 9 vs/ pages, fix legal layout, add BreadcrumbSchema to legal pages
+65. `4ccf1ae` — Fix content integrity issues, add Twitter cards, fix CTA links
+66. `bc68fe5` — Fix video testimonials: remove 'Real reactions' claim, standardize disclaimer
 
 ### Completed Features
 - [x] Exit-intent popup with WELCOME10 promo
@@ -277,6 +282,18 @@
 - [x] Consultants: corrected "3+" to "11+" styles
 - [x] Pricing meta: removed "52%" unverified savings claim
 - [x] How-it-works: "100% satisfaction" → "14-day money-back" guarantee alignment
+- [x] 37 pages: FAQSchema structured data (editor, use-cases, marketing pages)
+- [x] 8 pages: BreadcrumbSchema (legal, dpa, kvkk, refund-policy, headshot-cost-calculator)
+- [x] Ecommerce industry: canonical URL, OG url/images metadata
+- [x] 9 vs/ competitor pages: 5-question FAQ sections with FAQSchema
+- [x] (legal) layout: shared Header/Footer, proper padding
+- [x] 3 legal pages: BreadcrumbSchema (cookie-policy, privacy, terms)
+- [x] Blog config: fabricated stats removed (21x views, 40% conversion, 80-95% cost reduction)
+- [x] Blog config: selfie count corrected (3-5 → 10-20, minimum 8)
+- [x] Editor unblur-image: selfie count corrected (8-15 → 10-20)
+- [x] [category] page: 3 /dashboard/upload links → /auth/register
+- [x] 15 pages: Twitter card metadata added (use-cases hub, linkedin-headshots, tools, legal pages)
+- [x] Video testimonials: "Real reactions" → honest description, standardized disclaimer
 
 ### Backlog (Requires External Action)
 - [ ] Stripe: Create WELCOME10 promo code (10% off) — needs Stripe dashboard/API key
