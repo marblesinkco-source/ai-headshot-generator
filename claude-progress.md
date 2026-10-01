@@ -38,6 +38,13 @@
 33. `a630abb` — Developer API, technology, and integrations marketing pages
 34. `06366f0` — Pricing FAQ + comparison bar, how-it-works differentiators
 35. `eedefeb` — Enterprise FAQ schema + ROI calculator component
+36. `6a47af8` — Update progress tracker with commits 31-35
+37. `e494bf4` — Success stories page + changelog rewrite
+38. `0ca2365` — Partners, careers pages + /for-teams redirect + nav improvements
+39. `a0cb3fd` — Interactive demos for free tool pages
+40. `c2a2a2f` — Fix smart quote syntax errors across 5 files
+41. `9029521` — Blog index: featured post, category filters, newsletter CTA
+42. `5356093` — Free headshot generator + samples page improvements
 
 ### Completed Features
 - [x] Exit-intent popup with WELCOME10 promo
@@ -187,6 +194,18 @@
 - [x] How-it-works: fixed refund wording, removed fabricated "thousands" claim
 - [x] Enterprise: 6-item FAQSchema structured data
 - [x] Enterprise: ROI calculator (team size slider, savings display)
+- [x] /success-stories page: 4 representative scenario cards (startup, law firm, real estate, university)
+- [x] /changelog rewrite: 5 versioned releases (v1.0-v1.5), category badges
+- [x] /partners page: partner types, benefits, how-to-apply CTA
+- [x] /careers page: values, no-openings state, perks
+- [x] /for-teams redirect → /team-headshots (fixes 404 from blog links)
+- [x] Header nav: added Industries link
+- [x] Footer: added Partners, Careers links
+- [x] Interactive tool demos: background-remover, headshot-resizer, resume-photo-checker
+- [x] Smart quote syntax fixes across 5 files (dpa, kvkk, cookie-policy, comparison-table, success-stories)
+- [x] Blog index: featured post card, category/tag filters, newsletter CTA, Blog JSON-LD
+- [x] Free headshot generator: style cards, trial vs paid comparison, FAQSchema, removed fabricated claim
+- [x] Samples: popular styles section, quality features, honest comparison table
 
 ### Backlog (Requires External Action)
 - [ ] Stripe: Create WELCOME10 promo code (10% off) — needs Stripe dashboard/API key
