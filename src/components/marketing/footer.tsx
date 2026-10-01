@@ -13,6 +13,38 @@ const legalLinks = [
   { label: 'KVKK Aydınlatma', href: '/kvkk' },
   { label: 'DPA', href: '/dpa' },
   { label: 'Security', href: '/security' },
+  { label: 'Accessibility', href: '/accessibility' },
+  { label: 'Subprocessors', href: '/subprocessors' },
+];
+
+const productLinks = [
+  { label: 'How It Works', href: '/how-it-works' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'Samples', href: '/samples' },
+  { label: 'Reviews', href: '/reviews' },
+  { label: 'Enterprise', href: '/enterprise' },
+  { label: 'Team Headshots', href: '/team-headshots' },
+  { label: 'Photo Styles', href: '/styles' },
+];
+
+const freeToolLinks = [
+  { label: 'Free Headshots', href: '/free-headshot-generator' },
+  { label: 'LinkedIn Headshots', href: '/linkedin-headshots' },
+  { label: 'Photo Analyzer', href: '/tools/linkedin-photo-analyzer' },
+  { label: 'Cost Calculator', href: '/tools/headshot-cost-calculator' },
+  { label: 'AI Photo Editor', href: '/editor' },
+  { label: 'Signature Generator', href: '/tools/email-signature-generator' },
+];
+
+const resourceLinks = [
+  { label: 'About', href: '/about' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Industries', href: '/industries' },
+  { label: 'Glossary', href: '/glossary' },
+  { label: 'Changelog', href: '/changelog' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Affiliate', href: '/affiliate' },
 ];
 
 const socialLinks = [
@@ -81,7 +113,7 @@ export function Footer() {
     <footer className="border-t border-tp-line bg-tp-ink">
       {/* Main footer */}
       <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 py-12 lg:py-16">
-        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
           {/* Brand column */}
           <div className="col-span-2 sm:col-span-3 lg:col-span-1 mb-4 lg:mb-0">
             <Image
@@ -132,180 +164,60 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Product */}
           <div>
             <h3 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-tp-bronze mb-4">
-              Company
+              Product
             </h3>
             <ul className="space-y-2.5">
-              <li>
-                <Link
-                  href="/about"
-                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="/#how-it-works"
-                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
-                >
-                  How It Works
-                </a>
-              </li>
-              <li>
-                <Link
-                  href="/pricing"
-                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
-                >
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/enterprise"
-                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
-                >
-                  Enterprise
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/team-headshots"
-                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
-                >
-                  Team Headshots
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/samples"
-                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
-                >
-                  Samples
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/industries"
-                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
-                >
-                  Industries
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/reviews"
-                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
-                >
-                  Reviews
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/faq"
-                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
-                >
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
-                >
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/changelog"
-                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
-                >
-                  Changelog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/affiliate"
-                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
-                >
-                  Affiliate
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/tools/headshot-cost-calculator"
-                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
-                >
-                  Cost Calculator
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/tools/linkedin-photo-analyzer"
-                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
-                >
-                  Photo Analyzer
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/glossary"
-                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
-                >
-                  Glossary
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/tools/email-signature-generator"
-                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
-                >
-                  Signature Generator
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/free-headshot-generator"
-                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
-                >
-                  Free Headshots
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/linkedin-headshots"
-                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
-                >
-                  LinkedIn Headshots
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/styles"
-                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
-                >
-                  Photo Styles
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/editor"
-                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
-                >
-                  AI Photo Editor
-                </Link>
-              </li>
+              {productLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Free Tools */}
+          <div>
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-tp-bronze mb-4">
+              Free Tools
+            </h3>
+            <ul className="space-y-2.5">
+              {freeToolLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-tp-bronze mb-4">
+              Resources
+            </h3>
+            <ul className="space-y-2.5">
+              {resourceLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

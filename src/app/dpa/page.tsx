@@ -100,6 +100,26 @@ const subProcessors = [
     role: 'AI processing',
     text: 'Runs the AI workloads used for model training and headshot generation. Receives the photos and prompts required to perform these tasks.',
   },
+  {
+    name: 'Resend',
+    role: 'Email delivery',
+    text: 'Sends transactional emails such as order confirmations and password resets. Receives recipient email addresses and message content.',
+  },
+  {
+    name: 'Vercel',
+    role: 'Hosting & CDN',
+    text: 'Hosts the web application and serves static assets via a global edge network. Processes request metadata such as IP addresses and user-agent strings.',
+  },
+  {
+    name: 'Google Analytics',
+    role: 'Analytics',
+    text: 'Collects anonymized website usage data to help improve the service. Processes pseudonymous identifiers and browsing behavior when the visitor has consented.',
+  },
+  {
+    name: 'Google Cloud',
+    role: 'OAuth provider',
+    text: 'Provides Google Sign-In authentication. Receives only the information needed to verify the user's identity during the sign-in flow.',
+  },
 ];
 
 const sections = [
@@ -336,7 +356,15 @@ export default function DpaPage() {
             of Sub-processors, giving the Customer the opportunity to object on
             reasonable data protection grounds. If the parties cannot resolve the
             objection, the Customer may stop using the service and request deletion of
-            its data.
+            its data. A current list of Sub-processors with their purpose and data
+            location is maintained on our{' '}
+            <Link
+              href="/subprocessors"
+              className="font-medium text-tp-bronze-ink underline underline-offset-2 hover:text-tp-ink"
+            >
+              Subprocessors page
+            </Link>
+            .
           </p>
         </div>
       </section>

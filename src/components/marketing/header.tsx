@@ -12,14 +12,13 @@ import type { User } from '@supabase/supabase-js';
 const categories = getActiveCategories();
 
 const navLinks = [
-  { label: 'How It Works', href: '/#how-it-works' },
-  { label: 'Results', href: '/#results' },
+  { label: 'How It Works', href: '/how-it-works' },
   { label: 'Pricing', href: '/pricing' },
-  { label: 'Industries', href: '/industries' },
+  { label: 'Free Tools', href: '/tools' },
   { label: 'Samples', href: '/samples' },
-  { label: 'Blog', href: '/blog' },
   { label: 'Enterprise', href: '/enterprise' },
-  { label: 'Affiliate', href: '/affiliate' },
+  { label: 'Compare', href: '/vs' },
+  { label: 'Blog', href: '/blog' },
 ];
 
 export function Header() {

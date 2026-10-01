@@ -27,16 +27,13 @@ export function Pricing() {
   return (
     <section id="pricing" className="relative bg-tp-paper/40 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Limited-time offer banner */}
-        <div className="mx-auto max-w-xl mb-10 rounded-2xl border border-tp-bronze/30 bg-gradient-to-r from-tp-bronze/10 via-tp-bronze/5 to-tp-bronze/10 p-4 text-center">
-          <p className="text-sm font-bold text-tp-bronze-ink">
-            🔥 Limited Time Offer — Save 20% on All Plans
+        {/* Value proposition (no fake urgency) */}
+        <div className="mx-auto mb-10 max-w-xl rounded-tp-card border border-tp-line bg-white p-4 text-center">
+          <p className="text-sm font-semibold text-tp-bronze-ink">
+            One-time price. No subscription. 14-day money-back guarantee.
           </p>
-          <p className="text-xs text-tp-muted mt-1">
-            Professional photos at a fraction of studio prices. No code needed.
-          </p>
-          <p className="text-xs font-medium text-tp-bronze-ink mt-1">
-            Offer ends soon — lock in your discount today.
+          <p className="mt-1 text-xs text-tp-muted">
+            Studio-quality photos without the studio booking, travel or wardrobe changes.
           </p>
         </div>
 
@@ -165,7 +162,7 @@ export function Pricing() {
                   )}
                 </CardContent>
 
-                <CardFooter>
+                <CardFooter className="flex-col items-stretch">
                   <Link href={`/auth/register?redirect=/${activeCategory.slug}`} className="w-full">
                     <Button
                       variant={isRecommended ? 'primary' : 'outline'}
@@ -174,6 +171,10 @@ export function Pricing() {
                       {isExpress ? 'Try It' : 'Get Started'}
                     </Button>
                   </Link>
+                  <p className="mt-3 flex w-full items-center justify-center gap-1 text-xs text-tp-muted">
+                    <Lock className="h-3 w-3" aria-hidden="true" />
+                    Secure checkout via Stripe
+                  </p>
                 </CardFooter>
               </Card>
             );
@@ -204,7 +205,10 @@ export function Pricing() {
               Money-Back Guarantee
             </p>
             <p className="text-xs text-green-700 mt-0.5 leading-relaxed">
-              14-day money-back guarantee. No questions asked.
+              14-day money-back guarantee. No questions asked.{' '}
+              <Link href="/refund-policy" className="font-medium underline underline-offset-2 hover:text-green-900">
+                Read the refund policy
+              </Link>
             </p>
           </div>
         </div>

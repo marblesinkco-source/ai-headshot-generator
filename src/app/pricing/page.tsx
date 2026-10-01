@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Pricing } from '@/components/marketing/pricing';
@@ -90,6 +91,16 @@ export default function PricingPage() {
       <section className="py-12">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <GuaranteeBadge variant="card" />
+          <p className="mt-3 text-center text-sm text-tp-muted">
+            See exactly how refunds work in our{' '}
+            <Link
+              href="/refund-policy"
+              className="font-medium text-tp-bronze-ink underline underline-offset-2 hover:text-tp-ink"
+            >
+              refund policy
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

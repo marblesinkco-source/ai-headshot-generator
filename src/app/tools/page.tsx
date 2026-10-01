@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail } from 'lucide-react';
+import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     'Free online tools for professional photos — background remover, headshot resizer, resume photo checker, LinkedIn photo analyzer, email signature generator, and headshot cost calculator.',
   alternates: {
-    canonical: `${siteConfig.url}/tools`,
+    canonical: '/tools',
   },
   openGraph: generateOGMetadata({
     title: 'Free AI Photo Tools',
@@ -29,6 +29,13 @@ export const metadata: Metadata = {
 };
 
 const tools = [
+  {
+    title: 'AI Photo Editor',
+    description:
+      'Browse TailorPic\'s AI editing tools, including background changer, clothing changer, skin smoother, crop and resize, and more.',
+    href: '/editor',
+    icon: SlidersHorizontal,
+  },
   {
     title: 'Background Remover',
     description:
@@ -95,14 +102,46 @@ export default function ToolsPage() {
               Free AI Photo Tools
             </h1>
             <p className="mt-4 text-lg text-tp-beige/80">
-              Professional-grade photo tools, completely free. No sign-up
-              required.
+              Professional photo tools you can use for free — no account
+              needed.
             </p>
           </div>
         </section>
 
         {/* Tools Grid */}
         <section className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
+          <Link
+            href="/free-headshot-generator"
+            className="group mb-6 flex flex-col gap-4 rounded-tp-card border border-tp-line bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-tp-bronze/10 sm:flex-row sm:items-center sm:p-8"
+          >
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-tp-line bg-tp-paper/80 text-tp-bronze-ink">
+              <Sparkles className="h-6 w-6" />
+            </div>
+            <div className="flex-1">
+              <p className="text-xs font-semibold uppercase tracking-brand text-tp-bronze-ink">
+                Featured
+              </p>
+              <h2 className="mt-1 text-xl font-semibold text-tp-ink transition-colors group-hover:text-tp-bronze-ink">
+                Free AI Headshot Generator
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-tp-muted">
+                Upload a few selfies and get studio-style professional headshots
+                for LinkedIn, resumes and more, without a photoshoot.
+              </p>
+            </div>
+            <span className="inline-flex items-center gap-1 text-sm font-medium text-tp-bronze-ink">
+              Try it free
+              <svg
+                className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </span>
+          </Link>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {tools.map((tool) => {
               const Icon = tool.icon;

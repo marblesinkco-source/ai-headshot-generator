@@ -100,8 +100,14 @@ const config: Config = {
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         shimmer: 'shimmer 2s linear infinite',
         marquee: 'marquee 20s linear infinite',
+        'cta-pulse': 'ctaPulse 1.6s ease-out infinite',
       },
       keyframes: {
+        ctaPulse: {
+          '0%': { boxShadow: '0 0 0 0 rgba(201, 169, 138, 0.55)' },
+          '70%': { boxShadow: '0 0 0 14px rgba(201, 169, 138, 0)' },
+          '100%': { boxShadow: '0 0 0 0 rgba(201, 169, 138, 0)' },
+        },
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },

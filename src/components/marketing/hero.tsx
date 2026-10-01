@@ -44,7 +44,7 @@ export function Hero() {
               <div className="flex flex-wrap gap-3">
                 <button
                   onClick={() => categoryDialog.current?.showModal()}
-                  className="inline-flex items-center gap-5 rounded-xl border border-tp-black bg-tp-black px-6 py-3.5 text-sm font-semibold text-tp-paper transition-all hover:-translate-y-0.5 hover:shadow-lg whitespace-nowrap"
+                  className="inline-flex items-center gap-5 rounded-tp-button border border-tp-black bg-tp-black px-8 py-4 text-[15px] font-semibold text-tp-paper shadow-md transition-all hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl hover:animate-cta-pulse motion-reduce:hover:animate-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze whitespace-nowrap"
                 >
                   Create Your Photos <span aria-hidden="true" className="text-[22px] leading-none">&#8599;</span>
                 </button>
@@ -54,6 +54,37 @@ export function Hero() {
                 >
                   See How It Works <span aria-hidden="true" className="text-[22px] leading-none">&#8595;</span>
                 </a>
+              </div>
+
+              {/* Payment trust row */}
+              <div className="mt-4 flex flex-wrap items-center gap-2 text-[11px] text-tp-muted">
+                <span className="inline-flex items-center gap-1.5">
+                  <svg className="h-3.5 w-3.5 text-tp-bronze-ink" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" /></svg>
+                  Secure checkout via Stripe
+                </span>
+                <ul className="flex items-center gap-1.5" aria-label="Accepted cards">
+                  {['Visa', 'Mastercard', 'Amex'].map((brand) => (
+                    <li
+                      key={brand}
+                      className="rounded-md border border-tp-line bg-[#FEFCF8] px-2 py-0.5 text-[10px] font-semibold tracking-wide text-tp-ink"
+                    >
+                      {brand}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Before / after (placeholder visuals) */}
+              <div className="mt-7 flex max-w-[485px] items-center gap-3" aria-label="Selfie to AI headshot transformation">
+                <figure className="flex-1 m-0">
+                  <div className="aspect-[4/5] rounded-tp-card border border-tp-line bg-gradient-to-br from-tp-line via-tp-beige/60 to-tp-muted/30" role="img" aria-label="Placeholder for a casual selfie" />
+                  <figcaption className="mt-2 text-center text-[11px] font-semibold text-tp-muted">Your selfie</figcaption>
+                </figure>
+                <span aria-hidden="true" className="text-[26px] leading-none text-tp-bronze-ink">&rarr;</span>
+                <figure className="flex-1 m-0">
+                  <div className="aspect-[4/5] rounded-tp-card border border-tp-bronze bg-gradient-to-br from-tp-bronze via-tp-beige to-tp-paper" role="img" aria-label="Placeholder for an AI headshot" />
+                  <figcaption className="mt-2 text-center text-[11px] font-semibold text-tp-bronze-ink">AI headshot</figcaption>
+                </figure>
               </div>
 
               {/* Social proof stats */}

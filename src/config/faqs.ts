@@ -35,6 +35,21 @@ export const faqs = [
       'Yes. We offer a 100% money-back guarantee. If you are not happy with your photos, contact our support team within 14 days of delivery and we will issue a full refund -- no questions asked.',
   },
   {
+    question: 'Is this a subscription? Are there hidden fees?',
+    answer:
+      'No. Every package is a one-time payment at the price shown. There is no subscription, nothing renews automatically, and no hidden fees.',
+  },
+  {
+    question: 'Is checkout secure?',
+    answer:
+      'Yes. Payments are processed by Stripe, so your card details are handled by Stripe and never stored on our servers.',
+  },
+  {
+    question: 'What if the photos do not look like me?',
+    answer:
+      'Clear, varied selfies make the biggest difference, so follow the upload tips above. If you are still not happy with the results, contact support: we will work with you on regenerating photos, and the money-back guarantee applies. See our refund policy for details.',
+  },
+  {
     question: 'Can I use these photos professionally, such as on LinkedIn or my resume?',
     answer:
       'Yes. You own full rights to all generated photos. Use them on LinkedIn, your resume, your company website, business cards, email signatures, press kits, or anywhere else. There are no licensing restrictions or royalties.',
