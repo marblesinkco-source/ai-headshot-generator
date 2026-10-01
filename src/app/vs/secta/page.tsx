@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import {
@@ -134,6 +134,34 @@ function CellValue({ value }: { value: string | boolean }) {
 /*  Page                                                               */
 /* ------------------------------------------------------------------ */
 
+const faqs = [
+  {
+    question: 'How does TailorPic\'s price compare to Secta Labs?',
+    answer:
+      'TailorPic is a $9.90 one-time payment. Secta Labs\' entry price is roughly $49+. They may change their pricing, so check their site for current pricing.',
+  },
+  {
+    question: 'How many photos do I get with TailorPic?',
+    answer:
+      'Every TailorPic order includes 40+ photos across 11 categories. Secta Labs\' photo count varies by plan and it centers on professional headshots with fewer categories.',
+  },
+  {
+    question: 'How long does delivery take?',
+    answer:
+      'TailorPic delivers in about 2 hours. Secta Labs delivery time varies by plan, so check their site for current details.',
+  },
+  {
+    question: 'Is TailorPic a subscription or a one-time purchase?',
+    answer:
+      'TailorPic is a one-time $9.90 payment with no subscription, backed by a 14-day money-back guarantee.',
+  },
+  {
+    question: 'How does TailorPic train my photos, and is it easy to use?',
+    answer:
+      'TailorPic trains a personalized LoRA model on your own selfies, so the results are built around your actual face rather than a generic template. You upload your photos, pick your categories, and the generation runs automatically. Upload a few selfies, choose from 11 categories, and your photos arrive without any design or editing work on your part. There is nothing to learn and no tools to configure.',
+  },
+];
+
 export default function VsSectaPage() {
   return (
     <>
@@ -144,6 +172,7 @@ export default function VsSectaPage() {
           { name: 'Home', url: siteConfig.url },
           { name: 'TailorPic vs Secta Labs', url: `${siteConfig.url}/vs/secta` },
         ]} />
+        <FAQSchema items={faqs} />
         {/* ---- Hero ---- */}
         <section className="bg-white py-20 md:py-28">
           <div className="mx-auto max-w-4xl px-4 text-center">
@@ -255,6 +284,21 @@ export default function VsSectaPage() {
                   </div>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-16 md:py-20">
+          <div className="mx-auto max-w-3xl px-4">
+            <h2 className="mb-10 text-center text-3xl font-display font-normal text-tp-ink">Frequently asked questions</h2>
+            <div className="space-y-4">
+              {faqs.map((faq) => (
+                <div key={faq.question} className="rounded-tp-card border border-tp-line bg-tp-paper p-6">
+                  <h3 className="mb-2 font-semibold text-tp-ink">{faq.question}</h3>
+                  <p className="text-sm leading-relaxed text-tp-muted">{faq.answer}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

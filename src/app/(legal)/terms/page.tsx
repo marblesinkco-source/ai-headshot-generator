@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
+import { BreadcrumbSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
@@ -26,6 +27,12 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <article className="prose prose-gray max-w-none">
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: siteConfig.url },
+          { name: 'Terms of Service', url: `${siteConfig.url}/terms` },
+        ]}
+      />
       <h1>Terms of Service</h1>
       <p className="lead">Last updated: September 30, 2026</p>
 

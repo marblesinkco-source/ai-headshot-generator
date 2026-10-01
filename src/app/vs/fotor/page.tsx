@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import {
@@ -135,6 +135,34 @@ function CellValue({ value }: { value: string | boolean }) {
 /*  Page                                                               */
 /* ------------------------------------------------------------------ */
 
+const faqs = [
+  {
+    question: 'How does TailorPic\'s price compare to Fotor?',
+    answer:
+      'TailorPic is a $9.90 one-time payment. Fotor is generally sold as a subscription starting around $8.99/month. Fotor may change its pricing, so check their site for current pricing.',
+  },
+  {
+    question: 'How many photos do I get with TailorPic compared to Fotor?',
+    answer:
+      'Every TailorPic order includes 40+ photos across 11 categories. With Fotor the number of results varies by plan, since AI headshots are one tool among many in a general photo editor.',
+  },
+  {
+    question: 'How quickly will I receive my photos?',
+    answer:
+      'TailorPic delivers your set in about 2 hours. Check Fotor\'s site for current generation times for its AI tools.',
+  },
+  {
+    question: 'Is TailorPic a subscription like Fotor?',
+    answer:
+      'No. TailorPic is a one-time $9.90 payment with no renewals and a 14-day money-back guarantee. Fotor is typically offered as a monthly or annual subscription.',
+  },
+  {
+    question: 'How does TailorPic train its AI, and do I need editing skills?',
+    answer:
+      'TailorPic trains a personalized LoRA model on your own selfies, so the results are built around your actual face rather than a generic template. You upload your photos, pick your categories, and the generation runs automatically. You do not need any editing skills, unlike a full photo editor with a broad toolset.',
+  },
+];
+
 export default function VsFotorPage() {
   return (
     <>
@@ -145,6 +173,7 @@ export default function VsFotorPage() {
           { name: 'Home', url: siteConfig.url },
           { name: 'TailorPic vs Fotor AI', url: `${siteConfig.url}/vs/fotor` },
         ]} />
+        <FAQSchema items={faqs} />
         {/* ---- Hero ---- */}
         <section className="bg-white py-20 md:py-28">
           <div className="mx-auto max-w-4xl px-4 text-center">
@@ -256,6 +285,21 @@ export default function VsFotorPage() {
                   </div>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-16 md:py-20">
+          <div className="mx-auto max-w-3xl px-4">
+            <h2 className="mb-10 text-center text-3xl font-display font-normal text-tp-ink">Frequently asked questions</h2>
+            <div className="space-y-4">
+              {faqs.map((faq) => (
+                <div key={faq.question} className="rounded-tp-card border border-tp-line bg-tp-paper p-6">
+                  <h3 className="mb-2 font-semibold text-tp-ink">{faq.question}</h3>
+                  <p className="text-sm leading-relaxed text-tp-muted">{faq.answer}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

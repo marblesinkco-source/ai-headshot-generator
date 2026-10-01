@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
+import { BreadcrumbSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
   title: 'Cookie Policy | TailorPic',
@@ -73,6 +74,12 @@ const cookieTable: CookieRow[] = [
 export default function CookiePolicyPage() {
   return (
     <article className="prose prose-gray max-w-none prose-headings:text-tp-ink prose-a:text-tp-bronze-ink">
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: siteConfig.url },
+          { name: 'Cookie Policy', url: `${siteConfig.url}/cookie-policy` },
+        ]}
+      />
       <h1 className="font-display">Cookie Policy</h1>
       <p className="lead">Last updated: October 1, 2026</p>
 

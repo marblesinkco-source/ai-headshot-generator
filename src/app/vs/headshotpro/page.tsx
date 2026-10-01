@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
   Check,
@@ -134,6 +134,34 @@ function CellValue({ value, highlight }: { value: RowValue; highlight?: boolean 
 /*  Page                                                              */
 /* ------------------------------------------------------------------ */
 
+const faqs = [
+  {
+    question: 'How does TailorPic\'s price compare to HeadshotPro?',
+    answer:
+      'TailorPic is a $9.90 one-time payment. HeadshotPro\'s pricing starts at $29. HeadshotPro may change its plans, so check their site for current pricing.',
+  },
+  {
+    question: 'How many photos do I get compared to HeadshotPro?',
+    answer:
+      'Both services include 40+ photos. TailorPic spreads them across 11 categories, including dating, pet portraits, e-commerce, and family portraits, while HeadshotPro focuses on professional headshots.',
+  },
+  {
+    question: 'How long does delivery take?',
+    answer:
+      'TailorPic delivers in about 2 hours. HeadshotPro also advertises fast delivery, so check their site for current turnaround times.',
+  },
+  {
+    question: 'Is TailorPic a subscription?',
+    answer:
+      'No. TailorPic is a one-time $9.90 payment with no subscription and a 14-day money-back guarantee.',
+  },
+  {
+    question: 'How does TailorPic train my photos, and is it easy to use?',
+    answer:
+      'TailorPic trains a personalized LoRA model on your own selfies, so the results are built around your actual face rather than a generic template. You upload your photos, pick your categories, and the generation runs automatically. Upload a few selfies, choose from 11 categories, and your photos arrive without any design or editing work on your part. There is nothing to learn and no tools to configure.',
+  },
+];
+
 export default function VsHeadshotProPage() {
   return (
     <main id="main-content" className="min-h-screen bg-white">
@@ -141,6 +169,7 @@ export default function VsHeadshotProPage() {
         { name: 'Home', url: siteConfig.url },
         { name: 'TailorPic vs HeadshotPro', url: `${siteConfig.url}/vs/headshotpro` },
       ]} />
+      <FAQSchema items={faqs} />
       <Header />
 
       {/* ── Hero ──────────────────────────────────────────────────── */}
@@ -273,6 +302,21 @@ export default function VsHeadshotProPage() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 md:py-20">
+        <div className="mx-auto max-w-3xl px-4">
+          <h2 className="mb-10 text-center text-3xl font-display font-normal text-tp-ink">Frequently asked questions</h2>
+          <div className="space-y-4">
+            {faqs.map((faq) => (
+              <div key={faq.question} className="rounded-tp-card border border-tp-line bg-tp-paper p-6">
+                <h3 className="mb-2 font-semibold text-tp-ink">{faq.question}</h3>
+                <p className="text-sm leading-relaxed text-tp-muted">{faq.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

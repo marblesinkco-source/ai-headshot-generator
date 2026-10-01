@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
+import { BreadcrumbSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -26,6 +27,12 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <article className="prose prose-gray max-w-none">
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: siteConfig.url },
+          { name: 'Privacy Policy', url: `${siteConfig.url}/privacy` },
+        ]}
+      />
       <h1>Privacy Policy</h1>
       <p className="lead">Last updated: September 30, 2026</p>
 

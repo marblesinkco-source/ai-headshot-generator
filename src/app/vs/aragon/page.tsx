@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import {
@@ -133,6 +133,34 @@ function CellValue({ value }: { value: string | boolean }) {
 /*  Page                                                               */
 /* ------------------------------------------------------------------ */
 
+const faqs = [
+  {
+    question: 'How does TailorPic\'s price compare to Aragon AI?',
+    answer:
+      'TailorPic is a $9.90 one-time payment. Aragon AI lists plans starting around $29. Aragon may change its plans, so check their site for current pricing.',
+  },
+  {
+    question: 'How many photos do I get with TailorPic compared to Aragon AI?',
+    answer:
+      'Every TailorPic order includes 40+ photos across 11 categories, including business, dating, pet portraits, and e-commerce. Aragon AI also offers 40+ photos but with a more limited set of styles.',
+  },
+  {
+    question: 'How long does delivery take?',
+    answer:
+      'TailorPic delivers your photos in about 2 hours. Aragon AI also advertises fast turnaround, so check their site for current delivery times.',
+  },
+  {
+    question: 'Is TailorPic a subscription like Aragon AI?',
+    answer:
+      'No. TailorPic is a one-time $9.90 payment with no recurring charges and no renewals. It also comes with a 14-day money-back guarantee.',
+  },
+  {
+    question: 'How does TailorPic train my headshots, and is it easy to use?',
+    answer:
+      'TailorPic trains a personalized LoRA model on your own selfies, so the results are built around your actual face rather than a generic template. You upload your photos, pick your categories, and the generation runs automatically. Upload a few selfies, choose from 11 categories, and your photos arrive without any design or editing work on your part. There is nothing to learn and no tools to configure.',
+  },
+];
+
 export default function VsAragonPage() {
   return (
     <>
@@ -143,6 +171,7 @@ export default function VsAragonPage() {
           { name: 'Home', url: siteConfig.url },
           { name: 'TailorPic vs Aragon AI', url: `${siteConfig.url}/vs/aragon` },
         ]} />
+        <FAQSchema items={faqs} />
         {/* ---- Hero ---- */}
         <section className="bg-white py-20 md:py-28">
           <div className="mx-auto max-w-4xl px-4 text-center">
@@ -254,6 +283,21 @@ export default function VsAragonPage() {
                   </div>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-16 md:py-20">
+          <div className="mx-auto max-w-3xl px-4">
+            <h2 className="mb-10 text-center text-3xl font-display font-normal text-tp-ink">Frequently asked questions</h2>
+            <div className="space-y-4">
+              {faqs.map((faq) => (
+                <div key={faq.question} className="rounded-tp-card border border-tp-line bg-tp-paper p-6">
+                  <h3 className="mb-2 font-semibold text-tp-ink">{faq.question}</h3>
+                  <p className="text-sm leading-relaxed text-tp-muted">{faq.answer}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
