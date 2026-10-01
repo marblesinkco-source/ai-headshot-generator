@@ -179,7 +179,7 @@ export default function SecurityPage() {
           <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-tp-card bg-tp-black">
             <ShieldCheck className="h-8 w-8 text-tp-bronze" />
           </div>
-          <h1 className="font-display text-4xl tracking-tight text-tp-ink sm:text-5xl">
+          <h1 className="font-display font-normal text-4xl tracking-tight text-tp-ink sm:text-5xl">
             Security you can review, privacy you control
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-muted">
@@ -195,7 +195,26 @@ export default function SecurityPage() {
             </Link>
           </div>
 
-          <dl className="mx-auto mt-14 grid max-w-3xl grid-cols-2 gap-4 sm:grid-cols-4">
+          <ul
+            aria-label="Privacy and security commitments"
+            className="mx-auto mt-10 flex flex-wrap items-center justify-center gap-3"
+          >
+            {[
+              { icon: Lock, label: 'AES-256 and TLS 1.3 encryption' },
+              { icon: Globe, label: 'GDPR and CCPA requests honored' },
+              { icon: Trash2, label: 'Data deleted within 30 days' },
+            ].map(({ icon: Icon, label }) => (
+              <li
+                key={label}
+                className="flex items-center gap-2 rounded-full border border-tp-line bg-white px-4 py-2 text-sm font-medium text-tp-ink"
+              >
+                <Icon className="h-4 w-4 text-tp-bronze-ink" aria-hidden="true" />
+                {label}
+              </li>
+            ))}
+          </ul>
+
+          <dl className="mx-auto mt-10 grid max-w-3xl grid-cols-2 gap-4 sm:grid-cols-4">
             {[
               ['AES-256', 'Encryption at rest'],
               ['TLS 1.3', 'Encryption in transit'],
@@ -222,7 +241,7 @@ export default function SecurityPage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
               {section.eyebrow}
             </p>
-            <h2 className="mt-2 font-display text-3xl text-tp-ink sm:text-4xl">{section.title}</h2>
+            <h2 className="mt-2 font-display font-normal text-3xl text-tp-ink sm:text-4xl">{section.title}</h2>
             <p className="mt-3 max-w-2xl text-tp-muted">{section.intro}</p>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {section.items.map(({ icon: Icon, title, description }) => (
@@ -248,7 +267,7 @@ export default function SecurityPage() {
           <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
             Compliance
           </p>
-          <h2 className="mt-2 font-display text-3xl text-tp-ink sm:text-4xl">
+          <h2 className="mt-2 font-display font-normal text-3xl text-tp-ink sm:text-4xl">
             Documents your team can review
           </h2>
           <p className="mt-3 max-w-2xl text-tp-muted">
@@ -289,7 +308,7 @@ export default function SecurityPage() {
       {/* FAQ */}
       <section id="faq" className="border-t border-tp-line bg-tp-paper py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-display text-3xl text-tp-ink sm:text-4xl">Security FAQ</h2>
+          <h2 className="font-display font-normal text-3xl text-tp-ink sm:text-4xl">Security FAQ</h2>
           <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
             {securityFaqs.map((f) => (
               <details key={f.question} className="group">
@@ -312,7 +331,7 @@ export default function SecurityPage() {
       {/* CTA */}
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="font-display text-3xl text-tp-ink">Have security questions?</h2>
+          <h2 className="font-display font-normal text-3xl text-tp-ink">Have security questions?</h2>
           <p className="mt-4 text-lg text-tp-muted">
             Our team is happy to discuss our practices in detail.
           </p>

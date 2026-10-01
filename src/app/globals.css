@@ -162,3 +162,25 @@
     @apply flex h-16 w-16 items-center justify-center rounded-full border border-tp-line bg-tp-paper/80 text-tp-bronze-ink;
   }
 }
+
+/* Mobile navigation dialog: smooth open transition */
+@keyframes tp-nav-dialog-in {
+  from { opacity: 0; transform: translateY(-12px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes tp-nav-backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+dialog.tp-nav-dialog[open] {
+  animation: tp-nav-dialog-in 0.22s ease-out;
+}
+dialog.tp-nav-dialog[open]::backdrop {
+  animation: tp-nav-backdrop-in 0.22s ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  dialog.tp-nav-dialog[open],
+  dialog.tp-nav-dialog[open]::backdrop {
+    animation: none;
+  }
+}

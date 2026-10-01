@@ -22,6 +22,16 @@ const navLinks = [
   { label: 'Blog', href: '/blog' },
 ];
 
+// Secondary pages: reachable from the mobile menu (desktop keeps the nav compact; all are in the footer)
+const secondaryLinks = [
+  { label: 'Reviews', href: '/reviews' },
+  { label: 'For Teams', href: '/for-teams' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Security', href: '/security' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+];
+
 const groupedCategories = CATEGORY_GROUPS.map((group) => ({
   ...group,
   items: group.categories
@@ -88,6 +98,24 @@ export function Header() {
   const userName = user?.user_metadata?.full_name || user?.email?.split('@')[0] || '';
   const userAvatar = user?.user_metadata?.avatar_url;
 
+  // Close dropdowns with Escape
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') {
+        setMegaOpen(false);
+        setUserMenuOpen(false);
+      }
+    }
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, []);
+
+  // Close dropdowns on route change
+  useEffect(() => {
+    setMegaOpen(false);
+    setUserMenuOpen(false);
+  }, [pathname]);
+
   function openMega() {
     clearTimeout(closeTimer.current);
     setMegaOpen(true);
@@ -118,12 +146,17 @@ export function Header() {
             className="relative"
             onMouseEnter={openMega}
             onMouseLeave={scheduleMegaClose}
+            onFocus={openMega}
+            onBlur={(e) => {
+              if (!e.currentTarget.contains(e.relatedTarget as Node | null)) scheduleMegaClose();
+            }}
           >
             <button
               className="flex items-center gap-1 text-[13px] font-semibold text-tp-ink transition-colors hover:text-tp-bronze-ink whitespace-nowrap"
               onClick={() => setMegaOpen((v) => !v)}
               aria-expanded={megaOpen}
               aria-haspopup="true"
+              aria-controls="photo-types-menu"
             >
               Photo Types
               <svg className={`h-3.5 w-3.5 transition-transform ${megaOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -136,9 +169,9 @@ export function Header() {
               className="absolute left-1/2 top-full -translate-x-1/2 pt-3"
               onMouseEnter={openMega}
               onMouseLeave={scheduleMegaClose}
-              aria-hidden={!megaOpen}
             >
               <div
+                id="photo-types-menu"
                 className={`w-[680px] rounded-tp-card border border-tp-line/60 bg-white p-5 shadow-xl shadow-tp-black/8 transition-all duration-200 ease-out ${
                   megaOpen
                     ? 'visible translate-y-0 opacity-100'
@@ -362,7 +395,7 @@ export function Header() {
       {/* Mobile Nav Dialog */}
       <dialog
         ref={mobileDialog}
-        className="rounded-[20px] border border-tp-line bg-tp-paper p-0 text-tp-ink w-[min(760px,calc(100vw-28px))] max-h-[85vh] overflow-visible backdrop:bg-tp-black/56"
+        className="tp-nav-dialog rounded-[20px] border border-tp-line bg-tp-paper p-0 text-tp-ink w-[min(760px,calc(100vw-28px))] max-h-[85vh] overflow-visible backdrop:bg-tp-black/56"
       >
         <div className="overflow-auto max-h-[85vh] rounded-[20px]">
         {/* Sticky header — always visible when scrolling */}
@@ -415,7 +448,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 aria-current={active ? 'page' : undefined}
-                className={`flex items-center gap-2 rounded-tp-button border-l-2 p-3 text-[16px] min-h-[46px] text-left font-medium ${
+                className={`flex items-center gap-2 rounded-tp-button border-l-2 p-3 text-[16px] min-h-[46px] text-left font-medium transition-colors hover:bg-white ${
                   active
                     ? 'border-tp-bronze-ink bg-white text-tp-bronze-ink'
                     : 'border-transparent'
@@ -426,6 +459,25 @@ export function Header() {
               </Link>
             );
           })}
+          <p className="mt-3 border-t border-tp-line/50 px-3 pt-3 text-[11px] font-semibold uppercase tracking-widest text-tp-muted">More</p>
+          <div className="grid grid-cols-2 gap-1">
+            {secondaryLinks.map((link) => {
+              const active = isLinkActive(pathname, link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={active ? 'page' : undefined}
+                  className={`flex min-h-[44px] items-center rounded-tp-button border-l-2 px-3 text-[14px] font-medium transition-colors hover:bg-white ${
+                    active ? 'border-tp-bronze-ink bg-white text-tp-bronze-ink' : 'border-transparent text-tp-ink'
+                  }`}
+                  onClick={() => mobileDialog.current?.close()}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </div>
           {user ? (
             <>
               <Link

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { VideoTestimonials } from '@/components/marketing/video-testimonials';
+import { Testimonials } from '@/components/marketing/testimonials';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -491,6 +492,9 @@ export default function SamplesPage() {
 
         {/* ── Video Testimonials ───────────────────────── */}
         <VideoTestimonials />
+
+        {/* ── Use-case Testimonials (illustrative, labeled) ── */}
+        <Testimonials />
 
         {/* ── CTA ──────────────────────────────────────── */}
         <section className="border-t border-tp-line bg-tp-ink px-4 py-20 text-center">

@@ -247,7 +247,7 @@ export default function PricingPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <h2
             id="pricing-faq-heading"
-            className="text-center font-display text-3xl font-normal italic text-tp-ink sm:text-4xl"
+            className="text-center font-display text-3xl font-normal text-tp-ink sm:text-4xl"
           >
             Frequently Asked Questions
           </h2>

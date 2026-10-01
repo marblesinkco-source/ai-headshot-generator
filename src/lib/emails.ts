@@ -420,6 +420,39 @@ export function buildNewsletterWelcomeEmail() {
   return { subject, html };
 }
 
+// ─── Contact Form Auto-Reply Email ────────────────────────────────────
+
+interface ContactAutoReplyParams {
+  name: string;
+  subject: string;
+}
+
+export function buildContactAutoReplyEmail(params: ContactAutoReplyParams) {
+  const name = escapeHtml(params.name);
+  const topic = escapeHtml(params.subject);
+
+  const subject = `We received your message — ${siteConfig.name}`;
+
+  const html = emailWrapper(`
+    <h2 style="margin:0 0 16px;font-size:22px;color:${BRAND.ink};font-weight:700;">
+      Thank you for reaching out!
+    </h2>
+    <p style="margin:0 0 16px;font-size:15px;color:${BRAND.ink};line-height:1.6;">
+      Hi ${name}, we've received your message about <strong>${topic}</strong>.
+      Our team will review it and respond within 24–48 hours.
+    </p>
+    <p style="margin:0 0 16px;font-size:15px;color:${BRAND.muted};line-height:1.6;">
+      There's no need to send it again. If you'd like to add anything, just reply to this email
+      or write to
+      <a href="mailto:${siteConfig.supportEmail}" style="color:${BRAND.bronzeInk};">${siteConfig.supportEmail}</a>.
+    </p>
+
+    ${ctaButton(`Visit ${siteConfig.name}`, siteConfig.url)}
+  `);
+
+  return { subject, html };
+}
+
 // ─── Photos Ready Email (AI generation completed) ─────────────────────
 
 interface PhotosReadyParams {

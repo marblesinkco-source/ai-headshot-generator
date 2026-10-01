@@ -6,6 +6,7 @@ import { createClient } from '@/lib/supabase/client';
 import { Button } from '@/components/ui/button';
 import { OrderStatusBadge } from '@/components/dashboard/order-status';
 import { formatPrice } from '@/lib/utils';
+import { siteConfig } from '@/config/site';
 import { getCategoryById, getPackageById, type CategoryId } from '@/config/categories';
 import type { OrderStatus } from '@/types';
 
@@ -65,9 +66,24 @@ export default function BillingClient() {
     <div className="space-y-8">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-tp-ink">Billing &amp; Invoices</h1>
+        <h1 className="font-display text-3xl font-normal text-tp-ink">Billing &amp; Invoices</h1>
         <p className="mt-1 text-sm text-tp-muted">
           View your payment history and order details.
+        </p>
+      </div>
+
+      {/* Current plan */}
+      <div className="rounded-2xl border border-tp-line bg-white p-6">
+        <h2 className="font-display text-xl font-normal text-tp-ink">Your Plan</h2>
+        <p className="mt-2 text-sm text-tp-ink">
+          One-time payment of <span className="font-medium">$9.90</span>. No subscription and no recurring charges.
+        </p>
+        <p className="mt-1 text-sm text-tp-muted">
+          Invoices for each order are available below. For billing questions, contact{' '}
+          <a href={`mailto:${siteConfig.supportEmail}`} className="text-tp-bronze-ink underline">
+            {siteConfig.supportEmail}
+          </a>
+          .
         </p>
       </div>
 
@@ -92,7 +108,7 @@ export default function BillingClient() {
       {/* Orders Table */}
       <div className="rounded-2xl border border-tp-line bg-white shadow-sm">
         <div className="border-b border-tp-line px-6 py-4">
-          <h2 className="text-lg font-semibold text-tp-ink">Order History</h2>
+          <h2 className="font-display text-xl font-normal text-tp-ink">Order History</h2>
         </div>
 
         {orders.length === 0 ? (
