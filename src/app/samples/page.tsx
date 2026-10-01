@@ -18,6 +18,9 @@ import {
   ShieldCheck,
   Upload,
   Image as ImageIcon,
+  Sun,
+  Brush,
+  Check,
 } from 'lucide-react';
 
 /* ------------------------------------------------------------------ */
@@ -86,6 +89,57 @@ const qualityBadges = [
   { icon: Palette, label: '40+ Styles' },
   { icon: Clock, label: '2-Hour Delivery' },
   { icon: ShieldCheck, label: 'Commercial License' },
+];
+
+const styleGroups = [
+  {
+    name: 'Corporate',
+    blurb: 'Clean, confident looks for company sites, teams and executive profiles.',
+    styles: [
+      { label: 'Modern Minimal', gradient: gradientPalettes[1] },
+      { label: 'Executive Portrait', gradient: gradientPalettes[4] },
+      { label: 'Team Headshot', gradient: gradientPalettes[9] },
+    ],
+  },
+  {
+    name: 'Creative',
+    blurb: 'Expressive styles for portfolios, personal brands and playful profiles.',
+    styles: [
+      { label: 'Creative Professional', gradient: gradientPalettes[8] },
+      { label: 'Playful Studio', gradient: gradientPalettes[5] },
+    ],
+  },
+  {
+    name: 'Casual',
+    blurb: 'Relaxed, natural looks for dating apps, social profiles and family photos.',
+    styles: [
+      { label: 'Outdoor Natural', gradient: gradientPalettes[2] },
+      { label: 'Urban Lifestyle', gradient: gradientPalettes[10] },
+      { label: 'Warm & Candid', gradient: gradientPalettes[7] },
+    ],
+  },
+  {
+    name: 'Academic',
+    blurb: 'Graduation and campus portraits for announcements and applications.',
+    styles: [
+      { label: 'Cap & Gown Classic', gradient: gradientPalettes[6] },
+      { label: 'Modern Academic', gradient: gradientPalettes[11] },
+    ],
+  },
+];
+
+const qualityFeatures = [
+  { icon: Monitor, title: '4K Resolution', body: 'High-resolution output suited to web profiles and print.' },
+  { icon: ImageIcon, title: 'Multiple Backgrounds', body: 'Choose from studio, office, outdoor and other backdrops.' },
+  { icon: Sun, title: 'Various Lighting', body: 'Soft studio, natural and dramatic lighting options.' },
+  { icon: Brush, title: 'Professional Retouching', body: 'Polished, natural-looking results without heavy editing.' },
+];
+
+const comparisonRows = [
+  { feature: '40+ styles', ours: 'Every order includes 40+ photos across multiple style categories.', check: 'How many distinct styles are included?' },
+  { feature: 'Hours, not days', ours: 'Results are delivered in hours rather than days.', check: 'What is the stated turnaround time?' },
+  { feature: 'One-time payment', ours: 'Pay once, from $9.90. No subscription.', check: 'Is it a one-time fee or a recurring plan?' },
+  { feature: '14-day guarantee', ours: '14-day money-back guarantee.', check: 'What is the refund window and are there conditions?' },
 ];
 
 const beforeAfterCards = [
@@ -209,6 +263,55 @@ export default function SamplesPage() {
           </div>
         </section>
 
+        {/* ── Popular Styles ───────────────────────────── */}
+        <section className="border-t border-tp-line bg-tp-paper px-4 py-16 md:py-20">
+          <div className="mx-auto max-w-6xl">
+            <div className="text-center">
+              <h2 className="font-display text-3xl font-normal tracking-tight text-tp-ink sm:text-4xl">
+                Popular Styles
+              </h2>
+              <p className="mx-auto mt-4 max-w-xl text-tp-muted">
+                Pick a look that fits where your photo will be used. Placeholders below are illustrative, not real results.
+              </p>
+            </div>
+            <div className="mt-12 space-y-12">
+              {styleGroups.map((group) => (
+                <div key={group.name}>
+                  <h3 className="font-display text-2xl font-normal text-tp-ink">{group.name}</h3>
+                  <p className="mt-1 text-sm text-tp-muted">{group.blurb}</p>
+                  <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3">
+                    {group.styles.map((s) => (
+                      <div key={s.label} className="overflow-hidden rounded-tp-card border border-tp-line bg-white">
+                        <div className={`relative aspect-[4/3] bg-gradient-to-br ${s.gradient}`}>
+                          <span className="absolute left-3 top-3 rounded-tp-button bg-white/90 px-2.5 py-1 text-xs font-semibold text-tp-ink">
+                            {group.name}
+                          </span>
+                          <span className="absolute bottom-3 right-3 text-xs font-medium tracking-widest text-white/60">
+                            PLACEHOLDER
+                          </span>
+                        </div>
+                        <p className="p-3 text-sm font-semibold text-tp-ink">{s.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-12 text-center">
+              <Link
+                href="/auth/register"
+                className={cn(
+                  buttonVariants({ size: 'lg' }),
+                  'rounded-tp-button bg-tp-bronze text-white hover:bg-tp-bronze-ink'
+                )}
+              >
+                Try These Styles
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* ── Before / After ───────────────────────────── */}
         <section className="border-t border-tp-line bg-tp-paper px-4 py-16 md:py-20">
           <div className="mx-auto max-w-5xl text-center">
@@ -272,6 +375,72 @@ export default function SamplesPage() {
                 <span className="text-sm font-semibold text-tp-ink">{label}</span>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* ── Quality Features ─────────────────────────── */}
+        <section className="border-t border-tp-line bg-white px-4 py-16 md:py-20">
+          <div className="mx-auto max-w-5xl">
+            <h2 className="text-center font-display text-3xl font-normal tracking-tight text-tp-ink sm:text-4xl">
+              Built for Quality
+            </h2>
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {qualityFeatures.map(({ icon: Icon, title, body }) => (
+                <div key={title} className="rounded-tp-card border border-tp-line bg-tp-paper p-6">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-tp-button bg-white">
+                    <Icon className="h-5 w-5 text-tp-bronze-ink" />
+                  </div>
+                  <h3 className="mt-4 font-display text-xl font-normal text-tp-ink">{title}</h3>
+                  <p className="mt-2 text-sm text-tp-muted">{body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Comparison ───────────────────────────────── */}
+        <section className="border-t border-tp-line bg-tp-paper px-4 py-16 md:py-20">
+          <div className="mx-auto max-w-4xl">
+            <div className="text-center">
+              <h2 className="font-display text-3xl font-normal tracking-tight text-tp-ink sm:text-4xl">
+                Our Quality vs Competitors
+              </h2>
+              <p className="mx-auto mt-4 max-w-xl text-tp-muted">
+                What you get with TailorPic, and what to check with any AI headshot service.
+              </p>
+            </div>
+            <div className="mt-10 overflow-hidden rounded-tp-card border border-tp-line bg-white">
+              <div className="hidden grid-cols-[1fr_1.5fr_1.5fr] gap-4 border-b border-tp-line bg-tp-ink px-6 py-3 text-sm font-semibold text-tp-paper sm:grid">
+                <span>Feature</span>
+                <span>TailorPic</span>
+                <span>Ask any provider</span>
+              </div>
+              {comparisonRows.map((row) => (
+                <div
+                  key={row.feature}
+                  className="grid gap-2 border-b border-tp-line px-6 py-5 last:border-b-0 sm:grid-cols-[1fr_1.5fr_1.5fr] sm:gap-4"
+                >
+                  <span className="font-display text-lg text-tp-ink">{row.feature}</span>
+                  <span className="flex items-start gap-2 text-sm text-tp-ink">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-tp-bronze-ink" />
+                    {row.ours}
+                  </span>
+                  <span className="text-sm text-tp-muted">{row.check}</span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 text-center">
+              <Link
+                href="/auth/register"
+                className={cn(
+                  buttonVariants({ size: 'lg' }),
+                  'rounded-tp-button bg-tp-bronze text-white hover:bg-tp-bronze-ink'
+                )}
+              >
+                Get Your Headshots
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </section>
 
