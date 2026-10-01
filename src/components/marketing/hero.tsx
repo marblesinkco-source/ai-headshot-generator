@@ -106,11 +106,27 @@ export function Hero() {
                 width={503}
                 height={743}
                 className="absolute inset-0 w-full h-full object-cover object-[50%_58%]"
+                sizes="(max-width: 1024px) 100vw, 45vw"
                 priority
               />
               <span className="absolute right-4 bottom-3 bg-tp-black/75 text-white text-[9px] tracking-[0.01em] px-2.5 py-1.5 rounded-md">
                 AI-generated concept image
               </span>
+
+              {/* Secondary portrait: stacked-photo card (hidden on small phones) */}
+              <div className="hidden min-[480px]:block absolute left-[5%] bottom-[8%] w-[32%] max-w-[220px] aspect-[503/743] -rotate-[2.5deg] rounded-xl border-[3px] border-tp-paper bg-tp-beige shadow-[0_18px_40px_-12px_rgba(0,0,0,0.45)] overflow-hidden">
+                <Image
+                  src="/brand/tailorpic/web/portrait-man-editorial.webp"
+                  alt="AI-generated editorial portrait of a man"
+                  width={503}
+                  height={743}
+                  className="absolute inset-0 w-full h-full object-cover object-[50%_30%]"
+                  sizes="(max-width: 1024px) 30vw, 15vw"
+                />
+                <span className="absolute left-1.5 bottom-1.5 bg-tp-black/75 text-white text-[8px] tracking-[0.01em] px-1.5 py-1 rounded">
+                  AI-generated concept image
+                </span>
+              </div>
             </div>
           </div>
 
