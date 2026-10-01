@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { siteConfig } from '@/config/site';
+import { BreadcrumbSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
   title: 'Data Processing Agreement | TailorPic',
@@ -149,6 +150,10 @@ function SectionHeading({ number, children }: { number: number; children: React.
 export default function DpaPage() {
   return (
     <main id="main-content" className="min-h-screen bg-white">
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: siteConfig.url },
+        { name: 'Data Processing Agreement', url: `${siteConfig.url}/dpa` },
+      ]} />
       <Header />
 
       {/* Hero */}

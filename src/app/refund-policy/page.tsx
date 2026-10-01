@@ -5,6 +5,7 @@ import { Footer } from '@/components/marketing/footer';
 import { ShieldCheck, Clock, Mail, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
+import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
   title: 'Refund Policy | TailorPic',
@@ -45,6 +46,11 @@ const faqs = [
 export default function RefundPolicyPage() {
   return (
     <main id="main-content" className="min-h-screen">
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: siteConfig.url },
+        { name: 'Refund Policy', url: `${siteConfig.url}/refund-policy` },
+      ]} />
+      <FAQSchema items={faqs} />
       <Header />
 
       {/* Hero */}

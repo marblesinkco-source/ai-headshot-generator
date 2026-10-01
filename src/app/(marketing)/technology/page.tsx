@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
   Upload,
@@ -144,6 +144,9 @@ export default function TechnologyPage() {
           { name: 'Home', url: siteConfig.url },
           { name: 'Technology', url: `${siteConfig.url}/technology` },
         ]}
+      />
+      <FAQSchema
+        items={faqItems.map((item) => ({ question: item.q, answer: item.a }))}
       />
       <Header />
 

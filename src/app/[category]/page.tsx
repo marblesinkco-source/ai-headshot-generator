@@ -11,7 +11,7 @@ import {
 } from '@/config/categories';
 import { siteConfig } from '@/config/site';
 import { formatPrice } from '@/lib/utils';
-import { ProductSchema } from '@/components/structured-data';
+import { ProductSchema, BreadcrumbSchema } from '@/components/structured-data';
 
 interface Props {
   params: Promise<{ category: string }>;
@@ -66,6 +66,10 @@ export default async function CategoryPage({ params }: Props) {
         category="AI Photo Generation"
         slug={cat.slug}
       />
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: siteConfig.url },
+        { name: cat.name, url: `${siteConfig.url}/${cat.slug}` },
+      ]} />
       <Header />
 
       {/* Hero */}

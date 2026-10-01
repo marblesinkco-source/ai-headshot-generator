@@ -4,6 +4,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
+import { BreadcrumbSchema } from '@/components/structured-data';
 import { CalculatorForm } from './calculator-form';
 
 const title = 'AI Headshot Cost Calculator — Compare Photography vs AI Prices | TailorPic';
@@ -43,6 +44,10 @@ export default function HeadshotCostCalculatorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: siteConfig.url },
+        { name: 'Headshot Cost Calculator', url: `${siteConfig.url}/tools/headshot-cost-calculator` },
+      ]} />
       <Header />
 
       <section className="relative overflow-hidden pt-16">

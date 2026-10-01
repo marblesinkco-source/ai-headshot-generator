@@ -5,7 +5,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
-import { BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 
 const title = 'AI Makeup Editor — Natural Professional Makeup for Headshots | TailorPic';
 const description =
@@ -85,6 +85,7 @@ export default function MakeupEditorPage() {
           { name: 'AI Makeup Editor', url: `${siteConfig.url}${path}` },
         ]}
       />
+      <FAQSchema items={faqs} />
       <Header />
 
       <section className="relative overflow-hidden pt-16">

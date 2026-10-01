@@ -5,7 +5,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
-import { BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 
 const title = 'Pink Background Headshots — Fresh & Modern | TailorPic';
 const description =
@@ -82,6 +82,7 @@ export default function PinkBackgroundPage() {
           { name: 'Pink Background Headshots', url: `${siteConfig.url}${path}` },
         ]}
       />
+      <FAQSchema items={faqs} />
       <Header />
 
       <section className="relative overflow-hidden pt-16">

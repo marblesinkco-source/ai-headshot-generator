@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { siteConfig } from '@/config/site';
+import { BreadcrumbSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
   title: 'KVKK Aydınlatma Metni | TailorPic',
@@ -99,6 +100,10 @@ function Bullets({ items }: { items: string[] }) {
 export default function KvkkPage() {
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: siteConfig.url },
+        { name: 'KVKK', url: `${siteConfig.url}/kvkk` },
+      ]} />
       <Header />
       <main id="main-content" className="bg-tp-paper">
         <section className="bg-tp-black">
