@@ -6,7 +6,7 @@ import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
   Building2, Users, Shield, Clock, CreditCard, Palette,
-  ArrowRight, CheckCircle, Lock, BarChart3, Headphones, Globe,
+  ArrowRight, Check, CheckCircle, Lock, BarChart3, Headphones, Globe,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -162,7 +162,7 @@ export default function EnterprisePage() {
             {[
               { icon: Users, title: 'Team Dashboard', desc: 'Invite team members, track orders, and manage all headshots from one admin panel.' },
               { icon: Palette, title: 'Brand Guidelines', desc: 'Set your brand colors, backgrounds, and style preferences once. Apply them to every new headshot.' },
-              { icon: Lock, title: 'Enterprise Security', desc: 'Secure infrastructure. End-to-end encryption. Data retention policies you control.' },
+              { icon: Lock, title: 'Enterprise Security', desc: 'Secure infrastructure with Supabase and Stripe. Photos auto-deleted within 30 days.' },
               { icon: CreditCard, title: 'Volume Pricing', desc: 'Custom pricing for teams of 10+. The more seats, the lower the per-person cost.' },
               { icon: Headphones, title: 'Dedicated Support', desc: 'Priority support with a dedicated account manager for enterprise clients.' },
               { icon: BarChart3, title: 'Usage Analytics', desc: 'Track adoption, photo quality scores, and team utilization in real-time.' },
@@ -175,6 +175,44 @@ export default function EnterprisePage() {
                 <p className="mt-2 text-sm text-tp-muted leading-relaxed">{feature.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Enterprise benefits checklist */}
+      <section className="pb-16 sm:pb-20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-tp-card border border-tp-line bg-tp-paper p-6 sm:p-10">
+            <h2 className="font-display text-2xl sm:text-3xl text-tp-ink text-center">
+              Everything Your Team Needs
+            </h2>
+            <ul className="mt-8 grid gap-x-8 gap-y-4 sm:grid-cols-2">
+              {[
+                'One admin panel to invite members and track orders',
+                'Brand colors, backgrounds, and style set once',
+                'Consistent look across every team member',
+                'No photographer scheduling or office coordination',
+                'Volume pricing for teams of 10+',
+                'Data retention policies you control',
+                'Dedicated account manager for enterprise clients',
+                'Easy onboarding for new hires and rebrands',
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3 text-sm text-tp-ink">
+                  <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-tp-bronze/15">
+                    <Check className="h-3.5 w-3.5 text-tp-bronze-ink" aria-hidden="true" />
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-8 text-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-tp-button bg-tp-ink px-6 py-3 text-sm font-semibold text-tp-paper transition-all hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                Talk to Sales <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -218,7 +256,7 @@ export default function EnterprisePage() {
             {[
               { name: 'Small Team', range: '5–15 people', price: '$39', per: 'per person', features: ['40+ photos each', 'Consistent style', 'HD resolution', 'Email support'] },
               { name: 'Company', range: '16–50 people', price: '$29', per: 'per person', features: ['40+ photos each', 'Brand guidelines', '4K resolution', 'Priority support'], popular: true },
-              { name: 'Enterprise', range: '50+ people', price: 'Custom', per: 'contact us', features: ['Unlimited photos', 'Admin dashboard', 'SSO integration', 'Dedicated manager'] },
+              { name: 'Enterprise', range: '50+ people', price: 'Custom', per: 'contact us', features: ['Unlimited photos', 'Admin dashboard', 'Custom onboarding', 'Dedicated manager'] },
             ].map((plan) => (
               <div
                 key={plan.name}
@@ -271,7 +309,7 @@ export default function EnterprisePage() {
             Ready to Upgrade Your Team&apos;s Image?
           </h2>
           <p className="mt-4 text-lg text-tp-muted">
-            Join companies that trust TailorPic for their professional headshots.
+            Tell us about your team and we&apos;ll put together a plan that fits.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link

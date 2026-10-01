@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
+import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { Quote } from 'lucide-react';
 
@@ -103,7 +104,7 @@ export default function ReviewsPage() {
               A look at how people use {siteConfig.name} for professional headshots, dating
               photos, team photos and pet portraits.
             </p>
-            <p className="mx-auto mt-4 max-w-xl rounded-xl border border-tp-line bg-white px-4 py-3 text-sm text-tp-ink/80">
+            <p className="mx-auto mt-4 max-w-xl rounded-tp-button border border-tp-line bg-white px-4 py-3 text-sm text-tp-ink/80">
               These reviews represent typical customer experiences. Names have been changed for
               privacy.
             </p>
@@ -116,7 +117,7 @@ export default function ReviewsPage() {
               {testimonials.map((t) => (
                 <figure
                   key={t.name + t.context}
-                  className="relative flex flex-col rounded-[18px] border border-tp-line bg-white p-6"
+                  className="relative flex flex-col rounded-tp-card border border-tp-line bg-white p-6"
                 >
                   <Quote
                     className="absolute right-5 top-5 h-7 w-7 text-tp-beige"
@@ -141,17 +142,17 @@ export default function ReviewsPage() {
           </div>
         </section>
 
-        <section className="pb-20">
-          <div className="mx-auto max-w-3xl px-4 text-center">
+        <section className="px-4 pb-20 sm:px-6">
+          <div className="mx-auto max-w-3xl rounded-tp-card border border-tp-line bg-tp-beige/30 px-6 py-12 text-center sm:px-10">
             <h2 className="font-display text-3xl text-tp-ink md:text-4xl">
-              Ready to try it yourself?
+              Ready to see for yourself?
             </h2>
             <p className="mx-auto mt-3 max-w-lg text-tp-muted">
               Pick a photo type, upload a few selfies and see your results.
             </p>
             <Link
               href="/auth/register"
-              className="mt-8 inline-flex items-center rounded-[12px] bg-tp-bronze-ink px-8 py-3.5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:shadow-lg"
+              className={buttonVariants({ variant: 'primary', size: 'lg', className: 'mt-8' })}
             >
               Get Started
             </Link>

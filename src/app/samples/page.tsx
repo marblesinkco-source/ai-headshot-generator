@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
-import { Button } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 import { siteConfig } from '@/config/site';
 import {
   ArrowRight,
@@ -123,7 +124,10 @@ export default function SamplesPage() {
               See What AI Can Create
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-lg text-tp-muted">
-              Browse real examples of TailorPic AI-generated photos across all categories.
+              Browse AI-generated example portraits across all categories.
+            </p>
+            <p className="mx-auto mt-3 max-w-xl text-base font-medium text-tp-bronze-ink">
+              Get 40+ photos starting at $9.90, one-time, no subscription.
             </p>
           </div>
         </section>
@@ -274,18 +278,22 @@ export default function SamplesPage() {
         <section className="border-t border-tp-line bg-tp-ink px-4 py-20 text-center">
           <div className="mx-auto max-w-2xl">
             <h2 className="font-display text-3xl font-normal tracking-tight text-tp-paper sm:text-4xl">
-              Ready to Create Your Photos?
+              Ready to create yours?
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-tp-beige/80">
-              Join thousands of professionals who trust TailorPic for studio-quality AI photos.
+              Upload your photos and get 40+ studio-quality AI portraits, starting at $9.90.
             </p>
             <div className="mt-8">
-              <Button asChild size="lg" className="bg-tp-bronze text-white hover:bg-tp-bronze-ink">
-                <Link href="/auth/register">
-                  Get Started
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+              <Link
+                href="/auth/register"
+                className={cn(
+                  buttonVariants({ size: 'lg' }),
+                  'rounded-tp-button bg-tp-bronze text-white hover:bg-tp-bronze-ink'
+                )}
+              >
+                Get Started
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </div>
           </div>
         </section>
