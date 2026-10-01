@@ -4,6 +4,7 @@ import Replicate from 'replicate';
 import { createClient } from '@/lib/supabase/server';
 import { getCategoryById, getPackageById, type CategoryId } from '@/config/categories';
 import { siteConfig } from '@/config/site';
+import { rateLimit, getClientIp } from '@/lib/rate-limit';
 
 const replicate = new Replicate({
   auth: process.env.REPLICATE_API_TOKEN!,
@@ -43,6 +44,19 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { error: 'Authentication required' },
         { status: 401 }
+      );
+    }
+
+    // Rate limit: 10 requests per hour per user
+    const rl = rateLimit({
+      key: `ai-generate:${user.id}`,
+      limit: 10,
+      windowMs: 60 * 60 * 1000,
+    });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429, headers: { 'Retry-After': '3600' } },
       );
     }
 

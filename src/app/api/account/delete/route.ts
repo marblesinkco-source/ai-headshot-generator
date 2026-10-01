@@ -12,6 +12,7 @@ import { Resend } from 'resend';
 import { createClient, createAdminClient } from '@/lib/supabase/server';
 import { siteConfig } from '@/config/site';
 import { buildAccountDeletionEmail } from '@/lib/emails';
+import { rateLimit } from '@/lib/rate-limit';
 
 export async function POST() {
   // 1. Verify the user is authenticated
@@ -23,6 +24,19 @@ export async function POST() {
 
   if (authError || !user) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
+  // Rate limit: 3 requests per hour per user
+  const rl = rateLimit({
+    key: `account-delete:${user.id}`,
+    limit: 3,
+    windowMs: 60 * 60 * 1000,
+  });
+  if (!rl.success) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again later.' },
+      { status: 429, headers: { 'Retry-After': '3600' } },
+    );
   }
 
   const userId = user.id;

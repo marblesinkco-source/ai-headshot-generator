@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { createClient } from '@/lib/supabase/server';
 import JSZip from 'jszip';
+import { rateLimit, getClientIp } from '@/lib/rate-limit';
 
 export async function GET(
   request: NextRequest,
@@ -27,6 +28,19 @@ export async function GET(
       return NextResponse.json(
         { error: 'Authentication required' },
         { status: 401 }
+      );
+    }
+
+    // Rate limit: 20 requests per hour per user
+    const rl = rateLimit({
+      key: `gallery-download:${user.id}`,
+      limit: 20,
+      windowMs: 60 * 60 * 1000,
+    });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429, headers: { 'Retry-After': '3600' } },
       );
     }
 

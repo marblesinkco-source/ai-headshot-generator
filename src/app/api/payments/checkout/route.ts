@@ -7,6 +7,7 @@ import { PACKAGES, type PackageId } from '@/config/packages';
 import { getCategoryById, getPackageById, type CategoryId } from '@/config/categories';
 import { CREDIT_PACKAGES } from '@/config/credits';
 import { siteConfig } from '@/config/site';
+import { rateLimit, getClientIp } from '@/lib/rate-limit';
 
 // Known coupon codes mapped to Stripe coupon IDs
 // Create these in Stripe Dashboard: Dashboard → Products → Coupons
@@ -64,6 +65,19 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { error: 'Authentication required' },
         { status: 401 }
+      );
+    }
+
+    // Rate limit: 15 requests per hour per user
+    const rl = rateLimit({
+      key: `payments-checkout:${user.id}`,
+      limit: 15,
+      windowMs: 60 * 60 * 1000,
+    });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429, headers: { 'Retry-After': '3600' } },
       );
     }
 

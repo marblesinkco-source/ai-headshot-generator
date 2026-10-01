@@ -3,6 +3,7 @@ import { z } from 'zod';
 import { createClient, createAdminClient } from '@/lib/supabase/server';
 import { nanoid } from 'nanoid';
 import { getCategoryById, type CategoryId } from '@/config/categories';
+import { rateLimit, getClientIp } from '@/lib/rate-limit';
 
 const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
@@ -25,6 +26,19 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { error: 'Authentication required' },
         { status: 401 }
+      );
+    }
+
+    // Rate limit: 30 requests per hour per user
+    const rl = rateLimit({
+      key: `upload:${user.id}`,
+      limit: 30,
+      windowMs: 60 * 60 * 1000,
+    });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429, headers: { 'Retry-After': '3600' } },
       );
     }
 
