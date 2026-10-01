@@ -19,6 +19,7 @@ import {
   Paintbrush,
   Download,
   Check,
+  ArrowRight,
 } from 'lucide-react';
 
 const aboutDescription = `Learn about ${siteConfig.name}, the AI photo platform that creates professional, personalized photos in hours. Our mission, how we're different, and our commitment to privacy.`;
@@ -112,6 +113,31 @@ const values = [
   },
 ];
 
+const stats = [
+  { value: '40+', label: 'Photos per order' },
+  { value: '11+', label: 'Photo categories' },
+  { value: '<2hr', label: 'Typical delivery' },
+  { value: '$9.90', label: 'Starting price' },
+];
+
+const explore = [
+  {
+    href: '/technology',
+    title: 'Our technology',
+    description: 'A closer look at how personalized generative AI creates photos that look like you.',
+  },
+  {
+    href: '/security',
+    title: 'Security and privacy',
+    description: 'How we handle, protect, and delete the photos you upload.',
+  },
+  {
+    href: '/team-headshots',
+    title: 'Team headshots',
+    description: 'Consistent, professional headshots for your whole team, without a photo day.',
+  },
+];
+
 const commitments = [
   'Automatic deletion of your uploads within 30 days',
   'We do not sell your photos',
@@ -150,7 +176,7 @@ export default function AboutPage() {
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register" className={buttonVariants({ size: 'lg' })}>
-              Get Started
+              Try it yourself
             </Link>
             <Link href="/samples" className={buttonVariants({ variant: 'outline', size: 'lg' })}>
               See Sample Photos
@@ -182,8 +208,53 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* How we're different */}
+      {/* Stats */}
+      <section className="border-b border-tp-line bg-tp-paper py-14">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <dl className="grid grid-cols-2 gap-6 text-center lg:grid-cols-4">
+            {stats.map((stat) => (
+              <div key={stat.label} className="flex flex-col-reverse">
+                <dt className="mt-2 text-sm text-tp-muted">{stat.label}</dt>
+                <dd className="font-display text-4xl font-normal text-tp-black sm:text-5xl">
+                  {stat.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      {/* Why we built it */}
       <section className="py-24">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <p className="text-sm font-medium uppercase tracking-widest text-tp-bronze-ink">
+            Our Story
+          </p>
+          <h2 className="mt-3 font-display text-3xl font-normal text-tp-black sm:text-4xl">
+            Why we built {siteConfig.name}
+          </h2>
+          <div className="mt-6 space-y-5 text-lg leading-relaxed text-tp-muted">
+            <p>
+              A good photo of yourself matters more than most people expect. It is often the first
+              thing a client, recruiter, or colleague sees. Yet getting one has usually meant
+              booking a studio, taking time off, and paying for a session before knowing whether
+              you will like the result.
+            </p>
+            <p>
+              We built {siteConfig.name} because we believed generative AI could remove that
+              friction. Upload a few photos, choose a style, and receive polished images that
+              still look like you, not like a filter or a stranger.
+            </p>
+            <p>
+              We also wanted it done responsibly: simple pricing, clear privacy practices, and a
+              money-back guarantee when results fall short.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* How we're different */}
+      <section className="border-t border-tp-line py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-sm font-medium uppercase tracking-widest text-tp-bronze-ink">
@@ -202,7 +273,7 @@ export default function AboutPage() {
               return (
                 <div
                   key={item.title}
-                  className="rounded-tp-card border border-tp-line bg-white p-6 shadow-sm"
+                  className="rounded-tp-card border border-tp-line bg-tp-paper p-6 shadow-sm"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-black">
                     <Icon className="h-6 w-6 text-tp-bronze" />
@@ -282,7 +353,7 @@ export default function AboutPage() {
               return (
                 <div
                   key={value.title}
-                  className="flex gap-5 rounded-tp-card border border-tp-line bg-white p-6 shadow-sm"
+                  className="flex gap-5 rounded-tp-card border border-tp-line bg-tp-paper p-6 shadow-sm"
                 >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-tp-button bg-tp-black">
                     <Icon className="h-6 w-6 text-tp-bronze" />
@@ -298,10 +369,34 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Explore */}
+      <section className="border-t border-tp-line pb-24 pt-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center font-display text-3xl font-normal text-tp-black sm:text-4xl">
+            Go deeper
+          </h2>
+          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+            {explore.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group rounded-tp-card border border-tp-line bg-tp-paper p-6 transition-colors hover:border-tp-bronze"
+              >
+                <h3 className="font-display text-xl font-normal text-tp-ink">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-tp-bronze-ink">
+                  Learn more <ArrowRight className="h-4 w-4" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Commitments / trust */}
       <section className="pb-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-tp-dialog border border-tp-line bg-white p-8 shadow-sm sm:p-10">
+          <div className="rounded-tp-card border border-tp-line bg-tp-paper p-8 shadow-sm sm:p-10">
             <h2 className="font-display text-2xl font-normal text-tp-black sm:text-3xl">
               Our commitments to you
             </h2>
@@ -332,7 +427,7 @@ export default function AboutPage() {
       <section className="bg-tp-black py-24">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl font-normal text-tp-paper sm:text-5xl">
-            Ready to get your <span className="italic text-tp-bronze">headshots?</span>
+            Try it <span className="italic text-tp-bronze">yourself</span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-tp-beige/80">
             Upload your photos, choose a style, and let {siteConfig.name} do the rest. Not happy?
@@ -343,7 +438,7 @@ export default function AboutPage() {
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register" className={buttonVariants({ size: 'lg' })}>
-              Create Your Photos
+              Try it yourself
             </Link>
             <Link href="/contact" className={buttonVariants({ variant: 'outline', size: 'lg' })}>
               Contact Us

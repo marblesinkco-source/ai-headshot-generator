@@ -1,66 +1,61 @@
 import {
   Laptop,
-  Building,
+  Landmark,
   Stethoscope,
   Home,
   Scale,
-  Megaphone,
   GraduationCap,
-  Briefcase,
 } from "lucide-react";
 
 const industries = [
-  { icon: Laptop, label: "Tech & Startups" },
-  { icon: Building, label: "Finance & Banking" },
+  { icon: Landmark, label: "Finance" },
   { icon: Stethoscope, label: "Healthcare" },
-  { icon: Home, label: "Real Estate" },
   { icon: Scale, label: "Legal" },
-  { icon: Megaphone, label: "Marketing & Media" },
+  { icon: Laptop, label: "Tech" },
+  { icon: Home, label: "Real Estate" },
   { icon: GraduationCap, label: "Education" },
-  { icon: Briefcase, label: "Consulting" },
 ];
 
 export function CompanyLogos() {
   return (
-    <section className="w-full py-16 md:py-20">
+    <section
+      aria-labelledby="industries-heading"
+      className="w-full py-14 md:py-16"
+    >
       <div className="mx-auto max-w-6xl px-4">
-        {/* Heading */}
-        <div className="text-center mb-12">
-          <h2 className="font-display text-2xl md:text-3xl text-tp-ink mb-3">
-            Trusted by Professionals Everywhere
+        <div className="text-center mb-8 md:mb-10">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-tp-bronze-ink mb-3">
+            Built for professionals
+          </p>
+          <h2
+            id="industries-heading"
+            className="font-display text-2xl md:text-3xl text-tp-ink mb-3"
+          >
+            Professional headshots for every industry
           </h2>
           <p className="text-tp-muted text-base">
-            From startups to Fortune 500 teams
+            Professional-grade results for teams of all sizes
           </p>
         </div>
 
-        {/* Industry icons grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-8 gap-4 md:gap-6 mb-14">
+        <ul className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
           {industries.map(({ icon: Icon, label }) => (
-            <div
+            <li
               key={label}
-              className="flex flex-col items-center gap-3 rounded-tp-card border border-tp-line bg-tp-paper/60 px-4 py-6 transition-colors hover:border-tp-bronze/40"
+              className="inline-flex items-center gap-2.5 rounded-full border border-tp-line bg-tp-paper px-4 py-2.5 transition-colors hover:border-tp-bronze md:px-5 md:py-3"
             >
               <Icon
                 className="text-tp-bronze-ink"
-                size={28}
+                size={20}
                 strokeWidth={1.5}
+                aria-hidden="true"
               />
-              <span className="text-xs text-tp-muted text-center leading-tight font-medium">
+              <span className="text-sm font-medium text-tp-ink whitespace-nowrap">
                 {label}
               </span>
-            </div>
+            </li>
           ))}
-        </div>
-
-        {/* Bottom stats line */}
-        <div className="text-center">
-          <div className="inline-flex items-center gap-2 rounded-tp-button border border-tp-line bg-tp-paper/80 px-5 py-2.5">
-            <span className="text-sm text-tp-muted">
-              Join thousands of professionals who&apos;ve upgraded their image
-            </span>
-          </div>
-        </div>
+        </ul>
       </div>
     </section>
   );
