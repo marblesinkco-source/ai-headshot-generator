@@ -17,97 +17,139 @@ export const metadata: Metadata = {
   },
 };
 
-type BadgeType = 'new' | 'improved' | 'launch';
+type Category = 'Feature' | 'Improvement' | 'Security' | 'Launch';
+
+const categoryStyles: Record<Category, string> = {
+  Feature: 'bg-tp-bronze/15 text-tp-bronze-ink border-tp-bronze/30',
+  Improvement: 'bg-tp-beige text-tp-ink border-tp-line',
+  Security: 'bg-tp-black text-tp-paper border-tp-black',
+  Launch: 'bg-tp-bronze text-tp-black border-tp-bronze',
+};
 
 interface ChangelogEntry {
   title: string;
   description: string;
-  badge: BadgeType;
+  category: Category;
 }
 
-interface ChangelogMonth {
+interface ChangelogRelease {
   date: string;
+  version: string;
+  summary: string;
   entries: ChangelogEntry[];
 }
 
-const badgeStyles: Record<BadgeType, string> = {
-  new: 'bg-emerald-100 text-emerald-700',
-  improved: 'bg-amber-100 text-amber-700',
-  launch: 'bg-tp-bronze/20 text-tp-bronze-ink',
-};
-
-const badgeLabels: Record<BadgeType, string> = {
-  new: 'New',
-  improved: 'Improved',
-  launch: 'Launch',
-};
-
-const changelog: ChangelogMonth[] = [
+const changelog: ChangelogRelease[] = [
   {
-    date: 'September 2026',
+    date: 'October 2026',
+    version: 'v1.5',
+    summary: 'Built for teams: pricing, planning tools, and transparency.',
     entries: [
       {
-        title: 'Industry-Specific Landing Pages',
+        title: 'Volume Pricing for Teams',
         description:
-          'Added dedicated pages for healthcare, consulting, and accounting professionals with tailored messaging and examples.',
-        badge: 'new',
+          'Tiered per-seat pricing that rewards larger teams, with consistent styling across every employee headshot.',
+        category: 'Feature',
       },
       {
-        title: 'Competitor Comparison Pages',
+        title: 'ROI Calculator',
         description:
-          'New vs. pages comparing TailorPic with alternatives so you can make an informed choice.',
-        badge: 'new',
+          'Estimate how much your organization saves compared with traditional photo shoots before you commit.',
+        category: 'Feature',
       },
       {
-        title: 'Refund Policy Page',
+        title: 'Technology Page',
         description:
-          '14-day money-back guarantee clearly documented with a transparent, hassle-free refund process.',
-        badge: 'improved',
+          'A plain-language look at how our AI generates studio-quality portraits and how your data is handled.',
+        category: 'Improvement',
+      },
+    ],
+  },
+  {
+    date: 'September 2026',
+    version: 'v1.4',
+    summary: 'Guidance and integrations to help you get more from every photo.',
+    entries: [
+      {
+        title: 'Photo Tips Guide',
+        description:
+          'Practical advice on choosing source photos, lighting, and expressions for the best possible results.',
+        category: 'Improvement',
+      },
+      {
+        title: 'Integrations Page',
+        description:
+          'See how TailorPic fits into the tools you already use for profiles, hiring, and team directories.',
+        category: 'Feature',
+      },
+      {
+        title: 'Developer API Preview',
+        description:
+          'Early access to a programmatic interface for generating headshots inside your own workflows.',
+        category: 'Feature',
       },
     ],
   },
   {
     date: 'August 2026',
+    version: 'v1.3',
+    summary: 'A much bigger creative range.',
     entries: [
       {
-        title: 'Express Tier Launch',
+        title: '40+ New Headshot Styles',
         description:
-          'New $9.90 Express package for quick previews — perfect for trying out AI headshots before committing to a full package.',
-        badge: 'new',
+          'New backgrounds, outfits, and looks across professional, creative, and casual settings.',
+        category: 'Feature',
       },
       {
-        title: '11 Photo Categories',
+        title: 'Before/After Showcase',
         description:
-          'Expanded from headshots to dating, pets, family, and more. Eleven categories to cover every use case.',
-        badge: 'improved',
+          'Side-by-side comparisons showing the transformation from everyday selfies to polished portraits.',
+        category: 'Improvement',
       },
     ],
   },
   {
     date: 'July 2026',
+    version: 'v1.2',
+    summary: 'Privacy and a smoother app experience.',
     entries: [
       {
-        title: 'Affiliate Program',
+        title: 'Cookie Consent (GDPR Compliance)',
         description:
-          '35% commission for partners who refer new customers. Join our affiliate program and earn with every referral.',
-        badge: 'new',
+          'Clear, granular cookie controls so visitors decide what is stored, in line with GDPR requirements.',
+        category: 'Security',
       },
       {
-        title: 'Enterprise Solutions',
+        title: 'PWA Support',
         description:
-          'Dedicated enterprise page with volume pricing, team management, and priority support for organizations.',
-        badge: 'new',
+          'Install TailorPic on your phone or desktop for faster access and a more app-like experience.',
+        category: 'Feature',
       },
     ],
   },
   {
     date: 'June 2026',
+    version: 'v1.0',
+    summary: 'TailorPic goes live.',
     entries: [
       {
-        title: 'Platform Launch',
+        title: 'Core Headshot Generation',
         description:
-          'TailorPic officially launches with AI-powered photo generation. Studio-quality results in hours, not days.',
-        badge: 'launch',
+          'AI-powered photo generation with studio-quality results in hours, not days.',
+        category: 'Launch',
+      },
+      {
+        title: 'Dashboard',
+        description:
+          'One place to upload photos, track progress, and manage your orders.',
+        category: 'Launch',
+      },
+      {
+        title: 'Gallery',
+        description:
+          'Browse, favorite, and download your generated photos in high resolution.',
+        category: 'Launch',
       },
     ],
   },
@@ -115,11 +157,13 @@ const changelog: ChangelogMonth[] = [
 
 export default function ChangelogPage() {
   return (
-    <main id="main-content" className="min-h-screen">
-      <BreadcrumbSchema items={[
-        { name: 'Home', url: siteConfig.url },
-        { name: 'Changelog', url: `${siteConfig.url}/changelog` },
-      ]} />
+    <main id="main-content" className="min-h-screen bg-tp-paper">
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: siteConfig.url },
+          { name: 'Changelog', url: `${siteConfig.url}/changelog` },
+        ]}
+      />
       <Header />
 
       {/* Hero */}
@@ -127,7 +171,10 @@ export default function ChangelogPage() {
         <div className="pointer-events-none absolute inset-0 bg-grid" />
         <div className="pointer-events-none absolute -top-24 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-tp-bronze/10 blur-3xl" />
         <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 sm:py-28 lg:px-8">
-          <h1 className="text-4xl font-extrabold tracking-tight text-tp-ink sm:text-5xl">
+          <span className="inline-flex items-center rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-tp-bronze-ink">
+            Product updates
+          </span>
+          <h1 className="mt-6 font-display text-4xl font-normal tracking-tight text-tp-black sm:text-6xl">
             Changelog
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
@@ -137,41 +184,50 @@ export default function ChangelogPage() {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="mx-auto max-w-3xl px-4 pb-24 sm:px-6 lg:px-8">
-        <div className="border-l border-tp-line pl-8 sm:pl-10">
-          {changelog.map((month) => (
-            <div key={month.date} className="relative mb-12 last:mb-0">
-              {/* Date badge */}
-              <div className="absolute -left-[calc(2rem+0.5px)] top-0 sm:-left-[calc(2.5rem+0.5px)]">
-                <span className="inline-flex items-center rounded-full bg-tp-black px-3 py-1 text-xs font-medium text-tp-bronze">
-                  {month.date}
+      {/* Release cards */}
+      <section className="mx-auto max-w-3xl px-4 pb-16 sm:px-6 lg:px-8">
+        <ol className="space-y-8">
+          {changelog.map((release) => (
+            <li
+              key={release.date}
+              className="rounded-tp-card border border-tp-line bg-tp-beige/40 p-6 sm:p-8"
+            >
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="inline-flex items-center rounded-tp-button bg-tp-black px-3 py-1 text-xs font-medium text-tp-bronze">
+                  {release.version}
                 </span>
+                <h2 className="font-display text-2xl font-normal text-tp-black sm:text-3xl">
+                  {release.date}
+                </h2>
               </div>
+              <p className="mt-2 text-sm text-tp-muted">{release.summary}</p>
 
-              {/* Entries */}
-              <div className="space-y-6 pt-1">
-                {month.entries.map((entry) => (
-                  <div key={entry.title}>
-                    <div className="flex items-center gap-2">
+              <ul className="mt-6 space-y-5 border-t border-tp-line pt-6">
+                {release.entries.map((entry) => (
+                  <li key={entry.title}>
+                    <div className="flex flex-wrap items-center gap-2">
                       <span
-                        className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${badgeStyles[entry.badge]}`}
+                        className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium ${categoryStyles[entry.category]}`}
                       >
-                        {badgeLabels[entry.badge]}
+                        {entry.category}
                       </span>
-                      <h3 className="font-semibold text-tp-ink">
+                      <h3 className="font-display text-lg font-normal text-tp-ink">
                         {entry.title}
                       </h3>
                     </div>
-                    <p className="mt-1 text-sm leading-relaxed text-tp-muted">
+                    <p className="mt-1.5 text-sm leading-relaxed text-tp-muted">
                       {entry.description}
                     </p>
-                  </div>
+                  </li>
                 ))}
-              </div>
-            </div>
+              </ul>
+            </li>
           ))}
-        </div>
+        </ol>
+
+        <p className="mt-10 text-center text-xs text-tp-muted">
+          Dates and features listed are representative of planned milestones.
+        </p>
       </section>
 
       <Footer />

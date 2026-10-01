@@ -48,6 +48,7 @@ const resourceLinks = [
   { label: 'Technology', href: '/technology' },
   { label: 'Industries', href: '/industries' },
   { label: 'Photo Tips', href: '/photo-tips' },
+  { label: 'Success Stories', href: '/success-stories' },
   { label: 'Glossary', href: '/glossary' },
   { label: 'Changelog', href: '/changelog' },
   { label: 'Contact', href: '/contact' },
