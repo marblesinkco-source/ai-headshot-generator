@@ -17,6 +17,8 @@ export const maxDuration = 30;
 // Create these in Stripe Dashboard: Dashboard → Products → Coupons
 const COUPON_MAP: Record<string, string> = {
   UPGRADE25: 'UPGRADE25', // 25% off — Stripe coupon ID must match
+  AVATARBUNDLE: 'AVATARBUNDLE', // Avatar bundle discount — Stripe coupon ID must match
+  AVATAR20: 'AVATAR20', // 20% off avatars when added to cart — Stripe coupon ID must match
 };
 
 // Support category checkout, legacy checkout, and credit package checkout

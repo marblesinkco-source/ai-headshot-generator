@@ -675,7 +675,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
       {
         id: 'avatar-starter',
         name: 'Avatar Pack',
-        price: 1590,
+        price: 490,
         currency: 'usd',
         outputCount: 30,
         features: [
@@ -691,7 +691,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
       {
         id: 'avatar-mega',
         name: 'Mega Avatar Bundle',
-        price: 2480,
+        price: 890,
         currency: 'usd',
         outputCount: 50,
         features: [
@@ -709,7 +709,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
     promptTemplate: 'A highly detailed {style_prompt} portrait of a person. {character_prompt}. Maintaining exact facial features and likeness. {background_prompt}. Cinematic quality, dramatic lighting, ultra-detailed, 8k resolution.',
     negativePrompt: 'deformed, distorted, disfigured, poorly drawn face, bad anatomy, wrong anatomy, extra limb, missing limb, floating limbs, mutated hands, extra fingers, blurry, low quality, watermark, text, logo, different person, changed face, altered identity',
     seoTitle: 'AI Avatars — Your Face in Every Universe | TailorPic',
-    seoDescription: 'Transform your selfies into 50 jaw-dropping AI avatars. Fantasy, anime, cyberpunk, renaissance and more — all with your exact likeness. Starting at $15.90.',
+    seoDescription: 'Transform your selfies into 50 jaw-dropping AI avatars. Fantasy, anime, cyberpunk, renaissance and more — all with your exact likeness. Starting at $4.90.',
     slug: 'avatars',
     active: true,
   },

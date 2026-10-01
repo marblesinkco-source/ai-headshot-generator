@@ -53,7 +53,6 @@ export function Header() {
   const [megaOpen, setMegaOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const userMenuTimer = useRef<ReturnType<typeof setTimeout>>();
-  const closeTimer = useRef<ReturnType<typeof setTimeout>>();
   const [user, setUser] = useState<User | null>(null);
   const [loggingOut, setLoggingOut] = useState(false);
 
@@ -118,13 +117,19 @@ export function Header() {
     setUserMenuOpen(false);
   }, [pathname]);
 
-  function openMega() {
-    clearTimeout(closeTimer.current);
-    setMegaOpen(true);
-  }
-  function scheduleMegaClose() {
-    closeTimer.current = setTimeout(() => setMegaOpen(false), 200);
-  }
+  const megaRef = useRef<HTMLDivElement>(null);
+
+  // Close mega menu on click outside
+  useEffect(() => {
+    if (!megaOpen) return;
+    function handleClickOutside(e: MouseEvent) {
+      if (megaRef.current && !megaRef.current.contains(e.target as Node)) {
+        setMegaOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [megaOpen]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-tp-line/60 bg-tp-paper/85 backdrop-blur-md supports-[backdrop-filter]:bg-tp-paper/75">
@@ -146,12 +151,7 @@ export function Header() {
           {/* Photo Types mega menu trigger */}
           <div
             className="relative"
-            onMouseEnter={openMega}
-            onMouseLeave={scheduleMegaClose}
-            onFocus={openMega}
-            onBlur={(e) => {
-              if (!e.currentTarget.contains(e.relatedTarget as Node | null)) scheduleMegaClose();
-            }}
+            ref={megaRef}
           >
             <button
               className="flex items-center gap-1 text-[13px] font-semibold text-tp-ink transition-colors hover:text-tp-bronze-ink whitespace-nowrap"
@@ -169,8 +169,6 @@ export function Header() {
             {/* Mega dropdown */}
             <div
               className="absolute left-1/2 top-full -translate-x-1/2 pt-3"
-              onMouseEnter={openMega}
-              onMouseLeave={scheduleMegaClose}
             >
               <div
                 id="photo-types-menu"

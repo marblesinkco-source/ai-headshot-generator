@@ -34,18 +34,18 @@ import {
 export const metadata: Metadata = {
   title: 'AI Avatars — Your Face in Every Universe | TailorPic',
   description:
-    'Transform your selfies into 50 jaw-dropping AI avatars. Fantasy, anime, cyberpunk, renaissance — all with your exact likeness. From $15.90. 14-day money-back guarantee.',
+    'Transform your selfies into 50 jaw-dropping AI avatars. Fantasy, anime, cyberpunk, renaissance — all with your exact likeness. From $4.90. 14-day money-back guarantee.',
   alternates: { canonical: '/avatars' },
   openGraph: generateOGMetadata({
     title: 'AI Avatars — Your Face in Every Universe',
     description:
-      'Transform your selfies into 50 jaw-dropping AI avatars. Fantasy, anime, cyberpunk, renaissance — all with your exact likeness. From $15.90.',
+      'Transform your selfies into 50 jaw-dropping AI avatars. Fantasy, anime, cyberpunk, renaissance — all with your exact likeness. From $4.90.',
     path: '/avatars',
   }),
   twitter: generateTwitterMetadata({
     title: 'AI Avatars — Your Face in Every Universe | TailorPic',
     description:
-      '30-50 AI avatars that look exactly like you. Fantasy, anime, cyberpunk & more. From $15.90.',
+      '30-50 AI avatars that look exactly like you. Fantasy, anime, cyberpunk & more. From $4.90.',
   }),
 };
 
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
 
 const comparisonRows = [
   { feature: 'Avatars per pack', lensa: '~50', others: '10-40', us: '30-50' },
-  { feature: 'Starting price', lensa: '$3.99/week', others: '$29+', us: '$15.90 one-time' },
+  { feature: 'Starting price', lensa: '$3.99/week', others: '$29+', us: '$4.90 one-time' },
   { feature: 'Likeness accuracy', lensa: 'Medium', others: 'Low-Medium', us: 'Ultra-High (Flux AI)' },
   { feature: 'Style variety', lensa: '10+', others: '5-15', us: '15 categories' },
   { feature: 'Resolution', lensa: '512px', others: '512-1024px', us: 'Up to 4K' },
@@ -142,7 +142,7 @@ const faqs = [
   {
     question: "What's included in each pack?",
     answer:
-      'The Avatar Pack ($15.90) includes 30 unique avatars across our style categories. The Mega Bundle ($24.80) includes 50 avatars, so you get 20 more for just $8.90. All avatars are delivered in high resolution, up to 4K.',
+      'The Avatar Pack ($4.90) includes 30 unique avatars across our style categories. The Mega Bundle ($8.90) includes 50 avatars, so you get 20 more for just $4.00 extra. All avatars are delivered in high resolution, up to 4K.',
   },
   {
     question: 'Can I use these commercially?',
@@ -192,14 +192,14 @@ export default function AvatarsPage() {
           <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6">
             <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-sm font-medium text-white">
               <Sparkles className="h-4 w-4" aria-hidden="true" />
-              30 avatars from $15.90
+              30 avatars from $4.90
             </span>
             <h1 className="font-display text-5xl font-normal italic leading-tight text-white sm:text-6xl lg:text-7xl">
               Your Face. Every Universe.
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-white/90 sm:text-xl">
               30 jaw-dropping AI avatars that look exactly like you — as a fantasy warrior,
-              cyberpunk hero, anime legend, Renaissance master, and more. All for just $15.90.
+              cyberpunk hero, anime legend, Renaissance master, and more. All for just $4.90.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
@@ -209,7 +209,7 @@ export default function AvatarsPage() {
                   'w-full bg-white text-tp-black hover:bg-tp-paper sm:w-auto'
                 )}
               >
-                Create My Avatars — $15.90
+                Create My Avatars — $4.90
                 <ArrowRight className="h-5 w-5" aria-hidden="true" />
               </Link>
               <Link
@@ -219,7 +219,7 @@ export default function AvatarsPage() {
                   'w-full border-white/60 text-white hover:border-white hover:bg-white/10 sm:w-auto'
                 )}
               >
-                See All 50 Styles — $24.80
+                See All 50 Styles — $8.90
               </Link>
             </div>
             <p className="mt-8 text-sm text-white/80">
@@ -361,14 +361,14 @@ export default function AvatarsPage() {
                 Want ALL 50? Unlock the Mega Bundle
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-tp-beige/80">
-                Add 20 more avatars for just $8.90.
+                Add 20 more avatars for just $4.00 extra.
               </p>
             </div>
             <div className="mt-12 grid gap-6 md:grid-cols-2">
               <div className="rounded-tp-card border border-white/15 bg-white/5 p-8">
                 <h3 className="font-sans text-lg font-semibold text-white">Avatar Pack</h3>
                 <p className="mt-1 text-sm text-tp-beige/70">30 unique avatars</p>
-                <p className="mt-6 font-display text-5xl font-normal text-white">$15.90</p>
+                <p className="mt-6 font-display text-5xl font-normal text-white">$4.90</p>
                 <p className="mt-1 text-sm text-tp-beige/70">one-time, no subscription</p>
                 <Link
                   href="/auth/register"
@@ -377,18 +377,18 @@ export default function AvatarsPage() {
                     'mt-8 w-full border-white/40 text-white hover:border-white hover:bg-white/10'
                   )}
                 >
-                  Create My Avatars — $15.90
+                  Create My Avatars — $4.90
                 </Link>
               </div>
               <div className="relative rounded-tp-card bg-gradient-to-br from-purple-600 to-fuchsia-600 p-8 shadow-xl">
                 <span className="absolute -top-3 right-6 inline-flex items-center gap-1 rounded-full bg-white px-3 py-1 text-xs font-bold text-purple-700">
                   <Crown className="h-3.5 w-3.5" aria-hidden="true" />
-                  Save $6.90!
+                  Save 45%!
                 </span>
                 <h3 className="font-sans text-lg font-semibold text-white">Mega Bundle</h3>
                 <p className="mt-1 text-sm text-white/80">50 unique avatars</p>
-                <p className="mt-6 font-display text-5xl font-normal text-white">$24.80</p>
-                <p className="mt-1 text-sm text-white/80">that&apos;s 20 extra avatars for just $8.90</p>
+                <p className="mt-6 font-display text-5xl font-normal text-white">$8.90</p>
+                <p className="mt-1 text-sm text-white/80">that&apos;s 20 extra avatars for just $4.00 more</p>
                 <Link
                   href="/auth/register"
                   className={cn(
@@ -503,7 +503,7 @@ export default function AvatarsPage() {
                   'bg-white text-tp-black hover:bg-tp-paper'
                 )}
               >
-                Create My Avatars — $15.90
+                Create My Avatars — $4.90
                 <ArrowRight className="h-5 w-5" aria-hidden="true" />
               </Link>
             </div>

@@ -19,8 +19,8 @@ const EXAMPLES = [
   {
     label: 'Creative Portfolio',
     detail: 'Distinctive style that still feels polished',
-    before: { src: `${BASE}/portrait-man-before.webp`, alt: 'Casual selfie of a man before AI processing' },
-    after: { src: `${BASE}/portrait-man-editorial.webp`, alt: 'Editorial-style AI portrait of a man for a creative portfolio' },
+    before: { src: `${BASE}/portrait-woman-creative-before.webp`, alt: 'Professional woman before AI processing' },
+    after: { src: `${BASE}/portrait-woman-editorial.webp`, alt: 'Editorial-style AI portrait of a woman for a creative portfolio' },
   },
 ] as const;
 
