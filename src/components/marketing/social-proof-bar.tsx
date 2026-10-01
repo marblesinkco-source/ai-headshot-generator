@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Camera, Clock, Image, ShieldCheck, Tag } from "lucide-react";
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const metrics = [
   {
@@ -26,7 +27,7 @@ const metrics = [
   },
   {
     icon: Tag,
-    value: "From $9.90",
+    value: `From ${BASE_PRICE_DISPLAY}`,
     description: "Save up to 95% vs studios",
   },
 ] as const;

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Camera, Layers, Clock, Tag } from 'lucide-react';
+import { BASE_PRICE } from '@/config/pricing';
 
 interface Stat {
   icon: React.ElementType;
@@ -17,7 +18,7 @@ const stats: Stat[] = [
   { icon: Camera, value: 40, suffix: '+', label: 'Photos Per Session', detail: 'A full set to choose from' },
   { icon: Layers, value: 11, suffix: '+', label: 'Photo Categories', detail: 'Professional, dating, pets & more' },
   { icon: Clock, value: 2, prefix: '< ', suffix: ' hrs', label: 'Delivery Time', detail: 'Most orders ready in under 2 hours' },
-  { icon: Tag, value: 9.9, prefix: '$', decimals: 2, label: 'Starting Price', detail: 'Pay once, no subscription' },
+  { icon: Tag, value: BASE_PRICE, prefix: '$', decimals: 2, label: 'Starting Price', detail: 'Pay once, no subscription' },
 ];
 
 const DURATION = 1800;

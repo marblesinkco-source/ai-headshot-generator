@@ -9,9 +9,9 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
-const pageTitle = "AI Headshots for LinkedIn | Professional Profile Photos | TailorPic";
+const pageTitle = 'AI Headshots for LinkedIn Profile Photos | TailorPic';
 const pageDescription =
-  "Get a polished LinkedIn headshot from a few selfies. AI-generated professional profile photos that help you stand out to recruiters and clients, delivered in about 2 hours. Starting at $9.90.";
+  'Get a polished LinkedIn headshot from a few selfies. AI-generated professional profile photos that help you stand out to recruiters and clients. From $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

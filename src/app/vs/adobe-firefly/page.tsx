@@ -9,9 +9,9 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const competitor = "Adobe Firefly";
-const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
+const title = 'TailorPic vs Adobe Firefly: AI Headshot Generator Comparison';
 const description =
-  "Compare TailorPic vs Adobe Firefly for headshots. TailorPic is a one-time $9.90 for 40+ photos with LoRA-trained likeness, built for headshots rather than general image creation.";
+  'Compare TailorPic vs Adobe Firefly for headshots. TailorPic is a one-time $9.90 for 40+ LoRA-trained photos, built for headshots, not general image creation.';
 const path = '/vs/adobe-firefly';
 
 export const metadata: Metadata = {

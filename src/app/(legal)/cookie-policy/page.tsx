@@ -4,13 +4,13 @@ import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
-  title: 'Cookie Policy | TailorPic',
+  title: { absolute: 'Cookie Policy: How TailorPic Uses Cookies & Storage' },
   description:
     'Learn how TailorPic uses cookies and local storage: essential session cookies, and analytics cookies that are only set with your consent.',
   alternates: { canonical: '/cookie-policy' },
-  openGraph: generateOGMetadata({ title: 'Cookie Policy | TailorPic', description: 
+  openGraph: generateOGMetadata({ title: 'Cookie Policy: How TailorPic Uses Cookies & Storage', description: 
       'Learn how TailorPic uses cookies. Analytics cookies are only set with your explicit consent.', path: '/cookie-policy' }),
-  twitter: generateTwitterMetadata({ title: 'Cookie Policy | TailorPic', description: 
+  twitter: generateTwitterMetadata({ title: 'Cookie Policy: How TailorPic Uses Cookies & Storage', description: 
       'Learn how TailorPic uses cookies. Analytics cookies are only set with your explicit consent.' }),
 };
 

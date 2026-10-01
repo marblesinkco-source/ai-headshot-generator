@@ -8,12 +8,13 @@ import { getAllBlogPosts } from '@/config/blog';
 import { BlogListing } from '@/components/blog/blog-listing';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { ArrowRight, Camera, Sparkles, BookOpen } from 'lucide-react';
+import { formatDate } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'Blog: AI Headshot Tips, Guides & Comparisons',
+  title: { absolute: 'TailorPic Blog: AI Headshot Tips, Guides & Comparisons' },
   keywords: ['AI headshots', 'LinkedIn headshot tips', 'AI photography guides', 'professional headshots', 'AI headshot alternatives'],
   authors: [{ name: `${siteConfig.name} Team` }],
-  description: `Tips, guides, and insights about AI photography from ${siteConfig.name}. Learn how to get the most from AI-generated photos.`,
+  description: 'Tips, guides and insights about AI photography from TailorPic. Learn how to get the most from AI-generated headshots, profile photos and team photos.',
   alternates: { canonical: '/blog' },
   openGraph: generateOGMetadata({ title: `Blog | ${siteConfig.name}`, description: `Tips, guides, and insights about AI photography from ${siteConfig.name}.`, path: '/blog' }),
   twitter: generateTwitterMetadata({ title: `Blog | ${siteConfig.name}`, description: `Tips, guides, and insights about AI photography from ${siteConfig.name}.` }),
@@ -70,14 +71,6 @@ const placeholderPosts = [
     readingTime: '5 min read',
   },
 ];
-
-function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString('en-US', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
-  });
-}
 
 export default function BlogPage() {
   const allPosts = getAllBlogPosts();
@@ -267,7 +260,7 @@ export default function BlogPage() {
               required
               autoComplete="email"
               placeholder="you@example.com"
-              className="w-full flex-1 rounded-tp-button border border-tp-line bg-white px-4 py-3 text-sm text-tp-ink placeholder:text-tp-muted focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/30"
+              className="w-full flex-1 rounded-tp-button border border-tp-line bg-white px-4 py-3 text-sm text-tp-ink placeholder:text-tp-muted/80 focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/30"
             />
             <button
               type="submit"

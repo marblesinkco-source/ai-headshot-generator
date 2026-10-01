@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Yoga Instructors | TailorPic";
 const pageDescription =
-  "Professional AI headshots for yoga instructors, studio owners, and teacher trainers. Build a calm, credible presence on class schedules, studio sites, and social media with a portrait delivered in about 2 hours.";
+  'Professional AI headshots for yoga instructors, studio owners and teacher trainers. Build a calm, credible presence on class schedules and social media.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

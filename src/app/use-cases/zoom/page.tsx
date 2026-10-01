@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Zoom & Video Calls | TailorPic";
 const pageDescription =
-  "Professional profile photos for Zoom, Microsoft Teams and Google Meet. Look sharp when your camera is off, from a few selfies. Delivered in about 2 hours. Starting at $9.90.";
+  'Professional profile photos for Zoom, Microsoft Teams and Google Meet. Look sharp when your camera is off, from a few selfies. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

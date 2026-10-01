@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Psychologists | TailorPic";
 const pageDescription =
-  "Professional AI headshots for clinical, counseling, and research psychologists. Build trust on your practice website, directory listings, and LinkedIn with a warm, credible portrait delivered in about 2 hours.";
+  'Professional AI headshots for clinical, counseling and research psychologists. Build trust on your practice website, directory listings and LinkedIn.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

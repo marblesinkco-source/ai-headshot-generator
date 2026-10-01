@@ -12,7 +12,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Paramedics & EMTs | TailorPic";
 const pageDescription =
-  "Professional AI headshots for paramedics, EMTs, and EMS leaders. Get a credible, caring portrait for agency pages, credentials, and LinkedIn delivered in about 2 hours.";
+  'Professional AI headshots for paramedics, EMTs, and EMS leaders. Get a credible, caring portrait for agency pages, credentials, and LinkedIn.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

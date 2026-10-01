@@ -15,21 +15,21 @@ import {
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
-const title = 'Success Stories | AI Headshot Scenarios';
+const title = 'TailorPic Success Stories: How People Use AI Headshots';
 const description =
-  'See how professionals use TailorPic to get polished, consistent AI headshots for their careers, teams, and businesses.';
+  'See how professionals use TailorPic to get polished, consistent AI headshots for their careers, teams and businesses, from solo profiles to whole teams.';
 
 export const metadata: Metadata = {
-  title,
+  title: { absolute: title },
   description,
   alternates: { canonical: '/success-stories' },
   openGraph: generateOGMetadata({
-    title: `Success Stories | ${siteConfig.name}`,
+    title: title,
     description,
     path: '/success-stories',
   }),
   twitter: generateTwitterMetadata({
-    title: `Success Stories | ${siteConfig.name}`,
+    title: title,
     description,
   }),
 };

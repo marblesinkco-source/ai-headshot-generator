@@ -9,9 +9,9 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
-const pageTitle = "AI Headshots for Fitness Trainers & Personal Coaches | TailorPic";
+const pageTitle = 'AI Headshots for Fitness Trainers & Coaches | TailorPic';
 const pageDescription =
-  "Professional AI headshots for personal trainers, fitness coaches, yoga instructors, and gym owners. Stand out on Instagram, booking apps, and your website with a confident portrait delivered in about 2 hours.";
+  'Professional AI headshots for personal trainers, fitness coaches, yoga instructors and gym owners. Stand out on Instagram, booking apps and your website.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

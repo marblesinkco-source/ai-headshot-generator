@@ -9,9 +9,9 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const competitor = "Pixar-Style AI Portrait Tools";
-const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
+const title = 'TailorPic vs Pixar-Style AI Portraits: Headshot Comparison';
 const description =
-  "Compare TailorPic vs Pixar-style AI portrait tools. Cartoon 3D avatars are fun, but TailorPic creates 40+ realistic professional headshots from selfies for $9.90.";
+  'Compare TailorPic vs Pixar-style AI portrait tools. Cartoon 3D avatars are fun, but TailorPic makes 40+ realistic headshots from selfies for $9.90.';
 const path = '/vs/pixar-style';
 const canonicalUrl = 'https://www.tailorpic.com/vs/pixar-style';
 

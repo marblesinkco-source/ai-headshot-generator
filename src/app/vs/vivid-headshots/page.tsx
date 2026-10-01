@@ -9,7 +9,7 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const competitor = "Vivid Headshots";
-const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
+const title = 'TailorPic vs Vivid Headshots: AI Headshot Comparison';
 const description =
   "Compare TailorPic vs Vivid Headshots for AI headshots. TailorPic offers 40+ photos in 11 categories for a one-time $9.90 with a 14-day money-back guarantee.";
 const path = '/vs/vivid-headshots';

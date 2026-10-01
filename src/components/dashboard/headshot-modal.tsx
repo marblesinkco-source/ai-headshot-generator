@@ -126,6 +126,7 @@ export function HeadshotModal({
             src={current.imageUrl}
             alt={`Headshot ${currentIndex + 1}`}
             className="max-h-[80vh] max-w-[80vw] rounded-lg object-contain shadow-2xl"
+            decoding="async"
           />
 
           {/* Next button */}

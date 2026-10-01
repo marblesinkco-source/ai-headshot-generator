@@ -3,6 +3,7 @@ import { z } from 'zod';
 import { createClient } from '@/lib/supabase/server';
 import JSZip from 'jszip';
 import { rateLimit } from '@/lib/rate-limit';
+import { logger } from '@/lib/logger';
 
 export async function GET(
   request: NextRequest,
@@ -90,7 +91,7 @@ export async function GET(
         .download(headshot.storage_path);
 
       if (downloadError || !fileData) {
-        console.error('Failed to download headshot:', downloadError);
+        logger.error('Failed to download headshot:', downloadError);
         return NextResponse.json(
           { error: 'Failed to download headshot' },
           { status: 500 }
@@ -118,7 +119,7 @@ export async function GET(
       .eq('status', 'completed');
 
     if (headshotsError) {
-      console.error('Failed to fetch headshots:', headshotsError);
+      logger.error('Failed to fetch headshots:', headshotsError);
       return NextResponse.json(
         { error: 'Failed to fetch headshots' },
         { status: 500 }
@@ -150,7 +151,7 @@ export async function GET(
             zip.file(fileName, buffer);
           }
         } catch (err) {
-          console.error(`Failed to add headshot ${headshot.id} to ZIP:`, err);
+          logger.error(`Failed to add headshot ${headshot.id} to ZIP:`, err);
         }
       })
     );
@@ -170,7 +171,7 @@ export async function GET(
       },
     });
   } catch (error) {
-    console.error('Download error:', error);
+    logger.error('Download error:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

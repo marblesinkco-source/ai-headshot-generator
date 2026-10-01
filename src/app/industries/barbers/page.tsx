@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Barbers & Barbershops | TailorPic";
 const pageDescription =
-  "Professional AI headshots for barbers, barbershop owners, and master stylists. Fill your chair with a sharp portrait for your booking page, Instagram, and shop website, delivered in about 2 hours.";
+  'Professional AI headshots for barbers, shop owners and master stylists. Fill your chair with a sharp portrait for your booking page, Instagram and shop website.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

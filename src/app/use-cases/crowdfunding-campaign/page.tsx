@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Crowdfunding Campaigns | TailorPic";
 const pageDescription =
-  "Professional founder photos for Kickstarter, Indiegogo and GoFundMe campaign pages. Build backer trust with polished portraits from a few selfies. Starting at $9.90.";
+  'Professional founder photos for Kickstarter, Indiegogo and GoFundMe campaign pages. Build backer trust with polished portraits from a few selfies. From $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

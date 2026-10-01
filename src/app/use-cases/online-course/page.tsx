@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Online Course Instructors | TailorPic";
 const pageDescription =
-  "Professional instructor photos for Udemy, Teachable, Kajabi and your own course site. Build student trust from a few selfies, delivered in about 2 hours. Starting at $9.90.";
+  'Professional instructor photos for Udemy, Teachable, Kajabi and your own course site. Build student trust from a few selfies. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

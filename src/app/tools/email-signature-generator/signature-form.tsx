@@ -155,14 +155,14 @@ export function SignatureForm() {
   };
 
   const inputClass =
-    'mt-1.5 w-full rounded-tp-button border border-tp-line bg-white px-3 py-2.5 text-sm text-tp-ink placeholder:text-tp-muted/60 focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/30';
+    'mt-1.5 w-full rounded-tp-button border border-tp-line bg-white px-3 py-2.5 text-sm text-tp-ink placeholder:text-tp-muted/80 focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/30';
 
   return (
     <div className="grid gap-6 lg:grid-cols-2">
       {/* Inputs */}
       <div className="space-y-6">
         <div className="rounded-tp-card border border-tp-line bg-white p-5 sm:p-6">
-          <h2 className="text-lg font-bold text-tp-ink">Your details</h2>
+          <h2 className="text-lg font-display font-normal text-tp-ink">Your details</h2>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             {FIELD_DEFS.map((f) => (
               <label
@@ -186,7 +186,7 @@ export function SignatureForm() {
         </div>
 
         <div className="rounded-tp-card border border-tp-line bg-white p-5 sm:p-6">
-          <h2 className="flex items-center gap-2 text-lg font-bold text-tp-ink">
+          <h2 className="flex items-center gap-2 text-lg font-display font-normal text-tp-ink">
             <Palette className="h-5 w-5 text-tp-bronze-ink" aria-hidden="true" />
             Style
           </h2>
@@ -241,7 +241,7 @@ export function SignatureForm() {
       {/* Preview */}
       <div className="space-y-6">
         <div className="rounded-tp-card border border-tp-line bg-white p-5 sm:p-6">
-          <h2 className="flex items-center gap-2 text-lg font-bold text-tp-ink">
+          <h2 className="flex items-center gap-2 text-lg font-display font-normal text-tp-ink">
             <Eye className="h-5 w-5 text-tp-bronze-ink" aria-hidden="true" />
             Live preview
           </h2>

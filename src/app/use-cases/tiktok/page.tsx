@@ -9,9 +9,9 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
-const pageTitle = "AI Photos for TikTok | Profile Pictures & Thumbnails | TailorPic";
+const pageTitle = 'AI Photos for TikTok Profiles & Thumbnails | TailorPic';
 const pageDescription =
-  "Create eye-catching TikTok profile photos and video thumbnails from a few selfies. AI-generated portraits that help you grow your audience, delivered in about 2 hours. Starting at $9.90.";
+  'Create eye-catching TikTok profile photos and video thumbnails from a few selfies. AI-generated portraits that help you grow your audience. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

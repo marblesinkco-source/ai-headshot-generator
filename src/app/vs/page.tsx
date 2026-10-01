@@ -10,10 +10,10 @@ import { VsDirectory, type VsGroup } from './vs-directory';
 
 const title = 'TailorPic vs Alternatives: Compare AI Headshot Tools';
 const description =
-  'Compare TailorPic with 70+ AI headshot generators, AI image tools and photo editors. See features, pricing, photo quality and delivery side by side to find the right fit.';
+  'Compare TailorPic with 70+ AI headshot generators, image tools and photo editors. See features, pricing, photo quality and delivery side by side.';
 
 export const metadata: Metadata = {
-  title,
+  title: { absolute: title },
   description,
   alternates: { canonical: '/vs' },
   openGraph: generateOGMetadata({ title, description, path: '/vs', type: 'vs' }),

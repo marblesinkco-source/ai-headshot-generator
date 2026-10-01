@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Chiropractors | TailorPic";
 const pageDescription =
-  "Professional AI headshots for chiropractors and chiropractic clinics. Build patient trust on your practice website, Google Business profile, and social media with a polished portrait delivered in about 2 hours.";
+  'Professional AI headshots for chiropractors and chiropractic clinics. Build patient trust on your practice website, Google profile and social media.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

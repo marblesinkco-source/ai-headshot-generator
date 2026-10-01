@@ -27,11 +27,11 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: `AI Headshots API for Developers | ${siteConfig.name}`,
+  title: { absolute: 'TailorPic API: AI Headshot Generation for Developers' },
   description: `Integrate AI headshot generation into your own app. The ${siteConfig.name} API is in development. Request early access to be notified when it launches.`,
   alternates: { canonical: '/developer-api' },
-  openGraph: generateOGMetadata({ title: `AI Headshots API for Developers | ${siteConfig.name}`, description: `Add professional AI headshots to your platform with the upcoming ${siteConfig.name} REST API. Request early access today.`, path: '/developer-api' }),
-  twitter: generateTwitterMetadata({ title: `AI Headshots API for Developers | ${siteConfig.name}`, description: `Integrate AI headshot generation into your app. Request early access to the upcoming ${siteConfig.name} API.` }),
+  openGraph: generateOGMetadata({ title: 'TailorPic API: AI Headshot Generation for Developers', description: `Add professional AI headshots to your platform with the upcoming ${siteConfig.name} REST API. Request early access today.`, path: '/developer-api' }),
+  twitter: generateTwitterMetadata({ title: 'TailorPic API: AI Headshot Generation for Developers', description: `Integrate AI headshot generation into your app. Request early access to the upcoming ${siteConfig.name} API.` }),
 };
 
 /* ------------------------------------------------------------------ */

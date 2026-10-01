@@ -375,8 +375,8 @@ export default function SamplesPage() {
                         className={`relative aspect-square overflow-hidden rounded-tp-button bg-gradient-to-br ${card.gradientBefore}`}
                       >
                         <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                          <Upload className="h-6 w-6 text-tp-muted/60" />
-                          <span className="text-xs font-medium text-tp-muted/60">
+                          <Upload className="h-6 w-6 text-tp-muted" />
+                          <span className="text-xs font-medium text-tp-muted">
                             Upload
                           </span>
                         </div>

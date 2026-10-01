@@ -24,13 +24,13 @@ import {
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 export const metadata: Metadata = {
-  title: 'AI Headshots for Accountants & Financial Professionals | TailorPic',
+  title: { absolute: 'AI Headshots for Accountants & CPAs | TailorPic' },
   description:
-    'Get professional headshots for accountants, CPAs, and financial professionals. Firm-wide consistency, CPA directory photos, and quick updates for new hires — delivered in 2 hours.',
+    'Get professional headshots for accountants, CPAs and financial professionals. Firm-wide consistency, CPA directory photos and quick updates for new hires.',
   alternates: { canonical: '/industries/accountants' },
-  openGraph: generateOGMetadata({ title: 'AI Headshots for Accountants & Financial Professionals | TailorPic', description: 'AI-powered professional headshots for accounting and financial professionals. Firm-consistent, directory-ready photos delivered in hours.', path: '/industries/accountants', type: 'industry' }),
+  openGraph: generateOGMetadata({ title: 'AI Headshots for Accountants & CPAs | TailorPic', description: 'AI-powered professional headshots for accounting and financial professionals. Firm-consistent, directory-ready photos delivered in hours.', path: '/industries/accountants', type: 'industry' }),
   
-  twitter: generateTwitterMetadata({ title: 'AI Headshots for Accountants & Financial Professionals | TailorPic', description: 'AI-powered professional headshots for accounting and financial professionals. Firm-consistent, directory-ready photos delivered in hours.', type: 'industry' }),
+  twitter: generateTwitterMetadata({ title: 'AI Headshots for Accountants & CPAs | TailorPic', description: 'AI-powered professional headshots for accounting and financial professionals. Firm-consistent, directory-ready photos delivered in hours.', type: 'industry' }),
 };
 
 const painPoints = [

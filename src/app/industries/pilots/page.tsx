@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Pilots & Aviation Professionals | TailorPic";
 const pageDescription =
-  "Professional AI headshots for airline pilots, flight instructors, charter pilots, and aviation professionals. Stand out on LinkedIn, in crew profiles, and on job applications with a polished portrait delivered in about 2 hours.";
+  'Professional AI headshots for airline pilots, flight instructors, charter pilots and aviation professionals. Stand out on LinkedIn and in crew profiles.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

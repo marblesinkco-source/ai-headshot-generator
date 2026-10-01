@@ -22,9 +22,9 @@ import {
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
-  title: 'Professional Headshots for Real Estate Agents | TailorPic',
+  title: { absolute: 'AI Headshots for Real Estate Agents | TailorPic' },
   description:
-    'Get MLS-ready professional headshots for real estate agents and brokers. Build trust, win listings, and stand out in a competitive market — all without the studio hassle.',
+    'Get MLS-ready professional headshots for real estate agents and brokers. Build trust, win listings and stand out in a competitive market without a studio.',
   alternates: { canonical: '/industries/real-estate' },
   openGraph: generateOGMetadata({ title: 'Real Estate Agent Headshots | TailorPic', description: 'AI-powered professional headshots built for real estate. MLS-ready, brand-consistent team photos delivered in hours.', path: '/industries/real-estate', type: 'industry' }),
   
@@ -296,7 +296,7 @@ export default function RealEstateIndustryPage() {
       {/* Use cases */}
       <section className="border-y border-tp-line bg-tp-paper py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-2xl font-bold text-tp-ink">
+          <h2 className="text-center text-2xl font-display font-normal text-tp-ink">
             One Headshot, Everywhere You Need It
           </h2>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">

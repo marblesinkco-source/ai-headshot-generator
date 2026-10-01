@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Pixelcut";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs Pixelcut for AI headshots. TailorPic delivers 40+ LoRA-trained headshots across 11 categories for a one-time $9.90; Pixelcut is a general-purpose AI photo editor with background removal, upscaling and design tools.";
+  'Compare TailorPic vs Pixelcut. TailorPic delivers 40+ LoRA-trained headshots for a one-time $9.90; Pixelcut is a general AI photo editor with design tools.';
 const path = '/vs/pixelcut';
 
 export const metadata: Metadata = {

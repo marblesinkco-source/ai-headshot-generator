@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { createClient } from '@/lib/supabase/server';
+import { csrfGuard } from '@/lib/security';
+import { logger } from '@/lib/logger';
+import { rateLimit } from '@/lib/rate-limit';
+import { tooManyRequests } from '@/lib/security';
 
 const favoriteSchema = z.object({
   headshotId: z.string().uuid(),
@@ -11,6 +15,9 @@ export async function POST(
   request: NextRequest,
   { params }: { params: { orderId: string } }
 ) {
+  const csrf = csrfGuard(request);
+  if (csrf) return csrf;
+
   try {
     const { orderId } = params;
 
@@ -34,12 +41,16 @@ export async function POST(
       );
     }
 
+    if (!rateLimit({ key: `favorite:${user.id}`, limit: 60, windowMs: 60 * 1000 }).success) {
+      return tooManyRequests();
+    }
+
     const body = await request.json();
     const parsed = favoriteSchema.safeParse(body);
 
     if (!parsed.success) {
       return NextResponse.json(
-        { error: 'Invalid request', details: parsed.error.flatten() },
+        { error: 'Invalid request' },
         { status: 400 }
       );
     }
@@ -82,7 +93,7 @@ export async function POST(
       isFavorite: headshot.is_favorite,
     });
   } catch (error) {
-    console.error('Favorite error:', error);
+    logger.error('Favorite error:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

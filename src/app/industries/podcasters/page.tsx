@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Podcasters | TailorPic";
 const pageDescription =
-  "Professional AI headshots for podcast hosts, guests, and audio creators. Put a polished face on your show site, media kit, and social profiles with a portrait delivered in about 2 hours.";
+  'Professional AI headshots for podcast hosts, guests, and audio creators. Put a polished face on your show site, media kit, and social profiles with a portrait.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

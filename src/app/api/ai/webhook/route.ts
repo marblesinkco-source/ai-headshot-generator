@@ -7,6 +7,7 @@ import { BACKGROUNDS, STYLES, QUALITY_SETTINGS } from '@/config/ai';
 import { Resend } from 'resend';
 import { siteConfig } from '@/config/site';
 import { buildPhotosReadyEmail, buildGenerationFailedEmail } from '@/lib/emails';
+import { logger } from '@/lib/logger';
 
 const replicate = new Replicate({
   auth: process.env.REPLICATE_API_TOKEN!,
@@ -37,7 +38,7 @@ export async function POST(request: NextRequest) {
       ).catch(() => false);
 
       if (!isValid) {
-        console.error('Invalid Replicate webhook signature');
+        logger.error('Invalid Replicate webhook signature');
         return NextResponse.json({ error: 'Invalid signature' }, { status: 401 });
       }
     }
@@ -49,7 +50,7 @@ export async function POST(request: NextRequest) {
     const parsed = replicateWebhookSchema.safeParse(JSON.parse(body));
 
     if (!parsed.success) {
-      console.error('Invalid webhook payload:', parsed.error.flatten());
+      logger.error('Invalid webhook payload:', parsed.error.flatten());
       return NextResponse.json({ error: 'Invalid payload' }, { status: 400 });
     }
 
@@ -62,7 +63,7 @@ export async function POST(request: NextRequest) {
       return handleGenerationComplete(predictionId, status, output, predictionError);
     }
   } catch (error) {
-    console.error('AI webhook error:', error);
+    logger.error('AI webhook error:', error);
     return NextResponse.json(
       { error: 'Webhook handler failed' },
       { status: 500 }
@@ -85,12 +86,12 @@ async function handleTrainingComplete(
   const supabase = createAdminClient();
 
   if (!orderId) {
-    console.error('Training webhook missing orderId');
+    logger.error('Training webhook missing orderId');
     return NextResponse.json({ error: 'Missing orderId' }, { status: 400 });
   }
 
   if (status === 'failed' || status === 'canceled') {
-    console.error(`Training ${trainingId} ${status}:`, error);
+    logger.error(`Training ${trainingId} ${status}:`, error);
     await supabase
       .from('orders')
       .update({ status: 'failed' })
@@ -148,12 +149,12 @@ async function handleTrainingComplete(
         }
       }
     } catch (fetchErr) {
-      console.error('Failed to fetch training output:', fetchErr);
+      logger.error('Failed to fetch training output:', fetchErr);
     }
   }
 
   if (!trainedModelVersion && !loraWeightsUrl) {
-    console.error('No trained model version or LoRA weights found for training:', trainingId);
+    logger.error('No trained model version or LoRA weights found for training:', trainingId);
     await supabase
       .from('orders')
       .update({ status: 'failed' })
@@ -171,7 +172,7 @@ async function handleTrainingComplete(
   // Now start generating images using the trained model
   const category = getCategoryById(categoryId);
   if (!category) {
-    console.error('Invalid categoryId:', categoryId);
+    logger.error('Invalid categoryId:', categoryId);
     await supabase
       .from('orders')
       .update({ status: 'failed' })
@@ -187,7 +188,7 @@ async function handleTrainingComplete(
     .single();
 
   if (!order) {
-    console.error('Order not found:', orderId);
+    logger.error('Order not found:', orderId);
     return NextResponse.json({ received: true });
   }
 
@@ -290,7 +291,7 @@ async function handleTrainingComplete(
 
         return prediction.id;
       } catch (err) {
-        console.error(`Failed to create prediction for ${styleId}/${backgroundId}:`, err);
+        logger.error(`Failed to create prediction for ${styleId}/${backgroundId}:`, err);
         return null;
       }
     })
@@ -300,7 +301,7 @@ async function handleTrainingComplete(
     (r) => r.status === 'fulfilled' && r.value !== null
   ).length;
 
-  console.info(
+  logger.info(
     `[ai-webhook] Training complete for order ${orderId}. Launched ${successCount}/${generations.length} generation predictions.`
   );
 
@@ -335,7 +336,7 @@ async function handleGenerationComplete(
     .single();
 
   if (lookupError || !headshot) {
-    console.error('Headshot not found for prediction:', predictionId);
+    logger.error('Headshot not found for prediction:', predictionId);
     return NextResponse.json({ received: true }, { status: 200 });
   }
 
@@ -350,7 +351,7 @@ async function handleGenerationComplete(
     }
 
     if (!outputUrl) {
-      console.error('No output URL for prediction:', predictionId);
+      logger.error('No output URL for prediction:', predictionId);
       await supabase
         .from('generated_headshots')
         .update({ status: 'failed', error: 'No output generated' })
@@ -370,7 +371,7 @@ async function handleGenerationComplete(
           });
 
         if (uploadError) {
-          console.error('Failed to upload generated headshot:', uploadError);
+          logger.error('Failed to upload generated headshot:', uploadError);
           await supabase
             .from('generated_headshots')
             .update({ status: 'failed', error: 'Storage upload failed' })
@@ -386,7 +387,7 @@ async function handleGenerationComplete(
             .eq('id', headshot.id);
         }
       } catch (downloadErr) {
-        console.error('Failed to download generated image:', downloadErr);
+        logger.error('Failed to download generated image:', downloadErr);
         await supabase
           .from('generated_headshots')
           .update({ status: 'failed', error: 'Failed to download generated image' })
@@ -501,7 +502,7 @@ async function sendCompletionEmail(
       });
     }
   } catch (emailError) {
-    console.error('Failed to send completion email:', emailError);
+    logger.error('Failed to send completion email:', emailError);
   }
 }
 
@@ -531,6 +532,6 @@ async function sendFailureEmail(
       });
     }
   } catch (emailError) {
-    console.error('Failed to send failure email:', emailError);
+    logger.error('Failed to send failure email:', emailError);
   }
 }

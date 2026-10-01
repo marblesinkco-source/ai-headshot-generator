@@ -9,9 +9,9 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const competitor = "AI Headshot Generator";
-const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
+const title = 'TailorPic vs Generic AI Headshot Generators: Guide';
 const description =
-  "TailorPic vs AI Headshot Generator tools: a one-time $9.90 for 40+ LoRA-trained photos in 11 categories versus generic generators. See what to compare before you buy.";
+  'TailorPic vs AI headshot generator tools: a one-time $9.90 for 40+ LoRA-trained photos in 11 categories vs generic generators. See what to compare first.';
 const path = '/vs/ai-headshot-generator';
 
 export const metadata: Metadata = {

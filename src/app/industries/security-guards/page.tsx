@@ -23,7 +23,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Security Guards & Officers | TailorPic";
 const pageDescription =
-  "Professional AI headshots for security guards, officers, and security company owners. Get a credible portrait for ID profiles, resumes, and LinkedIn delivered in about 2 hours.";
+  'Professional AI headshots for security guards, officers, and security company owners. Get a credible portrait for ID profiles, resumes, and LinkedIn.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

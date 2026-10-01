@@ -23,7 +23,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'LinkedIn Headshots — AI-Generated Professional Profile Photos | TailorPic',
+  title: { absolute: 'AI LinkedIn Headshots: Professional Profile Photos' },
   description:
     'Get AI-generated LinkedIn headshots with clean backgrounds, natural expressions and professional lighting. A better LinkedIn profile photo without a photoshoot.',
   alternates: { canonical: '/linkedin-headshots' },

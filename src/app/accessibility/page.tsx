@@ -7,13 +7,13 @@ import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
-  title: 'Accessibility Statement | TailorPic',
+  title: { absolute: 'Accessibility Statement: Our WCAG 2.1 AA Commitment' },
   description:
-    'TailorPic is committed to making our website usable for everyone. Read about our WCAG 2.1 Level AA target, the accessibility features we have implemented, known limitations, and how to contact us.',
+    'We want our website to be usable for everyone. Read about our WCAG 2.1 Level AA target, accessibility features, known limitations and how to reach us.',
   alternates: { canonical: '/accessibility' },
-  openGraph: generateOGMetadata({ title: 'Accessibility Statement | TailorPic', description: 
+  openGraph: generateOGMetadata({ title: 'Accessibility Statement: Our WCAG 2.1 AA Commitment', description: 
       'Our commitment to digital accessibility, our WCAG 2.1 Level AA target, known limitations, and how to report an accessibility issue.', path: '/accessibility' }),
-  twitter: generateTwitterMetadata({ title: 'Accessibility Statement | TailorPic', description: 
+  twitter: generateTwitterMetadata({ title: 'Accessibility Statement: Our WCAG 2.1 AA Commitment', description: 
       'Our commitment to digital accessibility, our WCAG 2.1 Level AA target, known limitations, and how to report an accessibility issue.' }),
 };
 
@@ -92,7 +92,7 @@ export default function AccessibilityPage() {
 
       <section className="bg-white py-14">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-tp-ink">Our commitment</h2>
+          <h2 className="text-2xl font-display font-normal tracking-tight text-tp-ink">Our commitment</h2>
           <div className="mt-6 space-y-4 text-base leading-relaxed text-tp-muted">
             <p>
               We believe everyone should be able to create professional photos with{' '}
@@ -105,7 +105,7 @@ export default function AccessibilityPage() {
 
       <section className="border-y border-tp-line bg-tp-paper py-14">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-tp-ink">Conformance target</h2>
+          <h2 className="text-2xl font-display font-normal tracking-tight text-tp-ink">Conformance target</h2>
           <div className="mt-6 space-y-4 text-base leading-relaxed text-tp-muted">
             <p>
               We strive to conform to the{' '}
@@ -129,7 +129,7 @@ export default function AccessibilityPage() {
 
       <section className="bg-white py-14">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-tp-ink">
+          <h2 className="text-2xl font-display font-normal tracking-tight text-tp-ink">
             Accessibility features
           </h2>
           <p className="mt-6 text-base leading-relaxed text-tp-muted">
@@ -148,7 +148,7 @@ export default function AccessibilityPage() {
 
       <section className="border-y border-tp-line bg-tp-paper py-14">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-tp-ink">Known limitations</h2>
+          <h2 className="text-2xl font-display font-normal tracking-tight text-tp-ink">Known limitations</h2>
           <p className="mt-6 text-base leading-relaxed text-tp-muted">
             Despite our efforts, some parts of the site may not yet be fully accessible. Areas we
             know need improvement:
@@ -166,7 +166,7 @@ export default function AccessibilityPage() {
 
       <section className="bg-white py-14">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-tp-ink">
+          <h2 className="text-2xl font-display font-normal tracking-tight text-tp-ink">
             Feedback and contact
           </h2>
           <div className="mt-6 space-y-4 text-base leading-relaxed text-tp-muted">

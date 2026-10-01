@@ -5,10 +5,14 @@ import { createClient } from '@/lib/supabase/server';
 import { getCategoryById, getPackageById, type CategoryId } from '@/config/categories';
 import { siteConfig } from '@/config/site';
 import { rateLimit } from '@/lib/rate-limit';
+import { csrfGuard } from '@/lib/security';
+import { logger } from '@/lib/logger';
+import { MissingEnvError, requireEnvs } from '@/lib/env';
 
-const replicate = new Replicate({
-  auth: process.env.REPLICATE_API_TOKEN!,
-});
+function getReplicate() {
+  requireEnvs(['REPLICATE_API_TOKEN']);
+  return new Replicate({ auth: process.env.REPLICATE_API_TOKEN });
+}
 
 /** Flux LoRA trainer model on Replicate */
 const FLUX_TRAIN_MODEL_OWNER = 'ostris';
@@ -17,17 +21,24 @@ const FLUX_TRAIN_MODEL_VERSION =
   'd995297071a44dcb72244e6c19462f9670254b7e4a3679476e6ffb8a503aaec1';
 
 const generateSchema = z.object({
-  orderId: z.string(),
+  orderId: z.string().min(1).max(100),
 });
 
 export async function POST(request: NextRequest) {
+  const csrf = csrfGuard(request);
+  if (csrf) return csrf;
   try {
-    const body = await request.json();
+    let body: unknown;
+    try {
+      body = await request.json();
+    } catch {
+      return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
+    }
     const parsed = generateSchema.safeParse(body);
 
     if (!parsed.success) {
       return NextResponse.json(
-        { error: 'Invalid request', details: parsed.error.flatten() },
+        { error: 'Invalid request' },
         { status: 400 }
       );
     }
@@ -159,12 +170,15 @@ export async function POST(request: NextRequest) {
     for (let i = 0; i < trainingImageUrls.length; i++) {
       try {
         const imgRes = await fetch(trainingImageUrls[i]);
-        if (!imgRes.ok) continue;
+        if (!imgRes.ok) {
+          logger.warn(`Training image ${i} fetch returned HTTP ${imgRes.status}`);
+          continue;
+        }
         const imgBuffer = await imgRes.arrayBuffer();
         const ext = photos[i].storage_path.split('.').pop() || 'jpg';
         zip.file(`photo_${i}.${ext}`, imgBuffer);
-      } catch {
-        console.error(`Failed to fetch training image ${i}`);
+      } catch (imgErr) {
+        logger.error(`Failed to fetch training image ${i}`, imgErr);
       }
     }
 
@@ -179,7 +193,7 @@ export async function POST(request: NextRequest) {
       });
 
     if (zipUploadError) {
-      console.error('Failed to upload training ZIP:', zipUploadError);
+      logger.error('Failed to upload training ZIP:', zipUploadError);
       return NextResponse.json(
         { error: 'Failed to prepare training images' },
         { status: 500 }
@@ -199,19 +213,24 @@ export async function POST(request: NextRequest) {
     }
 
     // Update order status to training
-    await supabase
+    const { error: statusError } = await supabase
       .from('orders')
       .update({
         status: 'processing',
         started_at: new Date().toISOString(),
       })
       .eq('id', orderId);
+    if (statusError) {
+      logger.error('Failed to mark order as processing', statusError, { orderId });
+      return NextResponse.json({ error: 'Failed to start AI training. Please try again.' }, { status: 500 });
+    }
 
     // Start LoRA fine-tuning via Replicate
     const triggerWord = `sks${orderId.replace(/[^a-zA-Z0-9]/g, '').slice(0, 8)}`;
     const webhookUrl = `${siteConfig.url}/api/ai/webhook?type=training&orderId=${orderId}&categoryId=${categoryId}&packageId=${order.package_id}&triggerWord=${triggerWord}`;
 
     try {
+      const replicate = getReplicate();
       const training = await replicate.trainings.create(
         FLUX_TRAIN_MODEL_OWNER,
         FLUX_TRAIN_MODEL_NAME,
@@ -230,13 +249,16 @@ export async function POST(request: NextRequest) {
       );
 
       // Store training ID in order metadata
-      await supabase
+      const { error: metaError } = await supabase
         .from('orders')
         .update({
           training_id: training.id,
           trigger_word: triggerWord,
         })
         .eq('id', orderId);
+      if (metaError) {
+        logger.error('Failed to store training metadata', metaError, { orderId });
+      }
 
       return NextResponse.json({
         status: 'training',
@@ -245,13 +267,16 @@ export async function POST(request: NextRequest) {
         estimatedMinutes: 15,
       });
     } catch (trainError) {
-      console.error('Failed to start training:', trainError);
+      logger.error('Failed to start training:', trainError);
 
       // Revert order status
-      await supabase
+      const { error: revertError } = await supabase
         .from('orders')
         .update({ status: 'uploading' })
         .eq('id', orderId);
+      if (revertError) {
+        logger.error('Failed to revert order status after training failure', revertError, { orderId });
+      }
 
       return NextResponse.json(
         { error: 'Failed to start AI training. Please try again.' },
@@ -259,7 +284,11 @@ export async function POST(request: NextRequest) {
       );
     }
   } catch (error) {
-    console.error('Generation error:', error);
+    if (error instanceof MissingEnvError) {
+      logger.error('Generation misconfigured', error);
+    } else {
+      logger.error('Generation error:', error);
+    }
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

@@ -177,6 +177,7 @@ export function PhotoUploader({ orderId, onUploadComplete }: PhotoUploaderProps)
                 src={file.preview}
                 alt="Upload preview"
                 className="h-full w-full object-cover"
+                decoding="async"
               />
 
               {/* Progress overlay */}

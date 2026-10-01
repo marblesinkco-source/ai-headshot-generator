@@ -9,7 +9,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
-const pageTitle = "AI Headshots for Annual Reports & Corporate Documents | TailorPic";
+const pageTitle = 'AI Headshots for Annual Reports & Documents | TailorPic';
 const pageDescription =
   "Consistent executive and board headshots for annual reports, investor decks and corporate documents. Delivered in about 2 hours. Starting at $9.90.";
 

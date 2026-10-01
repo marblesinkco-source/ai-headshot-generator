@@ -10,6 +10,7 @@
 import { NextResponse } from 'next/server';
 import { createClient, createAdminClient } from '@/lib/supabase/server';
 import { rateLimit, getClientIp } from '@/lib/rate-limit';
+import { logger } from '@/lib/logger';
 
 export async function GET(request: Request) {
   // Rate limit: 3 exports per hour per IP
@@ -56,29 +57,46 @@ export async function GET(request: Request) {
     { name: 'generated_images', key: 'generated_images' },
   ];
 
+  const incomplete: string[] = [];
   for (const { name, key } of tables) {
     try {
-      const { data } = await admin.from(name).select('*').eq('user_id', userId);
-      exportData[key] = data || [];
-    } catch {
+      const { data, error } = await admin.from(name).select('*').eq('user_id', userId);
+      if (error) {
+        logger.warn(`Data export: query failed for table ${name}`, error);
+        exportData[key] = [];
+        incomplete.push(name);
+      } else {
+        exportData[key] = data || [];
+      }
+    } catch (err) {
+      logger.warn(`Data export: error reading table ${name}`, err);
       exportData[key] = [];
+      incomplete.push(name);
     }
   }
 
   // 3. List storage files (metadata only — not the actual files)
   for (const bucket of ['uploads', 'headshots']) {
     try {
-      const { data: files } = await admin.storage.from(bucket).list(userId);
+      const { data: files, error: listError } = await admin.storage.from(bucket).list(userId);
+      if (listError) {
+        logger.warn(`Data export: storage list failed for ${bucket}`, listError);
+        incomplete.push(`storage:${bucket}`);
+      }
       exportData[`storage_${bucket}`] = (files || []).map((f) => ({
         name: f.name,
         created_at: f.created_at,
         size: (f.metadata as Record<string, unknown>)?.size || null,
         mimetype: (f.metadata as Record<string, unknown>)?.mimetype || null,
       }));
-    } catch {
+    } catch (err) {
+      logger.warn(`Data export: error listing storage ${bucket}`, err);
+      incomplete.push(`storage:${bucket}`);
       exportData[`storage_${bucket}`] = [];
     }
   }
+
+  if (incomplete.length) exportData.incomplete_sections = incomplete;
 
   // 4. Return as downloadable JSON
   const json = JSON.stringify(exportData, null, 2);
@@ -87,6 +105,7 @@ export async function GET(request: Request) {
     status: 200,
     headers: {
       'Content-Type': 'application/json',
+      'Cache-Control': 'no-store',
       'Content-Disposition': `attachment; filename="tailorpic-data-export-${new Date().toISOString().slice(0, 10)}.json"`,
     },
   });

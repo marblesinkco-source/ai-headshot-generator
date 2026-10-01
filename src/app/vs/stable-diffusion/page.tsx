@@ -9,9 +9,9 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const competitor = "Stable Diffusion";
-const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
+const title = 'TailorPic vs Stable Diffusion: AI Headshot Comparison';
 const description =
-  "Compare TailorPic vs Stable Diffusion for headshots. Stable Diffusion is open source and DIY; TailorPic is a done-for-you LoRA service with 40+ photos for $9.90.";
+  'Compare TailorPic vs Stable Diffusion for headshots. Stable Diffusion is open source and DIY; TailorPic makes 40+ headshots from selfies for a one-time $9.90.';
 const path = '/vs/stable-diffusion';
 const canonicalUrl = 'https://www.tailorpic.com/vs/stable-diffusion';
 

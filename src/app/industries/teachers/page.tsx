@@ -9,9 +9,9 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
-const pageTitle = "AI Headshots for Teachers, Professors & Educators | TailorPic";
+const pageTitle = 'AI Headshots for Teachers & Educators | TailorPic';
 const pageDescription =
-  "Professional AI headshots for teachers, professors, tutors, and school staff. Ready for school websites, academic profiles, and conference materials, delivered in about 2 hours.";
+  'Professional AI headshots for teachers, professors, tutors, and school staff. Ready for school websites, academic profiles, and conference materials.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

@@ -8,7 +8,7 @@ import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
-const title = 'AI Expression Editor — Adjust Smile for Headshots | TailorPic';
+const title = 'AI Expression Editor: Adjust Your Smile | TailorPic';
 const description =
   'See how TailorPic\'s AI adjusts smile intensity and facial expression so your professional headshot looks warm, confident and approachable.';
 const path = '/editor/expression-editor';
@@ -97,7 +97,7 @@ export default function ExpressionEditorPage() {
 
       <section className="border-t border-tp-line bg-tp-paper">
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-          <h2 className="text-center text-2xl font-bold text-tp-ink sm:text-3xl">How it works</h2>
+          <h2 className="text-center text-2xl font-display font-normal text-tp-ink sm:text-3xl">How it works</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {steps.map((s, i) => (
               <div key={s.title} className="rounded-tp-card border border-tp-line bg-white p-6">
@@ -116,7 +116,7 @@ export default function ExpressionEditorPage() {
       </section>
 
       <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-        <h2 className="text-center text-2xl font-bold text-tp-ink sm:text-3xl">What the AI handles for you</h2>
+        <h2 className="text-center text-2xl font-display font-normal text-tp-ink sm:text-3xl">What the AI handles for you</h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
             <div key={f.title} className="rounded-tp-card border border-tp-line bg-white p-6">
@@ -132,7 +132,7 @@ export default function ExpressionEditorPage() {
 
       <section className="border-t border-tp-line bg-tp-paper">
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-          <h2 className="text-center text-2xl font-bold text-tp-ink sm:text-3xl">Who it&apos;s for</h2>
+          <h2 className="text-center text-2xl font-display font-normal text-tp-ink sm:text-3xl">Who it&apos;s for</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {useCases.map((u) => (
               <div key={u.title} className="rounded-tp-card border border-tp-line bg-white p-6">
@@ -146,7 +146,7 @@ export default function ExpressionEditorPage() {
       </section>
 
       <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
-        <h2 className="text-center text-2xl font-bold text-tp-ink sm:text-3xl">Frequently asked questions</h2>
+        <h2 className="text-center text-2xl font-display font-normal text-tp-ink sm:text-3xl">Frequently asked questions</h2>
         <div className="mt-8 space-y-3">
           {faqs.map((f) => (
             <details key={f.q} className="rounded-tp-card border border-tp-line bg-white p-5">
@@ -159,7 +159,7 @@ export default function ExpressionEditorPage() {
 
       <section className="border-t border-tp-line bg-tp-paper">
         <div className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
-          <h2 className="text-2xl font-bold text-tp-ink sm:text-3xl">
+          <h2 className="text-2xl font-display font-normal text-tp-ink sm:text-3xl">
             Smile with confidence — get AI headshots
           </h2>
           <p className="mt-3 text-tp-muted">

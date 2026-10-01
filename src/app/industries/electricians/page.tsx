@@ -12,7 +12,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Electricians | TailorPic";
 const pageDescription =
-  "Professional AI headshots for electricians, electrical contractors, and apprentices. Build trust on your website, Google profile, and truck wraps with a portrait delivered in about 2 hours.";
+  'Professional AI headshots for electricians, electrical contractors and apprentices. Build trust on your website, Google profile and truck wraps.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

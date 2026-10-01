@@ -9,9 +9,9 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const competitor = "The Multiverse AI";
-const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
+const title = 'TailorPic vs The Multiverse AI: AI Headshot Comparison';
 const description =
-  "Compare TailorPic vs The Multiverse AI. TailorPic is a one-time $9.90 for 40+ professional headshots; The Multiverse AI is a subscription starting around $14.99 per month with a social media focus.";
+  'Compare TailorPic vs The Multiverse AI. TailorPic is a one-time $9.90 for 40+ headshots; The Multiverse AI is a subscription from around $14.99 per month.';
 const path = '/vs/the-multiverse-ai';
 
 export const metadata: Metadata = {

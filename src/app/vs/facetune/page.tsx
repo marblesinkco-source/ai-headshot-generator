@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Facetune";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs Facetune for AI headshots. TailorPic delivers 40+ LoRA-trained professional headshots for a one-time $9.90; Facetune is a selfie editing app with retouching, reshaping and AI enhancement tools on a subscription.";
+  'Compare TailorPic vs Facetune. TailorPic delivers 40+ LoRA-trained headshots for a one-time $9.90; Facetune is a selfie editing app on a subscription.';
 const path = '/vs/facetune';
 
 export const metadata: Metadata = {

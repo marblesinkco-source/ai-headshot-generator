@@ -68,7 +68,7 @@ export function SocialProofToast() {
       role="status"
       aria-live="polite"
       aria-hidden={!visible}
-      className={`fixed bottom-4 left-4 z-50 w-[calc(100vw-2rem)] max-w-xs rounded-tp-card border border-tp-line bg-white shadow-lg transition-all duration-500 ease-out motion-reduce:transition-none ${
+      className={`fixed bottom-20 left-4 z-50 md:bottom-4 w-[calc(100vw-2rem)] max-w-xs rounded-tp-card border border-tp-line bg-white shadow-lg transition-all duration-500 ease-out motion-reduce:transition-none ${
         visible
           ? 'translate-y-0 opacity-100'
           : 'pointer-events-none translate-y-4 opacity-0'

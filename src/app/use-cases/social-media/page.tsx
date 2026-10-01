@@ -9,9 +9,9 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
-const pageTitle = "AI Profile Photos for Social Media | Instagram, Twitter & More | TailorPic";
+const pageTitle = 'AI Profile Photos for Social Media | TailorPic';
 const pageDescription =
-  "Create stunning profile photos for Instagram, Twitter, Facebook, TikTok, and other social media platforms. AI-generated photos that stop the scroll, delivered in about 2 hours. Starting at $9.90.";
+  'Create stunning profile photos for Instagram, Twitter, Facebook, TikTok, and other social media platforms. AI-generated photos that stop the scroll. From $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

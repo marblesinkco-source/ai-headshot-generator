@@ -10,6 +10,10 @@ import { z } from 'zod';
 import { nanoid } from 'nanoid';
 import { createClient } from '@/lib/supabase/server';
 import { createAdminClient } from '@/lib/supabase/server';
+import { csrfGuard } from '@/lib/security';
+import { logger } from '@/lib/logger';
+import { rateLimit } from '@/lib/rate-limit';
+import { tooManyRequests } from '@/lib/security';
 
 const useSchema = z.object({
   credits: z.number().int().positive(),
@@ -19,13 +23,15 @@ const useSchema = z.object({
 });
 
 export async function POST(request: NextRequest) {
+  const csrf = csrfGuard(request);
+  if (csrf) return csrf;
   try {
     const body = await request.json();
     const parsed = useSchema.safeParse(body);
 
     if (!parsed.success) {
       return NextResponse.json(
-        { error: 'Invalid request', details: parsed.error.flatten() },
+        { error: 'Invalid request' },
         { status: 400 }
       );
     }
@@ -42,6 +48,10 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
+    if (!rateLimit({ key: `credits-use:${user.id}`, limit: 20, windowMs: 60 * 1000 }).success) {
+      return tooManyRequests();
+    }
+
     // Use admin client for writes (RLS service_role)
     const admin = createAdminClient();
 
@@ -54,7 +64,7 @@ export async function POST(request: NextRequest) {
       .order('expires_at', { ascending: true });
 
     if (fetchError) {
-      console.error('Failed to fetch credits:', fetchError);
+      logger.error('Failed to fetch credits:', fetchError);
       return NextResponse.json({ error: 'Failed to fetch credits' }, { status: 500 });
     }
 
@@ -94,7 +104,7 @@ export async function POST(request: NextRequest) {
         .eq('id', pkg.id);
 
       if (updateError) {
-        console.error(`Failed to deduct from credit ${pkg.id}:`, updateError);
+        logger.error(`Failed to deduct from credit ${pkg.id}:`, updateError);
         return NextResponse.json({ error: 'Failed to deduct credits' }, { status: 500 });
       }
 
@@ -131,7 +141,7 @@ export async function POST(request: NextRequest) {
       deductions,
     });
   } catch (error) {
-    console.error('Credit use error:', error);
+    logger.error('Credit use error:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

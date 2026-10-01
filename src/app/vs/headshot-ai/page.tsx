@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Headshot AI";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs Headshot AI. TailorPic is a one-time $9.90 for 40+ photos in 11 categories; Headshot AI starts around $29 with quick delivery and a more limited set of styles.";
+  'Compare TailorPic vs Headshot AI. TailorPic is a one-time $9.90 for 40+ photos in 11 categories; Headshot AI starts around $29 with fewer styles.';
 const path = '/vs/headshot-ai';
 
 export const metadata: Metadata = {

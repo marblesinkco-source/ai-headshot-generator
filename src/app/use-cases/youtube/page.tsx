@@ -9,9 +9,9 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
-const pageTitle = "AI Photos for YouTube Channels | Avatars, Banners & Thumbnails | TailorPic";
+const pageTitle = 'AI Photos for YouTube Channels & Avatars | TailorPic';
 const pageDescription =
-  "Build a recognizable YouTube brand with AI-generated creator photos. Channel avatars, banner portraits, and thumbnail-ready faces from a few selfies, delivered in about 2 hours. Starting at $9.90.";
+  'Build a recognizable YouTube brand with AI-generated creator photos: channel avatars, banner portraits and thumbnail-ready faces from a few selfies. From $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

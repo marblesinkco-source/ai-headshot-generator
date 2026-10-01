@@ -8,7 +8,7 @@ import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
-  title: 'AI Photography Glossary — Key Terms Explained | TailorPic',
+  title: { absolute: 'AI Photography Glossary: Key Terms Explained | TailorPic' },
   description:
     '30+ AI photography terms explained in plain language: diffusion models, LoRA, fine-tuning, lighting setups, resolution, retouching and more.',
   alternates: { canonical: '/glossary' },

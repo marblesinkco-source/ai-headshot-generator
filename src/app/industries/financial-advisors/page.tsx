@@ -22,9 +22,9 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
-const pageTitle = "AI Headshots for Financial Advisors & Wealth Managers | TailorPic";
+const pageTitle = 'AI Headshots for Financial Advisors & Planners | TailorPic';
 const pageDescription =
-  "Professional AI headshots for financial advisors, wealth managers, CFPs, and financial planners. Trustworthy, polished portraits for LinkedIn, firm websites, and client presentations, delivered in about 2 hours.";
+  'Professional AI headshots for financial advisors, wealth managers and planners. Trustworthy portraits for LinkedIn, firm websites and client presentations.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

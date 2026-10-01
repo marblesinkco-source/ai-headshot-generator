@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Scientists & Researchers | TailorPic";
 const pageDescription =
-  "Professional AI headshots for scientists, researchers, and lab leaders. Polished portraits for lab websites, grant applications, conference bios, and publications, delivered in about 2 hours.";
+  'Professional AI headshots for scientists, researchers and lab leaders. Portraits for lab websites, grant applications, conference bios and papers.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

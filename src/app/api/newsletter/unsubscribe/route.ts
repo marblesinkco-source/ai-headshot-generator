@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { createAdminClient } from '@/lib/supabase/server';
 import { verifyUnsubscribeToken } from '@/lib/emails';
 import { siteConfig } from '@/config/site';
+import { logger } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -16,17 +17,16 @@ export async function GET(request: Request) {
 
   try {
     const supabase = createAdminClient();
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const { error } = await (supabase as any)
+    const { error } = await supabase
       .from('newsletter_subscribers')
       .update({ unsubscribed_at: new Date().toISOString() })
       .eq('email', email);
     if (error) {
-      console.error('newsletter unsubscribe failed:', error.message);
+      logger.error('newsletter unsubscribe failed:', error.message);
       return NextResponse.json({ error: 'Could not unsubscribe. Please try again.' }, { status: 500 });
     }
   } catch (err) {
-    console.error('newsletter unsubscribe error:', err);
+    logger.error('newsletter unsubscribe error:', err);
     return NextResponse.json({ error: 'Could not unsubscribe. Please try again.' }, { status: 500 });
   }
 

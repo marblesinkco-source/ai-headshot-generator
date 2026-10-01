@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Profile Photos for Discord | Creative Avatars | TailorPic";
 const pageDescription =
-  "Creative AI avatars for Discord servers and gaming communities. Get a standout profile picture from a few selfies in styles from realistic to stylized. Delivered in about 2 hours. Starting at $9.90.";
+  'Creative AI avatars for Discord servers and gaming communities. Get a standout profile picture from a few selfies, from realistic to stylized. From $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

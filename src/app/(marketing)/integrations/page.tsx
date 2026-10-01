@@ -22,14 +22,15 @@ import {
 } from 'lucide-react';
 
 const pageTitle = 'Integrations & Partnerships';
-const pageDescription = `Planned ${siteConfig.name} integrations with HR, communication, CRM, design, recruiting and website tools, plus partnership options for technology, agency and reseller partners.`;
+const seoTitle = 'TailorPic Integrations and Partnership Options (Planned)';
+const pageDescription = 'Planned TailorPic integrations with HR, communication, CRM, design and website tools, plus partnership options for technology, agency and reseller partners.';
 
 export const metadata: Metadata = {
-  title: `${pageTitle} | ${siteConfig.name}`,
+  title: { absolute: seoTitle },
   description: pageDescription,
   alternates: { canonical: '/integrations' },
-  openGraph: generateOGMetadata({ title: `${pageTitle} | ${siteConfig.name}`, description: pageDescription, path: '/integrations' }),
-  twitter: generateTwitterMetadata({ title: `${pageTitle} | ${siteConfig.name}`, description: pageDescription }),
+  openGraph: generateOGMetadata({ title: seoTitle, description: pageDescription, path: '/integrations' }),
+  twitter: generateTwitterMetadata({ title: seoTitle, description: pageDescription }),
 };
 
 /* ------------------------------------------------------------------ */

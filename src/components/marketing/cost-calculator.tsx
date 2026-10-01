@@ -1,5 +1,6 @@
 import { Check } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { BASE_PRICE } from '@/config/pricing';
 
 interface CostLine {
   label: string;
@@ -15,7 +16,7 @@ const TRADITIONAL: CostLine[] = [
 ];
 
 // Real Express tier price.
-const EXPRESS_PRICE = 9.9;
+const EXPRESS_PRICE = BASE_PRICE;
 const EXPRESS_OUTPUTS = 5;
 
 const fmt = (n: number) => `$${Number.isInteger(n) ? n : n.toFixed(2)}`;

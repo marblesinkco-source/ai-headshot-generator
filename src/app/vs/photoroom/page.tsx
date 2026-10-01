@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "PhotoRoom";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs PhotoRoom. PhotoRoom is a background removal and product photo tool; TailorPic creates 40+ AI headshots from your selfies for a one-time $9.90.";
+  'Compare TailorPic vs PhotoRoom. PhotoRoom is a background removal and product photo tool; TailorPic makes 40+ headshots from selfies for a one-time $9.90.';
 const path = '/vs/photoroom';
 const canonicalUrl = 'https://www.tailorpic.com/vs/photoroom';
 

@@ -21,7 +21,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: `Partner Program | ${siteConfig.name}`,
+  title: { absolute: 'TailorPic Partner Program: Referral, Integration, Reseller' },
   description: `Partner with ${siteConfig.name} as a referral, integration, or reseller partner. Earn commission, access our API, or white-label AI headshots under your brand.`,
   alternates: { canonical: '/partners' },
   openGraph: generateOGMetadata({

@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
+import { logger } from '@/lib/logger';
+import { rateLimit } from '@/lib/rate-limit';
+import { tooManyRequests } from '@/lib/security';
 
 /**
  * GET /api/ai/status?orderId=xxx
@@ -29,6 +32,10 @@ export async function GET(request: NextRequest) {
         { error: 'Authentication required' },
         { status: 401 }
       );
+    }
+
+    if (!rateLimit({ key: `ai-status:${user.id}`, limit: 60, windowMs: 60 * 1000 }).success) {
+      return tooManyRequests();
     }
 
     // Get order with status
@@ -113,7 +120,7 @@ export async function GET(request: NextRequest) {
       completedAt: order.completed_at,
     });
   } catch (error) {
-    console.error('Status check error:', error);
+    logger.error('Status check error:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

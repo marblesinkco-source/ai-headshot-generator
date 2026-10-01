@@ -6,7 +6,7 @@ import { siteConfig } from '@/config/site';
 import { ToastProvider } from '@/components/ui/toaster';
 import { CookieConsent } from '@/components/cookie-consent';
 import { ExitIntentPopupLazy } from '@/components/marketing/exit-intent-popup-lazy';
-import { SocialProofToast } from '@/components/marketing/social-proof-toast';
+import { SocialProofToastLazy } from '@/components/marketing/social-proof-toast-lazy';
 import { OrganizationSchema } from '@/components/structured-data';
 import { GoogleAnalytics } from '@/components/analytics/google-analytics';
 
@@ -54,9 +54,6 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: ['/brand/tailorpic/web/og-tailorpic-1200x630.jpg'],
     creator: siteConfig.links.twitter || undefined,
-  },
-  alternates: {
-    canonical: '/',
   },
   robots: {
     index: true,
@@ -106,7 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
           <CookieConsent />
           <ExitIntentPopupLazy />
-          <SocialProofToast />
+          <SocialProofToastLazy />
         </ToastProvider>
         {/* Vercel Analytics — only loads when NEXT_PUBLIC_VERCEL_ANALYTICS_ID is set */}
         {process.env.NEXT_PUBLIC_VERCEL_ANALYTICS_ID && (

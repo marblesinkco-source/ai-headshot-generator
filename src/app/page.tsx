@@ -20,7 +20,7 @@ import { BeforeAfterShowcase } from '@/components/marketing/before-after-showcas
 export const metadata: Metadata = {
   title: 'TailorPic — AI Headshots & Professional Photos | From $9.90',
   description:
-    'Get studio-quality AI headshots in under 2 hours. 40+ styles for business, LinkedIn & creative use. Fast delivery, 14-day money-back guarantee. Starting at $9.90.',
+    'Get studio-quality AI headshots in under 2 hours. 40+ styles for business, LinkedIn & creative use. Fast delivery, 14-day money-back guarantee. From $9.90.',
   openGraph: generateOGMetadata({ title: 'TailorPic — AI Headshots & Professional Photos | From $9.90', description: 
       'Upload a few selfies, get 40+ studio-quality AI headshots in under 2 hours. Professional, creative & business styles. 14-day money-back guarantee.', path: '/' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic — AI Headshots & Professional Photos | From $9.90', description: 

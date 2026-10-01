@@ -9,9 +9,9 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
-const pageTitle = "AI Headshots for Email Signatures | Professional & Personal | TailorPic";
+const pageTitle = 'AI Headshots for Email Signatures | TailorPic';
 const pageDescription =
-  "Add a face to every email you send. AI-generated professional headshots sized for Gmail, Outlook, and Apple Mail signatures, delivered in about 2 hours. Starting at $9.90.";
+  'Add a face to every email you send. AI-generated professional headshots sized for Gmail, Outlook, and Apple Mail signatures. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Prisma";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs Prisma. Prisma turns photos into artistic paintings with filters; TailorPic creates 40+ realistic AI headshots from your selfies for a one-time $9.90.";
+  'Compare TailorPic vs Prisma. Prisma turns photos into artistic paintings with filters; TailorPic makes 40+ headshots from selfies for a one-time $9.90.';
 const path = '/vs/prisma-app';
 const canonicalUrl = 'https://www.tailorpic.com/vs/prisma-app';
 

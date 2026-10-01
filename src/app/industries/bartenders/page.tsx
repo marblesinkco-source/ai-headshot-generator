@@ -22,7 +22,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Bartenders & Mixologists | TailorPic";
 const pageDescription =
-  "Professional AI headshots for bartenders, mixologists, and bar managers. Land better jobs and events with a polished portrait for your resume, LinkedIn, and Instagram, delivered in about 2 hours.";
+  'Professional AI headshots for bartenders, mixologists and bar managers. Land better jobs and events with a polished portrait for your resume and LinkedIn.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

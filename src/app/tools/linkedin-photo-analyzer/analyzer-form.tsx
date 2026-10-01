@@ -219,7 +219,7 @@ export function AnalyzerForm() {
           <div className={cn('relative mx-auto flex h-36 w-36 items-center justify-center', level.ring)}>
             <ScoreRing score={shown} className={level.ring} />
             <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <span className="text-4xl font-extrabold tabular-nums text-tp-ink">{shown}</span>
+              <span className="text-4xl font-display font-normal tabular-nums text-tp-ink">{shown}</span>
               <span className="text-xs font-medium text-tp-muted">out of 100</span>
             </div>
           </div>
@@ -238,7 +238,7 @@ export function AnalyzerForm() {
 
         {misses.length > 0 && (
           <div className="rounded-tp-card border border-tp-line bg-white p-5 shadow-sm sm:p-7">
-            <h2 className="flex items-center gap-2 text-lg font-bold text-tp-ink">
+            <h2 className="flex items-center gap-2 text-lg font-display font-normal text-tp-ink">
               <Lightbulb className="h-5 w-5 text-tp-bronze" aria-hidden="true" />
               How to improve your score
             </h2>

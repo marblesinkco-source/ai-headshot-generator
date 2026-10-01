@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Veterinarians | TailorPic";
 const pageDescription =
-  "Professional AI headshots for veterinarians, vet techs, and animal care teams. Build pet owner trust on your clinic website, Google profile, and directories with portraits delivered in about 2 hours.";
+  'Professional AI headshots for veterinarians, vet techs and animal care teams. Build pet owner trust on your clinic website, Google profile and directories.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

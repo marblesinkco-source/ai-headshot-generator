@@ -7,13 +7,13 @@ import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
-  title: 'Subprocessors | TailorPic',
+  title: { absolute: 'TailorPic Subprocessors: Third-Party Data Processors List' },
   description:
     'The third-party subprocessors TailorPic uses to process personal data on our behalf, including their purpose and data location.',
   alternates: { canonical: '/subprocessors' },
-  openGraph: generateOGMetadata({ title: 'Subprocessors | TailorPic', description: 
+  openGraph: generateOGMetadata({ title: 'TailorPic Subprocessors: Third-Party Data Processors List', description: 
       'The third-party subprocessors TailorPic uses to process personal data on our behalf, including their purpose and data location.', path: '/subprocessors' }),
-  twitter: generateTwitterMetadata({ title: 'Subprocessors | TailorPic', description: 
+  twitter: generateTwitterMetadata({ title: 'TailorPic Subprocessors: Third-Party Data Processors List', description: 
       'The third-party subprocessors TailorPic uses to process personal data on our behalf, including their purpose and data location.' }),
 };
 
@@ -59,7 +59,7 @@ export default function SubprocessorsPage() {
 
       <section className="bg-white py-14">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-tp-ink">Current subprocessors</h2>
+          <h2 className="text-2xl font-display font-normal tracking-tight text-tp-ink">Current subprocessors</h2>
 
           {/* Table on sm+, stacked cards on mobile */}
           <div className="mt-6 hidden overflow-hidden rounded-xl border border-tp-line sm:block">
@@ -109,7 +109,7 @@ export default function SubprocessorsPage() {
       <section className="border-y border-tp-line bg-tp-paper py-14">
         <div className="mx-auto max-w-3xl space-y-10 px-4 sm:px-6 lg:px-8">
           <div>
-            <h2 className="text-2xl font-bold tracking-tight text-tp-ink">
+            <h2 className="text-2xl font-display font-normal tracking-tight text-tp-ink">
               Changes to our subprocessors
             </h2>
             <p className="mt-4 text-base leading-relaxed text-tp-muted">
@@ -124,7 +124,7 @@ export default function SubprocessorsPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold tracking-tight text-tp-ink">Related documents</h2>
+            <h2 className="text-2xl font-display font-normal tracking-tight text-tp-ink">Related documents</h2>
             <p className="mt-4 text-base leading-relaxed text-tp-muted">
               For more on how we process personal data, see our{' '}
               <Link href="/dpa" className={linkClass}>

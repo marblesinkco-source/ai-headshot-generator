@@ -11,12 +11,17 @@ import { GuaranteeBadge } from '@/components/marketing/guarantee-badge';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
+import { BASE_PRICE_DISPLAY, TEAM_PRICES } from '@/config/pricing';
+import { formatPrice } from '@/lib/utils';
 import { getActiveCategories } from '@/config/categories';
 import { TrustBadges } from '@/components/marketing/trust-badges';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { ChevronDown, Check, Lock, RefreshCcw, CreditCard, BadgeCheck, Minus } from 'lucide-react';
 import { PricingViewToggle } from '@/components/marketing/pricing-view-toggle';
 import { PricingComparisonBar } from '@/components/marketing/pricing-comparison-bar';
+
+const TEAM_SMALL = formatPrice(TEAM_PRICES.small.perPersonCents, 'usd', true);
+const TEAM_LARGE = formatPrice(TEAM_PRICES.large.perPersonCents, 'usd', true);
 
 const pricingFaqs = [
   {
@@ -52,12 +57,12 @@ const pricingFaqs = [
   {
     question: 'How does team pricing work?',
     answer:
-      'Team pricing is per person and one-time: $39 per person for 5-15 people and $29 per person for 16-50 people. For 50+ people we offer custom pricing, so get in touch with us.',
+      `Team pricing is per person and one-time: ${TEAM_SMALL} per person for ${TEAM_PRICES.small.min}-${TEAM_PRICES.small.max} people and ${TEAM_LARGE} per person for ${TEAM_PRICES.large.min}-${TEAM_PRICES.large.max} people. For ${TEAM_PRICES.large.max}+ people we offer custom pricing, so get in touch with us.`,
   },
   {
     question: 'How does this compare with a studio photoshoot?',
     answer:
-      'A traditional headshot session typically runs $200-$500 once you add photographer, studio, styling and travel. A TailorPic package starts at $9.90 with no studio visit or scheduling.',
+      `A traditional headshot session typically runs $200-$500 once you add photographer, studio, styling and travel. A TailorPic package starts at ${BASE_PRICE_DISPLAY} with no studio visit or scheduling.`,
   },
   {
     question: 'What do credit packages save me?',
@@ -72,7 +77,7 @@ const pricingFaqs = [
 ];
 
 const comparisonRows: { label: string; individual: boolean | string; team: boolean | string; studio: boolean | string }[] = [
-  { label: 'Starting price', individual: '$9.90', team: '$29-$39 per person', studio: '$200-$500' },
+  { label: 'Starting price', individual: BASE_PRICE_DISPLAY, team: `${TEAM_LARGE}-${TEAM_SMALL} per person`, studio: '$200-$500' },
   { label: 'Payment model', individual: 'One-time', team: 'One-time', studio: 'Per session' },
   { label: 'No studio visit or scheduling', individual: true, team: true, studio: false },
   { label: 'Delivered in hours', individual: true, team: true, studio: false },
@@ -119,8 +124,8 @@ const OG_DESCRIPTION =
   'Affordable AI photo packages for every need. Professional headshots, dating photos, pet portraits and more.';
 
 export const metadata: Metadata = {
-  title: 'Pricing',
-  description: `${siteConfig.name} pricing plans — AI photos from $9.90. Choose single packages across 11 categories or save with credit packs.`,
+  title: { absolute: 'TailorPic Pricing: AI Headshots from $9.90 One-Time' },
+  description: `${siteConfig.name} pricing: AI photos from ${BASE_PRICE_DISPLAY} one-time, no subscription. Choose a single package across 11 categories or save with credit packs.`,
   alternates: { canonical: '/pricing' },
   openGraph: generateOGMetadata({
     title: `Pricing | ${siteConfig.name}`,
@@ -166,7 +171,7 @@ export default function PricingPage() {
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
-          { name: 'Pricing', url: `${siteConfig.url}/pricing` },
+          { name: 'TailorPic Pricing: AI Headshots from $9.90 One-Time', url: `${siteConfig.url}/pricing` },
         ]}
       />
       <Header />
@@ -185,14 +190,14 @@ export default function PricingPage() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-muted">
             One-time payment, no subscriptions. Choose your category, pick a package,
-            and get studio-quality AI photos delivered in hours. Individual packages start at $9.90;
-            teams pay $39 or $29 per person.
+            and get studio-quality AI photos delivered in hours. Individual packages start at {BASE_PRICE_DISPLAY};
+            teams pay {TEAM_SMALL} or {TEAM_LARGE} per person.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
-              Get your headshots from $9.90
+              Get your headshots from {BASE_PRICE_DISPLAY}
             </Link>
-            <Link href="/for-teams" className={buttonVariants({ variant: 'outline', size: 'lg' })}>
+            <Link href="/team-headshots" className={buttonVariants({ variant: 'outline', size: 'lg' })}>
               See team pricing
             </Link>
           </div>
@@ -290,7 +295,7 @@ export default function PricingPage() {
           </div>
           <div className="mt-10 text-center">
             <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
-              Get your headshots from $9.90
+              Get your headshots from {BASE_PRICE_DISPLAY}
             </Link>
           </div>
         </div>

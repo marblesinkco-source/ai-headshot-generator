@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Politicians & Candidates | TailorPic";
 const pageDescription =
-  "Professional AI headshots for politicians, candidates, and public officials. Polished portraits for campaign sites, official profiles, press kits, and social media, delivered in about 2 hours.";
+  'Professional AI headshots for politicians, candidates and public officials. Portraits for campaign sites, official profiles, press kits and social media.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

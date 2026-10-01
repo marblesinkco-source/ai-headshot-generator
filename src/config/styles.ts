@@ -181,7 +181,7 @@ export const photoStyles: PhotoStyle[] = [
     description:
       'Polished, editorial-style portraits with dramatic lighting and a refined, magazine-ready finish.',
     metaDescription:
-      'Create AI glamour portraits with dramatic lighting and a polished editorial finish. Magazine-style photos for profiles, media and special occasions with TailorPic.',
+      'Create AI glamour portraits with dramatic lighting and a polished editorial finish. Magazine-style photos for profiles, media and special occasions.',
     heroText:
       'Step into the spotlight. Glamour portraits combine dramatic lighting, refined styling and an editorial finish for images that look like they belong on a magazine page.',
     features: [
@@ -470,7 +470,7 @@ export const photoStyles: PhotoStyle[] = [
     description:
       'Dramatic high-contrast headshots with deep shadows, bold highlights and a striking, cinematic presence.',
     metaDescription:
-      'Create AI high-contrast headshots with deep shadows, bold highlights and dramatic flair. Striking, cinematic portraits for professionals and creatives with TailorPic.',
+      'Create AI high-contrast headshots with deep shadows, bold highlights and dramatic flair. Striking, cinematic portraits for professionals and creatives.',
     heroText:
       'Make a statement with light and shadow. High-contrast headshots use bold tonal separation, deep blacks and bright highlights to deliver portraits with unmistakable presence and an edge that demands attention.',
     features: [
@@ -1003,7 +1003,7 @@ export const photoStyles: PhotoStyle[] = [
     description:
       'Modern portraits lit with vivid neon color accents for a bold, attention-grabbing look. Created from a few selfies, no studio required.',
     metaDescription:
-      'Create AI neon glow headshots with vivid colored lighting and a modern, high-contrast look. Stand out on social media, music and creative profiles with TailorPic.',
+      'Create AI neon glow headshots with vivid colored lighting and a modern, high-contrast look. Stand out on social media, music and creative profiles.',
     heroText:
       'Turn heads with portraits lit in electric pink, blue and violet. Neon glow headshots use colored rim light and deep, moody backgrounds to give your profile a modern, cinematic edge that stops the scroll and makes you instantly memorable.',
     features: [
@@ -1037,7 +1037,7 @@ export const photoStyles: PhotoStyle[] = [
     description:
       'Dramatic black-and-white portraits with deep shadows and classic cinema atmosphere. A timeless look made from a few selfies.',
     metaDescription:
-      'Create AI film noir headshots in dramatic black and white with moody shadows and classic cinema style. Timeless portraits for creatives and leaders with TailorPic.',
+      'Create AI film noir headshots in dramatic black and white with moody shadows and classic cinema style. Timeless portraits for creatives and leaders.',
     heroText:
       'Shadow, contrast and mystery. Film noir headshots borrow the lighting of classic cinema, with crisp black-and-white tones and sculpted shadows that give your portrait gravitas and a timeless, editorial feel.',
     features: [
@@ -1071,7 +1071,7 @@ export const photoStyles: PhotoStyle[] = [
     description:
       'Light, airy portraits in gentle pastel tones for a soft, elegant and approachable feel. Made from a few selfies.',
     metaDescription:
-      'Create AI pastel soft headshots with gentle tones, airy light and an elegant, approachable look. Perfect for wellness, beauty and creative brands with TailorPic.',
+      'Create AI pastel soft headshots with gentle tones, airy light and an elegant, approachable look. Perfect for wellness, beauty and creative brands.',
     heroText:
       'Gentle, bright and welcoming. Pastel soft headshots use blush, mint, lavender and cream tones with diffused light to create a calm, graceful portrait that feels warm and approachable without losing polish.',
     features: [
@@ -1105,7 +1105,7 @@ export const photoStyles: PhotoStyle[] = [
     description:
       'Natural portraits set among trees, fields and warm golden light for an organic, genuine feel. Created from a few selfies.',
     metaDescription:
-      'Create AI rustic outdoor headshots with natural backgrounds, golden light and an authentic, organic feel. Ideal for outdoor, farm and lifestyle brands with TailorPic.',
+      'Create AI rustic outdoor headshots with natural backgrounds, golden light and an authentic, organic feel. Ideal for outdoor, farm and lifestyle brands.',
     heroText:
       'Authentic and grounded. Rustic outdoor headshots place you in natural settings such as woodland paths, open fields and weathered wood, lit by warm golden-hour sun for a genuine, down-to-earth portrait that feels real.',
     features: [
@@ -1343,7 +1343,7 @@ export const photoStyles: PhotoStyle[] = [
     description:
       'Warm portraits lit by low, golden-hour sunlight with a glowing rim of light and soft amber tones. Made from a few selfies.',
     metaDescription:
-      'Create AI sunset golden portraits with warm golden-hour light, glowing rim highlights and soft amber tones. Friendly, radiant photos from a few selfies with TailorPic.',
+      'Create AI sunset golden portraits with warm golden-hour light, glowing rim highlights and soft amber tones. Friendly, radiant photos from a few selfies.',
     heroText:
       'Golden hour makes everyone look good. Sunset golden portraits wrap you in low, warm light with a soft glow around your hair and shoulders, giving your photos an approachable, radiant feel without waiting for the perfect evening.',
     features: [
@@ -1378,7 +1378,7 @@ export const photoStyles: PhotoStyle[] = [
     description:
       'Bold Andy Warhol-inspired portraits with flat saturated colors, strong outlines and a graphic, screen-printed look.',
     metaDescription:
-      'Turn your selfies into AI pop art portraits inspired by Andy Warhol. Bold colors, graphic outlines and a screen-print look for avatars, posters and fun profiles with TailorPic.',
+      'Turn your selfies into AI pop art portraits inspired by Andy Warhol. Bold colors, graphic outlines and a screen-print look for avatars, posters and profiles.',
     heroText:
       'Be the art. Pop art portraits turn your face into a bold, screen-printed graphic with flat saturated color, punchy contrast and a playful attitude that stops the scroll on any feed.',
     features: [
@@ -1413,7 +1413,7 @@ export const photoStyles: PhotoStyle[] = [
     description:
       'Soft, artistic portraits with flowing washes of color, delicate edges and the texture of hand-painted paper.',
     metaDescription:
-      'Create AI watercolor portraits with flowing color washes, soft edges and paper texture. Artistic portraits for authors, creatives and gifts, made from a few selfies with TailorPic.',
+      'Create AI watercolor portraits with flowing color washes, soft edges and paper texture. Artistic portraits for authors, creatives and gifts from a few selfies.',
     heroText:
       'Painted, not photographed. Watercolor portraits blend your likeness with flowing washes of color, soft bleeding edges and the gentle texture of paper for a dreamy, artistic result.',
     features: [
@@ -1448,7 +1448,7 @@ export const photoStyles: PhotoStyle[] = [
     description:
       'Consistent, matching team portraits with uniform lighting, framing and backdrop so every person looks part of the same company.',
     metaDescription:
-      'Create consistent AI corporate team photos with matching lighting, backdrops and framing for every employee. Fast, affordable team headshots for websites and directories with TailorPic.',
+      'Create consistent AI corporate team photos with matching lighting, backdrops and framing for every employee. Team headshots for websites and directories.',
     heroText:
       'One team, one look. Corporate team photos give every person on your About page the same lighting, framing and backdrop, even when your people work in different cities and time zones.',
     features: [
@@ -1483,7 +1483,7 @@ export const photoStyles: PhotoStyle[] = [
     description:
       'High-fashion magazine portraits with dramatic lighting, confident poses and sophisticated styling.',
     metaDescription:
-      'Create AI fashion editorial portraits with dramatic lighting, bold styling and magazine-quality composition. Stand-out portraits for models, creatives and brands with TailorPic.',
+      'Create AI fashion editorial portraits with dramatic lighting, bold styling and magazine-quality composition. Portraits for models, creatives and brands.',
     heroText:
       'Step onto the page. Fashion editorial portraits bring magazine-style lighting, bold styling and confident posing to your photos, for people who want to be remembered at first glance.',
     features: [
@@ -1518,7 +1518,7 @@ export const photoStyles: PhotoStyle[] = [
     description:
       'Elegant 1920s-inspired portraits with geometric gold details, glamorous lighting and a Great Gatsby sense of style.',
     metaDescription:
-      'Create AI Art Deco portraits inspired by the 1920s, with geometric gold accents, glamorous styling and rich jewel tones. Elegant, distinctive photos with TailorPic.',
+      'Create AI Art Deco portraits inspired by the 1920s, with geometric gold accents, glamorous styling and rich jewel tones. Elegant, distinctive photos.',
     heroText:
       'Step into the Jazz Age. Art Deco portraits pair bold geometry, gold accents and glamorous lighting for a look that feels timeless, theatrical and effortlessly elegant.',
     features: [
@@ -1553,7 +1553,7 @@ export const photoStyles: PhotoStyle[] = [
     description:
       'Futuristic neon-lit portraits with city-night atmosphere, bold color contrast and a sci-fi edge.',
     metaDescription:
-      'Create AI cyberpunk portraits with neon lighting, futuristic backdrops and bold color contrast. Striking sci-fi photos for gamers, creators and tech brands with TailorPic.',
+      'Create AI cyberpunk portraits with neon lighting, futuristic backdrops and bold color contrast. Striking sci-fi photos for gamers, creators and tech brands.',
     heroText:
       'Welcome to the neon future. Cyberpunk portraits wrap you in glowing magenta and cyan light against a rain-soaked city night, for a look that is unmistakably bold.',
     features: [
@@ -1588,7 +1588,7 @@ export const photoStyles: PhotoStyle[] = [
     description:
       'Classical oil-painting portraits with rich color, dramatic chiaroscuro and the grandeur of Old Master art.',
     metaDescription:
-      'Create AI Renaissance portraits in the style of classical oil paintings, with dramatic chiaroscuro lighting, rich fabrics and museum-style composition. Try TailorPic.',
+      'Create AI Renaissance portraits in the style of classical oil paintings, with dramatic chiaroscuro lighting, rich fabrics and museum-style composition.',
     heroText:
       'Become a masterpiece. Renaissance portraits transform your selfies into classical oil paintings with deep color, soft candlelit shadows and the dignity of the Old Masters.',
     features: [
@@ -1623,7 +1623,7 @@ export const photoStyles: PhotoStyle[] = [
     description:
       'Bright, sun-soaked portraits with palm leaves, turquoise water and a relaxed summer mood.',
     metaDescription:
-      'Create AI tropical portraits with palm leaves, turquoise water and warm summer light. Cheerful vacation-style photos for profiles, travel and lifestyle brands with TailorPic.',
+      'Create AI tropical portraits with palm leaves, turquoise water and warm summer light. Cheerful vacation-style photos for profiles, travel and lifestyle brands.',
     heroText:
       'Bring the vacation with you. Tropical portraits place you amid palm leaves, warm sunshine and turquoise water for a fresh, happy look that feels like summer all year round.',
     features: [
@@ -1658,7 +1658,7 @@ export const photoStyles: PhotoStyle[] = [
     description:
       'Moody black-and-white portraits with trench coats, fedoras and venetian-blind shadows in classic detective style.',
     metaDescription:
-      'Create AI noir detective portraits with trench coats, fedoras, venetian-blind shadows and smoky black-and-white drama. Atmospheric 1940s-style photos with TailorPic.',
+      'Create AI noir detective portraits with trench coats, fedoras, venetian-blind shadows and smoky black-and-white drama. Atmospheric 1940s-style photos.',
     heroText:
       'The case starts with a great portrait. Noir detective photos bring trench coats, slatted window light and smoky black-and-white drama to your image, for a look full of mystery.',
     features: [
@@ -1693,7 +1693,7 @@ export const photoStyles: PhotoStyle[] = [
     description:
       'Modern portraits with frosted-glass panels, soft translucent layers and luminous gradients for a sleek digital look.',
     metaDescription:
-      'Create AI glass morphism portraits with frosted-glass panels, translucent layers and luminous gradients. Sleek, modern photos for tech and design with TailorPic.',
+      'Create AI glass morphism portraits with frosted-glass panels, translucent layers and luminous gradients. Sleek, modern photos for tech and design.',
     heroText:
       'Clear, layered and unmistakably modern. Glass morphism portraits place you in front of frosted panels and soft gradients, for a polished look that feels at home in today\'s best interfaces.',
     features: [

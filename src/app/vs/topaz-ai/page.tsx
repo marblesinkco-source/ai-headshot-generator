@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Topaz Labs";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs Topaz Labs. Topaz specializes in AI photo sharpening, denoising and upscaling; TailorPic creates 40+ AI headshots from your selfies for a one-time $9.90.";
+  'Compare TailorPic vs Topaz Labs. Topaz specializes in AI photo sharpening, denoising and upscaling; TailorPic: 40+ headshots for a one-time $9.90.';
 const path = '/vs/topaz-ai';
 const canonicalUrl = 'https://www.tailorpic.com/vs/topaz-ai';
 

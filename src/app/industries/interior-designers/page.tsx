@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Interior Designers | TailorPic";
 const pageDescription =
-  "Professional AI headshots for interior designers, decorators, and home stylists. Build trust on your portfolio, social profiles, and proposals with a polished portrait delivered in about 2 hours.";
+  'Professional AI headshots for interior designers, decorators and home stylists. Build trust on your portfolio, social profiles and proposals.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

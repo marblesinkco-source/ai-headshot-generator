@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getActiveCategories, FEATURED_CATEGORIES } from '@/config/categories';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const categories = getActiveCategories();
 const quickCategories = categories.filter((c) =>
@@ -21,7 +22,7 @@ export function Hero() {
           <div className="grid gap-9 pt-7 lg:grid-cols-[1.1fr_1fr] lg:min-h-[553px]">
             {/* Copy */}
             <div className="pt-6 pb-6 lg:pt-[45px] lg:pb-[42px] relative z-10">
-              <p className="uppercase text-[10px] font-semibold tracking-[0.25em] text-tp-bronze-ink mb-5 sm:text-[10px]">
+              <p className="uppercase text-[11px] font-semibold tracking-[0.25em] text-tp-bronze-ink mb-5">
                 Studio quality. Without the studio.
               </p>
 
@@ -36,9 +37,9 @@ export function Hero() {
               <p className="text-[16px] text-tp-ink/80 leading-[1.7] max-w-[485px] mb-4">
                 Upload a few selfies and get 40+ studio-quality headshots in about 2 hours. Pay once &mdash; no subscription, no studio, no scheduling.
               </p>
-              <p className="text-[13px] text-tp-muted/70 leading-[1.6] max-w-[485px] mb-7">
-                <span className="line-through text-tp-muted/50">Traditional photoshoot: $200&ndash;$500</span>
-                {' '}&rarr; <span className="font-semibold text-tp-bronze-ink">$9.90 one-time</span>
+              <p className="text-[13px] text-tp-muted leading-[1.6] max-w-[485px] mb-7">
+                <span className="line-through text-tp-muted">Traditional photoshoot: $200&ndash;$500</span>
+                {' '}&rarr; <span className="font-semibold text-tp-bronze-ink">{BASE_PRICE_DISPLAY} one-time</span>
               </p>
 
               <div className="flex flex-wrap gap-3">
@@ -50,14 +51,14 @@ export function Hero() {
                 </Link>
                 <a
                   href="#how-it-works"
-                  className="inline-flex items-center gap-3 rounded-xl border border-[#B5A696] bg-transparent px-6 py-3.5 text-sm font-semibold text-tp-ink transition-all hover:bg-tp-beige/20 whitespace-nowrap"
+                  className="inline-flex items-center gap-3 rounded-tp-button border border-tp-bronze-ink/40 bg-transparent px-6 py-3.5 text-sm font-semibold text-tp-ink transition-all hover:bg-tp-beige/20 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
                 >
                   See How It Works <span aria-hidden="true" className="text-[22px] leading-none">&#8595;</span>
                 </a>
               </div>
 
               {/* Friction reducer */}
-              <div className="flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-tp-muted mt-2">
+              <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-tp-muted mt-3">
                 <span className="inline-flex items-center gap-1">
                   <svg className="h-3 w-3 text-tp-bronze-ink" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
                   No credit card needed
@@ -71,7 +72,7 @@ export function Hero() {
               {/* Trust signals */}
               <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-[12px] font-medium text-tp-ink" aria-label="Why buy with confidence">
                 {[
-                  { label: 'One-time $9.90, no subscription', d: 'M12 8c-1.7 0-3 .9-3 2s1.3 2 3 2 3 .9 3 2-1.3 2-3 2m0-8V6m0 12v-2m9-4a9 9 0 11-18 0 9 9 0 0118 0z' },
+                  { label: `One-time ${BASE_PRICE_DISPLAY}, no subscription`, d: 'M12 8c-1.7 0-3 .9-3 2s1.3 2 3 2 3 .9 3 2-1.3 2-3 2m0-8V6m0 12v-2m9-4a9 9 0 11-18 0 9 9 0 0118 0z' },
                   { label: 'Delivered in about 2 hours', d: 'M12 6v6l4 2m5-2a9 9 0 11-18 0 9 9 0 0118 0z' },
                   { label: '14-day money-back guarantee', d: 'M9 12l2 2 4-4m5.6-3a12 12 0 01-8.6 3.9A12 12 0 013.4 7 12 12 0 003 10c0 5.6 3.8 10.3 9 11.6 5.2-1.3 9-6 9-11.6 0-1-.1-2-.4-3z' },
                 ].map((t) => (
@@ -82,10 +83,6 @@ export function Hero() {
                 ))}
               </ul>
 
-              {/* Micro social proof */}
-              <p className="text-[11px] text-tp-muted/60 mt-3 italic">
-                Trusted by professionals at companies worldwide
-              </p>
             </div>
 
             {/* Mobile product chooser (between copy and hero image on mobile) */}
@@ -109,7 +106,7 @@ export function Hero() {
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 priority
               />
-              <span className="absolute right-4 bottom-3 bg-tp-black/75 text-white text-[9px] tracking-[0.01em] px-2.5 py-1.5 rounded-md">
+              <span className="absolute right-4 bottom-3 bg-tp-black/75 text-white text-[11px] tracking-[0.01em] px-2.5 py-1.5 rounded-md">
                 AI-generated concept image
               </span>
             </div>
@@ -130,7 +127,7 @@ export function Hero() {
       {/* All Categories Dialog */}
       <dialog
         ref={categoryDialog}
-        className="rounded-[20px] border border-tp-line bg-tp-paper p-5 sm:p-[30px] text-tp-ink w-[min(760px,calc(100vw-28px))] max-h-[85vh] overflow-auto backdrop:bg-tp-black/56"
+        className="rounded-tp-dialog border border-tp-line bg-tp-paper p-5 sm:p-[30px] text-tp-ink w-[min(760px,calc(100vw-28px))] max-h-[85vh] overflow-auto backdrop:bg-tp-black/56"
         aria-labelledby="tp-categories-title"
       >
         <div className="flex items-center justify-between gap-5 mb-5">
@@ -138,7 +135,8 @@ export function Hero() {
             Find your photo direction.
           </h2>
           <button
-            className="h-11 w-11 rounded-full border border-tp-line bg-transparent text-[23px] flex-shrink-0 flex items-center justify-center"
+            type="button"
+            className="h-11 w-11 rounded-full border border-tp-line bg-transparent text-[23px] flex-shrink-0 flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
             aria-label="Close categories"
             onClick={() => categoryDialog.current?.close()}
           >
@@ -166,7 +164,7 @@ export function Hero() {
               </div>
               <span>
                 <strong className="block text-[13px]">{cat.name}</strong>
-                <small className="text-[10px] sm:text-[11px] text-tp-muted">{cat.tagline}</small>
+                <small className="text-[11px] text-tp-muted leading-snug">{cat.tagline}</small>
               </span>
             </Link>
           ))}
@@ -197,7 +195,9 @@ function QuickCategories({
           Choose your photo type.
         </h2>
         <button
-          className="border-0 bg-transparent text-[11px] sm:text-[12px] font-semibold flex items-center gap-2 min-h-[44px] whitespace-nowrap"
+          type="button"
+          aria-haspopup="dialog"
+          className="border-0 bg-transparent text-xs font-semibold text-tp-ink flex items-center gap-2 min-h-[44px] whitespace-nowrap rounded-tp-button focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
           onClick={onSeeAll}
         >
           All {allCount} categories <span aria-hidden="true">&#8599;</span>
@@ -208,7 +208,7 @@ function QuickCategories({
           <Link
             key={cat.id}
             href={`/${cat.slug}`}
-            className="group border border-tp-line bg-[#FEFCF8] rounded-xl overflow-hidden flex flex-row lg:flex-col min-h-[69px] lg:min-h-0 items-stretch transition-all duration-150 hover:-translate-y-[3px] hover:border-tp-bronze-ink"
+            className="group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink border border-tp-line bg-[#FEFCF8] rounded-xl overflow-hidden flex flex-row lg:flex-col min-h-[69px] lg:min-h-0 items-stretch transition-all duration-150 hover:-translate-y-[3px] hover:border-tp-bronze-ink"
           >
             {/* Category thumbnail */}
             <div className="w-[59px] lg:w-full h-[69px] lg:h-[98px] bg-gradient-to-br from-tp-beige to-tp-line flex-shrink-0 overflow-hidden">

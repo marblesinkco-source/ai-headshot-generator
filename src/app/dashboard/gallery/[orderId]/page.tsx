@@ -2,12 +2,17 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import { useParams } from 'next/navigation';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { createClient } from '@/lib/supabase/client';
 import { OrderStatusBadge } from '@/components/dashboard/order-status';
-import { HeadshotModal } from '@/components/dashboard/headshot-modal';
 import { Button } from '@/components/ui/button';
 import type { OrderStatus } from '@/types';
+
+const HeadshotModal = dynamic(
+  () => import('@/components/dashboard/headshot-modal').then((m) => m.HeadshotModal),
+  { ssr: false },
+);
 
 interface Headshot {
   id: string;
@@ -263,6 +268,7 @@ export default function OrderGalleryPage() {
                 className="w-full object-cover"
                 onClick={() => setModalIndex(idx)}
                 loading="lazy"
+                decoding="async"
               />
 
               {/* Overlay actions */}

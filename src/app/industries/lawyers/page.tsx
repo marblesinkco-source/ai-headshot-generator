@@ -24,9 +24,9 @@ import {
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
-  title: 'Professional Headshots for Attorneys & Law Firms | TailorPic',
+  title: { absolute: 'AI Headshots for Lawyers & Law Firms | TailorPic' },
   description:
-    'Get professional headshots for lawyers, attorneys, and law firms. Build client trust, maintain bar association compliance, and project authority — without expensive studio sessions.',
+    'Get professional headshots for lawyers, attorneys and law firms. Build client trust and project authority without expensive studio sessions.',
   alternates: { canonical: '/industries/lawyers' },
   openGraph: generateOGMetadata({ title: 'Attorney & Law Firm Headshots | TailorPic', description: 'AI-powered professional headshots for legal professionals. Bar-compliant, firm-consistent team photos delivered in hours.', path: '/industries/lawyers', type: 'industry' }),
   
@@ -298,7 +298,7 @@ export default function LawyersIndustryPage() {
       {/* Use cases */}
       <section className="border-y border-tp-line bg-tp-paper py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-2xl font-bold text-tp-ink">
+          <h2 className="text-center text-2xl font-display font-normal text-tp-ink">
             One Headshot, Everywhere You Need It
           </h2>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">

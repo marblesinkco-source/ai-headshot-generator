@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Chefs & Culinary Professionals | TailorPic";
 const pageDescription =
-  "Professional AI headshots for chefs, head cooks, and culinary professionals. Polished portraits for restaurant websites, menus, press features, and social media, delivered in about 2 hours.";
+  'Professional AI headshots for chefs, head cooks and culinary professionals. Polished portraits for restaurant websites, menus, press features and social media.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

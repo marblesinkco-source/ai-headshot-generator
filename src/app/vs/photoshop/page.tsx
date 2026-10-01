@@ -9,9 +9,9 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const competitor = "Adobe Photoshop";
-const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
+const title = 'TailorPic vs Adobe Photoshop: AI Headshot Comparison';
 const description =
-  "Compare TailorPic vs Adobe Photoshop. Photoshop is a professional image editor that needs your own photo and skills; TailorPic creates 40+ AI headshots from your selfies for a one-time $9.90.";
+  'Compare TailorPic vs Adobe Photoshop. Photoshop is a professional image editor that needs your own photo and skills; TailorPic: 40+ headshots, $9.90 one-time.';
 const path = '/vs/photoshop';
 const canonicalUrl = 'https://www.tailorpic.com/vs/photoshop';
 

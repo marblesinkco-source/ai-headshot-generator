@@ -9,12 +9,12 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight, Heart, Zap, Monitor, GraduationCap, Camera, Clapperboard, SmilePlus, TrendingUp, Ruler, Target, Brain, Dumbbell, Music, PawPrint, Users, Handshake, Mic, Palette, Newspaper, Shield, Plane, Calendar, BookOpen, Leaf, Globe, BarChart3, Award, Briefcase, FileCheck, UserCheck, Star } from 'lucide-react';
 
-const PAGE_TITLE = 'AI Photos by Industry | TailorPic';
+const PAGE_TITLE = 'AI Headshots by Industry: Guides for Every Profession';
 const PAGE_DESCRIPTION =
-  'Professional AI-generated photos tailored for your industry. Browse headshot guides for real estate, legal, healthcare, engineering, education, consulting, creative professions, skilled trades and more.';
+  'Professional AI-generated photos tailored to your industry. Browse headshot guides for real estate, legal, healthcare, engineering, education and more.';
 
 export const metadata: Metadata = {
-  title: PAGE_TITLE,
+  title: { absolute: PAGE_TITLE },
   description: PAGE_DESCRIPTION,
   alternates: { canonical: '/industries' },
   openGraph: generateOGMetadata({

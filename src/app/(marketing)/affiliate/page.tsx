@@ -24,7 +24,7 @@ const AFFILIATE_OG_TITLE = `Affiliate Program | ${siteConfig.name}`;
 const AFFILIATE_OG_DESCRIPTION = `Partner with ${siteConfig.name} and earn up to 30% commission promoting AI headshots. Referral tracking dashboard and monthly payouts.`;
 
 export const metadata: Metadata = {
-  title: `Affiliate Program — Partner with ${siteConfig.name}`,
+  title: { absolute: 'TailorPic Affiliate Program: Earn on Every Referred Sale' },
   description: `Join the ${siteConfig.name} affiliate program and earn commissions on every sale you refer. Competitive rates, marketing materials, and dedicated partner support.`,
   alternates: { canonical: '/affiliate' },
   openGraph: generateOGMetadata({

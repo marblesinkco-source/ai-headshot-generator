@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "DeepArt";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs DeepArt. DeepArt applies painting styles to your photos; TailorPic creates 40+ realistic AI headshots from your selfies for a one-time $9.90.";
+  'Compare TailorPic vs DeepArt. DeepArt applies painting styles to your photos; TailorPic makes 40+ headshots from selfies for a one-time $9.90.';
 const path = '/vs/deepart';
 const canonicalUrl = 'https://www.tailorpic.com/vs/deepart';
 

@@ -22,16 +22,16 @@ import {
   ArrowRight,
 } from 'lucide-react';
 
-const title = 'Careers at TailorPic';
+const title = 'Careers at TailorPic: Join Our AI Photography Team';
 const description =
-  'Join the TailorPic team and help build the future of AI photography. We are always looking for talented people who share our passion for quality and innovation.';
+  'Join the TailorPic team and help build the future of AI photography. See how we work and get in touch if you share our passion for quality and craft.';
 
 export const metadata: Metadata = {
-  title,
+  title: { absolute: title },
   description,
   alternates: { canonical: '/careers' },
-  openGraph: generateOGMetadata({ title: `Careers | ${siteConfig.name}`, description, path: '/careers' }),
-  twitter: generateTwitterMetadata({ title: `Careers | ${siteConfig.name}`, description }),
+  openGraph: generateOGMetadata({ title, description, path: '/careers' }),
+  twitter: generateTwitterMetadata({ title, description }),
 };
 
 const values = [

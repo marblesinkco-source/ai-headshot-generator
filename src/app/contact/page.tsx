@@ -9,7 +9,7 @@ import { ContactForm } from '@/components/marketing/contact-form';
 import { Mail, Clock, Building2, Lock, MailX, ShieldCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
+  title: { absolute: 'Contact TailorPic: Sales, Support, Press & Partnerships' },
   description: `Contact ${siteConfig.name} for pre-sales questions, order support, team and enterprise pricing, press, or partnerships. We aim to respond within 1 business day.`,
   alternates: { canonical: '/contact' },
   openGraph: generateOGMetadata({ title: `Contact Us | ${siteConfig.name}`, description: `Questions about AI headshots, orders, teams or partnerships? Message the ${siteConfig.name} team. We aim to respond within 1 business day.`, path: '/contact' }),

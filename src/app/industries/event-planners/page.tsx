@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Event Planners | TailorPic";
 const pageDescription =
-  "Professional AI headshots for wedding planners, corporate event planners, and event agencies. Win more clients with a polished portrait for your website, proposals, and social media, delivered in about 2 hours.";
+  'Professional AI headshots for wedding planners, corporate event planners and agencies. Win more clients with a polished portrait for your website and proposals.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

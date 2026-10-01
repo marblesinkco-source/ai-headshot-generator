@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Author Bios and Books | TailorPic";
 const pageDescription =
-  "Professional author photos for book jackets, Amazon author pages and bios. Get polished portraits from a few selfies, delivered in about 2 hours. Starting at $9.90.";
+  'Professional author photos for book jackets, Amazon author pages and bios. Get polished portraits from a few selfies. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

@@ -8,9 +8,9 @@ import { BreadcrumbSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { Palette, Sun, Maximize2, ArrowRight, Shirt, Eye, History, Eraser, Sparkles, ScanFace, Scissors, Smile, Move, Pipette, Glasses, Heart, Clock } from 'lucide-react';
 
-const title = 'AI Photo Editor — Professional Headshot Editing Tools | TailorPic';
+const title = 'AI Photo Editor: Professional Headshot Editing Tools';
 const description =
-  'Explore TailorPic\'s 21 AI-powered photo editing tools: background changer, clothing changer, pose editor, makeup, skin smoother, expression editor, crop & resize and more. Professional headshots without manual editing.';
+  'Explore TailorPic\'s 21 AI photo editing tools, from background changer and clothing changer to skin smoother, pose editor and crop & resize.';
 
 export const metadata: Metadata = {
   title: { absolute: title },

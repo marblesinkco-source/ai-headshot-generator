@@ -6,8 +6,6 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import {
-  Check,
-  X,
   DollarSign,
   Image as ImageIcon,
   Clock,
@@ -15,15 +13,16 @@ import {
   BadgeDollarSign,
   Target,
 } from 'lucide-react';
+import { CellValue } from '@/components/shared/cell-value';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 export const metadata: Metadata = {
-  title: 'TailorPic vs BetterPic — AI Headshot Generator Comparison',
+  title: { absolute: 'TailorPic vs BetterPic: AI Headshot Generator Comparison' },
   description:
-    'Compare TailorPic vs BetterPic for AI-generated professional headshots. See pricing, photo count, delivery time, and features side by side. TailorPic starts at $9.90 with 40+ photos.',
+    'Compare TailorPic vs BetterPic for professional AI headshots. See pricing, photo count, delivery time and features side by side. TailorPic: $9.90, 40+ photos.',
   alternates: { canonical: '/vs/betterpic' },
-  openGraph: generateOGMetadata({ title: 'TailorPic vs BetterPic — AI Headshot Generator Comparison', description: 'Compare TailorPic and BetterPic for AI headshots. Pricing, photo count, features, and delivery — see which AI headshot generator is right for you.', path: '/vs/betterpic', type: 'vs' }),
-  twitter: generateTwitterMetadata({ title: 'TailorPic vs BetterPic — AI Headshot Generator Comparison', description: 'Compare TailorPic and BetterPic for AI headshots. Pricing, photo count, features, and delivery — see which AI headshot generator is right for you.', type: 'vs' }),
+  openGraph: generateOGMetadata({ title: 'TailorPic vs BetterPic: AI Headshot Generator Comparison', description: 'Compare TailorPic and BetterPic for AI headshots. Pricing, photo count, features, and delivery — see which AI headshot generator is right for you.', path: '/vs/betterpic', type: 'vs' }),
+  twitter: generateTwitterMetadata({ title: 'TailorPic vs BetterPic: AI Headshot Generator Comparison', description: 'Compare TailorPic and BetterPic for AI headshots. Pricing, photo count, features, and delivery — see which AI headshot generator is right for you.', type: 'vs' }),
 };
 
 /* ------------------------------------------------------------------ */
@@ -100,26 +99,6 @@ const whyCards = [
 /* ------------------------------------------------------------------ */
 /*  Helpers                                                            */
 /* ------------------------------------------------------------------ */
-
-function CellValue({ value }: { value: string | boolean }) {
-  if (value === true) {
-    return (
-      <span className="inline-flex items-center gap-1.5 text-tp-bronze-ink">
-        <Check className="h-5 w-5" />
-        <span className="sr-only">Yes</span>
-      </span>
-    );
-  }
-  if (value === false) {
-    return (
-      <span className="inline-flex items-center gap-1.5 text-tp-muted">
-        <X className="h-5 w-5" />
-        <span className="sr-only">No</span>
-      </span>
-    );
-  }
-  return <span>{value}</span>;
-}
 
 /* ------------------------------------------------------------------ */
 /*  Page                                                               */

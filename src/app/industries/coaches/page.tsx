@@ -23,7 +23,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Coaches & Consultants | TailorPic";
 const pageDescription =
-  "Professional AI headshots for life coaches, business coaches, and independent consultants. Build instant trust on your website, sales pages, and LinkedIn with a polished portrait delivered in about 2 hours.";
+  'Professional AI headshots for life coaches, business coaches and independent consultants. Build instant trust on your website, sales pages and LinkedIn.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

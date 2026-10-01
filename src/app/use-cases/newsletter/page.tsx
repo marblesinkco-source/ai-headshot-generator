@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Newsletter Authors | TailorPic";
 const pageDescription =
-  "Professional author photos for Substack, Beehiiv, Ghost and email newsletters. Put a face to your writing from a few selfies, delivered in about 2 hours. Starting at $9.90.";
+  'Professional author photos for Substack, Beehiiv, Ghost and email newsletters. Put a face to your writing from a few selfies. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

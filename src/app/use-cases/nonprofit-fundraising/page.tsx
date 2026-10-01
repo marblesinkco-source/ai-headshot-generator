@@ -24,7 +24,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Nonprofit Fundraising | TailorPic";
 const pageDescription =
-  "Professional staff, board and volunteer photos for nonprofit websites, donor appeals and galas. Get polished portraits from a few selfies in about 2 hours. Starting at $9.90.";
+  'Professional staff, board and volunteer photos for nonprofit websites, donor appeals and galas. Get polished portraits from a few selfies. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

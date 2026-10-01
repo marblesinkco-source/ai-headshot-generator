@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { createClient } from '@/lib/supabase/server';
+import { logger } from '@/lib/logger';
+import { rateLimit } from '@/lib/rate-limit';
+import { tooManyRequests } from '@/lib/security';
 
 const querySchema = z.object({
   page: z.coerce.number().int().min(1).default(1),
@@ -34,6 +37,10 @@ export async function GET(
       );
     }
 
+    if (!rateLimit({ key: `gallery:${user.id}`, limit: 60, windowMs: 60 * 1000 }).success) {
+      return tooManyRequests();
+    }
+
     // Verify order belongs to user
     const { data: order, error: orderError } = await supabase
       .from('orders')
@@ -55,7 +62,7 @@ export async function GET(
 
     if (!parsed.success) {
       return NextResponse.json(
-        { error: 'Invalid query parameters', details: parsed.error.flatten() },
+        { error: 'Invalid query parameters' },
         { status: 400 }
       );
     }
@@ -80,7 +87,7 @@ export async function GET(
       .range(offset, offset + limit - 1);
 
     if (headshotsError) {
-      console.error('Failed to fetch headshots:', headshotsError);
+      logger.error('Failed to fetch headshots:', headshotsError);
       return NextResponse.json(
         { error: 'Failed to fetch headshots' },
         { status: 500 }
@@ -129,7 +136,7 @@ export async function GET(
       },
     });
   } catch (error) {
-    console.error('Gallery error:', error);
+    logger.error('Gallery error:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

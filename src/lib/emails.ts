@@ -5,7 +5,7 @@
 
 import { createHmac, timingSafeEqual } from 'crypto';
 import { siteConfig } from '@/config/site';
-import { formatPrice } from '@/lib/utils';
+import { escapeHtml, formatPrice } from '@/lib/utils';
 
 const BRAND = {
   black: '#0B0B0B',
@@ -488,14 +488,6 @@ export function buildPhotosReadyEmail(params: PhotosReadyParams) {
 
 interface GenerationFailedParams {
   errorMessage: string;
-}
-
-function escapeHtml(value: string): string {
-  return value
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
 }
 
 export function buildGenerationFailedEmail(params: GenerationFailedParams) {

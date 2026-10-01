@@ -61,12 +61,12 @@ const faqItems = [
   },
 ];
 
-const pageTitle = 'Team Headshots — Professional AI Photos for Your Team | TailorPic';
+const pageTitle = 'Team Headshots: Consistent AI Photos for Your Team';
 const pageDescription =
-  'Consistent, professional AI team headshots from $29-$39 per person. Each member uploads selfies and gets polished, on-brand headshots, with no studio day needed.';
+  'Consistent, professional AI team headshots from $29-$39 per person. Each member uploads selfies and gets polished, on-brand headshots with no studio day.';
 
 export const metadata: Metadata = {
-  title: pageTitle,
+  title: { absolute: pageTitle },
   description: pageDescription,
   alternates: { canonical: '/team-headshots' },
   openGraph: generateOGMetadata({

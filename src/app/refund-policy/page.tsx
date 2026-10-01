@@ -9,13 +9,13 @@ import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
-  title: 'Refund Policy | TailorPic',
+  title: { absolute: 'Refund Policy: 14-Day Money-Back Guarantee | TailorPic' },
   description:
-    'Our 14-day money-back guarantee ensures you love your AI-generated photos. Learn about our hassle-free refund process.',
+    'Our 14-day money-back guarantee lets you try TailorPic with confidence. Learn how the refund process works if you are not happy with your AI-generated photos.',
   alternates: { canonical: '/refund-policy' },
-  openGraph: generateOGMetadata({ title: 'Refund Policy | TailorPic', description: 
+  openGraph: generateOGMetadata({ title: 'Refund Policy: 14-Day Money-Back Guarantee | TailorPic', description: 
       'Our 14-day money-back guarantee ensures you love your AI-generated photos.', path: '/refund-policy' }),
-  twitter: generateTwitterMetadata({ title: 'Refund Policy | TailorPic', description: 
+  twitter: generateTwitterMetadata({ title: 'Refund Policy: 14-Day Money-Back Guarantee | TailorPic', description: 
       'Our 14-day money-back guarantee ensures you love your AI-generated photos.' }),
 };
 
@@ -79,7 +79,7 @@ export default function RefundPolicyPage() {
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
                 <ShieldCheck className="h-6 w-6 text-tp-bronze" />
               </div>
-              <h2 className="mt-4 text-xl font-semibold text-tp-ink">
+              <h2 className="mt-4 text-xl font-display font-normal text-tp-ink">
                 14-Day Money-Back Guarantee
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-tp-muted">
@@ -94,7 +94,7 @@ export default function RefundPolicyPage() {
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
                 <Mail className="h-6 w-6 text-tp-bronze" />
               </div>
-              <h2 className="mt-4 text-xl font-semibold text-tp-ink">
+              <h2 className="mt-4 text-xl font-display font-normal text-tp-ink">
                 How to Request a Refund
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-tp-muted">
@@ -115,7 +115,7 @@ export default function RefundPolicyPage() {
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
                 <Clock className="h-6 w-6 text-tp-bronze" />
               </div>
-              <h2 className="mt-4 text-xl font-semibold text-tp-ink">
+              <h2 className="mt-4 text-xl font-display font-normal text-tp-ink">
                 Processing Time
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-tp-muted">
@@ -130,7 +130,7 @@ export default function RefundPolicyPage() {
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
                 <ArrowRight className="h-6 w-6 text-tp-bronze" />
               </div>
-              <h2 className="mt-4 text-xl font-semibold text-tp-ink">
+              <h2 className="mt-4 text-xl font-display font-normal text-tp-ink">
                 Coverage & Exceptions
               </h2>
               <div className="mt-3 space-y-3 text-sm leading-relaxed text-tp-muted">
@@ -154,7 +154,7 @@ export default function RefundPolicyPage() {
       {/* FAQ */}
       <section className="border-t border-tp-line bg-tp-paper py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-bold text-tp-ink">
+          <h2 className="text-center text-3xl font-display font-normal text-tp-ink">
             Frequently Asked Questions
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-center text-tp-muted">
@@ -181,7 +181,7 @@ export default function RefundPolicyPage() {
       {/* CTA */}
       <section className="py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-tp-ink">
+          <h2 className="text-3xl font-display font-normal text-tp-ink">
             Questions? Contact Us
           </h2>
           <p className="mt-4 text-lg text-tp-muted">

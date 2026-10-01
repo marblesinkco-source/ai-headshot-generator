@@ -22,10 +22,10 @@ import {
   ArrowRight,
 } from 'lucide-react';
 
-const aboutDescription = `Learn about ${siteConfig.name}, the AI photo platform that creates professional, personalized photos in hours. Our mission, how we're different, and our commitment to privacy.`;
+const aboutDescription = 'Learn about TailorPic, the AI photo platform that creates professional, personalized photos. Our mission, what sets us apart, and our privacy commitment.';
 
 export const metadata: Metadata = {
-  title: 'About Us',
+  title: { absolute: 'About TailorPic: The AI Photo Platform Built Around You' },
   description: aboutDescription,
   alternates: { canonical: '/about' },
   openGraph: generateOGMetadata({ title: `About | ${siteConfig.name}`, description: `Learn about ${siteConfig.name} and our mission to make professional photography accessible to everyone.`, path: '/about' }),

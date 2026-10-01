@@ -9,9 +9,9 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const competitor = "Wondershare AI";
-const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
+const title = 'TailorPic vs Wondershare AI: AI Headshot Comparison';
 const description =
-  "Compare TailorPic vs Wondershare AI. Wondershare offers a suite of AI creative and editing tools; TailorPic creates 40+ AI headshots from your selfies for a one-time $9.90.";
+  'Compare TailorPic vs Wondershare AI. Wondershare offers a suite of AI creative and editing tools; TailorPic: 40+ headshots for a one-time $9.90.';
 const path = '/vs/wondershare-ai';
 const canonicalUrl = 'https://www.tailorpic.com/vs/wondershare-ai';
 

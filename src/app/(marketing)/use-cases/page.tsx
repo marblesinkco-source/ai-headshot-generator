@@ -28,14 +28,14 @@ import {
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
-const OG_TITLE = `How Professionals Use TailorPic | ${siteConfig.name}`;
+const OG_TITLE = 'How Professionals Use TailorPic AI Headshots and Photos';
 const OG_DESC =
   'See how individuals, teams, and enterprises use TailorPic AI headshots for LinkedIn, company pages, real estate, resumes, conferences, and more.';
 
 export const metadata: Metadata = {
-  title: `How Professionals Use TailorPic | ${siteConfig.name}`,
+  title: { absolute: OG_TITLE },
   description:
-    'Discover how professionals use TailorPic AI headshots for LinkedIn profiles, team pages, real estate, job applications, conferences, social media, and onboarding.',
+    'Discover how professionals use TailorPic AI headshots for LinkedIn, team pages, real estate, job applications, conferences, social media and onboarding.',
   alternates: { canonical: '/use-cases' },
   openGraph: generateOGMetadata({
     title: OG_TITLE,
@@ -148,7 +148,7 @@ const useCases: UseCase[] = [
     title: 'New Hire Onboarding',
     description:
       'Welcome new employees with a professional headshot on day one. Skip the awkward "we\'ll schedule your photo later" and get every new hire camera-ready immediately.',
-    href: '/for-teams',
+    href: '/team-headshots',
     category: 'teams',
   },
   {

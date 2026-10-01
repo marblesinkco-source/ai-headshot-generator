@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Therapists & Counselors | TailorPic";
 const pageDescription =
-  "Professional AI headshots for therapists, counselors, and mental health practitioners. Create a warm, trustworthy portrait for Psychology Today, your practice website, and directories in about 2 hours.";
+  'Professional AI headshots for therapists, counselors and mental health practitioners. A warm, trustworthy portrait for Psychology Today and your practice site.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

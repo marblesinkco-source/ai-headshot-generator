@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Check, X, ArrowRight, Clock, DollarSign, Camera, Sparkles, RefreshCw, Shield, Home, Layers } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 type Cell = { text: string; ok?: boolean };
 
@@ -17,7 +18,7 @@ const rows: {
     icon: DollarSign,
     traditional: { text: '$200 – $500+', ok: false },
     otherAi: { text: 'Varies by provider' },
-    tailorpic: { text: 'Starting at $9.90', ok: true },
+    tailorpic: { text: `Starting at ${BASE_PRICE_DISPLAY}`, ok: true },
   },
   {
     feature: 'Time to Photos',
@@ -126,7 +127,7 @@ function CellContent({
 const GRID = 'grid grid-cols-[1.3fr_1fr_1fr_1.25fr]';
 
 const highlights = [
-  { label: 'Price', value: '$9.90', note: 'vs $200 – $500+' },
+  { label: 'Price', value: BASE_PRICE_DISPLAY, note: 'vs $200 – $500+' },
   { label: 'Speed', value: '2 hours', note: 'vs 1 – 2 weeks' },
   { label: 'Scheduling', value: 'None', note: 'vs booking a session' },
   { label: 'Variety', value: '40+ photos', note: 'vs 5 – 15' },
@@ -179,20 +180,20 @@ export function ComparisonTable() {
                 <h3 className="text-sm font-semibold text-tp-ink">{row.feature}</h3>
               </div>
               <div className="border-l-4 border-tp-bronze bg-tp-bronze/10 px-4 py-3">
-                <p className="mb-1.5 inline-flex items-center rounded-full bg-tp-bronze-ink px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-tp-paper">
+                <p className="mb-1.5 inline-flex items-center rounded-full bg-tp-bronze-ink px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-tp-paper">
                   TailorPic
                 </p>
                 <CellContent cell={row.tailorpic} highlight align="start" />
               </div>
               <div className="space-y-3 px-4 py-3">
                 <div>
-                  <p className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-tp-muted">
+                  <p className="mb-1 text-[11px] font-semibold uppercase tracking-wider text-tp-muted">
                     Traditional Studio
                   </p>
                   <CellContent cell={row.traditional} align="start" />
                 </div>
                 <div>
-                  <p className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-tp-muted">
+                  <p className="mb-1 text-[11px] font-semibold uppercase tracking-wider text-tp-muted">
                     Other AI Tools
                   </p>
                   <CellContent cell={row.otherAi} align="start" />
@@ -230,7 +231,7 @@ export function ComparisonTable() {
                   role="columnheader"
                   className="relative rounded-t-tp-card border-x-2 border-t-2 border-tp-bronze bg-tp-bronze/20 px-5 pb-4 pt-6 text-center"
                 >
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-tp-bronze-ink px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-tp-paper">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-tp-bronze-ink px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-tp-paper">
                     Best value
                   </span>
                   <span className="font-display text-xl font-normal text-tp-ink">TailorPic</span>

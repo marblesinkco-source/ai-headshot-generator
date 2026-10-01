@@ -310,7 +310,7 @@ export default function HelpCenterPage() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search for help..."
-                className="w-full rounded-tp-button border border-tp-line bg-white py-3.5 pl-12 pr-4 text-base text-tp-ink placeholder:text-tp-muted/60 focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20"
+                className="w-full rounded-tp-button border border-tp-line bg-white py-3.5 pl-12 pr-4 text-base text-tp-ink placeholder:text-tp-muted/80 focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20"
               />
               {searchQuery && (
                 <button
@@ -341,7 +341,7 @@ export default function HelpCenterPage() {
                     <div className="flex h-10 w-10 items-center justify-center rounded-tp-button bg-tp-paper">
                       <Icon className="h-5 w-5 text-tp-bronze-ink" />
                     </div>
-                    <h3 className="mt-4 font-display font-normal text-lg text-tp-black">{cat.title}</h3>
+                    <h2 className="mt-4 font-display font-normal text-lg text-tp-black">{cat.title}</h2>
                     <p className="mt-1.5 text-sm leading-relaxed text-tp-muted">{cat.description}</p>
                     <ul className="mt-3 space-y-1">
                       {cat.items.slice(0, 4).map((item) => (

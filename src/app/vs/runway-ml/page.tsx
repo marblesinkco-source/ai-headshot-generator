@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "RunwayML";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs RunwayML. Runway is a generative video and image AI platform for creatives; TailorPic creates 40+ AI headshots from your selfies for a one-time $9.90.";
+  'Compare TailorPic vs RunwayML. Runway is a generative video and image AI platform for creatives; TailorPic: 40+ headshots for a one-time $9.90.';
 const path = '/vs/runway-ml';
 const canonicalUrl = 'https://www.tailorpic.com/vs/runway-ml';
 

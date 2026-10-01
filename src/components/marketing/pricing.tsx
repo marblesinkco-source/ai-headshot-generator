@@ -55,9 +55,11 @@ export function Pricing() {
           {featured.map((cat) => (
             <button
               key={cat.id}
+              type="button"
+              aria-pressed={activeCategory.id === cat.id}
               onClick={() => setActiveCategory(cat)}
               className={cn(
-                'rounded-full px-4 py-2 text-sm font-medium transition-all',
+                'rounded-full px-4 py-2 text-sm font-medium transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink',
                 activeCategory.id === cat.id
                   ? 'bg-tp-black text-tp-bronze shadow-md'
                   : 'bg-white text-tp-muted hover:bg-tp-paper border border-tp-line'
@@ -102,7 +104,7 @@ export function Pricing() {
               >
                 {isRecommended && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center gap-1 rounded-full bg-tp-black px-3.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-tp-paper shadow-md whitespace-nowrap">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-tp-black px-3.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-tp-paper shadow-md whitespace-nowrap">
                       <Star className="h-3 w-3 fill-tp-bronze text-tp-bronze" aria-hidden="true" />
                       Most Popular
                     </span>
@@ -215,7 +217,7 @@ export function Pricing() {
         </p>
 
         {/* Studio comparison */}
-        <p className="mt-2 text-center text-xs text-tp-muted/60">
+        <p className="mt-2 text-center text-xs text-tp-muted">
           Studio photography typically costs{' '}
           <span className="line-through">$200–$500</span> per session
         </p>

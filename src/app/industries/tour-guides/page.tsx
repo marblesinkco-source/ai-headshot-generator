@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Tour Guides | TailorPic";
 const pageDescription =
-  "Professional AI headshots for tour guides, travel hosts, and excursion leaders. Build traveler trust on booking platforms, licensing profiles, and your own website with a portrait delivered in about 2 hours.";
+  'Professional AI headshots for tour guides, travel hosts and excursion leaders. Build traveler trust on booking platforms and your own website.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

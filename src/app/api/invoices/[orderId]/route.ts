@@ -1,5 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
+import { logger } from '@/lib/logger';
+import { rateLimit } from '@/lib/rate-limit';
+import { tooManyRequests } from '@/lib/security';
+import { escapeHtml } from '@/lib/utils';
 
 export async function GET(
   _request: NextRequest,
@@ -26,6 +30,10 @@ export async function GET(
         { error: 'Authentication required' },
         { status: 401 }
       );
+    }
+
+    if (!rateLimit({ key: `invoice:${user.id}`, limit: 10, windowMs: 60 * 1000 }).success) {
+      return tooManyRequests();
     }
 
     // Fetch order and verify ownership
@@ -328,7 +336,7 @@ export async function GET(
       },
     });
   } catch (error) {
-    console.error('Invoice generation error:', error);
+    logger.error('Invoice generation error:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
@@ -336,12 +344,3 @@ export async function GET(
   }
 }
 
-/** Escape HTML special characters to prevent XSS in the generated invoice. */
-function escapeHtml(str: string): string {
-  return str
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}

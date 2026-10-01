@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Notaries & Legal Professionals | TailorPic";
 const pageDescription =
-  "Professional AI headshots for notaries, paralegals, and legal professionals. Build client trust on websites, directories, and LinkedIn with a polished portrait delivered in about 2 hours.";
+  'Professional AI headshots for notaries, paralegals, and legal professionals. Build client trust on websites, directories, and LinkedIn with a polished portrait.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

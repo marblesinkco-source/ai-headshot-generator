@@ -24,7 +24,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Real Estate Listings | TailorPic";
 const pageDescription =
-  "Professional agent headshots for real estate listings, yard signs and Zillow profiles. Get polished portraits from a few selfies, delivered in about 2 hours. Starting at $9.90.";
+  'Professional agent headshots for real estate listings, yard signs and Zillow profiles. Get polished portraits from a few selfies. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

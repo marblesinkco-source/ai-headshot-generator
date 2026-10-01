@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Insurance Agents | TailorPic";
 const pageDescription =
-  "Professional AI headshots for insurance agents and brokers. Earn client trust on your agency website, business cards, and LinkedIn with a polished portrait delivered in about 2 hours.";
+  'Professional AI headshots for insurance agents and brokers. Earn client trust on your agency website, business cards, and LinkedIn with a polished portrait.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Actors & Performers | TailorPic";
 const pageDescription =
-  "Professional AI headshots for actors, models, and performers. Get casting-ready portraits for auditions, talent profiles, and agencies, delivered in about 2 hours without a studio session.";
+  'Professional AI headshots for actors, models, and performers. Get casting-ready portraits for auditions, talent profiles, and agencies.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

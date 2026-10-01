@@ -34,19 +34,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const style = getPhotoStyle(slug);
   if (!style) return {};
 
-  const title = `${style.name} — AI-Generated ${style.name} | ${siteConfig.name}`;
+  const title = `${style.name}: AI Photo Style | ${siteConfig.name}`;
   return {
-    title,
+    title: { absolute: title },
     description: style.metaDescription,
     alternates: { canonical: `/styles/${style.slug}` },
     openGraph: generateOGMetadata({
-      title: style.name,
+      title,
       description: style.metaDescription,
       type: 'style',
       path: `/styles/${style.slug}`,
     }),
     twitter: generateTwitterMetadata({
-      title: style.name,
+      title,
       description: style.metaDescription,
       type: 'style',
     }),

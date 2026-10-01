@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Website Team Pages | TailorPic";
 const pageDescription =
-  "Consistent, professional headshots for your About Us and Team page. Every team member from a few selfies, matching style and background. Delivered in about 2 hours. Starting at $9.90.";
+  'Consistent, professional headshots for your About Us and Team page. Every team member from a few selfies, matching style and background. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

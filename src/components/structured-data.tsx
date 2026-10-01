@@ -7,7 +7,7 @@ export function OrganizationSchema() {
     '@type': 'Organization',
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}${siteConfig.ogImage}`,
+    logo: `${siteConfig.url}/brand/tailorpic/icons/profile-dark-512.png`,
     description: siteConfig.description,
     foundingDate: '2024',
     sameAs: [
@@ -95,31 +95,10 @@ export function ProductSchema({
       price: price / 100,
       priceCurrency: 'USD',
       availability: 'https://schema.org/InStock',
-      priceValidUntil: '2025-12-31',
       url: productUrl,
       seller: {
         '@type': 'Organization',
         name: siteConfig.name,
-      },
-      shippingDetails: {
-        '@type': 'OfferShippingDetails',
-        shippingRate: {
-          '@type': 'MonetaryAmount',
-          value: '0',
-          currency: 'USD',
-        },
-        deliveryTime: {
-          '@type': 'ShippingDeliveryTime',
-          businessDays: {
-            '@type': 'QuantitativeValue',
-            minValue: 0,
-            maxValue: 0,
-          },
-        },
-        shippingDestination: {
-          '@type': 'DefinedRegion',
-          addressCountry: 'US',
-        },
       },
       hasMerchantReturnPolicy: {
         '@type': 'MerchantReturnPolicy',

@@ -23,7 +23,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Florists & Floral Designers | TailorPic";
 const pageDescription =
-  "Professional AI headshots for florists, floral designers, and flower shop owners. Put a warm, credible face on your website, wedding inquiries, and social media in about 2 hours.";
+  'Professional AI headshots for florists, floral designers and flower shop owners. Put a warm, credible face on your website, wedding inquiries and social media.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

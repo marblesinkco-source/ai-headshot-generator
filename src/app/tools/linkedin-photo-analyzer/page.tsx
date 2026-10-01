@@ -8,9 +8,9 @@ import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import { AnalyzerForm } from './analyzer-form';
 
-const title = 'Free LinkedIn Photo Analyzer — Score Your Profile Photo | TailorPic';
+const title = 'Free LinkedIn Photo Analyzer: Score Your Profile Photo';
 const description =
-  'Get an instant score and actionable tips for your LinkedIn profile photo. Free AI-powered analysis tool by TailorPic.';
+  'Get an instant score and actionable tips for your LinkedIn profile photo. Free analysis of lighting, background, framing and professionalism by TailorPic.';
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -67,7 +67,7 @@ export default function LinkedInPhotoAnalyzerPage() {
 
       <section className="border-t border-tp-line bg-tp-paper">
         <div className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
-          <h2 className="text-2xl font-bold text-tp-ink sm:text-3xl">
+          <h2 className="text-2xl font-display font-normal text-tp-ink sm:text-3xl">
             Skip the checklist. Get a photo that passes every test.
           </h2>
           <p className="mt-3 text-tp-muted">

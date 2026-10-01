@@ -9,9 +9,9 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const competitor = "PhotoDirector";
-const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
+const title = 'TailorPic vs PhotoDirector: AI Headshot Generator Comparison';
 const description =
-  "Compare TailorPic vs PhotoDirector. PhotoDirector is CyberLink's AI photo editor; TailorPic generates 40+ professional AI headshots from your selfies for a one-time $9.90.";
+  'Compare TailorPic vs PhotoDirector. PhotoDirector is CyberLink\'s AI photo editor; TailorPic makes 40+ headshots from selfies for a one-time $9.90.';
 const path = '/vs/photodirector';
 const canonicalUrl = 'https://www.tailorpic.com/vs/photodirector';
 

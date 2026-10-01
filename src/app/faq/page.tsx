@@ -7,10 +7,10 @@ import { siteConfig } from '@/config/site';
 import { FAQSchema, BreadcrumbSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
-const DESCRIPTION = `Answers about ${siteConfig.name} AI headshots: how it works, pricing, privacy, delivery time, and our 14-day money-back guarantee.`;
+const DESCRIPTION = 'Answers about TailorPic AI headshots: how it works, pricing, privacy, delivery time, and our 14-day money-back guarantee. Find what you need quickly.';
 
 export const metadata: Metadata = {
-  title: 'Frequently Asked Questions',
+  title: { absolute: 'TailorPic FAQ: Pricing, Privacy, Delivery & Guarantee' },
   description: DESCRIPTION,
   alternates: { canonical: '/faq' },
   openGraph: generateOGMetadata({

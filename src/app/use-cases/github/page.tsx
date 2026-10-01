@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Profile Photos for GitHub | Developer Avatars | TailorPic";
 const pageDescription =
-  "Professional avatars for GitHub profiles, developer portfolios and open-source contributors. Stand out to recruiters and maintainers from a few selfies. Delivered in about 2 hours. Starting at $9.90.";
+  'Professional avatars for GitHub profiles, developer portfolios and open-source contributors. Stand out to recruiters and maintainers. From $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

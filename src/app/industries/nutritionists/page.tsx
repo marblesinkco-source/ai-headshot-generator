@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Nutritionists & Dietitians | TailorPic";
 const pageDescription =
-  "Professional AI headshots for nutritionists and registered dietitians. Build client trust on your website, social media, and telehealth profiles with a fresh, polished portrait delivered in about 2 hours.";
+  'Professional AI headshots for nutritionists and registered dietitians. Build client trust on your website, social media and telehealth profiles.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

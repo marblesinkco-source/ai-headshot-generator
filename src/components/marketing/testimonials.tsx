@@ -141,7 +141,7 @@ export function Testimonials() {
           ))}
         </div>
 
-        <p className="mt-10 text-center text-xs text-tp-muted/60">
+        <p className="mt-10 text-center text-xs text-tp-muted">
           * Illustrative testimonials for demonstration purposes.
         </p>
       </div>

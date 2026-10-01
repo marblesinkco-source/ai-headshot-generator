@@ -4,10 +4,14 @@ import { createAdminClient } from '@/lib/supabase/server';
 import { rateLimit, getClientIp } from '@/lib/rate-limit';
 import { siteConfig } from '@/config/site';
 import { buildNewsletterWelcomeEmail } from '@/lib/emails';
+import { csrfGuard } from '@/lib/security';
+import { logger } from '@/lib/logger';
+import { EMAIL_RE } from '@/lib/utils';
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function POST(request: Request) {
+  const csrf = csrfGuard(request);
+  if (csrf) return csrf;
   const rl = rateLimit({
     key: `newsletter:${getClientIp(request)}`,
     limit: 5,
@@ -37,8 +41,7 @@ export async function POST(request: Request) {
   let stored = false;
   try {
     const supabase = createAdminClient();
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const { error } = await (supabase as any)
+    const { error } = await supabase
       .from('newsletter_subscribers')
       .upsert(
         {
@@ -49,12 +52,12 @@ export async function POST(request: Request) {
         { onConflict: 'email' },
       );
     if (error) {
-      console.error('newsletter_subscribers upsert failed:', error.message);
+      logger.error('newsletter_subscribers upsert failed:', error.message);
     } else {
       stored = true;
     }
   } catch (err) {
-    console.error('newsletter_subscribers upsert error:', err);
+    logger.error('newsletter_subscribers upsert error:', err);
   }
 
   // Send welcome email via Resend.
@@ -73,7 +76,7 @@ export async function POST(request: Request) {
       });
       emailed = true;
     } catch (err) {
-      console.error('Newsletter welcome email send failed:', err);
+      logger.error('Newsletter welcome email send failed:', err);
     }
   }
 

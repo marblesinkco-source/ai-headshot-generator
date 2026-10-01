@@ -2,10 +2,11 @@ import Link from 'next/link';
 import { ArrowRight, Calendar, Camera, Clock } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { BASE_PRICE, BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const STUDIO_LOW = 200;
 const STUDIO_HIGH = 500;
-const TAILORPIC = 9.9;
+const TAILORPIC = BASE_PRICE;
 
 // Savings vs. the low end of studio pricing ($200) is the conservative figure: ~95%.
 const savingsPercent = Math.floor((1 - TAILORPIC / STUDIO_LOW) * 100);
@@ -31,7 +32,7 @@ const bars = [
   },
   {
     label: 'TailorPic',
-    price: '$9.90',
+    price: BASE_PRICE_DISPLAY,
     width: '3%',
     barClass: 'bg-tp-bronze',
     priceClass: 'text-tp-ink font-semibold',
@@ -102,7 +103,7 @@ export function SavingsHighlight() {
                 TailorPic
               </p>
               <p className="mt-4 font-display font-normal text-6xl text-tp-paper sm:text-7xl">
-                $9.90
+                {BASE_PRICE_DISPLAY}
               </p>
               <p className="mt-1 text-sm text-tp-beige">one-time for individuals</p>
             </div>

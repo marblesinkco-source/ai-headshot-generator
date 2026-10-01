@@ -23,9 +23,9 @@ import {
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
-  title: 'AI Headshots for Consultants & Advisors | TailorPic',
+  title: { absolute: 'AI Headshots for Consultants & Advisors | TailorPic' },
   description:
-    'Get professional headshots for consultants, advisors, and independent professionals. Multiple styles for proposals, LinkedIn, and speaking engagements — delivered in 2 hours.',
+    'Get professional headshots for consultants, advisors and independent professionals. Multiple styles for proposals, LinkedIn and speaking engagements.',
   alternates: { canonical: '/industries/consultants' },
   openGraph: generateOGMetadata({ title: 'AI Headshots for Consultants & Advisors | TailorPic', description: 'AI-powered professional headshots for consultants. Boardroom, casual professional, and speaker styles delivered in hours.', path: '/industries/consultants', type: 'industry' }),
   

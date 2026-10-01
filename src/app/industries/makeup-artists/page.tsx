@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Makeup Artists | TailorPic";
 const pageDescription =
-  "Professional AI headshots for makeup artists, beauty freelancers, and salon pros. Build a polished portfolio, booking page, and Instagram presence with a portrait delivered in about 2 hours.";
+  'Professional AI headshots for makeup artists, beauty freelancers and salon pros. Build a polished portfolio, booking page and Instagram presence.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

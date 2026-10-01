@@ -5,8 +5,6 @@ import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
-  Check,
-  X,
   DollarSign,
   Image,
   Layers,
@@ -15,10 +13,11 @@ import {
   Sparkles,
   ArrowRight,
 } from 'lucide-react';
+import { CellValue } from '@/components/shared/cell-value';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 export const metadata: Metadata = {
-  title: 'TailorPic vs HeadshotPro — Compare AI Headshot Generators (2026)',
+  title: { absolute: 'TailorPic vs HeadshotPro: AI Headshot Generator Comparison' },
   description:
     'Compare TailorPic and HeadshotPro side by side. See pricing, photo quality, category variety, and features to find the best AI headshot generator for you.',
   alternates: { canonical: '/vs/headshotpro' },
@@ -102,26 +101,6 @@ const advantages = [
 /* ------------------------------------------------------------------ */
 /*  Helpers                                                           */
 /* ------------------------------------------------------------------ */
-
-function CellValue({ value, highlight }: { value: RowValue; highlight?: boolean }) {
-  if (typeof value === 'boolean') {
-    return value ? (
-      <span className="inline-flex items-center justify-center rounded-full bg-tp-bronze/10 p-1 text-tp-bronze-ink">
-        <Check className="h-4 w-4" />
-      </span>
-    ) : (
-      <span className="inline-flex items-center justify-center rounded-full bg-tp-paper p-1 text-tp-muted">
-        <X className="h-4 w-4" />
-      </span>
-    );
-  }
-
-  return (
-    <span className={highlight ? 'font-semibold text-tp-bronze-ink' : 'text-tp-muted'}>
-      {value}
-    </span>
-  );
-}
 
 /* ------------------------------------------------------------------ */
 /*  Page                                                              */
@@ -256,10 +235,10 @@ export default function VsHeadshotProPage() {
                 >
                   <span className="font-medium text-tp-ink">{row.feature}</span>
                   <span className="text-center">
-                    <CellValue value={row.tailorpic} highlight={isWinner} />
+                    <CellValue variant="pill" value={row.tailorpic} highlight={isWinner} />
                   </span>
                   <span className="text-center">
-                    <CellValue value={row.headshotpro} />
+                    <CellValue variant="pill" value={row.headshotpro} />
                   </span>
                 </div>
               );

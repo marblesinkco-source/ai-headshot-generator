@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Mentorship Profiles | TailorPic";
 const pageDescription =
-  "Friendly, professional photos for mentor and mentee profiles on mentorship platforms. Get approachable portraits from a few selfies in about 2 hours. Starting at $9.90.";
+  'Friendly, professional photos for mentor and mentee profiles on mentorship platforms. Get approachable portraits from a few selfies. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

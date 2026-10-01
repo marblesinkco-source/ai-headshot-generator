@@ -13,11 +13,11 @@ export const metadata = {
 
 export default function GatePage() {
   return (
-    <main id="main-content" className="min-h-screen flex items-center justify-center bg-tp-paper px-6">
+    <main id="main-content" lang="tr" className="min-h-screen flex items-center justify-center bg-tp-paper px-6">
       <div className="max-w-md w-full text-center space-y-6">
         {/* Logo / Brand */}
         <div className="space-y-2">
-          <h1 className="text-4xl font-bold text-tp-ink font-display">
+          <h1 className="text-4xl text-tp-ink font-display font-normal">
             TailorPic
           </h1>
           <p className="text-tp-muted text-sm tracking-wide uppercase">
@@ -43,7 +43,7 @@ export default function GatePage() {
             </svg>
           </div>
 
-          <h2 className="text-xl font-semibold text-tp-ink">
+          <h2 className="text-xl font-display font-normal text-tp-ink">
             Bakım ve Geliştirme Aşamasında
           </h2>
 

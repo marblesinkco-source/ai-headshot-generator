@@ -23,7 +23,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Musicians & Artists | TailorPic";
 const pageDescription =
-  "Professional AI headshots for musicians, singers, producers, and visual artists. Create press-ready portraits for Spotify, EPKs, booking inquiries, and social media in about 2 hours.";
+  'Professional AI headshots for musicians, singers, producers and visual artists. Press-ready portraits for Spotify, EPKs, booking inquiries and social media.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

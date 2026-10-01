@@ -4,6 +4,8 @@ import { createClient, createAdminClient } from '@/lib/supabase/server';
 import { nanoid } from 'nanoid';
 import { getCategoryById, type CategoryId } from '@/config/categories';
 import { rateLimit } from '@/lib/rate-limit';
+import { csrfGuard } from '@/lib/security';
+import { logger } from '@/lib/logger';
 
 const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
@@ -15,6 +17,8 @@ const uploadMetaSchema = z.object({
 });
 
 export async function POST(request: NextRequest) {
+  const csrf = csrfGuard(request);
+  if (csrf) return csrf;
   try {
     const supabase = await createClient();
     const {
@@ -48,7 +52,7 @@ export async function POST(request: NextRequest) {
     const metaParsed = uploadMetaSchema.safeParse({ orderId });
     if (!metaParsed.success) {
       return NextResponse.json(
-        { error: 'Invalid orderId', details: metaParsed.error.flatten() },
+        { error: 'Invalid orderId' },
         { status: 400 }
       );
     }
@@ -141,7 +145,7 @@ export async function POST(request: NextRequest) {
         });
 
       if (uploadError) {
-        console.error(`Failed to upload ${file.name}:`, uploadError);
+        logger.error(`Failed to upload ${file.name}:`, uploadError);
         return NextResponse.json(
           { error: `Failed to upload "${file.name}"` },
           { status: 500 }
@@ -161,7 +165,7 @@ export async function POST(request: NextRequest) {
         .single();
 
       if (insertError || !photoRecord) {
-        console.error(`Failed to create photo record for ${file.name}:`, insertError);
+        logger.error(`Failed to create photo record for ${file.name}:`, insertError);
         continue;
       }
 
@@ -197,7 +201,7 @@ export async function POST(request: NextRequest) {
       ready,
     });
   } catch (error) {
-    console.error('Upload error:', error);
+    logger.error('Upload error:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

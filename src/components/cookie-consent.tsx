@@ -146,7 +146,7 @@ export function CookieConsent() {
         {!showPreferences ? (
           <div className="flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:gap-6 sm:p-5">
             <div className="min-w-0 flex-1">
-              <h2 id="tp-cookie-title" className="text-sm font-semibold text-tp-black">
+              <h2 id="tp-cookie-title" className="text-sm font-display font-normal text-tp-black">
                 We use cookies
               </h2>
               <p className="mt-1 text-sm leading-relaxed text-tp-muted">
@@ -184,7 +184,7 @@ export function CookieConsent() {
           </div>
         ) : (
           <div className="p-4 sm:p-5">
-            <h2 id="tp-cookie-title" className="mb-1 text-sm font-semibold text-tp-black">
+            <h2 id="tp-cookie-title" className="mb-1 text-sm font-display font-normal text-tp-black">
               Cookie preferences
             </h2>
             <p className="mb-2 text-xs text-tp-muted">

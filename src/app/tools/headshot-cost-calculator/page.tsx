@@ -8,9 +8,9 @@ import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { CalculatorForm } from './calculator-form';
 
-const title = 'AI Headshot Cost Calculator — Compare Photography vs AI Prices | TailorPic';
+const title = 'AI Headshot Cost Calculator: Photographer vs AI Prices';
 const description =
-  'Free calculator: see how much a professional photographer costs for headshots, dating photos, pet portraits or product shots, and how much you save with AI from $9.90.';
+  'Free calculator: see what a professional photographer costs for headshots, dating photos, pet portraits or product shots, and how much you save with AI.';
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -65,7 +65,7 @@ export default function HeadshotCostCalculatorPage() {
 
       <section className="border-t border-tp-line bg-tp-paper">
         <div className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
-          <h2 className="text-2xl font-bold text-tp-ink sm:text-3xl">Ready to skip the studio?</h2>
+          <h2 className="text-2xl font-display font-normal text-tp-ink sm:text-3xl">Ready to skip the studio?</h2>
           <p className="mt-3 text-tp-muted">
             Upload a few selfies and get studio-quality photos in hours, from $9.90.
           </p>

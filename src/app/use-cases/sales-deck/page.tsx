@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Sales Decks & Proposals | TailorPic";
 const pageDescription =
-  "Professional headshots for sales decks, pitch slides and client proposals. Build trust on the About Us slide from a few selfies in about 2 hours. Starting at $9.90.";
+  'Professional headshots for sales decks, pitch slides and client proposals. Build trust on the About Us slide from a few selfies. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

@@ -6,8 +6,6 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import {
-  Check,
-  X,
   DollarSign,
   Image as ImageIcon,
   Clock,
@@ -16,15 +14,16 @@ import {
   BadgeDollarSign,
   Target,
 } from 'lucide-react';
+import { CellValue } from '@/components/shared/cell-value';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 export const metadata: Metadata = {
-  title: 'TailorPic vs Secta Labs — AI Headshot Generator Comparison',
+  title: { absolute: 'TailorPic vs Secta Labs: AI Headshot Generator Comparison' },
   description:
-    'Compare TailorPic vs Secta Labs for AI headshots. TailorPic starts at $9.90 with 40+ photos, 11 categories, delivery in under 2 hours and a 14-day money-back guarantee.',
+    'Compare TailorPic vs Secta Labs for AI headshots. TailorPic starts at $9.90 with 40+ photos, 11 categories and a 14-day money-back guarantee.',
   alternates: { canonical: '/vs/secta' },
-  openGraph: generateOGMetadata({ title: 'TailorPic vs Secta Labs — AI Headshot Generator Comparison', description: 'Compare TailorPic and Secta Labs for AI headshots. Pricing, categories, delivery, and guarantees side by side.', path: '/vs/secta', type: 'vs' }),
-  twitter: generateTwitterMetadata({ title: 'TailorPic vs Secta Labs — AI Headshot Generator Comparison', description: 'Compare TailorPic and Secta Labs for AI headshots. Pricing, categories, delivery, and guarantees side by side.', type: 'vs' }),
+  openGraph: generateOGMetadata({ title: 'TailorPic vs Secta Labs: AI Headshot Generator Comparison', description: 'Compare TailorPic and Secta Labs for AI headshots. Pricing, categories, delivery, and guarantees side by side.', path: '/vs/secta', type: 'vs' }),
+  twitter: generateTwitterMetadata({ title: 'TailorPic vs Secta Labs: AI Headshot Generator Comparison', description: 'Compare TailorPic and Secta Labs for AI headshots. Pricing, categories, delivery, and guarantees side by side.', type: 'vs' }),
 };
 
 /* ------------------------------------------------------------------ */
@@ -101,26 +100,6 @@ const whyCards = [
 /* ------------------------------------------------------------------ */
 /*  Helpers                                                            */
 /* ------------------------------------------------------------------ */
-
-function CellValue({ value }: { value: string | boolean }) {
-  if (value === true) {
-    return (
-      <span className="inline-flex items-center gap-1.5 text-tp-bronze-ink">
-        <Check className="h-5 w-5" />
-        <span className="sr-only">Yes</span>
-      </span>
-    );
-  }
-  if (value === false) {
-    return (
-      <span className="inline-flex items-center gap-1.5 text-tp-muted">
-        <X className="h-5 w-5" />
-        <span className="sr-only">No</span>
-      </span>
-    );
-  }
-  return <span>{value}</span>;
-}
 
 /* ------------------------------------------------------------------ */
 /*  Page                                                               */

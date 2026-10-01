@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Neural.love";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs Neural.love. Neural.love is a suite of AI image generation and enhancement tools; TailorPic creates 40+ professional AI headshots from your selfies for a one-time $9.90.";
+  'Compare TailorPic vs Neural.love. Neural.love is a suite of AI image generation and enhancement tools; TailorPic makes 40+ headshots for a one-time $9.90.';
 const path = '/vs/neural-love';
 const canonicalUrl = 'https://www.tailorpic.com/vs/neural-love';
 

@@ -9,13 +9,13 @@ import { siteConfig } from '@/config/site';
 import { getAllPhotoStyles, type PhotoStyle } from '@/config/styles';
 
 export const metadata: Metadata = {
-  title: 'Photo Styles — Choose Your Perfect Headshot Style | TailorPic',
+  title: { absolute: 'AI Headshot Styles: Find the Look That Fits You | TailorPic' },
   description:
-    'Browse TailorPic headshot styles by category: professional, natural, creative, artistic and more. See what each style is best for and find the look that fits you.',
+    'Browse TailorPic headshot styles by category: professional, natural, creative, artistic and more. Find the look that fits you and see what each suits best.',
   alternates: { canonical: '/styles' },
-  openGraph: generateOGMetadata({ title: 'Photo Styles — Choose Your Perfect Headshot Style | TailorPic', description: 
+  openGraph: generateOGMetadata({ title: 'AI Headshot Styles: Find the Look That Fits You | TailorPic', description: 
       'Browse AI headshot styles by category and see which use cases each one suits, from LinkedIn to creative portfolios.', path: '/styles', type: 'style' }),
-  twitter: generateTwitterMetadata({ title: 'Photo Styles — Choose Your Perfect Headshot Style | TailorPic', description: 
+  twitter: generateTwitterMetadata({ title: 'AI Headshot Styles: Find the Look That Fits You | TailorPic', description: 
       'Browse AI headshot styles by category and see which use cases each one suits, from LinkedIn to creative portfolios.' }),
 };
 

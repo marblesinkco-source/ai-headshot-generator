@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Recruiters | TailorPic";
 const pageDescription =
-  "Professional AI headshots for recruiters and talent acquisition professionals. Build candidate trust on LinkedIn, job boards, and outreach emails with a polished portrait delivered in about 2 hours.";
+  'Professional AI headshots for recruiters and talent acquisition professionals. Build candidate trust on LinkedIn, job boards and outreach emails.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

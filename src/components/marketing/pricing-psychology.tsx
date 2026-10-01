@@ -1,5 +1,6 @@
 import { Coffee } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { BASE_PRICE } from '@/config/pricing';
 
 export interface PricingPsychologyProps {
   /** Total package price in USD. Defaults to the Express tier. */
@@ -13,7 +14,7 @@ export interface PricingPsychologyProps {
 }
 
 export function PricingPsychology({
-  price = 9.9,
+  price = BASE_PRICE,
   outputs = 5,
   planName = 'Express',
   mostPopular = false,

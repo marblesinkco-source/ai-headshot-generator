@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Medical Staff Directories | TailorPic";
 const pageDescription =
-  "Professional headshots for hospital and clinic staff directories. Build patient trust with polished portraits from a few selfies, in about 2 hours. Starting at $9.90.";
+  'Professional headshots for hospital and clinic staff directories. Build patient trust with polished portraits from a few selfies. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

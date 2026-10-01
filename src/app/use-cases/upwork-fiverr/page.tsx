@@ -9,9 +9,9 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
-const pageTitle = "AI Headshots for Upwork & Fiverr | Freelancer Photos | TailorPic";
+const pageTitle = 'AI Headshots for Upwork & Fiverr Freelancers | TailorPic';
 const pageDescription =
-  "Trust-building headshots for Upwork, Fiverr and other freelance marketplace profiles. Win more clients with a professional photo from a few selfies. Delivered in about 2 hours. Starting at $9.90.";
+  'Trust-building headshots for Upwork, Fiverr and other freelance marketplace profiles. Win more clients with a professional photo from a few selfies. From $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

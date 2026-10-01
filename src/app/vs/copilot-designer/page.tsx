@@ -9,9 +9,9 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const competitor = "Microsoft Copilot Designer";
-const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
+const title = 'TailorPic vs Microsoft Copilot Designer: Headshot Comparison';
 const description =
-  "Compare TailorPic vs Microsoft Copilot Designer. Copilot Designer creates images from prompts; TailorPic trains on your selfies to deliver 40+ headshots for $9.90.";
+  'Compare TailorPic vs Microsoft Copilot Designer. Copilot Designer creates images from prompts; TailorPic makes 40+ headshots from selfies for a one-time $9.90.';
 const path = '/vs/copilot-designer';
 const canonicalUrl = 'https://www.tailorpic.com/vs/copilot-designer';
 

@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Lensa";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs Lensa for AI headshots. TailorPic is a one-time $9.90 for 40+ professional headshots in 11 categories; Lensa is a mobile photo editor with AI avatar features and subscription pricing.";
+  'Compare TailorPic vs Lensa for AI headshots. TailorPic is a one-time $9.90 for 40+ headshots; Lensa is a mobile photo editor with AI avatars on subscription.';
 const path = '/vs/lensa';
 
 export const metadata: Metadata = {

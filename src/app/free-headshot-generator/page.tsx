@@ -30,7 +30,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Free AI Headshot Generator — Professional Photos in Minutes | TailorPic',
+  title: { absolute: 'Free AI Headshot Generator Alternative: Try Risk-Free' },
   description:
     'Looking for a free AI headshot generator? Try TailorPic risk-free: $9.90 one-time for 40+ studio-quality headshots, backed by a 14-day money-back guarantee.',
   alternates: { canonical: '/free-headshot-generator' },

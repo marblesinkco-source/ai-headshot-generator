@@ -33,10 +33,10 @@ import {
 
 const PAGE_TITLE = 'The Technology Behind Your AI Headshots | TailorPic';
 const PAGE_DESC =
-  'Discover how TailorPic uses state-of-the-art AI to transform everyday selfies into studio-quality headshots. Learn about our process, quality standards, and privacy commitments.';
+  'Discover how TailorPic turns everyday selfies into studio-quality headshots. Learn about our process, quality standards and privacy commitments.';
 
 export const metadata: Metadata = {
-  title: PAGE_TITLE,
+  title: { absolute: PAGE_TITLE },
   description: PAGE_DESC,
   alternates: { canonical: '/technology' },
   openGraph: generateOGMetadata({

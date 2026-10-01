@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Visa Application Photos | TailorPic";
 const pageDescription =
-  "Clean, well-lit portraits to help you prepare visa application photos. Generated from selfies, delivered in about 2 hours. Starting at $9.90. Check official requirements.";
+  'Clean, well-lit portraits to help you prepare visa application photos. Generated from selfies. Starting at $9.90. Check official requirements.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

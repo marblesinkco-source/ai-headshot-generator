@@ -9,9 +9,9 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
-const pageTitle = "AI Profile Photos for WhatsApp | Business & Personal | TailorPic";
+const pageTitle = 'AI Profile Photos for WhatsApp | TailorPic';
 const pageDescription =
-  "Professional profile photos for WhatsApp Business and personal messaging. Look trustworthy in every chat from a few selfies. Delivered in about 2 hours. Starting at $9.90.";
+  'Professional profile photos for WhatsApp Business and personal messaging. Look trustworthy in every chat from a few selfies. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

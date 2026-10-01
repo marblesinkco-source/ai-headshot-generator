@@ -8,6 +8,8 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import { CATEGORIES } from '@/config/categories';
+import { BASE_PRICE_DISPLAY, TEAM_PRICES } from '@/config/pricing';
+import { formatPrice } from '@/lib/utils';
 import {
   Clock,
   Camera,
@@ -21,12 +23,15 @@ import {
   Users,
 } from 'lucide-react';
 
+const TEAM_SMALL = formatPrice(TEAM_PRICES.small.perPersonCents, 'usd', true);
+const TEAM_LARGE = formatPrice(TEAM_PRICES.large.perPersonCents, 'usd', true);
+
 const OG_TITLE = `Pricing Comparison | ${siteConfig.name}`;
-const OG_DESCRIPTION = `Compare AI headshot pricing: ${siteConfig.name} from $9.90 one-time vs traditional studios vs other AI services.`;
+const OG_DESCRIPTION = `Compare AI headshot pricing: ${siteConfig.name} from ${BASE_PRICE_DISPLAY} one-time vs traditional studios vs other AI services.`;
 
 export const metadata: Metadata = {
-  title: `Pricing Comparison — ${siteConfig.name} vs Traditional Photography`,
-  description: `Compare ${siteConfig.name} AI headshots with traditional photography studios and other AI services. See how you can save time and money while getting professional results.`,
+  title: { absolute: 'TailorPic vs Traditional Photography: Price Comparison' },
+  description: 'Compare TailorPic AI headshots with traditional photography studios and other AI services. See how you can save time and money with professional results.',
   alternates: { canonical: '/pricing-comparison' },
   openGraph: generateOGMetadata({
     title: OG_TITLE,
@@ -51,10 +56,6 @@ const expressPackage = headshots.packages[0]; // Express: $9.90, 5 headshots
 const starterPackage = headshots.packages[1]; // Starter: $29.00, 40 headshots
 const proPackage = headshots.packages[2]; // Professional: $49.00, 80 headshots
 const execPackage = headshots.packages[3]; // Executive: $79.00, 140 headshots
-
-function formatPrice(cents: number): string {
-  return `$${(cents / 100).toFixed(2)}`;
-}
 
 function perPhotoPrice(cents: number, count: number): string {
   return `$${(cents / 100 / count).toFixed(2)}`;
@@ -172,11 +173,11 @@ const roiReasons = [
 const faqs = [
   {
     question: `How much does ${siteConfig.name} cost?`,
-    answer: `Individual orders start at $9.90 as a one-time payment, with no subscription. Larger packages add more headshots, backgrounds and styles. Team pricing is $39 per person for 5-15 people and $29 per person for 16-50 people, confirmed at checkout.`,
+    answer: `Individual orders start at ${BASE_PRICE_DISPLAY} as a one-time payment, with no subscription. Larger packages add more headshots, backgrounds and styles. Team pricing is ${TEAM_SMALL} per person for ${TEAM_PRICES.small.min}-${TEAM_PRICES.small.max} people and ${TEAM_LARGE} per person for ${TEAM_PRICES.large.min}-${TEAM_PRICES.large.max} people, confirmed at checkout.`,
   },
   {
     question: 'How does the price compare to a photography studio?',
-    answer: `Traditional studio sessions typically cost $150 to $500 or more and deliver a small number of retouched images. ${siteConfig.name} is a one-time payment starting at $9.90. Studio figures are rough, typical ranges and vary by provider and market.`,
+    answer: `Traditional studio sessions typically cost $150 to $500 or more and deliver a small number of retouched images. ${siteConfig.name} is a one-time payment starting at ${BASE_PRICE_DISPLAY}. Studio figures are rough, typical ranges and vary by provider and market.`,
   },
   {
     question: 'Are there subscriptions or hidden fees?',
@@ -276,14 +277,14 @@ export default function PricingComparisonPage() {
                   'bg-tp-bronze text-tp-black hover:bg-tp-bronze/90',
                 )}
               >
-                Start from $9.90
+                Start from {BASE_PRICE_DISPLAY}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </div>
             <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-tp-beige/80">
               <li className="flex items-center gap-2">
                 <DollarSign className="h-4 w-4 text-tp-bronze" aria-hidden="true" />
-                $9.90 one-time
+                {BASE_PRICE_DISPLAY} one-time
               </li>
               <li className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-tp-bronze" aria-hidden="true" />
@@ -316,8 +317,9 @@ export default function PricingComparisonPage() {
               Traditional studio and other AI service figures are rough,
               typical ranges and vary by provider and market. {siteConfig.name}
               figures come from our current plans. Individual orders start at
-              $9.90; team pricing is $39 per person for 5-15 people and $29 per
-              person for 16-50 people, confirmed at checkout.{' '}
+              {BASE_PRICE_DISPLAY}; team pricing is {TEAM_SMALL} per person for{' '}
+              {TEAM_PRICES.small.min}-{TEAM_PRICES.small.max} people and {TEAM_LARGE} per
+              person for {TEAM_PRICES.large.min}-{TEAM_PRICES.large.max} people, confirmed at checkout.{' '}
               <Link
                 href="/team-headshots"
                 className="font-medium text-tp-bronze-ink underline underline-offset-2"
@@ -638,7 +640,7 @@ export default function PricingComparisonPage() {
           />
           <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6">
             <h2 className="font-display text-3xl font-normal text-white sm:text-4xl">
-              Professional Headshots from $9.90
+              Professional Headshots from {BASE_PRICE_DISPLAY}
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige/80">
               One-time payment, most orders ready in about 2 hours, and a

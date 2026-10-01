@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Social Workers | TailorPic";
 const pageDescription =
-  "Professional AI headshots for social workers, case managers, and clinical counselors. Get a warm, credible portrait for LinkedIn, agency pages, and licensure profiles, delivered in about 2 hours.";
+  'Professional AI headshots for social workers, case managers and clinical counselors. A warm, credible portrait for LinkedIn and agency pages.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

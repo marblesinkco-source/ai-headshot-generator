@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Magazine Features | TailorPic";
 const pageDescription =
-  "Polished portraits for magazine features, author bylines and contributor profiles. Get editorial-ready photos from a few selfies in about 2 hours. Starting at $9.90.";
+  'Polished portraits for magazine features, author bylines and contributor profiles. Get editorial-ready photos from a few selfies. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

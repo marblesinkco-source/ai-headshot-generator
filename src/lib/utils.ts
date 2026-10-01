@@ -14,12 +14,13 @@ export function cn(...inputs: ClassValue[]): string {
  *
  * @example formatPrice(4900) // "$49.00"
  * @example formatPrice(4900, 'eur') // "EUR 49.00"
+ * @example formatPrice(3900, 'usd', true) // "$39" (whole amounts drop decimals)
  */
-export function formatPrice(amount: number, currency = 'usd'): string {
+export function formatPrice(amount: number, currency = 'usd', compact = false): string {
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: currency.toUpperCase(),
-    minimumFractionDigits: 2,
+    minimumFractionDigits: compact && amount % 100 === 0 ? 0 : 2,
   });
   return formatter.format(amount / 100);
 }
@@ -70,4 +71,32 @@ export function sleep(ms: number): Promise<void> {
  */
 export function clamp(value: number, min: number, max: number): number {
   return Math.min(Math.max(value, min), max);
+}
+
+/**
+ * Escape HTML special characters to prevent XSS in generated HTML (emails, invoices).
+ */
+export function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+/** Basic email format check (not a deliverability guarantee). */
+export const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+/**
+ * Format an ISO date string for display.
+ *
+ * @example formatDate('2026-01-05T00:00:00Z') // "Jan 5, 2026"
+ */
+export function formatDate(iso: string): string {
+  return new Date(iso).toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  });
 }

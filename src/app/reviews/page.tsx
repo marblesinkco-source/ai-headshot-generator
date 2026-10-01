@@ -8,11 +8,11 @@ import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { Quote, Shield, CreditCard, Image as ImageIcon, ArrowRight } from 'lucide-react';
 
-const pageTitle = 'What Professionals Are Saying';
+const pageTitle = 'TailorPic Testimonials: How Professionals Use AI Headshots';
 const pageDescription = `See how professionals use ${siteConfig.name} for headshots, team photos, LinkedIn profiles and more. Illustrative testimonials covering real use cases.`;
 
 export const metadata: Metadata = {
-  title: pageTitle,
+  title: { absolute: pageTitle },
   description: pageDescription,
   keywords: [
     'AI headshot reviews',

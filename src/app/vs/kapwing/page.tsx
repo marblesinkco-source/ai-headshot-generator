@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Kapwing";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs Kapwing. Kapwing is an online video and image editor with AI tools; TailorPic creates 40+ AI headshots from your selfies for a one-time $9.90.";
+  'Compare TailorPic vs Kapwing. Kapwing is an online video and image editor with AI tools; TailorPic makes 40+ headshots from selfies for a one-time $9.90.';
 const path = '/vs/kapwing';
 const canonicalUrl = 'https://www.tailorpic.com/vs/kapwing';
 

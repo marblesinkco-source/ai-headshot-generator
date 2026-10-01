@@ -4,13 +4,13 @@ import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy',
-  description: 'TailorPic privacy policy — how we collect, use, and protect your data.',
+  title: { absolute: 'Privacy Policy: How TailorPic Collects and Protects Data' },
+  description: 'Read the TailorPic privacy policy: how we collect, use, and protect your data and photos, and the choices you have. Contact us with any privacy questions.',
   alternates: { canonical: '/privacy' },
-  openGraph: generateOGMetadata({ title: 'Privacy Policy', description: 
-      'TailorPic privacy policy — how we collect, use, and protect your data.', path: '/privacy' }),
-  twitter: generateTwitterMetadata({ title: 'Privacy Policy', description: 
-      'TailorPic privacy policy — how we collect, use, and protect your data.' }),
+  openGraph: generateOGMetadata({ title: 'Privacy Policy: How TailorPic Collects and Protects Data', description: 
+      'Read the TailorPic privacy policy: how we collect, use, and protect your data and photos, and the choices you have. Contact us with any privacy questions.', path: '/privacy' }),
+  twitter: generateTwitterMetadata({ title: 'Privacy Policy: How TailorPic Collects and Protects Data', description: 
+      'Read the TailorPic privacy policy: how we collect, use, and protect your data and photos, and the choices you have. Contact us with any privacy questions.' }),
 };
 
 export default function PrivacyPage() {
@@ -19,7 +19,7 @@ export default function PrivacyPage() {
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
-          { name: 'Privacy Policy', url: `${siteConfig.url}/privacy` },
+          { name: 'Privacy Policy: How TailorPic Collects and Protects Data', url: `${siteConfig.url}/privacy` },
         ]}
       />
       <h1>Privacy Policy</h1>

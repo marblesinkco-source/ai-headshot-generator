@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { getActiveCategories } from '@/config/categories';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const categories = getActiveCategories();
 
@@ -49,7 +50,7 @@ export function CTABanner() {
                 </p>
                 <span aria-hidden="true" className="hidden text-tp-bronze sm:inline">&rarr;</span>
                 <p className="text-tp-paper">
-                  <span className="font-display text-4xl font-normal tracking-[-0.03em]">$9.90</span>
+                  <span className="font-display text-4xl font-normal tracking-[-0.03em]">{BASE_PRICE_DISPLAY}</span>
                   <span className="ml-2 text-sm text-tp-beige/80">one-time</span>
                 </p>
               </div>
@@ -92,7 +93,7 @@ export function CTABanner() {
       {/* Categories Dialog */}
       <dialog
         ref={categoryDialog}
-        className="rounded-[20px] border border-tp-line bg-tp-paper p-5 sm:p-[30px] text-tp-ink w-[min(760px,calc(100vw-28px))] max-h-[85vh] overflow-auto backdrop:bg-tp-black/56"
+        className="rounded-tp-dialog border border-tp-line bg-tp-paper p-5 sm:p-[30px] text-tp-ink w-[min(760px,calc(100vw-28px))] max-h-[85vh] overflow-auto backdrop:bg-tp-black/56"
       >
         <div className="flex items-center justify-between gap-5 mb-5">
           <h2 className="font-display text-[29px] sm:text-[35px] font-normal leading-tight">
@@ -126,7 +127,7 @@ export function CTABanner() {
               </div>
               <span>
                 <strong className="block text-[13px]">{cat.name}</strong>
-                <small className="text-[10px] text-tp-muted">{cat.tagline}</small>
+                <small className="text-[11px] text-tp-muted">{cat.tagline}</small>
               </span>
             </a>
           ))}

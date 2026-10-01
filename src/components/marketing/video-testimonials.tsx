@@ -65,7 +65,7 @@ export function VideoTestimonials() {
                     hoveredIndex === i ? 'scale-110' : 'scale-100'
                   }`}
                 >
-                  <Play className="h-6 w-6 text-white fill-white/80 ml-0.5" />
+                  <Play aria-hidden="true" className="h-6 w-6 text-white fill-white/80 ml-0.5" />
                 </div>
 
                 {/* Coming soon badge */}
@@ -86,7 +86,7 @@ export function VideoTestimonials() {
 
                 <div className="mt-5 flex items-center gap-3 border-t border-tp-line/50 pt-4">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-tp-bronze/20 to-tp-beige">
-                    <Play className="h-4 w-4 text-tp-bronze-ink" />
+                    <Play aria-hidden="true" className="h-4 w-4 text-tp-bronze-ink" />
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-tp-ink">{t.role}</p>

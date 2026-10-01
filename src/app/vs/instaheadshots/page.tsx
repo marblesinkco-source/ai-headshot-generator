@@ -9,9 +9,9 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const competitor = "InstaHeadshots";
-const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
+const title = 'TailorPic vs InstaHeadshots: AI Headshot Comparison';
 const description =
-  "Compare TailorPic vs InstaHeadshots. TailorPic is $9.90 one-time for 40+ photos across 11 categories; InstaHeadshots starts near $9 with basic headshots and limited styles.";
+  'Compare TailorPic vs InstaHeadshots. TailorPic is $9.90 one-time for 40+ photos in 11 categories; InstaHeadshots starts near $9 with basic headshots.';
 const path = '/vs/instaheadshots';
 
 export const metadata: Metadata = {

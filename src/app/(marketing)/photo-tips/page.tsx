@@ -18,8 +18,8 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: `Photo Tips for AI Headshots | ${siteConfig.name}`,
-  description: `Learn how to take the right selfies for AI headshots. Practical tips on lighting, clothing, backgrounds, and camera settings to help ${siteConfig.name} create more natural results.`,
+  title: { absolute: 'Photo Tips for AI Headshots: Selfies That Get Great Results' },
+  description: 'Learn how to take the right selfies for AI headshots. Tips on lighting, clothing, backgrounds, and camera settings so TailorPic can create natural results.',
   alternates: { canonical: '/photo-tips' },
   openGraph: generateOGMetadata({ title: `How to Take the Perfect Photo for AI Headshots | ${siteConfig.name}`, description: `Simple, practical guidance on lighting, clothing, backgrounds, and camera settings for better AI headshot results.`, path: '/photo-tips' }),
   twitter: generateTwitterMetadata({ title: `How to Take the Perfect Photo for AI Headshots | ${siteConfig.name}`, description: `Simple, practical guidance on lighting, clothing, backgrounds, and camera settings for better AI headshot results.` }),

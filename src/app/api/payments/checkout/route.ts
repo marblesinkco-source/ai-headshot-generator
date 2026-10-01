@@ -8,6 +8,8 @@ import { getCategoryById, getPackageById, type CategoryId } from '@/config/categ
 import { CREDIT_PACKAGES } from '@/config/credits';
 import { siteConfig } from '@/config/site';
 import { rateLimit } from '@/lib/rate-limit';
+import { csrfGuard } from '@/lib/security';
+import { logger } from '@/lib/logger';
 
 // Known coupon codes mapped to Stripe coupon IDs
 // Create these in Stripe Dashboard: Dashboard → Products → Coupons
@@ -43,13 +45,15 @@ const checkoutSchema = z.union([
 ]);
 
 export async function POST(request: NextRequest) {
+  const csrf = csrfGuard(request);
+  if (csrf) return csrf;
   try {
     const body = await request.json();
     const parsed = checkoutSchema.safeParse(body);
 
     if (!parsed.success) {
       return NextResponse.json(
-        { error: 'Invalid request', details: parsed.error.flatten() },
+        { error: 'Invalid request' },
         { status: 400 }
       );
     }
@@ -114,7 +118,7 @@ export async function POST(request: NextRequest) {
         .single();
 
       if (orderError) {
-        console.error('Failed to create credit order:', orderError);
+        logger.error('Failed to create credit order:', orderError);
         return NextResponse.json(
           { error: 'Failed to create order' },
           { status: 500 }
@@ -221,7 +225,7 @@ export async function POST(request: NextRequest) {
       .single();
 
     if (orderError || !order) {
-      console.error('Failed to create order:', orderError);
+      logger.error('Failed to create order:', orderError);
       return NextResponse.json(
         { error: 'Failed to create order' },
         { status: 500 }
@@ -260,7 +264,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ url: checkoutSession.url });
   } catch (error) {
-    console.error('Checkout error:', error);
+    logger.error('Checkout error:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

@@ -150,7 +150,7 @@ export function ExitIntentPopup() {
         onClick={(e) => {
           if (e.target === dialogRef.current) close();
         }}
-        className="tp-exit-dialog m-auto w-[calc(100%-2rem)] max-w-md rounded-[20px] border border-tp-bronze/30 bg-tp-black p-0 text-tp-paper shadow-2xl backdrop:bg-transparent"
+        className="tp-exit-dialog m-auto w-[calc(100%-2rem)] max-w-md rounded-tp-dialog border border-tp-bronze/30 bg-tp-black p-0 text-tp-paper shadow-2xl backdrop:bg-transparent"
       >
         <div className="relative px-6 py-10 text-center sm:px-10">
           <button

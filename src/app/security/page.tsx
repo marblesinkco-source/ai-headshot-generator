@@ -22,10 +22,10 @@ import {
 
 const TITLE = `Security & Data Protection | ${siteConfig.name}`;
 const DESCRIPTION =
-  'Your photos are personal data. TailorPic is designed to protect them with encryption, automatic 30-day deletion, no data selling, full commercial rights, and GDPR compliance tools.';
+  'Your photos are personal data. TailorPic protects them with encryption, automatic 30-day deletion, no data selling, full commercial rights and GDPR tools.';
 
 export const metadata: Metadata = {
-  title: 'Security & Data Protection',
+  title: { absolute: 'Security & Data Protection: How TailorPic Protects Photos' },
   description: DESCRIPTION,
   alternates: { canonical: '/security' },
   openGraph: generateOGMetadata({

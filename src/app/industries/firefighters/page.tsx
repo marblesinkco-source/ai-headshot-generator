@@ -12,7 +12,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Firefighters | TailorPic";
 const pageDescription =
-  "Professional AI headshots for firefighters, fire officers, and fire service leaders. Get a confident, trustworthy portrait for department websites, promotions, and LinkedIn in about 2 hours.";
+  'Professional AI headshots for firefighters, fire officers and fire service leaders. A confident portrait for department websites, promotions and LinkedIn.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

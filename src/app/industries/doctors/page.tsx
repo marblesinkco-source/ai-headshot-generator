@@ -23,13 +23,13 @@ import {
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
-  title: 'AI Headshots for Doctors & Healthcare Professionals | TailorPic',
+  title: { absolute: 'AI Headshots for Doctors & Physicians | TailorPic' },
   description:
-    'Get professional headshots for doctors, physicians, and healthcare professionals. Hospital website ready, insurance panel photos, and white coat styles — delivered in 2 hours without disrupting patient care.',
+    'Get professional headshots for doctors, physicians and healthcare professionals. Hospital website ready, insurance panel photos and white coat styles.',
   alternates: { canonical: '/industries/doctors' },
-  openGraph: generateOGMetadata({ title: 'AI Headshots for Doctors & Healthcare Professionals | TailorPic', description: 'AI-powered professional headshots for healthcare professionals. Privacy-conscious, hospital-ready photos delivered in hours.', path: '/industries/doctors', type: 'industry' }),
+  openGraph: generateOGMetadata({ title: 'AI Headshots for Doctors & Physicians | TailorPic', description: 'AI-powered professional headshots for healthcare professionals. Privacy-conscious, hospital-ready photos delivered in hours.', path: '/industries/doctors', type: 'industry' }),
   
-  twitter: generateTwitterMetadata({ title: 'AI Headshots for Doctors & Healthcare Professionals | TailorPic', description: 'AI-powered professional headshots for healthcare professionals. Privacy-conscious, hospital-ready photos delivered in hours.', type: 'industry' }),
+  twitter: generateTwitterMetadata({ title: 'AI Headshots for Doctors & Physicians | TailorPic', description: 'AI-powered professional headshots for healthcare professionals. Privacy-conscious, hospital-ready photos delivered in hours.', type: 'industry' }),
 };
 
 const painPoints = [

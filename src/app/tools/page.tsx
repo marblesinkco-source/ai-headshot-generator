@@ -8,9 +8,9 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
-  title: 'Free AI Photo Tools | TailorPic',
+  title: { absolute: 'Free AI Photo Tools: Background Remover, Resizer & More' },
   description:
-    'Free online tools for professional photos — background remover, headshot resizer, resume photo checker, LinkedIn photo analyzer, email signature generator, and headshot cost calculator.',
+    'Free online tools for professional photos: background remover, headshot resizer, resume photo checker, LinkedIn photo analyzer, email signature maker and more.',
   alternates: {
     canonical: '/tools',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     path: '/tools',
   }),
   twitter: generateTwitterMetadata({
-    title: 'Free AI Photo Tools | TailorPic',
+    title: 'Free AI Photo Tools: Background Remover, Resizer & More',
     description:
       'Free online tools for professional photos — background remover, headshot resizer, resume photo checker, and more.',
   }),

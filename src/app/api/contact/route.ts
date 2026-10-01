@@ -4,19 +4,15 @@ import { createAdminClient } from '@/lib/supabase/server';
 import { rateLimit, getClientIp } from '@/lib/rate-limit';
 import { siteConfig } from '@/config/site';
 import { buildContactAutoReplyEmail } from '@/lib/emails';
+import { csrfGuard } from '@/lib/security';
+import { logger } from '@/lib/logger';
+import { EMAIL_RE, escapeHtml } from '@/lib/utils';
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const HOUR_MS = 60 * 60 * 1000;
 
-function escapeHtml(s: string): string {
-  return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
-}
-
 export async function POST(request: Request) {
+  const csrf = csrfGuard(request);
+  if (csrf) return csrf;
   const ip = getClientIp(request);
   const rl = rateLimit({ key: `contact:${ip}`, limit: 3, windowMs: HOUR_MS });
   if (!rl.success) {
@@ -57,17 +53,16 @@ export async function POST(request: Request) {
   // Store in Supabase (table may not exist yet).
   try {
     const supabase = createAdminClient();
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const { error } = await (supabase as any)
+    const { error } = await supabase
       .from('contact_messages')
       .insert({ name, email, subject: `[${department}] ${subject}`, message });
     if (error) {
-      console.error('contact_messages insert failed:', error.message);
+      logger.error('contact_messages insert failed:', error.message);
     } else {
       stored = true;
     }
   } catch (err) {
-    console.error('contact_messages insert error:', err);
+    logger.error('contact_messages insert error:', err);
   }
 
   // Email notification via Resend (optional: skipped when not configured).
@@ -88,7 +83,7 @@ export async function POST(request: Request) {
       });
       emailed = true;
     } catch (err) {
-      console.error('Contact email send failed:', err);
+      logger.error('Contact email send failed:', err);
     }
 
     // Auto-reply to the sender. Independent of the team notification; never fails the request.
@@ -102,7 +97,7 @@ export async function POST(request: Request) {
         html: reply.html,
       });
     } catch (autoReplyErr) {
-      console.error('Contact auto-reply email send failed:', autoReplyErr);
+      logger.error('Contact auto-reply email send failed:', autoReplyErr);
     }
   }
 

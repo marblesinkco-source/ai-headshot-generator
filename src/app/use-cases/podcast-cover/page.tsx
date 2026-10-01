@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Podcast Cover Art | TailorPic";
 const pageDescription =
-  "Professional host photos for podcast cover art on Spotify and Apple Podcasts. Get polished portraits from a few selfies, delivered in about 2 hours. Starting at $9.90.";
+  'Professional host photos for podcast cover art on Spotify and Apple Podcasts. Get polished portraits from a few selfies. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

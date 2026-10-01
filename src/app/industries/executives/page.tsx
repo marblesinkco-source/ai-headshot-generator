@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for C-Suite Executives | TailorPic";
 const pageDescription =
-  "Professional AI headshots for CEOs, CFOs, and senior executives. Polished, authoritative portraits for leadership pages, annual reports, and LinkedIn, delivered in about 2 hours without a photo shoot.";
+  'Professional AI headshots for CEOs, CFOs, and senior executives. Polished, authoritative portraits for leadership pages, annual reports, and LinkedIn.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

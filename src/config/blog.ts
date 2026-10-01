@@ -2382,7 +2382,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Consistency Across Teams</h2>
       <p>When a company needs headshots for its entire team, consistency becomes critical. Everyone should have similar lighting, background, framing and overall feel. Traditional photography achieves this by shooting everyone in the same session with the same setup, but this requires coordinating schedules, which is difficult for remote and distributed teams.</p>
       <p>AI services excel at consistency. Every headshot is generated with the same style parameters, producing a uniform look regardless of when or where each person's selfies were taken. A team member in London and another in Tokyo can both get matching headshots without anyone travelling. For growing companies that add new employees regularly, AI maintains the same look months or years later, while rebooking a photographer may produce subtly different results.</p>
-      <p>Check out our <a href="/for-teams">team headshot solutions</a> to see how TailorPic handles team-wide consistency.</p>
+      <p>Check out our <a href="/team-headshots">team headshot solutions</a> to see how TailorPic handles team-wide consistency.</p>
 
       <h2>Convenience and Accessibility</h2>
       <p>Traditional photography requires physical presence. You need to travel to a studio or arrange for a photographer to come to you. For people with disabilities, those in remote locations, or anyone with tight schedules, this can be a significant barrier.</p>
@@ -2457,7 +2457,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>Use AI to Maintain the Standard</h2>
       <p>AI headshot generators are particularly good at consistency because they apply the same style parameters to every image. There is no variation from one session to the next, no difference between a Tuesday morning and a Friday afternoon shoot. Every headshot gets the same lighting model, the same background treatment and the same crop.</p>
-      <p><a href="/for-teams">TailorPic's team features</a> let you select a single style and apply it across your entire team. Each person uploads their own selfies from wherever they are, and the AI produces headshots that match. The result is a cohesive team page that looks like everyone sat for the same photographer on the same day.</p>
+      <p><a href="/team-headshots">TailorPic's team features</a> let you select a single style and apply it across your entire team. Each person uploads their own selfies from wherever they are, and the AI produces headshots that match. The result is a cohesive team page that looks like everyone sat for the same photographer on the same day.</p>
       <p>This is especially valuable for companies that are growing quickly. A new hire on their first day can have a matching headshot ready before their welcome email goes out. There is no waiting for the next group shoot or settling for a temporary placeholder photo.</p>
 
       <h2>Selfie Guidelines for Your Team</h2>
@@ -2527,7 +2527,7 @@ export const blogPosts: BlogPost[] = [
         <li><strong>Finance and Law:</strong> solid grey, navy blue or dark charcoal. Conservative and clean. Avoid casual or outdoor settings.</li>
         <li><strong>Technology:</strong> white, light grey or modern gradient. Clean and forward-looking. Environmental office shots also work well.</li>
         <li><strong>Healthcare:</strong> white or light blue. Clinical cleanliness reinforces trust. Avoid dark or dramatic backgrounds.</li>
-        <li><strong>Real Estate:</strong> blurred architectural settings, light grey or branded colour backgrounds. Approachability is key. See our <a href="/real-estate-agent-headshots">real estate headshot guide</a> for specific tips.</li>
+        <li><strong>Real Estate:</strong> blurred architectural settings, light grey or branded colour backgrounds. Approachability is key. See our <a href="/blog/real-estate-agent-headshots">real estate headshot guide</a> for specific tips.</li>
         <li><strong>Creative and Media:</strong> dark backgrounds, textured surfaces, environmental settings. More creative latitude is expected and welcomed.</li>
         <li><strong>Education:</strong> warm neutrals, campus settings or library blurs. Approachable and academic.</li>
         <li><strong>Consulting:</strong> solid grey or blue. Professional but not flashy. Match the tone of your client base.</li>
@@ -7180,7 +7180,7 @@ export const blogPosts: BlogPost[] = [
       <p>Remote and hybrid work has changed what professional means. Suits are no longer the default for many industries, and knitwear, open collars, soft blazers and plain tops are common in technology, marketing and creative fields. The <a href="/styles/business-casual">business casual</a> style reflects this trend. Formal attire still has its place in law, finance and government, so choose according to your audience. See our guide on <a href="/blog/corporate-headshot-dress-code">corporate headshot dress codes</a>.</p>
 
       <h2>Trend 5: Simple, Clean Backgrounds With Depth</h2>
-      <p>Backgrounds are simple but no longer flat. Subtle gradients, soft blur and gentle colour create depth without distraction. Muted blues, sage greens, warm greys and creamy neutrals are popular. Busy offices and stock-photo boardrooms are fading. For help choosing, see our <a href="/blog/ai-headshot-background-guide">AI headshot background guide</a> and the <a href="/styles/gradient-backdrop">gradient backdrop</a> style.</p>
+      <p>Backgrounds are simple but no longer flat. Subtle gradients, soft blur and gentle colour create depth without distraction. Muted blues, sage greens, warm greys and creamy neutrals are popular. Busy offices and stock-photo boardrooms are fading. For help choosing, see our <a href="/blog/ai-headshot-background-guide">AI headshot background guide</a> and the <a href="/styles">photo styles</a> page.</p>
 
       <h2>Trend 6: Consistent Team Imagery</h2>
       <p>Remote teams now treat headshots as brand assets. Rather than a mix of selfies, old conference photos and studio portraits, companies want the same lighting, crop and backdrop for every employee. AI makes this realistic for distributed teams, because everyone can upload selfies from home and receive matching results. The <a href="/styles/corporate-team">corporate team style</a> was built for this, and our <a href="/use-cases/corporate-teams">corporate teams</a> page explains how to roll it out. Read also the <a href="/blog/team-headshot-consistency-guide">team headshot consistency guide</a>.</p>

@@ -7,7 +7,7 @@ import { EmailCapture } from '@/components/marketing/email-capture';
 import { siteConfig } from '@/config/site';
 import { getBlogPost, getAllBlogPosts } from '@/config/blog';
 import { ArticleSchema, BreadcrumbSchema } from '@/components/structured-data';
-import { generateOGMetadata, generateTwitterMetadata, buildOGImageUrl } from '@/lib/og-metadata';
+import { generateOGMetadata, generateTwitterMetadata, buildOGImageUrl, clampTitle, clampDescription } from '@/lib/og-metadata';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 function getRelatedPosts(currentSlug: string, currentTags: string[], count = 3) {
@@ -37,9 +37,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getBlogPost(slug);
   if (!post) return {};
 
+  // Keep <title> and meta description within search-result display limits.
+  // The full headline and description stay on the page (h1 / OG / schema).
+  const seoTitle = clampTitle(post.title);
+  const seoDescription = clampDescription(post.description);
+
   return {
-    title: post.title,
-    description: post.description,
+    title: seoTitle.length + ' | TailorPic'.length <= 60 ? seoTitle : { absolute: seoTitle },
+    description: seoDescription,
     keywords: post.tags,
     authors: [{ name: post.author }],
     alternates: { canonical: `/blog/${post.slug}` },
@@ -171,7 +176,7 @@ export default async function BlogPostPage({ params }: Props) {
                         {rp.tags.slice(0, 2).map((t) => (
                           <span
                             key={t}
-                            className="rounded-full bg-tp-paper border border-tp-line px-2.5 py-0.5 text-[10px] font-medium text-tp-bronze-ink"
+                            className="rounded-full bg-tp-paper border border-tp-line px-2.5 py-0.5 text-[11px] font-medium text-tp-bronze-ink"
                           >
                             {t}
                           </span>

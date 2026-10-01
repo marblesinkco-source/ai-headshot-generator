@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 import { Resend } from 'resend';
 import { siteConfig } from '@/config/site';
+import { logger } from '@/lib/logger';
 
 const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
@@ -25,6 +26,10 @@ export async function GET(request: NextRequest) {
     const supabase = await createClient();
     const { error } = await supabase.auth.exchangeCodeForSession(code);
 
+    if (error) {
+      logger.warn('Auth callback: code exchange failed', { status: error.status, name: error.name });
+    }
+
     if (!error) {
       // Send welcome email for new users (fire-and-forget)
       try {
@@ -46,16 +51,21 @@ export async function GET(request: NextRequest) {
                 subject: `Welcome to ${siteConfig.name}!`,
                 html: getWelcomeEmailHtml(firstName),
               })
-              .catch(() => {}); // silent fail
+              .catch((emailErr: unknown) => {
+                logger.warn('Auth callback: welcome email failed', emailErr);
+              });
           }
         }
-      } catch {
-        // never block auth callback for email
+      } catch (postAuthErr) {
+        // never block auth callback for email, but record it
+        logger.warn('Auth callback: post-login step failed', postAuthErr);
       }
 
       return NextResponse.redirect(new URL(redirectTo, origin));
     }
   }
+
+  if (!code) logger.warn('Auth callback: missing code parameter');
 
   // If code exchange failed or no code, redirect to login with error
   return NextResponse.redirect(

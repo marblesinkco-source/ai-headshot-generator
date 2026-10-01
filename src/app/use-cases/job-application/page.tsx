@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Job Applications | TailorPic";
 const pageDescription =
-  "Professional photos for job applications, career portals and recruiter profiles. Get polished portraits from a few selfies, delivered in about 2 hours. Starting at $9.90.";
+  'Professional photos for job applications, career portals and recruiter profiles. Get polished portraits from a few selfies. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

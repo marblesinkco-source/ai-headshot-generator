@@ -18,18 +18,18 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '14-Day Money-Back Guarantee | TailorPic',
+  title: { absolute: '14-Day Money-Back Guarantee on AI Headshots | TailorPic' },
   description:
     'TailorPic offers a 14-day money-back guarantee on all purchases. Not satisfied with your AI headshots? Request a full refund within 14 days — no hassle.',
   alternates: { canonical: '/guarantee' },
   openGraph: generateOGMetadata({
-    title: `14-Day Money-Back Guarantee | ${siteConfig.name}`,
+    title: '14-Day Money-Back Guarantee on AI Headshots | TailorPic',
     description:
       'Try TailorPic risk-free. If you are not happy with your AI headshots, request a full refund within 14 days of purchase.',
     path: '/guarantee',
   }),
   twitter: generateTwitterMetadata({
-    title: `14-Day Money-Back Guarantee | ${siteConfig.name}`,
+    title: '14-Day Money-Back Guarantee on AI Headshots | TailorPic',
     description:
       'Try TailorPic risk-free. If you are not happy with your AI headshots, request a full refund within 14 days of purchase.',
   }),

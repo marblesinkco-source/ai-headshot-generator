@@ -24,7 +24,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Dentists & Dental Staff | TailorPic";
 const pageDescription =
-  "Professional AI headshots for dentists, orthodontists, hygienists, and dental office staff. Clean, trustworthy portraits for practice websites, patient directories, and marketing materials, delivered in about 2 hours.";
+  'Professional AI headshots for dentists, orthodontists, hygienists and dental staff. Trustworthy portraits for practice websites, directories and marketing.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

@@ -6,8 +6,6 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import {
-  Check,
-  X,
   DollarSign,
   Image as ImageIcon,
   Sparkles,
@@ -15,15 +13,16 @@ import {
   BadgeDollarSign,
   Target,
 } from 'lucide-react';
+import { CellValue } from '@/components/shared/cell-value';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 export const metadata: Metadata = {
-  title: 'TailorPic vs Remini — AI Headshot Generator vs Photo Enhancer',
+  title: { absolute: 'TailorPic vs Remini: AI Headshot Generator Comparison' },
   description:
-    'Compare TailorPic vs Remini. Remini enhances and restores existing photos; TailorPic generates new professional AI headshots. See pricing, features, and styles side by side. TailorPic starts at $9.90 one-time.',
+    'Compare TailorPic vs Remini. Remini enhances and restores existing photos; TailorPic makes 40+ headshots from selfies for a one-time $9.90.',
   alternates: { canonical: '/vs/remini' },
-  openGraph: generateOGMetadata({ title: 'TailorPic vs Remini — AI Headshot Generator vs Photo Enhancer', description: 'Compare TailorPic and Remini. A purpose-built AI headshot generator versus a photo enhancer — see which fits your needs.', path: '/vs/remini', type: 'vs' }),
-  twitter: generateTwitterMetadata({ title: 'TailorPic vs Remini — AI Headshot Generator vs Photo Enhancer', description: 'Compare TailorPic and Remini. A purpose-built AI headshot generator versus a photo enhancer — see which fits your needs.', type: 'vs' }),
+  openGraph: generateOGMetadata({ title: 'TailorPic vs Remini: AI Headshot Generator Comparison', description: 'Compare TailorPic and Remini. A purpose-built AI headshot generator versus a photo enhancer — see which fits your needs.', path: '/vs/remini', type: 'vs' }),
+  twitter: generateTwitterMetadata({ title: 'TailorPic vs Remini: AI Headshot Generator Comparison', description: 'Compare TailorPic and Remini. A purpose-built AI headshot generator versus a photo enhancer — see which fits your needs.', type: 'vs' }),
 };
 
 /* ------------------------------------------------------------------ */
@@ -102,26 +101,6 @@ const whyCards = [
 /* ------------------------------------------------------------------ */
 /*  Helpers                                                            */
 /* ------------------------------------------------------------------ */
-
-function CellValue({ value }: { value: string | boolean }) {
-  if (value === true) {
-    return (
-      <span className="inline-flex items-center gap-1.5 text-tp-bronze-ink">
-        <Check className="h-5 w-5" />
-        <span className="sr-only">Yes</span>
-      </span>
-    );
-  }
-  if (value === false) {
-    return (
-      <span className="inline-flex items-center gap-1.5 text-tp-muted">
-        <X className="h-5 w-5" />
-        <span className="sr-only">No</span>
-      </span>
-    );
-  }
-  return <span>{value}</span>;
-}
 
 /* ------------------------------------------------------------------ */
 /*  Page                                                               */

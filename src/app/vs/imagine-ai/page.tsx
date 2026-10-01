@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Imagine AI";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs Imagine AI. Imagine AI is a general AI art generator; TailorPic creates 40+ realistic headshots of you from your selfies for a one-time $9.90.";
+  'Compare TailorPic vs Imagine AI. Imagine AI is a general AI art generator; TailorPic makes 40+ headshots from selfies for a one-time $9.90.';
 const path = '/vs/imagine-ai';
 const canonicalUrl = 'https://www.tailorpic.com/vs/imagine-ai';
 

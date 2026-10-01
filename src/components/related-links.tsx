@@ -22,7 +22,7 @@ export function RelatedLinks({ links, title, className = '' }: RelatedLinksProps
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2
           id="related-links-heading"
-          className="mb-6 text-xl font-semibold text-tp-black sm:text-2xl"
+          className="mb-6 text-xl font-display font-normal text-tp-black sm:text-2xl"
         >
           {title}
         </h2>

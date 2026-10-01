@@ -19,18 +19,18 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Changelog | TailorPic',
+  title: { absolute: 'TailorPic Changelog: Product Updates and New Features' },
   description:
     'See what is new at TailorPic. Follow our latest product updates, new features, and improvements to the AI photo generation platform.',
   alternates: { canonical: '/changelog' },
   openGraph: generateOGMetadata({
-    title: 'Changelog | TailorPic',
+    title: 'TailorPic Changelog: Product Updates and New Features',
     description:
       'Stay up to date with the latest features, improvements, and updates to TailorPic.',
     path: '/changelog',
   }),
   twitter: generateTwitterMetadata({
-    title: 'Changelog | TailorPic',
+    title: 'TailorPic Changelog: Product Updates and New Features',
     description:
       'Stay up to date with the latest features, improvements, and updates to TailorPic.',
   }),
@@ -206,7 +206,7 @@ export default function ChangelogPage() {
                             >
                               {entry.tag}
                             </span>
-                            <h3 className="font-display text-lg font-normal text-tp-ink">
+                            <h2 className="font-display text-lg font-normal text-tp-ink">
                               {entry.href ? (
                                 <Link
                                   href={entry.href}
@@ -217,7 +217,7 @@ export default function ChangelogPage() {
                               ) : (
                                 entry.title
                               )}
-                            </h3>
+                            </h2>
                           </div>
                           <p className="mt-2 text-sm leading-relaxed text-tp-muted">
                             {entry.description}
@@ -252,7 +252,7 @@ export default function ChangelogPage() {
               type="email"
               placeholder="you@company.com"
               aria-label="Email address"
-              className="flex-1 rounded-tp-button border border-tp-line bg-white px-4 py-2.5 text-sm text-tp-ink placeholder:text-tp-muted focus:border-tp-bronze focus:outline-none focus:ring-1 focus:ring-tp-bronze"
+              className="flex-1 rounded-tp-button border border-tp-line bg-white px-4 py-2.5 text-sm text-tp-ink placeholder:text-tp-muted/80 focus:border-tp-bronze focus:outline-none focus:ring-1 focus:ring-tp-bronze"
             />
             <button
               type="submit"

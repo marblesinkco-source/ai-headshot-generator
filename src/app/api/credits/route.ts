@@ -5,6 +5,9 @@
 
 import { NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
+import { logger } from '@/lib/logger';
+import { rateLimit } from '@/lib/rate-limit';
+import { tooManyRequests } from '@/lib/security';
 
 export async function GET() {
   try {
@@ -18,6 +21,10 @@ export async function GET() {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
+    if (!rateLimit({ key: `credits:${user.id}`, limit: 60, windowMs: 60 * 1000 }).success) {
+      return tooManyRequests();
+    }
+
     // Get active (non-expired) credit balances
     const { data: credits, error: creditsError } = await supabase
       .from('user_credits')
@@ -27,7 +34,7 @@ export async function GET() {
       .order('expires_at', { ascending: true });
 
     if (creditsError) {
-      console.error('Failed to fetch credits:', creditsError);
+      logger.error('Failed to fetch credits:', creditsError);
       return NextResponse.json({ error: 'Failed to fetch credits' }, { status: 500 });
     }
 
@@ -50,7 +57,7 @@ export async function GET() {
       transactions: transactions || [],
     });
   } catch (error) {
-    console.error('Credits API error:', error);
+    logger.error('Credits API error:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Award Nominations | TailorPic";
 const pageDescription =
-  "Professional nominee photos for award submissions, finalist pages and ceremony programs. Get polished portraits from a few selfies in about 2 hours. Starting at $9.90.";
+  'Professional nominee photos for award submissions, finalist pages and ceremony programs. Get polished portraits from a few selfies. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

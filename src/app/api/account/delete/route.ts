@@ -13,8 +13,13 @@ import { createClient, createAdminClient } from '@/lib/supabase/server';
 import { siteConfig } from '@/config/site';
 import { buildAccountDeletionEmail } from '@/lib/emails';
 import { rateLimit } from '@/lib/rate-limit';
+import { csrfGuard } from '@/lib/security';
+import { logger } from '@/lib/logger';
 
-export async function POST() {
+export async function POST(request: Request) {
+  const csrf = csrfGuard(request);
+  if (csrf) return csrf;
+
   // 1. Verify the user is authenticated
   const supabase = await createClient();
   const {
@@ -45,7 +50,7 @@ export async function POST() {
   const customerName =
     typeof user.user_metadata?.full_name === 'string' ? user.user_metadata.full_name : undefined;
   const admin = createAdminClient();
-  const errors: string[] = [];
+  const errors: string[] = []; // internal only; never returned to the client
 
   try {
     // 2. Delete user files from storage buckets
@@ -54,7 +59,10 @@ export async function POST() {
       if (files && files.length > 0) {
         const paths = files.map((f) => `${userId}/${f.name}`);
         const { error } = await admin.storage.from(bucket).remove(paths);
-        if (error) errors.push(`storage/${bucket}: ${error.message}`);
+        if (error) {
+          errors.push(`storage/${bucket}`);
+          logger.error(`Account deletion: storage cleanup failed for ${bucket}`, error);
+        }
       }
     }
 
@@ -77,17 +85,19 @@ export async function POST() {
         } else {
           await admin.from(table).delete().eq('user_id', userId);
         }
-      } catch {
-        // Table may not exist — non-fatal
+      } catch (tableErr) {
+        // Table may not exist — non-fatal, but record it
+        logger.warn(`Account deletion: could not clear table ${table}`, tableErr);
       }
     }
 
     // 4. Delete the auth user (service role required)
     const { error: deleteUserError } = await admin.auth.admin.deleteUser(userId);
     if (deleteUserError) {
-      errors.push(`auth: ${deleteUserError.message}`);
+      errors.push('auth');
+      logger.error('Account deletion: auth user delete failed', deleteUserError);
       return NextResponse.json(
-        { error: 'Failed to delete account. Please contact support.', details: errors },
+        { error: 'Failed to delete account. Please contact support.' },
         { status: 500 }
       );
     }
@@ -104,12 +114,13 @@ export async function POST() {
           html,
         });
       } catch (emailErr) {
-        console.error('Account deletion email failed:', emailErr);
+        logger.error('Account deletion email failed:', emailErr);
       }
     }
 
-    return NextResponse.json({ success: true, errors: errors.length > 0 ? errors : undefined });
+    return NextResponse.json({ success: true });
   } catch (err) {
+    logger.error('Account deletion failed unexpectedly', err);
     return NextResponse.json(
       { error: 'An unexpected error occurred. Please contact support.' },
       { status: 500 }

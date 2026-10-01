@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Graduation Photos | TailorPic";
 const pageDescription =
-  "Polished AI headshots for graduation announcements, yearbooks and your first job search. Get professional portraits from a few selfies in about 2 hours. Starting at $9.90.";
+  'Polished AI headshots for graduation announcements, yearbooks and your first job search. Get professional portraits from a few selfies. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

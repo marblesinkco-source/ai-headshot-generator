@@ -12,7 +12,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Librarians | TailorPic";
 const pageDescription =
-  "Professional AI headshots for public, academic, and school librarians. Put a friendly, credible face on staff directories, library websites, and LinkedIn with a portrait delivered in about 2 hours.";
+  'Professional AI headshots for public, academic and school librarians. Put a friendly, credible face on staff directories, library websites and LinkedIn.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

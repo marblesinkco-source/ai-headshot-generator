@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Press Kits & Media | TailorPic";
 const pageDescription =
-  "Journalist-ready headshots for press kits, media pages and founder bios. High-resolution professional portraits from a few selfies in about 2 hours. Starting at $9.90.";
+  'Journalist-ready headshots for press kits, media pages and founder bios. High-resolution professional portraits from a few selfies. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

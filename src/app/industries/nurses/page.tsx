@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Nurses & Healthcare Staff | TailorPic";
 const pageDescription =
-  "Professional AI headshots for nurses, nurse practitioners, nursing students, and healthcare staff. Scrubs or formal portraits for hospital ID photos, LinkedIn, and staff directories, delivered in about 2 hours.";
+  'Professional AI headshots for nurses, nurse practitioners, nursing students and healthcare staff. Scrubs or formal portraits for hospital IDs and LinkedIn.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

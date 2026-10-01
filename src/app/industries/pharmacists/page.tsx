@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Pharmacists | TailorPic";
 const pageDescription =
-  "Professional AI headshots for retail, hospital, clinical, and independent pharmacists. Build patient trust on your pharmacy website, LinkedIn, and professional profiles with a polished portrait delivered in about 2 hours.";
+  'Professional AI headshots for retail, hospital, clinical and independent pharmacists. Build patient trust on your pharmacy website, LinkedIn and profiles.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

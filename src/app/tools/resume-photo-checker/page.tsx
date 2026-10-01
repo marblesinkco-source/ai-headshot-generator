@@ -10,7 +10,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { ResumePhotoCheckerDemo } from '@/components/tools/tool-demos';
 
-const title = "Free Resume Photo Checker \u2014 Is Your Photo Professional? | TailorPic";
+const title = 'Free Resume Photo Checker: Is Your Photo Professional?';
 const description = "Upload your photo to check if it's professional enough for your resume. Free checklist for lighting, background, attire, resolution and framing.";
 const path = '/tools/resume-photo-checker';
 const ctaHref = '/auth/register';

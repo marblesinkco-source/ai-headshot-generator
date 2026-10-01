@@ -9,9 +9,9 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
-const pageTitle = "AI Profile Photos for Facebook | Look Your Best Online | TailorPic";
+const pageTitle = 'AI Profile Photos for Facebook | TailorPic';
 const pageDescription =
-  "Get a friendly, polished Facebook profile picture from a few selfies. AI-generated photos that look natural in the circular crop, for personal profiles, pages, and groups. Delivered in about 2 hours. Starting at $9.90.";
+  'Get a friendly, polished Facebook profile picture from a few selfies. AI photos that look natural in the circular crop, for profiles and pages. From $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

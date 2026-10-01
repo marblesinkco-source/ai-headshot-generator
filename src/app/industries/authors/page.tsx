@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Authors & Writers | TailorPic";
 const pageDescription =
-  "Professional AI headshots for novelists, nonfiction authors, freelance writers, and bloggers. Get a polished author photo for book jackets, Amazon author pages, press kits, and your website, delivered in about 2 hours.";
+  'Professional AI headshots for novelists, nonfiction authors, freelance writers and bloggers. A polished author photo for book jackets, Amazon and press kits.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

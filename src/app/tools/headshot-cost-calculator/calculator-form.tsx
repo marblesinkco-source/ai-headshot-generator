@@ -189,7 +189,7 @@ export function CalculatorForm() {
               <Camera className="h-5 w-5" aria-hidden="true" />
               <h3 className="text-sm font-semibold uppercase tracking-wide">Professional photographer</h3>
             </div>
-            <p className="mt-4 text-3xl font-extrabold tracking-tight text-tp-ink transition-all duration-300 sm:text-4xl">
+            <p className="mt-4 text-3xl font-display font-normal tracking-tight text-tp-ink transition-all duration-300 sm:text-4xl">
               {usd(r.photoMin)} - {usd(r.photoMax)}
             </p>
             <p className="mt-1 text-xs text-tp-muted">Estimated total for {r.n} {r.t.noun}{r.n > 1 ? 's' : ''}</p>
@@ -221,7 +221,7 @@ export function CalculatorForm() {
               <Sparkles className="h-5 w-5" aria-hidden="true" />
               <h3 className="text-sm font-semibold uppercase tracking-wide">TailorPic AI</h3>
             </div>
-            <p className="mt-4 text-3xl font-extrabold tracking-tight text-tp-ink transition-all duration-300 sm:text-4xl">
+            <p className="mt-4 text-3xl font-display font-normal tracking-tight text-tp-ink transition-all duration-300 sm:text-4xl">
               {r.enterprise ? `From ${usd(r.aiTotal)}` : usd(r.aiTotal)}
             </p>
             <p className="mt-1 text-xs text-tp-muted">

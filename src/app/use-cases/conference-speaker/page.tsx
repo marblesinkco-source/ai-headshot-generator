@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Conference Speaker Bios | TailorPic";
 const pageDescription =
-  "Polished speaker headshots for conference websites, programs and bios. Meet organizer deadlines with a professional photo from a few selfies in about 2 hours. Starting at $9.90.";
+  'Polished speaker headshots for conference websites, programs and bios. Meet organizer deadlines with a professional photo from a few selfies. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

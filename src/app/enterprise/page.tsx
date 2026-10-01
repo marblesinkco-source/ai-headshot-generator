@@ -37,14 +37,13 @@ import {
 
 const ROICalculator = dynamic(
   () => import('@/components/marketing/roi-calculator').then((m) => m.ROICalculator),
-  { ssr: false },
 );
 
-const ENTERPRISE_TITLE = 'Enterprise AI Headshots for Teams | TailorPic';
+const ENTERPRISE_TITLE = 'Enterprise AI Headshots for Teams and Organizations';
 const ENTERPRISE_OG_DESCRIPTION = 'Scale professional headshots across your organization with AI.';
 
 export const metadata: Metadata = {
-  title: ENTERPRISE_TITLE,
+  title: { absolute: ENTERPRISE_TITLE },
   description:
     'Professional AI headshots for your entire organization. Consistent branding, team admin dashboard, volume pricing from $29/person, and dedicated support.',
   alternates: { canonical: '/enterprise' },
@@ -458,7 +457,7 @@ export default function EnterprisePage() {
                 }`}
               >
                 {plan.popular && (
-                  <span className="text-[10px] font-semibold uppercase tracking-widest text-tp-bronze mb-3 block">
+                  <span className="text-[11px] font-semibold uppercase tracking-widest text-tp-bronze mb-3 block">
                     Most Popular
                   </span>
                 )}
@@ -510,7 +509,7 @@ export default function EnterprisePage() {
               <p className="font-semibold text-tp-bronze-ink">Sarah M.</p>
               <p className="mt-1 text-sm text-tp-muted">Head of People Operations</p>
             </div>
-            <p className="mt-4 text-xs text-tp-muted/60">
+            <p className="mt-4 text-xs text-tp-muted">
               * Illustrative testimonial for demonstration purposes.
             </p>
           </div>

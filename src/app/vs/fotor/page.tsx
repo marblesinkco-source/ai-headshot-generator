@@ -6,8 +6,6 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import {
-  Check,
-  X,
   DollarSign,
   Image as ImageIcon,
   Sparkles,
@@ -15,15 +13,16 @@ import {
   BadgeDollarSign,
   Target,
 } from 'lucide-react';
+import { CellValue } from '@/components/shared/cell-value';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 export const metadata: Metadata = {
-  title: 'TailorPic vs Fotor AI — AI Headshot Generator vs Photo Editor',
+  title: { absolute: 'TailorPic vs Fotor AI: AI Headshot Generator Comparison' },
   description:
-    'Compare TailorPic vs Fotor AI. Fotor is a broad photo editor with AI tools; TailorPic specializes in professional AI headshots. See pricing, features, and quality side by side. TailorPic starts at $9.90 one-time.',
+    'Compare TailorPic vs Fotor AI. Fotor is a broad photo editor with AI tools; TailorPic makes 40+ headshots from selfies for a one-time $9.90.',
   alternates: { canonical: '/vs/fotor' },
-  openGraph: generateOGMetadata({ title: 'TailorPic vs Fotor AI — AI Headshot Generator vs Photo Editor', description: 'Compare TailorPic and Fotor AI. A specialized AI headshot generator versus a general photo editor — see which fits your needs.', path: '/vs/fotor', type: 'vs' }),
-  twitter: generateTwitterMetadata({ title: 'TailorPic vs Fotor AI — AI Headshot Generator vs Photo Editor', description: 'Compare TailorPic and Fotor AI. A specialized AI headshot generator versus a general photo editor — see which fits your needs.', type: 'vs' }),
+  openGraph: generateOGMetadata({ title: 'TailorPic vs Fotor AI: AI Headshot Generator Comparison', description: 'Compare TailorPic and Fotor AI. A specialized AI headshot generator versus a general photo editor — see which fits your needs.', path: '/vs/fotor', type: 'vs' }),
+  twitter: generateTwitterMetadata({ title: 'TailorPic vs Fotor AI: AI Headshot Generator Comparison', description: 'Compare TailorPic and Fotor AI. A specialized AI headshot generator versus a general photo editor — see which fits your needs.', type: 'vs' }),
 };
 
 /* ------------------------------------------------------------------ */
@@ -102,26 +101,6 @@ const whyCards = [
 /* ------------------------------------------------------------------ */
 /*  Helpers                                                            */
 /* ------------------------------------------------------------------ */
-
-function CellValue({ value }: { value: string | boolean }) {
-  if (value === true) {
-    return (
-      <span className="inline-flex items-center gap-1.5 text-tp-bronze-ink">
-        <Check className="h-5 w-5" />
-        <span className="sr-only">Yes</span>
-      </span>
-    );
-  }
-  if (value === false) {
-    return (
-      <span className="inline-flex items-center gap-1.5 text-tp-muted">
-        <X className="h-5 w-5" />
-        <span className="sr-only">No</span>
-      </span>
-    );
-  }
-  return <span>{value}</span>;
-}
 
 /* ------------------------------------------------------------------ */
 /*  Page                                                               */

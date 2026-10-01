@@ -9,9 +9,9 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const competitor = "Fotor AI Headshot";
-const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
+const title = 'TailorPic vs Fotor AI Headshot: AI Headshot Comparison';
 const description =
-  "Compare TailorPic vs Fotor AI Headshot. Fotor offers an AI headshot feature inside a broader photo editor; TailorPic is a dedicated generator with 40+ headshots for $9.90.";
+  'Compare TailorPic vs Fotor AI Headshot. Fotor offers an AI headshot feature inside a broader photo editor; TailorPic: 40+ headshots for a one-time $9.90.';
 const path = '/vs/fotor-ai-headshot';
 const canonicalUrl = 'https://www.tailorpic.com/vs/fotor-ai-headshot';
 

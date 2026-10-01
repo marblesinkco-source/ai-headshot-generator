@@ -9,9 +9,9 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
-const pageTitle = "AI Photos for Dating Apps | Tinder, Hinge & Bumble Photos | TailorPic";
+const pageTitle = 'AI Photos for Dating Apps: Tinder, Hinge, Bumble | TailorPic';
 const pageDescription =
-  "Get natural, flattering photos for dating apps like Tinder, Hinge, and Bumble. AI-enhanced profile pictures that look like you on your best day, not a studio shoot. Starting at $9.90.";
+  'Get natural, flattering photos for dating apps like Tinder, Hinge and Bumble. AI-enhanced profile pictures that look like you on your best day. From $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

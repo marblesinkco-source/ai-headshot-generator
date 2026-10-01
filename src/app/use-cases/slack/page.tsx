@@ -9,9 +9,9 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
-const pageTitle = "AI Profile Photos for Slack & Teams | Professional Workspace Photos | TailorPic";
+const pageTitle = 'AI Profile Photos for Slack & Teams | TailorPic';
 const pageDescription =
-  "Get a polished profile photo for Slack and Microsoft Teams from a few selfies. AI-generated workspace headshots that look professional in every channel, call, and DM, delivered in about 2 hours. Starting at $9.90.";
+  'Get a polished profile photo for Slack and Microsoft Teams from a few selfies. Workspace headshots that look professional in every channel and call. From $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

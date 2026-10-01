@@ -9,9 +9,9 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const competitor = "Passport Photo AI";
-const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
+const title = 'TailorPic vs Passport Photo AI: AI Headshot Comparison';
 const description =
-  "Compare TailorPic vs Passport Photo AI for AI headshots. TailorPic is a one-time $9.90 for 40+ photos in 11 categories with LoRA-trained likeness and no subscription.";
+  'Compare TailorPic vs Passport Photo AI. TailorPic is a one-time $9.90 for 40+ photos in 11 categories with LoRA-trained likeness and no subscription.';
 const path = '/vs/passport-photo-ai';
 
 export const metadata: Metadata = {

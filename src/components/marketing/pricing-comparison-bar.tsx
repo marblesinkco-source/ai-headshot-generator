@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 export function PricingComparisonBar() {
   const [scrolled, setScrolled] = useState(false);
@@ -44,7 +45,7 @@ export function PricingComparisonBar() {
           <span className="font-semibold">
             <span className="hidden sm:inline">AI headshots: </span>
             <span className="sm:hidden">AI: </span>
-            From $9.90
+            From {BASE_PRICE_DISPLAY}
           </span>
         </p>
         <Link

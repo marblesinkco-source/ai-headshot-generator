@@ -11,7 +11,7 @@ import {
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
-  title: 'AI Product Photography for E-Commerce | TailorPic',
+  title: { absolute: 'AI Product Photography for E-Commerce | TailorPic' },
   description:
     'Professional product photos for your online store. AI-powered, studio-quality images starting at $9.90. Perfect for Shopify, Amazon, Etsy, and more.',
   alternates: { canonical: '/industries/ecommerce' },

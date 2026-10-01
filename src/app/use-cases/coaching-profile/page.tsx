@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Coaching Profiles | TailorPic";
 const pageDescription =
-  "Professional headshots for coaching profiles, websites and directories. Get warm, credible portraits from a few selfies, delivered in about 2 hours. Starting at $9.90.";
+  'Professional headshots for coaching profiles, websites and directories. Get warm, credible portraits from a few selfies. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

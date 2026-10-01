@@ -64,7 +64,7 @@ export function Categories() {
   return (
     <section id="categories" className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 py-10 lg:py-16">
       <div className="text-center mb-12">
-        <p className="uppercase text-[10px] font-semibold tracking-[0.25em] text-tp-bronze-ink mb-3">
+        <p className="uppercase text-[11px] font-semibold tracking-[0.25em] text-tp-bronze-ink mb-3">
           Choose Your Photo Type
         </p>
         <h2 className="font-display text-[33px] lg:text-[42px] leading-tight tracking-[-0.03em] font-normal text-tp-ink">
@@ -131,12 +131,12 @@ export function Categories() {
                         <div className="absolute inset-0 bg-gradient-to-t from-tp-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                         {popular && (
-                          <span className="absolute left-2.5 top-2.5 rounded-full bg-tp-black px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-tp-bronze shadow-sm">
+                          <span className="absolute left-2.5 top-2.5 rounded-full bg-tp-black px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-tp-bronze shadow-sm">
                             Popular
                           </span>
                         )}
                         {maxOutput > 0 && (
-                          <span className="absolute bottom-2.5 right-2.5 rounded-full bg-tp-paper/95 px-2.5 py-1 text-[10px] font-semibold text-tp-bronze-ink shadow-sm">
+                          <span className="absolute bottom-2.5 right-2.5 rounded-full bg-tp-paper/95 px-2.5 py-1 text-[11px] font-semibold text-tp-bronze-ink shadow-sm">
                             Up to {maxOutput} {cat.outputLabel}
                           </span>
                         )}

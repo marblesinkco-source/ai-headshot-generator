@@ -4,13 +4,13 @@ import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service',
-  description: 'TailorPic terms of service — the rules and guidelines for using our platform.',
+  title: { absolute: 'Terms of Service: Rules for Using the TailorPic Platform' },
+  description: 'Read the TailorPic terms of service: the rules and guidelines for using our AI photo platform. Please review them before you create an account or order.',
   alternates: { canonical: '/terms' },
-  openGraph: generateOGMetadata({ title: 'Terms of Service', description: 
-      'TailorPic terms of service — the rules and guidelines for using our platform.', path: '/terms' }),
-  twitter: generateTwitterMetadata({ title: 'Terms of Service', description: 
-      'TailorPic terms of service — the rules and guidelines for using our platform.' }),
+  openGraph: generateOGMetadata({ title: 'Terms of Service: Rules for Using the TailorPic Platform', description: 
+      'Read the TailorPic terms of service: the rules and guidelines for using our AI photo platform. Please review them before you create an account or order.', path: '/terms' }),
+  twitter: generateTwitterMetadata({ title: 'Terms of Service: Rules for Using the TailorPic Platform', description: 
+      'Read the TailorPic terms of service: the rules and guidelines for using our AI photo platform. Please review them before you create an account or order.' }),
 };
 
 export default function TermsPage() {
@@ -19,7 +19,7 @@ export default function TermsPage() {
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
-          { name: 'Terms of Service', url: `${siteConfig.url}/terms` },
+          { name: 'Terms of Service: Rules for Using the TailorPic Platform', url: `${siteConfig.url}/terms` },
         ]}
       />
       <h1>Terms of Service</h1>

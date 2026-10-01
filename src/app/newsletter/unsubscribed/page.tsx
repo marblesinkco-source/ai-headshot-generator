@@ -5,8 +5,9 @@ import { EmailCapture } from '@/components/marketing/email-capture';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
-  title: 'Unsubscribed — TailorPic',
-  robots: { index: false },
+  title: { absolute: 'Unsubscribed from the TailorPic Newsletter' },
+  description: 'You have been unsubscribed from TailorPic emails. You can resubscribe at any time.',
+  robots: { index: false, follow: false },
 };
 
 export default function UnsubscribedPage() {

@@ -89,7 +89,7 @@ export function BeforeAfterShowcase() {
                   <span className="absolute left-3 top-3 rounded-tp-button bg-tp-black px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-tp-bronze">
                     AI Headshot
                   </span>
-                  <span className="absolute bottom-2 right-2 rounded-tp-button bg-tp-black/70 px-2 py-0.5 text-[10px] font-medium text-tp-paper">
+                  <span className="absolute bottom-2 right-2 rounded-tp-button bg-tp-black/70 px-2 py-0.5 text-[11px] font-medium text-tp-paper">
                     AI-generated concept image
                   </span>
                 </div>

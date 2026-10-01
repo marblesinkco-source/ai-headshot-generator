@@ -8,6 +8,7 @@ import { siteConfig } from '@/config/site';
 import { getActiveCategories, CATEGORY_GROUPS } from '@/config/categories';
 import { createClient } from '@/lib/supabase/client';
 import type { User } from '@supabase/supabase-js';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const categories = getActiveCategories();
 
@@ -25,7 +26,7 @@ const secondaryLinks = [
   { label: 'Industries', href: '/industries' },
   { label: 'Compare', href: '/vs' },
   { label: 'Reviews', href: '/reviews' },
-  { label: 'For Teams', href: '/for-teams' },
+  { label: 'For Teams', href: '/team-headshots' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Security', href: '/security' },
   { label: 'About', href: '/about' },
@@ -350,7 +351,7 @@ export function Header() {
               >
                 Get Started
                 <span className="rounded-lg bg-tp-bronze px-2.5 py-1 text-[12px] font-bold leading-none text-tp-black">
-                  $9.90
+                  {BASE_PRICE_DISPLAY}
                 </span>
               </Link>
             </>
@@ -406,14 +407,15 @@ export function Header() {
         aria-label="Site navigation"
         onToggle={(e) => setMobileOpen((e.currentTarget as HTMLDialogElement).open)}
         onClose={() => setMobileOpen(false)}
-        className="tp-nav-dialog rounded-[20px] border border-tp-line bg-tp-paper p-0 text-tp-ink w-[min(760px,calc(100vw-28px))] max-h-[85vh] overflow-visible backdrop:bg-tp-black/56"
+        className="tp-nav-dialog rounded-tp-dialog border border-tp-line bg-tp-paper p-0 text-tp-ink w-[min(760px,calc(100vw-28px))] max-h-[85vh] overflow-visible backdrop:bg-tp-black/56"
       >
-        <div className="overflow-auto max-h-[85vh] rounded-[20px]">
+        <div className="overflow-auto max-h-[85vh] rounded-tp-dialog">
         {/* Sticky header — always visible when scrolling */}
         <div className="sticky top-0 z-10 flex items-center justify-between gap-5 bg-tp-paper px-5 pt-5 pb-3 rounded-t-[20px]">
           <h2 className="font-display text-[29px] font-normal leading-tight">{siteConfig.name}</h2>
           <button
-            className="h-11 w-11 rounded-full border border-tp-line bg-transparent text-[23px] flex-shrink-0 flex items-center justify-center"
+            type="button"
+            className="h-11 w-11 rounded-full border border-tp-line bg-transparent text-[23px] flex-shrink-0 flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
             aria-label="Close menu"
             onClick={() => mobileDialog.current?.close()}
           >
@@ -513,7 +515,7 @@ export function Header() {
               onClick={() => mobileDialog.current?.close()}
             >
               Get Started
-              <span className="rounded-lg bg-tp-bronze px-2.5 py-1 text-[12px] font-bold leading-none text-tp-black">$9.90</span>
+              <span className="rounded-lg bg-tp-bronze px-2.5 py-1 font-display text-[15px] font-normal leading-none text-tp-black">{BASE_PRICE_DISPLAY}</span>
             </Link>
           )}
         </nav>

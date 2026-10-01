@@ -11,6 +11,8 @@
 
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { logger } from "@/lib/logger";
+import { safeEqual } from "@/lib/security";
 
 export const dynamic = "force-dynamic";
 
@@ -24,7 +26,7 @@ export async function POST(request: Request) {
     ? authHeader.slice(7)
     : null;
 
-  const hasValidToken = bearerToken !== null && serviceKey !== undefined && bearerToken === serviceKey;
+  const hasValidToken = safeEqual(bearerToken, serviceKey);
 
   // In production, require a valid Bearer token
   if (!isDev && !hasValidToken) {
@@ -38,7 +40,7 @@ export async function POST(request: Request) {
 
   if (!supabaseUrl || !serviceKey) {
     return NextResponse.json(
-      { error: "Missing Supabase credentials" },
+      { error: "Server configuration error" },
       { status: 500 }
     );
   }
@@ -61,7 +63,8 @@ export async function POST(request: Request) {
     if (uploadsError.message.includes("already exists")) {
       results.uploads = "already exists";
     } else {
-      results.uploads = `error: ${uploadsError.message}`;
+      logger.error("Storage setup: uploads bucket failed", uploadsError);
+      results.uploads = "error";
     }
   } else {
     results.uploads = "created";
@@ -81,7 +84,8 @@ export async function POST(request: Request) {
     if (headshotsError.message.includes("already exists")) {
       results.headshots = "already exists";
     } else {
-      results.headshots = `error: ${headshotsError.message}`;
+      logger.error("Storage setup: headshots bucket failed", headshotsError);
+      results.headshots = "error";
     }
   } else {
     results.headshots = "created";

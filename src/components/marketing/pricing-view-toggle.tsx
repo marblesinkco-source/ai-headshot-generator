@@ -117,7 +117,7 @@ export function PricingViewToggle({ individual }: { individual: ReactNode }) {
                   <p className="mt-6 font-display text-5xl text-tp-black">{t.price}</p>
                   <p className="mt-2 text-sm text-tp-muted">{t.unit}</p>
                   <Link
-                    href={t.price === 'Custom' ? '/for-teams' : '/auth/register'}
+                    href={t.price === 'Custom' ? '/team-headshots' : '/auth/register'}
                     className={cn(
                       buttonVariants({
                         variant: t.highlight ? 'primary' : 'outline',
@@ -142,7 +142,7 @@ export function PricingViewToggle({ individual }: { individual: ReactNode }) {
             <p className="mt-6 text-center text-sm text-tp-muted">
               Need help with a larger rollout? See our{' '}
               <Link
-                href="/for-teams"
+                href="/team-headshots"
                 className="font-medium text-tp-bronze-ink underline underline-offset-2 hover:text-tp-ink"
               >
                 team page

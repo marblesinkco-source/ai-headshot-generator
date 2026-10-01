@@ -9,9 +9,9 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const competitor = "Adobe Lightroom";
-const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
+const title = 'TailorPic vs Adobe Lightroom: AI Headshot Comparison';
 const description =
-  "Compare TailorPic vs Adobe Lightroom. Lightroom is a photo editing and organizing tool; TailorPic creates 40+ professional AI headshots from your selfies for a one-time $9.90.";
+  'Compare TailorPic vs Adobe Lightroom. Lightroom is a photo editing and organizing tool; TailorPic makes 40+ headshots from selfies for a one-time $9.90.';
 const path = '/vs/lightroom';
 const canonicalUrl = 'https://www.tailorpic.com/vs/lightroom';
 

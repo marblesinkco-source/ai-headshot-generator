@@ -22,9 +22,9 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
-const pageTitle = "AI Headshots for Resumes & CVs | Professional Job Photos | TailorPic";
+const pageTitle = 'AI Headshots for Resumes & CVs | TailorPic';
 const pageDescription =
-  "Create a professional resume and CV photo from a few selfies. AI headshots tailored for job applications, portfolios, and LinkedIn, delivered in about 2 hours. Starting at $9.90.";
+  'Create a professional resume and CV photo from a few selfies. AI headshots tailored for job applications, portfolios, and LinkedIn. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

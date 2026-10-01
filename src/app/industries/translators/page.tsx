@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Translators & Interpreters | TailorPic";
 const pageDescription =
-  "Professional AI headshots for translators and interpreters. Win more clients on ProZ, LinkedIn, and your portfolio site with a polished portrait delivered in about 2 hours.";
+  'Professional AI headshots for translators and interpreters. Win more clients on ProZ, LinkedIn, and your portfolio site with a polished portrait.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

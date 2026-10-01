@@ -6,13 +6,13 @@ import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
-  title: 'KVKK Aydınlatma Metni | TailorPic',
+  title: { absolute: 'KVKK Aydınlatma Metni: Kişisel Veriler | TailorPic' },
   description:
-    'TailorPic KVKK Aydınlatma Metni: 6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında işlenen kişisel veriler, işleme amaçları, yurt dışına aktarım, saklama süreleri ve ilgili kişi hakları.',
+    'TailorPic KVKK Aydınlatma Metni: 6698 sayılı Kanun kapsamında işlenen kişisel veriler, işleme amaçları, yurt dışına aktarım, saklama süreleri ve haklarınız.',
   alternates: { canonical: '/kvkk' },
-  openGraph: generateOGMetadata({ title: 'KVKK Aydınlatma Metni | TailorPic', description: 
+  openGraph: generateOGMetadata({ title: 'KVKK Aydınlatma Metni: Kişisel Veriler | TailorPic', description: 
       '6698 sayılı KVKK kapsamında TailorPic tarafından işlenen kişisel veriler, amaçlar, aktarımlar, saklama süreleri ve haklarınız.', path: '/kvkk' }),
-  twitter: generateTwitterMetadata({ title: 'KVKK Aydınlatma Metni | TailorPic', description: 
+  twitter: generateTwitterMetadata({ title: 'KVKK Aydınlatma Metni: Kişisel Veriler | TailorPic', description: 
       '6698 sayılı KVKK kapsamında TailorPic tarafından işlenen kişisel veriler, amaçlar, aktarımlar, saklama süreleri ve haklarınız.' }),
 };
 
@@ -71,7 +71,7 @@ const rights = [
 function Section({ n, title, children }: { n: number; title: string; children: React.ReactNode }) {
   return (
     <section className="border-t border-tp-line pt-8">
-      <h2 className="text-xl font-bold text-tp-ink sm:text-2xl">
+      <h2 className="text-xl font-display font-normal text-tp-ink sm:text-2xl">
         <span className="mr-2 text-tp-bronze-ink">{n}.</span>
         {title}
       </h2>
@@ -101,7 +101,7 @@ export default function KvkkPage() {
         { name: 'KVKK', url: `${siteConfig.url}/kvkk` },
       ]} />
       <Header />
-      <main id="main-content" className="bg-tp-paper">
+      <main id="main-content" lang="tr" className="bg-tp-paper">
         <section className="bg-tp-black">
           <div className="mx-auto max-w-3xl px-4 py-16 sm:py-20">
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">Hukuki Bilgilendirme</p>
@@ -109,7 +109,7 @@ export default function KvkkPage() {
               KVKK Aydınlatma Metni
             </h1>
             <p className="mt-4 text-base text-tp-beige">
-              6698 sayılı Kişisel Verilerin Korunması Kanunu\'nun 10. maddesi kapsamında hazırlanmıştır.
+              6698 sayılı Kişisel Verilerin Korunması Kanunu&apos;nun 10. maddesi kapsamında hazırlanmıştır.
             </p>
             <p className="mt-2 text-sm text-tp-beige/70">Son güncelleme: 1 Ekim 2026</p>
           </div>
@@ -126,7 +126,7 @@ export default function KvkkPage() {
 
           <Section n={1} title="Veri Sorumlusu">
             <p>
-              KVKK uyarınca veri sorumlusu TailorPic\'tir. Veri sorumlusuna aşağıdaki iletişim bilgileri
+              KVKK uyarınca veri sorumlusu TailorPic&apos;tir. Veri sorumlusuna aşağıdaki iletişim bilgileri
               aracılığıyla ulaşabilirsiniz:
             </p>
             <div className="rounded-tp-card border border-tp-line bg-white p-5">
@@ -175,7 +175,7 @@ export default function KvkkPage() {
             <p>
               Kişisel verileriniz, yukarıda belirtilen amaçların gerçekleştirilmesi için hizmet sağlayıcılarımıza
               ve yasal olarak yetkili kamu kurum ve kuruluşlarına aktarılabilir. Hizmet altyapımızın bir
-              parçası olarak kişisel verileriniz, aşağıdaki hizmet sağlayıcılara Amerika Birleşik Devletleri\'ne
+              parçası olarak kişisel verileriniz, aşağıdaki hizmet sağlayıcılara Amerika Birleşik Devletleri&apos;ne
               aktarılmaktadır:
             </p>
             <div className="overflow-x-auto rounded-tp-card border border-tp-line bg-white">
@@ -201,7 +201,7 @@ export default function KvkkPage() {
             <p>
               Yurt dışına aktarımlar, KVKK m. 9 ve ilgili mevzuat çerçevesinde, Standart Sözleşme Maddeleri
               (SCC) kapsamında gerçekleştirilmektedir. Standart sözleşmenin imzalanmasının ardından mevzuatta
-              öngörülen süre içinde Kişisel Verileri Koruma Kurumu\'na bildirim yapılır. Yüz fotoğraflarınızın
+              öngörülen süre içinde Kişisel Verileri Koruma Kurumu&apos;na bildirim yapılır. Yüz fotoğraflarınızın
               yurt dışındaki hizmet sağlayıcılara aktarımı için ayrıca açık rızanız alınır.
             </p>
           </Section>
@@ -244,11 +244,11 @@ export default function KvkkPage() {
               </a>{' '}
               adresine e-posta yoluyla iletebilirsiniz. Başvurunuz, talebin niteliğine göre en kısa sürede ve
               en geç otuz (30) gün içinde ücretsiz olarak sonuçlandırılır. İşlemin ayrıca bir maliyet
-              gerektirmesi hâlinde Kişisel Verileri Koruma Kurulu\'nca belirlenen tarifedeki ücret alınabilir.
+              gerektirmesi hâlinde Kişisel Verileri Koruma Kurulu&apos;nca belirlenen tarifedeki ücret alınabilir.
             </p>
             <p>
               Başvurunuza verilen cevabı yetersiz bulmanız veya süresinde cevap verilmemesi hâlinde,
-              KVKK m. 14 uyarınca Kişisel Verileri Koruma Kurulu\'na şikâyette bulunma hakkınız saklıdır.
+              KVKK m. 14 uyarınca Kişisel Verileri Koruma Kurulu&apos;na şikâyette bulunma hakkınız saklıdır.
             </p>
           </Section>
 

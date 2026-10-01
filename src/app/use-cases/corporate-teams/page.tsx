@@ -9,9 +9,9 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
-const pageTitle = "AI Headshots for Corporate Teams | Team Photo Solutions | TailorPic";
+const pageTitle = 'AI Headshots for Corporate Teams | TailorPic';
 const pageDescription =
-  "Get consistent, professional headshots for your entire team without coordinating a photographer. AI-generated corporate team photos for websites, directories, and pitch decks. Starting at $9.90 per person.";
+  'Get consistent, professional headshots for your whole team without coordinating a photographer. Team photos for websites, directories and decks. From $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

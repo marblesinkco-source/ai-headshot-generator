@@ -8,9 +8,9 @@ import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { SignatureForm } from './signature-form';
 
-const title = 'Free Email Signature Generator — Professional Signatures with Photo | TailorPic';
+const title = 'Free Email Signature Generator with Photo | TailorPic';
 const description =
-  'Create a professional email signature with your photo in seconds. Choose a layout and color, preview it live, and copy the HTML into Gmail, Outlook or Apple Mail. Free, no signup.';
+  'Create a professional email signature with your photo in seconds. Pick a layout and color, preview it live, and copy the HTML into Gmail, Outlook or Apple Mail.';
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -67,7 +67,7 @@ export default function EmailSignatureGeneratorPage() {
 
       <section className="border-t border-tp-line bg-tp-paper">
         <div className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
-          <h2 className="text-2xl font-bold text-tp-ink sm:text-3xl">
+          <h2 className="text-2xl font-display font-normal text-tp-ink sm:text-3xl">
             Ready for a better headshot in your signature?
           </h2>
           <p className="mt-3 text-tp-muted">

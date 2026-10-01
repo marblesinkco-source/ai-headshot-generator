@@ -28,11 +28,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!cat) return {};
 
   return {
-    title: cat.seoTitle,
+    title: { absolute: cat.seoTitle },
     description: cat.seoDescription,
     alternates: { canonical: `/${cat.slug}` },
-    openGraph: generateOGMetadata({ title: `${cat.seoTitle} | ${siteConfig.name}`, description: cat.seoDescription, path: `/${cat.slug}` }),
-    twitter: generateTwitterMetadata({ title: `${cat.seoTitle} | ${siteConfig.name}`, description: cat.seoDescription }),
+    openGraph: generateOGMetadata({ title: cat.seoTitle, description: cat.seoDescription, path: `/${cat.slug}` }),
+    twitter: generateTwitterMetadata({ title: cat.seoTitle, description: cat.seoDescription }),
   };
 }
 

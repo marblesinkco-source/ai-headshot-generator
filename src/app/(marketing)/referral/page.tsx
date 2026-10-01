@@ -21,7 +21,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Referral Program — Share TailorPic, Get Rewarded',
+  title: { absolute: 'TailorPic Referral Program: Share and Get Rewarded' },
   description:
     'Share TailorPic with friends and colleagues. They get professional AI headshots, you get rewarded. Join our referral program today.',
   alternates: { canonical: '/referral' },
@@ -179,7 +179,7 @@ export default function ReferralPage() {
                 )}
                 <div className="relative mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black mb-5">
                   <s.icon className="h-6 w-6 text-tp-bronze" />
-                  <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-tp-bronze text-[10px] font-semibold text-tp-black">
+                  <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-tp-bronze text-[11px] font-semibold text-tp-black">
                     {i + 1}
                   </span>
                 </div>

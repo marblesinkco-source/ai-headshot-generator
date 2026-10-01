@@ -35,8 +35,8 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'How It Works',
-  description: `Learn how ${siteConfig.name} creates professional AI photos in 3 simple steps. Upload selfies, let our AI train on your features, and download 40+ high-resolution photos in about 2 hours.`,
+  title: { absolute: 'How TailorPic Works: Upload Selfies, Get AI Headshots' },
+  description: 'Learn how TailorPic creates professional AI photos in 3 steps: upload selfies, let our AI train on your features, and download 40+ high-resolution photos.',
   alternates: { canonical: '/how-it-works' },
   openGraph: generateOGMetadata({ title: `How It Works | ${siteConfig.name}`, description: 
       'Upload your selfies, our AI trains a custom model on your features, and you get 40+ professional photos in about 2 hours.', path: '/how-it-works' }),
@@ -224,7 +224,7 @@ export default function HowItWorksPage() {
     <main id="main-content" className="min-h-screen">
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
-        { name: 'How It Works', url: `${siteConfig.url}/how-it-works` },
+        { name: 'How TailorPic Works: Upload Selfies, Get AI Headshots', url: `${siteConfig.url}/how-it-works` },
       ]} />
       <Header />
       <HowToSchema />

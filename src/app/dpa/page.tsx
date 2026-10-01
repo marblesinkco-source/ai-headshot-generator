@@ -7,13 +7,13 @@ import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
-  title: 'Data Processing Agreement | TailorPic',
+  title: { absolute: 'Data Processing Agreement (DPA): GDPR Terms | TailorPic' },
   description:
-    'TailorPic Data Processing Agreement (DPA): how we process personal data on behalf of customers, our security measures, sub-processors, retention, breach notification, and GDPR obligations.',
+    'TailorPic Data Processing Agreement: how we process personal data on behalf of customers, security measures, sub-processors, retention and GDPR obligations.',
   alternates: { canonical: '/dpa' },
-  openGraph: generateOGMetadata({ title: 'Data Processing Agreement | TailorPic', description: 
+  openGraph: generateOGMetadata({ title: 'Data Processing Agreement (DPA): GDPR Terms | TailorPic', description: 
       'How TailorPic processes personal data on behalf of customers: scope, security measures, sub-processors, retention and deletion, breach notification, and audit rights.', path: '/dpa' }),
-  twitter: generateTwitterMetadata({ title: 'Data Processing Agreement | TailorPic', description: 
+  twitter: generateTwitterMetadata({ title: 'Data Processing Agreement (DPA): GDPR Terms | TailorPic', description: 
       'How TailorPic processes personal data on behalf of customers: scope, security measures, sub-processors, retention and deletion, breach notification, and audit rights.' }),
 };
 
@@ -139,7 +139,7 @@ function SectionHeading({ number, children }: { number: number; children: React.
       <span className="font-mono text-sm font-semibold text-tp-bronze-ink">
         {String(number).padStart(2, '0')}
       </span>
-      <h2 className="text-2xl font-bold tracking-tight text-tp-ink">{children}</h2>
+      <h2 className="text-2xl font-display font-normal tracking-tight text-tp-ink">{children}</h2>
     </div>
   );
 }

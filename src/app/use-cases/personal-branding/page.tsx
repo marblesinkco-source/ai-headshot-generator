@@ -9,9 +9,9 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
-const pageTitle = "AI Photos for Personal Branding | Build Your Visual Identity | TailorPic";
+const pageTitle = 'AI Photos for Personal Branding | TailorPic';
 const pageDescription =
-  "Create a consistent visual identity with AI-generated professional photos for your personal brand. Perfect for coaches, speakers, authors, and entrepreneurs. Starting at $9.90.";
+  'Create a consistent visual identity with AI-generated professional photos for your personal brand. Ideal for coaches, speakers and authors. From $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

@@ -13,6 +13,7 @@ import {
   buildRefundConfirmationEmail,
 } from '@/lib/emails';
 import { nanoid } from 'nanoid';
+import { logger } from '@/lib/logger';
 
 // Resend throws on construction without a key — only create it when configured.
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
@@ -28,7 +29,7 @@ async function sendEmailSafe(to: string, subject: string, html: string): Promise
       html,
     });
   } catch (emailError) {
-    console.error('[stripe-webhook] Failed to send email:', emailError);
+    logger.error('[stripe-webhook] Failed to send email:', emailError);
   }
 }
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
@@ -49,7 +50,7 @@ export async function POST(request: NextRequest) {
     try {
       event = stripe.webhooks.constructEvent(body, signature, webhookSecret);
     } catch (err) {
-      console.error('Webhook signature verification failed:', err);
+      logger.error('Webhook signature verification failed:', err);
       return NextResponse.json(
         { error: 'Invalid signature' },
         { status: 400 }
@@ -64,7 +65,7 @@ export async function POST(request: NextRequest) {
         const { orderId, packageId, userId } = session.metadata || {};
 
         if (!orderId || !packageId || !userId) {
-          console.error('Missing metadata in checkout session:', session.id);
+          logger.error('Missing metadata in checkout session:', session.id);
           return NextResponse.json({ received: true }, { status: 200 });
         }
 
@@ -91,7 +92,7 @@ export async function POST(request: NextRequest) {
           .eq('user_id', userId);
 
         if (updateError) {
-          console.error('Failed to update order:', updateError);
+          logger.error('Failed to update order:', updateError);
           return NextResponse.json(
             { error: 'Failed to update order' },
             { status: 500 }
@@ -127,7 +128,7 @@ export async function POST(request: NextRequest) {
               });
 
             if (creditError) {
-              console.error('Failed to create credits:', creditError);
+              logger.error('Failed to create credits:', creditError);
             }
 
             // Record purchase transaction
@@ -165,7 +166,7 @@ export async function POST(request: NextRequest) {
                 html,
               });
             } catch (emailError) {
-              console.error('Failed to send credit confirmation email:', emailError);
+              logger.error('Failed to send credit confirmation email:', emailError);
             }
           }
 
@@ -201,7 +202,7 @@ export async function POST(request: NextRequest) {
               html,
             });
           } catch (emailError) {
-            console.error('Failed to send confirmation email:', emailError);
+            logger.error('Failed to send confirmation email:', emailError);
             // Don't fail the webhook for email errors
           }
         }
@@ -236,7 +237,7 @@ export async function POST(request: NextRequest) {
             .eq('status', 'pending');
 
           if (updateError) {
-            console.error('Failed to update order status:', updateError);
+            logger.error('Failed to update order status:', updateError);
           } else if (failedOrder) {
             // Notify the customer (best-effort; never fails the webhook)
             try {
@@ -260,7 +261,7 @@ export async function POST(request: NextRequest) {
                 await sendEmailSafe(recipient, subject, html);
               }
             } catch (emailError) {
-              console.error('Failed to send payment failed email:', emailError);
+              logger.error('Failed to send payment failed email:', emailError);
             }
           }
         }
@@ -276,13 +277,13 @@ export async function POST(request: NextRequest) {
             : charge.payment_intent?.id;
 
         if (!paymentIntentId) {
-          console.warn('[stripe-webhook] charge.refunded without payment_intent:', charge.id);
+          logger.warn('[stripe-webhook] charge.refunded without payment_intent:', charge.id);
           break;
         }
 
         // Only full refunds revoke the order/credits; partial refunds are logged only.
         if (!charge.refunded) {
-          console.warn(
+          logger.warn(
             `[stripe-webhook] Partial refund on charge ${charge.id} (${charge.amount_refunded}/${charge.amount}) — no action taken`
           );
           break;
@@ -295,7 +296,7 @@ export async function POST(request: NextRequest) {
           .maybeSingle();
 
         if (!refundOrder) {
-          console.warn('[stripe-webhook] No order found for refunded payment intent:', paymentIntentId);
+          logger.warn('[stripe-webhook] No order found for refunded payment intent:', paymentIntentId);
           break;
         }
 
@@ -308,7 +309,7 @@ export async function POST(request: NextRequest) {
           .select('id');
 
         if (refundUpdateError) {
-          console.error('Failed to mark order refunded:', refundUpdateError);
+          logger.error('Failed to mark order refunded:', refundUpdateError);
           return NextResponse.json({ error: 'Failed to update order' }, { status: 500 });
         }
 
@@ -322,7 +323,7 @@ export async function POST(request: NextRequest) {
             .eq('order_id', refundOrder.id);
 
           if (creditFetchError) {
-            console.error('Failed to fetch credits for refund:', creditFetchError);
+            logger.error('Failed to fetch credits for refund:', creditFetchError);
             return NextResponse.json({ error: 'Failed to deactivate credits' }, { status: 500 });
           }
 
@@ -336,7 +337,7 @@ export async function POST(request: NextRequest) {
               .eq('id', row.id);
 
             if (deactivateError) {
-              console.error(`Failed to deactivate credit ${row.id}:`, deactivateError);
+              logger.error(`Failed to deactivate credit ${row.id}:`, deactivateError);
               return NextResponse.json({ error: 'Failed to deactivate credits' }, { status: 500 });
             }
 
@@ -352,7 +353,7 @@ export async function POST(request: NextRequest) {
             });
 
             if (txError) {
-              console.error('Failed to record credit refund transaction:', txError);
+              logger.error('Failed to record credit refund transaction:', txError);
             }
           }
         }
@@ -382,7 +383,7 @@ export async function POST(request: NextRequest) {
               await sendEmailSafe(recipient, subject, html);
             }
           } catch (emailError) {
-            console.error('Failed to send refund confirmation email:', emailError);
+            logger.error('Failed to send refund confirmation email:', emailError);
           }
         }
 
@@ -403,7 +404,7 @@ export async function POST(request: NextRequest) {
             .eq('status', 'pending');
 
           if (updateError) {
-            console.error('Failed to expire abandoned order:', updateError);
+            logger.error('Failed to expire abandoned order:', updateError);
           }
         }
 
@@ -411,12 +412,12 @@ export async function POST(request: NextRequest) {
       }
 
       default:
-        console.warn(`[stripe-webhook] Unhandled event type: ${event.type}`);
+        logger.warn(`[stripe-webhook] Unhandled event type: ${event.type}`);
     }
 
     return NextResponse.json({ received: true }, { status: 200 });
   } catch (error) {
-    console.error('Stripe webhook error:', error);
+    logger.error('Stripe webhook error:', error);
     return NextResponse.json(
       { error: 'Webhook handler failed' },
       { status: 500 }

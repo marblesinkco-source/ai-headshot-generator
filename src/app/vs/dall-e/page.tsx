@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "DALL-E";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs DALL-E for headshots. DALL-E generates images from text prompts; TailorPic trains on your selfies to deliver 40+ photos that look like you for $9.90.";
+  'Compare TailorPic vs DALL-E for headshots. DALL-E generates images from text prompts; TailorPic makes 40+ headshots from selfies for a one-time $9.90.';
 const path = '/vs/dall-e';
 const canonicalUrl = 'https://www.tailorpic.com/vs/dall-e';
 

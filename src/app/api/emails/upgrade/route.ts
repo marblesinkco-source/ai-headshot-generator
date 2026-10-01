@@ -14,6 +14,8 @@ import { Resend } from 'resend';
 import { getCategoryById, getPackageById, type CategoryId } from '@/config/categories';
 import { siteConfig } from '@/config/site';
 import { buildUpgradeEmail } from '@/lib/emails';
+import { logger } from '@/lib/logger';
+import { safeEqual } from '@/lib/security';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -26,7 +28,7 @@ export async function POST(request: NextRequest) {
   const authHeader = request.headers.get('authorization');
   const cronSecret = process.env.CRON_SECRET;
 
-  if (!cronSecret || authHeader !== `Bearer ${cronSecret}`) {
+  if (!cronSecret || !safeEqual(authHeader, `Bearer ${cronSecret}`)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
@@ -44,7 +46,7 @@ export async function POST(request: NextRequest) {
     .is('upgrade_email_sent', null);
 
   if (queryError) {
-    console.error('Failed to query express orders:', queryError);
+    logger.error('Failed to query express orders:', queryError);
     return NextResponse.json({ error: 'Query failed' }, { status: 500 });
   }
 
@@ -130,7 +132,7 @@ export async function POST(request: NextRequest) {
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
       errors.push(`Order ${order.id}: ${msg}`);
-      console.error(`Failed to send upgrade email for order ${order.id}:`, err);
+      logger.error(`Failed to send upgrade email for order ${order.id}:`, err);
     }
   }
 

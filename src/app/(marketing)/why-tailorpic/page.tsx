@@ -35,7 +35,7 @@ const OG_TITLE = `Why ${siteConfig.name} — Professional AI Headshots`;
 const OG_DESCRIPTION = `Discover why ${siteConfig.name} is the smartest way to get professional headshots. Studio quality from $9.90, ready in hours, with a money-back guarantee.`;
 
 export const metadata: Metadata = {
-  title: `Why ${siteConfig.name} — Professional AI Headshots Done Right`,
+  title: { absolute: 'Why TailorPic: Professional AI Headshots Done Right' },
   description: OG_DESCRIPTION,
   alternates: { canonical: '/why-tailorpic' },
   openGraph: generateOGMetadata({

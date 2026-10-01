@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for DJs | TailorPic";
 const pageDescription =
-  "Professional AI headshots for club DJs, wedding DJs, and producers. Get press-ready portraits for booking pages, festival lineups, and Resident Advisor profiles in about 2 hours.";
+  'Professional AI headshots for club DJs, wedding DJs and producers. Press-ready portraits for booking pages, festival lineups and Resident Advisor profiles.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

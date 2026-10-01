@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Luminar AI";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs Luminar AI. Luminar AI is Skylum's AI photo editor; TailorPic generates 40+ professional AI headshots from your selfies for a one-time $9.90.";
+  'Compare TailorPic vs Luminar AI. Luminar AI is Skylum\'s AI photo editor; TailorPic makes 40+ headshots from selfies for a one-time $9.90.';
 const path = '/vs/luminar-ai';
 const canonicalUrl = 'https://www.tailorpic.com/vs/luminar-ai';
 

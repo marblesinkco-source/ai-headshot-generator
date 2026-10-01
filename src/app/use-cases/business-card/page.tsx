@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Business Cards | TailorPic";
 const pageDescription =
-  "Professional headshots for business cards, QR profiles and digital cards. Get a polished portrait from a few selfies, delivered in about 2 hours. Starting at $9.90.";
+  'Professional headshots for business cards, QR profiles and digital cards. Get a polished portrait from a few selfies. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

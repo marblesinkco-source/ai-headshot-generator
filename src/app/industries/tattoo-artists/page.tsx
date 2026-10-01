@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const pageTitle = "AI Headshots for Tattoo Artists | TailorPic";
 const pageDescription =
-  "Professional AI headshots for tattoo artists and studio owners. Build trust with new clients on your portfolio, booking page, and social media with a polished portrait delivered in about 2 hours.";
+  'Professional AI headshots for tattoo artists and studio owners. Build trust with new clients on your portfolio, booking page and social media.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

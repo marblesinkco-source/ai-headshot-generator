@@ -27,9 +27,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Student Headshots — Affordable AI Professional Photos for Students | TailorPic',
+  title: { absolute: 'AI Headshots for Students: LinkedIn and Grad School Photos' },
   description:
-    'Get professional AI-generated headshots starting at $9.90. Perfect for LinkedIn, graduate school applications, campus organizations and academic conferences.',
+    'Get professional AI-generated headshots from $9.90. Perfect for LinkedIn, graduate school applications, campus organizations and academic conferences.',
   alternates: { canonical: '/students' },
   openGraph: generateOGMetadata({
     title: 'Student Headshots | TailorPic',

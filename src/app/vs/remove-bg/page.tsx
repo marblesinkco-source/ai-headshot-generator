@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Remove.bg";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs Remove.bg. Remove.bg is a background removal tool; TailorPic generates 40+ professional AI headshots from your selfies for a one-time $9.90.";
+  'Compare TailorPic vs Remove.bg. Remove.bg is a background removal tool; TailorPic generates 40+ professional AI headshots for a one-time $9.90.';
 const path = '/vs/remove-bg';
 const canonicalUrl = 'https://www.tailorpic.com/vs/remove-bg';
 

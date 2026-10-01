@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Dreamwave";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs Dreamwave for AI headshots. TailorPic is a one-time $9.90 for 40+ photos in 11 categories; Dreamwave starts around $35 with up to 300 headshots.";
+  'Compare TailorPic vs Dreamwave for AI headshots. TailorPic is a one-time $9.90 for 40+ photos in 11 categories; Dreamwave starts around $35 for up to 300.';
 const path = '/vs/dreamwave';
 
 export const metadata: Metadata = {

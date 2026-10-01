@@ -9,7 +9,7 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const competitor = "ChatGPT Image Generation";
-const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
+const title = 'TailorPic vs ChatGPT Image Generation: Headshot Comparison';
 const description =
   "Compare TailorPic vs ChatGPT image generation for headshots. TailorPic is a one-time $9.90 for 40+ photos with a LoRA model trained on your own face.";
 const path = '/vs/chatgpt-image';

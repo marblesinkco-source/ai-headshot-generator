@@ -9,9 +9,9 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
-const pageTitle = "AI Profile Photos for X (Twitter) | Stand Out in Every Thread | TailorPic";
+const pageTitle = 'AI Profile Photos for X (Twitter) | TailorPic';
 const pageDescription =
-  "Create a sharp, memorable X (Twitter) profile photo from a few selfies. AI-generated portraits that build credibility in replies, threads, and DMs, delivered in about 2 hours. Starting at $9.90.";
+  'Create a sharp, memorable X (Twitter) profile photo from a few selfies. AI-generated portraits that build credibility in replies, threads, and DMs. From $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

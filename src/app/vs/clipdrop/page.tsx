@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "ClipDrop";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs ClipDrop. ClipDrop offers quick AI image tools like background removal, relighting and upscaling; TailorPic creates 40+ AI headshots for a one-time $9.90.";
+  'Compare TailorPic vs ClipDrop. ClipDrop offers quick AI image tools like background removal, relighting and upscaling; TailorPic: 40+ headshots, $9.90 one-time.';
 const path = '/vs/clipdrop';
 const canonicalUrl = 'https://www.tailorpic.com/vs/clipdrop';
 

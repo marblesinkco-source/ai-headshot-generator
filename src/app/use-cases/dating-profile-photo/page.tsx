@@ -23,7 +23,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Photos for Dating Profile Pictures | TailorPic";
 const pageDescription =
-  "Natural, flattering AI photos for your dating profile on Tinder, Hinge and Bumble. Get varied, realistic portraits from a few selfies in about 2 hours. Starting at $9.90.";
+  'Natural, flattering AI photos for your dating profile on Tinder, Hinge and Bumble. Get varied, realistic portraits from a few selfies. Starting at $9.90.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },

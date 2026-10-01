@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Artbreeder";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs Artbreeder. Artbreeder blends and evolves images for creative art; TailorPic creates 40+ AI headshots of you from selfies for a one-time $9.90.";
+  'Compare TailorPic vs Artbreeder. Artbreeder blends and evolves images for creative art; TailorPic makes 40+ headshots from selfies for a one-time $9.90.';
 const path = '/vs/artbreeder';
 const canonicalUrl = 'https://www.tailorpic.com/vs/artbreeder';
 

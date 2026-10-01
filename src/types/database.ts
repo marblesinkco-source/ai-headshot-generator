@@ -294,6 +294,52 @@ export interface Database {
           completed_at?: string | null;
         };
       };
+      contact_messages: {
+        Row: {
+          id: string;
+          name: string;
+          email: string;
+          subject: string;
+          message: string;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          name: string;
+          email: string;
+          subject: string;
+          message: string;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          name?: string;
+          email?: string;
+          subject?: string;
+          message?: string;
+          created_at?: string;
+        };
+      };
+      newsletter_subscribers: {
+        Row: {
+          id?: string;
+          email: string;
+          subscribed_at: string | null;
+          unsubscribed_at: string | null;
+        };
+        Insert: {
+          id?: string;
+          email: string;
+          subscribed_at?: string | null;
+          unsubscribed_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          email?: string;
+          subscribed_at?: string | null;
+          unsubscribed_at?: string | null;
+        };
+      };
     };
     Views: {
       [_ in never]: never;

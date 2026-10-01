@@ -88,7 +88,7 @@ export function EmailCapture({ variant = 'card', className = '' }: EmailCaptureP
 
       <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
         <div className={`max-w-xl ${isBanner ? 'pr-6' : ''}`}>
-          <h2 className="font-display text-xl font-semibold text-tp-ink sm:text-2xl">
+          <h2 className="font-display text-xl text-tp-ink sm:text-2xl font-normal">
             Get Photo Tips &amp; Exclusive Deals
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-tp-muted">
@@ -117,7 +117,7 @@ export function EmailCapture({ variant = 'card', className = '' }: EmailCaptureP
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
-                className="min-w-0 flex-1 rounded-tp-button border border-tp-line bg-white px-4 py-3 text-sm text-tp-ink placeholder:text-tp-muted/60 focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/30"
+                className="min-w-0 flex-1 rounded-tp-button border border-tp-line bg-white px-4 py-3 text-sm text-tp-ink placeholder:text-tp-muted/80 focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/30"
               />
               <button
                 type="submit"

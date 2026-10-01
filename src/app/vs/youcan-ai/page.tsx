@@ -9,9 +9,9 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const competitor = "YouCam Perfect";
-const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
+const title = 'TailorPic vs YouCam Perfect: AI Headshot Comparison';
 const description =
-  "Compare TailorPic vs YouCam Perfect. YouCam Perfect is a mobile photo editing and beauty app; TailorPic creates 40+ AI headshots from your selfies for a one-time $9.90.";
+  'Compare TailorPic vs YouCam Perfect. YouCam Perfect is a mobile photo editing and beauty app; TailorPic makes 40+ headshots from selfies for a one-time $9.90.';
 const path = '/vs/youcan-ai';
 const canonicalUrl = 'https://www.tailorpic.com/vs/youcan-ai';
 
