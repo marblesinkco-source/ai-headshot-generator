@@ -1,13 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
   Building2, Users, Shield, Clock, CreditCard, Palette,
   ArrowRight, Check, CheckCircle, Lock, BarChart3, Headphones, Globe,
 } from 'lucide-react';
+
+const ROICalculator = dynamic(
+  () => import('@/components/marketing/roi-calculator').then((m) => m.ROICalculator),
+  { ssr: false },
+);
 
 export const metadata: Metadata = {
   title: 'Enterprise AI Headshots for Teams | TailorPic',
@@ -30,6 +36,39 @@ export const metadata: Metadata = {
   },
 };
 
+const enterpriseFaqs = [
+  {
+    question: 'How does team pricing work?',
+    answer:
+      'Small teams of 5-15 people are $39 per person and companies of 16-50 people are $29 per person. For teams of 50+, we offer custom enterprise pricing. Contact our sales team for a tailored quote.',
+  },
+  {
+    question: 'Can we set brand guidelines for all team headshots?',
+    answer:
+      'Yes. Admins can set brand colors, backgrounds, and style preferences once and apply them to every team member, so the whole team has a consistent, on-brand look.',
+  },
+  {
+    question: 'How do team members submit their photos?',
+    answer:
+      'The admin creates a team account and invites members by email. Each member uploads their own selfies, and the AI generates their headshots in the shared team style. The admin can review and download all headshots from one dashboard.',
+  },
+  {
+    question: 'How is our team\'s data protected?',
+    answer:
+      'Uploaded photos are processed on secure infrastructure and automatically deleted within 30 days. We never sell your photos or share them with third parties.',
+  },
+  {
+    question: 'Is there a minimum team size for enterprise plans?',
+    answer:
+      'Volume pricing is available for teams of 10 or more, and our custom Enterprise plan is designed for organizations with 50+ people. Smaller teams can start with a Small Team plan.',
+  },
+  {
+    question: 'Do you offer dedicated support for enterprise customers?',
+    answer:
+      'Yes. Enterprise clients get priority support and a dedicated account manager, along with custom onboarding for your organization.',
+  },
+];
+
 export default function EnterprisePage() {
   return (
     <main id="main-content" className="min-h-screen">
@@ -37,6 +76,7 @@ export default function EnterprisePage() {
         { name: 'Home', url: siteConfig.url },
         { name: 'Enterprise', url: `${siteConfig.url}/enterprise` },
       ]} />
+      <FAQSchema items={enterpriseFaqs} />
       <Header />
 
       {/* Hero */}
@@ -300,6 +340,9 @@ export default function EnterprisePage() {
           </div>
         </div>
       </section>
+
+      {/* ROI calculator */}
+      <ROICalculator />
 
       {/* Final CTA */}
       <section className="py-20 sm:py-24">
