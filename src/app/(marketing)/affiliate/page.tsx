@@ -222,7 +222,7 @@ export default function AffiliatePage() {
             <div className="mt-14 grid gap-10 sm:grid-cols-3">
               {steps.map((step) => (
                 <div key={step.title} className="text-center">
-                  <div className="relative mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-tp-bronze/10">
+                  <div className="relative mx-auto flex h-16 w-16 items-center justify-center rounded-tp-card bg-tp-bronze/10">
                     <step.icon className="h-7 w-7 text-tp-bronze-ink" />
                     <span className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-tp-bronze text-xs font-bold text-tp-black">
                       {step.number}

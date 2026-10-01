@@ -125,7 +125,7 @@ export default function ReferralPage() {
           <div className="grid gap-8 sm:grid-cols-3">
             {steps.map((s) => (
               <div key={s.step} className="text-center">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-tp-black mb-4">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-tp-card bg-tp-black mb-4">
                   <s.icon className="h-6 w-6 text-tp-bronze" />
                 </div>
                 <h3 className="text-lg font-semibold text-tp-ink">{s.title}</h3>

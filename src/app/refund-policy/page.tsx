@@ -52,7 +52,7 @@ export default function RefundPolicyPage() {
         <div className="pointer-events-none absolute inset-0 bg-grid" />
         <div className="pointer-events-none absolute -top-24 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-tp-bronze/10 blur-3xl" />
         <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 sm:py-28 lg:px-8">
-          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-tp-black">
+          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-tp-card bg-tp-black">
             <ShieldCheck className="h-8 w-8 text-tp-bronze" />
           </div>
           <h1 className="text-4xl font-extrabold tracking-tight text-tp-ink sm:text-5xl">
@@ -70,7 +70,7 @@ export default function RefundPolicyPage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 sm:grid-cols-2">
             {/* 14-Day Guarantee */}
-            <div className="rounded-2xl border border-tp-line bg-white p-8 shadow-sm">
+            <div className="rounded-tp-card border border-tp-line bg-white p-8 shadow-sm">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
                 <ShieldCheck className="h-6 w-6 text-tp-bronze" />
               </div>
@@ -85,7 +85,7 @@ export default function RefundPolicyPage() {
             </div>
 
             {/* How to Request */}
-            <div className="rounded-2xl border border-tp-line bg-white p-8 shadow-sm">
+            <div className="rounded-tp-card border border-tp-line bg-white p-8 shadow-sm">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
                 <Mail className="h-6 w-6 text-tp-bronze" />
               </div>
@@ -106,7 +106,7 @@ export default function RefundPolicyPage() {
             </div>
 
             {/* Processing Time */}
-            <div className="rounded-2xl border border-tp-line bg-white p-8 shadow-sm">
+            <div className="rounded-tp-card border border-tp-line bg-white p-8 shadow-sm">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
                 <Clock className="h-6 w-6 text-tp-bronze" />
               </div>
@@ -121,7 +121,7 @@ export default function RefundPolicyPage() {
             </div>
 
             {/* What's Covered */}
-            <div className="rounded-2xl border border-tp-line bg-white p-8 shadow-sm">
+            <div className="rounded-tp-card border border-tp-line bg-white p-8 shadow-sm">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
                 <ArrowRight className="h-6 w-6 text-tp-bronze" />
               </div>
@@ -159,7 +159,7 @@ export default function RefundPolicyPage() {
             {faqs.map((faq) => (
               <div
                 key={faq.question}
-                className="rounded-2xl border border-tp-line bg-white p-6"
+                className="rounded-tp-card border border-tp-line bg-white p-6"
               >
                 <h3 className="text-base font-semibold text-tp-ink">
                   {faq.question}

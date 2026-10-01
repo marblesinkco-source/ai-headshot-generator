@@ -190,7 +190,7 @@ export default function AccountantsIndustryPage() {
               return (
                 <div
                   key={point.title}
-                  className="rounded-2xl border border-tp-line bg-tp-paper/50 p-6"
+                  className="rounded-tp-card border border-tp-line bg-tp-paper/50 p-6"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-muted/10">
                     <Icon className="h-6 w-6 text-tp-muted" />
@@ -235,7 +235,7 @@ export default function AccountantsIndustryPage() {
               return (
                 <div
                   key={benefit.title}
-                  className="rounded-2xl border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+                  className="rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
                     <Icon className="h-6 w-6 text-tp-bronze" />

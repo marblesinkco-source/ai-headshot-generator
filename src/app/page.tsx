@@ -47,7 +47,7 @@ export const metadata: Metadata = {
 function SectionSkeleton({ height }: { height: string }) {
   return (
     <div aria-hidden="true" className={`mx-auto w-full max-w-[1320px] px-4 sm:px-7 lg:px-14 ${height}`}>
-      <div className="h-full w-full animate-pulse rounded-2xl bg-tp-beige/60" />
+      <div className="h-full w-full animate-pulse rounded-tp-card bg-tp-beige/60" />
     </div>
   );
 }

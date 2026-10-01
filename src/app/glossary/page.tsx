@@ -441,7 +441,7 @@ export default function GlossaryPage() {
                 {g.items.map((t) => (
                   <div
                     key={t.term}
-                    className="rounded-2xl border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+                    className="rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                   >
                     <dt className="font-display text-xl text-tp-ink">{t.term}</dt>
                     <dd className="mt-2 text-sm leading-relaxed text-tp-muted">

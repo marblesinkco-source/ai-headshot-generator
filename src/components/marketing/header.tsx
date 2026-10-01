@@ -126,7 +126,7 @@ export function Header() {
                 onMouseEnter={openMega}
                 onMouseLeave={scheduleMegaClose}
               >
-                <div className="w-[640px] rounded-2xl border border-tp-line/60 bg-white p-5 shadow-xl shadow-tp-black/8">
+                <div className="w-[640px] rounded-tp-card border border-tp-line/60 bg-white p-5 shadow-xl shadow-tp-black/8">
                   <div className="grid grid-cols-2 gap-x-5 gap-y-1.5">
                     {categories.map((cat) => (
                       <Link

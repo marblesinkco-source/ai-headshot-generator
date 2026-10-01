@@ -572,7 +572,7 @@ export default function IndustriesPage() {
               <Link
                 key={ind.name}
                 href={ind.href}
-                className="group rounded-2xl border border-tp-line bg-white p-7 transition-all hover:border-tp-bronze/40 hover:shadow-md hover:-translate-y-1"
+                className="group rounded-tp-card border border-tp-line bg-white p-7 transition-all hover:border-tp-bronze/40 hover:shadow-md hover:-translate-y-1"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black mb-5">
                   <ind.icon className="h-6 w-6 text-tp-bronze" />

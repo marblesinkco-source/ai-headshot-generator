@@ -158,7 +158,7 @@ export default async function CategoryPage({ params }: Props) {
               return (
                 <div
                   key={pkg.id}
-                  className={`relative rounded-2xl border-2 bg-white p-6 lg:p-8 shadow-sm transition-shadow hover:shadow-lg ${
+                  className={`relative rounded-tp-card border-2 bg-white p-6 lg:p-8 shadow-sm transition-shadow hover:shadow-lg ${
                     pkg.recommended
                       ? 'border-tp-bronze ring-2 ring-tp-beige/30'
                       : isExpress
@@ -218,7 +218,7 @@ export default async function CategoryPage({ params }: Props) {
           <h2 className="text-center font-display text-2xl font-normal text-tp-black">
             Photo Requirements
           </h2>
-          <div className="mt-8 rounded-2xl border border-tp-line bg-tp-paper p-8 shadow-sm">
+          <div className="mt-8 rounded-tp-card border border-tp-line bg-tp-paper p-8 shadow-sm">
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
                 <h3 className="font-semibold text-tp-ink">Upload Guidelines</h3>

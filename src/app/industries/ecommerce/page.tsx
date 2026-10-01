@@ -110,7 +110,7 @@ export default function EcommerceLandingPage() {
                 desc: 'Every new product launch means another round of scheduling, shooting, and editing.',
               },
             ].map((pain) => (
-              <div key={pain.title} className="rounded-2xl border border-tp-line bg-tp-paper/50 p-6">
+              <div key={pain.title} className="rounded-tp-card border border-tp-line bg-tp-paper/50 p-6">
                 <h3 className="text-lg font-semibold text-tp-ink">{pain.title}</h3>
                 <p className="mt-2 text-sm text-tp-muted leading-relaxed">{pain.desc}</p>
               </div>
@@ -156,7 +156,7 @@ export default function EcommerceLandingPage() {
               { icon: Users, title: 'Scale Your Catalog', desc: 'Whether you have 10 or 1,000 products, AI handles them all consistently.' },
               { icon: CheckCircle, title: 'Consistent Branding', desc: 'Every product photo matches your brand style. No more visual inconsistency.' },
             ].map((benefit) => (
-              <div key={benefit.title} className="rounded-2xl border border-tp-line p-6 hover:border-tp-bronze/30 transition-colors">
+              <div key={benefit.title} className="rounded-tp-card border border-tp-line p-6 hover:border-tp-bronze/30 transition-colors">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-tp-black mb-4">
                   <benefit.icon className="h-5 w-5 text-tp-bronze" />
                 </div>

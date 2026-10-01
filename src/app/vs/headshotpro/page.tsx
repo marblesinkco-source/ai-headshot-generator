@@ -173,7 +173,7 @@ export default function VsHeadshotProPage() {
             return (
               <div
                 key={badge.label}
-                className="rounded-2xl border border-tp-line bg-tp-paper p-6 text-center"
+                className="rounded-tp-card border border-tp-line bg-tp-paper p-6 text-center"
               >
                 <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-tp-bronze/10">
                   <Icon className="h-5 w-5 text-tp-bronze-ink" />
@@ -205,7 +205,7 @@ export default function VsHeadshotProPage() {
             features, and flexibility.
           </p>
 
-          <div className="overflow-hidden rounded-2xl border border-tp-line">
+          <div className="overflow-hidden rounded-tp-card border border-tp-line">
             {/* Header row */}
             <div className="grid grid-cols-3 bg-tp-paper px-4 py-4 text-sm font-semibold sm:px-6">
               <span className="text-tp-muted">Feature</span>
@@ -259,7 +259,7 @@ export default function VsHeadshotProPage() {
               return (
                 <div
                   key={card.title}
-                  className="rounded-2xl border border-tp-line bg-white p-8"
+                  className="rounded-tp-card border border-tp-line bg-white p-8"
                 >
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-tp-bronze/10">
                     <Icon className="h-6 w-6 text-tp-bronze-ink" />

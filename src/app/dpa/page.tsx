@@ -168,7 +168,7 @@ export default function DpaPage() {
           </p>
           <p className="mt-4 text-sm text-tp-muted">Last updated: September 2026</p>
 
-          <nav aria-label="DPA sections" className="mt-10 rounded-2xl border border-tp-line bg-tp-paper p-6">
+          <nav aria-label="DPA sections" className="mt-10 rounded-tp-card border border-tp-line bg-tp-paper p-6">
             <p className="text-sm font-semibold text-tp-ink">Contents</p>
             <ol className="mt-4 grid gap-x-8 gap-y-2 text-sm sm:grid-cols-2">
               {sections.map((s, i) => (

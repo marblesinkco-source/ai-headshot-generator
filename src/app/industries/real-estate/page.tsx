@@ -195,7 +195,7 @@ export default function RealEstateIndustryPage() {
               return (
                 <div
                   key={point.title}
-                  className="rounded-2xl border border-tp-line bg-tp-paper/50 p-6"
+                  className="rounded-tp-card border border-tp-line bg-tp-paper/50 p-6"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-muted/10">
                     <Icon className="h-6 w-6 text-tp-muted" />
@@ -240,7 +240,7 @@ export default function RealEstateIndustryPage() {
               return (
                 <div
                   key={benefit.title}
-                  className="rounded-2xl border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+                  className="rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
                     <Icon className="h-6 w-6 text-tp-bronze" />
@@ -309,7 +309,7 @@ export default function RealEstateIndustryPage() {
               const Icon = item.icon;
               return (
                 <div key={item.step} className="text-center">
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-tp-black">
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-tp-card bg-tp-black">
                     <Icon className="h-7 w-7 text-tp-bronze" />
                   </div>
                   <p className="mt-4 text-xs font-bold uppercase tracking-widest text-tp-bronze">
@@ -380,7 +380,7 @@ export default function RealEstateIndustryPage() {
                 </Link>
               </div>
             </div>
-            <div className="rounded-2xl border border-tp-line bg-tp-paper p-8 text-center">
+            <div className="rounded-tp-card border border-tp-line bg-tp-paper p-8 text-center">
               <Users className="mx-auto h-16 w-16 text-tp-bronze/40" />
               <p className="mt-4 font-display text-4xl font-normal italic text-tp-bronze-ink">
                 50+ agents

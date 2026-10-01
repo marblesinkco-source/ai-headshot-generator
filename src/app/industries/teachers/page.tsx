@@ -216,7 +216,7 @@ export default function TeachersIndustryPage() {
               return (
                 <div
                   key={benefit.title}
-                  className="tp-card rounded-2xl border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+                  className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
                     <Icon className="h-6 w-6 text-tp-bronze" />
@@ -270,7 +270,7 @@ export default function TeachersIndustryPage() {
             {audiences.map((item) => {
               const Icon = item.icon;
               return (
-                <div key={item.title} className="rounded-2xl border border-tp-line bg-white p-6">
+                <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
                   <Icon className="h-6 w-6 text-tp-bronze" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
@@ -289,7 +289,7 @@ export default function TeachersIndustryPage() {
           </h2>
           <div className="mt-12 space-y-6">
             {faqs.map((faq) => (
-              <div key={faq.question} className="rounded-2xl border border-tp-line bg-white p-6">
+              <div key={faq.question} className="rounded-tp-card border border-tp-line bg-white p-6">
                 <h3 className="text-lg font-semibold text-tp-ink">{faq.question}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-tp-muted">{faq.answer}</p>
               </div>

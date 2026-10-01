@@ -162,7 +162,7 @@ export default function VsFotorPage() {
                 return (
                   <div
                     key={badge.label}
-                    className="rounded-2xl border border-tp-line bg-white p-6 text-center shadow-sm"
+                    className="rounded-tp-card border border-tp-line bg-white p-6 text-center shadow-sm"
                   >
                     <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-tp-paper">
                       <Icon className="h-6 w-6 text-tp-bronze-ink" />
@@ -193,7 +193,7 @@ export default function VsFotorPage() {
               Feature-by-Feature Comparison
             </h2>
 
-            <div className="overflow-x-auto rounded-2xl border border-tp-line">
+            <div className="overflow-x-auto rounded-tp-card border border-tp-line">
               <table className="w-full min-w-[480px] text-left text-sm">
                 <thead>
                   <tr className="border-b border-tp-line bg-tp-paper">
@@ -242,7 +242,7 @@ export default function VsFotorPage() {
                 return (
                   <div
                     key={card.title}
-                    className="rounded-2xl border border-tp-line bg-white p-8 shadow-sm"
+                    className="rounded-tp-card border border-tp-line bg-white p-8 shadow-sm"
                   >
                     <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-tp-bronze/10">
                       <Icon className="h-5 w-5 text-tp-bronze-ink" />
