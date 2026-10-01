@@ -166,7 +166,7 @@ export function Pricing() {
                 </CardContent>
 
                 <CardFooter>
-                  <Link href={`/auth/login?redirect=/${activeCategory.slug}`} className="w-full">
+                  <Link href={`/auth/register?redirect=/${activeCategory.slug}`} className="w-full">
                     <Button
                       variant={isRecommended ? 'primary' : 'outline'}
                       className={cn('w-full', isExpress && 'border-tp-bronze/50 text-tp-bronze-ink hover:bg-tp-bronze/5')}

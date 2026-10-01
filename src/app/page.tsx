@@ -59,8 +59,8 @@ export default function LandingPage() {
       <TrustStrip />
       <HowItWorks />
       <ComparisonTable />
-      <Pricing />
       <Testimonials />
+      <Pricing />
       <FAQ />
       <CTABanner />
       <Footer />

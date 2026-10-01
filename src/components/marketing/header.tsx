@@ -16,6 +16,8 @@ const navLinks = [
   { label: 'Results', href: '/#results' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Industries', href: '/industries' },
+  { label: 'Samples', href: '/samples' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Enterprise', href: '/enterprise' },
   { label: 'Affiliate', href: '/affiliate' },
 ];
@@ -98,7 +100,7 @@ export function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden items-center gap-7 md:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-4 md:flex lg:gap-6 xl:gap-7" aria-label="Main navigation">
           {/* Photo Types mega menu trigger */}
           <div
             className="relative"
@@ -266,7 +268,7 @@ export function Header() {
                 Sign In
               </Link>
               <Link
-                href="/auth/login"
+                href="/auth/register"
                 className="inline-flex items-center gap-5 rounded-xl border border-tp-black bg-tp-black px-6 py-3 text-sm font-semibold text-tp-paper transition-all hover:-translate-y-0.5 hover:shadow-lg"
               >
                 Get Started <span aria-hidden="true" className="text-lg leading-none">&#8599;</span>
@@ -389,7 +391,7 @@ export function Header() {
             </>
           ) : (
             <Link
-              href="/auth/login"
+              href="/auth/register"
               className="mt-2 flex items-center justify-center gap-3 rounded-xl bg-tp-black px-6 py-3.5 text-sm font-semibold text-tp-paper"
               onClick={() => mobileDialog.current?.close()}
             >

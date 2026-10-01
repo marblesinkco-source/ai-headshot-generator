@@ -44,7 +44,7 @@ export default function ReferralPage() {
           </p>
           <div className="mt-8">
             <Link
-              href="/auth/login?redirect=/dashboard"
+              href="/auth/register?redirect=/dashboard"
               className="inline-flex items-center gap-2 rounded-xl bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:bg-tp-bronze/90"
             >
               Get Your Referral Link <ArrowRight className="h-4 w-4" />
@@ -185,7 +185,7 @@ export default function ReferralPage() {
           </p>
           <div className="mt-8">
             <Link
-              href="/auth/login?redirect=/dashboard"
+              href="/auth/register?redirect=/dashboard"
               className="inline-flex items-center gap-2 rounded-xl bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:bg-tp-bronze/90"
             >
               Get Your Referral Link <ArrowRight className="h-4 w-4" />
