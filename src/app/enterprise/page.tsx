@@ -79,9 +79,9 @@ export default function EnterprisePage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 text-center">
             {[
-              { icon: Lock, text: 'SOC 2 Compliant' },
+              { icon: Lock, text: 'Secure Infrastructure' },
               { icon: Users, text: 'Unlimited Team Members' },
-              { icon: Clock, text: '2-Hour Delivery' },
+              { icon: Clock, text: 'Fast Delivery' },
               { icon: Shield, text: 'Enterprise Security' },
             ].map((item) => (
               <div key={item.text} className="flex items-center justify-center gap-2 text-xs font-medium text-tp-muted">
@@ -133,10 +133,10 @@ export default function EnterprisePage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 text-center">
             {[
-              { value: '85%', label: 'faster than traditional shoots' },
-              { value: '70%', label: 'cost savings vs studio photography' },
-              { value: '100%', label: 'visual consistency across team' },
-              { value: '<2hrs', label: 'from upload to download' },
+              { value: 'Faster', label: 'than coordinating traditional shoots' },
+              { value: 'Lower cost', label: 'than studio photography for teams' },
+              { value: 'Consistent', label: 'look across your team' },
+              { value: 'Fast', label: 'turnaround from upload to download' },
             ].map((stat) => (
               <div key={stat.label}>
                 <p className="text-2xl sm:text-3xl font-bold text-white">{stat.value}</p>
@@ -162,7 +162,7 @@ export default function EnterprisePage() {
             {[
               { icon: Users, title: 'Team Dashboard', desc: 'Invite team members, track orders, and manage all headshots from one admin panel.' },
               { icon: Palette, title: 'Brand Guidelines', desc: 'Set your brand colors, backgrounds, and style preferences once. Apply them to every new headshot.' },
-              { icon: Lock, title: 'Enterprise Security', desc: 'SOC 2 compliant. End-to-end encryption. Data retention policies you control.' },
+              { icon: Lock, title: 'Enterprise Security', desc: 'Secure infrastructure. End-to-end encryption. Data retention policies you control.' },
               { icon: CreditCard, title: 'Volume Pricing', desc: 'Custom pricing for teams of 10+. The more seats, the lower the per-person cost.' },
               { icon: Headphones, title: 'Dedicated Support', desc: 'Priority support with a dedicated account manager for enterprise clients.' },
               { icon: BarChart3, title: 'Usage Analytics', desc: 'Track adoption, photo quality scores, and team utilization in real-time.' },
@@ -201,27 +201,6 @@ export default function EnterprisePage() {
                 <p className="mt-2 text-sm text-tp-muted leading-relaxed">{s.desc}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonial */}
-      <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <div className="rounded-2xl border border-tp-line bg-white p-8 sm:p-10">
-            <div className="flex justify-center gap-0.5 mb-4">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <CheckCircle key={i} className="h-5 w-5 text-tp-bronze" />
-              ))}
-            </div>
-            <blockquote className="text-lg text-tp-ink leading-relaxed font-display italic">
-              &ldquo;We onboard 20+ people per quarter. Getting everyone studio-quality headshots
-              used to be a logistical nightmare. Now each new hire gets their photos on day one.&rdquo;
-            </blockquote>
-            <div className="mt-6">
-              <p className="text-sm font-semibold text-tp-ink">Ayşe Demir</p>
-              <p className="text-xs text-tp-muted">HR Director, SaaS Company</p>
-            </div>
           </div>
         </div>
       </section>

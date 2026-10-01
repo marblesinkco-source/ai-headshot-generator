@@ -6,6 +6,7 @@ import { Camera, Users, Layers, ShieldCheck } from 'lucide-react';
 interface Stat {
   icon: React.ElementType;
   value: number;
+  text?: string;
   suffix: string;
   label: string;
 }
@@ -13,7 +14,7 @@ interface Stat {
 const stats: Stat[] = [
   { icon: Camera, value: 40, suffix: '+', label: 'Photos Per Session' },
   { icon: Users, value: 11, suffix: '', label: 'Photo Categories' },
-  { icon: Layers, value: 2, suffix: ' hrs', label: 'Average Delivery' },
+  { icon: Layers, value: 0, suffix: '', text: 'Fast', label: 'Turnaround' },
   { icon: ShieldCheck, value: 100, suffix: '%', label: 'Money-Back Guarantee' },
 ];
 
@@ -84,7 +85,7 @@ export function StatsCounter() {
                 <stat.icon className="h-5 w-5 text-tp-bronze" />
               </div>
               <p className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-                <AnimatedNumber target={stat.value} suffix={stat.suffix} />
+                {stat.text ?? <AnimatedNumber target={stat.value} suffix={stat.suffix} />}
               </p>
               <p className="mt-1.5 text-xs sm:text-sm text-tp-beige/60 font-medium">
                 {stat.label}

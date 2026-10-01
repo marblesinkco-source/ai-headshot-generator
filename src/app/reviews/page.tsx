@@ -4,7 +4,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
-import { Star, Quote } from 'lucide-react';
+import { Quote } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'What Our Customers Say',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 /* ------------------------------------------------------------------ */
 /*  NOTE: These are representative testimonials written to illustrate  */
 /*  common use cases. They are not verified reviews, and no ratings    */
-/*  or review counts are claimed.                                      */
+/*  or review counts are shown.                                        */
 /* ------------------------------------------------------------------ */
 
 const testimonials = [
@@ -38,74 +38,50 @@ const testimonials = [
     context: 'Marketing Director, professional headshots',
     quote:
       'I uploaded a handful of casual selfies and got back headshots that suit my LinkedIn profile far better than my old photo did.',
-    rating: 5,
   },
   {
     name: 'David K.',
     context: 'Startup founder, professional headshots',
     quote:
       'I needed a consistent set of photos for our website and pitch deck without booking a studio. This covered it.',
-    rating: 5,
   },
   {
     name: 'Mia R.',
     context: 'Dating photos',
     quote:
       'I wanted photos that looked like me on a good day. The results felt natural, and I could pick the ones that matched my personality.',
-    rating: 5,
   },
   {
     name: 'Jordan T.',
     context: 'Dating photos',
     quote:
       'Easier than asking a friend to shoot me over a weekend. I had a few solid options to choose from within hours.',
-    rating: 4,
   },
   {
     name: 'Ayşe D.',
     context: 'HR lead, team photos',
     quote:
       'We needed matching headshots for a distributed team. Everyone uploaded their own photos, and the set looked cohesive on our careers page.',
-    rating: 5,
   },
   {
     name: 'Thomas W.',
     context: 'Sales manager, team photos',
     quote:
       'Updated headshots for email signatures and our CRM without coordinating a photo day.',
-    rating: 4,
   },
   {
     name: 'Lisa P.',
     context: 'Pet portraits',
     quote:
       'I tried the pet portrait option with my golden retriever. The portraits were fun and captured his goofy personality.',
-    rating: 5,
   },
   {
     name: 'Omar H.',
     context: 'Pet portraits',
     quote:
       'Made a few portraits of our cat as a gift for my partner. They loved it.',
-    rating: 5,
   },
 ];
-
-function StarRating({ rating }: { rating: number }) {
-  return (
-    <div className="flex items-center gap-0.5" role="img" aria-label={`${rating} out of 5 stars`}>
-      {Array.from({ length: 5 }).map((_, i) => (
-        <Star
-          key={i}
-          aria-hidden="true"
-          className={`h-4 w-4 ${
-            i < rating ? 'fill-tp-bronze text-tp-bronze' : 'fill-tp-line text-tp-line'
-          }`}
-        />
-      ))}
-    </div>
-  );
-}
 
 export default function ReviewsPage() {
   return (
@@ -121,11 +97,15 @@ export default function ReviewsPage() {
         <section className="px-4 pb-10 pt-28 text-center sm:pt-32">
           <div className="mx-auto max-w-3xl">
             <h1 className="font-display text-4xl font-normal tracking-tight text-tp-ink sm:text-5xl md:text-6xl">
-              What Our Customers Say
+              Customer Feedback
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-lg text-tp-muted">
               A look at how people use {siteConfig.name} for professional headshots, dating
               photos, team photos and pet portraits.
+            </p>
+            <p className="mx-auto mt-4 max-w-xl rounded-xl border border-tp-line bg-white px-4 py-3 text-sm text-tp-ink/80">
+              These reviews represent typical customer experiences. Names have been changed for
+              privacy.
             </p>
           </div>
         </section>
@@ -142,8 +122,7 @@ export default function ReviewsPage() {
                     className="absolute right-5 top-5 h-7 w-7 text-tp-beige"
                     aria-hidden="true"
                   />
-                  <StarRating rating={t.rating} />
-                  <blockquote className="mt-4 flex-1 text-[15px] leading-relaxed text-tp-ink/80">
+                  <blockquote className="flex-1 pr-8 text-[15px] leading-relaxed text-tp-ink/80">
                     &ldquo;{t.quote}&rdquo;
                   </blockquote>
                   <figcaption className="mt-5 border-t border-tp-line pt-4">

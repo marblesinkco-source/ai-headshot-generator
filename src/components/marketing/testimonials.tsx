@@ -1,65 +1,49 @@
 'use client';
 
 import { useState } from 'react';
-import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const testimonials = [
   {
-    name: 'Sarah Chen',
-    role: 'Product Manager at Stripe',
+    role: 'Marketing Professional',
     quote:
-      'I was skeptical about AI headshots, but the results blew me away. I updated my LinkedIn and got compliments from colleagues who thought I hired a professional photographer.',
-    rating: 5,
+      'I wanted an updated LinkedIn photo without booking a photographer. A set of casual selfies was enough to get several polished options to choose from.',
   },
   {
-    name: 'Marcus Johnson',
-    role: 'Founder & CEO, Luma Labs',
+    role: 'Startup Founder',
     quote:
-      "As a startup founder, I don't have time for photo shoots. TailorPic gave me a full set of professional photos in under two hours. The quality is indistinguishable from real studio shots.",
-    rating: 5,
+      "I don't have time for photo shoots. Having a full set of professional-looking photos for my website and pitch deck without a studio visit is what I was after.",
   },
   {
-    name: 'Emily Rodriguez',
-    role: 'Senior Consultant at Deloitte',
+    role: 'Consultant',
     quote:
-      'Our entire team used this for our new website. The consistency across all our headshots is remarkable, and it cost a fraction of what a photographer would have charged for 15 people.',
-    rating: 5,
+      'A team use case: everyone uploads their own photos and the set looks consistent on the company website, without coordinating a photographer for the whole group.',
   },
   {
-    name: 'David Kim',
-    role: 'Real Estate Agent, Keller Williams',
+    role: 'Real Estate Agent',
     quote:
-      'In real estate, your headshot is everything. TailorPic gave me photos that look expensive and professional. My clients always comment on how polished my marketing materials look now.',
-    rating: 5,
+      'In real estate, your headshot is part of your marketing. I wanted photos that look polished and professional across my materials.',
   },
   {
-    name: 'Ayşe Demir',
-    role: 'HR Director, SaaS Company',
+    role: 'HR Manager',
     quote:
-      'We onboard 20+ people per quarter. Getting everyone studio-quality headshots used to be a logistical nightmare. Now each new hire gets their photos on day one. Game changer.',
-    rating: 5,
+      'Onboarding new hires is easier when getting a professional headshot is not a logistical task. Each person can upload their own photos and get results.',
   },
   {
-    name: 'James O\'Brien',
-    role: 'Attorney, O\'Brien & Partners',
+    role: 'Attorney',
     quote:
-      'I needed a professional headshot for our firm\'s website urgently. TailorPic delivered multiple options within 2 hours. The quality exceeded what I got from my last $400 studio session.',
-    rating: 5,
+      "I needed a professional headshot for a firm website and wanted several options to pick from rather than a single studio shot.",
   },
   {
-    name: 'Priya Patel',
-    role: 'UX Designer, Freelance',
+    role: 'Freelance Designer',
     quote:
-      'As a freelancer, my profile photo is my first impression. I tried three different categories and got an amazing creative shot that perfectly represents my personal brand.',
-    rating: 5,
+      'As a freelancer, my profile photo is my first impression. Trying a few different categories let me find a creative shot that fits my personal brand.',
   },
   {
-    name: 'Thomas Weber',
-    role: 'Sales Director, Enterprise SaaS',
+    role: 'Sales Leader',
     quote:
-      'Our sales team of 30 all have consistent, professional headshots now. The ROI was immediate — our outbound response rates went up noticeably after updating our profiles.',
-    rating: 5,
+      'A consistent look across a sales team helps with email signatures and profiles. This is the kind of use case a team plan is meant for.',
   },
 ];
 
@@ -78,38 +62,25 @@ export function Testimonials() {
             Testimonials
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-tp-black sm:text-4xl">
-            Loved by Professionals
+            How Professionals Use TailorPic
           </h2>
           <p className="mt-4 text-lg text-tp-muted">
-            See why thousands of professionals trust us with their image.
+            Representative examples of how professionals use TailorPic.
           </p>
-
-          {/* Review summary badge */}
-          <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-tp-line bg-white px-5 py-2.5 shadow-sm">
-            <div className="flex gap-0.5">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-tp-bronze text-tp-bronze" />
-              ))}
-            </div>
-            <span className="text-sm font-semibold text-tp-ink">4.9/5</span>
-            <span className="text-xs text-tp-muted">from 500+ reviews</span>
-          </div>
+          <p className="mt-3 text-xs text-tp-muted">
+            These are representative examples written to illustrate common use cases. They are
+            not verified customer reviews, and no ratings or review counts are claimed.
+          </p>
         </div>
 
         {/* Cards */}
         <div className="mt-16 grid gap-8 sm:mt-20 md:grid-cols-3">
           {visible.map((t) => (
-            <Card key={t.name} className="flex flex-col hover:shadow-md transition-shadow">
+            <Card key={t.role} className="flex flex-col hover:shadow-md transition-shadow">
               <CardContent className="flex flex-1 flex-col p-6">
-                {/* Stars */}
-                <div className="flex gap-0.5">
-                  {Array.from({ length: t.rating }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-4 w-4 fill-tp-bronze text-tp-bronze"
-                    />
-                  ))}
-                </div>
+                <span className="inline-flex w-fit rounded-full border border-tp-line bg-tp-paper px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-tp-muted">
+                  Representative example
+                </span>
 
                 {/* Quote */}
                 <blockquote className="mt-4 flex-1 text-base leading-relaxed text-tp-ink">
@@ -119,14 +90,11 @@ export function Testimonials() {
                 {/* Author */}
                 <div className="mt-6 flex items-center gap-3 border-t border-tp-line/50 pt-5">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-tp-black text-sm font-semibold text-tp-bronze">
-                    {t.name
-                      .split(' ')
-                      .map((n) => n[0])
-                      .join('')}
+                    {t.role[0]}
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-tp-black">{t.name}</p>
-                    <p className="text-xs text-tp-muted">{t.role}</p>
+                    <p className="text-sm font-semibold text-tp-black">{t.role}</p>
+                    <p className="text-xs text-tp-muted">Illustrative use case</p>
                   </div>
                 </div>
               </CardContent>

@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function GatePage() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-tp-paper px-6">
+    <main id="main-content" className="min-h-screen flex items-center justify-center bg-tp-paper px-6">
       <div className="max-w-md w-full text-center space-y-6">
         {/* Logo / Brand */}
         <div className="space-y-2">
@@ -73,6 +73,6 @@ export default function GatePage() {
           </a>
         </p>
       </div>
-    </div>
+    </main>
   );
 }

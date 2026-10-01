@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { Header } from '@/components/marketing/header';
 import { Hero } from '@/components/marketing/hero';
-import { PressLogos } from '@/components/marketing/press-logos';
 import { TrustStrip } from '@/components/marketing/trust-strip';
 import { TrustBadges } from '@/components/marketing/trust-badges';
 import { Categories } from '@/components/marketing/categories';
@@ -56,7 +55,6 @@ export default function LandingPage() {
       <HowToSchema />
       <Header />
       <Hero />
-      <PressLogos />
       <StatsCounter />
       <Categories />
       <TrustBadges />
