@@ -87,6 +87,7 @@
 82. `52417d3` — Hero: reposition secondary portrait card for better composition
 83. `fc5e03c` — Hero: remove secondary portrait overlay
 84. `8f086c7` — Codebase health cleanup: dead code, unused assets, stale config (~9.3MB freed)
+85. `d10ddd6` — Full-stack site audit: UX, SEO, perf, security, code quality (320 files, 5 parallel agents)
 
 ### Completed Features
 - [x] Exit-intent popup with WELCOME10 promo
@@ -369,6 +370,43 @@
 - [x] Removed 'use client' from credit-packages.tsx and dashboard/not-found.tsx (no hooks)
 - [x] Deleted 156 unused public/brand/tailorpic/ assets (~9.3MB freed: ads, categories, feed, stories, social, ui, duplicate logos/icons/web images)
 - [x] Tailwind config cleanup: removed tailor-*, brand palette (50-950), 9 unused accent tones, 6 unused animations + keyframes, font-heading
+- [x] Full-stack site audit (5 parallel agents: UX/UI, SEO, Performance, Code Quality, Security)
+- [x] UX: h1/h2 typography fixed across 49 files (font-display font-normal)
+- [x] UX: low-contrast text fixed (text-tp-muted/50 → text-tp-muted, 12 locations)
+- [x] UX: tiny text sizes fixed (9-10px → 11px minimum)
+- [x] UX: accessibility improvements (aria labels, focus rings, button types, aria-pressed)
+- [x] UX: brand inconsistencies fixed (rounded-tp-dialog, border tokens)
+- [x] UX: mobile social-proof-toast repositioned (no longer overlaps sticky CTA)
+- [x] UX: removed "Trusted by professionals" fabricated claim from hero
+- [x] SEO: fixed double brand suffix in ~57 page titles ("X | TailorPic | TailorPic")
+- [x] SEO: removed root canonical '/' that made all pages canonical to homepage
+- [x] SEO: normalized title lengths (≤60 char) and descriptions (120-160 char) across 283 pages
+- [x] SEO: fixed expired priceValidUntil and removed irrelevant shippingDetails from JSON-LD
+- [x] SEO: fixed heading hierarchy (h1→h3 jumps in 3 pages)
+- [x] SEO: fixed internal links (/for-teams → /team-headshots, broken blog links)
+- [x] SEO: added lang="tr" to Turkish content pages (kvkk, gate)
+- [x] SEO: removed /for-teams redirect from sitemap, fixed lastModified
+- [x] SEO: allowed /api/og in robots.txt for OG image crawling
+- [x] SEO: added clampTitle/clampDescription helpers for blog metadata
+- [x] SEO: fixed Organization logo in JSON-LD (OG image → profile-dark-512.png)
+- [x] SEO: fixed JSX escaped quotes in /kvkk page (6 locations)
+- [x] Perf: SocialProofToast lazy-loaded (dynamic import, ssr:false)
+- [x] Perf: HeadshotModal lazy-loaded in gallery page
+- [x] Perf: enterprise page SSR issue fixed (removed ssr:false from dynamic)
+- [x] Perf: added decoding="async" to img elements
+- [x] Perf: removed unused zustand dependency from package.json
+- [x] Code Quality: centralized pricing config (src/config/pricing.ts) — marketing components use BASE_PRICE_DISPLAY
+- [x] Code Quality: extracted shared CellValue component from 9 vs/ pages
+- [x] Code Quality: deduplicated escapeHtml, EMAIL_RE, formatDate to src/lib/utils.ts
+- [x] Security: structured logger with secret redaction (src/lib/logger.ts)
+- [x] Security: CSRF guard for all cookie-authenticated POST routes (src/lib/security.ts)
+- [x] Security: rate limiting added to 6 previously unlimited API routes
+- [x] Security: constant-time secret comparison (safeEqual) for cron/bearer tokens
+- [x] Security: environment variable validation (src/lib/env.ts)
+- [x] Security: fixed information leaks (Zod error details, Supabase error messages removed from responses)
+- [x] Security: fixed error swallowing in auth-callback, export, account-delete, ai-generate
+- [x] Security: fixed (supabase as any) casts with proper database types
+- [x] Security: replaced all console.error in API routes with structured logger
 
 ### Backlog (Requires External Action)
 - [ ] Stripe: Create WELCOME10 promo code (10% off) — needs Stripe dashboard/API key
@@ -384,5 +422,16 @@
 
 ### Performance Backlog (Optional Improvements)
 - [x] credit-packages.tsx: converted to server component (removed unnecessary 'use client')
+- [x] SocialProofToast: lazy-loaded with dynamic import (social-proof-toast-lazy.tsx)
+- [x] HeadshotModal: lazy-loaded with dynamic import in gallery page
 - [ ] Consider converting more 'use client' marketing components to server components (trust-strip, cta-banner, faq)
 - [ ] StickyCTA and TrustStrip could potentially be lazy-loaded if below fold
+- [ ] Rate limiting is in-memory (resets on deploy) — production needs Redis/Upstash
+
+### Decisions for User
+- Delivery time inconsistency: some pages say "about 2 hours", others "within 24 hours" — needs alignment
+- Organization JSON-LD: foundingDate '2024', address 'US', sameAs social URLs — verify accuracy
+- Site URL: code uses www.tailorpic.com, NEXT_PUBLIC_APP_URL may differ — verify canonical consistency
+- /reviews page: self-described as "illustrative testimonials" — may need title/content review
+- social-proof-toast.tsx: random "N min ago" notifications may create false activity impression
+- next.config.mjs: typescript.ignoreBuildErrors and eslint.ignoreDuringBuilds are ON — build skips type/lint errors
