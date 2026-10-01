@@ -44,7 +44,7 @@ const CTABanner = dynamic(
 
 export default function LandingPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <OrganizationSchema />
       <WebsiteSchema />
       <FAQSchema items={faqs} />

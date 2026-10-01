@@ -1,14 +1,33 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, Suspense } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { createClient } from '@/lib/supabase/client';
 import { Button } from '@/components/ui/button';
 
 export default function RegisterPage() {
+  return (
+    <Suspense fallback={<div className="flex min-h-screen items-center justify-center bg-tp-paper"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-tp-bronze" /></div>}>
+      <RegisterContent />
+    </Suspense>
+  );
+}
+
+function RegisterContent() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const rawRedirect = searchParams.get('redirect');
+  // Only allow same-site relative paths (prevents open redirects like //evil.com)
+  const redirectTo =
+    rawRedirect && rawRedirect.startsWith('/') && !rawRedirect.startsWith('//')
+      ? rawRedirect
+      : '/dashboard';
+  const loginHref =
+    redirectTo === '/dashboard'
+      ? '/auth/login'
+      : `/auth/login?redirect=${encodeURIComponent(redirectTo)}`;
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -21,7 +40,7 @@ export default function RegisterPage() {
 
   const supabase = createClient();
 
-  const oauthRedirectUrl = `${typeof window !== 'undefined' ? window.location.origin : ''}/auth/callback`;
+  const oauthRedirectUrl = `${typeof window !== 'undefined' ? window.location.origin : ''}/auth/callback?redirect=${encodeURIComponent(redirectTo)}`;
 
   async function handleRegister(e: React.FormEvent) {
     e.preventDefault();
@@ -39,7 +58,7 @@ export default function RegisterPage() {
 
     setLoading(true);
 
-    const { error: signUpError } = await supabase.auth.signUp({
+    const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
       email,
       password,
       options: {
@@ -53,6 +72,13 @@ export default function RegisterPage() {
     if (signUpError) {
       setError(signUpError.message);
       setLoading(false);
+      return;
+    }
+
+    // If email confirmation is disabled, a session exists already: go straight to the target
+    if (signUpData?.session) {
+      router.push(redirectTo);
+      router.refresh();
       return;
     }
 
@@ -106,7 +132,7 @@ export default function RegisterPage() {
               Click the link to activate your account.
             </p>
             <Link
-              href="/auth/login"
+              href={loginHref}
               className="text-sm font-medium text-tp-bronze-ink hover:text-tp-bronze transition-colors"
             >
               Back to sign in
@@ -290,7 +316,7 @@ export default function RegisterPage() {
         {/* Login link */}
         <p className="mt-6 text-center text-sm text-tp-muted">
           Already have an account?{' '}
-          <Link href="/auth/login" className="font-medium text-tp-bronze-ink hover:text-tp-bronze transition-colors">
+          <Link href={loginHref} className="font-medium text-tp-bronze-ink hover:text-tp-bronze transition-colors">
             Sign in
           </Link>
         </p>
