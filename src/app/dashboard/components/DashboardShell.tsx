@@ -124,7 +124,7 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
           <span className="font-semibold text-tp-black">{siteConfig.name}</span>
           <button
             onClick={() => setSidebarOpen(false)}
-            className="ml-auto rounded-lg p-1 text-gray-400 hover:bg-tp-paper lg:hidden"
+            className="ml-auto rounded-lg p-1 text-tp-muted hover:bg-tp-paper lg:hidden"
           >
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -148,7 +148,7 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
                 className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
                   isActive
                     ? 'bg-tp-black text-tp-bronze'
-                    : 'text-gray-600 hover:bg-tp-paper hover:text-tp-bronze-ink'
+                    : 'text-tp-muted hover:bg-tp-paper hover:text-tp-bronze-ink'
                 }`}
               >
                 {item.icon}
@@ -174,7 +174,7 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
             )}
             <div className="min-w-0 flex-1">
               <p className="truncate text-sm font-medium text-tp-black">{displayName}</p>
-              <p className="truncate text-xs text-gray-500">{user.email}</p>
+              <p className="truncate text-xs text-tp-muted">{user.email}</p>
             </div>
           </div>
         </div>
@@ -186,7 +186,7 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
         <header className="flex h-16 items-center justify-between border-b border-tp-line/50 bg-white px-4 lg:px-8">
           <button
             onClick={() => setSidebarOpen(true)}
-            className="rounded-lg p-2 text-gray-500 hover:bg-tp-paper lg:hidden"
+            className="rounded-lg p-2 text-tp-muted hover:bg-tp-paper lg:hidden"
           >
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -198,7 +198,7 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
           <button
             onClick={handleLogout}
             disabled={loggingOut}
-            className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-tp-paper hover:text-tp-bronze-ink transition-colors disabled:opacity-50"
+            className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-tp-muted hover:bg-tp-paper hover:text-tp-bronze-ink transition-colors disabled:opacity-50"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />

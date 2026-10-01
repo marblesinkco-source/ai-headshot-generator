@@ -108,13 +108,13 @@ export default function OrderDetailPage() {
   if (error || !order) {
     return (
       <div className="py-20 text-center">
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gray-100">
-          <svg className="h-7 w-7 text-gray-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-paper">
+          <svg className="h-7 w-7 text-tp-muted" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
           </svg>
         </div>
-        <h2 className="mt-4 text-lg font-semibold text-gray-900">Order not found</h2>
-        <p className="mt-2 text-sm text-gray-500">This order doesn&apos;t exist or you don&apos;t have access.</p>
+        <h2 className="mt-4 text-lg font-semibold text-tp-ink">Order not found</h2>
+        <p className="mt-2 text-sm text-tp-muted">This order doesn&apos;t exist or you don&apos;t have access.</p>
         <Link href="/dashboard/gallery" className="mt-6 inline-block">
           <Button variant="outline" size="sm">Back to Orders</Button>
         </Link>
@@ -175,23 +175,23 @@ export default function OrderDetailPage() {
       <div className="flex items-center gap-4">
         <Link
           href="/dashboard/gallery"
-          className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-50 transition-colors"
+          className="flex h-9 w-9 items-center justify-center rounded-lg border border-tp-line text-tp-muted hover:bg-tp-paper transition-colors"
         >
           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
           </svg>
         </Link>
         <div>
-          <h1 className="text-xl font-bold text-gray-900">Order Details</h1>
-          <p className="text-sm text-gray-500">Order #{orderId.slice(0, 8)}</p>
+          <h1 className="text-xl font-bold text-tp-ink">Order Details</h1>
+          <p className="text-sm text-tp-muted">Order #{orderId.slice(0, 8)}</p>
         </div>
       </div>
 
       {/* Status Card */}
-      <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm text-center">
+      <div className="rounded-2xl border border-tp-line bg-white p-8 shadow-sm text-center">
         <div className="text-4xl">{statusInfo.icon}</div>
-        <h2 className="mt-4 text-xl font-bold text-gray-900">{statusInfo.title}</h2>
-        <p className="mt-2 text-sm text-gray-500 max-w-md mx-auto">{statusInfo.description}</p>
+        <h2 className="mt-4 text-xl font-bold text-tp-ink">{statusInfo.title}</h2>
+        <p className="mt-2 text-sm text-tp-muted max-w-md mx-auto">{statusInfo.description}</p>
         <div className="mt-4">
           <OrderStatusBadge status={order.status} />
         </div>
@@ -201,13 +201,13 @@ export default function OrderDetailPage() {
           <div className="mt-6 mx-auto max-w-md space-y-4">
             {/* Progress Bar */}
             <div>
-              <div className="flex items-center justify-between text-xs text-gray-500 mb-1.5">
+              <div className="flex items-center justify-between text-xs text-tp-muted mb-1.5">
                 <span>{pipeline.progress}% complete</span>
                 {pipeline.estimatedMinutesRemaining && (
                   <span>~{pipeline.estimatedMinutesRemaining} min remaining</span>
                 )}
               </div>
-              <div className="h-2.5 rounded-full bg-gray-100 overflow-hidden">
+              <div className="h-2.5 rounded-full bg-tp-paper overflow-hidden">
                 <div
                   className="h-full rounded-full bg-gradient-to-r from-tp-bronze to-tp-bronze-ink transition-all duration-1000 ease-out"
                   style={{ width: `${pipeline.progress}%` }}
@@ -219,7 +219,7 @@ export default function OrderDetailPage() {
             <div className="flex items-center justify-center gap-3 text-xs">
               <div className={`flex items-center gap-1.5 ${
                 pipeline.phase === 'training' ? 'text-tp-bronze font-medium' :
-                pipeline.progress > 50 ? 'text-green-600' : 'text-gray-400'
+                pipeline.progress > 50 ? 'text-green-600' : 'text-tp-muted'
               }`}>
                 {pipeline.progress > 50 ? (
                   <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
@@ -228,16 +228,16 @@ export default function OrderDetailPage() {
                 ) : pipeline.phase === 'training' ? (
                   <div className="h-3.5 w-3.5 rounded-full border-2 border-tp-bronze border-t-transparent animate-spin" />
                 ) : (
-                  <div className="h-3 w-3 rounded-full border-2 border-gray-300" />
+                  <div className="h-3 w-3 rounded-full border-2 border-tp-line" />
                 )}
                 AI Training
               </div>
-              <svg className="h-3 w-3 text-gray-300" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <svg className="h-3 w-3 text-tp-line" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
               </svg>
               <div className={`flex items-center gap-1.5 ${
                 pipeline.phase === 'generating' ? 'text-tp-bronze font-medium' :
-                pipeline.phase === 'completed' ? 'text-green-600' : 'text-gray-400'
+                pipeline.phase === 'completed' ? 'text-green-600' : 'text-tp-muted'
               }`}>
                 {pipeline.phase === 'completed' ? (
                   <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
@@ -246,7 +246,7 @@ export default function OrderDetailPage() {
                 ) : pipeline.phase === 'generating' ? (
                   <div className="h-3.5 w-3.5 rounded-full border-2 border-tp-bronze border-t-transparent animate-spin" />
                 ) : (
-                  <div className="h-3 w-3 rounded-full border-2 border-gray-300" />
+                  <div className="h-3 w-3 rounded-full border-2 border-tp-line" />
                 )}
                 Photo Generation
               </div>
@@ -254,7 +254,7 @@ export default function OrderDetailPage() {
 
             {/* Generation Stats */}
             {pipeline.phase === 'generating' && pipeline.generation.total > 0 && (
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-tp-muted">
                 {pipeline.generation.completed} of {pipeline.generation.total} photos generated
                 {pipeline.generation.failed > 0 && ` (${pipeline.generation.failed} failed)`}
               </p>
@@ -264,32 +264,32 @@ export default function OrderDetailPage() {
       </div>
 
       {/* Order Summary */}
-      <div className="rounded-2xl border border-gray-200 bg-white shadow-sm">
-        <div className="border-b border-gray-100 px-6 py-4">
-          <h3 className="font-semibold text-gray-900">Order Summary</h3>
+      <div className="rounded-2xl border border-tp-line bg-white shadow-sm">
+        <div className="border-b border-tp-line/50 px-6 py-4">
+          <h3 className="font-semibold text-tp-ink">Order Summary</h3>
         </div>
-        <div className="divide-y divide-gray-100">
+        <div className="divide-y divide-tp-line/50">
           <div className="flex items-center justify-between px-6 py-3.5">
-            <span className="text-sm text-gray-500">Category</span>
-            <span className="text-sm font-medium text-gray-900">
+            <span className="text-sm text-tp-muted">Category</span>
+            <span className="text-sm font-medium text-tp-ink">
               {category?.icon} {categoryName}
             </span>
           </div>
           <div className="flex items-center justify-between px-6 py-3.5">
-            <span className="text-sm text-gray-500">Package</span>
-            <span className="text-sm font-medium text-gray-900 capitalize">{order.package_id}</span>
+            <span className="text-sm text-tp-muted">Package</span>
+            <span className="text-sm font-medium text-tp-ink capitalize">{order.package_id}</span>
           </div>
           <div className="flex items-center justify-between px-6 py-3.5">
-            <span className="text-sm text-gray-500">Photos Included</span>
-            <span className="text-sm font-medium text-gray-900">{totalOutputs}</span>
+            <span className="text-sm text-tp-muted">Photos Included</span>
+            <span className="text-sm font-medium text-tp-ink">{totalOutputs}</span>
           </div>
           <div className="flex items-center justify-between px-6 py-3.5">
-            <span className="text-sm text-gray-500">Amount Paid</span>
-            <span className="text-sm font-medium text-gray-900">${amount} {order.currency.toUpperCase()}</span>
+            <span className="text-sm text-tp-muted">Amount Paid</span>
+            <span className="text-sm font-medium text-tp-ink">${amount} {order.currency.toUpperCase()}</span>
           </div>
           <div className="flex items-center justify-between px-6 py-3.5">
-            <span className="text-sm text-gray-500">Order Date</span>
-            <span className="text-sm font-medium text-gray-900">
+            <span className="text-sm text-tp-muted">Order Date</span>
+            <span className="text-sm font-medium text-tp-ink">
               {new Date(order.created_at).toLocaleDateString('en-US', {
                 month: 'long',
                 day: 'numeric',

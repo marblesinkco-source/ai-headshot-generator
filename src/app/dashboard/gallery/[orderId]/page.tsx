@@ -146,8 +146,8 @@ export default function OrderGalleryPage() {
   if (!order) {
     return (
       <div className="py-20 text-center">
-        <h2 className="text-lg font-semibold text-gray-900">Order not found</h2>
-        <p className="mt-2 text-sm text-gray-500">This order may not exist or you don&apos;t have access.</p>
+        <h2 className="text-lg font-semibold text-tp-ink">Order not found</h2>
+        <p className="mt-2 text-sm text-tp-muted">This order may not exist or you don&apos;t have access.</p>
         <Link href="/dashboard/gallery" className="mt-4 inline-block">
           <Button variant="outline" size="sm">Back to Orders</Button>
         </Link>
@@ -162,7 +162,7 @@ export default function OrderGalleryPage() {
         <div className="flex items-center gap-4">
           <Link
             href="/dashboard/gallery"
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-50 transition-colors"
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-tp-line text-tp-muted hover:bg-tp-paper transition-colors"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -170,10 +170,10 @@ export default function OrderGalleryPage() {
           </Link>
           <div>
             <div className="flex items-center gap-3">
-              <h1 className="text-xl font-bold text-gray-900 capitalize">{order.packageId} Package</h1>
+              <h1 className="text-xl font-bold text-tp-ink capitalize">{order.packageId} Package</h1>
               <OrderStatusBadge status={order.status} />
             </div>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-tp-muted">
               {new Date(order.createdAt).toLocaleDateString('en-US', {
                 month: 'long',
                 day: 'numeric',
@@ -203,11 +203,11 @@ export default function OrderGalleryPage() {
 
       {/* Filter Tabs */}
       {headshots.length > 0 && (
-        <div className="flex gap-1 rounded-lg bg-gray-100 p-1 w-fit">
+        <div className="flex gap-1 rounded-lg bg-tp-paper p-1 w-fit">
           <button
             onClick={() => setFilter('all')}
             className={`rounded-md px-4 py-1.5 text-sm font-medium transition-colors ${
-              filter === 'all' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'
+              filter === 'all' ? 'bg-white text-tp-ink shadow-sm' : 'text-tp-muted hover:text-tp-bronze-ink'
             }`}
           >
             All ({headshots.length})
@@ -215,7 +215,7 @@ export default function OrderGalleryPage() {
           <button
             onClick={() => setFilter('favorites')}
             className={`rounded-md px-4 py-1.5 text-sm font-medium transition-colors ${
-              filter === 'favorites' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'
+              filter === 'favorites' ? 'bg-white text-tp-ink shadow-sm' : 'text-tp-muted hover:text-tp-bronze-ink'
             }`}
           >
             Favorites ({headshots.filter((h) => h.isFavorite).length})
@@ -225,10 +225,10 @@ export default function OrderGalleryPage() {
 
       {/* Gallery Grid */}
       {filteredHeadshots.length === 0 ? (
-        <div className="rounded-xl border border-gray-200 bg-white px-6 py-16 text-center shadow-sm">
+        <div className="rounded-xl border border-tp-line bg-white px-6 py-16 text-center shadow-sm">
           {filter === 'favorites' ? (
             <>
-              <p className="text-sm text-gray-500">No favorites yet. Click the heart icon on any headshot to save it.</p>
+              <p className="text-sm text-tp-muted">No favorites yet. Click the heart icon on any headshot to save it.</p>
               <button
                 onClick={() => setFilter('all')}
                 className="mt-3 text-sm font-medium text-tp-bronze-ink hover:text-tp-bronze"
@@ -244,10 +244,10 @@ export default function OrderGalleryPage() {
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                 </svg>
               </div>
-              <p className="text-sm text-gray-500">Your headshots are being generated. Check back soon!</p>
+              <p className="text-sm text-tp-muted">Your headshots are being generated. Check back soon!</p>
             </div>
           ) : (
-            <p className="text-sm text-gray-500">No headshots generated yet.</p>
+            <p className="text-sm text-tp-muted">No headshots generated yet.</p>
           )}
         </div>
       ) : (
@@ -255,7 +255,7 @@ export default function OrderGalleryPage() {
           {filteredHeadshots.map((headshot, idx) => (
             <div
               key={headshot.id}
-              className="mb-4 break-inside-avoid group relative cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md"
+              className="mb-4 break-inside-avoid group relative cursor-pointer overflow-hidden rounded-xl border border-tp-line bg-white shadow-sm transition-all hover:shadow-md"
             >
               <img
                 src={headshot.thumbnailUrl}
@@ -272,7 +272,7 @@ export default function OrderGalleryPage() {
                     e.stopPropagation();
                     handleDownloadSingle(headshot.imageUrl, idx);
                   }}
-                  className="rounded-lg bg-white/90 p-2 text-gray-700 hover:bg-white transition-colors"
+                  className="rounded-lg bg-white/90 p-2 text-tp-ink hover:bg-white transition-colors"
                   title="Download"
                 >
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -288,7 +288,7 @@ export default function OrderGalleryPage() {
                   title={headshot.isFavorite ? 'Remove from favorites' : 'Add to favorites'}
                 >
                   <svg
-                    className={`h-4 w-4 ${headshot.isFavorite ? 'fill-red-500 text-red-500' : 'text-gray-700'}`}
+                    className={`h-4 w-4 ${headshot.isFavorite ? 'fill-red-500 text-red-500' : 'text-tp-ink'}`}
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
