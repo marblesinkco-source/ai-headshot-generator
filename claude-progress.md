@@ -16,6 +16,10 @@
 11. `df51386` — Dashboard orders page, email templates, Stripe refund handler
 12. `5d36821` — Unsubscribe endpoint, centralized email templates, account deletion email
 13. `f3fe10e` — Remove fabricated data, fix accessibility issues
+14. `57d678c` — Dashboard nav active state + gallery tp-* token migration
+15. `371c490` — Team-headshots page, dashboard metadata, tp-* token migration
+16. `ccd8bea` — Sitemap, footer links, remaining gray-* token migration
+17. `3809389` — Complete gray-* to tp-* brand token migration site-wide
 
 ### Completed Features
 - [x] Exit-intent popup with WELCOME10 promo
@@ -70,7 +74,7 @@
 - [x] Organization JSON-LD schema (site-wide in layout)
 - [x] 4 dashboard loading states (overview, credits, orders, gallery)
 - [x] Dashboard billing/invoices page (order history, summary cards, expandable rows)
-- [x] Dashboard nav: Billing link added
+- [x] Dashboard nav: Billing + Orders links added
 - [x] Dashboard /dashboard redirect to /dashboard/overview
 - [x] Dashboard orders page with status filtering (All/Pending/Processing/Completed)
 - [x] Branded error boundaries (global-error, not-found, dashboard/error, dashboard/not-found)
@@ -94,6 +98,13 @@
 - [x] Stripe payment_intent.payment_failed idempotency fix
 - [x] OrderStatus type: added 'refunded'
 - [x] Order status badge: added 'refunded' entry
+- [x] Dashboard nav: startsWith active state for detail pages
+- [x] Gallery page renamed to "My Gallery" with tp-* tokens
+- [x] /team-headshots landing page (fixes broken links from 15+ pages)
+- [x] Dashboard metadata: server wrapper pattern for settings, billing, overview, upload
+- [x] Site-wide gray-* to tp-* brand token migration (103 → 8 remaining, all intentional)
+- [x] Sitemap: added /team-headshots route
+- [x] Footer: added enterprise, team-headshots, samples, industries links
 
 ### Backlog (Requires External Action)
 - [ ] Stripe: Create WELCOME10 promo code (10% off) — needs Stripe dashboard/API key
