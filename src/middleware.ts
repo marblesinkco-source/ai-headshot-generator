@@ -5,10 +5,36 @@
  * 1. Refresh the Supabase auth session (keeps cookies alive).
  * 2. Protect /dashboard routes -- unauthenticated visitors are
  *    redirected to /login.
+ * 3. TEST MODE: When enabled, only whitelisted test users can
+ *    access the site. Everyone else sees the /gate page.
  */
 
 import { type NextRequest, NextResponse } from "next/server";
 import { updateSession } from "@/lib/supabase/middleware";
+
+/* ------------------------------------------------------------------ */
+/*  TEST MODE CONFIGURATION                                           */
+/*  Set TEST_MODE=true in env to restrict site to test users only.    */
+/*  Add allowed emails to TEST_USER_EMAILS (comma-separated).        */
+/* ------------------------------------------------------------------ */
+const TEST_MODE = process.env.TEST_MODE === "true";
+
+const TEST_USER_EMAILS: string[] = (process.env.TEST_USER_EMAILS || "")
+  .split(",")
+  .map((e) => e.trim().toLowerCase())
+  .filter(Boolean);
+
+/** Routes that bypass the test-mode gate (always accessible). */
+const GATE_BYPASS_PREFIXES = [
+  "/gate",          // the gate page itself
+  "/auth",          // login/register/callback — need to sign in
+  "/api",           // API routes & webhooks must always work
+  "/_next",         // Next.js internals
+  "/favicon",       // favicon
+  "/brand",         // brand assets
+  "/sitemap",       // sitemaps
+  "/robots",        // robots.txt
+];
 
 /** Routes that require an authenticated user. */
 const PROTECTED_PREFIXES = ["/dashboard"];
@@ -19,6 +45,32 @@ const AUTH_ROUTES = ["/auth/login", "/auth/register", "/auth/forgot-password", "
 export async function middleware(request: NextRequest) {
   const { user, response } = await updateSession(request);
   const { pathname } = request.nextUrl;
+
+  /* ---- TEST MODE GATE ---- */
+  if (TEST_MODE) {
+    const isBypassed = GATE_BYPASS_PREFIXES.some((prefix) =>
+      pathname.startsWith(prefix),
+    );
+
+    if (!isBypassed) {
+      // Not logged in → gate page
+      if (!user) {
+        const gateUrl = request.nextUrl.clone();
+        gateUrl.pathname = "/gate";
+        return NextResponse.redirect(gateUrl);
+      }
+
+      // Logged in but not a test user → gate page
+      const email = user.email?.toLowerCase() || "";
+      if (!TEST_USER_EMAILS.includes(email)) {
+        const gateUrl = request.nextUrl.clone();
+        gateUrl.pathname = "/gate";
+        return NextResponse.redirect(gateUrl);
+      }
+
+      // Test user → proceed normally
+    }
+  }
 
   // Redirect unauthenticated users away from protected routes
   const isProtected = PROTECTED_PREFIXES.some((prefix) =>
