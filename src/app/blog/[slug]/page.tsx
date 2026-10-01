@@ -183,7 +183,7 @@ export default async function BlogPostPage({ params }: Props) {
               Create professional-quality photos in minutes with TailorPic.
             </p>
             <Link
-              href="/dashboard/upload"
+              href="/auth/register"
               className="mt-6 inline-flex items-center justify-center rounded-xl bg-tp-black px-8 py-3 text-sm font-semibold text-tp-bronze shadow-sm transition-all hover:bg-tp-black/90"
             >
               Get Started

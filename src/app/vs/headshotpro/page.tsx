@@ -154,7 +154,7 @@ export default function VsHeadshotProPage() {
             Competitor Comparison
           </p>
 
-          <h1 className="text-4xl font-extrabold tracking-tight text-tp-black sm:text-5xl lg:text-6xl">
+          <h1 className="font-display text-4xl font-normal tracking-tight text-tp-black sm:text-5xl lg:text-6xl">
             TailorPic vs{' '}
             <span className="bg-gradient-to-r from-tp-bronze-ink to-tp-bronze bg-clip-text text-transparent">
               HeadshotPro

@@ -185,7 +185,7 @@ export default function VsImagineAiPage() {
         <section className="bg-tp-black py-20 md:py-28">
           <div className="mx-auto max-w-4xl px-4 text-center">
             <p className="text-sm font-medium uppercase tracking-widest text-tp-bronze">Comparison</p>
-            <h1 className="mt-4 text-4xl font-bold tracking-tight text-tp-paper sm:text-5xl lg:text-6xl">
+            <h1 className="mt-4 font-display text-4xl font-normal tracking-tight text-tp-paper sm:text-5xl lg:text-6xl">
               TailorPic <span className="text-tp-bronze">vs</span> {competitor}
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">{intro}</p>

@@ -599,7 +599,7 @@ export const blogPosts: BlogPost[] = [
       <p>People often ask how many photos they really need. For most professionals, three to five strong options are plenty: one for LinkedIn, one for your website or company bio, and one or two alternatives for different contexts. Another frequent question is whether to wear glasses. If you always wear them, wear them in your photo, but check for glare. If you only wear them occasionally, going without is usually simpler. Finally, people ask whether they should match their photo to a corporate brand. If you work for a company with a style guide, follow it. If you are independent, choose colors and settings that reflect your own brand.</p>
 
       <h2>Get Your Professional Headshot With TailorPic</h2>
-      <p>If you want a polished headshot without booking a studio, TailorPic can help. You upload a handful of selfies, our AI generates professional portraits in a range of styles and settings, and you pick the ones you like best. Plans start at $9.90, and there are 11 categories available, including <a href="/headshots">professional headshots</a>, <a href="/team-headshots">team headshots</a> and <a href="/dating-photos">dating photos</a>. Your uploaded photos are automatically deleted after 30 days, and every order is covered by a 14-day money-back guarantee. You can see all plans on the <a href="/pricing">pricing page</a>, find answers on the <a href="/faq">FAQ</a>, or learn more <a href="/about">about us</a>. When you are ready, <a href="/dashboard/upload">upload your selfies and get started</a>.</p>
+      <p>If you want a polished headshot without booking a studio, TailorPic can help. You upload a handful of selfies, our AI generates professional portraits in a range of styles and settings, and you pick the ones you like best. Plans start at $9.90, and there are 11 categories available, including <a href="/styles">professional headshots</a>, <a href="/team-headshots">team headshots</a> and <a href="/dating-photos">dating photos</a>. Your uploaded photos are automatically deleted after 30 days, and every order is covered by a 14-day money-back guarantee. You can see all plans on the <a href="/pricing">pricing page</a>, find answers on the <a href="/faq">FAQ</a>, or learn more <a href="/about">about us</a>. When you are ready, <a href="/auth/register">upload your selfies and get started</a>.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-03-01',
@@ -666,7 +666,7 @@ export const blogPosts: BlogPost[] = [
       <p>Finally, think about the consequences of a miss. If a studio session produces only one or two usable frames, you may have to book again. If an AI run produces results that do not look quite like you, the usual fix is to upload better source photos and regenerate. Either way, take the review step seriously. Ask a trusted colleague or friend to pick their favorites, because other people often choose a better photo of you than you would choose yourself.</p>
 
       <h2>Try an AI Headshot With TailorPic</h2>
-      <p>If the AI route sounds right for you, TailorPic makes it straightforward. Upload a handful of selfies, choose from 11 photo categories including <a href="/headshots">professional headshots</a>, and receive your portraits typically within a couple of hours. Plans begin at $9.90, your uploads are automatically deleted after 30 days, and there is a 14-day money-back guarantee if you are not happy. Have questions first? The <a href="/faq">FAQ</a> covers the most common ones, and you can read more <a href="/about">about TailorPic</a>. When you are ready, <a href="/dashboard/upload">upload your selfies</a> and see the results for yourself.</p>
+      <p>If the AI route sounds right for you, TailorPic makes it straightforward. Upload a handful of selfies, choose from 11 photo categories including <a href="/styles">professional headshots</a>, and receive your portraits typically within a couple of hours. Plans begin at $9.90, your uploads are automatically deleted after 30 days, and there is a 14-day money-back guarantee if you are not happy. Have questions first? The <a href="/faq">FAQ</a> covers the most common ones, and you can read more <a href="/about">about TailorPic</a>. When you are ready, <a href="/auth/register">upload your selfies</a> and see the results for yourself.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-03-15',
@@ -738,7 +738,7 @@ export const blogPosts: BlogPost[] = [
       <p>Your banner image and Featured section give you a second and third chance to communicate who you are. A simple banner with your industry, a short tagline or a subtle brand color complements the headshot without competing with it. The Featured section can highlight a portfolio, article, talk or case study. Together with the photo, these elements make the top of your profile feel deliberate, and they encourage visitors to keep reading instead of bouncing away after a quick glance.</p>
 
       <h2>Create Your LinkedIn Headshot With TailorPic</h2>
-      <p>TailorPic generates professional headshots suited to LinkedIn from a handful of selfies. Choose a look that fits your industry, receive multiple options and pick your favorites. Plans start at $9.90, and there are 11 categories available, including <a href="/headshots">professional headshots</a>. Your uploads are automatically deleted after 30 days, and if you are not satisfied, you can use our 14-day money-back guarantee. Compare plans on the <a href="/pricing">pricing page</a>, read the <a href="/faq">FAQ</a> or <a href="/dashboard/upload">upload your selfies now</a> to get started.</p>
+      <p>TailorPic generates professional headshots suited to LinkedIn from a handful of selfies. Choose a look that fits your industry, receive multiple options and pick your favorites. Plans start at $9.90, and there are 11 categories available, including <a href="/styles">professional headshots</a>. Your uploads are automatically deleted after 30 days, and if you are not satisfied, you can use our 14-day money-back guarantee. Compare plans on the <a href="/pricing">pricing page</a>, read the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies now</a> to get started.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-04-01',
@@ -805,7 +805,7 @@ export const blogPosts: BlogPost[] = [
       <p>Finally, consider a short set of supporting photos beyond the main headshot. A slightly wider half-body portrait works well for brochures and banner images, and a casual candid-style image can suit social posts about community events. With AI generation, producing these variations is usually quick, which makes it easier to keep your marketing materials fresh without scheduling multiple photo sessions.</p>
 
       <h2>Get a Real Estate Headshot With TailorPic</h2>
-      <p>TailorPic helps agents get a polished, professional photo without scheduling a studio. Upload a handful of selfies, choose from our professional styles and receive portraits that look like you at your best. Plans start at $9.90, and there are 11 categories, including <a href="/headshots">professional headshots</a>. Your uploaded photos are automatically deleted after 30 days, and every order is backed by a 14-day money-back guarantee. You can compare options on our <a href="/pricing">pricing page</a>, browse answers on the <a href="/faq">FAQ</a> or <a href="/dashboard/upload">upload your selfies</a> to get started today.</p>
+      <p>TailorPic helps agents get a polished, professional photo without scheduling a studio. Upload a handful of selfies, choose from our professional styles and receive portraits that look like you at your best. Plans start at $9.90, and there are 11 categories, including <a href="/styles">professional headshots</a>. Your uploaded photos are automatically deleted after 30 days, and every order is backed by a 14-day money-back guarantee. You can compare options on our <a href="/pricing">pricing page</a>, browse answers on the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies</a> to get started today.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-04-15',
@@ -884,7 +884,7 @@ export const blogPosts: BlogPost[] = [
       <p>Finally, remember that a team page is a living part of your brand. Revisit it each quarter, remove former employees promptly and check that every image loads correctly on mobile devices.</p>
 
       <h2>Get Consistent Team Headshots With TailorPic</h2>
-      <p>TailorPic makes it simple to create a cohesive set of professional headshots, whether your team sits in one office or across several time zones. Each person uploads a few selfies, chooses a style and receives polished portraits, typically within a couple of hours. Plans start at $9.90, and there are 11 categories, including <a href="/team-headshots">team headshots</a> and <a href="/headshots">professional headshots</a>. Uploaded photos are automatically deleted after 30 days, and every order is protected by a 14-day money-back guarantee. Review the options on the <a href="/pricing">pricing page</a>, check the <a href="/faq">FAQ</a> or <a href="/dashboard/upload">start uploading selfies</a> today.</p>
+      <p>TailorPic makes it simple to create a cohesive set of professional headshots, whether your team sits in one office or across several time zones. Each person uploads a few selfies, chooses a style and receives polished portraits, typically within a couple of hours. Plans start at $9.90, and there are 11 categories, including <a href="/team-headshots">team headshots</a> and <a href="/styles">professional headshots</a>. Uploaded photos are automatically deleted after 30 days, and every order is protected by a 14-day money-back guarantee. Review the options on the <a href="/pricing">pricing page</a>, check the <a href="/faq">FAQ</a> or <a href="/auth/register">start uploading selfies</a> today.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-05-01',
@@ -960,7 +960,7 @@ export const blogPosts: BlogPost[] = [
       <p>Finally, remember that you can change your mind. If you choose a background and later find that it does not fit a new platform or purpose, you can produce another version. Backgrounds are one of the easiest elements to adapt, particularly with digital tools, so treat your first choice as a starting point rather than a permanent decision.</p>
 
       <h2>Choose Your Background With TailorPic</h2>
-      <p>One of the practical advantages of AI headshots is that you can explore backgrounds without rebooking a session or changing your location. With TailorPic you upload a handful of selfies, and your portraits can be generated in a range of professional styles, including different backgrounds and settings, so you can compare and pick what works best for your industry. Plans start at $9.90, and there are 11 categories, including <a href="/headshots">professional headshots</a>. Your uploaded photos are automatically deleted after 30 days, and there is a 14-day money-back guarantee. Explore the <a href="/pricing">pricing page</a>, read the <a href="/faq">FAQ</a> or <a href="/dashboard/upload">upload your selfies</a> to try different looks.</p>
+      <p>One of the practical advantages of AI headshots is that you can explore backgrounds without rebooking a session or changing your location. With TailorPic you upload a handful of selfies, and your portraits can be generated in a range of professional styles, including different backgrounds and settings, so you can compare and pick what works best for your industry. Plans start at $9.90, and there are 11 categories, including <a href="/styles">professional headshots</a>. Your uploaded photos are automatically deleted after 30 days, and there is a 14-day money-back guarantee. Explore the <a href="/pricing">pricing page</a>, read the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies</a> to try different looks.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-05-15',
@@ -1028,7 +1028,7 @@ export const blogPosts: BlogPost[] = [
       <p>Think, too, about the full set of materials that will carry your image. Your firm's website, your bar directory listing, your conference bio and your email signature all benefit from the same photo, or at least from photos with the same look. When prospective clients see a consistent face and style in every place they encounter you, they perceive stability, which is a quality people look for in legal counsel. Keep a high-resolution master file and a few pre-cropped versions so you are never tempted to substitute a low-quality image at the last minute.</p>
 
       <h2>Get a Professional Attorney Headshot With TailorPic</h2>
-      <p>TailorPic generates polished, professional headshots from a handful of selfies, with styles suited to legal and corporate settings. Choose from 11 photo categories, including <a href="/headshots">professional headshots</a>, and receive your portraits typically within a couple of hours. Plans start at $9.90, your uploaded photos are automatically deleted after 30 days, and you are covered by a 14-day money-back guarantee. Review plans on the <a href="/pricing">pricing page</a>, see the <a href="/faq">FAQ</a> or <a href="/about">learn more about us</a>, then <a href="/dashboard/upload">upload your selfies</a> to get started.</p>
+      <p>TailorPic generates polished, professional headshots from a handful of selfies, with styles suited to legal and corporate settings. Choose from 11 photo categories, including <a href="/styles">professional headshots</a>, and receive your portraits typically within a couple of hours. Plans start at $9.90, your uploaded photos are automatically deleted after 30 days, and you are covered by a 14-day money-back guarantee. Review plans on the <a href="/pricing">pricing page</a>, see the <a href="/faq">FAQ</a> or <a href="/about">learn more about us</a>, then <a href="/auth/register">upload your selfies</a> to get started.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-06-01',
@@ -1109,7 +1109,7 @@ export const blogPosts: BlogPost[] = [
       <p>Finally, be thoughtful about what your photos reveal. Avoid images that show your home address, workplace, license plate or children's school. Consider whether a photo can be traced easily through a reverse image search, and think about which platforms you are comfortable having linked to your face. If you are using an AI service, choose one that explains how long photos are stored and how they are deleted. Good habits around privacy let you share your best self without unnecessary risk.</p>
 
       <h2>Create Your Dating Photos With TailorPic</h2>
-      <p>TailorPic's <a href="/dating-photos">dating photos category</a> generates natural, flattering portraits from a handful of selfies, so you can build a balanced gallery without a photo shoot. Choose from a range of settings and styles, compare the results and keep the ones that look most like you. Plans start at $9.90, and there are 11 categories in total. Your uploaded photos are automatically deleted after 30 days, and there is a 14-day money-back guarantee if you are not happy. See the <a href="/pricing">pricing page</a> for plan details, read the <a href="/faq">FAQ</a> or <a href="/dashboard/upload">upload your selfies</a> to get started.</p>
+      <p>TailorPic's <a href="/dating-photos">dating photos category</a> generates natural, flattering portraits from a handful of selfies, so you can build a balanced gallery without a photo shoot. Choose from a range of settings and styles, compare the results and keep the ones that look most like you. Plans start at $9.90, and there are 11 categories in total. Your uploaded photos are automatically deleted after 30 days, and there is a 14-day money-back guarantee if you are not happy. See the <a href="/pricing">pricing page</a> for plan details, read the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies</a> to get started.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-06-15',
@@ -1186,7 +1186,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>How TailorPic Approaches Privacy</h2>
       <p>We believe privacy should be simple. At TailorPic, the photos you upload are automatically deleted after 30 days, so your data is not kept indefinitely. Our goal is to generate your portraits and then step out of the way. You can check the details on our <a href="/faq">FAQ</a>, and if you have questions before uploading, you can contact us through the site.</p>
-      <p>Plans start at $9.90, and there are 11 categories, including <a href="/headshots">professional headshots</a> and <a href="/dating-photos">dating photos</a>. Every order is covered by a 14-day money-back guarantee, so you can try the service and judge the results for yourself. You can compare plans on the <a href="/pricing">pricing page</a>, and when you are ready, <a href="/dashboard/upload">upload your selfies</a> to get started.</p>
+      <p>Plans start at $9.90, and there are 11 categories, including <a href="/styles">professional headshots</a> and <a href="/dating-photos">dating photos</a>. Every order is covered by a 14-day money-back guarantee, so you can try the service and judge the results for yourself. You can compare plans on the <a href="/pricing">pricing page</a>, and when you are ready, <a href="/auth/register">upload your selfies</a> to get started.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-07-01',
@@ -1263,7 +1263,7 @@ export const blogPosts: BlogPost[] = [
       <p>If you already have a photo and cannot retake it right away, a few small fixes help. Crop it more tightly so that your face fills the frame. Adjust brightness and contrast slightly if the image is dark or flat. Remove distracting elements at the edges if you can. Replace the photo on the platforms where it matters most first, usually LinkedIn and your company profile, and update the others as time allows. Then plan a proper refresh so the temporary fix does not become permanent.</p>
 
       <h2>Fix Your Headshot With TailorPic</h2>
-      <p>If your current photo breaks several of these rules, TailorPic offers a quick way to replace it. Upload a handful of selfies, and our AI generates professional portraits with flattering lighting, clean backgrounds and polished styling, typically within a couple of hours. Plans start at $9.90, and there are 11 categories, including <a href="/headshots">professional headshots</a> and <a href="/team-headshots">team headshots</a>. Your uploads are automatically deleted after 30 days, and every order is backed by a 14-day money-back guarantee. See the <a href="/pricing">pricing page</a>, read the <a href="/faq">FAQ</a> or <a href="/dashboard/upload">upload your selfies</a> and get a photo you will be proud to use.</p>
+      <p>If your current photo breaks several of these rules, TailorPic offers a quick way to replace it. Upload a handful of selfies, and our AI generates professional portraits with flattering lighting, clean backgrounds and polished styling, typically within a couple of hours. Plans start at $9.90, and there are 11 categories, including <a href="/styles">professional headshots</a> and <a href="/team-headshots">team headshots</a>. Your uploads are automatically deleted after 30 days, and every order is backed by a 14-day money-back guarantee. See the <a href="/pricing">pricing page</a>, read the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies</a> and get a photo you will be proud to use.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-07-15',
@@ -1337,7 +1337,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>Bring Consistent Headshots to Your Team With TailorPic</h2>
       <p>If your company has a similar mix of outdated and missing photos, the process above is easy to try. Start with one or two people as a pilot, compare the results with your current photos, and then roll it out to everyone once you are comfortable with the quality.</p>
-      <p>For larger teams, our <a href="/enterprise">enterprise page</a> explains team plans, consistent styling and centralized ordering. If you just want to see what you get, you can <a href="/dashboard/upload">upload your selfies</a> and have your own headshot in a couple of hours. Every order is backed by a 14-day money-back guarantee, so it is easy to test with no real risk.</p>
+      <p>For larger teams, our <a href="/enterprise">enterprise page</a> explains team plans, consistent styling and centralized ordering. If you just want to see what you get, you can <a href="/auth/register">upload your selfies</a> and have your own headshot in a couple of hours. Every order is backed by a 14-day money-back guarantee, so it is easy to test with no real risk.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-08-01',
@@ -1401,7 +1401,7 @@ export const blogPosts: BlogPost[] = [
       <p>This process works well alongside a good online presence. For related advice, see our articles on <a href="/blog/best-photos-for-linkedin">the best photos for LinkedIn</a> and <a href="/blog/professional-headshot-tips-2025">professional headshot tips</a>.</p>
 
       <h2>Try TailorPic for Your Real Estate Team</h2>
-      <p>TailorPic generates professional headshots from a few selfies, typically within a couple of hours, starting at $9.90. Your uploads are deleted automatically after 30 days and every order comes with a 14-day money-back guarantee. To see how we approach this industry, visit our <a href="/industries/real-estate">real estate headshots page</a>. When you are ready to try it yourself, <a href="/dashboard/upload">upload your selfies</a> and see what your next agent photo could look like.</p>
+      <p>TailorPic generates professional headshots from a few selfies, typically within a couple of hours, starting at $9.90. Your uploads are deleted automatically after 30 days and every order comes with a 14-day money-back guarantee. To see how we approach this industry, visit our <a href="/industries/real-estate">real estate headshots page</a>. When you are ready to try it yourself, <a href="/auth/register">upload your selfies</a> and see what your next agent photo could look like.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-08-15',
@@ -1465,7 +1465,7 @@ export const blogPosts: BlogPost[] = [
       <p>Founders often treat a photo as a one-time task, but your appearance and role keep changing. A good habit is to review your profiles every six months, or whenever something significant happens, such as a funding announcement, a new product launch or a change of title. Replace the image on the profiles that matter most first, then update the rest. Keep the original selfies and style notes you used, so the next refresh is quick and looks consistent with the last one. Small, regular updates signal that you are active and engaged, which is a quiet form of credibility in itself.</p>
 
       <h2>Build Your Founder Brand With TailorPic</h2>
-      <p>Your photo will never replace a good product or a clear story, but it can remove one small obstacle between you and the people you want to reach. With TailorPic, you upload a few selfies and receive professional portraits, typically within a couple of hours. Your uploads are deleted automatically after 30 days, and every order comes with a 14-day money-back guarantee. When you are ready, <a href="/dashboard/upload">upload your selfies</a> and create a set of photos for every platform you use.</p>
+      <p>Your photo will never replace a good product or a clear story, but it can remove one small obstacle between you and the people you want to reach. With TailorPic, you upload a few selfies and receive professional portraits, typically within a couple of hours. Your uploads are deleted automatically after 30 days, and every order comes with a 14-day money-back guarantee. When you are ready, <a href="/auth/register">upload your selfies</a> and create a set of photos for every platform you use.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-09-01',
@@ -1520,7 +1520,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h2>Get Your Remote-Ready Headshot With TailorPic</h2>
-      <p>You do not need a studio to look professional from your home office. With TailorPic, you upload a handful of selfies and receive a set of polished portraits, typically within a couple of hours. Your uploads are deleted automatically after 30 days, and there is a 14-day money-back guarantee. When you are ready, <a href="/dashboard/upload">upload your selfies</a> or browse <a href="/headshots">headshot styles</a> to find the look that suits your role.</p>
+      <p>You do not need a studio to look professional from your home office. With TailorPic, you upload a handful of selfies and receive a set of polished portraits, typically within a couple of hours. Your uploads are deleted automatically after 30 days, and there is a 14-day money-back guarantee. When you are ready, <a href="/auth/register">upload your selfies</a> or browse <a href="/styles">headshot styles</a> to find the look that suits your role.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-11-15',
@@ -1574,7 +1574,7 @@ export const blogPosts: BlogPost[] = [
       <p>Whatever method you choose, choose a result that honestly represents your appearance. Programs value authenticity, and you will meet them in person soon enough.</p>
 
       <h2>Prepare Your Residency Photo With TailorPic</h2>
-      <p>TailorPic helps students and physicians create polished, natural headshots in about an hour or two, with no photographer required. Your uploads are deleted after 30 days and every order includes a 14-day money-back guarantee. <a href="/dashboard/upload">Upload your selfies</a> to get started, or see <a href="/pricing">pricing</a> for current plans.</p>
+      <p>TailorPic helps students and physicians create polished, natural headshots in about an hour or two, with no photographer required. Your uploads are deleted after 30 days and every order includes a 14-day money-back guarantee. <a href="/auth/register">Upload your selfies</a> to get started, or see <a href="/pricing">pricing</a> for current plans.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-11-28',
@@ -1628,7 +1628,7 @@ export const blogPosts: BlogPost[] = [
       <p>Executive calendars rarely leave room for a half-day studio session, which is why many leaders now consider AI as a complement or alternative. You can read an honest comparison in our article on <a href="/blog/ai-headshots-vs-traditional-photography">AI headshots versus traditional photography</a>. For many executives, the flexibility of refreshing a photo from home, whenever a role or look changes, outweighs the ritual of a traditional shoot.</p>
 
       <h2>Build Your Visual Authority With TailorPic</h2>
-      <p>TailorPic turns a handful of selfies into polished, professional portraits in about an hour or two, with your uploads deleted after 30 days and a 14-day money-back guarantee. If you manage a leadership team, explore <a href="/team-headshots">team headshots</a> or talk to us about our <a href="/enterprise">enterprise options</a>. To begin, <a href="/dashboard/upload">upload your selfies</a> today.</p>
+      <p>TailorPic turns a handful of selfies into polished, professional portraits in about an hour or two, with your uploads deleted after 30 days and a 14-day money-back guarantee. If you manage a leadership team, explore <a href="/team-headshots">team headshots</a> or talk to us about our <a href="/enterprise">enterprise options</a>. To begin, <a href="/auth/register">upload your selfies</a> today.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-12-05',
@@ -1678,7 +1678,7 @@ export const blogPosts: BlogPost[] = [
       <p>For a real-world example of how a company approached a full switch, read how a <a href="/blog/how-50-person-company-switched-to-ai-headshots">50-person company switched to AI headshots</a>. Founders may also enjoy our piece on <a href="/blog/startup-founder-personal-branding-ai-photos">personal branding with AI photos</a>.</p>
 
       <h2>Start Building Your Team Brand With TailorPic</h2>
-      <p>TailorPic gives startups a simple way to give every teammate a matching, professional portrait without booking a photographer. Uploads are deleted after 30 days, and every order comes with a 14-day money-back guarantee. Explore <a href="/team-headshots">team headshots</a>, check <a href="/pricing">pricing</a> or <a href="/dashboard/upload">upload your selfies</a> to get started.</p>
+      <p>TailorPic gives startups a simple way to give every teammate a matching, professional portrait without booking a photographer. Uploads are deleted after 30 days, and every order comes with a 14-day money-back guarantee. Explore <a href="/team-headshots">team headshots</a>, check <a href="/pricing">pricing</a> or <a href="/auth/register">upload your selfies</a> to get started.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-12-20',
@@ -1731,7 +1731,7 @@ export const blogPosts: BlogPost[] = [
       <p>If your current photo is more than two or three years old, is poorly lit or does not reflect your current role, 2025 is a good time to refresh it. Aim for natural light, a relaxed expression, a clean background and a look that fits your industry. Then use the same image consistently everywhere you appear online.</p>
 
       <h2>Refresh Your Headshot With TailorPic</h2>
-      <p>TailorPic brings these trends together, offering natural-looking, professional portraits from just a few selfies, usually in an hour or two. Uploads are deleted after 30 days, and there is a 14-day money-back guarantee. Browse <a href="/headshots">headshot styles</a>, see <a href="/pricing">pricing</a> or <a href="/dashboard/upload">upload your selfies</a> to begin.</p>
+      <p>TailorPic brings these trends together, offering natural-looking, professional portraits from just a few selfies, usually in an hour or two. Uploads are deleted after 30 days, and there is a 14-day money-back guarantee. Browse <a href="/styles">headshot styles</a>, see <a href="/pricing">pricing</a> or <a href="/auth/register">upload your selfies</a> to begin.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-01-15',
@@ -1786,7 +1786,7 @@ export const blogPosts: BlogPost[] = [
       <p>If that sounds like your situation, explore <a href="/team-headshots">team headshots</a> or the <a href="/enterprise">enterprise page</a> to see what fits.</p>
 
       <h2>Getting Started</h2>
-      <p>Start small. Pick a pilot group, choose one background and style, and compare the results to your current photos. Most teams find the decision easy once they see a consistent set side by side. When you are ready, review <a href="/pricing">pricing</a> and let your team <a href="/dashboard/upload">upload their selfies</a> to get started with TailorPic.</p>
+      <p>Start small. Pick a pilot group, choose one background and style, and compare the results to your current photos. Most teams find the decision easy once they see a consistent set side by side. When you are ready, review <a href="/pricing">pricing</a> and let your team <a href="/auth/register">upload their selfies</a> to get started with TailorPic.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-01-20',
@@ -1835,7 +1835,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>Which Should You Use?</h2>
       <p>The best answer is often a combination. Use a general editor for everyday photos, and a specialist for the one image that represents you professionally. If you are choosing a photo for a job search or business profile, our guides on <a href="/blog/best-headshot-for-linkedin-profile">the best headshot for a LinkedIn profile</a> and <a href="/blog/professional-headshot-tips-2025">professional headshot tips</a> will help you decide what to aim for.</p>
-      <p>When you are ready to skip the editing and get a finished result, browse <a href="/headshots">headshot styles</a> or <a href="/dashboard/upload">upload your selfies to TailorPic</a>.</p>
+      <p>When you are ready to skip the editing and get a finished result, browse <a href="/styles">headshot styles</a> or <a href="/auth/register">upload your selfies to TailorPic</a>.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-02-03',
@@ -1890,7 +1890,7 @@ export const blogPosts: BlogPost[] = [
       <p>Light interacts with whatever is behind you. A soft, slightly blurred background keeps attention on your face, while a busy one competes with it. Our <a href="/blog/headshot-background-guide">headshot background guide</a> shows which combinations work best.</p>
 
       <h2>Choosing What Is Right for You</h2>
-      <p>If you enjoy photography and have time, natural light can produce lovely results. If you need a high-end campaign image, a studio is worth it. If you simply want a professional, well-lit headshot without the logistics, AI is the most practical option. To see the results for yourself, browse <a href="/headshots">headshot styles</a> or <a href="/dashboard/upload">upload your selfies</a> to TailorPic.</p>
+      <p>If you enjoy photography and have time, natural light can produce lovely results. If you need a high-end campaign image, a studio is worth it. If you simply want a professional, well-lit headshot without the logistics, AI is the most practical option. To see the results for yourself, browse <a href="/styles">headshot styles</a> or <a href="/auth/register">upload your selfies</a> to TailorPic.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-02-14',
@@ -1966,7 +1966,7 @@ export const blogPosts: BlogPost[] = [
       <p>TailorPic delivers natural-looking, professional results from a few selfies, which gives you plenty of high-quality options to choose from. Learn more in <a href="/blog/how-ai-headshots-work">how AI headshots work</a>, or take a look at our <a href="/blog/best-photos-for-linkedin">best photos for LinkedIn</a> guide.</p>
 
       <h2>Get One Photo That Works Everywhere</h2>
-      <p>A consistent, high-quality profile picture is one of the simplest ways to look credible online. Browse <a href="/headshots">headshot styles</a>, check <a href="/pricing">pricing</a> or <a href="/dashboard/upload">upload your selfies</a> to create yours with TailorPic.</p>
+      <p>A consistent, high-quality profile picture is one of the simplest ways to look credible online. Browse <a href="/styles">headshot styles</a>, check <a href="/pricing">pricing</a> or <a href="/auth/register">upload your selfies</a> to create yours with TailorPic.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-03-01',
@@ -2024,7 +2024,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h2>Using AI Responsibly</h2>
-      <p>Ethical AI photography comes down to honesty, consent and care with data. Use images that genuinely look like you, respect the rules of the places you post them and choose services that treat your photos with respect. If you are ready to create a professional portrait the responsible way, explore <a href="/headshots">headshot styles</a> or <a href="/dashboard/upload">upload your selfies</a> to get started with TailorPic.</p>
+      <p>Ethical AI photography comes down to honesty, consent and care with data. Use images that genuinely look like you, respect the rules of the places you post them and choose services that treat your photos with respect. If you are ready to create a professional portrait the responsible way, explore <a href="/styles">headshot styles</a> or <a href="/auth/register">upload your selfies</a> to get started with TailorPic.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-03-15',
@@ -2068,7 +2068,7 @@ export const blogPosts: BlogPost[] = [
       <p>Keep accessories minimal so they support your look rather than compete with it. Small earrings, a simple necklace or an understated watch are fine, while large, reflective or noisy pieces can distract. If you wear glasses, check for glare and consider cleaning the lenses well or angling your chin slightly to reduce reflections. For grooming, get a haircut a few days beforehand rather than the day before, tidy facial hair, and keep skin care simple and matte rather than shiny. Light makeup that evens skin tone looks natural on camera.</p>
 
       <h2>Bring Options and Think About the Background</h2>
-      <p>If you are shooting in person, pack two or three outfits and compare them. Consider the backdrop too: a dark jacket will stand out against a light wall, while a mid-tone shirt can disappear into a similar background. If you are using AI, you can explore different wardrobe and background combinations without changing clothes at all. Take a look at our <a href="/headshots">professional headshots</a> page to see how different outfits and settings come across.</p>
+      <p>If you are shooting in person, pack two or three outfits and compare them. Consider the backdrop too: a dark jacket will stand out against a light wall, while a mid-tone shirt can disappear into a similar background. If you are using AI, you can explore different wardrobe and background combinations without changing clothes at all. Take a look at our <a href="/styles">professional headshots</a> page to see how different outfits and settings come across.</p>
 
       <h2>Final Checklist</h2>
       <ul>
@@ -2078,7 +2078,7 @@ export const blogPosts: BlogPost[] = [
         <li>Groom a few days ahead so you look fresh, not freshly cut.</li>
         <li>Pick a look that feels like you on a good day.</li>
       </ul>
-      <p>When you feel comfortable and appropriately dressed, it shows in your expression. Ready to see yourself in different outfits and settings? Explore TailorPic's <a href="/styles">headshot styles</a> or start from our <a href="/headshots">headshots page</a> to create a portrait you will be proud to use.</p>
+      <p>When you feel comfortable and appropriately dressed, it shows in your expression. Ready to see yourself in different outfits and settings? Explore TailorPic's <a href="/styles">headshot styles</a> or start from our <a href="/styles">headshots page</a> to create a portrait you will be proud to use.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-03-12',
@@ -2135,7 +2135,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h2>A Faster Option With AI</h2>
-      <p>DIY headshots can look great, but they take time, equipment and trial and error. That is where TailorPic's AI makes the process easier. Instead of setting up lights and posing for dozens of shots, you upload a handful of selfies and receive polished, studio-style portraits in a range of outfits and backgrounds. You can even try it first with our <a href="/free-headshot-generator">free headshot generator</a>, then browse <a href="/headshots">professional headshots</a> and <a href="/styles">styles</a> to pick the look that suits you best.</p>
+      <p>DIY headshots can look great, but they take time, equipment and trial and error. That is where TailorPic's AI makes the process easier. Instead of setting up lights and posing for dozens of shots, you upload a handful of selfies and receive polished, studio-style portraits in a range of outfits and backgrounds. You can even try it first with our <a href="/free-headshot-generator">free headshot generator</a>, then browse <a href="/styles">professional headshots</a> and <a href="/styles">styles</a> to pick the look that suits you best.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-03-10',
@@ -2183,7 +2183,7 @@ export const blogPosts: BlogPost[] = [
       <p>Traditional headshot sessions can be a significant investment, and actors often need to refresh photos regularly as their look evolves. Building a flexible, cost-conscious approach to new photos helps you stay current. AI tools can be a useful way to explore different looks, backgrounds and styles before investing in a full session, or to create supplemental images for online profiles and social media. Always check whether a casting platform or agency accepts AI-generated images before submitting them.</p>
 
       <h2>Explore Looks With TailorPic</h2>
-      <p>If you want to see how different styles, lighting and settings might read on you, TailorPic makes it easy to experiment. Browse our <a href="/headshots">professional headshots</a> to see the range available, or explore the <a href="/styles/creative">creative style</a> for expressive, character-forward portraits that suit performers and artists. A strong, current headshot is one of the best investments in your career, so take the time to get it right.</p>
+      <p>If you want to see how different styles, lighting and settings might read on you, TailorPic makes it easy to experiment. Browse our <a href="/styles">professional headshots</a> to see the range available, or explore the <a href="/styles/creative">creative style</a> for expressive, character-forward portraits that suit performers and artists. A strong, current headshot is one of the best investments in your career, so take the time to get it right.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-03-08',
@@ -6985,7 +6985,7 @@ export const blogPosts: BlogPost[] = [
     content: `
       <p>For therapists, counsellors and psychologists, a profile photo does a job that few other professionals face. Before a prospective client ever books a consultation, they look at your picture and quietly ask one question: "Could I feel safe talking to this person?" A photo cannot answer that completely, but it can certainly make the answer harder or easier. In this guide we explain how AI headshots can help therapists build a warm, credible and consistent image without the cost and awkwardness of a traditional photo session.</p>
 
-      <p>If you want to jump straight in, you can <a href="/headshots">create your AI headshots</a> in a few minutes. Keep reading if you want to understand what makes a great therapist headshot and how to avoid the common pitfalls.</p>
+      <p>If you want to jump straight in, you can <a href="/auth/register">create your AI headshots</a> in a few minutes. Keep reading if you want to understand what makes a great therapist headshot and how to avoid the common pitfalls.</p>
 
       <h2>Why Your Photo Matters More in Mental Health</h2>
       <p>Choosing a therapist is a vulnerable decision. People often search late at night, scroll through directories such as Psychology Today or your clinic website, and narrow down a shortlist within seconds. Research on first impressions consistently shows that people form judgments about warmth and trustworthiness in a fraction of a second. For a therapist, those impressions influence whether a worried person picks up the phone or keeps scrolling.</p>
@@ -7056,7 +7056,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h2>Final Thoughts</h2>
-      <p>A therapist's headshot is a small gesture of welcome. It tells a prospective client that there is a real, kind and qualified person on the other side of the screen. AI headshots make it easy to achieve that look without a studio booking, a large invoice or the discomfort of posing for a stranger. When you are ready, <a href="/headshots">create your headshots with TailorPic</a>, browse our <a href="/styles">styles</a> and pick the one that feels most like the way you greet your clients.</p>
+      <p>A therapist's headshot is a small gesture of welcome. It tells a prospective client that there is a real, kind and qualified person on the other side of the screen. AI headshots make it easy to achieve that look without a studio booking, a large invoice or the discomfort of posing for a stranger. When you are ready, <a href="/auth/register">create your headshots with TailorPic</a>, browse our <a href="/styles">styles</a> and pick the one that feels most like the way you greet your clients.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-10-01',
@@ -7070,7 +7070,7 @@ export const blogPosts: BlogPost[] = [
       'Learn how to choose the best headshot background for your industry, brand and platform, from neutral studio backdrops to gradients, colour and blurred offices.',
     content: `
       <p>When people think about a great headshot, they usually think about the face. But the background quietly does half of the work. It sets the mood, influences how sharp your features look, and tells viewers what kind of professional you are before they read a single word of your bio. With AI headshots you can choose your background in seconds, which makes the decision both easier and more important. This guide walks through how to pick the right one for your industry, your brand and every platform where your photo will appear.</p>
-      <p>Ready to try it? You can <a href="/headshots">generate your AI headshots</a> and experiment with different backdrops in minutes.</p>
+      <p>Ready to try it? You can <a href="/auth/register">generate your AI headshots</a> and experiment with different backdrops in minutes.</p>
 
       <h2>Why the Background Matters</h2>
       <p>A background has three jobs. First, it should <strong>separate you from the scene</strong>, creating enough contrast that your face stands out, even at thumbnail size on LinkedIn or an email signature. Second, it should <strong>set the tone</strong>: a soft grey suggests calm competence, a bright colour suggests energy, and an office suggests a corporate setting. Third, it should <strong>stay out of the way</strong>. A distracting background pulls attention from your face and can make the photo feel amateur.</p>
@@ -7150,7 +7150,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h2>Final Thoughts</h2>
-      <p>The best headshot background is the one you stop noticing, because it makes you look confident, clear and credible. Start with your industry, consider each platform and keep the backdrop simple. When you are ready to see your options, explore our <a href="/styles">styles</a>, compare <a href="/pricing">pricing</a> and <a href="/headshots">create your headshots</a> today.</p>
+      <p>The best headshot background is the one you stop noticing, because it makes you look confident, clear and credible. Start with your industry, consider each platform and keep the backdrop simple. When you are ready to see your options, explore our <a href="/styles">styles</a>, compare <a href="/pricing">pricing</a> and <a href="/auth/register">create your headshots</a> today.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-10-01',
@@ -7164,7 +7164,7 @@ export const blogPosts: BlogPost[] = [
       'Discover the professional headshot trends shaping 2026, from natural light and warm tones to consistent team imagery, and how to apply them to your own profile.',
     content: `
       <p>Every year, professional headshots shift a little. Lighting gets softer, backgrounds get simpler, and expectations about authenticity change. In 2026 the biggest change is not a colour or a pose but an attitude: people want portraits that look real, feel human and still look polished. This guide covers the headshot trends shaping 2026, what is fading out, and how to apply each trend to your own profile whether you are an executive, freelancer or new graduate.</p>
-      <p>Want to try these looks yourself? You can <a href="/headshots">create AI headshots</a> in a few minutes and explore every trend below in our <a href="/styles">style library</a>.</p>
+      <p>Want to try these looks yourself? You can <a href="/auth/register">create AI headshots</a> in a few minutes and explore every trend below in our <a href="/styles">style library</a>.</p>
 
       <h2>Trend 1: Authentic Over Airbrushed</h2>
       <p>Heavily retouched portraits with glassy skin and perfectly symmetrical faces are losing credibility. Recruiters, clients and colleagues now look for a photo that resembles the person they will meet on a video call. In 2026 the preferred look keeps natural skin texture, visible character lines and realistic hair. Retouching is subtle: it removes distractions such as a blemish or a stray hair, not personality.</p>
@@ -7230,7 +7230,7 @@ export const blogPosts: BlogPost[] = [
       <p>AI has made it easier to keep up with trends. Instead of booking a new shoot each time tastes change, you can regenerate portraits in a new style for a fraction of the cost. You can check <a href="/pricing">pricing</a> before you begin and review our look at <a href="/blog/headshot-trends-2026">headshot trends</a> and <a href="/blog/ai-headshot-statistics-2026">AI headshot statistics</a> for background on adoption. Privacy is also a growing concern, so review how we handle data on our <a href="/security">security</a> page.</p>
 
       <h2>Final Thoughts</h2>
-      <p>The defining trend of 2026 is honest polish: natural light, warm tones, simple backgrounds and an expression that feels real. Whichever direction you choose, keep the focus on looking like the best, most approachable version of yourself. When you are ready to update your image, explore our <a href="/styles">styles</a> and <a href="/headshots">generate your headshots</a> today.</p>
+      <p>The defining trend of 2026 is honest polish: natural light, warm tones, simple backgrounds and an expression that feels real. Whichever direction you choose, keep the focus on looking like the best, most approachable version of yourself. When you are ready to update your image, explore our <a href="/styles">styles</a> and <a href="/auth/register">generate your headshots</a> today.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-10-01',
@@ -7244,7 +7244,7 @@ export const blogPosts: BlogPost[] = [
       'How startup founders can use AI headshots to get credible, consistent photos for pitch decks, LinkedIn, press and team pages, quickly and affordably.',
     content: `
       <p>A startup founder sells a product, a vision and, above all, themselves. Investors back people, candidates join teams led by people they trust, and customers follow founders they feel they know. In that world, your headshot is not a vanity item. It is a small piece of infrastructure that appears on your pitch deck, your LinkedIn, your website, Crunchbase, press coverage and the speaker page of every conference you attend. This guide explains how AI headshots help founders get a credible, consistent and affordable image while moving at startup speed.</p>
-      <p>If you are ready to start, you can <a href="/headshots">generate your AI headshots</a> in minutes and use them the same day.</p>
+      <p>If you are ready to start, you can <a href="/auth/register">generate your AI headshots</a> in minutes and use them the same day.</p>
 
       <h2>Why Founders Need a Strong Headshot</h2>
       <p>Early-stage companies have few trust signals. There may be no revenue history, no big-name customers and a brand-new domain. The founder's face and story fill that gap. A polished, approachable photo signals that you take the company seriously and that you are someone people can follow.</p>
@@ -7326,7 +7326,7 @@ export const blogPosts: BlogPost[] = [
       </ol>
 
       <h2>Final Thoughts</h2>
-      <p>As a founder you will spend countless hours on product, fundraising and hiring. Your headshot should not take more than a few minutes of that time. A clear, confident and consistent image helps investors, candidates and customers trust you from the first impression. When you are ready, browse our <a href="/styles">styles</a> and <a href="/headshots">create your founder headshots</a> with TailorPic today.</p>
+      <p>As a founder you will spend countless hours on product, fundraising and hiring. Your headshot should not take more than a few minutes of that time. A clear, confident and consistent image helps investors, candidates and customers trust you from the first impression. When you are ready, browse our <a href="/styles">styles</a> and <a href="/auth/register">create your founder headshots</a> with TailorPic today.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-10-01',
@@ -7358,7 +7358,7 @@ export const blogPosts: BlogPost[] = [
       <p><strong>High resolution</strong> — Podcast directories display images at various sizes. Start with a high-res image (at least 1400×1400 for cover art contexts) so it looks crisp everywhere from a phone screen to a desktop browser.</p>
 
       <h2>How AI Headshots Help Podcast Creators</h2>
-      <p>Traditional headshot sessions can cost $200–$500 and require scheduling, travel, and wardrobe planning — a significant investment for independent podcasters who may be bootstrapping their show. <a href="/headshots">AI headshot generators</a> like TailorPic offer a practical alternative.</p>
+      <p>Traditional headshot sessions can cost $200–$500 and require scheduling, travel, and wardrobe planning — a significant investment for independent podcasters who may be bootstrapping their show. <a href="/styles">AI headshot generators</a> like TailorPic offer a practical alternative.</p>
       <p>With TailorPic, you upload a few selfies and receive studio-quality headshots in multiple styles within hours. This is especially useful for podcasters because:</p>
       <p><strong>Multiple styles for multiple platforms</strong> — You can get a casual shot for Instagram, a polished one for LinkedIn, and a creative option for your podcast cover, all from the same session.</p>
       <p><strong>Easy updates</strong> — When you rebrand, launch a new season, or simply want a fresh look, generating new headshots takes minutes instead of scheduling another photo session.</p>
@@ -7389,7 +7389,7 @@ export const blogPosts: BlogPost[] = [
       <p>For shows with teams, a unified set of <a href="/use-cases/website-team-page">team headshots</a> on your show's website reinforces your brand and makes the team behind the voices feel real to listeners.</p>
 
       <h2>Get Started</h2>
-      <p>A strong visual brand starts with a strong headshot. Whether you're launching your first podcast or refreshing an established show, <a href="/headshots">TailorPic's AI headshot generator</a> gives you studio-quality results from your phone — no photographer, no studio, no scheduling hassle. Try it today and give your audience a face to remember.</p>
+      <p>A strong visual brand starts with a strong headshot. Whether you're launching your first podcast or refreshing an established show, <a href="/auth/register">TailorPic's AI headshot generator</a> gives you studio-quality results from your phone — no photographer, no studio, no scheduling hassle. Try it today and give your audience a face to remember.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-10-01',
@@ -7416,7 +7416,7 @@ export const blogPosts: BlogPost[] = [
 
       <p>A traditional studio session can cost several hundred dollars per person once you include the photographer, retouching and travel. For a small team, a board of directors or a group of program staff, that adds up quickly. Many nonprofit leaders end up using a photo from a conference or a friend's phone, which often looks inconsistent with the rest of the website.</p>
 
-      <p>AI headshots change the equation. With <a href="/headshots">TailorPic</a>, you upload a few selfies and receive a set of professional portraits in minutes. There is no booking, no travel and no need to coordinate calendars across a busy board. The same approach works for one person or an entire leadership team, and the cost is a small fraction of a studio day.</p>
+      <p>AI headshots change the equation. With <a href="/auth/register">TailorPic</a>, you upload a few selfies and receive a set of professional portraits in minutes. There is no booking, no travel and no need to coordinate calendars across a busy board. The same approach works for one person or an entire leadership team, and the cost is a small fraction of a studio day.</p>
 
       <h2>Choosing the Right Style for Nonprofit Work</h2>
 
@@ -7472,7 +7472,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>Final Thoughts</h2>
 
-      <p>Your mission deserves to be presented with care, and your budget deserves to be protected. AI headshots let nonprofit leaders look credible, warm and professional without taking resources away from the people they serve. When you are ready, <a href="/headshots">try TailorPic</a> and give your organisation a face donors can trust.</p>
+      <p>Your mission deserves to be presented with care, and your budget deserves to be protected. AI headshots let nonprofit leaders look credible, warm and professional without taking resources away from the people they serve. When you are ready, <a href="/auth/register">try TailorPic</a> and give your organisation a face donors can trust.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-10-01',
@@ -7547,7 +7547,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>Creating Both With AI</h2>
 
-      <p>AI makes it easy to produce both formats from the same set of selfies. With <a href="/headshots">TailorPic</a> you can generate a polished professional headshot in one style and a more expressive portrait in another, then compare them side by side. This saves the time and cost of arranging two separate photo sessions, and it lets you test which look works best for your audience before committing.</p>
+      <p>AI makes it easy to produce both formats from the same set of selfies. With <a href="/auth/register">TailorPic</a> you can generate a polished professional headshot in one style and a more expressive portrait in another, then compare them side by side. This saves the time and cost of arranging two separate photo sessions, and it lets you test which look works best for your audience before committing.</p>
 
       <p>For the best results, upload clear, well-lit selfies from several angles, choose your styles carefully and pick the images that look most like you. If you are unsure where to start, begin with a classic headshot style, then add one portrait style that reflects your personality.</p>
 
@@ -7557,7 +7557,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>Final Thoughts</h2>
 
-      <p>Headshots and portraits are cousins, not twins. A headshot is a focused, professional tool that introduces you quickly and credibly. A portrait is a richer, more personal piece that shows who you are beyond the job title. Knowing the difference helps you choose the right image for each situation and avoid awkward mismatches. To go deeper on picking your look, read our guide to <a href="/blog/choosing-right-headshot-style">choosing the right headshot style</a>, then <a href="/headshots">create your photos with TailorPic</a>.</p>
+      <p>Headshots and portraits are cousins, not twins. A headshot is a focused, professional tool that introduces you quickly and credibly. A portrait is a richer, more personal piece that shows who you are beyond the job title. Knowing the difference helps you choose the right image for each situation and avoid awkward mismatches. To go deeper on picking your look, read our guide to <a href="/blog/choosing-right-headshot-style">choosing the right headshot style</a>, then <a href="/auth/register">create your photos with TailorPic</a>.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-10-01',
@@ -7582,7 +7582,7 @@ export const blogPosts: BlogPost[] = [
 
       <p>Distributed professionals face a particular set of obstacles. You may live far from a good photographer, travel often or work in a time zone where studio hours do not match your schedule. Teams spread across several countries cannot easily organise a shared photo day. Even if you can find a photographer, the result may look different from your teammates, leaving your company website or directory with mismatched portraits.</p>
 
-      <p>AI removes those obstacles. You take a few selfies, upload them to <a href="/headshots">TailorPic</a> and receive professional portraits in minutes. Because every style is consistent, a team that has never met in person can still end up with a matching set of images. For more on the team side of this, see our article on <a href="/blog/virtual-headshots-remote-teams">virtual headshots for remote teams</a>.</p>
+      <p>AI removes those obstacles. You take a few selfies, upload them to <a href="/auth/register">TailorPic</a> and receive professional portraits in minutes. Because every style is consistent, a team that has never met in person can still end up with a matching set of images. For more on the team side of this, see our article on <a href="/blog/virtual-headshots-remote-teams">virtual headshots for remote teams</a>.</p>
 
       <h2>Preparing Your Selfies at Home</h2>
 
@@ -7640,7 +7640,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>Final Thoughts</h2>
 
-      <p>When most of your professional relationships happen on screen, your photo is an essential part of your professional identity. AI headshots give remote workers a fast, affordable way to look polished, consistent and confident, without travel, studios or schedules. <a href="/headshots">Try TailorPic</a> and make every thumbnail count.</p>
+      <p>When most of your professional relationships happen on screen, your photo is an essential part of your professional identity. AI headshots give remote workers a fast, affordable way to look polished, consistent and confident, without travel, studios or schedules. <a href="/auth/register">Try TailorPic</a> and make every thumbnail count.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-10-01',
@@ -7717,7 +7717,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>Final Thoughts</h2>
 
-      <p>The right headshot style is the one that serves your goal, speaks to your audience and feels like you. Start with purpose, consider audience and platform, respect industry norms, stay true to your personality and test a couple of options before you commit. When you are ready, <a href="/headshots">explore TailorPic's styles</a> and build a headshot that does its job every time someone sees it.</p>
+      <p>The right headshot style is the one that serves your goal, speaks to your audience and feels like you. Start with purpose, consider audience and platform, respect industry norms, stay true to your personality and test a couple of options before you commit. When you are ready, <a href="/styles">explore TailorPic's styles</a> and build a headshot that does its job every time someone sees it.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-10-01',
@@ -7740,7 +7740,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>The Student Budget Problem</h2>
 
-      <p>Studio sessions often cost more than a student can comfortably spend, and campus photo days are not always available when you need them. Many students end up using a photo from a friend's phone, a graduation gown picture or a cropped group shot. AI headshots solve this. With <a href="/headshots">TailorPic</a> you upload a few selfies and get professional portraits in minutes at a small fraction of the cost of a traditional session. You can even split the effort with friends in a study group, each using their own selfies in a consistent style.</p>
+      <p>Studio sessions often cost more than a student can comfortably spend, and campus photo days are not always available when you need them. Many students end up using a photo from a friend's phone, a graduation gown picture or a cropped group shot. AI headshots solve this. With <a href="/auth/register">TailorPic</a> you upload a few selfies and get professional portraits in minutes at a small fraction of the cost of a traditional session. You can even split the effort with friends in a study group, each using their own selfies in a consistent style.</p>
 
       <h2>Choosing the Right Style as a Student</h2>
 
@@ -7796,7 +7796,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>Final Thoughts</h2>
 
-      <p>Your student years are the perfect time to build a professional presence, and a great headshot is one of the simplest ways to start. AI makes it affordable, fast and accessible, even if you live in a dorm with a tight budget. <a href="/headshots">Create your headshot with TailorPic</a> and give every application the strong first impression it deserves.</p>
+      <p>Your student years are the perfect time to build a professional presence, and a great headshot is one of the simplest ways to start. AI makes it affordable, fast and accessible, even if you live in a dorm with a tight budget. <a href="/auth/register">Create your headshot with TailorPic</a> and give every application the strong first impression it deserves.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-10-01',
@@ -7867,7 +7867,7 @@ export const blogPosts: BlogPost[] = [
       <p>The most frequent errors are mixing photo styles, using old images, cropping inconsistently, choosing distracting backgrounds and skipping alt text. Another is leaving the decision to each individual with no guidance, which almost guarantees inconsistency. A short one-page brief solves most of these problems.</p>
 
       <h2>Final Thoughts</h2>
-      <p>Excellent corporate headshots are not about expensive equipment. They come from clear purpose, strict consistency, flattering light, restrained retouching and regular updates. <a href="/headshots">Create your team headshots with TailorPic</a> and give your company a polished, unified face in minutes, whether your people sit in one office or across several time zones.</p>
+      <p>Excellent corporate headshots are not about expensive equipment. They come from clear purpose, strict consistency, flattering light, restrained retouching and regular updates. <a href="/auth/register">Create your team headshots with TailorPic</a> and give your company a polished, unified face in minutes, whether your people sit in one office or across several time zones.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-10-01',
@@ -7949,7 +7949,7 @@ export const blogPosts: BlogPost[] = [
       <p>A local portrait session can cost several hundred dollars and requires scheduling, travel and waiting for edits. AI headshots deliver a similar professional result for a fraction of the price, and you can regenerate whenever you change your look. You can compare options in our <a href="/blog/ai-headshot-vs-professional-photographer-cost">cost comparison</a>. For agents who like to keep marketing spend under control, it is one of the most efficient investments available.</p>
 
       <h2>Final Thoughts</h2>
-      <p>In real estate, people buy from agents they like and trust, and your photo is often the first step. A warm, consistent and professional portrait helps you stand out in crowded search results and stay memorable in your community. <a href="/headshots">Create your real estate agent headshot with TailorPic</a> and start every client relationship with a great first impression.</p>
+      <p>In real estate, people buy from agents they like and trust, and your photo is often the first step. A warm, consistent and professional portrait helps you stand out in crowded search results and stay memorable in your community. <a href="/auth/register">Create your real estate agent headshot with TailorPic</a> and start every client relationship with a great first impression.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-10-01',
@@ -8016,7 +8016,7 @@ export const blogPosts: BlogPost[] = [
       <p>Remember that your photo shows at small sizes. On <a href="/use-cases/linkedin">LinkedIn</a>, a clean, well-lit face against a simple backdrop stands out in a feed full of tiny circles. Very busy colours or low-contrast images become unreadable at thumbnail size. Test your chosen image by shrinking it to a few dozen pixels and checking that the face is still clear.</p>
 
       <h2>Final Thoughts</h2>
-      <p>Colour psychology is a guide, not a rulebook. Start with the impression you want to make, pick a palette that supports it, check contrast and skin tone, and then choose the result that looks most like you. <a href="/headshots">Create your headshot with TailorPic</a>, try a couple of colour directions side by side, and keep the one that feels right for your audience.</p>
+      <p>Colour psychology is a guide, not a rulebook. Start with the impression you want to make, pick a palette that supports it, check contrast and skin tone, and then choose the result that looks most like you. <a href="/auth/register">Create your headshot with TailorPic</a>, try a couple of colour directions side by side, and keep the one that feels right for your audience.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-10-01',
@@ -8100,7 +8100,7 @@ export const blogPosts: BlogPost[] = [
       <p>Refresh your photo every two to three years, or sooner if your appearance changes. Many educators choose to update at the start of the academic year, when staff pages and directories are already being revised. Doing it once a year keeps your profile current without much effort.</p>
 
       <h2>Final Thoughts</h2>
-      <p>A good headshot helps students, parents and colleagues see you as the approachable professional you are. It costs little, takes minutes and lasts for years. <a href="/headshots">Create your educator headshot with TailorPic</a> and give every staff page, course listing and profile a friendly, professional face.</p>
+      <p>A good headshot helps students, parents and colleagues see you as the approachable professional you are. It costs little, takes minutes and lasts for years. <a href="/auth/register">Create your educator headshot with TailorPic</a> and give every staff page, course listing and profile a friendly, professional face.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-10-01',
@@ -8192,7 +8192,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>Final Thoughts</h2>
 
-      <p>For senior leaders, a headshot is part of the first impression that investors, hires, partners and the press form before a single conversation. AI makes it possible to produce a polished, consistent and timely portrait in minutes, provided you supply good source photos, pick a restrained style and stay faithful to your real appearance. Ready to try it? <a href="/pricing">See pricing</a> or <a href="/headshots">create your executive headshot with TailorPic</a> today.</p>
+      <p>For senior leaders, a headshot is part of the first impression that investors, hires, partners and the press form before a single conversation. AI makes it possible to produce a polished, consistent and timely portrait in minutes, provided you supply good source photos, pick a restrained style and stay faithful to your real appearance. Ready to try it? <a href="/pricing">See pricing</a> or <a href="/auth/register">create your executive headshot with TailorPic</a> today.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-10-01',
@@ -8281,7 +8281,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>Final Thoughts</h2>
 
-      <p>Optimising an AI headshot for social media is less about technical wizardry and more about thoughtful choices: a high-quality source, a face-forward crop, a style suited to the platform and consistency across accounts. Do that, and your photo will look sharp and recognisable whether it appears as a huge profile image or a tiny comment avatar. Ready to create yours? Browse the <a href="/styles">style library</a> or <a href="/headshots">generate your AI headshot with TailorPic</a>.</p>
+      <p>Optimising an AI headshot for social media is less about technical wizardry and more about thoughtful choices: a high-quality source, a face-forward crop, a style suited to the platform and consistency across accounts. Do that, and your photo will look sharp and recognisable whether it appears as a huge profile image or a tiny comment avatar. Ready to create yours? Browse the <a href="/styles">style library</a> or <a href="/auth/register">generate your AI headshot with TailorPic</a>.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-10-01',
@@ -8374,7 +8374,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>Final Thoughts</h2>
 
-      <p>AI portraits give couples a low-pressure, affordable way to create beautiful images that reflect their personality. Whether you want a romantic keepsake, a creative save-the-date or a playful gift, the key is good source photos, a style you both enjoy and realistic expectations. <a href="/pricing">Check pricing</a> or <a href="/headshots">start creating your couples portraits with TailorPic</a>.</p>
+      <p>AI portraits give couples a low-pressure, affordable way to create beautiful images that reflect their personality. Whether you want a romantic keepsake, a creative save-the-date or a playful gift, the key is good source photos, a style you both enjoy and realistic expectations. <a href="/pricing">Check pricing</a> or <a href="/auth/register">start creating your couples portraits with TailorPic</a>.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-10-01',
@@ -8569,7 +8569,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>Final Thoughts</h2>
 
-      <p>The best AI headshot generator is the one that gives you natural, usable photos at a fair price while treating your data responsibly. Use the ten-point checklist above, compare real examples, and do not be swayed by marketing alone. When you are ready, <a href="/headshots">try TailorPic</a> and see whether it fits your needs.</p>
+      <p>The best AI headshot generator is the one that gives you natural, usable photos at a fair price while treating your data responsibly. Use the ten-point checklist above, compare real examples, and do not be swayed by marketing alone. When you are ready, <a href="/auth/register">try TailorPic</a> and see whether it fits your needs.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-10-01',

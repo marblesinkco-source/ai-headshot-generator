@@ -79,7 +79,7 @@ export default function LinkedInPhotoAnalyzerPage() {
             Upload a few selfies and get studio-quality LinkedIn headshots in hours, from $9.90.
           </p>
           <Link
-            href="/dashboard/upload"
+            href="/auth/register"
             className={buttonVariants({ size: 'lg', className: 'mt-6' })}
           >
             Get AI Headshots — From $9.90

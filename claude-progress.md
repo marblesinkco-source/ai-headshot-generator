@@ -52,6 +52,13 @@
 47. `556458d` — Enterprise pricing fixes, pricing toggle, contact/about improvements, homepage $9.90
 48. `64fdc4b` — 14-day guarantee consistency, openGraph metadata, route conflict fix
 49. `68453f0` — Security page overhaul, FAQ categories, hero conversion optimization
+50. `af77aee` — Update progress tracker with commits 43-49
+51. `3766996` — Team-headshots, how-it-works, glossary & pricing-comparison improvements
+52. `cea3017` — Fix guarantee text, pricing, stats & links across 65+ industry pages
+53. `016ef3c` — Improve free-headshot-generator, samples, changelog & blog pages
+54. `63254b5` — Replace rounded-2xl with rounded-tp-card across all public pages
+55. `04f2337` — Add twitter metadata to 5 pages, improve editor hub & tools pages
+56. `8ee91cd` — Add twitter metadata to 217 pages (use-cases, industries, vs, editor)
 
 ### Completed Features
 - [x] Exit-intent popup with WELCOME10 promo
@@ -234,6 +241,21 @@
 - [x] Security page: structured sections, FAQSchema, removed unverifiable claims
 - [x] FAQ page: category grouping with jump links, 5 new entries (17 total), FAQSchema
 - [x] Hero: clearer value prop, "Get My Headshots" CTA, 3-step mini how-it-works, trust signals
+- [x] Team-headshots: improved layout, Individual vs Team comparison, 4 scenarios, FAQSchema
+- [x] How-it-works: "What You'll Need" section, "What You'll Get" section, time estimate strip, tips
+- [x] Glossary: sticky letter index, 2-column grid, font-display headings, OG+twitter metadata
+- [x] Pricing-comparison: twitter metadata, team pricing note, competitor price disclaimer
+- [x] 65 industry pages: "Money-Back" → "14-Day Money-Back", rounded-2xl → rounded-tp-card, twitter metadata
+- [x] Industry pages: fabricated stats → verifiable facts, $29 → $9.90 starting price, CTA → /auth/register
+- [x] Free-headshot-generator: trust bar, comparison table "Free Tools vs TailorPic", CTAs → /auth/register
+- [x] Samples: hero CTA, gallery CTA, rounded-tp-card/button migration
+- [x] Changelog: real feature highlights (removed fabricated versions), OG+twitter metadata
+- [x] Blog: branded "coming soon" empty state with navigation links
+- [x] Editor hub: twitter metadata, font-display headings, rounded-tp-button icon tiles
+- [x] Tools page: font-display headings, CTA → /auth/register
+- [x] 142 public pages: rounded-2xl → rounded-tp-card migration complete
+- [x] 217 pages: twitter metadata added (use-cases, industries, vs, editor sub-pages)
+- [x] 5 marketing pages: twitter metadata (affiliate, referral, guarantee, photo-tips, editor)
 
 ### Backlog (Requires External Action)
 - [ ] Stripe: Create WELCOME10 promo code (10% off) — needs Stripe dashboard/API key

@@ -147,7 +147,7 @@ export default function VsProfilePhotoPage() {
         {/* ---- Hero ---- */}
         <section className="bg-white py-20 md:py-28">
           <div className="mx-auto max-w-4xl px-4 text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-tp-ink sm:text-5xl lg:text-6xl">
+            <h1 className="font-display text-4xl font-normal tracking-tight text-tp-ink sm:text-5xl lg:text-6xl">
               TailorPic vs ProfilePhoto.ai
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-muted">

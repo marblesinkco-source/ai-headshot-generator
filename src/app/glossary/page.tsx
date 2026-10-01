@@ -477,7 +477,7 @@ export default function GlossaryPage() {
             Upload a few selfies and get professional AI headshots, with most orders completed within 2 hours.
           </p>
           <div className="mt-8">
-            <Link href="/dashboard/upload">
+            <Link href="/auth/register">
               <Button size="lg">Get Your Headshots</Button>
             </Link>
           </div>
