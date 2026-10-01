@@ -1,10 +1,13 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { siteConfig } from '@/config/site';
 import { getActiveCategories, CATEGORY_GROUPS } from '@/config/categories';
+import { createClient } from '@/lib/supabase/client';
+import type { User } from '@supabase/supabase-js';
 
 const categories = getActiveCategories();
 
@@ -18,9 +21,37 @@ const navLinks = [
 ];
 
 export function Header() {
+  const router = useRouter();
   const mobileDialog = useRef<HTMLDialogElement>(null);
   const [megaOpen, setMegaOpen] = useState(false);
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const userMenuTimer = useRef<ReturnType<typeof setTimeout>>();
   const closeTimer = useRef<ReturnType<typeof setTimeout>>();
+  const [user, setUser] = useState<User | null>(null);
+  const [loggingOut, setLoggingOut] = useState(false);
+
+  useEffect(() => {
+    const supabase = createClient();
+    supabase.auth.getUser().then(({ data: { user } }) => setUser(user));
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+    return () => subscription.unsubscribe();
+  }, []);
+
+  async function handleSignOut() {
+    setLoggingOut(true);
+    const supabase = createClient();
+    await supabase.auth.signOut();
+    setUser(null);
+    setUserMenuOpen(false);
+    router.push('/');
+    router.refresh();
+  }
+
+  const userInitial = user?.user_metadata?.full_name?.[0]?.toUpperCase() || user?.email?.[0]?.toUpperCase() || '?';
+  const userName = user?.user_metadata?.full_name || user?.email?.split('@')[0] || '';
+  const userAvatar = user?.user_metadata?.avatar_url;
 
   function openMega() {
     clearTimeout(closeTimer.current);
@@ -125,28 +156,131 @@ export function Header() {
 
         {/* Desktop Account */}
         <div className="hidden items-center gap-5 md:flex">
-          <Link
-            href="/auth/login"
-            className="text-[13px] font-medium text-tp-ink transition-colors hover:text-tp-bronze-ink"
-          >
-            Sign In
-          </Link>
-          <Link
-            href="/auth/login"
-            className="inline-flex items-center gap-5 rounded-xl border border-tp-black bg-tp-black px-6 py-3 text-sm font-semibold text-tp-paper transition-all hover:-translate-y-0.5 hover:shadow-lg"
-          >
-            Get Started <span aria-hidden="true" className="text-lg leading-none">&#8599;</span>
-          </Link>
+          {user ? (
+            <div
+              className="relative"
+              onMouseEnter={() => { clearTimeout(userMenuTimer.current); setUserMenuOpen(true); }}
+              onMouseLeave={() => { userMenuTimer.current = setTimeout(() => setUserMenuOpen(false), 200); }}
+            >
+              <button
+                className="flex items-center gap-2.5 rounded-full border border-tp-line/60 bg-white py-1.5 pl-1.5 pr-4 transition-all hover:border-tp-bronze/40 hover:shadow-sm"
+                onClick={() => setUserMenuOpen((v) => !v)}
+                aria-expanded={userMenuOpen}
+                aria-haspopup="true"
+              >
+                {userAvatar ? (
+                  <Image
+                    src={userAvatar}
+                    alt={userName}
+                    width={32}
+                    height={32}
+                    className="h-8 w-8 rounded-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                ) : (
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-tp-bronze text-sm font-bold text-white">
+                    {userInitial}
+                  </span>
+                )}
+                <span className="text-[13px] font-medium text-tp-ink max-w-[120px] truncate">{userName}</span>
+                <svg className={`h-3.5 w-3.5 text-tp-muted transition-transform ${userMenuOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </button>
+
+              {userMenuOpen && (
+                <div
+                  className="absolute right-0 top-full pt-2"
+                  onMouseEnter={() => { clearTimeout(userMenuTimer.current); setUserMenuOpen(true); }}
+                  onMouseLeave={() => { userMenuTimer.current = setTimeout(() => setUserMenuOpen(false), 200); }}
+                >
+                  <div className="w-56 rounded-xl border border-tp-line/60 bg-white py-2 shadow-xl shadow-tp-black/8">
+                    <div className="px-4 py-2 border-b border-tp-line/40">
+                      <p className="text-[13px] font-semibold text-tp-ink truncate">{userName}</p>
+                      <p className="text-[11px] text-tp-muted truncate">{user.email}</p>
+                    </div>
+                    <Link
+                      href="/dashboard"
+                      className="flex items-center gap-2.5 px-4 py-2.5 text-[13px] text-tp-ink hover:bg-tp-paper transition-colors"
+                      onClick={() => setUserMenuOpen(false)}
+                    >
+                      <svg className="h-4 w-4 text-tp-muted" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6z" />
+                      </svg>
+                      Dashboard
+                    </Link>
+                    <Link
+                      href="/dashboard/settings"
+                      className="flex items-center gap-2.5 px-4 py-2.5 text-[13px] text-tp-ink hover:bg-tp-paper transition-colors"
+                      onClick={() => setUserMenuOpen(false)}
+                    >
+                      <svg className="h-4 w-4 text-tp-muted" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      Settings
+                    </Link>
+                    <div className="border-t border-tp-line/40 mt-1 pt-1">
+                      <button
+                        onClick={handleSignOut}
+                        disabled={loggingOut}
+                        className="flex w-full items-center gap-2.5 px-4 py-2.5 text-[13px] text-red-600 hover:bg-red-50 transition-colors disabled:opacity-50"
+                      >
+                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+                        </svg>
+                        {loggingOut ? 'Signing out...' : 'Sign out'}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : (
+            <>
+              <Link
+                href="/auth/login"
+                className="text-[13px] font-medium text-tp-ink transition-colors hover:text-tp-bronze-ink"
+              >
+                Sign In
+              </Link>
+              <Link
+                href="/auth/login"
+                className="inline-flex items-center gap-5 rounded-xl border border-tp-black bg-tp-black px-6 py-3 text-sm font-semibold text-tp-paper transition-all hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                Get Started <span aria-hidden="true" className="text-lg leading-none">&#8599;</span>
+              </Link>
+            </>
+          )}
         </div>
 
-        {/* Mobile: Sign In + Menu */}
+        {/* Mobile: Sign In/Avatar + Menu */}
         <div className="flex items-center gap-3 md:hidden">
-          <Link
-            href="/auth/login"
-            className="text-[11px] font-medium text-tp-ink min-h-[44px] flex items-center"
-          >
-            Sign In
-          </Link>
+          {user ? (
+            <Link href="/dashboard" className="flex items-center min-h-[44px]">
+              {userAvatar ? (
+                <Image
+                  src={userAvatar}
+                  alt={userName}
+                  width={32}
+                  height={32}
+                  className="h-8 w-8 rounded-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              ) : (
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-tp-bronze text-sm font-bold text-white">
+                  {userInitial}
+                </span>
+              )}
+            </Link>
+          ) : (
+            <Link
+              href="/auth/login"
+              className="text-[11px] font-medium text-tp-ink min-h-[44px] flex items-center"
+            >
+              Sign In
+            </Link>
+          )}
           <button
             className="flex h-[46px] w-[46px] items-center justify-center rounded-[10px] border border-tp-line bg-transparent"
             onClick={() => mobileDialog.current?.showModal()}
@@ -212,13 +346,32 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/auth/login"
-            className="mt-2 flex items-center justify-center gap-3 rounded-xl bg-tp-black px-6 py-3.5 text-sm font-semibold text-tp-paper"
-            onClick={() => mobileDialog.current?.close()}
-          >
-            Get Started <span aria-hidden="true" className="text-lg leading-none">&#8599;</span>
-          </Link>
+          {user ? (
+            <>
+              <Link
+                href="/dashboard"
+                className="mt-2 flex items-center justify-center gap-3 rounded-xl bg-tp-black px-6 py-3.5 text-sm font-semibold text-tp-paper"
+                onClick={() => mobileDialog.current?.close()}
+              >
+                Dashboard <span aria-hidden="true" className="text-lg leading-none">&#8599;</span>
+              </Link>
+              <button
+                onClick={() => { mobileDialog.current?.close(); handleSignOut(); }}
+                disabled={loggingOut}
+                className="mt-1 flex w-full items-center justify-center gap-2 rounded-xl border border-red-200 px-6 py-3 text-sm font-medium text-red-600 hover:bg-red-50 transition-colors disabled:opacity-50"
+              >
+                {loggingOut ? 'Signing out...' : 'Sign out'}
+              </button>
+            </>
+          ) : (
+            <Link
+              href="/auth/login"
+              className="mt-2 flex items-center justify-center gap-3 rounded-xl bg-tp-black px-6 py-3.5 text-sm font-semibold text-tp-paper"
+              onClick={() => mobileDialog.current?.close()}
+            >
+              Get Started <span aria-hidden="true" className="text-lg leading-none">&#8599;</span>
+            </Link>
+          )}
         </nav>
       </dialog>
     </header>
