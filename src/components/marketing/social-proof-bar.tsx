@@ -1,10 +1,13 @@
-import { Camera, Image, Clock, DollarSign } from "lucide-react";
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { Camera, Clock, Image, ShieldCheck, Tag } from "lucide-react";
 
 const metrics = [
   {
-    icon: Camera,
-    value: "11+ Photo Categories",
-    description: "Professional, creative & lifestyle",
+    icon: Clock,
+    value: "~2 Hour Delivery",
+    description: "Same-day turnaround",
   },
   {
     icon: Image,
@@ -12,35 +15,99 @@ const metrics = [
     description: "Multiple styles and backgrounds",
   },
   {
-    icon: Clock,
-    value: "~2 Hour Delivery",
-    description: "Same-day turnaround",
+    icon: Camera,
+    value: "11+ Photo Categories",
+    description: "Professional, creative & lifestyle",
   },
   {
-    icon: DollarSign,
-    value: "$9.90 Starting Price",
+    icon: ShieldCheck,
+    value: "Money-Back Guarantee",
+    description: "See our guarantee for terms",
+  },
+  {
+    icon: Tag,
+    value: "From $9.90",
     description: "Save up to 95% vs studios",
   },
 ] as const;
 
+const css = `
+@keyframes tp-spb-rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes tp-spb-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 169, 138, 0.0); }
+  50% { box-shadow: 0 0 0 6px rgba(201, 169, 138, 0.22); }
+}
+.tp-spb-item { opacity: 0; }
+.tp-spb-visible .tp-spb-item {
+  animation: tp-spb-rise 0.6s ease-out forwards;
+  animation-delay: calc(var(--i) * 90ms);
+}
+.tp-spb-visible .tp-spb-icon {
+  animation: tp-spb-pulse 3.2s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 400ms + 700ms);
+}
+@media (prefers-reduced-motion: reduce) {
+  .tp-spb-item { opacity: 1; }
+  .tp-spb-visible .tp-spb-item,
+  .tp-spb-visible .tp-spb-icon { animation: none; }
+}
+`;
+
 export function SocialProofBar() {
+  const ref = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(false);
+  const [enhanced, setEnhanced] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setVisible(true);
+      return;
+    }
+    setEnhanced(true);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="w-full bg-tp-paper border-y border-tp-line">
+    <section
+      ref={ref}
+      aria-label="Why choose TailorPic"
+      className={`w-full bg-tp-paper border-y border-tp-line ${
+        visible ? "tp-spb-visible" : ""
+      }`}
+    >
+      <style>{css}</style>
       <div className="mx-auto max-w-6xl px-4 py-6 sm:py-5">
-        <div className="grid grid-cols-2 gap-y-5 gap-x-4 sm:grid-cols-4 sm:gap-x-6">
-          {metrics.map((metric) => {
+        <ul className="grid grid-cols-2 gap-y-5 gap-x-4 sm:grid-cols-3 lg:grid-cols-5 sm:gap-x-6">
+          {metrics.map((metric, i) => {
             const Icon = metric.icon;
             return (
-              <div
+              <li
                 key={metric.value}
-                className="flex items-start gap-3"
+                style={{ "--i": i } as React.CSSProperties}
+                className={`${enhanced ? "tp-spb-item" : ""} flex items-start gap-3`}
               >
-                <div className="mt-0.5 flex-shrink-0">
+                <span className="tp-spb-icon mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-tp-beige/40">
                   <Icon
-                    className="h-5 w-5 text-tp-bronze-ink"
+                    className="h-4 w-4 text-tp-bronze-ink"
                     strokeWidth={1.75}
+                    aria-hidden="true"
                   />
-                </div>
+                </span>
                 <div className="min-w-0">
                   <p className="font-semibold text-tp-ink text-sm leading-tight">
                     {metric.value}
@@ -49,10 +116,10 @@ export function SocialProofBar() {
                     {metric.description}
                   </p>
                 </div>
-              </div>
+              </li>
             );
           })}
-        </div>
+        </ul>
       </div>
     </section>
   );

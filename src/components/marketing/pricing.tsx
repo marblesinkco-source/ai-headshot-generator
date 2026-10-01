@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Check, Zap, ShieldCheck, Lock } from 'lucide-react';
+import { Check, Zap, ShieldCheck, Lock, Star, BadgeCheck } from 'lucide-react';
 import { getActiveCategories, type Category } from '@/config/categories';
 import { formatPrice } from '@/lib/utils';
 import { cn } from '@/lib/utils';
@@ -95,14 +95,15 @@ export function Pricing() {
                 className={cn(
                   'relative flex flex-col',
                   isRecommended &&
-                    'border-tp-bronze/50 shadow-lg shadow-tp-bronze/10 ring-1 ring-tp-bronze/30 scale-[1.02] lg:scale-105',
+                    'z-10 border-tp-bronze bg-white shadow-xl shadow-tp-bronze/20 ring-2 ring-tp-bronze/60 scale-[1.02] lg:scale-105',
                   isExpress &&
                     'border-dashed border-tp-bronze/30'
                 )}
               >
                 {isRecommended && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="bg-tp-bronze text-tp-black text-[10px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full whitespace-nowrap">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-tp-black px-3.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-tp-paper shadow-md whitespace-nowrap">
+                      <Star className="h-3 w-3 fill-tp-bronze text-tp-bronze" aria-hidden="true" />
                       Most Popular
                     </span>
                   </div>
@@ -173,7 +174,12 @@ export function Pricing() {
                   <Link href={`/auth/register?redirect=/${activeCategory.slug}`} className="w-full">
                     <Button
                       variant={isRecommended ? 'primary' : 'outline'}
-                      className={cn('w-full', isExpress && 'border-tp-bronze/50 text-tp-bronze-ink hover:bg-tp-bronze/5')}
+                      className={cn(
+                        'w-full',
+                        isRecommended &&
+                          'h-12 bg-tp-black text-tp-paper font-semibold hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl hover:animate-cta-pulse motion-reduce:hover:animate-none',
+                        isExpress && 'border-tp-bronze/50 text-tp-bronze-ink hover:bg-tp-bronze/5'
+                      )}
                     >
                       {isExpress ? 'Try It' : 'Get Started'}
                     </Button>
@@ -212,6 +218,12 @@ export function Pricing() {
         <p className="mt-2 text-center text-xs text-tp-muted/60">
           Studio photography typically costs{' '}
           <span className="line-through">$200–$500</span> per session
+        </p>
+
+        {/* Trust reinforcer (factual, no invented numbers) */}
+        <p className="mt-8 flex items-center justify-center gap-1.5 text-center text-sm font-medium text-tp-ink">
+          <BadgeCheck className="h-4 w-4 text-tp-bronze-ink" aria-hidden="true" />
+          Built for professionals: LinkedIn, resumes, teams and personal brands
         </p>
 
         {/* Money-back guarantee banner */}
