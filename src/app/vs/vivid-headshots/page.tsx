@@ -132,7 +132,7 @@ export default function VsVividHeadshotsPage() {
         {/* Comparison table */}
         <section className="py-16 md:py-20">
           <div className="mx-auto max-w-4xl px-4">
-            <h2 className="mb-8 text-center text-3xl font-bold text-tp-ink">Side-by-side comparison</h2>
+            <h2 className="mb-8 text-center text-3xl font-display font-normal text-tp-ink">Side-by-side comparison</h2>
             <div className="overflow-x-auto rounded-tp-card border border-tp-line bg-white">
               <table className="w-full min-w-[560px] text-left text-sm">
                 <thead>
@@ -167,7 +167,7 @@ export default function VsVividHeadshotsPage() {
         {/* Key differences */}
         <section className="bg-white py-16 md:py-20">
           <div className="mx-auto max-w-5xl px-4">
-            <h2 className="mb-10 text-center text-3xl font-bold text-tp-ink">Key differences</h2>
+            <h2 className="mb-10 text-center text-3xl font-display font-normal text-tp-ink">Key differences</h2>
             <div className="grid gap-6 sm:grid-cols-2">
               {differences.map((d) => (
                 <div key={d.title} className="rounded-tp-card border border-tp-line bg-tp-paper p-7">
@@ -182,7 +182,7 @@ export default function VsVividHeadshotsPage() {
         {/* Use cases */}
         <section className="py-16 md:py-20">
           <div className="mx-auto max-w-5xl px-4">
-            <h2 className="mb-10 text-center text-3xl font-bold text-tp-ink">Which one should you choose?</h2>
+            <h2 className="mb-10 text-center text-3xl font-display font-normal text-tp-ink">Which one should you choose?</h2>
             <div className="grid gap-6 md:grid-cols-2">
               <div className="rounded-tp-card border border-tp-bronze bg-white p-7">
                 <h3 className="mb-4 text-lg font-semibold text-tp-bronze-ink">Choose TailorPic if you want</h3>
@@ -213,7 +213,7 @@ export default function VsVividHeadshotsPage() {
         {/* FAQ */}
         <section className="bg-white py-16 md:py-20">
           <div className="mx-auto max-w-3xl px-4">
-            <h2 className="mb-10 text-center text-3xl font-bold text-tp-ink">Frequently asked questions</h2>
+            <h2 className="mb-10 text-center text-3xl font-display font-normal text-tp-ink">Frequently asked questions</h2>
             <div className="space-y-4">
               {faqs.map((faq) => (
                 <div key={faq.question} className="rounded-tp-card border border-tp-line bg-tp-paper p-6">
@@ -228,7 +228,7 @@ export default function VsVividHeadshotsPage() {
         {/* CTA */}
         <section className="bg-tp-black py-16 md:py-20">
           <div className="mx-auto max-w-3xl px-4 text-center">
-            <h2 className="text-3xl font-bold text-tp-paper">Ready for your best headshots?</h2>
+            <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
               40+ professional photos across 11 categories for a one-time $9.90. No subscription, delivered within 24 hours.
             </p>

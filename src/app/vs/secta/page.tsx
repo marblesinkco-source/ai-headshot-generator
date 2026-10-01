@@ -192,7 +192,7 @@ export default function VsSectaPage() {
         {/* ---- Detailed Comparison Table ---- */}
         <section className="bg-white py-20">
           <div className="mx-auto max-w-4xl px-4">
-            <h2 className="mb-10 text-center text-3xl font-bold text-tp-ink">
+            <h2 className="mb-10 text-center text-3xl font-display font-normal text-tp-ink">
               Feature-by-Feature Comparison
             </h2>
 
@@ -235,7 +235,7 @@ export default function VsSectaPage() {
         {/* ---- Why Choose TailorPic ---- */}
         <section className="bg-tp-paper py-20">
           <div className="mx-auto max-w-5xl px-4">
-            <h2 className="mb-12 text-center text-3xl font-bold text-tp-ink">
+            <h2 className="mb-12 text-center text-3xl font-display font-normal text-tp-ink">
               Why Choose TailorPic
             </h2>
 
@@ -262,7 +262,7 @@ export default function VsSectaPage() {
         {/* ---- CTA ---- */}
         <section className="bg-white py-20">
           <div className="mx-auto max-w-3xl px-4 text-center">
-            <h2 className="text-3xl font-bold text-tp-ink">Ready to Try TailorPic?</h2>
+            <h2 className="text-3xl font-display font-normal text-tp-ink">Ready to Try TailorPic?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-muted">
               Get professional AI headshots starting at just $9.90. No subscriptions, no hidden fees
               — just great photos delivered in under 2 hours.

@@ -201,7 +201,7 @@ export default function VsHeadshotProPage() {
       {/* ── Detailed Comparison Table ─────────────────────────────── */}
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="mb-2 text-center text-3xl font-bold tracking-tight text-tp-black sm:text-4xl">
+          <h2 className="mb-2 text-center text-3xl font-display font-normal tracking-tight text-tp-black sm:text-4xl">
             Feature-by-Feature Comparison
           </h2>
           <p className="mx-auto mb-12 max-w-xl text-center text-tp-muted">
@@ -249,7 +249,7 @@ export default function VsHeadshotProPage() {
       {/* ── Why TailorPic ─────────────────────────────────────────── */}
       <section className="bg-tp-paper py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="mb-4 text-center text-3xl font-bold tracking-tight text-tp-black sm:text-4xl">
+          <h2 className="mb-4 text-center text-3xl font-display font-normal tracking-tight text-tp-black sm:text-4xl">
             Why Choose TailorPic
           </h2>
           <p className="mx-auto mb-14 max-w-xl text-center text-tp-muted">
@@ -280,7 +280,7 @@ export default function VsHeadshotProPage() {
       {/* ── CTA ───────────────────────────────────────────────────── */}
       <section className="py-20">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight text-tp-black sm:text-4xl">
+          <h2 className="text-3xl font-display font-normal tracking-tight text-tp-black sm:text-4xl">
             Ready to Make the Switch?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-tp-muted">
@@ -288,10 +288,10 @@ export default function VsHeadshotProPage() {
             delivered in hours with TailorPic.
           </p>
           <Link
-            href="/pricing"
+            href="/auth/register"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-tp-bronze-ink px-8 py-4 text-base font-semibold text-white shadow-lg transition-all hover:bg-tp-ink hover:shadow-xl"
           >
-            Make the Switch
+            Get Started
             <ArrowRight className="h-5 w-5" />
           </Link>
           <p className="mt-4 text-sm text-tp-muted">
