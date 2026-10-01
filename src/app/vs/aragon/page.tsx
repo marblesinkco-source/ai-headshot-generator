@@ -83,7 +83,7 @@ const whyCards = [
     icon: BadgeDollarSign,
     title: 'More Affordable',
     description:
-      'TailorPic starts at just $9.90 — roughly 60% less than Aragon AI\'s entry-level plan. Get professional headshots without the premium price tag.',
+      'TailorPic starts at just $9.90, compared to Aragon AI\'s higher pricing. Get professional headshots without the premium price tag.',
   },
   {
     icon: LayoutGrid,

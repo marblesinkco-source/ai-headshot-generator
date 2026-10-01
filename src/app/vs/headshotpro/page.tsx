@@ -82,7 +82,7 @@ const comparisonRows: ComparisonRow[] = [
 const advantages = [
   {
     icon: DollarSign,
-    title: '3x Lower Price',
+    title: 'Lower Price',
     description:
       'Get the same quality AI headshots starting at $9.90 instead of $29. No subscription needed — just a simple one-time payment.',
   },

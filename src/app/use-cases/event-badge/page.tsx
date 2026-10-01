@@ -229,7 +229,7 @@ export default function EventBadgeUseCasePage() {
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               {"Why Your Badge Photo Matters"}
             </h2>
             <p className="mt-4 text-lg text-tp-muted">{"People remember faces they can recognize at a glance."}</p>
@@ -258,7 +258,7 @@ export default function EventBadgeUseCasePage() {
       <section className="bg-tp-paper py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               How It Works
             </h2>
             <p className="mt-4 text-lg text-tp-muted">{"From selfie to badge-ready portrait in three steps."}</p>
@@ -285,7 +285,7 @@ export default function EventBadgeUseCasePage() {
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               {"Who Uses TailorPic for Event Badges"}
             </h2>
             <p className="mt-4 text-lg text-tp-muted">{"Great portraits for everyone who attends, speaks or organizes."}</p>
@@ -308,7 +308,7 @@ export default function EventBadgeUseCasePage() {
       {/* FAQs */}
       <section className="bg-tp-paper py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+          <h2 className="text-center text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
             Frequently Asked Questions
           </h2>
           <div className="mt-12 space-y-6">
@@ -325,7 +325,7 @@ export default function EventBadgeUseCasePage() {
       {/* CTA */}
       <section className="py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+          <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
             {"Show Up Looking Your Best at Your Next Event"}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">

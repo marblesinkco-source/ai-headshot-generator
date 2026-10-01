@@ -104,7 +104,7 @@ export default function KvkkPage() {
         <section className="bg-tp-black">
           <div className="mx-auto max-w-3xl px-4 py-16 sm:py-20">
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">Hukuki Bilgilendirme</p>
-            <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
+            <h1 className="mt-3 text-3xl font-display font-normal tracking-tight text-white sm:text-5xl">
               KVKK Aydınlatma Metni
             </h1>
             <p className="mt-4 text-base text-tp-beige">

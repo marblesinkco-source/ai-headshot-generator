@@ -141,7 +141,7 @@ export default function PricingPage() {
         <div className="pointer-events-none absolute inset-0 bg-grid" />
         <div className="pointer-events-none absolute -top-24 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-tp-bronze/10 blur-3xl" />
         <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 sm:py-24 lg:px-8">
-          <h1 className="text-4xl font-extrabold tracking-tight text-tp-black sm:text-5xl">
+          <h1 className="text-4xl font-display font-normal tracking-tight text-tp-black sm:text-5xl">
             Simple,{' '}
             <span className="bg-gradient-to-r from-tp-bronze-ink to-tp-bronze bg-clip-text text-transparent">
               Transparent

@@ -82,7 +82,7 @@ export default function AccessibilityPage() {
           <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
             Accessibility
           </p>
-          <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-tp-ink sm:text-5xl">
+          <h1 className="mt-3 text-4xl font-display font-normal tracking-tight text-tp-ink sm:text-5xl">
             Accessibility Statement
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-tp-muted">

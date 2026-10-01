@@ -19,7 +19,7 @@ export default function UnsubscribedPage() {
         <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-tp-card bg-tp-black">
           <MailX className="h-7 w-7 text-tp-bronze" aria-hidden="true" />
         </div>
-        <h1 className="text-2xl font-extrabold tracking-tight text-tp-ink sm:text-3xl">
+        <h1 className="text-2xl font-display font-normal tracking-tight text-tp-ink sm:text-3xl">
           You&apos;ve been unsubscribed
         </h1>
         <p className="mt-3 text-sm leading-relaxed text-tp-muted">

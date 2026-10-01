@@ -229,7 +229,7 @@ export default function DatingProfilePhotoUseCasePage() {
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               {"Why Your Dating Photos Matter"}
             </h2>
             <p className="mt-4 text-lg text-tp-muted">{"Profiles with clear, friendly photos get a better first impression."}</p>
@@ -258,7 +258,7 @@ export default function DatingProfilePhotoUseCasePage() {
       <section className="bg-tp-paper py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               How It Works
             </h2>
             <p className="mt-4 text-lg text-tp-muted">{"From selfie to swipe-worthy photos in three steps."}</p>
@@ -285,7 +285,7 @@ export default function DatingProfilePhotoUseCasePage() {
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               {"Who Uses TailorPic for Dating Photos"}
             </h2>
             <p className="mt-4 text-lg text-tp-muted">{"Better photos for anyone who wants a stronger first impression."}</p>
@@ -308,7 +308,7 @@ export default function DatingProfilePhotoUseCasePage() {
       {/* FAQs */}
       <section className="bg-tp-paper py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+          <h2 className="text-center text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
             Frequently Asked Questions
           </h2>
           <div className="mt-12 space-y-6">
@@ -325,7 +325,7 @@ export default function DatingProfilePhotoUseCasePage() {
       {/* CTA */}
       <section className="py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+          <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
             {"Put Your Best Face Forward"}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">

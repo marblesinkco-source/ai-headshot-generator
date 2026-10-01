@@ -105,7 +105,7 @@ export default async function BlogPostPage({ params }: Props) {
             ))}
           </div>
 
-          <h1 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+          <h1 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
             {post.title}
           </h1>
 

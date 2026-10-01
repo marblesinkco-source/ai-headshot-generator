@@ -215,7 +215,7 @@ export default function ResumeUseCasePage() {
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               Why a Professional CV Photo Matters
             </h2>
             <p className="mt-4 text-lg text-tp-muted">Give your application a human, credible face.</p>
@@ -244,7 +244,7 @@ export default function ResumeUseCasePage() {
       <section className="bg-tp-paper py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               How It Works
             </h2>
             <p className="mt-4 text-lg text-tp-muted">From selfie to resume-ready headshot in three steps.</p>
@@ -271,7 +271,7 @@ export default function ResumeUseCasePage() {
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               Who Uses TailorPic for Resumes
             </h2>
             <p className="mt-4 text-lg text-tp-muted">Professional photos for every stage of your career.</p>
@@ -294,7 +294,7 @@ export default function ResumeUseCasePage() {
       {/* FAQs */}
       <section className="bg-tp-paper py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+          <h2 className="text-center text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
             Frequently Asked Questions
           </h2>
           <div className="mt-12 space-y-6">
@@ -311,7 +311,7 @@ export default function ResumeUseCasePage() {
       {/* CTA */}
       <section className="py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+          <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
             Get Hired Looking Your Best
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">

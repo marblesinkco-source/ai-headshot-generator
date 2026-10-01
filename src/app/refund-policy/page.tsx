@@ -55,7 +55,7 @@ export default function RefundPolicyPage() {
           <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-tp-card bg-tp-black">
             <ShieldCheck className="h-8 w-8 text-tp-bronze" />
           </div>
-          <h1 className="text-4xl font-extrabold tracking-tight text-tp-ink sm:text-5xl">
+          <h1 className="text-4xl font-display font-normal tracking-tight text-tp-ink sm:text-5xl">
             Our Refund Policy
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-muted">

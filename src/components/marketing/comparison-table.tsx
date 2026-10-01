@@ -163,7 +163,7 @@ export function ComparisonTable() {
         {/* CTA */}
         <div className="mt-8 text-center">
           <Link
-            href="/dashboard/upload"
+            href="/auth/register"
             className={cn(
               buttonVariants({ size: 'lg' }),
               'rounded-tp-button bg-tp-ink text-tp-paper hover:bg-tp-ink/90'

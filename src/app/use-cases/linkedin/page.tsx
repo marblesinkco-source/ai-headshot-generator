@@ -33,7 +33,7 @@ const benefits = [
   {
     icon: Eye,
     title: "Make a Strong First Impression",
-    description: "LinkedIn profiles with professional photos get up to 21x more views. A polished headshot signals credibility before you say a word.",
+    description: "A professional photo is one of the first things people notice on your LinkedIn profile. A polished headshot signals credibility before you say a word.",
   },
   {
     icon: Target,
@@ -211,7 +211,7 @@ export default function LinkedInUseCasePage() {
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               Why Your LinkedIn Photo Matters
             </h2>
             <p className="mt-4 text-lg text-tp-muted">A professional headshot is the single easiest upgrade you can make to your LinkedIn presence.</p>
@@ -240,7 +240,7 @@ export default function LinkedInUseCasePage() {
       <section className="bg-tp-paper py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               How It Works
             </h2>
             <p className="mt-4 text-lg text-tp-muted">From selfie to polished LinkedIn headshot in three steps.</p>
@@ -267,7 +267,7 @@ export default function LinkedInUseCasePage() {
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               Who Uses TailorPic for LinkedIn
             </h2>
             <p className="mt-4 text-lg text-tp-muted">Professional headshots for every career stage.</p>
@@ -290,7 +290,7 @@ export default function LinkedInUseCasePage() {
       {/* FAQs */}
       <section className="bg-tp-paper py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+          <h2 className="text-center text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
             Frequently Asked Questions
           </h2>
           <div className="mt-12 space-y-6">
@@ -307,7 +307,7 @@ export default function LinkedInUseCasePage() {
       {/* CTA */}
       <section className="py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+          <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
             Upgrade Your LinkedIn Profile Today
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">

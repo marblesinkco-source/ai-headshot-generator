@@ -33,7 +33,7 @@ const benefits = [
   {
     icon: Heart,
     title: "Boost Engagement Instantly",
-    description: "Posts with high-quality photos get up to 38% more engagement. A polished profile picture sets the tone for every interaction on your page.",
+    description: "High-quality photos help your posts stand out and attract more attention. A polished profile picture sets the tone for every interaction on your page.",
   },
   {
     icon: Target,
@@ -211,7 +211,7 @@ export default function InstagramUseCasePage() {
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               Why Great Instagram Photos Matter
             </h2>
             <p className="mt-4 text-lg text-tp-muted">Stand out in crowded feeds with photos that look professionally shot.</p>
@@ -240,7 +240,7 @@ export default function InstagramUseCasePage() {
       <section className="bg-tp-paper py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               How It Works
             </h2>
             <p className="mt-4 text-lg text-tp-muted">From selfie to Instagram-ready photo in three steps.</p>
@@ -267,7 +267,7 @@ export default function InstagramUseCasePage() {
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               Who Uses TailorPic for Instagram
             </h2>
             <p className="mt-4 text-lg text-tp-muted">Stunning photos for every type of Instagram creator.</p>
@@ -290,7 +290,7 @@ export default function InstagramUseCasePage() {
       {/* FAQs */}
       <section className="bg-tp-paper py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+          <h2 className="text-center text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
             Frequently Asked Questions
           </h2>
           <div className="mt-12 space-y-6">
@@ -307,7 +307,7 @@ export default function InstagramUseCasePage() {
       {/* CTA */}
       <section className="py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+          <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
             Level Up Your Instagram Today
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
