@@ -13,7 +13,34 @@ import { StickyCTA } from '@/components/marketing/sticky-cta';
 import { WebsiteSchema, FAQSchema, SoftwareApplicationSchema, HowToSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/' },
+  title: 'TailorPic — AI Headshots & Professional Photos | From $9.99',
+  description:
+    'Get studio-quality AI headshots in under 2 hours. 40+ styles for business, LinkedIn & creative use. Fast delivery, 100% money-back guarantee. Starting at $9.99.',
+  openGraph: {
+    title: 'TailorPic — AI Headshots & Professional Photos | From $9.99',
+    description:
+      'Upload a few selfies, get 40+ studio-quality AI headshots in under 2 hours. Professional, creative & business styles. 100% money-back guarantee.',
+    url: 'https://www.tailorpic.com',
+    siteName: 'TailorPic',
+    images: [
+      {
+        url: '/brand/tailorpic/web/og-tailorpic-1200x630.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'TailorPic — AI Headshots & Professional Photos',
+      },
+    ],
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'TailorPic — AI Headshots & Professional Photos | From $9.99',
+    description:
+      'Upload a few selfies, get 40+ studio-quality AI headshots in under 2 hours. Starting at $9.99 with a money-back guarantee.',
+    images: ['/brand/tailorpic/web/og-tailorpic-1200x630.jpg'],
+  },
+  alternates: { canonical: 'https://www.tailorpic.com' },
 };
 
 function SectionSkeleton({ height }: { height: string }) {
