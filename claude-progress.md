@@ -26,6 +26,8 @@
 21. `81ebf51` — Trust badges card grid + pricing Product schema
 22. `13335ae` — Samples, enterprise, reviews page improvements
 23. `4e27edb` — Fabricated claims removal (15 files) + about page improvements
+24. `a0a1e90` — Brand consistency, FAQ wording, testimonials & stats enhancements
+25. `f8d60fd` — Complete tp-* brand token migration across 26 files
 
 ### Completed Features
 - [x] Exit-intent popup with WELCOME10 promo

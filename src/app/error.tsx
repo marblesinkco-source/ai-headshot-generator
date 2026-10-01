@@ -16,9 +16,9 @@ export default function Error({
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-tp-paper px-4">
       <div className="text-center">
-        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-red-100">
+        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-tp-muted/10">
           <svg
-            className="h-8 w-8 text-red-600"
+            className="h-8 w-8 text-tp-muted"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
@@ -40,7 +40,7 @@ export default function Error({
         <div className="mt-8 flex items-center justify-center gap-4">
           <button
             onClick={reset}
-            className="rounded-tp-button bg-tp-black px-5 py-2.5 text-sm font-semibold text-tp-bronze shadow-sm hover:bg-gray-900 transition-colors"
+            className="rounded-tp-button bg-tp-black px-5 py-2.5 text-sm font-semibold text-tp-bronze shadow-sm hover:bg-tp-ink transition-colors"
           >
             Try again
           </button>

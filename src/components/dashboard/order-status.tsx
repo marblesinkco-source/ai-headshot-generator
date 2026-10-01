@@ -4,7 +4,7 @@ import type { OrderStatus } from '@/types';
 const STATUS_CONFIG: Record<OrderStatus, { label: string; className: string; pulse?: boolean }> = {
   pending: {
     label: 'Pending',
-    className: 'bg-gray-100 text-gray-700',
+    className: 'bg-tp-paper text-tp-muted',
   },
   paid: {
     label: 'Paid',
@@ -29,7 +29,7 @@ const STATUS_CONFIG: Record<OrderStatus, { label: string; className: string; pul
   },
   refunded: {
     label: 'Refunded',
-    className: 'bg-gray-100 text-gray-700',
+    className: 'bg-tp-paper text-tp-muted',
   },
 };
 
