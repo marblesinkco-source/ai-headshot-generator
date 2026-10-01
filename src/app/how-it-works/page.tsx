@@ -334,6 +334,11 @@ export default function HowItWorksPage() {
                           </li>
                         ))}
                       </ul>
+                      {step.number === 1 && (
+                        <p className="mt-4 text-sm text-tp-muted">
+                          Need help choosing the right selfies? Check our <Link href="/photo-tips" className="font-medium text-tp-bronze-ink underline underline-offset-2 hover:text-tp-ink">photo tips guide</Link>.
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>

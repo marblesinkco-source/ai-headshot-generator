@@ -395,6 +395,11 @@ export default function LinkedInHeadshotsPage() {
               </div>
             ))}
           </div>
+          <p className="mt-8 text-center text-sm text-tp-muted">
+            Also available: <Link href="/students" className="font-medium text-tp-bronze-ink underline underline-offset-2 hover:text-tp-ink">student headshots</Link>,{' '}
+            <Link href="/team-headshots" className="font-medium text-tp-bronze-ink underline underline-offset-2 hover:text-tp-ink">team headshots</Link>, and more on our{' '}
+            <Link href="/use-cases" className="font-medium text-tp-bronze-ink underline underline-offset-2 hover:text-tp-ink">use cases</Link> page.
+          </p>
         </div>
       </section>
 

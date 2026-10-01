@@ -253,7 +253,10 @@ export default function AboutPage() {
           </ol>
           <p className="mx-auto mt-10 max-w-2xl text-center text-sm leading-relaxed text-tp-muted">
             AI-generated images can vary from one result to the next. That is why we offer a
-            money-back guarantee if you are not happy with your photos.
+            money-back guarantee if you are not happy with your photos.{' '}
+            <Link href="/technology" className="font-medium text-tp-bronze-ink underline underline-offset-4">
+              Learn more about our technology
+            </Link>.
           </p>
         </div>
       </section>
@@ -269,7 +272,8 @@ export default function AboutPage() {
               Our Values
             </h2>
             <p className="mt-4 text-tp-muted">
-              The principles that guide how we build and run {siteConfig.name}.
+              The principles that guide how we build and run {siteConfig.name}. See how we protect your data on our{' '}
+              <Link href="/security" className="font-medium text-tp-bronze-ink underline underline-offset-4">security page</Link>.
             </p>
           </div>
           <div className="mt-14 grid gap-6 sm:grid-cols-2">
@@ -332,7 +336,10 @@ export default function AboutPage() {
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-tp-beige/80">
             Upload your photos, choose a style, and let {siteConfig.name} do the rest. Not happy?
-            Our money-back guarantee has you covered.
+            Our money-back guarantee has you covered. Need headshots for your whole team?{' '}
+            <Link href="/team-headshots" className="font-medium text-tp-bronze underline underline-offset-4">
+              See our team plans
+            </Link>.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register" className={buttonVariants({ size: 'lg' })}>

@@ -381,12 +381,18 @@ export default function PhotoTipsPage() {
             Put these tips to work, upload your photos, and let {siteConfig.name}{' '}
             do the rest.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
               href="/auth/register"
               className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:bg-tp-bronze/90"
             >
               Create Your Headshots <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/samples"
+              className="inline-flex items-center gap-2 text-sm font-medium text-tp-beige/80 underline underline-offset-2 hover:text-white"
+            >
+              See our samples
             </Link>
           </div>
         </div>

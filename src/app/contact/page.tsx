@@ -168,6 +168,9 @@ export default function ContactPage() {
             <p className="mt-3 text-tp-muted">
               Pick a topic so your message reaches the right team. Fields marked with * are required.
             </p>
+            <p className="mt-3 text-sm text-tp-muted">
+              Looking for a quick answer? <Link href="/help" className="font-medium text-tp-bronze-ink underline underline-offset-2 hover:text-tp-ink">Check our Help Center</Link> first.
+            </p>
           </div>
           <ContactForm />
           <ul className="mt-8 grid gap-4 sm:grid-cols-3">

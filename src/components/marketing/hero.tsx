@@ -64,7 +64,7 @@ export function Hero() {
                 </span>
                 <span className="inline-flex items-center gap-1">
                   <svg className="h-3 w-3 text-tp-bronze-ink" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
-                  Cancel anytime
+                  14-day money-back guarantee
                 </span>
               </div>
 

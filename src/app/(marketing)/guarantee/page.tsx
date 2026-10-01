@@ -306,6 +306,10 @@ export default function GuaranteePage() {
               One-time payment. 14-day money-back guarantee.{' '}
               <Link href="/pricing" className="underline underline-offset-2 hover:text-tp-beige">
                 See pricing
+              </Link>{' '}
+              &middot;{' '}
+              <Link href="/help" className="underline underline-offset-2 hover:text-tp-beige">
+                Help Center
               </Link>
             </p>
           </div>
