@@ -20,6 +20,7 @@
 15. `371c490` — Team-headshots page, dashboard metadata, tp-* token migration
 16. `ccd8bea` — Sitemap, footer links, remaining gray-* token migration
 17. `3809389` — Complete gray-* to tp-* brand token migration site-wide
+18. `2c059f0` — Rate limiting on critical API routes (ai/generate, upload, checkout, delete, download)
 
 ### Completed Features
 - [x] Exit-intent popup with WELCOME10 promo
@@ -105,6 +106,7 @@
 - [x] Site-wide gray-* to tp-* brand token migration (103 → 8 remaining, all intentional)
 - [x] Sitemap: added /team-headshots route
 - [x] Footer: added enterprise, team-headshots, samples, industries links
+- [x] Rate limiting: /api/ai/generate (10/hr), /api/upload (30/hr), /api/payments/checkout (15/hr), /api/account/delete (3/hr), /api/gallery/download (20/hr)
 
 ### Backlog (Requires External Action)
 - [ ] Stripe: Create WELCOME10 promo code (10% off) — needs Stripe dashboard/API key
