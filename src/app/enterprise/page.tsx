@@ -10,6 +10,7 @@ import {
   Building2, Users, Shield, CreditCard, Palette,
   ArrowRight, Check, CheckCircle, Lock, BarChart3, Headphones, Globe,
   Trash2, FileCheck, ShieldCheck, Eye, MessageSquare, Settings, UserPlus, Rocket,
+  CalendarX, ImageOff, DollarSign, Star, RefreshCw, Linkedin, Clock,
 } from 'lucide-react';
 
 const ROICalculator = dynamic(
@@ -23,7 +24,7 @@ const ENTERPRISE_OG_DESCRIPTION = 'Scale professional headshots across your orga
 export const metadata: Metadata = {
   title: ENTERPRISE_TITLE,
   description:
-    'Professional AI headshots for your entire organization. Consistent branding, team admin dashboard, volume pricing, and dedicated support.',
+    'Professional AI headshots for your entire organization. Consistent branding, team admin dashboard, volume pricing from $29/person, and dedicated support.',
   alternates: { canonical: '/enterprise' },
   openGraph: generateOGMetadata({
     title: ENTERPRISE_TITLE,
@@ -65,9 +66,14 @@ const enterpriseFaqs = [
       'Data is encrypted at rest with AES-256 and in transit with TLS. Team members can request access, correction, or deletion of their personal data at any time, and a Data Processing Agreement is available for procurement and legal review.',
   },
   {
+    question: 'Can we pay by invoice instead of credit card?',
+    answer:
+      'Yes. Enterprise clients with 50+ people can arrange invoiced billing with NET-30 terms. Contact our sales team to set up invoicing for your organization.',
+  },
+  {
     question: 'Is there a minimum team size for enterprise plans?',
     answer:
-      'Volume pricing is available for teams of 10 or more, and our custom Enterprise plan is designed for organizations with 50+ people. Smaller teams can start with a Small Team plan.',
+      'Volume pricing is available for teams of 5 or more. Our Small Team plan covers 5-15 people, the Company plan covers 16-50, and our custom Enterprise plan is designed for organizations with 50+ people.',
   },
   {
     question: 'Do you offer dedicated support for enterprise customers?',
@@ -113,6 +119,50 @@ const serviceSchema = {
   ],
 };
 
+const painPoints = [
+  {
+    icon: CalendarX,
+    title: 'Scheduling Logistics',
+    description:
+      'Booking a photographer for dozens of employees across offices and time zones takes weeks of back-and-forth. Remote workers make it even harder.',
+  },
+  {
+    icon: ImageOff,
+    title: 'Inconsistent Photos',
+    description:
+      'Partners photographed three years ago, associates shot last month, new hires with nothing at all. Your team page looks like a patchwork instead of a unified brand.',
+  },
+  {
+    icon: DollarSign,
+    title: 'High Per-Person Cost',
+    description:
+      'Professional studio sessions run $300-700+ per person. For a growing organization that adds staff every quarter, keeping everyone current is expensive.',
+  },
+];
+
+const useCases = [
+  {
+    icon: UserPlus,
+    title: 'New Hire Onboarding',
+    description: 'Day-one headshots that match the rest of the team. No studio visit, no waiting weeks for a photographer.',
+  },
+  {
+    icon: RefreshCw,
+    title: 'Annual Refreshes',
+    description: 'Keep your website and directory current with affordable annual updates as staff changes and styles evolve.',
+  },
+  {
+    icon: Users,
+    title: 'Department Consistency',
+    description: 'Every department — from sales to engineering — gets the same professional look, background, and quality.',
+  },
+  {
+    icon: Linkedin,
+    title: 'LinkedIn Standardization',
+    description: 'Give every team member a polished, on-brand LinkedIn photo that represents your organization professionally.',
+  },
+];
+
 export default function EnterprisePage() {
   return (
     <main id="main-content" className="min-h-screen">
@@ -127,40 +177,41 @@ export default function EnterprisePage() {
       />
       <Header />
 
-      {/* Hero */}
-      <section className="relative bg-tp-black py-20 sm:py-28 overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04]">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,#C9A98A_0%,transparent_50%)]" />
-        </div>
-        <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-4 py-1.5 text-xs font-semibold text-tp-bronze mb-6">
-            <Building2 className="h-3.5 w-3.5" />
-            Enterprise
-          </div>
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-white leading-tight tracking-tight">
-            Professional Headshots,{' '}
-            <em className="text-tp-bronze not-italic font-display italic">At Scale</em>
-          </h1>
-          <p className="mt-5 text-lg text-tp-beige/70 max-w-2xl mx-auto leading-relaxed">
-            Unified, professional AI headshots for your entire organization.
-            No photographers to coordinate, no schedules to juggle.
-          </p>
-          <p className="mt-3 text-sm text-tp-beige/60">
-            Team pricing from $29 per person. Priority support and a dedicated account manager for enterprise.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-8 py-4 text-base font-semibold text-tp-black shadow-lg shadow-tp-bronze/20 transition-all hover:-translate-y-0.5 hover:bg-tp-bronze/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2 focus-visible:ring-offset-tp-black"
-            >
-              Request a Demo <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/pricing"
-              className="inline-flex items-center gap-2 rounded-tp-button border border-tp-beige/20 px-6 py-3.5 text-sm font-semibold text-tp-beige transition-all hover:bg-white/5"
-            >
-              View Team Plans
-            </Link>
+      {/* Hero — premium dark */}
+      <section className="relative overflow-hidden bg-tp-black pt-16">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-tp-bronze/8 via-transparent to-transparent" />
+        <div className="relative mx-auto max-w-5xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="inline-flex items-center gap-2 rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-4 py-1.5 text-sm font-medium text-tp-bronze">
+              <Building2 className="h-4 w-4" />
+              For Teams &amp; Organizations
+            </p>
+            <h1 className="mt-8 font-display text-4xl font-normal italic leading-tight text-tp-paper sm:text-5xl lg:text-6xl">
+              Professional Headshots,{' '}
+              <span className="not-italic text-tp-bronze">At Scale</span>
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
+              Unified, professional AI headshots for your entire organization.
+              No photographers to coordinate, no schedules to juggle — just consistent,
+              on-brand photos delivered in hours.
+            </p>
+            <p className="mt-3 text-sm text-tp-beige/50">
+              Team pricing from $29 per person. Priority support and a dedicated account manager for enterprise.
+            </p>
+            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <Link
+                href="/auth/register"
+                className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-8 py-4 text-base font-semibold text-tp-black shadow-lg shadow-tp-bronze/20 transition-all hover:-translate-y-0.5 hover:bg-tp-bronze/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2 focus-visible:ring-offset-tp-black"
+              >
+                Get Started <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-tp-button border border-tp-beige/20 px-6 py-3.5 text-sm font-semibold text-tp-beige transition-all hover:bg-white/5"
+              >
+                Contact Sales
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -184,81 +235,143 @@ export default function EnterprisePage() {
         </div>
       </section>
 
-      {/* Problem */}
+      {/* Key value props */}
       <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
+            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
+              Why Teams Choose TailorPic
+            </p>
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+              Four Reasons to Switch
+            </h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { icon: Palette, title: 'Consistent Branding', desc: 'Set brand colors, backgrounds, and style once. Every team member gets the same polished, on-brand look.' },
+              { icon: CreditCard, title: 'Volume Savings', desc: 'Per-person costs drop as your team grows. From $39 for small teams down to custom pricing at scale.' },
+              { icon: Clock, title: 'Fast Onboarding', desc: 'New hires upload selfies on day one and have matching headshots within hours. No studio visit required.' },
+              { icon: Settings, title: 'Admin Controls', desc: 'One dashboard to invite members, set brand guidelines, track orders, and download all headshots.' },
+            ].map((prop) => (
+              <div key={prop.title} className="rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
+                  <prop.icon className="h-6 w-6 text-tp-bronze" />
+                </div>
+                <h3 className="mt-4 text-lg font-semibold text-tp-ink">{prop.title}</h3>
+                <p className="mt-2 text-sm text-tp-muted leading-relaxed">{prop.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pain points */}
+      <section className="bg-tp-paper py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center mb-14">
             <h2 className="font-display text-3xl sm:text-4xl text-tp-ink">
               The Team Headshot Problem
             </h2>
-            <p className="mt-3 text-tp-muted max-w-xl mx-auto">
-              Getting professional headshots for 50+ people shouldn&apos;t take months.
+            <p className="mt-4 text-lg text-tp-muted">
+              Getting professional headshots for a growing organization shouldn&apos;t take months or break the budget.
             </p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-3">
-            {[
-              {
-                title: 'Coordination Nightmare',
-                desc: 'Booking a photographer for 50+ employees across offices and time zones takes weeks of back-and-forth.',
-              },
-              {
-                title: 'Inconsistent Results',
-                desc: 'Different photographers, different lighting, different backgrounds. Your team page looks like a patchwork.',
-              },
-              {
-                title: 'Ongoing Cost',
-                desc: 'Every new hire, every promotion, every rebrand means another round of expensive photo shoots.',
-              },
-            ].map((pain) => (
-              <div key={pain.title} className="rounded-tp-card border border-tp-line bg-tp-paper/50 p-6">
-                <h3 className="text-lg font-semibold text-tp-ink">{pain.title}</h3>
-                <p className="mt-2 text-sm text-tp-muted leading-relaxed">{pain.desc}</p>
-              </div>
-            ))}
+          <div className="grid gap-8 sm:grid-cols-3">
+            {painPoints.map((point) => {
+              const Icon = point.icon;
+              return (
+                <div
+                  key={point.title}
+                  className="rounded-tp-card border border-tp-line bg-white p-6"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-muted/10">
+                    <Icon className="h-6 w-6 text-tp-muted" />
+                  </div>
+                  <h3 className="mt-4 text-lg font-semibold text-tp-ink">{point.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-tp-muted">{point.description}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Stats */}
-      <section className="bg-tp-black py-12">
+      <section className="bg-tp-black py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 text-center">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 text-center">
             {[
-              { value: 'Faster', label: 'than coordinating traditional shoots' },
-              { value: 'Lower cost', label: 'than studio photography for teams' },
-              { value: 'Consistent', label: 'look across your team' },
-              { value: 'Fast', label: 'turnaround from upload to download' },
+              { value: '40+', label: 'Photos per person' },
+              { value: '< 2hrs', label: 'From upload to download' },
+              { value: '$29', label: 'Per person for 16-50 teams' },
+              { value: '100%', label: 'Consistent team look' },
             ].map((stat) => (
               <div key={stat.label}>
-                <p className="text-2xl sm:text-3xl font-bold text-white">{stat.value}</p>
-                <p className="mt-1 text-xs text-tp-beige/50">{stat.label}</p>
+                <p className="text-3xl font-bold text-tp-bronze sm:text-4xl">{stat.value}</p>
+                <p className="mt-2 text-sm text-tp-beige/70">{stat.label}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Enterprise features */}
+      {/* Use cases grid */}
       <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
+              Use Cases
+            </p>
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+              Built for How Teams Actually Work
+            </h2>
+            <p className="mt-3 text-tp-muted max-w-xl mx-auto">
+              From a single new hire to a company-wide rebrand, TailorPic handles it.
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2">
+            {useCases.map((useCase) => {
+              const Icon = useCase.icon;
+              return (
+                <div
+                  key={useCase.title}
+                  className="flex gap-5 rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+                >
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-tp-black">
+                    <Icon className="h-6 w-6 text-tp-bronze" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-tp-ink">{useCase.title}</h3>
+                    <p className="mt-1.5 text-sm text-tp-muted leading-relaxed">{useCase.description}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Enterprise features */}
+      <section className="bg-tp-paper py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
               Enterprise Features
             </p>
             <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
-              Built for Organizations
+              Everything Your Organization Needs
             </h2>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { icon: Users, title: 'Team Dashboard', desc: 'Invite team members, track orders, and manage all headshots from one admin panel.' },
               { icon: Palette, title: 'Brand Guidelines', desc: 'Set your brand colors, backgrounds, and style preferences once. Apply them to every new headshot.' },
-              { icon: Lock, title: 'Enterprise Security', desc: 'Secure infrastructure with Supabase and Stripe. Photos auto-deleted within 30 days.' },
-              { icon: CreditCard, title: 'Volume Pricing', desc: 'Custom pricing for teams of 10+. The more seats, the lower the per-person cost.' },
+              { icon: Lock, title: 'Enterprise Security', desc: 'Secure infrastructure with encryption at rest and in transit. Photos auto-deleted within 30 days.' },
+              { icon: CreditCard, title: 'Volume Pricing', desc: 'Per-person cost drops as your team grows. Custom pricing available for 50+ organizations.' },
               { icon: Headphones, title: 'Dedicated Support', desc: 'Priority support with a dedicated account manager for enterprise clients.' },
               { icon: BarChart3, title: 'Usage Overview', desc: 'View team adoption and order history from the admin dashboard.' },
             ].map((feature) => (
-              <div key={feature.title} className="rounded-tp-card border border-tp-line p-6 hover:border-tp-bronze/30 transition-colors">
+              <div key={feature.title} className="rounded-tp-card border border-tp-line bg-white p-6 hover:border-tp-bronze/30 transition-colors">
                 <div className="flex h-10 w-10 items-center justify-center rounded-tp-button bg-tp-black mb-4">
                   <feature.icon className="h-5 w-5 text-tp-bronze" />
                 </div>
@@ -270,93 +383,8 @@ export default function EnterprisePage() {
         </div>
       </section>
 
-      {/* Enterprise benefits checklist */}
-      <section className="pb-16 sm:pb-20">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-tp-card border border-tp-line bg-tp-paper p-6 sm:p-10">
-            <h2 className="font-display text-2xl sm:text-3xl text-tp-ink text-center">
-              Everything Your Team Needs
-            </h2>
-            <ul className="mt-8 grid gap-x-8 gap-y-4 sm:grid-cols-2">
-              {[
-                'One admin panel to invite members and track orders',
-                'Brand colors, backgrounds, and style set once',
-                'Consistent look across every team member',
-                'No photographer scheduling or office coordination',
-                'Volume pricing for teams of 10+',
-                'Photos auto-deleted within 30 days of delivery',
-                'Dedicated account manager for enterprise clients',
-                'Easy onboarding for new hires and rebrands',
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm text-tp-ink">
-                  <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-tp-bronze/15">
-                    <Check className="h-3.5 w-3.5 text-tp-bronze-ink" aria-hidden="true" />
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-8 text-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:-translate-y-0.5 hover:bg-tp-bronze/90 hover:shadow-lg"
-              >
-                Talk to Sales <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Security & privacy */}
-      <section id="security" className="py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
-              Security &amp; Privacy
-            </p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
-              Your Team&apos;s Photos Stay Private
-            </h2>
-            <p className="mt-3 text-tp-muted max-w-xl mx-auto">
-              Employee photos are personal data. Here is how we handle them.
-            </p>
-          </div>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { icon: Lock, title: 'Encryption', desc: 'Data is encrypted at rest with AES-256 and in transit with TLS 1.3.' },
-              { icon: Trash2, title: 'Automatic Data Deletion', desc: 'Original uploads and training data are permanently deleted within 30 days of delivery.' },
-              { icon: FileCheck, title: 'GDPR & CCPA Requests', desc: 'Team members can request access, correction, or deletion of their personal data at any time.' },
-              { icon: Eye, title: 'No Selling or Sharing', desc: 'Photos are used only to generate your headshots. We never sell them or share them with third parties.' },
-              { icon: ShieldCheck, title: 'Data Processing Agreement', desc: 'Need paperwork for procurement or legal review? Review our DPA and subprocessor list.' },
-            ].map((item) => (
-              <div key={item.title} className="rounded-tp-card border border-tp-line p-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-tp-button bg-tp-black mb-4">
-                  <item.icon className="h-5 w-5 text-tp-bronze" />
-                </div>
-                <h3 className="text-base font-semibold text-tp-ink">{item.title}</h3>
-                <p className="mt-2 text-sm text-tp-muted leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-            <div className="rounded-tp-card border border-tp-bronze/30 bg-tp-paper p-6 flex flex-col justify-between">
-              <div>
-                <h3 className="text-base font-semibold text-tp-ink">Security review?</h3>
-                <p className="mt-2 text-sm text-tp-muted leading-relaxed">
-                  Read the details, or tell us what your security team needs.
-                </p>
-              </div>
-              <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold text-tp-bronze-ink">
-                <Link href="/security" className="underline underline-offset-4">Security</Link>
-                <Link href="/dpa" className="underline underline-offset-4">DPA</Link>
-                <Link href="/subprocessors" className="underline underline-offset-4">Subprocessors</Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* How it works for teams */}
-      <section className="bg-tp-paper py-16 sm:py-20">
+      <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl sm:text-4xl text-tp-ink">
@@ -377,6 +405,139 @@ export default function EnterprisePage() {
                 <p className="mt-2 text-sm text-tp-muted leading-relaxed">{s.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing tiers */}
+      <section className="bg-tp-black py-16 sm:py-20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze mb-3">
+            Pricing
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl text-white mb-4">
+            Team Pricing That Scales
+          </h2>
+          <p className="text-tp-beige/60 mb-10 max-w-xl mx-auto">
+            The bigger your team, the lower the per-person cost. Custom plans for enterprise.
+          </p>
+          <div className="grid gap-6 sm:grid-cols-3">
+            {[
+              { name: 'Small Team', range: '5-15 people', price: '$39', per: 'per person', features: ['40+ photos each', 'Consistent style', 'HD resolution', 'Email support'], href: '/auth/register' },
+              { name: 'Company', range: '16-50 people', price: '$29', per: 'per person', features: ['40+ photos each', 'Brand guidelines', '4K resolution', 'Priority support'], popular: true, href: '/auth/register' },
+              { name: 'Enterprise', range: '50+ people', price: 'Custom', per: 'contact us', features: ['Custom photo packages', 'Admin dashboard', 'Custom onboarding', 'Dedicated manager', 'Invoiced billing'], href: '/contact' },
+            ].map((plan) => (
+              <div
+                key={plan.name}
+                className={`rounded-tp-card p-6 text-left ${
+                  plan.popular
+                    ? 'border-2 border-tp-bronze bg-tp-bronze/5 ring-1 ring-tp-bronze/20'
+                    : 'border border-tp-beige/10 bg-white/5'
+                }`}
+              >
+                {plan.popular && (
+                  <span className="text-[10px] font-semibold uppercase tracking-widest text-tp-bronze mb-3 block">
+                    Most Popular
+                  </span>
+                )}
+                <h3 className="text-lg font-semibold text-white">{plan.name}</h3>
+                <p className="text-xs text-tp-beige/50 mt-0.5">{plan.range}</p>
+                <div className="mt-4 flex items-baseline gap-1">
+                  <span className="text-3xl font-bold text-white">{plan.price}</span>
+                  <span className="text-xs text-tp-beige/50">{plan.per}</span>
+                </div>
+                <ul className="mt-5 space-y-2">
+                  {plan.features.map((f) => (
+                    <li key={f} className="flex items-center gap-2 text-sm text-tp-beige/70">
+                      <CheckCircle className="h-3.5 w-3.5 text-tp-bronze flex-shrink-0" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href={plan.href}
+                  className={`mt-6 block rounded-tp-button py-3 text-center text-sm font-semibold transition-all ${
+                    plan.popular
+                      ? 'bg-tp-bronze text-tp-black hover:bg-tp-bronze/90'
+                      : 'border border-tp-beige/20 text-tp-beige hover:bg-white/5'
+                  }`}
+                >
+                  {plan.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonial */}
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <div className="flex items-center justify-center gap-1">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="h-5 w-5 fill-tp-bronze text-tp-bronze" />
+              ))}
+            </div>
+            <blockquote className="mt-6 font-display text-2xl font-normal italic leading-relaxed text-tp-ink sm:text-3xl">
+              &ldquo;We onboarded twenty new team members last quarter and every single one had a
+              matching headshot on our website within their first week. The consistency across
+              our team page finally looks like the professional organization we are.&rdquo;
+            </blockquote>
+            <div className="mt-8">
+              <p className="font-semibold text-tp-bronze-ink">Sarah M.</p>
+              <p className="mt-1 text-sm text-tp-muted">Head of People Operations</p>
+            </div>
+            <p className="mt-4 text-xs text-tp-muted/60">
+              * Illustrative testimonial for demonstration purposes.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Security & privacy */}
+      <section id="security" className="bg-tp-paper py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
+              Security &amp; Privacy
+            </p>
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+              Your Team&apos;s Photos Stay Private
+            </h2>
+            <p className="mt-3 text-tp-muted max-w-xl mx-auto">
+              Employee photos are personal data. Here is how we handle them.
+            </p>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { icon: Lock, title: 'Encryption', desc: 'Data is encrypted at rest with AES-256 and in transit with TLS 1.3.' },
+              { icon: Trash2, title: 'Automatic Data Deletion', desc: 'Original uploads and training data are permanently deleted within 30 days of delivery.' },
+              { icon: FileCheck, title: 'GDPR & CCPA Requests', desc: 'Team members can request access, correction, or deletion of their personal data at any time.' },
+              { icon: Eye, title: 'No Selling or Sharing', desc: 'Photos are used only to generate your headshots. We never sell them or share them with third parties.' },
+              { icon: ShieldCheck, title: 'Data Processing Agreement', desc: 'Need paperwork for procurement or legal review? Review our DPA and subprocessor list.' },
+            ].map((item) => (
+              <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
+                <div className="flex h-10 w-10 items-center justify-center rounded-tp-button bg-tp-black mb-4">
+                  <item.icon className="h-5 w-5 text-tp-bronze" />
+                </div>
+                <h3 className="text-base font-semibold text-tp-ink">{item.title}</h3>
+                <p className="mt-2 text-sm text-tp-muted leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+            <div className="rounded-tp-card border border-tp-bronze/30 bg-white p-6 flex flex-col justify-between">
+              <div>
+                <h3 className="text-base font-semibold text-tp-ink">Security review?</h3>
+                <p className="mt-2 text-sm text-tp-muted leading-relaxed">
+                  Read the details, or tell us what your security team needs.
+                </p>
+              </div>
+              <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold text-tp-bronze-ink">
+                <Link href="/security" className="underline underline-offset-4">Security</Link>
+                <Link href="/dpa" className="underline underline-offset-4">DPA</Link>
+                <Link href="/subprocessors" className="underline underline-offset-4">Subprocessors</Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -414,77 +575,11 @@ export default function EnterprisePage() {
               </li>
             ))}
           </ol>
-          <div className="mt-8 text-center">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:-translate-y-0.5 hover:bg-tp-bronze/90 hover:shadow-lg"
-            >
-              Start the Conversation <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing tiers */}
-      <section className="bg-tp-black py-16 sm:py-20">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-3xl sm:text-4xl text-white mb-4">
-            Team Pricing
-          </h2>
-          <p className="text-tp-beige/60 mb-10 max-w-xl mx-auto">
-            Volume discounts for teams. Custom plans for enterprise.
-          </p>
-          <div className="grid gap-6 sm:grid-cols-3">
-            {[
-              { name: 'Small Team', range: '5–15 people', price: '$39', per: 'per person', features: ['40+ photos each', 'Consistent style', 'HD resolution', 'Email support'] },
-              { name: 'Company', range: '16–50 people', price: '$29', per: 'per person', features: ['40+ photos each', 'Brand guidelines', '4K resolution', 'Priority support'], popular: true },
-              { name: 'Enterprise', range: '50+ people', price: 'Custom', per: 'contact us', features: ['Custom photo packages', 'Admin dashboard', 'Custom onboarding', 'Dedicated manager'] },
-            ].map((plan) => (
-              <div
-                key={plan.name}
-                className={`rounded-tp-card p-6 text-left ${
-                  plan.popular
-                    ? 'border-2 border-tp-bronze bg-tp-bronze/5 ring-1 ring-tp-bronze/20'
-                    : 'border border-tp-beige/10 bg-white/5'
-                }`}
-              >
-                {plan.popular && (
-                  <span className="text-[10px] font-semibold uppercase tracking-widest text-tp-bronze mb-3 block">
-                    Most Popular
-                  </span>
-                )}
-                <h3 className="text-lg font-semibold text-white">{plan.name}</h3>
-                <p className="text-xs text-tp-beige/50 mt-0.5">{plan.range}</p>
-                <div className="mt-4 flex items-baseline gap-1">
-                  <span className="text-3xl font-bold text-white">{plan.price}</span>
-                  <span className="text-xs text-tp-beige/50">{plan.per}</span>
-                </div>
-                <ul className="mt-5 space-y-2">
-                  {plan.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm text-tp-beige/70">
-                      <CheckCircle className="h-3.5 w-3.5 text-tp-bronze flex-shrink-0" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href={plan.name === 'Enterprise' ? '/contact' : '/team-headshots'}
-                  className={`mt-6 block rounded-tp-button py-3 text-center text-sm font-semibold transition-all ${
-                    plan.popular
-                      ? 'bg-tp-bronze text-tp-black hover:bg-tp-bronze/90'
-                      : 'border border-tp-beige/20 text-tp-beige hover:bg-white/5'
-                  }`}
-                >
-                  {plan.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
-                </Link>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
       {/* ROI calculator */}
-      <section id="roi" className="pt-16 sm:pt-20">
+      <section id="roi" className="bg-tp-paper pt-16 sm:pt-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
             ROI
@@ -497,7 +592,9 @@ export default function EnterprisePage() {
           </p>
         </div>
       </section>
-      <ROICalculator ctaHref="/contact" ctaLabel="Get a Team Quote" />
+      <div className="bg-tp-paper">
+        <ROICalculator ctaHref="/contact" ctaLabel="Get a Team Quote" />
+      </div>
 
       {/* FAQ */}
       <section className="py-16 sm:py-20">
@@ -517,16 +614,16 @@ export default function EnterprisePage() {
         </div>
       </section>
 
-      {/* Request a demo CTA */}
+      {/* Dual CTA */}
       <section className="bg-tp-black py-20 sm:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <Globe className="h-10 w-10 text-tp-bronze mx-auto mb-4" aria-hidden="true" />
           <h2 className="font-display text-3xl sm:text-4xl text-white">
-            Request a Demo for Your Team
+            Ready to Upgrade Your Team&apos;s Image?
           </h2>
-          <p className="mt-4 text-lg text-tp-beige/70">
-            Tell us about your organization and we&apos;ll walk you through the admin dashboard,
-            brand guidelines, and a rollout plan that fits.
+          <p className="mt-4 text-lg text-tp-beige/70 max-w-2xl mx-auto">
+            Whether you&apos;re a growing startup or a large enterprise, get consistent,
+            professional headshots for every team member — delivered in hours, not weeks.
           </p>
           <ul className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-tp-beige/70">
             {['Walkthrough of the team dashboard', 'Custom quote for your team size', 'Answers for your security review'].map((t) => (
@@ -538,16 +635,16 @@ export default function EnterprisePage() {
           </ul>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:bg-tp-bronze/90"
+              href="/auth/register"
+              className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:-translate-y-0.5 hover:bg-tp-bronze/90 hover:shadow-lg"
             >
-              Request a Demo <ArrowRight className="h-4 w-4" />
+              Get Started <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              href="/team-headshots"
+              href="/contact"
               className="inline-flex items-center gap-2 rounded-tp-button border border-tp-beige/20 px-6 py-3.5 text-sm font-semibold text-tp-beige transition-all hover:bg-white/5"
             >
-              Start with Team Plan
+              Contact Sales
             </Link>
           </div>
         </div>

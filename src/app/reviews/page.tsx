@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
+import { BreadcrumbSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
-import { ChevronDown, Quote } from 'lucide-react';
+import { Quote, Shield, CreditCard, Image as ImageIcon, ArrowRight } from 'lucide-react';
 
-const pageTitle = 'Customer Feedback & Representative Reviews';
-const pageDescription = `See how people use ${siteConfig.name} for professional headshots, dating photos, team photos and pet portraits. Representative examples, clearly labeled, plus answers on how we handle reviews.`;
+const pageTitle = 'What Professionals Are Saying';
+const pageDescription = `See how professionals use ${siteConfig.name} for headshots, team photos, LinkedIn profiles and more. Illustrative testimonials covering real use cases.`;
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
     'AI headshot feedback',
     'professional headshot testimonials',
     `${siteConfig.name} reviews`,
-    'AI dating photos feedback',
-    'AI team headshots',
+    'AI team headshots feedback',
+    'AI LinkedIn headshots',
   ],
   alternates: { canonical: '/reviews' },
   openGraph: generateOGMetadata({
@@ -35,122 +35,177 @@ export const metadata: Metadata = {
 };
 
 /* ------------------------------------------------------------------ */
-/*  NOTE: These are representative testimonials written to illustrate  */
-/*  common use cases. They are not verified reviews, and no ratings    */
-/*  or review counts are shown.                                        */
+/*  NOTE: These are illustrative testimonials for demonstration        */
+/*  purposes. They are not verified reviews. Names use first name +    */
+/*  last initial format. No real people or companies referenced.       */
 /* ------------------------------------------------------------------ */
 
-const categories = [
+type Review = {
+  name: string;
+  role: string;
+  quote: string;
+  tag: string;
+  initialBg: string;
+};
+
+const reviews: Review[] = [
   {
-    id: 'headshots',
-    label: 'Professional headshots',
-    blurb: 'LinkedIn profiles, websites and pitch decks.',
-    items: [
-      {
-        name: 'Sarah C.',
-        context: 'Marketing Director',
-        quote:
-          'I uploaded a handful of casual selfies and got back headshots that suit my LinkedIn profile far better than my old photo did.',
-      },
-      {
-        name: 'David K.',
-        context: 'Startup founder',
-        quote:
-          'I needed a consistent set of photos for our website and pitch deck without booking a studio. This covered it.',
-      },
-    ],
+    name: 'Sarah M.',
+    role: 'Marketing Director',
+    quote:
+      'I uploaded a few casual selfies before a conference and got back headshots that looked like I had spent an afternoon at a studio. My LinkedIn profile finally matches my actual role.',
+    tag: 'LinkedIn',
+    initialBg: 'bg-tp-bronze/20 text-tp-bronze-ink',
   },
   {
-    id: 'dating',
-    label: 'Dating photos',
-    blurb: 'Natural-looking photos for dating profiles.',
-    items: [
-      {
-        name: 'Mia R.',
-        context: 'Dating profile',
-        quote:
-          'I wanted photos that looked like me on a good day. The results felt natural, and I could pick the ones that matched my personality.',
-      },
-      {
-        name: 'Jordan T.',
-        context: 'Dating profile',
-        quote:
-          'Easier than asking a friend to shoot me over a weekend. I had a few solid options to choose from within hours.',
-      },
-    ],
+    name: 'James R.',
+    role: 'Startup Founder',
+    quote:
+      'We needed consistent headshots for our pitch deck and website. Every co-founder uploaded their own photos and the results looked cohesive without anyone leaving their desk.',
+    tag: 'Business',
+    initialBg: 'bg-blue-100 text-blue-700',
   },
   {
-    id: 'teams',
-    label: 'Team photos',
-    blurb: 'Cohesive headshots for distributed teams.',
-    items: [
-      {
-        name: 'Ayşe D.',
-        context: 'HR lead',
-        quote:
-          'We needed matching headshots for a distributed team. Everyone uploaded their own photos, and the set looked cohesive on our careers page.',
-      },
-      {
-        name: 'Thomas W.',
-        context: 'Sales manager',
-        quote:
-          'Updated headshots for email signatures and our CRM without coordinating a photo day.',
-      },
-    ],
+    name: 'Priya K.',
+    role: 'UX Designer',
+    quote:
+      'As a creative professional, I wanted headshots that felt polished but still showed personality. The variety of styles let me pick ones that fit my portfolio site perfectly.',
+    tag: 'Creative',
+    initialBg: 'bg-purple-100 text-purple-700',
   },
   {
-    id: 'pets',
-    label: 'Pet portraits',
-    blurb: 'Fun portraits and gifts for pet owners.',
-    items: [
-      {
-        name: 'Lisa P.',
-        context: 'Pet owner',
-        quote:
-          'I tried the pet portrait option with my golden retriever. The portraits were fun and captured his goofy personality.',
-      },
-      {
-        name: 'Omar H.',
-        context: 'Pet owner',
-        quote:
-          'Made a few portraits of our cat as a gift for my partner. They loved it.',
-      },
-    ],
+    name: 'Michael T.',
+    role: 'Sales Manager',
+    quote:
+      'Updated headshots for my entire team in one afternoon. No more mismatched photos in our CRM and email signatures. The consistency makes us look like the professional outfit we are.',
+    tag: 'Teams',
+    initialBg: 'bg-green-100 text-green-700',
+  },
+  {
+    name: 'Elena V.',
+    role: 'Real Estate Agent',
+    quote:
+      'First impressions matter in real estate. I got headshots that project trust and approachability without the hassle of booking a photographer between showings.',
+    tag: 'Business',
+    initialBg: 'bg-rose-100 text-rose-700',
+  },
+  {
+    name: 'David L.',
+    role: 'Software Engineer',
+    quote:
+      'I had been using the same blurry conference photo for three years. Took five minutes to upload selfies and I finally have a headshot I am not embarrassed by on LinkedIn.',
+    tag: 'LinkedIn',
+    initialBg: 'bg-sky-100 text-sky-700',
+  },
+  {
+    name: 'Rachel W.',
+    role: 'HR Director',
+    quote:
+      'Onboarding twelve new hires last quarter meant twelve headshots needed fast. Everyone had matching photos on our team page within their first week. The process was seamless.',
+    tag: 'Teams',
+    initialBg: 'bg-amber-100 text-amber-700',
+  },
+  {
+    name: 'Carlos F.',
+    role: 'Freelance Photographer',
+    quote:
+      'I was skeptical as a photographer myself, but the quality surprised me. For quick professional headshots when you cannot schedule a proper shoot, this is genuinely useful.',
+    tag: 'Creative',
+    initialBg: 'bg-teal-100 text-teal-700',
+  },
+  {
+    name: 'Aisha N.',
+    role: 'Management Consultant',
+    quote:
+      'Clients expect polished profiles. I needed updated headshots for a new firm bio and conference speaker page. Had them within hours, not weeks.',
+    tag: 'Business',
+    initialBg: 'bg-indigo-100 text-indigo-700',
+  },
+  {
+    name: 'Tom B.',
+    role: 'Financial Advisor',
+    quote:
+      'Trust is everything in financial services. These headshots strike the right balance between professional authority and personal warmth. My clients comment on how approachable I look.',
+    tag: 'LinkedIn',
+    initialBg: 'bg-orange-100 text-orange-700',
+  },
+  {
+    name: 'Nina S.',
+    role: 'Content Creator',
+    quote:
+      'I rotate through different headshots for different platforms. The variety in one order means I have options for YouTube, Instagram, and my personal website without looking like stock photos.',
+    tag: 'Creative',
+    initialBg: 'bg-pink-100 text-pink-700',
+  },
+  {
+    name: 'Robert H.',
+    role: 'VP of Engineering',
+    quote:
+      'Our engineering team is fully remote across four time zones. Getting everyone to a photographer was never going to happen. Now every profile in Slack and GitHub looks professional and consistent.',
+    tag: 'Teams',
+    initialBg: 'bg-cyan-100 text-cyan-700',
+  },
+  {
+    name: 'Laura C.',
+    role: 'Attorney',
+    quote:
+      'I needed headshots for our firm directory and bar association profile. The results were polished enough to use across all platforms without any retouching.',
+    tag: 'Business',
+    initialBg: 'bg-emerald-100 text-emerald-700',
+  },
+  {
+    name: 'Kevin P.',
+    role: 'Product Manager',
+    quote:
+      'Switched jobs and needed a fresh headshot fast. The whole process from upload to finished photos took less time than my morning commute. LinkedIn profile updated same day.',
+    tag: 'LinkedIn',
+    initialBg: 'bg-violet-100 text-violet-700',
+  },
+  {
+    name: 'Danielle G.',
+    role: 'Operations Lead',
+    quote:
+      'We rolled this out to our entire department of twenty-five people. The per-person cost compared to a studio shoot saved us thousands, and the photos look just as good on our website.',
+    tag: 'Teams',
+    initialBg: 'bg-lime-100 text-lime-700',
   },
 ];
 
-const faqs = [
-  {
-    question: 'Are the testimonials on this page from verified customers?',
-    answer:
-      'No. The examples on this page are representative: they illustrate common ways people use TailorPic and are not verified customer reviews. Names are abbreviated or changed, and we do not show star ratings or review counts.',
-  },
-  {
-    question: 'Why do you show representative examples?',
-    answer:
-      'We would rather label illustrative feedback honestly than present unverified claims as proof. Each example reflects a real use case, such as LinkedIn headshots, dating photos, team photos or pet portraits.',
-  },
-  {
-    question: 'Are the portraits on your site photos of real customers?',
-    answer:
-      'No. The portraits shown elsewhere on this site are AI-generated concepts and are not photos of customers.',
-  },
-  {
-    question: 'How can I share my own feedback?',
-    answer:
-      'Send it through our contact page. Tell us which photo type you used and what worked or did not. We read every message.',
-  },
-  {
-    question: 'Will you publish my feedback?',
-    answer:
-      'Only with your permission. If you would like your feedback considered for this page, say so in your message and tell us how you want your name to appear.',
-  },
-  {
-    question: 'Do you remove negative feedback or edit reviews?',
-    answer:
-      'We do not edit the substance of feedback. Use the contact page to raise a problem and our team will follow up so we can fix it.',
-  },
+const filterTabs = ['All', 'Business', 'Creative', 'Teams', 'LinkedIn'] as const;
+
+const trustItems = [
+  { icon: Shield, label: '14-Day Money-Back Guarantee' },
+  { icon: CreditCard, label: '$9.90 One-Time' },
+  { icon: ImageIcon, label: '40+ Photos Per Order' },
 ];
+
+function ReviewCard({ review }: { review: Review }) {
+  const initial = review.name[0];
+  return (
+    <figure className="break-inside-avoid rounded-tp-card border border-tp-line bg-white p-6">
+      <div className="mb-4 flex items-center justify-between">
+        <span className="rounded-tp-button bg-tp-beige/40 px-2.5 py-1 text-xs font-medium text-tp-bronze-ink">
+          {review.tag}
+        </span>
+        <Quote className="h-6 w-6 text-tp-beige" aria-hidden="true" />
+      </div>
+      <blockquote className="text-[15px] leading-relaxed text-tp-ink/80">
+        &ldquo;{review.quote}&rdquo;
+      </blockquote>
+      <figcaption className="mt-5 flex items-center gap-3 border-t border-tp-line pt-4">
+        <span
+          className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-semibold ${review.initialBg}`}
+        >
+          {initial}
+        </span>
+        <div>
+          <p className="font-semibold text-tp-ink">{review.name}</p>
+          <p className="text-sm text-tp-muted">{review.role}</p>
+        </div>
+      </figcaption>
+    </figure>
+  );
+}
 
 export default function ReviewsPage() {
   return (
@@ -161,142 +216,171 @@ export default function ReviewsPage() {
           { name: 'Reviews', url: `${siteConfig.url}/reviews` },
         ]}
       />
-      <FAQSchema items={faqs} />
       <Header />
       <main id="main-content" className="min-h-screen bg-tp-paper">
+        {/* Hero */}
         <section className="px-4 pb-10 pt-28 text-center sm:pt-32">
           <div className="mx-auto max-w-3xl">
-            <h1 className="font-display text-4xl font-normal tracking-tight text-tp-ink sm:text-5xl md:text-6xl">
+            <p className="inline-flex items-center gap-2 rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-4 py-1.5 text-sm font-medium text-tp-bronze-ink">
+              <Quote className="h-4 w-4" />
               Customer Feedback
+            </p>
+            <h1 className="mt-8 font-display text-4xl font-normal tracking-tight text-tp-ink sm:text-5xl md:text-6xl">
+              What Professionals{' '}
+              <span className="italic text-tp-bronze-ink">Are Saying</span>
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-lg text-tp-muted">
-              A look at how people use {siteConfig.name} for professional headshots, dating
-              photos, team photos and pet portraits.
+              See how people across industries use {siteConfig.name} for headshots,
+              team photos, LinkedIn profiles and creative projects.
             </p>
             <p className="mx-auto mt-4 max-w-xl rounded-tp-button border border-tp-line bg-white px-4 py-3 text-sm text-tp-ink/80">
-              These reviews represent typical customer experiences. Names have been changed for
-              privacy.
+              * Illustrative testimonials for demonstration purposes.
             </p>
           </div>
         </section>
 
-        <nav aria-label="Review categories" className="px-4 pb-8">
-          <ul className="mx-auto flex max-w-3xl flex-wrap justify-center gap-2">
-            {categories.map((c) => (
-              <li key={c.id}>
-                <a
-                  href={`#${c.id}`}
-                  className="inline-flex h-10 items-center rounded-tp-button border border-tp-line bg-white px-4 text-sm font-medium text-tp-ink transition-colors hover:border-tp-bronze hover:bg-tp-beige/30"
-                >
-                  {c.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        {/* Trust strip */}
+        <section className="border-y border-tp-line bg-white py-5">
+          <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-10 gap-y-3 px-4 text-sm text-tp-muted">
+            {trustItems.map((item) => {
+              const Icon = item.icon;
+              return (
+                <span key={item.label} className="flex items-center gap-2">
+                  <Icon className="h-4 w-4 text-tp-bronze" />
+                  {item.label}
+                </span>
+              );
+            })}
+          </div>
+        </section>
 
-        <section className="pb-12">
-          <div className="mx-auto max-w-6xl space-y-14 px-4 sm:px-6">
-            {categories.map((c) => (
-              <div key={c.id} id={c.id} className="scroll-mt-28">
-                <div className="mb-5 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                  <h2 className="font-display text-2xl font-normal text-tp-ink md:text-3xl">{c.label}</h2>
-                  <p className="text-sm text-tp-muted">{c.blurb}</p>
-                </div>
-                <div className="grid gap-6 md:grid-cols-2">
-                  {c.items.map((t) => (
-                    <figure
-                      key={t.name + t.context}
-                      className="relative flex flex-col rounded-tp-card border border-tp-line bg-white p-6"
-                    >
-                      <span className="mb-4 w-fit rounded-tp-button bg-tp-beige/40 px-2.5 py-1 text-xs font-medium text-tp-bronze-ink">
-                        Representative example
-                      </span>
-                      <Quote
-                        className="absolute right-5 top-5 h-7 w-7 text-tp-beige"
-                        aria-hidden="true"
-                      />
-                      <blockquote className="flex-1 text-[15px] leading-relaxed text-tp-ink/80">
-                        &ldquo;{t.quote}&rdquo;
-                      </blockquote>
-                      <figcaption className="mt-5 border-t border-tp-line pt-4">
-                        <p className="font-semibold text-tp-ink">{t.name}</p>
-                        <p className="text-sm text-tp-muted">{t.context}</p>
-                      </figcaption>
-                    </figure>
-                  ))}
-                </div>
+        {/* Filter tabs + Reviews grid (CSS-only tabs) */}
+        <section className="py-12">
+          <div className="reviews-filter-group">
+            {/* Hidden radio inputs for CSS-only tab filtering */}
+            {filterTabs.map((tab, i) => (
+              <input
+                key={tab}
+                type="radio"
+                name="review-filter"
+                id={`filter-${tab.toLowerCase()}`}
+                className="peer sr-only"
+                defaultChecked={i === 0}
+                aria-label={`Show ${tab} reviews`}
+              />
+            ))}
+
+            {/* Tab nav */}
+            <nav
+              aria-label="Filter reviews by category"
+              className="mb-10 px-4"
+            >
+              <div className="mx-auto flex max-w-2xl flex-wrap justify-center gap-2">
+                {filterTabs.map((tab) => (
+                  <label
+                    key={tab}
+                    htmlFor={`filter-${tab.toLowerCase()}`}
+                    className="inline-flex h-10 cursor-pointer items-center rounded-tp-button border border-tp-line bg-white px-5 text-sm font-medium text-tp-ink transition-colors hover:border-tp-bronze hover:bg-tp-beige/30 has-[:checked]:border-tp-bronze has-[:checked]:bg-tp-bronze/10 has-[:checked]:text-tp-bronze-ink peer-checked:border-tp-bronze peer-checked:bg-tp-bronze/10 peer-checked:text-tp-bronze-ink [input:checked+&]:border-tp-bronze [input:checked+&]:bg-tp-bronze/10 [input:checked+&]:text-tp-bronze-ink"
+                  >
+                    {tab}
+                  </label>
+                ))}
               </div>
-            ))}
+            </nav>
 
-            <p className="mx-auto max-w-2xl text-center text-xs text-tp-muted">
-              These are representative testimonials that illustrate common use cases. They are
-              not verified reviews, and the portraits used elsewhere on this site are
-              AI-generated concepts, not customer photos.
-            </p>
-          </div>
-        </section>
-
-        <section className="px-4 pb-16 sm:px-6" aria-labelledby="review-faq-heading">
-          <div className="mx-auto max-w-3xl">
-            <h2
-              id="review-faq-heading"
-              className="text-center font-display text-3xl font-normal text-tp-ink md:text-4xl"
-            >
-              About our reviews
-            </h2>
-            <div className="mt-8 space-y-3">
-              {faqs.map((f) => (
-                <details
-                  key={f.question}
-                  className="group rounded-tp-card border border-tp-line bg-white"
-                >
-                  <summary className="flex cursor-pointer items-center justify-between gap-4 px-6 py-4 text-sm font-semibold text-tp-ink">
-                    {f.question}
-                    <ChevronDown
-                      className="h-4 w-4 shrink-0 text-tp-muted transition-transform group-open:rotate-180"
-                      aria-hidden="true"
-                    />
-                  </summary>
-                  <p className="px-6 pb-5 text-sm leading-relaxed text-tp-muted">{f.answer}</p>
-                </details>
-              ))}
+            {/* All tab content */}
+            <div className="mx-auto max-w-6xl px-4 sm:px-6">
+              {filterTabs.map((tab, i) => {
+                const filtered =
+                  tab === 'All' ? reviews : reviews.filter((r) => r.tag === tab);
+                /*
+                 * CSS-only visibility: each panel corresponds to the Nth radio.
+                 * We use the group of radio + sibling selectors via a wrapper
+                 * approach. Since pure CSS sibling selectors across arbitrary
+                 * depths are complex, we use a simple inline style trick with
+                 * the :has() pseudo-class in a style tag below.
+                 */
+                return (
+                  <div
+                    key={tab}
+                    data-tab={tab.toLowerCase()}
+                    className="hidden columns-1 gap-6 sm:columns-2 lg:columns-3"
+                  >
+                    {filtered.map((review) => (
+                      <div key={review.name} className="mb-6 break-inside-avoid">
+                        <ReviewCard review={review} />
+                      </div>
+                    ))}
+                  </div>
+                );
+              })}
             </div>
+
+            {/* CSS-only tab switching via :has() */}
+            <style
+              dangerouslySetInnerHTML={{
+                __html: filterTabs
+                  .map(
+                    (tab) =>
+                      `.reviews-filter-group:has(#filter-${tab.toLowerCase()}:checked) [data-tab="${tab.toLowerCase()}"] { display: columns; column-count: 1; }
+@media (min-width: 640px) { .reviews-filter-group:has(#filter-${tab.toLowerCase()}:checked) [data-tab="${tab.toLowerCase()}"] { column-count: 2; } }
+@media (min-width: 1024px) { .reviews-filter-group:has(#filter-${tab.toLowerCase()}:checked) [data-tab="${tab.toLowerCase()}"] { column-count: 3; } }`
+                  )
+                  .join('\n'),
+              }}
+            />
           </div>
+
+          <p className="mx-auto mt-10 max-w-2xl px-4 text-center text-xs text-tp-muted">
+            * Illustrative testimonials for demonstration purposes. Names and roles
+            are representative. No real individuals or companies are referenced.
+          </p>
         </section>
 
-        <section className="px-4 pb-16 sm:px-6" aria-labelledby="leave-review-heading">
-          <div className="mx-auto max-w-3xl rounded-tp-card border border-tp-line bg-white px-6 py-10 text-center sm:px-10">
-            <h2 id="leave-review-heading" className="font-display text-3xl font-normal text-tp-ink md:text-4xl">
-              Leave a Review
-            </h2>
-            <p className="mx-auto mt-3 max-w-lg text-tp-muted">
-              Used {siteConfig.name}? Tell us how it went. Send your feedback through our contact
-              page and let us know if we may feature it.
-            </p>
-            <Link
-              href="/contact"
-              className={buttonVariants({ variant: 'outline', size: 'lg', className: 'mt-6' })}
-            >
-              Share Your Feedback
-            </Link>
-          </div>
-        </section>
-
+        {/* CTA section */}
         <section className="px-4 pb-20 sm:px-6">
-          <div className="mx-auto max-w-3xl rounded-tp-card border border-tp-line bg-tp-beige/30 px-6 py-12 text-center sm:px-10">
-            <h2 className="font-display text-3xl font-normal text-tp-ink md:text-4xl">
-              Ready to see for yourself?
+          <div className="mx-auto max-w-4xl rounded-tp-card border border-tp-line bg-tp-black px-6 py-14 text-center sm:px-12">
+            <h2 className="font-display text-3xl font-normal text-tp-paper md:text-4xl">
+              Ready to See for Yourself?
             </h2>
-            <p className="mx-auto mt-3 max-w-lg text-tp-muted">
-              Pick a photo type, upload a few selfies and see your results.
+            <p className="mx-auto mt-4 max-w-lg text-tp-beige/70">
+              Upload a few selfies and get studio-quality headshots delivered in
+              under 2 hours. No subscription, no studio appointment needed.
             </p>
-            <Link
-              href="/auth/register"
-              className={buttonVariants({ variant: 'primary', size: 'lg', className: 'mt-8' })}
-            >
-              Get Started
-            </Link>
+            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <Link
+                href="/auth/register"
+                className={buttonVariants({
+                  variant: 'primary',
+                  size: 'lg',
+                  className: 'gap-2',
+                })}
+              >
+                Get Your Headshots
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/pricing"
+                className={buttonVariants({
+                  variant: 'outline',
+                  size: 'lg',
+                  className: 'border-tp-beige/30 text-tp-beige hover:bg-tp-beige/10',
+                })}
+              >
+                View Pricing
+              </Link>
+            </div>
+            <div className="mx-auto mt-8 flex max-w-md flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-tp-beige/60">
+              {trustItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <span key={item.label} className="flex items-center gap-1.5">
+                    <Icon className="h-3.5 w-3.5 text-tp-bronze" />
+                    {item.label}
+                  </span>
+                );
+              })}
+            </div>
           </div>
         </section>
       </main>

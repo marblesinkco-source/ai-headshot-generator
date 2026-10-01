@@ -298,7 +298,6 @@ export default function PricingComparisonPage() {
                 Money-back guarantee
               </li>
             </ul>
-            </div>
           </div>
         </section>
 
