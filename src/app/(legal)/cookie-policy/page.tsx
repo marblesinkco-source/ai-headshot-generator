@@ -42,7 +42,7 @@ const cookieTable: CookieRow[] = [
   {
     name: 'tp_cookie_consent',
     purpose:
-      'Stores your cookie preferences (stored in your browser’s localStorage, not a cookie).',
+      'Stores your cookie preferences (stored in your browser\'s localStorage, not a cookie).',
     type: 'Essential',
     provider: 'TailorPic',
     duration: 'Until you clear it',

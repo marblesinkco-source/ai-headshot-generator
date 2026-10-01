@@ -53,11 +53,11 @@ const processingSteps = [
   },
   {
     title: 'AI model training',
-    text: 'Uploaded photos are used to train a personalized AI model for the individual depicted. This model is created solely to generate that individual’s headshots and is not used to serve other customers.',
+    text: 'Uploaded photos are used to train a personalized AI model for the individual depicted. This model is created solely to generate that individual\'s headshots and is not used to serve other customers.',
   },
   {
     title: 'Result generation',
-    text: 'The personalized model is used to generate the headshots ordered by the Customer, which are then made available for download in the Customer’s account.',
+    text: 'The personalized model is used to generate the headshots ordered by the Customer, which are then made available for download in the Customer\'s account.',
   },
 ];
 
@@ -118,7 +118,7 @@ const subProcessors = [
   {
     name: 'Google Cloud',
     role: 'OAuth provider',
-    text: 'Provides Google Sign-In authentication. Receives only the information needed to verify the user's identity during the sign-in flow.',
+    text: "Provides Google Sign-In authentication. Receives only the information needed to verify the user's identity during the sign-in flow.",
   },
 ];
 

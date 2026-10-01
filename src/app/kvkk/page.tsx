@@ -26,7 +26,7 @@ const dataCategories = [
   { title: 'Müşteri işlem ve ödeme verileri', text: 'Sipariş, kredi paketi ve ödeme bilgileri. Ödeme bilgileri Stripe aracılığıyla işlenir; kart bilgileriniz TailorPic tarafından saklanmaz.' },
   { title: 'Görsel veriler (özel nitelikli kişisel veri)', text: 'Hizmetten yararlanmak amacıyla yüklediğiniz yüz fotoğrafları ve bu fotoğraflardan oluşturulan yapay zekâ görselleri. Yüz fotoğraflarınız, biyometrik veri üretmeye elverişli olması nedeniyle KVKK m. 6 kapsamında özel nitelikli kişisel veri olarak değerlendirilmektedir.' },
   { title: 'İşlem güvenliği verileri', text: 'IP adresi, cihaz ve tarayıcı bilgileri, işletim sistemi, log kayıtları.' },
-  { title: 'Çerez verileri', text: 'Çerezler ve benzeri teknolojiler aracılığıyla toplanan kullanım ve tercih verileri. Ayrıntılar için Çerez Politikası’na bakınız.' },
+  { title: 'Çerez verileri', text: 'Çerezler ve benzeri teknolojiler aracılığıyla toplanan kullanım ve tercih verileri. Ayrıntılar için Çerez Politikası\'na bakınız.' },
 ];
 
 const purposes = [
@@ -108,7 +108,7 @@ export default function KvkkPage() {
               KVKK Aydınlatma Metni
             </h1>
             <p className="mt-4 text-base text-tp-beige">
-              6698 sayılı Kişisel Verilerin Korunması Kanunu’nun 10. maddesi kapsamında hazırlanmıştır.
+              6698 sayılı Kişisel Verilerin Korunması Kanunu\'nun 10. maddesi kapsamında hazırlanmıştır.
             </p>
             <p className="mt-2 text-sm text-tp-beige/70">Son güncelleme: 1 Ekim 2026</p>
           </div>
@@ -116,7 +116,7 @@ export default function KvkkPage() {
 
         <article className="mx-auto max-w-3xl space-y-10 px-4 py-12 sm:py-16">
           <p className="text-base leading-relaxed text-tp-muted">
-            İşbu Aydınlatma Metni, 6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”) m. 10 ve Aydınlatma
+            İşbu Aydınlatma Metni, 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") m. 10 ve Aydınlatma
             Yükümlülüğünün Yerine Getirilmesinde Uyulacak Usul ve Esaslar Hakkında Tebliğ uyarınca, yapay zekâ
             destekli fotoğraf oluşturma hizmeti sunan TailorPic tarafından, kişisel verilerinizin hangi amaçlarla
             işlendiği, kimlere ve hangi amaçla aktarıldığı, toplanma yöntemi, hukuki sebebi ve haklarınız
@@ -125,7 +125,7 @@ export default function KvkkPage() {
 
           <Section n={1} title="Veri Sorumlusu">
             <p>
-              KVKK uyarınca veri sorumlusu TailorPic’tir. Veri sorumlusuna aşağıdaki iletişim bilgileri
+              KVKK uyarınca veri sorumlusu TailorPic\'tir. Veri sorumlusuna aşağıdaki iletişim bilgileri
               aracılığıyla ulaşabilirsiniz:
             </p>
             <div className="rounded-tp-card border border-tp-line bg-white p-5">
@@ -174,7 +174,7 @@ export default function KvkkPage() {
             <p>
               Kişisel verileriniz, yukarıda belirtilen amaçların gerçekleştirilmesi için hizmet sağlayıcılarımıza
               ve yasal olarak yetkili kamu kurum ve kuruluşlarına aktarılabilir. Hizmet altyapımızın bir
-              parçası olarak kişisel verileriniz, aşağıdaki hizmet sağlayıcılara Amerika Birleşik Devletleri’ne
+              parçası olarak kişisel verileriniz, aşağıdaki hizmet sağlayıcılara Amerika Birleşik Devletleri\'ne
               aktarılmaktadır:
             </p>
             <div className="overflow-x-auto rounded-tp-card border border-tp-line bg-white">
@@ -200,7 +200,7 @@ export default function KvkkPage() {
             <p>
               Yurt dışına aktarımlar, KVKK m. 9 ve ilgili mevzuat çerçevesinde, Standart Sözleşme Maddeleri
               (SCC) kapsamında gerçekleştirilmektedir. Standart sözleşmenin imzalanmasının ardından mevzuatta
-              öngörülen süre içinde Kişisel Verileri Koruma Kurumu’na bildirim yapılır. Yüz fotoğraflarınızın
+              öngörülen süre içinde Kişisel Verileri Koruma Kurumu\'na bildirim yapılır. Yüz fotoğraflarınızın
               yurt dışındaki hizmet sağlayıcılara aktarımı için ayrıca açık rızanız alınır.
             </p>
           </Section>
@@ -243,11 +243,11 @@ export default function KvkkPage() {
               </a>{' '}
               adresine e-posta yoluyla iletebilirsiniz. Başvurunuz, talebin niteliğine göre en kısa sürede ve
               en geç otuz (30) gün içinde ücretsiz olarak sonuçlandırılır. İşlemin ayrıca bir maliyet
-              gerektirmesi hâlinde Kişisel Verileri Koruma Kurulu’nca belirlenen tarifedeki ücret alınabilir.
+              gerektirmesi hâlinde Kişisel Verileri Koruma Kurulu\'nca belirlenen tarifedeki ücret alınabilir.
             </p>
             <p>
               Başvurunuza verilen cevabı yetersiz bulmanız veya süresinde cevap verilmemesi hâlinde,
-              KVKK m. 14 uyarınca Kişisel Verileri Koruma Kurulu’na şikâyette bulunma hakkınız saklıdır.
+              KVKK m. 14 uyarınca Kişisel Verileri Koruma Kurulu\'na şikâyette bulunma hakkınız saklıdır.
             </p>
           </Section>
 

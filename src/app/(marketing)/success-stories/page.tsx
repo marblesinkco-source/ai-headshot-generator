@@ -101,7 +101,7 @@ const outcomes: Outcome[] = [
     icon: Zap,
     title: 'Faster turnaround than scheduling photoshoots',
     description:
-      'Skip the back-and-forth of finding a photographer, a date, and a location. Upload selfies and receive your headshots without waiting on anyone else’s calendar.',
+      'Skip the back-and-forth of finding a photographer, a date, and a location. Upload selfies and receive your headshots without waiting on anyone else\'s calendar.',
   },
   {
     icon: Wallet,

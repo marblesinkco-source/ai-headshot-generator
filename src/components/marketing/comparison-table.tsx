@@ -65,7 +65,7 @@ const rows: {
     feature: 'Privacy',
     icon: Shield,
     traditional: { text: 'Depends on photographer' },
-    otherAi: { text: 'Check each provider’s policy' },
+    otherAi: { text: "Check each provider's policy" },
     tailorpic: { text: 'Photos auto-deleted within 30 days', ok: true },
   },
 ];
