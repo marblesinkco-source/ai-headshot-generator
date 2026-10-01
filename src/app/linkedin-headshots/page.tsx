@@ -15,6 +15,10 @@ import {
   Star,
   Upload,
   Download,
+  Eye,
+  Users,
+  Briefcase,
+  X,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -38,7 +42,27 @@ const faqs = [
   {
     question: 'What size should a LinkedIn profile photo be?',
     answer:
-      'LinkedIn displays profile photos as a square crop, and a higher-resolution square image keeps your face sharp. TailorPic delivers high-resolution photos that crop cleanly for LinkedIn.',
+      'A square image of at least 400x400 pixels is the commonly recommended size. LinkedIn shows your photo in a circle, so keep your face centered with a little room around it. Check LinkedIn\'s help pages for its current file requirements.',
+  },
+  {
+    question: 'Should I smile in my LinkedIn photo?',
+    answer:
+      'A natural, relaxed expression usually comes across as approachable. Choose whichever look fits your industry and personality, as long as it still looks like you.',
+  },
+  {
+    question: 'What should I wear in my LinkedIn headshot?',
+    answer:
+      'Dress as you would for a client meeting or interview in your field. Solid, simple clothing keeps attention on your face. TailorPic offers several outfit options so you can match your industry.',
+  },
+  {
+    question: 'How often should I update my LinkedIn photo?',
+    answer:
+      'Update it whenever your appearance changes noticeably, or when you change roles or move into a new industry. Your photo should look like the person someone will meet.',
+  },
+  {
+    question: 'Will recruiters be able to tell my photo is AI-generated?',
+    answer:
+      'Your headshots are generated from your own selfies, so the goal is a polished photo that looks like you. We recommend choosing images that accurately represent your current appearance.',
   },
   {
     question: 'Can I use AI-generated headshots on LinkedIn?',
@@ -59,7 +83,7 @@ const faqs = [
 
 const whyItMatters = [
   'Your photo is often the first thing recruiters, clients and colleagues see next to your name.',
-  'Studies suggest profiles with a professional photo tend to receive significantly more views than profiles without one.',
+  'A profile with a clear, professional photo gives visitors a reason to stay and read the rest of it.',
   'A clear, friendly photo can make connection requests and messages feel more trustworthy.',
   'People form impressions of competence and approachability within moments of seeing a face.',
   'An outdated or casual photo can undercut an otherwise strong profile.',
@@ -77,6 +101,47 @@ const transformation = [
   { title: 'Clean backgrounds', description: 'Distracting rooms, walls and outdoor clutter are replaced with polished, professional backdrops.' },
   { title: 'Proper framing', description: 'Head-and-shoulders composition with your face centered and sized well for a small profile circle.' },
   { title: 'Professional lighting', description: 'Even, flattering light replaces harsh shadows, glare and low-light selfie grain.' },
+];
+
+const specs = [
+  { label: 'Recommended minimum size', value: '400 x 400 px', note: 'A square image keeps your face sharp in every place LinkedIn shows it.' },
+  { label: 'Aspect ratio', value: 'Square (1:1)', note: 'LinkedIn crops to a circle, so center your face with room around it.' },
+  { label: 'File format', value: 'JPG or PNG', note: 'Both are widely supported. Check LinkedIn for its current limits.' },
+  { label: 'Framing', value: 'Head and shoulders', note: 'Your face should fill most of the frame so it stays readable when small.' },
+];
+
+const practices = [
+  { title: 'Keep it current', description: 'Use a photo that looks like you today so the person who meets you matches the profile.' },
+  { title: 'Make your face the focus', description: 'Use close, head-and-shoulders framing. Tiny profile circles reward a face that fills the frame.' },
+  { title: 'Choose a simple background', description: 'Neutral, uncluttered backdrops keep attention on you instead of the room behind you.' },
+  { title: 'Dress for your industry', description: 'Match the attire your clients, colleagues or hiring managers would expect to see.' },
+  { title: 'Look approachable', description: 'A natural, relaxed expression tends to feel more inviting than a stiff pose.' },
+  { title: 'Be the only person in frame', description: 'Crops from group photos and cut-off shoulders can look unfinished.' },
+];
+
+const checklist = [
+  'Your face is clearly visible, with eyes open and unobstructed',
+  'Lighting is even, without harsh shadows or glare',
+  'The background is simple and does not compete with you',
+  'You are the only person in the photo',
+  'Framing is head and shoulders, centered for a circular crop',
+  'The image is sharp and at least 400x400 pixels',
+  'Your attire suits your industry',
+  'It looks like you right now',
+];
+
+const avoid = [
+  'Cropped group photos or party snapshots',
+  'Heavy filters, sunglasses or hats that hide your face',
+  'Dark, grainy or low-resolution selfies',
+  'Busy backgrounds or distracting objects',
+  'Photos that are years out of date',
+];
+
+const scenarios = [
+  { icon: Briefcase, label: 'Job seeker', situation: 'Updating a profile before applying for new roles, with only casual phone photos available.', outcome: 'A clean, professional headshot to use alongside the resume and cover letter.' },
+  { icon: Users, label: 'Sales professional', situation: 'Reaching out to new prospects who will look at the profile before replying.', outcome: 'A friendly, credible photo that matches the tone of the outreach.' },
+  { icon: Eye, label: 'Consultant', situation: 'Wanting a consistent look across LinkedIn, a personal site and proposals.', outcome: 'A set of matching headshots in a few styles to use across channels.' },
 ];
 
 const personas = [
@@ -127,25 +192,44 @@ export default function LinkedInHeadshotsPage() {
 
       {/* Hero */}
       <section className="bg-tp-paper px-4 py-20 sm:py-28">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-4 text-sm font-medium uppercase tracking-wide text-tp-bronze-ink">
-            LinkedIn Profile Photos
-          </p>
-          <h1 className="text-4xl font-bold tracking-tight text-tp-ink sm:text-5xl">
-            LinkedIn Headshots That Get You Noticed
-          </h1>
-          <p className="mt-6 text-lg text-tp-muted">
-            Your LinkedIn photo is your first impression. Turn a few selfies into polished,
-            professional headshots that help you look credible, confident and approachable.
-          </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
-              Get your LinkedIn headshot
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link href="/samples" className={buttonVariants({ variant: 'outline', size: 'lg' })}>
-              See sample photos
-            </Link>
+        <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
+          <div className="text-center lg:text-left">
+            <p className="mb-4 text-sm font-medium uppercase tracking-wide text-tp-bronze-ink">
+              AI LinkedIn Headshots
+            </p>
+            <h1 className="font-display text-4xl font-bold tracking-tight text-tp-ink sm:text-5xl">
+              Get More Profile Views With a LinkedIn Headshot That Stands Out
+            </h1>
+            <p className="mt-6 text-lg text-tp-muted">
+              Stand out to recruiters, clients and connections. Turn a few selfies into
+              polished, professional LinkedIn photos without booking a photographer.
+            </p>
+            <ul className="mt-6 space-y-2 text-left text-tp-muted">
+              {['Look credible and approachable at a glance', 'Framed for the square LinkedIn photo crop', 'No studio, no scheduling, no travel'].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <Check className="mt-1 h-5 w-5 shrink-0 text-tp-bronze-ink" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row lg:items-start">
+              <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
+                Get your LinkedIn headshot
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link href="/samples" className={buttonVariants({ variant: 'outline', size: 'lg' })}>
+                See sample photos
+              </Link>
+            </div>
+          </div>
+          <div className="mx-auto w-full max-w-sm" aria-hidden="true">
+            <div className="rounded-tp-card border border-tp-line bg-white p-6">
+              <div className="mx-auto flex h-40 w-40 items-center justify-center rounded-full bg-gradient-to-br from-tp-beige to-tp-bronze">
+                <Camera className="h-10 w-10 text-tp-ink/60" />
+              </div>
+              <p className="mt-5 text-center text-sm font-medium text-tp-ink">Your LinkedIn photo</p>
+              <p className="mt-1 text-center text-xs text-tp-muted">Placeholder illustration</p>
+            </div>
           </div>
         </div>
       </section>
@@ -153,7 +237,7 @@ export default function LinkedInHeadshotsPage() {
       {/* Why it matters */}
       <section className="px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-center text-3xl font-bold text-tp-ink">
+          <h2 className="font-display text-center text-3xl font-bold text-tp-ink">
             Why Your LinkedIn Photo Matters
           </h2>
           <ul className="mt-8 space-y-4">
@@ -167,15 +251,77 @@ export default function LinkedInHeadshotsPage() {
         </div>
       </section>
 
+      {/* LinkedIn photo requirements & best practices */}
+      <section className="bg-tp-paper px-4 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="font-display text-center text-3xl font-bold text-tp-ink">
+            LinkedIn Profile Photo Requirements and Best Practices
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-tp-muted">
+            Get the basics right so your photo looks sharp everywhere it appears.
+          </p>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {specs.map((sp) => (
+              <div key={sp.label} className="rounded-tp-card border border-tp-line bg-white p-5">
+                <p className="text-xs font-medium uppercase tracking-wide text-tp-bronze-ink">{sp.label}</p>
+                <p className="font-display mt-2 text-xl font-semibold text-tp-ink">{sp.value}</p>
+                <p className="mt-2 text-sm text-tp-muted">{sp.note}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {practices.map((pr) => (
+              <div key={pr.title} className="rounded-tp-card border border-tp-line bg-white p-6">
+                <h3 className="font-display text-lg font-semibold text-tp-ink">{pr.title}</h3>
+                <p className="mt-2 text-sm text-tp-muted">{pr.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Checklist */}
+      <section className="px-4 py-16 sm:py-20">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="font-display text-center text-3xl font-bold text-tp-ink">
+            What Makes a Great LinkedIn Photo
+          </h2>
+          <div className="mt-10 grid gap-6 md:grid-cols-5">
+            <div className="rounded-tp-card border border-tp-line bg-white p-6 md:col-span-3">
+              <h3 className="font-display text-lg font-semibold text-tp-ink">Checklist</h3>
+              <ul className="mt-4 space-y-3">
+                {checklist.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm text-tp-muted">
+                    <Check className="mt-0.5 h-5 w-5 shrink-0 text-tp-bronze-ink" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-tp-card border border-tp-line bg-tp-paper p-6 md:col-span-2">
+              <h3 className="font-display text-lg font-semibold text-tp-ink">Best to avoid</h3>
+              <ul className="mt-4 space-y-3">
+                {avoid.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm text-tp-muted">
+                    <X className="mt-0.5 h-5 w-5 shrink-0 text-tp-bronze-ink" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* What you get */}
       <section className="bg-tp-paper px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-center text-3xl font-bold text-tp-ink">What You Get</h2>
+          <h2 className="font-display text-center text-3xl font-bold text-tp-ink">What You Get</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((f) => (
               <div key={f.title} className="rounded-tp-card border border-tp-line bg-white p-6">
                 <f.icon className="h-6 w-6 text-tp-bronze-ink" />
-                <h3 className="mt-4 text-lg font-semibold text-tp-ink">{f.title}</h3>
+                <h3 className="font-display mt-4 text-lg font-semibold text-tp-ink">{f.title}</h3>
                 <p className="mt-2 text-sm text-tp-muted">{f.description}</p>
               </div>
             ))}
@@ -186,11 +332,32 @@ export default function LinkedInHeadshotsPage() {
       {/* Before / After */}
       <section className="px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-center text-3xl font-bold text-tp-ink">
+          <h2 className="font-display text-center text-3xl font-bold text-tp-ink">
             From Everyday Selfie to Professional Headshot
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-tp-muted">
             Here is the kind of transformation to expect.
+          </p>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+            <figure>
+              <div className="flex aspect-[4/3] items-center justify-center rounded-tp-card border border-tp-line bg-gradient-to-br from-tp-line via-tp-paper to-tp-beige">
+                <Camera className="h-10 w-10 text-tp-muted" aria-hidden="true" />
+              </div>
+              <figcaption className="mt-3 text-center text-sm text-tp-muted">
+                <span className="font-semibold text-tp-ink">Before:</span> everyday selfie (placeholder)
+              </figcaption>
+            </figure>
+            <figure>
+              <div className="flex aspect-[4/3] items-center justify-center rounded-tp-card border border-tp-line bg-gradient-to-br from-tp-bronze via-tp-beige to-tp-paper">
+                <Sparkles className="h-10 w-10 text-tp-bronze-ink" aria-hidden="true" />
+              </div>
+              <figcaption className="mt-3 text-center text-sm text-tp-muted">
+                <span className="font-semibold text-tp-ink">After:</span> professional headshot (placeholder)
+              </figcaption>
+            </figure>
+          </div>
+          <p className="mt-3 text-center text-xs text-tp-muted">
+            Illustrative placeholders. <Link href="/samples" className="underline hover:text-tp-bronze-ink">See real sample photos</Link>.
           </p>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {transformation.map((t, i) => (
@@ -198,7 +365,7 @@ export default function LinkedInHeadshotsPage() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-tp-button bg-tp-beige/40 text-sm font-semibold text-tp-bronze-ink">
                   {i + 1}
                 </div>
-                <h3 className="mt-4 text-lg font-semibold text-tp-ink">{t.title}</h3>
+                <h3 className="font-display mt-4 text-lg font-semibold text-tp-ink">{t.title}</h3>
                 <p className="mt-2 text-sm text-tp-muted">{t.description}</p>
               </div>
             ))}
@@ -214,14 +381,47 @@ export default function LinkedInHeadshotsPage() {
       {/* Who benefits */}
       <section className="bg-tp-paper px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-center text-3xl font-bold text-tp-ink">Who Benefits</h2>
+          <h2 className="font-display text-center text-3xl font-bold text-tp-ink">Who Benefits</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {personas.map((p) => (
               <div key={p.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                <h3 className="text-lg font-semibold text-tp-ink">{p.title}</h3>
+                <h3 className="font-display text-lg font-semibold text-tp-ink">{p.title}</h3>
                 <p className="mt-2 text-sm text-tp-muted">{p.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Representative examples */}
+      <section className="bg-tp-paper px-4 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="font-display text-center text-3xl font-bold text-tp-ink">
+            How People Use LinkedIn Headshots
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-tp-muted">
+            Representative examples of common situations, not customer testimonials.
+          </p>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {scenarios.map((sc) => (
+              <div key={sc.label} className="rounded-tp-card border border-tp-line bg-white p-6">
+                <span className="inline-block rounded-tp-button bg-tp-beige/40 px-3 py-1 text-xs font-medium uppercase tracking-wide text-tp-bronze-ink">
+                  Representative example
+                </span>
+                <div className="mt-4 flex items-center gap-3">
+                  <sc.icon className="h-6 w-6 text-tp-bronze-ink" />
+                  <h3 className="font-display text-lg font-semibold text-tp-ink">{sc.label}</h3>
+                </div>
+                <p className="mt-3 text-sm text-tp-muted"><span className="font-semibold text-tp-ink">Situation:</span> {sc.situation}</p>
+                <p className="mt-2 text-sm text-tp-muted"><span className="font-semibold text-tp-ink">Goal:</span> {sc.outcome}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
+              Create your LinkedIn headshot
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
@@ -230,7 +430,7 @@ export default function LinkedInHeadshotsPage() {
       <section className="px-4 py-16">
         <div className="mx-auto max-w-2xl rounded-tp-card border border-tp-line bg-white p-8 text-center">
           <DollarSign className="mx-auto h-7 w-7 text-tp-bronze-ink" />
-          <h2 className="mt-3 text-3xl font-bold text-tp-ink">Starting from $9.90</h2>
+          <h2 className="font-display mt-3 text-3xl font-bold text-tp-ink">Starting from $9.90</h2>
           <p className="mt-3 text-tp-muted">
             A fraction of the cost of a studio session, with no scheduling or travel.
           </p>
@@ -244,7 +444,7 @@ export default function LinkedInHeadshotsPage() {
       {/* Related tools */}
       <section className="bg-tp-paper px-4 py-16">
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-center text-2xl font-bold text-tp-ink">Free Tools</h2>
+          <h2 className="font-display text-center text-2xl font-bold text-tp-ink">Free Tools</h2>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {tools.map((t) => (
               <Link
@@ -252,7 +452,7 @@ export default function LinkedInHeadshotsPage() {
                 href={t.href}
                 className="group rounded-tp-card border border-tp-line bg-white p-5 transition-colors hover:border-tp-bronze"
               >
-                <h3 className="flex items-center justify-between font-semibold text-tp-ink">
+                <h3 className="font-display flex items-center justify-between font-semibold text-tp-ink">
                   {t.title}
                   <ArrowRight className="h-4 w-4 text-tp-bronze-ink transition-transform group-hover:translate-x-1" />
                 </h3>
@@ -266,7 +466,7 @@ export default function LinkedInHeadshotsPage() {
       {/* FAQ */}
       <section className="px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-center text-3xl font-bold text-tp-ink">LinkedIn Headshot FAQ</h2>
+          <h2 className="font-display text-center text-3xl font-bold text-tp-ink">LinkedIn Headshot FAQ</h2>
           <div className="mt-10 space-y-3">
             {faqs.map((faq) => (
               <details key={faq.question} className="rounded-tp-card border border-tp-line bg-white p-5">
@@ -283,7 +483,7 @@ export default function LinkedInHeadshotsPage() {
       {/* Final CTA */}
       <section className="px-4 pb-20">
         <div className="mx-auto max-w-2xl rounded-tp-card bg-tp-ink px-6 py-12 text-center">
-          <h2 className="text-3xl font-bold text-white">Get Your LinkedIn Headshot Today</h2>
+          <h2 className="font-display text-3xl font-bold text-white">Get Your LinkedIn Headshot Today</h2>
           <p className="mt-3 text-tp-beige">
             Upload a few selfies and show up with a profile photo you are proud of.
           </p>
