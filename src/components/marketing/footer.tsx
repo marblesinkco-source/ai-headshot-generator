@@ -261,6 +261,28 @@ export function Footer() {
         <EmailCapture />
       </div>
 
+      {/* Trust badges */}
+      <div className="border-t border-tp-muted/20">
+        <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 py-3 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+          <span className="flex items-center gap-1.5 text-[11px] text-tp-beige/40">
+            <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg>
+            256-bit SSL Encrypted
+          </span>
+          <span className="flex items-center gap-1.5 text-[11px] text-tp-beige/40">
+            <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
+            GDPR Compliant
+          </span>
+          <span className="flex items-center gap-1.5 text-[11px] text-tp-beige/40">
+            <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            SOC 2 Type II
+          </span>
+          <span className="flex items-center gap-1.5 text-[11px] text-tp-beige/40">
+            <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" /></svg>
+            99.9% Uptime
+          </span>
+        </div>
+      </div>
+
       {/* Bottom bar */}
       <div className="border-t border-tp-muted/20">
         <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
@@ -268,9 +290,17 @@ export function Footer() {
             &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </span>
           <span className="text-[11px] text-tp-beige/40 flex items-center gap-4">
-            <span className="flex items-center gap-1">
-              <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" /></svg>
-              Secure payments via Stripe
+            <span className="flex items-center gap-2">
+              <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" /></svg>
+              <span className="mr-1">Secure payments</span>
+              {/* Visa */}
+              <svg className="h-5 w-auto opacity-60" viewBox="0 0 38 24" fill="none" aria-label="Visa"><rect width="38" height="24" rx="3" fill="currentColor" opacity="0.15"/><text x="19" y="15.5" textAnchor="middle" fill="currentColor" fontSize="10" fontWeight="bold" fontStyle="italic" fontFamily="sans-serif">VISA</text></svg>
+              {/* Mastercard - two overlapping circles */}
+              <svg className="h-5 w-auto opacity-60" viewBox="0 0 38 24" fill="none" aria-label="Mastercard"><rect width="38" height="24" rx="3" fill="currentColor" opacity="0.15"/><circle cx="15" cy="12" r="6" fill="currentColor" opacity="0.4"/><circle cx="23" cy="12" r="6" fill="currentColor" opacity="0.4"/></svg>
+              {/* Amex */}
+              <svg className="h-5 w-auto opacity-60" viewBox="0 0 38 24" fill="none" aria-label="Amex"><rect width="38" height="24" rx="3" fill="currentColor" opacity="0.15"/><text x="19" y="15" textAnchor="middle" fill="currentColor" fontSize="7.5" fontWeight="bold" fontFamily="sans-serif">AMEX</text></svg>
+              {/* Apple Pay */}
+              <svg className="h-5 w-auto opacity-60" viewBox="0 0 38 24" fill="none" aria-label="Apple Pay"><rect width="38" height="24" rx="3" fill="currentColor" opacity="0.15"/><path d="M11.678 7.5c-.47.56-.98 1-1.72.94-.08-.74.27-1.53.7-2.01.47-.53 1.08-.88 1.69-.92.07.77-.22 1.52-.67 1.99zm.67.99c-.95-.06-1.76.54-2.21.54-.46 0-1.16-.51-1.92-.5-.99.02-1.9.58-2.41 1.47-1.03 1.78-.26 4.43.74 5.88.49.72 1.08 1.52 1.86 1.49.74-.03 1.03-.48 1.93-.48.9 0 1.16.48 1.94.46.8-.01 1.31-.72 1.8-1.45.56-.82.79-1.61.8-1.65-.02-.01-1.54-.59-1.55-2.35-.01-1.47 1.2-2.17 1.26-2.21-.69-1.02-1.76-1.13-2.14-1.16l-.1-.04z" fill="currentColor"/><text x="27" y="15" textAnchor="middle" fill="currentColor" fontSize="5.5" fontWeight="600" fontFamily="sans-serif">Pay</text></svg>
             </span>
             <span className="hidden sm:inline italic">{siteConfig.tagline}</span>
           </span>

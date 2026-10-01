@@ -9,6 +9,7 @@ export function OrganizationSchema() {
     url: siteConfig.url,
     logo: `${siteConfig.url}${siteConfig.ogImage}`,
     description: siteConfig.description,
+    foundingDate: '2024',
     sameAs: [
       siteConfig.links.twitter,
       siteConfig.links.linkedin,
@@ -22,6 +23,11 @@ export function OrganizationSchema() {
       email: siteConfig.supportEmail,
       contactType: 'customer support',
     },
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'US',
+    },
+    areaServed: 'Worldwide',
   };
 
   return (
@@ -59,32 +65,68 @@ export function ProductSchema({
   price,
   category,
   slug,
+  image,
+  sku,
 }: {
   name: string;
   description: string;
   price: number;
   category: string;
   slug: string;
+  image?: string;
+  sku?: string;
 }) {
+  const productUrl = `${siteConfig.url}/${slug}`;
   const data = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name,
     description,
+    ...(image && { image }),
+    ...(sku && { sku }),
     brand: {
       '@type': 'Brand',
       name: siteConfig.name,
     },
     category,
-    url: `${siteConfig.url}/${slug}`,
+    url: productUrl,
     offers: {
       '@type': 'Offer',
       price: price / 100,
       priceCurrency: 'USD',
       availability: 'https://schema.org/InStock',
+      priceValidUntil: '2025-12-31',
+      url: productUrl,
       seller: {
         '@type': 'Organization',
         name: siteConfig.name,
+      },
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        shippingRate: {
+          '@type': 'MonetaryAmount',
+          value: '0',
+          currency: 'USD',
+        },
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          businessDays: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 0,
+          },
+        },
+        shippingDestination: {
+          '@type': 'DefinedRegion',
+          addressCountry: 'US',
+        },
+      },
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        applicableCountry: 'US',
+        returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+        merchantReturnDays: 14,
+        merchantReturnLink: `${siteConfig.url}/refund-policy`,
       },
     },
   };
@@ -156,6 +198,8 @@ export function SoftwareApplicationSchema() {
     operatingSystem: 'Web',
     url: siteConfig.url,
     description: siteConfig.description,
+    screenshot: `${siteConfig.url}/brand/tailorpic/web/og-tailorpic-1200x630.jpg`,
+    featureList: 'AI Headshots, Professional Photos, LinkedIn Photos, Team Photos, 40+ Styles',
     offers: {
       '@type': 'Offer',
       price: '9.90',
@@ -211,6 +255,25 @@ export function ArticleSchema({
       '@type': 'WebPage',
       '@id': `${siteConfig.url}/blog/${slug}`,
     },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+export function MerchantReturnPolicySchema() {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'MerchantReturnPolicy',
+    name: '14-Day Money-Back Guarantee',
+    applicableCountry: 'US',
+    returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+    merchantReturnDays: 14,
+    merchantReturnLink: `${siteConfig.url}/refund-policy`,
   };
 
   return (

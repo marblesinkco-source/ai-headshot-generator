@@ -1,6 +1,8 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
+import { DollarSign, Clock, ShieldCheck, Trash2 } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Button } from '@/components/ui/button';
@@ -11,7 +13,7 @@ import {
 } from '@/config/categories';
 import { siteConfig } from '@/config/site';
 import { formatPrice } from '@/lib/utils';
-import { ProductSchema, BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 
 interface Props {
   params: Promise<{ category: string }>;
@@ -57,15 +59,76 @@ export default async function CategoryPage({ params }: Props) {
 
   const lowestPrice = Math.min(...cat.packages.map((p) => p.price));
 
+  const allCategories = getActiveCategories();
+  const relatedCategories = allCategories
+    .filter((c) => c.id !== cat.id)
+    .sort(() => 0.5 - Math.random())
+    .slice(0, 3);
+
+  const faqItems = [
+    {
+      question: 'How many photos do I need to upload?',
+      answer:
+        'Upload 10-20 clear selfies with varied angles, expressions, and lighting. The more variety you provide, the better results our AI can generate.',
+    },
+    {
+      question: 'How long does it take?',
+      answer:
+        'About 2 hours from upload to download. You will receive an email notification as soon as your photos are ready.',
+    },
+    {
+      question: 'Can I get a refund?',
+      answer:
+        'Yes, we offer a 14-day money-back guarantee. If you are not satisfied with your results, contact our support team for a full refund.',
+    },
+    {
+      question: 'What resolution are the photos?',
+      answer:
+        'All photos are high-resolution, suitable for both print and web use. Premium packages include 4K resolution output.',
+    },
+  ];
+
+  const productJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: cat.name,
+    description: cat.seoDescription,
+    image: `${siteConfig.url}/images/categories/${cat.id}.jpg`,
+    sku: cat.id,
+    brand: {
+      '@type': 'Brand',
+      name: siteConfig.name,
+    },
+    category: 'AI Photo Generation',
+    url: `${siteConfig.url}/${cat.slug}`,
+    offers: {
+      '@type': 'Offer',
+      price: lowestPrice / 100,
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      seller: {
+        '@type': 'Organization',
+        name: siteConfig.name,
+      },
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        applicableCountry: 'US',
+        returnPolicyCategory:
+          'https://schema.org/MerchantReturnFiniteReturnWindow',
+        merchantReturnDays: 14,
+        returnMethod: 'https://schema.org/ReturnByMail',
+        returnFees: 'https://schema.org/FreeReturn',
+      },
+    },
+  };
+
   return (
     <main id="main-content" className="min-h-screen">
-      <ProductSchema
-        name={cat.name}
-        description={cat.seoDescription}
-        price={lowestPrice}
-        category="AI Photo Generation"
-        slug={cat.slug}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
       />
+      <FAQSchema items={faqItems} />
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
         { name: cat.name, url: `${siteConfig.url}/${cat.slug}` },
@@ -216,6 +279,25 @@ export default async function CategoryPage({ params }: Props) {
         </div>
       </section>
 
+      {/* Trust strip */}
+      <section className="bg-tp-paper py-12 border-t border-tp-line/40">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
+            {[
+              { icon: DollarSign, text: '$9.90 one-time, no subscription' },
+              { icon: Clock, text: 'Ready in ~2 hours' },
+              { icon: ShieldCheck, text: '14-day money-back guarantee' },
+              { icon: Trash2, text: 'Your data deleted within 30 days' },
+            ].map((item) => (
+              <div key={item.text} className="flex items-start gap-3">
+                <item.icon className="h-5 w-5 flex-shrink-0 text-tp-bronze-ink mt-0.5" />
+                <span className="text-sm text-tp-muted">{item.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Upload requirements */}
       <section className="bg-white py-20 border-t border-tp-line/40">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
@@ -236,6 +318,74 @@ export default async function CategoryPage({ params }: Props) {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 bg-tp-paper">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center font-display text-3xl font-normal text-tp-black">
+            Frequently Asked Questions
+          </h2>
+          <div className="mt-10 space-y-3">
+            {faqItems.map((item) => (
+              <details
+                key={item.question}
+                className="group rounded-tp-button border border-tp-line bg-white"
+              >
+                <summary className="flex cursor-pointer items-center justify-between gap-4 px-6 py-4 text-tp-ink font-medium list-none [&::-webkit-details-marker]:hidden">
+                  {item.question}
+                  <svg
+                    className="h-5 w-5 flex-shrink-0 text-tp-muted transition-transform group-open:rotate-180"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </summary>
+                <div className="px-6 pb-5 text-sm leading-relaxed text-tp-muted">
+                  {item.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related categories */}
+      <section className="bg-white py-20 border-t border-tp-line/40">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center font-display text-3xl font-normal text-tp-black">
+            Explore Other Styles
+          </h2>
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            {relatedCategories.map((related) => (
+              <Link
+                key={related.id}
+                href={`/${related.slug}`}
+                className="group overflow-hidden rounded-tp-card border border-tp-line bg-white transition-shadow hover:shadow-lg"
+              >
+                <div className="aspect-[16/9] overflow-hidden bg-tp-beige">
+                  <Image
+                    src={`/images/categories/${related.id}.jpg`}
+                    alt={related.name}
+                    width={480}
+                    height={270}
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes="(min-width: 640px) 33vw, 100vw"
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-semibold text-tp-ink">{related.name}</h3>
+                  <p className="mt-1 text-sm text-tp-muted line-clamp-2">
+                    {related.tagline}
+                  </p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

@@ -29,8 +29,8 @@ export function Hero() {
                 id="tp-title"
                 className="font-display text-[clamp(48px,5.6vw,86px)] leading-[1.04] tracking-[-0.057em] font-normal mb-6 max-w-[720px]"
               >
-                Your Best Photo,<br />
-                <em className="text-tp-bronze-ink not-italic font-normal font-display italic">Tailored</em> by AI.
+                Professional{' '}<em className="text-tp-bronze-ink not-italic font-normal font-display italic">AI&nbsp;Headshots</em><br />
+                in Under 2&nbsp;Hours
               </h1>
 
               <p className="text-[16px] text-tp-ink/80 leading-[1.7] max-w-[485px] mb-4">
@@ -56,6 +56,18 @@ export function Hero() {
                 </a>
               </div>
 
+              {/* Friction reducer */}
+              <div className="flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-tp-muted mt-2">
+                <span className="inline-flex items-center gap-1">
+                  <svg className="h-3 w-3 text-tp-bronze-ink" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                  No credit card needed
+                </span>
+                <span className="inline-flex items-center gap-1">
+                  <svg className="h-3 w-3 text-tp-bronze-ink" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                  Cancel anytime
+                </span>
+              </div>
+
               {/* Trust signals */}
               <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-[12px] font-medium text-tp-ink" aria-label="Why buy with confidence">
                 {[
@@ -70,38 +82,10 @@ export function Hero() {
                 ))}
               </ul>
 
-              {/* How it works mini-steps */}
-              <ol className="mt-7 flex max-w-[485px] items-start gap-2" aria-label="How it works">
-                {[
-                  { n: 'Upload', sub: 'A few selfies', d: 'M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 4v12m0-12L8 8m4-4l4 4' },
-                  { n: 'AI processes', sub: 'Tailored to you', d: 'M5 3v4M3 5h4M6 17v4M4 19h4M13 3l2.5 6.5L22 12l-6.5 2.5L13 21l-2.5-6.5L4 12l6.5-2.5L13 3z' },
-                  { n: 'Get photos', sub: '40+ in ~2 hours', d: 'M4 7h3l2-2h6l2 2h3a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V8a1 1 0 011-1zm8 9a3.5 3.5 0 100-7 3.5 3.5 0 000 7z' },
-                ].map((st, i) => (
-                  <li key={st.n} className="flex flex-1 items-start gap-2">
-                    <div className="flex flex-col items-center text-center flex-1">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-full border border-tp-line bg-[#FEFCF8] text-tp-bronze-ink">
-                        <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d={st.d} /></svg>
-                      </span>
-                      <span className="mt-2 text-[12px] font-semibold text-tp-ink">{i + 1}. {st.n}</span>
-                      <span className="text-[11px] text-tp-muted">{st.sub}</span>
-                    </div>
-                    {i < 2 && <span aria-hidden="true" className="mt-2 text-[18px] leading-none text-tp-line">&rarr;</span>}
-                  </li>
-                ))}
-              </ol>
-
-              {/* Before / after (placeholder visuals) */}
-              <div className="mt-7 flex max-w-[485px] items-center gap-3" aria-label="Selfie to AI headshot transformation">
-                <figure className="flex-1 m-0">
-                  <div className="aspect-[4/5] rounded-tp-card border border-tp-line bg-gradient-to-br from-tp-line via-tp-beige/60 to-tp-muted/30" role="img" aria-label="Placeholder for a casual selfie" />
-                  <figcaption className="mt-2 text-center text-[11px] font-semibold text-tp-muted">Your selfie</figcaption>
-                </figure>
-                <span aria-hidden="true" className="text-[26px] leading-none text-tp-bronze-ink">&rarr;</span>
-                <figure className="flex-1 m-0">
-                  <div className="aspect-[4/5] rounded-tp-card border border-tp-bronze bg-gradient-to-br from-tp-bronze via-tp-beige to-tp-paper" role="img" aria-label="Placeholder for an AI headshot" />
-                  <figcaption className="mt-2 text-center text-[11px] font-semibold text-tp-bronze-ink">AI headshot</figcaption>
-                </figure>
-              </div>
+              {/* Micro social proof */}
+              <p className="text-[11px] text-tp-muted/60 mt-3 italic">
+                Trusted by professionals at companies worldwide
+              </p>
             </div>
 
             {/* Mobile product chooser (between copy and hero image on mobile) */}
