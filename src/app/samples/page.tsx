@@ -166,6 +166,24 @@ export default function SamplesPage() {
         { name: 'Home', url: siteConfig.url },
         { name: 'Samples', url: `${siteConfig.url}/samples` },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            name: `AI Headshot Samples | ${siteConfig.name}`,
+            description:
+              'Browse sample AI-generated professional headshots across LinkedIn, Corporate, Dating, Real Estate, and more styles.',
+            url: `${siteConfig.url}/samples`,
+            isPartOf: {
+              '@type': 'WebSite',
+              name: siteConfig.name,
+              url: siteConfig.url,
+            },
+          }),
+        }}
+      />
       <Header />
       <main id="main-content" className="min-h-screen bg-white">
         {/* ── Hero ─────────────────────────────────────── */}

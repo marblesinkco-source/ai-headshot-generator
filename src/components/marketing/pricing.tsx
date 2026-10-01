@@ -42,7 +42,7 @@ export function Pricing() {
           <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
             Pricing
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-tp-black sm:text-4xl">
+          <h2 className="mt-3 font-display font-normal text-3xl tracking-tight text-tp-black sm:text-4xl">
             Choose Your Plan
           </h2>
           <p className="mt-4 text-lg text-tp-muted">
@@ -102,7 +102,9 @@ export function Pricing() {
               >
                 {isRecommended && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <Badge>Most Popular</Badge>
+                    <span className="bg-tp-bronze text-tp-black text-[10px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full whitespace-nowrap">
+                      Most Popular
+                    </span>
                   </div>
                 )}
                 {isExpress && (
@@ -128,6 +130,11 @@ export function Pricing() {
                     </span>
                     <span className="text-sm text-tp-muted">one-time</span>
                   </div>
+                  {pkg.outputCount > 0 && (
+                    <p className="mt-1 text-[12px] text-tp-muted">
+                      That&apos;s just {formatPrice(Math.round(pkg.price / pkg.outputCount))} per photo
+                    </p>
+                  )}
                 </CardHeader>
 
                 <CardContent className="flex-1 space-y-4">
@@ -194,6 +201,18 @@ export function Pricing() {
             Start with Express to preview your results, then upgrade anytime.
           </p>
         )}
+
+        {/* Guarantee text */}
+        <p className="mt-6 flex items-center justify-center gap-1.5 text-center text-sm text-tp-muted">
+          <ShieldCheck className="h-4 w-4 text-tp-bronze-ink" />
+          All plans include a 14-day money-back guarantee
+        </p>
+
+        {/* Studio comparison */}
+        <p className="mt-2 text-center text-xs text-tp-muted/60">
+          Studio photography typically costs{' '}
+          <span className="line-through">$200–$500</span> per session
+        </p>
 
         {/* Money-back guarantee banner */}
         <div className="mt-10 mx-auto max-w-2xl rounded-tp-card border border-tp-line bg-tp-paper p-5 sm:p-6 flex items-center gap-4">

@@ -4,14 +4,14 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
-import { BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, OrganizationSchema } from '@/components/structured-data';
 import {
   Shield,
   Zap,
   Wallet,
   Sparkles,
   Eye,
-  Accessibility,
+  Clock,
   Gem,
   Cpu,
   Upload,
@@ -98,28 +98,28 @@ const technologySteps = [
 
 const values = [
   {
-    icon: Eye,
-    title: 'Privacy-first',
+    icon: Wallet,
+    title: 'Accessibility',
     description:
-      'Your photos are yours. We handle them with care, limit how long we keep them, and never treat your likeness as a product.',
+      'Professional photos should not cost a fortune. We keep pricing simple and affordable so anyone can look their best online.',
+  },
+  {
+    icon: Eye,
+    title: 'Privacy',
+    description:
+      'Your data is yours. We delete uploads after processing and never sell your photos or use your likeness beyond your order.',
   },
   {
     icon: Gem,
-    title: 'Quality obsession',
+    title: 'Quality',
     description:
-      'We aim for natural, professional results that look like you, and we back our work with a money-back guarantee.',
+      'AI-powered, studio-quality results that look like you. We back every order with a money-back guarantee.',
   },
   {
-    icon: Wallet,
-    title: 'Fair pricing',
+    icon: Clock,
+    title: 'Speed',
     description:
-      'Straightforward one-time pricing. You should know what you are paying for before you upload a single photo.',
-  },
-  {
-    icon: Accessibility,
-    title: 'Accessibility',
-    description:
-      'Great photos should not depend on your budget, location, or schedule. We design for simple, approachable use.',
+      'From upload to download in about 2 hours. No scheduling, no waiting weeks for a photographer.',
   },
 ];
 
@@ -139,6 +139,7 @@ export default function AboutPage() {
           { name: 'About', url: `${siteConfig.url}/about` },
         ]}
       />
+      <OrganizationSchema />
       <Header />
 
       {/* Hero */}
@@ -176,7 +177,7 @@ export default function AboutPage() {
             Our Mission
           </p>
           <h2 className="mt-4 font-display text-3xl font-normal text-tp-paper sm:text-5xl">
-            Make professional photos{' '}
+            Making professional photography{' '}
             <span className="italic text-tp-bronze">accessible to everyone</span>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/80">
@@ -338,7 +339,7 @@ export default function AboutPage() {
       <section className="bg-tp-black py-24">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl font-normal text-tp-paper sm:text-5xl">
-            Ready to see your <span className="italic text-tp-bronze">best photo?</span>
+            Ready to get your <span className="italic text-tp-bronze">headshots?</span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-tp-beige/80">
             Upload your photos, choose a style, and let {siteConfig.name} do the rest. Not happy?
