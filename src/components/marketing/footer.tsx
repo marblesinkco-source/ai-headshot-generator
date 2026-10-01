@@ -43,6 +43,7 @@ const freeToolLinks = [
 
 const resourceLinks = [
   { label: 'About', href: '/about' },
+  { label: 'Careers', href: '/careers' },
   { label: 'Blog', href: '/blog' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Technology', href: '/technology' },
@@ -54,6 +55,7 @@ const resourceLinks = [
   { label: 'Contact', href: '/contact' },
   { label: 'Affiliate', href: '/affiliate' },
   { label: 'Referral', href: '/referral' },
+  { label: 'Partners', href: '/partners' },
 ];
 
 const socialLinks = [

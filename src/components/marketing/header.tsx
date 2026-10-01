@@ -17,6 +17,7 @@ const navLinks = [
   { label: 'Free Tools', href: '/tools' },
   { label: 'Samples', href: '/samples' },
   { label: 'Enterprise', href: '/enterprise' },
+  { label: 'Industries', href: '/industries' },
   { label: 'Compare', href: '/vs' },
   { label: 'Blog', href: '/blog' },
 ];
