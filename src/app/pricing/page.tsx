@@ -10,11 +10,13 @@ import { CostCalculator } from '@/components/marketing/cost-calculator';
 import { PricingPsychology } from '@/components/marketing/pricing-psychology';
 import { GuaranteeBadge } from '@/components/marketing/guarantee-badge';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { getActiveCategories } from '@/config/categories';
 import { TrustBadges } from '@/components/marketing/trust-badges';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Check, Lock, RefreshCcw, CreditCard } from 'lucide-react';
+import { PricingViewToggle } from '@/components/marketing/pricing-view-toggle';
 import { PricingComparisonBar } from '@/components/marketing/pricing-comparison-bar';
 
 const pricingFaqs = [
@@ -43,6 +45,39 @@ const pricingFaqs = [
     answer:
       'Upload around 10-20 selfies from different angles for the best results. A minimum of 8 photos is required.',
   },
+];
+
+const includedFeatures = [
+  {
+    title: 'Photos',
+    items: [
+      '40+ professional headshots from a single upload',
+      'A variety of styles, backgrounds and outfits',
+      'High-resolution downloads',
+    ],
+  },
+  {
+    title: 'Process',
+    items: [
+      'Upload 10-20 selfies (minimum 8)',
+      'No studio visit, no scheduling',
+      'Delivered in hours',
+    ],
+  },
+  {
+    title: 'Payment & protection',
+    items: [
+      'One-time payment, no subscription',
+      '14-day money-back guarantee',
+      'Secure Stripe checkout',
+    ],
+  },
+];
+
+const trustSignals = [
+  { icon: CreditCard, label: 'One-time payment, no subscription' },
+  { icon: RefreshCcw, label: '14-day money-back guarantee' },
+  { icon: Lock, label: 'Secure Stripe checkout' },
 ];
 
 const OG_DESCRIPTION =
@@ -122,9 +157,52 @@ export default function PricingPage() {
 
       <TrustBar />
 
-      <Pricing />
+      <section aria-label="Why buy with confidence" className="pt-8">
+        <ul className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-8 gap-y-3 px-4">
+          {trustSignals.map(({ icon: Icon, label }) => (
+            <li key={label} className="flex items-center gap-2 text-sm font-medium text-tp-ink">
+              <Icon className="h-4 w-4 text-tp-bronze-ink" aria-hidden="true" />
+              {label}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <PricingViewToggle individual={<Pricing />} />
 
       <TrustBadges />
+
+      {/* What's included */}
+      <section className="py-16" aria-labelledby="included-heading">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2
+            id="included-heading"
+            className="text-center font-display text-3xl text-tp-black sm:text-4xl"
+          >
+            What&apos;s included
+          </h2>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {includedFeatures.map((g) => (
+              <div key={g.title} className="rounded-tp-card border border-tp-line bg-white p-6">
+                <h3 className="text-lg font-semibold text-tp-ink">{g.title}</h3>
+                <ul className="mt-4 space-y-3">
+                  {g.items.map((i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-tp-muted">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-tp-bronze-ink" aria-hidden="true" />
+                      {i}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
+              Get your headshots from $9.90
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Divider */}
       <div className="mx-auto max-w-5xl px-4">

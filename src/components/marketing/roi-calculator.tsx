@@ -5,9 +5,19 @@ import Link from 'next/link';
 import { ArrowRight, Camera, Sparkles } from 'lucide-react';
 
 const TRADITIONAL_PER_PERSON = 150;
-const TAILORPIC_PER_PERSON = 19.9;
-const MIN_TEAM = 1;
+const MIN_TEAM = 5;
 const MAX_TEAM = 100;
+
+/** Matches the enterprise pricing tiers on /enterprise */
+function tailorpicPerPerson(teamSize: number): number {
+  if (teamSize >= 50) return 19; // Enterprise — custom, use estimate
+  if (teamSize >= 16) return 29;
+  return 39; // 5-15
+}
+
+function tailorpicTotal(teamSize: number): number {
+  return teamSize * tailorpicPerPerson(teamSize);
+}
 
 function formatUSD(value: number): string {
   return `$${value.toLocaleString('en-US', {
@@ -25,9 +35,10 @@ export function ROICalculator({
 } = {}) {
   const [teamSize, setTeamSize] = useState(10);
 
+  const perPerson = tailorpicPerPerson(teamSize);
   const traditional = teamSize * TRADITIONAL_PER_PERSON;
-  const tailorpic = teamSize * TAILORPIC_PER_PERSON;
-  const savings = traditional - tailorpic;
+  const tailorpicCost = tailorpicTotal(teamSize);
+  const savings = traditional - tailorpicCost;
   const savingsPct = Math.round((savings / traditional) * 100);
 
   return (
@@ -80,8 +91,8 @@ export function ROICalculator({
                 <Sparkles className="h-4 w-4" aria-hidden="true" />
                 TailorPic
               </div>
-              <p className="mt-3 font-display text-3xl text-tp-ink">{formatUSD(tailorpic)}</p>
-              <p className="mt-1 text-xs text-tp-muted">{formatUSD(TAILORPIC_PER_PERSON)} per person</p>
+              <p className="mt-3 font-display text-3xl text-tp-ink">{formatUSD(tailorpicCost)}</p>
+              <p className="mt-1 text-xs text-tp-muted">{formatUSD(perPerson)} per person</p>
             </div>
           </div>
 

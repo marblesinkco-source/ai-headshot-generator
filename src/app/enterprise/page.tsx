@@ -121,9 +121,9 @@ export default function EnterprisePage() {
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 text-center">
             {[
               { icon: Lock, text: 'Secure Infrastructure' },
-              { icon: Users, text: 'Unlimited Team Members' },
+              { icon: Users, text: 'Flexible Team Sizes' },
               { icon: Clock, text: 'Fast Delivery' },
-              { icon: Shield, text: 'Enterprise Security' },
+              { icon: Shield, text: 'Data Privacy' },
             ].map((item) => (
               <div key={item.text} className="flex items-center justify-center gap-2 text-xs font-medium text-tp-muted">
                 <item.icon className="h-4 w-4 text-tp-bronze" />
@@ -206,7 +206,7 @@ export default function EnterprisePage() {
               { icon: Lock, title: 'Enterprise Security', desc: 'Secure infrastructure with Supabase and Stripe. Photos auto-deleted within 30 days.' },
               { icon: CreditCard, title: 'Volume Pricing', desc: 'Custom pricing for teams of 10+. The more seats, the lower the per-person cost.' },
               { icon: Headphones, title: 'Dedicated Support', desc: 'Priority support with a dedicated account manager for enterprise clients.' },
-              { icon: BarChart3, title: 'Usage Analytics', desc: 'Track adoption, photo quality scores, and team utilization in real-time.' },
+              { icon: BarChart3, title: 'Usage Overview', desc: 'View team adoption and order history from the admin dashboard.' },
             ].map((feature) => (
               <div key={feature.title} className="rounded-tp-card border border-tp-line p-6 hover:border-tp-bronze/30 transition-colors">
                 <div className="flex h-10 w-10 items-center justify-center rounded-tp-button bg-tp-black mb-4">
@@ -234,7 +234,7 @@ export default function EnterprisePage() {
                 'Consistent look across every team member',
                 'No photographer scheduling or office coordination',
                 'Volume pricing for teams of 10+',
-                'Data retention policies you control',
+                'Photos auto-deleted within 30 days of delivery',
                 'Dedicated account manager for enterprise clients',
                 'Easy onboarding for new hires and rebrands',
               ].map((item) => (
@@ -388,7 +388,7 @@ export default function EnterprisePage() {
             {[
               { name: 'Small Team', range: '5–15 people', price: '$39', per: 'per person', features: ['40+ photos each', 'Consistent style', 'HD resolution', 'Email support'] },
               { name: 'Company', range: '16–50 people', price: '$29', per: 'per person', features: ['40+ photos each', 'Brand guidelines', '4K resolution', 'Priority support'], popular: true },
-              { name: 'Enterprise', range: '50+ people', price: 'Custom', per: 'contact us', features: ['Unlimited photos', 'Admin dashboard', 'Custom onboarding', 'Dedicated manager'] },
+              { name: 'Enterprise', range: '50+ people', price: 'Custom', per: 'contact us', features: ['Custom photo packages', 'Admin dashboard', 'Custom onboarding', 'Dedicated manager'] },
             ].map((plan) => (
               <div
                 key={plan.name}
@@ -448,6 +448,24 @@ export default function EnterprisePage() {
         </div>
       </section>
       <ROICalculator ctaHref="/contact" ctaLabel="Get a Team Quote" />
+
+      {/* FAQ */}
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center font-display text-3xl text-tp-ink sm:text-4xl">Frequently Asked Questions</h2>
+          <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
+            {enterpriseFaqs.map((f) => (
+              <details key={f.question} className="group p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-tp-ink">
+                  {f.question}
+                  <span className="text-tp-bronze-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">{f.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Request a demo CTA */}
       <section className="bg-tp-black py-20 sm:py-24">

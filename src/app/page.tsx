@@ -14,13 +14,13 @@ import { WebsiteSchema, FAQSchema, SoftwareApplicationSchema, HowToSchema } from
 import { BeforeAfterShowcase } from '@/components/marketing/before-after-showcase';
 
 export const metadata: Metadata = {
-  title: 'TailorPic — AI Headshots & Professional Photos | From $9.99',
+  title: 'TailorPic — AI Headshots & Professional Photos | From $9.90',
   description:
-    'Get studio-quality AI headshots in under 2 hours. 40+ styles for business, LinkedIn & creative use. Fast delivery, 100% money-back guarantee. Starting at $9.99.',
+    'Get studio-quality AI headshots in under 2 hours. 40+ styles for business, LinkedIn & creative use. Fast delivery, 14-day money-back guarantee. Starting at $9.90.',
   openGraph: {
-    title: 'TailorPic — AI Headshots & Professional Photos | From $9.99',
+    title: 'TailorPic — AI Headshots & Professional Photos | From $9.90',
     description:
-      'Upload a few selfies, get 40+ studio-quality AI headshots in under 2 hours. Professional, creative & business styles. 100% money-back guarantee.',
+      'Upload a few selfies, get 40+ studio-quality AI headshots in under 2 hours. Professional, creative & business styles. 14-day money-back guarantee.',
     url: 'https://www.tailorpic.com',
     siteName: 'TailorPic',
     images: [
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TailorPic — AI Headshots & Professional Photos | From $9.99',
+    title: 'TailorPic — AI Headshots & Professional Photos | From $9.90',
     description:
-      'Upload a few selfies, get 40+ studio-quality AI headshots in under 2 hours. Starting at $9.99 with a money-back guarantee.',
+      'Upload a few selfies, get 40+ studio-quality AI headshots in under 2 hours. Starting at $9.90 with a money-back guarantee.',
     images: ['/brand/tailorpic/web/og-tailorpic-1200x630.jpg'],
   },
   alternates: { canonical: 'https://www.tailorpic.com' },

@@ -34,6 +34,9 @@ export async function POST(request: Request) {
 
   const name = typeof body.name === 'string' ? body.name.trim() : '';
   const email = typeof body.email === 'string' ? body.email.trim() : '';
+  const DEPARTMENTS = ['General', 'Sales / Enterprise', 'Support', 'Press / Media', 'Partnerships'];
+  const department =
+    typeof body.department === 'string' && DEPARTMENTS.includes(body.department) ? body.department : 'General';
   const subject = typeof body.subject === 'string' ? body.subject.trim() : '';
   const message = typeof body.message === 'string' ? body.message.trim() : '';
 
@@ -56,7 +59,7 @@ export async function POST(request: Request) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { error } = await (supabase as any)
       .from('contact_messages')
-      .insert({ name, email, subject, message });
+      .insert({ name, email, subject: `[${department}] ${subject}`, message });
     if (error) {
       console.error('contact_messages insert failed:', error.message);
     } else {
@@ -74,8 +77,9 @@ export async function POST(request: Request) {
         from: `${siteConfig.name} <${process.env.EMAIL_FROM || `noreply@${new URL(siteConfig.url).hostname}`}>`,
         to: siteConfig.supportEmail,
         replyTo: email,
-        subject: `[Contact] ${subject}`,
+        subject: `[Contact · ${department}] ${subject}`,
         html: `<p><strong>From:</strong> ${escapeHtml(name)} &lt;${escapeHtml(email)}&gt;</p>
+<p><strong>Department:</strong> ${escapeHtml(department)}</p>
 <p><strong>Subject:</strong> ${escapeHtml(subject)}</p>
 <p style="white-space:pre-wrap">${escapeHtml(message)}</p>`,
       });
@@ -104,7 +108,7 @@ export async function POST(request: Request) {
             <td style="padding:32px;">
               <h2 style="margin:0 0 16px;font-size:22px;color:#171613;font-weight:700;">Thank you for reaching out!</h2>
               <p style="margin:0 0 16px;font-size:15px;color:#171613;line-height:1.6;">
-                Hi ${escapeHtml(name)}, we've received your message and will get back to you within 24–48 hours.
+                Hi ${escapeHtml(name)}, we've received your message and will get back to you within 1 business day.
               </p>
               <p style="margin:0 0 16px;font-size:15px;color:#5F5A54;line-height:1.6;">
                 In the meantime, feel free to explore our site.
