@@ -18,7 +18,7 @@ export function BeforeAfterShowcase() {
         <div className="mx-auto max-w-2xl text-center">
           <h2
             id="before-after-heading"
-            className="text-3xl font-semibold tracking-tight text-tp-ink sm:text-4xl"
+            className="font-display text-3xl font-normal tracking-tight text-tp-ink sm:text-4xl"
           >
             From everyday photo to polished headshot
           </h2>

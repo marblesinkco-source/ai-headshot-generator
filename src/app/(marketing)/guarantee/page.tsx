@@ -4,6 +4,8 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 import {
   ShieldCheck,
   Clock,
@@ -11,6 +13,7 @@ import {
   CheckCircle,
   ArrowRight,
   ChevronDown,
+  Mail,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -42,7 +45,7 @@ const refundSteps = [
     step: '1',
     icon: CreditCard,
     title: 'Contact Us',
-    desc: 'Send an email to support@tailorpic.com with the subject line "Refund Request" and include your order ID.',
+    desc: 'Not satisfied? Send an email to support@tailorpic.com with the subject line "Refund Request" and include your order ID.',
   },
   {
     step: '2',
@@ -82,8 +85,16 @@ const notCoveredItems = [
 
 const faqItems = [
   {
-    q: 'How long does the refund take to appear?',
-    a: 'Once we approve your refund, it is sent back to your original payment method. Depending on your bank or card issuer, it typically takes 5-10 business days to appear on your statement.',
+    q: 'How do I request a refund?',
+    a: `Email ${siteConfig.supportEmail} within 14 days of purchase with the subject line "Refund Request" and include your order ID. There is no form to fill out and no need to explain in detail.`,
+  },
+  {
+    q: 'When will I get my money back?',
+    a: 'Once we approve your request, the refund is sent to your original payment method. Depending on your bank or card issuer, it typically appears within 5-10 business days.',
+  },
+  {
+    q: 'What if I have already downloaded my photos?',
+    a: 'Downloading your photos does not stop you from asking. Contact us within 14 days of purchase and we will review your request under the terms on this page, including the note on used credits.',
   },
   {
     q: 'Can I get a partial refund?',
@@ -91,7 +102,7 @@ const faqItems = [
   },
   {
     q: 'What if I purchased a team plan?',
-    a: 'Team and enterprise plans are also covered by our 14-day guarantee. Contact us at support@tailorpic.com and we will work with you to resolve any concerns.',
+    a: `Team and enterprise plans are also covered by our 14-day guarantee. Contact us at ${siteConfig.supportEmail} and we will work with you to resolve any concerns.`,
   },
 ];
 
@@ -119,25 +130,36 @@ export default function GuaranteePage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#C9A98A_0%,transparent_50%)]" />
         </div>
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-4 py-1.5 text-xs font-semibold text-tp-bronze mb-6">
-            <ShieldCheck className="h-3.5 w-3.5" />
-            Risk-Free Purchase
+          <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full border border-tp-bronze/30 bg-tp-bronze/10">
+            <ShieldCheck className="h-12 w-12 text-tp-bronze" strokeWidth={1.5} />
           </div>
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-white leading-tight tracking-tight">
+          <p className="text-xs font-semibold uppercase tracking-widest text-tp-bronze mb-4">
+            Risk-Free Purchase
+          </p>
+          <h1 className="font-display font-normal text-4xl sm:text-5xl lg:text-6xl text-white leading-tight tracking-tight">
             14-Day Money-Back Guarantee
           </h1>
           <p className="mt-5 text-lg text-tp-beige/70 max-w-2xl mx-auto leading-relaxed">
-            We stand behind the quality of our AI headshots. If you are not
-            satisfied with your purchase, request a full refund within 14 days
-            — no hassle.
+            Not satisfied? Contact us within 14 days for a full refund. No
+            questions asked. Try TailorPic for a one-time $9.90 and know you
+            are covered.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
-              href="/pricing"
-              className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:bg-tp-bronze/90"
+              href="/auth/register"
+              className={cn(
+                buttonVariants({ size: 'lg' }),
+                'bg-tp-bronze text-tp-black hover:bg-tp-bronze/90'
+              )}
             >
-              Start with Confidence <ArrowRight className="h-4 w-4" />
+              Try TailorPic Risk-Free <ArrowRight className="h-4 w-4" />
             </Link>
+            <a
+              href={`mailto:${siteConfig.supportEmail}`}
+              className="inline-flex items-center gap-2 text-sm font-medium text-tp-beige/80 hover:text-white"
+            >
+              <Mail className="h-4 w-4" /> {siteConfig.supportEmail}
+            </a>
           </div>
         </div>
       </section>
@@ -149,7 +171,7 @@ export default function GuaranteePage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
               Our Promise
             </p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               What&apos;s Covered
             </h2>
             <p className="mt-3 text-tp-muted max-w-xl mx-auto">
@@ -182,7 +204,7 @@ export default function GuaranteePage() {
       <section className="bg-tp-paper py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               How to Request a Refund
             </h2>
             <p className="mt-3 text-tp-muted max-w-xl mx-auto">
@@ -209,7 +231,7 @@ export default function GuaranteePage() {
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               What&apos;s Not Covered
             </h2>
             <p className="mt-3 text-tp-muted max-w-xl mx-auto">
@@ -238,7 +260,7 @@ export default function GuaranteePage() {
       <section className="bg-tp-paper py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               Frequently Asked Questions
             </h2>
           </div>
@@ -264,7 +286,7 @@ export default function GuaranteePage() {
       {/* ── Bottom CTA ── */}
       <section className="bg-tp-black py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-3xl sm:text-4xl text-white">
+          <h2 className="font-display font-normal text-3xl sm:text-4xl text-white">
             Start with Confidence
           </h2>
           <p className="mt-4 text-tp-beige/60">
@@ -273,11 +295,20 @@ export default function GuaranteePage() {
           </p>
           <div className="mt-8">
             <Link
-              href="/pricing"
-              className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:bg-tp-bronze/90"
+              href="/auth/register"
+              className={cn(
+                buttonVariants({ size: 'lg' }),
+                'bg-tp-bronze text-tp-black hover:bg-tp-bronze/90'
+              )}
             >
-              View Pricing <ArrowRight className="h-4 w-4" />
+              Get Started for $9.90 <ArrowRight className="h-4 w-4" />
             </Link>
+            <p className="mt-4 text-sm text-tp-beige/50">
+              One-time payment. 14-day money-back guarantee.{' '}
+              <Link href="/pricing" className="underline underline-offset-2 hover:text-tp-beige">
+                See pricing
+              </Link>
+            </p>
           </div>
         </div>
       </section>
