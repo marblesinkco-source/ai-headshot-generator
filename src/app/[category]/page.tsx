@@ -7,11 +7,7 @@ import { DollarSign, Clock, ShieldCheck, Trash2 } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Button } from '@/components/ui/button';
-import {
-  getActiveCategories,
-  getCategoryBySlug,
-  type CategoryId,
-} from '@/config/categories';
+import { getActiveCategories, getCategoryBySlug } from '@/config/categories';
 import { siteConfig } from '@/config/site';
 import { formatPrice } from '@/lib/utils';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';

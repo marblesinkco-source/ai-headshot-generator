@@ -40,37 +40,10 @@ const config: Config = {
           foreground: 'hsl(var(--card-foreground))',
         },
         // TailorPic brand palette — premium luxury
-        brand: {
-          50: '#faf8f5',    // lightest warm off-white
-          100: '#f3efe8',   // soft cream
-          200: '#e5ddd0',   // warm beige light
-          300: '#dccdbb',   // Warm Beige
-          400: '#c9a98a',   // Bronze / Tailoring Gold
-          500: '#b8946e',   // deeper gold
-          600: '#a07a52',   // rich bronze
-          700: '#876440',   // dark bronze
-          800: '#6e5035',   // deep espresso bronze
-          900: '#5a4130',   // very dark
-          950: '#2d1f16',   // near-black warm
-        },
         accent: {
-          50: '#faf8f5',
-          100: '#f8f5ef',   // Soft Off-White
-          200: '#e8e2d8',
-          300: '#dccdbb',   // Warm Beige
-          400: '#c9a98a',   // Bronze
-          500: '#b8946e',
           600: '#a07a52',
-          700: '#876440',
-          800: '#6e5035',
-          900: '#0b0b0b',   // Tailoring Black
-          950: '#050505',
         },
         // Named semantic brand tokens
-        'tailor-black': '#0b0b0b',
-        'tailor-gold': '#c9a98a',
-        'tailor-beige': '#dccdbb',
-        'tailor-cream': '#f8f5ef',
         'tp-black': '#0B0B0B',
         'tp-ink': '#171613',
         'tp-bronze': '#C9A98A',
@@ -90,16 +63,9 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-manrope)', 'Inter', 'Arial', 'system-ui', 'sans-serif'],
-        heading: ['var(--font-manrope)', 'Inter', 'Arial', 'sans-serif'],
         display: ['"Instrument Serif"', 'Georgia', '"Times New Roman"', 'serif'],
       },
       animation: {
-        'fade-in': 'fadeIn 0.5s ease-in-out',
-        'fade-up': 'fadeUp 0.5s ease-out',
-        'slide-in': 'slideIn 0.3s ease-out',
-        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        shimmer: 'shimmer 2s linear infinite',
-        marquee: 'marquee 20s linear infinite',
         'cta-pulse': 'ctaPulse 1.6s ease-out infinite',
       },
       keyframes: {
@@ -107,26 +73,6 @@ const config: Config = {
           '0%': { boxShadow: '0 0 0 0 rgba(201, 169, 138, 0.55)' },
           '70%': { boxShadow: '0 0 0 14px rgba(201, 169, 138, 0)' },
           '100%': { boxShadow: '0 0 0 0 rgba(201, 169, 138, 0)' },
-        },
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        fadeUp: {
-          '0%': { opacity: '0', transform: 'translateY(10px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        slideIn: {
-          '0%': { opacity: '0', transform: 'translateX(-10px)' },
-          '100%': { opacity: '1', transform: 'translateX(0)' },
-        },
-        shimmer: {
-          '0%': { backgroundPosition: '-200% 0' },
-          '100%': { backgroundPosition: '200% 0' },
-        },
-        marquee: {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
         },
       },
     },

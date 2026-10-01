@@ -1,6 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Briefcase, Building2, Camera, Check, Droplets, Heart, ShieldCheck, Smile, Sparkles, Sun, Upload, UserCheck, Users } from 'lucide-react';
+import {
+  Briefcase,
+  Building2,
+  Camera,
+  Check,
+  Droplets,
+  Heart,
+  ShieldCheck,
+  Smile,
+  Sparkles,
+  Sun,
+  Upload,
+  UserCheck,
+} from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { buttonVariants } from '@/components/ui/button';

@@ -9,7 +9,6 @@ import {
   getCategoryPackages,
   CATEGORY_GROUPS,
   type CategoryId,
-  type CategoryPackage,
 } from '@/config/categories';
 import { formatPrice } from '@/lib/utils';
 import { Button } from '@/components/ui/button';

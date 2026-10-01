@@ -5,14 +5,12 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
-import { buttonVariants } from '@/components/ui/button';
 import {
   Gift,
   Users,
   CreditCard,
   ArrowRight,
   Share2,
-  CheckCircle,
   ChevronDown,
   Sparkles,
   Heart,

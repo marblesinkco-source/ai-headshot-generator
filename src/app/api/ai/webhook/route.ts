@@ -3,7 +3,7 @@ import { z } from 'zod';
 import Replicate from 'replicate';
 import { createAdminClient } from '@/lib/supabase/server';
 import { getCategoryById, type CategoryId } from '@/config/categories';
-import { BACKGROUNDS, STYLES, NEGATIVE_PROMPT, QUALITY_SETTINGS } from '@/config/ai';
+import { BACKGROUNDS, STYLES, QUALITY_SETTINGS } from '@/config/ai';
 import { Resend } from 'resend';
 import { siteConfig } from '@/config/site';
 import { buildPhotosReadyEmail, buildGenerationFailedEmail } from '@/lib/emails';

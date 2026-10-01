@@ -4,7 +4,7 @@ import Replicate from 'replicate';
 import { createClient } from '@/lib/supabase/server';
 import { getCategoryById, getPackageById, type CategoryId } from '@/config/categories';
 import { siteConfig } from '@/config/site';
-import { rateLimit, getClientIp } from '@/lib/rate-limit';
+import { rateLimit } from '@/lib/rate-limit';
 
 const replicate = new Replicate({
   auth: process.env.REPLICATE_API_TOKEN!,

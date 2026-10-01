@@ -1,6 +1,18 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Check, Globe, Image, Megaphone, Mic, Music, Palette, Sparkles, Star, Upload, Users, Video } from 'lucide-react';
+import {
+  Check,
+  Globe,
+  Image,
+  Megaphone,
+  Mic,
+  Music,
+  Palette,
+  Sparkles,
+  Star,
+  Upload,
+  Users,
+} from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';

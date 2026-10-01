@@ -1,6 +1,18 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Award, Briefcase, Check, FileCheck, Globe, Shield, Sparkles, Star, Target, Upload, UserCheck, Users } from 'lucide-react';
+import {
+  Award,
+  Briefcase,
+  Check,
+  FileCheck,
+  Globe,
+  Shield,
+  Sparkles,
+  Star,
+  Upload,
+  UserCheck,
+  Users,
+} from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';

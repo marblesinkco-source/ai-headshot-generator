@@ -1,6 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Briefcase, Check, Clock, Crop, GraduationCap, Home, Mic, Palette, Shield, Sparkles, Star, Upload, Users } from 'lucide-react';
+import {
+  Briefcase,
+  Check,
+  Clock,
+  Crop,
+  GraduationCap,
+  Home,
+  Palette,
+  Shield,
+  Sparkles,
+  Star,
+  Upload,
+  Users,
+} from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';

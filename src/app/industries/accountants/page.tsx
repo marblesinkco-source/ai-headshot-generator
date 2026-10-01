@@ -6,7 +6,6 @@ import { BreadcrumbSchema, ProductSchema, FAQSchema } from '@/components/structu
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import {
-  Camera,
   Clock,
   Users,
   CheckCircle,
@@ -15,12 +14,9 @@ import {
   ImageOff,
   Star,
   Shield,
-  Sparkles,
   ArrowRight,
   Calculator,
-  Building,
   UserPlus,
-  Palette,
   BadgeCheck,
   RefreshCw,
 } from 'lucide-react';

@@ -1,6 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { BadgeDollarSign, Briefcase, Building2, Check, GraduationCap, Handshake, LineChart, ShieldCheck, Sparkles, Star, Upload, UserCheck, Users } from 'lucide-react';
+import {
+  BadgeDollarSign,
+  Briefcase,
+  Building2,
+  Check,
+  GraduationCap,
+  Handshake,
+  LineChart,
+  ShieldCheck,
+  Sparkles,
+  Star,
+  Upload,
+  Users,
+} from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';

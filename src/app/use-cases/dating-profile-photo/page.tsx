@@ -1,6 +1,18 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Camera, Check, Clock, Heart, Plane, RefreshCw, Shield, Smile, Sparkles, Star, Upload, Users } from 'lucide-react';
+import {
+  Camera,
+  Check,
+  Clock,
+  Heart,
+  Plane,
+  RefreshCw,
+  Shield,
+  Smile,
+  Sparkles,
+  Star,
+  Upload,
+} from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';

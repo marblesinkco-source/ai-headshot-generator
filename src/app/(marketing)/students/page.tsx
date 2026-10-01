@@ -12,7 +12,6 @@ import {
   GraduationCap,
   Briefcase,
   Users,
-  BookOpen,
   Upload,
   Sparkles,
   Download,

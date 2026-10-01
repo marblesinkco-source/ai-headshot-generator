@@ -11,7 +11,6 @@ import {
   DollarSign,
   Image as ImageIcon,
   Clock,
-  Sparkles,
   LayoutGrid,
   BadgeDollarSign,
   Target,

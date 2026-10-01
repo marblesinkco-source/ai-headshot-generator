@@ -7,10 +7,32 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
-  Building2, Users, Shield, CreditCard, Palette,
-  ArrowRight, Check, CheckCircle, Lock, BarChart3, Headphones, Globe,
-  Trash2, FileCheck, ShieldCheck, Eye, MessageSquare, Settings, UserPlus, Rocket,
-  CalendarX, ImageOff, DollarSign, Star, RefreshCw, Linkedin, Clock,
+  Building2,
+  Users,
+  Shield,
+  CreditCard,
+  Palette,
+  ArrowRight,
+  CheckCircle,
+  Lock,
+  BarChart3,
+  Headphones,
+  Globe,
+  Trash2,
+  FileCheck,
+  ShieldCheck,
+  Eye,
+  MessageSquare,
+  Settings,
+  UserPlus,
+  Rocket,
+  CalendarX,
+  ImageOff,
+  DollarSign,
+  Star,
+  RefreshCw,
+  Linkedin,
+  Clock,
 } from 'lucide-react';
 
 const ROICalculator = dynamic(

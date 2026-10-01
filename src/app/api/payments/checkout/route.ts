@@ -7,7 +7,7 @@ import { PACKAGES, type PackageId } from '@/config/packages';
 import { getCategoryById, getPackageById, type CategoryId } from '@/config/categories';
 import { CREDIT_PACKAGES } from '@/config/credits';
 import { siteConfig } from '@/config/site';
-import { rateLimit, getClientIp } from '@/lib/rate-limit';
+import { rateLimit } from '@/lib/rate-limit';
 
 // Known coupon codes mapped to Stripe coupon IDs
 // Create these in Stripe Dashboard: Dashboard → Products → Coupons

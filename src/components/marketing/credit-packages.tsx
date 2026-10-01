@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import { Check, Sparkles, Zap } from 'lucide-react';
 import { CREDIT_PACKAGES } from '@/config/credits';
