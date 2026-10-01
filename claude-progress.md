@@ -33,6 +33,11 @@
 28. `0106ef2` — Invoice download API + video testimonials component
 29. `c64ae68` — Pricing comparison + money-back guarantee pages
 30. `705b056` — Use-cases hub page + homepage SEO optimization
+31. `7fc5fc0` — Photo tips page, social proof toast, before/after showcase
+32. `b0b7e3b` — FAQ schema on photo-tips, video testimonials on samples, volume pricing on team-headshots
+33. `a630abb` — Developer API, technology, and integrations marketing pages
+34. `06366f0` — Pricing FAQ + comparison bar, how-it-works differentiators
+35. `eedefeb` — Enterprise FAQ schema + ROI calculator component
 
 ### Completed Features
 - [x] Exit-intent popup with WELCOME10 promo
@@ -167,6 +172,21 @@
 - [x] Before/after showcase integrated into homepage
 - [x] Footer: added Photo Tips, Pricing Comparison, Use Cases, Guarantee links
 - [x] Sitemap: added /photo-tips route
+- [x] Photo-tips: FAQSchema structured data with 8 Q&A entries
+- [x] Samples: VideoTestimonials component integrated between quality badges and CTA
+- [x] Team-headshots: volume pricing calculator (4 tiers), trusted-by-teams section (6 industries)
+- [x] Team-headshots: removed duplicate pricing teaser, migrated rounded-xl → rounded-tp-card/button
+- [x] /developer-api page: API for Developers marketing/waitlist, coming-soon notice
+- [x] /technology page: AI technology explainer, process steps, privacy, FAQ
+- [x] /integrations page: 6 integration categories, 3 partner types, all "Coming Soon"
+- [x] Footer: added API, Integrations, Technology links
+- [x] Sitemap: added /developer-api, /technology, /integrations routes
+- [x] Pricing: 5-item FAQ section with FAQSchema structured data
+- [x] Pricing: sticky comparison bar (studio $200+ vs AI $9.90)
+- [x] How-it-works: "Why Choose Us" section with 4 differentiators
+- [x] How-it-works: fixed refund wording, removed fabricated "thousands" claim
+- [x] Enterprise: 6-item FAQSchema structured data
+- [x] Enterprise: ROI calculator (team size slider, savings display)
 
 ### Backlog (Requires External Action)
 - [ ] Stripe: Create WELCOME10 promo code (10% off) — needs Stripe dashboard/API key
