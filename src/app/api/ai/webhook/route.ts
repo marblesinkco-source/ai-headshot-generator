@@ -299,8 +299,8 @@ async function handleTrainingComplete(
     (r) => r.status === 'fulfilled' && r.value !== null
   ).length;
 
-  console.log(
-    `Training complete for order ${orderId}. Launched ${successCount}/${generations.length} generation predictions.`
+  console.info(
+    `[ai-webhook] Training complete for order ${orderId}. Launched ${successCount}/${generations.length} generation predictions.`
   );
 
   if (successCount === 0) {

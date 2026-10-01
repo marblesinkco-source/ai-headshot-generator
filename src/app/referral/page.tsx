@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: 'Refer a Friend & Earn Credits | TailorPic',
   description:
     'Share TailorPic with friends. They get 20% off their first order, you earn $10 credit for every referral.',
+  alternates: { canonical: '/referral' },
 };
 
 export default function ReferralPage() {

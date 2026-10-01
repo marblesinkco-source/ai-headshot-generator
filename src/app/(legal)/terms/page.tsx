@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Terms of Service',
   description: 'TailorPic terms of service — the rules and guidelines for using our platform.',
+  alternates: { canonical: '/terms' },
 };
 
 export default function TermsPage() {

@@ -5,6 +5,7 @@ import { Footer } from '@/components/marketing/footer';
 import { siteConfig } from '@/config/site';
 import { getAllBlogPosts } from '@/config/blog';
 import { ArrowRight } from 'lucide-react';
+import { BreadcrumbSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -22,6 +23,7 @@ export default function BlogPage() {
 
   return (
     <main id="main-content" className="min-h-screen">
+      <BreadcrumbSchema items={[{ name: 'Home', url: siteConfig.url }, { name: 'Blog', url: siteConfig.url + '/blog' }]} />
       <Header />
 
       {/* Hero */}

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: 'Enterprise AI Headshots for Teams | TailorPic',
   description:
     'Professional AI headshots for your entire organization. Consistent branding, team admin dashboard, volume pricing, and dedicated support.',
+  alternates: { canonical: '/enterprise' },
   openGraph: {
     title: 'Enterprise AI Headshots for Teams | TailorPic',
     description: 'Scale professional headshots across your organization with AI.',

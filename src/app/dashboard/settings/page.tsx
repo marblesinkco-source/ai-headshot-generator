@@ -16,7 +16,6 @@ export default function SettingsPage() {
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
   // Password change
-  const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passwordLoading, setPasswordLoading] = useState(false);
@@ -24,6 +23,11 @@ export default function SettingsPage() {
 
   // Delete account
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [deleteLoading, setDeleteLoading] = useState(false);
+  const [deleteConfirmText, setDeleteConfirmText] = useState('');
+
+  // Data export
+  const [exportLoading, setExportLoading] = useState(false);
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data: { user } }) => {
@@ -78,18 +82,50 @@ export default function SettingsPage() {
       setPasswordMessage({ type: 'error', text: error.message });
     } else {
       setPasswordMessage({ type: 'success', text: 'Password updated successfully.' });
-      setCurrentPassword('');
       setNewPassword('');
       setConfirmPassword('');
     }
     setPasswordLoading(false);
   }
 
+  async function handleExportData() {
+    setExportLoading(true);
+    try {
+      const res = await fetch('/api/account/export');
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || 'Export failed');
+      }
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `tailorpic-data-export-${new Date().toISOString().slice(0, 10)}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      alert(err instanceof Error ? err.message : 'Failed to export data. Please try again.');
+    }
+    setExportLoading(false);
+  }
+
   async function handleDeleteAccount() {
-    // For now, just sign out and show message
-    // Full account deletion requires a server-side action
-    await supabase.auth.signOut();
-    router.push('/?deleted=1');
+    setDeleteLoading(true);
+    try {
+      const res = await fetch('/api/account/delete', { method: 'POST' });
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || 'Failed to delete account');
+      }
+      // Sign out locally and redirect
+      await supabase.auth.signOut();
+      router.push('/?deleted=1');
+    } catch (err) {
+      alert(err instanceof Error ? err.message : 'Failed to delete account. Please contact support.');
+      setDeleteLoading(false);
+    }
   }
 
   const isOAuthUser = user?.app_metadata?.provider === 'google';
@@ -207,6 +243,27 @@ export default function SettingsPage() {
         </div>
       )}
 
+      {/* Data & Privacy Section */}
+      <div className="rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <div className="border-b border-gray-100 px-6 py-4">
+          <h2 className="font-semibold text-gray-900">Data &amp; Privacy</h2>
+        </div>
+        <div className="p-6 space-y-4">
+          <p className="text-sm text-gray-500">
+            Download a copy of all personal data we hold about you, including orders, generated images metadata, and account information.
+          </p>
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            loading={exportLoading}
+            onClick={handleExportData}
+          >
+            Download my data
+          </Button>
+        </div>
+      </div>
+
       {/* Danger Zone */}
       <div className="rounded-2xl border border-red-200 bg-white shadow-sm">
         <div className="border-b border-red-100 px-6 py-4">
@@ -214,22 +271,33 @@ export default function SettingsPage() {
         </div>
         <div className="p-6">
           <p className="text-sm text-gray-500 mb-4">
-            Permanently delete your account and all associated data. This action cannot be undone.
+            Permanently delete your account and all associated data, including orders, generated photos, and uploaded images. This action cannot be undone.
           </p>
           {showDeleteConfirm ? (
-            <div className="rounded-lg bg-red-50 border border-red-200 p-4">
-              <p className="text-sm font-medium text-red-800 mb-3">
-                Are you sure? All your orders, generated photos, and account data will be permanently deleted.
+            <div className="rounded-lg bg-red-50 border border-red-200 p-4 space-y-3">
+              <p className="text-sm font-medium text-red-800">
+                This will permanently delete your account and all data. Type <strong>DELETE</strong> to confirm.
               </p>
+              <input
+                type="text"
+                value={deleteConfirmText}
+                onChange={(e) => setDeleteConfirmText(e.target.value)}
+                placeholder="Type DELETE to confirm"
+                className="block w-full rounded-lg border border-red-300 px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-200 transition-colors"
+              />
               <div className="flex gap-3">
                 <button
                   onClick={handleDeleteAccount}
-                  className="rounded-lg bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-700 transition-colors"
+                  disabled={deleteConfirmText !== 'DELETE' || deleteLoading}
+                  className="rounded-lg bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Yes, delete my account
+                  {deleteLoading ? 'Deleting…' : 'Yes, delete my account'}
                 </button>
                 <button
-                  onClick={() => setShowDeleteConfirm(false)}
+                  onClick={() => {
+                    setShowDeleteConfirm(false);
+                    setDeleteConfirmText('');
+                  }}
                   className="rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
                 >
                   Cancel

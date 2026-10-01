@@ -2,8 +2,11 @@
  * One-time storage bucket initialization.
  *
  * Creates the "uploads" and "headshots" buckets in Supabase Storage
- * if they don't already exist. Called automatically on first deploy
- * or can be triggered manually via GET /api/setup/storage.
+ * if they don't already exist. Called manually via POST /api/setup/storage
+ * with Authorization: Bearer <SUPABASE_SERVICE_ROLE_KEY>.
+ *
+ * In development (NODE_ENV !== 'production'), the Bearer token is optional.
+ * In production, a valid Bearer token matching SUPABASE_SERVICE_ROLE_KEY is required.
  */
 
 import { NextResponse } from "next/server";
@@ -11,21 +14,27 @@ import { createClient } from "@supabase/supabase-js";
 
 export const dynamic = "force-dynamic";
 
-export async function GET(request: Request) {
-  // Protect setup route — only allow in development or with admin secret
-  const url = new URL(request.url);
-  const adminSecret = url.searchParams.get('secret');
-  const isLocalhost = url.hostname === 'localhost' || url.hostname === '127.0.0.1';
+export async function POST(request: Request) {
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const isDev = process.env.NODE_ENV !== "production";
 
-  if (!isLocalhost && adminSecret !== process.env.SUPABASE_SERVICE_ROLE_KEY?.slice(-12)) {
+  // Extract Bearer token from Authorization header
+  const authHeader = request.headers.get("authorization");
+  const bearerToken = authHeader?.startsWith("Bearer ")
+    ? authHeader.slice(7)
+    : null;
+
+  const hasValidToken = bearerToken !== null && serviceKey !== undefined && bearerToken === serviceKey;
+
+  // In production, require a valid Bearer token
+  if (!isDev && !hasValidToken) {
     return NextResponse.json(
-      { error: 'Unauthorized' },
-      { status: 401 }
+      { error: "Forbidden" },
+      { status: 403 }
     );
   }
 
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
   if (!supabaseUrl || !serviceKey) {
     return NextResponse.json(

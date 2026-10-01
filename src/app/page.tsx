@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { Header } from '@/components/marketing/header';
 import { Hero } from '@/components/marketing/hero';
@@ -11,6 +12,10 @@ import { faqs } from '@/config/faqs';
 import { Footer } from '@/components/marketing/footer';
 import { StickyCTA } from '@/components/marketing/sticky-cta';
 import { OrganizationSchema, WebsiteSchema, FAQSchema, SoftwareApplicationSchema, HowToSchema } from '@/components/structured-data';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+};
 
 function SectionSkeleton({ height }: { height: string }) {
   return (

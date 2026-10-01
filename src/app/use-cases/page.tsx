@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: 'AI Photo Use Cases | TailorPic',
   description:
     'Discover how professionals, families, and businesses use TailorPic AI photos. From LinkedIn headshots to pet portraits, find your perfect photo category.',
+  alternates: { canonical: '/use-cases' },
 };
 
 const useCases = [
