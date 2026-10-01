@@ -348,6 +348,13 @@
 - [x] Security page: trust badge pills (AES-256, GDPR/CCPA, 30-day deletion)
 - [x] Samples page: Testimonials component integrated
 - [x] Pricing page: FAQ heading italic removed
+- [x] Contact form: gradient success card, centered checkmark, response time copy
+- [x] Developer API, Referral, Students pages: enhanced layout and brand tokens
+- [x] Sample gallery: emoji placeholders → SVG pattern backgrounds + Lucide icons
+- [x] ROI calculator: custom branded slider (black/bronze thumb, filled track)
+- [x] Cost calculator: emoji checkmarks → Lucide Check, font-extrabold → font-display
+- [x] Pricing + credit packages: font-extrabold → font-display on price displays
+- [x] Removed orphaned images: icon-192.png, og.png
 
 ### Backlog (Requires External Action)
 - [ ] Stripe: Create WELCOME10 promo code (10% off) — needs Stripe dashboard/API key
