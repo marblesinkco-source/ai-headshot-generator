@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, ProductSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import {
@@ -111,9 +111,50 @@ const stats = [
   { value: '$9.90', label: 'Starting price per person' },
 ];
 
+const faqs = [
+  {
+    question: "Can I get my headshots during tax season?",
+    answer:
+      "Yes. Upload selfies from your phone between client calls and your headshots are typically ready in about 2 hours. There is no studio visit or calendar block required, even during Q1 and Q4 crunch time.",
+  },
+  {
+    question: "Will the headshots work for CPA society and association directories?",
+    answer:
+      "The headshots are high-resolution and professionally framed, which suits most state CPA society and professional association listings. Always check your directory's specific size and format requirements before uploading.",
+  },
+  {
+    question: "How do I keep my whole firm's photos consistent?",
+    answer:
+      "Each team member uploads their own selfies and chooses the same style, so backgrounds and overall look match across your team page. Partners and new hires end up with a cohesive set without any group photo session.",
+  },
+  {
+    question: "What if a new hire starts and needs a headshot quickly?",
+    answer:
+      "They can upload selfies on day one and receive finished headshots within about 2 hours. That means your website team page can be updated the same day.",
+  },
+  {
+    question: "How much does it cost?",
+    answer:
+      "Headshots start at $9.90 per person with no subscription required. That is far less than a traditional studio session.",
+  },
+  {
+    question: "What if I am not happy with the results?",
+    answer:
+      "Every order is covered by our 14-day money-back guarantee. You also get full commercial rights to use your headshots on your website, LinkedIn, and firm materials.",
+  },
+];
+
 export default function AccountantsIndustryPage() {
   return (
     <main id="main-content" className="min-h-screen">
+      <ProductSchema
+        name="Professional Headshots for Accountants & Financial Professionals"
+        description="AI-generated professional headshots for accountants, CPAs, and financial professionals, with firm-consistent styling and directory-ready formatting."
+        price={990}
+        category="Professional Services"
+        slug="industries/accountants"
+      />
+      <FAQSchema items={faqs} />
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
         { name: 'Industries', url: `${siteConfig.url}/industries` },
@@ -182,7 +223,7 @@ export default function AccountantsIndustryPage() {
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               Your Firm Deserves Photos as Sharp as Your Numbers
             </h2>
             <p className="mt-4 text-lg text-tp-muted">
@@ -228,7 +269,7 @@ export default function AccountantsIndustryPage() {
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               Built for Accountants &amp; Financial Professionals
             </h2>
             <p className="mt-4 text-lg text-tp-muted">
@@ -280,10 +321,27 @@ export default function AccountantsIndustryPage() {
         </div>
       </section>
 
+      {/* FAQs */}
+      <section className="bg-tp-paper py-20">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
+            Frequently Asked Questions
+          </h2>
+          <div className="mt-12 space-y-6">
+            {faqs.map((faq) => (
+              <div key={faq.question} className="rounded-tp-card border border-tp-line bg-white p-6">
+                <h3 className="text-lg font-semibold text-tp-ink">{faq.question}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-tp-muted">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+          <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
             Look as Professional as Your Work
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">

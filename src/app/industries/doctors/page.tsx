@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, ProductSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import {
@@ -111,9 +111,50 @@ const stats = [
   { value: '$9.90', label: 'Starting price per person' },
 ];
 
+const faqs = [
+  {
+    question: "Will the headshots work for hospital and physician directories?",
+    answer:
+      "Yes. You receive high-resolution headshots with clean, consistent backgrounds that suit hospital websites, department pages, and physician finder tools. Check your institution's size and format requirements before uploading.",
+  },
+  {
+    question: "Can I get a white coat or scrubs look?",
+    answer:
+      "Yes. You can choose from attire options including white coat, scrubs, or business professional to match your specialty and practice setting.",
+  },
+  {
+    question: "Is my data kept private?",
+    answer:
+      "The process only uses the selfies you upload. No patient data or clinical settings are involved, and your photos are processed securely and delivered directly to you.",
+  },
+  {
+    question: "Can I fit this around my clinic schedule?",
+    answer:
+      "Yes. You can upload selfies during a break and receive finished headshots in about 2 hours. There is no studio visit and no clinic time to block out.",
+  },
+  {
+    question: "Can my practice get matching headshots for new staff?",
+    answer:
+      "Yes. New residents, fellows, or attending physicians can each upload their own selfies and choose the same style. Your team page stays consistent without a group photo session.",
+  },
+  {
+    question: "How much does it cost, and is there a guarantee?",
+    answer:
+      "Headshots start at $9.90 per person with no subscription required. Every order is covered by our 14-day money-back guarantee.",
+  },
+];
+
 export default function DoctorsIndustryPage() {
   return (
     <main id="main-content" className="min-h-screen">
+      <ProductSchema
+        name="Professional Headshots for Doctors & Healthcare Professionals"
+        description="AI-generated professional headshots for doctors, physicians, and healthcare professionals, suited to hospital directories, insurance panels, and practice websites."
+        price={990}
+        category="Professional Services"
+        slug="industries/doctors"
+      />
+      <FAQSchema items={faqs} />
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
         { name: 'Industries', url: `${siteConfig.url}/industries` },
@@ -182,7 +223,7 @@ export default function DoctorsIndustryPage() {
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               Getting Headshots Shouldn&apos;t Take Time Away from Patients
             </h2>
             <p className="mt-4 text-lg text-tp-muted">
@@ -227,7 +268,7 @@ export default function DoctorsIndustryPage() {
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               Built for Doctors &amp; Medical Professionals
             </h2>
             <p className="mt-4 text-lg text-tp-muted">
@@ -280,10 +321,27 @@ export default function DoctorsIndustryPage() {
         </div>
       </section>
 
+      {/* FAQs */}
+      <section className="bg-tp-paper py-20">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
+            Frequently Asked Questions
+          </h2>
+          <div className="mt-12 space-y-6">
+            {faqs.map((faq) => (
+              <div key={faq.question} className="rounded-tp-card border border-tp-line bg-white p-6">
+                <h3 className="text-lg font-semibold text-tp-ink">{faq.question}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-tp-muted">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+          <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
             Your Patients Are Looking You Up. Look Your Best.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">

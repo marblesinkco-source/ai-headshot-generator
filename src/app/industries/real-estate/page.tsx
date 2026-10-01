@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, ProductSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import {
@@ -100,8 +100,8 @@ const benefits = [
 ];
 
 const stats = [
-  { value: '2x', label: 'More inquiries with professional photos' },
-  { value: '75%', label: 'Of buyers judge agents by their headshot' },
+  { value: '40+', label: 'Professional photos per order' },
+  { value: '11+', label: 'Styles including business & headshot' },
   { value: '$9.90', label: 'Starting price per person' },
   { value: '< 2hrs', label: 'From selfies to finished headshots' },
 ];
@@ -117,9 +117,50 @@ const useCases = [
   'Marketing Materials',
 ];
 
+const faqs = [
+  {
+    question: "Are the headshots suitable for MLS, Zillow, and Realtor.com profiles?",
+    answer:
+      "The headshots are delivered in high resolution, which suits most MLS and listing portal profiles. Each MLS sets its own photo rules, so check your local requirements before uploading.",
+  },
+  {
+    question: "Can I use them on yard signs, business cards, and flyers?",
+    answer:
+      "Yes. The high-resolution files work for print and digital materials, and your order includes full commercial rights. That covers signage, business cards, email signatures, and social media.",
+  },
+  {
+    question: "How fast can I get my headshots between showings?",
+    answer:
+      "You can upload selfies from your phone at any time and typically receive finished headshots in about 2 hours. There is no photographer to schedule around your showings.",
+  },
+  {
+    question: "Can my whole brokerage get matching headshots?",
+    answer:
+      "Yes. Each agent uploads their own selfies on their own time and chooses the same style, so the team looks consistent. Team pricing is also available for brokerages.",
+  },
+  {
+    question: "How much does it cost compared to a photographer?",
+    answer:
+      "Headshots start at $9.90 per person with no subscription required. Traditional real estate headshot sessions often cost far more per agent.",
+  },
+  {
+    question: "What if I am not happy with my headshots?",
+    answer:
+      "Every order is backed by our 14-day money-back guarantee.",
+  },
+];
+
 export default function RealEstateIndustryPage() {
   return (
     <main id="main-content" className="min-h-screen">
+      <ProductSchema
+        name="Professional Headshots for Real Estate Agents"
+        description="AI-generated professional headshots for real estate agents and brokerages, sized for MLS profiles, listing portals, signage, and marketing materials."
+        price={990}
+        category="Professional Services"
+        slug="industries/real-estate"
+      />
+      <FAQSchema items={faqs} />
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
         { name: 'Industries', url: `${siteConfig.url}/industries` },
@@ -188,7 +229,7 @@ export default function RealEstateIndustryPage() {
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               Traditional Headshots Are Broken
             </h2>
             <p className="mt-4 text-lg text-tp-muted">
@@ -233,7 +274,7 @@ export default function RealEstateIndustryPage() {
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               Built for Real Estate Professionals
             </h2>
             <p className="mt-4 text-lg text-tp-muted">
@@ -282,7 +323,7 @@ export default function RealEstateIndustryPage() {
       {/* How it works */}
       <section className="py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+          <h2 className="text-center text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
             3 Simple Steps to Your New Headshot
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-tp-muted">
@@ -348,6 +389,7 @@ export default function RealEstateIndustryPage() {
               <p className="font-semibold text-tp-bronze">David Kim</p>
               <p className="mt-1 text-sm text-tp-beige/60">Real Estate Agent, Keller Williams</p>
             </div>
+            <p className="mt-4 text-xs text-tp-beige/40">* Illustrative testimonial for demonstration purposes.</p>
           </div>
         </div>
       </section>
@@ -357,7 +399,7 @@ export default function RealEstateIndustryPage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
-              <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+              <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
                 Managing a Brokerage?
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-tp-muted">
@@ -389,16 +431,33 @@ export default function RealEstateIndustryPage() {
             <div className="rounded-tp-card border border-tp-line bg-tp-paper p-8 text-center">
               <Users className="mx-auto h-16 w-16 text-tp-bronze/40" />
               <p className="mt-4 font-display text-4xl font-normal italic text-tp-bronze-ink">
-                50+ agents
+                Team-Ready
               </p>
               <p className="mt-2 text-sm text-tp-muted">
-                onboarded per brokerage on average
+                from solo agents to full brokerages
               </p>
               <p className="mt-6 text-xs text-tp-muted">
-                Used by teams at RE/MAX, Keller Williams, Coldwell Banker, and independent
-                brokerages across the country.
+                Built for solo agents, boutique teams, and large brokerages across
+                every market.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="bg-tp-paper py-20">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
+            Frequently Asked Questions
+          </h2>
+          <div className="mt-12 space-y-6">
+            {faqs.map((faq) => (
+              <div key={faq.question} className="rounded-tp-card border border-tp-line bg-white p-6">
+                <h3 className="text-lg font-semibold text-tp-ink">{faq.question}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-tp-muted">{faq.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -406,7 +465,7 @@ export default function RealEstateIndustryPage() {
       {/* CTA */}
       <section className="py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+          <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
             Your Next Listing Deserves a Better Headshot
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">

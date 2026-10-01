@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, ProductSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import {
@@ -111,9 +111,50 @@ const stats = [
   { value: '3+', label: 'Professional styles per order' },
 ];
 
+const faqs = [
+  {
+    question: "Can I get different styles for proposals, LinkedIn, and speaking bios?",
+    answer:
+      "Yes. You receive multiple looks from a single upload, from polished boardroom portraits to more approachable casual professional shots. One order can cover your proposals, website, and conference materials.",
+  },
+  {
+    question: "How fast can I get headshots before a conference deadline?",
+    answer:
+      "Most headshots are ready in about 2 hours after you upload your selfies. That makes it practical for last-minute proposals, speaker bios, and event programs.",
+  },
+  {
+    question: "Do I need to be in one place to take the photos?",
+    answer:
+      "No. You only need selfies taken on your phone, so you can do it from a hotel, airport, or client site. There is no studio session to schedule.",
+  },
+  {
+    question: "Can I use the headshots on client-facing materials?",
+    answer:
+      "Yes. Your order includes full commercial rights, so you can use the images on proposals, pitch decks, your website, and social profiles.",
+  },
+  {
+    question: "How much does it cost compared to a photographer?",
+    answer:
+      "Headshots start at $9.90 with no subscription. Traditional studio sessions often cost several hundred dollars and usually cover only a single look.",
+  },
+  {
+    question: "What if the results are not what I expected?",
+    answer:
+      "Every order is backed by our 14-day money-back guarantee, so you can try it with confidence.",
+  },
+];
+
 export default function ConsultantsIndustryPage() {
   return (
     <main id="main-content" className="min-h-screen">
+      <ProductSchema
+        name="Professional Headshots for Consultants & Advisors"
+        description="AI-generated professional headshots for consultants, advisors, and independent professionals, with multiple styles for proposals, LinkedIn, and speaking bios."
+        price={990}
+        category="Professional Services"
+        slug="industries/consultants"
+      />
+      <FAQSchema items={faqs} />
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
         { name: 'Industries', url: `${siteConfig.url}/industries` },
@@ -182,7 +223,7 @@ export default function ConsultantsIndustryPage() {
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               Your Image Is Part of Your Value Proposition
             </h2>
             <p className="mt-4 text-lg text-tp-muted">
@@ -227,7 +268,7 @@ export default function ConsultantsIndustryPage() {
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               Built for Consultants &amp; Independent Advisors
             </h2>
             <p className="mt-4 text-lg text-tp-muted">
@@ -280,10 +321,27 @@ export default function ConsultantsIndustryPage() {
         </div>
       </section>
 
+      {/* FAQs */}
+      <section className="bg-tp-paper py-20">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
+            Frequently Asked Questions
+          </h2>
+          <div className="mt-12 space-y-6">
+            {faqs.map((faq) => (
+              <div key={faq.question} className="rounded-tp-card border border-tp-line bg-white p-6">
+                <h3 className="text-lg font-semibold text-tp-ink">{faq.question}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-tp-muted">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+          <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
             Clients Judge the Book by Its Cover. Make Yours Count.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">

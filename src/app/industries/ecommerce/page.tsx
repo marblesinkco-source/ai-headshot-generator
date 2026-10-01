@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, ProductSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
   ShoppingBag, Camera, Clock, Shield, Star, ArrowRight,
@@ -26,9 +26,50 @@ export const metadata: Metadata = {
   },
 };
 
+const faqs = [
+  {
+    question: "Are the photos suitable for marketplaces like Amazon, Shopify, and Etsy?",
+    answer:
+      "The photos include clean, white-background options designed for common marketplace listings. Each marketplace has its own image rules, so check the current requirements for your platform before uploading.",
+  },
+  {
+    question: "What kinds of shots do I get from one upload?",
+    answer:
+      "You can get a mix of styles, including clean product-on-white, lifestyle scenes, and flat lays. The exact mix depends on the style options you choose.",
+  },
+  {
+    question: "How long does it take to receive my photos?",
+    answer:
+      "Most orders are ready in about 2 hours. That lets you list new products the same day instead of waiting on a studio or photographer.",
+  },
+  {
+    question: "Can I keep my branding consistent across a large catalog?",
+    answer:
+      "Yes. Using the same styles across your products helps keep backgrounds and overall look consistent from item to item. This works whether you have a handful of products or a large catalog.",
+  },
+  {
+    question: "Can I use the photos commercially?",
+    answer:
+      "Yes. Your order includes a commercial license, so you can use the images on your store, marketplace listings, ads, and social channels.",
+  },
+  {
+    question: "How much does it cost, and what if I am not satisfied?",
+    answer:
+      "Photos start at $9.90 with no subscription required. Every order is backed by our 14-day money-back guarantee.",
+  },
+];
+
 export default function EcommerceLandingPage() {
   return (
     <main id="main-content" className="min-h-screen">
+      <ProductSchema
+        name="Professional Headshots for E-Commerce Sellers"
+        description="AI-generated professional photos for e-commerce sellers and online store owners, including team and founder headshots delivered in about 2 hours."
+        price={990}
+        category="Professional Services"
+        slug="industries/ecommerce"
+      />
+      <FAQSchema items={faqs} />
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
         { name: 'Industries', url: `${siteConfig.url}/industries` },
@@ -130,7 +171,7 @@ export default function EcommerceLandingPage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 text-center">
             {[
-              { value: '93%', label: 'of shoppers say images affect purchase decisions' },
+              { value: '11+', label: 'photo styles for products & people' },
               { value: '40+', label: 'photos per session' },
               { value: '$9.90', label: 'starting price vs $200+ studios' },
               { value: '<2hrs', label: 'average delivery time' },
@@ -157,7 +198,7 @@ export default function EcommerceLandingPage() {
             {[
               { icon: Package, title: 'Marketplace-Ready', desc: 'White background photos optimized for Amazon, Shopify, Etsy, and eBay requirements.' },
               { icon: Palette, title: 'Multiple Angles & Styles', desc: 'Lifestyle shots, flat lays, and clean product-on-white — all from one upload.' },
-              { icon: TrendingUp, title: 'Higher Conversion Rates', desc: 'Professional product images can increase conversion rates by up to 30%.' },
+              { icon: TrendingUp, title: 'Higher Conversion Rates', desc: 'Professional product images help build buyer trust and drive more sales.' },
               { icon: Zap, title: '2-Hour Turnaround', desc: 'Launch new products the same day. No waiting weeks for a photographer.' },
               { icon: Users, title: 'Scale Your Catalog', desc: 'Whether you have 10 or 1,000 products, AI handles them all consistently.' },
               { icon: CheckCircle, title: 'Consistent Branding', desc: 'Every product photo matches your brand style. No more visual inconsistency.' },
@@ -188,6 +229,23 @@ export default function EcommerceLandingPage() {
               >
                 {platform}
               </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="bg-tp-paper py-20">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
+            Frequently Asked Questions
+          </h2>
+          <div className="mt-12 space-y-6">
+            {faqs.map((faq) => (
+              <div key={faq.question} className="rounded-tp-card border border-tp-line bg-white p-6">
+                <h3 className="text-lg font-semibold text-tp-ink">{faq.question}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-tp-muted">{faq.answer}</p>
+              </div>
             ))}
           </div>
         </div>

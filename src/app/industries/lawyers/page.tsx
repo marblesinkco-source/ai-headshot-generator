@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, ProductSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import {
@@ -102,8 +102,8 @@ const benefits = [
 ];
 
 const stats = [
-  { value: '73%', label: 'Of clients check attorney photos before hiring' },
-  { value: '4x', label: 'More profile views with a professional headshot' },
+  { value: '40+', label: 'Professional photos per order' },
+  { value: '11+', label: 'Styles including business & legal' },
   { value: '$9.90', label: 'Starting price per person' },
   { value: '< 2hrs', label: 'From selfies to finished headshots' },
 ];
@@ -119,9 +119,50 @@ const useCases = [
   'Email Signatures',
 ];
 
+const faqs = [
+  {
+    question: "Will the headshots work for my state bar directory?",
+    answer:
+      "The headshots are high-resolution and professionally formatted, which suits most bar directory listings. Because each state bar sets its own photo rules, check your bar's specific requirements before uploading.",
+  },
+  {
+    question: "Can I get consistent headshots across my entire firm?",
+    answer:
+      "Yes. Each attorney uploads their own selfies and picks the same style, so lighting and backgrounds match across partners and associates. Your team page looks unified without a group photo day.",
+  },
+  {
+    question: "How quickly can a new associate or partner get a headshot?",
+    answer:
+      "Most headshots are ready about 2 hours after the selfies are uploaded. A lateral hire or new associate can have a matching photo on the firm website the same day.",
+  },
+  {
+    question: "Can I use one set of photos for the firm site, LinkedIn, and conference bios?",
+    answer:
+      "Yes. You receive multiple professional styles, from formal for the firm website to more approachable for LinkedIn. Your order also includes full commercial rights.",
+  },
+  {
+    question: "How much does it cost compared to a studio session?",
+    answer:
+      "Headshots start at $9.90 per person, with no subscription required. Team pricing is available for firms that want to onboard several attorneys.",
+  },
+  {
+    question: "What if I am not satisfied with the results?",
+    answer:
+      "Every order is covered by our 14-day money-back guarantee.",
+  },
+];
+
 export default function LawyersIndustryPage() {
   return (
     <main id="main-content" className="min-h-screen">
+      <ProductSchema
+        name="Professional Headshots for Lawyers & Law Firms"
+        description="AI-generated professional headshots for attorneys and law firms, with firm-consistent styling suited to bar directories, firm websites, and legal publications."
+        price={990}
+        category="Professional Services"
+        slug="industries/lawyers"
+      />
+      <FAQSchema items={faqs} />
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
         { name: 'Industries', url: `${siteConfig.url}/industries` },
@@ -190,7 +231,7 @@ export default function LawyersIndustryPage() {
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               The Old Way of Getting Legal Headshots Is Broken
             </h2>
             <p className="mt-4 text-lg text-tp-muted">
@@ -235,7 +276,7 @@ export default function LawyersIndustryPage() {
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+            <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
               Built for Legal Professionals
             </h2>
             <p className="mt-4 text-lg text-tp-muted">
@@ -284,7 +325,7 @@ export default function LawyersIndustryPage() {
       {/* How it works */}
       <section className="py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+          <h2 className="text-center text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
             3 Simple Steps to Your New Headshot
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-tp-muted">
@@ -351,6 +392,7 @@ export default function LawyersIndustryPage() {
               <p className="font-semibold text-tp-bronze">James O&apos;Brien</p>
               <p className="mt-1 text-sm text-tp-beige/60">Managing Partner, O&apos;Brien & Associates</p>
             </div>
+            <p className="mt-4 text-xs text-tp-beige/40">* Illustrative testimonial for demonstration purposes.</p>
           </div>
         </div>
       </section>
@@ -360,7 +402,7 @@ export default function LawyersIndustryPage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
-              <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+              <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
                 Managing a Law Firm?
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-tp-muted">
@@ -393,13 +435,13 @@ export default function LawyersIndustryPage() {
             <div className="rounded-tp-card border border-tp-line bg-tp-paper p-8 text-center">
               <Scale className="mx-auto h-16 w-16 text-tp-bronze/40" />
               <p className="mt-4 font-display text-4xl font-normal italic text-tp-bronze-ink">
-                200+ firms
+                Team-Ready
               </p>
               <p className="mt-2 text-sm text-tp-muted">
-                trust TailorPic for their team headshots
+                from solo practitioners to full firms
               </p>
               <p className="mt-6 text-xs text-tp-muted">
-                Used by solo practitioners, boutique firms, and Am Law 200 practices across
+                Built for solo practitioners, boutique firms, and large practices across
                 every practice area.
               </p>
             </div>
@@ -407,10 +449,27 @@ export default function LawyersIndustryPage() {
         </div>
       </section>
 
+      {/* FAQs */}
+      <section className="bg-tp-paper py-20">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
+            Frequently Asked Questions
+          </h2>
+          <div className="mt-12 space-y-6">
+            {faqs.map((faq) => (
+              <div key={faq.question} className="rounded-tp-card border border-tp-line bg-white p-6">
+                <h3 className="text-lg font-semibold text-tp-ink">{faq.question}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-tp-muted">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-extrabold tracking-tight text-tp-ink sm:text-4xl">
+          <h2 className="text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
             Your Clients Are Looking You Up. Look Your Best.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
