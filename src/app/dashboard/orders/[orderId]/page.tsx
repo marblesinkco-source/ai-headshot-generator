@@ -160,6 +160,11 @@ export default function OrderDetailPage() {
       description: 'There was an issue with your order. Please contact support for assistance.',
       icon: '❌',
     },
+    refunded: {
+      title: 'Order Refunded',
+      description: 'This order has been refunded. Please allow a few business days for the funds to appear on your statement.',
+      icon: '↩️',
+    },
   };
 
   const statusInfo = statusMessages[order.status];

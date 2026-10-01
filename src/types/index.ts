@@ -2,7 +2,7 @@
 // Enums / Status types
 // ---------------------------------------------------------------------------
 
-export type OrderStatus = 'pending' | 'paid' | 'uploading' | 'processing' | 'completed' | 'failed';
+export type OrderStatus = 'pending' | 'paid' | 'uploading' | 'processing' | 'completed' | 'failed' | 'refunded';
 
 export type GenerationStatus = 'queued' | 'processing' | 'upscaling' | 'completed' | 'failed';
 

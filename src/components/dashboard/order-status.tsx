@@ -27,6 +27,10 @@ const STATUS_CONFIG: Record<OrderStatus, { label: string; className: string; pul
     label: 'Failed',
     className: 'bg-red-100 text-red-700',
   },
+  refunded: {
+    label: 'Refunded',
+    className: 'bg-gray-100 text-gray-700',
+  },
 };
 
 interface OrderStatusBadgeProps {

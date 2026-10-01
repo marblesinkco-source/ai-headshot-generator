@@ -23,7 +23,8 @@ export type OrderStatus =
   | "uploading"
   | "processing"
   | "completed"
-  | "failed";
+  | "failed"
+  | "refunded";
 
 export interface Database {
   public: {

@@ -200,3 +200,169 @@ export function buildOrderConfirmationEmail(params: OrderConfirmationParams) {
 
   return { subject, html };
 }
+
+// ─── Payment Failed Email ─────────────────────────────────────────────
+
+interface PaymentFailedParams {
+  customerName?: string;
+  orderId: string;
+  categoryName: string;
+  amount: number;       // cents
+  currency?: string;    // defaults to usd
+}
+
+export function buildPaymentFailedEmail(params: PaymentFailedParams) {
+  const { customerName, orderId, categoryName, amount, currency } = params;
+  const greeting = customerName ? `Hi ${customerName},` : 'Hi there,';
+  const retryUrl = `${siteConfig.url}/dashboard/orders/${orderId}`;
+
+  const subject = `Your ${categoryName} payment didn't go through`;
+
+  const html = emailWrapper(`
+    <h2 style="margin:0 0 16px;font-size:22px;color:${BRAND.ink};font-weight:700;">
+      We couldn't process your payment
+    </h2>
+    <p style="margin:0 0 16px;font-size:15px;color:${BRAND.muted};line-height:1.6;">
+      ${greeting}
+    </p>
+    <p style="margin:0 0 16px;font-size:15px;color:${BRAND.ink};line-height:1.6;">
+      Your payment of <strong>${formatPrice(amount, currency)}</strong> for your
+      <strong>${categoryName}</strong> order was not completed, and you haven't been charged.
+      This can happen because of an expired card, insufficient funds, or a bank security check.
+    </p>
+    <p style="margin:0 0 8px;font-size:15px;color:${BRAND.ink};line-height:1.6;">
+      Your order is waiting — you can try again with the same or a different payment method.
+    </p>
+
+    ${ctaButton('Try Again', retryUrl)}
+
+    <p style="margin:16px 0 0;font-size:13px;color:${BRAND.muted};text-align:center;line-height:1.5;">
+      Need help? Contact us at
+      <a href="mailto:${siteConfig.supportEmail}" style="color:${BRAND.bronzeInk};">${siteConfig.supportEmail}</a>
+    </p>
+  `);
+
+  return { subject, html };
+}
+
+// ─── Abandoned Checkout Email ─────────────────────────────────────────
+
+interface AbandonedCheckoutParams {
+  customerName?: string;
+  categoryName: string;
+  packageName: string;
+  checkoutUrl: string;
+}
+
+export function buildAbandonedCheckoutEmail(params: AbandonedCheckoutParams) {
+  const { customerName, categoryName, packageName, checkoutUrl } = params;
+  const greeting = customerName ? `Hi ${customerName},` : 'Hi there,';
+
+  const subject = `Your ${categoryName} order is waiting`;
+
+  const html = emailWrapper(`
+    <h2 style="margin:0 0 16px;font-size:22px;color:${BRAND.ink};font-weight:700;">
+      You left something behind
+    </h2>
+    <p style="margin:0 0 16px;font-size:15px;color:${BRAND.muted};line-height:1.6;">
+      ${greeting}
+    </p>
+    <p style="margin:0 0 16px;font-size:15px;color:${BRAND.ink};line-height:1.6;">
+      You started an order for the <strong>${categoryName} — ${packageName}</strong> package
+      but didn't finish checking out. Pick up right where you left off.
+    </p>
+
+    ${ctaButton('Complete Your Order', checkoutUrl)}
+
+    <p style="margin:16px 0 0;font-size:13px;color:${BRAND.muted};text-align:center;line-height:1.5;">
+      Questions before you buy? Reach us at
+      <a href="mailto:${siteConfig.supportEmail}" style="color:${BRAND.bronzeInk};">${siteConfig.supportEmail}</a>
+    </p>
+  `);
+
+  return { subject, html };
+}
+
+// ─── Refund Confirmation Email ────────────────────────────────────────
+
+interface RefundConfirmationParams {
+  customerName?: string;
+  orderId: string;
+  amount: number;       // cents (amount refunded)
+  categoryName: string;
+  currency?: string;    // defaults to usd
+}
+
+export function buildRefundConfirmationEmail(params: RefundConfirmationParams) {
+  const { customerName, orderId, amount, categoryName, currency } = params;
+  const greeting = customerName ? `Hi ${customerName},` : 'Hi there,';
+
+  const subject = `Refund confirmed — ${categoryName} order`;
+
+  const html = emailWrapper(`
+    <h2 style="margin:0 0 16px;font-size:22px;color:${BRAND.ink};font-weight:700;">
+      Your refund has been issued
+    </h2>
+    <p style="margin:0 0 16px;font-size:15px;color:${BRAND.muted};line-height:1.6;">
+      ${greeting}
+    </p>
+    <p style="margin:0 0 16px;font-size:15px;color:${BRAND.ink};line-height:1.6;">
+      We've refunded <strong>${formatPrice(amount, currency)}</strong> for your
+      <strong>${categoryName}</strong> order.
+    </p>
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:16px 0;background-color:${BRAND.paper};border-radius:10px;">
+      <tr>
+        <td style="padding:16px 20px;">
+          <p style="margin:0 0 4px;font-size:13px;color:${BRAND.muted};">Order</p>
+          <p style="margin:0 0 12px;font-size:14px;color:${BRAND.ink};font-weight:600;">${orderId}</p>
+          <p style="margin:0 0 4px;font-size:13px;color:${BRAND.muted};">Refunded amount</p>
+          <p style="margin:0;font-size:14px;color:${BRAND.ink};font-weight:600;">${formatPrice(amount, currency)}</p>
+        </td>
+      </tr>
+    </table>
+
+    <p style="margin:0;font-size:14px;color:${BRAND.muted};line-height:1.6;">
+      Depending on your bank, it may take 5–10 business days for the funds to appear on your statement.
+      If you have questions, contact us at
+      <a href="mailto:${siteConfig.supportEmail}" style="color:${BRAND.bronzeInk};">${siteConfig.supportEmail}</a>.
+    </p>
+  `);
+
+  return { subject, html };
+}
+
+// ─── Account Deletion Email ───────────────────────────────────────────
+
+interface AccountDeletionParams {
+  customerName?: string;
+}
+
+export function buildAccountDeletionEmail(params: AccountDeletionParams = {}) {
+  const { customerName } = params;
+  const greeting = customerName ? `Hi ${customerName},` : 'Hi there,';
+
+  const subject = `Your ${siteConfig.name} account has been deleted`;
+
+  const html = emailWrapper(`
+    <h2 style="margin:0 0 16px;font-size:22px;color:${BRAND.ink};font-weight:700;">
+      Your account has been deleted
+    </h2>
+    <p style="margin:0 0 16px;font-size:15px;color:${BRAND.muted};line-height:1.6;">
+      ${greeting}
+    </p>
+    <p style="margin:0 0 16px;font-size:15px;color:${BRAND.ink};line-height:1.6;">
+      This confirms that your ${siteConfig.name} account and the data associated with it have been deleted
+      at your request.
+    </p>
+    <p style="margin:0 0 16px;font-size:15px;color:${BRAND.ink};line-height:1.6;">
+      If you didn't request this, please contact us right away at
+      <a href="mailto:${siteConfig.supportEmail}" style="color:${BRAND.bronzeInk};">${siteConfig.supportEmail}</a>.
+    </p>
+    <p style="margin:0;font-size:14px;color:${BRAND.muted};line-height:1.6;">
+      You're always welcome to come back and create a new account.
+    </p>
+  `);
+
+  return { subject, html };
+}
