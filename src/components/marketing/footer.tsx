@@ -89,6 +89,8 @@ export function Footer() {
               width={1000}
               height={230}
               className="h-7 w-auto mb-4"
+              loading="lazy"
+              sizes="122px"
             />
             <p className="text-[13px] text-tp-beige/60 leading-relaxed max-w-xs">
               {siteConfig.description}
@@ -157,6 +159,14 @@ export function Footer() {
                   className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
                 >
                   Pricing
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/reviews"
+                  className="text-[13px] text-tp-beige/60 transition-colors hover:text-tp-bronze"
+                >
+                  Reviews
                 </Link>
               </li>
               <li>

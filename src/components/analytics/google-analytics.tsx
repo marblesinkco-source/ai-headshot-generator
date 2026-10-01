@@ -73,7 +73,7 @@ gtag('config', ${JSON.stringify(GA_ID)}, { send_page_view: false });
       <Script
         id="ga-gtag"
         src={`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GA_ID)}`}
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         onLoad={() => {
           // Initial page view (route-change effect ran before gtag.js existed).
           if (typeof window.gtag === 'function') {

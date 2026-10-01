@@ -2,6 +2,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getActiveCategories, CATEGORY_GROUPS } from '@/config/categories';
 
+// Tiny neutral beige 8x6 SVG placeholder shown while category images load
+const BLUR_DATA_URL =
+  'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDYiPjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjYiIGZpbGw9IiNFOERGRDAiLz48L3N2Zz4=';
+
 // Category images — downloaded locally during build (see scripts/download-category-images.mjs)
 // All photos sourced from Unsplash (free for commercial use)
 const CATEGORY_IMAGES: Record<string, { src: string; alt: string }> = {
@@ -102,6 +106,9 @@ export function Categories() {
                               height={600}
                               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                               sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
+                              loading="lazy"
+                              placeholder="blur"
+                              blurDataURL={BLUR_DATA_URL}
                             />
                             {/* Subtle bottom gradient for text readability */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

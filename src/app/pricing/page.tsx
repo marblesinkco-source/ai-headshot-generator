@@ -10,6 +10,7 @@ import { PricingPsychology } from '@/components/marketing/pricing-psychology';
 import { GuaranteeBadge } from '@/components/marketing/guarantee-badge';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
+import { TrustBadges } from '@/components/marketing/trust-badges';
 import { BreadcrumbSchema } from '@/components/structured-data';
 
 const OG_DESCRIPTION =
@@ -63,6 +64,8 @@ export default function PricingPage() {
       <TrustBar />
 
       <Pricing />
+
+      <TrustBadges />
 
       {/* Divider */}
       <div className="mx-auto max-w-5xl px-4">

@@ -57,9 +57,31 @@ export const metadata: Metadata = {
   },
 };
 
+const FONT_CSS_URL =
+  'https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap';
+const SUPABASE_ORIGIN = process.env.NEXT_PUBLIC_SUPABASE_URL
+  ? new URL(process.env.NEXT_PUBLIC_SUPABASE_URL).origin
+  : null;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={manrope.variable} suppressHydrationWarning>
+      <head>
+        {/* Instrument Serif: preconnect + non-chained stylesheet (replaces CSS @import, font-display: swap in URL) */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="stylesheet" href={FONT_CSS_URL} />
+        {SUPABASE_ORIGIN && (
+          <>
+            <link rel="preconnect" href={SUPABASE_ORIGIN} crossOrigin="anonymous" />
+            <link rel="dns-prefetch" href={SUPABASE_ORIGIN} />
+          </>
+        )}
+        {/* Stripe + analytics are only needed later (checkout / after consent): dns-prefetch only */}
+        <link rel="dns-prefetch" href="https://js.stripe.com" />
+        <link rel="dns-prefetch" href="https://api.stripe.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+      </head>
       <body className="min-h-screen bg-tp-paper font-sans antialiased text-tp-ink">
         {/* GA4 + Consent Mode v2 — only renders when NEXT_PUBLIC_GA_MEASUREMENT_ID is set */}
         <GoogleAnalytics />

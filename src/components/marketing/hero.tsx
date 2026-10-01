@@ -159,6 +159,7 @@ export function Hero() {
                   height={120}
                   className="w-full h-full object-cover"
                   sizes="60px"
+                  loading="lazy"
                 />
               </div>
               <span>
