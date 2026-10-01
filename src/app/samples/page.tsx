@@ -34,33 +34,23 @@ import {
 /*  Data                                                              */
 /* ------------------------------------------------------------------ */
 
-const categories = [
-  'All',
-  'LinkedIn',
-  'Corporate',
-  'Dating',
-  'Real Estate',
-  'Legal',
-  'Pet Portraits',
-  'Graduation',
-  'Family',
-] as const;
+const categories = ['All', 'Professional', 'Creative', 'Lifestyle', 'Academic', 'Family & Pets'] as const;
 
 type Category = (typeof categories)[number];
 
 const gradientPalettes = [
-  'from-[#C9A98A] to-[#76563D]',
-  'from-[#76563D] to-[#0B0B0B]',
-  'from-[#DCCDBB] to-[#C9A98A]',
-  'from-[#171613] to-[#76563D]',
-  'from-[#C9A98A] to-[#DCCDBB]',
-  'from-[#5F5A54] to-[#171613]',
-  'from-[#DFD6CC] to-[#C9A98A]',
-  'from-[#76563D] to-[#DCCDBB]',
-  'from-[#0B0B0B] to-[#5F5A54]',
-  'from-[#C9A98A] to-[#5F5A54]',
-  'from-[#DCCDBB] to-[#76563D]',
-  'from-[#171613] to-[#C9A98A]',
+  'from-tp-bronze to-tp-bronze-ink',
+  'from-tp-bronze-ink to-tp-black',
+  'from-tp-beige to-tp-bronze',
+  'from-tp-ink to-tp-bronze-ink',
+  'from-tp-bronze to-tp-beige',
+  'from-tp-muted to-tp-ink',
+  'from-tp-line to-tp-bronze',
+  'from-tp-bronze-ink to-tp-beige',
+  'from-tp-black to-tp-muted',
+  'from-tp-bronze to-tp-muted',
+  'from-tp-beige to-tp-bronze-ink',
+  'from-tp-ink to-tp-bronze',
 ];
 
 interface SampleEntry {
@@ -71,18 +61,20 @@ interface SampleEntry {
 }
 
 const sampleEntries: SampleEntry[] = [
-  { id: 1, category: 'LinkedIn', style: 'Classic Studio', gradient: gradientPalettes[0] },
-  { id: 2, category: 'Corporate', style: 'Modern Minimal', gradient: gradientPalettes[1] },
-  { id: 3, category: 'Dating', style: 'Outdoor Natural', gradient: gradientPalettes[2] },
-  { id: 4, category: 'Real Estate', style: 'Professional Trust', gradient: gradientPalettes[3] },
-  { id: 5, category: 'Legal', style: 'Executive Portrait', gradient: gradientPalettes[4] },
-  { id: 6, category: 'Pet Portraits', style: 'Playful Studio', gradient: gradientPalettes[5] },
-  { id: 7, category: 'Graduation', style: 'Cap & Gown Classic', gradient: gradientPalettes[6] },
-  { id: 8, category: 'Family', style: 'Warm & Candid', gradient: gradientPalettes[7] },
-  { id: 9, category: 'LinkedIn', style: 'Creative Professional', gradient: gradientPalettes[8] },
-  { id: 10, category: 'Corporate', style: 'Team Headshot', gradient: gradientPalettes[9] },
-  { id: 11, category: 'Dating', style: 'Urban Lifestyle', gradient: gradientPalettes[10] },
-  { id: 12, category: 'Graduation', style: 'Modern Academic', gradient: gradientPalettes[11] },
+  { id: 1, category: 'Professional', style: 'Classic Studio', gradient: gradientPalettes[0] },
+  { id: 2, category: 'Professional', style: 'Modern Minimal', gradient: gradientPalettes[1] },
+  { id: 3, category: 'Professional', style: 'Executive Portrait', gradient: gradientPalettes[4] },
+  { id: 4, category: 'Professional', style: 'Team Headshot', gradient: gradientPalettes[9] },
+  { id: 5, category: 'Creative', style: 'Creative Professional', gradient: gradientPalettes[8] },
+  { id: 6, category: 'Creative', style: 'Editorial Portrait', gradient: gradientPalettes[3] },
+  { id: 7, category: 'Creative', style: 'Playful Studio', gradient: gradientPalettes[5] },
+  { id: 8, category: 'Lifestyle', style: 'Outdoor Natural', gradient: gradientPalettes[2] },
+  { id: 9, category: 'Lifestyle', style: 'Urban Lifestyle', gradient: gradientPalettes[10] },
+  { id: 10, category: 'Lifestyle', style: 'Golden Hour', gradient: gradientPalettes[7] },
+  { id: 11, category: 'Academic', style: 'Cap & Gown Classic', gradient: gradientPalettes[6] },
+  { id: 12, category: 'Academic', style: 'Modern Academic', gradient: gradientPalettes[11] },
+  { id: 13, category: 'Family & Pets', style: 'Warm & Candid', gradient: gradientPalettes[0] },
+  { id: 14, category: 'Family & Pets', style: 'Pet Portrait Studio', gradient: gradientPalettes[8] },
 ];
 
 const qualityBadges = [
@@ -144,9 +136,9 @@ const comparisonRows = [
 ];
 
 const beforeAfterCards = [
-  { style: 'LinkedIn Headshot', gradientBefore: 'from-[#DFD6CC] to-[#DCCDBB]', gradientAfter: 'from-[#C9A98A] to-[#76563D]' },
-  { style: 'Corporate Team', gradientBefore: 'from-[#DFD6CC] to-[#DCCDBB]', gradientAfter: 'from-[#171613] to-[#76563D]' },
-  { style: 'Dating Profile', gradientBefore: 'from-[#DFD6CC] to-[#DCCDBB]', gradientAfter: 'from-[#DCCDBB] to-[#C9A98A]' },
+  { style: 'LinkedIn Headshot', gradientBefore: 'from-tp-line to-tp-beige', gradientAfter: 'from-tp-bronze to-tp-bronze-ink' },
+  { style: 'Corporate Team', gradientBefore: 'from-tp-line to-tp-beige', gradientAfter: 'from-tp-ink to-tp-bronze-ink' },
+  { style: 'Dating Profile', gradientBefore: 'from-tp-line to-tp-beige', gradientAfter: 'from-tp-beige to-tp-bronze' },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -198,7 +190,7 @@ export default function SamplesPage() {
               See What AI Can Create
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-lg text-tp-muted">
-              Browse AI-generated example portraits across all categories.
+              Browse AI-generated concept portraits by category. All photos shown are AI-generated concept images.
             </p>
             <p className="mx-auto mt-3 max-w-xl text-base font-medium text-tp-bronze-ink">
               Get 40+ photos starting at $9.90, one-time, no subscription.
@@ -225,12 +217,14 @@ export default function SamplesPage() {
             <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-2 scrollbar-none sm:flex-wrap sm:justify-center">
               {categories.map((cat) => (
                 <button
+                  type="button"
+                  aria-pressed={activeCategory === cat}
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
                   className={`shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition-all ${
                     activeCategory === cat
-                      ? 'border-tp-bronze bg-tp-bronze text-white'
-                      : 'border-tp-line bg-white text-tp-muted hover:border-tp-bronze hover:text-tp-bronze-ink'
+                      ? 'border-tp-bronze bg-tp-bronze text-tp-black'
+                      : 'border-tp-line bg-tp-paper text-tp-muted hover:border-tp-bronze hover:text-tp-bronze-ink'
                   }`}
                 >
                   {cat}
@@ -243,11 +237,14 @@ export default function SamplesPage() {
         {/* ── Gallery Grid ─────────────────────────────── */}
         <section className="px-4 py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <p role="note" className="mx-auto mb-8 max-w-2xl rounded-tp-button border border-tp-line bg-tp-paper px-4 py-3 text-center text-sm text-tp-muted">
+              All photos shown are AI-generated concept images. They are illustrative placeholders, not real customers or verified results.
+            </p>
+            <div className="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 lg:grid-cols-4">
               {filteredEntries.map((entry) => (
                 <div
                   key={entry.id}
-                  className="group relative overflow-hidden rounded-tp-card border border-tp-line bg-white shadow-sm transition-shadow hover:shadow-md"
+                  className="group relative overflow-hidden rounded-tp-card border border-tp-line bg-tp-paper transition-shadow hover:shadow-md"
                 >
                   {/* Gradient placeholder */}
                   <div
@@ -255,20 +252,20 @@ export default function SamplesPage() {
                   >
                     {/* AI Generated watermark */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="rotate-[-20deg] select-none text-lg font-semibold tracking-widest text-white/20">
+                      <span className="rotate-[-20deg] select-none text-lg font-semibold tracking-widest text-tp-paper/30">
                         AI GENERATED
                       </span>
                     </div>
                     {/* Category badge */}
                     <div className="absolute left-3 top-3">
-                      <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-tp-ink backdrop-blur-sm">
+                      <span className="rounded-full bg-tp-paper/90 px-3 py-1 text-xs font-semibold text-tp-ink backdrop-blur-sm">
                         {entry.category}
                       </span>
                     </div>
                     {/* Hover overlay */}
-                    <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100">
+                    <div className="absolute inset-0 flex items-end bg-gradient-to-t from-tp-black/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100">
                       <div className="w-full p-4">
-                        <p className="text-sm font-medium text-white">
+                        <p className="text-sm font-medium text-tp-paper">
                           {entry.style}
                         </p>
                       </div>
@@ -301,7 +298,7 @@ export default function SamplesPage() {
                   'rounded-tp-button bg-tp-bronze text-white hover:bg-tp-bronze-ink'
                 )}
               >
-                Create Yours from $9.90
+                Create yours
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
               <p className="mt-3 text-sm text-tp-muted">40+ photos, one-time payment. Most orders ready within 2 hours.</p>

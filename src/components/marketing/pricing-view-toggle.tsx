@@ -36,6 +36,7 @@ const TEAM_PERKS = [
   'Consistent look across the whole team',
   'One-time payment per person, no subscription',
   '14-day money-back guarantee',
+  'Full commercial rights',
   'Secure Stripe checkout',
 ];
 
@@ -102,10 +103,15 @@ export function PricingViewToggle({ individual }: { individual: ReactNode }) {
                 <div
                   key={t.name}
                   className={cn(
-                    'rounded-tp-card border bg-white p-6 text-center sm:p-8',
+                    'relative rounded-tp-card border bg-white p-6 text-center sm:p-8',
                     t.highlight ? 'border-tp-bronze' : 'border-tp-line'
                   )}
                 >
+                  {t.highlight && (
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-tp-black px-3 py-1 text-xs font-semibold text-tp-bronze">
+                      Most Popular
+                    </span>
+                  )}
                   <h3 className="text-lg font-semibold text-tp-ink">{t.name}</h3>
                   <p className="mt-1 text-sm text-tp-muted">{t.size}</p>
                   <p className="mt-6 font-display text-5xl text-tp-black">{t.price}</p>

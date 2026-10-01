@@ -161,18 +161,19 @@ function RegisterContent() {
                 priority
               />
             </Link>
-            <p className="mt-3 text-sm text-tp-muted">Create your account</p>
+            <h1 className="mt-6 font-display font-normal text-4xl text-tp-black">Create your account</h1>
+            <p className="mt-2 text-sm text-tp-muted">Your professional headshots are one step away.</p>
           </div>
 
           {/* Card */}
-          <div className="rounded-tp-card border border-tp-line/60 bg-white p-8 shadow-sm">
+          <div className="rounded-tp-card border border-tp-line bg-white p-6 sm:p-8 shadow-[0_1px_2px_rgba(11,11,11,0.04),0_12px_32px_-12px_rgba(118,86,61,0.18)]">
             {/* OAuth Buttons */}
             <div className="space-y-3">
               {/* Google */}
               <Button
                 variant="outline"
                 size="md"
-                className="w-full border-tp-line text-tp-ink hover:bg-tp-paper"
+                className="w-full gap-3 rounded-tp-button border-tp-line bg-white font-medium text-tp-ink hover:bg-tp-paper"
                 onClick={() => handleOAuthSignUp('google')}
                 loading={oauthLoading === 'google'}
                 disabled={loading || (oauthLoading !== null && oauthLoading !== 'google')}
@@ -279,9 +280,15 @@ function RegisterContent() {
             </form>
 
             {/* Trust signals */}
-            <p className="mt-4 text-center text-xs text-tp-muted">
-              256-bit encryption &middot; No credit card required &middot; Cancel anytime
-            </p>
+            <ul className="mt-5 grid grid-cols-1 gap-2 rounded-tp-button border border-tp-line bg-tp-paper px-4 py-3 text-xs text-tp-ink sm:grid-cols-3 sm:gap-1 sm:text-center">
+              {['No credit card required', '14-day money-back guarantee', '$9.90 one-time'].map((t) => (
+                <li key={t} className="flex items-center gap-1.5 sm:flex-col sm:gap-1">
+                  <Check className="h-3.5 w-3.5 shrink-0 text-tp-bronze-ink" aria-hidden="true" />
+                  <span className="font-medium">{t}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-3 text-center text-xs text-tp-muted">256-bit encryption &middot; Your photos stay private</p>
 
             <p className="mt-3 text-center text-xs text-tp-muted">
               By signing up, you agree to our{' '}
@@ -308,38 +315,37 @@ function RegisterContent() {
         <div className="absolute -bottom-32 -right-32 w-80 h-80 rounded-full bg-gradient-to-br from-tp-bronze/10 to-tp-bronze/0 blur-3xl" />
 
         <div className="relative z-10 w-full max-w-sm">
-          <h2 className="font-display text-3xl text-white mb-8">
-            Create Stunning AI Photos
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-tp-bronze">AI headshots, tailored</p>
+          <h2 className="font-display font-normal text-4xl leading-tight text-tp-paper mb-8">
+            Look like your best professional self
           </h2>
 
           <ul className="space-y-5 mb-10">
-            <li className="flex items-start gap-3">
-              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-tp-bronze/20">
-                <Check className="h-3 w-3 text-tp-bronze" />
-              </span>
-              <span className="text-sm text-tp-beige">Upload selfies, get professional photos</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-tp-bronze/20">
-                <Check className="h-3 w-3 text-tp-bronze" />
-              </span>
-              <span className="text-sm text-tp-beige">40+ photos per session</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-tp-bronze/20">
-                <Check className="h-3 w-3 text-tp-bronze" />
-              </span>
-              <span className="text-sm text-tp-beige">Ready in under 2 hours</span>
-            </li>
+            {['Upload selfies, get professional photos', '40+ photos per session', 'Ready in under 2 hours', '14-day money-back guarantee'].map((t) => (
+              <li key={t} className="flex items-start gap-3">
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-tp-bronze/20">
+                  <Check className="h-3 w-3 text-tp-bronze" />
+                </span>
+                <span className="text-sm text-tp-beige">{t}</span>
+              </li>
+            ))}
           </ul>
 
-          {/* Star rating line */}
-          <div className="flex items-center gap-1.5 mb-2">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="h-4 w-4 fill-tp-bronze text-tp-bronze" />
-            ))}
-          </div>
-          <p className="text-sm text-tp-muted">Trusted by professionals worldwide</p>
+          {/* Value card */}
+          <figure className="rounded-tp-card border border-white/10 bg-white/5 p-6">
+            <div className="flex items-center gap-1 mb-3" aria-label="5 out of 5 stars">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="h-4 w-4 fill-tp-bronze text-tp-bronze" />
+              ))}
+            </div>
+            <blockquote className="font-display font-normal text-xl leading-snug text-tp-paper">
+              &ldquo;Studio-quality headshots without the studio. Skip the photographer, keep the polish.&rdquo;
+            </blockquote>
+            <figcaption className="mt-4 text-xs text-tp-beige/80">
+              One-time $9.90 &middot; No subscription
+            </figcaption>
+          </figure>
+          <p className="mt-6 text-sm text-tp-beige/70">Trusted by professionals worldwide</p>
         </div>
       </div>
     </div>

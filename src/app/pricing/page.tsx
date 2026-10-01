@@ -4,7 +4,6 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Pricing } from '@/components/marketing/pricing';
 import { CreditPackages } from '@/components/marketing/credit-packages';
-import { FAQ } from '@/components/marketing/faq';
 import { TrustBar } from '@/components/marketing/trust-bar';
 import { CostCalculator } from '@/components/marketing/cost-calculator';
 import { PricingPsychology } from '@/components/marketing/pricing-psychology';
@@ -15,7 +14,7 @@ import { siteConfig } from '@/config/site';
 import { getActiveCategories } from '@/config/categories';
 import { TrustBadges } from '@/components/marketing/trust-badges';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
-import { ChevronDown, Check, Lock, RefreshCcw, CreditCard } from 'lucide-react';
+import { ChevronDown, Check, Lock, RefreshCcw, CreditCard, BadgeCheck, Minus } from 'lucide-react';
 import { PricingViewToggle } from '@/components/marketing/pricing-view-toggle';
 import { PricingComparisonBar } from '@/components/marketing/pricing-comparison-bar';
 
@@ -45,6 +44,41 @@ const pricingFaqs = [
     answer:
       'Upload around 10-20 selfies from different angles for the best results. A minimum of 8 photos is required.',
   },
+  {
+    question: 'Can I use the headshots commercially?',
+    answer:
+      'Yes. You get full commercial rights to your headshots, so you can use them on LinkedIn, your website, print materials and advertising.',
+  },
+  {
+    question: 'How does team pricing work?',
+    answer:
+      'Team pricing is per person and one-time: $39 per person for 5-15 people and $29 per person for 16-50 people. For 50+ people we offer custom pricing, so get in touch with us.',
+  },
+  {
+    question: 'How does this compare with a studio photoshoot?',
+    answer:
+      'A traditional headshot session typically runs $200-$500 once you add photographer, studio, styling and travel. A TailorPic package starts at $9.90 with no studio visit or scheduling.',
+  },
+  {
+    question: 'What do credit packages save me?',
+    answer:
+      'Credit packages save 20%, 40% or 52% compared with buying single packages, depending on the pack you choose. Credits are a one-time purchase, not a subscription.',
+  },
+  {
+    question: 'Are there any hidden fees?',
+    answer:
+      'No. The price you see at checkout is the price you pay. There are no extra charges for downloads, resolution or commercial use.',
+  },
+];
+
+const comparisonRows: { label: string; individual: boolean | string; team: boolean | string; studio: boolean | string }[] = [
+  { label: 'Starting price', individual: '$9.90', team: '$29-$39 per person', studio: '$200-$500' },
+  { label: 'Payment model', individual: 'One-time', team: 'One-time', studio: 'Per session' },
+  { label: 'No studio visit or scheduling', individual: true, team: true, studio: false },
+  { label: 'Delivered in hours', individual: true, team: true, studio: false },
+  { label: 'Consistent look across a team', individual: false, team: true, studio: 'Extra coordination' },
+  { label: 'Full commercial rights', individual: true, team: true, studio: 'Varies' },
+  { label: '14-day money-back guarantee', individual: true, team: true, studio: false },
 ];
 
 const includedFeatures = [
@@ -77,6 +111,7 @@ const includedFeatures = [
 const trustSignals = [
   { icon: CreditCard, label: 'One-time payment, no subscription' },
   { icon: RefreshCcw, label: '14-day money-back guarantee' },
+  { icon: BadgeCheck, label: 'Full commercial rights' },
   { icon: Lock, label: 'Secure Stripe checkout' },
 ];
 
@@ -150,8 +185,17 @@ export default function PricingPage() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-muted">
             One-time payment, no subscriptions. Choose your category, pick a package,
-            and get studio-quality AI photos delivered in hours.
+            and get studio-quality AI photos delivered in hours. Individual packages start at $9.90;
+            teams pay $39 or $29 per person.
           </p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
+              Get your headshots from $9.90
+            </Link>
+            <Link href="/for-teams" className={buttonVariants({ variant: 'outline', size: 'lg' })}>
+              See team pricing
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -171,6 +215,54 @@ export default function PricingPage() {
       <PricingViewToggle individual={<Pricing />} />
 
       <TrustBadges />
+
+      {/* Feature comparison */}
+      <section className="py-16" aria-labelledby="compare-heading">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 id="compare-heading" className="text-center font-display text-3xl font-normal text-tp-black sm:text-4xl">
+            Compare your options
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-center text-base text-tp-muted">
+            Studio price range reflects typical market estimates and varies by location.
+          </p>
+          <div className="mt-10 overflow-x-auto rounded-tp-card border border-tp-line bg-white">
+            <table className="w-full min-w-[640px] text-left text-sm">
+              <thead>
+                <tr className="border-b border-tp-line bg-tp-paper text-tp-ink">
+                  <th scope="col" className="px-5 py-4 font-semibold">Feature</th>
+                  <th scope="col" className="px-5 py-4 font-semibold">Individual</th>
+                  <th scope="col" className="px-5 py-4 font-semibold">Team</th>
+                  <th scope="col" className="px-5 py-4 font-semibold text-tp-muted">Photo studio</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-tp-line">
+                {comparisonRows.map((r) => (
+                  <tr key={r.label}>
+                    <th scope="row" className="px-5 py-4 font-medium text-tp-ink">{r.label}</th>
+                    {([r.individual, r.team, r.studio] as const).map((v, i) => (
+                      <td key={i} className="px-5 py-4 text-tp-muted">
+                        {v === true ? (
+                          <>
+                            <Check className="h-4 w-4 text-tp-bronze-ink" aria-hidden="true" />
+                            <span className="sr-only">Included</span>
+                          </>
+                        ) : v === false ? (
+                          <>
+                            <Minus className="h-4 w-4 text-tp-muted" aria-hidden="true" />
+                            <span className="sr-only">Not included</span>
+                          </>
+                        ) : (
+                          v
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
 
       {/* What's included */}
       <section className="py-16" aria-labelledby="included-heading">
@@ -239,8 +331,6 @@ export default function PricingPage() {
           </p>
         </div>
       </section>
-
-      <FAQ />
 
       {/* Pricing FAQs */}
       <section className="py-16 sm:py-20" aria-labelledby="pricing-faq-heading">
