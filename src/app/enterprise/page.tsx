@@ -258,7 +258,7 @@ export default function EnterprisePage() {
                   ))}
                 </ul>
                 <Link
-                  href={plan.name === 'Enterprise' ? '/contact' : '/linkedin-team'}
+                  href={plan.name === 'Enterprise' ? '/contact' : '/team-headshots'}
                   className={`mt-6 block rounded-xl py-3 text-center text-sm font-semibold transition-all ${
                     plan.popular
                       ? 'bg-tp-bronze text-tp-black hover:bg-tp-bronze/90'
@@ -291,7 +291,7 @@ export default function EnterprisePage() {
               Talk to Sales <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              href="/linkedin-team"
+              href="/team-headshots"
               className="inline-flex items-center gap-2 rounded-xl border border-tp-line px-6 py-3.5 text-sm font-semibold text-tp-ink transition-all hover:bg-tp-paper"
             >
               Start with Team Plan
