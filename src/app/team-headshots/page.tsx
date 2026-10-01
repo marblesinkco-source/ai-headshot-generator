@@ -4,11 +4,13 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
   Users, Sparkles, ArrowRight, CheckCircle, Palette,
   Download, LayoutDashboard, Image, Camera, Send,
   Laptop, Scale, Building2, Stethoscope, GraduationCap, Landmark,
   Lock, ShieldCheck, CreditCard, UserPlus, RefreshCw, Minus,
+  Clock, Wallet, Layers,
 } from 'lucide-react';
 
 const faqItems = [
@@ -38,33 +40,86 @@ const faqItems = [
       'Uploaded photos, trained models, and generated photos are automatically deleted from our servers within 30 days of delivery, and you can request earlier deletion by contacting support. Payments are processed by Stripe and card details are never stored on our servers.',
   },
   {
+    question: 'How many people do I need for a team plan?',
+    answer:
+      'Team pricing starts at 5 people ($39 per person for 5-15 people, $29 per person for 16-50). Orders of 1-4 people use the individual price of $9.90 per person. For 50+ people, request a demo for custom pricing.',
+  },
+  {
+    question: 'How long does it take to get team headshots?',
+    answer:
+      'There is no studio day to schedule. Each member uploads selfies whenever it suits them, and the AI generates their headshots in the shared team style. Timing depends on how quickly your team uploads.',
+  },
+  {
+    question: 'Can new hires be added later?',
+    answer:
+      'Yes. The admin can invite additional members, who upload selfies and get headshots in the same shared team style. Pricing for additional members is confirmed at checkout.',
+  },
+  {
     question: 'Can I see a demo or talk to someone before buying?',
     answer:
       'Yes. Use the Request a Demo button to contact our team and we will walk you through the team dashboard and answer questions about your rollout.',
   },
 ];
 
+const pageTitle = 'Team Headshots — Professional AI Photos for Your Team | TailorPic';
+const pageDescription =
+  'Consistent, professional AI team headshots from $29-$39 per person. Each member uploads selfies and gets polished, on-brand headshots, with no studio day needed.';
+
 export const metadata: Metadata = {
-  title: 'Team Headshots — Professional AI Photos for Your Team | TailorPic',
-  description:
-    'Get consistent, professional AI headshots for your entire team. Each member uploads selfies, and our AI generates polished, on-brand headshots in minutes.',
+  title: pageTitle,
+  description: pageDescription,
   alternates: { canonical: '/team-headshots' },
-  openGraph: {
-    title: 'Team Headshots — Professional AI Photos for Your Team | TailorPic',
-    description:
-      'Get consistent, professional AI headshots for your entire team. Upload selfies, get polished results in minutes.',
-    url: `${siteConfig.url}/team-headshots`,
-    siteName: siteConfig.name,
-    type: 'website',
-    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: siteConfig.name }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Team Headshots — Professional AI Photos for Your Team | TailorPic',
-    description:
-      'Get consistent, professional AI headshots for your entire team. Upload selfies, get polished results in minutes.',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({
+    title: pageTitle,
+    description: pageDescription,
+    type: 'usecase',
+    subtitle: 'Consistent AI headshots for every team member',
+    path: '/team-headshots',
+  }),
+  twitter: generateTwitterMetadata({
+    title: pageTitle,
+    description: pageDescription,
+    type: 'usecase',
+  }),
+};
+
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'AI Team Headshots',
+  serviceType: 'AI headshot generation for teams',
+  description: pageDescription,
+  url: `${siteConfig.url}/team-headshots`,
+  provider: { '@type': 'Organization', name: siteConfig.name, url: siteConfig.url },
+  areaServed: 'Worldwide',
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'Small Team (5-15 people)',
+      price: '39',
+      priceCurrency: 'USD',
+      url: `${siteConfig.url}/team-headshots`,
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '39',
+        priceCurrency: 'USD',
+        referenceQuantity: { '@type': 'QuantitativeValue', value: 1, unitText: 'person' },
+      },
+    },
+    {
+      '@type': 'Offer',
+      name: 'Business (16-50 people)',
+      price: '29',
+      priceCurrency: 'USD',
+      url: `${siteConfig.url}/team-headshots`,
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '29',
+        priceCurrency: 'USD',
+        referenceQuantity: { '@type': 'QuantitativeValue', value: 1, unitText: 'person' },
+      },
+    },
+  ],
 };
 
 export default function TeamHeadshotsPage() {
@@ -75,6 +130,10 @@ export default function TeamHeadshotsPage() {
         { name: 'Team Headshots', url: `${siteConfig.url}/team-headshots` },
       ]} />
       <FAQSchema items={faqItems} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       <Header />
 
       {/* Hero */}
@@ -87,7 +146,7 @@ export default function TeamHeadshotsPage() {
             <Users className="h-3.5 w-3.5" />
             Team Plan
           </div>
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-white leading-tight tracking-tight">
+          <h1 className="font-display font-normal text-4xl sm:text-5xl lg:text-6xl text-white leading-tight tracking-tight">
             Professional Headshots{' '}
             <em className="text-tp-bronze not-italic font-display italic">for Your Team</em>
           </h1>
@@ -131,7 +190,7 @@ export default function TeamHeadshotsPage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
               Simple Process
             </p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               How It Works for Teams
             </h2>
             <p className="mt-3 text-tp-muted max-w-xl mx-auto">
@@ -155,8 +214,8 @@ export default function TeamHeadshotsPage() {
               {
                 step: '3',
                 icon: Sparkles,
-                title: 'AI Generates Headshots',
-                desc: 'Our AI produces consistent, professional headshots for every member. Review, download, and use them anywhere.',
+                title: 'AI Generates, Team Downloads',
+                desc: 'Our AI produces consistent, professional headshots for every member. Everyone downloads their set, or the admin bulk-downloads the whole team.',
               },
             ].map((s) => (
               <div key={s.step} className="text-center">
@@ -179,7 +238,7 @@ export default function TeamHeadshotsPage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
               Volume Pricing
             </p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               Built for Teams of Any Size
             </h2>
             <p className="mt-3 text-tp-muted max-w-xl mx-auto">
@@ -255,7 +314,7 @@ export default function TeamHeadshotsPage() {
                   href={tier.href}
                   className={`inline-flex items-center justify-center gap-2 rounded-tp-button px-5 py-3 text-sm font-semibold transition-all ${
                     tier.featured
-                      ? 'bg-tp-black text-tp-bronze hover:-translate-y-0.5 hover:shadow-lg'
+                      ? 'bg-tp-bronze text-tp-black hover:-translate-y-0.5 hover:shadow-lg hover:bg-tp-bronze/90'
                       : 'border border-tp-line text-tp-ink hover:bg-tp-paper'
                   }`}
                 >
@@ -273,6 +332,53 @@ export default function TeamHeadshotsPage() {
         </div>
       </section>
 
+      {/* Savings comparison */}
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
+              Cost &amp; Time Savings
+            </p>
+            <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
+              Skip the Studio Day
+            </h2>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2">
+            <div className="rounded-tp-card border border-tp-line bg-white p-6 sm:p-8">
+              <Camera className="h-6 w-6 text-tp-muted mb-3" />
+              <h3 className="font-display text-xl text-tp-ink">Studio photography</h3>
+              <p className="mt-1 text-sm text-tp-muted">For 10 people</p>
+              <p className="mt-4 font-display text-3xl text-tp-muted">$2,000-$5,000+</p>
+              <p className="mt-3 text-sm text-tp-muted leading-relaxed">
+                Typical market estimate. Requires scheduling a shoot day, travel, and coordinating everyone&apos;s availability.
+              </p>
+            </div>
+            <div className="rounded-tp-card border border-tp-bronze bg-tp-black p-6 sm:p-8">
+              <Sparkles className="h-6 w-6 text-tp-bronze mb-3" />
+              <h3 className="font-display text-xl text-white">TailorPic Team Plan</h3>
+              <p className="mt-1 text-sm text-tp-beige/70">For 10 people at $39 each</p>
+              <p className="mt-4 font-display text-3xl text-tp-bronze">$390</p>
+              <p className="mt-3 text-sm text-tp-beige/70 leading-relaxed">
+                Everyone uploads selfies from wherever they are. No scheduling, no travel.
+              </p>
+            </div>
+          </div>
+          <ul className="mt-8 grid gap-4 sm:grid-cols-3">
+            {[
+              { icon: Layers, title: 'One consistent look', desc: 'A shared style and background keeps every profile on-brand.' },
+              { icon: Clock, title: 'No studio day', desc: 'Remote and hybrid teams skip the shoot coordination entirely.' },
+              { icon: Wallet, title: 'Predictable pricing', desc: 'A flat per-person price, confirmed at checkout.' },
+            ].map((t) => (
+              <li key={t.title} className="rounded-tp-card border border-tp-line bg-tp-paper p-5 text-center">
+                <t.icon className="h-5 w-5 text-tp-bronze-ink mx-auto mb-2" />
+                <p className="text-sm font-semibold text-tp-ink">{t.title}</p>
+                <p className="mt-1 text-sm text-tp-muted leading-relaxed">{t.desc}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* Individual vs Team comparison */}
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -280,7 +386,7 @@ export default function TeamHeadshotsPage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
               Compare Plans
             </p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               Individual Plan vs Team Plan
             </h2>
             <p className="mt-3 text-tp-muted max-w-xl mx-auto">
@@ -355,7 +461,7 @@ export default function TeamHeadshotsPage() {
                   href={plan.href}
                   className={`inline-flex items-center justify-center gap-2 rounded-tp-button px-5 py-3 text-sm font-semibold transition-all ${
                     plan.featured
-                      ? 'bg-tp-black text-tp-bronze hover:-translate-y-0.5 hover:shadow-lg'
+                      ? 'bg-tp-bronze text-tp-black hover:-translate-y-0.5 hover:shadow-lg hover:bg-tp-bronze/90'
                       : 'border border-tp-line text-tp-ink hover:bg-tp-paper'
                   }`}
                 >
@@ -381,7 +487,7 @@ export default function TeamHeadshotsPage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
               Scenarios
             </p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               How Teams Can Use It
             </h2>
           </div>
@@ -432,7 +538,7 @@ export default function TeamHeadshotsPage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
               Industries
             </p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               Built for Teams That Put People First
             </h2>
             <p className="mt-3 text-tp-muted max-w-xl mx-auto">
@@ -494,7 +600,7 @@ export default function TeamHeadshotsPage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
               Team Features
             </p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               Everything Your Team Needs
             </h2>
           </div>
@@ -577,7 +683,7 @@ export default function TeamHeadshotsPage() {
       {/* FAQ */}
       <section className="bg-tp-paper py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl sm:text-4xl text-tp-ink mb-10">
+          <h2 className="text-center font-display font-normal text-3xl sm:text-4xl text-tp-ink mb-10">
             Team Headshots FAQ
           </h2>
           <div className="space-y-3">
@@ -597,7 +703,7 @@ export default function TeamHeadshotsPage() {
       <section className="py-20 sm:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <Users className="h-10 w-10 text-tp-bronze mx-auto mb-4" />
-          <h2 className="font-display text-3xl sm:text-4xl text-tp-ink">
+          <h2 className="font-display font-normal text-3xl sm:text-4xl text-tp-ink">
             Ready to Outfit Your Team?
           </h2>
           <p className="mt-4 text-lg text-tp-muted max-w-xl mx-auto">
@@ -607,7 +713,7 @@ export default function TeamHeadshotsPage() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
               href="/auth/register"
-              className="inline-flex items-center gap-2 rounded-tp-button bg-tp-black px-7 py-3.5 text-sm font-semibold text-tp-bronze transition-all hover:-translate-y-0.5 hover:shadow-lg"
+              className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:-translate-y-0.5 hover:bg-tp-bronze/90 hover:shadow-lg"
             >
               Get Started <ArrowRight className="h-4 w-4" />
             </Link>

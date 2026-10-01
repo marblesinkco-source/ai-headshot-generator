@@ -223,6 +223,8 @@ export function ArticleSchema({
   publishedAt,
   updatedAt,
   author,
+  image,
+  keywords,
 }: {
   title: string;
   description: string;
@@ -230,15 +232,21 @@ export function ArticleSchema({
   publishedAt: string;
   updatedAt?: string;
   author?: string;
+  image?: string;
+  keywords?: string[];
 }) {
   const data = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'BlogPosting',
     headline: title,
     description,
     url: `${siteConfig.url}/blog/${slug}`,
     datePublished: publishedAt,
     dateModified: updatedAt || publishedAt,
+    inLanguage: 'en-US',
+    ...(image && { image: [image] }),
+    ...(keywords && keywords.length > 0 && { keywords: keywords.join(', ') }),
+    isPartOf: { '@type': 'Blog', name: `${siteConfig.name} Blog`, url: `${siteConfig.url}/blog` },
     author: {
       '@type': 'Organization',
       name: author || siteConfig.name,
@@ -260,7 +268,7 @@ export function ArticleSchema({
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, '\\u003c') }}
     />
   );
 }

@@ -7,7 +7,7 @@ import { EmailCapture } from '@/components/marketing/email-capture';
 import { siteConfig } from '@/config/site';
 import { getBlogPost, getAllBlogPosts } from '@/config/blog';
 import { ArticleSchema, BreadcrumbSchema } from '@/components/structured-data';
-import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { generateOGMetadata, generateTwitterMetadata, buildOGImageUrl } from '@/lib/og-metadata';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 function getRelatedPosts(currentSlug: string, currentTags: string[], count = 3) {
@@ -40,6 +40,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.description,
+    keywords: post.tags,
+    authors: [{ name: post.author }],
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: generateOGMetadata({
       title: post.title,
@@ -72,6 +74,8 @@ export default async function BlogPostPage({ params }: Props) {
         publishedAt={post.publishedAt}
         updatedAt={post.updatedAt}
         author={post.author}
+        image={buildOGImageUrl({ title: post.title, type: 'blog' })}
+        keywords={post.tags}
       />
       <BreadcrumbSchema
         items={[
@@ -109,8 +113,8 @@ export default async function BlogPostPage({ params }: Props) {
             {post.title}
           </h1>
 
-          <div className="mt-4 flex items-center gap-4 text-sm text-tp-muted">
-            <span>{post.author}</span>
+          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-tp-muted">
+            <address className="not-italic">{post.author}</address>
             <span>&middot;</span>
             <time dateTime={post.publishedAt}>
               {new Date(post.publishedAt).toLocaleDateString('en-US', {
@@ -119,6 +123,21 @@ export default async function BlogPostPage({ params }: Props) {
                 year: 'numeric',
               })}
             </time>
+            {post.updatedAt && post.updatedAt !== post.publishedAt && (
+              <>
+                <span>&middot;</span>
+                <span>
+                  Updated{' '}
+                  <time dateTime={post.updatedAt}>
+                    {new Date(post.updatedAt).toLocaleDateString('en-US', {
+                      month: 'long',
+                      day: 'numeric',
+                      year: 'numeric',
+                    })}
+                  </time>
+                </span>
+              </>
+            )}
             <span>&middot;</span>
             <span>{post.readingTime}</span>
           </div>
@@ -127,7 +146,7 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Content */}
         <div className="mx-auto max-w-3xl px-4 pb-20 sm:px-6 lg:px-8">
           <div
-            className="prose prose-gray max-w-none prose-headings:font-bold prose-headings:text-tp-ink prose-p:text-tp-muted prose-p:leading-relaxed prose-a:text-tp-bronze-ink prose-a:underline prose-a:underline-offset-2 hover:prose-a:text-tp-bronze prose-strong:text-tp-ink prose-li:text-tp-muted"
+            className="prose prose-gray max-w-none prose-headings:font-display prose-headings:font-normal prose-headings:text-tp-ink prose-p:text-tp-muted prose-p:leading-relaxed prose-a:text-tp-bronze-ink prose-a:underline prose-a:underline-offset-2 hover:prose-a:text-tp-bronze prose-strong:text-tp-ink prose-li:text-tp-muted"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
           <EmailCapture variant="banner" className="mt-12" />
@@ -140,7 +159,7 @@ export default async function BlogPostPage({ params }: Props) {
           return (
             <div className="border-t border-tp-line bg-white py-16">
               <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-                <h2 className="text-xl font-bold text-tp-ink mb-8">You might also like</h2>
+                <h2 className="font-display text-2xl font-normal text-tp-ink mb-8">You might also like</h2>
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {related.map((rp) => (
                     <Link
@@ -176,7 +195,7 @@ export default async function BlogPostPage({ params }: Props) {
         {/* CTA */}
         <div className="border-t border-tp-line bg-tp-paper py-16">
           <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-tp-ink">
+            <h2 className="font-display text-3xl font-normal text-tp-ink">
               Ready to Try AI Photography?
             </h2>
             <p className="mt-3 text-tp-muted">
@@ -184,7 +203,7 @@ export default async function BlogPostPage({ params }: Props) {
             </p>
             <Link
               href="/auth/register"
-              className="mt-6 inline-flex items-center justify-center rounded-xl bg-tp-black px-8 py-3 text-sm font-semibold text-tp-bronze shadow-sm transition-all hover:bg-tp-black/90"
+              className="mt-6 inline-flex items-center justify-center rounded-tp-button bg-tp-black px-8 py-3 text-sm font-semibold text-tp-bronze shadow-sm transition-all hover:bg-tp-black/90"
             >
               Get Started
             </Link>

@@ -5,8 +5,9 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
-  Building2, Users, Shield, Clock, CreditCard, Palette,
+  Building2, Users, Shield, CreditCard, Palette,
   ArrowRight, Check, CheckCircle, Lock, BarChart3, Headphones, Globe,
   Trash2, FileCheck, ShieldCheck, Eye, MessageSquare, Settings, UserPlus, Rocket,
 } from 'lucide-react';
@@ -16,25 +17,25 @@ const ROICalculator = dynamic(
   { ssr: false },
 );
 
+const ENTERPRISE_TITLE = 'Enterprise AI Headshots for Teams | TailorPic';
+const ENTERPRISE_OG_DESCRIPTION = 'Scale professional headshots across your organization with AI.';
+
 export const metadata: Metadata = {
-  title: 'Enterprise AI Headshots for Teams | TailorPic',
+  title: ENTERPRISE_TITLE,
   description:
     'Professional AI headshots for your entire organization. Consistent branding, team admin dashboard, volume pricing, and dedicated support.',
   alternates: { canonical: '/enterprise' },
-  openGraph: {
-    title: 'Enterprise AI Headshots for Teams | TailorPic',
-    description: 'Scale professional headshots across your organization with AI.',
-    url: `${siteConfig.url}/enterprise`,
-    siteName: siteConfig.name,
-    type: 'website',
-    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: siteConfig.name }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Enterprise AI Headshots for Teams | TailorPic',
-    description: 'Scale professional headshots across your organization with AI.',
-    images: [siteConfig.ogImage],
-  },
+  openGraph: generateOGMetadata({
+    title: ENTERPRISE_TITLE,
+    description: ENTERPRISE_OG_DESCRIPTION,
+    type: 'default',
+    subtitle: 'Team pricing from $29 per person',
+    path: '/enterprise',
+  }),
+  twitter: generateTwitterMetadata({
+    title: ENTERPRISE_TITLE,
+    description: ENTERPRISE_OG_DESCRIPTION,
+  }),
 };
 
 const enterpriseFaqs = [
@@ -59,6 +60,11 @@ const enterpriseFaqs = [
       'Uploaded photos are processed on secure infrastructure and automatically deleted within 30 days. We never sell your photos or share them with third parties.',
   },
   {
+    question: 'Is data encrypted, and can we request GDPR or CCPA deletion?',
+    answer:
+      'Data is encrypted at rest with AES-256 and in transit with TLS. Team members can request access, correction, or deletion of their personal data at any time, and a Data Processing Agreement is available for procurement and legal review.',
+  },
+  {
     question: 'Is there a minimum team size for enterprise plans?',
     answer:
       'Volume pricing is available for teams of 10 or more, and our custom Enterprise plan is designed for organizations with 50+ people. Smaller teams can start with a Small Team plan.',
@@ -70,6 +76,43 @@ const enterpriseFaqs = [
   },
 ];
 
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'TailorPic Enterprise AI Headshots',
+  serviceType: 'AI headshot generation for teams',
+  description:
+    'Professional AI headshots for teams and organizations, with a team admin dashboard, brand guidelines, volume pricing, and priority support with a dedicated account manager.',
+  url: `${siteConfig.url}/enterprise`,
+  provider: { '@type': 'Organization', name: siteConfig.name, url: siteConfig.url },
+  areaServed: 'Worldwide',
+  audience: { '@type': 'BusinessAudience', name: 'Teams and organizations' },
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'Small Team (5-15 people)',
+      price: '39',
+      priceCurrency: 'USD',
+      eligibleQuantity: { '@type': 'QuantitativeValue', minValue: 5, maxValue: 15, unitText: 'people' },
+      priceSpecification: { '@type': 'UnitPriceSpecification', price: '39', priceCurrency: 'USD', referenceQuantity: { '@type': 'QuantitativeValue', value: 1, unitText: 'person' } },
+    },
+    {
+      '@type': 'Offer',
+      name: 'Company (16-50 people)',
+      price: '29',
+      priceCurrency: 'USD',
+      eligibleQuantity: { '@type': 'QuantitativeValue', minValue: 16, maxValue: 50, unitText: 'people' },
+      priceSpecification: { '@type': 'UnitPriceSpecification', price: '29', priceCurrency: 'USD', referenceQuantity: { '@type': 'QuantitativeValue', value: 1, unitText: 'person' } },
+    },
+    {
+      '@type': 'Offer',
+      name: 'Enterprise (50+ people)',
+      description: 'Custom pricing. Contact sales for a quote.',
+      url: `${siteConfig.url}/contact`,
+    },
+  ],
+};
+
 export default function EnterprisePage() {
   return (
     <main id="main-content" className="min-h-screen">
@@ -78,6 +121,10 @@ export default function EnterprisePage() {
         { name: 'Enterprise', url: `${siteConfig.url}/enterprise` },
       ]} />
       <FAQSchema items={enterpriseFaqs} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <Header />
 
       {/* Hero */}
@@ -98,12 +145,15 @@ export default function EnterprisePage() {
             Unified, professional AI headshots for your entire organization.
             No photographers to coordinate, no schedules to juggle.
           </p>
+          <p className="mt-3 text-sm text-tp-beige/60">
+            Team pricing from $29 per person. Priority support and a dedicated account manager for enterprise.
+          </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:bg-tp-bronze/90"
+              className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-8 py-4 text-base font-semibold text-tp-black shadow-lg shadow-tp-bronze/20 transition-all hover:-translate-y-0.5 hover:bg-tp-bronze/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2 focus-visible:ring-offset-tp-black"
             >
-              Contact Sales <ArrowRight className="h-4 w-4" />
+              Request a Demo <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/pricing"
@@ -120,10 +170,10 @@ export default function EnterprisePage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 text-center">
             {[
-              { icon: Lock, text: 'Secure Infrastructure' },
-              { icon: Users, text: 'Flexible Team Sizes' },
-              { icon: Clock, text: 'Fast Delivery' },
-              { icon: Shield, text: 'Data Privacy' },
+              { icon: Lock, text: 'SSL/TLS Encrypted' },
+              { icon: Shield, text: 'GDPR & CCPA Requests' },
+              { icon: Trash2, text: '30-Day Photo Deletion' },
+              { icon: Headphones, text: 'Priority Support' },
             ].map((item) => (
               <div key={item.text} className="flex items-center justify-center gap-2 text-xs font-medium text-tp-muted">
                 <item.icon className="h-4 w-4 text-tp-bronze" />
@@ -249,7 +299,7 @@ export default function EnterprisePage() {
             <div className="mt-8 text-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-tp-button bg-tp-ink px-6 py-3 text-sm font-semibold text-tp-paper transition-all hover:-translate-y-0.5 hover:shadow-lg"
+                className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:-translate-y-0.5 hover:bg-tp-bronze/90 hover:shadow-lg"
               >
                 Talk to Sales <ArrowRight className="h-4 w-4" />
               </Link>
@@ -367,7 +417,7 @@ export default function EnterprisePage() {
           <div className="mt-8 text-center">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-tp-button bg-tp-ink px-6 py-3 text-sm font-semibold text-tp-paper transition-all hover:-translate-y-0.5 hover:shadow-lg"
+              className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:-translate-y-0.5 hover:bg-tp-bronze/90 hover:shadow-lg"
             >
               Start the Conversation <ArrowRight className="h-4 w-4" />
             </Link>
