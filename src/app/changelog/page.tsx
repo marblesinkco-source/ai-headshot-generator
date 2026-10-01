@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
@@ -14,142 +15,133 @@ export const metadata: Metadata = {
     description:
       'Stay up to date with the latest features, improvements, and updates to TailorPic.',
     url: `${siteConfig.url}/changelog`,
+    siteName: siteConfig.name,
+    type: 'website',
+    locale: 'en_US',
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: siteConfig.name }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Changelog | TailorPic',
+    description:
+      'Stay up to date with the latest features, improvements, and updates to TailorPic.',
+    images: [siteConfig.ogImage],
   },
 };
 
-type Category = 'Feature' | 'Improvement' | 'Security' | 'Launch';
+type Category = 'Feature' | 'Tool' | 'Trust';
 
 const categoryStyles: Record<Category, string> = {
   Feature: 'bg-tp-bronze/15 text-tp-bronze-ink border-tp-bronze/30',
-  Improvement: 'bg-tp-beige text-tp-ink border-tp-line',
-  Security: 'bg-tp-black text-tp-paper border-tp-black',
-  Launch: 'bg-tp-bronze text-tp-black border-tp-bronze',
+  Tool: 'bg-tp-beige text-tp-ink border-tp-line',
+  Trust: 'bg-tp-black text-tp-paper border-tp-black',
 };
 
-interface ChangelogEntry {
+interface Highlight {
   title: string;
   description: string;
   category: Category;
+  href: string;
 }
 
-interface ChangelogRelease {
-  date: string;
-  version: string;
+interface HighlightGroup {
+  heading: string;
   summary: string;
-  entries: ChangelogEntry[];
+  items: Highlight[];
 }
 
-const changelog: ChangelogRelease[] = [
+// Undated, descriptive highlights of what exists on the site today.
+const groups: HighlightGroup[] = [
   {
-    date: 'October 2026',
-    version: 'v1.5',
-    summary: 'Built for teams: pricing, planning tools, and transparency.',
-    entries: [
+    heading: 'Headshot generation',
+    summary: 'The core product: one upload, many professional looks.',
+    items: [
       {
-        title: 'Volume Pricing for Teams',
+        title: 'Multi-category AI headshots',
         description:
-          'Tiered per-seat pricing that rewards larger teams, with consistent styling across every employee headshot.',
+          'Generate portraits across professional, creative, and casual categories from a single set of selfies, starting at $9.90.',
         category: 'Feature',
+        href: '/samples',
       },
       {
-        title: 'ROI Calculator',
+        title: '40+ photos per order',
         description:
-          'Estimate how much your organization saves compared with traditional photo shoots before you commit.',
+          'Each order delivers a wide range of backgrounds, outfits, and expressions so you can pick the shots that suit you.',
         category: 'Feature',
+        href: '/pricing',
       },
       {
-        title: 'Technology Page',
+        title: 'LinkedIn headshots',
         description:
-          'A plain-language look at how our AI generates studio-quality portraits and how your data is handled.',
-        category: 'Improvement',
+          'A dedicated flow tuned for LinkedIn profile photos, with framing and styling that read well at small sizes.',
+        category: 'Feature',
+        href: '/linkedin-headshots',
       },
     ],
   },
   {
-    date: 'September 2026',
-    version: 'v1.4',
-    summary: 'Guidance and integrations to help you get more from every photo.',
-    entries: [
+    heading: 'For teams',
+    summary: 'Consistent, on-brand portraits for everyone in the company.',
+    items: [
       {
-        title: 'Photo Tips Guide',
+        title: 'Team headshots',
         description:
-          'Practical advice on choosing source photos, lighting, and expressions for the best possible results.',
-        category: 'Improvement',
+          'Give every employee a matching style and background without scheduling a photo shoot.',
+        category: 'Feature',
+        href: '/team-headshots',
       },
       {
-        title: 'Integrations Page',
+        title: 'Enterprise and team plans',
         description:
-          'See how TailorPic fits into the tools you already use for profiles, hiring, and team directories.',
+          'Information for organizations that need volume ordering, consistent styling, and security review.',
         category: 'Feature',
-      },
-      {
-        title: 'Developer API Preview',
-        description:
-          'Early access to a programmatic interface for generating headshots inside your own workflows.',
-        category: 'Feature',
+        href: '/enterprise',
       },
     ],
   },
   {
-    date: 'August 2026',
-    version: 'v1.3',
-    summary: 'A much bigger creative range.',
-    entries: [
+    heading: 'Free tools',
+    summary: 'Small utilities that help before you buy.',
+    items: [
       {
-        title: '40+ New Headshot Styles',
-        description:
-          'New backgrounds, outfits, and looks across professional, creative, and casual settings.',
-        category: 'Feature',
+        title: 'LinkedIn photo analyzer',
+        description: 'Check how your current profile photo comes across.',
+        category: 'Tool',
+        href: '/tools/linkedin-photo-analyzer',
       },
       {
-        title: 'Before/After Showcase',
+        title: 'Headshot cost calculator',
         description:
-          'Side-by-side comparisons showing the transformation from everyday selfies to polished portraits.',
-        category: 'Improvement',
-      },
-    ],
-  },
-  {
-    date: 'July 2026',
-    version: 'v1.2',
-    summary: 'Privacy and a smoother app experience.',
-    entries: [
-      {
-        title: 'Cookie Consent (GDPR Compliance)',
-        description:
-          'Clear, granular cookie controls so visitors decide what is stored, in line with GDPR requirements.',
-        category: 'Security',
+          'Compare the cost of a traditional photo shoot with an AI headshot order.',
+        category: 'Tool',
+        href: '/tools/headshot-cost-calculator',
       },
       {
-        title: 'PWA Support',
+        title: 'Background remover, resizer, and more',
         description:
-          'Install TailorPic on your phone or desktop for faster access and a more app-like experience.',
-        category: 'Feature',
+          'Background remover, headshot resizer, resume photo checker, and an email signature generator.',
+        category: 'Tool',
+        href: '/tools',
       },
     ],
   },
   {
-    date: 'June 2026',
-    version: 'v1.0',
-    summary: 'TailorPic goes live.',
-    entries: [
+    heading: 'Trust and privacy',
+    summary: 'Clear policies so you know how your photos are handled.',
+    items: [
       {
-        title: 'Core Headshot Generation',
+        title: '14-day money-back guarantee',
         description:
-          'AI-powered photo generation with studio-quality results in hours, not days.',
-        category: 'Launch',
+          'If you are not happy with your results, our refund policy covers you for 14 days.',
+        category: 'Trust',
+        href: '/refund-policy',
       },
       {
-        title: 'Dashboard',
+        title: 'Security and data handling',
         description:
-          'One place to upload photos, track progress, and manage your orders.',
-        category: 'Launch',
-      },
-      {
-        title: 'Gallery',
-        description:
-          'Browse, favorite, and download your generated photos in high resolution.',
-        category: 'Launch',
+          'Published security practices, subprocessors list, and a data processing agreement.',
+        category: 'Trust',
+        href: '/security',
       },
     ],
   },
@@ -184,49 +176,68 @@ export default function ChangelogPage() {
         </div>
       </section>
 
-      {/* Release cards */}
+      {/* Highlights */}
       <section className="mx-auto max-w-3xl px-4 pb-16 sm:px-6 lg:px-8">
-        <ol className="space-y-8">
-          {changelog.map((release) => (
-            <li
-              key={release.date}
+        <div className="space-y-8">
+          {groups.map((group) => (
+            <section
+              key={group.heading}
+              aria-labelledby={`group-${group.heading}`}
               className="rounded-tp-card border border-tp-line bg-tp-beige/40 p-6 sm:p-8"
             >
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="inline-flex items-center rounded-tp-button bg-tp-black px-3 py-1 text-xs font-medium text-tp-bronze">
-                  {release.version}
-                </span>
-                <h2 className="font-display text-2xl font-normal text-tp-black sm:text-3xl">
-                  {release.date}
-                </h2>
-              </div>
-              <p className="mt-2 text-sm text-tp-muted">{release.summary}</p>
+              <h2
+                id={`group-${group.heading}`}
+                className="font-display text-2xl font-normal text-tp-black sm:text-3xl"
+              >
+                {group.heading}
+              </h2>
+              <p className="mt-2 text-sm text-tp-muted">{group.summary}</p>
 
               <ul className="mt-6 space-y-5 border-t border-tp-line pt-6">
-                {release.entries.map((entry) => (
-                  <li key={entry.title}>
+                {group.items.map((item) => (
+                  <li key={item.title}>
                     <div className="flex flex-wrap items-center gap-2">
                       <span
-                        className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium ${categoryStyles[entry.category]}`}
+                        className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium ${categoryStyles[item.category]}`}
                       >
-                        {entry.category}
+                        {item.category}
                       </span>
                       <h3 className="font-display text-lg font-normal text-tp-ink">
-                        {entry.title}
+                        <Link
+                          href={item.href}
+                          className="underline-offset-4 hover:text-tp-bronze-ink hover:underline"
+                        >
+                          {item.title}
+                        </Link>
                       </h3>
                     </div>
                     <p className="mt-1.5 text-sm leading-relaxed text-tp-muted">
-                      {entry.description}
+                      {item.description}
                     </p>
                   </li>
                 ))}
               </ul>
-            </li>
+            </section>
           ))}
-        </ol>
+        </div>
 
-        <p className="mt-10 text-center text-xs text-tp-muted">
-          Dates and features listed are representative of planned milestones.
+        <div className="mt-10 rounded-tp-card bg-tp-black p-8 text-center">
+          <h2 className="font-display text-2xl font-normal text-tp-paper sm:text-3xl">
+            Try TailorPic risk-free
+          </h2>
+          <p className="mx-auto mt-2 max-w-md text-sm text-tp-paper/70">
+            Headshots from $9.90, backed by a 14-day money-back guarantee.
+          </p>
+          <Link
+            href="/pricing"
+            className="mt-6 inline-flex items-center rounded-tp-button bg-tp-bronze px-6 py-3 text-sm font-medium text-tp-black transition-colors hover:bg-tp-bronze/90"
+          >
+            See pricing
+          </Link>
+        </div>
+
+        <p className="mt-8 text-center text-xs text-tp-muted">
+          Dated release notes will appear here as we ship new updates.
         </p>
       </section>
 

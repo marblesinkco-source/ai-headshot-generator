@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { siteConfig } from '@/config/site';
@@ -89,7 +90,37 @@ export default function BlogPage() {
       </section>
 
       <section className="pb-20">
-        <BlogListing posts={posts} />
+        {posts.length > 0 ? (
+          <BlogListing posts={posts} />
+        ) : (
+          <div className="mx-auto max-w-2xl px-4 text-center sm:px-6">
+            <div className="rounded-tp-card border border-tp-line bg-tp-beige/40 p-10">
+              <span className="inline-flex items-center rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-tp-bronze-ink">
+                Coming soon
+              </span>
+              <h2 className="mt-5 font-display text-3xl font-normal text-tp-ink">
+                Our first guides are on the way
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-tp-muted">
+                In the meantime, explore our samples or see how TailorPic works.
+              </p>
+              <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+                <Link
+                  href="/samples"
+                  className="inline-flex items-center justify-center rounded-tp-button bg-tp-black px-6 py-3 text-sm font-medium text-tp-paper"
+                >
+                  View samples
+                </Link>
+                <Link
+                  href="/how-it-works"
+                  className="inline-flex items-center justify-center rounded-tp-button border border-tp-line px-6 py-3 text-sm font-medium text-tp-ink"
+                >
+                  How it works
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
       </section>
 
       <Footer />

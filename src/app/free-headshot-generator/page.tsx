@@ -23,18 +23,30 @@ import {
   Building2,
   UserCircle,
   Users,
+  ShieldCheck,
+  CreditCard,
+  Lock,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Free AI Headshot Generator — Professional Photos in Minutes | TailorPic',
   description:
-    'Try a free AI headshot generator. Upload a few selfies and get studio-quality professional headshots for LinkedIn, resumes and more, without a photoshoot.',
+    'Looking for a free AI headshot generator? Try TailorPic risk-free: $9.90 one-time for 40+ studio-quality headshots, backed by a 14-day money-back guarantee.',
   alternates: { canonical: '/free-headshot-generator' },
   openGraph: {
     title: 'Free AI Headshot Generator | TailorPic',
     description:
-      'Upload a few selfies and get professional AI headshots. Start with a free trial.',
+      'Upload your selfies and get 40+ professional AI headshots from $9.90 one-time. Risk-free with a 14-day money-back guarantee.',
     url: `${siteConfig.url}/free-headshot-generator`,
+    type: 'website',
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: siteConfig.name }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free AI Headshot Generator | TailorPic',
+    description:
+      'Professional AI headshots from your selfies. $9.90 one-time, 14-day money-back guarantee.',
+    images: [siteConfig.ogImage],
   },
 };
 
@@ -43,13 +55,13 @@ const steps = [
     icon: Upload,
     title: 'Upload your selfies',
     description:
-      'Add a handful of casual selfies taken with your phone. Good light and a clear view of your face is all you need.',
+      'Add 10-20 casual selfies from your phone (minimum 8). Good light and a clear view of your face is all you need.',
   },
   {
     icon: Sparkles,
     title: 'AI generates your headshots',
     description:
-      'Our AI learns your features and creates professional headshots in the styles and backgrounds you pick.',
+      'Our AI learns your features and creates 40+ professional photos across 11+ categories. Most orders are ready within 2 hours.',
   },
   {
     icon: Download,
@@ -71,11 +83,18 @@ const headshotTypes = [
 ];
 
 const trialComparison = [
-  { label: 'Cost', free: 'Start at no cost', paid: 'One-time payment, packages from $9.90' },
-  { label: 'Get started', free: 'Create an account and explore the process', paid: 'Upload selfies and generate your full set' },
-  { label: 'Style categories', free: 'Browse what is available', paid: 'Choose from 11 categories, including professional headshots and dating photos' },
-  { label: 'Terms', free: 'See the pricing page for current trial terms', paid: 'Covered by a 14-day money-back guarantee' },
-  { label: 'Subscription', free: 'None required to start', paid: 'Single packages, no subscription to cancel' },
+  { label: 'Price', free: 'Free tools: $0', paid: '$9.90 one-time per person' },
+  { label: 'Teams', free: 'Usually one photo at a time', paid: '$39 (5-15 people) or $29 (16-50 people)' },
+  { label: 'Output', free: 'Often a few photos, sometimes watermarked', paid: '40+ photos across 11+ categories' },
+  { label: 'Risk', free: 'No payment, but no guarantee of quality', paid: '14-day money-back guarantee' },
+  { label: 'Subscription', free: 'Varies by tool', paid: 'None. One-time payment, no subscription to cancel' },
+];
+
+const trustSignals = [
+  { icon: ShieldCheck, title: '14-day money-back guarantee', description: 'Not happy? Ask for a refund within 14 days.' },
+  { icon: CreditCard, title: 'One-time payment', description: 'No subscription and nothing to cancel.' },
+  { icon: Lock, title: 'Secure Stripe checkout', description: 'Payments are processed by Stripe. Card details never touch our servers.' },
+  { icon: Clock, title: 'Most orders within 2 hours', description: 'No booking, travel or waiting for a photographer.' },
 ];
 
 const features = [
@@ -108,12 +127,21 @@ const faqs = [
   {
     question: 'Is there really a free AI headshot generator?',
     answer:
-      'TailorPic lets you start with a free trial so you can see the quality before committing. Check the pricing page for the current trial terms and what is included.',
+      'TailorPic is not free, but it is risk-free. A full set costs $9.90 one-time and every order is covered by a 14-day money-back guarantee, so you can try it without a subscription or long-term commitment.',
+  },
+  {
+    question: 'How much does TailorPic cost?',
+    answer:
+      'Individual orders are $9.90 one-time. Team pricing is $39 for 5-15 people and $29 for 16-50 people. There is no subscription.',
   },
   {
     question: 'What do I need to get started?',
     answer:
-      'Just a few clear selfies from your phone. Use good natural light, face the camera, and include a couple of different angles and expressions.',
+      'Upload 10-20 selfies from your phone (minimum 8). Use good natural light, face the camera, and include a few different angles and expressions.',
+  },
+  {
+    question: 'How many photos do I get?',
+    answer: 'You get 40+ photos across 11+ categories, including professional headshots, LinkedIn photos and more.',
   },
   {
     question: 'Can I use the headshots on LinkedIn and my resume?',
@@ -123,17 +151,17 @@ const faqs = [
   {
     question: 'How long does it take?',
     answer:
-      'Much less time than a traditional photoshoot. There is no booking or travel, and you can upload from anywhere.',
-  },
-  {
-    question: 'What is the difference between the free trial and a paid package?',
-    answer:
-      'The free trial lets you start and see how TailorPic works before you commit. A paid package, starting from $9.90, is where you generate your full set of headshots. Check the pricing page for current trial terms and what each package includes.',
+      'Most orders are delivered within 2 hours. There is no booking or travel, and you can upload from anywhere.',
   },
   {
     question: 'Can I get a refund?',
     answer:
       'Yes. Every order is covered by a 14-day money-back guarantee. See our refund policy for the details.',
+  },
+  {
+    question: 'Is payment secure?',
+    answer:
+      'Yes. Payments are processed by Stripe, and card details are never stored on our servers.',
   },
   {
     question: 'Is my data kept private?',
@@ -151,7 +179,7 @@ export default function FreeHeadshotGeneratorPage() {
     operatingSystem: 'Web',
     url: `${siteConfig.url}/free-headshot-generator`,
     description:
-      'AI headshot generator that turns selfies into professional headshots. Start with a free trial.',
+      'AI headshot generator that turns your selfies into 40+ professional headshots. $9.90 one-time with a 14-day money-back guarantee.',
     offers: {
       '@type': 'Offer',
       price: '9.90',
@@ -185,12 +213,12 @@ export default function FreeHeadshotGeneratorPage() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-muted">
             Upload a few selfies, pick your styles, and get studio-quality headshots for LinkedIn,
-            resumes and more. Start with a free trial, with packages from $9.90 and a 14-day
-            money-back guarantee.
+            resumes and more. Try it risk-free: $9.90 one-time, 40+ photos, most orders ready within 2 hours,
+            and a 14-day money-back guarantee if you are not happy.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
-              Start your free trial
+              Try it risk-free
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link href="/samples" className={buttonVariants({ variant: 'outline', size: 'lg' })}>
@@ -199,9 +227,24 @@ export default function FreeHeadshotGeneratorPage() {
           </div>
           <ul className="mt-8 flex flex-col items-center justify-center gap-2 text-sm text-tp-muted sm:flex-row sm:gap-6">
             <li className="flex items-center gap-2"><Check className="h-4 w-4 text-tp-bronze-ink" />No studio or booking</li>
-            <li className="flex items-center gap-2"><Check className="h-4 w-4 text-tp-bronze-ink" />No subscription</li>
+            <li className="flex items-center gap-2"><Check className="h-4 w-4 text-tp-bronze-ink" />One-time $9.90, no subscription</li>
             <li className="flex items-center gap-2"><Check className="h-4 w-4 text-tp-bronze-ink" />14-day money-back guarantee</li>
           </ul>
+        </div>
+      </section>
+
+      {/* Trust signals */}
+      <section className="border-y border-tp-line bg-white px-4 py-10">
+        <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {trustSignals.map((t) => (
+            <div key={t.title} className="flex items-start gap-3">
+              <t.icon className="mt-0.5 h-5 w-5 shrink-0 text-tp-bronze-ink" />
+              <div>
+                <p className="text-sm font-semibold text-tp-ink">{t.title}</p>
+                <p className="mt-0.5 text-sm text-tp-muted">{t.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -267,18 +310,18 @@ export default function FreeHeadshotGeneratorPage() {
       <section className="bg-tp-paper px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-display text-center text-3xl font-bold text-tp-ink">
-            Free Trial vs Full Package
+            Free Tools vs TailorPic
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-tp-muted">
-            Start free to see how it works, then upgrade when you are ready for your full set.
+            Free generators are tempting, but results vary. TailorPic costs $9.90 and you can get your money back within 14 days.
           </p>
           <div className="mt-10 overflow-x-auto rounded-tp-card border border-tp-line bg-white">
             <table className="w-full min-w-[560px] text-left text-sm">
               <thead>
                 <tr className="border-b border-tp-line bg-tp-paper">
                   <th className="px-5 py-4 font-semibold text-tp-ink"></th>
-                  <th className="px-5 py-4 font-semibold text-tp-ink">Free Trial</th>
-                  <th className="px-5 py-4 font-semibold text-tp-bronze-ink">Full Package</th>
+                  <th className="px-5 py-4 font-semibold text-tp-ink">Typical Free Tools</th>
+                  <th className="px-5 py-4 font-semibold text-tp-bronze-ink">TailorPic</th>
                 </tr>
               </thead>
               <tbody>
@@ -294,11 +337,11 @@ export default function FreeHeadshotGeneratorPage() {
           </div>
           <div className="mt-6 text-center">
             <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
-              Start your free trial
+              Get my headshots for $9.90
               <ArrowRight className="h-4 w-4" />
             </Link>
             <p className="mt-3 text-sm text-tp-muted">
-              Details on the{' '}
+              14-day money-back guarantee. See the{' '}
               <Link href="/pricing" className="text-tp-bronze-ink underline underline-offset-2">
                 pricing page
               </Link>
@@ -408,15 +451,15 @@ export default function FreeHeadshotGeneratorPage() {
       {/* Final CTA */}
       <section className="px-4 py-20">
         <div className="mx-auto max-w-2xl rounded-tp-card bg-tp-ink px-6 py-12 text-center">
-          <h2 className="font-display text-3xl font-bold text-white">Start with your free trial</h2>
+          <h2 className="font-display text-3xl font-bold text-white">Try it risk-free</h2>
           <p className="mt-3 text-tp-beige">
-            Upload a few selfies and see your professional headshots.
+            $9.90 one-time, secure Stripe checkout, and a 14-day money-back guarantee.
           </p>
           <Link
             href="/auth/register"
             className={`${buttonVariants({ variant: 'secondary', size: 'lg' })} mt-8 bg-tp-bronze text-tp-ink hover:bg-tp-beige`}
           >
-            Get started
+            Get my headshots
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

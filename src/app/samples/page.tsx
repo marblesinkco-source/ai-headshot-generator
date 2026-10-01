@@ -184,6 +184,19 @@ export default function SamplesPage() {
             <p className="mx-auto mt-3 max-w-xl text-base font-medium text-tp-bronze-ink">
               Get 40+ photos starting at $9.90, one-time, no subscription.
             </p>
+            <div className="mt-8 flex flex-col items-center gap-3">
+              <Link
+                href="/auth/register"
+                className={cn(
+                  buttonVariants({ size: 'lg' }),
+                  'rounded-tp-button bg-tp-bronze text-white hover:bg-tp-bronze-ink'
+                )}
+              >
+                Get Your Headshots
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+              <p className="text-sm text-tp-muted">14-day money-back guarantee</p>
+            </div>
           </div>
         </section>
 
@@ -215,7 +228,7 @@ export default function SamplesPage() {
               {filteredEntries.map((entry) => (
                 <div
                   key={entry.id}
-                  className="group relative overflow-hidden rounded-2xl border border-tp-line bg-white shadow-sm transition-shadow hover:shadow-md"
+                  className="group relative overflow-hidden rounded-tp-card border border-tp-line bg-white shadow-sm transition-shadow hover:shadow-md"
                 >
                   {/* Gradient placeholder */}
                   <div
@@ -260,6 +273,20 @@ export default function SamplesPage() {
                 No samples available for this category yet.
               </p>
             )}
+
+            <div className="mt-12 text-center">
+              <Link
+                href="/auth/register"
+                className={cn(
+                  buttonVariants({ size: 'lg' }),
+                  'rounded-tp-button bg-tp-bronze text-white hover:bg-tp-bronze-ink'
+                )}
+              >
+                Create Yours from $9.90
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+              <p className="mt-3 text-sm text-tp-muted">40+ photos, one-time payment. Most orders ready within 2 hours.</p>
+            </div>
           </div>
         </section>
 
@@ -329,7 +356,7 @@ export default function SamplesPage() {
                     {/* Before */}
                     <div className="flex-1">
                       <div
-                        className={`relative aspect-square overflow-hidden rounded-xl bg-gradient-to-br ${card.gradientBefore}`}
+                        className={`relative aspect-square overflow-hidden rounded-tp-button bg-gradient-to-br ${card.gradientBefore}`}
                       >
                         <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
                           <Upload className="h-6 w-6 text-tp-muted/60" />
@@ -346,7 +373,7 @@ export default function SamplesPage() {
                     {/* After */}
                     <div className="flex-1">
                       <div
-                        className={`relative aspect-square overflow-hidden rounded-xl bg-gradient-to-br ${card.gradientAfter}`}
+                        className={`relative aspect-square overflow-hidden rounded-tp-button bg-gradient-to-br ${card.gradientAfter}`}
                       >
                         <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
                           <ImageIcon className="h-6 w-6 text-white/40" />
