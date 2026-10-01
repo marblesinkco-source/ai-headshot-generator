@@ -45,6 +45,7 @@ const resourceLinks = [
   { label: 'Changelog', href: '/changelog' },
   { label: 'Contact', href: '/contact' },
   { label: 'Affiliate', href: '/affiliate' },
+  { label: 'Referral', href: '/referral' },
 ];
 
 const socialLinks = [
