@@ -299,6 +299,15 @@ export default function BillingClient() {
                               View Photos
                             </Button>
                           </Link>
+                          <a
+                            href={`/api/invoices/${order.id}`}
+                            download={`invoice-${order.id}.html`}
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <Button variant="outline" size="sm">
+                              Download Invoice
+                            </Button>
+                          </a>
                         </div>
                       </div>
                     )}
