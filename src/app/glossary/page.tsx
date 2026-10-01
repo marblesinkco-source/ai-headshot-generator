@@ -16,6 +16,18 @@ export const metadata: Metadata = {
     description:
       '30+ AI photography and headshot terms explained in plain language.',
     url: `${siteConfig.url}/glossary`,
+    siteName: siteConfig.name,
+    type: 'website',
+    images: [
+      { url: siteConfig.ogImage, width: 1200, height: 630, alt: `${siteConfig.name} AI Photography Glossary` },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `AI Photography Glossary | ${siteConfig.name}`,
+    description:
+      '30+ AI photography and headshot terms explained in plain language.',
+    images: [siteConfig.ogImage],
   },
 };
 
@@ -384,9 +396,9 @@ export default function GlossaryPage() {
         <div className="pointer-events-none absolute inset-0 bg-grid" />
         <div className="pointer-events-none absolute -top-24 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-tp-bronze/10 blur-3xl" />
         <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 sm:py-24 lg:px-8">
-          <h1 className="text-4xl font-extrabold tracking-tight text-tp-ink sm:text-5xl">
+          <h1 className="font-display text-4xl font-normal tracking-tight text-tp-ink sm:text-5xl lg:text-6xl">
             AI Photography{' '}
-            <span className="bg-gradient-to-r from-tp-bronze-ink to-tp-bronze bg-clip-text text-transparent">
+            <span className="italic text-tp-bronze-ink">
               Glossary
             </span>
           </h1>
@@ -401,7 +413,7 @@ export default function GlossaryPage() {
       {/* Letter index */}
       <nav
         aria-label="Glossary index"
-        className="border-y border-tp-line bg-white/80 py-4"
+        className="sticky top-16 z-30 border-y border-tp-line bg-white/90 py-3 backdrop-blur"
       >
         <ul className="mx-auto flex max-w-4xl flex-wrap justify-center gap-2 px-4 sm:px-6 lg:px-8">
           {groups.map((g) => (
@@ -419,19 +431,19 @@ export default function GlossaryPage() {
 
       {/* Terms */}
       <section className="py-16">
-        <div className="mx-auto max-w-4xl space-y-12 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl space-y-12 px-4 sm:px-6 lg:px-8">
           {groups.map((g) => (
             <div key={g.letter} id={`letter-${g.letter}`} className="scroll-mt-24">
               <h2 className="font-display text-3xl font-normal italic text-tp-bronze-ink">
                 {g.letter}
               </h2>
-              <dl className="mt-4 grid gap-4">
+              <dl className="mt-4 grid gap-4 md:grid-cols-2">
                 {g.items.map((t) => (
                   <div
                     key={t.term}
-                    className="rounded-2xl border border-tp-line bg-white p-6 shadow-sm"
+                    className="rounded-2xl border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                   >
-                    <dt className="text-lg font-bold text-tp-ink">{t.term}</dt>
+                    <dt className="font-display text-xl text-tp-ink">{t.term}</dt>
                     <dd className="mt-2 text-sm leading-relaxed text-tp-muted">
                       {t.definition}
                       {t.link && (
@@ -462,7 +474,7 @@ export default function GlossaryPage() {
             See the Technology in Action
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-tp-beige/80">
-            Upload a few selfies and get professional AI headshots in about two hours.
+            Upload a few selfies and get professional AI headshots, with most orders completed within 2 hours.
           </p>
           <div className="mt-8">
             <Link href="/dashboard/upload">

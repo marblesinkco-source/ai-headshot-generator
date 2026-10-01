@@ -37,6 +37,12 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Pricing Comparison | ${siteConfig.name}`,
+    description: `Compare ${siteConfig.name} AI headshots with traditional studios and other AI services.`,
+    images: [siteConfig.ogImage],
+  },
 };
 
 /* ------------------------------------------------------------------ */
@@ -87,7 +93,7 @@ const comparisonRows: ComparisonRow[] = [
     feature: 'Turnaround time',
     traditional: '1 - 2 weeks',
     otherAI: '1 - 24 hours',
-    tailorpic: 'Minutes to 24 hours',
+    tailorpic: 'Most orders within 2 hours',
   },
   {
     feature: 'Travel required',
@@ -147,7 +153,7 @@ const roiReasons = [
     icon: Clock,
     title: 'Time Savings',
     description:
-      'No scheduling, commuting, or waiting for retouching. Upload your selfies and receive professional headshots the same day you need them.',
+      'No scheduling, commuting, or waiting for retouching. Upload your selfies and receive your headshots, with most orders completed within 2 hours.',
   },
   {
     icon: Sparkles,
@@ -254,6 +260,21 @@ export default function PricingComparisonPage() {
             <p className="mx-auto mt-4 max-w-2xl text-center text-tp-muted">
               A side-by-side look at traditional studios, other AI headshot
               services, and {siteConfig.name}.
+            </p>
+
+            <p className="mx-auto mt-3 max-w-2xl text-center text-xs text-tp-muted">
+              Traditional studio and other AI service figures are rough,
+              typical ranges and vary by provider and market. {siteConfig.name}
+              figures come from our current plans. Individual orders start at
+              $9.90; team pricing is $39 per person for 5-15 people and $29 per
+              person for 16-50 people, confirmed at checkout.{' '}
+              <Link
+                href="/team-headshots"
+                className="font-medium text-tp-bronze-ink underline underline-offset-2"
+              >
+                See team pricing
+              </Link>
+              .
             </p>
 
             {/* Desktop table */}

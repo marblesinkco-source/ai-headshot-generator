@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { HowToSchema, BreadcrumbSchema } from '@/components/structured-data';
+import { HowToSchema, BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import {
@@ -24,17 +24,34 @@ import {
   Timer,
   LayoutGrid,
   Undo2,
+  ArrowRight,
+  Smartphone,
+  ImageIcon,
+  Layers,
+  MonitorUp,
+  Lightbulb,
+  Glasses,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'How It Works',
-  description: `Learn how ${siteConfig.name} creates stunning AI-generated professional photos in 3 simple steps. Upload selfies, let our AI work its magic, and download 4K results.`,
+  description: `Learn how ${siteConfig.name} creates professional AI photos in 3 simple steps. Upload selfies, let our AI train on your features, and download 40+ high-resolution photos in about 2 hours.`,
   alternates: { canonical: '/how-it-works' },
   openGraph: {
+    type: 'website',
+    siteName: siteConfig.name,
     title: `How It Works | ${siteConfig.name}`,
     description:
       'Upload your selfies, our AI trains a custom model on your features, and you get 40+ professional photos in about 2 hours.',
     url: `${siteConfig.url}/how-it-works`,
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: `How ${siteConfig.name} works` }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `How It Works | ${siteConfig.name}`,
+    description:
+      'Upload selfies, let our AI train on your features, and download 40+ professional photos in about 2 hours.',
+    images: [siteConfig.ogImage],
   },
 };
 
@@ -137,6 +154,35 @@ const whyChooseUs = [
   },
 ];
 
+const timeline = [
+  { icon: Upload, label: 'Upload', time: 'A few minutes', note: 'Add your selfies and pick your styles' },
+  { icon: Sparkles, label: 'AI Processing', time: 'About 2 hours', note: 'We train your model and generate your photos' },
+  { icon: Download, label: 'Download', time: 'Instant', note: 'Browse your gallery and save your favorites' },
+];
+
+const youNeed = [
+  { icon: Smartphone, title: 'Selfies from your phone', description: 'Casual shots are fine. We recommend 10 to 20 for the best likeness, and you can start with as few as 8.' },
+  { icon: Sun, title: 'Good lighting', description: 'Face a window or shoot outdoors in soft daylight so your features are even and clear.' },
+  { icon: ImageIcon, title: 'A simple background', description: 'A plain, uncluttered wall works best, and changing it between shots helps the AI focus on you.' },
+  { icon: Eye, title: 'A clear view of your face', description: 'No sunglasses, hats or heavy filters. Include a few different angles and expressions.' },
+];
+
+const youGet = [
+  { icon: LayoutGrid, title: '40+ photos', description: 'A full set of professional photos generated from one upload.' },
+  { icon: Layers, title: 'Multiple styles', description: 'Choose from 11+ style categories, from corporate headshots to creative portraits.' },
+  { icon: MonitorUp, title: 'High-resolution files', description: 'Download in 4K resolution, ready for web profiles and print.' },
+  { icon: BadgeCheck, title: 'Commercial rights', description: 'Use your photos on LinkedIn, your website, business cards and more.' },
+];
+
+const bestResultsTips = [
+  { icon: Sun, title: 'Shoot in soft daylight', description: 'Stand facing a window. Avoid harsh overhead light and strong shadows across your face.' },
+  { icon: RotateCcw, title: 'Mix up angles and expressions', description: 'Include front-on and slightly turned shots, with a smile and a neutral look.' },
+  { icon: Glasses, title: 'Keep your face unobstructed', description: 'Skip sunglasses, hats and anything covering your features. Regular glasses are fine if you usually wear them.' },
+  { icon: Camera, title: 'Use recent photos', description: 'Pick selfies that look like you today so your results match how you look now.' },
+  { icon: Smartphone, title: 'Hold the camera at eye level', description: 'It keeps proportions natural and avoids distortion from extreme up or down angles.' },
+  { icon: Lightbulb, title: 'Skip filters and beauty modes', description: 'Unedited photos give the AI the most accurate information about your real features.' },
+];
+
 const doList = [
   { icon: Sun, text: 'Natural, even lighting on your face' },
   { icon: Eye, text: 'Face clearly visible, no obstructions' },
@@ -172,6 +218,16 @@ const faqs = [
     answer:
       'We offer a 100% money-back guarantee within 14 days of delivery. If you are not satisfied with your photos, contact our support team and we will make it right — either with a re-generation or a full refund.',
   },
+  {
+    question: 'What do I need to get started?',
+    answer:
+      'Just a phone and a handful of casual selfies taken in good lighting. No professional equipment, photographer or studio is needed.',
+  },
+  {
+    question: 'What resolution are the photos?',
+    answer:
+      'Photos are delivered in high-resolution 4K quality, suited to web profiles and print.',
+  },
 ];
 
 export default function HowItWorksPage() {
@@ -183,6 +239,7 @@ export default function HowItWorksPage() {
       ]} />
       <Header />
       <HowToSchema />
+      <FAQSchema items={faqs} />
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-tp-black pt-16">
@@ -199,6 +256,45 @@ export default function HowItWorksPage() {
             Upload a few selfies, let our AI do the rest, and download your
             results in about 2 hours.
           </p>
+          <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+            <Link href="/auth/register">
+              <Button size="lg" className="bg-tp-bronze text-tp-black hover:bg-tp-bronze/90">
+                Get Started
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Time estimate */}
+      <section className="border-b border-tp-line bg-tp-paper py-12 sm:py-16" aria-labelledby="timeline-heading">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 id="timeline-heading" className="text-center font-display text-2xl font-normal italic text-tp-ink sm:text-3xl">
+            From selfies to photos in about 2 hours
+          </h2>
+          <ol className="mt-8 flex flex-col items-stretch gap-4 md:flex-row md:items-center md:gap-3">
+            {timeline.map((t, i) => {
+              const Icon = t.icon;
+              return (
+                <li key={t.label} className="flex flex-1 flex-col items-stretch gap-4 md:flex-row md:items-center md:gap-3">
+                  <div className="flex-1 rounded-tp-card border border-tp-line bg-white p-5 text-center">
+                    <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-beige">
+                      <Icon className="h-6 w-6 text-tp-bronze-ink" aria-hidden="true" />
+                    </div>
+                    <p className="mt-3 text-base font-semibold text-tp-ink">{t.label}</p>
+                    <p className="mt-1 font-display text-2xl italic text-tp-bronze-ink">{t.time}</p>
+                    <p className="mt-1 text-sm text-tp-muted">{t.note}</p>
+                  </div>
+                  {i < timeline.length - 1 && (
+                    <ArrowRight className="mx-auto hidden h-5 w-5 shrink-0 text-tp-bronze md:block" aria-hidden="true" />
+                  )}
+                </li>
+              );
+            })}
+          </ol>
+          <p className="mt-6 text-center text-xs text-tp-muted">
+            Times are approximate. We email you as soon as your photos are ready.
+          </p>
         </div>
       </section>
 
@@ -211,41 +307,102 @@ export default function HowItWorksPage() {
               return (
                 <div
                   key={step.number}
-                  className="relative rounded-2xl border border-tp-line bg-white p-6 shadow-sm sm:p-10"
+                  className="relative overflow-hidden rounded-tp-dialog border border-tp-line bg-white p-6 shadow-sm sm:p-10"
                 >
-                  {/* Step number connector */}
-                  <div className="flex flex-col gap-6 sm:flex-row sm:gap-10">
-                    {/* Left: Number + Icon */}
-                    <div className="flex shrink-0 flex-col items-center gap-4">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-tp-black text-xl font-bold text-tp-bronze sm:h-16 sm:w-16 sm:text-2xl">
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -right-2 -top-6 select-none font-display text-[10rem] italic leading-none text-tp-beige sm:text-[14rem]"
+                  >
+                    {step.number}
+                  </span>
+                  <div className="relative flex flex-col gap-6 sm:flex-row sm:gap-10">
+                    <div className="flex shrink-0 items-center gap-4 sm:flex-col">
+                      <div className="flex h-20 w-20 items-center justify-center rounded-full bg-tp-black font-display text-4xl italic text-tp-bronze sm:h-24 sm:w-24 sm:text-5xl">
                         {step.number}
                       </div>
-                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-paper">
-                        <Icon className="h-6 w-6 text-tp-bronze-ink" />
+                      <div className="flex h-14 w-14 items-center justify-center rounded-tp-card bg-tp-paper sm:h-16 sm:w-16">
+                        <Icon className="h-7 w-7 text-tp-bronze-ink sm:h-8 sm:w-8" aria-hidden="true" />
                       </div>
                     </div>
-
-                    {/* Right: Content */}
                     <div className="flex-1">
-                      <h2 className="font-display text-2xl font-normal italic text-tp-ink sm:text-3xl">
+                      <p className="text-xs font-semibold uppercase tracking-widest text-tp-bronze-ink">
+                        Step {step.number}
+                      </p>
+                      <h2 className="mt-1 font-display text-3xl font-normal italic text-tp-ink sm:text-4xl">
                         {step.title}
                       </h2>
-                      <p className="mt-3 text-base leading-relaxed text-tp-muted">
+                      <p className="mt-4 text-base leading-relaxed text-tp-muted sm:text-lg">
                         {step.description}
                       </p>
-                      <ul className="mt-5 space-y-2.5">
+                      <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                         {step.tips.map((tip) => (
                           <li
                             key={tip}
-                            className="flex items-start gap-3 text-sm text-tp-muted"
+                            className="flex items-start gap-3 rounded-tp-button bg-tp-paper p-3 text-sm text-tp-muted"
                           >
-                            <Check className="mt-0.5 h-4 w-4 shrink-0 text-tp-bronze" />
+                            <Check className="mt-0.5 h-4 w-4 shrink-0 text-tp-bronze-ink" aria-hidden="true" />
                             <span>{tip}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
                   </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* What you'll need */}
+      <section className="bg-tp-paper py-20 sm:py-28" aria-labelledby="need-heading">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 id="need-heading" className="font-display text-3xl font-normal italic text-tp-ink sm:text-4xl">
+              What You&apos;ll Need
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base text-tp-muted">
+              No studio, no photographer. Just your phone and a few minutes.
+            </p>
+          </div>
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {youNeed.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-beige">
+                    <Icon className="h-6 w-6 text-tp-bronze-ink" aria-hidden="true" />
+                  </div>
+                  <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* What you'll get */}
+      <section className="bg-tp-black py-20 sm:py-28" aria-labelledby="get-heading">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 id="get-heading" className="font-display text-3xl font-normal italic text-tp-bronze sm:text-4xl">
+              What You&apos;ll Get
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base text-tp-beige/60">
+              One upload, a full gallery of photos that look like you.
+            </p>
+          </div>
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {youGet.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="rounded-tp-card border border-white/10 bg-white/5 p-6">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-bronze/10">
+                    <Icon className="h-6 w-6 text-tp-bronze" aria-hidden="true" />
+                  </div>
+                  <h3 className="mt-4 text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-tp-beige/60">{item.description}</p>
                 </div>
               );
             })}
@@ -309,9 +466,9 @@ export default function HowItWorksPage() {
               return (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm"
+                  className="rounded-tp-card border border-white/10 bg-white/5 p-6 backdrop-blur-sm"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-bronze/10">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-bronze/10">
                     <Icon className="h-6 w-6 text-tp-bronze" />
                   </div>
                   <h3 className="mt-4 text-lg font-semibold text-white">
@@ -320,6 +477,39 @@ export default function HowItWorksPage() {
                   <p className="mt-2 text-sm leading-relaxed text-tp-beige/60">
                     {item.description}
                   </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Tips for best results */}
+      <section className="py-20 sm:py-28" aria-labelledby="tips-heading">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 id="tips-heading" className="font-display text-3xl font-normal italic text-tp-ink sm:text-4xl">
+              Tips for Best Results
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base text-tp-muted">
+              Better input photos lead to a better likeness. Keep these in mind when you shoot.
+            </p>
+          </div>
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {bestResultsTips.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="flex gap-4 rounded-tp-card border border-tp-line bg-white p-6">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-tp-button bg-tp-beige">
+                    <Icon className="h-5 w-5 text-tp-bronze-ink" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-semibold text-tp-ink">
+                      <span className="mr-1.5 text-tp-bronze-ink">{i + 1}.</span>
+                      {item.title}
+                    </h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-tp-muted">{item.description}</p>
+                  </div>
                 </div>
               );
             })}
@@ -342,10 +532,10 @@ export default function HowItWorksPage() {
 
           <div className="mt-14 grid gap-8 sm:grid-cols-2">
             {/* DO */}
-            <div className="rounded-2xl border border-tp-line bg-white p-6 sm:p-8">
+            <div className="rounded-tp-card border border-tp-line bg-white p-6 sm:p-8">
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100">
-                  <Check className="h-5 w-5 text-emerald-600" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-tp-bronze/15">
+                  <Check className="h-5 w-5 text-tp-bronze-ink" />
                 </div>
                 <h3 className="text-xl font-semibold text-tp-ink">Do</h3>
               </div>
@@ -354,7 +544,7 @@ export default function HowItWorksPage() {
                   const Icon = item.icon;
                   return (
                     <li key={item.text} className="flex items-start gap-3">
-                      <Icon className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
+                      <Icon className="mt-0.5 h-5 w-5 shrink-0 text-tp-bronze-ink" />
                       <span className="text-sm leading-relaxed text-tp-muted">
                         {item.text}
                       </span>
@@ -365,7 +555,7 @@ export default function HowItWorksPage() {
             </div>
 
             {/* DON'T */}
-            <div className="rounded-2xl border border-tp-line bg-white p-6 sm:p-8">
+            <div className="rounded-tp-card border border-tp-line bg-white p-6 sm:p-8">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-tp-muted/10">
                   <X className="h-5 w-5 text-tp-muted" />
@@ -426,7 +616,7 @@ export default function HowItWorksPage() {
             Transform your photos with studio-quality AI headshots. Your new headshots are just a few selfies away.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/dashboard/upload">
+            <Link href="/auth/register">
               <Button
                 size="lg"
                 className="bg-tp-bronze text-tp-black hover:bg-tp-bronze/90"

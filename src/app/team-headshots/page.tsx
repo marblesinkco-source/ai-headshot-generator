@@ -2,13 +2,47 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
   Users, Sparkles, ArrowRight, CheckCircle, Palette,
   Download, LayoutDashboard, Image, Camera, Send,
   Laptop, Scale, Building2, Stethoscope, GraduationCap, Landmark,
+  Lock, ShieldCheck, CreditCard, UserPlus, RefreshCw, Minus,
 } from 'lucide-react';
+
+const faqItems = [
+  {
+    question: 'How much do team headshots cost?',
+    answer:
+      'An individual order is $9.90. Small teams of 5-15 people are $39 per person and companies of 16-50 people are $29 per person. For 50+ people we offer custom enterprise pricing. Final pricing is confirmed at checkout.',
+  },
+  {
+    question: 'How does the team ordering process work?',
+    answer:
+      'An admin creates the team account and invites members by email. Each member uploads a few selfies, and the AI generates their headshots in the shared team style.',
+  },
+  {
+    question: 'Will every headshot match our brand?',
+    answer:
+      'The team plan lets the admin set a shared style and background so headshots look consistent across the team. Brand guidelines can be applied for larger plans.',
+  },
+  {
+    question: 'Is there a money-back guarantee?',
+    answer:
+      'Yes. Orders are covered by a 14-day money-back guarantee. See our refund policy for details.',
+  },
+  {
+    question: 'How is our data handled?',
+    answer:
+      'Uploaded photos, trained models, and generated photos are automatically deleted from our servers within 30 days of delivery, and you can request earlier deletion by contacting support. Payments are processed by Stripe and card details are never stored on our servers.',
+  },
+  {
+    question: 'Can I see a demo or talk to someone before buying?',
+    answer:
+      'Yes. Use the Request a Demo button to contact our team and we will walk you through the team dashboard and answer questions about your rollout.',
+  },
+];
 
 export const metadata: Metadata = {
   title: 'Team Headshots — Professional AI Photos for Your Team | TailorPic',
@@ -40,6 +74,7 @@ export default function TeamHeadshotsPage() {
         { name: 'Home', url: siteConfig.url },
         { name: 'Team Headshots', url: `${siteConfig.url}/team-headshots` },
       ]} />
+      <FAQSchema items={faqItems} />
       <Header />
 
       {/* Hero */}
@@ -71,9 +106,21 @@ export default function TeamHeadshotsPage() {
               href="/contact"
               className="inline-flex items-center gap-2 rounded-tp-button border border-tp-beige/20 px-6 py-3.5 text-sm font-semibold text-tp-beige transition-all hover:bg-white/5"
             >
-              Contact Sales
+              Request a Demo
             </Link>
           </div>
+          <ul className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-tp-beige/70">
+            {[
+              { icon: CreditCard, text: 'Secure checkout by Stripe' },
+              { icon: Lock, text: 'Photos deleted within 30 days' },
+              { icon: ShieldCheck, text: '14-day money-back guarantee' },
+            ].map((t) => (
+              <li key={t.text} className="inline-flex items-center gap-1.5">
+                <t.icon className="h-3.5 w-3.5 text-tp-bronze" />
+                {t.text}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -144,7 +191,7 @@ export default function TeamHeadshotsPage() {
               {
                 name: 'Individual',
                 size: '1-4 people',
-                price: '$29.90',
+                price: '$9.90',
                 unit: '/person',
                 features: ['Per-person ordering', 'Choose your style', 'High-resolution downloads'],
                 cta: 'Get Started',
@@ -153,8 +200,8 @@ export default function TeamHeadshotsPage() {
               },
               {
                 name: 'Small Team',
-                size: '5-14 people',
-                price: '$24.90',
+                size: '5-15 people',
+                price: '$39',
                 unit: '/person',
                 features: ['Everything in Individual', 'Consistent team background', 'Admin dashboard'],
                 cta: 'Get Started',
@@ -163,8 +210,8 @@ export default function TeamHeadshotsPage() {
               },
               {
                 name: 'Business',
-                size: '15-49 people',
-                price: '$19.90',
+                size: '16-50 people',
+                price: '$29',
                 unit: '/person',
                 features: ['Everything in Small Team', 'Brand guidelines applied', 'Bulk download'],
                 cta: 'Get Started',
@@ -174,10 +221,10 @@ export default function TeamHeadshotsPage() {
               {
                 name: 'Enterprise',
                 size: '50+ people',
-                price: 'Contact Sales',
+                price: 'Custom',
                 unit: '',
                 features: ['Everything in Business', 'Custom volume pricing', 'Dedicated onboarding help'],
-                cta: 'Contact Sales',
+                cta: 'Request a Demo',
                 href: '/contact',
                 featured: false,
               },
@@ -221,20 +268,172 @@ export default function TeamHeadshotsPage() {
             All plans include 40+ headshots per person, commercial license, and 14-day money-back guarantee.
           </p>
           <p className="mt-2 text-center text-xs text-tp-muted">
-            Pricing shown is for illustration. Final pricing confirmed at checkout.
+            Final pricing is confirmed at checkout.
           </p>
         </div>
       </section>
 
-      {/* Trusted by Teams */}
+      {/* Individual vs Team comparison */}
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
+              Compare Plans
+            </p>
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+              Individual Plan vs Team Plan
+            </h2>
+            <p className="mt-3 text-tp-muted max-w-xl mx-auto">
+              Ordering for yourself, or outfitting a whole company? Here is what changes.
+            </p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2">
+            {[
+              {
+                name: 'Individual Plan',
+                price: '$9.90',
+                note: 'one-time, per person',
+                featured: false,
+                cta: 'Get Started',
+                href: '/auth/register',
+                rows: [
+                  { text: '40+ headshots per person', on: true },
+                  { text: 'Choose your own style', on: true },
+                  { text: 'High-resolution downloads', on: true },
+                  { text: 'Commercial license', on: true },
+                  { text: 'Shared team style & background', on: false },
+                  { text: 'Admin dashboard & invites', on: false },
+                  { text: 'Bulk download', on: false },
+                ],
+              },
+              {
+                name: 'Team Plan',
+                price: '$39 / $29',
+                note: 'per person: $39 for 5-15 people, $29 for 16-50',
+                featured: true,
+                cta: 'Start a Team Order',
+                href: '/auth/register',
+                rows: [
+                  { text: '40+ headshots per person', on: true },
+                  { text: 'One shared style for the whole team', on: true },
+                  { text: 'High-resolution downloads', on: true },
+                  { text: 'Commercial license', on: true },
+                  { text: 'Consistent team background', on: true },
+                  { text: 'Admin dashboard & invites', on: true },
+                  { text: 'Bulk download', on: true },
+                ],
+              },
+            ].map((plan) => (
+              <div
+                key={plan.name}
+                className={`flex flex-col rounded-tp-card border bg-white p-6 sm:p-8 ${
+                  plan.featured ? 'border-tp-bronze' : 'border-tp-line'
+                }`}
+              >
+                <h3 className="font-display text-2xl text-tp-ink">{plan.name}</h3>
+                <p className="mt-4 font-display text-4xl text-tp-ink">{plan.price}</p>
+                <p className="mt-1 text-sm text-tp-muted">{plan.note}</p>
+                <ul className="mt-6 mb-8 space-y-3 flex-1">
+                  {plan.rows.map((r) => (
+                    <li
+                      key={r.text}
+                      className={`flex items-start gap-2 text-sm ${r.on ? 'text-tp-ink' : 'text-tp-muted'}`}
+                    >
+                      {r.on ? (
+                        <CheckCircle className="h-4 w-4 mt-0.5 text-tp-bronze-ink flex-shrink-0" />
+                      ) : (
+                        <Minus className="h-4 w-4 mt-0.5 text-tp-muted flex-shrink-0" />
+                      )}
+                      <span>
+                        {r.text}
+                        {!r.on && <span className="sr-only"> (not included)</span>}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href={plan.href}
+                  className={`inline-flex items-center justify-center gap-2 rounded-tp-button px-5 py-3 text-sm font-semibold transition-all ${
+                    plan.featured
+                      ? 'bg-tp-black text-tp-bronze hover:-translate-y-0.5 hover:shadow-lg'
+                      : 'border border-tp-line text-tp-ink hover:bg-tp-paper'
+                  }`}
+                >
+                  {plan.cta} <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-center text-sm text-tp-muted">
+            Teams of 50+?{' '}
+            <Link href="/contact" className="font-semibold text-tp-bronze-ink underline underline-offset-4">
+              Request a demo
+            </Link>{' '}
+            for custom pricing.
+          </p>
+        </div>
+      </section>
+
+      {/* Scenarios */}
+      <section className="bg-tp-paper py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
+              Scenarios
+            </p>
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+              How Teams Can Use It
+            </h2>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2">
+            {[
+              {
+                icon: RefreshCw,
+                title: 'HR: Company Rebrand',
+                desc: 'A refreshed brand needs refreshed faces. HR sets one style and background, invites everyone, and the whole directory updates together instead of photo by photo.',
+              },
+              {
+                icon: UserPlus,
+                title: 'New Hire Onboarding',
+                desc: 'Add a headshot step to the first-week checklist. New hires upload selfies from home and get a photo that matches the rest of the team page.',
+              },
+              {
+                icon: Building2,
+                title: 'Real Estate Team',
+                desc: 'A brokerage wants matching agent photos across listings, signage, and email signatures, including for agents who join mid-year.',
+              },
+              {
+                icon: Scale,
+                title: 'Law Firm Team',
+                desc: 'Partners and associates are spread across offices and schedules. Selfies replace a coordinated studio day while attorney profiles still look uniform.',
+              },
+            ].map((s) => (
+              <div key={s.title} className="rounded-tp-card border border-tp-line bg-white p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-tp-button bg-tp-black">
+                    <s.icon className="h-5 w-5 text-tp-bronze" />
+                  </div>
+                  <span className="rounded-full border border-tp-line bg-tp-paper px-3 py-1 text-xs font-medium text-tp-muted">
+                    Representative scenario
+                  </span>
+                </div>
+                <h3 className="font-display text-lg text-tp-ink">{s.title}</h3>
+                <p className="mt-2 text-sm text-tp-muted leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industries */}
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
-              Use Cases
+              Industries
             </p>
             <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
-              Trusted by Teams
+              Built for Teams That Put People First
             </h2>
             <p className="mt-3 text-tp-muted max-w-xl mx-auto">
               Consistent headshots work for any team that puts people front and center.
@@ -337,6 +536,63 @@ export default function TeamHeadshotsPage() {
         </div>
       </section>
 
+      {/* Trust */}
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-5 sm:grid-cols-3">
+            {[
+              {
+                icon: CreditCard,
+                title: 'Secure checkout',
+                desc: 'Payments are processed by Stripe. Card details are never stored on our servers.',
+              },
+              {
+                icon: Lock,
+                title: 'Data privacy',
+                desc: 'Uploaded photos, models, and results are deleted within 30 days of delivery.',
+              },
+              {
+                icon: ShieldCheck,
+                title: '14-day guarantee',
+                desc: 'Covered by a 14-day money-back guarantee on every order.',
+              },
+            ].map((t) => (
+              <div key={t.title} className="rounded-tp-card border border-tp-line bg-white p-6 text-center">
+                <t.icon className="h-6 w-6 text-tp-bronze-ink mx-auto mb-3" />
+                <h3 className="font-display text-lg text-tp-ink">{t.title}</h3>
+                <p className="mt-2 text-sm text-tp-muted leading-relaxed">{t.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-center text-sm text-tp-muted">
+            Learn more on our{' '}
+            <Link href="/security" className="font-semibold text-tp-bronze-ink underline underline-offset-4">
+              security page
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-tp-paper py-16 sm:py-20">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center font-display text-3xl sm:text-4xl text-tp-ink mb-10">
+            Team Headshots FAQ
+          </h2>
+          <div className="space-y-3">
+            {faqItems.map((f) => (
+              <details key={f.question} className="group rounded-tp-card border border-tp-line bg-white p-5">
+                <summary className="cursor-pointer list-none text-base font-semibold text-tp-ink">
+                  {f.question}
+                </summary>
+                <p className="mt-3 text-sm text-tp-muted leading-relaxed">{f.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-20 sm:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
@@ -359,7 +615,7 @@ export default function TeamHeadshotsPage() {
               href="/contact"
               className="inline-flex items-center gap-2 rounded-tp-button border border-tp-line px-6 py-3.5 text-sm font-semibold text-tp-ink transition-all hover:bg-tp-paper"
             >
-              Contact Sales
+              Request a Demo
             </Link>
           </div>
         </div>
