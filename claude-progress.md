@@ -88,6 +88,9 @@
 83. `fc5e03c` — Hero: remove secondary portrait overlay
 84. `8f086c7` — Codebase health cleanup: dead code, unused assets, stale config (~9.3MB freed)
 85. `d10ddd6` — Full-stack site audit: UX, SEO, perf, security, code quality (320 files, 5 parallel agents)
+86. `6e7f249` — Update progress tracker with full-stack audit results
+87. `97a7486` — Add comprehensive scaling plan for 10K, 100K, and 1M users
+88. `88a3b1b` — Phase 1 infrastructure upgrades: Upstash Redis rate limiting, maxDuration, retry utility, Stripe event dedup, stuck order cron (22 files, 431 insertions)
 
 ### Completed Features
 - [x] Exit-intent popup with WELCOME10 promo
@@ -409,11 +412,15 @@
 - [x] Security: replaced all console.error in API routes with structured logger
 
 ### Backlog (Requires External Action)
+- [ ] **Upstash: Create Redis database** → get UPSTASH_REDIS_REST_URL + UPSTASH_REDIS_REST_TOKEN
+- [ ] **Vercel: Add UPSTASH env vars** (UPSTASH_REDIS_REST_URL, UPSTASH_REDIS_REST_TOKEN)
+- [ ] **Supabase: Run migration 006_add_retry_and_dedupe.sql** (retry_count, Stripe dedup table, indexes)
 - [ ] Stripe: Create WELCOME10 promo code (10% off) — needs Stripe dashboard/API key
 - [ ] Vercel env: Set NEXT_PUBLIC_GA_MEASUREMENT_ID for GA4
 - [ ] Supabase: Run contact_messages migration SQL
 - [ ] Supabase: Run newsletter_subscribers migration SQL
 - [ ] Supabase: Run 005_add_refunded_status.sql migration
+- [ ] Supabase Pro plan upgrade (Faz 2 için)
 - [ ] Apple Developer Program setup + Supabase Apple provider (user said "sonra yapalım")
 - [ ] Facebook Developer App + Supabase Facebook provider (user said "sonra yapalım")
 - [ ] Error monitoring (Sentry) — needs API key/DSN
@@ -426,7 +433,13 @@
 - [x] HeadshotModal: lazy-loaded with dynamic import in gallery page
 - [ ] Consider converting more 'use client' marketing components to server components (trust-strip, cta-banner, faq)
 - [ ] StickyCTA and TrustStrip could potentially be lazy-loaded if below fold
-- [ ] Rate limiting is in-memory (resets on deploy) — production needs Redis/Upstash
+- [x] Rate limiting upgraded to Upstash Redis (sliding window) with in-memory fallback
+- [x] maxDuration configured for all 10 API routes
+- [x] Vercel function memory 1024MB for AI routes
+- [x] Stripe event deduplication (processed_stripe_events table)
+- [x] Stuck order retry cron (every 15min, max 3 retries)
+- [x] withRetry utility with exponential backoff
+- [x] Migration 006: retry_count, last_retry_at, performance indexes
 
 ### Decisions for User
 - Delivery time inconsistency: some pages say "about 2 hours", others "within 24 hours" — needs alignment
