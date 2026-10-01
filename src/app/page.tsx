@@ -79,11 +79,11 @@ export default function LandingPage() {
       <BeforeAfterShowcase />
       <CompanyLogos />
       <HowItWorks />
+      <Testimonials />
       <ComparisonTable />
       <SavingsHighlight />
-      <Testimonials />
-      <PrivacySection />
       <Pricing />
+      <PrivacySection />
       <FAQ />
       <CTABanner />
       <Footer />
