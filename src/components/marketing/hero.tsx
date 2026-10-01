@@ -112,21 +112,6 @@ export function Hero() {
               <span className="absolute right-4 bottom-3 bg-tp-black/75 text-white text-[9px] tracking-[0.01em] px-2.5 py-1.5 rounded-md">
                 AI-generated concept image
               </span>
-
-              {/* Secondary portrait: offset card beside main image (hidden on small phones) */}
-              <div className="hidden min-[480px]:block absolute -left-[6%] bottom-[12%] w-[28%] max-w-[180px] lg:w-[30%] lg:max-w-[200px] aspect-[3/4] -rotate-[3deg] rounded-2xl border-[3.5px] border-white bg-tp-beige shadow-[0_20px_50px_-10px_rgba(0,0,0,0.5),0_8px_20px_-6px_rgba(0,0,0,0.3)] overflow-hidden ring-1 ring-black/5">
-                <Image
-                  src="/brand/tailorpic/web/portrait-man-editorial.webp"
-                  alt="AI-generated editorial portrait of a man"
-                  width={503}
-                  height={743}
-                  className="absolute inset-0 w-full h-full object-cover object-[50%_25%]"
-                  sizes="(max-width: 1024px) 28vw, 14vw"
-                />
-                <span className="absolute left-1.5 bottom-1.5 bg-tp-black/80 text-white text-[7px] tracking-[0.01em] px-1.5 py-0.5 rounded-sm backdrop-blur-sm">
-                  AI-generated concept
-                </span>
-              </div>
             </div>
           </div>
 
