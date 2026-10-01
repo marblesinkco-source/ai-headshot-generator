@@ -30,6 +30,8 @@ const productLinks = [
   { label: 'Use Cases', href: '/use-cases' },
   { label: 'Photo Styles', href: '/styles' },
   { label: 'Guarantee', href: '/guarantee' },
+  { label: 'Why TailorPic', href: '/why-tailorpic' },
+  { label: 'Students', href: '/students' },
 ];
 
 const freeToolLinks = [
@@ -56,6 +58,7 @@ const resourceLinks = [
   { label: 'Affiliate', href: '/affiliate' },
   { label: 'Referral', href: '/referral' },
   { label: 'Partners', href: '/partners' },
+  { label: 'Help Center', href: '/help' },
 ];
 
 const socialLinks = [
