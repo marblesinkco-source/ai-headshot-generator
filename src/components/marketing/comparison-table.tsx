@@ -105,7 +105,7 @@ export function ComparisonTable() {
           <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
             Comparison
           </p>
-          <h2 className="mt-3 text-2xl font-bold tracking-tight text-tp-ink sm:text-3xl">
+          <h2 className="mt-3 font-display text-2xl font-normal tracking-tight text-tp-ink sm:text-3xl">
             Why people choose TailorPic
           </h2>
           <p className="mt-3 text-base text-tp-muted max-w-xl mx-auto">

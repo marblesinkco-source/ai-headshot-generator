@@ -2,10 +2,13 @@ import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { Header } from '@/components/marketing/header';
 import { Hero } from '@/components/marketing/hero';
+import { SocialProofBar } from '@/components/marketing/social-proof-bar';
 import { TrustStrip } from '@/components/marketing/trust-strip';
 import { TrustBadges } from '@/components/marketing/trust-badges';
+import { CompanyLogos } from '@/components/marketing/company-logos';
 import { Categories } from '@/components/marketing/categories';
 import { HowItWorks } from '@/components/marketing/how-it-works';
+import { PrivacySection } from '@/components/marketing/privacy-section';
 import { Pricing } from '@/components/marketing/pricing';
 import { faqs } from '@/config/faqs';
 import { Footer } from '@/components/marketing/footer';
@@ -83,14 +86,17 @@ export default function LandingPage() {
       <HowToSchema />
       <Header />
       <Hero />
+      <SocialProofBar />
       <StatsCounter />
       <Categories />
       <TrustBadges />
       <TrustStrip />
       <BeforeAfterShowcase />
+      <CompanyLogos />
       <HowItWorks />
       <ComparisonTable />
       <Testimonials />
+      <PrivacySection />
       <Pricing />
       <FAQ />
       <CTABanner />

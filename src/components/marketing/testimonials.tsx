@@ -68,7 +68,7 @@ export function Testimonials() {
           <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
             Use Cases
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-tp-black sm:text-4xl">
+          <h2 className="mt-3 font-display text-3xl font-normal tracking-tight text-tp-black sm:text-4xl">
             How Professionals Use TailorPic
           </h2>
           <p className="mt-4 text-lg text-tp-muted">
