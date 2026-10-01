@@ -268,12 +268,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/tools`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
       url: `${baseUrl}/tools/headshot-cost-calculator`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
