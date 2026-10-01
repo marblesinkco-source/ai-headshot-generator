@@ -8,7 +8,10 @@
  */
 
 import { NextResponse } from 'next/server';
+import { Resend } from 'resend';
 import { createClient, createAdminClient } from '@/lib/supabase/server';
+import { siteConfig } from '@/config/site';
+import { buildAccountDeletionEmail } from '@/lib/emails';
 
 export async function POST() {
   // 1. Verify the user is authenticated
@@ -23,6 +26,10 @@ export async function POST() {
   }
 
   const userId = user.id;
+  // Capture before deletion — the user record is gone afterwards.
+  const userEmail = user.email;
+  const customerName =
+    typeof user.user_metadata?.full_name === 'string' ? user.user_metadata.full_name : undefined;
   const admin = createAdminClient();
   const errors: string[] = [];
 
@@ -69,6 +76,22 @@ export async function POST() {
         { error: 'Failed to delete account. Please contact support.', details: errors },
         { status: 500 }
       );
+    }
+
+    // 5. Send confirmation email (non-fatal — the account is already deleted)
+    if (userEmail && process.env.RESEND_API_KEY) {
+      try {
+        const resend = new Resend(process.env.RESEND_API_KEY);
+        const { subject, html } = buildAccountDeletionEmail({ customerName });
+        await resend.emails.send({
+          from: `${siteConfig.name} <noreply@${new URL(siteConfig.url).hostname}>`,
+          to: userEmail,
+          subject,
+          html,
+        });
+      } catch (emailErr) {
+        console.error('Account deletion email failed:', emailErr);
+      }
     }
 
     return NextResponse.json({ success: true, errors: errors.length > 0 ? errors : undefined });

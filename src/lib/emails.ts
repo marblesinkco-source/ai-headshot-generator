@@ -3,6 +3,7 @@
  * Branded HTML email templates for transactional emails
  */
 
+import { createHmac, timingSafeEqual } from 'crypto';
 import { siteConfig } from '@/config/site';
 import { formatPrice } from '@/lib/utils';
 
@@ -17,6 +18,38 @@ const BRAND = {
   line: '#DFD6CC',
   white: '#FFFFFF',
 };
+
+// ─── Unsubscribe helpers ──────────────────────────────────────────────
+
+function unsubscribeSecret(): string {
+  return (
+    process.env.RESEND_API_KEY ||
+    process.env.SUPABASE_SERVICE_ROLE_KEY ||
+    'tailorpic-unsubscribe-dev-secret'
+  );
+}
+
+export function signUnsubscribeEmail(email: string): string {
+  return createHmac('sha256', unsubscribeSecret())
+    .update(email.trim().toLowerCase())
+    .digest('hex');
+}
+
+export function verifyUnsubscribeToken(email: string, token: string): boolean {
+  const expected = Buffer.from(signUnsubscribeEmail(email));
+  const given = Buffer.from(token);
+  return expected.length === given.length && timingSafeEqual(expected, given);
+}
+
+/** Builds the one-click unsubscribe URL (HMAC-signed) for use in email footers. */
+export function buildUnsubscribeUrl(email: string): string {
+  const normalized = email.trim().toLowerCase();
+  const params = new URLSearchParams({
+    email: normalized,
+    token: signUnsubscribeEmail(normalized),
+  });
+  return `${siteConfig.url}/api/newsletter/unsubscribe?${params.toString()}`;
+}
 
 function emailWrapper(content: string): string {
   return `
@@ -361,6 +394,95 @@ export function buildAccountDeletionEmail(params: AccountDeletionParams = {}) {
     </p>
     <p style="margin:0;font-size:14px;color:${BRAND.muted};line-height:1.6;">
       You're always welcome to come back and create a new account.
+    </p>
+  `);
+
+  return { subject, html };
+}
+
+// ─── Newsletter Welcome Email ────────────────────────────────────────
+
+export function buildNewsletterWelcomeEmail() {
+  const subject = `Welcome to ${siteConfig.name}!`;
+
+  const html = emailWrapper(`
+    <h2 style="margin:0 0 16px;font-size:22px;color:${BRAND.ink};font-weight:700;">
+      You're in!
+    </h2>
+    <p style="margin:0 0 16px;font-size:15px;color:${BRAND.ink};line-height:1.6;">
+      Thanks for subscribing to the <strong>${siteConfig.name}</strong> newsletter.
+      We'll keep you in the loop with tips, updates, and exclusive offers.
+    </p>
+
+    ${ctaButton(`Visit ${siteConfig.name}`, siteConfig.url)}
+  `);
+
+  return { subject, html };
+}
+
+// ─── Photos Ready Email (AI generation completed) ─────────────────────
+
+interface PhotosReadyParams {
+  orderId: string;
+  count: number;
+}
+
+export function buildPhotosReadyEmail(params: PhotosReadyParams) {
+  const { orderId, count } = params;
+  const ordersUrl = `${siteConfig.url}/dashboard/orders/${orderId}`;
+
+  const subject = `Your ${count} AI photos are ready!`;
+
+  const html = emailWrapper(`
+    <h2 style="margin:0 0 16px;font-size:22px;color:${BRAND.ink};font-weight:700;">
+      Your photos are ready! 🎉
+    </h2>
+    <p style="margin:0 0 16px;font-size:15px;color:${BRAND.ink};line-height:1.6;">
+      We've finished generating <strong>${count}</strong> photos for you using our AI model trained specifically on your images.
+    </p>
+
+    ${ctaButton('View Your Photos', ordersUrl)}
+
+    <p style="margin:16px 0 0;font-size:13px;color:${BRAND.muted};text-align:center;line-height:1.5;">
+      You can download them individually or as a ZIP file from your dashboard.
+    </p>
+  `);
+
+  return { subject, html };
+}
+
+// ─── Generation Failed Email (AI training/generation failed) ──────────
+
+interface GenerationFailedParams {
+  errorMessage: string;
+}
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+export function buildGenerationFailedEmail(params: GenerationFailedParams) {
+  const { errorMessage } = params;
+
+  const subject = 'Issue with your AI photo generation';
+
+  const html = emailWrapper(`
+    <h2 style="margin:0 0 16px;font-size:22px;color:${BRAND.ink};font-weight:700;">
+      We ran into an issue
+    </h2>
+    <p style="margin:0 0 16px;font-size:15px;color:${BRAND.ink};line-height:1.6;">
+      Unfortunately, there was a problem generating your AI photos. Our team has been notified and we'll look into it.
+    </p>
+    <p style="margin:0 0 16px;font-size:13px;color:${BRAND.muted};line-height:1.5;">
+      Error: ${escapeHtml(errorMessage)}
+    </p>
+    <p style="margin:0;font-size:14px;color:${BRAND.muted};line-height:1.6;">
+      If you need help, please contact us at
+      <a href="mailto:${siteConfig.supportEmail}" style="color:${BRAND.bronzeInk};">${siteConfig.supportEmail}</a>
     </p>
   `);
 

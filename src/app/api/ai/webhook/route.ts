@@ -6,6 +6,7 @@ import { getCategoryById, type CategoryId } from '@/config/categories';
 import { BACKGROUNDS, STYLES, NEGATIVE_PROMPT, QUALITY_SETTINGS } from '@/config/ai';
 import { Resend } from 'resend';
 import { siteConfig } from '@/config/site';
+import { buildPhotosReadyEmail, buildGenerationFailedEmail } from '@/lib/emails';
 
 const replicate = new Replicate({
   auth: process.env.REPLICATE_API_TOKEN!,
@@ -491,27 +492,12 @@ async function sendCompletionEmail(
     const { data: orderUser } = await supabase.auth.admin.getUserById(userId);
 
     if (orderUser?.user?.email) {
+      const { subject, html } = buildPhotosReadyEmail({ orderId, count });
       await resend.emails.send({
         from: `${siteConfig.name} <${process.env.EMAIL_FROM || `noreply@${new URL(siteConfig.url).hostname}`}>`,
         to: orderUser.user.email,
-        subject: `Your ${count} AI photos are ready!`,
-        html: `
-          <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
-            <h2 style="color: #1a1a1a;">Your photos are ready! 🎉</h2>
-            <p style="color: #4a4a4a; line-height: 1.6;">
-              We've finished generating <strong>${count}</strong> photos for you using our AI model trained specifically on your images.
-            </p>
-            <p style="margin: 24px 0;">
-              <a href="${siteConfig.url}/dashboard/orders/${orderId}"
-                 style="background: #4F46E5; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; display: inline-block;">
-                View Your Photos
-              </a>
-            </p>
-            <p style="color: #6a6a6a; font-size: 14px;">
-              You can download them individually or as a ZIP file from your dashboard.
-            </p>
-          </div>
-        `,
+        subject,
+        html,
       });
     }
   } catch (emailError) {
@@ -536,24 +522,12 @@ async function sendFailureEmail(
     const { data: orderUser } = await supabase.auth.admin.getUserById(order.user_id);
 
     if (orderUser?.user?.email) {
+      const { subject, html } = buildGenerationFailedEmail({ errorMessage });
       await resend.emails.send({
         from: `${siteConfig.name} <${process.env.EMAIL_FROM || `noreply@${new URL(siteConfig.url).hostname}`}>`,
         to: orderUser.user.email,
-        subject: 'Issue with your AI photo generation',
-        html: `
-          <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
-            <h2 style="color: #1a1a1a;">We ran into an issue</h2>
-            <p style="color: #4a4a4a; line-height: 1.6;">
-              Unfortunately, there was a problem generating your AI photos. Our team has been notified and we'll look into it.
-            </p>
-            <p style="color: #6a6a6a; font-size: 14px;">
-              Error: ${errorMessage}
-            </p>
-            <p style="color: #4a4a4a;">
-              If you need help, please contact us at ${siteConfig.supportEmail}
-            </p>
-          </div>
-        `,
+        subject,
+        html,
       });
     }
   } catch (emailError) {
