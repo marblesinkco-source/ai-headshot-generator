@@ -1,49 +1,48 @@
 import Link from 'next/link';
-import { ArrowRight, Camera, ChevronRight, Clock, Download, Sparkles, Upload } from 'lucide-react';
+import { ArrowDown, ArrowRight, Clock, Download, Sparkles, Upload, LayoutGrid } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
 
 const steps = [
   {
-    number: '01',
-    title: 'Choose a category',
-    icon: Camera,
+    number: '1',
+    label: 'Step 1',
+    title: 'Pick your style and package',
+    icon: LayoutGrid,
     description:
-      'Browse 11 photo categories — from corporate headshots and LinkedIn portraits to dating profiles and creative editorial shots. Pick the style that fits your goal.',
+      'Choose the photo category that fits your goal, such as corporate, LinkedIn, dating or creative, then select the package that suits you. One-time payment, no subscription.',
   },
   {
-    number: '02',
-    title: 'Choose a package',
-    icon: Sparkles,
-    description:
-      'Start with Express for $9.90 to preview your results, or go all-in with a premium package for 120+ photos in 4K resolution. One-time payment, no subscription.',
-  },
-  {
-    number: '03',
-    title: 'Upload your photos',
+    number: '2',
+    label: 'Step 2',
+    title: 'Upload 10–20 selfies',
     icon: Upload,
     description:
-      'Upload 8–12 clear selfies following our simple guidelines. Our AI trains a personalized model on your unique features — your photos are auto-deleted within 30 days.',
+      'Add 10–20 clear, well-lit selfies (8 minimum) with different angles and expressions. Our AI learns your features from them, and your uploads are auto-deleted within 30 days.',
   },
   {
-    number: '04',
-    title: 'Download your photos',
+    number: '3',
+    label: 'Step 3',
+    title: 'Download your portraits',
     icon: Download,
     description:
-      'Receive 40–120+ studio-quality portraits in under 2 hours. Download them all, pick your favorites, and use them anywhere — LinkedIn, resumes, social media, or print.',
+      'Get your studio-quality portraits in under 2 hours. Browse the full set, save your favorites, and use them on LinkedIn, resumes, social profiles or print.',
   },
 ];
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 py-10 lg:py-[68px]">
-      <div className="flex justify-between items-center gap-4 mb-5 lg:mb-[30px]">
+    <section
+      id="how-it-works"
+      className="scroll-mt-24 mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 py-10 lg:py-[68px]"
+    >
+      <div className="flex justify-between items-end gap-4 mb-8 lg:mb-12">
         <div>
           <span className="inline-flex items-center gap-1.5 mb-3 rounded-full border border-tp-line bg-tp-paper px-3 py-1 text-[11px] lg:text-xs font-medium text-tp-bronze-ink">
             <Sparkles className="h-3 w-3" aria-hidden="true" />
-            4 simple steps
+            3 simple steps
           </span>
-          <h2 className="font-display text-[25px] lg:text-[33px] leading-tight tracking-[-0.03em] font-normal">
-            A clearer way to create.
+          <h2 className="font-display text-[28px] lg:text-[40px] leading-tight tracking-[-0.03em] font-normal text-tp-ink">
+            How it works
           </h2>
         </div>
         <span className="hidden sm:inline-flex shrink-0 items-center gap-1.5 rounded-full border border-tp-line bg-tp-paper px-3 py-1 text-[11px] lg:text-xs font-medium text-tp-bronze-ink">
@@ -52,56 +51,77 @@ export function HowItWorks() {
         </span>
       </div>
 
-      <div className="grid grid-cols-2 gap-5 lg:grid-cols-4 lg:gap-7">
+      <ol className="m-0 flex list-none flex-col p-0 lg:grid lg:grid-cols-3 lg:gap-14">
         {steps.map((step, index) => {
           const Icon = step.icon;
+          const isLast = index === steps.length - 1;
           return (
-            <article
-              key={step.number}
-              className="relative rounded-tp-card border border-tp-line border-l-4 border-l-tp-bronze bg-tp-paper p-4 lg:p-6"
-            >
-              <div className="flex items-center justify-between">
+            <li key={step.number} className="relative flex flex-col items-stretch">
+              <article className="relative h-full overflow-hidden rounded-tp-card border border-tp-line bg-tp-paper p-6 lg:p-8">
                 <span
-                  className="flex h-9 w-9 lg:h-12 lg:w-12 items-center justify-center rounded-full bg-tp-bronze font-display text-sm lg:text-xl leading-none text-tp-ink"
+                  className="pointer-events-none absolute -right-2 -top-6 select-none font-display text-[140px] leading-none text-tp-beige/60 lg:text-[180px]"
                   aria-hidden="true"
                 >
                   {step.number}
                 </span>
-                <Icon className="h-5 w-5 lg:h-7 lg:w-7 text-tp-bronze-ink" aria-hidden="true" />
-              </div>
-              <h3 className="font-display font-normal text-[15px] lg:text-xl mt-3 lg:mt-[17px] mb-2 lg:mb-[9px]">
-                {step.title}
-              </h3>
-              <p className="text-[11px] lg:text-[13px] text-tp-muted leading-[1.7] m-0">
-                {step.description}
-              </p>
-              {index < steps.length - 1 && (
+
+                <div className="relative flex items-center gap-4">
+                  <span
+                    className="flex h-14 w-14 lg:h-[72px] lg:w-[72px] shrink-0 items-center justify-center rounded-full bg-tp-ink font-display text-[30px] lg:text-[40px] leading-none text-tp-bronze"
+                    aria-hidden="true"
+                  >
+                    {step.number}
+                  </span>
+                  <div>
+                    <p className="m-0 text-[11px] lg:text-xs font-semibold uppercase tracking-[0.14em] text-tp-bronze-ink">
+                      {step.label}
+                    </p>
+                    <Icon className="mt-1.5 h-5 w-5 lg:h-6 lg:w-6 text-tp-bronze-ink" aria-hidden="true" />
+                  </div>
+                </div>
+
+                <h3 className="relative font-display font-normal text-[22px] lg:text-[26px] leading-tight mt-5 lg:mt-6 mb-2 lg:mb-3 text-tp-ink">
+                  {step.title}
+                </h3>
+                <p className="relative m-0 text-sm lg:text-[15px] leading-[1.7] text-tp-muted">
+                  {step.description}
+                </p>
+              </article>
+
+              {/* Mobile connector: vertical arrow between stacked steps */}
+              {!isLast && (
                 <span
-                  className="pointer-events-none absolute -right-[22px] top-[40px] z-10 hidden h-6 w-6 items-center justify-center rounded-full border border-tp-line bg-tp-paper text-tp-bronze-ink lg:flex"
+                  className="mx-auto my-3 flex h-10 w-10 items-center justify-center rounded-full border border-tp-line bg-tp-paper text-tp-bronze-ink lg:hidden"
                   aria-hidden="true"
                 >
-                  <ChevronRight className="h-4 w-4" />
+                  <ArrowDown className="h-5 w-5" />
                 </span>
               )}
-            </article>
+
+              {/* Desktop connector: horizontal arrow in the gap between steps */}
+              {!isLast && (
+                <span
+                  className="pointer-events-none absolute -right-[48px] top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-tp-bronze bg-tp-paper text-tp-bronze-ink lg:flex"
+                  aria-hidden="true"
+                >
+                  <ArrowRight className="h-5 w-5" />
+                </span>
+              )}
+            </li>
           );
         })}
-      </div>
+      </ol>
 
-      <div className="mt-8 lg:mt-10 flex flex-col items-center gap-3 text-center">
-        <p className="m-0 inline-flex items-center gap-1.5 text-xs lg:text-sm font-medium text-tp-bronze-ink">
-          <Clock className="h-4 w-4" aria-hidden="true" />
-          ~2 hours total, from upload to download
-        </p>
+      <div className="mt-10 lg:mt-14 flex flex-col items-center gap-3 text-center">
         <Link
           href="/auth/register"
           className={`${buttonVariants({ variant: 'primary', size: 'lg' })} bg-tp-ink text-tp-paper rounded-tp-button gap-2`}
         >
-          Create Your Photos
+          Get Started in Under 5 Minutes
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </Link>
         <p className="m-0 text-[11px] lg:text-xs text-tp-muted">
-          No credit card needed to browse categories
+          Create your account and start uploading. No subscription.
         </p>
       </div>
     </section>

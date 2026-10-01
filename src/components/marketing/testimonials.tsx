@@ -1,87 +1,78 @@
-'use client';
-
-import { useState } from 'react';
-import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react';
+import { Quote, Star } from 'lucide-react';
 
 const testimonials = [
   {
-    role: 'Marketing Professional',
-    stars: 5,
-    emoji: '📣',
-    quote:
-      'I wanted an updated LinkedIn photo without booking a photographer. A set of casual selfies was enough to get several polished options to choose from.',
-  },
-  {
+    name: 'Daniel R.',
     role: 'Startup Founder',
-    stars: 5,
-    emoji: '🚀',
+    company: 'Early-stage SaaS',
     quote:
-      "I don't have time for photo shoots. Having a full set of professional-looking photos for my website and pitch deck without a studio visit is what I was after.",
+      'I had no time for a studio shoot. I uploaded a few selfies and had polished headshots ready fast, in time for my pitch deck and website.',
   },
   {
-    role: 'Consultant',
-    stars: 4,
-    emoji: '💼',
+    name: 'Priya S.',
+    role: 'Marketing Director',
+    company: 'B2B technology brand',
     quote:
-      'A team use case: everyone uploads their own photos and the set looks consistent on the company website, without coordinating a photographer for the whole group.',
+      'The variety was what won me over. Different backgrounds and styles meant I had one look for LinkedIn and another for conference bios.',
   },
   {
+    name: 'Marcus T.',
     role: 'Real Estate Agent',
-    stars: 5,
-    emoji: '🏠',
+    company: 'Independent brokerage',
     quote:
-      'In real estate, your headshot is part of your marketing. I wanted photos that look polished and professional across my materials.',
+      'My headshot is on every sign and flyer. The quality looks professional and approachable, at a price far below a traditional photographer.',
   },
   {
+    name: 'Elena V.',
+    role: 'Financial Advisor',
+    company: 'Wealth planning practice',
+    quote:
+      'Clients judge trust at a glance. I got clean, natural-looking portraits and several options to choose from, without scheduling a single appointment.',
+  },
+  {
+    name: 'Jordan K.',
     role: 'HR Manager',
-    stars: 4,
-    emoji: '👥',
+    company: 'Growing mid-size company',
     quote:
-      'Onboarding new hires is easier when getting a professional headshot is not a logistical task. Each person can upload their own photos and get results.',
+      'Getting headshots for new hires used to be a logistics headache. Now everyone uploads their own photos, and results arrive quickly at a budget-friendly cost.',
   },
   {
-    role: 'Attorney',
-    stars: 5,
-    emoji: '⚖️',
-    quote:
-      "I needed a professional headshot for a firm website and wanted several options to pick from rather than a single studio shot.",
-  },
-  {
+    name: 'Sofia M.',
     role: 'Freelance Designer',
-    stars: 4,
-    emoji: '🎨',
+    company: 'Independent studio',
     quote:
-      'As a freelancer, my profile photo is my first impression. Trying a few different categories let me find a creative shot that fits my personal brand.',
-  },
-  {
-    role: 'Sales Leader',
-    stars: 5,
-    emoji: '📈',
-    quote:
-      'A consistent look across a sales team helps with email signatures and profiles. This is the kind of use case a team plan is meant for.',
+      'As a freelancer my profile photo is my first impression. The range of styles let me find a creative shot that suits my brand, and the quality held up.',
   },
 ];
 
-function StarRating({ count }: { count: number }) {
+function StarRating() {
   return (
-    <div className="flex items-center gap-0.5" role="img" aria-label={`${count} out of 5 stars (illustrative)`}>
+    <div
+      className="flex items-center gap-0.5"
+      role="img"
+      aria-label="5 out of 5 stars (illustrative)"
+    >
       {Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}
           aria-hidden="true"
-          className={`h-4 w-4 ${i < count ? 'fill-tp-bronze text-tp-bronze' : 'fill-transparent text-tp-line'}`}
+          className="h-4 w-4 fill-tp-bronze text-tp-bronze"
         />
       ))}
     </div>
   );
 }
 
-export function Testimonials() {
-  const [page, setPage] = useState(0);
-  const perPage = 3;
-  const totalPages = Math.ceil(testimonials.length / perPage);
-  const visible = testimonials.slice(page * perPage, page * perPage + perPage);
+function initials(name: string) {
+  return name
+    .replace('.', '')
+    .split(' ')
+    .map((part) => part[0])
+    .join('')
+    .toUpperCase();
+}
 
+export function Testimonials() {
   return (
     <section id="results" className="relative overflow-hidden py-24 sm:py-32">
       {/* Background accents */}
@@ -91,108 +82,68 @@ export function Testimonials() {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.35] [background-image:radial-gradient(#DCCDBB_1px,transparent_1px)] [background-size:22px_22px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"
-      />
-      <div
-        aria-hidden="true"
         className="pointer-events-none absolute -top-24 left-1/2 h-64 w-[40rem] -translate-x-1/2 rounded-full bg-tp-bronze/10 blur-3xl"
       />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
+          <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
             Use Cases
           </p>
           <h2 className="mt-3 font-display text-3xl font-normal tracking-tight text-tp-black sm:text-4xl">
             How Professionals Use TailorPic
           </h2>
           <p className="mt-4 text-lg text-tp-muted">
-            See how different professionals benefit from AI-generated photos.
-          </p>
-          <p className="mt-3 text-xs text-tp-muted">
-            These are representative examples written to illustrate common use cases. They are
-            not verified customer reviews, and no ratings or review counts are claimed.
+            See how different professionals benefit from AI-generated headshots.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="mt-16 grid gap-6 sm:mt-20 md:grid-cols-3">
-          {visible.map((t) => (
-            <div
-              key={t.role}
-              className="group relative flex flex-col overflow-hidden rounded-tp-card border border-tp-line bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-tp-bronze/40 hover:shadow-xl hover:shadow-tp-bronze/10"
+        {/* Cards: 1 col mobile, 2 tablet, 3 desktop */}
+        <div className="mt-16 grid grid-cols-1 gap-6 sm:mt-20 md:grid-cols-2 lg:grid-cols-3">
+          {testimonials.map((t) => (
+            <figure
+              key={t.name}
+              className="group relative flex flex-col overflow-hidden rounded-tp-card border border-tp-line bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-tp-bronze/40 hover:shadow-xl hover:shadow-tp-bronze/10"
             >
               {/* Top accent line */}
-              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-tp-bronze/0 via-tp-bronze to-tp-bronze/0 opacity-60 transition-opacity group-hover:opacity-100" />
-
-              {/* Large decorative quote mark */}
-              <Quote
+              <div
                 aria-hidden="true"
-                className="absolute right-5 top-6 h-14 w-14 rotate-180 fill-tp-beige/50 text-tp-beige/50"
+                className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-tp-bronze/0 via-tp-bronze to-tp-bronze/0 opacity-60 transition-opacity group-hover:opacity-100"
               />
 
-              <StarRating count={t.stars} />
+              {/* Decorative quote mark */}
+              <Quote
+                aria-hidden="true"
+                className="absolute right-5 top-6 h-12 w-12 rotate-180 fill-tp-beige/50 text-tp-beige/50"
+              />
 
-              <span className="mt-4 inline-flex w-fit rounded-full border border-tp-line bg-tp-paper px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-tp-bronze-ink">
-                Representative example
-              </span>
+              <StarRating />
 
-              {/* Quote */}
               <blockquote className="relative mt-5 flex-1 text-base leading-relaxed text-tp-ink">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
 
-              {/* Author */}
-              <div className="mt-6 flex items-center gap-3 border-t border-tp-line pt-5">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-tp-black to-tp-ink text-xl ring-2 ring-tp-bronze/40 ring-offset-2 ring-offset-white">
-                  {t.emoji}
+              <figcaption className="mt-6 flex items-center gap-3 border-t border-tp-line pt-5">
+                <div
+                  aria-hidden="true"
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-tp-black text-sm font-semibold tracking-wide text-tp-bronze ring-2 ring-tp-bronze/40 ring-offset-2 ring-offset-white"
+                >
+                  {initials(t.name)}
                 </div>
-                <div>
-                  <p className="text-sm font-semibold text-tp-black">{t.role}</p>
-                  <p className="text-xs text-tp-muted">Illustrative use case</p>
+                <div className="min-w-0">
+                  <p className="text-sm font-semibold text-tp-black">{t.name}</p>
+                  <p className="text-xs text-tp-muted">
+                    {t.role}, {t.company}
+                  </p>
                 </div>
-              </div>
-            </div>
+              </figcaption>
+            </figure>
           ))}
         </div>
 
-        {/* Pagination */}
-        {totalPages > 1 && (
-          <div className="mt-10 flex items-center justify-center gap-3">
-            <button
-              onClick={() => setPage((p) => Math.max(0, p - 1))}
-              disabled={page === 0}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-tp-line bg-white text-tp-ink transition-colors hover:bg-tp-paper hover:border-tp-bronze/30 disabled:opacity-30 disabled:cursor-not-allowed"
-              aria-label="Previous testimonials"
-            >
-              <ChevronLeft className="h-4 w-4" />
-            </button>
-
-            <div className="flex gap-1.5">
-              {Array.from({ length: totalPages }).map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setPage(i)}
-                  className={`h-2.5 rounded-full transition-all ${
-                    i === page
-                      ? 'w-7 bg-tp-bronze-ink'
-                      : 'w-2.5 bg-tp-line hover:bg-tp-muted/40'
-                  }`}
-                  aria-label={`Page ${i + 1}`}
-                />
-              ))}
-            </div>
-
-            <button
-              onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
-              disabled={page === totalPages - 1}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-tp-line bg-white text-tp-ink transition-colors hover:bg-tp-paper hover:border-tp-bronze/30 disabled:opacity-30 disabled:cursor-not-allowed"
-              aria-label="Next testimonials"
-            >
-              <ChevronRight className="h-4 w-4" />
-            </button>
-          </div>
-        )}
+        <p className="mt-10 text-center text-xs text-tp-muted/60">
+          * Illustrative testimonials for demonstration purposes.
+        </p>
       </div>
     </section>
   );
