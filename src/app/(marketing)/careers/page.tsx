@@ -1,65 +1,111 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
-  Target,
+  Lightbulb,
+  Shield,
+  Heart,
   Globe,
-  TrendingUp,
-  Users,
-  Briefcase,
+  Sparkles,
   Laptop,
-  Clock,
-  BookOpen,
-  HeartHandshake,
-  Sprout,
-  Mail,
+  TrendingUp,
+  Zap,
+  Users,
+  Code,
+  Palette,
+  Megaphone,
+  Headphones,
+  ArrowRight,
 } from 'lucide-react';
 
 const title = 'Careers at TailorPic';
 const description =
-  'Join the TailorPic team and help build the future of AI photography. See current openings or send us your resume.';
+  'Join the TailorPic team and help build the future of AI photography. We are always looking for talented people who share our passion for quality and innovation.';
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: '/careers' },
-  openGraph: generateOGMetadata({ title: `Careers | ${siteConfig.name}`, description: description, path: '/careers' }),
-  twitter: generateTwitterMetadata({ title: `Careers | ${siteConfig.name}`, description: description }),
+  openGraph: generateOGMetadata({ title: `Careers | ${siteConfig.name}`, description, path: '/careers' }),
+  twitter: generateTwitterMetadata({ title: `Careers | ${siteConfig.name}`, description }),
 };
 
 const values = [
   {
-    icon: Target,
-    title: 'Mission-driven',
-    desc: 'We help people show up with confidence through professional photos, and that goal guides the work we do.',
+    icon: Lightbulb,
+    title: 'Innovation',
+    desc: 'We push the boundaries of what AI can do for photography, always exploring new ideas and better approaches.',
+  },
+  {
+    icon: Sparkles,
+    title: 'Quality',
+    desc: 'Every pixel matters. We hold ourselves to a high standard in everything we ship, from models to UI.',
+  },
+  {
+    icon: Shield,
+    title: 'Privacy-first',
+    desc: 'Trust is earned. We treat user data with care and build privacy into the product from the ground up.',
+  },
+  {
+    icon: Heart,
+    title: 'Customer focus',
+    desc: 'Our users shape what we build. We listen closely, iterate quickly, and celebrate their success.',
   },
   {
     icon: Globe,
-    title: 'Remote-first',
-    desc: 'We work across locations and time zones, with a focus on clear communication and trust.',
-  },
-  {
-    icon: TrendingUp,
-    title: 'Fast-growing',
-    desc: 'AI photography is evolving quickly, and so are we. There is always something new to build and learn.',
-  },
-  {
-    icon: Users,
-    title: 'Impact at scale',
-    desc: 'What we ship reaches professionals, teams, and businesses everywhere who need better photos.',
+    title: 'Remote-friendly',
+    desc: 'Great work happens everywhere. We support flexible, distributed work across locations and time zones.',
   },
 ];
 
-const perks = [
-  { icon: Laptop, title: 'Remote work', desc: 'Work from where you do your best work.' },
-  { icon: Clock, title: 'Flexible hours', desc: 'Organize your day around results, not a clock.' },
-  { icon: BookOpen, title: 'Learning budget', desc: 'Support for courses, books, and growth.' },
-  { icon: HeartHandshake, title: 'Supportive team', desc: 'Collaborative colleagues who help each other succeed.' },
-  { icon: Sprout, title: 'Room to grow', desc: 'Take on new challenges as the company grows.' },
-  { icon: Briefcase, title: 'Meaningful work', desc: 'Build a product people actually use and care about.' },
+const benefits = [
+  {
+    icon: Laptop,
+    title: 'Flexible work',
+    desc: 'Work from where you do your best work, on a schedule that fits your life.',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Growth',
+    desc: 'Learning budget, mentorship, and real ownership over projects that stretch your skills.',
+  },
+  {
+    icon: Zap,
+    title: 'Impact',
+    desc: 'Ship features that reach thousands of professionals, teams, and businesses every day.',
+  },
+  {
+    icon: Users,
+    title: 'Team culture',
+    desc: 'Collaborative, supportive colleagues who share knowledge and help each other succeed.',
+  },
+];
+
+const departments = [
+  {
+    icon: Code,
+    title: 'Engineering',
+    desc: 'Build and scale AI models, APIs, and the infrastructure behind millions of photos.',
+  },
+  {
+    icon: Palette,
+    title: 'Design',
+    desc: 'Craft intuitive experiences that make professional photography accessible to everyone.',
+  },
+  {
+    icon: Megaphone,
+    title: 'Marketing',
+    desc: 'Tell our story, grow our audience, and connect with the people who need us most.',
+  },
+  {
+    icon: Headphones,
+    title: 'Customer Success',
+    desc: 'Help users get the most out of TailorPic and turn their feedback into product improvements.',
+  },
 ];
 
 export default function CareersPage() {
@@ -77,22 +123,26 @@ export default function CareersPage() {
       <section className="bg-tp-black py-20 sm:py-28">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-7">
           <h1 className="font-display text-4xl font-normal leading-tight text-tp-paper sm:text-5xl">
-            Join the TailorPic Team
+            Join Our Team
           </h1>
           <p className="mt-6 text-base leading-relaxed text-tp-beige/70 sm:text-lg">
-            Help us build the future of AI photography and make professional-quality photos
-            accessible to everyone.
+            We are building the future of AI photography and we are always looking for talented
+            people who care about craft, creativity, and making professional photos accessible to
+            everyone.
           </p>
         </div>
       </section>
 
-      {/* Why TailorPic */}
+      {/* Our Values */}
       <section className="bg-tp-paper py-16 sm:py-20">
         <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
           <h2 className="font-display text-center text-3xl font-normal text-tp-ink sm:text-4xl">
-            Why TailorPic
+            What We Stand For
           </h2>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-relaxed text-tp-muted sm:text-base">
+            These values shape how we work, what we build, and who we look for.
+          </p>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {values.map((v) => (
               <div key={v.title} className="rounded-tp-card border border-tp-line bg-white p-7">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-black">
@@ -106,45 +156,54 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Current Openings */}
+      {/* What We Offer */}
       <section className="bg-tp-beige py-16 sm:py-20">
-        <div className="mx-auto max-w-3xl px-4 sm:px-7">
+        <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
           <h2 className="font-display text-center text-3xl font-normal text-tp-ink sm:text-4xl">
-            Current Openings
+            What We Offer
           </h2>
-          <div className="mt-10 rounded-tp-card border border-tp-line bg-white p-8 text-center sm:p-10">
-            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-black">
-              <Briefcase className="h-5 w-5 text-tp-bronze" aria-hidden="true" />
-            </div>
-            <h3 className="font-display text-2xl font-normal text-tp-ink">
-              No open positions right now
-            </h3>
-            <p className="mt-3 text-sm leading-relaxed text-tp-muted sm:text-base">
-              We&apos;re not hiring at the moment, but we&apos;d love to hear from you. Send your
-              resume and a note about what excites you to careers@tailorpic.com
-            </p>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-relaxed text-tp-muted sm:text-base">
+            We want you to do your best work and enjoy doing it.
+          </p>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {benefits.map((b) => (
+              <div
+                key={b.title}
+                className="rounded-tp-card border border-tp-line bg-white p-7 text-center"
+              >
+                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-black">
+                  <b.icon className="h-5 w-5 text-tp-bronze" aria-hidden="true" />
+                </div>
+                <h3 className="font-display text-lg font-normal text-tp-ink">{b.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-tp-muted">{b.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Perks */}
+      {/* Areas We Hire For */}
       <section className="bg-tp-paper py-16 sm:py-20">
         <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
           <h2 className="font-display text-center text-3xl font-normal text-tp-ink sm:text-4xl">
-            Perks
+            Areas We Hire For
           </h2>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {perks.map((p) => (
+          <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-relaxed text-tp-muted sm:text-base">
+            We do not always have specific openings listed, but we are always interested in hearing
+            from people in these areas.
+          </p>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {departments.map((d) => (
               <div
-                key={p.title}
+                key={d.title}
                 className="flex items-start gap-4 rounded-tp-card border border-tp-line bg-white p-6"
               >
                 <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-tp-button bg-tp-black">
-                  <p.icon className="h-4 w-4 text-tp-bronze" aria-hidden="true" />
+                  <d.icon className="h-4 w-4 text-tp-bronze" aria-hidden="true" />
                 </div>
                 <div>
-                  <h3 className="text-base font-semibold text-tp-ink">{p.title}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-tp-muted">{p.desc}</p>
+                  <h3 className="font-display text-base font-normal text-tp-ink">{d.title}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-tp-muted">{d.desc}</p>
                 </div>
               </div>
             ))}
@@ -156,15 +215,19 @@ export default function CareersPage() {
       <section className="bg-tp-black py-16 sm:py-20">
         <div className="mx-auto max-w-2xl px-4 text-center sm:px-7">
           <h2 className="font-display text-3xl font-normal text-tp-paper sm:text-4xl">
-            Send us your resume
+            Interested? Let&apos;s Talk
           </h2>
           <p className="mt-4 text-base leading-relaxed text-tp-beige/70">
-            Tell us a bit about yourself and what excites you about TailorPic.
+            Tell us a bit about yourself, what you are great at, and what excites you about
+            TailorPic. We would love to hear from you.
           </p>
-          <p className="mt-8 inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black">
-            <Mail className="h-4 w-4" aria-hidden="true" />
-            careers@tailorpic.com
-          </p>
+          <Link
+            href="/contact"
+            className="mt-8 inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:-translate-y-0.5 hover:shadow-lg"
+          >
+            Get in Touch
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
         </div>
       </section>
 
