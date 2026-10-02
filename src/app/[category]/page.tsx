@@ -3,11 +3,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
-import { DollarSign, Clock, ShieldCheck, Trash2 } from 'lucide-react';
+import { Camera, Sparkles, Clock, ShieldCheck, ChevronRight } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Button } from '@/components/ui/button';
 import { getActiveCategories, getCategoryBySlug } from '@/config/categories';
+import { getCategoryContent } from '@/config/category-content';
 import { siteConfig } from '@/config/site';
 import { formatPrice } from '@/lib/utils';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
@@ -44,35 +45,56 @@ export default async function CategoryPage({ params }: Props) {
     notFound();
   }
 
+  const content = getCategoryContent(cat.id);
   const lowestPrice = Math.min(...cat.packages.map((p) => p.price));
 
   const allCategories = getActiveCategories();
   const relatedCategories = allCategories
     .filter((c) => c.id !== cat.id)
-    .sort(() => 0.5 - Math.random())
-    .slice(0, 3);
+    .slice(0, 6);
 
-  const faqItems = [
+  // Pick top 3 packages for the pricing teaser: entry, recommended, and one more
+  const recommended = cat.packages.find((p) => p.recommended);
+  const entry = cat.packages[0];
+  const teaserPackages = recommended
+    ? [
+        entry,
+        recommended,
+        cat.packages[cat.packages.length - 1] !== recommended
+          ? cat.packages[cat.packages.length - 1]
+          : cat.packages[cat.packages.length - 2],
+      ].filter((p, i, arr) => p && arr.indexOf(p) === i)
+    : cat.packages.slice(0, 3);
+
+  // Use first 3 benefits for hero bullets
+  const heroBenefits = content?.benefits.slice(0, 3) ?? [];
+
+  // FAQ items — category-specific or generic fallback
+  const faqItems = content?.faqItems ?? [
     {
       question: 'How many photos do I need to upload?',
-      answer:
-        'Upload 10-20 clear selfies with varied angles, expressions, and lighting. The more variety you provide, the better results our AI can generate.',
+      answer: `Upload ${cat.minPhotos}–${cat.maxPhotos} clear photos with varied angles, expressions, and lighting for best results.`,
     },
     {
       question: 'How long does it take?',
-      answer:
-        'About 2 hours from upload to download. You will receive an email notification as soon as your photos are ready.',
+      answer: 'About 2 hours from upload to download. You will receive an email notification as soon as your photos are ready.',
     },
     {
       question: 'Can I get a refund?',
-      answer:
-        'Yes, we offer a satisfaction guarantee. If you are not satisfied with your results, contact our support team for a full refund.',
+      answer: 'Yes, we offer a satisfaction guarantee. If you are not satisfied with your results, contact our support team for a full refund.',
     },
     {
       question: 'What resolution are the photos?',
-      answer:
-        'All photos are high-resolution, suitable for both print and web use. Premium packages include 4K resolution output.',
+      answer: 'All photos are high-resolution, suitable for both print and web use. Premium packages include 4K resolution output.',
     },
+  ];
+
+  const useCases = content?.useCases ?? [];
+  const howItWorks = content?.howItWorks ?? [
+    { step: '1', title: 'Upload Your Photos', description: cat.uploadInstructions },
+    { step: '2', title: 'AI Creates Your Photos', description: `Our AI analyzes your photos and generates ${cat.outputLabel} tailored to your preferences.` },
+    { step: '3', title: 'Preview & Choose', description: 'Review your results and pick your favorites from multiple options.' },
+    { step: '4', title: 'Download & Use', description: `Get high-quality ${cat.outputLabel} ready for immediate use. Download in multiple formats.` },
   ];
 
   const productJsonLd = {
@@ -122,210 +144,365 @@ export default async function CategoryPage({ params }: Props) {
       ]} />
       <Header />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden pt-16 bg-tp-paper">
-        <div className="pointer-events-none absolute inset-0 bg-grid" />
+      {/* ── HERO ── */}
+      <section className="relative overflow-hidden bg-tp-paper">
+        <div className="pointer-events-none absolute inset-0 bg-grid opacity-40" />
 
-        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
-          <div className="max-w-3xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-tp-line bg-white px-4 py-1.5 text-sm font-medium text-tp-bronze-ink">
-              <span className="text-lg">{cat.icon}</span>
-              {cat.name}
+        <div className="relative mx-auto max-w-tp-site px-4 pb-0 pt-24 sm:px-6 sm:pt-32 lg:px-8">
+          {/* Breadcrumb */}
+          <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-1.5 text-sm text-tp-muted">
+            <Link href="/" className="transition-colors hover:text-tp-ink">Home</Link>
+            <ChevronRight className="h-3.5 w-3.5 flex-shrink-0" />
+            <span className="text-tp-ink">{cat.name}</span>
+          </nav>
+
+          <div className="grid items-start gap-12 lg:grid-cols-2">
+            {/* Left: Copy */}
+            <div className="max-w-xl">
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-tp-line bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-tp-bronze-ink">
+                <span className="text-base">{cat.icon}</span>
+                {cat.name}
+              </div>
+
+              <h1 className="font-display text-4xl font-normal tracking-tight text-tp-black sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">
+                {cat.seoTitle.replace(' | TailorPic', '')}
+              </h1>
+
+              <p className="mt-5 text-lg leading-relaxed text-tp-muted">
+                {cat.description}
+              </p>
+
+              {/* Hero benefits checklist */}
+              {heroBenefits.length > 0 && (
+                <ul className="mt-7 space-y-3">
+                  {heroBenefits.map((b) => (
+                    <li key={b.title} className="flex items-start gap-3">
+                      <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-tp-success" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
+                      <span className="text-tp-ink">{b.title}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+                <Link href={`/auth/register?redirect=/${slug}`}>
+                  <Button size="lg" variant="primary">
+                    Get Started
+                    <ChevronRight className="ml-1 h-4 w-4" />
+                  </Button>
+                </Link>
+                <span className="text-sm text-tp-muted">
+                  From {formatPrice(lowestPrice, 'usd')} · 100% Satisfaction Guarantee
+                </span>
+              </div>
             </div>
 
-            <h1 className="font-display text-4xl font-normal tracking-tight text-tp-black sm:text-5xl">
-              {cat.seoTitle}
-            </h1>
-
-            <p className="mt-6 text-lg leading-relaxed text-tp-muted">
-              {cat.description}
-            </p>
-
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Link href={`/auth/register?redirect=/${slug}`}>
-                <Button size="lg" variant="primary">
-                  Get Your {cat.outputLabel}
-                </Button>
-              </Link>
-              <span className="text-sm text-tp-muted">
-                Starting from {formatPrice(lowestPrice, 'usd')}
-              </span>
+            {/* Right: Image collage placeholder */}
+            <div className="relative hidden lg:block">
+              <div className="grid grid-cols-2 gap-3">
+                {[1, 2, 3, 4].map((i) => (
+                  <div
+                    key={i}
+                    className={`overflow-hidden rounded-tp-card bg-tp-warm ${
+                      i === 1 ? 'aspect-[3/4] col-span-1' :
+                      i === 2 ? 'aspect-square col-span-1 mt-8' :
+                      i === 3 ? 'aspect-square col-span-1' :
+                      'aspect-[3/4] col-span-1 -mt-8'
+                    }`}
+                  >
+                    <Image
+                      src={`/images/categories/${cat.id}.jpg`}
+                      alt={`${cat.name} example ${i}`}
+                      width={320}
+                      height={i % 2 === 1 ? 427 : 320}
+                      className="h-full w-full object-cover"
+                      sizes="(min-width: 1024px) 20vw, 0px"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* How it works for this category */}
-      <section className="bg-white py-20 border-t border-tp-line/40">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-normal text-tp-black">
-            How It Works
-          </h2>
-          <div className="mt-12 grid gap-8 sm:grid-cols-3">
+        {/* Trust strip */}
+        <div className="relative mt-12 border-t border-tp-line/40 bg-tp-paper/80 py-6 backdrop-blur-sm sm:mt-16">
+          <div className="mx-auto grid max-w-tp-site grid-cols-2 gap-4 px-4 sm:grid-cols-4 sm:gap-6 sm:px-6 lg:px-8">
             {[
-              {
-                step: '1',
-                title: 'Upload Photos',
-                desc: cat.uploadInstructions,
-              },
-              {
-                step: '2',
-                title: 'AI Creates Your Photos',
-                desc: `Our AI analyzes your photos and generates ${cat.outputLabel} tailored to your preferences.`,
-              },
-              {
-                step: '3',
-                title: 'Download & Use',
-                desc: `Get high-quality ${cat.outputLabel} ready for immediate use. Download in multiple formats.`,
-              },
+              { icon: Camera, text: 'Studio-quality results using advanced AI' },
+              { icon: Sparkles, text: 'Multiple styles and backgrounds' },
+              { icon: Clock, text: 'Ready in about 2 hours' },
+              { icon: ShieldCheck, text: 'Secure and private' },
             ].map((item) => (
-              <div key={item.step} className="text-center">
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-tp-black text-lg font-bold text-tp-bronze">
-                  {item.step}
-                </div>
-                <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
-                <p className="mt-2 text-sm text-tp-muted">{item.desc}</p>
+              <div key={item.text} className="flex items-start gap-3">
+                <item.icon className="h-5 w-5 flex-shrink-0 text-tp-bronze-ink" />
+                <span className="text-sm leading-snug text-tp-muted">{item.text}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Pricing */}
-      <section className="py-20 bg-tp-paper">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-normal text-tp-black">
+      {/* ── BEFORE & AFTER ── */}
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-tp-site px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-baseline justify-between gap-4">
+            <h2 className="font-display text-2xl font-normal text-tp-black sm:text-3xl">
+              Before &amp; After
+              <span className="ml-3 text-base font-sans text-tp-muted">– See the Transformation</span>
+            </h2>
+          </div>
+
+          <div className="mt-10 grid items-center gap-8 md:grid-cols-2">
+            <div className="relative overflow-hidden rounded-tp-card border border-tp-line bg-tp-paper">
+              <div className="grid grid-cols-2">
+                <div className="relative aspect-[3/4] bg-tp-warm">
+                  <div className="absolute bottom-3 left-3 rounded-full bg-tp-black/70 px-3 py-1 text-xs font-medium text-white">
+                    Before
+                  </div>
+                  <Image
+                    src={`/images/categories/${cat.id}.jpg`}
+                    alt={`Before - ${cat.name}`}
+                    fill
+                    className="object-cover opacity-80 grayscale-[30%]"
+                    sizes="(min-width: 768px) 25vw, 50vw"
+                  />
+                </div>
+                <div className="relative aspect-[3/4] bg-tp-warm">
+                  <div className="absolute bottom-3 right-3 rounded-full bg-tp-bronze px-3 py-1 text-xs font-medium text-white">
+                    After
+                  </div>
+                  <Image
+                    src={`/images/categories/${cat.id}.jpg`}
+                    alt={`After - ${cat.name}`}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 768px) 25vw, 50vw"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <p className="text-lg leading-relaxed text-tp-muted">
+                Turn your everyday photos into stunning, professional results.
+                Our AI enhances lighting, refines backgrounds, and creates {cat.outputLabel} that
+                look like they were taken in a professional studio.
+              </p>
+              <Link
+                href={`/examples`}
+                className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-tp-bronze-ink transition-colors hover:text-tp-ink"
+              >
+                View More Examples
+                <ChevronRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SAMPLE GALLERY ── */}
+      <section className="border-t border-tp-line/40 bg-tp-paper py-16 sm:py-20">
+        <div className="mx-auto max-w-tp-site px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-baseline justify-between gap-4">
+            <h2 className="font-display text-2xl font-normal text-tp-black sm:text-3xl">
+              Sample Gallery
+            </h2>
+            <Link
+              href="/examples"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-tp-bronze-ink transition-colors hover:text-tp-ink"
+            >
+              View More Examples
+              <ChevronRight className="h-4 w-4" />
+            </Link>
+          </div>
+
+          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div
+                key={i}
+                className="aspect-square overflow-hidden rounded-tp-button bg-tp-warm"
+              >
+                <Image
+                  src={`/images/categories/${cat.id}.jpg`}
+                  alt={`${cat.name} sample ${i + 1}`}
+                  width={240}
+                  height={240}
+                  className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                  sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 50vw"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── PERFECT FOR (Use Cases) ── */}
+      {useCases.length > 0 && (
+        <section className="bg-white py-16 sm:py-20">
+          <div className="mx-auto max-w-tp-site px-4 sm:px-6 lg:px-8">
+            <h2 className="font-display text-2xl font-normal text-tp-black sm:text-3xl">
+              Perfect For
+            </h2>
+
+            <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+              {useCases.slice(0, 6).map((uc) => (
+                <div
+                  key={uc.title}
+                  className="flex flex-col items-center rounded-tp-button border border-tp-line bg-tp-paper/60 px-4 py-5 text-center transition-shadow hover:shadow-md"
+                >
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-tp-warm text-tp-bronze-ink">
+                    <Sparkles className="h-5 w-5" />
+                  </div>
+                  <h3 className="mt-3 text-sm font-semibold text-tp-ink">{uc.title}</h3>
+                  <p className="mt-1 text-xs text-tp-muted line-clamp-2">{uc.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── HOW IT WORKS ── */}
+      <section className="border-t border-tp-line/40 bg-tp-paper py-16 sm:py-20">
+        <div className="mx-auto max-w-tp-site px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center font-display text-2xl font-normal text-tp-black sm:text-3xl">
+            How It Works
+          </h2>
+
+          <div className={`mt-12 grid gap-6 sm:gap-4 ${
+            howItWorks.length === 4
+              ? 'sm:grid-cols-4'
+              : 'sm:grid-cols-3'
+          }`}>
+            {howItWorks.map((item, i) => (
+              <div key={item.step} className="relative text-center">
+                {/* Arrow connector (hidden on mobile, shown between items) */}
+                {i < howItWorks.length - 1 && (
+                  <div className="pointer-events-none absolute right-0 top-6 hidden translate-x-1/2 text-tp-line sm:block">
+                    <ChevronRight className="h-5 w-5" />
+                  </div>
+                )}
+
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-tp-black text-lg font-bold text-tp-bronze">
+                  {item.step}
+                </div>
+                <h3 className="mt-4 text-sm font-semibold text-tp-ink sm:text-base">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── PRICING TEASER ── */}
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center font-display text-2xl font-normal text-tp-black sm:text-3xl">
             Choose Your Package
           </h2>
-          <p className="mt-4 text-center text-tp-muted">
-            Select the plan that fits your needs.
+          <p className="mt-3 text-center text-tp-muted">
+            Choose the plan that fits your needs. Live pricing from TailorPic.
           </p>
 
-          <div className={`mt-12 grid gap-5 max-w-5xl mx-auto ${
-            cat.packages.length <= 3
+          <div className={`mt-10 grid gap-5 ${
+            teaserPackages.length <= 3
               ? 'sm:grid-cols-3'
-              : cat.packages.length === 4
-                ? 'sm:grid-cols-2 lg:grid-cols-4'
-                : 'sm:grid-cols-2 lg:grid-cols-3'
+              : 'sm:grid-cols-2 lg:grid-cols-4'
           }`}>
-            {cat.packages.map((pkg) => {
-              // Entry tier = cheapest package in the category.
+            {teaserPackages.map((pkg) => {
               const entryPrice = Math.min(...cat.packages.map((p) => p.price));
-              const isExpress = pkg.price === entryPrice;
+              const isEntry = pkg.price === entryPrice;
 
               return (
                 <div
                   key={pkg.id}
-                  className={`relative rounded-tp-card border-2 bg-white p-6 lg:p-8 shadow-sm transition-shadow hover:shadow-lg ${
+                  className={`relative rounded-tp-card border-2 bg-white p-6 shadow-sm transition-shadow hover:shadow-lg ${
                     pkg.recommended
                       ? 'border-tp-bronze ring-2 ring-tp-beige/30'
-                      : isExpress
+                      : isEntry
                         ? 'border-tp-bronze/40'
                         : 'border-tp-line'
                   }`}
                 >
                   {pkg.recommended && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-tp-black px-4 py-0.5 text-xs font-medium text-tp-bronze whitespace-nowrap">
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-tp-black px-4 py-0.5 text-xs font-medium text-tp-bronze">
                       Most Popular
                     </span>
                   )}
-                  {isExpress && !pkg.recommended && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-tp-bronze px-4 py-0.5 text-xs font-medium text-white whitespace-nowrap">
+                  {isEntry && !pkg.recommended && (
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-tp-bronze px-4 py-0.5 text-xs font-medium text-white">
                       Try It
                     </span>
                   )}
                   <h3 className="text-lg font-semibold text-tp-ink">{pkg.name}</h3>
-                  <p className="mt-3 text-3xl lg:text-4xl font-bold text-tp-black">
-                    {formatPrice(pkg.price, pkg.currency)}
+                  <p className="mt-3 text-3xl font-bold text-tp-black">
+                    {formatPrice(pkg.price, pkg.currency, true)}
                   </p>
                   <ul className="mt-5 space-y-2.5 text-sm text-tp-muted">
                     <li className="flex items-center gap-2">
-                      <svg className="h-4 w-4 text-emerald-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                      <svg className="h-4 w-4 flex-shrink-0 text-tp-success" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
                       <span className="font-medium text-tp-ink">{pkg.outputCount} {cat.outputLabel}</span>
                     </li>
                     {pkg.features.map((f) => (
                       <li key={f} className="flex items-center gap-2">
-                        <svg className="h-4 w-4 text-emerald-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                        <svg className="h-4 w-4 flex-shrink-0 text-tp-success" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
                         {f}
                       </li>
                     ))}
                   </ul>
-                  <Link href={`/auth/register?redirect=/${slug}`} className="block mt-6">
+                  <Link href={`/auth/register?redirect=/${slug}`} className="mt-6 block">
                     <Button
                       variant={pkg.recommended ? 'primary' : 'outline'}
                       size="md"
                       className="w-full"
                     >
-                      {isExpress ? 'Try Express' : 'Get Started'}
+                      {isEntry ? 'Try It' : 'Get Started'}
                     </Button>
                   </Link>
                 </div>
               );
             })}
           </div>
+
+          <p className="mt-6 text-center text-sm text-tp-muted">
+            Simple, transparent pricing for everyone.{' '}
+            <Link href="/pricing" className="font-medium text-tp-bronze-ink underline-offset-2 hover:underline">
+              View all packages
+            </Link>
+          </p>
         </div>
       </section>
 
-      {/* Trust strip */}
-      <section className="bg-tp-paper py-12 border-t border-tp-line/40">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
-            {[
-              { icon: DollarSign, text: 'from $1.99, no subscription' },
-              { icon: Clock, text: 'Ready in ~2 hours' },
-              { icon: ShieldCheck, text: 'satisfaction guarantee' },
-              { icon: Trash2, text: 'Your data deleted within 30 days' },
-            ].map((item) => (
-              <div key={item.text} className="flex items-start gap-3">
-                <item.icon className="h-5 w-5 flex-shrink-0 text-tp-bronze-ink mt-0.5" />
-                <span className="text-sm text-tp-muted">{item.text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Upload requirements */}
-      <section className="bg-white py-20 border-t border-tp-line/40">
+      {/* ── FAQ PREVIEW ── */}
+      <section className="border-t border-tp-line/40 bg-tp-paper py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-2xl font-normal text-tp-black">
-            Photo Requirements
-          </h2>
-          <div className="mt-8 rounded-tp-card border border-tp-line bg-tp-paper p-8 shadow-sm">
-            <div className="grid gap-6 sm:grid-cols-2">
-              <div>
-                <h3 className="font-semibold text-tp-ink">Upload Guidelines</h3>
-                <p className="mt-2 text-sm text-tp-muted">{cat.uploadInstructions}</p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-tp-ink">Photo Count</h3>
-                <p className="mt-2 text-sm text-tp-muted">
-                  Upload between {cat.minPhotos} and {cat.maxPhotos} photos for best results.
-                  More photos give the AI more to work with.
-                </p>
-              </div>
-            </div>
+          <div className="flex flex-wrap items-baseline justify-between gap-4">
+            <h2 className="font-display text-2xl font-normal text-tp-black sm:text-3xl">
+              FAQ Preview
+            </h2>
+            <Link
+              href="/faq"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-tp-bronze-ink transition-colors hover:text-tp-ink"
+            >
+              View All FAQs
+              <ChevronRight className="h-4 w-4" />
+            </Link>
           </div>
-        </div>
-      </section>
 
-      {/* FAQ */}
-      <section className="py-20 bg-tp-paper">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-normal text-tp-black">
-            Frequently Asked Questions
-          </h2>
-          <div className="mt-10 space-y-3">
-            {faqItems.map((item) => (
+          <div className="mt-8 space-y-3">
+            {faqItems.slice(0, 4).map((item) => (
               <details
                 key={item.question}
                 className="group rounded-tp-button border border-tp-line bg-white"
               >
-                <summary className="flex cursor-pointer items-center justify-between gap-4 px-6 py-4 text-tp-ink font-medium list-none [&::-webkit-details-marker]:hidden">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 px-6 py-4 font-medium text-tp-ink list-none [&::-webkit-details-marker]:hidden">
                   {item.question}
                   <svg
                     className="h-5 w-5 flex-shrink-0 text-tp-muted transition-transform group-open:rotate-180"
@@ -346,34 +523,36 @@ export default async function CategoryPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Related categories */}
-      <section className="bg-white py-20 border-t border-tp-line/40">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl font-normal text-tp-black">
-            Explore Other Styles
-          </h2>
-          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+      {/* ── RELATED PHOTO TYPES ── */}
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-tp-site px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-baseline justify-between gap-4">
+            <h2 className="font-display text-2xl font-normal text-tp-black sm:text-3xl">
+              Related Photo Types
+            </h2>
+            <span className="text-sm text-tp-muted">Explore other photo types you might like.</span>
+          </div>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
             {relatedCategories.map((related) => (
               <Link
                 key={related.id}
                 href={`/${related.slug}`}
                 className="group overflow-hidden rounded-tp-card border border-tp-line bg-white transition-shadow hover:shadow-lg"
               >
-                <div className="aspect-[16/9] overflow-hidden bg-tp-beige">
+                <div className="aspect-[4/3] overflow-hidden bg-tp-warm">
                   <Image
                     src={`/images/categories/${related.id}.jpg`}
                     alt={related.name}
-                    width={480}
-                    height={270}
+                    width={280}
+                    height={210}
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    sizes="(min-width: 640px) 33vw, 100vw"
+                    sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 50vw"
                   />
                 </div>
-                <div className="p-5">
-                  <h3 className="font-semibold text-tp-ink">{related.name}</h3>
-                  <p className="mt-1 text-sm text-tp-muted line-clamp-2">
-                    {related.tagline}
-                  </p>
+                <div className="p-4">
+                  <h3 className="text-sm font-semibold text-tp-ink">{related.shortName}</h3>
+                  <p className="mt-1 text-xs text-tp-muted line-clamp-1">{related.tagline}</p>
                 </div>
               </Link>
             ))}
@@ -381,19 +560,27 @@ export default async function CategoryPage({ params }: Props) {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-tp-paper">
+      {/* ── CTA BANNER ── */}
+      <section className="bg-tp-black py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="font-display text-3xl font-normal text-tp-black">
-            Ready for Your {cat.name}?
+          <h2 className="font-display text-3xl font-normal text-white sm:text-4xl">
+            Turn Your Photos Into<br className="hidden sm:block" /> Something Extraordinary.
           </h2>
-          <p className="mt-4 text-lg text-tp-muted">
-            Upload your photos and get AI-generated results in hours.
+          <p className="mx-auto mt-4 max-w-xl text-base text-tp-beige/80">
+            Upload your photos and get AI-generated {cat.outputLabel} in hours, not days.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href={`/auth/register?redirect=/${slug}`}>
-              <Button size="lg" variant="primary">Get Started Now</Button>
+              <Button size="lg" variant="primary">
+                Get Started
+                <ChevronRight className="ml-1 h-4 w-4" />
+              </Button>
             </Link>
+            <div className="flex items-center gap-6 text-sm text-tp-beige/60">
+              <span>⚡ Fast results</span>
+              <span>🔒 Secure &amp; private</span>
+              <span>✅ 100% satisfaction</span>
+            </div>
           </div>
         </div>
       </section>
