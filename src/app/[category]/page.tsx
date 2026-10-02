@@ -275,7 +275,7 @@ export default async function CategoryPage({ params }: Props) {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
             {[
-              { icon: DollarSign, text: '$1.99 one-time, no subscription' },
+              { icon: DollarSign, text: 'from $1.99, no subscription' },
               { icon: Clock, text: 'Ready in ~2 hours' },
               { icon: ShieldCheck, text: '14-day money-back guarantee' },
               { icon: Trash2, text: 'Your data deleted within 30 days' },

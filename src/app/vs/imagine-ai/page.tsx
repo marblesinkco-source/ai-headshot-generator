@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Imagine AI";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  'Compare TailorPic vs Imagine AI. Imagine AI is a general AI art generator; TailorPic makes professional headshots from selfies, from a one-time $1.99.';
+  'Compare TailorPic vs Imagine AI. Imagine AI is a general AI art generator; TailorPic makes professional headshots from selfies, from $1.99.';
 const path = '/vs/imagine-ai';
 const canonicalUrl = 'https://www.tailorpic.com/vs/imagine-ai';
 
@@ -28,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -47,7 +47,7 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "From $1.99 one-time",
+    "tailorpic": "from $1.99",
     "other": "Plans and credits vary; check their site"
   },
   {
@@ -108,7 +108,7 @@ const differences = [
   },
   {
     "title": "Predictable price",
-    "body": "TailorPic packages start at $1.99 one time, with no credits to track or plan to manage."
+    "body": "TailorPic packages start from $1.99, with no credits to track or plan to manage."
   },
   {
     "title": "Trade-off on creativity",
@@ -134,7 +134,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than Imagine AI?",
-    "answer": "TailorPic packages start at a one-time $1.99 and go up to 160 photos. Imagine AI pricing varies by plan, so compare against their current price page."
+    "answer": "TailorPic packages start from $1.99 and go up to 160 photos. Imagine AI pricing varies by plan, so compare against their current price page."
   },
   {
     "question": "Can Imagine AI make a headshot that looks like me?",

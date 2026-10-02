@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "My Headshots AI";
 const title = 'TailorPic vs My Headshots AI: AI Headshot Comparison';
 const description =
-  'Compare TailorPic vs My Headshots AI. TailorPic starts at a one-time $1.99 across 11 categories with LoRA-trained likeness and no subscription.';
+  'Compare TailorPic vs My Headshots AI. TailorPic starts from $1.99 across 11 categories with LoRA-trained likeness and no subscription.';
 const path = '/vs/myheadshots-ai';
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -44,7 +44,7 @@ const intro =
   "My Headshots AI is one of many tools aimed at professional profile photos. TailorPic focuses on a simple one-time price, LoRA-trained likeness and 11 photo categories beyond the standard corporate headshot.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "From $1.99 one-time", other: "Varies by plan; confirm on their site" },
+  { label: "Starting price", tailorpic: "from $1.99", other: "Varies by plan; confirm on their site" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on the package you pick" },
   { label: "Delivery time", tailorpic: "Within 24 hours", other: "Varies by plan" },
   { label: "Categories / styles", tailorpic: "11 categories (business, dating, creative, pets and more)", other: "Professional headshot style presets" },
@@ -57,7 +57,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 ];
 
 const differences = [
-  { title: "A low entry price", body: "TailorPic starts at $1.99 one time. Every package shows its total up front, so you know what you pay before you upload a single photo." },
+  { title: "A low entry price", body: "TailorPic starts from $1.99. Every package shows its total up front, so you know what you pay before you upload a single photo." },
   { title: "Beyond the office headshot", body: "Eleven categories cover LinkedIn, dating, creative portraits, pets and product shots, so one upload can serve several needs." },
   { title: "Personal model, not a generic filter", body: "TailorPic fine-tunes a LoRA model on your own selfies, which aims for a closer likeness than a one-size-fits-all preset." },
   { title: "Trade-off on speed", body: "TailorPic delivers within 24 hours. If you need results in minutes, a faster tool may suit an urgent deadline better." },
@@ -79,7 +79,7 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is TailorPic cheaper than My Headshots AI?", answer: "TailorPic packages start at a one-time $1.99 and go up to 160 photos. My Headshots AI pricing varies by plan and can change, so compare against their current price page." },
+  { question: "Is TailorPic cheaper than My Headshots AI?", answer: "TailorPic packages start from $1.99 and go up to 160 photos. My Headshots AI pricing varies by plan and can change, so compare against their current price page." },
   { question: "What makes TailorPic different from My Headshots AI?", answer: "TailorPic trains a personal LoRA model on your photos and outputs 11 categories, including dating, creative, pet and e-commerce photos, not just business headshots." },
   { question: "How long does TailorPic take?", answer: "Delivery is within 24 hours, since a dedicated model is fine-tuned on your uploads." },
   { question: "Do I need a subscription with TailorPic?", answer: "No. Every package is a single one-time payment (from $1.99) with no recurring fees." },

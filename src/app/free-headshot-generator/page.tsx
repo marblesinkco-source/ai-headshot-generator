@@ -32,18 +32,18 @@ import {
 export const metadata: Metadata = {
   title: { absolute: 'Free AI Headshot Generator Alternative: Try Risk-Free' },
   description:
-    'Looking for a free AI headshot generator? Try TailorPic risk-free: $1.99 one-time for studio-quality headshots, backed by a 14-day money-back guarantee.',
+    'Looking for a free AI headshot generator? Try TailorPic risk-free: from $1.99 for studio-quality headshots, backed by a 14-day money-back guarantee.',
   alternates: { canonical: '/free-headshot-generator' },
   openGraph: generateOGMetadata({
     title: 'Free AI Headshot Generator | TailorPic',
     description:
-      'Upload your selfies and get professional AI headshots from $1.99 one-time. Risk-free with a 14-day money-back guarantee.',
+      'Upload your selfies and get professional AI headshots from $1.99. Risk-free with a 14-day money-back guarantee.',
     path: '/free-headshot-generator',
   }),
   twitter: generateTwitterMetadata({
     title: 'Free AI Headshot Generator | TailorPic',
     description:
-      'Professional AI headshots from your selfies. $1.99 one-time, 14-day money-back guarantee.',
+      'Professional AI headshots from your selfies. from $1.99, 14-day money-back guarantee.',
   }),
 };
 
@@ -80,7 +80,7 @@ const headshotTypes = [
 ];
 
 const trialComparison = [
-  { label: 'Price', free: 'Free tools: $0', paid: '$1.99 one-time per person' },
+  { label: 'Price', free: 'Free tools: $0', paid: 'from $1.99 per person' },
   { label: 'Teams', free: 'Usually one photo at a time', paid: '$39 (5-15 people) or $29 (16-50 people)' },
   { label: 'Output', free: 'Often a few photos, sometimes watermarked', paid: 'photos across 11+ categories' },
   { label: 'Risk', free: 'No payment, but no guarantee of quality', paid: '14-day money-back guarantee' },
@@ -124,12 +124,12 @@ const faqs = [
   {
     question: 'Is there really a free AI headshot generator?',
     answer:
-      'TailorPic is not free, but it is risk-free. Packages start at $1.99 one-time and every order is covered by a 14-day money-back guarantee, so you can try it without a subscription or long-term commitment.',
+      'TailorPic is not free, but it is risk-free. Packages start from $1.99 and every order is covered by a 14-day money-back guarantee, so you can try it without a subscription or long-term commitment.',
   },
   {
     question: 'How much does TailorPic cost?',
     answer:
-      'Packages start at $1.99 one-time. Team pricing is $39 for 5-15 people and $29 for 16-50 people. There is no subscription.',
+      'Packages start from $1.99. Team pricing is $39 for 5-15 people and $29 for 16-50 people. There is no subscription.',
   },
   {
     question: 'What do I need to get started?',
@@ -176,7 +176,7 @@ export default function FreeHeadshotGeneratorPage() {
     operatingSystem: 'Web',
     url: `${siteConfig.url}/free-headshot-generator`,
     description:
-      'AI headshot generator that turns your selfies into professional headshots. $1.99 one-time with a 14-day money-back guarantee.',
+      'AI headshot generator that turns your selfies into professional headshots. from $1.99 with a 14-day money-back guarantee.',
     offers: {
       '@type': 'Offer',
       price: '1.99',
@@ -210,7 +210,7 @@ export default function FreeHeadshotGeneratorPage() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-muted">
             Upload a few selfies, pick your styles, and get studio-quality headshots for LinkedIn,
-            resumes and more. Try it risk-free: $1.99 one-time, photos, most orders ready within 2 hours,
+            resumes and more. Try it risk-free: from $1.99, photos, most orders ready within 2 hours,
             and a 14-day money-back guarantee if you are not happy.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -450,7 +450,7 @@ export default function FreeHeadshotGeneratorPage() {
         <div className="mx-auto max-w-2xl rounded-tp-card bg-tp-ink px-6 py-12 text-center">
           <h2 className="font-display text-3xl font-normal text-white">Try it risk-free</h2>
           <p className="mt-3 text-tp-beige">
-            $1.99 one-time, secure Stripe checkout, and a 14-day money-back guarantee.
+            from $1.99, secure Stripe checkout, and a 14-day money-back guarantee.
           </p>
           <Link
             href="/auth/register"

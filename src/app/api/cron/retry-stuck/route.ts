@@ -1,8 +1,9 @@
 /**
- * POST /api/cron/retry-stuck
+ * GET & POST /api/cron/retry-stuck
  *
  * Retries orders stuck in 'processing' status for over 30 minutes.
- * Protected by CRON_SECRET. Runs every 15 minutes via Vercel Cron.
+ * Protected by CRON_SECRET. Runs daily via Vercel Cron.
+ * Vercel Cron calls with GET; manual calls can use POST.
  *
  * Retry policy: max 3 retries, exponential backoff (30min, 1h, 2h).
  * After 3 failures → marks as 'failed' and notifies admin.
@@ -14,9 +15,19 @@ import Replicate from 'replicate';
 import { logger } from '@/lib/logger';
 import { safeEqual } from '@/lib/security';
 
+export const dynamic = 'force-dynamic';
 export const maxDuration = 60;
 
+/** Vercel Cron calls GET; manual triggers use POST — both run the same logic. */
+export async function GET(request: NextRequest) {
+  return handleRetryStuck(request);
+}
+
 export async function POST(request: NextRequest) {
+  return handleRetryStuck(request);
+}
+
+async function handleRetryStuck(request: NextRequest) {
   // Verify cron secret
   const authHeader = request.headers.get('authorization');
   const cronSecret = process.env.CRON_SECRET;

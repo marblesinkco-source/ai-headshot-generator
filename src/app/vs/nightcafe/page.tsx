@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "NightCafe";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs NightCafe. NightCafe is an AI art creation community; TailorPic creates realistic AI headshots from your selfies, from a one-time $1.99.";
+  "Compare TailorPic vs NightCafe. NightCafe is an AI art creation community; TailorPic creates realistic AI headshots from your selfies, from $1.99.";
 const path = '/vs/nightcafe';
 const canonicalUrl = 'https://www.tailorpic.com/vs/nightcafe';
 
@@ -28,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -47,7 +47,7 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "From $1.99 one-time",
+    "tailorpic": "from $1.99",
     "other": "Credit-based with free daily credits; check their site"
   },
   {
@@ -108,7 +108,7 @@ const differences = [
   },
   {
     "title": "No credits to manage",
-    "body": "TailorPic packages start at $1.99 one time, with no credit balance or subscription to track."
+    "body": "TailorPic packages start from $1.99, with no credit balance or subscription to track."
   },
   {
     "title": "Trade-off on speed",
@@ -134,7 +134,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than NightCafe?",
-    "answer": "TailorPic packages start at a one-time $1.99 and go up to 160 photos. NightCafe uses credits and plans that vary, so compare against their current price page."
+    "answer": "TailorPic packages start from $1.99 and go up to 160 photos. NightCafe uses credits and plans that vary, so compare against their current price page."
   },
   {
     "question": "Can NightCafe make a headshot of me?",

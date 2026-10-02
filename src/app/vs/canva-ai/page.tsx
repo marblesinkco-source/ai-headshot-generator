@@ -20,7 +20,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs Canva AI: AI Headshot Generator Comparison' },
   description:
-    'Compare TailorPic vs Canva AI. Canva is a design platform with AI image tools; TailorPic makes professional headshots from selfies, from a one-time $1.99.',
+    'Compare TailorPic vs Canva AI. Canva is a design platform with AI image tools; TailorPic makes professional headshots from selfies, from $1.99.',
   alternates: { canonical: '/vs/canva-ai' },
   openGraph: generateOGMetadata({ title: 'TailorPic vs Canva AI: AI Headshot Generator Comparison', description: 'Compare TailorPic and Canva AI. Photorealistic AI headshots versus a general design platform — see which fits your needs.', path: '/vs/canva-ai', type: 'vs' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic vs Canva AI: AI Headshot Generator Comparison', description: 'Compare TailorPic and Canva AI. Photorealistic AI headshots versus a general design platform — see which fits your needs.', type: 'vs' }),
@@ -34,7 +34,7 @@ const quickBadges = [
   {
     icon: DollarSign,
     label: 'Starting Price',
-    tailorpic: 'From $1.99 one-time',
+    tailorpic: 'from $1.99',
     competitor: '~$12.99/month (Pro)',
   },
   {
@@ -58,7 +58,7 @@ type FeatureRow = {
 };
 
 const comparisonRows: FeatureRow[] = [
-  { feature: 'Starting Price', tailorpic: 'From $1.99 one-time', competitor: '~$12.99/month (Canva Pro)' },
+  { feature: 'Starting Price', tailorpic: 'from $1.99', competitor: '~$12.99/month (Canva Pro)' },
   { feature: 'Pricing Model', tailorpic: 'One-time payment', competitor: 'Subscription (free tier available)' },
   { feature: 'Primary Purpose', tailorpic: 'Photorealistic AI headshots', competitor: 'Design platform with AI features' },
   { feature: 'Photorealistic Headshots from Selfies', tailorpic: true, competitor: 'Limited' },

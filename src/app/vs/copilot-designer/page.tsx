@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Microsoft Copilot Designer";
 const title = 'TailorPic vs Microsoft Copilot Designer: Headshot Comparison';
 const description =
-  'Compare TailorPic vs Microsoft Copilot Designer. Copilot Designer creates images from prompts; TailorPic makes professional headshots from selfies, from a one-time $1.99.';
+  'Compare TailorPic vs Microsoft Copilot Designer. Copilot Designer creates images from prompts; TailorPic makes professional headshots from selfies, from $1.99.';
 const path = '/vs/copilot-designer';
 const canonicalUrl = 'https://www.tailorpic.com/vs/copilot-designer';
 
@@ -28,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -47,7 +47,7 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "From $1.99 one-time",
+    "tailorpic": "from $1.99",
     "other": "Access options vary; check Microsoft's site"
   },
   {
@@ -108,7 +108,7 @@ const differences = [
   },
   {
     "title": "A low entry price",
-    "body": "TailorPic packages start at $1.99 one time, with no subscription."
+    "body": "TailorPic packages start from $1.99, with no subscription."
   },
   {
     "title": "Trade-off on range",
@@ -134,7 +134,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than Copilot Designer?",
-    "answer": "TailorPic packages start at a one-time $1.99 and go up to 160 photos. Copilot Designer access varies by Microsoft account and plan, so check their current details."
+    "answer": "TailorPic packages start from $1.99 and go up to 160 photos. Copilot Designer access varies by Microsoft account and plan, so check their current details."
   },
   {
     "question": "Can Copilot Designer make a headshot of me?",

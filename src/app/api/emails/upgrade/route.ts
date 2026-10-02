@@ -1,10 +1,11 @@
 /**
- * POST /api/emails/upgrade
+ * GET & POST /api/emails/upgrade
  *
  * Sends upgrade-offer emails to entry-tier buyers (TailorPic 1, Lite, Basic/Express)
  * whose orders are 48+ hours old and who haven't purchased a higher-tier package yet.
  *
- * Designed to be called by a cron job (e.g. Vercel Cron) once per hour.
+ * Designed to be called by a cron job (e.g. Vercel Cron) once per day.
+ * Vercel Cron calls with GET; manual calls can use POST.
  * Protected by CRON_SECRET to prevent unauthorized access.
  */
 
@@ -17,13 +18,24 @@ import { buildUpgradeEmail } from '@/lib/emails';
 import { logger } from '@/lib/logger';
 import { safeEqual } from '@/lib/security';
 
+export const dynamic = 'force-dynamic';
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const UPGRADE_DELAY_HOURS = 48;
 const DISCOUNT_PERCENT = 25;
 const COUPON_CODE = 'UPGRADE25';
 
+/** Vercel Cron calls GET; manual triggers use POST — both run the same logic. */
+export async function GET(request: NextRequest) {
+  return handleUpgradeEmails(request);
+}
+
 export async function POST(request: NextRequest) {
+  return handleUpgradeEmails(request);
+}
+
+async function handleUpgradeEmails(request: NextRequest) {
   // Verify cron secret
   const authHeader = request.headers.get('authorization');
   const cronSecret = process.env.CRON_SECRET;

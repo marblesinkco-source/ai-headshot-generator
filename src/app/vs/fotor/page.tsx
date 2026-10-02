@@ -19,7 +19,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs Fotor AI: AI Headshot Generator Comparison' },
   description:
-    'Compare TailorPic vs Fotor AI. Fotor is a broad photo editor with AI tools; TailorPic makes professional headshots from selfies, from a one-time $1.99.',
+    'Compare TailorPic vs Fotor AI. Fotor is a broad photo editor with AI tools; TailorPic makes professional headshots from selfies, from $1.99.',
   alternates: { canonical: '/vs/fotor' },
   openGraph: generateOGMetadata({ title: 'TailorPic vs Fotor AI: AI Headshot Generator Comparison', description: 'Compare TailorPic and Fotor AI. A specialized AI headshot generator versus a general photo editor — see which fits your needs.', path: '/vs/fotor', type: 'vs' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic vs Fotor AI: AI Headshot Generator Comparison', description: 'Compare TailorPic and Fotor AI. A specialized AI headshot generator versus a general photo editor — see which fits your needs.', type: 'vs' }),
@@ -33,7 +33,7 @@ const quickBadges = [
   {
     icon: DollarSign,
     label: 'Starting Price',
-    tailorpic: 'From $1.99 one-time',
+    tailorpic: 'from $1.99',
     competitor: '~$8.99/month',
   },
   {
@@ -57,7 +57,7 @@ type FeatureRow = {
 };
 
 const comparisonRows: FeatureRow[] = [
-  { feature: 'Starting Price', tailorpic: 'From $1.99 one-time', competitor: '~$8.99/month subscription' },
+  { feature: 'Starting Price', tailorpic: 'from $1.99', competitor: '~$8.99/month subscription' },
   { feature: 'Pricing Model', tailorpic: 'One-time payment', competitor: 'Subscription' },
   { feature: 'Primary Purpose', tailorpic: 'Specialized AI headshots', competitor: 'General photo editing with AI tools' },
   { feature: 'Broad Editing Toolset', tailorpic: 'Not the focus', competitor: true },
@@ -76,7 +76,7 @@ const whyCards = [
     icon: BadgeDollarSign,
     title: 'One-Time Price',
     description:
-      'TailorPic packages start at a one-time $1.99 with no renewals. Fotor is generally offered as a monthly or annual subscription starting around $8.99/month, so costs add up over time. Check Fotor for current pricing.',
+      'TailorPic packages start from $1.99 with no renewals. Fotor is generally offered as a monthly or annual subscription starting around $8.99/month, so costs add up over time. Check Fotor for current pricing.',
   },
   {
     icon: Target,

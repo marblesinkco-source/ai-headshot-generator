@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "HeadMagic";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs HeadMagic. Both are AI headshot services; TailorPic delivers headshots across 11 categories from a one-time $1.99 with no subscription.";
+  "Compare TailorPic vs HeadMagic. Both are AI headshot services; TailorPic delivers headshots across 11 categories from $1.99 with no subscription.";
 const path = '/vs/headmagic';
 const canonicalUrl = 'https://www.tailorpic.com/vs/headmagic';
 
@@ -28,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -47,7 +47,7 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "From $1.99 one-time",
+    "tailorpic": "from $1.99",
     "other": "Check their site for current pricing"
   },
   {
@@ -104,7 +104,7 @@ const differences = [
   },
   {
     "title": "One-time price",
-    "body": "TailorPic packages start at $1.99 one time, so there is no subscription plan to compare."
+    "body": "TailorPic packages start from $1.99, so there is no subscription plan to compare."
   },
   {
     "title": "Range beyond work photos",
@@ -134,7 +134,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than HeadMagic?",
-    "answer": "TailorPic packages start at a one-time $1.99 and go up to 160 photos. HeadMagic's pricing may differ, so compare against their current price page."
+    "answer": "TailorPic packages start from $1.99 and go up to 160 photos. HeadMagic's pricing may differ, so compare against their current price page."
   },
   {
     "question": "Are TailorPic and HeadMagic similar?",

@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Leonardo AI";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs Leonardo AI for headshots. TailorPic starts at a one-time $1.99 with LoRA-trained likeness of you, not a general AI art platform.";
+  "Compare TailorPic vs Leonardo AI for headshots. TailorPic starts from $1.99 with LoRA-trained likeness of you, not a general AI art platform.";
 const path = '/vs/leonardo-ai';
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -44,7 +44,7 @@ const intro =
   "Leonardo AI is an AI art platform that can generate portraits. TailorPic is a headshot service that trains a model on your own photos, so the results are meant to look like you.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "From $1.99 one-time", other: "Varies by plan; check their site" },
+  { label: "Starting price", tailorpic: "from $1.99", other: "Varies by plan; check their site" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on prompts and plan limits" },
   { label: "Delivery time", tailorpic: "Within 24 hours", other: "Varies by settings and queue" },
   { label: "Categories / styles", tailorpic: "11 categories (business, dating, creative, pets and more)", other: "Broad art styles, characters and concepts" },
@@ -79,7 +79,7 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is TailorPic cheaper than Leonardo AI?", answer: "TailorPic packages start at a one-time $1.99 and go up to 160 photos. Leonardo AI pricing varies by plan and can change, so check their current pricing." },
+  { question: "Is TailorPic cheaper than Leonardo AI?", answer: "TailorPic packages start from $1.99 and go up to 160 photos. Leonardo AI pricing varies by plan and can change, so check their current pricing." },
   { question: "Can Leonardo AI make portraits of me?", answer: "Leonardo can generate portraits, but it is an AI art platform and does not automatically train on your photos. TailorPic trains a personal LoRA model on your selfies as part of the service." },
   { question: "How long does TailorPic take?", answer: "Delivery is within 24 hours, since a dedicated model is fine-tuned on your uploads." },
   { question: "Do I need to write prompts with TailorPic?", answer: "No. You upload your photos and receive finished headshots across 11 categories." },

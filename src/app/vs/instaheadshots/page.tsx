@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "InstaHeadshots";
 const title = 'TailorPic vs InstaHeadshots: AI Headshot Comparison';
 const description =
-  'Compare TailorPic vs InstaHeadshots. TailorPic starts at a one-time $1.99 across 11 categories; InstaHeadshots starts near $9 with basic headshots.';
+  'Compare TailorPic vs InstaHeadshots. TailorPic starts from $1.99 across 11 categories; InstaHeadshots starts near $9 with basic headshots.';
 const path = '/vs/instaheadshots';
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -41,7 +41,7 @@ const productJsonLd = {
 };
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "From $1.99 one-time", other: "~$9 starting" },
+  { label: "Starting price", tailorpic: "from $1.99", other: "~$9 starting" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Basic headshot set; varies by plan" },
   { label: "Delivery time", tailorpic: "24 hours", other: "Varies by plan; check their site" },
   { label: "Categories / styles", tailorpic: "11 categories (business, dating, creative, pets and more)", other: "Limited styles" },
@@ -51,7 +51,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 ];
 
 const differences = [
-  { title: "Lower entry price, more range", body: "InstaHeadshots starts at around $9, while TailorPic packages start at a one-time $1.99. TailorPic also covers 11 categories while InstaHeadshots offers limited styles." },
+  { title: "Lower entry price, more range", body: "InstaHeadshots starts at around $9, while TailorPic packages start from $1.99. TailorPic also covers 11 categories while InstaHeadshots offers limited styles." },
   { title: "Depth of output", body: "InstaHeadshots focuses on basic headshots. TailorPic includes photos for business, dating, creative and other uses." },
   { title: "Personalization", body: "TailorPic trains a LoRA model on your own photos for a closer likeness." },
   { title: "Delivery", body: "TailorPic delivers within 24 hours, with the extra time going to model training." },
@@ -60,7 +60,7 @@ const differences = [
 const useCases = {
   tailorpic: [
     "More than a basic headshot, with 11 categories",
-    "Photos from a one-time $1.99",
+    "Photos from $1.99",
     "A personalized LoRA-trained model",
     "Team and enterprise options as you grow",
   ],
@@ -72,7 +72,7 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is InstaHeadshots cheaper than TailorPic?", answer: "InstaHeadshots starts at around $9, while TailorPic packages start at a one-time $1.99. TailorPic includes photos across 11 categories." },
+  { question: "Is InstaHeadshots cheaper than TailorPic?", answer: "InstaHeadshots starts at around $9, while TailorPic packages start from $1.99. TailorPic includes photos across 11 categories." },
   { question: "What styles does TailorPic offer?", answer: "TailorPic offers 11 categories, including business, dating and creative looks. InstaHeadshots offers a more limited set of styles." },
   { question: "How does TailorPic train its model?", answer: "TailorPic uses LoRA fine-tuning on your uploaded photos to capture your likeness, and delivers within 24 hours." },
   { question: "Is TailorPic a subscription?", answer: "No. TailorPic packages are one-time payments starting at $1.99." },

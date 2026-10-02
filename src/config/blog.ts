@@ -4134,7 +4134,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h2>Upload and Let AI Do the Rest</h2>
-      <p>Once you have 5 to 10 good selfies, upload them to <a href="/auth/register">TailorPic</a>. The LoRA model trains on your unique features and generates up to 160 professional headshots across 11 categories, with packages from a one-time $1.99.</p>
+      <p>Once you have 5 to 10 good selfies, upload them to <a href="/auth/register">TailorPic</a>. The LoRA model trains on your unique features and generates up to 160 professional headshots across 11 categories, with packages from $1.99.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-02-24',

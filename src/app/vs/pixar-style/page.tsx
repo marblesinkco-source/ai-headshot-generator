@@ -28,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -47,7 +47,7 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "From $1.99 one-time",
+    "tailorpic": "from $1.99",
     "other": "Often free with ads, or a small paid upgrade"
   },
   {
@@ -142,7 +142,7 @@ const faqs = [
   },
   {
     "question": "Is TailorPic cheaper than Pixar-style apps?",
-    "answer": "TailorPic starts at a one-time $1.99. Pixar-style apps vary from free to subscription, so check the specific app's pricing."
+    "answer": "TailorPic starts from $1.99. Pixar-style apps vary from free to subscription, so check the specific app's pricing."
   },
   {
     "question": "How long does TailorPic take?",

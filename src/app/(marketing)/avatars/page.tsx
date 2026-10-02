@@ -55,7 +55,7 @@ export const metadata: Metadata = {
 
 const comparisonRows = [
   { feature: 'Avatars per pack', lensa: '~50', others: '10-40', us: '30-50' },
-  { feature: 'Starting price', lensa: '$3.99/week', others: '$29+', us: '$1.99 one-time' },
+  { feature: 'Starting price', lensa: '$3.99/week', others: '$29+', us: 'from $1.99' },
   { feature: 'Likeness accuracy', lensa: 'Medium', others: 'Low-Medium', us: 'Ultra-High (Flux AI)' },
   { feature: 'Style variety', lensa: '10+', others: '5-15', us: '15 categories' },
   { feature: 'Resolution', lensa: '512px', others: '512-1024px', us: 'Up to 4K' },

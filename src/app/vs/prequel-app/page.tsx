@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Prequel";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  'Compare TailorPic vs Prequel. Prequel is a mobile app for photo and video effects and filters; TailorPic makes professional headshots from selfies, from a one-time $1.99.';
+  'Compare TailorPic vs Prequel. Prequel is a mobile app for photo and video effects and filters; TailorPic makes professional headshots from selfies, from $1.99.';
 const path = '/vs/prequel-app';
 const canonicalUrl = 'https://www.tailorpic.com/vs/prequel-app';
 
@@ -28,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -47,7 +47,7 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "From $1.99 one-time",
+    "tailorpic": "from $1.99",
     "other": "Free with in-app subscription; check the app store"
   },
   {
@@ -108,7 +108,7 @@ const differences = [
   },
   {
     "title": "A low entry price",
-    "body": "TailorPic packages start at $1.99 one time, with no subscription to manage."
+    "body": "TailorPic packages start from $1.99, with no subscription to manage."
   },
   {
     "title": "Trade-off on instant play",
@@ -134,7 +134,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than Prequel?",
-    "answer": "TailorPic packages start at a one-time $1.99 and go up to 160 photos. Prequel uses a free tier with subscription options, so compare against the current app store listing."
+    "answer": "TailorPic packages start from $1.99 and go up to 160 photos. Prequel uses a free tier with subscription options, so compare against the current app store listing."
   },
   {
     "question": "Can Prequel make a professional headshot?",

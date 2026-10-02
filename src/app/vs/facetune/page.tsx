@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Facetune";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  'Compare TailorPic vs Facetune. TailorPic delivers LoRA-trained headshots from a one-time $1.99; Facetune is a selfie editing app on a subscription.';
+  'Compare TailorPic vs Facetune. TailorPic delivers LoRA-trained headshots from $1.99; Facetune is a selfie editing app on a subscription.';
 const path = '/vs/facetune';
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -41,7 +41,7 @@ const productJsonLd = {
 };
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "From $1.99 one-time", other: "Free basic version; VIP subscription for full features" },
+  { label: "Starting price", tailorpic: "from $1.99", other: "Free basic version; VIP subscription for full features" },
   { label: "Billing model", tailorpic: "One-time payment, no subscription", other: "Subscription (weekly, monthly or annual)" },
   { label: "Focus", tailorpic: "Headshots and profile photos", other: "Selfie retouching, reshaping and AI enhancement" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Edit your own photos; no headshot generation" },
@@ -106,7 +106,7 @@ export default function Page() {
               TailorPic <span className="text-tp-bronze">vs</span> {competitor}
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">
-              Facetune is a popular selfie editor for retouching and enhancing existing photos. TailorPic is a headshot specialist: realistic, LoRA-trained photos across 11 categories (up to 160 per order), from a one-time $1.99.
+              Facetune is a popular selfie editor for retouching and enhancing existing photos. TailorPic is a headshot specialist: realistic, LoRA-trained photos across 11 categories (up to 160 per order), from $1.99.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

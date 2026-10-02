@@ -19,7 +19,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs Remini: AI Headshot Generator Comparison' },
   description:
-    'Compare TailorPic vs Remini. Remini enhances and restores existing photos; TailorPic makes professional headshots from selfies, from a one-time $1.99.',
+    'Compare TailorPic vs Remini. Remini enhances and restores existing photos; TailorPic makes professional headshots from selfies, from $1.99.',
   alternates: { canonical: '/vs/remini' },
   openGraph: generateOGMetadata({ title: 'TailorPic vs Remini: AI Headshot Generator Comparison', description: 'Compare TailorPic and Remini. A purpose-built AI headshot generator versus a photo enhancer — see which fits your needs.', path: '/vs/remini', type: 'vs' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic vs Remini: AI Headshot Generator Comparison', description: 'Compare TailorPic and Remini. A purpose-built AI headshot generator versus a photo enhancer — see which fits your needs.', type: 'vs' }),
@@ -33,7 +33,7 @@ const quickBadges = [
   {
     icon: DollarSign,
     label: 'Starting Price',
-    tailorpic: 'From $1.99 one-time',
+    tailorpic: 'from $1.99',
     competitor: '~$9.99/month',
   },
   {
@@ -57,7 +57,7 @@ type FeatureRow = {
 };
 
 const comparisonRows: FeatureRow[] = [
-  { feature: 'Starting Price', tailorpic: 'From $1.99 one-time', competitor: '~$9.99/month subscription' },
+  { feature: 'Starting Price', tailorpic: 'from $1.99', competitor: '~$9.99/month subscription' },
   { feature: 'Pricing Model', tailorpic: 'One-time payment', competitor: 'Subscription' },
   { feature: 'Primary Purpose', tailorpic: 'Generate AI headshots', competitor: 'Enhance and restore photos' },
   { feature: 'Creates New Headshots from Selfies', tailorpic: true, competitor: 'Limited' },

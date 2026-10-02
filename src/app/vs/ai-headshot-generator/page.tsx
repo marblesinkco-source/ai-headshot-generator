@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "AI Headshot Generator";
 const title = 'TailorPic vs Generic AI Headshot Generators: Guide';
 const description =
-  'TailorPic vs AI headshot generator tools: LoRA-trained photos in 11 categories from a one-time $1.99 vs generic generators. See what to compare first.';
+  'TailorPic vs AI headshot generator tools: LoRA-trained photos in 11 categories from $1.99 vs generic generators. See what to compare first.';
 const path = '/vs/ai-headshot-generator';
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -44,7 +44,7 @@ const intro =
   "\"AI Headshot Generator\" is a generic name used by several tools. This page compares TailorPic with that kind of general-purpose generator so you know what to look for.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "From $1.99 one-time", other: "Varies widely between tools" },
+  { label: "Starting price", tailorpic: "from $1.99", other: "Varies widely between tools" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Often a small set per package" },
   { label: "Delivery time", tailorpic: "Within 24 hours", other: "Ranges from minutes to hours" },
   { label: "Categories / styles", tailorpic: "11 categories", other: "Usually a few business-focused styles" },

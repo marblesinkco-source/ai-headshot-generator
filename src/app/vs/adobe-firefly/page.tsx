@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Adobe Firefly";
 const title = 'TailorPic vs Adobe Firefly: AI Headshot Generator Comparison';
 const description =
-  'Compare TailorPic vs Adobe Firefly for headshots. TailorPic offers LoRA-trained photos from a one-time $1.99, built for headshots, not general image creation.';
+  'Compare TailorPic vs Adobe Firefly for headshots. TailorPic offers LoRA-trained photos from $1.99, built for headshots, not general image creation.';
 const path = '/vs/adobe-firefly';
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -44,7 +44,7 @@ const intro =
   "Adobe Firefly is a general-purpose AI image tool inside the Adobe ecosystem. TailorPic is built for one job: turning your selfies into professional headshots with a model trained on your face.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "From $1.99 one-time", other: "Varies by Adobe plan; check their site" },
+  { label: "Starting price", tailorpic: "from $1.99", other: "Varies by Adobe plan; check their site" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on your prompts and credits" },
   { label: "Delivery time", tailorpic: "Within 24 hours", other: "Varies by task" },
   { label: "Categories / styles", tailorpic: "11 categories (business, dating, creative, pets and more)", other: "General-purpose image generation and editing" },
@@ -79,7 +79,7 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is TailorPic cheaper than Adobe Firefly?", answer: "TailorPic packages start at a one-time $1.99 and go up to 160 photos. Firefly pricing depends on Adobe plans and credits and can change, so check their current pricing." },
+  { question: "Is TailorPic cheaper than Adobe Firefly?", answer: "TailorPic packages start from $1.99 and go up to 160 photos. Firefly pricing depends on Adobe plans and credits and can change, so check their current pricing." },
   { question: "Can Adobe Firefly make headshots of me?", answer: "Firefly is a general-purpose image generator and is not specialized for headshots. TailorPic trains a LoRA model on your own photos specifically to keep your likeness." },
   { question: "How long does TailorPic take?", answer: "Delivery is within 24 hours, since a dedicated model is fine-tuned on your uploads." },
   { question: "Do I need design skills to use TailorPic?", answer: "No. You upload your photos and receive finished headshots, with no prompt writing." },

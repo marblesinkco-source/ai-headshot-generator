@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Pixelcut";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  'Compare TailorPic vs Pixelcut. TailorPic delivers LoRA-trained headshots from a one-time $1.99; Pixelcut is a general AI photo editor with design tools.';
+  'Compare TailorPic vs Pixelcut. TailorPic delivers LoRA-trained headshots from $1.99; Pixelcut is a general AI photo editor with design tools.';
 const path = '/vs/pixelcut';
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -41,7 +41,7 @@ const productJsonLd = {
 };
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "From $1.99 one-time", other: "Free tier available; paid plans vary" },
+  { label: "Starting price", tailorpic: "from $1.99", other: "Free tier available; paid plans vary" },
   { label: "Billing model", tailorpic: "One-time payment, no subscription", other: "Freemium with subscription upgrades" },
   { label: "Focus", tailorpic: "Headshots and profile photos", other: "General photo editing, background removal, design tools" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on how you use the editing tools" },
@@ -55,7 +55,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 const differences = [
   { title: "Generator vs editor", body: "TailorPic generates entirely new headshots from your selfies using a personal AI model. Pixelcut edits photos you already have, offering background removal, upscaling and design templates. They solve different problems." },
   { title: "Headshot specialist vs general tool", body: "TailorPic is built specifically for headshots across professional, dating and creative styles. Pixelcut is a broader photo editing and design platform that handles product photos, social media graphics and more." },
-  { title: "Pricing structure", body: "TailorPic starts at a one-time $1.99 with no recurring fees. Pixelcut offers a free tier with limited features and paid plans for full access. Check their site for current pricing." },
+  { title: "Pricing structure", body: "TailorPic starts from $1.99 with no recurring fees. Pixelcut offers a free tier with limited features and paid plans for full access. Check their site for current pricing." },
   { title: "Personal AI model", body: "TailorPic trains a LoRA model on your uploaded selfies, producing photos that closely resemble you in new settings. Pixelcut enhances existing photos but does not create new portraits from scratch." },
 ];
 
@@ -77,7 +77,7 @@ const useCases = {
 const faqs = [
   { question: "Is TailorPic the same as Pixelcut?", answer: "No. TailorPic is an AI headshot generator that creates new professional photos from your selfies. Pixelcut is a general photo editing tool focused on background removal, upscaling and design features." },
   { question: "Can Pixelcut generate headshots?", answer: "Pixelcut is primarily an editor, not a headshot generator. It can improve existing photos but does not train a personal AI model or generate new headshots the way TailorPic does." },
-  { question: "Is TailorPic cheaper than Pixelcut?", answer: "TailorPic starts at a one-time $1.99, with packages up to 160 headshots. Pixelcut has a free tier with limited features and paid subscription plans. For headshot generation specifically, TailorPic is purpose-built and competitively priced." },
+  { question: "Is TailorPic cheaper than Pixelcut?", answer: "TailorPic starts from $1.99, with packages up to 160 headshots. Pixelcut has a free tier with limited features and paid subscription plans. For headshot generation specifically, TailorPic is purpose-built and competitively priced." },
   { question: "How many photos does TailorPic include?", answer: "TailorPic includes photos across 11 categories, delivered within 24 hours." },
 ];
 
@@ -106,7 +106,7 @@ export default function Page() {
               TailorPic <span className="text-tp-bronze">vs</span> {competitor}
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">
-              Pixelcut is a versatile photo editor with background removal and design tools. TailorPic is a headshot specialist: polished, LoRA-trained photos across 11 categories (up to 160 per order), from a one-time $1.99.
+              Pixelcut is a versatile photo editor with background removal and design tools. TailorPic is a headshot specialist: polished, LoRA-trained photos across 11 categories (up to 160 per order), from $1.99.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "SnapHeadshots";
 const title = 'TailorPic vs SnapHeadshots: AI Headshot Generator Comparison';
 const description =
-  'Compare TailorPic vs SnapHeadshots. TailorPic makes professional headshots from selfies, from a one-time $1.99; SnapHeadshots is approximately $9.99.';
+  'Compare TailorPic vs SnapHeadshots. TailorPic makes professional headshots from selfies, from $1.99; SnapHeadshots is approximately $9.99.';
 const path = '/vs/snapheadshots';
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -41,7 +41,7 @@ const productJsonLd = {
 };
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "From $1.99 one-time", other: "Approximately $9.99" },
+  { label: "Starting price", tailorpic: "from $1.99", other: "Approximately $9.99" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Varies by package; check their site" },
   { label: "Delivery time", tailorpic: "24 hours", other: "Check their site" },
   { label: "Categories / styles", tailorpic: "11 categories (business, dating, creative, pets and more)", other: "Basic headshot styles" },
@@ -60,7 +60,7 @@ const differences = [
 
 const useCases = {
   tailorpic: [
-    "Packages up to 160 photos, from a one-time $1.99",
+    "Packages up to 160 photos, from $1.99",
     "A wider range of categories",
     "Editor tools to refine your photos",
     "A personalized LoRA-trained model of your face",
@@ -74,7 +74,7 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is TailorPic cheaper than SnapHeadshots?", answer: "TailorPic starts at a one-time $1.99 and SnapHeadshots is approximately $9.99. Pricing may change, so check their site." },
+  { question: "Is TailorPic cheaper than SnapHeadshots?", answer: "TailorPic starts from $1.99 and SnapHeadshots is approximately $9.99. Pricing may change, so check their site." },
   { question: "What do I get with TailorPic that is extra?", answer: "TailorPic includes photos across 11 categories plus editor tools." },
   { question: "Is TailorPic a subscription?", answer: "No. TailorPic packages are one-time payments starting at $1.99 with no recurring fees." },
   { question: "How fast does TailorPic deliver?", answer: "TailorPic delivers within 24 hours because it fine-tunes a LoRA model on your photos." },
@@ -105,7 +105,7 @@ export default function Page() {
               TailorPic <span className="text-tp-bronze">vs</span> {competitor}
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">
-              SnapHeadshots offers basic headshot generation. TailorPic adds more photos, 11 categories and editor tools from a one-time $1.99.
+              SnapHeadshots offers basic headshot generation. TailorPic adds more photos, 11 categories and editor tools from $1.99.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

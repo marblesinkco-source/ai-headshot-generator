@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Adobe Photoshop";
 const title = 'TailorPic vs Adobe Photoshop: AI Headshot Comparison';
 const description =
-  'Compare TailorPic vs Adobe Photoshop. Photoshop is a professional image editor that needs your own photo and skills; TailorPic: headshots from a one-time $1.99.';
+  'Compare TailorPic vs Adobe Photoshop. Photoshop is a professional image editor that needs your own photo and skills; TailorPic: headshots from $1.99.';
 const path = '/vs/photoshop';
 const canonicalUrl = 'https://www.tailorpic.com/vs/photoshop';
 
@@ -28,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -47,7 +47,7 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "From $1.99 one-time",
+    "tailorpic": "from $1.99",
     "other": "Subscription-based; check Adobe's site"
   },
   {
@@ -108,7 +108,7 @@ const differences = [
   },
   {
     "title": "A low entry price",
-    "body": "TailorPic packages start at $1.99 one time, with no subscription to manage."
+    "body": "TailorPic packages start from $1.99, with no subscription to manage."
   },
   {
     "title": "Trade-off on control",
@@ -134,7 +134,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than Photoshop?",
-    "answer": "TailorPic packages start at a one-time $1.99 and go up to 160 photos. Photoshop is sold through Adobe plans that vary, so compare against their current price page."
+    "answer": "TailorPic packages start from $1.99 and go up to 160 photos. Photoshop is sold through Adobe plans that vary, so compare against their current price page."
   },
   {
     "question": "Can Photoshop make a headshot?",
