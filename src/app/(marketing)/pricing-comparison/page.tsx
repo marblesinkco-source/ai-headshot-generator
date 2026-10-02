@@ -52,6 +52,12 @@ export const metadata: Metadata = {
 /* ------------------------------------------------------------------ */
 
 const headshots = CATEGORIES.headshots;
+if (headshots.packages.length < 6) {
+  throw new Error(
+    `pricing-comparison expects at least 6 headshot packages but found ${headshots.packages.length}. ` +
+    `Update this page when changing the package list.`
+  );
+}
 const tailorpic1Package = headshots.packages[0]; // TailorPic 1: $1.99, 1 headshot
 const litePackage = headshots.packages[1]; // Lite: $9.90, 5 headshots
 const basicPackage = headshots.packages[2]; // Basic: $19.90, 10 headshots

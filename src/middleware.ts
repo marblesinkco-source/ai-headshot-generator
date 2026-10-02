@@ -4,7 +4,7 @@
  * Runs on every matched request to:
  * 1. Refresh the Supabase auth session (keeps cookies alive).
  * 2. Protect /dashboard routes -- unauthenticated visitors are
- *    redirected to /login.
+ *    redirected to /auth/login.
  * 3. TEST MODE: When enabled, only whitelisted test users can
  *    access the site. Everyone else sees the /gate page.
  */

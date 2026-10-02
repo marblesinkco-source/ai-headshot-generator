@@ -15,7 +15,6 @@ import {
   ArrowRight,
   ChevronDown,
   Mail,
-  Lock,
 } from 'lucide-react';
 
 export const metadata: Metadata = {

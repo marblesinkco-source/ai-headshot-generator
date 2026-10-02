@@ -57,7 +57,7 @@ function getRecommendation(state: QuizState) {
       title: rec.name,
       price: formatPrice(rec.price),
       reason: `${rec.outputCount}+ photos across multiple styles — enough variety to find your best look for every app.`,
-      href: `/auth/register?redirect=/dating`,
+      href: `/auth/register?redirect=/dating-photos`,
       ctaText: 'Get Started',
     };
   }
