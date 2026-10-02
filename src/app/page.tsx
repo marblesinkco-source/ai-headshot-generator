@@ -77,6 +77,14 @@ const SpeedComparison = dynamic(
   () => import('@/components/marketing/speed-comparison').then((m) => m.SpeedComparison),
   { loading: () => <SectionSkeleton height="h-[400px]" /> }
 );
+const AIvsGeneric = dynamic(
+  () => import('@/components/marketing/ai-vs-generic').then((m) => m.AIvsGeneric),
+  { loading: () => <SectionSkeleton height="h-[500px]" /> }
+);
+const TeamShowcase = dynamic(
+  () => import('@/components/marketing/team-showcase').then((m) => m.TeamShowcase),
+  { loading: () => <SectionSkeleton height="h-[600px]" /> }
+);
 
 export default function LandingPage() {
   return (
@@ -101,8 +109,10 @@ export default function LandingPage() {
       <SpeedComparison />
       <Testimonials />
       <ComparisonTable />
+      <AIvsGeneric />
       <DeliveryGuarantee />
       <SavingsHighlight />
+      <TeamShowcase />
       <Pricing />
       <PlanPicker />
       <PhotoPrepGuide />
