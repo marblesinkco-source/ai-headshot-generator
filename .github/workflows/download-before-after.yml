@@ -1,0 +1,82 @@
+name: Download Before/After Images
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download before/after portrait images
+        run: |
+          mkdir -p public/brand/tailorpic/web
+
+          # PAIR 1: Young woman - LinkedIn Profile
+          # Before: casual selfie style
+          curl -fSL -o public/brand/tailorpic/web/portrait-woman-before.webp \
+            "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=1000&fit=crop&crop=face&fm=webp&q=85" || \
+          curl -fSL -o public/brand/tailorpic/web/portrait-woman-before.webp \
+            "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&h=1000&fit=crop&crop=face&fm=webp&q=85"
+
+          # After: polished professional (same person concept - different professional woman)
+          curl -fSL -o public/brand/tailorpic/web/portrait-woman-after.webp \
+            "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=1000&fit=crop&crop=face&fm=webp&q=85" || \
+          curl -fSL -o public/brand/tailorpic/web/portrait-woman-after.webp \
+            "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&h=1000&fit=crop&crop=face&fm=webp&q=85"
+
+          # PAIR 2: Man - Corporate Team
+          # Before: casual
+          curl -fSL -o public/brand/tailorpic/web/portrait-man-before.webp \
+            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop&crop=face&fm=webp&q=85" || \
+          curl -fSL -o public/brand/tailorpic/web/portrait-man-before.webp \
+            "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&h=1000&fit=crop&crop=face&fm=webp&q=85"
+
+          # After: professional suit
+          curl -fSL -o public/brand/tailorpic/web/portrait-man-after.webp \
+            "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=1000&fit=crop&crop=face&fm=webp&q=85" || \
+          curl -fSL -o public/brand/tailorpic/web/portrait-man-after.webp \
+            "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&h=1000&fit=crop&crop=face&fm=webp&q=85"
+
+          # PAIR 3: Different woman - Creative Portfolio (MUST be different from Pair 1)
+          # Before: natural/artistic
+          curl -fSL -o public/brand/tailorpic/web/portrait-woman-creative-before.webp \
+            "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&h=1000&fit=crop&crop=face&fm=webp&q=85" || \
+          curl -fSL -o public/brand/tailorpic/web/portrait-woman-creative-before.webp \
+            "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=1000&fit=crop&crop=face&fm=webp&q=85"
+
+          # After: editorial polished
+          curl -fSL -o public/brand/tailorpic/web/portrait-woman-editorial.webp \
+            "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=800&h=1000&fit=crop&crop=face&fm=webp&q=85" || \
+          curl -fSL -o public/brand/tailorpic/web/portrait-woman-editorial.webp \
+            "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?w=800&h=1000&fit=crop&crop=face&fm=webp&q=85"
+
+          # Verify all files
+          echo "=== Image verification ==="
+          for f in public/brand/tailorpic/web/portrait-*.webp; do
+            size=$(stat -c%s "$f" 2>/dev/null || echo 0)
+            if [ "$size" -lt 5000 ]; then
+              echo "FAIL: $f is only $size bytes"
+              exit 1
+            fi
+            dims=$(identify "$f" 2>/dev/null | awk '{print $3}' || echo "unknown")
+            echo "OK: $f — $size bytes — $dims"
+          done
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/brand/tailorpic/web/
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "feat: replace before/after portraits with high-quality diverse images
+
+          - All 6 portraits at 800x1000px, high-quality WebP
+          - 3 distinct people (no repeated characters)
+          - LinkedIn: young woman
+          - Corporate: man in suit
+          - Creative: different woman (distinct from LinkedIn)"
+          git push
