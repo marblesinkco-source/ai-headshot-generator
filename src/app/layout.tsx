@@ -6,7 +6,6 @@ import { siteConfig } from '@/config/site';
 import { ToastProvider } from '@/components/ui/toaster';
 import { CookieConsent } from '@/components/cookie-consent';
 import { ExitIntentPopupLazy } from '@/components/marketing/exit-intent-popup-lazy';
-import { SocialProofToastLazy } from '@/components/marketing/social-proof-toast-lazy';
 import { OrganizationSchema } from '@/components/structured-data';
 import { GoogleAnalytics } from '@/components/analytics/google-analytics';
 
@@ -103,7 +102,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
           <CookieConsent />
           <ExitIntentPopupLazy />
-          <SocialProofToastLazy />
         </ToastProvider>
         {/* Vercel Analytics — only loads when NEXT_PUBLIC_VERCEL_ANALYTICS_ID is set */}
         {process.env.NEXT_PUBLIC_VERCEL_ANALYTICS_ID && (

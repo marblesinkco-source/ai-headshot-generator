@@ -1,76 +1,43 @@
-import { Quote, Star } from 'lucide-react';
+import { Briefcase, Megaphone, Building2, LineChart, Users, Palette } from 'lucide-react';
 
-const testimonials = [
+const useCases = [
   {
-    name: 'Daniel R.',
-    role: 'Startup Founder',
-    company: 'Early-stage SaaS',
-    quote:
-      'I had no time for a studio shoot. I uploaded a few selfies and had polished headshots ready fast, in time for my pitch deck and website.',
+    icon: Briefcase,
+    role: 'Startup Founders',
+    scenario:
+      'Need polished headshots fast for pitch decks, websites, and investor meetings — without scheduling a studio session.',
   },
   {
-    name: 'Priya S.',
-    role: 'Marketing Director',
-    company: 'B2B technology brand',
-    quote:
-      'The variety was what won me over. Different backgrounds and styles meant I had one look for LinkedIn and another for conference bios.',
+    icon: Megaphone,
+    role: 'Marketing Teams',
+    scenario:
+      'Get consistent headshots across different styles — one look for LinkedIn, another for conference bios, all from the same selfies.',
   },
   {
-    name: 'Marcus T.',
-    role: 'Real Estate Agent',
-    company: 'Independent brokerage',
-    quote:
-      'My headshot is on every sign and flyer. The quality looks professional and approachable, at a price far below a traditional photographer.',
+    icon: Building2,
+    role: 'Real Estate Agents',
+    scenario:
+      'Professional, approachable photos for signs, flyers, and listings at a fraction of the cost of a traditional photographer.',
   },
   {
-    name: 'Elena V.',
-    role: 'Financial Advisor',
-    company: 'Wealth planning practice',
-    quote:
-      'Clients judge trust at a glance. I got clean, natural-looking portraits and several options to choose from, without scheduling a single appointment.',
+    icon: LineChart,
+    role: 'Financial Advisors',
+    scenario:
+      'Clean, trust-building portraits and multiple options to choose from, without scheduling appointments.',
   },
   {
-    name: 'Jordan K.',
-    role: 'HR Manager',
-    company: 'Growing mid-size company',
-    quote:
-      'Getting headshots for new hires used to be a logistics headache. Now everyone uploads their own photos, and results arrive quickly at a budget-friendly cost.',
+    icon: Users,
+    role: 'HR & People Teams',
+    scenario:
+      'Streamline headshots for new hires — everyone uploads their own photos and results arrive quickly at a budget-friendly cost.',
   },
   {
-    name: 'Sofia M.',
-    role: 'Freelance Designer',
-    company: 'Independent studio',
-    quote:
-      'As a freelancer my profile photo is my first impression. The range of styles let me find a creative shot that suits my brand, and the quality held up.',
+    icon: Palette,
+    role: 'Freelancers & Creatives',
+    scenario:
+      'Find the perfect headshot that matches your personal brand across a wide range of creative styles.',
   },
 ];
-
-function StarRating() {
-  return (
-    <div
-      className="flex items-center gap-0.5"
-      role="img"
-      aria-label="5 out of 5 stars (illustrative)"
-    >
-      {Array.from({ length: 5 }).map((_, i) => (
-        <Star
-          key={i}
-          aria-hidden="true"
-          className="h-4 w-4 fill-tp-bronze text-tp-bronze"
-        />
-      ))}
-    </div>
-  );
-}
-
-function initials(name: string) {
-  return name
-    .replace('.', '')
-    .split(' ')
-    .map((part) => part[0])
-    .join('')
-    .toUpperCase();
-}
 
 export function Testimonials() {
   return (
@@ -100,50 +67,38 @@ export function Testimonials() {
 
         {/* Cards: 1 col mobile, 2 tablet, 3 desktop */}
         <div className="mt-16 grid grid-cols-1 gap-6 sm:mt-20 md:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((t) => (
-            <figure
-              key={t.name}
-              className="group relative flex flex-col overflow-hidden rounded-tp-card border border-tp-line bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-tp-bronze/40 hover:shadow-xl hover:shadow-tp-bronze/10"
-            >
-              {/* Top accent line */}
+          {useCases.map((uc) => {
+            const Icon = uc.icon;
+            return (
               <div
-                aria-hidden="true"
-                className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-tp-bronze/0 via-tp-bronze to-tp-bronze/0 opacity-60 transition-opacity group-hover:opacity-100"
-              />
-
-              {/* Decorative quote mark */}
-              <Quote
-                aria-hidden="true"
-                className="absolute right-5 top-6 h-12 w-12 rotate-180 fill-tp-beige/50 text-tp-beige/50"
-              />
-
-              <StarRating />
-
-              <blockquote className="relative mt-5 flex-1 text-base leading-relaxed text-tp-ink">
-                &ldquo;{t.quote}&rdquo;
-              </blockquote>
-
-              <figcaption className="mt-6 flex items-center gap-3 border-t border-tp-line pt-5">
+                key={uc.role}
+                className="group relative flex flex-col overflow-hidden rounded-tp-card border border-tp-line bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-tp-bronze/40 hover:shadow-xl hover:shadow-tp-bronze/10"
+              >
+                {/* Top accent line */}
                 <div
                   aria-hidden="true"
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-tp-black text-sm font-semibold tracking-wide text-tp-bronze ring-2 ring-tp-bronze/40 ring-offset-2 ring-offset-white"
-                >
-                  {initials(t.name)}
-                </div>
-                <div className="min-w-0">
-                  <p className="text-sm font-semibold text-tp-black">{t.name}</p>
-                  <p className="text-xs text-tp-muted">
-                    {t.role}, {t.company}
-                  </p>
-                </div>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+                  className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-tp-bronze/0 via-tp-bronze to-tp-bronze/0 opacity-60 transition-opacity group-hover:opacity-100"
+                />
 
-        <p className="mt-10 text-center text-xs text-tp-muted">
-          * Illustrative testimonials for demonstration purposes.
-        </p>
+                <div className="flex items-center gap-3">
+                  <div
+                    aria-hidden="true"
+                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-tp-black text-tp-bronze ring-2 ring-tp-bronze/40 ring-offset-2 ring-offset-white"
+                  >
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="text-base font-semibold text-tp-black">
+                    {uc.role}
+                  </h3>
+                </div>
+
+                <p className="mt-5 flex-1 text-base leading-relaxed text-tp-muted">
+                  {uc.scenario}
+                </p>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
