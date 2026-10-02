@@ -105,6 +105,9 @@
 100. `06f88aa` — Package quiz recommender + eagerly import near-fold sections
 101. `bd4b22b` — Price receipt card + style configurator to homepage
 102. `bcf93c8` — Interactive Studio vs AI cost calculator with team slider
+103. `a28ef5c` — Remove 14-day money-back guarantee references from marketing pages
+104. `723f9e2` — Remove 14-day money-back guarantee from entire site (batch 2)
+105. `7cb99b1` — Payment methods (Stripe Link), infrastructure abstraction & Plan 2/3 migration readiness
 
 ### Completed Features
 - [x] Homepage results gallery — filterable portrait gallery with 12 styles across 4 categories
@@ -442,22 +445,42 @@
 - [x] Security: fixed error swallowing in auth-callback, export, account-delete, ai-generate
 - [x] Security: fixed (supabase as any) casts with proper database types
 - [x] Security: replaced all console.error in API routes with structured logger
+- [x] 14-day money-back guarantee removed site-wide (186 files, 2 commits)
+- [x] Stripe checkout: Link (one-click) payment method enabled
+- [x] Stripe checkout: phone number collection enabled
+- [x] Infrastructure abstraction layer (src/lib/infra.ts) — Plan 1/2/3 auto-detection
+- [x] Docker Compose: profile-based deployment (hybrid for Plan 2, full for Plan 3)
+- [x] Nginx reverse proxy config (SSL, rate limiting, caching)
+- [x] PostgreSQL init schema for Plan 3 self-hosted DB
+- [x] Deploy script (infrastructure/deploy.sh) for Plan 1→2→3
+- [x] Migration guide (infrastructure/MIGRATION-GUIDE.md) with rollback procedures
+- [x] Combined Supabase migration (20241002_combined_pending.sql)
+- [x] .env.example: organized by plan with all provider variables
 
 ### Backlog (Requires External Action)
-- [ ] **Upstash: Create Redis database** → get UPSTASH_REDIS_REST_URL + UPSTASH_REDIS_REST_TOKEN
-- [ ] **Vercel: Add UPSTASH env vars** (UPSTASH_REDIS_REST_URL, UPSTASH_REDIS_REST_TOKEN)
-- [ ] **Supabase: Run migration 006_add_retry_and_dedupe.sql** (retry_count, Stripe dedup table, indexes)
-- [ ] Stripe: Create WELCOME10 promo code (10% off) — needs Stripe dashboard/API key
-- [ ] Vercel env: Set NEXT_PUBLIC_GA_MEASUREMENT_ID for GA4
-- [ ] Supabase: Run contact_messages migration SQL
-- [ ] Supabase: Run newsletter_subscribers migration SQL
-- [ ] Supabase: Run 005_add_refunded_status.sql migration
-- [ ] Supabase Pro plan upgrade (Faz 2 için)
-- [ ] Apple Developer Program setup + Supabase Apple provider (user said "sonra yapalım")
-- [ ] Facebook Developer App + Supabase Facebook provider (user said "sonra yapalım")
-- [ ] Error monitoring (Sentry) — needs API key/DSN
-- [ ] Resend API key setup for email functionality
-- [ ] Sample images: gradient placeholders need real AI-generated examples
+
+#### ÖNCELİK 1 — Siteyi Tam Çalışır Hale Getirmek
+- [ ] **Supabase: Combined migration çalıştır** → `gh workflow run db-migrate.yml -f mode=apply` (contact_messages, newsletter_subscribers, retry/dedup infrastructure — hepsi tek SQL'de)
+- [ ] **Upstash: Redis database oluştur** → UPSTASH_REDIS_REST_URL + UPSTASH_REDIS_REST_TOKEN al
+- [ ] **Vercel: UPSTASH env vars ekle** (UPSTASH_REDIS_REST_URL, UPSTASH_REDIS_REST_TOKEN)
+- [ ] **Resend: API key oluştur** → RESEND_API_KEY olarak Vercel'e ekle + tailorpic.com domain'i doğrula
+- [ ] **Stripe Dashboard: "Link" ödeme yöntemini aktif et** (Settings → Payment methods → Link)
+- [ ] **Stripe Dashboard: Apple Pay & Google Pay aktif et** (Settings → Payment methods)
+- [ ] **Stripe: WELCOME10 promo kodu oluştur** (10% indirim, Coupons → Create)
+
+#### ÖNCELİK 2 — Analytics & İzleme
+- [ ] Vercel env: NEXT_PUBLIC_GA_MEASUREMENT_ID (Google Analytics 4)
+- [ ] Error monitoring: Sentry hesabı oluştur → DSN al
+
+#### ÖNCELİK 3 — OAuth Sağlayıcıları
+- [ ] Google OAuth: Google Cloud Console → OAuth 2.0 client → Supabase'e ekle
+- [ ] Microsoft OAuth: Azure AD → App registration → Supabase'e ekle
+- [ ] Apple Developer Program (user said "sonra yapalım")
+- [ ] Facebook Developer App (user said "sonra yapalım")
+
+#### ÖNCELİK 4 — Plan 2/3 Hazırlık (gelecek)
+- [ ] Supabase Pro plan upgrade (ölçeklenme için)
+- [ ] Sample images: gradient placeholder'lar → gerçek AI headshot örnekleri
 
 ### Performance Backlog (Optional Improvements)
 - [x] credit-packages.tsx: converted to server component (removed unnecessary 'use client')
