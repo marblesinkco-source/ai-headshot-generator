@@ -1,0 +1,84 @@
+{
+  "features": [
+    {
+      "id": "feat-A",
+      "name": "Phase A — Audit",
+      "description": "Repo / routes / pricing / categories / auth / payment / upload / generation / legal / broken links tam denetim",
+      "dependencies": [],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "feat-B",
+      "name": "Phase B — Global Design System",
+      "description": "Logo / tokens / typography / spacing / grid / button states / cards — brand kurallarına uygun",
+      "dependencies": ["feat-A"],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "feat-C",
+      "name": "Phase C — Navigation",
+      "description": "Header / mega menu (3 sütun 12 kategori) / mobile nav / active states / sticky / kompakt scroll",
+      "dependencies": ["feat-B"],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "feat-D",
+      "name": "Phase D — Homepage",
+      "description": "Hero / quick chooser / customization / before-after / categories / pricing / FAQ / footer — V3 Master sırasına uygun",
+      "dependencies": ["feat-C"],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "feat-E",
+      "name": "Phase E — 12 Category Pages",
+      "description": "Tek reusable şablon + category data: breadcrumb, hero, benefits, before-after, gallery, use cases, how-it-works, pricing teaser, FAQ, related, CTA",
+      "dependencies": ["feat-D"],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "feat-F",
+      "name": "Phase F — Conversion Pages",
+      "description": "Pricing / examples / how it works / FAQ / blog / contact sayfaları",
+      "dependencies": ["feat-D"],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "feat-G",
+      "name": "Phase G — Funnel",
+      "description": "Signup / signin / checkout / upload / generation / results akışı",
+      "dependencies": ["feat-F"],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "feat-H",
+      "name": "Phase H — Cleanup",
+      "description": "Broken/unused/redundant components, dead links, duplicate sections, console errors temizliği",
+      "dependencies": ["feat-D"],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "feat-I",
+      "name": "Phase I — Performance + Accessibility + SEO",
+      "description": "next/image, lazy load, code split, WCAG AA, semantic headings, OG/meta, sitemap, schema",
+      "dependencies": ["feat-H"],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "feat-J",
+      "name": "Phase J — QA",
+      "description": "Build / typecheck / lint / desktop-mobile test / auth / Stripe / upload / generation / legal links / console errors / Lighthouse",
+      "dependencies": ["feat-I"],
+      "status": "not-started",
+      "evidence": ""
+    }
+  ]
+}

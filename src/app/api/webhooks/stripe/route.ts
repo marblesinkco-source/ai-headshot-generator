@@ -159,6 +159,10 @@ export async function POST(request: NextRequest) {
 
             if (creditError) {
               logger.error('Failed to create credits:', creditError);
+              return NextResponse.json(
+                { error: 'Failed to create credits' },
+                { status: 500 }
+              );
             }
 
             // Record purchase transaction

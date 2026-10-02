@@ -44,7 +44,7 @@ const GATE_BYPASS_PREFIXES = [
 const PROTECTED_PREFIXES = ["/dashboard"];
 
 /** Routes that authenticated users should not see (login, signup, etc.). */
-const AUTH_ROUTES = ["/auth/login", "/auth/register", "/auth/forgot-password", "/auth/reset-password"];
+const AUTH_ROUTES = ["/auth/login", "/auth/register", "/auth/forgot-password"];
 
 export async function middleware(request: NextRequest) {
   const { user, response } = await updateSession(request);

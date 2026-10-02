@@ -33,16 +33,19 @@ export async function POST(request: NextRequest) {
     const webhookSecret = process.env.REPLICATE_WEBHOOK_SECRET;
     const body = await request.text();
 
-    if (webhookSecret) {
-      const isValid = await replicate.webhooks.default.verify(
-        body,
-        Object.fromEntries(request.headers) as Record<string, string>
-      ).catch(() => false);
+    if (!webhookSecret) {
+      logger.error('REPLICATE_WEBHOOK_SECRET not configured — rejecting webhook');
+      return NextResponse.json({ error: 'Webhook secret not configured' }, { status: 500 });
+    }
 
-      if (!isValid) {
-        logger.error('Invalid Replicate webhook signature');
-        return NextResponse.json({ error: 'Invalid signature' }, { status: 401 });
-      }
+    const isValid = await replicate.webhooks.default.verify(
+      body,
+      Object.fromEntries(request.headers) as Record<string, string>
+    ).catch(() => false);
+
+    if (!isValid) {
+      logger.error('Invalid Replicate webhook signature');
+      return NextResponse.json({ error: 'Invalid signature' }, { status: 401 });
     }
 
     const url = new URL(request.url);

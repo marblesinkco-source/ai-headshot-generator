@@ -15,7 +15,7 @@ const MAX_FILES = 10;
 const DEFAULT_MIN_PHOTOS = 4;
 
 const uploadMetaSchema = z.object({
-  orderId: z.string().uuid(),
+  orderId: z.string().min(1).max(100),
 });
 
 export async function POST(request: NextRequest) {
