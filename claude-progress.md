@@ -102,6 +102,9 @@
 97. `5b07596` — AI vs generic comparison and team showcase sections
 98. `10ee31d` — Outfit/backdrop customizer and style rotation strip to homepage
 99. `ee09c4a` — Filterable results gallery to homepage (12 portrait styles, 4 category tabs)
+100. `06f88aa` — Package quiz recommender + eagerly import near-fold sections
+101. `bd4b22b` — Price receipt card + style configurator to homepage
+102. `bcf93c8` — Interactive Studio vs AI cost calculator with team slider
 
 ### Completed Features
 - [x] Homepage results gallery — filterable portrait gallery with 12 styles across 4 categories
