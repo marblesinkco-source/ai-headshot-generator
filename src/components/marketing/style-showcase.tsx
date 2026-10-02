@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
 import { Check, ChevronLeft, ChevronRight } from 'lucide-react';
+import { PortraitSilhouette } from '@/components/marketing/portrait-silhouette';
 
 const STYLES = [
   {
@@ -134,12 +135,7 @@ export function StyleShowcase() {
                     key={n}
                     className="relative flex h-24 w-20 flex-col items-center justify-end overflow-hidden rounded-tp-button bg-white/70 shadow-sm backdrop-blur-sm sm:h-28 sm:w-24"
                   >
-                    {/* Shoulders */}
-                    <div className="absolute bottom-0 h-[35%] w-[80%] rounded-t-[45%] bg-tp-ink/15" />
-                    {/* Neck */}
-                    <div className="absolute bottom-[32%] h-[8%] w-[16%] rounded-md bg-tp-beige/80" />
-                    {/* Head */}
-                    <div className="absolute bottom-[37%] aspect-square w-[35%] rounded-full bg-tp-beige/80 shadow-inner" />
+                    <PortraitSilhouette outfitColor="#2A2A2E" />
                   </div>
                 ))}
               </div>

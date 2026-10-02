@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
 import { Shuffle, ArrowRight, Palette } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { PortraitSilhouette } from '@/components/marketing/portrait-silhouette';
 
 const BACKDROPS = [
   { id: 'studio-gray', label: 'Studio Gray', gradient: 'from-[#E8E6E0] to-[#C8C6C0]' },
@@ -137,15 +138,7 @@ export function StyleConfigurator() {
                 bg.gradient
               )}
             >
-              {/* Shoulders */}
-              <div
-                className="absolute bottom-0 left-1/2 h-[35%] w-[75%] -translate-x-1/2 rounded-t-[45%] transition-colors duration-500"
-                style={{ backgroundColor: fit.color }}
-              />
-              {/* Neck */}
-              <div className="absolute bottom-[32%] left-1/2 h-[8%] w-[14%] -translate-x-1/2 rounded-md bg-tp-beige/70" />
-              {/* Head */}
-              <div className="absolute bottom-[37%] left-1/2 aspect-square w-[30%] -translate-x-1/2 rounded-full bg-tp-beige/70 shadow-inner" />
+              <PortraitSilhouette outfitColor={fit.color} />
               {/* Glow */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-white/10" />
               {/* Labels */}

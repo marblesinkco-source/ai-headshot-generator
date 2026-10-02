@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ArrowRight, Check } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { PortraitSilhouette } from '@/components/marketing/portrait-silhouette';
 
 const BACKDROPS = [
   { id: 'studio-white', name: 'Studio White', background: 'linear-gradient(160deg, #FFFFFF 0%, #EFEDE8 100%)' },
@@ -137,13 +138,10 @@ export function OutfitPreview() {
                   />
                 )}
               </div>
-              {/* Neck (turtleneck gets outfit colour) */}
-              <div
-                className="absolute bottom-[34%] left-1/2 h-[10%] w-[16%] -translate-x-1/2 rounded-md bg-tp-beige transition-colors duration-300"
-                style={outfit.style === 'turtleneck' ? { backgroundColor: outfit.accent } : undefined}
-              />
-              {/* Head */}
-              <div className="absolute bottom-[40%] left-1/2 aspect-square w-[34%] -translate-x-1/2 rounded-full bg-tp-beige shadow-inner" />
+              {/* Neck + head (shoulders above are drawn by the div) */}
+              <div className="absolute inset-0 -translate-y-[8%]">
+                <PortraitSilhouette bare outfitColor={outfit.color} neckColor={outfit.style === 'turtleneck' ? outfit.accent : undefined} />
+              </div>
 
               <span className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-tp-ink">
                 Illustrative preview

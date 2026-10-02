@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { PortraitSilhouette } from '@/components/marketing/portrait-silhouette';
 
 const TABS = ['All', 'Corporate', 'LinkedIn', 'Creative', 'Casual'] as const;
 
@@ -29,15 +30,7 @@ function PortraitCard({ result }: { result: typeof RESULTS[number] }) {
         className="relative aspect-[3/4] overflow-hidden"
         style={{ background: result.backdrop }}
       >
-        {/* Shoulders */}
-        <div
-          className="absolute bottom-0 left-1/2 h-[35%] w-[75%] -translate-x-1/2 rounded-t-[45%]"
-          style={{ backgroundColor: result.outfit }}
-        />
-        {/* Neck */}
-        <div className="absolute bottom-[32%] left-1/2 h-[8%] w-[14%] -translate-x-1/2 rounded-md bg-tp-beige" />
-        {/* Head */}
-        <div className="absolute bottom-[37%] left-1/2 aspect-square w-[30%] -translate-x-1/2 rounded-full bg-tp-beige shadow-inner" />
+        <PortraitSilhouette outfitColor={result.outfit} />
       </div>
       <div className="bg-white p-3">
         <p className="text-sm font-medium text-tp-ink">{result.label}</p>
