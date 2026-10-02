@@ -1,0 +1,55 @@
+name: Download Category Images
+
+on:
+  workflow_dispatch:
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create directory
+        run: mkdir -p public/images/categories
+
+      - name: Download images from Unsplash
+        run: |
+          declare -A IMAGES=(
+            ["headshots"]="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=600&fit=crop&auto=format&q=80"
+            ["dating"]="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=800&h=600&fit=crop&auto=format&q=80"
+            ["pet-portraits"]="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&h=600&fit=crop&auto=format&q=80"
+            ["family-portraits"]="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=800&h=600&fit=crop&auto=format&q=80"
+            ["ecommerce-product"]="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop&auto=format&q=80"
+            ["linkedin-team"]="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&h=600&fit=crop&auto=format&q=80"
+            ["couple-engagement"]="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=800&h=600&fit=crop&auto=format&q=80"
+            ["graduation"]="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=800&h=600&fit=crop&auto=format&q=80"
+            ["baby-shower"]="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=800&h=600&fit=crop&auto=format&q=80"
+            ["holiday-cards"]="https://images.unsplash.com/photo-1512389142860-9c449e58a814?w=800&h=600&fit=crop&auto=format&q=80"
+            ["real-estate"]="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop&auto=format&q=80"
+            ["avatars"]="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop&auto=format&q=80"
+          )
+
+          for name in "${!IMAGES[@]}"; do
+            echo "Downloading $name..."
+            curl -sL -o "public/images/categories/${name}.jpg" "${IMAGES[$name]}"
+            ls -la "public/images/categories/${name}.jpg"
+          done
+
+          echo "All images downloaded:"
+          ls -la public/images/categories/
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/images/categories/*.jpg
+          git status
+          git commit -m "feat: add real Unsplash category images
+
+          Replace abstract placeholder images with real, high-quality
+          Unsplash photos for all 12 category cards.
+
+          Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>"
+          git push
