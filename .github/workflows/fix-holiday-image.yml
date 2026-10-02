@@ -1,0 +1,51 @@
+name: Fix Holiday Cards Image
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download holiday cards image
+        run: |
+          # Try several holiday/christmas family photo URLs
+          urls=(
+            "https://images.unsplash.com/photo-1543589077-47d81606c1bf?w=800&h=600&fit=crop&auto=format&q=80"
+            "https://images.unsplash.com/photo-1482517967863-00e15c9b44be?w=800&h=600&fit=crop&auto=format&q=80"
+            "https://images.unsplash.com/photo-1513297887119-d46091b24bfa?w=800&h=600&fit=crop&auto=format&q=80"
+          )
+          
+          for url in "${urls[@]}"; do
+            echo "Trying: $url"
+            curl -sL -o public/images/categories/holiday-cards.jpg "$url"
+            filetype=$(file -b public/images/categories/holiday-cards.jpg | head -c 4)
+            if [ "$filetype" = "JPEG" ]; then
+              echo "Success! Downloaded valid JPEG"
+              ls -la public/images/categories/holiday-cards.jpg
+              break
+            else
+              echo "Not a valid JPEG, trying next..."
+            fi
+          done
+          
+          # Final check
+          file public/images/categories/holiday-cards.jpg
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/images/categories/holiday-cards.jpg
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "fix: replace broken holiday-cards image with valid Unsplash photo
+
+          Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>"
+            git push
+          fi
