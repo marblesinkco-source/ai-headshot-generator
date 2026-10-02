@@ -46,7 +46,7 @@ export function Hero() {
 
               <div className="flex flex-wrap gap-3">
                 <Link
-                  href="/auth/register?redirect=/headshots"
+                  href="/auth/register"
                   className="inline-flex items-center gap-5 rounded-tp-button border border-tp-black bg-tp-black px-8 py-4 text-[15px] font-semibold text-tp-paper shadow-md transition-all hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl hover:animate-cta-pulse motion-reduce:hover:animate-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze whitespace-nowrap"
                 >
                   Get My Headshots <span aria-hidden="true" className="text-[22px] leading-none">&#8599;</span>
