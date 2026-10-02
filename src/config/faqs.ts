@@ -93,7 +93,7 @@ export const faqs = [
     category: 'Delivery',
     question: 'Can I get my photos faster?',
     answer:
-      'Most orders are delivered in about 2 hours, and you will receive an email as soon as your photos are ready to download.',
+      'The Lite ($9.90) and Basic ($19.90) packages include 24-hour delivery. Most other orders are completed within 2 hours, and you will receive an email as soon as your photos are ready to download.',
   },
   {
     category: 'Refund',

@@ -72,7 +72,7 @@ export function CostCalculator({ className }: { className?: string }) {
               </li>
               <li className="flex items-center gap-2">
                 <Check className="h-4 w-4 shrink-0 text-tp-bronze" aria-hidden="true" />
-                Delivered in about 2 hours
+                Delivered in 24 hours
               </li>
               <li className="flex items-center gap-2">
                 <Check className="h-4 w-4 shrink-0 text-tp-bronze" aria-hidden="true" />

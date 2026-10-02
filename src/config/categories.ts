@@ -78,7 +78,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
         price: 990,
         currency: 'usd',
         outputCount: 5,
-        features: ['2 backgrounds', '2 styles', 'HD resolution', '~2-hour delivery'],
+        features: ['2 backgrounds', '2 styles', 'HD resolution', '24-hour delivery'],
       },
       {
         id: 'headshots-express',
@@ -86,7 +86,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
         price: 1990,
         currency: 'usd',
         outputCount: 10,
-        features: ['3 backgrounds', '3 styles', 'HD resolution', '~2-hour delivery'],
+        features: ['3 backgrounds', '3 styles', 'HD resolution', '24-hour delivery'],
       },
       {
         id: 'headshots-starter',
@@ -142,7 +142,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
         price: 1990,
         currency: 'usd',
         outputCount: 10,
-        features: ['2 scene styles', 'Natural lighting', 'HD resolution', '~2-hour delivery'],
+        features: ['2 scene styles', 'Natural lighting', 'HD resolution', '24-hour delivery'],
       },
       {
         id: 'dating-basic',
@@ -302,7 +302,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
         price: 1990,
         currency: 'usd',
         outputCount: 10,
-        features: ['2 design themes', 'Digital download', 'HD resolution', '~2-hour delivery'],
+        features: ['2 design themes', 'Digital download', 'HD resolution', '24-hour delivery'],
       },
       {
         id: 'babyshower-basic',
@@ -358,7 +358,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
         price: 1990,
         currency: 'usd',
         outputCount: 10,
-        features: ['2 academic settings', 'Cap & gown', 'HD resolution', '~2-hour delivery'],
+        features: ['2 academic settings', 'Cap & gown', 'HD resolution', '24-hour delivery'],
       },
       {
         id: 'grad-basic',
@@ -414,7 +414,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
         price: 1990,
         currency: 'usd',
         outputCount: 10,
-        features: ['2 holiday themes', 'Digital download', 'HD resolution', '~2-hour delivery'],
+        features: ['2 holiday themes', 'Digital download', 'HD resolution', '24-hour delivery'],
       },
       {
         id: 'holiday-basic',
@@ -470,7 +470,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
         price: 1990,
         currency: 'usd',
         outputCount: 10,
-        features: ['2 portrait styles', 'HD resolution', 'Digital delivery', '~2-hour delivery'],
+        features: ['2 portrait styles', 'HD resolution', 'Digital delivery', '24-hour delivery'],
       },
       {
         id: 'family-basic',
@@ -526,7 +526,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
         price: 1990,
         currency: 'usd',
         outputCount: 10,
-        features: ['2 romantic settings', 'HD resolution', 'Digital delivery', '~2-hour delivery'],
+        features: ['2 romantic settings', 'HD resolution', 'Digital delivery', '24-hour delivery'],
       },
       {
         id: 'couple-basic',
@@ -582,7 +582,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
         price: 1990,
         currency: 'usd',
         outputCount: 10,
-        features: ['2 furniture styles', 'Living room & bedroom', 'HD resolution', '~2-hour delivery'],
+        features: ['2 furniture styles', 'Living room & bedroom', 'HD resolution', '24-hour delivery'],
       },
       {
         id: 'realestate-basic',
@@ -638,7 +638,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
         price: 1990,
         currency: 'usd',
         outputCount: 10,
-        features: ['White background', '2 lifestyle scenes', 'HD resolution', '~2-hour delivery'],
+        features: ['White background', '2 lifestyle scenes', 'HD resolution', '24-hour delivery'],
       },
       {
         id: 'product-basic',
@@ -700,7 +700,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
           'HD resolution (1024×1024)',
           'Your exact likeness preserved',
           'Fantasy, Anime, Cyberpunk & more',
-          '~2-hour delivery',
+          '24-hour delivery',
         ],
         recommended: true,
       },

@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered in about 2 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -46,7 +46,7 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Varies by plan; check their site" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on prompts and plan limits" },
-  { label: "Delivery time", tailorpic: "About 2 hours", other: "Varies by settings and queue" },
+  { label: "Delivery time", tailorpic: "Within 24 hours", other: "Varies by settings and queue" },
   { label: "Categories / styles", tailorpic: "11 categories (business, dating, creative, pets and more)", other: "Broad art styles, characters and concepts" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Portraits come from prompts and models; not trained on your photos by default" },
   { label: "Pricing model", tailorpic: "One-time payment, no subscription", other: "Check whether free, credit or subscription plans apply" },
@@ -81,7 +81,7 @@ const useCases = {
 const faqs = [
   { question: "Is TailorPic cheaper than Leonardo AI?", answer: "TailorPic packages start from $1.99 and go up to 160 photos. Leonardo AI pricing varies by plan and can change, so check their current pricing." },
   { question: "Can Leonardo AI make portraits of me?", answer: "Leonardo can generate portraits, but it is an AI art platform and does not automatically train on your photos. TailorPic trains a personal LoRA model on your selfies as part of the service." },
-  { question: "How long does TailorPic take?", answer: "Delivery is in about 2 hours, since a dedicated model is fine-tuned on your uploads." },
+  { question: "How long does TailorPic take?", answer: "Delivery is within 24 hours, since a dedicated model is fine-tuned on your uploads." },
   { question: "Do I need to write prompts with TailorPic?", answer: "No. You upload your photos and receive finished headshots across 11 categories." },
   { question: "Do I need a subscription with TailorPic?", answer: "No. Every package is a single one-time payment (from $1.99) with no recurring fees." },
 ];
@@ -221,7 +221,7 @@ export default function VsLeonardoAiPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 11 categories from $1.99. No subscription, delivered in about 2 hours.
+              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
