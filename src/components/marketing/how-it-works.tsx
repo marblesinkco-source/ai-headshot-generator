@@ -1,40 +1,32 @@
 import Link from 'next/link';
 import { ArrowDown, ArrowRight, Clock, Sparkles } from 'lucide-react';
-import { StepUploadIllustration, StepStyleIllustration, StepPreviewIllustration, StepDownloadIllustration } from '@/components/marketing/illustrations';
+import { StepStyleIllustration, StepUploadIllustration, StepDownloadIllustration } from '@/components/marketing/illustrations';
 import { buttonVariants } from '@/components/ui/button';
 
 const steps = [
   {
     number: '1',
     label: 'Step 1',
-    title: 'Choose your style & upload',
-    Illustration: StepUploadIllustration,
+    title: 'Pick your style and package',
+    Illustration: StepStyleIllustration,
     description:
-      'Pick a photo category — corporate, LinkedIn, dating, creative or more — then upload 10–20 clear selfies. One-time payment, no subscription.',
+      'Choose the photo category that fits your goal, such as corporate, LinkedIn, dating or creative, then select the package that suits you. One-time payment, no subscription.',
   },
   {
     number: '2',
     label: 'Step 2',
-    title: 'AI tailors your photos',
-    Illustration: StepStyleIllustration,
+    title: 'Upload 10–20 selfies',
+    Illustration: StepUploadIllustration,
     description:
-      'Our AI studies your features and generates studio-quality portraits in your chosen style. Delivered in about 2 hours.',
+      'Add 10–20 clear, well-lit selfies (8 minimum) with different angles and expressions. Our AI learns your features from them, and your uploads are auto-deleted within 30 days.',
   },
   {
     number: '3',
     label: 'Step 3',
-    title: 'Preview & choose favorites',
-    Illustration: StepPreviewIllustration,
-    description:
-      'Browse your full set of AI-generated photos. Pick your favorites and request adjustments if needed.',
-  },
-  {
-    number: '4',
-    label: 'Step 4',
-    title: 'Download & use anywhere',
+    title: 'Download your portraits',
     Illustration: StepDownloadIllustration,
     description:
-      'Download high-resolution portraits ready for LinkedIn, resumes, social profiles, websites or print. Your uploads are auto-deleted within 30 days.',
+      'Get your studio-quality portraits in under 2 hours. Browse the full set, save your favorites, and use them on LinkedIn, resumes, social profiles or print.',
   },
 ];
 
@@ -48,7 +40,7 @@ export function HowItWorks() {
         <div>
           <span className="inline-flex items-center gap-1.5 mb-3 rounded-full border border-tp-line bg-tp-paper px-3 py-1 text-[11px] lg:text-xs font-medium text-tp-bronze-ink">
             <Sparkles className="h-3 w-3" aria-hidden="true" />
-            4 simple steps
+            3 simple steps
           </span>
           <h2 className="font-display text-[28px] lg:text-[40px] leading-tight tracking-[-0.03em] font-normal text-tp-ink">
             How it works
@@ -60,7 +52,7 @@ export function HowItWorks() {
         </span>
       </div>
 
-      <ol className="m-0 flex list-none flex-col p-0 lg:grid lg:grid-cols-2 lg:gap-8 xl:grid-cols-4 xl:gap-10">
+      <ol className="m-0 flex list-none flex-col p-0 lg:grid lg:grid-cols-3 lg:gap-14">
         {steps.map((step, index) => {
           const Illustration = step.Illustration;
           const isLast = index === steps.length - 1;
@@ -113,7 +105,7 @@ export function HowItWorks() {
               {/* Desktop connector: horizontal arrow in the gap between steps */}
               {!isLast && (
                 <span
-                  className="pointer-events-none absolute -right-[34px] top-1/2 z-10 hidden h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-tp-bronze bg-tp-paper text-tp-bronze-ink xl:flex"
+                  className="pointer-events-none absolute -right-[48px] top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-tp-bronze bg-tp-paper text-tp-bronze-ink lg:flex"
                   aria-hidden="true"
                 >
                   <ArrowRight className="h-5 w-5" />

@@ -110,37 +110,6 @@ export function StepDownloadIllustration({ className = '' }: { className?: strin
   );
 }
 
-/** Step 4 — preview & choose: grid of portraits with a heart/check selection. */
-export function StepPreviewIllustration({ className = '' }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 160 110" className={className} role="img" aria-label="Preview and choose your favorites" fill="none">
-      {/* 2x2 portrait grid */}
-      <rect x="10" y="14" width="42" height="40" rx="6" fill={PAPER} stroke={BRONZE_INK} strokeWidth="1.5" />
-      <Bust x={31} y={32} scale={0.55} fill={BRONZE} />
-      <rect x="58" y="14" width="42" height="40" rx="6" fill={PAPER} stroke={BEIGE} />
-      <Bust x={79} y={32} scale={0.55} fill={BEIGE} />
-      <rect x="10" y="60" width="42" height="40" rx="6" fill={PAPER} stroke={BEIGE} />
-      <Bust x={31} y={78} scale={0.55} fill={BEIGE} />
-      <rect x="58" y="60" width="42" height="40" rx="6" fill={PAPER} stroke={BEIGE} />
-      <Bust x={79} y={78} scale={0.55} fill={BEIGE} />
-      {/* Check on selected */}
-      <circle cx="44" cy="20" r="8" fill={INK} />
-      <path d="M40 20l3 3 5-6" stroke={BRONZE} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      {/* Star / favorite indicator */}
-      <circle cx="92" cy="20" r="8" fill={PAPER} stroke={BEIGE} />
-      <path d="M92 16l1.5 3 3.5.5-2.5 2.5.5 3.5-3-1.5-3 1.5.5-3.5L87 19.5l3.5-.5z" fill={BRONZE} />
-      {/* Side panel - selection summary */}
-      <rect x="112" y="14" width="40" height="86" rx="8" fill={INK} />
-      <rect x="116" y="20" width="32" height="4" rx="2" fill={BRONZE} />
-      <rect x="116" y="28" width="24" height="3" rx="1.5" fill={BRONZE} fillOpacity="0.4" />
-      <rect x="116" y="36" width="32" height="24" rx="4" fill={BRONZE} fillOpacity="0.2" />
-      <Bust x={132} y={48} scale={0.45} fill={BRONZE} />
-      <rect x="116" y="66" width="32" height="24" rx="4" fill={BRONZE} fillOpacity="0.2" />
-      <Bust x={132} y={78} scale={0.45} fill={BRONZE} />
-    </svg>
-  );
-}
-
 /** Custom trust-badge glyphs (stroke icons, 24x24, currentColor). */
 export function TrustGlyph({ kind, className = '' }: { kind: 'no-subscription' | 'auto-delete' | 'commercial' | 'one-time'; className?: string }) {
   const common = { fill: 'none', stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };

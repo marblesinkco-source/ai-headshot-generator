@@ -25,19 +25,19 @@ export function Hero() {
             {/* Copy */}
             <div className="pt-6 pb-6 lg:pt-[45px] lg:pb-[42px] relative z-10">
               <p className="uppercase text-[11px] font-semibold tracking-[0.25em] text-tp-bronze-ink mb-5">
-                Professional. Personal. Creative.
+                Studio quality. Without the studio.
               </p>
 
               <h1
                 id="tp-title"
-                className="font-display text-[clamp(44px,5.6vw,82px)] leading-[1.06] tracking-[-0.04em] font-normal mb-6 max-w-[660px]"
+                className="font-display text-[clamp(48px,5.6vw,86px)] leading-[1.04] tracking-[-0.057em] font-normal mb-6 max-w-[720px]"
               >
-                Your Best Photo,{' '}<br className="hidden sm:inline" />
-                <em className="text-tp-bronze-ink not-italic font-normal font-display italic">Tailored&nbsp;by&nbsp;AI.</em>
+                Professional{' '}<em className="text-tp-bronze-ink not-italic font-normal font-display italic">AI&nbsp;Headshots</em><br />
+                in Under 2&nbsp;Hours
               </h1>
 
               <p className="text-[16px] text-tp-ink/80 leading-[1.7] max-w-[485px] mb-4">
-                Upload a few selfies and get studio-quality photos in about 2 hours &mdash; from a single photo to a full set of 160. Pay once, no subscription.
+                Upload a few selfies and get studio-quality headshots in about 2 hours &mdash; from a single photo to a full set of 160. Pay once &mdash; no subscription, no studio, no scheduling.
               </p>
               <p className="text-[13px] text-tp-muted leading-[1.6] max-w-[485px] mb-7">
                 <span className="line-through text-tp-muted">Traditional photoshoot: $200&ndash;$500</span>
@@ -47,30 +47,31 @@ export function Hero() {
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/auth/register?redirect=/headshots"
-                  className="inline-flex items-center gap-3 rounded-tp-button border border-tp-black bg-tp-black px-8 py-4 text-[15px] font-semibold text-tp-paper shadow-md transition-all hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze whitespace-nowrap"
+                  className="inline-flex items-center gap-5 rounded-tp-button border border-tp-black bg-tp-black px-8 py-4 text-[15px] font-semibold text-tp-paper shadow-md transition-all hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl hover:animate-cta-pulse motion-reduce:hover:animate-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze whitespace-nowrap"
                 >
-                  Create Your Photos
-                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
+                  Get My Headshots <span aria-hidden="true" className="text-[22px] leading-none">&#8599;</span>
                 </Link>
                 <a
                   href="#how-it-works"
                   className="inline-flex items-center gap-3 rounded-tp-button border border-tp-bronze-ink/40 bg-transparent px-6 py-3.5 text-sm font-semibold text-tp-ink transition-all hover:bg-tp-beige/20 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
                 >
-                  See How It Works
-                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
-                  </svg>
+                  See How It Works <span aria-hidden="true" className="text-[22px] leading-none">&#8595;</span>
                 </a>
               </div>
 
+              {/* Friction reducer */}
+              <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-tp-muted mt-3">
+                <span className="inline-flex items-center gap-1">
+                  <svg className="h-3 w-3 text-tp-bronze-ink" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                  No credit card needed
+                </span>
+              </div>
+
               {/* Trust signals */}
-              <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[12px] font-medium text-tp-ink" aria-label="Why buy with confidence">
+              <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-[12px] font-medium text-tp-ink" aria-label="Why buy with confidence">
                 {[
-                  { label: `${BASE_PRICE_DISPLAY} one-time, no subscription`, d: 'M12 8c-1.7 0-3 .9-3 2s1.3 2 3 2 3 .9 3 2-1.3 2-3 2m0-8V6m0 12v-2m9-4a9 9 0 11-18 0 9 9 0 0118 0z' },
+                  { label: `One-time ${BASE_PRICE_DISPLAY}, no subscription`, d: 'M12 8c-1.7 0-3 .9-3 2s1.3 2 3 2 3 .9 3 2-1.3 2-3 2m0-8V6m0 12v-2m9-4a9 9 0 11-18 0 9 9 0 0118 0z' },
                   { label: 'Delivered in about 2 hours', d: 'M12 6v6l4 2m5-2a9 9 0 11-18 0 9 9 0 0118 0z' },
-                  { label: 'No credit card needed to start', d: 'M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z' },
                 ].map((t) => (
                   <li key={t.label} className="inline-flex items-center gap-1.5">
                     <svg className="h-4 w-4 text-tp-bronze-ink" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d={t.d} /></svg>
