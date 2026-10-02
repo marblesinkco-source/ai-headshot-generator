@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
 import { Users, ArrowRight, Check, Shield, Clock, CreditCard } from 'lucide-react';
-import { PortraitSilhouette } from '@/components/marketing/portrait-silhouette';
 
 const TEAM_BENEFITS = [
   {
@@ -105,7 +104,15 @@ export function TeamShowcase() {
                   key={i}
                   className={`relative aspect-square overflow-hidden rounded-tp-button bg-gradient-to-br ${card.bg}`}
                 >
-                  <PortraitSilhouette outfitColor={card.outfit} />
+                  {/* Shoulders */}
+                  <div
+                    className="absolute bottom-0 left-1/2 h-[35%] w-[75%] -translate-x-1/2 rounded-t-[45%]"
+                    style={{ backgroundColor: card.outfit }}
+                  />
+                  {/* Neck */}
+                  <div className="absolute bottom-[32%] left-1/2 h-[8%] w-[14%] -translate-x-1/2 rounded-md bg-tp-beige/70" />
+                  {/* Head */}
+                  <div className="absolute bottom-[37%] left-1/2 aspect-square w-[30%] -translate-x-1/2 rounded-full bg-tp-beige/70 shadow-inner" />
                 </div>
               ))}
             </div>
