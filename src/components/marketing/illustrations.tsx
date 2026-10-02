@@ -310,6 +310,107 @@ export function BeforeAfterIllustration({ className = '' }: { className?: string
   );
 }
 
+/** LinkedIn profile card — a profile header with a polished headshot and connection info. */
+export function LinkedInProfileIllustration({ className = '' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 300 180" className={className} role="img" aria-label="LinkedIn profile with a professional headshot" fill="none">
+      {/* Card background */}
+      <rect x="10" y="10" width="280" height="160" rx="12" fill={PAPER} stroke={BEIGE} strokeWidth="1.5" />
+      {/* Banner stripe */}
+      <rect x="10" y="10" width="280" height="50" rx="12" fill={INK} />
+      <rect x="10" y="40" width="280" height="20" fill={INK} />
+      {/* Profile photo circle */}
+      <circle cx="70" cy="62" r="32" fill={PAPER} stroke={PAPER} strokeWidth="4" />
+      <circle cx="70" cy="62" r="28" fill={BEIGE} fillOpacity="0.5" />
+      <Bust x={70} y={66} scale={0.85} />
+      {/* Name + title */}
+      <rect x="116" y="66" width="90" height="6" rx="3" fill={INK} fillOpacity="0.85" />
+      <rect x="116" y="78" width="60" height="5" rx="2.5" fill={BRONZE} />
+      {/* Connection count */}
+      <rect x="116" y="92" width="40" height="4" rx="2" fill={BEIGE} />
+      {/* CTA buttons */}
+      <rect x="40" y="118" width="70" height="24" rx="12" fill={INK} />
+      <rect x="53" y="127" width="44" height="6" rx="3" fill={BRONZE} />
+      <rect x="120" y="118" width="70" height="24" rx="12" fill="none" stroke={INK} strokeWidth="1.5" />
+      <rect x="133" y="127" width="44" height="6" rx="3" fill={INK} fillOpacity="0.6" />
+      {/* Checkmark badge */}
+      <circle cx="252" cy="34" r="10" fill={BRONZE_INK} />
+      <path d="M247 34l3.5 3.5 5.5-7" stroke={PAPER} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Stats row */}
+      <rect x="40" y="152" width="220" height="4" rx="2" fill={BEIGE} fillOpacity="0.7" />
+    </svg>
+  );
+}
+
+/** About mission — globe with multiple diverse busts around it, representing accessibility. */
+export function AboutMissionIllustration({ className = '' }: { className?: string }) {
+  const people = [
+    { x: 60, y: 70, s: 0.65, f: BRONZE_INK },
+    { x: 140, y: 40, s: 0.8, f: BRONZE },
+    { x: 220, y: 70, s: 0.65, f: BRONZE_INK },
+    { x: 90, y: 120, s: 0.55, f: BRONZE },
+    { x: 190, y: 120, s: 0.55, f: BRONZE },
+  ];
+  return (
+    <svg viewBox="0 0 280 160" className={className} role="img" aria-label="People around the world accessing professional photos" fill="none">
+      {/* Central dotted circle — globe metaphor */}
+      <circle cx="140" cy="80" r="50" stroke={BEIGE} strokeWidth="1.5" strokeDasharray="4 4" />
+      <circle cx="140" cy="80" r="35" stroke={BEIGE} strokeWidth="1" strokeDasharray="3 4" />
+      {/* Connecting lines from people to center */}
+      {people.map((p, i) => (
+        <line key={i} x1={p.x} y1={p.y - 10} x2={140} y2={80} stroke={BEIGE} strokeWidth="1" strokeDasharray="2 3" />
+      ))}
+      {/* People */}
+      {people.map((p, i) => (
+        <g key={i}>
+          <circle cx={p.x} cy={p.y - 14 * p.s} r={16 * p.s} fill={PAPER} stroke={BEIGE} strokeWidth="1" />
+          <Bust x={p.x} y={p.y} scale={p.s} fill={p.f} />
+        </g>
+      ))}
+      {/* Center sparkle / AI symbol */}
+      <circle cx="140" cy="80" r="14" fill={INK} />
+      <path d="M135 80h10M140 75v10" stroke={BRONZE} strokeWidth="2" strokeLinecap="round" />
+      <circle cx="133" cy="73" r="2" fill={BRONZE} fillOpacity="0.5" />
+      <circle cx="147" cy="73" r="2" fill={BRONZE} fillOpacity="0.5" />
+      <circle cx="133" cy="87" r="2" fill={BRONZE} fillOpacity="0.5" />
+      <circle cx="147" cy="87" r="2" fill={BRONZE} fillOpacity="0.5" />
+    </svg>
+  );
+}
+
+/** Free trial — phone with upload arrow + star badge, conveying easy & affordable. */
+export function FreeTrialIllustration({ className = '' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 240 160" className={className} role="img" aria-label="Upload selfies and get headshots affordably" fill="none">
+      {/* Phone outline */}
+      <rect x="80" y="8" width="80" height="144" rx="14" fill={PAPER} stroke={BEIGE} strokeWidth="1.5" />
+      {/* Screen */}
+      <rect x="88" y="24" width="64" height="100" rx="4" fill={BEIGE} fillOpacity="0.35" />
+      {/* Bust in screen */}
+      <Bust x={120} y={76} scale={1} />
+      {/* Upload arrow on left */}
+      <g opacity="0.7">
+        <circle cx="40" cy="80" r="20" fill={BEIGE} fillOpacity="0.5" />
+        <path d="M40 90V72m0 0l-6 6m6-6l6 6" stroke={BRONZE_INK} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      </g>
+      {/* Arrow from upload to phone */}
+      <path d="M62 80h16" stroke={BRONZE_INK} strokeWidth="1.5" strokeDasharray="3 3" />
+      {/* Star/sparkle on right */}
+      <g opacity="0.7">
+        <circle cx="200" cy="80" r="20" fill={BEIGE} fillOpacity="0.5" />
+        <path d="M200 66l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill={BRONZE_INK} />
+      </g>
+      {/* Arrow from phone to star */}
+      <path d="M162 80h18" stroke={BRONZE_INK} strokeWidth="1.5" strokeDasharray="3 3" />
+      {/* Price badge */}
+      <rect x="90" y="128" width="60" height="16" rx="8" fill={INK} />
+      <rect x="100" y="133" width="40" height="6" rx="3" fill={BRONZE} />
+      {/* Top notch */}
+      <rect x="104" y="12" width="32" height="6" rx="3" fill={BEIGE} fillOpacity="0.6" />
+    </svg>
+  );
+}
+
 /** Pricing tiers — three ascending cards, the middle one highlighted. */
 export function PricingVisualIllustration({ className = '' }: { className?: string }) {
   const cards = [

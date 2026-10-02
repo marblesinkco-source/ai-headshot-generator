@@ -6,6 +6,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
+import { LinkedInProfileIllustration } from '@/components/marketing/illustrations';
 import {
   Camera,
   Sparkles,
@@ -228,13 +229,7 @@ export default function LinkedInHeadshotsPage() {
             </div>
           </div>
           <div className="mx-auto w-full max-w-sm" aria-hidden="true">
-            <div className="rounded-tp-card border border-tp-line bg-white p-6">
-              <div className="mx-auto flex h-40 w-40 items-center justify-center rounded-full bg-gradient-to-br from-tp-beige to-tp-bronze">
-                <Camera className="h-10 w-10 text-tp-ink/60" />
-              </div>
-              <p className="mt-5 text-center text-sm font-medium text-tp-ink">Your LinkedIn photo</p>
-              <p className="mt-1 text-center text-xs text-tp-muted">Placeholder illustration</p>
-            </div>
+            <LinkedInProfileIllustration className="w-full h-auto" />
           </div>
         </div>
       </section>

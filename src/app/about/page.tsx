@@ -6,6 +6,7 @@ import { Footer } from '@/components/marketing/footer';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema, OrganizationSchema } from '@/components/structured-data';
+import { AboutMissionIllustration } from '@/components/marketing/illustrations';
 import {
   Shield,
   Zap,
@@ -180,6 +181,9 @@ export default function AboutPage() {
             <Link href="/samples" className={buttonVariants({ variant: 'outline', size: 'lg' })}>
               See Sample Photos
             </Link>
+          </div>
+          <div className="mx-auto mt-12 max-w-sm">
+            <AboutMissionIllustration className="w-full h-auto" />
           </div>
         </div>
       </section>

@@ -6,6 +6,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
+import { FreeTrialIllustration } from '@/components/marketing/illustrations';
 import {
   Camera,
   Sparkles,
@@ -219,8 +220,11 @@ export default function FreeHeadshotGeneratorPage() {
           <ul className="mt-8 flex flex-col items-center justify-center gap-2 text-sm text-tp-muted sm:flex-row sm:gap-6">
             <li className="flex items-center gap-2"><Check className="h-4 w-4 text-tp-bronze-ink" />No studio or booking</li>
             <li className="flex items-center gap-2"><Check className="h-4 w-4 text-tp-bronze-ink" />From $1.99, no subscription</li>
-            <li className="flex items-center gap-2"><Check className="h-4 w-4 text-tp-bronze-ink" />No subscription required</li>
+            <li className="flex items-center gap-2"><Check className="h-4 w-4 text-tp-bronze-ink" />Most orders within 2 hours</li>
           </ul>
+          <div className="mx-auto mt-10 max-w-xs">
+            <FreeTrialIllustration className="w-full h-auto" />
+          </div>
         </div>
       </section>
 
