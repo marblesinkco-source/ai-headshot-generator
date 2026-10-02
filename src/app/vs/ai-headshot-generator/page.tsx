@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered in about 2 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -46,7 +46,7 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Varies widely between tools" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Often a small set per package" },
-  { label: "Delivery time", tailorpic: "Within 24 hours", other: "Ranges from minutes to hours" },
+  { label: "Delivery time", tailorpic: "About 2 hours", other: "Ranges from minutes to hours" },
   { label: "Categories / styles", tailorpic: "11 categories", other: "Usually a few business-focused styles" },
   { label: "Training method", tailorpic: "Personal LoRA fine-tuning", other: "Some use trained models, others use face-swap templates" },
   { label: "Pricing model", tailorpic: "One-time, no subscription", other: "Mix of packages and subscriptions" },
@@ -82,7 +82,7 @@ const faqs = [
   { question: "What is the best AI headshot generator?", answer: "It depends on budget and needs. TailorPic is built for low cost, likeness quality and variety, with photos across 11 categories from $1.99." },
   { question: "How is TailorPic different from generic AI headshot generators?", answer: "It fine-tunes a LoRA model on your own photos instead of relying on fixed templates, and it covers categories beyond business." },
   { question: "What should I compare before buying?", answer: "Look at photo count, training method, turnaround, satisfaction guarantee and whether pricing is one-time or recurring." },
-  { question: "How many photos will I receive?", answer: "TailorPic delivers photos within 24 hours." },
+  { question: "How many photos will I receive?", answer: "TailorPic delivers photos in about 2 hours." },
   { question: "Is there a subscription?", answer: "No. TailorPic packages are one-time payments starting at $1.99." },
 ];
 
@@ -221,7 +221,7 @@ export default function VsAiHeadshotGeneratorPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
+              Professional photos across 11 categories from $1.99. No subscription, delivered in about 2 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

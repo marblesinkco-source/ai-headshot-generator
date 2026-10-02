@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered in about 2 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -46,7 +46,7 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Confirm current pricing on their site" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on the plan" },
-  { label: "Delivery time", tailorpic: "Within 24 hours", other: "Varies by plan" },
+  { label: "Delivery time", tailorpic: "About 2 hours", other: "Varies by plan" },
   { label: "Categories / styles", tailorpic: "11 categories", other: "Headshot-focused style options" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
   { label: "Pricing model", tailorpic: "One-time payment", other: "Check for packages or subscriptions" },
@@ -81,7 +81,7 @@ const useCases = {
 const faqs = [
   { question: "How does TailorPic pricing compare to Vivid Headshots?", answer: "TailorPic packages start from $1.99 and go up to 160 photos. Check Vivid Headshots' current pricing, as it may change." },
   { question: "What categories does TailorPic support?", answer: "Eleven, including business, dating, creative, pet portraits and e-commerce photos." },
-  { question: "How quickly will I get my photos?", answer: "Within 24 hours." },
+  { question: "How quickly will I get my photos?", answer: "In about 2 hours." },
   { question: "Is there a satisfaction guarantee?", answer: "Yes, TailorPic offers a satisfaction guarantee." },
   { question: "Is it a subscription?", answer: "No, every package is a one-time payment starting at $1.99." },
 ];
@@ -221,7 +221,7 @@ export default function VsVividHeadshotsPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
+              Professional photos across 11 categories from $1.99. No subscription, delivered in about 2 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

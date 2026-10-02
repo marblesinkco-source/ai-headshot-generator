@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered in about 2 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -46,7 +46,7 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Included with ChatGPT plans; check their site" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "A few images per request; limits vary by plan" },
-  { label: "Delivery time", tailorpic: "Within 24 hours", other: "Usually quick per image" },
+  { label: "Delivery time", tailorpic: "About 2 hours", other: "Usually quick per image" },
   { label: "Categories / styles", tailorpic: "11 categories (business, dating, creative, pets and more)", other: "General-purpose images from text and reference photos" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "No personal model training; results depend on the prompt and reference" },
   { label: "Pricing model", tailorpic: "One-time payment, no subscription", other: "Tied to a ChatGPT plan; check their site" },
@@ -60,7 +60,7 @@ const differences = [
   { title: "Specialized vs convenient", body: "ChatGPT is handy for quick images. TailorPic is tuned for headshots, with categories and a workflow designed for that single goal." },
   { title: "A trained model, not a one-off", body: "TailorPic fine-tunes a LoRA model on your selfies, so every photo in the set draws on the same learned likeness." },
   { title: "A full set in one go", body: "You receive photos across 11 categories instead of generating and refining images one at a time." },
-  { title: "Trade-off on speed", body: "ChatGPT can return an image in moments. TailorPic takes up to 24 hours because it trains a dedicated model first." },
+  { title: "Trade-off on speed", body: "ChatGPT can return an image in moments. TailorPic takes about 2 hours because it trains a dedicated model first." },
 ];
 
 const useCases = {
@@ -81,7 +81,7 @@ const useCases = {
 const faqs = [
   { question: "Is TailorPic cheaper than ChatGPT image generation?", answer: "TailorPic packages start from $1.99 and go up to 160 photos. ChatGPT image generation is tied to ChatGPT plans that can change, so check their current pricing." },
   { question: "Can ChatGPT make headshots of me?", answer: "ChatGPT can generate portrait-style images, but it does not train a personal model on your face. TailorPic fine-tunes a LoRA model on your own photos for a consistent likeness." },
-  { question: "How long does TailorPic take?", answer: "Delivery is within 24 hours, since a dedicated model is fine-tuned on your uploads." },
+  { question: "How long does TailorPic take?", answer: "Delivery is in about 2 hours, since a dedicated model is fine-tuned on your uploads." },
   { question: "Do I need to write prompts with TailorPic?", answer: "No. You upload your photos and receive finished headshots across 11 categories." },
   { question: "Do I need a subscription with TailorPic?", answer: "No. Every package is a single one-time payment (from $1.99) with no recurring fees." },
 ];
@@ -221,7 +221,7 @@ export default function VsChatgptImagePage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
+              Professional photos across 11 categories from $1.99. No subscription, delivered in about 2 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

@@ -28,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered in about 2 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -57,7 +57,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   },
   {
     "label": "Delivery time",
-    "tailorpic": "Within 24 hours",
+    "tailorpic": "About 2 hours",
     "other": "Edits are typically instant"
   },
   {
@@ -142,7 +142,7 @@ const faqs = [
   },
   {
     "question": "How long does TailorPic take?",
-    "answer": "Delivery is within 24 hours, since a dedicated model is fine-tuned on your uploads."
+    "answer": "Delivery is in about 2 hours, since a dedicated model is fine-tuned on your uploads."
   },
   {
     "question": "Do I need a subscription with TailorPic?",
@@ -289,7 +289,7 @@ export default function VsSnapseedPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
+              Professional photos across 11 categories from $1.99. No subscription, delivered in about 2 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

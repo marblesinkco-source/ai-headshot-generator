@@ -4261,7 +4261,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h2>Get Started Without Prompting</h2>
-      <p>Skip the prompt engineering. <a href="/auth/register">TailorPic</a> handles everything — upload your selfies, pick your categories, and receive up to 160 professional photos within 24 hours, with packages starting at just $1.99.</p>
+      <p>Skip the prompt engineering. <a href="/auth/register">TailorPic</a> handles everything — upload your selfies, pick your categories, and receive up to 160 professional photos in about 2 hours, with packages starting at just $1.99.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-02-28',
@@ -4982,7 +4982,7 @@ export const blogPosts: BlogPost[] = [
       <p>Surveys of hiring managers and recruiters suggest that most cannot reliably distinguish AI-generated headshots from traditional photographs. A 2024 study found that AI headshots were rated as equally or more professional than photographer-taken images in blind comparisons. The key factor is not the tool but the output: a well-generated AI headshot looks like you in a well-lit studio.</p>
 
       <h2>Time Savings</h2>
-      <p>A traditional headshot session requires scheduling, travel, wardrobe preparation, the shoot itself, and waiting for edited deliverables — typically 1–3 weeks from booking to final image. AI headshots compress this to minutes of uploading selfies and a delivery window of 1–24 hours. TailorPic delivers within 24 hours, and many orders are ready in about 2 hours.</p>
+      <p>A traditional headshot session requires scheduling, travel, wardrobe preparation, the shoot itself, and waiting for edited deliverables — typically 1–3 weeks from booking to final image. AI headshots compress this to minutes of uploading selfies and a short delivery window. TailorPic delivers in about 2 hours.</p>
 
       <h2>Environmental Impact</h2>
       <p>AI headshots eliminate the need for travel to studios, physical lighting equipment, and printed proofs. While AI model training has its own energy footprint, the per-image cost of inference is a fraction of the carbon footprint of a photographer session when travel is factored in.</p>
