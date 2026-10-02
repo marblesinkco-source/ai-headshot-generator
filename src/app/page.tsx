@@ -85,6 +85,14 @@ const TeamShowcase = dynamic(
   () => import('@/components/marketing/team-showcase').then((m) => m.TeamShowcase),
   { loading: () => <SectionSkeleton height="h-[600px]" /> }
 );
+const OutfitPreview = dynamic(
+  () => import('@/components/marketing/outfit-preview').then((m) => m.OutfitPreview),
+  { loading: () => <SectionSkeleton height="h-[600px]" /> }
+);
+const ActivityFeed = dynamic(
+  () => import('@/components/marketing/activity-feed').then((m) => m.ActivityFeed),
+  { loading: () => <SectionSkeleton height="h-12" /> }
+);
 
 export default function LandingPage() {
   return (
@@ -100,7 +108,9 @@ export default function LandingPage() {
       <UseCaseChips />
       <StatsCounter />
       <Categories />
+      <ActivityFeed />
       <StyleShowcase />
+      <OutfitPreview />
       <TrustBadges />
       <TrustStrip />
       <BeforeAfterShowcase />
