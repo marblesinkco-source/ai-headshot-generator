@@ -17,6 +17,8 @@ import { StickyCTA } from '@/components/marketing/sticky-cta';
 import { WebsiteSchema, FAQSchema, SoftwareApplicationSchema, HowToSchema } from '@/components/structured-data';
 import { BeforeAfterShowcase } from '@/components/marketing/before-after-showcase';
 import { DeliveryGuarantee } from '@/components/marketing/delivery-guarantee';
+import { UseCaseChips } from '@/components/marketing/use-case-chips';
+import { PhotoPrepGuide } from '@/components/marketing/photo-prep-guide';
 
 export const metadata: Metadata = {
   title: 'TailorPic — AI Headshots & Professional Photos | From $1.99',
@@ -62,6 +64,10 @@ const CTABanner = dynamic(
   () => import('@/components/marketing/cta-banner').then((m) => m.CTABanner),
   { loading: () => <SectionSkeleton height="h-64" /> }
 );
+const PlanPicker = dynamic(
+  () => import('@/components/marketing/plan-picker').then((m) => m.PlanPicker),
+  { loading: () => <SectionSkeleton height="h-[420px]" /> }
+);
 
 export default function LandingPage() {
   return (
@@ -73,6 +79,7 @@ export default function LandingPage() {
       <Header />
       <Hero />
       <SocialProofBar />
+      <UseCaseChips />
       <StatsCounter />
       <Categories />
       <TrustBadges />
@@ -85,6 +92,8 @@ export default function LandingPage() {
       <DeliveryGuarantee />
       <SavingsHighlight />
       <Pricing />
+      <PlanPicker />
+      <PhotoPrepGuide />
       <PrivacySection />
       <FAQ />
       <CTABanner />
