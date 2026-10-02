@@ -12,25 +12,21 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const categories = getActiveCategories();
 
-// Ordered along the decision funnel: understand (How It Works) -> see proof (Samples) -> decide (Pricing) -> learn more (Blog)
+// Ordered along the decision funnel: understand → see proof → decide → learn
 const navLinks = [
   { label: 'How It Works', href: '/how-it-works' },
-  { label: 'Samples', href: '/samples' },
+  { label: 'Examples', href: '/samples' },
   { label: 'Pricing', href: '/pricing' },
-  { label: 'Blog', href: '/blog' },
+  { label: 'FAQ', href: '/faq' },
 ];
 
 // Secondary pages: reachable from the mobile menu (desktop keeps the nav compact; all are in the footer)
-// Support links first (FAQ, Contact), then evaluation, then company. Team Headshots lives in Photo Types.
 const secondaryLinks = [
-  { label: 'FAQ', href: '/faq' },
   { label: 'Contact', href: '/contact' },
   { label: 'Reviews', href: '/reviews' },
   { label: 'Compare', href: '/vs' },
   { label: 'Enterprise', href: '/enterprise' },
-  { label: 'Industries', href: '/industries' },
-  { label: 'Tools', href: '/tools' },
-  { label: 'Security', href: '/security' },
+  { label: 'Blog', href: '/blog' },
   { label: 'About', href: '/about' },
 ];
 
@@ -56,8 +52,18 @@ export function Header() {
   const userMenuTimer = useRef<ReturnType<typeof setTimeout>>();
   const [user, setUser] = useState<User | null>(null);
   const [loggingOut, setLoggingOut] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const closeTimer = useRef<ReturnType<typeof setTimeout>>();
+
+  // Compact header on scroll
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 24);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   // Close the mobile dialog with a short exit animation (the CSS keyframes live in globals.css)
   function closeMobile() {
@@ -163,8 +169,8 @@ export function Header() {
   }, [megaOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-tp-line/60 bg-tp-paper/85 backdrop-blur-md supports-[backdrop-filter]:bg-tp-paper/75">
-      <div className="mx-auto flex h-20 max-w-[1320px] items-center justify-between px-4 sm:px-7 lg:px-14">
+    <header className={`sticky top-0 z-50 border-b border-tp-line/60 bg-tp-paper/85 backdrop-blur-md supports-[backdrop-filter]:bg-tp-paper/75 transition-[height] duration-200 ${scrolled ? '' : ''}`}>
+      <div className={`mx-auto flex max-w-[1320px] items-center justify-between px-4 sm:px-7 lg:px-14 transition-[height] duration-200 ${scrolled ? 'h-16' : 'h-20'}`}>
         {/* Logo */}
         <Link href="/" className="flex-shrink-0" aria-label="TailorPic home">
           <Image
@@ -197,26 +203,23 @@ export function Header() {
               </svg>
             </button>
 
-            {/* Mega dropdown */}
+            {/* Mega dropdown — 3-column grouped layout */}
             <div
               className="absolute left-1/2 top-full -translate-x-1/2 pt-3"
             >
               <div
                 id="photo-types-menu"
-                className={`w-[680px] rounded-tp-card border border-tp-line/60 bg-white p-5 shadow-xl shadow-tp-black/8 transition-all duration-200 ease-out ${
+                className={`w-[780px] rounded-tp-card border border-tp-line/60 bg-white p-6 shadow-xl shadow-tp-black/8 transition-all duration-200 ease-out ${
                   megaOpen
                     ? 'visible translate-y-0 opacity-100'
                     : 'pointer-events-none invisible -translate-y-1.5 opacity-0'
                 }`}
               >
-                <div className="space-y-4">
+                <div className="grid grid-cols-3 gap-6">
                   {groupedCategories.map((group) => (
                     <div key={group.title}>
-                      <div className="mb-1.5 flex items-baseline gap-2 px-2.5">
-                        <p className="text-[11px] font-semibold uppercase tracking-widest text-tp-bronze-ink">{group.title}</p>
-                        <p className="text-[11px] text-tp-muted">{group.description}</p>
-                      </div>
-                      <div className="grid grid-cols-2 gap-x-5 gap-y-1">
+                      <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-tp-bronze-ink">{group.title}</p>
+                      <div className="space-y-0.5">
                         {group.items.map((cat) => {
                           const catActive = isLinkActive(pathname, `/${cat.slug}`);
                           return (
@@ -224,7 +227,7 @@ export function Header() {
                               key={cat.id}
                               href={`/${cat.slug}`}
                               aria-current={catActive ? 'page' : undefined}
-                              className={`flex items-center gap-3 rounded-xl p-2.5 transition-colors hover:bg-tp-paper ${catActive ? 'bg-tp-paper' : ''}`}
+                              className={`group/item flex items-center gap-3 rounded-xl p-2.5 transition-colors hover:bg-tp-paper ${catActive ? 'bg-tp-paper' : ''}`}
                               onClick={() => setMegaOpen(false)}
                             >
                               <div className="h-10 w-10 flex-shrink-0 overflow-hidden rounded-lg bg-gradient-to-br from-tp-beige to-tp-line">
@@ -237,10 +240,13 @@ export function Header() {
                                   sizes="40px"
                                 />
                               </div>
-                              <div className="min-w-0">
+                              <div className="min-w-0 flex-1">
                                 <p className={`text-[13px] font-semibold ${catActive ? 'text-tp-bronze-ink' : 'text-tp-ink'}`}>{cat.name}</p>
                                 <p className="truncate text-[11px] text-tp-muted">{cat.tagline}</p>
                               </div>
+                              <svg className="h-4 w-4 flex-shrink-0 text-tp-muted/50 transition-colors group-hover/item:text-tp-bronze-ink" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                              </svg>
                             </Link>
                           );
                         })}
@@ -248,13 +254,13 @@ export function Header() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-3 border-t border-tp-line/50 pt-3 text-center">
+                <div className="mt-4 border-t border-tp-line/50 pt-3 text-center">
                   <Link
-                    href="/pricing"
+                    href="/samples"
                     className="text-[12px] font-semibold text-tp-bronze-ink hover:text-tp-black transition-colors"
                     onClick={() => setMegaOpen(false)}
                   >
-                    View All Pricing &rarr;
+                    View All Photo Types &rarr;
                   </Link>
                 </div>
               </div>
@@ -285,7 +291,17 @@ export function Header() {
         </nav>
 
         {/* Desktop Account */}
-        <div className="hidden flex-shrink-0 items-center gap-4 md:flex lg:gap-6">
+        <div className="hidden flex-shrink-0 items-center gap-3 md:flex lg:gap-5">
+          {/* Search icon */}
+          <Link
+            href="/samples"
+            className="flex h-10 w-10 items-center justify-center rounded-full text-tp-muted transition-colors hover:bg-tp-beige/40 hover:text-tp-ink"
+            aria-label="Search photo types"
+          >
+            <svg className="h-[18px] w-[18px]" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+          </Link>
           {user ? (
             <div
               className="relative"
@@ -376,12 +392,12 @@ export function Header() {
               </Link>
               <Link
                 href="/auth/register"
-                className="group inline-flex min-h-[44px] flex-shrink-0 items-center gap-3 whitespace-nowrap rounded-tp-button border border-tp-bronze bg-tp-bronze py-2.5 pl-5 pr-5 lg:pl-6 lg:pr-3 text-sm font-semibold text-tp-black shadow-md shadow-tp-black/15 transition-all hover:-translate-y-0.5 hover:bg-tp-beige hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
+                className="group inline-flex min-h-[44px] flex-shrink-0 items-center gap-2 whitespace-nowrap rounded-tp-button border border-tp-black bg-tp-black py-2.5 px-6 text-sm font-semibold text-tp-paper shadow-md shadow-tp-black/15 transition-all hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
               >
                 Get Started
-                <span className="hidden rounded-lg bg-tp-black px-2.5 py-1 text-[12px] font-bold leading-none text-tp-paper lg:inline">
-                  from {BASE_PRICE_DISPLAY}
-                </span>
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
               </Link>
             </>
           )}

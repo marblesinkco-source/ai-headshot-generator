@@ -7,62 +7,37 @@ import { EmailCapture } from '@/components/marketing/email-capture';
 
 type FooterLink = { label: string; href: string };
 
-const productLinks: FooterLink[] = [
-  { label: 'How It Works', href: '/how-it-works' },
-  { label: 'Pricing', href: '/pricing' },
-  { label: 'Pricing Comparison', href: '/pricing-comparison' },
-  { label: 'Samples', href: '/samples' },
-  { label: 'Photo Styles', href: '/styles' },
-  { label: 'Guarantee', href: '/guarantee' },
-  { label: 'LinkedIn Headshots', href: '/linkedin-headshots' },
-  { label: 'Team Headshots', href: '/team-headshots' },
-  { label: 'AI Avatars', href: '/avatars' },
-  { label: 'Free Headshots', href: '/free-headshot-generator' },
-  { label: 'AI Photo Editor', href: '/editor' },
-];
-
-const solutionLinks: FooterLink[] = [
-  { label: 'Use Cases', href: '/use-cases' },
-  { label: 'Industries', href: '/industries' },
-  { label: 'Enterprise', href: '/enterprise' },
-  { label: 'Students', href: '/students' },
-  { label: 'Integrations', href: '/integrations' },
-  { label: 'API', href: '/developer-api' },
-];
-
-const resourceLinks: FooterLink[] = [
-  { label: 'FAQ', href: '/faq' },
-  { label: 'Help Center', href: '/help' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'Photo Tips', href: '/photo-tips' },
-  { label: 'Success Stories', href: '/success-stories' },
-  { label: 'Free Tools', href: '/tools' },
-  { label: 'Photo Analyzer', href: '/tools/linkedin-photo-analyzer' },
-  { label: 'Cost Calculator', href: '/tools/headshot-cost-calculator' },
-  { label: 'Signature Generator', href: '/tools/email-signature-generator' },
-  { label: 'Glossary', href: '/glossary' },
-  { label: 'Changelog', href: '/changelog' },
-];
-
-// Most-needed links, repeated above the columns so they never get lost in a long list
-const quickLinks: FooterLink[] = [
-  { label: 'Pricing', href: '/pricing' },
-  { label: 'FAQ', href: '/faq' },
-  { label: 'Contact', href: '/contact' },
-  { label: 'Help Center', href: '/help' },
-  { label: 'Guarantee', href: '/guarantee' },
+// Photo Types column — mirrors the category catalog
+const photoTypeLinks: FooterLink[] = [
+  { label: 'Professional Headshots', href: '/headshots' },
+  { label: 'LinkedIn & Team', href: '/linkedin-headshots' },
+  { label: 'E-commerce Product', href: '/ecommerce-product-photography' },
+  { label: 'Real Estate', href: '/real-estate-virtual-staging' },
+  { label: 'Dating Photos', href: '/dating-profile-photos' },
+  { label: 'Family Portraits', href: '/family-portraits' },
+  { label: 'Couple & Engagement', href: '/couple-engagement-photos' },
+  { label: 'Graduation Photos', href: '/graduation-photos' },
+  { label: 'Pet Portraits', href: '/pet-portraits' },
+  { label: 'Baby Shower', href: '/baby-shower-invitations' },
+  { label: 'Holiday Cards', href: '/holiday-cards' },
 ];
 
 const companyLinks: FooterLink[] = [
   { label: 'About', href: '/about' },
-  { label: 'Why TailorPic', href: '/why-tailorpic' },
-  { label: 'Technology', href: '/technology' },
+  { label: 'How It Works', href: '/how-it-works' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'Examples', href: '/samples' },
   { label: 'Reviews', href: '/reviews' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Careers', href: '/careers' },
+];
+
+const supportLinks: FooterLink[] = [
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Help Center', href: '/help' },
   { label: 'Contact', href: '/contact' },
-  { label: 'Partners', href: '/partners' },
-  { label: 'Affiliate', href: '/affiliate' },
-  { label: 'Referral', href: '/referral' },
+  { label: 'Photo Tips', href: '/photo-tips' },
+  { label: 'Free Tools', href: '/tools' },
 ];
 
 const legalLinks: FooterLink[] = [
@@ -73,7 +48,6 @@ const legalLinks: FooterLink[] = [
   { label: 'DPA', href: '/dpa' },
   { label: 'Security', href: '/security' },
   { label: 'Accessibility', href: '/accessibility' },
-  { label: 'Subprocessors', href: '/subprocessors' },
 ];
 
 const linkClass =
@@ -152,26 +126,14 @@ export function Footer() {
           </div>
           <EmailCapture />
         </div>
-        <nav aria-label="Quick links" className="mt-8 flex flex-wrap gap-2 border-t border-tp-muted/30 pt-6">
-          {quickLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="inline-flex min-h-[44px] items-center rounded-tp-button border border-tp-muted/40 px-4 text-[13px] font-semibold text-tp-beige transition-colors hover:border-tp-bronze/60 hover:text-tp-bronze focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
       </div>
 
-      {/* Link columns */}
+      {/* Link columns — 4-column layout per reference */}
       <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 py-12 lg:py-14">
-        <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-5">
-          <FooterColumn title="Product" links={productLinks} />
-          <FooterColumn title="Solutions" links={solutionLinks} />
-          <FooterColumn title="Resources" links={resourceLinks} />
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-4">
+          <FooterColumn title="Photo Types" links={photoTypeLinks} />
           <FooterColumn title="Company" links={companyLinks} />
+          <FooterColumn title="Support" links={supportLinks} />
           <FooterColumn title="Legal" links={legalLinks}>
             <li>
               <CookieSettingsButton className={linkClass} />
