@@ -21,7 +21,7 @@ const navLinks = [
 
 // Secondary pages: reachable from the mobile menu (desktop keeps the nav compact; all are in the footer)
 const secondaryLinks = [
-  { label: 'Free Tools', href: '/tools' },
+  { label: 'Tools', href: '/tools' },
   { label: 'Enterprise', href: '/enterprise' },
   { label: 'Industries', href: '/industries' },
   { label: 'Compare', href: '/vs' },
