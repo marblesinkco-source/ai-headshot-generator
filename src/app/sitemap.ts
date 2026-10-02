@@ -195,6 +195,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.4,
     },
     {
+      url: `${baseUrl}/refund-policy`,
+      changeFrequency: 'yearly',
+      priority: 0.4,
+    },
+    {
+      url: `${baseUrl}/for-teams`,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/vs/betterpic`,
       changeFrequency: 'monthly',
       priority: 0.8,
