@@ -21,6 +21,7 @@ export { formatPrice };
 export const TEAM_PRICES = {
   small: { min: 5, max: 15, perPersonCents: 3900 },
   large: { min: 16, max: 50, perPersonCents: 2900 },
+  premium: { flat: true, priceCents: 19990, maxMembers: 10 },
 } as const;
 
 /** "$9.90" */

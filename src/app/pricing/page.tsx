@@ -42,7 +42,7 @@ const pricingFaqs = [
   {
     question: 'How many photos do I get?',
     answer:
-      'You receive 40+ professional headshots in a variety of styles from a single upload.',
+      'Depending on your plan, you receive 10 to 160+ professional headshots in a variety of styles from a single upload.',
   },
   {
     question: 'Do I need to upload many selfies?',
@@ -90,7 +90,7 @@ const includedFeatures = [
   {
     title: 'Photos',
     items: [
-      '40+ professional headshots from a single upload',
+      '10 to 160+ professional headshots from a single upload',
       'A variety of styles, backgrounds and outfits',
       'High-resolution downloads',
     ],

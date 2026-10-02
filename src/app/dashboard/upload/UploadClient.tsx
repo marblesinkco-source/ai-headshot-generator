@@ -392,13 +392,13 @@ function UploadContent() {
                   <span className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-lg">🎁</span>
                   <div>
                     <h4 className="font-semibold text-tp-ink">
-                      Upgrade to 50 Avatars — Save 45%
+                      Upgrade to 50 Avatars — Best Value
                     </h4>
                     <p className="mt-0.5 text-sm text-tp-muted">
-                      Add <strong className="text-purple-700">20 more avatars</strong> with 5 extra style categories + 4K resolution for just <strong className="text-purple-700">$4.00 more</strong>
+                      Add <strong className="text-purple-700">20 more avatars</strong> with 5 extra style categories + 4K resolution for just <strong className="text-purple-700">$6.00 more</strong>
                     </p>
                     <p className="mt-1 text-xs text-tp-muted">
-                      Total: $8.90 instead of $16.30 if purchased separately
+                      Total: $15.90 instead of $16.50 if purchased separately
                     </p>
                   </div>
                 </div>
@@ -413,7 +413,7 @@ function UploadContent() {
                     handleCheckout('avatar-mega');
                   }}
                 >
-                  Get 50 Avatars — $8.90
+                  Get 50 Avatars — $15.90
                 </Button>
               </div>
             </div>
@@ -430,7 +430,7 @@ function UploadContent() {
                       Add AI Avatars — Special Bundle Price
                     </h4>
                     <p className="mt-0.5 text-sm text-tp-muted">
-                      Get <strong className="text-purple-700">30 unique AI avatars</strong> of yourself for just <strong className="text-purple-700">$3.90</strong> <span className="line-through text-tp-muted/70">$4.90</span> — 20% off when bundled!
+                      Get <strong className="text-purple-700">30 unique AI avatars</strong> of yourself for just <strong className="text-purple-700">$7.90</strong> <span className="line-through text-tp-muted/70">$9.90</span> — 20% off when bundled!
                     </p>
                     <p className="mt-1 text-xs text-tp-muted">
                       Fantasy, Anime, Cyberpunk & 12 more styles — your face, every universe

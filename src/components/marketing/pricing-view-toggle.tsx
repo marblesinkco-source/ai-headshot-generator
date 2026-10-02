@@ -24,6 +24,14 @@ const TEAM_TIERS = [
     highlight: true,
   },
   {
+    name: 'Premium',
+    size: 'Up to 10 people',
+    price: '$199.90',
+    unit: 'flat rate, all-inclusive',
+    highlight: false,
+    isPremium: true,
+  },
+  {
     name: 'Enterprise',
     size: '50+ people',
     price: 'Custom',
@@ -98,7 +106,7 @@ export function PricingViewToggle({ individual }: { individual: ReactNode }) {
                 The more people on your team, the lower the per-person price.
               </p>
             </div>
-            <div className="mt-10 grid gap-6 md:grid-cols-3">
+            <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               {TEAM_TIERS.map((t) => (
                 <div
                   key={t.name}
