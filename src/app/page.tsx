@@ -26,7 +26,6 @@ import { PackageQuizLazy } from '@/components/marketing/package-quiz-lazy';
 import { PriceReceipt } from '@/components/marketing/price-receipt';
 import { StyleConfiguratorLazy } from '@/components/marketing/style-configurator-lazy';
 import { StudioVsAI } from '@/components/marketing/studio-vs-ai';
-import { PlatformPreviewLazy } from '@/components/marketing/platform-preview-lazy';
 
 export const metadata: Metadata = {
   title: 'TailorPic — AI Headshots & Professional Photos | From $1.99',
@@ -121,7 +120,6 @@ export default function LandingPage() {
       <TrustBadges />
       <TrustStrip />
       <BeforeAfterShowcase />
-      <PlatformPreviewLazy />
       <CompanyLogos />
       <HowItWorks />
       <SpeedComparison />
