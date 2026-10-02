@@ -3,100 +3,45 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import dynamic from 'next/dynamic';
 import { Header } from '@/components/marketing/header';
 import { Hero } from '@/components/marketing/hero';
-import { SocialProofBar } from '@/components/marketing/social-proof-bar';
-import { TrustStrip } from '@/components/marketing/trust-strip';
-import { TrustBadges } from '@/components/marketing/trust-badges';
-import { CompanyLogos } from '@/components/marketing/company-logos';
 import { Categories } from '@/components/marketing/categories';
 import { HowItWorks } from '@/components/marketing/how-it-works';
-import { PrivacySection } from '@/components/marketing/privacy-section';
 import { Pricing } from '@/components/marketing/pricing';
 import { faqs } from '@/config/faqs';
 import { Footer } from '@/components/marketing/footer';
-import { StickyCTA } from '@/components/marketing/sticky-cta';
 import { WebsiteSchema, FAQSchema, SoftwareApplicationSchema, HowToSchema } from '@/components/structured-data';
 import { BeforeAfterShowcase } from '@/components/marketing/before-after-showcase';
-import { DeliveryGuarantee } from '@/components/marketing/delivery-guarantee';
-import { UseCaseChips } from '@/components/marketing/use-case-chips';
-import { PhotoPrepGuide } from '@/components/marketing/photo-prep-guide';
-import { GuaranteeStrip } from '@/components/marketing/guarantee-strip';
-import { StatsCounter } from '@/components/marketing/stats-counter';
-import { ActivityFeed } from '@/components/marketing/activity-feed';
-import { PackageQuiz } from '@/components/marketing/package-quiz';
-import { PriceReceipt } from '@/components/marketing/price-receipt';
 import { StyleConfigurator } from '@/components/marketing/style-configurator';
-import { StudioVsAI } from '@/components/marketing/studio-vs-ai';
+import { TrustBadges } from '@/components/marketing/trust-badges';
+import { CompanyLogos } from '@/components/marketing/company-logos';
 
 export const metadata: Metadata = {
   title: 'TailorPic — AI Headshots & Professional Photos | From $1.99',
   description:
-    'Get studio-quality AI headshots in under 2 hours. Multiple styles for business, LinkedIn & creative use. Fast delivery. From $1.99.',
-  openGraph: generateOGMetadata({ title: 'TailorPic — AI Headshots & Professional Photos | From $1.99', description: 
-      'Upload a few selfies, get studio-quality AI headshots in under 2 hours. Professional, creative & business styles.', path: '/' }),
-  twitter: generateTwitterMetadata({ title: 'TailorPic — AI Headshots & Professional Photos | From $1.99', description: 
-      'Upload a few selfies, get studio-quality AI headshots in under 2 hours. Starting at $1.99.' }),
+    'Get studio-quality AI headshots in minutes. Multiple styles for business, LinkedIn & creative use. From $1.99.',
+  openGraph: generateOGMetadata({ title: 'TailorPic — AI Headshots & Professional Photos | From $1.99', description:
+      'Upload a few selfies, get studio-quality AI headshots. Professional, creative & business styles.', path: '/' }),
+  twitter: generateTwitterMetadata({ title: 'TailorPic — AI Headshots & Professional Photos | From $1.99', description:
+      'Upload a few selfies, get studio-quality AI headshots. Starting at $1.99.' }),
   alternates: { canonical: 'https://www.tailorpic.com' },
 };
 
-function SectionSkeleton({ height, dark }: { height: string; dark?: boolean }) {
+function SectionSkeleton({ height }: { height: string }) {
   return (
-    <div aria-hidden="true" className={`flex items-center justify-center ${height} ${dark ? 'bg-tp-ink' : ''}`}>
-      <div className={`h-5 w-5 animate-spin rounded-full border-2 border-t-transparent ${dark ? 'border-tp-bronze/40' : 'border-tp-bronze/30'}`} />
+    <div aria-hidden="true" className={`flex items-center justify-center ${height}`}>
+      <div className="h-5 w-5 animate-spin rounded-full border-2 border-t-transparent border-tp-bronze/30" />
     </div>
   );
 }
 
-// Below-the-fold sections: split into separate chunks (still SSR'd for SEO, JS loads lazily)
-// StatsCounter is eagerly imported (near-fold, small)
-const ComparisonTable = dynamic(
-  () => import('@/components/marketing/comparison-table').then((m) => m.ComparisonTable),
-  { loading: () => <SectionSkeleton height="h-[520px]" /> }
-);
-const Testimonials = dynamic(
-  () => import('@/components/marketing/testimonials').then((m) => m.Testimonials),
-  { loading: () => <SectionSkeleton height="h-[480px]" /> }
-);
+// Below-the-fold sections: lazy load for performance
 const FAQ = dynamic(
   () => import('@/components/marketing/faq').then((m) => m.FAQ),
   { loading: () => <SectionSkeleton height="h-[560px]" /> }
-);
-const SavingsHighlight = dynamic(
-  () => import('@/components/marketing/savings-highlight').then((m) => m.SavingsHighlight),
-  { loading: () => <SectionSkeleton height="h-[400px]" /> }
 );
 const CTABanner = dynamic(
   () => import('@/components/marketing/cta-banner').then((m) => m.CTABanner),
   { loading: () => <SectionSkeleton height="h-64" /> }
 );
-const PlanPicker = dynamic(
-  () => import('@/components/marketing/plan-picker').then((m) => m.PlanPicker),
-  { loading: () => <SectionSkeleton height="h-[420px]" /> }
-);
-const StyleShowcase = dynamic(
-  () => import('@/components/marketing/style-showcase').then((m) => m.StyleShowcase),
-  { loading: () => <SectionSkeleton height="h-[500px]" /> }
-);
-const SpeedComparison = dynamic(
-  () => import('@/components/marketing/speed-comparison').then((m) => m.SpeedComparison),
-  { loading: () => <SectionSkeleton height="h-[400px]" /> }
-);
-const AIvsGeneric = dynamic(
-  () => import('@/components/marketing/ai-vs-generic').then((m) => m.AIvsGeneric),
-  { loading: () => <SectionSkeleton height="h-[500px]" /> }
-);
-const TeamShowcase = dynamic(
-  () => import('@/components/marketing/team-showcase').then((m) => m.TeamShowcase),
-  { loading: () => <SectionSkeleton height="h-[600px]" dark /> }
-);
-const OutfitPreview = dynamic(
-  () => import('@/components/marketing/outfit-preview').then((m) => m.OutfitPreview),
-  { loading: () => <SectionSkeleton height="h-[600px]" /> }
-);
-const ResultsGallery = dynamic(
-  () => import('@/components/marketing/results-gallery').then((m) => m.ResultsGallery),
-  { loading: () => <SectionSkeleton height="h-[700px]" /> }
-);
-// ActivityFeed is eagerly imported (near-fold, tiny)
 
 export default function LandingPage() {
   return (
@@ -105,41 +50,40 @@ export default function LandingPage() {
       <FAQSchema items={faqs} />
       <SoftwareApplicationSchema />
       <HowToSchema />
+
+      {/* 1. Header */}
       <Header />
+
+      {/* 2. Hero — premium editorial image + 2 CTAs */}
       <Hero />
-      <SocialProofBar />
-      <GuaranteeStrip />
-      <UseCaseChips />
-      <StatsCounter />
+
+      {/* 3. Quick Photo Type Chooser — 12 categories grouped */}
       <Categories />
-      <ActivityFeed />
+
+      {/* 4. Style & Customization Preview */}
       <StyleConfigurator />
-      <StyleShowcase />
-      <OutfitPreview />
-      <ResultsGallery />
-      <TrustBadges />
-      <TrustStrip />
+
+      {/* 5. Before / After Comparison */}
       <BeforeAfterShowcase />
-      <CompanyLogos />
+
+      {/* 6. How It Works */}
       <HowItWorks />
-      <SpeedComparison />
-      <Testimonials />
-      <ComparisonTable />
-      <AIvsGeneric />
-      <DeliveryGuarantee />
-      <SavingsHighlight />
-      <StudioVsAI />
-      <TeamShowcase />
-      <PackageQuiz />
+
+      {/* 7. Pricing Overview */}
       <Pricing />
-      <PlanPicker />
-      <PriceReceipt />
-      <PhotoPrepGuide />
-      <PrivacySection />
+
+      {/* 8. Trust & Integrations */}
+      <TrustBadges />
+      <CompanyLogos />
+
+      {/* 9. FAQ Preview */}
       <FAQ />
+
+      {/* 10. Newsletter / Final CTA */}
       <CTABanner />
+
+      {/* 11. Footer */}
       <Footer />
-      <StickyCTA />
     </main>
   );
 }
