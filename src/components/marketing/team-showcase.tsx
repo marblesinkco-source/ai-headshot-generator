@@ -89,23 +89,32 @@ export function TeamShowcase() {
 
           {/* Right: visual grid */}
           <div className="relative">
-            {/* Simulated team grid */}
+            {/* Simulated team portrait grid */}
             <div className="grid grid-cols-3 gap-3">
-              {Array.from({ length: 9 }).map((_, i) => (
+              {[
+                { bg: 'from-[#E8E6E0] to-[#D5D3CD]', outfit: '#1B2A4A' },
+                { bg: 'from-[#DDE5EE] to-[#C2D0E0]', outfit: '#2C3E50' },
+                { bg: 'from-[#F5F5F0] to-[#EFEDE8]', outfit: '#16161A' },
+                { bg: 'from-[#E8EFDD] to-[#C8D8B0]', outfit: '#3F6B8C' },
+                { bg: 'from-[#F0EDEA] to-[#D8D4D0]', outfit: '#1B2A4A' },
+                { bg: 'from-[#1F3A5F] to-[#0F2240]', outfit: '#F5F5F0' },
+                { bg: 'from-[#FCF0DB] to-[#EADCC6]', outfit: '#6B5A48' },
+                { bg: 'from-[#D5D6D8] to-[#A9ABAF]', outfit: '#2C3E50' },
+                { bg: 'from-[#E8D5F0] to-[#C8A8D8]', outfit: '#4A1B6B' },
+              ].map((card, i) => (
                 <div
                   key={i}
-                  className="relative aspect-square overflow-hidden rounded-tp-button bg-tp-beige/10"
+                  className={`relative aspect-square overflow-hidden rounded-tp-button bg-gradient-to-br ${card.bg}`}
                 >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="h-16 w-16 rounded-full bg-tp-beige/20 sm:h-20 sm:w-20" />
-                  </div>
-                  {/* Subtle overlay for visual variety */}
+                  {/* Shoulders */}
                   <div
-                    className="absolute inset-0 bg-gradient-to-br opacity-30"
-                    style={{
-                      background: `linear-gradient(${135 + i * 20}deg, transparent, rgba(201,169,138,0.1))`,
-                    }}
+                    className="absolute bottom-0 left-1/2 h-[35%] w-[75%] -translate-x-1/2 rounded-t-[45%]"
+                    style={{ backgroundColor: card.outfit }}
                   />
+                  {/* Neck */}
+                  <div className="absolute bottom-[32%] left-1/2 h-[8%] w-[14%] -translate-x-1/2 rounded-md bg-tp-beige/70" />
+                  {/* Head */}
+                  <div className="absolute bottom-[37%] left-1/2 aspect-square w-[30%] -translate-x-1/2 rounded-full bg-tp-beige/70 shadow-inner" />
                 </div>
               ))}
             </div>

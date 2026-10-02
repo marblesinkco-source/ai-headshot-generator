@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Check, Zap, ShieldCheck, Lock, Star, BadgeCheck } from 'lucide-react';
+import { Check, Zap, ShieldCheck, Lock, Star } from 'lucide-react';
 import { getActiveCategories, type Category } from '@/config/categories';
 import { formatPrice } from '@/lib/utils';
 import { cn } from '@/lib/utils';
@@ -33,7 +33,7 @@ export function Pricing() {
     <section id="pricing" className="relative bg-tp-paper/40 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Value proposition (no fake urgency) */}
-        <div className="mx-auto mb-10 max-w-xl rounded-tp-card border border-tp-line bg-white p-4 text-center">
+        <div className="mx-auto mb-10 max-w-xl rounded-tp-card border border-tp-line bg-tp-paper p-4 text-center">
           <p className="text-sm font-semibold text-tp-bronze-ink">
             One-time price. No subscription. 14-day money-back guarantee.
           </p>
@@ -127,7 +127,7 @@ export function Pricing() {
                 )}
 
                 <CardHeader className="pb-4">
-                  <CardTitle className="text-lg font-semibold text-tp-black">
+                  <CardTitle className="font-display text-xl font-normal text-tp-black">
                     {pkg.name}
                   </CardTitle>
 
@@ -203,12 +203,6 @@ export function Pricing() {
           })}
         </div>
 
-        {/* Secure payment note */}
-        <p className="mt-6 text-center text-xs text-tp-muted">
-          <Lock className="mr-1 inline h-3 w-3" />
-          Secure payment via Stripe
-        </p>
-
         {/* Entry-tier upsell hint */}
         {hasExpress && entryPackage && (
           <p className="mt-6 text-center text-sm text-tp-muted">
@@ -216,24 +210,6 @@ export function Pricing() {
             Start with {entryPackage.name} to preview your results, then upgrade anytime.
           </p>
         )}
-
-        {/* Guarantee text */}
-        <p className="mt-6 flex items-center justify-center gap-1.5 text-center text-sm text-tp-muted">
-          <ShieldCheck className="h-4 w-4 text-tp-bronze-ink" />
-          All plans include a 14-day money-back guarantee
-        </p>
-
-        {/* Studio comparison */}
-        <p className="mt-2 text-center text-xs text-tp-muted">
-          Studio photography typically costs{' '}
-          <span className="line-through">$200–$500</span> per session
-        </p>
-
-        {/* Trust reinforcer (factual, no invented numbers) */}
-        <p className="mt-8 flex items-center justify-center gap-1.5 text-center text-sm font-medium text-tp-ink">
-          <BadgeCheck className="h-4 w-4 text-tp-bronze-ink" aria-hidden="true" />
-          Built for professionals: LinkedIn, resumes, teams and personal brands
-        </p>
 
         {/* Money-back guarantee banner */}
         <div className="mt-10 mx-auto max-w-2xl rounded-tp-card border border-tp-line bg-tp-paper p-5 sm:p-6 flex items-center gap-4">
