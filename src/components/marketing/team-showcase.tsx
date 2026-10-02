@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
 import { Users, ArrowRight, Check, Shield, Clock, CreditCard } from 'lucide-react';
