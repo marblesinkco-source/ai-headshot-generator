@@ -8,15 +8,15 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          'bg-tp-black text-tp-bronze shadow-md shadow-black/15 hover:bg-gray-900 hover:shadow-lg active:bg-gray-800',
+          'bg-tp-black text-tp-bronze shadow-md shadow-black/15 hover:bg-tp-ink hover:shadow-lg active:bg-tp-ink/90',
         secondary:
           'bg-tp-beige/30 text-tp-bronze-ink hover:bg-tp-beige/50 active:bg-tp-beige/70',
         outline:
           'border-2 border-tp-line bg-transparent text-tp-bronze-ink hover:bg-tp-paper hover:border-tp-bronze active:bg-tp-beige/30',
         ghost:
-          'bg-transparent text-tp-ink hover:bg-gray-100 active:bg-gray-200',
+          'bg-transparent text-tp-ink hover:bg-tp-warm/50 active:bg-tp-warm/80',
         destructive:
-          'bg-red-600 text-white shadow-sm hover:bg-red-700 active:bg-red-800',
+          'bg-tp-error text-white shadow-sm hover:bg-tp-error/90 active:bg-tp-error/80',
       },
       size: {
         sm: 'h-9 px-3.5 text-xs gap-1.5',

@@ -43,7 +43,7 @@ const config: Config = {
         accent: {
           600: '#a07a52',
         },
-        // Named semantic brand tokens
+        // Named semantic brand tokens (V3 §2 locked palette)
         'tp-black': '#0B0B0B',
         'tp-ink': '#171613',
         'tp-bronze': '#C9A98A',
@@ -52,6 +52,12 @@ const config: Config = {
         'tp-beige': '#DCCDBB',
         'tp-muted': '#5F5A54',
         'tp-line': '#DFD6CC',
+        'tp-warm': '#E8E1D8',
+        'tp-white': '#FFFFFF',
+        // Semantic state colors
+        'tp-success': '#16A34A',
+        'tp-warning': '#F59E0B',
+        'tp-error': '#DC2626',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -64,6 +70,31 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-manrope)', 'Inter', 'Arial', 'system-ui', 'sans-serif'],
         display: ['"Instrument Serif"', 'Georgia', '"Times New Roman"', 'serif'],
+      },
+      fontSize: {
+        // V3 Design System typography scale (ref image §3)
+        // Headings — Instrument Serif (font-display font-normal)
+        'tp-h1': ['clamp(2.5rem, 4vw, 3.5rem)', { lineHeight: '1.14', letterSpacing: '-0.02em' }],
+        'tp-h2': ['clamp(1.875rem, 3vw, 2.5rem)', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
+        'tp-h3': ['clamp(1.25rem, 2vw, 1.5rem)', { lineHeight: '1.33' }],
+        // Body — Manrope (font-sans)
+        'tp-body-lg': ['1.125rem', { lineHeight: '1.75' }],
+        'tp-body': ['1rem', { lineHeight: '1.75' }],
+        'tp-body-sm': ['0.875rem', { lineHeight: '1.5' }],
+        'tp-caption': ['0.75rem', { lineHeight: '1.33', letterSpacing: '0.02em' }],
+        'tp-label': ['0.6875rem', { lineHeight: '1.45', letterSpacing: '0.08em' }],
+      },
+      maxWidth: {
+        // V3 §5: main container 1280–1440px
+        'tp-site': '1320px',
+        'tp-content': '620px', // readable text width
+      },
+      spacing: {
+        // V3 §5: section vertical rhythm 72–112px
+        'tp-section': '5rem',      // 80px — default section gap
+        'tp-section-sm': '3rem',   // 48px — compact section gap
+        'tp-section-lg': '6rem',   // 96px — spacious section gap
+        'tp-gutter': '1.5rem',     // 24px — outer gutter (V3 §5)
       },
       animation: {
         'cta-pulse': 'ctaPulse 1.6s ease-out infinite',

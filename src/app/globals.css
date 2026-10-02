@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    /* TailorPic brand tokens */
+    /* TailorPic brand tokens (V3 §2 locked palette) */
     --tp-black: #0B0B0B;
     --tp-ink: #171613;
     --tp-bronze: #C9A98A;
@@ -13,6 +13,10 @@
     --tp-beige: #DCCDBB;
     --tp-muted: #5F5A54;
     --tp-line: #DFD6CC;
+    --tp-warm: #E8E1D8;
+
+    /* Section vertical rhythm (V3 §5) */
+    --tp-section-gap: 5rem;
 
     /* shadcn/ui mapped to brand */
     --background: 40 33% 97%;
@@ -144,6 +148,39 @@
 }
 
 @layer components {
+  /* ── V3 Design System: Site container ────────────────────────── */
+  /* max-w-tp-site (1320px) + consistent gutters (V3 §5) */
+  .tp-container {
+    @apply mx-auto w-full max-w-tp-site px-5 sm:px-6 lg:px-8;
+  }
+
+  /* ── V3 Design System: Section spacing ───────────────────────── */
+  .tp-section {
+    @apply py-tp-section;
+  }
+  .tp-section-sm {
+    @apply py-tp-section-sm;
+  }
+  .tp-section-lg {
+    @apply py-tp-section-lg;
+  }
+
+  /* ── V3 Design System: Card ──────────────────────────────────── */
+  .tp-card {
+    @apply rounded-tp-card border border-tp-line bg-white p-6 transition-all duration-300;
+  }
+  .tp-card-hover:hover {
+    @apply -translate-y-1 border-tp-beige shadow-lg shadow-tp-bronze/8;
+  }
+
+  /* ── V3 Design System: Section heading ───────────────────────── */
+  .tp-heading {
+    @apply font-display text-tp-h2 font-normal text-tp-ink;
+  }
+  .tp-subheading {
+    @apply text-tp-body-lg text-tp-muted;
+  }
+
   /* Premium pill button */
   .btn-pill {
     @apply inline-flex items-center justify-center gap-2 rounded-full bg-tp-black px-8 py-4 text-base font-semibold text-tp-bronze transition-all duration-300;

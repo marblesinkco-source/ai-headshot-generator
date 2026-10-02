@@ -5,32 +5,32 @@
       "name": "Phase A — Audit",
       "description": "Repo / routes / pricing / categories / auth / payment / upload / generation / legal / broken links tam denetim",
       "dependencies": [],
-      "status": "not-started",
-      "evidence": ""
+      "status": "done",
+      "evidence": "3 paralel ajan ile denetim tamamlandı. 306 page.tsx, 51 marketing bileşeni, 12 kategori doğrulandı. Kritik buglar düzeltildi: upload orderId UUID→nanoid, Stripe webhook credit insert 500 hatası, Replicate webhook zorunlu imza, password reset redirect. Commit: 88c8848"
     },
     {
       "id": "feat-B",
       "name": "Phase B — Global Design System",
       "description": "Logo / tokens / typography / spacing / grid / button states / cards — brand kurallarına uygun",
       "dependencies": ["feat-A"],
-      "status": "not-started",
-      "evidence": ""
+      "status": "done",
+      "evidence": "Tailwind config: tp-warm, tp-white, tp-success/warning/error renkleri, tp-h1..tp-label tipografi ölçeği, tp-site/tp-content max-width, tp-section spacing tokenleri eklendi. globals.css: tp-container, tp-section, tp-card, tp-heading component class'ları eklendi. button.tsx: gray-* referansları tp-ink/tp-warm/tp-error ile değiştirildi."
     },
     {
       "id": "feat-C",
       "name": "Phase C — Navigation",
       "description": "Header / mega menu (3 sütun 12 kategori) / mobile nav / active states / sticky / kompakt scroll",
       "dependencies": ["feat-B"],
-      "status": "not-started",
-      "evidence": ""
+      "status": "done",
+      "evidence": "Header: tp-container class'ına geçiş, scroll-compact davranışı (h-20→h-16 + logo küçülme), mega menü 2-kolon→3-kolon grid layout, nav etiketi Samples→Examples. Mobile nav ve active state'ler korundu."
     },
     {
       "id": "feat-D",
       "name": "Phase D — Homepage",
       "description": "Hero / quick chooser / customization / before-after / categories / pricing / FAQ / footer — V3 Master sırasına uygun",
       "dependencies": ["feat-C"],
-      "status": "not-started",
-      "evidence": ""
+      "status": "done",
+      "evidence": "Homepage 36 bölümden 11 bölüme düşürüldü. V3 Master §7 sırasına uygun yapılandırıldı. CI PASS, Vercel PASS. Commit: 90f3bb5. Canlı site doğrulaması beklemede (tarayıcı bağlantısı yok)."
     },
     {
       "id": "feat-E",

@@ -12,10 +12,10 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const categories = getActiveCategories();
 
-// Ordered along the decision funnel: understand (How It Works) -> see proof (Samples) -> decide (Pricing) -> learn more (Blog)
+// Ordered along the decision funnel: understand (How It Works) -> see proof (Examples) -> decide (Pricing) -> learn more (Blog)
 const navLinks = [
   { label: 'How It Works', href: '/how-it-works' },
-  { label: 'Samples', href: '/samples' },
+  { label: 'Examples', href: '/samples' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Blog', href: '/blog' },
 ];
@@ -56,8 +56,19 @@ export function Header() {
   const userMenuTimer = useRef<ReturnType<typeof setTimeout>>();
   const [user, setUser] = useState<User | null>(null);
   const [loggingOut, setLoggingOut] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const closeTimer = useRef<ReturnType<typeof setTimeout>>();
+
+  // Scroll-compact: shrink header on scroll (V3 §6: 72-80px → 60-64px)
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 24);
+    }
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   // Close the mobile dialog with a short exit animation (the CSS keyframes live in globals.css)
   function closeMobile() {
@@ -163,8 +174,8 @@ export function Header() {
   }, [megaOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-tp-line/60 bg-tp-paper/85 backdrop-blur-md supports-[backdrop-filter]:bg-tp-paper/75">
-      <div className="mx-auto flex h-20 max-w-[1320px] items-center justify-between px-4 sm:px-7 lg:px-14">
+    <header className="sticky top-0 z-50 border-b border-tp-line/60 bg-tp-paper/85 backdrop-blur-md supports-[backdrop-filter]:bg-tp-paper/75 transition-[height] duration-200">
+      <div className={`tp-container flex items-center justify-between transition-[height] duration-200 ${scrolled ? 'h-16' : 'h-20'}`}>
         {/* Logo */}
         <Link href="/" className="flex-shrink-0" aria-label="TailorPic home">
           <Image
@@ -172,7 +183,7 @@ export function Header() {
             alt="TailorPic"
             width={212}
             height={49}
-            className="h-8 w-auto sm:h-9"
+            className={`w-auto transition-[height] duration-200 ${scrolled ? 'h-7 sm:h-8' : 'h-8 sm:h-9'}`}
             priority
           />
         </Link>
@@ -203,20 +214,21 @@ export function Header() {
             >
               <div
                 id="photo-types-menu"
-                className={`w-[680px] rounded-tp-card border border-tp-line/60 bg-white p-5 shadow-xl shadow-tp-black/8 transition-all duration-200 ease-out ${
+                className={`w-[780px] rounded-tp-card border border-tp-line/60 bg-white p-5 shadow-xl shadow-tp-black/8 transition-all duration-200 ease-out ${
                   megaOpen
                     ? 'visible translate-y-0 opacity-100'
                     : 'pointer-events-none invisible -translate-y-1.5 opacity-0'
                 }`}
               >
-                <div className="space-y-4">
+                {/* 3-column layout: Professional / Personal / Creative (V3 §6) */}
+                <div className="grid grid-cols-3 gap-5">
                   {groupedCategories.map((group) => (
                     <div key={group.title}>
-                      <div className="mb-1.5 flex items-baseline gap-2 px-2.5">
+                      <div className="mb-2 px-2">
                         <p className="text-[11px] font-semibold uppercase tracking-widest text-tp-bronze-ink">{group.title}</p>
-                        <p className="text-[11px] text-tp-muted">{group.description}</p>
+                        <p className="mt-0.5 text-[11px] text-tp-muted">{group.description}</p>
                       </div>
-                      <div className="grid grid-cols-2 gap-x-5 gap-y-1">
+                      <div className="space-y-0.5">
                         {group.items.map((cat) => {
                           const catActive = isLinkActive(pathname, `/${cat.slug}`);
                           return (
@@ -224,21 +236,21 @@ export function Header() {
                               key={cat.id}
                               href={`/${cat.slug}`}
                               aria-current={catActive ? 'page' : undefined}
-                              className={`flex items-center gap-3 rounded-xl p-2.5 transition-colors hover:bg-tp-paper ${catActive ? 'bg-tp-paper' : ''}`}
+                              className={`flex items-center gap-2.5 rounded-xl p-2 transition-colors hover:bg-tp-paper ${catActive ? 'bg-tp-paper' : ''}`}
                               onClick={() => setMegaOpen(false)}
                             >
-                              <div className="h-10 w-10 flex-shrink-0 overflow-hidden rounded-lg bg-gradient-to-br from-tp-beige to-tp-line">
+                              <div className="h-9 w-9 flex-shrink-0 overflow-hidden rounded-lg bg-gradient-to-br from-tp-beige to-tp-line">
                                 <Image
                                   src={`/images/categories/${cat.id}.jpg`}
                                   alt={cat.name}
-                                  width={80}
-                                  height={80}
+                                  width={72}
+                                  height={72}
                                   className="h-full w-full object-cover"
-                                  sizes="40px"
+                                  sizes="36px"
                                 />
                               </div>
                               <div className="min-w-0">
-                                <p className={`text-[13px] font-semibold ${catActive ? 'text-tp-bronze-ink' : 'text-tp-ink'}`}>{cat.name}</p>
+                                <p className={`text-[13px] font-semibold leading-tight ${catActive ? 'text-tp-bronze-ink' : 'text-tp-ink'}`}>{cat.name}</p>
                                 <p className="truncate text-[11px] text-tp-muted">{cat.tagline}</p>
                               </div>
                             </Link>
