@@ -11,33 +11,46 @@ const productLinks: FooterLink[] = [
   { label: 'How It Works', href: '/how-it-works' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Pricing Comparison', href: '/pricing-comparison' },
-  { label: 'AI Avatars', href: '/avatars' },
   { label: 'Samples', href: '/samples' },
   { label: 'Photo Styles', href: '/styles' },
-  { label: 'Use Cases', href: '/use-cases' },
+  { label: 'Guarantee', href: '/guarantee' },
+  { label: 'LinkedIn Headshots', href: '/linkedin-headshots' },
   { label: 'Team Headshots', href: '/team-headshots' },
+  { label: 'AI Avatars', href: '/avatars' },
+  { label: 'Free Headshots', href: '/free-headshot-generator' },
+  { label: 'AI Photo Editor', href: '/editor' },
+];
+
+const solutionLinks: FooterLink[] = [
+  { label: 'Use Cases', href: '/use-cases' },
+  { label: 'Industries', href: '/industries' },
   { label: 'Enterprise', href: '/enterprise' },
   { label: 'Students', href: '/students' },
   { label: 'Integrations', href: '/integrations' },
   { label: 'API', href: '/developer-api' },
-  { label: 'Guarantee', href: '/guarantee' },
 ];
 
 const resourceLinks: FooterLink[] = [
-  { label: 'Blog', href: '/blog' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Help Center', href: '/help' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Photo Tips', href: '/photo-tips' },
   { label: 'Success Stories', href: '/success-stories' },
-  { label: 'Industries', href: '/industries' },
-  { label: 'Glossary', href: '/glossary' },
-  { label: 'Changelog', href: '/changelog' },
-  { label: 'Free Headshots', href: '/free-headshot-generator' },
-  { label: 'LinkedIn Headshots', href: '/linkedin-headshots' },
+  { label: 'Free Tools', href: '/tools' },
   { label: 'Photo Analyzer', href: '/tools/linkedin-photo-analyzer' },
   { label: 'Cost Calculator', href: '/tools/headshot-cost-calculator' },
   { label: 'Signature Generator', href: '/tools/email-signature-generator' },
-  { label: 'AI Photo Editor', href: '/editor' },
+  { label: 'Glossary', href: '/glossary' },
+  { label: 'Changelog', href: '/changelog' },
+];
+
+// Most-needed links, repeated above the columns so they never get lost in a long list
+const quickLinks: FooterLink[] = [
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Help Center', href: '/help' },
+  { label: 'Guarantee', href: '/guarantee' },
 ];
 
 const companyLinks: FooterLink[] = [
@@ -64,7 +77,7 @@ const legalLinks: FooterLink[] = [
 ];
 
 const linkClass =
-  'inline-block py-1 text-[13px] text-tp-beige/70 transition-colors hover:text-tp-bronze focus-visible:outline-none focus-visible:text-tp-bronze focus-visible:underline';
+  'inline-flex min-h-[44px] items-center text-[13px] lg:min-h-0 lg:py-1 text-tp-beige/70 transition-colors hover:text-tp-bronze focus-visible:outline-none focus-visible:text-tp-bronze focus-visible:underline';
 
 const socialLinks = [
   {
@@ -91,7 +104,7 @@ function FooterColumn({ title, links, children }: { title: string; links: Footer
   return (
     <nav aria-label={title}>
       <h3 className="mb-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-tp-bronze">{title}</h3>
-      <ul className="space-y-0.5">
+      <ul className="space-y-0 lg:space-y-0.5">
         {links.map((link) => (
           <li key={link.href}>
             <Link href={link.href} className={linkClass}>
@@ -139,12 +152,24 @@ export function Footer() {
           </div>
           <EmailCapture />
         </div>
+        <nav aria-label="Quick links" className="mt-8 flex flex-wrap gap-2 border-t border-tp-muted/30 pt-6">
+          {quickLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="inline-flex min-h-[44px] items-center rounded-tp-button border border-tp-muted/40 px-4 text-[13px] font-semibold text-tp-beige transition-colors hover:border-tp-bronze/60 hover:text-tp-bronze focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
       </div>
 
       {/* Link columns */}
       <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 py-12 lg:py-14">
-        <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-5">
           <FooterColumn title="Product" links={productLinks} />
+          <FooterColumn title="Solutions" links={solutionLinks} />
           <FooterColumn title="Resources" links={resourceLinks} />
           <FooterColumn title="Company" links={companyLinks} />
           <FooterColumn title="Legal" links={legalLinks}>

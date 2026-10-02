@@ -12,25 +12,26 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const categories = getActiveCategories();
 
+// Ordered along the decision funnel: understand (How It Works) -> see proof (Samples) -> decide (Pricing) -> learn more (Blog)
 const navLinks = [
-  { label: 'Pricing', href: '/pricing' },
   { label: 'How It Works', href: '/#how-it-works' },
   { label: 'Samples', href: '/samples' },
+  { label: 'Pricing', href: '/pricing' },
   { label: 'Blog', href: '/blog' },
 ];
 
 // Secondary pages: reachable from the mobile menu (desktop keeps the nav compact; all are in the footer)
+// Support links first (FAQ, Contact), then evaluation, then company. Team Headshots lives in Photo Types.
 const secondaryLinks = [
-  { label: 'Tools', href: '/tools' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Reviews', href: '/reviews' },
+  { label: 'Compare', href: '/vs' },
   { label: 'Enterprise', href: '/enterprise' },
   { label: 'Industries', href: '/industries' },
-  { label: 'Compare', href: '/vs' },
-  { label: 'Reviews', href: '/reviews' },
-  { label: 'For Teams', href: '/team-headshots' },
-  { label: 'FAQ', href: '/faq' },
+  { label: 'Tools', href: '/tools' },
   { label: 'Security', href: '/security' },
   { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
 ];
 
 const groupedCategories = CATEGORY_GROUPS.map((group) => ({
@@ -56,8 +57,29 @@ export function Header() {
   const [user, setUser] = useState<User | null>(null);
   const [loggingOut, setLoggingOut] = useState(false);
 
+  const closeTimer = useRef<ReturnType<typeof setTimeout>>();
+
+  // Close the mobile dialog with a short exit animation (the CSS keyframes live in globals.css)
+  function closeMobile() {
+    const dialog = mobileDialog.current;
+    if (!dialog || !dialog.open) return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) {
+      dialog.close();
+      return;
+    }
+    dialog.setAttribute('data-closing', '');
+    clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => {
+      dialog.removeAttribute('data-closing');
+      dialog.close();
+    }, 180);
+  }
+
   // Close mobile dialog on route change
   useEffect(() => {
+    clearTimeout(closeTimer.current);
+    mobileDialog.current?.removeAttribute('data-closing');
     mobileDialog.current?.close();
   }, [pathname]);
 
@@ -68,12 +90,21 @@ export function Header() {
 
     function handleClick(e: MouseEvent) {
       if (e.target === dialog) {
-        dialog.close();
+        closeMobile();
       }
+    }
+    function handleCancel(e: Event) {
+      e.preventDefault();
+      closeMobile();
     }
 
     dialog.addEventListener('click', handleClick);
-    return () => dialog.removeEventListener('click', handleClick);
+    dialog.addEventListener('cancel', handleCancel);
+    return () => {
+      dialog.removeEventListener('click', handleClick);
+      dialog.removeEventListener('cancel', handleCancel);
+      clearTimeout(closeTimer.current);
+    };
   }, []);
 
   useEffect(() => {
@@ -254,7 +285,7 @@ export function Header() {
         </nav>
 
         {/* Desktop Account */}
-        <div className="hidden items-center gap-6 md:flex">
+        <div className="hidden flex-shrink-0 items-center gap-4 md:flex lg:gap-6">
           {user ? (
             <div
               className="relative"
@@ -339,17 +370,17 @@ export function Header() {
             <>
               <Link
                 href="/auth/login"
-                className="text-[13px] font-semibold text-tp-ink transition-colors hover:text-tp-bronze-ink"
+                className="flex min-h-[44px] items-center text-[13px] font-semibold text-tp-ink transition-colors hover:text-tp-bronze-ink"
               >
                 Sign In
               </Link>
               <Link
                 href="/auth/register"
-                className="group inline-flex items-center gap-3 rounded-tp-button border border-tp-black bg-tp-black py-2.5 pl-6 pr-3 text-sm font-semibold text-tp-paper shadow-md shadow-tp-black/15 transition-all hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
+                className="group inline-flex min-h-[44px] flex-shrink-0 items-center gap-3 whitespace-nowrap rounded-tp-button border border-tp-bronze bg-tp-bronze py-2.5 pl-5 pr-5 lg:pl-6 lg:pr-3 text-sm font-semibold text-tp-black shadow-md shadow-tp-black/15 transition-all hover:-translate-y-0.5 hover:bg-tp-beige hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
               >
                 Get Started
-                <span className="rounded-lg bg-tp-bronze px-2.5 py-1 text-[12px] font-bold leading-none text-tp-black">
-                  {BASE_PRICE_DISPLAY}
+                <span className="hidden rounded-lg bg-tp-black px-2.5 py-1 text-[12px] font-bold leading-none text-tp-paper lg:inline">
+                  from {BASE_PRICE_DISPLAY}
                 </span>
               </Link>
             </>
@@ -377,10 +408,10 @@ export function Header() {
             </Link>
           ) : (
             <Link
-              href="/auth/login"
-              className="text-[13px] font-semibold text-tp-ink min-h-[44px] flex items-center"
+              href="/auth/register"
+              className="inline-flex min-h-[44px] items-center whitespace-nowrap rounded-tp-button bg-tp-bronze px-4 text-[13px] font-semibold text-tp-black transition-colors hover:bg-tp-beige focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
             >
-              Sign In
+              Get Started
             </Link>
           )}
           <button
@@ -415,43 +446,15 @@ export function Header() {
             type="button"
             className="h-11 w-11 rounded-full border border-tp-line bg-transparent text-[23px] flex-shrink-0 flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
             aria-label="Close menu"
-            onClick={() => mobileDialog.current?.close()}
+            onClick={() => closeMobile()}
           >
             &#215;
           </button>
         </div>
         <div className="px-5 pb-5">
 
-        {/* Mobile category grid */}
-        <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest text-tp-muted">Photo Types</p>
-        <div className="grid grid-cols-2 gap-1.5 mb-4">
-          {categories.map((cat) => (
-            <Link
-              key={cat.id}
-              href={`/${cat.slug}`}
-              aria-current={isLinkActive(pathname, `/${cat.slug}`) ? 'page' : undefined}
-              className={`flex items-center gap-2.5 rounded-lg border bg-white p-2.5 min-h-[52px] transition-colors hover:border-tp-bronze-ink ${
-                isLinkActive(pathname, `/${cat.slug}`) ? 'border-tp-bronze-ink text-tp-bronze-ink' : 'border-tp-line/60'
-              }`}
-              onClick={() => mobileDialog.current?.close()}
-            >
-              <div className="h-9 w-9 flex-shrink-0 overflow-hidden rounded-md bg-gradient-to-br from-tp-beige to-tp-line">
-                <Image
-                  src={`/images/categories/${cat.id}.jpg`}
-                  alt={cat.name}
-                  width={72}
-                  height={72}
-                  className="h-full w-full object-cover"
-                  sizes="36px"
-                />
-              </div>
-              <span className="text-[12px] font-semibold leading-tight">{cat.shortName}</span>
-            </Link>
-          ))}
-        </div>
-
-        {/* Other nav links */}
-        <nav className="grid gap-1 border-t border-tp-line/50 pt-3" aria-label="Mobile navigation">
+        {/* Primary funnel links */}
+        <nav className="grid gap-1" aria-label="Mobile navigation">
           {navLinks.map((link) => {
             const active = isLinkActive(pathname, link.href);
             return (
@@ -459,19 +462,63 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 aria-current={active ? 'page' : undefined}
-                className={`flex items-center gap-2 rounded-tp-button border-l-2 p-3 text-[16px] min-h-[46px] text-left font-medium transition-colors hover:bg-white ${
+                className={`flex items-center gap-2 rounded-tp-button border-l-2 p-3 text-[16px] min-h-[48px] text-left font-medium transition-colors hover:bg-white ${
                   active
                     ? 'border-tp-bronze-ink bg-white text-tp-bronze-ink'
                     : 'border-transparent'
                 }`}
-                onClick={() => mobileDialog.current?.close()}
+                onClick={() => closeMobile()}
               >
                 {link.label}
               </Link>
             );
           })}
-          <p className="mt-3 border-t border-tp-line/50 px-3 pt-3 text-[11px] font-semibold uppercase tracking-widest text-tp-muted">More</p>
-          <div className="grid grid-cols-2 gap-1">
+        </nav>
+
+        {/* Photo types, grouped like the desktop mega menu */}
+        <div className="mt-3 border-t border-tp-line/50 pt-3">
+          {groupedCategories.map((group) => (
+            <div key={group.title} className="mb-3">
+              <p className="mb-2 text-[11px] font-semibold uppercase tracking-widest text-tp-muted">
+                {group.title}
+                <span className="ml-2 font-normal normal-case tracking-normal">{group.description}</span>
+              </p>
+              <div className="grid grid-cols-2 gap-1.5">
+                {group.items.map((cat) => {
+                  const catActive = isLinkActive(pathname, `/${cat.slug}`);
+                  return (
+                    <Link
+                      key={cat.id}
+                      href={`/${cat.slug}`}
+                      aria-current={catActive ? 'page' : undefined}
+                      className={`flex items-center gap-2.5 rounded-lg border bg-white p-2.5 min-h-[52px] transition-colors hover:border-tp-bronze-ink ${
+                        catActive ? 'border-tp-bronze-ink text-tp-bronze-ink' : 'border-tp-line/60'
+                      }`}
+                      onClick={() => closeMobile()}
+                    >
+                      <div className="h-9 w-9 flex-shrink-0 overflow-hidden rounded-md bg-gradient-to-br from-tp-beige to-tp-line">
+                        <Image
+                          src={`/images/categories/${cat.id}.jpg`}
+                          alt=""
+                          width={72}
+                          height={72}
+                          className="h-full w-full object-cover"
+                          sizes="36px"
+                        />
+                      </div>
+                      <span className="text-[12px] font-semibold leading-tight">{cat.shortName}</span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Secondary links */}
+        <nav className="border-t border-tp-line/50 pt-3" aria-label="More pages">
+          <p className="px-3 text-[11px] font-semibold uppercase tracking-widest text-tp-muted">More</p>
+          <div className="mt-1 grid grid-cols-2 gap-1">
             {secondaryLinks.map((link) => {
               const active = isLinkActive(pathname, link.href);
               return (
@@ -482,41 +529,54 @@ export function Header() {
                   className={`flex min-h-[44px] items-center rounded-tp-button border-l-2 px-3 text-[14px] font-medium transition-colors hover:bg-white ${
                     active ? 'border-tp-bronze-ink bg-white text-tp-bronze-ink' : 'border-transparent text-tp-ink'
                   }`}
-                  onClick={() => mobileDialog.current?.close()}
+                  onClick={() => closeMobile()}
                 >
                   {link.label}
                 </Link>
               );
             })}
           </div>
+        </nav>
+        </div>
+
+        {/* Sticky action bar: the primary CTA is always visible without scrolling */}
+        <div className="sticky bottom-0 z-10 border-t border-tp-line/60 bg-tp-paper px-5 pb-5 pt-3 rounded-b-[20px]">
           {user ? (
-            <>
+            <div className="grid gap-1">
               <Link
                 href="/dashboard"
-                className="mt-2 flex items-center justify-center gap-3 rounded-xl bg-tp-black px-6 py-3.5 text-sm font-semibold text-tp-paper"
-                onClick={() => mobileDialog.current?.close()}
+                className="flex min-h-[48px] items-center justify-center gap-3 rounded-tp-button bg-tp-bronze px-6 py-3 text-sm font-semibold text-tp-black transition-colors hover:bg-tp-beige"
+                onClick={() => closeMobile()}
               >
                 Dashboard <span aria-hidden="true" className="text-lg leading-none">&#8599;</span>
               </Link>
               <button
-                onClick={() => { mobileDialog.current?.close(); handleSignOut(); }}
+                onClick={() => { closeMobile(); handleSignOut(); }}
                 disabled={loggingOut}
-                className="mt-1 flex w-full items-center justify-center gap-2 rounded-xl border border-red-200 px-6 py-3 text-sm font-medium text-red-600 hover:bg-red-50 transition-colors disabled:opacity-50"
+                className="flex min-h-[44px] w-full items-center justify-center gap-2 rounded-tp-button border border-red-200 px-6 py-3 text-sm font-medium text-red-600 hover:bg-red-50 transition-colors disabled:opacity-50"
               >
                 {loggingOut ? 'Signing out...' : 'Sign out'}
               </button>
-            </>
+            </div>
           ) : (
-            <Link
-              href="/auth/register"
-              className="mt-2 flex items-center justify-center gap-3 rounded-tp-button bg-tp-black px-6 py-3.5 text-sm font-semibold text-tp-paper shadow-md shadow-tp-black/15"
-              onClick={() => mobileDialog.current?.close()}
-            >
-              Get Started
-              <span className="rounded-lg bg-tp-bronze px-2.5 py-1 font-display text-[15px] font-normal leading-none text-tp-black">{BASE_PRICE_DISPLAY}</span>
-            </Link>
+            <div className="grid gap-1">
+              <Link
+                href="/auth/register"
+                className="flex min-h-[48px] items-center justify-center gap-3 rounded-tp-button bg-tp-bronze px-6 py-3 text-sm font-semibold text-tp-black shadow-md shadow-tp-black/15 transition-colors hover:bg-tp-beige"
+                onClick={() => closeMobile()}
+              >
+                Get Started
+                <span className="rounded-lg bg-tp-black px-2.5 py-1 text-[12px] font-bold leading-none text-tp-paper">from {BASE_PRICE_DISPLAY}</span>
+              </Link>
+              <Link
+                href="/auth/login"
+                className="flex min-h-[44px] items-center justify-center rounded-tp-button text-sm font-semibold text-tp-ink transition-colors hover:text-tp-bronze-ink"
+                onClick={() => closeMobile()}
+              >
+                Already have an account? Sign In
+              </Link>
+            </div>
           )}
-        </nav>
         </div>
         </div>
       </dialog>
