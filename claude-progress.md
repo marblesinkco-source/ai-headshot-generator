@@ -93,8 +93,31 @@
 88. `88a3b1b` — Phase 1 infrastructure upgrades: Upstash Redis rate limiting, maxDuration, retry utility, Stripe event dedup, stuck order cron (22 files, 431 insertions)
 89. `b9d925f` — Update progress tracker with Phase 1 infrastructure commits
 90. `4fe3ee2` — AI Avatars category: landing page, bundle upsell, nav integration (5 files, 622 insertions)
+91. `2e3ab69` — Fix pricing copy site-wide for new 6-tier package structure
+92. `1c49b29` — Add GET handlers for Vercel crons + remove flat-price claims site-wide
+93. `e6b8942` — Remove remaining misleading one-time/$1.99 pairings
+94. `0cfeb62` — Interactive before/after slider + delivery guarantee section
+95. `67471cd` — Use-case chips, plan picker, and photo prep guide
+96. `a01d230` — Style showcase, speed comparison, and guarantee strip to homepage
+97. `5b07596` — AI vs generic comparison and team showcase sections
+98. `10ee31d` — Outfit/backdrop customizer and style rotation strip to homepage
+99. `ee09c4a` — Filterable results gallery to homepage (12 portrait styles, 4 category tabs)
 
 ### Completed Features
+- [x] Homepage results gallery — filterable portrait gallery with 12 styles across 4 categories
+- [x] Outfit/backdrop customizer — interactive preview with 8 backdrops + 8 outfits
+- [x] Available Styles activity feed — rotating strip showing headshot style options
+- [x] AI vs Generic comparison section — side-by-side TailorPic vs ChatGPT/stock
+- [x] Team showcase section — enterprise team headshots with benefits grid
+- [x] Style showcase section — 6 professional style cards with gradient previews
+- [x] Speed comparison section — visual timeline TailorPic vs traditional studio
+- [x] Guarantee strip — delivery guarantees bar
+- [x] Before/After slider — interactive image comparison component
+- [x] Delivery guarantee section — timeline with trust signals
+- [x] Use-case chips — "Who It's For" row on homepage
+- [x] Plan picker — "Which plan fits me?" decision helper
+- [x] Photo prep guide — "Good vs Bad Selfie" upload checklist
+- [x] Savings highlight — ROI calculator section
 - [x] AI Avatars category (12th category) with 2 packages ($15.90/30 + $24.80/50)
 - [x] AI Avatars landing page (/avatars) — 9 sections, structured data, OG meta
 - [x] Avatar bundle upsell in checkout flow ($8.90 upgrade from 30→50 avatars)
