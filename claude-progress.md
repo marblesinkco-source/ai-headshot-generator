@@ -1,23 +1,8 @@
 # TailorPic — Progress Tracker
 
-## Last Session: 2026-10-03
+## Last Session: 2026-10-02
 
-### Commits (2026-10-03)
-1. `a9ed538` — Hero CTA redirect fix + image download workflow
-2. `90fc53a` — Real Unsplash category images (12 photos via GitHub Actions)
-3. `a752578` — Fix broken holiday-cards image
-4. `bb5ca05` — Remove one-off image download workflows
-5. `7590fa9` — Add missing pages to sitemap + remove dead code (3 unused components)
-
-### Completed (2026-10-03)
-- [x] Replace all 12 abstract Pillow-generated category images with real Unsplash photos (800x600, 52-129KB each)
-- [x] Fix hero CTA: add ?redirect=/headshots to register link
-- [x] Add /refund-policy and /for-teams to sitemap.ts
-- [x] Remove 3 dead components: guarantee-badge, social-proof-toast-lazy, delivery-tracker
-- [x] Full site audit: imports, routes, navigation, images — all clean
-- [x] CI passed + Vercel deployed + live site verified
-
-### Commits (2026-10-02)
+### Commits (this session)
 1. `178090a` — Exit-intent popup, email capture, upload guidelines
 2. `5efabdf` — Performance optimization + trust signals
 3. `b39f50f` — Critical conversion fixes (CTAs to register, nav, sitemap, robots)
