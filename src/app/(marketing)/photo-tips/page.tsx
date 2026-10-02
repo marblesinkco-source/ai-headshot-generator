@@ -3,6 +3,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { PhotoQualityCheckerLazy } from '@/components/marketing/photo-quality-checker-lazy';
 import { PhotoTipsIllustration } from '@/components/marketing/illustrations';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
@@ -402,6 +403,7 @@ export default function PhotoTipsPage() {
         </div>
       </section>
 
+      <PhotoQualityCheckerLazy />
       <Footer />
     </main>
   );
