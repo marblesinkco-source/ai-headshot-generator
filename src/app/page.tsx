@@ -22,9 +22,9 @@ import { PhotoPrepGuide } from '@/components/marketing/photo-prep-guide';
 import { GuaranteeStrip } from '@/components/marketing/guarantee-strip';
 import { StatsCounter } from '@/components/marketing/stats-counter';
 import { ActivityFeed } from '@/components/marketing/activity-feed';
-import { PackageQuizLazy } from '@/components/marketing/package-quiz-lazy';
+import { PackageQuiz } from '@/components/marketing/package-quiz';
 import { PriceReceipt } from '@/components/marketing/price-receipt';
-import { StyleConfiguratorLazy } from '@/components/marketing/style-configurator-lazy';
+import { StyleConfigurator } from '@/components/marketing/style-configurator';
 import { StudioVsAI } from '@/components/marketing/studio-vs-ai';
 
 export const metadata: Metadata = {
@@ -113,7 +113,7 @@ export default function LandingPage() {
       <StatsCounter />
       <Categories />
       <ActivityFeed />
-      <StyleConfiguratorLazy />
+      <StyleConfigurator />
       <StyleShowcase />
       <OutfitPreview />
       <ResultsGallery />
@@ -130,7 +130,7 @@ export default function LandingPage() {
       <SavingsHighlight />
       <StudioVsAI />
       <TeamShowcase />
-      <PackageQuizLazy />
+      <PackageQuiz />
       <Pricing />
       <PlanPicker />
       <PriceReceipt />

@@ -38,7 +38,6 @@ import {
 
 const ROICalculator = dynamic(
   () => import('@/components/marketing/roi-calculator').then((m) => m.ROICalculator),
-  { ssr: false, loading: () => <div className="animate-pulse bg-tp-line/30 rounded-tp-card h-64" /> },
 );
 
 const ENTERPRISE_TITLE = 'Enterprise AI Headshots for Teams and Organizations';
