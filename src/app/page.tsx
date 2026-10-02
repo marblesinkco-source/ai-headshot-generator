@@ -20,6 +20,9 @@ import { DeliveryGuarantee } from '@/components/marketing/delivery-guarantee';
 import { UseCaseChips } from '@/components/marketing/use-case-chips';
 import { PhotoPrepGuide } from '@/components/marketing/photo-prep-guide';
 import { GuaranteeStrip } from '@/components/marketing/guarantee-strip';
+import { StatsCounter } from '@/components/marketing/stats-counter';
+import { ActivityFeed } from '@/components/marketing/activity-feed';
+import { PackageQuiz } from '@/components/marketing/package-quiz';
 
 export const metadata: Metadata = {
   title: 'TailorPic — AI Headshots & Professional Photos | From $1.99',
@@ -41,10 +44,7 @@ function SectionSkeleton({ height, dark }: { height: string; dark?: boolean }) {
 }
 
 // Below-the-fold sections: split into separate chunks (still SSR'd for SEO, JS loads lazily)
-const StatsCounter = dynamic(
-  () => import('@/components/marketing/stats-counter').then((m) => m.StatsCounter),
-  { loading: () => <SectionSkeleton height="h-40" dark /> }
-);
+// StatsCounter is eagerly imported (near-fold, small)
 const ComparisonTable = dynamic(
   () => import('@/components/marketing/comparison-table').then((m) => m.ComparisonTable),
   { loading: () => <SectionSkeleton height="h-[520px]" /> }
@@ -93,10 +93,7 @@ const ResultsGallery = dynamic(
   () => import('@/components/marketing/results-gallery').then((m) => m.ResultsGallery),
   { loading: () => <SectionSkeleton height="h-[700px]" /> }
 );
-const ActivityFeed = dynamic(
-  () => import('@/components/marketing/activity-feed').then((m) => m.ActivityFeed),
-  { loading: () => <SectionSkeleton height="h-12" /> }
-);
+// ActivityFeed is eagerly imported (near-fold, tiny)
 
 export default function LandingPage() {
   return (
@@ -128,6 +125,7 @@ export default function LandingPage() {
       <DeliveryGuarantee />
       <SavingsHighlight />
       <TeamShowcase />
+      <PackageQuiz />
       <Pricing />
       <PlanPicker />
       <PhotoPrepGuide />
