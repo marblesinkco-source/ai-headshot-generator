@@ -7,7 +7,6 @@ import { CreditPackages } from '@/components/marketing/credit-packages';
 import { TrustBar } from '@/components/marketing/trust-bar';
 import { CostCalculator } from '@/components/marketing/cost-calculator';
 import { PricingPsychology } from '@/components/marketing/pricing-psychology';
-import { GuaranteeBadge } from '@/components/marketing/guarantee-badge';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
@@ -16,7 +15,7 @@ import { formatPrice } from '@/lib/utils';
 import { CATEGORIES, getActiveCategories } from '@/config/categories';
 import { TrustBadges } from '@/components/marketing/trust-badges';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
-import { ChevronDown, Check, Lock, RefreshCcw, CreditCard, BadgeCheck, Minus } from 'lucide-react';
+import { ChevronDown, Check, Lock, CreditCard, BadgeCheck, Minus } from 'lucide-react';
 import { PricingViewToggle } from '@/components/marketing/pricing-view-toggle';
 import { PricingComparisonBar } from '@/components/marketing/pricing-comparison-bar';
 
@@ -40,11 +39,6 @@ const pricingFaqs = [
     question: 'What payment methods do you accept?',
     answer:
       'We accept all major credit cards. Payments are processed securely through Stripe.',
-  },
-  {
-    question: 'Can I get a refund?',
-    answer:
-      'Yes. Every order is covered by our 14-day money-back guarantee. See our refund policy for the details.',
   },
   {
     question: 'How many photos do I get?',
@@ -90,7 +84,6 @@ const comparisonRows: { label: string; individual: boolean | string; team: boole
   { label: 'Delivered in hours', individual: true, team: true, studio: false },
   { label: 'Consistent look across a team', individual: false, team: true, studio: 'Extra coordination' },
   { label: 'Full commercial rights', individual: true, team: true, studio: 'Varies' },
-  { label: '14-day money-back guarantee', individual: true, team: true, studio: false },
 ];
 
 const includedFeatures = [
@@ -114,7 +107,6 @@ const includedFeatures = [
     title: 'Payment & protection',
     items: [
       'One-time payment, no subscription',
-      '14-day money-back guarantee',
       'Secure Stripe checkout',
     ],
   },
@@ -122,7 +114,6 @@ const includedFeatures = [
 
 const trustSignals = [
   { icon: CreditCard, label: 'One-time payment, no subscription' },
-  { icon: RefreshCcw, label: '14-day money-back guarantee' },
   { icon: BadgeCheck, label: 'Full commercial rights' },
   { icon: Lock, label: 'Secure Stripe checkout' },
 ];
@@ -332,23 +323,6 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Money-back guarantee */}
-      <section className="py-12">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <GuaranteeBadge variant="card" />
-          <p className="mt-3 text-center text-sm text-tp-muted">
-            See exactly how refunds work in our{' '}
-            <Link
-              href="/refund-policy"
-              className="font-medium text-tp-bronze-ink underline underline-offset-2 hover:text-tp-ink"
-            >
-              refund policy
-            </Link>
-            .
-          </p>
-        </div>
-      </section>
-
       {/* Pricing FAQs */}
       <section className="py-16 sm:py-20" aria-labelledby="pricing-faq-heading">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
@@ -359,7 +333,7 @@ export default function PricingPage() {
             Frequently Asked Questions
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-center text-base text-tp-muted">
-            Quick answers about pricing, payment and refunds.
+            Quick answers about pricing and payment.
           </p>
           <div className="mt-10 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white px-6">
             {pricingFaqs.map((faq) => (

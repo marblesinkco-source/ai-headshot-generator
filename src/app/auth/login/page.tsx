@@ -74,7 +74,6 @@ function LoginContent() {
   const bulletPoints = [
     'Studio-quality headshots in under 2 hours',
     '11 photo categories for every occasion',
-    '14-day money-back guarantee',
   ];
 
   return (
@@ -235,7 +234,7 @@ function LoginContent() {
 
             {/* Trust signals */}
             <p className="mt-6 pt-5 border-t border-tp-line/40 text-center text-xs text-tp-muted">
-              256-bit encryption · 14-day money-back guarantee · No subscription required
+              256-bit encryption · No subscription required
             </p>
           </div>
 

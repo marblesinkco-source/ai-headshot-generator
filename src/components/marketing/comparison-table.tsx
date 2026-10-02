@@ -289,9 +289,6 @@ export function ComparisonTable() {
         </div>
 
         <p className="mt-6 text-center text-xs text-tp-muted">
-          Backed by a 14-day money-back guarantee.
-        </p>
-        <p className="mt-3 text-center text-xs text-tp-muted">
           * Traditional studio prices reflect average market rates. Other AI tools vary; check each
           provider for details.
         </p>

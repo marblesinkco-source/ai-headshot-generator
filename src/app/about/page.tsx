@@ -103,7 +103,7 @@ const values = [
     icon: Gem,
     title: 'Quality',
     description:
-      'AI-powered, studio-quality results that look like you. We back every order with a money-back guarantee.',
+      'AI-powered, studio-quality results that look like you.',
   },
   {
     icon: Clock,
@@ -141,7 +141,6 @@ const explore = [
 const commitments = [
   'Automatic deletion of your uploads within 30 days',
   'We do not sell your photos',
-  '14-day money-back guarantee',
   'No subscription lock-in',
 ];
 
@@ -246,8 +245,7 @@ export default function AboutPage() {
               still look like you, not like a filter or a stranger.
             </p>
             <p>
-              We also wanted it done responsibly: simple pricing, clear privacy practices, and a
-              money-back guarantee when results fall short.
+              We also wanted it done responsibly: simple pricing and clear privacy practices.
             </p>
           </div>
         </div>
@@ -323,8 +321,7 @@ export default function AboutPage() {
             })}
           </ol>
           <p className="mx-auto mt-10 max-w-2xl text-center text-sm leading-relaxed text-tp-muted">
-            AI-generated images can vary from one result to the next. That is why we offer a
-            money-back guarantee if you are not happy with your photos.{' '}
+            AI-generated images can vary from one result to the next.{' '}
             <Link href="/technology" className="font-medium text-tp-bronze-ink underline underline-offset-4">
               Learn more about our technology
             </Link>.
@@ -412,10 +409,6 @@ export default function AboutPage() {
               Want the details? Read our{' '}
               <Link href="/security" className="font-medium text-tp-bronze-ink underline underline-offset-4">
                 security overview
-              </Link>{' '}
-              or{' '}
-              <Link href="/guarantee" className="font-medium text-tp-bronze-ink underline underline-offset-4">
-                guarantee
               </Link>
               .
             </p>
@@ -430,8 +423,7 @@ export default function AboutPage() {
             Try it <span className="italic text-tp-bronze">yourself</span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-tp-beige/80">
-            Upload your photos, choose a style, and let {siteConfig.name} do the rest. Not happy?
-            Our money-back guarantee has you covered. Need headshots for your whole team?{' '}
+            Upload your photos, choose a style, and let {siteConfig.name} do the rest. Need headshots for your whole team?{' '}
             <Link href="/team-headshots" className="font-medium text-tp-bronze underline underline-offset-4">
               See our team plans
             </Link>.

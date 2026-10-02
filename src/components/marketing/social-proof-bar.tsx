@@ -22,8 +22,8 @@ const metrics = [
   },
   {
     icon: ShieldCheck,
-    value: "Money-Back Guarantee",
-    description: "See our guarantee for terms",
+    value: "Secure Checkout",
+    description: "256-bit encrypted via Stripe",
   },
   {
     icon: Tag,

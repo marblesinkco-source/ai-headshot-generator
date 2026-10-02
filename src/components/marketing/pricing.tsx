@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Check, Zap, ShieldCheck, Lock, Star } from 'lucide-react';
+import { Check, Zap, Lock, Star } from 'lucide-react';
 import { getActiveCategories, type Category } from '@/config/categories';
 import { formatPrice } from '@/lib/utils';
 import { cn } from '@/lib/utils';
@@ -35,7 +35,7 @@ export function Pricing() {
         {/* Value proposition (no fake urgency) */}
         <div className="mx-auto mb-10 max-w-xl rounded-tp-card border border-tp-line bg-tp-paper p-4 text-center">
           <p className="text-sm font-semibold text-tp-bronze-ink">
-            One-time price. No subscription. 14-day money-back guarantee.
+            One-time price. No subscription. Yours to keep.
           </p>
           <p className="mt-1 text-xs text-tp-muted">
             Studio-quality photos without the studio booking, travel or wardrobe changes.
@@ -211,23 +211,6 @@ export function Pricing() {
           </p>
         )}
 
-        {/* Money-back guarantee banner */}
-        <div className="mt-10 mx-auto max-w-2xl rounded-tp-card border border-tp-line bg-tp-paper p-5 sm:p-6 flex items-center gap-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-tp-bronze/10 border border-tp-bronze/20 flex-shrink-0">
-            <ShieldCheck className="h-6 w-6 text-tp-bronze-ink" />
-          </div>
-          <div>
-            <p className="text-sm font-semibold text-tp-ink">
-              14-Day Money-Back Guarantee
-            </p>
-            <p className="text-xs text-tp-muted mt-0.5 leading-relaxed">
-              14-day money-back guarantee. No questions asked.{' '}
-              <Link href="/refund-policy" className="font-medium text-tp-bronze-ink underline underline-offset-2 hover:text-tp-ink">
-                Read the refund policy
-              </Link>
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

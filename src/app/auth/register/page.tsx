@@ -326,7 +326,7 @@ function RegisterContent() {
 
             {/* Trust signals */}
             <ul className="mt-5 grid grid-cols-1 gap-2 rounded-tp-button border border-tp-line bg-tp-paper px-4 py-3 text-xs text-tp-ink sm:grid-cols-3 sm:gap-1 sm:text-center">
-              {['Secure checkout', '14-day money-back guarantee', 'Ready in under 2 hours'].map((t) => (
+              {['Secure checkout', 'Ready in under 2 hours'].map((t) => (
                 <li key={t} className="flex items-center gap-1.5 sm:flex-col sm:gap-1">
                   <Check className="h-3.5 w-3.5 shrink-0 text-tp-bronze-ink" aria-hidden="true" />
                   <span className="font-medium">{t}</span>
@@ -366,7 +366,7 @@ function RegisterContent() {
           </h2>
 
           <ul className="space-y-5 mb-10">
-            {['Upload selfies, get professional photos', '40+ photos per session', 'Ready in under 2 hours', '14-day money-back guarantee'].map((t) => (
+            {['Upload selfies, get professional photos', '40+ photos per session', 'Ready in under 2 hours'].map((t) => (
               <li key={t} className="flex items-start gap-3">
                 <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-tp-bronze/20">
                   <Check className="h-3 w-3 text-tp-bronze" />

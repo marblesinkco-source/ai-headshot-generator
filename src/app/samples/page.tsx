@@ -132,7 +132,6 @@ const comparisonRows = [
   { feature: '40+ styles', ours: 'Every order includes photos across multiple style categories.', check: 'How many distinct styles are included?' },
   { feature: 'Hours, not days', ours: 'Results are delivered in hours rather than days.', check: 'What is the stated turnaround time?' },
   { feature: 'One-time payment', ours: 'Pay once, from $1.99. No subscription.', check: 'Is it a one-time fee or a recurring plan?' },
-  { feature: '14-day guarantee', ours: '14-day money-back guarantee.', check: 'What is the refund window and are there conditions?' },
 ];
 
 const beforeAfterCards = [
@@ -206,7 +205,7 @@ export default function SamplesPage() {
                 Get Your Headshots
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
-              <p className="text-sm text-tp-muted">14-day money-back guarantee</p>
+              <p className="text-sm text-tp-muted">No subscription required</p>
             </div>
           </div>
         </section>

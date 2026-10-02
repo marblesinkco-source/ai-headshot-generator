@@ -349,7 +349,7 @@ export default function SecurityPage() {
             </Link>
           </div>
           <p className="mt-6 text-sm text-tp-muted">
-            No subscription required. 14-day money-back guarantee.
+            No subscription required.
           </p>
         </div>
       </section>

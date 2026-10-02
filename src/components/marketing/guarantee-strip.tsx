@@ -1,7 +1,6 @@
-import { ShieldCheck, RotateCcw, Clock, Lock, CreditCard, Headphones } from 'lucide-react';
+import { RotateCcw, Clock, Lock, CreditCard, Headphones } from 'lucide-react';
 
 const ITEMS = [
-  { icon: ShieldCheck, label: '14-Day Money-Back' },
   { icon: RotateCcw, label: 'Unlimited Re-Gens' },
   { icon: Clock, label: 'Under 2 Hours' },
   { icon: Lock, label: 'Privacy First' },

@@ -1,9 +1,8 @@
-import { BadgeCheck, Clock, CreditCard, ShieldCheck, Trash2 } from 'lucide-react';
+import { BadgeCheck, Clock, CreditCard, Trash2 } from 'lucide-react';
 
 const items = [
   { icon: CreditCard, label: 'One-Time Payment' },
   { icon: Clock, label: '2-Hour Delivery' },
-  { icon: ShieldCheck, label: '14-Day Guarantee' },
   { icon: BadgeCheck, label: 'Full Commercial Rights' },
   { icon: Trash2, label: 'Photos Auto-Deleted' },
 ];

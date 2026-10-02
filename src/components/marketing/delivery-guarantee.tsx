@@ -1,4 +1,4 @@
-import { Clock, ShieldCheck, RefreshCcw, Lock } from 'lucide-react';
+import { Clock, RefreshCcw, Lock } from 'lucide-react';
 import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
 
@@ -8,12 +8,6 @@ const guarantees = [
     title: 'Ready in Under 2 Hours',
     description:
       'From the moment you upload your selfies, our AI works to deliver your photos fast. Most orders are ready in 90 minutes or less.',
-  },
-  {
-    icon: ShieldCheck,
-    title: '14-Day Money-Back Guarantee',
-    description:
-      'Not happy with your results? Get a full refund within 14 days, no questions asked. We stand behind our quality.',
   },
   {
     icon: RefreshCcw,

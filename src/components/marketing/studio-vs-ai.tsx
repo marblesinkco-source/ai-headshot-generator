@@ -214,7 +214,7 @@ export function StudioVsAI() {
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
             <p className="mt-3 text-xs text-tp-muted">
-              No subscription · 14-day money-back guarantee
+              No subscription · One-time payment
             </p>
           </div>
         </div>

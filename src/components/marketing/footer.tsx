@@ -56,7 +56,6 @@ const legalLinks: FooterLink[] = [
   { label: 'Privacy Policy', href: '/privacy' },
   { label: 'Terms of Service', href: '/terms' },
   { label: 'Cookie Policy', href: '/cookie-policy' },
-  { label: 'Refund Policy', href: '/refund-policy' },
   { label: 'KVKK Aydınlatma', href: '/kvkk' },
   { label: 'DPA', href: '/dpa' },
   { label: 'Security', href: '/security' },

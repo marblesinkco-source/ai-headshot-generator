@@ -63,10 +63,6 @@ export function Hero() {
                   <svg className="h-3 w-3 text-tp-bronze-ink" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
                   No credit card needed
                 </span>
-                <span className="inline-flex items-center gap-1">
-                  <svg className="h-3 w-3 text-tp-bronze-ink" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
-                  14-day money-back guarantee
-                </span>
               </div>
 
               {/* Trust signals */}
@@ -74,7 +70,6 @@ export function Hero() {
                 {[
                   { label: `One-time ${BASE_PRICE_DISPLAY}, no subscription`, d: 'M12 8c-1.7 0-3 .9-3 2s1.3 2 3 2 3 .9 3 2-1.3 2-3 2m0-8V6m0 12v-2m9-4a9 9 0 11-18 0 9 9 0 0118 0z' },
                   { label: 'Delivered in about 2 hours', d: 'M12 6v6l4 2m5-2a9 9 0 11-18 0 9 9 0 0118 0z' },
-                  { label: '14-day money-back guarantee', d: 'M9 12l2 2 4-4m5.6-3a12 12 0 01-8.6 3.9A12 12 0 013.4 7 12 12 0 003 10c0 5.6 3.8 10.3 9 11.6 5.2-1.3 9-6 9-11.6 0-1-.1-2-.4-3z' },
                 ].map((t) => (
                   <li key={t.label} className="inline-flex items-center gap-1.5">
                     <svg className="h-4 w-4 text-tp-bronze-ink" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d={t.d} /></svg>

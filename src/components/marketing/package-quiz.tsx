@@ -303,7 +303,6 @@ export function PackageQuiz() {
               </div>
 
               <p className="mt-4 text-center text-xs text-tp-muted">
-                All plans include a 14-day money-back guarantee.{' '}
                 <Link href="/#pricing" className="font-medium text-tp-bronze-ink underline underline-offset-2 hover:text-tp-ink">
                   See all plans
                 </Link>

@@ -43,7 +43,6 @@ const TEAM_TIERS = [
 const TEAM_PERKS = [
   'Consistent look across the whole team',
   'One-time payment per person, no subscription',
-  '14-day money-back guarantee',
   'Full commercial rights',
   'Secure Stripe checkout',
 ];

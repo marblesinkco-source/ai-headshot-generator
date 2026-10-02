@@ -30,11 +30,11 @@ import { StudioVsAI } from '@/components/marketing/studio-vs-ai';
 export const metadata: Metadata = {
   title: 'TailorPic — AI Headshots & Professional Photos | From $1.99',
   description:
-    'Get studio-quality AI headshots in under 2 hours. Multiple styles for business, LinkedIn & creative use. Fast delivery, 14-day money-back guarantee. From $1.99.',
+    'Get studio-quality AI headshots in under 2 hours. Multiple styles for business, LinkedIn & creative use. Fast delivery. From $1.99.',
   openGraph: generateOGMetadata({ title: 'TailorPic — AI Headshots & Professional Photos | From $1.99', description: 
-      'Upload a few selfies, get studio-quality AI headshots in under 2 hours. Professional, creative & business styles. 14-day money-back guarantee.', path: '/' }),
+      'Upload a few selfies, get studio-quality AI headshots in under 2 hours. Professional, creative & business styles.', path: '/' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic — AI Headshots & Professional Photos | From $1.99', description: 
-      'Upload a few selfies, get studio-quality AI headshots in under 2 hours. Starting at $1.99 with a money-back guarantee.' }),
+      'Upload a few selfies, get studio-quality AI headshots in under 2 hours. Starting at $1.99.' }),
   alternates: { canonical: 'https://www.tailorpic.com' },
 };
 

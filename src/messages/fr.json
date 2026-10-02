@@ -28,7 +28,6 @@
     "perHeadshot": "par portrait",
     "delivery": "Livraison en 24 heures",
     "features": "Ce qui est inclus",
-    "moneyBack": "Garantie satisfait ou remboursé",
     "getStarted": "Commencer maintenant"
   },
   "footer": {
@@ -38,7 +37,6 @@
     "legal": "Mentions légales",
     "privacy": "Politique de confidentialité",
     "terms": "Conditions d'utilisation",
-    "refund": "Politique de remboursement",
     "copyright": "Tous droits réservés"
   },
   "meta": {

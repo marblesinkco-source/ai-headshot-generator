@@ -150,11 +150,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/refund-policy`,
-      changeFrequency: 'yearly',
-      priority: 0.4,
-    },
-    {
       url: `${baseUrl}/cookie-policy`,
       changeFrequency: 'yearly',
       priority: 0.3,

@@ -28,7 +28,6 @@
     "perHeadshot": "per headshot",
     "delivery": "24-hour delivery",
     "features": "What's included",
-    "moneyBack": "Money-back guarantee",
     "getStarted": "Get Started Now"
   },
   "footer": {
@@ -38,7 +37,6 @@
     "legal": "Legal",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
-    "refund": "Refund Policy",
     "copyright": "All rights reserved"
   },
   "meta": {

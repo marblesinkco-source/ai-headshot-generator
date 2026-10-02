@@ -39,7 +39,7 @@ export const faqs = [
     category: 'Refund',
     question: 'Can I get a refund if I am not satisfied?',
     answer:
-      'Yes. We offer a 14-day money-back guarantee. If you are not happy with your photos, contact our support team within 14 days of your purchase and we will issue a full refund — no questions asked.',
+      'If you are not happy with your photos, contact our support team and we will work with you to resolve the issue.',
   },
   {
     category: 'Pricing',

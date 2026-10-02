@@ -6,7 +6,7 @@ import { BreadcrumbSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
-import { Quote, Shield, CreditCard, Image as ImageIcon, ArrowRight } from 'lucide-react';
+import { Quote, CreditCard, Image as ImageIcon, ArrowRight } from 'lucide-react';
 
 const pageTitle = 'TailorPic Testimonials: How Professionals Use AI Headshots';
 const pageDescription = `See how professionals use ${siteConfig.name} for headshots, team photos, LinkedIn profiles and more. Illustrative testimonials covering real use cases.`;
@@ -174,7 +174,6 @@ const reviews: Review[] = [
 const filterTabs = ['All', 'Business', 'Creative', 'Teams', 'LinkedIn'] as const;
 
 const trustItems = [
-  { icon: Shield, label: '14-Day Money-Back Guarantee' },
   { icon: CreditCard, label: 'From $1.99' },
   { icon: ImageIcon, label: 'Up to 160 Photos' },
 ];

@@ -132,7 +132,7 @@ const changelog: ChangelogGroup[] = [
         tag: 'New',
         title: 'Security and privacy foundations',
         description:
-          'Published security practices, subprocessors list, data processing agreement, and a 14-day money-back guarantee from day one.',
+          'Published security practices, subprocessors list, and data processing agreement from day one.',
         icon: <Shield className={iconClass} />,
         href: '/security',
       },
@@ -269,8 +269,7 @@ export default function ChangelogPage() {
             Try the latest version
           </h2>
           <p className="mx-auto mt-2 max-w-md text-sm text-tp-paper/70">
-            Professional AI headshots from $1.99, backed by a 14-day
-            money-back guarantee.
+            Professional AI headshots from $1.99. No subscription required.
           </p>
           <Link
             href="/auth/register"

@@ -10,7 +10,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const categories = getActiveCategories();
 
-const trustPoints = ['No subscription', '14-day guarantee', '2-hour delivery'];
+const trustPoints = ['No subscription', '2-hour delivery'];
 
 export function CTABanner() {
   const categoryDialog = useRef<HTMLDialogElement>(null);

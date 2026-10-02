@@ -1,4 +1,4 @@
-import { Clock, Lock, ShieldCheck } from 'lucide-react';
+import { Clock, Lock } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
@@ -21,7 +21,6 @@ export interface TrustBarProps {
 const DEFAULT_METRICS: TrustMetric[] = [
   { icon: Clock, label: 'Ready in 24h' },
   { icon: Lock, label: '256-bit Encrypted' },
-  { icon: ShieldCheck, label: '14-day Money-back Guarantee' },
 ];
 
 export function TrustBar({

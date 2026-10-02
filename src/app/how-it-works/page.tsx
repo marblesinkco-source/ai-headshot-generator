@@ -110,9 +110,9 @@ const differentiators = [
   },
   {
     icon: ShieldCheck,
-    title: 'Money-Back Guarantee',
+    title: 'Privacy First',
     description:
-      'We stand behind our results with a 14-day money-back guarantee. If you are not happy, we will make it right.',
+      'Your uploads are used only to create your photos and are automatically deleted within 30 days.',
   },
 ];
 
@@ -137,9 +137,9 @@ const whyChooseUs = [
   },
   {
     icon: Undo2,
-    title: 'Money-Back Guarantee',
+    title: 'One-Time Payment',
     description:
-      'Covered by our 14-day money-back guarantee. See our refund policy for details.',
+      'Pay once for your package. No subscription and nothing to cancel.',
   },
 ];
 
@@ -205,7 +205,7 @@ const faqs = [
   {
     question: 'What if I am not happy with the results?',
     answer:
-      'We offer a 14-day money-back guarantee. If you are not satisfied with your photos, contact our support team and we will make it right — either with a re-generation or a full refund.',
+      'If you are not satisfied with your photos, contact our support team and we will work with you to make it right.',
   },
   {
     question: 'What do I need to get started?',

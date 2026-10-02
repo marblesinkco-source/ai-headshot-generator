@@ -7,7 +7,7 @@ import { siteConfig } from '@/config/site';
 import { FAQSchema, BreadcrumbSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
-const DESCRIPTION = 'Answers about TailorPic AI headshots: how it works, pricing, privacy, delivery time, and our 14-day money-back guarantee. Find what you need quickly.';
+const DESCRIPTION = 'Answers about TailorPic AI headshots: how it works, pricing, privacy and delivery time. Find what you need quickly.';
 
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic FAQ: Pricing, Privacy, Delivery & Guarantee' },
@@ -99,10 +99,6 @@ export default function FAQPage() {
           ))}
           <p className="text-center text-sm text-tp-muted">
             See also our{' '}
-            <Link href="/refund-policy" className="font-medium text-tp-bronze-ink underline underline-offset-2">
-              refund policy
-            </Link>{' '}
-            and{' '}
             <Link href="/security" className="font-medium text-tp-bronze-ink underline underline-offset-2">
               security overview
             </Link>

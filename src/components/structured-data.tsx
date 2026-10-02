@@ -101,13 +101,6 @@ export function ProductSchema({
         '@type': 'Organization',
         name: siteConfig.name,
       },
-      hasMerchantReturnPolicy: {
-        '@type': 'MerchantReturnPolicy',
-        applicableCountry: 'US',
-        returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
-        merchantReturnDays: 14,
-        merchantReturnLink: `${siteConfig.url}/refund-policy`,
-      },
     },
   };
 
@@ -253,24 +246,6 @@ export function ArticleSchema({
   );
 }
 
-export function MerchantReturnPolicySchema() {
-  const data = {
-    '@context': 'https://schema.org',
-    '@type': 'MerchantReturnPolicy',
-    name: '14-Day Money-Back Guarantee',
-    applicableCountry: 'US',
-    returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
-    merchantReturnDays: 14,
-    merchantReturnLink: `${siteConfig.url}/refund-policy`,
-  };
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-    />
-  );
-}
 
 export function HowToSchema() {
   const data = {

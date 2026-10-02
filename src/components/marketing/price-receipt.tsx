@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
-import { Check, Receipt, ChevronDown, Shield, Clock, RefreshCcw } from 'lucide-react';
+import { Check, Receipt, ChevronDown, Clock, RefreshCcw } from 'lucide-react';
 import { CATEGORIES } from '@/config/categories';
 import { formatPrice } from '@/lib/utils';
 import { cn } from '@/lib/utils';
@@ -125,10 +125,6 @@ export function PriceReceipt() {
           <div className="border-t border-tp-line bg-tp-beige/30 px-6 py-4">
             <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-tp-muted">
               <span className="flex items-center gap-1.5">
-                <Shield className="h-3.5 w-3.5 text-tp-bronze-ink" />
-                14-day money-back guarantee
-              </span>
-              <span className="flex items-center gap-1.5">
                 <Clock className="h-3.5 w-3.5 text-tp-bronze-ink" />
                 Ready in under 2 hours
               </span>
@@ -149,7 +145,7 @@ export function PriceReceipt() {
             Get My {pkg.outputCount}+ Headshots
           </Link>
           <p className="mt-3 text-xs text-tp-muted">
-            Secure checkout powered by Stripe. Cancel within 14 days for a full refund.
+            Secure checkout powered by Stripe.
           </p>
         </div>
       </div>

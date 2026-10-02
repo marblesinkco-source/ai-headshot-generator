@@ -1,8 +1,7 @@
-import { Ban, BadgeCheck, CreditCard, ShieldCheck, Trash2 } from 'lucide-react';
+import { Ban, BadgeCheck, CreditCard, Trash2 } from 'lucide-react';
 
 const badges = [
   { icon: Ban, label: 'No Subscription' },
-  { icon: ShieldCheck, label: '14-Day Money-Back Guarantee' },
   { icon: Trash2, label: 'Photos Auto-Deleted in 30 Days' },
   { icon: BadgeCheck, label: 'Full Commercial Rights' },
   { icon: CreditCard, label: 'One-Time Payment' },
