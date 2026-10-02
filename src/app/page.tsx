@@ -25,6 +25,7 @@ import { ActivityFeed } from '@/components/marketing/activity-feed';
 import { PackageQuiz } from '@/components/marketing/package-quiz';
 import { PriceReceipt } from '@/components/marketing/price-receipt';
 import { StyleConfigurator } from '@/components/marketing/style-configurator';
+import { StudioVsAI } from '@/components/marketing/studio-vs-ai';
 
 export const metadata: Metadata = {
   title: 'TailorPic — AI Headshots & Professional Photos | From $1.99',
@@ -127,6 +128,7 @@ export default function LandingPage() {
       <AIvsGeneric />
       <DeliveryGuarantee />
       <SavingsHighlight />
+      <StudioVsAI />
       <TeamShowcase />
       <PackageQuiz />
       <Pricing />
