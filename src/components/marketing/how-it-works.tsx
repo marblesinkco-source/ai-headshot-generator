@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { ArrowDown, ArrowRight, Clock, Download, Sparkles, Upload, LayoutGrid } from 'lucide-react';
+import { ArrowDown, ArrowRight, Clock, Sparkles } from 'lucide-react';
+import { StepStyleIllustration, StepUploadIllustration, StepDownloadIllustration } from '@/components/marketing/illustrations';
 import { buttonVariants } from '@/components/ui/button';
 
 const steps = [
@@ -7,7 +8,7 @@ const steps = [
     number: '1',
     label: 'Step 1',
     title: 'Pick your style and package',
-    icon: LayoutGrid,
+    Illustration: StepStyleIllustration,
     description:
       'Choose the photo category that fits your goal, such as corporate, LinkedIn, dating or creative, then select the package that suits you. One-time payment, no subscription.',
   },
@@ -15,7 +16,7 @@ const steps = [
     number: '2',
     label: 'Step 2',
     title: 'Upload 10–20 selfies',
-    icon: Upload,
+    Illustration: StepUploadIllustration,
     description:
       'Add 10–20 clear, well-lit selfies (8 minimum) with different angles and expressions. Our AI learns your features from them, and your uploads are auto-deleted within 30 days.',
   },
@@ -23,7 +24,7 @@ const steps = [
     number: '3',
     label: 'Step 3',
     title: 'Download your portraits',
-    icon: Download,
+    Illustration: StepDownloadIllustration,
     description:
       'Get your studio-quality portraits in under 2 hours. Browse the full set, save your favorites, and use them on LinkedIn, resumes, social profiles or print.',
   },
@@ -53,7 +54,7 @@ export function HowItWorks() {
 
       <ol className="m-0 flex list-none flex-col p-0 lg:grid lg:grid-cols-3 lg:gap-14">
         {steps.map((step, index) => {
-          const Icon = step.icon;
+          const Illustration = step.Illustration;
           const isLast = index === steps.length - 1;
           return (
             <li key={step.number} className="relative flex flex-col items-stretch">
@@ -76,8 +77,11 @@ export function HowItWorks() {
                     <p className="m-0 text-[11px] lg:text-xs font-semibold uppercase tracking-[0.14em] text-tp-bronze-ink">
                       {step.label}
                     </p>
-                    <Icon className="mt-1.5 h-5 w-5 lg:h-6 lg:w-6 text-tp-bronze-ink" aria-hidden="true" />
-                  </div>
+                    </div>
+                </div>
+
+                <div className="relative mt-5 flex h-[120px] lg:h-[140px] items-center justify-center rounded-tp-button border border-tp-line bg-gradient-to-br from-tp-paper to-tp-beige/40">
+                  <Illustration className="h-full w-auto max-w-full p-2" />
                 </div>
 
                 <h3 className="relative font-display font-normal text-[22px] lg:text-[26px] leading-tight mt-5 lg:mt-6 mb-2 lg:mb-3 text-tp-ink">

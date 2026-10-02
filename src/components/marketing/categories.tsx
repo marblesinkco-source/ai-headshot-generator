@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getActiveCategories, CATEGORY_GROUPS } from '@/config/categories';
+import { CategoryFallbackIllustration } from '@/components/marketing/illustrations';
 
 // Tiny neutral beige 8x6 SVG placeholder shown while category images load
 const BLUR_DATA_URL =
@@ -124,9 +125,10 @@ export function Categories() {
                             blurDataURL={BLUR_DATA_URL}
                           />
                         ) : (
-                          <div className="flex h-full w-full items-center justify-center">
-                            <span className="text-4xl sm:text-5xl" aria-hidden="true">{cat.icon}</span>
-                          </div>
+                          <CategoryFallbackIllustration
+                            seed={Array.from(cat.id).reduce((a, ch) => a + ch.charCodeAt(0), 0)}
+                            className="h-full w-full"
+                          />
                         )}
                         <div className="absolute inset-0 bg-gradient-to-t from-tp-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 

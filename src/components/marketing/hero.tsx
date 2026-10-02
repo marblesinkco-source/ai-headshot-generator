@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getActiveCategories, FEATURED_CATEGORIES } from '@/config/categories';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+import { HeroPattern } from '@/components/marketing/illustrations';
 
 const categories = getActiveCategories();
 const quickCategories = categories.filter((c) =>
@@ -16,7 +17,8 @@ export function Hero() {
 
   return (
     <>
-      <section className="relative" aria-labelledby="tp-title">
+      <section className="relative overflow-hidden" aria-labelledby="tp-title">
+        <HeroPattern />
         <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
           {/* Desktop: two-column editorial layout */}
           <div className="grid gap-9 pt-7 lg:grid-cols-[1.1fr_1fr] lg:min-h-[553px]">
