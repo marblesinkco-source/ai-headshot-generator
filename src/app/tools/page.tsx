@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { ToolsIllustration } from '@/components/marketing/illustrations';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
@@ -105,6 +106,9 @@ export default function ToolsPage() {
               Professional photo tools you can use for free — no account
               needed.
             </p>
+            <div className="mx-auto mt-8 max-w-sm">
+              <ToolsIllustration className="w-full h-auto" />
+            </div>
           </div>
         </section>
 

@@ -447,3 +447,249 @@ export function PricingVisualIllustration({ className = '' }: { className?: stri
     </svg>
   );
 }
+
+/** Question mark glyph drawn as a stroke path, centered on (x, y). */
+function QMark({ x = 0, y = 0, scale = 1, color = BRONZE_INK, dot = color }: { x?: number; y?: number; scale?: number; color?: string; dot?: string }) {
+  return (
+    <g transform={`translate(${x} ${y}) scale(${scale})`}>
+      <path d="M-6 -6c0-11 12-11 12 0c0 6-6 7-6 13" stroke={color} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      <circle cx="0" cy="13" r="1.9" fill={dot} />
+    </g>
+  );
+}
+
+/** FAQ — three overlapping chat bubbles with question marks, joined by dotted lines. */
+export function FAQIllustration({ className = '' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 260 160" className={className} aria-hidden="true" focusable="false" fill="none">
+      {/* Dotted connections */}
+      <path d="M46 72C46 52 60 46 82 48" stroke={BRONZE} strokeWidth="1.5" strokeLinecap="round" strokeDasharray="1 5" />
+      <path d="M216 86C216 66 202 58 178 58" stroke={BRONZE} strokeWidth="1.5" strokeLinecap="round" strokeDasharray="1 5" />
+      <path d="M74 128C92 140 120 142 140 134" stroke={BRONZE} strokeWidth="1.5" strokeLinecap="round" strokeDasharray="1 5" />
+      {/* Left small bubble */}
+      <path d="M26 72h40a12 12 0 0112 12v22a12 12 0 01-12 12H44l-12 12v-12h-6a12 12 0 01-12-12V84a12 12 0 0112-12z" fill={PAPER} stroke={BRONZE_INK} strokeWidth="1.5" strokeLinejoin="round" />
+      <QMark x={46} y={92} scale={0.7} color={BRONZE_INK} />
+      {/* Right small bubble */}
+      <path d="M200 86h30a12 12 0 0112 12v20a12 12 0 01-12 12h-4v12l-12-12h-14a12 12 0 01-12-12V98a12 12 0 0112-12z" fill={BEIGE} fillOpacity="0.55" stroke={BRONZE} strokeWidth="1.5" strokeLinejoin="round" />
+      <QMark x={209} y={104} scale={0.62} color={BRONZE_INK} />
+      {/* Center large bubble */}
+      <path d="M96 20h68a16 16 0 0116 16v44a16 16 0 01-16 16h-44l-18 18V96h-6a16 16 0 01-16-16V36a16 16 0 0116-16z" fill={INK} stroke={BRONZE} strokeWidth="1.5" strokeLinejoin="round" />
+      <QMark x={130} y={50} scale={1.25} color={BRONZE} />
+      {/* Accent dots */}
+      <circle cx="236" cy="38" r="3" fill={BRONZE} fillOpacity="0.6" />
+      <circle cx="22" cy="40" r="2.5" fill={BEIGE} />
+    </svg>
+  );
+}
+
+/** Tools — photo frame with crop handles, scissors on the left, magic wand on the right (for dark backgrounds). */
+export function ToolsIllustration({ className = '' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 280 160" className={className} aria-hidden="true" focusable="false" fill="none">
+      {/* Frame */}
+      <rect x="90" y="30" width="100" height="100" rx="6" fill={PAPER} fillOpacity="0.06" stroke={PAPER} strokeOpacity="0.55" strokeWidth="1.5" />
+      <path d="M123.3 30v100M156.7 30v100M90 63.3h100M90 96.7h100" stroke={PAPER} strokeOpacity="0.18" strokeWidth="1" strokeDasharray="3 4" />
+      <Bust x={140} y={88} scale={1.15} fill={BRONZE} opacity={0.7} />
+      {/* Crop handles */}
+      <g stroke={BRONZE} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M82 46V22h24" />
+        <path d="M174 22h24v24" />
+        <path d="M82 114v24h24" />
+        <path d="M198 114v24h-24" />
+      </g>
+      {/* Scissors */}
+      <g strokeLinecap="round" strokeLinejoin="round">
+        <path d="M33 101L50 56" stroke={PAPER} strokeWidth="2.5" />
+        <path d="M47 101L30 56" stroke={PAPER} strokeWidth="2.5" />
+        <circle cx="30" cy="109" r="8" stroke={BRONZE} strokeWidth="2.5" />
+        <circle cx="50" cy="109" r="8" stroke={BRONZE} strokeWidth="2.5" />
+        <circle cx="40" cy="82" r="2.2" fill={BRONZE} />
+      </g>
+      <path d="M60 84h18" stroke={BRONZE} strokeWidth="1.5" strokeLinecap="round" strokeDasharray="1 5" />
+      {/* Magic wand */}
+      <path d="M212 122l26-38" stroke={PAPER} strokeWidth="5" strokeLinecap="round" />
+      <path d="M232 92l6-8" stroke={BRONZE} strokeWidth="5" strokeLinecap="round" />
+      <path d="M252 46l3.5 10.5L266 60l-10.5 3.5L252 74l-3.5-10.5L238 60l10.5-3.5z" fill={BRONZE} />
+      <path d="M229 38v8M225 42h8" stroke={PAPER} strokeOpacity="0.8" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M268 90v8M264 94h8" stroke={PAPER} strokeOpacity="0.8" strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="222" cy="64" r="2" fill={BRONZE} fillOpacity="0.7" />
+    </svg>
+  );
+}
+
+/** Technology — pipeline from a casual selfie, through a neural-network hexagon, to a polished headshot. */
+export function TechnologyIllustration({ className = '' }: { className?: string }) {
+  const layers = [
+    [[134, 68], [134, 92]],
+    [[150, 60], [150, 80], [150, 100]],
+    [[166, 72], [166, 88]],
+  ];
+  const links: Array<[number[], number[]]> = [];
+  for (let l = 0; l < layers.length - 1; l++) {
+    for (const a of layers[l]) for (const b of layers[l + 1]) links.push([a, b]);
+  }
+  return (
+    <svg viewBox="0 0 300 160" className={className} aria-hidden="true" focusable="false" fill="none">
+      <defs>
+        <clipPath id="tp-tech-clip-l">
+          <circle cx="48" cy="80" r="35" />
+        </clipPath>
+        <clipPath id="tp-tech-clip-r">
+          <circle cx="252" cy="80" r="35" />
+        </clipPath>
+      </defs>
+      {/* Input: casual selfie */}
+      <circle cx="48" cy="80" r="36" fill={BEIGE} fillOpacity="0.3" stroke={BEIGE} strokeWidth="1.5" strokeDasharray="4 4" />
+      <g clipPath="url(#tp-tech-clip-l)">
+        <g transform="rotate(-10 50 90)">
+          <Bust x={46} y={88} scale={0.95} fill={BRONZE} opacity={0.85} />
+        </g>
+      </g>
+      {/* Arrows */}
+      <path d="M90 80h22m0 0l-5-5m5 5l-5 5" stroke={BRONZE_INK} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M188 80h22m0 0l-5-5m5 5l-5 5" stroke={BRONZE_INK} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Neural hexagon */}
+      <path d="M150 44l31 18v36l-31 18-31-18V62z" fill={INK} stroke={BRONZE} strokeWidth="1.5" strokeLinejoin="round" />
+      {links.map(([a, b], i) => (
+        <line key={i} x1={a[0]} y1={a[1]} x2={b[0]} y2={b[1]} stroke={BRONZE} strokeOpacity="0.55" strokeWidth="1" />
+      ))}
+      {layers.flat().map(([cx, cy], i) => (
+        <circle key={i} cx={cx} cy={cy} r="3" fill={BRONZE} />
+      ))}
+      {/* Output: polished headshot */}
+      <circle cx="252" cy="80" r="36" fill={BEIGE} fillOpacity="0.6" stroke={BRONZE_INK} strokeWidth="2" />
+      <g clipPath="url(#tp-tech-clip-r)">
+        <Bust x={252} y={86} scale={1.05} fill={BRONZE_INK} />
+      </g>
+      <circle cx="278" cy="52" r="9" fill={INK} />
+      <path d="M273.5 52l3 3 5-6" stroke={BRONZE} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+/** Photo tips — phone taking a selfie with a head-and-shoulders guide, window light rays behind. */
+export function PhotoTipsIllustration({ className = '' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 260 180" className={className} aria-hidden="true" focusable="false" fill="none">
+      {/* Window */}
+      <rect x="10" y="14" width="96" height="120" rx="6" fill={BRONZE} fillOpacity="0.12" stroke={BEIGE} strokeWidth="1.5" />
+      <path d="M58 14v120M10 74h96" stroke={BEIGE} strokeWidth="1.5" />
+      <rect x="4" y="134" width="108" height="6" rx="3" fill={BEIGE} />
+      <circle cx="32" cy="40" r="8" fill={BRONZE} fillOpacity="0.55" />
+      {/* Light rays */}
+      <g stroke={BRONZE} strokeWidth="1.5" strokeLinecap="round" strokeDasharray="4 5" strokeOpacity="0.8">
+        <path d="M108 36l36 28" />
+        <path d="M108 64l36 28" />
+        <path d="M108 92l36 26" />
+      </g>
+      {/* Phone */}
+      <rect x="148" y="18" width="92" height="152" rx="16" fill={INK} />
+      <rect x="154" y="28" width="80" height="132" rx="10" fill={PAPER} />
+      <rect x="154" y="28" width="80" height="132" rx="10" fill={BEIGE} fillOpacity="0.35" />
+      <rect x="178" y="21" width="32" height="4" rx="2" fill={BRONZE_INK} />
+      <Bust x={194} y={100} scale={1.2} fill={BRONZE} opacity={0.55} />
+      {/* Head-and-shoulders guide */}
+      <ellipse cx="194" cy="82" rx="20" ry="24" stroke={BRONZE_INK} strokeWidth="1.5" strokeDasharray="4 3" />
+      <path d="M160 152c0-26 14-38 34-38s34 12 34 38" stroke={BRONZE_INK} strokeWidth="1.5" strokeLinecap="round" strokeDasharray="4 3" />
+      <path d="M160 40h10M160 40v10M228 40h-10M228 40v10" stroke={BRONZE_INK} strokeWidth="1.5" strokeLinecap="round" />
+      {/* Sparkle */}
+      <path d="M124 16l2.4 7.2L134 25.6l-7.6 2.4L124 35l-2.4-7-7.6-2.4 7.6-2.4z" fill={BRONZE} />
+    </svg>
+  );
+}
+
+/** Use cases — staggered LinkedIn card, resume and ID badge, each with a headshot. */
+export function UseCasesIllustration({ className = '' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 300 160" className={className} aria-hidden="true" focusable="false" fill="none">
+      <defs>
+        <clipPath id="tp-uc-clip-a">
+          <circle cx="38" cy="48" r="14" />
+        </clipPath>
+        <clipPath id="tp-uc-clip-b">
+          <circle cx="122" cy="72" r="15" />
+        </clipPath>
+        <clipPath id="tp-uc-clip-c">
+          <circle cx="236" cy="62" r="24" />
+        </clipPath>
+      </defs>
+      {/* LinkedIn card */}
+      <rect x="10" y="16" width="116" height="84" rx="10" fill={PAPER} stroke={BEIGE} strokeWidth="1.5" />
+      <rect x="10" y="16" width="116" height="26" rx="10" fill={INK} />
+      <rect x="10" y="30" width="116" height="12" fill={INK} />
+      <circle cx="38" cy="48" r="16" fill={PAPER} />
+      <circle cx="38" cy="48" r="14" fill={BEIGE} />
+      <g clipPath="url(#tp-uc-clip-a)">
+        <Bust x={38} y={55} scale={0.5} />
+      </g>
+      <rect x="24" y="68" width="56" height="5" rx="2.5" fill={INK} fillOpacity="0.85" />
+      <rect x="24" y="78" width="38" height="4" rx="2" fill={BRONZE} />
+      <rect x="24" y="88" width="34" height="7" rx="3.5" fill={INK} />
+      {/* Resume */}
+      <rect x="96" y="44" width="100" height="104" rx="8" fill={PAPER} stroke={BEIGE} strokeWidth="1.5" />
+      <circle cx="122" cy="72" r="15" fill={BEIGE} />
+      <g clipPath="url(#tp-uc-clip-b)">
+        <Bust x={122} y={79} scale={0.52} />
+      </g>
+      <circle cx="122" cy="72" r="15" stroke={BRONZE_INK} strokeWidth="1.2" />
+      <rect x="144" y="62" width="40" height="5" rx="2.5" fill={INK} fillOpacity="0.85" />
+      <rect x="144" y="72" width="28" height="4" rx="2" fill={BRONZE} />
+      <rect x="108" y="94" width="76" height="1.5" rx="0.75" fill={BEIGE} />
+      <rect x="108" y="104" width="76" height="4" rx="2" fill={BEIGE} />
+      <rect x="108" y="114" width="64" height="4" rx="2" fill={BEIGE} />
+      <rect x="108" y="124" width="70" height="4" rx="2" fill={BEIGE} />
+      <rect x="108" y="134" width="50" height="4" rx="2" fill={BEIGE} />
+      {/* ID badge */}
+      <rect x="186" y="12" width="100" height="120" rx="10" fill={INK} stroke={PAPER} strokeWidth="2" />
+      <rect x="225" y="20" width="22" height="5" rx="2.5" fill={BRONZE} fillOpacity="0.5" />
+      <circle cx="236" cy="62" r="24" fill={BRONZE} fillOpacity="0.25" />
+      <g clipPath="url(#tp-uc-clip-c)">
+        <Bust x={236} y={70} scale={0.9} fill={BRONZE} />
+      </g>
+      <circle cx="236" cy="62" r="24" stroke={BRONZE} strokeWidth="1.5" />
+      <rect x="210" y="94" width="52" height="6" rx="3" fill={BRONZE} />
+      <rect x="218" y="105" width="36" height="4" rx="2" fill={BEIGE} fillOpacity="0.6" />
+      <rect x="210" y="116" width="52" height="8" rx="2" fill={BRONZE} fillOpacity="0.4" />
+    </svg>
+  );
+}
+
+/** Blog — open journal with abstract text, a camera lens overlapping bottom-right and a sparkle. */
+export function BlogIllustration({ className = '' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 240 160" className={className} aria-hidden="true" focusable="false" fill="none">
+      {/* Page stack */}
+      <path d="M28 124c32-8 78-6 92 2c14-8 60-10 92-2" stroke={BEIGE} strokeWidth="1.5" strokeLinecap="round" />
+      {/* Open pages */}
+      <path d="M120 38c-14-8-60-10-92-2v82c32-8 78-6 92 2z" fill={PAPER} stroke={BRONZE_INK} strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="M120 38c14-8 60-10 92-2v82c-32-8-78-6-92 2z" fill={PAPER} stroke={BRONZE_INK} strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="M120 38v82" stroke={BRONZE_INK} strokeWidth="1.5" />
+      {/* Left page text */}
+      <g stroke={BEIGE} strokeWidth="3" strokeLinecap="round">
+        <path d="M40 56h62" />
+        <path d="M40 68h62" />
+        <path d="M40 80h50" />
+        <path d="M40 92h58" />
+        <path d="M40 104h38" />
+      </g>
+      {/* Right page: heading, image, text */}
+      <path d="M134 54h40" stroke={INK} strokeOpacity="0.8" strokeWidth="4" strokeLinecap="round" />
+      <path d="M134 66h58" stroke={BEIGE} strokeWidth="3" strokeLinecap="round" />
+      <rect x="134" y="78" width="30" height="22" rx="3" fill={BEIGE} fillOpacity="0.6" stroke={BRONZE} />
+      <circle cx="149" cy="86" r="3.5" fill={BRONZE_INK} />
+      <path d="M137 98c2-6 6-8 12-8s9 3 12 8z" fill={BRONZE_INK} />
+      <path d="M172 84h20M172 94h16" stroke={BEIGE} strokeWidth="3" strokeLinecap="round" />
+      <path d="M134 108h40" stroke={BEIGE} strokeWidth="3" strokeLinecap="round" />
+      {/* Camera lens */}
+      <circle cx="192" cy="116" r="28" fill={PAPER} />
+      <circle cx="192" cy="116" r="26" fill={INK} />
+      <circle cx="192" cy="116" r="19" stroke={BRONZE} strokeWidth="3" />
+      <circle cx="192" cy="116" r="11" fill={BRONZE} fillOpacity="0.3" stroke={BRONZE} strokeWidth="1.5" />
+      <circle cx="186" cy="110" r="3" fill={PAPER} fillOpacity="0.85" />
+      {/* Sparkle */}
+      <path d="M210 14l2.8 8.2L221 25l-8.2 2.8L210 36l-2.8-8.2L199 25l8.2-2.8z" fill={BRONZE} />
+      <circle cx="228" cy="44" r="2" fill={BRONZE} fillOpacity="0.7" />
+      <circle cx="192" cy="18" r="1.5" fill={BRONZE_INK} />
+    </svg>
+  );
+}

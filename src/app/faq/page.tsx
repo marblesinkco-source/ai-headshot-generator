@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { FAQIllustration } from '@/components/marketing/illustrations';
 import { faqs, faqCategories } from '@/config/faqs';
 import { siteConfig } from '@/config/site';
 import { FAQSchema, BreadcrumbSchema } from '@/components/structured-data';
@@ -70,6 +71,9 @@ export default function FAQPage() {
               </a>
             ))}
           </nav>
+          <div className="mx-auto mt-8 max-w-xs">
+            <FAQIllustration className="w-full h-auto" />
+          </div>
         </div>
       </section>
 

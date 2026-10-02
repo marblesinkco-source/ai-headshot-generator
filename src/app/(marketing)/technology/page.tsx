@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { TechnologyIllustration } from '@/components/marketing/illustrations';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import { buttonVariants } from '@/components/ui/button';
@@ -262,6 +263,9 @@ export default function TechnologyPage() {
             >
               View Sample Results <ArrowRight className="h-3.5 w-3.5" />
             </Link>
+          </div>
+          <div className="mx-auto mt-12 max-w-md">
+            <TechnologyIllustration className="w-full h-auto" />
           </div>
         </div>
       </section>

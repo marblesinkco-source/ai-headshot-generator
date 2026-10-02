@@ -3,6 +3,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { PhotoTipsIllustration } from '@/components/marketing/illustrations';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
@@ -253,6 +254,9 @@ export default function PhotoTipsPage() {
             >
               Get Started <ArrowRight className="h-4 w-4" />
             </Link>
+          </div>
+          <div className="mx-auto mt-10 max-w-sm">
+            <PhotoTipsIllustration className="w-full h-auto" />
           </div>
         </div>
       </section>

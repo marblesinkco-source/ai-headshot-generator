@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { UseCasesIllustration } from '@/components/marketing/illustrations';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -226,8 +227,12 @@ export default function UseCasesPage() {
             minutes.
           </p>
 
+          <div className="mx-auto mt-10 max-w-sm">
+            <UseCasesIllustration className="w-full h-auto" />
+          </div>
+
           {/* Category pills */}
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             {categories.map((cat) => (
               <a
                 key={cat.id}

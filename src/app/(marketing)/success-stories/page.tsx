@@ -3,6 +3,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { BeforeAfterIllustration } from '@/components/marketing/illustrations';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
@@ -217,6 +218,9 @@ export default function SuccessStoriesPage() {
               >
                 View Samples
               </Link>
+            </div>
+            <div className="mx-auto mt-10 max-w-sm">
+              <BeforeAfterIllustration className="w-full h-auto" />
             </div>
           </div>
         </section>

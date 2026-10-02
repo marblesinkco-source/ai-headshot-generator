@@ -3,6 +3,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { BlogIllustration } from '@/components/marketing/illustrations';
 import { siteConfig } from '@/config/site';
 import { getAllBlogPosts } from '@/config/blog';
 import { BlogListing } from '@/components/blog/blog-listing';
@@ -151,6 +152,9 @@ export default function BlogPage() {
                 </span>
               ),
             )}
+          </div>
+          <div className="mx-auto mt-8 max-w-xs">
+            <BlogIllustration className="w-full h-auto" />
           </div>
         </div>
       </section>

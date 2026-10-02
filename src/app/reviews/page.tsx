@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { BeforeAfterIllustration } from '@/components/marketing/illustrations';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
@@ -235,6 +236,9 @@ export default function ReviewsPage() {
             <p className="mx-auto mt-4 max-w-xl rounded-tp-button border border-tp-line bg-white px-4 py-3 text-sm text-tp-ink/80">
               * Illustrative testimonials for demonstration purposes.
             </p>
+            <div className="mx-auto mt-8 max-w-xs">
+              <BeforeAfterIllustration className="w-full h-auto" />
+            </div>
           </div>
         </section>
 
