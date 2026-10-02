@@ -19,6 +19,7 @@ import { BeforeAfterShowcase } from '@/components/marketing/before-after-showcas
 import { DeliveryGuarantee } from '@/components/marketing/delivery-guarantee';
 import { UseCaseChips } from '@/components/marketing/use-case-chips';
 import { PhotoPrepGuide } from '@/components/marketing/photo-prep-guide';
+import { GuaranteeStrip } from '@/components/marketing/guarantee-strip';
 
 export const metadata: Metadata = {
   title: 'TailorPic — AI Headshots & Professional Photos | From $1.99',
@@ -68,6 +69,14 @@ const PlanPicker = dynamic(
   () => import('@/components/marketing/plan-picker').then((m) => m.PlanPicker),
   { loading: () => <SectionSkeleton height="h-[420px]" /> }
 );
+const StyleShowcase = dynamic(
+  () => import('@/components/marketing/style-showcase').then((m) => m.StyleShowcase),
+  { loading: () => <SectionSkeleton height="h-[500px]" /> }
+);
+const SpeedComparison = dynamic(
+  () => import('@/components/marketing/speed-comparison').then((m) => m.SpeedComparison),
+  { loading: () => <SectionSkeleton height="h-[400px]" /> }
+);
 
 export default function LandingPage() {
   return (
@@ -79,14 +88,17 @@ export default function LandingPage() {
       <Header />
       <Hero />
       <SocialProofBar />
+      <GuaranteeStrip />
       <UseCaseChips />
       <StatsCounter />
       <Categories />
+      <StyleShowcase />
       <TrustBadges />
       <TrustStrip />
       <BeforeAfterShowcase />
       <CompanyLogos />
       <HowItWorks />
+      <SpeedComparison />
       <Testimonials />
       <ComparisonTable />
       <DeliveryGuarantee />
