@@ -3,6 +3,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { BeforeAfterIllustration } from '@/components/marketing/illustrations';
 import { HowToSchema, BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
@@ -345,6 +346,16 @@ export default function HowItWorksPage() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* Before → After visual */}
+      <section className="py-12 sm:py-16">
+        <div className="mx-auto max-w-md px-4 sm:px-6 lg:px-8 text-center">
+          <BeforeAfterIllustration className="w-full h-auto" />
+          <p className="mt-4 text-sm text-tp-muted">
+            From a casual selfie to a polished, studio-quality headshot — powered by AI.
+          </p>
         </div>
       </section>
 

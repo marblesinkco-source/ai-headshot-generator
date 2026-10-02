@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Pricing } from '@/components/marketing/pricing';
+import { PricingVisualIllustration } from '@/components/marketing/illustrations';
 import { CreditPackages } from '@/components/marketing/credit-packages';
 import { TrustBar } from '@/components/marketing/trust-bar';
 import { CostCalculator } from '@/components/marketing/cost-calculator';
@@ -198,6 +199,9 @@ export default function PricingPage() {
             <Link href="/team-headshots" className={buttonVariants({ variant: 'outline', size: 'lg' })}>
               See team pricing
             </Link>
+          </div>
+          <div className="mx-auto mt-10 max-w-xs">
+            <PricingVisualIllustration className="w-full h-auto" />
           </div>
         </div>
       </section>
