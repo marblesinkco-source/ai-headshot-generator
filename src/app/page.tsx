@@ -32,10 +32,10 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.tailorpic.com' },
 };
 
-function SectionSkeleton({ height }: { height: string }) {
+function SectionSkeleton({ height, dark }: { height: string; dark?: boolean }) {
   return (
-    <div aria-hidden="true" className={`mx-auto w-full max-w-[1320px] px-4 sm:px-7 lg:px-14 ${height}`}>
-      <div className="h-full w-full animate-pulse rounded-tp-card bg-tp-beige/60" />
+    <div aria-hidden="true" className={`flex items-center justify-center ${height} ${dark ? 'bg-tp-ink' : ''}`}>
+      <div className={`h-5 w-5 animate-spin rounded-full border-2 border-t-transparent ${dark ? 'border-tp-bronze/40' : 'border-tp-bronze/30'}`} />
     </div>
   );
 }
@@ -43,7 +43,7 @@ function SectionSkeleton({ height }: { height: string }) {
 // Below-the-fold sections: split into separate chunks (still SSR'd for SEO, JS loads lazily)
 const StatsCounter = dynamic(
   () => import('@/components/marketing/stats-counter').then((m) => m.StatsCounter),
-  { loading: () => <SectionSkeleton height="h-40" /> }
+  { loading: () => <SectionSkeleton height="h-40" dark /> }
 );
 const ComparisonTable = dynamic(
   () => import('@/components/marketing/comparison-table').then((m) => m.ComparisonTable),
@@ -83,7 +83,7 @@ const AIvsGeneric = dynamic(
 );
 const TeamShowcase = dynamic(
   () => import('@/components/marketing/team-showcase').then((m) => m.TeamShowcase),
-  { loading: () => <SectionSkeleton height="h-[600px]" /> }
+  { loading: () => <SectionSkeleton height="h-[600px]" dark /> }
 );
 const OutfitPreview = dynamic(
   () => import('@/components/marketing/outfit-preview').then((m) => m.OutfitPreview),
