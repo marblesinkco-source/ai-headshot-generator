@@ -56,7 +56,7 @@ const helpCategories: HelpCategory[] = [
       {
         question: 'How much does TailorPic cost?',
         answer:
-          'TailorPic starts at a one-time payment of $9.90. There are no subscriptions or recurring fees — you pay once and keep your photos forever.',
+          'TailorPic starts at a one-time payment of $1.99. There are no subscriptions or recurring fees — you pay once and keep your photos forever.',
       },
       {
         question: 'What packages are available?',

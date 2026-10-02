@@ -281,7 +281,7 @@ function RegisterContent() {
 
             {/* Trust signals */}
             <ul className="mt-5 grid grid-cols-1 gap-2 rounded-tp-button border border-tp-line bg-tp-paper px-4 py-3 text-xs text-tp-ink sm:grid-cols-3 sm:gap-1 sm:text-center">
-              {['No credit card required', '14-day money-back guarantee', '$9.90 one-time'].map((t) => (
+              {['No credit card required', '14-day money-back guarantee', '$1.99 one-time'].map((t) => (
                 <li key={t} className="flex items-center gap-1.5 sm:flex-col sm:gap-1">
                   <Check className="h-3.5 w-3.5 shrink-0 text-tp-bronze-ink" aria-hidden="true" />
                   <span className="font-medium">{t}</span>
@@ -342,7 +342,7 @@ function RegisterContent() {
               &ldquo;Studio-quality headshots without the studio. Skip the photographer, keep the polish.&rdquo;
             </blockquote>
             <figcaption className="mt-4 text-xs text-tp-beige/80">
-              One-time $9.90 &middot; No subscription
+              One-time $1.99 &middot; No subscription
             </figcaption>
           </figure>
           <p className="mt-6 text-sm text-tp-beige/70">Trusted by professionals worldwide</p>

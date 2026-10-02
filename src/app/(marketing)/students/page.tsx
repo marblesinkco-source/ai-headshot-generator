@@ -29,16 +29,16 @@ import {
 export const metadata: Metadata = {
   title: { absolute: 'AI Headshots for Students: LinkedIn and Grad School Photos' },
   description:
-    'Get professional AI-generated headshots from $9.90. Perfect for LinkedIn, graduate school applications, campus organizations and academic conferences.',
+    'Get professional AI-generated headshots from $1.99. Perfect for LinkedIn, graduate school applications, campus organizations and academic conferences.',
   alternates: { canonical: '/students' },
   openGraph: generateOGMetadata({
     title: 'Student Headshots | TailorPic',
-    description: 'Affordable AI-generated professional headshots for students. Starting at $9.90.',
+    description: 'Affordable AI-generated professional headshots for students. Starting at $1.99.',
     path: '/students',
   }),
   twitter: generateTwitterMetadata({
     title: 'Student Headshots | TailorPic',
-    description: 'Affordable AI-generated professional headshots for students. Starting at $9.90.',
+    description: 'Affordable AI-generated professional headshots for students. Starting at $1.99.',
   }),
 };
 
@@ -46,7 +46,7 @@ const faqs = [
   {
     question: 'Do I need a .edu email address to use TailorPic?',
     answer:
-      'No. TailorPic is available to everyone. You can sign up with any email address. The pricing is already student-friendly at $9.90 — no discount code needed.',
+      'No. TailorPic is available to everyone. You can sign up with any email address. The pricing is already student-friendly at $1.99 — no discount code needed.',
   },
   {
     question: 'What headshot styles work best for LinkedIn as a student?',
@@ -75,7 +75,7 @@ const painPoints = [
     icon: DollarSign,
     title: 'Studio sessions cost $150 or more',
     description:
-      'Professional photographers charge $150 to $400 per session. TailorPic gives you the same polished result for $9.90 — less than the cost of a campus coffee run.',
+      'Professional photographers charge $150 to $400 per session. TailorPic gives you the same polished result for $1.99 — less than the cost of a campus coffee run.',
   },
   {
     icon: Target,
@@ -195,7 +195,7 @@ export default function StudentsPage() {
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/80">
             A polished headshot for LinkedIn, graduate school applications and internship
             searches — without the $200 studio session. Starting at just{' '}
-            <span className="font-semibold text-tp-bronze">$9.90</span>.
+            <span className="font-semibold text-tp-bronze">$1.99</span>.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
@@ -318,7 +318,7 @@ export default function StudentsPage() {
                 Student Budget Friendly
               </p>
               <div className="mt-3 flex items-baseline justify-center gap-1">
-                <span className="font-display text-5xl font-normal text-white">$9.90</span>
+                <span className="font-display text-5xl font-normal text-white">$1.99</span>
                 <span className="text-sm text-tp-beige/70">one-time</span>
               </div>
               <p className="mt-2 text-sm text-tp-beige/70">
@@ -341,7 +341,7 @@ export default function StudentsPage() {
                   href="/auth/register"
                   className={buttonVariants({ variant: 'primary', size: 'lg' })}
                 >
-                  Get started for $9.90
+                  Get started for $1.99
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
@@ -459,7 +459,7 @@ export default function StudentsPage() {
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-tp-beige/80">
             Your next internship, job offer or graduate school acceptance starts with a first
-            impression. Make it a professional one — for just $9.90.
+            impression. Make it a professional one — for just $1.99.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link

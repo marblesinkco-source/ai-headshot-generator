@@ -20,7 +20,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs Aragon AI: AI Headshot Generator Comparison' },
   description:
-    'Compare TailorPic vs Aragon AI for professional AI headshots. See pricing, features, photo quality and delivery side by side. TailorPic: $9.90 for 40+ photos.',
+    'Compare TailorPic vs Aragon AI for professional AI headshots. See pricing, features, photo quality and delivery side by side. TailorPic: $1.99 across multiple packages.',
   alternates: { canonical: '/vs/aragon' },
   openGraph: generateOGMetadata({ title: 'TailorPic vs Aragon AI: AI Headshot Generator Comparison', description: 'Compare TailorPic and Aragon AI for AI headshots. Pricing, quality, features, and delivery — see which AI headshot generator is right for you.', path: '/vs/aragon', type: 'vs' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic vs Aragon AI: AI Headshot Generator Comparison', description: 'Compare TailorPic and Aragon AI for AI headshots. Pricing, quality, features, and delivery — see which AI headshot generator is right for you.', type: 'vs' }),
@@ -34,7 +34,7 @@ const quickBadges = [
   {
     icon: DollarSign,
     label: 'Starting Price',
-    tailorpic: '$9.90',
+    tailorpic: '$1.99',
     competitor: '$29+',
   },
   {
@@ -58,7 +58,7 @@ type FeatureRow = {
 };
 
 const comparisonRows: FeatureRow[] = [
-  { feature: 'Starting Price', tailorpic: '$9.90', competitor: '$29' },
+  { feature: 'Starting Price', tailorpic: '$1.99', competitor: '$29' },
   { feature: 'Number of Photos', tailorpic: '40+', competitor: '40+' },
   { feature: 'Delivery Time', tailorpic: 'Under 2 hours', competitor: 'Under 2 hours' },
   { feature: 'Photo Categories', tailorpic: '11 categories', competitor: 'Limited styles' },
@@ -75,7 +75,7 @@ const whyCards = [
     icon: BadgeDollarSign,
     title: 'More Affordable',
     description:
-      'TailorPic starts at just $9.90, compared to Aragon AI\'s higher pricing. Get professional headshots without the premium price tag.',
+      'TailorPic starts at just $1.99, compared to Aragon AI\'s higher pricing. Get professional headshots without the premium price tag.',
   },
   {
     icon: LayoutGrid,
@@ -109,12 +109,12 @@ const faqs = [
   {
     question: 'How does TailorPic\'s price compare to Aragon AI?',
     answer:
-      'TailorPic is a $9.90 one-time payment. Aragon AI lists plans starting around $29. Aragon may change its plans, so check their site for current pricing.',
+      'TailorPic is a $1.99 one-time payment. Aragon AI lists plans starting around $29. Aragon may change its plans, so check their site for current pricing.',
   },
   {
     question: 'How many photos do I get with TailorPic compared to Aragon AI?',
     answer:
-      'Every TailorPic order includes 40+ photos across 11 categories, including business, dating, pet portraits, and e-commerce. Aragon AI also offers 40+ photos but with a more limited set of styles.',
+      'Every TailorPic order includes photos across 11 categories, including business, dating, pet portraits, and e-commerce. Aragon AI also offers photos but with a more limited set of styles.',
   },
   {
     question: 'How long does delivery take?',
@@ -124,7 +124,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription like Aragon AI?',
     answer:
-      'No. TailorPic is a one-time $9.90 payment with no recurring charges and no renewals. It also comes with a 14-day money-back guarantee.',
+      'No. TailorPic is a one-time $1.99 payment with no recurring charges and no renewals. It also comes with a 14-day money-back guarantee.',
   },
   {
     question: 'How does TailorPic train my headshots, and is it easy to use?',
@@ -279,7 +279,7 @@ export default function VsAragonPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-ink">Ready to Switch?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-muted">
-              Get professional AI headshots starting at just $9.90. No subscriptions, no hidden fees
+              Get professional AI headshots starting at just $1.99. No subscriptions, no hidden fees
               — just great photos delivered in under 2 hours.
             </p>
             <div className="mt-8">

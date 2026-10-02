@@ -71,13 +71,13 @@ export default function LinkedInPhotoAnalyzerPage() {
             Skip the checklist. Get a photo that passes every test.
           </h2>
           <p className="mt-3 text-tp-muted">
-            Upload a few selfies and get studio-quality LinkedIn headshots in hours, from $9.90.
+            Upload a few selfies and get studio-quality LinkedIn headshots in hours, from $1.99.
           </p>
           <Link
             href="/auth/register"
             className={buttonVariants({ size: 'lg', className: 'mt-6' })}
           >
-            Get AI Headshots — From $9.90
+            Get AI Headshots — From $1.99
           </Link>
         </div>
       </section>

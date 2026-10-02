@@ -76,7 +76,7 @@ export default function BillingClient() {
       <div className="rounded-2xl border border-tp-line bg-white p-6">
         <h2 className="font-display text-xl font-normal text-tp-ink">Your Plan</h2>
         <p className="mt-2 text-sm text-tp-ink">
-          One-time payment of <span className="font-medium">$9.90</span>. No subscription and no recurring charges.
+          One-time payment — no subscription and no recurring charges.
         </p>
         <p className="mt-1 text-sm text-tp-muted">
           Invoices for each order are available below. For billing questions, contact{' '}

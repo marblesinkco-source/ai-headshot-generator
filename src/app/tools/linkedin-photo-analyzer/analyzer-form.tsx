@@ -272,7 +272,7 @@ export function AnalyzerForm() {
             href="/auth/register"
             className={buttonVariants({ size: 'lg', className: 'mt-5 w-full sm:w-auto' })}
           >
-            Get AI Headshots — From $9.90 <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            Get AI Headshots — From $1.99 <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>
 

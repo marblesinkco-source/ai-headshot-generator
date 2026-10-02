@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Portret";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs Portret for AI portraits and headshots. TailorPic offers 40+ photos in 11 categories for a one-time $9.90 with a personal LoRA model.";
+  "Compare TailorPic vs Portret for AI portraits and headshots. TailorPic offers photos in 11 categories for a one-time $1.99 with a personal LoRA model.";
 const path = '/vs/portret';
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $9.90.',
+    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -44,8 +44,8 @@ const intro =
   "Portret is a portrait-focused AI tool. TailorPic takes a wider approach, pairing a personal LoRA model with 11 categories for work, dating, creative and commercial use.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "$9.90 one-time", other: "Confirm current pricing on their site" },
-  { label: "Photos included", tailorpic: "40+ photos", other: "Depends on the plan" },
+  { label: "Starting price", tailorpic: "$1.99 one-time", other: "Confirm current pricing on their site" },
+  { label: "Photos included", tailorpic: "photos", other: "Depends on the plan" },
   { label: "Delivery time", tailorpic: "Within 24 hours", other: "Varies by plan" },
   { label: "Categories / styles", tailorpic: "11 categories", other: "Portrait-oriented styles" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your selfies", other: "Not publicly detailed" },
@@ -58,7 +58,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 
 const differences = [
   { title: "Portrait art vs practical photos", body: "If you want a stylised portrait, a portrait-first tool may fit. TailorPic balances creative looks with practical business and dating shots." },
-  { title: "One price, many uses", body: "A single $9.90 covers 40+ photos in 11 categories, which is useful if you need more than one kind of image." },
+  { title: "One price, many uses", body: "A single $1.99 covers photos in 11 categories, which is useful if you need more than one kind of image." },
   { title: "Personal likeness", body: "TailorPic trains on your own photos, aiming for a recognisable result rather than a generic face." },
   { title: "Turnaround", body: "TailorPic takes up to 24 hours. Choose a faster service only if speed outweighs likeness and variety for you." },
 ];
@@ -79,10 +79,10 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "How does TailorPic compare to Portret on price?", answer: "TailorPic is a one-time $9.90 for 40+ photos. Portret pricing can change, so review their current plans." },
+  { question: "How does TailorPic compare to Portret on price?", answer: "TailorPic is a one-time $1.99 across multiple packages. Portret pricing can change, so review their current plans." },
   { question: "Can TailorPic make artistic portraits too?", answer: "Yes. The creative category sits alongside business, dating, pet and e-commerce options." },
   { question: "How long until I get my photos?", answer: "Within 24 hours, because a personal LoRA model is trained from your uploads." },
-  { question: "Is a subscription required?", answer: "No. TailorPic is a single $9.90 payment." },
+  { question: "Is a subscription required?", answer: "No. TailorPic is a single $1.99 payment." },
   { question: "What photos should I upload?", answer: "Clear, well-lit selfies from different angles and expressions give the model the best likeness." },
 ];
 
@@ -114,7 +114,7 @@ export default function VsPortretPage() {
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">{intro}</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
-                Get 40+ headshots for $9.90
+                Get headshots from $1.99
               </Link>
             </div>
           </div>
@@ -221,7 +221,7 @@ export default function VsPortretPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              40+ professional photos across 11 categories for a one-time $9.90. No subscription, delivered within 24 hours.
+              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

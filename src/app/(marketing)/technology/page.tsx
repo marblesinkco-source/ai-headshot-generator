@@ -501,7 +501,7 @@ export default function TechnologyPage() {
             </Link>
           </div>
           <p className="mt-6 text-xs text-tp-beige/40">
-            Starting at $9.90 &middot; No subscription required
+            Starting at $1.99 &middot; No subscription required
           </p>
         </div>
       </section>

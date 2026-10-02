@@ -19,7 +19,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs Remini: AI Headshot Generator Comparison' },
   description:
-    'Compare TailorPic vs Remini. Remini enhances and restores existing photos; TailorPic makes 40+ headshots from selfies for a one-time $9.90.',
+    'Compare TailorPic vs Remini. Remini enhances and restores existing photos; TailorPic makes 40+ headshots from selfies for a one-time $1.99.',
   alternates: { canonical: '/vs/remini' },
   openGraph: generateOGMetadata({ title: 'TailorPic vs Remini: AI Headshot Generator Comparison', description: 'Compare TailorPic and Remini. A purpose-built AI headshot generator versus a photo enhancer — see which fits your needs.', path: '/vs/remini', type: 'vs' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic vs Remini: AI Headshot Generator Comparison', description: 'Compare TailorPic and Remini. A purpose-built AI headshot generator versus a photo enhancer — see which fits your needs.', type: 'vs' }),
@@ -33,7 +33,7 @@ const quickBadges = [
   {
     icon: DollarSign,
     label: 'Starting Price',
-    tailorpic: '$9.90 one-time',
+    tailorpic: '$1.99 one-time',
     competitor: '~$9.99/month',
   },
   {
@@ -57,7 +57,7 @@ type FeatureRow = {
 };
 
 const comparisonRows: FeatureRow[] = [
-  { feature: 'Starting Price', tailorpic: '$9.90 one-time', competitor: '~$9.99/month subscription' },
+  { feature: 'Starting Price', tailorpic: '$1.99 one-time', competitor: '~$9.99/month subscription' },
   { feature: 'Pricing Model', tailorpic: 'One-time payment', competitor: 'Subscription' },
   { feature: 'Primary Purpose', tailorpic: 'Generate AI headshots', competitor: 'Enhance and restore photos' },
   { feature: 'Creates New Headshots from Selfies', tailorpic: true, competitor: 'Limited' },
@@ -76,7 +76,7 @@ const whyCards = [
     icon: BadgeDollarSign,
     title: 'One-Time Payment',
     description:
-      'TailorPic is a single $9.90 payment with no recurring charges, while Remini is typically offered as a subscription starting around $9.99/month. Pricing may change, so check Remini for current rates.',
+      'TailorPic is a single $1.99 payment with no recurring charges, while Remini is typically offered as a subscription starting around $9.99/month. Pricing may change, so check Remini for current rates.',
   },
   {
     icon: Target,
@@ -110,7 +110,7 @@ const faqs = [
   {
     question: 'How does TailorPic\'s price compare to Remini?',
     answer:
-      'TailorPic is a $9.90 one-time payment. Remini is typically offered as a subscription starting around $9.99/month. Remini may change its pricing, so check their site for current pricing.',
+      'TailorPic is a $1.99 one-time payment. Remini is typically offered as a subscription starting around $9.99/month. Remini may change its pricing, so check their site for current pricing.',
   },
   {
     question: 'How many photos do I get with TailorPic compared to Remini?',
@@ -125,7 +125,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription like Remini?',
     answer:
-      'No. TailorPic is a one-time $9.90 payment with no recurring charges and a 14-day money-back guarantee. Remini is typically sold as a subscription.',
+      'No. TailorPic is a one-time $1.99 payment with no recurring charges and a 14-day money-back guarantee. Remini is typically sold as a subscription.',
   },
   {
     question: 'How does TailorPic work compared to Remini\'s enhancement?',
@@ -280,7 +280,7 @@ export default function VsReminiPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-ink">Ready to Switch?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-muted">
-              Get professional AI headshots starting at just $9.90. No subscriptions, no hidden fees
+              Get professional AI headshots starting at just $1.99. No subscriptions, no hidden fees
               — just great photos delivered in under 2 hours.
             </p>
             <div className="mt-8">

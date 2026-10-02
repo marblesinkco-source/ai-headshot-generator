@@ -24,7 +24,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Nonprofit Fundraising | TailorPic";
 const pageDescription =
-  'Professional staff, board and volunteer photos for nonprofit websites, donor appeals and galas. Get polished portraits from a few selfies. Starting at $9.90.';
+  'Professional staff, board and volunteer photos for nonprofit websites, donor appeals and galas. Get polished portraits from a few selfies. Starting at $1.99.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -128,7 +128,7 @@ const features = [
 const faqs = [
   {
     question: "Is this affordable for a small nonprofit?",
-    answer: "TailorPic starts at $9.90 per pack, far less than hiring a photographer for a team shoot.",
+    answer: "TailorPic starts at $1.99 per pack, far less than hiring a photographer for a team shoot.",
   },
   {
     question: "Will the photo look like me?",
@@ -183,7 +183,7 @@ export default function NonprofitFundraisingUseCasePage() {
               <span className="not-italic text-tp-bronze">{"Nonprofit Fundraising"}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              {"Donors give to people they trust. Get professional portraits for your staff, board and volunteers from a handful of selfies, delivered in about 2 hours, starting at just $9.90 per person."}
+              {"Donors give to people they trust. Get professional portraits for your staff, board and volunteers from a handful of selfies, delivered in about 2 hours, starting at just $1.99 per person."}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -221,7 +221,7 @@ export default function NonprofitFundraisingUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            {"Starting at $9.90"}
+            {"Starting at $1.99"}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -334,7 +334,7 @@ export default function NonprofitFundraisingUseCasePage() {
             {"Show Donors the People Behind Your Mission"}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            {"Give your team portraits that build trust. Starting at just $9.90."}
+            {"Give your team portraits that build trust. Starting at just $1.99."}
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

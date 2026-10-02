@@ -230,7 +230,7 @@ export default function EditorIndexPage() {
           </h2>
           <p className="mt-3 text-tp-muted">
             Instead of editing photos yourself, upload a few selfies and let TailorPic generate
-            studio-quality headshots for you. From $9.90.
+            studio-quality headshots for you. From $1.99.
           </p>
           <Link
             href="/auth/register"

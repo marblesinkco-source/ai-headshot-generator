@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Professional Directories | TailorPic";
 const pageDescription =
-  "Consistent, polished photos for professional directories and member listings. Get credible portraits from a few selfies in about 2 hours. Starting at $9.90.";
+  "Consistent, polished photos for professional directories and member listings. Get credible portraits from a few selfies in about 2 hours. Starting at $1.99.";
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -131,7 +131,7 @@ const faqs = [
   },
   {
     question: "How much does it cost?",
-    answer: "TailorPic starts at $9.90 per pack, far less than a photographer session.",
+    answer: "TailorPic starts at $1.99 per pack, far less than a photographer session.",
   },
   {
     question: "How long does delivery take?",
@@ -170,7 +170,7 @@ export default function ProfessionalDirectoryUseCasePage() {
               <span className="not-italic text-tp-bronze">{"Professional Directory"}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              {"Directory listings are often the first place clients find you. Get a polished, credible portrait from a handful of selfies, delivered in about 2 hours, starting at just $9.90."}
+              {"Directory listings are often the first place clients find you. Get a polished, credible portrait from a handful of selfies, delivered in about 2 hours, starting at just $1.99."}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -208,7 +208,7 @@ export default function ProfessionalDirectoryUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            {"Starting at $9.90"}
+            {"Starting at $1.99"}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -321,7 +321,7 @@ export default function ProfessionalDirectoryUseCasePage() {
             {"Make Your Listing the One They Click"}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            {"Look credible on every directory. Starting at just $9.90."}
+            {"Look credible on every directory. Starting at just $1.99."}
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

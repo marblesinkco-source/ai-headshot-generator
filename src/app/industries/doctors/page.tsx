@@ -96,7 +96,7 @@ const stats = [
   { value: '40+', label: 'Photos per order' },
   { value: '11+', label: 'Professional styles' },
   { value: '< 2hrs', label: 'From selfies to finished headshots' },
-  { value: '$9.90', label: 'Starting price per person' },
+  { value: '$1.99', label: 'Starting price per person' },
 ];
 
 const faqs = [
@@ -128,7 +128,7 @@ const faqs = [
   {
     question: "How much does it cost, and is there a guarantee?",
     answer:
-      "Headshots start at $9.90 per person with no subscription required. Every order is covered by our 14-day money-back guarantee.",
+      "Headshots start at $1.99 per person with no subscription required. Every order is covered by our 14-day money-back guarantee.",
   },
 ];
 
@@ -334,7 +334,7 @@ export default function DoctorsIndustryPage() {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
             Upgrade your professional image with TailorPic.
-            Studio-quality headshots starting at just $9.90.
+            Studio-quality headshots starting at just $1.99.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register">

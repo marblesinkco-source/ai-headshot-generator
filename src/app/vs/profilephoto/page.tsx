@@ -20,7 +20,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs ProfilePhoto.ai: AI Headshot Comparison' },
   description:
-    'Compare TailorPic vs ProfilePhoto.ai for AI photos. TailorPic starts at $9.90 with 40+ photos, 11 categories and a 14-day money-back guarantee.',
+    'Compare TailorPic vs ProfilePhoto.ai for AI photos. TailorPic starts at $1.99 with photos, 11 categories and a 14-day money-back guarantee.',
   alternates: { canonical: '/vs/profilephoto' },
   openGraph: generateOGMetadata({ title: 'TailorPic vs ProfilePhoto.ai: AI Headshot Comparison', description: 'Compare TailorPic and ProfilePhoto.ai for AI photos. Pricing, styles, delivery, and guarantees side by side.', path: '/vs/profilephoto', type: 'vs' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic vs ProfilePhoto.ai: AI Headshot Comparison', description: 'Compare TailorPic and ProfilePhoto.ai for AI photos. Pricing, styles, delivery, and guarantees side by side.', type: 'vs' }),
@@ -34,7 +34,7 @@ const quickBadges = [
   {
     icon: DollarSign,
     label: 'Starting Price',
-    tailorpic: '$9.90',
+    tailorpic: '$1.99',
     competitor: '~$15+',
   },
   {
@@ -58,7 +58,7 @@ type FeatureRow = {
 };
 
 const comparisonRows: FeatureRow[] = [
-  { feature: 'Starting Price', tailorpic: '$9.90', competitor: '~$15+' },
+  { feature: 'Starting Price', tailorpic: '$1.99', competitor: '~$15+' },
   { feature: 'Number of Photos', tailorpic: '40+', competitor: 'Varies by plan' },
   { feature: 'Delivery Time', tailorpic: 'Under 2 hours', competitor: 'Varies by plan' },
   { feature: 'Photo Categories', tailorpic: '11 categories', competitor: 'Limited styles' },
@@ -75,7 +75,7 @@ const whyCards = [
     icon: BadgeDollarSign,
     title: 'Lower Starting Price',
     description:
-      'TailorPic starts at just $9.90, undercutting the roughly $15+ entry price of ProfilePhoto.ai while delivering 40+ photos.',
+      'TailorPic starts at just $1.99, undercutting the roughly $15+ entry price of ProfilePhoto.ai while delivering photos.',
   },
   {
     icon: LayoutGrid,
@@ -87,7 +87,7 @@ const whyCards = [
     icon: Sparkles,
     title: '40+ Photos in Under 2 Hours',
     description:
-      'Get a full set of 40+ photos in under 2 hours, backed by a 14-day money-back guarantee.',
+      'Get a full set of photos in under 2 hours, backed by a 14-day money-back guarantee.',
   },
   {
     icon: Target,
@@ -109,12 +109,12 @@ const faqs = [
   {
     question: 'How does TailorPic\'s price compare to ProfilePhoto.ai?',
     answer:
-      'TailorPic is a $9.90 one-time payment. ProfilePhoto.ai\'s entry price is roughly $15+. They may change their pricing, so check their site for current pricing.',
+      'TailorPic is a $1.99 one-time payment. ProfilePhoto.ai\'s entry price is roughly $15+. They may change their pricing, so check their site for current pricing.',
   },
   {
     question: 'How many photos do I get with TailorPic?',
     answer:
-      'Every TailorPic order includes 40+ photos across 11 categories. ProfilePhoto.ai\'s photo count varies by plan and its styles are more limited, with a focus on LinkedIn-style photos.',
+      'Every TailorPic order includes photos across 11 categories. ProfilePhoto.ai\'s photo count varies by plan and its styles are more limited, with a focus on LinkedIn-style photos.',
   },
   {
     question: 'How long does delivery take?',
@@ -124,7 +124,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription or a one-time purchase?',
     answer:
-      'TailorPic is a one-time $9.90 payment with no recurring charges, backed by a 14-day money-back guarantee.',
+      'TailorPic is a one-time $1.99 payment with no recurring charges, backed by a 14-day money-back guarantee.',
   },
   {
     question: 'How does TailorPic create my photos, and is it easy to use?',
@@ -279,7 +279,7 @@ export default function VsProfilePhotoPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-ink">Ready to Try TailorPic?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-muted">
-              Get professional AI headshots starting at just $9.90. No subscriptions, no hidden fees
+              Get professional AI headshots starting at just $1.99. No subscriptions, no hidden fees
               — just great photos delivered in under 2 hours.
             </p>
             <div className="mt-8">

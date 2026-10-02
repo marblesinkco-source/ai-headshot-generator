@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = 'AI Profile Photos for Facebook | TailorPic';
 const pageDescription =
-  'Get a friendly, polished Facebook profile picture from a few selfies. AI photos that look natural in the circular crop, for profiles and pages. From $9.90.';
+  'Get a friendly, polished Facebook profile picture from a few selfies. AI photos that look natural in the circular crop, for profiles and pages. From $1.99.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -114,7 +114,7 @@ const faqs = [
   },
   {
     question: "How much does it cost?",
-    answer: "TailorPic starts at $9.90 per pack, far less than a photographer session, and you never need to leave the house.",
+    answer: "TailorPic starts at $1.99 per pack, far less than a photographer session, and you never need to leave the house.",
   },
   {
     question: "How long does delivery take?",
@@ -156,7 +156,7 @@ export default function FacebookUseCasePage() {
               <span className="not-italic text-tp-bronze">Facebook</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              Stop using a blurry crop from a family picture. Get a warm, flattering Facebook profile photo from a handful of selfies, no photographer required. Delivered in about 2 hours, starting at just $9.90.
+              Stop using a blurry crop from a family picture. Get a warm, flattering Facebook profile photo from a handful of selfies, no photographer required. Delivered in about 2 hours, starting at just $1.99.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -194,7 +194,7 @@ export default function FacebookUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Starting at $9.90
+            Starting at $1.99
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -307,7 +307,7 @@ export default function FacebookUseCasePage() {
             Give Your Facebook a Fresh Face
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            Show up as the best version of yourself to friends, family, and customers. Starting at just $9.90.
+            Show up as the best version of yourself to friends, family, and customers. Starting at just $1.99.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

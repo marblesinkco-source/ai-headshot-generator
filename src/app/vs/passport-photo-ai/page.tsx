@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Passport Photo AI";
 const title = 'TailorPic vs Passport Photo AI: AI Headshot Comparison';
 const description =
-  'Compare TailorPic vs Passport Photo AI. TailorPic is a one-time $9.90 for 40+ photos in 11 categories with LoRA-trained likeness and no subscription.';
+  'Compare TailorPic vs Passport Photo AI. TailorPic is a one-time $1.99 across multiple packages in 11 categories with LoRA-trained likeness and no subscription.';
 const path = '/vs/passport-photo-ai';
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $9.90.',
+    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -44,8 +44,8 @@ const intro =
   "Passport Photo AI is oriented toward ID and passport-style photos, which follow strict official requirements. TailorPic is built for a different job: professional, dating and creative portraits across 11 categories. The two tools solve different problems.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "$9.90 one-time", other: "Varies by plan; confirm on their site" },
-  { label: "Photos included", tailorpic: "40+ photos", other: "Depends on the package you pick" },
+  { label: "Starting price", tailorpic: "$1.99 one-time", other: "Varies by plan; confirm on their site" },
+  { label: "Photos included", tailorpic: "photos", other: "Depends on the package you pick" },
   { label: "Delivery time", tailorpic: "Within 24 hours", other: "Varies by plan" },
   { label: "Categories / styles", tailorpic: "11 categories (business, dating, creative, pets and more)", other: "ID and passport-style photo formats" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
@@ -57,7 +57,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 ];
 
 const differences = [
-  { title: "A flat, low entry price", body: "TailorPic is $9.90 one time. There is no plan ladder to decode, so you know the total before you upload a single photo." },
+  { title: "A flat, low entry price", body: "TailorPic is $1.99 one time. There is no plan ladder to decode, so you know the total before you upload a single photo." },
   { title: "Different goals", body: "TailorPic creates polished portraits for LinkedIn, dating, creative and social use. It is not designed to produce official passport or ID photos, which must follow government rules." },
   { title: "Personal model, not a generic filter", body: "TailorPic fine-tunes a LoRA model on your own selfies, which aims for a closer likeness than a one-size-fits-all preset." },
   { title: "Trade-off on speed", body: "TailorPic delivers within 24 hours. If you need results in minutes, a faster tool may suit an urgent deadline better." },
@@ -79,10 +79,10 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is TailorPic cheaper than Passport Photo AI?", answer: "TailorPic is a one-time $9.90 for 40+ photos. Passport Photo AI pricing varies by plan and can change, so compare against their current price page." },
+  { question: "Is TailorPic cheaper than Passport Photo AI?", answer: "TailorPic is a one-time $1.99 across multiple packages. Passport Photo AI pricing varies by plan and can change, so compare against their current price page." },
   { question: "What makes TailorPic different from Passport Photo AI?", answer: "TailorPic trains a personal LoRA model on your photos and outputs 11 categories, including dating, creative, pet and e-commerce photos, not just business headshots." },
   { question: "How long does TailorPic take?", answer: "Delivery is within 24 hours, since a dedicated model is fine-tuned on your uploads." },
-  { question: "Do I need a subscription with TailorPic?", answer: "No. It is a single $9.90 payment with no recurring fees." },
+  { question: "Do I need a subscription with TailorPic?", answer: "No. It is a single $1.99 payment with no recurring fees." },
   { question: "Can I use the photos on LinkedIn?", answer: "Yes. The business category is built for LinkedIn, resumes and company pages." },
   { question: "Can TailorPic photos be used as passport photos?", answer: "No. TailorPic generates stylized professional portraits, which do not meet official passport or ID photo requirements. Check your issuing authority's rules before submitting any photo." },
 ];
@@ -115,7 +115,7 @@ export default function VsPassportPhotoAiPage() {
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">{intro}</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
-                Get 40+ headshots for $9.90
+                Get headshots from $1.99
               </Link>
             </div>
           </div>
@@ -222,7 +222,7 @@ export default function VsPassportPhotoAiPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              40+ professional photos across 11 categories for a one-time $9.90. No subscription, delivered within 24 hours.
+              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

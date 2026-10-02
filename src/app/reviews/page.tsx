@@ -175,7 +175,7 @@ const filterTabs = ['All', 'Business', 'Creative', 'Teams', 'LinkedIn'] as const
 
 const trustItems = [
   { icon: Shield, label: '14-Day Money-Back Guarantee' },
-  { icon: CreditCard, label: '$9.90 One-Time' },
+  { icon: CreditCard, label: '$1.99 One-Time' },
   { icon: ImageIcon, label: '40+ Photos Per Order' },
 ];
 

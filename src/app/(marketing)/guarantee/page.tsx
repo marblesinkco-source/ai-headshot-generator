@@ -140,7 +140,7 @@ export default function GuaranteePage() {
           </h1>
           <p className="mt-5 text-lg text-tp-beige/70 max-w-2xl mx-auto leading-relaxed">
             Not satisfied? Contact us within 14 days for a full refund. No
-            questions asked. Try TailorPic for a one-time $9.90 and know you
+            questions asked. Try TailorPic for a one-time $1.99 and know you
             are covered.
           </p>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
@@ -300,7 +300,7 @@ export default function GuaranteePage() {
                 'bg-tp-bronze text-tp-black hover:bg-tp-bronze/90'
               )}
             >
-              Get Started for $9.90 <ArrowRight className="h-4 w-4" />
+              Get Started for $1.99 <ArrowRight className="h-4 w-4" />
             </Link>
             <p className="mt-4 text-sm text-tp-beige/50">
               One-time payment. 14-day money-back guarantee.{' '}

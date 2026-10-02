@@ -13,7 +13,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: { absolute: 'AI Product Photography for E-Commerce | TailorPic' },
   description:
-    'Professional product photos for your online store. AI-powered, studio-quality images starting at $9.90. Perfect for Shopify, Amazon, Etsy, and more.',
+    'Professional product photos for your online store. AI-powered, studio-quality images from $1.99. Perfect for Shopify, Amazon, Etsy, and more.',
   alternates: { canonical: '/industries/ecommerce' },
   openGraph: generateOGMetadata({ title: 'AI Product Photography for E-Commerce | TailorPic', description: 'Studio-quality product photos in 2 hours. No photographer needed.', path: '/industries/ecommerce', type: 'industry' }),
   
@@ -49,7 +49,7 @@ const faqs = [
   {
     question: "How much does it cost, and what if I am not satisfied?",
     answer:
-      "Photos start at $9.90 with no subscription required. Every order is backed by our 14-day money-back guarantee.",
+      "Photos start at $1.99 with no subscription required. Every order is backed by our 14-day money-back guarantee.",
   },
 ];
 
@@ -167,7 +167,7 @@ export default function EcommerceLandingPage() {
             {[
               { value: '11+', label: 'photo styles for products & people' },
               { value: '40+', label: 'photos per session' },
-              { value: '$9.90', label: 'starting price vs $200+ studios' },
+              { value: '$1.99', label: 'starting price vs $200+ studios' },
               { value: '<2hrs', label: 'average delivery time' },
             ].map((stat) => (
               <div key={stat.label}>

@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "InstaHeadshots";
 const title = 'TailorPic vs InstaHeadshots: AI Headshot Comparison';
 const description =
-  'Compare TailorPic vs InstaHeadshots. TailorPic is $9.90 one-time for 40+ photos in 11 categories; InstaHeadshots starts near $9 with basic headshots.';
+  'Compare TailorPic vs InstaHeadshots. TailorPic is $1.99 one-time across multiple packages in 11 categories; InstaHeadshots starts near $9 with basic headshots.';
 const path = '/vs/instaheadshots';
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $9.90.',
+    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -41,8 +41,8 @@ const productJsonLd = {
 };
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "$9.90 one-time", other: "~$9 starting" },
-  { label: "Photos included", tailorpic: "40+ photos", other: "Basic headshot set; varies by plan" },
+  { label: "Starting price", tailorpic: "$1.99 one-time", other: "~$9 starting" },
+  { label: "Photos included", tailorpic: "photos", other: "Basic headshot set; varies by plan" },
   { label: "Delivery time", tailorpic: "24 hours", other: "Varies by plan; check their site" },
   { label: "Categories / styles", tailorpic: "11 categories (business, dating, creative, pets and more)", other: "Limited styles" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
@@ -51,8 +51,8 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 ];
 
 const differences = [
-  { title: "Similar price, more range", body: "At around $9 versus $9.90, the price gap is small, but TailorPic covers 11 categories while InstaHeadshots offers limited styles." },
-  { title: "Depth of output", body: "InstaHeadshots focuses on basic headshots. TailorPic includes 40+ photos for business, dating, creative and other uses." },
+  { title: "Similar price, more range", body: "At around $9 versus $1.99, the price gap is small, but TailorPic covers 11 categories while InstaHeadshots offers limited styles." },
+  { title: "Depth of output", body: "InstaHeadshots focuses on basic headshots. TailorPic includes photos for business, dating, creative and other uses." },
   { title: "Personalization", body: "TailorPic trains a LoRA model on your own photos for a closer likeness." },
   { title: "Delivery", body: "TailorPic delivers within 24 hours, with the extra time going to model training." },
 ];
@@ -60,7 +60,7 @@ const differences = [
 const useCases = {
   tailorpic: [
     "More than a basic headshot, with 11 categories",
-    "40+ photos for a one-time $9.90",
+    "photos for a one-time $1.99",
     "A personalized LoRA-trained model",
     "Team and enterprise options as you grow",
   ],
@@ -72,10 +72,10 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is InstaHeadshots cheaper than TailorPic?", answer: "InstaHeadshots starts at around $9, slightly under TailorPic's one-time $9.90. TailorPic includes 40+ photos across 11 categories." },
+  { question: "Is InstaHeadshots cheaper than TailorPic?", answer: "InstaHeadshots starts at around $9, slightly under TailorPic's one-time $1.99. TailorPic includes photos across 11 categories." },
   { question: "What styles does TailorPic offer?", answer: "TailorPic offers 11 categories, including business, dating and creative looks. InstaHeadshots offers a more limited set of styles." },
   { question: "How does TailorPic train its model?", answer: "TailorPic uses LoRA fine-tuning on your uploaded photos to capture your likeness, and delivers within 24 hours." },
-  { question: "Is TailorPic a subscription?", answer: "No. TailorPic is a one-time payment of $9.90." },
+  { question: "Is TailorPic a subscription?", answer: "No. TailorPic is a one-time payment of $1.99." },
 ];
 
 export default function Page() {
@@ -103,11 +103,11 @@ export default function Page() {
               TailorPic <span className="text-tp-bronze">vs</span> {competitor}
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">
-              InstaHeadshots has a similar entry price but basic headshots and limited styles. TailorPic adds 11 categories and LoRA fine-tuning for $9.90.
+              InstaHeadshots has a similar entry price but basic headshots and limited styles. TailorPic adds 11 categories and LoRA fine-tuning for $1.99.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
-                Get 40+ headshots for $9.90
+                Get headshots from $1.99
               </Link>
             </div>
           </div>
@@ -214,7 +214,7 @@ export default function Page() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              40+ professional photos across 11 categories for a one-time $9.90. No subscription, delivered within 24 hours.
+              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

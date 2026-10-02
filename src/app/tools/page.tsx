@@ -190,7 +190,7 @@ export default function ToolsPage() {
             </h2>
             <p className="mt-3 text-tp-muted">
               Skip the photoshoot. Upload selfies and get 40+ professional
-              headshots in hours, starting at just $9.90.
+              headshots in hours, starting at just $1.99.
             </p>
             <Link
               href="/auth/register"

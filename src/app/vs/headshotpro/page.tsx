@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   description:
     'Compare TailorPic and HeadshotPro side by side. See pricing, photo quality, category variety, and features to find the best AI headshot generator for you.',
   alternates: { canonical: '/vs/headshotpro' },
-  openGraph: generateOGMetadata({ title: 'TailorPic vs HeadshotPro — AI Headshot Generator Comparison', description: 'Detailed comparison of TailorPic and HeadshotPro. Compare pricing from $9.90 vs $29, photo categories, delivery speed, and more.', path: '/vs/headshotpro', type: 'vs' }),
-  twitter: generateTwitterMetadata({ title: 'TailorPic vs HeadshotPro — AI Headshot Generator Comparison', description: 'Detailed comparison of TailorPic and HeadshotPro. Compare pricing from $9.90 vs $29, photo categories, delivery speed, and more.', type: 'vs' }),
+  openGraph: generateOGMetadata({ title: 'TailorPic vs HeadshotPro — AI Headshot Generator Comparison', description: 'Detailed comparison of TailorPic and HeadshotPro. Compare pricing from $1.99 vs $29, photo categories, delivery speed, and more.', path: '/vs/headshotpro', type: 'vs' }),
+  twitter: generateTwitterMetadata({ title: 'TailorPic vs HeadshotPro — AI Headshot Generator Comparison', description: 'Detailed comparison of TailorPic and HeadshotPro. Compare pricing from $1.99 vs $29, photo categories, delivery speed, and more.', type: 'vs' }),
 };
 
 /* ------------------------------------------------------------------ */
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 const quickBadges = [
   {
     label: 'Starting Price',
-    ours: '$9.90',
+    ours: '$1.99',
     theirs: '$29',
     icon: DollarSign,
   },
@@ -59,7 +59,7 @@ interface ComparisonRow {
 }
 
 const comparisonRows: ComparisonRow[] = [
-  { feature: 'Starting Price', tailorpic: '$9.90', headshotpro: '$29' },
+  { feature: 'Starting Price', tailorpic: '$1.99', headshotpro: '$29' },
   { feature: 'Photos per Session', tailorpic: '40+', headshotpro: '40+' },
   { feature: 'Delivery', tailorpic: 'Under 2 hours', headshotpro: 'Under 2 hours' },
   { feature: 'Photo Categories', tailorpic: '11', headshotpro: 'Professional only' },
@@ -76,7 +76,7 @@ const advantages = [
     icon: DollarSign,
     title: 'Lower Price',
     description:
-      'Get the same quality AI headshots starting at $9.90 instead of $29. No subscription needed — just a simple one-time payment.',
+      'Get the same quality AI headshots starting at $1.99 instead of $29. No subscription needed — just a simple one-time payment.',
   },
   {
     icon: Layers,
@@ -110,12 +110,12 @@ const faqs = [
   {
     question: 'How does TailorPic\'s price compare to HeadshotPro?',
     answer:
-      'TailorPic is a $9.90 one-time payment. HeadshotPro\'s pricing starts at $29. HeadshotPro may change its plans, so check their site for current pricing.',
+      'TailorPic is a $1.99 one-time payment. HeadshotPro\'s pricing starts at $29. HeadshotPro may change its plans, so check their site for current pricing.',
   },
   {
     question: 'How many photos do I get compared to HeadshotPro?',
     answer:
-      'Both services include 40+ photos. TailorPic spreads them across 11 categories, including dating, pet portraits, e-commerce, and family portraits, while HeadshotPro focuses on professional headshots.',
+      'Both services include photos. TailorPic spreads them across 11 categories, including dating, pet portraits, e-commerce, and family portraits, while HeadshotPro focuses on professional headshots.',
   },
   {
     question: 'How long does delivery take?',
@@ -125,7 +125,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription?',
     answer:
-      'No. TailorPic is a one-time $9.90 payment with no subscription and a 14-day money-back guarantee.',
+      'No. TailorPic is a one-time $1.99 payment with no subscription and a 14-day money-back guarantee.',
   },
   {
     question: 'How does TailorPic train my photos, and is it easy to use?',
@@ -311,7 +311,7 @@ export default function VsHeadshotProPage() {
             <ArrowRight className="h-5 w-5" />
           </Link>
           <p className="mt-4 text-sm text-tp-muted">
-            Starting at $9.90 &middot; No subscription &middot; 14-day money-back guarantee
+            Starting at $1.99 &middot; No subscription &middot; 14-day money-back guarantee
           </p>
         </div>
       </section>

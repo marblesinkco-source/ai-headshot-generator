@@ -123,7 +123,7 @@ const faqs = [
   {
     question: "How much does it cost compared to a photographer?",
     answer:
-      "Headshots start at $9.90 with no subscription. Traditional studio sessions often cost several hundred dollars and usually cover only a single look.",
+      "Headshots start at $1.99 with no subscription. Traditional studio sessions often cost several hundred dollars and usually cover only a single look.",
   },
   {
     question: "What if the results are not what I expected?",
@@ -334,7 +334,7 @@ export default function ConsultantsIndustryPage() {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
             Upgrade your professional image with TailorPic.
-            Studio-quality headshots starting at just $9.90.
+            Studio-quality headshots starting at just $1.99.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register">

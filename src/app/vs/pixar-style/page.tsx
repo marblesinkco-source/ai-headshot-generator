@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Pixar-Style AI Portrait Tools";
 const title = 'TailorPic vs Pixar-Style AI Portraits: Headshot Comparison';
 const description =
-  'Compare TailorPic vs Pixar-style AI portrait tools. Cartoon 3D avatars are fun, but TailorPic makes 40+ realistic headshots from selfies for $9.90.';
+  'Compare TailorPic vs Pixar-style AI portrait tools. Cartoon 3D avatars are fun, but TailorPic makes 40+ realistic headshots from selfies for $1.99.';
 const path = '/vs/pixar-style';
 const canonicalUrl = 'https://www.tailorpic.com/vs/pixar-style';
 
@@ -28,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $9.90.',
+    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -47,12 +47,12 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "$9.90 one-time",
+    "tailorpic": "$1.99 one-time",
     "other": "Often free with ads, or a small paid upgrade"
   },
   {
     "label": "Photos included",
-    "tailorpic": "40+ photos",
+    "tailorpic": "photos",
     "other": "A handful of stylized images per run"
   },
   {
@@ -120,8 +120,8 @@ const useCases = {
   "tailorpic": [
     "Realistic headshots for work and LinkedIn",
     "A likeness that looks like you",
-    "A one-time $9.90 payment",
-    "40+ photos across 11 categories"
+    "A one-time $1.99 payment",
+    "photos across 11 categories"
   ],
   "other": [
     "A playful cartoon or 3D avatar",
@@ -142,7 +142,7 @@ const faqs = [
   },
   {
     "question": "Is TailorPic cheaper than Pixar-style apps?",
-    "answer": "TailorPic is a one-time $9.90. Pixar-style apps vary from free to subscription, so check the specific app's pricing."
+    "answer": "TailorPic is a one-time $1.99. Pixar-style apps vary from free to subscription, so check the specific app's pricing."
   },
   {
     "question": "How long does TailorPic take?",
@@ -150,7 +150,7 @@ const faqs = [
   },
   {
     "question": "Do I need a subscription with TailorPic?",
-    "answer": "No. It is a single $9.90 payment with no recurring fees."
+    "answer": "No. It is a single $1.99 payment with no recurring fees."
   }
 ];
 
@@ -182,7 +182,7 @@ export default function VsPixarStylePage() {
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">{intro}</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
-                Get 40+ headshots for $9.90
+                Get headshots from $1.99
               </Link>
             </div>
           </div>
@@ -289,7 +289,7 @@ export default function VsPixarStylePage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              40+ professional photos across 11 categories for a one-time $9.90. No subscription, delivered within 24 hours.
+              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

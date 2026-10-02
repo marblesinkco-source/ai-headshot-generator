@@ -52,10 +52,12 @@ export const metadata: Metadata = {
 /* ------------------------------------------------------------------ */
 
 const headshots = CATEGORIES.headshots;
-const expressPackage = headshots.packages[0]; // Express: $9.90, 5 headshots
-const starterPackage = headshots.packages[1]; // Starter: $29.00, 40 headshots
-const proPackage = headshots.packages[2]; // Professional: $49.00, 80 headshots
-const execPackage = headshots.packages[3]; // Executive: $79.00, 140 headshots
+const tailorpic1Package = headshots.packages[0]; // TailorPic 1: $1.99, 1 headshot
+const litePackage = headshots.packages[1]; // Lite: $1.99, 5 headshots
+const basicPackage = headshots.packages[2]; // Basic: $19.90, 10 headshots
+const starterPackage = headshots.packages[3]; // Starter: $29.90, 40 headshots
+const proPackage = headshots.packages[4]; // Professional: $49.90, 80 headshots
+const execPackage = headshots.packages[5]; // Executive: $89.90, 160 headshots
 
 function perPhotoPrice(cents: number, count: number): string {
   return `$${(cents / 100 / count).toFixed(2)}`;
@@ -79,13 +81,13 @@ const comparisonRows: ComparisonRow[] = [
     feature: 'Price range',
     traditional: '$150 - $500+',
     otherAI: '$20 - $60',
-    tailorpic: `${formatPrice(expressPackage.price)} - ${formatPrice(execPackage.price)}`,
+    tailorpic: `${formatPrice(tailorpic1Package.price)} - ${formatPrice(execPackage.price)}`,
   },
   {
     feature: 'Number of photos included',
     traditional: '3 - 10 retouched',
     otherAI: '10 - 40',
-    tailorpic: `${expressPackage.outputCount} - ${execPackage.outputCount}`,
+    tailorpic: `${tailorpic1Package.outputCount} - ${execPackage.outputCount}`,
   },
   {
     feature: 'Turnaround time',
@@ -145,7 +147,7 @@ const roiReasons = [
   {
     icon: DollarSign,
     title: 'Lower Cost Per Photo',
-    description: `Starting at just ${perPhotoPrice(expressPackage.price, expressPackage.outputCount)} per headshot with our Express package, compared to $30-$100+ per retouched photo at a traditional studio.`,
+    description: `Starting at just ${perPhotoPrice(tailorpic1Package.price, tailorpic1Package.outputCount)} per headshot with our TailorPic 1 package, compared to $30-$100+ per retouched photo at a traditional studio.`,
   },
   {
     icon: Clock,
@@ -372,7 +374,7 @@ export default function PricingComparisonPage() {
                         </span>
                       </div>
                       <span className="mt-1 block text-xs font-normal text-tp-bronze-ink">
-                        {formatPrice(expressPackage.price)} -{' '}
+                        {formatPrice(tailorpic1Package.price)} -{' '}
                         {formatPrice(execPackage.price)}
                       </span>
                     </th>
@@ -474,7 +476,7 @@ export default function PricingComparisonPage() {
                   </h3>
                 </div>
                 <p className="mt-1 text-sm text-tp-bronze-ink">
-                  {formatPrice(expressPackage.price)} -{' '}
+                  {formatPrice(tailorpic1Package.price)} -{' '}
                   {formatPrice(execPackage.price)}
                 </p>
                 <dl className="mt-4 space-y-3">

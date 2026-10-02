@@ -32,18 +32,18 @@ import {
 export const metadata: Metadata = {
   title: { absolute: 'Free AI Headshot Generator Alternative: Try Risk-Free' },
   description:
-    'Looking for a free AI headshot generator? Try TailorPic risk-free: $9.90 one-time for 40+ studio-quality headshots, backed by a 14-day money-back guarantee.',
+    'Looking for a free AI headshot generator? Try TailorPic risk-free: $1.99 one-time for studio-quality headshots, backed by a 14-day money-back guarantee.',
   alternates: { canonical: '/free-headshot-generator' },
   openGraph: generateOGMetadata({
     title: 'Free AI Headshot Generator | TailorPic',
     description:
-      'Upload your selfies and get 40+ professional AI headshots from $9.90 one-time. Risk-free with a 14-day money-back guarantee.',
+      'Upload your selfies and get professional AI headshots from $1.99 one-time. Risk-free with a 14-day money-back guarantee.',
     path: '/free-headshot-generator',
   }),
   twitter: generateTwitterMetadata({
     title: 'Free AI Headshot Generator | TailorPic',
     description:
-      'Professional AI headshots from your selfies. $9.90 one-time, 14-day money-back guarantee.',
+      'Professional AI headshots from your selfies. $1.99 one-time, 14-day money-back guarantee.',
   }),
 };
 
@@ -80,9 +80,9 @@ const headshotTypes = [
 ];
 
 const trialComparison = [
-  { label: 'Price', free: 'Free tools: $0', paid: '$9.90 one-time per person' },
+  { label: 'Price', free: 'Free tools: $0', paid: '$1.99 one-time per person' },
   { label: 'Teams', free: 'Usually one photo at a time', paid: '$39 (5-15 people) or $29 (16-50 people)' },
-  { label: 'Output', free: 'Often a few photos, sometimes watermarked', paid: '40+ photos across 11+ categories' },
+  { label: 'Output', free: 'Often a few photos, sometimes watermarked', paid: 'photos across 11+ categories' },
   { label: 'Risk', free: 'No payment, but no guarantee of quality', paid: '14-day money-back guarantee' },
   { label: 'Subscription', free: 'Varies by tool', paid: 'None. One-time payment, no subscription to cancel' },
 ];
@@ -104,7 +104,7 @@ const features = [
 ];
 
 const comparison = [
-  { label: 'Cost', traditional: 'Often hundreds of dollars per session', ai: 'Starting from $9.90' },
+  { label: 'Cost', traditional: 'Often hundreds of dollars per session', ai: 'Starting from $1.99' },
   { label: 'Time', traditional: 'Booking, travel and waiting for edits', ai: 'Upload from home, get results quickly' },
   { label: 'Outfit Changes', traditional: 'Limited by what you bring and studio time', ai: 'Multiple outfit styles in one order' },
   { label: 'Retakes', traditional: 'Usually means another session and another fee', ai: 'Generate again with different styles' },
@@ -124,12 +124,12 @@ const faqs = [
   {
     question: 'Is there really a free AI headshot generator?',
     answer:
-      'TailorPic is not free, but it is risk-free. A full set costs $9.90 one-time and every order is covered by a 14-day money-back guarantee, so you can try it without a subscription or long-term commitment.',
+      'TailorPic is not free, but it is risk-free. Packages start at $1.99 one-time and every order is covered by a 14-day money-back guarantee, so you can try it without a subscription or long-term commitment.',
   },
   {
     question: 'How much does TailorPic cost?',
     answer:
-      'Individual orders are $9.90 one-time. Team pricing is $39 for 5-15 people and $29 for 16-50 people. There is no subscription.',
+      'Packages start at $1.99 one-time. Team pricing is $39 for 5-15 people and $29 for 16-50 people. There is no subscription.',
   },
   {
     question: 'What do I need to get started?',
@@ -138,7 +138,7 @@ const faqs = [
   },
   {
     question: 'How many photos do I get?',
-    answer: 'You get 40+ photos across 11+ categories, including professional headshots, LinkedIn photos and more.',
+    answer: 'You get photos across 11+ categories, including professional headshots, LinkedIn photos and more.',
   },
   {
     question: 'Can I use the headshots on LinkedIn and my resume?',
@@ -176,7 +176,7 @@ export default function FreeHeadshotGeneratorPage() {
     operatingSystem: 'Web',
     url: `${siteConfig.url}/free-headshot-generator`,
     description:
-      'AI headshot generator that turns your selfies into 40+ professional headshots. $9.90 one-time with a 14-day money-back guarantee.',
+      'AI headshot generator that turns your selfies into professional headshots. $1.99 one-time with a 14-day money-back guarantee.',
     offers: {
       '@type': 'Offer',
       price: '9.90',
@@ -210,7 +210,7 @@ export default function FreeHeadshotGeneratorPage() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-muted">
             Upload a few selfies, pick your styles, and get studio-quality headshots for LinkedIn,
-            resumes and more. Try it risk-free: $9.90 one-time, 40+ photos, most orders ready within 2 hours,
+            resumes and more. Try it risk-free: $1.99 one-time, photos, most orders ready within 2 hours,
             and a 14-day money-back guarantee if you are not happy.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -224,7 +224,7 @@ export default function FreeHeadshotGeneratorPage() {
           </div>
           <ul className="mt-8 flex flex-col items-center justify-center gap-2 text-sm text-tp-muted sm:flex-row sm:gap-6">
             <li className="flex items-center gap-2"><Check className="h-4 w-4 text-tp-bronze-ink" />No studio or booking</li>
-            <li className="flex items-center gap-2"><Check className="h-4 w-4 text-tp-bronze-ink" />One-time $9.90, no subscription</li>
+            <li className="flex items-center gap-2"><Check className="h-4 w-4 text-tp-bronze-ink" />One-time $1.99, no subscription</li>
             <li className="flex items-center gap-2"><Check className="h-4 w-4 text-tp-bronze-ink" />14-day money-back guarantee</li>
           </ul>
         </div>
@@ -310,7 +310,7 @@ export default function FreeHeadshotGeneratorPage() {
             Free Tools vs TailorPic
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-tp-muted">
-            Free generators are tempting, but results vary. TailorPic costs $9.90 and you can get your money back within 14 days.
+            Free generators are tempting, but results vary. TailorPic starts at $1.99 and you can get your money back within 14 days.
           </p>
           <div className="mt-10 overflow-x-auto rounded-tp-card border border-tp-line bg-white">
             <table className="w-full min-w-[560px] text-left text-sm">
@@ -334,7 +334,7 @@ export default function FreeHeadshotGeneratorPage() {
           </div>
           <div className="mt-6 text-center">
             <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
-              Get my headshots for $9.90
+              Get my headshots from $1.99
               <ArrowRight className="h-4 w-4" />
             </Link>
             <p className="mt-3 text-sm text-tp-muted">
@@ -450,7 +450,7 @@ export default function FreeHeadshotGeneratorPage() {
         <div className="mx-auto max-w-2xl rounded-tp-card bg-tp-ink px-6 py-12 text-center">
           <h2 className="font-display text-3xl font-normal text-white">Try it risk-free</h2>
           <p className="mt-3 text-tp-beige">
-            $9.90 one-time, secure Stripe checkout, and a 14-day money-back guarantee.
+            $1.99 one-time, secure Stripe checkout, and a 14-day money-back guarantee.
           </p>
           <Link
             href="/auth/register"

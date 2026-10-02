@@ -67,7 +67,7 @@ export default function HeadshotCostCalculatorPage() {
         <div className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
           <h2 className="text-2xl font-display font-normal text-tp-ink sm:text-3xl">Ready to skip the studio?</h2>
           <p className="mt-3 text-tp-muted">
-            Upload a few selfies and get studio-quality photos in hours, from $9.90.
+            Upload a few selfies and get studio-quality photos in hours, from $1.99.
           </p>
           <Link
             href="/auth/register"

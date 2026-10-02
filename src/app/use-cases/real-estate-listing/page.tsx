@@ -24,7 +24,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Real Estate Listings | TailorPic";
 const pageDescription =
-  'Professional agent headshots for real estate listings, yard signs and Zillow profiles. Get polished portraits from a few selfies. Starting at $9.90.';
+  'Professional agent headshots for real estate listings, yard signs and Zillow profiles. Get polished portraits from a few selfies. Starting at $1.99.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -144,7 +144,7 @@ const faqs = [
   },
   {
     question: "How much does it cost?",
-    answer: "TailorPic starts at $9.90 per pack, far less than a photographer session.",
+    answer: "TailorPic starts at $1.99 per pack, far less than a photographer session.",
   },
   {
     question: "How long does delivery take?",
@@ -183,7 +183,7 @@ export default function RealEstateListingUseCasePage() {
               <span className="not-italic text-tp-bronze">{"Real Estate Listings"}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              {"Buyers and sellers choose an agent they trust on sight. Get a crisp, professional agent portrait from a handful of selfies, delivered in about 2 hours, starting at just $9.90."}
+              {"Buyers and sellers choose an agent they trust on sight. Get a crisp, professional agent portrait from a handful of selfies, delivered in about 2 hours, starting at just $1.99."}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -221,7 +221,7 @@ export default function RealEstateListingUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            {"Starting at $9.90"}
+            {"Starting at $1.99"}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -334,7 +334,7 @@ export default function RealEstateListingUseCasePage() {
             {"Give Your Listings a Face Clients Trust"}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            {"Make every listing work harder from the first glance. Starting at just $9.90."}
+            {"Make every listing work harder from the first glance. Starting at just $1.99."}
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

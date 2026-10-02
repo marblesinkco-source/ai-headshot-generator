@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = 'AI Profile Photos for X (Twitter) | TailorPic';
 const pageDescription =
-  'Create a sharp, memorable X (Twitter) profile photo from a few selfies. AI-generated portraits that build credibility in replies, threads, and DMs. From $9.90.';
+  'Create a sharp, memorable X (Twitter) profile photo from a few selfies. AI-generated portraits that build credibility in replies, threads, and DMs. From $1.99.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -106,7 +106,7 @@ const faqs = [
   },
   {
     question: "How much does an X profile photo cost?",
-    answer: "TailorPic starts at $9.90 per pack. You receive multiple headshot variations so you can choose the one that best represents your online persona.",
+    answer: "TailorPic starts at $1.99 per pack. You receive multiple headshot variations so you can choose the one that best represents your online persona.",
   },
   {
     question: "Can I use these photos on other platforms too?",
@@ -152,7 +152,7 @@ export default function TwitterUseCasePage() {
               <span className="not-italic text-tp-bronze">X (Twitter)</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              Your X profile photo follows every post, reply, and DM. Get a sharp, credibility-building headshot from a few phone selfies, no studio needed. Delivered in about 2 hours, starting at just $9.90.
+              Your X profile photo follows every post, reply, and DM. Get a sharp, credibility-building headshot from a few phone selfies, no studio needed. Delivered in about 2 hours, starting at just $1.99.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -190,7 +190,7 @@ export default function TwitterUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Starting at $9.90
+            Starting at $1.99
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -303,7 +303,7 @@ export default function TwitterUseCasePage() {
             Upgrade Your X Profile Today
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            Boost your X presence with a studio-quality AI profile photo. Starting at just $9.90.
+            Boost your X presence with a studio-quality AI profile photo. Starting at just $1.99.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

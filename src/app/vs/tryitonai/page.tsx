@@ -19,7 +19,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs Try It On AI: AI Headshot Generator Comparison' },
   description:
-    'Compare TailorPic vs Try It On AI for AI photos. See pricing, features, categories and delivery time side by side. TailorPic: $9.90 for 40+ photos.',
+    'Compare TailorPic vs Try It On AI for AI photos. See pricing, features, categories and delivery time side by side. TailorPic: $1.99 across multiple packages.',
   alternates: { canonical: '/vs/tryitonai' },
   openGraph: generateOGMetadata({ title: 'TailorPic vs Try It On AI: AI Headshot Generator Comparison', description: 'Compare TailorPic and Try It On AI. Pricing, categories, features, and delivery — see which AI photo generator is right for you.', path: '/vs/tryitonai', type: 'vs' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic vs Try It On AI: AI Headshot Generator Comparison', description: 'Compare TailorPic and Try It On AI. Pricing, categories, features, and delivery — see which AI photo generator is right for you.', type: 'vs' }),
@@ -33,7 +33,7 @@ const quickBadges = [
   {
     icon: DollarSign,
     label: 'Starting Price',
-    tailorpic: '$9.90',
+    tailorpic: '$1.99',
     competitor: '$17+',
   },
   {
@@ -57,7 +57,7 @@ type FeatureRow = {
 };
 
 const comparisonRows: FeatureRow[] = [
-  { feature: 'Starting Price', tailorpic: '$9.90', competitor: '$17+' },
+  { feature: 'Starting Price', tailorpic: '$1.99', competitor: '$17+' },
   { feature: 'Number of Photos', tailorpic: '40+', competitor: 'Varies by plan' },
   { feature: 'Delivery Time', tailorpic: 'Under 2 hours', competitor: 'Minutes (per their site)' },
   { feature: 'Photo Categories', tailorpic: '11 categories', competitor: 'Headshots and more' },
@@ -74,7 +74,7 @@ const whyCards = [
     icon: BadgeDollarSign,
     title: 'More Affordable',
     description:
-      'TailorPic starts at just $9.90, compared with Try It On AI\'s starting price of $17. Get professional results for less.',
+      'TailorPic starts at just $1.99, compared with Try It On AI\'s starting price of $17. Get professional results for less.',
   },
   {
     icon: LayoutGrid,
@@ -86,7 +86,7 @@ const whyCards = [
     icon: ImageIcon,
     title: '40+ Photos Every Order',
     description:
-      'Every TailorPic order includes 40+ photos delivered in under 2 hours, so you can pick the best shots with confidence.',
+      'Every TailorPic order includes photos delivered in under 2 hours, so you can pick the best shots with confidence.',
   },
   {
     icon: Target,
@@ -108,12 +108,12 @@ const faqs = [
   {
     question: 'How does TailorPic\'s price compare to Try It On AI?',
     answer:
-      'TailorPic is a $9.90 one-time payment. Try It On AI starts at $17. They may change their pricing, so check their site for current pricing.',
+      'TailorPic is a $1.99 one-time payment. Try It On AI starts at $17. They may change their pricing, so check their site for current pricing.',
   },
   {
     question: 'How many photos do I get with TailorPic?',
     answer:
-      'Every TailorPic order includes 40+ photos across 11 categories. Try It On AI\'s photo count varies by plan.',
+      'Every TailorPic order includes photos across 11 categories. Try It On AI\'s photo count varies by plan.',
   },
   {
     question: 'How long does delivery take?',
@@ -123,7 +123,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription or a one-time purchase?',
     answer:
-      'TailorPic is a one-time $9.90 payment with no subscription, and every order has a 14-day money-back guarantee.',
+      'TailorPic is a one-time $1.99 payment with no subscription, and every order has a 14-day money-back guarantee.',
   },
   {
     question: 'How does TailorPic train my photos, and is it easy to use?',
@@ -278,7 +278,7 @@ export default function VsTryItOnAiPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-ink">Ready to Switch?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-muted">
-              Get professional AI photos starting at just $9.90 with a 14-day money-back guarantee. No subscriptions, no hidden fees
+              Get professional AI photos starting at just $1.99 with a 14-day money-back guarantee. No subscriptions, no hidden fees
               — just 40+ great photos delivered in under 2 hours.
             </p>
             <div className="mt-8">

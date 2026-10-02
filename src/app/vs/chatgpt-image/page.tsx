@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "ChatGPT Image Generation";
 const title = 'TailorPic vs ChatGPT Image Generation: Headshot Comparison';
 const description =
-  "Compare TailorPic vs ChatGPT image generation for headshots. TailorPic is a one-time $9.90 for 40+ photos with a LoRA model trained on your own face.";
+  "Compare TailorPic vs ChatGPT image generation for headshots. TailorPic is a one-time $1.99 across multiple packages with a LoRA model trained on your own face.";
 const path = '/vs/chatgpt-image';
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $9.90.',
+    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -44,14 +44,14 @@ const intro =
   "ChatGPT image generation is convenient and already in a tool many people use. TailorPic is specialized: it trains a personal model on your photos and delivers 40+ headshots across 11 categories.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "$9.90 one-time", other: "Included with ChatGPT plans; check their site" },
-  { label: "Photos included", tailorpic: "40+ photos", other: "A few images per request; limits vary by plan" },
+  { label: "Starting price", tailorpic: "$1.99 one-time", other: "Included with ChatGPT plans; check their site" },
+  { label: "Photos included", tailorpic: "photos", other: "A few images per request; limits vary by plan" },
   { label: "Delivery time", tailorpic: "Within 24 hours", other: "Usually quick per image" },
   { label: "Categories / styles", tailorpic: "11 categories (business, dating, creative, pets and more)", other: "General-purpose images from text and reference photos" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "No personal model training; results depend on the prompt and reference" },
   { label: "Pricing model", tailorpic: "One-time payment, no subscription", other: "Tied to a ChatGPT plan; check their site" },
   { label: "Built for headshots", tailorpic: "Yes, purpose-built workflow", other: "General-purpose image generation" },
-  { label: "Consistency across photos", tailorpic: "Same trained model across all 40+ photos", other: "Each image is generated separately, so likeness can vary" },
+  { label: "Consistency across photos", tailorpic: "Same trained model across all photos", other: "Each image is generated separately, so likeness can vary" },
   { label: "Convenience", tailorpic: "Upload once, receive a full set", other: "Very convenient if you already use ChatGPT" },
   { label: "Team features", tailorpic: "Team and enterprise options available", other: "Check their site for business plans" },
 ];
@@ -59,14 +59,14 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 const differences = [
   { title: "Specialized vs convenient", body: "ChatGPT is handy for quick images. TailorPic is tuned for headshots, with categories and a workflow designed for that single goal." },
   { title: "A trained model, not a one-off", body: "TailorPic fine-tunes a LoRA model on your selfies, so every photo in the set draws on the same learned likeness." },
-  { title: "A full set in one go", body: "You receive 40+ photos across 11 categories instead of generating and refining images one at a time." },
+  { title: "A full set in one go", body: "You receive photos across 11 categories instead of generating and refining images one at a time." },
   { title: "Trade-off on speed", body: "ChatGPT can return an image in moments. TailorPic takes up to 24 hours because it trains a dedicated model first." },
 ];
 
 const useCases = {
   tailorpic: [
     "A full set of headshots with a consistent likeness",
-    "A single $9.90 payment with no subscription",
+    "A single $1.99 payment with no subscription",
     "A model trained on your own photos",
     "Ready-made categories for work, dating and more",
   ],
@@ -79,11 +79,11 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is TailorPic cheaper than ChatGPT image generation?", answer: "TailorPic is a one-time $9.90 for 40+ photos. ChatGPT image generation is tied to ChatGPT plans that can change, so check their current pricing." },
+  { question: "Is TailorPic cheaper than ChatGPT image generation?", answer: "TailorPic is a one-time $1.99 across multiple packages. ChatGPT image generation is tied to ChatGPT plans that can change, so check their current pricing." },
   { question: "Can ChatGPT make headshots of me?", answer: "ChatGPT can generate portrait-style images, but it does not train a personal model on your face. TailorPic fine-tunes a LoRA model on your own photos for a consistent likeness." },
   { question: "How long does TailorPic take?", answer: "Delivery is within 24 hours, since a dedicated model is fine-tuned on your uploads." },
   { question: "Do I need to write prompts with TailorPic?", answer: "No. You upload your photos and receive finished headshots across 11 categories." },
-  { question: "Do I need a subscription with TailorPic?", answer: "No. It is a single $9.90 payment with no recurring fees." },
+  { question: "Do I need a subscription with TailorPic?", answer: "No. It is a single $1.99 payment with no recurring fees." },
 ];
 
 export default function VsChatgptImagePage() {
@@ -114,7 +114,7 @@ export default function VsChatgptImagePage() {
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">{intro}</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
-                Get 40+ headshots for $9.90
+                Get headshots from $1.99
               </Link>
             </div>
           </div>
@@ -221,7 +221,7 @@ export default function VsChatgptImagePage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              40+ professional photos across 11 categories for a one-time $9.90. No subscription, delivered within 24 hours.
+              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

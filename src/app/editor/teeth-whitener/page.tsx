@@ -176,7 +176,7 @@ export default function TeethWhitenerPage() {
             Get AI headshots with a confident smile
           </h2>
           <p className="mt-3 text-tp-muted">
-            Upload a few selfies and get professional headshots with a natural smile in hours, from $9.90.
+            Upload a few selfies and get professional headshots with a natural smile in hours, from $1.99.
           </p>
           <Link href="/auth/register" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
             Get AI Headshots

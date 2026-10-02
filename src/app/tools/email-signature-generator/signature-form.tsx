@@ -289,7 +289,7 @@ export function SignatureForm() {
             Want a professional headshot for your signature?
           </p>
           <p className="mt-1 text-sm text-tp-muted">
-            TailorPic generates studio-quality photos from selfies — From $9.90
+            TailorPic generates studio-quality photos from selfies — From $1.99
           </p>
           <Link
             href="/auth/register"

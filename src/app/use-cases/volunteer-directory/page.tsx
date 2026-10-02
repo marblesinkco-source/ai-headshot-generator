@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Volunteer Directories | TailorPic";
 const pageDescription =
-  "Consistent, friendly headshots for volunteer directories and nonprofit team pages. Generated from selfies, delivered in about 2 hours. Starting at $9.90.";
+  "Consistent, friendly headshots for volunteer directories and nonprofit team pages. Generated from selfies, delivered in about 2 hours. Starting at $1.99.";
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -67,7 +67,7 @@ const benefits = [
   {
     icon: Briefcase,
     title: "Budget-Friendly for Nonprofits",
-    description: "Starting at $9.90 per person keeps costs low for small organizations."
+    description: "Starting at $1.99 per person keeps costs low for small organizations."
   }
 ];
 
@@ -131,7 +131,7 @@ const faqs = [
   },
   {
     question: "How much does it cost?",
-    answer: "TailorPic starts at $9.90 per pack, far less than organizing a photographer."
+    answer: "TailorPic starts at $1.99 per pack, far less than organizing a photographer."
   },
   {
     question: "How long does delivery take?",
@@ -170,7 +170,7 @@ export default function VolunteerDirectoryUseCasePage() {
               <span className="not-italic text-tp-bronze">{"Volunteer Directories"}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              {"Put faces to the people who make your mission happen. Collect consistent, friendly portraits from volunteers using just selfies, delivered in about 2 hours, starting at $9.90."}
+              {"Put faces to the people who make your mission happen. Collect consistent, friendly portraits from volunteers using just selfies, delivered in about 2 hours, from $1.99."}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -208,7 +208,7 @@ export default function VolunteerDirectoryUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            {"Starting at $9.90"}
+            {"Starting at $1.99"}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -321,7 +321,7 @@ export default function VolunteerDirectoryUseCasePage() {
             {"Show the Faces Behind Your Mission"}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            {"Build a warm, consistent volunteer directory. Starting at just $9.90."}
+            {"Build a warm, consistent volunteer directory. Starting at just $1.99."}
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Fotor AI Headshot";
 const title = 'TailorPic vs Fotor AI Headshot: AI Headshot Comparison';
 const description =
-  'Compare TailorPic vs Fotor AI Headshot. Fotor offers an AI headshot feature inside a broader photo editor; TailorPic: 40+ headshots for a one-time $9.90.';
+  'Compare TailorPic vs Fotor AI Headshot. Fotor offers an AI headshot feature inside a broader photo editor; TailorPic: 40+ headshots for a one-time $1.99.';
 const path = '/vs/fotor-ai-headshot';
 const canonicalUrl = 'https://www.tailorpic.com/vs/fotor-ai-headshot';
 
@@ -28,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $9.90.',
+    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -42,17 +42,17 @@ const productJsonLd = {
 };
 
 const intro =
-  "Fotor is a broad online photo editor that includes an AI headshot feature. TailorPic is a dedicated headshot generator that trains a personal model on your selfies and delivers 40+ photos in 11 categories.";
+  "Fotor is a broad online photo editor that includes an AI headshot feature. TailorPic is a dedicated headshot generator that trains a personal model on your selfies and delivers photos in 11 categories.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "$9.90 one-time",
+    "tailorpic": "$1.99 one-time",
     "other": "Free and paid options; check their site"
   },
   {
     "label": "Photos included",
-    "tailorpic": "40+ photos",
+    "tailorpic": "photos",
     "other": "Depends on the feature and plan; check their site"
   },
   {
@@ -108,7 +108,7 @@ const differences = [
   },
   {
     "title": "Flat, low entry price",
-    "body": "TailorPic is $9.90 one time with no subscription to manage."
+    "body": "TailorPic is $1.99 one time with no subscription to manage."
   },
   {
     "title": "Trade-off on breadth",
@@ -134,7 +134,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than Fotor AI Headshot?",
-    "answer": "TailorPic is a one-time $9.90 for 40+ photos. Fotor offers free and paid options that vary, so compare against their current price page."
+    "answer": "TailorPic is a one-time $1.99 across multiple packages. Fotor offers free and paid options that vary, so compare against their current price page."
   },
   {
     "question": "Does Fotor have an AI headshot feature?",
@@ -146,7 +146,7 @@ const faqs = [
   },
   {
     "question": "Do I need a subscription with TailorPic?",
-    "answer": "No. It is a single $9.90 payment with no recurring fees."
+    "answer": "No. It is a single $1.99 payment with no recurring fees."
   },
   {
     "question": "Can I still edit photos with TailorPic?",
@@ -182,7 +182,7 @@ export default function VsFotorAiHeadshotPage() {
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">{intro}</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
-                Get 40+ headshots for $9.90
+                Get headshots from $1.99
               </Link>
             </div>
           </div>
@@ -289,7 +289,7 @@ export default function VsFotorAiHeadshotPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              40+ professional photos across 11 categories for a one-time $9.90. No subscription, delivered within 24 hours.
+              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

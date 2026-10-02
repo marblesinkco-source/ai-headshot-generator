@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Prequel";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  'Compare TailorPic vs Prequel. Prequel is a mobile app for photo and video effects and filters; TailorPic makes 40+ headshots from selfies for a one-time $9.90.';
+  'Compare TailorPic vs Prequel. Prequel is a mobile app for photo and video effects and filters; TailorPic makes 40+ headshots from selfies for a one-time $1.99.';
 const path = '/vs/prequel-app';
 const canonicalUrl = 'https://www.tailorpic.com/vs/prequel-app';
 
@@ -28,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $9.90.',
+    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -47,12 +47,12 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "$9.90 one-time",
+    "tailorpic": "$1.99 one-time",
     "other": "Free with in-app subscription; check the app store"
   },
   {
     "label": "Photos included",
-    "tailorpic": "40+ photos",
+    "tailorpic": "photos",
     "other": "Edits the photos you take"
   },
   {
@@ -108,7 +108,7 @@ const differences = [
   },
   {
     "title": "A flat, low entry price",
-    "body": "TailorPic is $9.90 one time with no subscription to manage."
+    "body": "TailorPic is $1.99 one time with no subscription to manage."
   },
   {
     "title": "Trade-off on instant play",
@@ -134,7 +134,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than Prequel?",
-    "answer": "TailorPic is a one-time $9.90 for 40+ photos. Prequel uses a free tier with subscription options, so compare against the current app store listing."
+    "answer": "TailorPic is a one-time $1.99 across multiple packages. Prequel uses a free tier with subscription options, so compare against the current app store listing."
   },
   {
     "question": "Can Prequel make a professional headshot?",
@@ -150,7 +150,7 @@ const faqs = [
   },
   {
     "question": "Do I need a subscription with TailorPic?",
-    "answer": "No. It is a single $9.90 payment with no recurring fees."
+    "answer": "No. It is a single $1.99 payment with no recurring fees."
   }
 ];
 
@@ -182,7 +182,7 @@ export default function VsPrequelAppPage() {
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">{intro}</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
-                Get 40+ headshots for $9.90
+                Get headshots from $1.99
               </Link>
             </div>
           </div>
@@ -289,7 +289,7 @@ export default function VsPrequelAppPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              40+ professional photos across 11 categories for a one-time $9.90. No subscription, delivered within 24 hours.
+              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

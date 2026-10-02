@@ -19,7 +19,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs Fotor AI: AI Headshot Generator Comparison' },
   description:
-    'Compare TailorPic vs Fotor AI. Fotor is a broad photo editor with AI tools; TailorPic makes 40+ headshots from selfies for a one-time $9.90.',
+    'Compare TailorPic vs Fotor AI. Fotor is a broad photo editor with AI tools; TailorPic makes 40+ headshots from selfies for a one-time $1.99.',
   alternates: { canonical: '/vs/fotor' },
   openGraph: generateOGMetadata({ title: 'TailorPic vs Fotor AI: AI Headshot Generator Comparison', description: 'Compare TailorPic and Fotor AI. A specialized AI headshot generator versus a general photo editor — see which fits your needs.', path: '/vs/fotor', type: 'vs' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic vs Fotor AI: AI Headshot Generator Comparison', description: 'Compare TailorPic and Fotor AI. A specialized AI headshot generator versus a general photo editor — see which fits your needs.', type: 'vs' }),
@@ -33,7 +33,7 @@ const quickBadges = [
   {
     icon: DollarSign,
     label: 'Starting Price',
-    tailorpic: '$9.90 one-time',
+    tailorpic: '$1.99 one-time',
     competitor: '~$8.99/month',
   },
   {
@@ -57,7 +57,7 @@ type FeatureRow = {
 };
 
 const comparisonRows: FeatureRow[] = [
-  { feature: 'Starting Price', tailorpic: '$9.90 one-time', competitor: '~$8.99/month subscription' },
+  { feature: 'Starting Price', tailorpic: '$1.99 one-time', competitor: '~$8.99/month subscription' },
   { feature: 'Pricing Model', tailorpic: 'One-time payment', competitor: 'Subscription' },
   { feature: 'Primary Purpose', tailorpic: 'Specialized AI headshots', competitor: 'General photo editing with AI tools' },
   { feature: 'Broad Editing Toolset', tailorpic: 'Not the focus', competitor: true },
@@ -76,7 +76,7 @@ const whyCards = [
     icon: BadgeDollarSign,
     title: 'One-Time Price',
     description:
-      'TailorPic costs a single $9.90 with no renewals. Fotor is generally offered as a monthly or annual subscription starting around $8.99/month, so costs add up over time. Check Fotor for current pricing.',
+      'TailorPic costs a single $1.99 with no renewals. Fotor is generally offered as a monthly or annual subscription starting around $8.99/month, so costs add up over time. Check Fotor for current pricing.',
   },
   {
     icon: Target,
@@ -110,12 +110,12 @@ const faqs = [
   {
     question: 'How does TailorPic\'s price compare to Fotor?',
     answer:
-      'TailorPic is a $9.90 one-time payment. Fotor is generally sold as a subscription starting around $8.99/month. Fotor may change its pricing, so check their site for current pricing.',
+      'TailorPic is a $1.99 one-time payment. Fotor is generally sold as a subscription starting around $8.99/month. Fotor may change its pricing, so check their site for current pricing.',
   },
   {
     question: 'How many photos do I get with TailorPic compared to Fotor?',
     answer:
-      'Every TailorPic order includes 40+ photos across 11 categories. With Fotor the number of results varies by plan, since AI headshots are one tool among many in a general photo editor.',
+      'Every TailorPic order includes photos across 11 categories. With Fotor the number of results varies by plan, since AI headshots are one tool among many in a general photo editor.',
   },
   {
     question: 'How quickly will I receive my photos?',
@@ -125,7 +125,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription like Fotor?',
     answer:
-      'No. TailorPic is a one-time $9.90 payment with no renewals and a 14-day money-back guarantee. Fotor is typically offered as a monthly or annual subscription.',
+      'No. TailorPic is a one-time $1.99 payment with no renewals and a 14-day money-back guarantee. Fotor is typically offered as a monthly or annual subscription.',
   },
   {
     question: 'How does TailorPic train its AI, and do I need editing skills?',
@@ -280,7 +280,7 @@ export default function VsFotorPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-ink">Ready to Switch?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-muted">
-              Get professional AI headshots starting at just $9.90. No subscriptions, no hidden fees
+              Get professional AI headshots starting at just $1.99. No subscriptions, no hidden fees
               — just great photos delivered in under 2 hours.
             </p>
             <div className="mt-8">

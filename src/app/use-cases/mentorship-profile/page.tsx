@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Mentorship Profiles | TailorPic";
 const pageDescription =
-  'Friendly, professional photos for mentor and mentee profiles on mentorship platforms. Get approachable portraits from a few selfies. Starting at $9.90.';
+  'Friendly, professional photos for mentor and mentee profiles on mentorship platforms. Get approachable portraits from a few selfies. Starting at $1.99.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -131,7 +131,7 @@ const faqs = [
   },
   {
     question: "How much does it cost?",
-    answer: "TailorPic starts at $9.90 per pack, far less than a photographer session.",
+    answer: "TailorPic starts at $1.99 per pack, far less than a photographer session.",
   },
   {
     question: "How long does delivery take?",
@@ -170,7 +170,7 @@ export default function MentorshipProfileUseCasePage() {
               <span className="not-italic text-tp-bronze">{"Mentorship Profile"}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              {"Great mentorship starts with a good first impression. Get a warm, approachable portrait from a handful of selfies, delivered in about 2 hours, starting at just $9.90."}
+              {"Great mentorship starts with a good first impression. Get a warm, approachable portrait from a handful of selfies, delivered in about 2 hours, starting at just $1.99."}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -208,7 +208,7 @@ export default function MentorshipProfileUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            {"Starting at $9.90"}
+            {"Starting at $1.99"}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -321,7 +321,7 @@ export default function MentorshipProfileUseCasePage() {
             {"Start Every Mentoring Match on the Right Foot"}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            {"Make your profile feel welcoming. Starting at just $9.90."}
+            {"Make your profile feel welcoming. Starting at just $1.99."}
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

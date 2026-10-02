@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "AIPhotoShoot";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs AIPhotoShoot. AIPhotoShoot offers AI photo shoots; TailorPic delivers 40+ headshots across 11 categories for a one-time $9.90.";
+  "Compare TailorPic vs AIPhotoShoot. AIPhotoShoot offers AI photo shoots; TailorPic delivers 40+ headshots across 11 categories for a one-time $1.99.";
 const path = '/vs/aiphotoshoot';
 const canonicalUrl = 'https://www.tailorpic.com/vs/aiphotoshoot';
 
@@ -28,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $9.90.',
+    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -42,17 +42,17 @@ const productJsonLd = {
 };
 
 const intro =
-  "AIPhotoShoot offers AI-generated photo shoots. TailorPic takes a similar approach, training a personal model on your selfies and delivering 40+ photos across 11 categories.";
+  "AIPhotoShoot offers AI-generated photo shoots. TailorPic takes a similar approach, training a personal model on your selfies and delivering photos across 11 categories.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "$9.90 one-time",
+    "tailorpic": "$1.99 one-time",
     "other": "Check their site for current pricing"
   },
   {
     "label": "Photos included",
-    "tailorpic": "40+ photos",
+    "tailorpic": "photos",
     "other": "Varies by package; check their site"
   },
   {
@@ -100,7 +100,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 const differences = [
   {
     "title": "Shoot-style variety, one upload",
-    "body": "TailorPic spreads 40+ photos across 11 categories so one upload covers work, social and creative looks."
+    "body": "TailorPic spreads photos across 11 categories so one upload covers work, social and creative looks."
   },
   {
     "title": "Personal model on your selfies",
@@ -108,7 +108,7 @@ const differences = [
   },
   {
     "title": "One-time price",
-    "body": "TailorPic is $9.90 once, with no subscription."
+    "body": "TailorPic is $1.99 once, with no subscription."
   },
   {
     "title": "Trade-off on themes",
@@ -134,7 +134,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than AIPhotoShoot?",
-    "answer": "TailorPic is a one-time $9.90 for 40+ photos. AIPhotoShoot pricing may differ, so compare against their current price page."
+    "answer": "TailorPic is a one-time $1.99 across multiple packages. AIPhotoShoot pricing may differ, so compare against their current price page."
   },
   {
     "question": "Are they both AI photo shoot services?",
@@ -146,7 +146,7 @@ const faqs = [
   },
   {
     "question": "Do I need a subscription with TailorPic?",
-    "answer": "No. It is a single $9.90 payment with no recurring fees."
+    "answer": "No. It is a single $1.99 payment with no recurring fees."
   },
   {
     "question": "Can I use the photos commercially?",
@@ -182,7 +182,7 @@ export default function VsAiphotoshootPage() {
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">{intro}</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
-                Get 40+ headshots for $9.90
+                Get headshots from $1.99
               </Link>
             </div>
           </div>
@@ -289,7 +289,7 @@ export default function VsAiphotoshootPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              40+ professional photos across 11 categories for a one-time $9.90. No subscription, delivered within 24 hours.
+              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

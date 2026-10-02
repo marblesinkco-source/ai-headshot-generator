@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = 'AI Profile Photos for Social Media | TailorPic';
 const pageDescription =
-  'Create stunning profile photos for Instagram, Twitter, Facebook, TikTok, and other social media platforms. AI-generated photos that stop the scroll. From $9.90.';
+  'Create stunning profile photos for Instagram, Twitter, Facebook, TikTok, and other social media platforms. AI-generated photos that stop the scroll. From $1.99.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -106,7 +106,7 @@ const faqs = [
   },
   {
     question: "How often should I update my social media profile photo?",
-    answer: "Most social media experts recommend refreshing your profile photo every few months to keep your presence feeling current and active. With TailorPic starting at $9.90, regular updates are easy and affordable.",
+    answer: "Most social media experts recommend refreshing your profile photo every few months to keep your presence feeling current and active. With TailorPic from $1.99, regular updates are easy and affordable.",
   },
   {
     question: "Can I use these photos in paid promotions or sponsored posts?",
@@ -152,7 +152,7 @@ export default function SocialMediaUseCasePage() {
               <span className="not-italic text-tp-bronze">Social Media</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              Your profile photo is the first thing people notice on every platform. Get polished, eye-catching photos for Instagram, Twitter, TikTok, and beyond, from a few quick selfies. Starting at just $9.90.
+              Your profile photo is the first thing people notice on every platform. Get polished, eye-catching photos for Instagram, Twitter, TikTok, and beyond, from a few quick selfies. Starting at just $1.99.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -190,7 +190,7 @@ export default function SocialMediaUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Starting at $9.90
+            Starting at $1.99
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -303,7 +303,7 @@ export default function SocialMediaUseCasePage() {
             Level Up Your Social Media Presence
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            Get profile photos that make people stop scrolling and start following. Multiple styles for every platform, starting at $9.90.
+            Get profile photos that make people stop scrolling and start following. Multiple styles for every platform, from $1.99.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

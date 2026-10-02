@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = 'AI Headshots for Corporate Teams | TailorPic';
 const pageDescription =
-  'Get consistent, professional headshots for your whole team without coordinating a photographer. Team photos for websites, directories and decks. From $9.90.';
+  'Get consistent, professional headshots for your whole team without coordinating a photographer. Team photos for websites, directories and decks. From $1.99.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -40,7 +40,7 @@ const benefits = [
   {
     icon: CreditCard,
     title: "Fraction of Studio Cost",
-    description: "Starting at $9.90 per person, outfitting a 50-person team costs less than a single on-site photographer session.",
+    description: "Starting at $1.99 per person, outfitting a 50-person team costs less than a single on-site photographer session.",
   },
   {
     icon: Palette,
@@ -110,7 +110,7 @@ const faqs = [
   },
   {
     question: "How much does it cost per person?",
-    answer: "TailorPic starts at $9.90 per person. For a team of 20, that is under $200 total, a fraction of what one session with a professional photographer costs.",
+    answer: "TailorPic starts at $1.99 per person. For a team of 20, that is under $200 total, a fraction of what one session with a professional photographer costs.",
   },
   {
     question: "Can new hires get matching headshots later?",
@@ -152,7 +152,7 @@ export default function CorporateTeamsUseCasePage() {
               <span className="not-italic text-tp-bronze">Corporate Teams</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              Give your entire team polished, consistent headshots without scheduling a photographer. Each person uploads selfies on their own time, and everyone gets matching professional photos. Starting at $9.90 per person.
+              Give your entire team polished, consistent headshots without scheduling a photographer. Each person uploads selfies on their own time, and everyone gets matching professional photos. Starting at $1.99 per person.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -190,7 +190,7 @@ export default function CorporateTeamsUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Starting at $9.90/Person
+            Starting at $1.99/Person
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -303,7 +303,7 @@ export default function CorporateTeamsUseCasePage() {
             Unify Your Team's Professional Image
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            Give every team member a polished headshot that matches, no matter where they are located. Starting at $9.90 per person.
+            Give every team member a polished headshot that matches, no matter where they are located. Starting at $1.99 per person.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

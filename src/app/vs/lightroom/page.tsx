@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Adobe Lightroom";
 const title = 'TailorPic vs Adobe Lightroom: AI Headshot Comparison';
 const description =
-  'Compare TailorPic vs Adobe Lightroom. Lightroom is a photo editing and organizing tool; TailorPic makes 40+ headshots from selfies for a one-time $9.90.';
+  'Compare TailorPic vs Adobe Lightroom. Lightroom is a photo editing and organizing tool; TailorPic makes 40+ headshots from selfies for a one-time $1.99.';
 const path = '/vs/lightroom';
 const canonicalUrl = 'https://www.tailorpic.com/vs/lightroom';
 
@@ -28,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $9.90.',
+    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -47,12 +47,12 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "$9.90 one-time",
+    "tailorpic": "$1.99 one-time",
     "other": "Subscription plans; check their site"
   },
   {
     "label": "Photos included",
-    "tailorpic": "40+ photos",
+    "tailorpic": "photos",
     "other": "Edits the photos you upload"
   },
   {
@@ -108,7 +108,7 @@ const differences = [
   },
   {
     "title": "A flat, low entry price",
-    "body": "TailorPic is $9.90 one time with no subscription to manage."
+    "body": "TailorPic is $1.99 one time with no subscription to manage."
   },
   {
     "title": "Trade-off on control",
@@ -134,7 +134,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than Lightroom?",
-    "answer": "TailorPic is a one-time $9.90 for 40+ photos. Lightroom is offered through subscription plans, so compare against Adobe's current price page."
+    "answer": "TailorPic is a one-time $1.99 across multiple packages. Lightroom is offered through subscription plans, so compare against Adobe's current price page."
   },
   {
     "question": "Can Lightroom make a headshot?",
@@ -146,7 +146,7 @@ const faqs = [
   },
   {
     "question": "Do I need a subscription with TailorPic?",
-    "answer": "No. It is a single $9.90 payment with no recurring fees."
+    "answer": "No. It is a single $1.99 payment with no recurring fees."
   },
   {
     "question": "Do I need editing skills for TailorPic?",
@@ -182,7 +182,7 @@ export default function VsLightroomPage() {
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">{intro}</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
-                Get 40+ headshots for $9.90
+                Get headshots from $1.99
               </Link>
             </div>
           </div>
@@ -289,7 +289,7 @@ export default function VsLightroomPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              40+ professional photos across 11 categories for a one-time $9.90. No subscription, delivered within 24 hours.
+              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Event Badges | TailorPic";
 const pageDescription =
-  "Professional photos for event badges, lanyards and attendee apps. Get polished portraits from a few selfies, delivered in about 2 hours. Starting at $9.90.";
+  "Professional photos for event badges, lanyards and attendee apps. Get polished portraits from a few selfies, delivered in about 2 hours. Starting at $1.99.";
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -131,7 +131,7 @@ const faqs = [
   },
   {
     question: "How much does it cost?",
-    answer: "TailorPic starts at $9.90 per pack, far less than an on-site photographer.",
+    answer: "TailorPic starts at $1.99 per pack, far less than an on-site photographer.",
   },
   {
     question: "How long does delivery take?",
@@ -170,7 +170,7 @@ export default function EventBadgeUseCasePage() {
               <span className="not-italic text-tp-bronze">{"Event Badges"}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              {"A clear face on a badge makes networking easier. Get a crisp, professional portrait from a handful of selfies, delivered in about 2 hours, starting at just $9.90."}
+              {"A clear face on a badge makes networking easier. Get a crisp, professional portrait from a handful of selfies, delivered in about 2 hours, starting at just $1.99."}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -208,7 +208,7 @@ export default function EventBadgeUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            {"Starting at $9.90"}
+            {"Starting at $1.99"}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -321,7 +321,7 @@ export default function EventBadgeUseCasePage() {
             {"Show Up Looking Your Best at Your Next Event"}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            {"Get a badge photo people recognize. Starting at just $9.90."}
+            {"Get a badge photo people recognize. Starting at just $1.99."}
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

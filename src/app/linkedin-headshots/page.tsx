@@ -82,7 +82,7 @@ const faqs = [
   {
     question: 'How much do LinkedIn headshots cost?',
     answer:
-      'Packages start from $9.90. Visit the pricing page for current plans and what each one includes.',
+      'Packages start from $1.99. Visit the pricing page for current plans and what each one includes.',
   },
 ];
 
@@ -440,7 +440,7 @@ export default function LinkedInHeadshotsPage() {
       <section className="px-4 py-16">
         <div className="mx-auto max-w-2xl rounded-tp-card border border-tp-line bg-white p-8 text-center">
           <DollarSign className="mx-auto h-7 w-7 text-tp-bronze-ink" />
-          <h2 className="font-display mt-3 text-3xl font-normal text-tp-ink">Starting from $9.90</h2>
+          <h2 className="font-display mt-3 text-3xl font-normal text-tp-ink">Starting from $1.99</h2>
           <p className="mt-3 text-tp-muted">
             A fraction of the cost of a studio session, with no scheduling or travel.
           </p>

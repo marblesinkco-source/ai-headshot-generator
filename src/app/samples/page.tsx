@@ -129,9 +129,9 @@ const qualityFeatures = [
 ];
 
 const comparisonRows = [
-  { feature: '40+ styles', ours: 'Every order includes 40+ photos across multiple style categories.', check: 'How many distinct styles are included?' },
+  { feature: '40+ styles', ours: 'Every order includes photos across multiple style categories.', check: 'How many distinct styles are included?' },
   { feature: 'Hours, not days', ours: 'Results are delivered in hours rather than days.', check: 'What is the stated turnaround time?' },
-  { feature: 'One-time payment', ours: 'Pay once, from $9.90. No subscription.', check: 'Is it a one-time fee or a recurring plan?' },
+  { feature: 'One-time payment', ours: 'Pay once, from $1.99. No subscription.', check: 'Is it a one-time fee or a recurring plan?' },
   { feature: '14-day guarantee', ours: '14-day money-back guarantee.', check: 'What is the refund window and are there conditions?' },
 ];
 
@@ -193,7 +193,7 @@ export default function SamplesPage() {
               Browse AI-generated concept portraits by category. All photos shown are AI-generated concept images.
             </p>
             <p className="mx-auto mt-3 max-w-xl text-base font-medium text-tp-bronze-ink">
-              Get 40+ photos starting at $9.90, one-time, no subscription.
+              Get photos starting at $1.99, one-time, no subscription.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3">
               <Link
@@ -301,7 +301,7 @@ export default function SamplesPage() {
                 Create yours
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
-              <p className="mt-3 text-sm text-tp-muted">40+ photos, one-time payment. Most orders ready within 2 hours.</p>
+              <p className="mt-3 text-sm text-tp-muted">photos, one-time payment. Most orders ready within 2 hours.</p>
             </div>
           </div>
         </section>
@@ -500,7 +500,7 @@ export default function SamplesPage() {
               Ready to create yours?
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-tp-beige/80">
-              Upload your photos and get 40+ studio-quality AI portraits, starting at $9.90.
+              Upload your photos and get 40+ studio-quality AI portraits, starting at $1.99.
             </p>
             <div className="mt-8">
               <Link

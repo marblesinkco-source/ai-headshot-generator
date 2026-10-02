@@ -17,7 +17,7 @@ const faqItems = [
   {
     question: 'How much do team headshots cost?',
     answer:
-      'An individual order is $9.90. Small teams of 5-15 people are $39 per person and companies of 16-50 people are $29 per person. For 50+ people we offer custom enterprise pricing. Final pricing is confirmed at checkout.',
+      'An individual order is $1.99. Small teams of 5-15 people are $39 per person and companies of 16-50 people are $29 per person. For 50+ people we offer custom enterprise pricing. Final pricing is confirmed at checkout.',
   },
   {
     question: 'How does the team ordering process work?',
@@ -42,7 +42,7 @@ const faqItems = [
   {
     question: 'How many people do I need for a team plan?',
     answer:
-      'Team pricing starts at 5 people ($39 per person for 5-15 people, $29 per person for 16-50). Orders of 1-4 people use the individual price of $9.90 per person. For 50+ people, request a demo for custom pricing.',
+      'Team pricing starts at 5 people ($39 per person for 5-15 people, $29 per person for 16-50). Orders of 1-4 people use the individual price of $1.99 per person. For 50+ people, request a demo for custom pricing.',
   },
   {
     question: 'How long does it take to get team headshots?',
@@ -250,7 +250,7 @@ export default function TeamHeadshotsPage() {
               {
                 name: 'Individual',
                 size: '1-4 people',
-                price: '$9.90',
+                price: '$1.99',
                 unit: '/person',
                 features: ['Per-person ordering', 'Choose your style', 'High-resolution downloads'],
                 cta: 'Get Started',
@@ -397,7 +397,7 @@ export default function TeamHeadshotsPage() {
             {[
               {
                 name: 'Individual Plan',
-                price: '$9.90',
+                price: '$1.99',
                 note: 'one-time, per person',
                 featured: false,
                 cta: 'Get Started',

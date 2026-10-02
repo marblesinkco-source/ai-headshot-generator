@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = 'AI Photos for Instagram Profile & Feed | TailorPic';
 const pageDescription =
-  'Create scroll-stopping Instagram photos from a few selfies. AI profile pictures and feed-worthy portraits that elevate your personal brand. From $9.90.';
+  'Create scroll-stopping Instagram photos from a few selfies. AI profile pictures and feed-worthy portraits that elevate your personal brand. From $1.99.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -106,7 +106,7 @@ const faqs = [
   },
   {
     question: "How much do Instagram-ready photos cost?",
-    answer: "TailorPic starts at $9.90 per pack. You receive multiple high-resolution photos optimized for Instagram's feed, profile, and story formats, all for less than a single hour with a photographer.",
+    answer: "TailorPic starts at $1.99 per pack. You receive multiple high-resolution photos optimized for Instagram's feed, profile, and story formats, all for less than a single hour with a photographer.",
   },
   {
     question: "Can I use these photos for stories and reels covers?",
@@ -152,7 +152,7 @@ export default function InstagramUseCasePage() {
               <span className="not-italic text-tp-bronze">Instagram</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              Your Instagram profile deserves more than a cropped group photo. Get scroll-stopping portraits from a few phone selfies, no photographer or studio needed. Delivered in about 2 hours, starting at just $9.90.
+              Your Instagram profile deserves more than a cropped group photo. Get scroll-stopping portraits from a few phone selfies, no photographer or studio needed. Delivered in about 2 hours, starting at just $1.99.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -190,7 +190,7 @@ export default function InstagramUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Starting at $9.90
+            Starting at $1.99
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -303,7 +303,7 @@ export default function InstagramUseCasePage() {
             Level Up Your Instagram Today
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            Transform your Instagram presence with studio-quality AI photos. Starting at just $9.90.
+            Transform your Instagram presence with studio-quality AI photos. Starting at just $1.99.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

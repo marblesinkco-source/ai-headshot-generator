@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Visa Application Photos | TailorPic";
 const pageDescription =
-  'Clean, well-lit portraits to help you prepare visa application photos. Generated from selfies. Starting at $9.90. Check official requirements.';
+  'Clean, well-lit portraits to help you prepare visa application photos. Generated from selfies. Starting at $1.99. Check official requirements.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -131,7 +131,7 @@ const faqs = [
   },
   {
     question: "How much does it cost?",
-    answer: "TailorPic starts at $9.90 per pack."
+    answer: "TailorPic starts at $1.99 per pack."
   },
   {
     question: "How long does delivery take?",
@@ -170,7 +170,7 @@ export default function VisaApplicationUseCasePage() {
               <span className="not-italic text-tp-bronze">{"Visa Application Photos"}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              {"Start your visa photo with a clean, well-lit, plain-background portrait generated from your selfies, delivered in about 2 hours, starting at $9.90. Always confirm your country's official photo rules."}
+              {"Start your visa photo with a clean, well-lit, plain-background portrait generated from your selfies, delivered in about 2 hours, from $1.99. Always confirm your country's official photo rules."}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -208,7 +208,7 @@ export default function VisaApplicationUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            {"Starting at $9.90"}
+            {"Starting at $1.99"}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -321,7 +321,7 @@ export default function VisaApplicationUseCasePage() {
             {"Prepare a Cleaner Visa Photo"}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            {"Start from a clear, neutral portrait. Starting at just $9.90."}
+            {"Start from a clear, neutral portrait. Starting at just $1.99."}
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

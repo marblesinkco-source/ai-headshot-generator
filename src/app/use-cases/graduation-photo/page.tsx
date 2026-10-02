@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Graduation Photos | TailorPic";
 const pageDescription =
-  'Polished AI headshots for graduation announcements, yearbooks and your first job search. Get professional portraits from a few selfies. Starting at $9.90.';
+  'Polished AI headshots for graduation announcements, yearbooks and your first job search. Get professional portraits from a few selfies. Starting at $1.99.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -52,7 +52,7 @@ const benefits = [
   {
     icon: Wallet,
     title: "Student-Friendly Price",
-    description: "Skip a photographer session. Packs start at $9.90.",
+    description: "Skip a photographer session. Packs start at $1.99.",
   },
   {
     icon: Sparkles,
@@ -131,7 +131,7 @@ const faqs = [
   },
   {
     "question": "How much does it cost?",
-    "answer": "TailorPic starts at $9.90 per pack, far less than a photographer session."
+    "answer": "TailorPic starts at $1.99 per pack, far less than a photographer session."
   },
   {
     "question": "How long does delivery take?",
@@ -170,7 +170,7 @@ export default function GraduationPhotoUseCasePage() {
               <span className="not-italic text-tp-bronze">{"Graduation Photos"}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              {"Mark the milestone with a portrait you are proud of. Get polished photos from a handful of selfies, delivered in about 2 hours, starting at just $9.90."}
+              {"Mark the milestone with a portrait you are proud of. Get polished photos from a handful of selfies, delivered in about 2 hours, starting at just $1.99."}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -208,7 +208,7 @@ export default function GraduationPhotoUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            {"Starting at $9.90"}
+            {"Starting at $1.99"}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -321,7 +321,7 @@ export default function GraduationPhotoUseCasePage() {
             {"Celebrate With a Portrait You Love"}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            {"Look your best for the big day and what comes next. Starting at just $9.90."}
+            {"Look your best for the big day and what comes next. Starting at just $1.99."}
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

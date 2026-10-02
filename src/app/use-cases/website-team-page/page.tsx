@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Website Team Pages | TailorPic";
 const pageDescription =
-  'Consistent, professional headshots for your About Us and Team page. Every team member from a few selfies, matching style and background. Starting at $9.90.';
+  'Consistent, professional headshots for your About Us and Team page. Every team member from a few selfies, matching style and background. Starting at $1.99.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -131,7 +131,7 @@ const faqs = [
   },
   {
     question: "How much does it cost?",
-    answer: "TailorPic starts at $9.90 per pack, far less than hiring a photographer for a team shoot.",
+    answer: "TailorPic starts at $1.99 per pack, far less than hiring a photographer for a team shoot.",
   },
   {
     question: "How long does delivery take?",
@@ -170,7 +170,7 @@ export default function WebsiteTeamPage() {
               <span className="not-italic text-tp-bronze">Website Team Pages</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              Mismatched photos make a team page look unfinished. Give every person a polished, consistent headshot from a few selfies, no photographer or office shoot required. Delivered in about 2 hours, starting at just $9.90.
+              Mismatched photos make a team page look unfinished. Give every person a polished, consistent headshot from a few selfies, no photographer or office shoot required. Delivered in about 2 hours, starting at just $1.99.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -208,7 +208,7 @@ export default function WebsiteTeamPage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Starting at $9.90
+            Starting at $1.99
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -321,7 +321,7 @@ export default function WebsiteTeamPage() {
             A Team Page Your Whole Company Can Be Proud Of
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            Give every teammate a matching, professional headshot. Starting at just $9.90.
+            Give every teammate a matching, professional headshot. Starting at just $1.99.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

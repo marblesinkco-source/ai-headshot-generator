@@ -24,5 +24,5 @@ export const TEAM_PRICES = {
   premium: { flat: true, priceCents: 19990, maxMembers: 10 },
 } as const;
 
-/** "$9.90" */
+/** "$1.99" */
 export const BASE_PRICE_DISPLAY = formatPrice(BASE_PRICE_CENTS, CURRENCY);

@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = 'AI Photos for TikTok Profiles & Thumbnails | TailorPic';
 const pageDescription =
-  'Create eye-catching TikTok profile photos and video thumbnails from a few selfies. AI-generated portraits that help you grow your audience. Starting at $9.90.';
+  'Create eye-catching TikTok profile photos and video thumbnails from a few selfies. AI-generated portraits that help you grow your audience. Starting at $1.99.';
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -106,7 +106,7 @@ const faqs = [
   },
   {
     question: "How much does a TikTok profile photo cost?",
-    answer: "TailorPic starts at $9.90 per pack. You receive multiple photo variations so you can test different looks and update your profile whenever you want a fresh vibe.",
+    answer: "TailorPic starts at $1.99 per pack. You receive multiple photo variations so you can test different looks and update your profile whenever you want a fresh vibe.",
   },
   {
     question: "Can I use these photos as video thumbnails?",
@@ -152,7 +152,7 @@ export default function TikTokUseCasePage() {
               <span className="not-italic text-tp-bronze">TikTok</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              Your TikTok profile photo is your brand at a glance. Get bold, scroll-stopping portraits from a few phone selfies, no photoshoot needed. Delivered in about 2 hours, starting at just $9.90.
+              Your TikTok profile photo is your brand at a glance. Get bold, scroll-stopping portraits from a few phone selfies, no photoshoot needed. Delivered in about 2 hours, starting at just $1.99.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -190,7 +190,7 @@ export default function TikTokUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Starting at $9.90
+            Starting at $1.99
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -303,7 +303,7 @@ export default function TikTokUseCasePage() {
             Upgrade Your TikTok Profile Today
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            Level up your TikTok presence with studio-quality AI photos. Starting at just $9.90.
+            Level up your TikTok presence with studio-quality AI photos. Starting at just $1.99.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

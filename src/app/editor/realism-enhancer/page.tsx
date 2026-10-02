@@ -176,7 +176,7 @@ export default function RealismEnhancerPage() {
             Get AI headshots that look real
           </h2>
           <p className="mt-3 text-tp-muted">
-            Upload a few selfies and get natural, studio-quality headshots in hours, from $9.90.
+            Upload a few selfies and get natural, studio-quality headshots in hours, from $1.99.
           </p>
           <Link href="/auth/register" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
             Get AI Headshots

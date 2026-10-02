@@ -71,7 +71,7 @@ export default function EmailSignatureGeneratorPage() {
             Ready for a better headshot in your signature?
           </h2>
           <p className="mt-3 text-tp-muted">
-            Upload a few selfies and get studio-quality photos in hours, from $9.90.
+            Upload a few selfies and get studio-quality photos in hours, from $1.99.
           </p>
           <Link
             href="/auth/register"

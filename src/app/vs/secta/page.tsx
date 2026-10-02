@@ -20,7 +20,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs Secta Labs: AI Headshot Generator Comparison' },
   description:
-    'Compare TailorPic vs Secta Labs for AI headshots. TailorPic starts at $9.90 with 40+ photos, 11 categories and a 14-day money-back guarantee.',
+    'Compare TailorPic vs Secta Labs for AI headshots. TailorPic starts at $1.99 with photos, 11 categories and a 14-day money-back guarantee.',
   alternates: { canonical: '/vs/secta' },
   openGraph: generateOGMetadata({ title: 'TailorPic vs Secta Labs: AI Headshot Generator Comparison', description: 'Compare TailorPic and Secta Labs for AI headshots. Pricing, categories, delivery, and guarantees side by side.', path: '/vs/secta', type: 'vs' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic vs Secta Labs: AI Headshot Generator Comparison', description: 'Compare TailorPic and Secta Labs for AI headshots. Pricing, categories, delivery, and guarantees side by side.', type: 'vs' }),
@@ -34,7 +34,7 @@ const quickBadges = [
   {
     icon: DollarSign,
     label: 'Starting Price',
-    tailorpic: '$9.90',
+    tailorpic: '$1.99',
     competitor: '~$49+',
   },
   {
@@ -58,7 +58,7 @@ type FeatureRow = {
 };
 
 const comparisonRows: FeatureRow[] = [
-  { feature: 'Starting Price', tailorpic: '$9.90', competitor: '~$49+' },
+  { feature: 'Starting Price', tailorpic: '$1.99', competitor: '~$49+' },
   { feature: 'Number of Photos', tailorpic: '40+', competitor: 'Varies by plan' },
   { feature: 'Delivery Time', tailorpic: 'Under 2 hours', competitor: 'Varies by plan' },
   { feature: 'Photo Categories', tailorpic: '11 categories', competitor: 'Fewer categories' },
@@ -75,7 +75,7 @@ const whyCards = [
     icon: BadgeDollarSign,
     title: 'Far More Affordable',
     description:
-      'TailorPic starts at just $9.90 — a fraction of the roughly $49+ entry price you can expect from Secta Labs. Professional results without the premium price tag.',
+      'TailorPic starts at just $1.99 — a fraction of the roughly $49+ entry price you can expect from Secta Labs. Professional results without the premium price tag.',
   },
   {
     icon: LayoutGrid,
@@ -87,7 +87,7 @@ const whyCards = [
     icon: Sparkles,
     title: '40+ Photos in Under 2 Hours',
     description:
-      'Get 40+ photos delivered in under 2 hours, backed by a 14-day money-back guarantee so you can order with confidence.',
+      'Get photos delivered in under 2 hours, backed by a 14-day money-back guarantee so you can order with confidence.',
   },
   {
     icon: Target,
@@ -109,12 +109,12 @@ const faqs = [
   {
     question: 'How does TailorPic\'s price compare to Secta Labs?',
     answer:
-      'TailorPic is a $9.90 one-time payment. Secta Labs\' entry price is roughly $49+. They may change their pricing, so check their site for current pricing.',
+      'TailorPic is a $1.99 one-time payment. Secta Labs\' entry price is roughly $49+. They may change their pricing, so check their site for current pricing.',
   },
   {
     question: 'How many photos do I get with TailorPic?',
     answer:
-      'Every TailorPic order includes 40+ photos across 11 categories. Secta Labs\' photo count varies by plan and it centers on professional headshots with fewer categories.',
+      'Every TailorPic order includes photos across 11 categories. Secta Labs\' photo count varies by plan and it centers on professional headshots with fewer categories.',
   },
   {
     question: 'How long does delivery take?',
@@ -124,7 +124,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription or a one-time purchase?',
     answer:
-      'TailorPic is a one-time $9.90 payment with no subscription, backed by a 14-day money-back guarantee.',
+      'TailorPic is a one-time $1.99 payment with no subscription, backed by a 14-day money-back guarantee.',
   },
   {
     question: 'How does TailorPic train my photos, and is it easy to use?',
@@ -279,7 +279,7 @@ export default function VsSectaPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-ink">Ready to Try TailorPic?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-muted">
-              Get professional AI headshots starting at just $9.90. No subscriptions, no hidden fees
+              Get professional AI headshots starting at just $1.99. No subscriptions, no hidden fees
               — just great photos delivered in under 2 hours.
             </p>
             <div className="mt-8">

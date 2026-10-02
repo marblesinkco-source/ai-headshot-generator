@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "HeadPix";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs HeadPix for AI headshots. TailorPic delivers 40+ photos in 11 categories for a one-time $9.90 with no subscription.";
+  "Compare TailorPic vs HeadPix for AI headshots. TailorPic delivers photos in 11 categories for a one-time $1.99 with no subscription.";
 const path = '/vs/headpix';
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $9.90.',
+    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -44,8 +44,8 @@ const intro =
   "HeadPix is an AI headshot service aimed at professionals. TailorPic competes on price, breadth of categories and a personal LoRA-trained model.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "$9.90 one-time", other: "Confirm current pricing on their site" },
-  { label: "Photos included", tailorpic: "40+ photos", other: "Depends on the package" },
+  { label: "Starting price", tailorpic: "$1.99 one-time", other: "Confirm current pricing on their site" },
+  { label: "Photos included", tailorpic: "photos", other: "Depends on the package" },
   { label: "Delivery time", tailorpic: "Within 24 hours", other: "Varies by package" },
   { label: "Categories / styles", tailorpic: "11 categories", other: "Primarily professional headshot styles" },
   { label: "Training method", tailorpic: "Personal LoRA fine-tuning", other: "Not publicly detailed" },
@@ -58,7 +58,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 
 const differences = [
   { title: "Professional focus vs full range", body: "HeadPix is centred on professional headshots. TailorPic adds dating, creative, pet and e-commerce categories to the same order." },
-  { title: "Entry cost", body: "A one-time $9.90 keeps the barrier low if you just want to try AI headshots." },
+  { title: "Entry cost", body: "A one-time $1.99 keeps the barrier low if you just want to try AI headshots." },
   { title: "Risk reduction", body: "TailorPic offers a 14-day money-back guarantee, so you can judge the results before committing." },
   { title: "Speed", body: "TailorPic can take up to 24 hours. If a same-day deadline matters, confirm HeadPix turnaround on their site." },
 ];
@@ -79,11 +79,11 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is TailorPic a good HeadPix alternative?", answer: "If you want lower upfront cost and more categories, yes. TailorPic is $9.90 one time for 40+ photos across 11 categories." },
+  { question: "Is TailorPic a good HeadPix alternative?", answer: "If you want lower upfront cost and more categories, yes. TailorPic is $1.99 one time across multiple packages across 11 categories." },
   { question: "Does TailorPic offer a refund?", answer: "Yes, there is a 14-day money-back guarantee." },
   { question: "How long does delivery take?", answer: "Within 24 hours after your photos are processed." },
   { question: "Are the photos suitable for LinkedIn?", answer: "Yes. The business category is designed for LinkedIn, resumes and company pages." },
-  { question: "Do I need to subscribe?", answer: "No. It is a single $9.90 payment." },
+  { question: "Do I need to subscribe?", answer: "No. It is a single $1.99 payment." },
 ];
 
 export default function VsHeadpixPage() {
@@ -114,7 +114,7 @@ export default function VsHeadpixPage() {
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">{intro}</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
-                Get 40+ headshots for $9.90
+                Get headshots from $1.99
               </Link>
             </div>
           </div>
@@ -221,7 +221,7 @@ export default function VsHeadpixPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              40+ professional photos across 11 categories for a one-time $9.90. No subscription, delivered within 24 hours.
+              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
