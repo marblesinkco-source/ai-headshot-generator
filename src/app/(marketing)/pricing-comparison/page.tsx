@@ -53,7 +53,7 @@ export const metadata: Metadata = {
 
 const headshots = CATEGORIES.headshots;
 const tailorpic1Package = headshots.packages[0]; // TailorPic 1: $1.99, 1 headshot
-const litePackage = headshots.packages[1]; // Lite: $1.99, 5 headshots
+const litePackage = headshots.packages[1]; // Lite: $9.90, 5 headshots
 const basicPackage = headshots.packages[2]; // Basic: $19.90, 10 headshots
 const starterPackage = headshots.packages[3]; // Starter: $29.90, 40 headshots
 const proPackage = headshots.packages[4]; // Professional: $49.90, 80 headshots

@@ -65,12 +65,28 @@ export const CATEGORIES: Record<CategoryId, Category> = {
     outputLabel: 'headshots',
     packages: [
       {
+        id: 'headshots-tailorpic1',
+        name: 'TailorPic 1',
+        price: 199,
+        currency: 'usd',
+        outputCount: 1,
+        features: ['1 background', '1 style', 'HD resolution', 'Try before you commit'],
+      },
+      {
+        id: 'headshots-lite',
+        name: 'Lite',
+        price: 990,
+        currency: 'usd',
+        outputCount: 5,
+        features: ['2 backgrounds', '2 styles', 'HD resolution', '24-hour delivery'],
+      },
+      {
         id: 'headshots-express',
-        name: 'Express',
+        name: 'Basic',
         price: 1990,
         currency: 'usd',
         outputCount: 10,
-        features: ['2 backgrounds', '2 styles', 'HD resolution', '24-hour delivery'],
+        features: ['3 backgrounds', '3 styles', 'HD resolution', '24-hour delivery'],
       },
       {
         id: 'headshots-starter',

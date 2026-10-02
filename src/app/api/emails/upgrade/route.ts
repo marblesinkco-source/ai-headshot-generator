@@ -37,10 +37,11 @@ export async function POST(request: NextRequest) {
   // Find Express orders that are 48+ hours old and haven't been sent an upgrade email
   const cutoffDate = new Date(Date.now() - UPGRADE_DELAY_HOURS * 60 * 60 * 1000).toISOString();
 
+  // Find entry-tier orders (TailorPic 1, Lite, or Basic/Express) eligible for upgrade
   const { data: expressOrders, error: queryError } = await supabase
     .from('orders')
     .select('id, user_id, package_id, category_id, created_at, stripe_session_id')
-    .like('package_id', '%-express')
+    .or('package_id.like.%-tailorpic1,package_id.like.%-lite,package_id.like.%-express')
     .in('status', ['paid', 'uploading', 'processing', 'completed'])
     .lt('created_at', cutoffDate)
     .is('upgrade_email_sent', null);
