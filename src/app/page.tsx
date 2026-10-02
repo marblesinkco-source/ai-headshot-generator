@@ -16,6 +16,7 @@ import { Footer } from '@/components/marketing/footer';
 import { StickyCTA } from '@/components/marketing/sticky-cta';
 import { WebsiteSchema, FAQSchema, SoftwareApplicationSchema, HowToSchema } from '@/components/structured-data';
 import { BeforeAfterShowcase } from '@/components/marketing/before-after-showcase';
+import { DeliveryGuarantee } from '@/components/marketing/delivery-guarantee';
 
 export const metadata: Metadata = {
   title: 'TailorPic — AI Headshots & Professional Photos | From $1.99',
@@ -81,6 +82,7 @@ export default function LandingPage() {
       <HowItWorks />
       <Testimonials />
       <ComparisonTable />
+      <DeliveryGuarantee />
       <SavingsHighlight />
       <Pricing />
       <PrivacySection />
