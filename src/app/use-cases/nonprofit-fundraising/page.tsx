@@ -147,8 +147,8 @@ const faqs = [
     answer: "Most orders arrive in about 2 hours after you upload your selfies.",
   },
   {
-    question: "Is there a money-back guarantee?",
-    answer: "Yes. There is a 14-day money-back guarantee if you are not happy with your results.",
+    question: "Is there a satisfaction guarantee?",
+    answer: "Yes. We offer a satisfaction guarantee. If you are not happy with your results, contact our support team.",
   },
 ];
 
@@ -225,7 +225,7 @@ export default function NonprofitFundraisingUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            {"Money-Back Guarantee"}
+            {"Satisfaction Guaranteed"}
           </span>
         </div>
       </section>
@@ -345,7 +345,7 @@ export default function NonprofitFundraisingUseCasePage() {
             </Link>
           </div>
           <p className="mt-6 text-sm text-tp-muted">
-            No subscription required. 14-day money-back guarantee.
+            No subscription required. One-time payment.
           </p>
         </div>
       </section>

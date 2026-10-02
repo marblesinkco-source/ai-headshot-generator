@@ -195,7 +195,7 @@ export default function TeachersIndustryPage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            14-Day Money-Back Guarantee
+            Satisfaction Guaranteed
           </span>
         </div>
       </section>
@@ -315,7 +315,7 @@ export default function TeachersIndustryPage() {
             </Link>
           </div>
           <p className="mt-6 text-sm text-tp-muted">
-            No subscription required. 14-day money-back guarantee.
+            No subscription required. One-time payment.
           </p>
         </div>
       </section>

@@ -49,7 +49,7 @@ const faqs = [
   {
     question: "How much does it cost, and what if I am not satisfied?",
     answer:
-      "Photos start at $1.99 with no subscription required. Every order is backed by our 14-day money-back guarantee.",
+      "Photos start at $1.99 with no subscription required. Every order includes full commercial usage rights.",
   },
 ];
 
@@ -114,7 +114,7 @@ export default function EcommerceLandingPage() {
               { icon: Camera, text: 'White Background Ready' },
               { icon: Clock, text: 'Under 2 Hours' },
               { icon: Shield, text: 'Commercial License' },
-              { icon: Star, text: '14-Day Money-Back Guarantee' },
+              { icon: Star, text: 'Satisfaction Guaranteed' },
             ].map((item) => (
               <div key={item.text} className="flex items-center justify-center gap-2 text-xs font-medium text-tp-muted">
                 <item.icon className="h-4 w-4 text-tp-bronze" />

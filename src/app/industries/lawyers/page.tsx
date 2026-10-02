@@ -140,7 +140,7 @@ const faqs = [
   {
     question: "What if I am not satisfied with the results?",
     answer:
-      "Every order is covered by our 14-day money-back guarantee.",
+      "Every order includes commercial usage rights for your headshots.",
   },
 ];
 
@@ -214,7 +214,7 @@ export default function LawyersIndustryPage() {
           </span>
           <span className="flex items-center gap-1.5">
             <CheckCircle className="h-4 w-4 text-tp-bronze" />
-            14-Day Money-Back Guarantee
+            Satisfaction Guaranteed
           </span>
         </div>
       </section>
@@ -482,7 +482,7 @@ export default function LawyersIndustryPage() {
             </Link>
           </div>
           <p className="mt-6 text-sm text-tp-muted">
-            No subscription required. 14-day money-back guarantee.
+            No subscription required. One-time payment.
           </p>
         </div>
       </section>

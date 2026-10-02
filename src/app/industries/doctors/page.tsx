@@ -128,7 +128,7 @@ const faqs = [
   {
     question: "How much does it cost, and is there a guarantee?",
     answer:
-      "Headshots start at $1.99 per person with no subscription required. Every order is covered by our 14-day money-back guarantee.",
+      "Headshots start at $1.99 per person with no subscription required. Every order includes full commercial usage rights.",
   },
 ];
 
@@ -202,7 +202,7 @@ export default function DoctorsIndustryPage() {
           </span>
           <span className="flex items-center gap-1.5">
             <CheckCircle className="h-4 w-4 text-tp-bronze" />
-            14-Day Money-Back Guarantee
+            Satisfaction Guaranteed
           </span>
         </div>
       </section>
@@ -350,7 +350,7 @@ export default function DoctorsIndustryPage() {
             </Link>
           </div>
           <p className="mt-6 text-sm text-tp-muted">
-            No subscription required. 14-day money-back guarantee.
+            No subscription required. One-time payment.
           </p>
         </div>
       </section>

@@ -138,7 +138,7 @@ export default function Page() {
       <section className="px-4 pb-20 pt-6 sm:px-6">
         <div className="mx-auto max-w-3xl rounded-tp-dialog bg-tp-ink px-6 py-12 text-center sm:px-10">
           <h2 className="font-display text-3xl text-tp-paper sm:text-4xl">Skip the guesswork</h2>
-          <p className="mx-auto mt-3 max-w-xl text-sm text-tp-beige sm:text-base">Get a headshot that passes every check, backed by our money-back guarantee.</p>
+          <p className="mx-auto mt-3 max-w-xl text-sm text-tp-beige sm:text-base">Get a headshot that passes every check, backed by our satisfaction guarantee.</p>
           <Link href={ctaHref} className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'mt-7 bg-tp-bronze text-tp-black hover:bg-tp-beige')}>
             Get a guaranteed professional headshot with TailorPic →
           </Link>

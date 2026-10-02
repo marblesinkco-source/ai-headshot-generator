@@ -66,18 +66,18 @@ export default function TermsPage() {
         <li>Prices may change at any time; existing orders are honored at their purchase price.</li>
       </ul>
 
-      <h2>5. Refund Policy</h2>
+      <h2>5. Satisfaction Guarantee</h2>
       <p>
-        Due to the computational cost of AI processing, refunds are handled on a case-by-case basis:
+        We are committed to delivering studio-quality results. If you are not satisfied with your AI-generated headshots:
       </p>
       <ul>
-        <li><strong>Before processing:</strong> Full refund available if requested before AI training begins.</li>
-        <li><strong>Quality issues:</strong> If generated results are significantly below expected quality, we may offer a partial refund or free re-processing.</li>
-        <li><strong>Technical failures:</strong> Full refund if we are unable to deliver results due to technical issues on our end.</li>
+        <li><strong>Regeneration:</strong> You may regenerate photos within your purchased package at no additional cost.</li>
+        <li><strong>Quality issues:</strong> If generated results are significantly below expected quality, contact our support team and we will work with you to resolve the issue.</li>
+        <li><strong>Technical failures:</strong> If we are unable to deliver results due to technical issues on our end, we will re-process your order at no cost.</li>
       </ul>
       <p>
-        To request a refund, contact us at{' '}
-        <a href="mailto:support@tailorpic.com">support@tailorpic.com</a> within 14 days of your order.
+        For any concerns about your order, contact us at{' '}
+        <a href="mailto:support@tailorpic.com">support@tailorpic.com</a>.
       </p>
 
       <h2>6. Intellectual Property</h2>

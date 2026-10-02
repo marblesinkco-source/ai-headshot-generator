@@ -57,7 +57,7 @@ export const faqs = [
     category: 'Refund',
     question: 'What if the photos do not look like me?',
     answer:
-      'Clear, varied selfies make the biggest difference, so follow the upload tips above. If you are still not happy with the results, contact support: we will work with you on regenerating photos, and the money-back guarantee applies. See our refund policy for details.',
+      'Clear, varied selfies make the biggest difference, so follow the upload tips above. If you are still not happy with the results, contact support: we will work with you on regenerating photos, and our satisfaction guarantee applies.',
   },
   {
     category: 'Product',
@@ -99,7 +99,7 @@ export const faqs = [
     category: 'Refund',
     question: 'How long do I have to request a refund?',
     answer:
-      'Contact our support team within 14 days of your purchase and we will issue a full refund under our money-back guarantee.',
+      'Contact our support team and we will work with you to resolve the issue under our satisfaction guarantee.',
   },
 ];
 

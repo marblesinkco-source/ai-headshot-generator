@@ -62,7 +62,7 @@ const comparisonRows: FeatureRow[] = [
   { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: '40+' },
   { feature: 'Delivery Time', tailorpic: 'Under 2 hours', competitor: 'Under 2 hours' },
   { feature: 'Photo Categories', tailorpic: '11 categories', competitor: 'Limited styles' },
-  { feature: 'Money-Back Guarantee', tailorpic: 'Yes (14 days)', competitor: 'Yes' },
+  { feature: 'Satisfaction Guarantee', tailorpic: 'Yes', competitor: 'Yes' },
   { feature: 'Team / Enterprise Plans', tailorpic: true, competitor: true },
   { feature: 'Pet Portraits', tailorpic: true, competitor: false },
   { feature: 'Dating Photos', tailorpic: true, competitor: 'Limited' },
@@ -124,7 +124,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription like Aragon AI?',
     answer:
-      'No. TailorPic packages are one-time payments starting at $1.99 with no recurring charges and no renewals. It also comes with a 14-day money-back guarantee.',
+      'No. TailorPic packages are one-time payments starting at $1.99 with no recurring charges and no renewals. It also comes with a satisfaction guarantee.',
   },
   {
     question: 'How does TailorPic train my headshots, and is it easy to use?',

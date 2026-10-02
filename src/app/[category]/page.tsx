@@ -66,7 +66,7 @@ export default async function CategoryPage({ params }: Props) {
     {
       question: 'Can I get a refund?',
       answer:
-        'Yes, we offer a 14-day money-back guarantee. If you are not satisfied with your results, contact our support team for a full refund.',
+        'Yes, we offer a satisfaction guarantee. If you are not satisfied with your results, contact our support team for a full refund.',
     },
     {
       question: 'What resolution are the photos?',
@@ -277,7 +277,7 @@ export default async function CategoryPage({ params }: Props) {
             {[
               { icon: DollarSign, text: 'from $1.99, no subscription' },
               { icon: Clock, text: 'Ready in ~2 hours' },
-              { icon: ShieldCheck, text: '14-day money-back guarantee' },
+              { icon: ShieldCheck, text: 'satisfaction guarantee' },
               { icon: Trash2, text: 'Your data deleted within 30 days' },
             ].map((item) => (
               <div key={item.text} className="flex items-start gap-3">

@@ -126,7 +126,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription like Canva Pro?',
     answer:
-      'No. TailorPic packages are one-time payments starting at $1.99 with no recurring charges, plus a 14-day money-back guarantee. Canva Pro is billed as a subscription.',
+      'No. TailorPic packages are one-time payments starting at $1.99 with no recurring charges, plus a satisfaction guarantee. Canva Pro is billed as a subscription.',
   },
   {
     question: 'How is TailorPic different from Canva\'s AI tools in how it works?',

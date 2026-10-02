@@ -126,7 +126,7 @@ const comparisonRows: ComparisonRow[] = [
     tailorpic: 'yes',
   },
   {
-    feature: 'Money-back guarantee',
+    feature: 'Satisfaction guarantee',
     traditional: 'no',
     otherAI: 'partial',
     tailorpic: 'yes',
@@ -190,8 +190,8 @@ const faqs = [
     answer: 'Most orders are completed within about 2 hours. A traditional studio typically takes one to two weeks including scheduling and retouching.',
   },
   {
-    question: 'Is there a money-back guarantee?',
-    answer: `Yes. If you are not satisfied, contact our support team and we will review your order for a refund. See our refund policy for the details.`,
+    question: 'Is there a satisfaction guarantee?',
+    answer: `Yes. If you are not satisfied, contact our support team and we will review your order for a resolution.`,
   },
   {
     question: 'Do you offer team or bulk pricing?',
@@ -298,7 +298,7 @@ export default function PricingComparisonPage() {
               </li>
               <li className="flex items-center gap-2">
                 <Shield className="h-4 w-4 text-tp-bronze" aria-hidden="true" />
-                Money-back guarantee
+                Satisfaction guarantee
               </li>
             </ul>
           </div>
@@ -646,7 +646,7 @@ export default function PricingComparisonPage() {
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige/80">
               One-time payment, most orders ready in about 2 hours, and a
-              money-back guarantee. Pick the package that fits your needs.
+              satisfaction guarantee. Pick the package that fits your needs.
             </p>
             <Link
               href="/pricing"

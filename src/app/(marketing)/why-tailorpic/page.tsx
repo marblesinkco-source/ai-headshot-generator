@@ -32,7 +32,7 @@ import {
 /* ------------------------------------------------------------------ */
 
 const OG_TITLE = `Why ${siteConfig.name} — Professional AI Headshots`;
-const OG_DESCRIPTION = `Discover why ${siteConfig.name} is the smartest way to get professional headshots. Studio quality from $1.99, ready in hours, with a money-back guarantee.`;
+const OG_DESCRIPTION = `Discover why ${siteConfig.name} is the smartest way to get professional headshots. Studio quality from $1.99, ready in hours, with a satisfaction guarantee.`;
 
 export const metadata: Metadata = {
   title: { absolute: 'Why TailorPic: Professional AI Headshots Done Right' },
@@ -94,10 +94,10 @@ const valueProps = [
   },
   {
     icon: Shield,
-    title: 'Money-Back Guarantee',
-    stat: '14 days',
+    title: 'Satisfaction Guarantee',
+    stat: '100%',
     description:
-      'Not satisfied with your results? Contact our support team within 14 days and we will review your order for a refund.',
+      'Not satisfied with your results? Contact our support team and we will work with you to resolve the issue.',
   },
 ];
 
@@ -134,7 +134,7 @@ const comparisonRows: ComparisonRow[] = [
     tailorpic: 'yes',
   },
   {
-    feature: 'Money-back guarantee',
+    feature: 'Satisfaction guarantee',
     traditional: 'no',
     otherAI: 'partial',
     tailorpic: 'yes',
@@ -570,7 +570,7 @@ export default function WhyTailorPicPage() {
             <p className="mx-auto mt-4 max-w-xl text-tp-beige/80">
               Join thousands of professionals who have switched from expensive
               studios to {siteConfig.name}. One-time payment, most orders ready
-              in about 2 hours, and a money-back guarantee if you are not
+              in about 2 hours, and a satisfaction guarantee if you are not
               satisfied.
             </p>
             <Link

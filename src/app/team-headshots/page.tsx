@@ -30,9 +30,9 @@ const faqItems = [
       'The team plan lets the admin set a shared style and background so headshots look consistent across the team. Brand guidelines can be applied for larger plans.',
   },
   {
-    question: 'Is there a money-back guarantee?',
+    question: 'Is there a satisfaction guarantee?',
     answer:
-      'Yes. Orders are covered by a 14-day money-back guarantee. See our refund policy for details.',
+      'Yes. Orders are covered by our satisfaction guarantee. Contact our support team for details.',
   },
   {
     question: 'How is our data handled?',
@@ -172,7 +172,7 @@ export default function TeamHeadshotsPage() {
             {[
               { icon: CreditCard, text: 'Secure checkout by Stripe' },
               { icon: Lock, text: 'Photos deleted within 30 days' },
-              { icon: ShieldCheck, text: '14-day money-back guarantee' },
+              { icon: ShieldCheck, text: 'satisfaction guarantee' },
             ].map((t) => (
               <li key={t.text} className="inline-flex items-center gap-1.5">
                 <t.icon className="h-3.5 w-3.5 text-tp-bronze" />
@@ -324,7 +324,7 @@ export default function TeamHeadshotsPage() {
             ))}
           </div>
           <p className="mt-8 text-center text-sm text-tp-ink">
-            All plans include 40+ headshots per person, commercial license, and 14-day money-back guarantee.
+            All plans include 40+ headshots per person, commercial license, and satisfaction guarantee.
           </p>
           <p className="mt-2 text-center text-xs text-tp-muted">
             Final pricing is confirmed at checkout.
@@ -659,8 +659,8 @@ export default function TeamHeadshotsPage() {
               },
               {
                 icon: ShieldCheck,
-                title: '14-day guarantee',
-                desc: 'Covered by a 14-day money-back guarantee on every order.',
+                title: 'Satisfaction guarantee',
+                desc: 'Covered by a satisfaction guarantee on every order.',
               },
             ].map((t) => (
               <div key={t.title} className="rounded-tp-card border border-tp-line bg-white p-6 text-center">

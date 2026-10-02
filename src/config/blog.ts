@@ -270,7 +270,7 @@ export const blogPosts: BlogPost[] = [
       <p>You are uploading pictures of your face, so read the privacy policy. Look for clear statements about how long photos are stored, whether they are used to train other models, and how to request deletion. A trustworthy provider makes these answers easy to find.</p>
 
       <h2>Which One Should You Choose?</h2>
-      <p>If budget is your main concern, TailorPic, with packages starting at $1.99, is hard to beat for professional headshots. If you need extensive team management or a specific look, one of the pricier services may suit you better. Whatever you pick, compare sample output, check the refund policy, and review our <a href="/pricing">pricing page</a> and <a href="/vs/headshotpro">comparison guides</a> to make a confident decision.</p>
+      <p>If budget is your main concern, TailorPic, with packages starting at $1.99, is hard to beat for professional headshots. If you need extensive team management or a specific look, one of the pricier services may suit you better. Whatever you pick, compare sample output, check the guarantee terms, and review our <a href="/pricing">pricing page</a> and <a href="/vs/headshotpro">comparison guides</a> to make a confident decision.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-12-28',
@@ -599,7 +599,7 @@ export const blogPosts: BlogPost[] = [
       <p>People often ask how many photos they really need. For most professionals, three to five strong options are plenty: one for LinkedIn, one for your website or company bio, and one or two alternatives for different contexts. Another frequent question is whether to wear glasses. If you always wear them, wear them in your photo, but check for glare. If you only wear them occasionally, going without is usually simpler. Finally, people ask whether they should match their photo to a corporate brand. If you work for a company with a style guide, follow it. If you are independent, choose colors and settings that reflect your own brand.</p>
 
       <h2>Get Your Professional Headshot With TailorPic</h2>
-      <p>If you want a polished headshot without booking a studio, TailorPic can help. You upload a handful of selfies, our AI generates professional portraits in a range of styles and settings, and you pick the ones you like best. Plans start at $1.99, and there are 11 categories available, including <a href="/styles">professional headshots</a>, <a href="/team-headshots">team headshots</a> and <a href="/dating-photos">dating photos</a>. Your uploaded photos are automatically deleted after 30 days, and every order is covered by a 14-day money-back guarantee. You can see all plans on the <a href="/pricing">pricing page</a>, find answers on the <a href="/faq">FAQ</a>, or learn more <a href="/about">about us</a>. When you are ready, <a href="/auth/register">upload your selfies and get started</a>.</p>
+      <p>If you want a polished headshot without booking a studio, TailorPic can help. You upload a handful of selfies, our AI generates professional portraits in a range of styles and settings, and you pick the ones you like best. Plans start at $1.99, and there are 11 categories available, including <a href="/styles">professional headshots</a>, <a href="/team-headshots">team headshots</a> and <a href="/dating-photos">dating photos</a>. Your uploaded photos are automatically deleted after 30 days, and every order is covered by a satisfaction guarantee. You can see all plans on the <a href="/pricing">pricing page</a>, find answers on the <a href="/faq">FAQ</a>, or learn more <a href="/about">about us</a>. When you are ready, <a href="/auth/register">upload your selfies and get started</a>.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-03-01',
@@ -666,7 +666,7 @@ export const blogPosts: BlogPost[] = [
       <p>Finally, think about the consequences of a miss. If a studio session produces only one or two usable frames, you may have to book again. If an AI run produces results that do not look quite like you, the usual fix is to upload better source photos and regenerate. Either way, take the review step seriously. Ask a trusted colleague or friend to pick their favorites, because other people often choose a better photo of you than you would choose yourself.</p>
 
       <h2>Try an AI Headshot With TailorPic</h2>
-      <p>If the AI route sounds right for you, TailorPic makes it straightforward. Upload a handful of selfies, choose from 11 photo categories including <a href="/styles">professional headshots</a>, and receive your portraits typically within a couple of hours. Plans begin at $1.99, your uploads are automatically deleted after 30 days, and there is a 14-day money-back guarantee if you are not happy. Have questions first? The <a href="/faq">FAQ</a> covers the most common ones, and you can read more <a href="/about">about TailorPic</a>. When you are ready, <a href="/auth/register">upload your selfies</a> and see the results for yourself.</p>
+      <p>If the AI route sounds right for you, TailorPic makes it straightforward. Upload a handful of selfies, choose from 11 photo categories including <a href="/styles">professional headshots</a>, and receive your portraits typically within a couple of hours. Plans begin at $1.99, your uploads are automatically deleted after 30 days, and there is a satisfaction guarantee if you are not happy. Have questions first? The <a href="/faq">FAQ</a> covers the most common ones, and you can read more <a href="/about">about TailorPic</a>. When you are ready, <a href="/auth/register">upload your selfies</a> and see the results for yourself.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-03-15',
@@ -738,7 +738,7 @@ export const blogPosts: BlogPost[] = [
       <p>Your banner image and Featured section give you a second and third chance to communicate who you are. A simple banner with your industry, a short tagline or a subtle brand color complements the headshot without competing with it. The Featured section can highlight a portfolio, article, talk or case study. Together with the photo, these elements make the top of your profile feel deliberate, and they encourage visitors to keep reading instead of bouncing away after a quick glance.</p>
 
       <h2>Create Your LinkedIn Headshot With TailorPic</h2>
-      <p>TailorPic generates professional headshots suited to LinkedIn from a handful of selfies. Choose a look that fits your industry, receive multiple options and pick your favorites. Plans start at $1.99, and there are 11 categories available, including <a href="/styles">professional headshots</a>. Your uploads are automatically deleted after 30 days, and if you are not satisfied, you can use our 14-day money-back guarantee. Compare plans on the <a href="/pricing">pricing page</a>, read the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies now</a> to get started.</p>
+      <p>TailorPic generates professional headshots suited to LinkedIn from a handful of selfies. Choose a look that fits your industry, receive multiple options and pick your favorites. Plans start at $1.99, and there are 11 categories available, including <a href="/styles">professional headshots</a>. Your uploads are automatically deleted after 30 days, and if you are not satisfied, you can use our satisfaction guarantee. Compare plans on the <a href="/pricing">pricing page</a>, read the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies now</a> to get started.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-04-01',
@@ -805,7 +805,7 @@ export const blogPosts: BlogPost[] = [
       <p>Finally, consider a short set of supporting photos beyond the main headshot. A slightly wider half-body portrait works well for brochures and banner images, and a casual candid-style image can suit social posts about community events. With AI generation, producing these variations is usually quick, which makes it easier to keep your marketing materials fresh without scheduling multiple photo sessions.</p>
 
       <h2>Get a Real Estate Headshot With TailorPic</h2>
-      <p>TailorPic helps agents get a polished, professional photo without scheduling a studio. Upload a handful of selfies, choose from our professional styles and receive portraits that look like you at your best. Plans start at $1.99, and there are 11 categories, including <a href="/styles">professional headshots</a>. Your uploaded photos are automatically deleted after 30 days, and every order is backed by a 14-day money-back guarantee. You can compare options on our <a href="/pricing">pricing page</a>, browse answers on the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies</a> to get started today.</p>
+      <p>TailorPic helps agents get a polished, professional photo without scheduling a studio. Upload a handful of selfies, choose from our professional styles and receive portraits that look like you at your best. Plans start at $1.99, and there are 11 categories, including <a href="/styles">professional headshots</a>. Your uploaded photos are automatically deleted after 30 days, and every order is backed by a satisfaction guarantee. You can compare options on our <a href="/pricing">pricing page</a>, browse answers on the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies</a> to get started today.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-04-15',
@@ -884,7 +884,7 @@ export const blogPosts: BlogPost[] = [
       <p>Finally, remember that a team page is a living part of your brand. Revisit it each quarter, remove former employees promptly and check that every image loads correctly on mobile devices.</p>
 
       <h2>Get Consistent Team Headshots With TailorPic</h2>
-      <p>TailorPic makes it simple to create a cohesive set of professional headshots, whether your team sits in one office or across several time zones. Each person uploads a few selfies, chooses a style and receives polished portraits, typically within a couple of hours. Plans start at $1.99, and there are 11 categories, including <a href="/team-headshots">team headshots</a> and <a href="/styles">professional headshots</a>. Uploaded photos are automatically deleted after 30 days, and every order is protected by a 14-day money-back guarantee. Review the options on the <a href="/pricing">pricing page</a>, check the <a href="/faq">FAQ</a> or <a href="/auth/register">start uploading selfies</a> today.</p>
+      <p>TailorPic makes it simple to create a cohesive set of professional headshots, whether your team sits in one office or across several time zones. Each person uploads a few selfies, chooses a style and receives polished portraits, typically within a couple of hours. Plans start at $1.99, and there are 11 categories, including <a href="/team-headshots">team headshots</a> and <a href="/styles">professional headshots</a>. Uploaded photos are automatically deleted after 30 days, and every order is protected by a satisfaction guarantee. Review the options on the <a href="/pricing">pricing page</a>, check the <a href="/faq">FAQ</a> or <a href="/auth/register">start uploading selfies</a> today.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-05-01',
@@ -960,7 +960,7 @@ export const blogPosts: BlogPost[] = [
       <p>Finally, remember that you can change your mind. If you choose a background and later find that it does not fit a new platform or purpose, you can produce another version. Backgrounds are one of the easiest elements to adapt, particularly with digital tools, so treat your first choice as a starting point rather than a permanent decision.</p>
 
       <h2>Choose Your Background With TailorPic</h2>
-      <p>One of the practical advantages of AI headshots is that you can explore backgrounds without rebooking a session or changing your location. With TailorPic you upload a handful of selfies, and your portraits can be generated in a range of professional styles, including different backgrounds and settings, so you can compare and pick what works best for your industry. Plans start at $1.99, and there are 11 categories, including <a href="/styles">professional headshots</a>. Your uploaded photos are automatically deleted after 30 days, and there is a 14-day money-back guarantee. Explore the <a href="/pricing">pricing page</a>, read the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies</a> to try different looks.</p>
+      <p>One of the practical advantages of AI headshots is that you can explore backgrounds without rebooking a session or changing your location. With TailorPic you upload a handful of selfies, and your portraits can be generated in a range of professional styles, including different backgrounds and settings, so you can compare and pick what works best for your industry. Plans start at $1.99, and there are 11 categories, including <a href="/styles">professional headshots</a>. Your uploaded photos are automatically deleted after 30 days, and there is a satisfaction guarantee. Explore the <a href="/pricing">pricing page</a>, read the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies</a> to try different looks.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-05-15',
@@ -1028,7 +1028,7 @@ export const blogPosts: BlogPost[] = [
       <p>Think, too, about the full set of materials that will carry your image. Your firm's website, your bar directory listing, your conference bio and your email signature all benefit from the same photo, or at least from photos with the same look. When prospective clients see a consistent face and style in every place they encounter you, they perceive stability, which is a quality people look for in legal counsel. Keep a high-resolution master file and a few pre-cropped versions so you are never tempted to substitute a low-quality image at the last minute.</p>
 
       <h2>Get a Professional Attorney Headshot With TailorPic</h2>
-      <p>TailorPic generates polished, professional headshots from a handful of selfies, with styles suited to legal and corporate settings. Choose from 11 photo categories, including <a href="/styles">professional headshots</a>, and receive your portraits typically within a couple of hours. Plans start at $1.99, your uploaded photos are automatically deleted after 30 days, and you are covered by a 14-day money-back guarantee. Review plans on the <a href="/pricing">pricing page</a>, see the <a href="/faq">FAQ</a> or <a href="/about">learn more about us</a>, then <a href="/auth/register">upload your selfies</a> to get started.</p>
+      <p>TailorPic generates polished, professional headshots from a handful of selfies, with styles suited to legal and corporate settings. Choose from 11 photo categories, including <a href="/styles">professional headshots</a>, and receive your portraits typically within a couple of hours. Plans start at $1.99, your uploaded photos are automatically deleted after 30 days, and you are covered by a satisfaction guarantee. Review plans on the <a href="/pricing">pricing page</a>, see the <a href="/faq">FAQ</a> or <a href="/about">learn more about us</a>, then <a href="/auth/register">upload your selfies</a> to get started.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-06-01',
@@ -1109,7 +1109,7 @@ export const blogPosts: BlogPost[] = [
       <p>Finally, be thoughtful about what your photos reveal. Avoid images that show your home address, workplace, license plate or children's school. Consider whether a photo can be traced easily through a reverse image search, and think about which platforms you are comfortable having linked to your face. If you are using an AI service, choose one that explains how long photos are stored and how they are deleted. Good habits around privacy let you share your best self without unnecessary risk.</p>
 
       <h2>Create Your Dating Photos With TailorPic</h2>
-      <p>TailorPic's <a href="/dating-photos">dating photos category</a> generates natural, flattering portraits from a handful of selfies, so you can build a balanced gallery without a photo shoot. Choose from a range of settings and styles, compare the results and keep the ones that look most like you. Plans start at $1.99, and there are 11 categories in total. Your uploaded photos are automatically deleted after 30 days, and there is a 14-day money-back guarantee if you are not happy. See the <a href="/pricing">pricing page</a> for plan details, read the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies</a> to get started.</p>
+      <p>TailorPic's <a href="/dating-photos">dating photos category</a> generates natural, flattering portraits from a handful of selfies, so you can build a balanced gallery without a photo shoot. Choose from a range of settings and styles, compare the results and keep the ones that look most like you. Plans start at $1.99, and there are 11 categories in total. Your uploaded photos are automatically deleted after 30 days, and there is a satisfaction guarantee if you are not happy. See the <a href="/pricing">pricing page</a> for plan details, read the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies</a> to get started.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-06-15',
@@ -1157,7 +1157,7 @@ export const blogPosts: BlogPost[] = [
         <li><strong>Who has access to my data?</strong> Employees, contractors and third-party services should be limited and described.</li>
         <li><strong>How is data protected in transit and at rest?</strong> Look for mention of encryption and standard security practices.</li>
         <li><strong>Can I delete my data sooner?</strong> A good provider offers a way to request deletion before the automatic period ends.</li>
-        <li><strong>What are the refund and support terms?</strong> A clear refund policy is a sign of a service that stands behind its product. TailorPic offers a 14-day money-back guarantee.</li>
+        <li><strong>What are the refund and support terms?</strong> A clear satisfaction guarantee is a sign of a service that stands behind its product. TailorPic offers a satisfaction guarantee.</li>
         <li><strong>Is the company transparent about who it is?</strong> Look for an identifiable team, contact details and an about page. You can read more <a href="/about">about TailorPic</a>.</li>
       </ul>
       <p>Our <a href="/faq">FAQ</a> answers many of these questions for TailorPic directly, and you should expect similar clarity from any alternative you consider.</p>
@@ -1182,11 +1182,11 @@ export const blogPosts: BlogPost[] = [
       <h3>Red Flags That Should Make You Pause</h3>
       <p>Some warning signs are easy to spot once you know them. Be cautious if a service has no privacy policy, or if the policy is written in a way that grants broad rights over your images. Be cautious if you cannot find a company name, contact information or any description of who runs the site. Be wary of offers that seem too good to be true, such as unlimited free results, because someone is paying for the computing power and you should understand how. Pressure tactics, such as countdown timers that push you to upload immediately, are another signal to slow down. Finally, treat a service that asks for more personal information than it needs, such as contacts or location data, with skepticism.</p>
       <h3>A Quick Checklist Before You Upload</h3>
-      <p>If you want a short version, run through these questions before you upload. Does the service state how long photos are kept? Does it say whether photos are used for training or marketing? Does it explain how to delete data? Is there a refund policy? Can you identify the company behind it? If you can answer yes to all five, you are in a much better position than with a service that leaves them unanswered. It takes only a few minutes, and it is well worth the time for something as personal as your face.</p>
+      <p>If you want a short version, run through these questions before you upload. Does the service state how long photos are kept? Does it say whether photos are used for training or marketing? Does it explain how to delete data? Is there a satisfaction guarantee? Can you identify the company behind it? If you can answer yes to all five, you are in a much better position than with a service that leaves them unanswered. It takes only a few minutes, and it is well worth the time for something as personal as your face.</p>
 
       <h2>How TailorPic Approaches Privacy</h2>
       <p>We believe privacy should be simple. At TailorPic, the photos you upload are automatically deleted after 30 days, so your data is not kept indefinitely. Our goal is to generate your portraits and then step out of the way. You can check the details on our <a href="/faq">FAQ</a>, and if you have questions before uploading, you can contact us through the site.</p>
-      <p>Plans start at $1.99, and there are 11 categories, including <a href="/styles">professional headshots</a> and <a href="/dating-photos">dating photos</a>. Every order is covered by a 14-day money-back guarantee, so you can try the service and judge the results for yourself. You can compare plans on the <a href="/pricing">pricing page</a>, and when you are ready, <a href="/auth/register">upload your selfies</a> to get started.</p>
+      <p>Plans start at $1.99, and there are 11 categories, including <a href="/styles">professional headshots</a> and <a href="/dating-photos">dating photos</a>. Every order is covered by a satisfaction guarantee, so you can try the service and judge the results for yourself. You can compare plans on the <a href="/pricing">pricing page</a>, and when you are ready, <a href="/auth/register">upload your selfies</a> to get started.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-07-01',
@@ -1263,7 +1263,7 @@ export const blogPosts: BlogPost[] = [
       <p>If you already have a photo and cannot retake it right away, a few small fixes help. Crop it more tightly so that your face fills the frame. Adjust brightness and contrast slightly if the image is dark or flat. Remove distracting elements at the edges if you can. Replace the photo on the platforms where it matters most first, usually LinkedIn and your company profile, and update the others as time allows. Then plan a proper refresh so the temporary fix does not become permanent.</p>
 
       <h2>Fix Your Headshot With TailorPic</h2>
-      <p>If your current photo breaks several of these rules, TailorPic offers a quick way to replace it. Upload a handful of selfies, and our AI generates professional portraits with flattering lighting, clean backgrounds and polished styling, typically within a couple of hours. Plans start at $1.99, and there are 11 categories, including <a href="/styles">professional headshots</a> and <a href="/team-headshots">team headshots</a>. Your uploads are automatically deleted after 30 days, and every order is backed by a 14-day money-back guarantee. See the <a href="/pricing">pricing page</a>, read the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies</a> and get a photo you will be proud to use.</p>
+      <p>If your current photo breaks several of these rules, TailorPic offers a quick way to replace it. Upload a handful of selfies, and our AI generates professional portraits with flattering lighting, clean backgrounds and polished styling, typically within a couple of hours. Plans start at $1.99, and there are 11 categories, including <a href="/styles">professional headshots</a> and <a href="/team-headshots">team headshots</a>. Your uploads are automatically deleted after 30 days, and every order is backed by a satisfaction guarantee. See the <a href="/pricing">pricing page</a>, read the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies</a> and get a photo you will be proud to use.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-07-15',
@@ -1337,7 +1337,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>Bring Consistent Headshots to Your Team With TailorPic</h2>
       <p>If your company has a similar mix of outdated and missing photos, the process above is easy to try. Start with one or two people as a pilot, compare the results with your current photos, and then roll it out to everyone once you are comfortable with the quality.</p>
-      <p>For larger teams, our <a href="/enterprise">enterprise page</a> explains team plans, consistent styling and centralized ordering. If you just want to see what you get, you can <a href="/auth/register">upload your selfies</a> and have your own headshot in a couple of hours. Every order is backed by a 14-day money-back guarantee, so it is easy to test with no real risk.</p>
+      <p>For larger teams, our <a href="/enterprise">enterprise page</a> explains team plans, consistent styling and centralized ordering. If you just want to see what you get, you can <a href="/auth/register">upload your selfies</a> and have your own headshot in a couple of hours. Every order is backed by a satisfaction guarantee, so it is easy to test with no real risk.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-08-01',
@@ -1401,7 +1401,7 @@ export const blogPosts: BlogPost[] = [
       <p>This process works well alongside a good online presence. For related advice, see our articles on <a href="/blog/best-photos-for-linkedin">the best photos for LinkedIn</a> and <a href="/blog/professional-headshot-tips-2025">professional headshot tips</a>.</p>
 
       <h2>Try TailorPic for Your Real Estate Team</h2>
-      <p>TailorPic generates professional headshots from a few selfies, typically within a couple of hours, starting at $1.99. Your uploads are deleted automatically after 30 days and every order comes with a 14-day money-back guarantee. To see how we approach this industry, visit our <a href="/industries/real-estate">real estate headshots page</a>. When you are ready to try it yourself, <a href="/auth/register">upload your selfies</a> and see what your next agent photo could look like.</p>
+      <p>TailorPic generates professional headshots from a few selfies, typically within a couple of hours, starting at $1.99. Your uploads are deleted automatically after 30 days and every order comes with a satisfaction guarantee. To see how we approach this industry, visit our <a href="/industries/real-estate">real estate headshots page</a>. When you are ready to try it yourself, <a href="/auth/register">upload your selfies</a> and see what your next agent photo could look like.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-08-15',
@@ -1465,7 +1465,7 @@ export const blogPosts: BlogPost[] = [
       <p>Founders often treat a photo as a one-time task, but your appearance and role keep changing. A good habit is to review your profiles every six months, or whenever something significant happens, such as a funding announcement, a new product launch or a change of title. Replace the image on the profiles that matter most first, then update the rest. Keep the original selfies and style notes you used, so the next refresh is quick and looks consistent with the last one. Small, regular updates signal that you are active and engaged, which is a quiet form of credibility in itself.</p>
 
       <h2>Build Your Founder Brand With TailorPic</h2>
-      <p>Your photo will never replace a good product or a clear story, but it can remove one small obstacle between you and the people you want to reach. With TailorPic, you upload a few selfies and receive professional portraits, typically within a couple of hours. Your uploads are deleted automatically after 30 days, and every order comes with a 14-day money-back guarantee. When you are ready, <a href="/auth/register">upload your selfies</a> and create a set of photos for every platform you use.</p>
+      <p>Your photo will never replace a good product or a clear story, but it can remove one small obstacle between you and the people you want to reach. With TailorPic, you upload a few selfies and receive professional portraits, typically within a couple of hours. Your uploads are deleted automatically after 30 days, and every order comes with a satisfaction guarantee. When you are ready, <a href="/auth/register">upload your selfies</a> and create a set of photos for every platform you use.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-09-01',
@@ -1520,7 +1520,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h2>Get Your Remote-Ready Headshot With TailorPic</h2>
-      <p>You do not need a studio to look professional from your home office. With TailorPic, you upload a handful of selfies and receive a set of polished portraits, typically within a couple of hours. Your uploads are deleted automatically after 30 days, and there is a 14-day money-back guarantee. When you are ready, <a href="/auth/register">upload your selfies</a> or browse <a href="/styles">headshot styles</a> to find the look that suits your role.</p>
+      <p>You do not need a studio to look professional from your home office. With TailorPic, you upload a handful of selfies and receive a set of polished portraits, typically within a couple of hours. Your uploads are deleted automatically after 30 days, and there is a satisfaction guarantee. When you are ready, <a href="/auth/register">upload your selfies</a> or browse <a href="/styles">headshot styles</a> to find the look that suits your role.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-11-15',
@@ -1574,7 +1574,7 @@ export const blogPosts: BlogPost[] = [
       <p>Whatever method you choose, choose a result that honestly represents your appearance. Programs value authenticity, and you will meet them in person soon enough.</p>
 
       <h2>Prepare Your Residency Photo With TailorPic</h2>
-      <p>TailorPic helps students and physicians create polished, natural headshots in about an hour or two, with no photographer required. Your uploads are deleted after 30 days and every order includes a 14-day money-back guarantee. <a href="/auth/register">Upload your selfies</a> to get started, or see <a href="/pricing">pricing</a> for current plans.</p>
+      <p>TailorPic helps students and physicians create polished, natural headshots in about an hour or two, with no photographer required. Your uploads are deleted after 30 days and every order includes a satisfaction guarantee. <a href="/auth/register">Upload your selfies</a> to get started, or see <a href="/pricing">pricing</a> for current plans.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-11-28',
@@ -1628,7 +1628,7 @@ export const blogPosts: BlogPost[] = [
       <p>Executive calendars rarely leave room for a half-day studio session, which is why many leaders now consider AI as a complement or alternative. You can read an honest comparison in our article on <a href="/blog/ai-headshots-vs-traditional-photography">AI headshots versus traditional photography</a>. For many executives, the flexibility of refreshing a photo from home, whenever a role or look changes, outweighs the ritual of a traditional shoot.</p>
 
       <h2>Build Your Visual Authority With TailorPic</h2>
-      <p>TailorPic turns a handful of selfies into polished, professional portraits in about an hour or two, with your uploads deleted after 30 days and a 14-day money-back guarantee. If you manage a leadership team, explore <a href="/team-headshots">team headshots</a> or talk to us about our <a href="/enterprise">enterprise options</a>. To begin, <a href="/auth/register">upload your selfies</a> today.</p>
+      <p>TailorPic turns a handful of selfies into polished, professional portraits in about an hour or two, with your uploads deleted after 30 days and a satisfaction guarantee. If you manage a leadership team, explore <a href="/team-headshots">team headshots</a> or talk to us about our <a href="/enterprise">enterprise options</a>. To begin, <a href="/auth/register">upload your selfies</a> today.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-12-05',
@@ -1678,7 +1678,7 @@ export const blogPosts: BlogPost[] = [
       <p>For a real-world example of how a company approached a full switch, read how a <a href="/blog/how-50-person-company-switched-to-ai-headshots">50-person company switched to AI headshots</a>. Founders may also enjoy our piece on <a href="/blog/startup-founder-personal-branding-ai-photos">personal branding with AI photos</a>.</p>
 
       <h2>Start Building Your Team Brand With TailorPic</h2>
-      <p>TailorPic gives startups a simple way to give every teammate a matching, professional portrait without booking a photographer. Uploads are deleted after 30 days, and every order comes with a 14-day money-back guarantee. Explore <a href="/team-headshots">team headshots</a>, check <a href="/pricing">pricing</a> or <a href="/auth/register">upload your selfies</a> to get started.</p>
+      <p>TailorPic gives startups a simple way to give every teammate a matching, professional portrait without booking a photographer. Uploads are deleted after 30 days, and every order comes with a satisfaction guarantee. Explore <a href="/team-headshots">team headshots</a>, check <a href="/pricing">pricing</a> or <a href="/auth/register">upload your selfies</a> to get started.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-12-20',
@@ -1731,7 +1731,7 @@ export const blogPosts: BlogPost[] = [
       <p>If your current photo is more than two or three years old, is poorly lit or does not reflect your current role, 2025 is a good time to refresh it. Aim for natural light, a relaxed expression, a clean background and a look that fits your industry. Then use the same image consistently everywhere you appear online.</p>
 
       <h2>Refresh Your Headshot With TailorPic</h2>
-      <p>TailorPic brings these trends together, offering natural-looking, professional portraits from just a few selfies, usually in an hour or two. Uploads are deleted after 30 days, and there is a 14-day money-back guarantee. Browse <a href="/styles">headshot styles</a>, see <a href="/pricing">pricing</a> or <a href="/auth/register">upload your selfies</a> to begin.</p>
+      <p>TailorPic brings these trends together, offering natural-looking, professional portraits from just a few selfies, usually in an hour or two. Uploads are deleted after 30 days, and there is a satisfaction guarantee. Browse <a href="/styles">headshot styles</a>, see <a href="/pricing">pricing</a> or <a href="/auth/register">upload your selfies</a> to begin.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-01-15',
@@ -2020,7 +2020,7 @@ export const blogPosts: BlogPost[] = [
         <li><strong>Short retention:</strong> Uploads are deleted after 30 days.</li>
         <li><strong>Realistic results:</strong> We aim for natural, recognizable portraits, not exaggerated transformations.</li>
         <li><strong>Transparency:</strong> We explain how the technology works in <a href="/blog/how-ai-headshots-work">how AI headshots work</a> and on our <a href="/about">about page</a>.</li>
-        <li><strong>Buyer protection:</strong> A 14-day money-back guarantee if you are not satisfied.</li>
+        <li><strong>Buyer protection:</strong> A satisfaction guarantee if you are not satisfied.</li>
       </ul>
 
       <h2>Using AI Responsibly</h2>
@@ -8524,7 +8524,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>7. Editing and Regeneration Options</h2>
 
-      <p>What happens if you do not like the results? The best services let you retry, adjust or edit without paying again from scratch. Look at whether you can change the background, fix small issues or regenerate particular images. A built-in <a href="/editor">photo editor</a> is a useful extra, letting you adjust crops, backgrounds and lighting quickly. Clarify refund and retry policies before buying, and read our <a href="/refund-policy">refund policy</a> to see how we handle it.</p>
+      <p>What happens if you do not like the results? The best services let you retry, adjust or edit without paying again from scratch. Look at whether you can change the background, fix small issues or regenerate particular images. A built-in <a href="/editor">photo editor</a> is a useful extra, letting you adjust crops, backgrounds and lighting quickly. Clarify retry policies before buying, and see our <a href="/guarantee">guarantee page</a> to learn how we handle it.</p>
 
       <h2>8. Resolution and File Quality</h2>
 
@@ -8565,7 +8565,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>Test Before You Commit</h2>
 
-      <p>Where possible, try before you buy. Some services offer free previews or money-back guarantees. Try our <a href="/free-headshot-generator">free headshot generator</a> to get a sense of how the process works. Upload the same set of selfies to two services if you can and compare the results side by side. Show them to a friend and ask which looks more like you.</p>
+      <p>Where possible, try before you buy. Some services offer free previews or satisfaction guarantees. Try our <a href="/free-headshot-generator">free headshot generator</a> to get a sense of how the process works. Upload the same set of selfies to two services if you can and compare the results side by side. Show them to a friend and ask which looks more like you.</p>
 
       <h2>Final Thoughts</h2>
 

@@ -9,29 +9,30 @@ import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import {
   ShieldCheck,
-  Clock,
-  CreditCard,
+  RefreshCcw,
+  Sparkles,
   CheckCircle,
   ArrowRight,
   ChevronDown,
   Mail,
+  Lock,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: { absolute: '14-Day Money-Back Guarantee on AI Headshots | TailorPic' },
+  title: { absolute: 'Quality & Satisfaction Guarantee | TailorPic' },
   description:
-    'TailorPic offers a 14-day money-back guarantee on all purchases. Not satisfied with your AI headshots? Request a full refund within 14 days — no hassle.',
+    'TailorPic is committed to delivering studio-quality AI headshots. Not happy with your results? We will regenerate your photos until they look great.',
   alternates: { canonical: '/guarantee' },
   openGraph: generateOGMetadata({
-    title: '14-Day Money-Back Guarantee on AI Headshots | TailorPic',
+    title: 'Quality & Satisfaction Guarantee | TailorPic',
     description:
-      'Try TailorPic risk-free. If you are not happy with your AI headshots, request a full refund within 14 days of purchase.',
+      'Studio-quality AI headshots, guaranteed. We work with you until every photo is right.',
     path: '/guarantee',
   }),
   twitter: generateTwitterMetadata({
-    title: '14-Day Money-Back Guarantee on AI Headshots | TailorPic',
+    title: 'Quality & Satisfaction Guarantee | TailorPic',
     description:
-      'Try TailorPic risk-free. If you are not happy with your AI headshots, request a full refund within 14 days of purchase.',
+      'Studio-quality AI headshots, guaranteed. We work with you until every photo is right.',
   }),
 };
 
@@ -39,69 +40,54 @@ export const metadata: Metadata = {
 /*  Data                                                               */
 /* ------------------------------------------------------------------ */
 
-const refundSteps = [
+const guaranteeSteps = [
   {
     step: '1',
-    icon: CreditCard,
-    title: 'Contact Us',
-    desc: 'Not satisfied? Send an email to support@tailorpic.com with the subject line "Refund Request" and include your order ID.',
+    icon: Sparkles,
+    title: 'Upload & Generate',
+    desc: 'Upload your selfies and choose your style. Our AI generates your professional headshots in under two hours.',
   },
   {
     step: '2',
-    icon: Clock,
-    title: 'We Review Your Request',
-    desc: 'Our team will review your request and confirm eligibility. We aim to respond within one business day.',
+    icon: RefreshCcw,
+    title: 'Review & Regenerate',
+    desc: 'Not happy with a photo? Regenerate it within your package. Fine-tune poses, expressions and backgrounds until every shot is right.',
   },
   {
     step: '3',
     icon: CheckCircle,
-    title: 'Refund Processed',
-    desc: 'Once approved, your refund is processed to the original payment method. It typically appears within 5-10 business days.',
+    title: 'Download with Confidence',
+    desc: 'Download your final headshots in high resolution and use them anywhere — LinkedIn, your website, business cards and more.',
   },
 ];
 
 const coveredItems = [
-  'Full refund within 14 days of purchase',
-  'Applies to all headshot packages',
-  'No questions asked for first-time refund requests',
-  'Refund issued to your original payment method',
-];
-
-const notCoveredItems = [
-  {
-    title: 'Credits partially or fully used',
-    desc: 'If you have already used a portion of your purchased credits to generate headshots, those used credits are not eligible for a refund.',
-  },
-  {
-    title: 'Requests made after 14 days',
-    desc: 'Refund requests submitted more than 14 days after the original purchase date cannot be honored.',
-  },
-  {
-    title: 'Account abuse or fraud',
-    desc: 'Accounts flagged for abusive behavior, such as repeated refund requests across multiple accounts, are not eligible.',
-  },
+  'Unlimited regenerations within your package',
+  'Dedicated support if results need adjusting',
+  'Full commercial usage rights on every photo',
+  'Privacy-first: photos encrypted and auto-deleted within 30 days',
 ];
 
 const faqItems = [
   {
-    q: 'How do I request a refund?',
-    a: `Email ${siteConfig.supportEmail} within 14 days of purchase with the subject line "Refund Request" and include your order ID. There is no form to fill out and no need to explain in detail.`,
+    q: 'What if I am not happy with my photos?',
+    a: 'You can regenerate any photo within your package at no additional cost. If you are still not satisfied after regeneration, contact our support team and we will work with you to resolve the issue.',
   },
   {
-    q: 'When will I get my money back?',
-    a: 'Once we approve your request, the refund is sent to your original payment method. Depending on your bank or card issuer, it typically appears within 5-10 business days.',
+    q: 'How many times can I regenerate?',
+    a: 'You can regenerate photos within your purchased package as many times as needed until you are satisfied with the results.',
   },
   {
-    q: 'What if I have already downloaded my photos?',
-    a: 'Downloading your photos does not stop you from asking. Contact us within 14 days of purchase and we will review your request under the terms on this page, including the note on used credits.',
-  },
-  {
-    q: 'Can I get a partial refund?',
-    a: 'Our guarantee covers a full refund within 14 days of purchase, provided credits have not been used. If you have used some credits, we evaluate partial refund requests on a case-by-case basis.',
+    q: 'What does the satisfaction guarantee cover?',
+    a: 'Our guarantee covers the quality of the AI-generated headshots. If the results do not meet professional standards, we will work with you on regenerations or adjustments until the photos are right.',
   },
   {
     q: 'What if I purchased a team plan?',
-    a: `Team and enterprise plans are also covered by our 14-day guarantee. Contact us at ${siteConfig.supportEmail} and we will work with you to resolve any concerns.`,
+    a: `Team and enterprise plans are also covered by our satisfaction guarantee. Contact us at ${siteConfig.supportEmail} and we will work with you to resolve any concerns.`,
+  },
+  {
+    q: 'How do I contact support?',
+    a: `Email us at ${siteConfig.supportEmail} with your order details and a description of the issue. Our team aims to respond within one business day.`,
   },
 ];
 
@@ -115,7 +101,7 @@ export default function GuaranteePage() {
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
-          { name: 'Money-Back Guarantee', url: `${siteConfig.url}/guarantee` },
+          { name: 'Satisfaction Guarantee', url: `${siteConfig.url}/guarantee` },
         ]}
       />
       <FAQSchema
@@ -133,15 +119,15 @@ export default function GuaranteePage() {
             <ShieldCheck className="h-12 w-12 text-tp-bronze" strokeWidth={1.5} />
           </div>
           <p className="text-xs font-semibold uppercase tracking-widest text-tp-bronze mb-4">
-            Risk-Free Purchase
+            Our Promise
           </p>
           <h1 className="font-display font-normal text-4xl sm:text-5xl lg:text-6xl text-white leading-tight tracking-tight">
-            14-Day Money-Back Guarantee
+            Satisfaction Guaranteed
           </h1>
           <p className="mt-5 text-lg text-tp-beige/70 max-w-2xl mx-auto leading-relaxed">
-            Not satisfied? Contact us within 14 days for a full refund. No
-            questions asked. Try TailorPic for from $1.99 and know you
-            are covered.
+            We are committed to delivering studio-quality results. If your
+            headshots do not meet your expectations, we will work with you
+            until every photo is right.
           </p>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
@@ -151,7 +137,7 @@ export default function GuaranteePage() {
                 'bg-tp-bronze text-tp-black hover:bg-tp-bronze/90'
               )}
             >
-              Try TailorPic Risk-Free <ArrowRight className="h-4 w-4" />
+              Get Your Headshots <ArrowRight className="h-4 w-4" />
             </Link>
             <a
               href={`mailto:${siteConfig.supportEmail}`}
@@ -168,20 +154,20 @@ export default function GuaranteePage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
-              Our Promise
+              Quality First
             </p>
             <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
-              What&apos;s Covered
+              What&apos;s Included
             </h2>
             <p className="mt-3 text-tp-muted max-w-xl mx-auto">
-              Every purchase is protected by our 14-day money-back guarantee.
+              Every order is backed by our commitment to quality.
             </p>
           </div>
           <div className="mx-auto max-w-lg">
             <div className="rounded-tp-card border border-tp-line bg-white p-7">
               <ShieldCheck className="h-8 w-8 text-tp-bronze mb-4" />
               <h3 className="text-lg font-semibold text-tp-ink mb-3">
-                Full Refund Guarantee
+                Satisfaction Guarantee
               </h3>
               <ul className="space-y-2.5">
                 {coveredItems.map((item) => (
@@ -199,19 +185,19 @@ export default function GuaranteePage() {
         </div>
       </section>
 
-      {/* ── How to Request a Refund ── */}
+      {/* ── How It Works ── */}
       <section className="bg-tp-paper py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-display font-normal text-3xl sm:text-4xl text-tp-ink">
-              How to Request a Refund
+              How It Works
             </h2>
             <p className="mt-3 text-tp-muted max-w-xl mx-auto">
-              Three simple steps to get your money back.
+              From upload to download, quality at every step.
             </p>
           </div>
           <div className="grid gap-8 sm:grid-cols-3">
-            {refundSteps.map((s) => (
+            {guaranteeSteps.map((s) => (
               <div key={s.step} className="text-center">
                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-tp-card bg-tp-black mb-4">
                   <s.icon className="h-6 w-6 text-tp-bronze" />
@@ -226,37 +212,8 @@ export default function GuaranteePage() {
         </div>
       </section>
 
-      {/* ── What's NOT Covered ── */}
-      <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-display font-normal text-3xl sm:text-4xl text-tp-ink">
-              What&apos;s Not Covered
-            </h2>
-            <p className="mt-3 text-tp-muted max-w-xl mx-auto">
-              To keep things fair for everyone, there are a few exceptions.
-            </p>
-          </div>
-          <div className="mx-auto max-w-2xl space-y-4">
-            {notCoveredItems.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-tp-card border border-tp-line bg-white p-6"
-              >
-                <h3 className="text-sm font-semibold text-tp-ink">
-                  {item.title}
-                </h3>
-                <p className="mt-1.5 text-sm text-tp-muted leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── FAQ ── */}
-      <section className="bg-tp-paper py-16 sm:py-20">
+      <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-display font-normal text-3xl sm:text-4xl text-tp-ink">
@@ -289,8 +246,7 @@ export default function GuaranteePage() {
             Start with Confidence
           </h2>
           <p className="mt-4 text-tp-beige/60">
-            Your purchase is protected by our 14-day money-back guarantee. Try
-            TailorPic risk-free today.
+            Studio-quality headshots, backed by our satisfaction guarantee.
           </p>
           <div className="mt-8">
             <Link
@@ -303,7 +259,7 @@ export default function GuaranteePage() {
               Get Started for $1.99 <ArrowRight className="h-4 w-4" />
             </Link>
             <p className="mt-4 text-sm text-tp-beige/50">
-              One-time payment. 14-day money-back guarantee.{' '}
+              One-time payment. Satisfaction guaranteed.{' '}
               <Link href="/pricing" className="underline underline-offset-2 hover:text-tp-beige">
                 See pricing
               </Link>{' '}

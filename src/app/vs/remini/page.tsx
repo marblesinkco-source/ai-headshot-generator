@@ -68,7 +68,7 @@ const comparisonRows: FeatureRow[] = [
   { feature: 'Dating Photos', tailorpic: true, competitor: 'Limited' },
   { feature: 'Pet Portraits', tailorpic: true, competitor: false },
   { feature: 'E-Commerce Product Photos', tailorpic: true, competitor: false },
-  { feature: 'Money-Back Guarantee', tailorpic: 'Yes (14 days)', competitor: 'Varies by platform' },
+  { feature: 'Satisfaction Guarantee', tailorpic: 'Yes', competitor: 'Varies by platform' },
 ];
 
 const whyCards = [
@@ -125,7 +125,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription like Remini?',
     answer:
-      'No. TailorPic packages are one-time payments starting at $1.99 with no recurring charges and a 14-day money-back guarantee. Remini is typically sold as a subscription.',
+      'No. TailorPic packages are one-time payments starting at $1.99 with no recurring charges and a satisfaction guarantee. Remini is typically sold as a subscription.',
   },
   {
     question: 'How does TailorPic work compared to Remini\'s enhancement?',
