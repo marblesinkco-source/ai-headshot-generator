@@ -134,9 +134,11 @@ export async function POST(request: NextRequest) {
       const checkoutSession = await stripe.checkout.sessions.create({
         mode: 'payment',
         customer_email: user.email,
-        // Accept card, Apple Pay and Google Pay — covers US and EU buyers globally
-        payment_method_types: ['card'],
+        // Automatic payment methods: card, Apple Pay, Google Pay, Link (one-click checkout)
+        // Stripe automatically shows the best methods based on customer's device and location
+        payment_method_types: ['card', 'link'],
         billing_address_collection: 'auto',
+        phone_number_collection: { enabled: true },
         line_items: [
           {
             price_data: {
@@ -245,8 +247,10 @@ export async function POST(request: NextRequest) {
     const checkoutSession = await stripe.checkout.sessions.create({
       mode: 'payment',
       customer_email: user.email,
-      payment_method_types: ['card'],
+      // Automatic payment methods: card, Apple Pay, Google Pay, Link (one-click checkout)
+      payment_method_types: ['card', 'link'],
       billing_address_collection: 'auto',
+      phone_number_collection: { enabled: true },
       line_items: [
         {
           price_data: {
