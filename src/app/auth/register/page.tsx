@@ -342,7 +342,7 @@ function RegisterContent() {
               &ldquo;Studio-quality headshots without the studio. Skip the photographer, keep the polish.&rdquo;
             </blockquote>
             <figcaption className="mt-4 text-xs text-tp-beige/80">
-              One-time $1.99 &middot; No subscription
+              From $1.99 &middot; No subscription
             </figcaption>
           </figure>
           <p className="mt-6 text-sm text-tp-beige/70">Trusted by professionals worldwide</p>

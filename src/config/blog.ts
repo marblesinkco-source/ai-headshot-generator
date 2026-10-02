@@ -374,7 +374,7 @@ export const blogPosts: BlogPost[] = [
       <h2>The Main AI Pricing Models</h2>
       <p>Most AI headshot services use a one-time package price that determines how many photos you receive, how many styles are included and how fast they are delivered. A few offer subscriptions or credit systems. Team-oriented services often price per person with volume discounts. Understanding which model a provider uses is the first step in comparing real costs.</p>
 
-      <h2>TailorPic: From $1.99 One-Time</h2>
+      <h2>TailorPic: From $1.99</h2>
       <p>TailorPic's headshot packages start at $1.99, each as a single payment. There is no subscription to cancel. You can see exactly what is included on our <a href="/pricing">pricing page</a>. If you want to estimate what you would otherwise spend, try our <a href="/tools/headshot-cost-calculator">headshot cost calculator</a> to compare a traditional session against AI options.</p>
 
       <h2>How Competitors Price Their Plans</h2>

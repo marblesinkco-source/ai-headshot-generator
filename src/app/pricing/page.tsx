@@ -131,8 +131,8 @@ const OG_DESCRIPTION =
   'Affordable AI photo packages for every need. Professional headshots, dating photos, pet portraits and more.';
 
 export const metadata: Metadata = {
-  title: { absolute: 'TailorPic Pricing: AI Headshots from $1.99 One-Time' },
-  description: `${siteConfig.name} pricing: AI photos from ${BASE_PRICE_DISPLAY} one-time, no subscription. Choose a single package across 11 categories or save with credit packs.`,
+  title: { absolute: 'TailorPic Pricing: AI Headshots from $1.99' },
+  description: `${siteConfig.name} pricing: AI photos from ${BASE_PRICE_DISPLAY}, no subscription. Choose a single package across 11 categories or save with credit packs.`,
   alternates: { canonical: '/pricing' },
   openGraph: generateOGMetadata({
     title: `Pricing | ${siteConfig.name}`,
@@ -178,7 +178,7 @@ export default function PricingPage() {
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
-          { name: 'TailorPic Pricing: AI Headshots from $1.99 One-Time', url: `${siteConfig.url}/pricing` },
+          { name: 'TailorPic Pricing: AI Headshots from $1.99', url: `${siteConfig.url}/pricing` },
         ]}
       />
       <Header />
