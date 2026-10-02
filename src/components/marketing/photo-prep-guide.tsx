@@ -40,40 +40,40 @@ export function PhotoPrepGuide() {
         {/* Do / Don't grid */}
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {/* DO */}
-          <div className="rounded-tp-card border border-green-200 bg-green-50/50 p-6 sm:p-8">
+          <div className="rounded-tp-card border border-tp-bronze/30 bg-tp-bronze/5 p-6 sm:p-8">
             <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-green-100">
-                <Check className="h-4 w-4 text-green-700" />
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-tp-bronze/15">
+                <Check className="h-4 w-4 text-tp-bronze-ink" />
               </div>
-              <h3 className="text-lg font-semibold text-green-800">Do</h3>
+              <h3 className="text-lg font-semibold text-tp-ink">Do</h3>
             </div>
             <ul className="mt-5 space-y-4">
               {DOS.map(({ icon: Icon, text }) => (
                 <li key={text} className="flex items-start gap-3">
-                  <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-100">
-                    <Icon className="h-3.5 w-3.5 text-green-700" aria-hidden="true" />
+                  <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-tp-bronze/15">
+                    <Icon className="h-3.5 w-3.5 text-tp-bronze-ink" aria-hidden="true" />
                   </div>
-                  <span className="text-sm text-green-900">{text}</span>
+                  <span className="text-sm text-tp-ink">{text}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* DON'T */}
-          <div className="rounded-tp-card border border-red-200 bg-red-50/50 p-6 sm:p-8">
+          <div className="rounded-tp-card border border-tp-line bg-tp-beige/30 p-6 sm:p-8">
             <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100">
-                <X className="h-4 w-4 text-red-700" />
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-tp-ink/10">
+                <X className="h-4 w-4 text-tp-ink" />
               </div>
-              <h3 className="text-lg font-semibold text-red-800">Don&apos;t</h3>
+              <h3 className="text-lg font-semibold text-tp-ink">Don&apos;t</h3>
             </div>
             <ul className="mt-5 space-y-4">
               {DONTS.map((text) => (
                 <li key={text} className="flex items-start gap-3">
-                  <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-red-100">
-                    <X className="h-3.5 w-3.5 text-red-700" aria-hidden="true" />
+                  <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-tp-ink/10">
+                    <X className="h-3.5 w-3.5 text-tp-ink" aria-hidden="true" />
                   </div>
-                  <span className="text-sm text-red-900">{text}</span>
+                  <span className="text-sm text-tp-ink">{text}</span>
                 </li>
               ))}
             </ul>

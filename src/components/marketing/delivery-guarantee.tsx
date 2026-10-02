@@ -83,9 +83,14 @@ export function DeliveryGuarantee() {
             From Upload to Download
           </h3>
           <div className="relative mt-10">
-            {/* Connection line (desktop) */}
+            {/* Connection line (desktop — horizontal) */}
             <div
               className="absolute left-0 right-0 top-6 hidden h-[2px] bg-gradient-to-r from-tp-bronze/0 via-tp-bronze to-tp-bronze/0 sm:block"
+              aria-hidden="true"
+            />
+            {/* Connection line (mobile — vertical) */}
+            <div
+              className="absolute left-1/2 top-6 bottom-6 w-[2px] -translate-x-1/2 bg-gradient-to-b from-tp-bronze/0 via-tp-bronze to-tp-bronze/0 sm:hidden"
               aria-hidden="true"
             />
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-4 sm:gap-4">
@@ -96,7 +101,7 @@ export function DeliveryGuarantee() {
                 { time: '~90 min', label: 'Ready!', sub: 'Download & use' },
               ].map((step, i) => (
                 <div key={step.label} className="relative text-center">
-                  <div className="relative mx-auto flex h-12 w-12 items-center justify-center rounded-full border-2 border-tp-bronze bg-tp-black text-sm font-bold text-tp-bronze shadow-[0_0_20px_rgba(196,162,123,0.2)]">
+                  <div className="relative z-10 mx-auto flex h-12 w-12 items-center justify-center rounded-full border-2 border-tp-bronze bg-tp-black text-sm font-bold text-tp-bronze shadow-[0_0_20px_rgba(196,162,123,0.2)]">
                     {i + 1}
                   </div>
                   <p className="mt-3 text-xs font-medium text-tp-bronze">
