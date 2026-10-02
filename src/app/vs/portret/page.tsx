@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Portret";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs Portret for AI portraits and headshots. TailorPic offers photos in 11 categories for a one-time $1.99 with a personal LoRA model.";
+  "Compare TailorPic vs Portret for AI portraits and headshots. TailorPic offers photos in 11 categories from a one-time $1.99 with a personal LoRA model.";
 const path = '/vs/portret';
 
 export const metadata: Metadata = {
@@ -27,13 +27,13 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
   offers: {
     '@type': 'Offer',
-    price: '9.90',
+    price: '1.99',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: `${siteConfig.url}/auth/register`,
@@ -44,8 +44,8 @@ const intro =
   "Portret is a portrait-focused AI tool. TailorPic takes a wider approach, pairing a personal LoRA model with 11 categories for work, dating, creative and commercial use.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "$1.99 one-time", other: "Confirm current pricing on their site" },
-  { label: "Photos included", tailorpic: "photos", other: "Depends on the plan" },
+  { label: "Starting price", tailorpic: "From $1.99 one-time", other: "Confirm current pricing on their site" },
+  { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on the plan" },
   { label: "Delivery time", tailorpic: "Within 24 hours", other: "Varies by plan" },
   { label: "Categories / styles", tailorpic: "11 categories", other: "Portrait-oriented styles" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your selfies", other: "Not publicly detailed" },
@@ -58,7 +58,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 
 const differences = [
   { title: "Portrait art vs practical photos", body: "If you want a stylised portrait, a portrait-first tool may fit. TailorPic balances creative looks with practical business and dating shots." },
-  { title: "One price, many uses", body: "A single $1.99 covers photos in 11 categories, which is useful if you need more than one kind of image." },
+  { title: "Low entry price, many uses", body: "Packages from $1.99 cover photos in 11 categories, which is useful if you need more than one kind of image." },
   { title: "Personal likeness", body: "TailorPic trains on your own photos, aiming for a recognisable result rather than a generic face." },
   { title: "Turnaround", body: "TailorPic takes up to 24 hours. Choose a faster service only if speed outweighs likeness and variety for you." },
 ];
@@ -79,10 +79,10 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "How does TailorPic compare to Portret on price?", answer: "TailorPic is a one-time $1.99 across multiple packages. Portret pricing can change, so review their current plans." },
+  { question: "How does TailorPic compare to Portret on price?", answer: "TailorPic packages start at a one-time $1.99 and go up to 160 photos. Portret pricing can change, so review their current plans." },
   { question: "Can TailorPic make artistic portraits too?", answer: "Yes. The creative category sits alongside business, dating, pet and e-commerce options." },
   { question: "How long until I get my photos?", answer: "Within 24 hours, because a personal LoRA model is trained from your uploads." },
-  { question: "Is a subscription required?", answer: "No. TailorPic is a single $1.99 payment." },
+  { question: "Is a subscription required?", answer: "No. TailorPic packages are one-time payments starting at $1.99." },
   { question: "What photos should I upload?", answer: "Clear, well-lit selfies from different angles and expressions give the model the best likeness." },
 ];
 

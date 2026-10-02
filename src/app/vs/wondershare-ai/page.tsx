@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Wondershare AI";
 const title = 'TailorPic vs Wondershare AI: AI Headshot Comparison';
 const description =
-  'Compare TailorPic vs Wondershare AI. Wondershare offers a suite of AI creative and editing tools; TailorPic: 40+ headshots for a one-time $1.99.';
+  'Compare TailorPic vs Wondershare AI. Wondershare offers a suite of AI creative and editing tools; TailorPic: headshots from a one-time $1.99.';
 const path = '/vs/wondershare-ai';
 const canonicalUrl = 'https://www.tailorpic.com/vs/wondershare-ai';
 
@@ -28,13 +28,13 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
   offers: {
     '@type': 'Offer',
-    price: '9.90',
+    price: '1.99',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: `${siteConfig.url}/auth/register`,
@@ -47,12 +47,12 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "$1.99 one-time",
+    "tailorpic": "From $1.99 one-time",
     "other": "Varies by product; subscription and license options"
   },
   {
     "label": "Photos included",
-    "tailorpic": "photos",
+    "tailorpic": "1 to 160, depending on package",
     "other": "Depends on the tool and what you edit"
   },
   {
@@ -107,8 +107,8 @@ const differences = [
     "body": "Upload selfies and receive finished headshots. There is no timeline, layer or effect to learn."
   },
   {
-    "title": "A flat, low entry price",
-    "body": "TailorPic is $1.99 one time with no plan ladder or license tier to choose from."
+    "title": "A low entry price",
+    "body": "TailorPic packages start at $1.99 one time, with no subscription or license tier to choose from."
   },
   {
     "title": "Trade-off on breadth",
@@ -134,7 +134,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than Wondershare AI?",
-    "answer": "TailorPic is a one-time $1.99 across multiple packages. Wondershare pricing varies by product and plan, so compare against their current price pages."
+    "answer": "TailorPic packages start at a one-time $1.99 and go up to 160 photos. Wondershare pricing varies by product and plan, so compare against their current price pages."
   },
   {
     "question": "Can Wondershare AI make a headshot?",
@@ -150,7 +150,7 @@ const faqs = [
   },
   {
     "question": "Do I need a subscription with TailorPic?",
-    "answer": "No. It is a single $1.99 payment with no recurring fees."
+    "answer": "No. Every package is a single one-time payment (from $1.99) with no recurring fees."
   }
 ];
 

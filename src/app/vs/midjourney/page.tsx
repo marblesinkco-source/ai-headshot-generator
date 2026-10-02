@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Midjourney";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  'Compare TailorPic vs Midjourney for headshots. TailorPic is a one-time $1.99 across multiple packages with LoRA-trained likeness, no prompting skill or Discord needed.';
+  'Compare TailorPic vs Midjourney for headshots. TailorPic starts at a one-time $1.99 with LoRA-trained likeness, no prompting skill or Discord needed.';
 const path = '/vs/midjourney';
 
 export const metadata: Metadata = {
@@ -27,13 +27,13 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
   offers: {
     '@type': 'Offer',
-    price: '9.90',
+    price: '1.99',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: `${siteConfig.url}/auth/register`,
@@ -44,8 +44,8 @@ const intro =
   "Midjourney is a powerful AI art tool, but getting a good headshot takes prompting skill. TailorPic trains a model on your photos and delivers finished headshots with no prompts to write.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "$1.99 one-time", other: "Subscription-based; check their site" },
-  { label: "Photos included", tailorpic: "photos", other: "Depends on prompts and plan limits" },
+  { label: "Starting price", tailorpic: "From $1.99 one-time", other: "Subscription-based; check their site" },
+  { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on prompts and plan limits" },
   { label: "Delivery time", tailorpic: "Within 24 hours", other: "Varies by mode and queue" },
   { label: "Categories / styles", tailorpic: "11 categories (business, dating, creative, pets and more)", other: "Artistic and photorealistic imagery of all kinds" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Prompt-based generation; not a model trained on your face" },
@@ -66,7 +66,7 @@ const differences = [
 const useCases = {
   tailorpic: [
     "Headshots that resemble you, without writing prompts",
-    "A single $1.99 payment with no subscription",
+    "A one-time payment from $1.99 with no subscription",
     "A simple web flow with no extra apps to learn",
     "Dating, creative, pet and product photos from one upload",
   ],
@@ -79,11 +79,11 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is TailorPic cheaper than Midjourney?", answer: "TailorPic is a one-time $1.99 across multiple packages. Midjourney is priced by plan and can change, so check their current pricing." },
+  { question: "Is TailorPic cheaper than Midjourney?", answer: "TailorPic packages start at a one-time $1.99 and go up to 160 photos. Midjourney is priced by plan and can change, so check their current pricing." },
   { question: "Can Midjourney make headshots of me?", answer: "Midjourney can produce portraits from prompts, but it is not trained on your face by default. TailorPic trains a personal LoRA model on your own photos." },
   { question: "Do I need Discord or prompting skill for TailorPic?", answer: "No. You upload your photos on the website and receive finished headshots, with no prompts to write." },
   { question: "How long does TailorPic take?", answer: "Delivery is within 24 hours, since a dedicated model is fine-tuned on your uploads." },
-  { question: "Do I need a subscription with TailorPic?", answer: "No. It is a single $1.99 payment with no recurring fees." },
+  { question: "Do I need a subscription with TailorPic?", answer: "No. Every package is a single one-time payment (from $1.99) with no recurring fees." },
 ];
 
 export default function VsMidjourneyPage() {

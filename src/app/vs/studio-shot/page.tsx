@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "StudioShot";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs StudioShot. TailorPic is a one-time $1.99 across multiple packages in 11 categories; StudioShot starts around $29 and advertises 100+ headshots.";
+  "Compare TailorPic vs StudioShot. TailorPic starts at a one-time $1.99 across 11 categories; StudioShot starts around $29 and advertises 100+ headshots.";
 const path = '/vs/studio-shot';
 
 export const metadata: Metadata = {
@@ -27,13 +27,13 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
   offers: {
     '@type': 'Offer',
-    price: '9.90',
+    price: '1.99',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: `${siteConfig.url}/auth/register`,
@@ -41,8 +41,8 @@ const productJsonLd = {
 };
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "$1.99 one-time", other: "Approximately $29" },
-  { label: "Photos included", tailorpic: "photos", other: "100+ headshots advertised" },
+  { label: "Starting price", tailorpic: "From $1.99 one-time", other: "Approximately $29" },
+  { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "100+ headshots advertised" },
   { label: "Delivery time", tailorpic: "24 hours", other: "Varies by plan; check their site" },
   { label: "Categories / styles", tailorpic: "11 categories (business, dating, creative, pets and more)", other: "Professional headshot styles" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
@@ -52,7 +52,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 ];
 
 const differences = [
-  { title: "Price", body: "TailorPic costs $1.99 one time, about a third of StudioShot's approximate $29 starting price." },
+  { title: "Price", body: "TailorPic packages start at $1.99 one time, compared with StudioShot's approximate $29 starting price." },
   { title: "Volume vs variety", body: "StudioShot advertises 100+ headshots. TailorPic delivers photos but spreads them across 11 categories, from business to dating and creative looks." },
   { title: "Delivery", body: "TailorPic delivers within 24 hours. Check StudioShot's site for its current turnaround times for each plan." },
   { title: "Personalization", body: "TailorPic trains a personal LoRA model on your photos for a close likeness." },
@@ -60,7 +60,7 @@ const differences = [
 
 const useCases = {
   tailorpic: [
-    "The lowest upfront cost at a one-time $1.99",
+    "A low upfront cost, from a one-time $1.99",
     "More categories beyond standard headshots",
     "Delivery within 24 hours",
     "Predictable pricing with no subscription",
@@ -74,10 +74,10 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is TailorPic cheaper than StudioShot?", answer: "Yes. TailorPic is a one-time $1.99, while StudioShot starts at approximately $29. Pricing may change, so check their site." },
+  { question: "Is TailorPic cheaper than StudioShot?", answer: "Yes. TailorPic starts at a one-time $1.99, while StudioShot starts at approximately $29. Pricing may change, so check their site." },
   { question: "How many photos does StudioShot include?", answer: "StudioShot advertises 100+ headshots. TailorPic includes photos across 11 categories." },
   { question: "Which delivers faster?", answer: "TailorPic delivers within 24 hours. Check StudioShot's site for its current delivery times." },
-  { question: "Is TailorPic a subscription?", answer: "No. TailorPic is a one-time payment of $1.99 with no recurring fees." },
+  { question: "Is TailorPic a subscription?", answer: "No. TailorPic packages are one-time payments starting at $1.99 with no recurring fees." },
 ];
 
 export default function Page() {
@@ -105,7 +105,7 @@ export default function Page() {
               TailorPic <span className="text-tp-bronze">vs</span> {competitor}
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">
-              StudioShot advertises 100+ headshots at a higher price. TailorPic gives you 40+ polished photos across 11 categories, delivered within 24 hours, for a one-time $1.99.
+              StudioShot advertises 100+ headshots at a higher price. TailorPic gives you polished photos across 11 categories (up to 160 per order), delivered within 24 hours, from a one-time $1.99.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "PhotoDirector";
 const title = 'TailorPic vs PhotoDirector: AI Headshot Generator Comparison';
 const description =
-  'Compare TailorPic vs PhotoDirector. PhotoDirector is CyberLink\'s AI photo editor; TailorPic makes 40+ headshots from selfies for a one-time $1.99.';
+  'Compare TailorPic vs PhotoDirector. PhotoDirector is CyberLink\'s AI photo editor; TailorPic makes professional headshots from selfies, from a one-time $1.99.';
 const path = '/vs/photodirector';
 const canonicalUrl = 'https://www.tailorpic.com/vs/photodirector';
 
@@ -28,13 +28,13 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
   offers: {
     '@type': 'Offer',
-    price: '9.90',
+    price: '1.99',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: `${siteConfig.url}/auth/register`,
@@ -47,12 +47,12 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "$1.99 one-time",
+    "tailorpic": "From $1.99 one-time",
     "other": "Free and paid options; check CyberLink's site"
   },
   {
     "label": "Photos included",
-    "tailorpic": "photos",
+    "tailorpic": "1 to 160, depending on package",
     "other": "Edits the photos you import"
   },
   {
@@ -107,8 +107,8 @@ const differences = [
     "body": "TailorPic handles lighting, outfits and backgrounds automatically across 11 categories, so you do not need to learn an editor."
   },
   {
-    "title": "A flat, low entry price",
-    "body": "TailorPic is $1.99 one time with no subscription to manage."
+    "title": "A low entry price",
+    "body": "TailorPic packages start at $1.99 one time, with no subscription to manage."
   },
   {
     "title": "Trade-off on control",
@@ -134,7 +134,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than PhotoDirector?",
-    "answer": "TailorPic is a one-time $1.99 across multiple packages. PhotoDirector pricing varies, so compare against CyberLink's current price page."
+    "answer": "TailorPic packages start at a one-time $1.99 and go up to 160 photos. PhotoDirector pricing varies, so compare against CyberLink's current price page."
   },
   {
     "question": "Can PhotoDirector make a headshot from selfies?",
@@ -146,7 +146,7 @@ const faqs = [
   },
   {
     "question": "Do I need a subscription with TailorPic?",
-    "answer": "No. It is a single $1.99 payment with no recurring fees."
+    "answer": "No. Every package is a single one-time payment (from $1.99) with no recurring fees."
   },
   {
     "question": "Do I need editing skills?",

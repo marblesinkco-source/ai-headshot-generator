@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Pixar-Style AI Portrait Tools";
 const title = 'TailorPic vs Pixar-Style AI Portraits: Headshot Comparison';
 const description =
-  'Compare TailorPic vs Pixar-style AI portrait tools. Cartoon 3D avatars are fun, but TailorPic makes 40+ realistic headshots from selfies for $1.99.';
+  'Compare TailorPic vs Pixar-style AI portrait tools. Cartoon 3D avatars are fun, but TailorPic makes realistic headshots from selfies, from $1.99.';
 const path = '/vs/pixar-style';
 const canonicalUrl = 'https://www.tailorpic.com/vs/pixar-style';
 
@@ -28,13 +28,13 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
   offers: {
     '@type': 'Offer',
-    price: '9.90',
+    price: '1.99',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: `${siteConfig.url}/auth/register`,
@@ -47,12 +47,12 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "$1.99 one-time",
+    "tailorpic": "From $1.99 one-time",
     "other": "Often free with ads, or a small paid upgrade"
   },
   {
     "label": "Photos included",
-    "tailorpic": "photos",
+    "tailorpic": "1 to 160, depending on package",
     "other": "A handful of stylized images per run"
   },
   {
@@ -120,7 +120,7 @@ const useCases = {
   "tailorpic": [
     "Realistic headshots for work and LinkedIn",
     "A likeness that looks like you",
-    "A one-time $1.99 payment",
+    "A one-time payment from $1.99",
     "photos across 11 categories"
   ],
   "other": [
@@ -142,7 +142,7 @@ const faqs = [
   },
   {
     "question": "Is TailorPic cheaper than Pixar-style apps?",
-    "answer": "TailorPic is a one-time $1.99. Pixar-style apps vary from free to subscription, so check the specific app's pricing."
+    "answer": "TailorPic starts at a one-time $1.99. Pixar-style apps vary from free to subscription, so check the specific app's pricing."
   },
   {
     "question": "How long does TailorPic take?",
@@ -150,7 +150,7 @@ const faqs = [
   },
   {
     "question": "Do I need a subscription with TailorPic?",
-    "answer": "No. It is a single $1.99 payment with no recurring fees."
+    "answer": "No. Every package is a single one-time payment (from $1.99) with no recurring fees."
   }
 ];
 

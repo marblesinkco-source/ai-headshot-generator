@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Luminar AI";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  'Compare TailorPic vs Luminar AI. Luminar AI is Skylum\'s AI photo editor; TailorPic makes 40+ headshots from selfies for a one-time $1.99.';
+  'Compare TailorPic vs Luminar AI. Luminar AI is Skylum\'s AI photo editor; TailorPic makes professional headshots from selfies, from a one-time $1.99.';
 const path = '/vs/luminar-ai';
 const canonicalUrl = 'https://www.tailorpic.com/vs/luminar-ai';
 
@@ -28,13 +28,13 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
   offers: {
     '@type': 'Offer',
-    price: '9.90',
+    price: '1.99',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: `${siteConfig.url}/auth/register`,
@@ -47,12 +47,12 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "$1.99 one-time",
+    "tailorpic": "From $1.99 one-time",
     "other": "Check Skylum's site for current pricing"
   },
   {
     "label": "Photos included",
-    "tailorpic": "photos",
+    "tailorpic": "1 to 160, depending on package",
     "other": "Edits the photos you import"
   },
   {
@@ -107,8 +107,8 @@ const differences = [
     "body": "TailorPic works in your browser: upload selfies and download results. There is no editor to learn."
   },
   {
-    "title": "A flat, low entry price",
-    "body": "TailorPic is $1.99 one time with no subscription to manage."
+    "title": "A low entry price",
+    "body": "TailorPic packages start at $1.99 one time, with no subscription to manage."
   },
   {
     "title": "Trade-off on editing control",
@@ -134,7 +134,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than Luminar AI?",
-    "answer": "TailorPic is a one-time $1.99 across multiple packages. Luminar AI pricing varies, so compare against Skylum's current price page."
+    "answer": "TailorPic packages start at a one-time $1.99 and go up to 160 photos. Luminar AI pricing varies, so compare against Skylum's current price page."
   },
   {
     "question": "Can Luminar AI create a headshot from selfies?",

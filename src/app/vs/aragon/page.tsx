@@ -20,7 +20,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs Aragon AI: AI Headshot Generator Comparison' },
   description:
-    'Compare TailorPic vs Aragon AI for professional AI headshots. See pricing, features, photo quality and delivery side by side. TailorPic: $1.99 across multiple packages.',
+    'Compare TailorPic vs Aragon AI for professional AI headshots. See pricing, features, photo quality and delivery side by side. TailorPic: packages from $1.99.',
   alternates: { canonical: '/vs/aragon' },
   openGraph: generateOGMetadata({ title: 'TailorPic vs Aragon AI: AI Headshot Generator Comparison', description: 'Compare TailorPic and Aragon AI for AI headshots. Pricing, quality, features, and delivery — see which AI headshot generator is right for you.', path: '/vs/aragon', type: 'vs' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic vs Aragon AI: AI Headshot Generator Comparison', description: 'Compare TailorPic and Aragon AI for AI headshots. Pricing, quality, features, and delivery — see which AI headshot generator is right for you.', type: 'vs' }),
@@ -34,13 +34,13 @@ const quickBadges = [
   {
     icon: DollarSign,
     label: 'Starting Price',
-    tailorpic: '$1.99',
+    tailorpic: 'From $1.99',
     competitor: '$29+',
   },
   {
     icon: ImageIcon,
     label: 'Photos Included',
-    tailorpic: '40+',
+    tailorpic: '1 to 160',
     competitor: '40+',
   },
   {
@@ -58,8 +58,8 @@ type FeatureRow = {
 };
 
 const comparisonRows: FeatureRow[] = [
-  { feature: 'Starting Price', tailorpic: '$1.99', competitor: '$29' },
-  { feature: 'Number of Photos', tailorpic: '40+', competitor: '40+' },
+  { feature: 'Starting Price', tailorpic: 'From $1.99', competitor: '$29' },
+  { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: '40+' },
   { feature: 'Delivery Time', tailorpic: 'Under 2 hours', competitor: 'Under 2 hours' },
   { feature: 'Photo Categories', tailorpic: '11 categories', competitor: 'Limited styles' },
   { feature: 'Money-Back Guarantee', tailorpic: 'Yes (14 days)', competitor: 'Yes' },
@@ -109,7 +109,7 @@ const faqs = [
   {
     question: 'How does TailorPic\'s price compare to Aragon AI?',
     answer:
-      'TailorPic is a $1.99 one-time payment. Aragon AI lists plans starting around $29. Aragon may change its plans, so check their site for current pricing.',
+      'TailorPic packages are one-time payments starting at $1.99. Aragon AI lists plans starting around $29. Aragon may change its plans, so check their site for current pricing.',
   },
   {
     question: 'How many photos do I get with TailorPic compared to Aragon AI?',
@@ -124,7 +124,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription like Aragon AI?',
     answer:
-      'No. TailorPic is a one-time $1.99 payment with no recurring charges and no renewals. It also comes with a 14-day money-back guarantee.',
+      'No. TailorPic packages are one-time payments starting at $1.99 with no recurring charges and no renewals. It also comes with a 14-day money-back guarantee.',
   },
   {
     question: 'How does TailorPic train my headshots, and is it easy to use?',

@@ -22,7 +22,12 @@ export function Pricing() {
   );
 
   const packages = activeCategory.packages;
-  const hasExpress = packages.length >= 4;
+  // Entry tier = cheapest package in the category (TailorPic 1 for headshots, Express elsewhere).
+  const entryPackage =
+    packages.length > 0
+      ? packages.reduce((min, p) => (p.price < min.price ? p : min), packages[0])
+      : undefined;
+  const hasExpress = packages.length >= 4 && entryPackage !== undefined;
 
   return (
     <section id="pricing" className="relative bg-tp-paper/40 py-24 sm:py-32">
@@ -79,9 +84,11 @@ export function Pricing() {
         {/* Cards */}
         <div className={cn(
           'mt-12 grid gap-6',
-          packages.length >= 4
-            ? 'lg:grid-cols-4'
-            : packages.length === 3
+          packages.length >= 5
+            ? 'sm:grid-cols-2 lg:grid-cols-3'
+            : packages.length === 4
+              ? 'sm:grid-cols-2 lg:grid-cols-4'
+              : packages.length === 3
               ? 'lg:grid-cols-3'
               : packages.length === 2
                 ? 'lg:grid-cols-2 max-w-3xl mx-auto'
@@ -89,7 +96,7 @@ export function Pricing() {
         )}>
           {packages.map((pkg) => {
             const isRecommended = pkg.recommended === true;
-            const isExpress = pkg.name === 'Express';
+            const isExpress = !isRecommended && entryPackage !== undefined && pkg.id === entryPackage.id;
 
             return (
               <Card
@@ -202,11 +209,11 @@ export function Pricing() {
           Secure payment via Stripe
         </p>
 
-        {/* Express upsell hint */}
-        {hasExpress && (
+        {/* Entry-tier upsell hint */}
+        {hasExpress && entryPackage && (
           <p className="mt-6 text-center text-sm text-tp-muted">
             <Zap className="mr-1 inline h-3.5 w-3.5 text-tp-bronze" />
-            Start with Express to preview your results, then upgrade anytime.
+            Start with {entryPackage.name} to preview your results, then upgrade anytime.
           </p>
         )}
 

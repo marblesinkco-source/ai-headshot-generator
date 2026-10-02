@@ -12,8 +12,8 @@ const metrics = [
   },
   {
     icon: Image,
-    value: "40+ Photos Per Session",
-    description: "Multiple styles and backgrounds",
+    value: "Up to 160 Photos",
+    description: "From a single headshot to a full set",
   },
   {
     icon: Camera,

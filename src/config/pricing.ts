@@ -7,10 +7,13 @@ import { formatPrice } from '@/lib/utils';
  * Never use these values to compute what a customer is billed.
  */
 
-/** Entry price in the smallest currency unit (cents). */
-export const BASE_PRICE_CENTS = 990;
+/**
+ * Entry price in the smallest currency unit (cents).
+ * Must match the cheapest headshots package in config/categories.ts (TailorPic 1).
+ */
+export const BASE_PRICE_CENTS = 199;
 
-/** Entry price in major units (9.9). */
+/** Entry price in major units (1.99). */
 export const BASE_PRICE = BASE_PRICE_CENTS / 100;
 
 export const CURRENCY = 'usd';

@@ -19,7 +19,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs Remini: AI Headshot Generator Comparison' },
   description:
-    'Compare TailorPic vs Remini. Remini enhances and restores existing photos; TailorPic makes 40+ headshots from selfies for a one-time $1.99.',
+    'Compare TailorPic vs Remini. Remini enhances and restores existing photos; TailorPic makes professional headshots from selfies, from a one-time $1.99.',
   alternates: { canonical: '/vs/remini' },
   openGraph: generateOGMetadata({ title: 'TailorPic vs Remini: AI Headshot Generator Comparison', description: 'Compare TailorPic and Remini. A purpose-built AI headshot generator versus a photo enhancer — see which fits your needs.', path: '/vs/remini', type: 'vs' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic vs Remini: AI Headshot Generator Comparison', description: 'Compare TailorPic and Remini. A purpose-built AI headshot generator versus a photo enhancer — see which fits your needs.', type: 'vs' }),
@@ -33,13 +33,13 @@ const quickBadges = [
   {
     icon: DollarSign,
     label: 'Starting Price',
-    tailorpic: '$1.99 one-time',
+    tailorpic: 'From $1.99 one-time',
     competitor: '~$9.99/month',
   },
   {
     icon: ImageIcon,
     label: 'Photos Included',
-    tailorpic: '40+',
+    tailorpic: '1 to 160',
     competitor: 'Varies by plan',
   },
   {
@@ -57,12 +57,12 @@ type FeatureRow = {
 };
 
 const comparisonRows: FeatureRow[] = [
-  { feature: 'Starting Price', tailorpic: '$1.99 one-time', competitor: '~$9.99/month subscription' },
+  { feature: 'Starting Price', tailorpic: 'From $1.99 one-time', competitor: '~$9.99/month subscription' },
   { feature: 'Pricing Model', tailorpic: 'One-time payment', competitor: 'Subscription' },
   { feature: 'Primary Purpose', tailorpic: 'Generate AI headshots', competitor: 'Enhance and restore photos' },
   { feature: 'Creates New Headshots from Selfies', tailorpic: true, competitor: 'Limited' },
   { feature: 'Enhances / Upscales Existing Photos', tailorpic: 'Not the focus', competitor: true },
-  { feature: 'Number of Photos', tailorpic: '40+', competitor: 'Varies by plan' },
+  { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: 'Varies by plan' },
   { feature: 'Photo Categories', tailorpic: '11 categories', competitor: 'No dedicated categories' },
   { feature: 'Professional Headshot Styles', tailorpic: true, competitor: 'Limited' },
   { feature: 'Dating Photos', tailorpic: true, competitor: 'Limited' },
@@ -76,7 +76,7 @@ const whyCards = [
     icon: BadgeDollarSign,
     title: 'One-Time Payment',
     description:
-      'TailorPic is a single $1.99 payment with no recurring charges, while Remini is typically offered as a subscription starting around $9.99/month. Pricing may change, so check Remini for current rates.',
+      'TailorPic packages are one-time payments starting at $1.99 with no recurring charges, while Remini is typically offered as a subscription starting around $9.99/month. Pricing may change, so check Remini for current rates.',
   },
   {
     icon: Target,
@@ -94,7 +94,7 @@ const whyCards = [
     icon: Sparkles,
     title: 'Polished, Ready-to-Use Results',
     description:
-      'Rather than improving a single photo you already have, TailorPic delivers a full set of 40+ professional images in different looks, ready for LinkedIn, resumes, and more.',
+      'Rather than improving a single photo you already have, TailorPic delivers up to 160 professional images in different looks, ready for LinkedIn, resumes, and more.',
   },
 ];
 
@@ -110,12 +110,12 @@ const faqs = [
   {
     question: 'How does TailorPic\'s price compare to Remini?',
     answer:
-      'TailorPic is a $1.99 one-time payment. Remini is typically offered as a subscription starting around $9.99/month. Remini may change its pricing, so check their site for current pricing.',
+      'TailorPic packages are one-time payments starting at $1.99. Remini is typically offered as a subscription starting around $9.99/month. Remini may change its pricing, so check their site for current pricing.',
   },
   {
     question: 'How many photos do I get with TailorPic compared to Remini?',
     answer:
-      'Every TailorPic order includes 40+ new photos across 11 categories. Remini is a photo enhancer that improves images you already have, and what you get varies by plan.',
+      'TailorPic packages include from 1 to 160 new photos across 11 categories. Remini is a photo enhancer that improves images you already have, and what you get varies by plan.',
   },
   {
     question: 'How long does it take to get my headshots?',
@@ -125,7 +125,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription like Remini?',
     answer:
-      'No. TailorPic is a one-time $1.99 payment with no recurring charges and a 14-day money-back guarantee. Remini is typically sold as a subscription.',
+      'No. TailorPic packages are one-time payments starting at $1.99 with no recurring charges and a 14-day money-back guarantee. Remini is typically sold as a subscription.',
   },
   {
     question: 'How does TailorPic work compared to Remini\'s enhancement?',

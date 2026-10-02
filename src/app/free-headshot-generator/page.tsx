@@ -179,7 +179,7 @@ export default function FreeHeadshotGeneratorPage() {
       'AI headshot generator that turns your selfies into professional headshots. $1.99 one-time with a 14-day money-back guarantee.',
     offers: {
       '@type': 'Offer',
-      price: '9.90',
+      price: '1.99',
       priceCurrency: 'USD',
     },
   };

@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Remove.bg";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  'Compare TailorPic vs Remove.bg. Remove.bg is a background removal tool; TailorPic generates 40+ professional AI headshots for a one-time $1.99.';
+  'Compare TailorPic vs Remove.bg. Remove.bg is a background removal tool; TailorPic generates professional AI headshots from a one-time $1.99.';
 const path = '/vs/remove-bg';
 const canonicalUrl = 'https://www.tailorpic.com/vs/remove-bg';
 
@@ -28,13 +28,13 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
   offers: {
     '@type': 'Offer',
-    price: '9.90',
+    price: '1.99',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: `${siteConfig.url}/auth/register`,
@@ -47,12 +47,12 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "$1.99 one-time",
+    "tailorpic": "From $1.99 one-time",
     "other": "Free and paid options; check their site"
   },
   {
     "label": "Photos included",
-    "tailorpic": "photos",
+    "tailorpic": "1 to 160, depending on package",
     "other": "Processes the images you upload"
   },
   {
@@ -107,8 +107,8 @@ const differences = [
     "body": "Remove.bg works on a photo you already have. TailorPic builds new images from a handful of selfies."
   },
   {
-    "title": "A flat, low entry price",
-    "body": "TailorPic is $1.99 one time with no subscription to manage."
+    "title": "A low entry price",
+    "body": "TailorPic packages start at $1.99 one time, with no subscription to manage."
   },
   {
     "title": "Trade-off on speed",
@@ -134,7 +134,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than Remove.bg?",
-    "answer": "TailorPic is a one-time $1.99 across multiple packages. Remove.bg offers free and paid options that vary, so compare against their current price page."
+    "answer": "TailorPic packages start at a one-time $1.99 and go up to 160 photos. Remove.bg offers free and paid options that vary, so compare against their current price page."
   },
   {
     "question": "Can Remove.bg make a headshot?",
@@ -146,7 +146,7 @@ const faqs = [
   },
   {
     "question": "Do I need a subscription with TailorPic?",
-    "answer": "No. It is a single $1.99 payment with no recurring fees."
+    "answer": "No. Every package is a single one-time payment (from $1.99) with no recurring fees."
   },
   {
     "question": "Can TailorPic change a background too?",

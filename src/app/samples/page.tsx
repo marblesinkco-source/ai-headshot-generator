@@ -500,7 +500,7 @@ export default function SamplesPage() {
               Ready to create yours?
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-tp-beige/80">
-              Upload your photos and get 40+ studio-quality AI portraits, starting at $1.99.
+              Upload your photos and get studio-quality AI portraits &mdash; from a single photo to a set of 160 &mdash; starting at $1.99.
             </p>
             <div className="mt-8">
               <Link

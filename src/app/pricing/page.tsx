@@ -13,7 +13,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BASE_PRICE_DISPLAY, TEAM_PRICES } from '@/config/pricing';
 import { formatPrice } from '@/lib/utils';
-import { getActiveCategories } from '@/config/categories';
+import { CATEGORIES, getActiveCategories } from '@/config/categories';
 import { TrustBadges } from '@/components/marketing/trust-badges';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { ChevronDown, Check, Lock, RefreshCcw, CreditCard, BadgeCheck, Minus } from 'lucide-react';
@@ -22,6 +22,13 @@ import { PricingComparisonBar } from '@/components/marketing/pricing-comparison-
 
 const TEAM_SMALL = formatPrice(TEAM_PRICES.small.perPersonCents, 'usd', true);
 const TEAM_LARGE = formatPrice(TEAM_PRICES.large.perPersonCents, 'usd', true);
+
+// The "Most Popular" headshots package (flagged `recommended` in config).
+const HEADSHOT_PACKAGES = CATEGORIES.headshots.packages;
+const POPULAR_PACKAGE =
+  HEADSHOT_PACKAGES.find((p) => p.recommended) ?? HEADSHOT_PACKAGES[HEADSHOT_PACKAGES.length - 1];
+const MIN_OUTPUTS = Math.min(...HEADSHOT_PACKAGES.map((p) => p.outputCount));
+const MAX_OUTPUTS = Math.max(...HEADSHOT_PACKAGES.map((p) => p.outputCount));
 
 const pricingFaqs = [
   {
@@ -42,7 +49,7 @@ const pricingFaqs = [
   {
     question: 'How many photos do I get?',
     answer:
-      'Depending on your plan, you receive 10 to 160+ professional headshots in a variety of styles from a single upload.',
+      `Depending on your plan, you receive ${MIN_OUTPUTS} to ${MAX_OUTPUTS} professional headshots in a variety of styles from a single upload.`,
   },
   {
     question: 'Do I need to upload many selfies?',
@@ -90,7 +97,7 @@ const includedFeatures = [
   {
     title: 'Photos',
     items: [
-      '10 to 160+ professional headshots from a single upload',
+      `${MIN_OUTPUTS} to ${MAX_OUTPUTS} professional headshots from a single upload`,
       'A variety of styles, backgrounds and outfits',
       'High-resolution downloads',
     ],
@@ -316,7 +323,12 @@ export default function PricingPage() {
 
       <section className="pb-8">
         <div className="mx-auto max-w-sm px-4 sm:px-6 lg:px-8">
-          <PricingPsychology mostPopular={true} />
+          <PricingPsychology
+            price={POPULAR_PACKAGE.price / 100}
+            outputs={POPULAR_PACKAGE.outputCount}
+            planName={POPULAR_PACKAGE.name}
+            mostPopular={true}
+          />
         </div>
       </section>
 

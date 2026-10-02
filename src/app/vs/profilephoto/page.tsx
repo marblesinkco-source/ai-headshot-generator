@@ -34,13 +34,13 @@ const quickBadges = [
   {
     icon: DollarSign,
     label: 'Starting Price',
-    tailorpic: '$1.99',
+    tailorpic: 'From $1.99',
     competitor: '~$15+',
   },
   {
     icon: ImageIcon,
     label: 'Photos Included',
-    tailorpic: '40+',
+    tailorpic: '1 to 160',
     competitor: 'Varies by plan',
   },
   {
@@ -58,8 +58,8 @@ type FeatureRow = {
 };
 
 const comparisonRows: FeatureRow[] = [
-  { feature: 'Starting Price', tailorpic: '$1.99', competitor: '~$15+' },
-  { feature: 'Number of Photos', tailorpic: '40+', competitor: 'Varies by plan' },
+  { feature: 'Starting Price', tailorpic: 'From $1.99', competitor: '~$15+' },
+  { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: 'Varies by plan' },
   { feature: 'Delivery Time', tailorpic: 'Under 2 hours', competitor: 'Varies by plan' },
   { feature: 'Photo Categories', tailorpic: '11 categories', competitor: 'Limited styles' },
   { feature: 'Money-Back Guarantee', tailorpic: 'Yes (14 days)', competitor: 'Check current terms' },
@@ -85,7 +85,7 @@ const whyCards = [
   },
   {
     icon: Sparkles,
-    title: '40+ Photos in Under 2 Hours',
+    title: 'Up to 160 Photos in Under 2 Hours',
     description:
       'Get a full set of photos in under 2 hours, backed by a 14-day money-back guarantee.',
   },
@@ -109,7 +109,7 @@ const faqs = [
   {
     question: 'How does TailorPic\'s price compare to ProfilePhoto.ai?',
     answer:
-      'TailorPic is a $1.99 one-time payment. ProfilePhoto.ai\'s entry price is roughly $15+. They may change their pricing, so check their site for current pricing.',
+      'TailorPic packages are one-time payments starting at $1.99. ProfilePhoto.ai\'s entry price is roughly $15+. They may change their pricing, so check their site for current pricing.',
   },
   {
     question: 'How many photos do I get with TailorPic?',
@@ -124,7 +124,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription or a one-time purchase?',
     answer:
-      'TailorPic is a one-time $1.99 payment with no recurring charges, backed by a 14-day money-back guarantee.',
+      'TailorPic packages are one-time payments starting at $1.99 with no recurring charges, backed by a 14-day money-back guarantee.',
   },
   {
     question: 'How does TailorPic create my photos, and is it easy to use?',

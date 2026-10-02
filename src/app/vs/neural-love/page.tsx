@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Neural.love";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  'Compare TailorPic vs Neural.love. Neural.love is a suite of AI image generation and enhancement tools; TailorPic makes 40+ headshots for a one-time $1.99.';
+  'Compare TailorPic vs Neural.love. Neural.love is a suite of AI image generation and enhancement tools; TailorPic makes professional headshots, from a one-time $1.99.';
 const path = '/vs/neural-love';
 const canonicalUrl = 'https://www.tailorpic.com/vs/neural-love';
 
@@ -28,13 +28,13 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
   offers: {
     '@type': 'Offer',
-    price: '9.90',
+    price: '1.99',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: `${siteConfig.url}/auth/register`,
@@ -47,12 +47,12 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "$1.99 one-time",
+    "tailorpic": "From $1.99 one-time",
     "other": "Credit-based pricing; check their site"
   },
   {
     "label": "Photos included",
-    "tailorpic": "photos",
+    "tailorpic": "1 to 160, depending on package",
     "other": "Generates or enhances images per credit"
   },
   {
@@ -107,8 +107,8 @@ const differences = [
     "body": "General image tools reward careful prompting. TailorPic needs only selfies and a category choice."
   },
   {
-    "title": "A flat, low entry price",
-    "body": "TailorPic is $1.99 one time rather than credits that run out."
+    "title": "A low entry price",
+    "body": "TailorPic packages start at $1.99 one time rather than credits that run out."
   },
   {
     "title": "Trade-off on breadth",
@@ -134,7 +134,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than Neural.love?",
-    "answer": "TailorPic is a one-time $1.99 across multiple packages. Neural.love uses credit-based pricing that varies, so compare against their current price page."
+    "answer": "TailorPic packages start at a one-time $1.99 and go up to 160 photos. Neural.love uses credit-based pricing that varies, so compare against their current price page."
   },
   {
     "question": "Can Neural.love make a headshot?",
@@ -146,7 +146,7 @@ const faqs = [
   },
   {
     "question": "Do I need a subscription with TailorPic?",
-    "answer": "No. It is a single $1.99 payment with no recurring fees."
+    "answer": "No. Every package is a single one-time payment (from $1.99) with no recurring fees."
   },
   {
     "question": "Do I need to write prompts for TailorPic?",

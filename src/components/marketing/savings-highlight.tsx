@@ -8,7 +8,7 @@ const STUDIO_LOW = 200;
 const STUDIO_HIGH = 500;
 const TAILORPIC = BASE_PRICE;
 
-// Savings vs. the low end of studio pricing ($200) is the conservative figure: ~95%.
+// Savings vs. the low end of studio pricing ($200) is the conservative figure: ~99%.
 const savingsPercent = Math.floor((1 - TAILORPIC / STUDIO_LOW) * 100);
 const savingsLow = (STUDIO_LOW - TAILORPIC).toFixed(2);
 const savingsHigh = (STUDIO_HIGH - TAILORPIC).toFixed(2);
@@ -33,7 +33,7 @@ const bars = [
   {
     label: 'TailorPic',
     price: BASE_PRICE_DISPLAY,
-    width: '3%',
+    width: `${Math.max(2, (TAILORPIC / STUDIO_HIGH) * 100)}%`,
     barClass: 'bg-tp-bronze',
     priceClass: 'text-tp-ink font-semibold',
   },
@@ -41,7 +41,7 @@ const bars = [
 
 const valueProps = [
   { icon: Calendar, title: 'No scheduling needed', body: 'Upload selfies whenever it suits you. No booking, no travel.' },
-  { icon: Camera, title: '40+ photos included', body: 'Plenty of looks and backgrounds to choose from.' },
+  { icon: Camera, title: 'Up to 160 photos', body: 'Start with a single headshot or pick a package with plenty of looks and backgrounds.' },
   { icon: Clock, title: 'Ready in ~2 hours', body: 'Skip the weeks of waiting on a studio session.' },
 ];
 
@@ -65,7 +65,7 @@ export function SavingsHighlight() {
           {/* Price comparison bars */}
           <div className="rounded-tp-card border border-tp-line bg-white p-6 sm:p-8 md:col-span-3">
             <p className="text-sm font-semibold uppercase tracking-wide text-tp-muted">
-              Cost of one professional headshot set
+              Cost to get a professional headshot
             </p>
 
             <ul className="mt-6 space-y-5">
@@ -91,8 +91,9 @@ export function SavingsHighlight() {
             </ul>
 
             <p className="mt-6 text-xs leading-relaxed text-tp-muted">
-              Bars are drawn to scale. Studio prices are typical single-session costs, before
-              retouching or extra looks. TailorPic is a one-time price for individuals.
+              Bars are drawn to scale, with a minimum width so the TailorPic bar stays visible.
+              Studio prices are typical single-session costs, before retouching or extra looks.
+              TailorPic is the one-time starting price for individuals.
             </p>
           </div>
 

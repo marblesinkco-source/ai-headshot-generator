@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Stable Diffusion";
 const title = 'TailorPic vs Stable Diffusion: AI Headshot Comparison';
 const description =
-  'Compare TailorPic vs Stable Diffusion for headshots. Stable Diffusion is open source and DIY; TailorPic makes 40+ headshots from selfies for a one-time $1.99.';
+  'Compare TailorPic vs Stable Diffusion for headshots. Stable Diffusion is open source and DIY; TailorPic makes professional headshots from selfies, from a one-time $1.99.';
 const path = '/vs/stable-diffusion';
 const canonicalUrl = 'https://www.tailorpic.com/vs/stable-diffusion';
 
@@ -28,13 +28,13 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
   offers: {
     '@type': 'Offer',
-    price: '9.90',
+    price: '1.99',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: `${siteConfig.url}/auth/register`,
@@ -47,12 +47,12 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "$1.99 one-time",
+    "tailorpic": "From $1.99 one-time",
     "other": "Model is open source; hardware or hosting costs vary"
   },
   {
     "label": "Photos included",
-    "tailorpic": "photos",
+    "tailorpic": "1 to 160, depending on package",
     "other": "As many as you generate yourself"
   },
   {
@@ -107,8 +107,8 @@ const differences = [
     "body": "TailorPic fine-tunes a LoRA on your photos and tunes the output. Doing this yourself takes time and trial and error."
   },
   {
-    "title": "A flat, low entry price",
-    "body": "TailorPic is $1.99 one time with no hardware or hosting costs."
+    "title": "A low entry price",
+    "body": "TailorPic packages start at $1.99 one time, with no hardware or hosting costs."
   },
   {
     "title": "Trade-off on control",
@@ -134,7 +134,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than Stable Diffusion?",
-    "answer": "Stable Diffusion itself is open source, but you pay in hardware, hosting or your own time. TailorPic is a one-time $1.99 with nothing to set up."
+    "answer": "Stable Diffusion itself is open source, but you pay in hardware, hosting or your own time. TailorPic starts at a one-time $1.99 with nothing to set up."
   },
   {
     "question": "Does TailorPic use Stable Diffusion?",

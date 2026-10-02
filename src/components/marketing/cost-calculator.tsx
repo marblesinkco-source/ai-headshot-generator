@@ -15,9 +15,9 @@ const TRADITIONAL: CostLine[] = [
   { label: 'Travel', min: 20, max: 50 },
 ];
 
-// Real Express tier price.
+// Real entry-tier price (TailorPic 1).
 const EXPRESS_PRICE = BASE_PRICE;
-const EXPRESS_OUTPUTS = 5;
+const EXPRESS_OUTPUTS = 1;
 
 const fmt = (n: number) => `$${Number.isInteger(n) ? n : n.toFixed(2)}`;
 
@@ -64,11 +64,11 @@ export function CostCalculator({ className }: { className?: string }) {
           <div className="rounded-tp-card border border-tp-bronze bg-tp-ink p-6 text-tp-paper sm:p-8">
             <h3 className="text-lg font-semibold text-tp-bronze">TailorPic AI</h3>
             <p className="mt-5 font-display text-5xl font-normal tracking-tight">{fmt(EXPRESS_PRICE)}</p>
-            <p className="mt-1 text-sm text-tp-beige">Express pack, one-time payment</p>
+            <p className="mt-1 text-sm text-tp-beige">TailorPic 1, one-time payment</p>
             <ul className="mt-6 space-y-3 text-sm">
               <li className="flex items-center gap-2">
                 <Check className="h-4 w-4 shrink-0 text-tp-bronze" aria-hidden="true" />
-                {EXPRESS_OUTPUTS} professional headshots
+                {EXPRESS_OUTPUTS} professional headshot{EXPRESS_OUTPUTS === 1 ? '' : 's'}
               </li>
               <li className="flex items-center gap-2">
                 <Check className="h-4 w-4 shrink-0 text-tp-bronze" aria-hidden="true" />

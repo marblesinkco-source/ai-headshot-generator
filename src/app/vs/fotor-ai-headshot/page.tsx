@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Fotor AI Headshot";
 const title = 'TailorPic vs Fotor AI Headshot: AI Headshot Comparison';
 const description =
-  'Compare TailorPic vs Fotor AI Headshot. Fotor offers an AI headshot feature inside a broader photo editor; TailorPic: 40+ headshots for a one-time $1.99.';
+  'Compare TailorPic vs Fotor AI Headshot. Fotor offers an AI headshot feature inside a broader photo editor; TailorPic: headshots from a one-time $1.99.';
 const path = '/vs/fotor-ai-headshot';
 const canonicalUrl = 'https://www.tailorpic.com/vs/fotor-ai-headshot';
 
@@ -28,13 +28,13 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
   offers: {
     '@type': 'Offer',
-    price: '9.90',
+    price: '1.99',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: `${siteConfig.url}/auth/register`,
@@ -47,12 +47,12 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "$1.99 one-time",
+    "tailorpic": "From $1.99 one-time",
     "other": "Free and paid options; check their site"
   },
   {
     "label": "Photos included",
-    "tailorpic": "photos",
+    "tailorpic": "1 to 160, depending on package",
     "other": "Depends on the feature and plan; check their site"
   },
   {
@@ -107,8 +107,8 @@ const differences = [
     "body": "TailorPic fine-tunes on your own photos so the likeness is built around you."
   },
   {
-    "title": "Flat, low entry price",
-    "body": "TailorPic is $1.99 one time with no subscription to manage."
+    "title": "Low entry price",
+    "body": "TailorPic packages start at $1.99 one time, with no subscription to manage."
   },
   {
     "title": "Trade-off on breadth",
@@ -134,7 +134,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than Fotor AI Headshot?",
-    "answer": "TailorPic is a one-time $1.99 across multiple packages. Fotor offers free and paid options that vary, so compare against their current price page."
+    "answer": "TailorPic packages start at a one-time $1.99 and go up to 160 photos. Fotor offers free and paid options that vary, so compare against their current price page."
   },
   {
     "question": "Does Fotor have an AI headshot feature?",
@@ -146,7 +146,7 @@ const faqs = [
   },
   {
     "question": "Do I need a subscription with TailorPic?",
-    "answer": "No. It is a single $1.99 payment with no recurring fees."
+    "answer": "No. Every package is a single one-time payment (from $1.99) with no recurring fees."
   },
   {
     "question": "Can I still edit photos with TailorPic?",

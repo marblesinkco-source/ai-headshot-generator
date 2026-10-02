@@ -155,7 +155,7 @@ export function buildUpgradeEmail(params: UpgradeEmailParams) {
     </p>
     <p style="margin:0 0 16px;font-size:15px;color:${BRAND.ink};line-height:1.6;">
       Your <strong>${expressPackageName}</strong> photos are looking great! Now imagine what you could do with our full
-      <strong>${recommendedPackageName}</strong> package — <strong>${outputCount}+ photos</strong>, more styles,
+      <strong>${recommendedPackageName}</strong> package — <strong>${outputCount} photos</strong>, more styles,
       and more backgrounds to choose from.
     </p>
 
@@ -180,8 +180,8 @@ export function buildUpgradeEmail(params: UpgradeEmailParams) {
     ${ctaButton(`Upgrade to ${recommendedPackageName} →`, upgradeUrl)}
 
     <p style="margin:16px 0 0;font-size:13px;color:${BRAND.muted};text-align:center;line-height:1.5;">
-      This offer expires in 48 hours. Your Express payment (${formatPrice(expressPrice)})
-      will be deducted from the upgrade price.
+      This offer expires in 48 hours. You paid ${formatPrice(expressPrice)} for ${expressPackageName} —
+      use code <strong>${couponCode}</strong> at checkout to get ${recommendedPackageName} for ${formatPrice(discountedPrice)}.
     </p>
   `);
 

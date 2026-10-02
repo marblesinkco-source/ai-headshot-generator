@@ -1,4 +1,5 @@
 import { siteConfig } from '@/config/site';
+import { BASE_PRICE } from '@/config/pricing';
 
 // JSON-LD Structured Data for SEO
 export function OrganizationSchema() {
@@ -181,7 +182,7 @@ export function SoftwareApplicationSchema() {
     featureList: 'AI Headshots, Professional Photos, LinkedIn Photos, Team Photos, 40+ Styles',
     offers: {
       '@type': 'Offer',
-      price: '9.90',
+      price: BASE_PRICE.toFixed(2),
       priceCurrency: 'USD',
     },
     // aggregateRating removed — do not add without real verified review data
@@ -288,7 +289,7 @@ export function HowToSchema() {
         '@type': 'HowToStep',
         position: 2,
         name: 'AI Creates Your Photos',
-        text: 'Our AI model trains on your photos and generates 40+ professional headshots in various styles.',
+        text: 'Our AI model trains on your photos and generates professional headshots in various styles — from a single photo to a full set of 160, depending on your package.',
       },
       {
         '@type': 'HowToStep',

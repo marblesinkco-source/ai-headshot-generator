@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Snapseed";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs Snapseed. Snapseed is Google's photo editing app; TailorPic creates 40+ AI headshots from your selfies for a one-time $1.99.";
+  "Compare TailorPic vs Snapseed. Snapseed is Google's photo editing app; TailorPic creates AI headshots from your selfies, from a one-time $1.99.";
 const path = '/vs/snapseed';
 const canonicalUrl = 'https://www.tailorpic.com/vs/snapseed';
 
@@ -28,13 +28,13 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
   offers: {
     '@type': 'Offer',
-    price: '9.90',
+    price: '1.99',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: `${siteConfig.url}/auth/register`,
@@ -47,12 +47,12 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "$1.99 one-time",
+    "tailorpic": "From $1.99 one-time",
     "other": "Check the app store listing for current pricing"
   },
   {
     "label": "Photos included",
-    "tailorpic": "photos",
+    "tailorpic": "1 to 160, depending on package",
     "other": "Edits the photos you provide"
   },
   {
@@ -107,8 +107,8 @@ const differences = [
     "body": "TailorPic is tuned for faces and professional looks across 11 categories, while Snapseed is a general-purpose editor."
   },
   {
-    "title": "A flat, low entry price",
-    "body": "TailorPic is $1.99 one time with no subscription to manage."
+    "title": "A low entry price",
+    "body": "TailorPic packages start at $1.99 one time, with no subscription to manage."
   },
   {
     "title": "Trade-off on control",
@@ -134,7 +134,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than Snapseed?",
-    "answer": "TailorPic is a one-time $1.99 across multiple packages. Check the app store listing for Snapseed's current pricing."
+    "answer": "TailorPic packages start at a one-time $1.99 and go up to 160 photos. Check the app store listing for Snapseed's current pricing."
   },
   {
     "question": "Can Snapseed make a headshot?",
@@ -146,7 +146,7 @@ const faqs = [
   },
   {
     "question": "Do I need a subscription with TailorPic?",
-    "answer": "No. It is a single $1.99 payment with no recurring fees."
+    "answer": "No. Every package is a single one-time payment (from $1.99) with no recurring fees."
   },
   {
     "question": "Do I need editing skills for TailorPic?",

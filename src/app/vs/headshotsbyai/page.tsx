@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "HeadshotsByAI";
 const title = 'TailorPic vs HeadshotsByAI: AI Headshot Generator Comparison';
 const description =
-  'Compare TailorPic vs HeadshotsByAI. TailorPic is $1.99 one-time across multiple packages in 11 categories; HeadshotsByAI is around $29 for 100+ headshots.';
+  'Compare TailorPic vs HeadshotsByAI. TailorPic starts at a one-time $1.99 across 11 categories; HeadshotsByAI is around $29 for 100+ headshots.';
 const path = '/vs/headshotsbyai';
 
 export const metadata: Metadata = {
@@ -27,13 +27,13 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
   offers: {
     '@type': 'Offer',
-    price: '9.90',
+    price: '1.99',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: `${siteConfig.url}/auth/register`,
@@ -41,8 +41,8 @@ const productJsonLd = {
 };
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "$1.99 one-time", other: "~$29 one-time" },
-  { label: "Photos included", tailorpic: "photos", other: "100+ headshots" },
+  { label: "Starting price", tailorpic: "From $1.99 one-time", other: "~$29 one-time" },
+  { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "100+ headshots" },
   { label: "Delivery time", tailorpic: "24 hours", other: "About 10 minutes" },
   { label: "Categories / styles", tailorpic: "11 categories (business, dating, creative, pets and more)", other: "Professional headshot styles" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
@@ -51,15 +51,15 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 ];
 
 const differences = [
-  { title: "Price", body: "Both are one-time purchases, but TailorPic is $1.99 versus around $29 for HeadshotsByAI." },
-  { title: "Quantity", body: "HeadshotsByAI includes 100+ headshots. TailorPic includes 40+, organized across 11 categories so you get variety, not just volume." },
+  { title: "Price", body: "Both are one-time purchases, but TailorPic starts at $1.99 versus around $29 for HeadshotsByAI." },
+  { title: "Quantity", body: "HeadshotsByAI includes 100+ headshots. TailorPic packages range from 1 to 160 photos, organized across 11 categories so you get variety, not just volume." },
   { title: "Speed", body: "HeadshotsByAI delivers in about 10 minutes. TailorPic takes up to 24 hours while it trains a LoRA model on your photos." },
   { title: "Editing vs fine-tuning", body: "HeadshotsByAI offers edit credits to tweak results. TailorPic focuses on likeness up front through LoRA fine-tuning." },
 ];
 
 const useCases = {
   tailorpic: [
-    "The lowest one-time price at $1.99",
+    "A low one-time price, starting at $1.99",
     "Photos for business, dating, creative and more",
     "A model trained specifically on your face",
     "No subscription or recurring charges",
@@ -73,8 +73,8 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is TailorPic cheaper than HeadshotsByAI?", answer: "Yes. TailorPic is a one-time $1.99, compared with around $29 for HeadshotsByAI. Both avoid subscriptions." },
-  { question: "Do I get more photos with HeadshotsByAI?", answer: "HeadshotsByAI includes 100+ headshots versus 40+ from TailorPic. TailorPic spreads its photos over 11 categories." },
+  { question: "Is TailorPic cheaper than HeadshotsByAI?", answer: "Yes. TailorPic starts at a one-time $1.99, compared with around $29 for HeadshotsByAI. Both avoid subscriptions." },
+  { question: "Do I get more photos with HeadshotsByAI?", answer: "HeadshotsByAI includes 100+ headshots versus up to 160 from TailorPic. TailorPic spreads its photos over 11 categories." },
   { question: "Which delivers faster?", answer: "HeadshotsByAI delivers in about 10 minutes. TailorPic delivers within 24 hours because it fine-tunes a LoRA model for each customer." },
   { question: "Does TailorPic offer edit credits?", answer: "TailorPic focuses on fine-tuning a model of your face to get accurate results from the start. HeadshotsByAI offers edit credits for adjustments after generation." },
 ];
@@ -104,7 +104,7 @@ export default function Page() {
               TailorPic <span className="text-tp-bronze">vs</span> {competitor}
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">
-              HeadshotsByAI is a one-time purchase with 100+ headshots and edit credits. TailorPic costs about a third as much and covers 11 photo categories.
+              HeadshotsByAI is a one-time purchase with 100+ headshots and edit credits. TailorPic starts at a one-time $1.99 and covers 11 photo categories.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

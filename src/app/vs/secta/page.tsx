@@ -34,13 +34,13 @@ const quickBadges = [
   {
     icon: DollarSign,
     label: 'Starting Price',
-    tailorpic: '$1.99',
+    tailorpic: 'From $1.99',
     competitor: '~$49+',
   },
   {
     icon: ImageIcon,
     label: 'Photos Included',
-    tailorpic: '40+',
+    tailorpic: '1 to 160',
     competitor: 'Varies by plan',
   },
   {
@@ -58,8 +58,8 @@ type FeatureRow = {
 };
 
 const comparisonRows: FeatureRow[] = [
-  { feature: 'Starting Price', tailorpic: '$1.99', competitor: '~$49+' },
-  { feature: 'Number of Photos', tailorpic: '40+', competitor: 'Varies by plan' },
+  { feature: 'Starting Price', tailorpic: 'From $1.99', competitor: '~$49+' },
+  { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: 'Varies by plan' },
   { feature: 'Delivery Time', tailorpic: 'Under 2 hours', competitor: 'Varies by plan' },
   { feature: 'Photo Categories', tailorpic: '11 categories', competitor: 'Fewer categories' },
   { feature: 'Money-Back Guarantee', tailorpic: 'Yes (14 days)', competitor: 'Check current terms' },
@@ -85,7 +85,7 @@ const whyCards = [
   },
   {
     icon: Sparkles,
-    title: '40+ Photos in Under 2 Hours',
+    title: 'Up to 160 Photos in Under 2 Hours',
     description:
       'Get photos delivered in under 2 hours, backed by a 14-day money-back guarantee so you can order with confidence.',
   },
@@ -109,7 +109,7 @@ const faqs = [
   {
     question: 'How does TailorPic\'s price compare to Secta Labs?',
     answer:
-      'TailorPic is a $1.99 one-time payment. Secta Labs\' entry price is roughly $49+. They may change their pricing, so check their site for current pricing.',
+      'TailorPic packages are one-time payments starting at $1.99. Secta Labs\' entry price is roughly $49+. They may change their pricing, so check their site for current pricing.',
   },
   {
     question: 'How many photos do I get with TailorPic?',
@@ -124,7 +124,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription or a one-time purchase?',
     answer:
-      'TailorPic is a one-time $1.99 payment with no subscription, backed by a 14-day money-back guarantee.',
+      'TailorPic packages are one-time payments starting at $1.99 with no subscription, backed by a 14-day money-back guarantee.',
   },
   {
     question: 'How does TailorPic train my photos, and is it easy to use?',

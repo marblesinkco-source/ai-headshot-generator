@@ -20,7 +20,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs Canva AI: AI Headshot Generator Comparison' },
   description:
-    'Compare TailorPic vs Canva AI. Canva is a design platform with AI image tools; TailorPic makes 40+ headshots from selfies for a one-time $1.99.',
+    'Compare TailorPic vs Canva AI. Canva is a design platform with AI image tools; TailorPic makes professional headshots from selfies, from a one-time $1.99.',
   alternates: { canonical: '/vs/canva-ai' },
   openGraph: generateOGMetadata({ title: 'TailorPic vs Canva AI: AI Headshot Generator Comparison', description: 'Compare TailorPic and Canva AI. Photorealistic AI headshots versus a general design platform — see which fits your needs.', path: '/vs/canva-ai', type: 'vs' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic vs Canva AI: AI Headshot Generator Comparison', description: 'Compare TailorPic and Canva AI. Photorealistic AI headshots versus a general design platform — see which fits your needs.', type: 'vs' }),
@@ -34,13 +34,13 @@ const quickBadges = [
   {
     icon: DollarSign,
     label: 'Starting Price',
-    tailorpic: '$1.99 one-time',
+    tailorpic: 'From $1.99 one-time',
     competitor: '~$12.99/month (Pro)',
   },
   {
     icon: ImageIcon,
     label: 'Photos Included',
-    tailorpic: '40+',
+    tailorpic: '1 to 160',
     competitor: 'Varies by plan',
   },
   {
@@ -58,12 +58,12 @@ type FeatureRow = {
 };
 
 const comparisonRows: FeatureRow[] = [
-  { feature: 'Starting Price', tailorpic: '$1.99 one-time', competitor: '~$12.99/month (Canva Pro)' },
+  { feature: 'Starting Price', tailorpic: 'From $1.99 one-time', competitor: '~$12.99/month (Canva Pro)' },
   { feature: 'Pricing Model', tailorpic: 'One-time payment', competitor: 'Subscription (free tier available)' },
   { feature: 'Primary Purpose', tailorpic: 'Photorealistic AI headshots', competitor: 'Design platform with AI features' },
   { feature: 'Photorealistic Headshots from Selfies', tailorpic: true, competitor: 'Limited' },
   { feature: 'Design Templates and Layouts', tailorpic: 'Not the focus', competitor: true },
-  { feature: 'Number of Photos', tailorpic: '40+', competitor: 'Varies by use' },
+  { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: 'Varies by use' },
   { feature: 'Photo Categories', tailorpic: '11 categories', competitor: 'No dedicated headshot categories' },
   { feature: 'Professional Headshot Styles', tailorpic: true, competitor: 'Limited' },
   { feature: 'Dating Photos', tailorpic: true, competitor: false },
@@ -77,7 +77,7 @@ const whyCards = [
     icon: BadgeDollarSign,
     title: 'Lower Cost, No Subscription',
     description:
-      'TailorPic is a one-time $1.99 payment. Canva Pro is a subscription starting around $12.99/month. Canva also has a free tier, and pricing may change, so check Canva for current rates.',
+      'TailorPic packages are one-time payments starting at $1.99. Canva Pro is a subscription starting around $12.99/month. Canva also has a free tier, and pricing may change, so check Canva for current rates.',
   },
   {
     icon: Camera,
@@ -111,7 +111,7 @@ const faqs = [
   {
     question: 'How does TailorPic\'s price compare to Canva AI?',
     answer:
-      'TailorPic is a $1.99 one-time payment. Canva Pro is a subscription starting around $12.99/month, and Canva also has a free tier. Canva may change its pricing, so check their site for current rates.',
+      'TailorPic packages are one-time payments starting at $1.99. Canva Pro is a subscription starting around $12.99/month, and Canva also has a free tier. Canva may change its pricing, so check their site for current rates.',
   },
   {
     question: 'How many photos do I get with TailorPic?',
@@ -126,7 +126,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription like Canva Pro?',
     answer:
-      'No. TailorPic is a one-time $1.99 payment with no recurring charges, plus a 14-day money-back guarantee. Canva Pro is billed as a subscription.',
+      'No. TailorPic packages are one-time payments starting at $1.99 with no recurring charges, plus a 14-day money-back guarantee. Canva Pro is billed as a subscription.',
   },
   {
     question: 'How is TailorPic different from Canva\'s AI tools in how it works?',

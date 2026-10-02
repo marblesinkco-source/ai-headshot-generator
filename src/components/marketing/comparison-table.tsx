@@ -130,7 +130,7 @@ const highlights = [
   { label: 'Price', value: BASE_PRICE_DISPLAY, note: 'vs $200 – $500+' },
   { label: 'Speed', value: '2 hours', note: 'vs 1 – 2 weeks' },
   { label: 'Scheduling', value: 'None', note: 'vs booking a session' },
-  { label: 'Variety', value: '40+ photos', note: 'vs 5 – 15' },
+  { label: 'Variety', value: 'Up to 160 photos', note: 'vs 5 – 15' },
 ];
 
 export function ComparisonTable() {

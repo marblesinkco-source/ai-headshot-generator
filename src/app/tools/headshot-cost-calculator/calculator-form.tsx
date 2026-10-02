@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { Camera, Sparkles, Check, ArrowRight, Clock, TrendingDown } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { CATEGORIES, type CategoryId } from '@/config/categories';
+import { TEAM_PRICES } from '@/config/pricing';
 
 type GroupId = '1' | '2-5' | '6-10' | '11-25' | '26-50' | '50+';
 type TypeId = 'headshot' | 'dating' | 'pet' | 'product';
@@ -32,7 +34,28 @@ const VIEWS: { id: ViewId; label: string }[] = [
   { id: 'ai', label: 'AI (TailorPic)' },
 ];
 
-const AI_PRICE = 9.9;
+// Which catalog category each calculator type maps to (for the real entry price).
+const TYPE_CATEGORY: Record<TypeId, CategoryId> = {
+  headshot: 'headshots',
+  dating: 'dating',
+  pet: 'pet-portraits',
+  product: 'ecommerce-product',
+};
+
+function entryPrice(catId: CategoryId): number {
+  const pkgs = CATEGORIES[catId]?.packages ?? [];
+  return pkgs.length > 0 ? Math.min(...pkgs.map((p) => p.price)) / 100 : 0;
+}
+
+/** Per-unit AI price: team list price for headshot groups, otherwise the category's entry price. */
+function aiPricePerUnit(type: TypeId, count: number): number {
+  if (type === 'headshot') {
+    if (count >= TEAM_PRICES.large.min) return TEAM_PRICES.large.perPersonCents / 100;
+    if (count >= TEAM_PRICES.small.min) return TEAM_PRICES.small.perPersonCents / 100;
+  }
+  return entryPrice(TYPE_CATEGORY[type]);
+}
+
 const STUDIO = { min: 50, max: 200 };
 const MAKEUP = { min: 50, max: 100 };
 const TRAVEL = { min: 20, max: 60 };
@@ -100,12 +123,14 @@ export function CalculatorForm() {
     const photoMin = shoot.min + studio.min + travel.min + makeup.min;
     const photoMax = shoot.max + studio.max + travel.max + makeup.max;
 
-    const aiTotal = AI_PRICE * n;
+    const aiPrice = aiPricePerUnit(t.id, n);
+    const aiTotal = aiPrice * n;
     const enterprise = n > 5;
+    const teamPricing = enterprise && t.id === 'headshot';
     const hours = t.person ? Math.max(3, Math.ceil(n * 0.75) + 2) : Math.max(2, Math.ceil(n * 0.5) + 1);
 
     return {
-      g, t, n, shoot, studio, travel, makeup, photoMin, photoMax, aiTotal, enterprise, hours,
+      g, t, n, shoot, studio, travel, makeup, photoMin, photoMax, aiPrice, aiTotal, enterprise, teamPricing, hours,
       saveMin: Math.max(0, photoMin - aiTotal),
       saveMax: Math.max(0, photoMax - aiTotal),
       savePct: Math.round((1 - aiTotal / ((photoMin + photoMax) / 2)) * 100),
@@ -222,12 +247,12 @@ export function CalculatorForm() {
               <h3 className="text-sm font-semibold uppercase tracking-wide">TailorPic AI</h3>
             </div>
             <p className="mt-4 text-3xl font-display font-normal tracking-tight text-tp-ink transition-all duration-300 sm:text-4xl">
-              {r.enterprise ? `From ${usd(r.aiTotal)}` : usd(r.aiTotal)}
+              From {usd(r.aiTotal)}
             </p>
             <p className="mt-1 text-xs text-tp-muted">
-              {r.enterprise
-                ? `${usd(AI_PRICE)} per ${r.t.noun} at list price. Volume pricing is negotiable.`
-                : `${usd(AI_PRICE)} per ${r.t.noun}, one-time payment`}
+              {r.teamPricing
+                ? `${usd(r.aiPrice)} per ${r.t.noun} at team list price. Volume pricing is negotiable.`
+                : `Starting at ${usd(r.aiPrice)} per ${r.t.noun}, one-time payment`}
             </p>
             <ul className="mt-5 space-y-2 border-t border-tp-line pt-4 text-sm text-tp-muted">
               {['No studio, makeup or travel costs', 'Ready in hours, from your own device', 'Multiple styles and backgrounds', r.enterprise ? 'Team pricing and brand consistency' : 'No subscription'].map((t) => (

@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Photomatic";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs Photomatic. Photomatic is an AI portrait and photo tool; TailorPic creates 40+ AI headshots from your selfies for a one-time $1.99.";
+  "Compare TailorPic vs Photomatic. Photomatic is an AI portrait and photo tool; TailorPic creates AI headshots from your selfies, from a one-time $1.99.";
 const path = '/vs/photomatic';
 const canonicalUrl = 'https://www.tailorpic.com/vs/photomatic';
 
@@ -28,13 +28,13 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
   offers: {
     '@type': 'Offer',
-    price: '9.90',
+    price: '1.99',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: `${siteConfig.url}/auth/register`,
@@ -42,17 +42,17 @@ const productJsonLd = {
 };
 
 const intro =
-  "Photomatic offers AI-powered portrait and photo generation. TailorPic is built around a dedicated model trained on your selfies, generating professional headshots in 11 categories for one flat price.";
+  "Photomatic offers AI-powered portrait and photo generation. TailorPic is built around a dedicated model trained on your selfies, generating professional headshots in 11 categories with one-time packages from $1.99.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "$1.99 one-time",
+    "tailorpic": "From $1.99 one-time",
     "other": "Plans vary; check their site"
   },
   {
     "label": "Photos included",
-    "tailorpic": "photos",
+    "tailorpic": "1 to 160, depending on package",
     "other": "Varies by plan; check their site"
   },
   {
@@ -99,8 +99,8 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 
 const differences = [
   {
-    "title": "One flat price",
-    "body": "TailorPic is $1.99 one time with no plan ladder or subscription to manage."
+    "title": "A low entry price",
+    "body": "TailorPic packages start at $1.99 one time, with no subscription to manage."
   },
   {
     "title": "11 categories in one order",
@@ -134,7 +134,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than Photomatic?",
-    "answer": "TailorPic is a one-time $1.99 across multiple packages. Photomatic's plans vary, so compare against their current price page."
+    "answer": "TailorPic packages start at a one-time $1.99 and go up to 160 photos. Photomatic's plans vary, so compare against their current price page."
   },
   {
     "question": "How does TailorPic create headshots?",
@@ -146,7 +146,7 @@ const faqs = [
   },
   {
     "question": "Do I need a subscription with TailorPic?",
-    "answer": "No. It is a single $1.99 payment with no recurring fees."
+    "answer": "No. Every package is a single one-time payment (from $1.99) with no recurring fees."
   },
   {
     "question": "Should I check Photomatic's details myself?",

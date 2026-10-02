@@ -32,13 +32,13 @@ export const metadata: Metadata = {
 const quickBadges = [
   {
     label: 'Starting Price',
-    ours: '$1.99',
+    ours: 'From $1.99',
     theirs: '$29',
     icon: DollarSign,
   },
   {
     label: 'Photos per Session',
-    ours: '40+',
+    ours: '1 to 160',
     theirs: '40+',
     icon: Image,
   },
@@ -59,8 +59,8 @@ interface ComparisonRow {
 }
 
 const comparisonRows: ComparisonRow[] = [
-  { feature: 'Starting Price', tailorpic: '$1.99', headshotpro: '$29' },
-  { feature: 'Photos per Session', tailorpic: '40+', headshotpro: '40+' },
+  { feature: 'Starting Price', tailorpic: 'From $1.99', headshotpro: '$29' },
+  { feature: 'Photos per Session', tailorpic: '1 to 160', headshotpro: '40+' },
   { feature: 'Delivery', tailorpic: 'Under 2 hours', headshotpro: 'Under 2 hours' },
   { feature: 'Photo Categories', tailorpic: '11', headshotpro: 'Professional only' },
   { feature: 'Pet Portraits', tailorpic: true, headshotpro: false },
@@ -110,7 +110,7 @@ const faqs = [
   {
     question: 'How does TailorPic\'s price compare to HeadshotPro?',
     answer:
-      'TailorPic is a $1.99 one-time payment. HeadshotPro\'s pricing starts at $29. HeadshotPro may change its plans, so check their site for current pricing.',
+      'TailorPic packages are one-time payments starting at $1.99. HeadshotPro\'s pricing starts at $29. HeadshotPro may change its plans, so check their site for current pricing.',
   },
   {
     question: 'How many photos do I get compared to HeadshotPro?',
@@ -125,7 +125,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription?',
     answer:
-      'No. TailorPic is a one-time $1.99 payment with no subscription and a 14-day money-back guarantee.',
+      'No. TailorPic packages are one-time payments starting at $1.99 with no subscription and a 14-day money-back guarantee.',
   },
   {
     question: 'How does TailorPic train my photos, and is it easy to use?',

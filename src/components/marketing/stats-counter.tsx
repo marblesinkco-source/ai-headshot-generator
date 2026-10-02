@@ -15,7 +15,7 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { icon: Camera, value: 40, suffix: '+', label: 'Photos Per Session', detail: 'A full set to choose from' },
+  { icon: Camera, value: 160, prefix: 'Up to ', label: 'Photos Per Order', detail: 'From a single headshot to a full set' },
   { icon: Layers, value: 11, suffix: '+', label: 'Photo Categories', detail: 'Professional, dating, pets & more' },
   { icon: Clock, value: 2, prefix: '< ', suffix: ' hrs', label: 'Delivery Time', detail: 'Most orders ready in under 2 hours' },
   { icon: Tag, value: BASE_PRICE, prefix: '$', decimals: 2, label: 'Starting Price', detail: 'Pay once, no subscription' },

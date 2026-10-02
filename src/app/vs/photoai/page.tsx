@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "PhotoAI";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  'Compare TailorPic vs PhotoAI for headshots. TailorPic is a one-time $1.99 for 40+ headshots; PhotoAI is a subscription from around $29 per month.';
+  'Compare TailorPic vs PhotoAI for headshots. TailorPic: one-time packages from $1.99, up to 160 headshots. PhotoAI: a subscription from around $29 per month.';
 const path = '/vs/photoai';
 
 export const metadata: Metadata = {
@@ -27,13 +27,13 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
   offers: {
     '@type': 'Offer',
-    price: '9.90',
+    price: '1.99',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: `${siteConfig.url}/auth/register`,
@@ -41,27 +41,27 @@ const productJsonLd = {
 };
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "$1.99 one-time", other: "Approximately $29 per month" },
+  { label: "Starting price", tailorpic: "From $1.99 one-time", other: "Approximately $29 per month" },
   { label: "Billing model", tailorpic: "One-time payment, no subscription", other: "Monthly subscription" },
   { label: "Focus", tailorpic: "Headshots and profile photos", other: "Many kinds of AI photos, not only headshots" },
-  { label: "Photos included", tailorpic: "photos", other: "Varies by plan; check their site" },
+  { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Varies by plan; check their site" },
   { label: "Delivery time", tailorpic: "24 hours", other: "Varies; check their site" },
   { label: "Categories / styles", tailorpic: "11 categories (business, dating, creative, pets and more)", other: "Wide range of photo styles and scenarios" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
-  { label: "Ongoing cost", tailorpic: "None after the $1.99 payment", other: "Recurring while you stay subscribed" },
+  { label: "Ongoing cost", tailorpic: "None after your one-time payment (from $1.99)", other: "Recurring while you stay subscribed" },
   { label: "Team features", tailorpic: "Team and enterprise options available", other: "Check their site for team options" },
 ];
 
 const differences = [
-  { title: "Subscription vs one-time", body: "PhotoAI is billed monthly at approximately $29. TailorPic is a single $1.99 payment, so you are not paying every month for a set of photos you only need once." },
+  { title: "Subscription vs one-time", body: "PhotoAI is billed monthly at approximately $29. TailorPic is a single payment from $1.99, so you are not paying every month for a set of photos you only need once." },
   { title: "Specialist vs generalist", body: "PhotoAI covers many photo types beyond headshots. TailorPic focuses on headshots and profile photos, including business, dating and creative looks." },
-  { title: "Cost over time", body: "If you keep a PhotoAI subscription for several months, the total can pass TailorPic's price many times over. TailorPic stays at $1.99." },
+  { title: "Cost over time", body: "If you keep a PhotoAI subscription for several months, the total can pass the cost of a TailorPic package. TailorPic is paid once, with packages starting at $1.99." },
   { title: "Personalized model", body: "TailorPic trains a personal LoRA model on your photos for a close likeness, which is why delivery takes up to 24 hours." },
 ];
 
 const useCases = {
   tailorpic: [
-    "A one-time $1.99 payment with no subscription",
+    "A one-time payment from $1.99 with no subscription",
     "A tool built specifically for headshots",
     "A personalized LoRA-trained model of your face",
     "Photos for work, dating and creative uses",
@@ -75,9 +75,9 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is TailorPic cheaper than PhotoAI?", answer: "Yes for most headshot needs. TailorPic is a one-time $1.99, while PhotoAI is a subscription starting at approximately $29 per month. PhotoAI pricing may change, so check their site." },
+  { question: "Is TailorPic cheaper than PhotoAI?", answer: "Yes for most headshot needs. TailorPic starts at a one-time $1.99, while PhotoAI is a subscription starting at approximately $29 per month. PhotoAI pricing may change, so check their site." },
   { question: "Is PhotoAI only for headshots?", answer: "No. PhotoAI generates various types of AI photos, not just headshots. TailorPic is focused on headshots and profile photos." },
-  { question: "Is TailorPic a subscription?", answer: "No. TailorPic is a one-time payment of $1.99 with no recurring fees." },
+  { question: "Is TailorPic a subscription?", answer: "No. TailorPic packages are one-time payments starting at $1.99 with no recurring fees." },
   { question: "How many photos does TailorPic include?", answer: "TailorPic includes photos across 11 categories, delivered within 24 hours." },
 ];
 
@@ -106,7 +106,7 @@ export default function Page() {
               TailorPic <span className="text-tp-bronze">vs</span> {competitor}
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">
-              PhotoAI is a broad AI photo tool sold as a monthly subscription. TailorPic is a headshot specialist: 40+ polished, LoRA-trained photos across 11 categories for a one-time $1.99.
+              PhotoAI is a broad AI photo tool sold as a monthly subscription. TailorPic is a headshot specialist: polished, LoRA-trained photos across 11 categories (up to 160 per order), from a one-time $1.99.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

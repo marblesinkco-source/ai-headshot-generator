@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import { BASE_PRICE } from '@/config/pricing';
 
 export interface PricingPsychologyProps {
-  /** Total package price in USD. Defaults to the Express tier. */
+  /** Total package price in USD. Defaults to the entry tier (TailorPic 1). */
   price?: number;
   /** Number of headshots in the package. */
   outputs?: number;
@@ -15,8 +15,8 @@ export interface PricingPsychologyProps {
 
 export function PricingPsychology({
   price = BASE_PRICE,
-  outputs = 5,
-  planName = 'Express',
+  outputs = 1,
+  planName = 'TailorPic 1',
   mostPopular = false,
   className,
 }: PricingPsychologyProps) {

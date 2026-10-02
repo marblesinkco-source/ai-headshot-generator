@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "RunwayML";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  'Compare TailorPic vs RunwayML. Runway is a generative video and image AI platform for creatives; TailorPic: 40+ headshots for a one-time $1.99.';
+  'Compare TailorPic vs RunwayML. Runway is a generative video and image AI platform for creatives; TailorPic: headshots from a one-time $1.99.';
 const path = '/vs/runway-ml';
 const canonicalUrl = 'https://www.tailorpic.com/vs/runway-ml';
 
@@ -28,13 +28,13 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
   offers: {
     '@type': 'Offer',
-    price: '9.90',
+    price: '1.99',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: `${siteConfig.url}/auth/register`,
@@ -47,12 +47,12 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "$1.99 one-time",
+    "tailorpic": "From $1.99 one-time",
     "other": "Free tier and paid plans; check their site"
   },
   {
     "label": "Photos included",
-    "tailorpic": "photos",
+    "tailorpic": "1 to 160, depending on package",
     "other": "Credit-based generation"
   },
   {
@@ -107,8 +107,8 @@ const differences = [
     "body": "Upload selfies and pick categories. There is no prompt writing or credit budgeting."
   },
   {
-    "title": "A flat, low entry price",
-    "body": "TailorPic is $1.99 one time with no monthly credits to manage."
+    "title": "A low entry price",
+    "body": "TailorPic packages start at $1.99 one time, with no monthly credits to manage."
   },
   {
     "title": "Trade-off on scope",
@@ -134,7 +134,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than RunwayML?",
-    "answer": "TailorPic is a one-time $1.99 across multiple packages. Runway uses subscription plans with credits, so compare against their current price page."
+    "answer": "TailorPic packages start at a one-time $1.99 and go up to 160 photos. Runway uses subscription plans with credits, so compare against their current price page."
   },
   {
     "question": "Can RunwayML make a headshot?",
@@ -150,7 +150,7 @@ const faqs = [
   },
   {
     "question": "Do I need a subscription with TailorPic?",
-    "answer": "No. It is a single $1.99 payment with no recurring fees."
+    "answer": "No. Every package is a single one-time payment (from $1.99) with no recurring fees."
   }
 ];
 

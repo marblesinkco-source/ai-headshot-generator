@@ -35,7 +35,7 @@ export function Hero() {
               </h1>
 
               <p className="text-[16px] text-tp-ink/80 leading-[1.7] max-w-[485px] mb-4">
-                Upload a few selfies and get 40+ studio-quality headshots in about 2 hours. Pay once &mdash; no subscription, no studio, no scheduling.
+                Upload a few selfies and get studio-quality headshots in about 2 hours &mdash; from a single photo to a full set of 160. Pay once &mdash; no subscription, no studio, no scheduling.
               </p>
               <p className="text-[13px] text-tp-muted leading-[1.6] max-w-[485px] mb-7">
                 <span className="line-through text-tp-muted">Traditional photoshoot: $200&ndash;$500</span>

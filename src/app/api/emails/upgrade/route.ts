@@ -1,8 +1,8 @@
 /**
  * POST /api/emails/upgrade
  *
- * Sends upgrade-offer emails to Express buyers whose orders are 48+ hours old
- * and who haven't purchased a higher-tier package yet.
+ * Sends upgrade-offer emails to entry-tier buyers (TailorPic 1, Lite, Basic/Express)
+ * whose orders are 48+ hours old and who haven't purchased a higher-tier package yet.
  *
  * Designed to be called by a cron job (e.g. Vercel Cron) once per hour.
  * Protected by CRON_SECRET to prevent unauthorized access.
@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
 
   const supabase = createAdminClient();
 
-  // Find Express orders that are 48+ hours old and haven't been sent an upgrade email
+  // Find entry-tier orders that are 48+ hours old and haven't been sent an upgrade email
   const cutoffDate = new Date(Date.now() - UPGRADE_DELAY_HOURS * 60 * 60 * 1000).toISOString();
 
   // Find entry-tier orders (TailorPic 1, Lite, or Basic/Express) eligible for upgrade
@@ -71,12 +71,14 @@ export async function POST(request: NextRequest) {
         continue;
       }
 
-      // Check if user already bought a non-express package in the same category
+      // Check if user already bought a higher-tier (non-entry) package in the same category
       const { data: existingUpgrade } = await supabase
         .from('orders')
         .select('id')
         .eq('user_id', order.user_id)
         .eq('category_id', order.category_id)
+        .not('package_id', 'like', '%-tailorpic1')
+        .not('package_id', 'like', '%-lite')
         .not('package_id', 'like', '%-express')
         .in('status', ['paid', 'uploading', 'processing', 'completed'])
         .limit(1);

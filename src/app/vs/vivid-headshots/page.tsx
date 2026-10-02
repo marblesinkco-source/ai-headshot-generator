@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Vivid Headshots";
 const title = 'TailorPic vs Vivid Headshots: AI Headshot Comparison';
 const description =
-  "Compare TailorPic vs Vivid Headshots for AI headshots. TailorPic offers photos in 11 categories for a one-time $1.99 with a 14-day money-back guarantee.";
+  "Compare TailorPic vs Vivid Headshots for AI headshots. TailorPic offers photos in 11 categories from a one-time $1.99 with a 14-day money-back guarantee.";
 const path = '/vs/vivid-headshots';
 
 export const metadata: Metadata = {
@@ -27,13 +27,13 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
   offers: {
     '@type': 'Offer',
-    price: '9.90',
+    price: '1.99',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: `${siteConfig.url}/auth/register`,
@@ -41,11 +41,11 @@ const productJsonLd = {
 };
 
 const intro =
-  "Vivid Headshots is another option in the AI headshot market. TailorPic stands out with a one-time $1.99 price, personal LoRA training and 11 photo categories.";
+  "Vivid Headshots is another option in the AI headshot market. TailorPic stands out with one-time pricing from $1.99, personal LoRA training and 11 photo categories.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "$1.99 one-time", other: "Confirm current pricing on their site" },
-  { label: "Photos included", tailorpic: "photos", other: "Depends on the plan" },
+  { label: "Starting price", tailorpic: "From $1.99 one-time", other: "Confirm current pricing on their site" },
+  { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on the plan" },
   { label: "Delivery time", tailorpic: "Within 24 hours", other: "Varies by plan" },
   { label: "Categories / styles", tailorpic: "11 categories", other: "Headshot-focused style options" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
@@ -57,7 +57,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 ];
 
 const differences = [
-  { title: "Vivid looks, practical price", body: "TailorPic gives you a wide set of looks without stepping up through pricing tiers." },
+  { title: "Vivid looks, practical price", body: "TailorPic gives you a wide set of looks across 11 categories, with one-time packages starting at $1.99." },
   { title: "More than one use case", body: "A single upload can produce business, dating, creative, pet and product images." },
   { title: "Trained on you", body: "The LoRA model learns from your own photos, which helps keep the result recognisable across styles." },
   { title: "Guarantee", body: "A 14-day money-back guarantee lets you try TailorPic with limited risk." },
@@ -79,11 +79,11 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "How does TailorPic pricing compare to Vivid Headshots?", answer: "TailorPic is a one-time $1.99 across multiple packages. Check Vivid Headshots' current pricing, as it may change." },
+  { question: "How does TailorPic pricing compare to Vivid Headshots?", answer: "TailorPic packages start at a one-time $1.99 and go up to 160 photos. Check Vivid Headshots' current pricing, as it may change." },
   { question: "What categories does TailorPic support?", answer: "Eleven, including business, dating, creative, pet portraits and e-commerce photos." },
   { question: "How quickly will I get my photos?", answer: "Within 24 hours." },
   { question: "Is there a money-back guarantee?", answer: "Yes, TailorPic offers a 14-day money-back guarantee." },
-  { question: "Is it a subscription?", answer: "No, it is a one-time payment of $1.99." },
+  { question: "Is it a subscription?", answer: "No, every package is a one-time payment starting at $1.99." },
 ];
 
 export default function VsVividHeadshotsPage() {

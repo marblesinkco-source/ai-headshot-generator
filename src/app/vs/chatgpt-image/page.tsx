@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "ChatGPT Image Generation";
 const title = 'TailorPic vs ChatGPT Image Generation: Headshot Comparison';
 const description =
-  "Compare TailorPic vs ChatGPT image generation for headshots. TailorPic is a one-time $1.99 across multiple packages with a LoRA model trained on your own face.";
+  "Compare TailorPic vs ChatGPT image generation for headshots. TailorPic starts at a one-time $1.99 with a LoRA model trained on your own face.";
 const path = '/vs/chatgpt-image';
 
 export const metadata: Metadata = {
@@ -27,13 +27,13 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
   offers: {
     '@type': 'Offer',
-    price: '9.90',
+    price: '1.99',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: `${siteConfig.url}/auth/register`,
@@ -41,11 +41,11 @@ const productJsonLd = {
 };
 
 const intro =
-  "ChatGPT image generation is convenient and already in a tool many people use. TailorPic is specialized: it trains a personal model on your photos and delivers 40+ headshots across 11 categories.";
+  "ChatGPT image generation is convenient and already in a tool many people use. TailorPic is specialized: it trains a personal model on your photos and delivers up to 160 headshots across 11 categories.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "$1.99 one-time", other: "Included with ChatGPT plans; check their site" },
-  { label: "Photos included", tailorpic: "photos", other: "A few images per request; limits vary by plan" },
+  { label: "Starting price", tailorpic: "From $1.99 one-time", other: "Included with ChatGPT plans; check their site" },
+  { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "A few images per request; limits vary by plan" },
   { label: "Delivery time", tailorpic: "Within 24 hours", other: "Usually quick per image" },
   { label: "Categories / styles", tailorpic: "11 categories (business, dating, creative, pets and more)", other: "General-purpose images from text and reference photos" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "No personal model training; results depend on the prompt and reference" },
@@ -66,7 +66,7 @@ const differences = [
 const useCases = {
   tailorpic: [
     "A full set of headshots with a consistent likeness",
-    "A single $1.99 payment with no subscription",
+    "A one-time payment from $1.99 with no subscription",
     "A model trained on your own photos",
     "Ready-made categories for work, dating and more",
   ],
@@ -79,11 +79,11 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is TailorPic cheaper than ChatGPT image generation?", answer: "TailorPic is a one-time $1.99 across multiple packages. ChatGPT image generation is tied to ChatGPT plans that can change, so check their current pricing." },
+  { question: "Is TailorPic cheaper than ChatGPT image generation?", answer: "TailorPic packages start at a one-time $1.99 and go up to 160 photos. ChatGPT image generation is tied to ChatGPT plans that can change, so check their current pricing." },
   { question: "Can ChatGPT make headshots of me?", answer: "ChatGPT can generate portrait-style images, but it does not train a personal model on your face. TailorPic fine-tunes a LoRA model on your own photos for a consistent likeness." },
   { question: "How long does TailorPic take?", answer: "Delivery is within 24 hours, since a dedicated model is fine-tuned on your uploads." },
   { question: "Do I need to write prompts with TailorPic?", answer: "No. You upload your photos and receive finished headshots across 11 categories." },
-  { question: "Do I need a subscription with TailorPic?", answer: "No. It is a single $1.99 payment with no recurring fees." },
+  { question: "Do I need a subscription with TailorPic?", answer: "No. Every package is a single one-time payment (from $1.99) with no recurring fees." },
 ];
 
 export default function VsChatgptImagePage() {

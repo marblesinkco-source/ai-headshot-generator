@@ -31,7 +31,7 @@ const productJsonLd = {
   category: 'Professional Services',
   offers: {
     '@type': 'Offer',
-    price: '9.90',
+    price: '1.99',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: 'https://www.tailorpic.com/use-cases/magazine-feature',

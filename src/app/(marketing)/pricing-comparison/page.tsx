@@ -317,8 +317,8 @@ export default function PricingComparisonPage() {
 
             <p className="mx-auto mt-3 max-w-2xl text-center text-xs text-tp-muted">
               Traditional studio and other AI service figures are rough,
-              typical ranges and vary by provider and market. {siteConfig.name}
-              figures come from our current plans. Individual orders start at
+              typical ranges and vary by provider and market. {siteConfig.name}{' '}
+              figures come from our current plans. Individual orders start at{' '}
               {BASE_PRICE_DISPLAY}; team pricing is {TEAM_SMALL} per person for{' '}
               {TEAM_PRICES.small.min}-{TEAM_PRICES.small.max} people and {TEAM_LARGE} per
               person for {TEAM_PRICES.large.min}-{TEAM_PRICES.large.max} people, confirmed at checkout.{' '}
@@ -530,7 +530,7 @@ export default function PricingComparisonPage() {
                     {formatPrice(pkg.price)}
                   </p>
                   <p className="mt-1 text-sm text-tp-muted">
-                    {pkg.outputCount} headshots included
+                    {pkg.outputCount} {pkg.outputCount === 1 ? 'headshot' : 'headshots'} included
                   </p>
                   <div className="mt-4 rounded-lg bg-tp-paper px-4 py-3">
                     <span className="text-sm text-tp-muted">Per photo: </span>

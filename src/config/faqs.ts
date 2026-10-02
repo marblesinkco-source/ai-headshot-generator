@@ -69,7 +69,7 @@ export const faqs = [
     category: 'Pricing',
     question: 'What is the difference between the packages?',
     answer:
-      'Express ($9.90) gives you 5 headshots in 1 background and 1 style with 24-hour delivery. Starter ($29) gives you 40 headshots with 5 backgrounds and 3 styles. Professional ($49) gives you 80 headshots with 10 backgrounds, 6 styles, HD resolution, and a LinkedIn banner. Executive ($79) gives you 140 headshots with 15 backgrounds, 10 styles, 4K resolution, a LinkedIn banner, an email signature, and priority support.',
+      'TailorPic 1 ($1.99) gives you a single headshot to try the service. Lite ($9.90) gives you 5 headshots with 2 backgrounds and 2 styles. Basic ($19.90) gives you 10 headshots with 3 backgrounds and 3 styles. Starter ($29.90) gives you 40 headshots with 5 backgrounds and 3 styles. Professional ($49.90) gives you 80 headshots with 10 backgrounds, 6 styles, HD resolution, and a LinkedIn banner. Executive ($89.90) gives you 160 headshots with 15 backgrounds, 10 styles, 4K resolution, a LinkedIn banner, an email signature, and priority support.',
   },
   {
     category: 'Privacy',
@@ -93,7 +93,7 @@ export const faqs = [
     category: 'Delivery',
     question: 'Can I get my photos faster?',
     answer:
-      'The Express package ($9.90) includes 24-hour delivery. Most other orders are completed within 2 hours, and you will receive an email as soon as your photos are ready to download.',
+      'The Lite ($9.90) and Basic ($19.90) packages include 24-hour delivery. Most other orders are completed within 2 hours, and you will receive an email as soon as your photos are ready to download.',
   },
   {
     category: 'Refund',

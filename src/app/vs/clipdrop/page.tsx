@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "ClipDrop";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  'Compare TailorPic vs ClipDrop. ClipDrop offers quick AI image tools like background removal, relighting and upscaling; TailorPic: 40+ headshots, $1.99 one-time.';
+  'Compare TailorPic vs ClipDrop. ClipDrop offers quick AI image tools like background removal, relighting and upscaling; TailorPic: headshots from a one-time $1.99.';
 const path = '/vs/clipdrop';
 const canonicalUrl = 'https://www.tailorpic.com/vs/clipdrop';
 
@@ -28,13 +28,13 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
   offers: {
     '@type': 'Offer',
-    price: '9.90',
+    price: '1.99',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: `${siteConfig.url}/auth/register`,
@@ -47,12 +47,12 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "$1.99 one-time",
+    "tailorpic": "From $1.99 one-time",
     "other": "Free tier and paid plans; check their site"
   },
   {
     "label": "Photos included",
-    "tailorpic": "photos",
+    "tailorpic": "1 to 160, depending on package",
     "other": "Processes the images you upload"
   },
   {
@@ -107,8 +107,8 @@ const differences = [
     "body": "Instead of chaining separate tools for background, lighting and upscaling, you receive a complete set of styled headshots."
   },
   {
-    "title": "A flat, low entry price",
-    "body": "TailorPic is $1.99 one time with no plan ladder or subscription."
+    "title": "A low entry price",
+    "body": "TailorPic packages start at $1.99 one time, with no subscription."
   },
   {
     "title": "Trade-off on speed",
@@ -134,7 +134,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than ClipDrop?",
-    "answer": "TailorPic is a one-time $1.99 across multiple packages. ClipDrop offers free and paid plans that vary, so compare against their current price page."
+    "answer": "TailorPic packages start at a one-time $1.99 and go up to 160 photos. ClipDrop offers free and paid plans that vary, so compare against their current price page."
   },
   {
     "question": "Can ClipDrop make a headshot?",
@@ -150,7 +150,7 @@ const faqs = [
   },
   {
     "question": "Do I need a subscription with TailorPic?",
-    "answer": "No. It is a single $1.99 payment with no recurring fees."
+    "answer": "No. Every package is a single one-time payment (from $1.99) with no recurring fees."
   }
 ];
 

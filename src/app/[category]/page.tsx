@@ -204,10 +204,14 @@ export default async function CategoryPage({ params }: Props) {
           <div className={`mt-12 grid gap-5 max-w-5xl mx-auto ${
             cat.packages.length <= 3
               ? 'sm:grid-cols-3'
-              : 'sm:grid-cols-2 lg:grid-cols-4'
+              : cat.packages.length === 4
+                ? 'sm:grid-cols-2 lg:grid-cols-4'
+                : 'sm:grid-cols-2 lg:grid-cols-3'
           }`}>
             {cat.packages.map((pkg) => {
-              const isExpress = pkg.name === 'Express';
+              // Entry tier = cheapest package in the category.
+              const entryPrice = Math.min(...cat.packages.map((p) => p.price));
+              const isExpress = pkg.price === entryPrice;
 
               return (
                 <div

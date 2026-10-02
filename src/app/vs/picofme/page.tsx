@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "PicofMe";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs PicofMe. PicofMe is an AI profile picture generator; TailorPic creates 40+ realistic headshots from your selfies for a one-time $1.99.";
+  "Compare TailorPic vs PicofMe. PicofMe is an AI profile picture generator; TailorPic creates realistic headshots from your selfies, from a one-time $1.99.";
 const path = '/vs/picofme';
 const canonicalUrl = 'https://www.tailorpic.com/vs/picofme';
 
@@ -28,13 +28,13 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering 40+ professional photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours for a one-time $1.99.',
+    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from a one-time $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
   offers: {
     '@type': 'Offer',
-    price: '9.90',
+    price: '1.99',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: `${siteConfig.url}/auth/register`,
@@ -47,12 +47,12 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "$1.99 one-time",
+    "tailorpic": "From $1.99 one-time",
     "other": "Check their site for current pricing"
   },
   {
     "label": "Photos included",
-    "tailorpic": "photos",
+    "tailorpic": "1 to 160, depending on package",
     "other": "Varies by package; check their site"
   },
   {
@@ -108,7 +108,7 @@ const differences = [
   },
   {
     "title": "Simple one-time pricing",
-    "body": "TailorPic is $1.99 once, with no subscription."
+    "body": "TailorPic packages start at $1.99 one time, with no subscription."
   },
   {
     "title": "Trade-off on style range",
@@ -134,7 +134,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than PicofMe?",
-    "answer": "TailorPic is a one-time $1.99 across multiple packages. PicofMe pricing may differ, so compare against their current price page."
+    "answer": "TailorPic packages start at a one-time $1.99 and go up to 160 photos. PicofMe pricing may differ, so compare against their current price page."
   },
   {
     "question": "Can TailorPic make profile pictures?",
@@ -146,7 +146,7 @@ const faqs = [
   },
   {
     "question": "Do I need a subscription with TailorPic?",
-    "answer": "No. It is a single $1.99 payment with no recurring fees."
+    "answer": "No. Every package is a single one-time payment (from $1.99) with no recurring fees."
   },
   {
     "question": "Will the photos look like me?",
