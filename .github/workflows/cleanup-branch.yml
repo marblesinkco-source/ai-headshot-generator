@@ -1,0 +1,28 @@
+name: Cleanup branch
+
+# One-shot helper: deletes a branch from the repo.
+# Trigger:  gh workflow run cleanup-branch.yml -f branch=ci-selftest
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: Branch name to delete (without refs/heads/)
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  delete:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Delete branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "Deleting branch: ${{ inputs.branch }}"
+          gh api -X DELETE "repos/${{ github.repository }}/git/refs/heads/${{ inputs.branch }}" \
+            && echo "✅ Branch ${{ inputs.branch }} deleted." \
+            || echo "❌ Failed to delete branch ${{ inputs.branch }}."
