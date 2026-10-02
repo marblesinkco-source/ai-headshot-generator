@@ -134,6 +134,9 @@ export async function POST(request: NextRequest) {
       const checkoutSession = await stripe.checkout.sessions.create({
         mode: 'payment',
         customer_email: user.email,
+        // Accept card, Apple Pay and Google Pay — covers US and EU buyers globally
+        payment_method_types: ['card'],
+        billing_address_collection: 'auto',
         line_items: [
           {
             price_data: {
@@ -242,6 +245,8 @@ export async function POST(request: NextRequest) {
     const checkoutSession = await stripe.checkout.sessions.create({
       mode: 'payment',
       customer_email: user.email,
+      payment_method_types: ['card'],
+      billing_address_collection: 'auto',
       line_items: [
         {
           price_data: {
