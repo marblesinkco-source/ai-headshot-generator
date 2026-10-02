@@ -1,0 +1,101 @@
+name: CI
+
+# Build gate. Runs the same `next build` Vercel runs, on every push to main and
+# every PR, so a broken build is caught (and its log is readable through the
+# GitHub API) even from an environment that cannot run npm locally.
+#
+# NOTE: next.config.mjs sets typescript.ignoreBuildErrors, so TypeScript errors
+# do not fail the build on Vercel either; the tsc step is informational.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write        # commit comment with the failure excerpt
+  pull-requests: write
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      # Build-time values. NEXT_PUBLIC_* are public by design; set them as repo
+      # Variables (Settings → Secrets and variables → Actions → Variables) for
+      # exact parity with Vercel. Everything else is a placeholder: the build
+      # only needs the variables to exist, it never calls these services.
+      NEXT_PUBLIC_APP_URL: ${{ vars.NEXT_PUBLIC_APP_URL || 'https://tailorpic.com' }}
+      NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co' }}
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-anon-key' }}
+      NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: ${{ vars.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || 'pk_test_placeholder' }}
+      SUPABASE_SERVICE_ROLE_KEY: placeholder-service-role-key
+      STRIPE_SECRET_KEY: sk_test_placeholder
+      STRIPE_WEBHOOK_SECRET: whsec_placeholder
+      REPLICATE_API_TOKEN: r8_placeholder
+      REPLICATE_WEBHOOK_SECRET: placeholder
+      RESEND_API_KEY: re_placeholder
+      EMAIL_FROM: noreply@tailorpic.com
+      CRON_SECRET: placeholder
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then npm ci; else echo "::warning::No package-lock.json — using npm install (non-reproducible). Commit a lockfile when npm is available."; npm install --no-audit --no-fund; fi
+
+      - name: Type check (informational)
+        id: tsc
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          npx tsc --noEmit 2>&1 | tee tsc.log | tail -40
+
+      - name: Build (the real gate — same command as Vercel)
+        id: build
+        run: |
+          set -o pipefail
+          npm run build 2>&1 | tee build.log
+
+      - name: Summary
+        if: always()
+        run: |
+          ts_errors=$(grep -c 'error TS' tsc.log 2>/dev/null || true)
+          {
+            echo "## CI result for \`${GITHUB_SHA::7}\`"
+            echo "- build: **${{ steps.build.outcome }}**"
+            echo "- tsc: ${{ steps.tsc.outcome }} (${ts_errors:-0} type errors — informational, Vercel ignores them)"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Post failure excerpt as a commit comment
+        # The sandbox cannot download Actions logs, but it can read commit
+        # comments through api.github.com — scripts/deploy-status.sh prints this.
+        if: failure() && github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          {
+            echo "### CI build failed — \`${GITHUB_SHA::7}\`"
+            echo "Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo
+            echo '```'
+            echo "--- matched error lines ---"
+            grep -nE 'Error|error|TypeError|Failed to|failed' build.log 2>/dev/null | grep -v 'ignoreBuildErrors' | tail -40 || true
+            echo
+            echo "--- last 60 lines of build log ---"
+            tail -60 build.log 2>/dev/null || echo "(no build.log — install step failed?)"
+            echo '```'
+          } > comment.md
+          gh api "repos/${{ github.repository }}/commits/${GITHUB_SHA}/comments" -F body=@comment.md > /dev/null

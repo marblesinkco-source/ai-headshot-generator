@@ -1,0 +1,75 @@
+name: Vercel logs
+
+# Fetches a Vercel deployment's build log from a GitHub Actions runner and
+# publishes it as the job summary (and optionally a commit comment), so the
+# Claude Code sandbox — which cannot reach vercel.com — can read it through
+# the GitHub API. Usually unnecessary: ci.yml runs the same build and posts
+# its own excerpt. Use this when Vercel fails but CI passes (env/Vercel-side).
+#
+# One-time setup (repo owner): GitHub → Settings → Secrets and variables →
+# Actions → New repository secret
+#   VERCEL_TOKEN = token from https://vercel.com/account/tokens
+#
+# Trigger from the sandbox:
+#   gh workflow run vercel-logs.yml -f deployment=<dpl_… or deployment URL> -f sha=<commit>
+# The deployment id is in the Vercel commit status that scripts/deploy-status.sh prints.
+
+on:
+  workflow_dispatch:
+    inputs:
+      deployment:
+        description: Deployment id (dpl_…) or deployment URL
+        required: true
+      sha:
+        description: Commit to attach the log to as a comment (optional)
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  logs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      TARGET: ${{ inputs.deployment }}
+      SHA: ${{ inputs.sha }}
+    steps:
+      - name: Check secret
+        run: |
+          if [ -z "$VERCEL_TOKEN" ]; then
+            echo "::error::Secret VERCEL_TOKEN is not set. Create one at https://vercel.com/account/tokens and add it under Settings → Secrets and variables → Actions."
+            exit 1
+          fi
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Fetch deployment log
+        run: |
+          set -o pipefail
+          npx --yes vercel@latest inspect "$TARGET" --logs --token "$VERCEL_TOKEN" 2>&1 | tee vercel.log | tail -120 || true
+          {
+            echo "## Vercel log — $TARGET"
+            echo '```'
+            tail -200 vercel.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Attach as commit comment
+        if: inputs.sha != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          {
+            echo "### Vercel log — $TARGET"
+            echo '```'
+            grep -nE 'Error|error|Failed|failed' vercel.log | tail -40 || true
+            echo "--- last 80 lines ---"
+            tail -80 vercel.log
+            echo '```'
+          } > comment.md
+          gh api "repos/${{ github.repository }}/commits/${SHA}/comments" -F body=@comment.md > /dev/null

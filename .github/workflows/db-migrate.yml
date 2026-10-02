@@ -1,0 +1,105 @@
+name: DB migrate (Supabase)
+
+# Applies SQL migrations to the Supabase Postgres database from a GitHub Actions
+# runner (which has full network access), so migrations can be run from the
+# Claude Code sandbox via `gh workflow run db-migrate.yml ...` without any
+# database credentials ever entering the sandbox.
+#
+# One-time setup (repo owner): GitHub → Settings → Secrets and variables →
+# Actions → New repository secret
+#   SUPABASE_DB_URL = the "Connection string" from Supabase → Project Settings →
+#                     Database (Session pooler, port 5432, with the password filled in)
+#
+# Applied files are recorded in public.schema_migrations so each file runs once.
+# Because the live schema was created before this workflow existed, run
+# mode=baseline FIRST to mark the already-applied files without executing them.
+
+on:
+  workflow_dispatch:
+    inputs:
+      dir:
+        description: Migrations directory
+        type: choice
+        options:
+          - src/database/migrations
+          - supabase/migrations
+        default: src/database/migrations
+      mode:
+        description: list = show pending (safe) · apply = run pending · baseline = record pending as applied WITHOUT running
+        type: choice
+        options: [list, apply, baseline]
+        default: list
+      file:
+        description: Limit to a single file name (optional, e.g. 006_add_retry_and_dedupe.sql)
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+      DIR: ${{ inputs.dir }}
+      MODE: ${{ inputs.mode }}
+      ONLY: ${{ inputs.file }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check secret
+        run: |
+          if [ -z "$DB_URL" ]; then
+            echo "::error::Secret SUPABASE_DB_URL is not set. Add it under Settings → Secrets and variables → Actions (Supabase → Project Settings → Database → Connection string, Session pooler)."
+            exit 1
+          fi
+
+      - name: Run
+        run: |
+          set -euo pipefail
+          q() { psql "$DB_URL" -v ON_ERROR_STOP=1 -q "$@"; }
+          q -c "create table if not exists public.schema_migrations (name text primary key, applied_at timestamptz not null default now());"
+          applied=$(q -At -c "select name from public.schema_migrations order by name")
+
+          pending=()
+          for f in $(ls "$DIR"/*.sql | sort); do
+            n=$(basename "$f")
+            if [ -n "$ONLY" ] && [ "$n" != "$ONLY" ]; then continue; fi
+            if grep -qx "$n" <<<"$applied"; then continue; fi
+            pending+=("$f")
+          done
+
+          {
+            echo "## DB migrate — dir=\`$DIR\` mode=\`$MODE\`"
+            echo "Already applied: $(wc -l <<<"$applied" | tr -d ' ') · Pending: ${#pending[@]}"
+          } | tee -a "$GITHUB_STEP_SUMMARY"
+          if [ "${#pending[@]}" -eq 0 ]; then echo "Nothing pending."; exit 0; fi
+          printf -- '- %s\n' "${pending[@]##*/}" | tee -a "$GITHUB_STEP_SUMMARY"
+
+          case "$MODE" in
+            list)
+              echo "List only — nothing applied." ;;
+            baseline)
+              for f in "${pending[@]}"; do
+                n=$(basename "$f")
+                q -c "insert into public.schema_migrations(name) values ('$n') on conflict do nothing"
+                echo "baseline: $n"
+              done ;;
+            apply)
+              for f in "${pending[@]}"; do
+                n=$(basename "$f")
+                echo "::group::Applying $n"
+                # Files that manage their own transaction (BEGIN/COMMIT) or use
+                # CREATE INDEX CONCURRENTLY cannot be wrapped in -1.
+                if grep -qiE '^\s*(begin|commit|start transaction)\b|concurrently' "$f"; then
+                  q -f "$f"
+                else
+                  q -1 -f "$f"
+                fi
+                q -c "insert into public.schema_migrations(name) values ('$n') on conflict do nothing"
+                echo "::endgroup::"
+                echo "applied: $n" | tee -a "$GITHUB_STEP_SUMMARY"
+              done ;;
+          esac
