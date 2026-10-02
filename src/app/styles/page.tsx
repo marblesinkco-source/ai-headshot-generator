@@ -160,7 +160,7 @@ function StyleCard({ style, featured = false }: { style: PhotoStyle; featured?: 
 function CtaButton({ children }: { children: React.ReactNode }) {
   return (
     <Link
-      href="/auth/register"
+      href="/auth/register?redirect=/headshots"
       className="inline-flex items-center justify-center gap-2 rounded-tp-button bg-tp-black px-6 py-3 text-sm font-semibold text-tp-paper transition-colors hover:bg-tp-ink"
     >
       {children} <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -323,7 +323,7 @@ export default function StylesPage() {
             </p>
             <div className="mt-8">
               <Link
-                href="/auth/register"
+                href="/auth/register?redirect=/headshots"
                 className="inline-flex items-center justify-center gap-2 rounded-tp-button bg-tp-bronze px-6 py-3 text-sm font-semibold text-tp-black transition-colors hover:bg-tp-beige"
               >
                 Try multiple styles <ArrowRight className="h-4 w-4" aria-hidden="true" />

@@ -203,7 +203,7 @@ export default function AvatarsPage() {
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
-                href="/auth/register"
+                href="/auth/register?redirect=/headshots"
                 className={cn(
                   buttonVariants({ variant: 'primary', size: 'lg' }),
                   'w-full bg-white text-tp-black hover:bg-tp-paper sm:w-auto'
@@ -213,7 +213,7 @@ export default function AvatarsPage() {
                 <ArrowRight className="h-5 w-5" aria-hidden="true" />
               </Link>
               <Link
-                href="/auth/register"
+                href="/auth/register?redirect=/headshots"
                 className={cn(
                   buttonVariants({ variant: 'outline', size: 'lg' }),
                   'w-full border-white/60 text-white hover:border-white hover:bg-white/10 sm:w-auto'
@@ -371,7 +371,7 @@ export default function AvatarsPage() {
                 <p className="mt-6 font-display text-5xl font-normal text-white">$1.99</p>
                 <p className="mt-1 text-sm text-tp-beige/70">one-time, no subscription</p>
                 <Link
-                  href="/auth/register"
+                  href="/auth/register?redirect=/headshots"
                   className={cn(
                     buttonVariants({ variant: 'outline', size: 'lg' }),
                     'mt-8 w-full border-white/40 text-white hover:border-white hover:bg-white/10'
@@ -390,7 +390,7 @@ export default function AvatarsPage() {
                 <p className="mt-6 font-display text-5xl font-normal text-white">$15.90</p>
                 <p className="mt-1 text-sm text-white/80">that&apos;s 20 extra avatars for just $6.00 more</p>
                 <Link
-                  href="/auth/register"
+                  href="/auth/register?redirect=/headshots"
                   className={cn(
                     buttonVariants({ variant: 'primary', size: 'lg' }),
                     'mt-8 w-full bg-white text-tp-black hover:bg-tp-paper'
@@ -497,7 +497,7 @@ export default function AvatarsPage() {
             </h2>
             <div className="mt-10">
               <Link
-                href="/auth/register"
+                href="/auth/register?redirect=/headshots"
                 className={cn(
                   buttonVariants({ variant: 'primary', size: 'lg' }),
                   'bg-white text-tp-black hover:bg-tp-paper'

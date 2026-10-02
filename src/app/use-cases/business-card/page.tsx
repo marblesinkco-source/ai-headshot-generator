@@ -173,7 +173,7 @@ export default function BusinessCardUseCasePage() {
               {"A photo on your business card makes you memorable long after the handshake. Get a crisp, professional headshot from a handful of selfies, delivered in about 2 hours, starting at just $1.99."}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 {"Get Your Business Card Headshot"}
               </Link>
               <Link
@@ -324,7 +324,7 @@ export default function BusinessCardUseCasePage() {
             {"Put a confident face on every introduction. Starting at just $1.99."}
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               {"Get Your Business Card Headshot"}
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

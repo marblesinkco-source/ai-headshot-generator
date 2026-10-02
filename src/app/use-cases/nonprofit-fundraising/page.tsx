@@ -186,7 +186,7 @@ export default function NonprofitFundraisingUseCasePage() {
               {"Donors give to people they trust. Get professional portraits for your staff, board and volunteers from a handful of selfies, delivered in about 2 hours, starting at just $1.99 per person."}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 {"Get Your Nonprofit Headshot"}
               </Link>
               <Link
@@ -337,7 +337,7 @@ export default function NonprofitFundraisingUseCasePage() {
             {"Give your team portraits that build trust. Starting at just $1.99."}
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               {"Get Your Nonprofit Headshot"}
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

@@ -173,7 +173,7 @@ export default function VisaApplicationUseCasePage() {
               {"Start your visa photo with a clean, well-lit, plain-background portrait generated from your selfies, delivered in about 2 hours, from $1.99. Always confirm your country's official photo rules."}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 {"Get Your Visa Photo Portrait"}
               </Link>
               <Link
@@ -324,7 +324,7 @@ export default function VisaApplicationUseCasePage() {
             {"Start from a clear, neutral portrait. Starting at just $1.99."}
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               {"Get Your Visa Photo Portrait"}
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

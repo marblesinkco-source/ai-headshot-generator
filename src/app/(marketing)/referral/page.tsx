@@ -141,7 +141,7 @@ export default function ReferralPage() {
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/auth/register"
+              href="/auth/register?redirect=/headshots"
               className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-8 py-4 text-sm font-semibold text-tp-black transition-all hover:bg-tp-bronze/90 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-tp-bronze/20"
             >
               Start Referring <ArrowRight className="h-4 w-4" />
@@ -341,7 +341,7 @@ export default function ReferralPage() {
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/auth/register"
+              href="/auth/register?redirect=/headshots"
               className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-8 py-4 text-sm font-semibold text-tp-black transition-all hover:bg-tp-bronze/90 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-tp-bronze/20"
             >
               Start Referring <ArrowRight className="h-4 w-4" />

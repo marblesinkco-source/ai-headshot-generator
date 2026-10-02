@@ -123,7 +123,7 @@ export default async function StylePage({ params }: Props) {
           </p>
           <div className="mt-8 flex justify-center">
             <Link
-              href="/auth/register"
+              href="/auth/register?redirect=/headshots"
               className={buttonVariants({ variant: 'primary', size: 'lg' })}
             >
               Get Started
@@ -263,7 +263,7 @@ export default async function StylePage({ params }: Props) {
           </p>
           <div className="mt-8 flex justify-center">
             <Link
-              href="/auth/register"
+              href="/auth/register?redirect=/headshots"
               className={buttonVariants({ variant: 'primary', size: 'lg' })}
             >
               Get Started

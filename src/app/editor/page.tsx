@@ -233,7 +233,7 @@ export default function EditorIndexPage() {
             studio-quality headshots for you. From $1.99.
           </p>
           <Link
-            href="/auth/register"
+            href="/auth/register?redirect=/headshots"
             className={buttonVariants({ size: 'lg', className: 'mt-6' })}
           >
             Create your AI headshots

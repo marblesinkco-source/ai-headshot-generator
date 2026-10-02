@@ -170,7 +170,7 @@ export default function AccountantsIndustryPage() {
               project competence, reliability, and professionalism.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register">
+              <Link href="/auth/register?redirect=/headshots">
                 <Button size="lg" className="gap-2">
                   Get Your Professional Headshot
                   <ArrowRight className="h-4 w-4" />
@@ -338,7 +338,7 @@ export default function AccountantsIndustryPage() {
             Studio-quality headshots starting at just $1.99.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register">
+            <Link href="/auth/register?redirect=/headshots">
               <Button size="lg" className="gap-2">
                 Get Your Professional Headshot
                 <ArrowRight className="h-4 w-4" />

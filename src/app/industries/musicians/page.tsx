@@ -172,7 +172,7 @@ export default function MusiciansIndustryPage() {
               Bookers, press, and fans all judge your image first. Get striking, press-ready portraits that fit your sound, without paying for a photographer, studio, or stylist.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Artist Headshot
               </Link>
               <Link
@@ -323,7 +323,7 @@ export default function MusiciansIndustryPage() {
             Get press-ready portraits that help bookers, press, and fans remember you.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Artist Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

@@ -209,7 +209,7 @@ export default function FreeHeadshotGeneratorPage() {
             resumes and more. From $1.99, no subscription, most orders ready within 2 hours.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
+            <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
               Try it risk-free
               <ArrowRight className="h-4 w-4" />
             </Link>
@@ -331,7 +331,7 @@ export default function FreeHeadshotGeneratorPage() {
             </table>
           </div>
           <div className="mt-6 text-center">
-            <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
+            <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
               Get my headshots from $1.99
               <ArrowRight className="h-4 w-4" />
             </Link>
@@ -451,7 +451,7 @@ export default function FreeHeadshotGeneratorPage() {
             From $1.99, secure Stripe checkout, no subscription.
           </p>
           <Link
-            href="/auth/register"
+            href="/auth/register?redirect=/headshots"
             className={`${buttonVariants({ variant: 'secondary', size: 'lg' })} mt-8 bg-tp-bronze text-tp-ink hover:bg-tp-beige`}
           >
             Get my headshots

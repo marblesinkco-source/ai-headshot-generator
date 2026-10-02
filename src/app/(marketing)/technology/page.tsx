@@ -249,7 +249,7 @@ export default function TechnologyPage() {
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/auth/register"
+              href="/auth/register?redirect=/headshots"
               className={cn(
                 buttonVariants({ size: 'lg' }),
                 'bg-tp-bronze text-tp-black hover:bg-tp-bronze/90 active:bg-tp-bronze/80 font-semibold'
@@ -489,7 +489,7 @@ export default function TechnologyPage() {
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/auth/register"
+              href="/auth/register?redirect=/headshots"
               className={cn(
                 buttonVariants({ size: 'lg' }),
                 'bg-tp-bronze text-tp-black hover:bg-tp-bronze/90 active:bg-tp-bronze/80 font-semibold shadow-lg shadow-tp-bronze/20'

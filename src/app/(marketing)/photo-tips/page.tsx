@@ -249,7 +249,7 @@ export default function PhotoTipsPage() {
           </p>
           <div className="mt-8">
             <Link
-              href="/auth/register"
+              href="/auth/register?redirect=/headshots"
               className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:bg-tp-bronze/90"
             >
               Get Started <ArrowRight className="h-4 w-4" />
@@ -387,7 +387,7 @@ export default function PhotoTipsPage() {
           </p>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
-              href="/auth/register"
+              href="/auth/register?redirect=/headshots"
               className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:bg-tp-bronze/90"
             >
               Create Your Headshots <ArrowRight className="h-4 w-4" />

@@ -130,7 +130,7 @@ export default function GuaranteePage() {
           </p>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
-              href="/auth/register"
+              href="/auth/register?redirect=/headshots"
               className={cn(
                 buttonVariants({ size: 'lg' }),
                 'bg-tp-bronze text-tp-black hover:bg-tp-bronze/90'
@@ -249,7 +249,7 @@ export default function GuaranteePage() {
           </p>
           <div className="mt-8">
             <Link
-              href="/auth/register"
+              href="/auth/register?redirect=/headshots"
               className={cn(
                 buttonVariants({ size: 'lg' }),
                 'bg-tp-bronze text-tp-black hover:bg-tp-bronze/90'

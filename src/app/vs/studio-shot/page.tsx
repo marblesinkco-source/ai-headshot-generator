@@ -108,7 +108,7 @@ export default function Page() {
               StudioShot advertises 100+ headshots at a higher price. TailorPic gives you polished photos across 11 categories (up to 160 per order), delivered within 24 hours, from $1.99.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
+              <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
                 Get headshots from $1.99
               </Link>
             </div>
@@ -219,7 +219,7 @@ export default function Page() {
               Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
-              <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
+              <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
                 Get started
               </Link>
             </div>

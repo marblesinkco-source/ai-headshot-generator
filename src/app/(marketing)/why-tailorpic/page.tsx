@@ -262,7 +262,7 @@ export default function WhyTailorPicPage() {
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link
-                href="/auth/register"
+                href="/auth/register?redirect=/headshots"
                 className={cn(
                   buttonVariants({ size: 'lg' }),
                   'bg-tp-bronze text-tp-black hover:bg-tp-bronze/90',
@@ -574,7 +574,7 @@ export default function WhyTailorPicPage() {
               satisfied.
             </p>
             <Link
-              href="/auth/register"
+              href="/auth/register?redirect=/headshots"
               className={cn(
                 buttonVariants({ size: 'lg' }),
                 'mt-8 bg-tp-bronze text-tp-black shadow-lg shadow-tp-bronze/20 hover:bg-tp-bronze/90',

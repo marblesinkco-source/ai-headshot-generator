@@ -173,7 +173,7 @@ export default function DentistsIndustryPage() {
               Patients pick their dentist before they pick up the phone. A warm, professional headshot on your website and directory listings builds trust from the first impression.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Dentist Headshot
               </Link>
               <Link
@@ -324,7 +324,7 @@ export default function DentistsIndustryPage() {
             Get polished headshots for your practice website, directories, and marketing from a few selfies.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Dentist Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

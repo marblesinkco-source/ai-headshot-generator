@@ -285,7 +285,7 @@ export default function VsReminiPage() {
             </p>
             <div className="mt-8">
               <Button asChild size="lg" className="bg-tp-bronze-ink hover:bg-tp-bronze-ink/90 text-white">
-                <Link href="/auth/register">Get Started</Link>
+                <Link href="/auth/register?redirect=/headshots">Get Started</Link>
               </Button>
             </div>
           </div>

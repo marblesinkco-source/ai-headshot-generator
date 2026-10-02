@@ -86,7 +86,7 @@ export function ResumePhotoCheckerDemo() {
         </div>
 
         <div className="mt-6 text-center">
-          <Link href="/auth/register" className={cn(buttonVariants({ variant: 'primary', size: 'md' }))}>
+          <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ variant: 'primary', size: 'md' }))}>
             Get AI-Generated Resume Photo
           </Link>
         </div>

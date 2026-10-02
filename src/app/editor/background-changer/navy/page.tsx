@@ -90,7 +90,7 @@ export default function NavyBackgroundPage() {
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-tp-muted sm:text-lg">
             Navy blue signals stability, authority and trust. TailorPic&apos;s AI generates your headshot against a refined dark blue background that looks polished and executive-ready.
           </p>
-          <Link href="/auth/register" className={buttonVariants({ size: 'lg', className: 'mt-8' })}>
+          <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ size: 'lg', className: 'mt-8' })}>
             Try TailorPic AI Headshots
           </Link>
           <p className="mt-4 text-sm text-tp-muted">
@@ -171,7 +171,7 @@ export default function NavyBackgroundPage() {
           <p className="mt-3 text-tp-muted">
             Upload a few selfies and get studio-quality professional headshots in hours, from $1.99.
           </p>
-          <Link href="/auth/register" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
+          <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
             Get AI Headshots
           </Link>
         </div>

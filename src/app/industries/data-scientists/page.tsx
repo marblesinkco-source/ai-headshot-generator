@@ -160,7 +160,7 @@ export default function DataScientistsIndustryPage() {
               Your work speaks through models and insights, but people still want to see who is behind them. Get a sharp, approachable headshot for LinkedIn, conference bios, and your site, without a photo shoot.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Data Science Headshot
               </Link>
               <Link
@@ -311,7 +311,7 @@ export default function DataScientistsIndustryPage() {
             Get a headshot that helps your work get noticed.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Data Science Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

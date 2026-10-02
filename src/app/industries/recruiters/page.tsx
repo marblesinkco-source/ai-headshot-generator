@@ -160,7 +160,7 @@ export default function RecruitersIndustryPage() {
               Candidates judge your profile before they reply to your message. Get a warm, credible headshot that makes every outreach feel personal.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Recruiter Headshot
               </Link>
               <Link
@@ -311,7 +311,7 @@ export default function RecruitersIndustryPage() {
             Get a headshot that helps candidates say yes to your message.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Recruiter Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

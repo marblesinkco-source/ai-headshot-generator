@@ -160,7 +160,7 @@ export default function NotariesIndustryPage() {
               Clients trust notaries with important documents. Get a dependable, professional headshot that helps new clients feel confident booking with you.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Notary Headshot
               </Link>
               <Link
@@ -311,7 +311,7 @@ export default function NotariesIndustryPage() {
             Get a headshot that helps new clients book with confidence.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Notary Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

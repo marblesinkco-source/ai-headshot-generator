@@ -109,7 +109,7 @@ export default function Page() {
               Lensa is a mobile photo editor known for artistic AI avatars. TailorPic is a headshot specialist: realistic, LoRA-trained photos across 11 categories (up to 160 per order), from $1.99.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
+              <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
                 Get headshots from $1.99
               </Link>
             </div>
@@ -220,7 +220,7 @@ export default function Page() {
               Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
-              <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
+              <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
                 Get started
               </Link>
             </div>

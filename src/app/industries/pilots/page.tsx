@@ -160,7 +160,7 @@ export default function PilotsIndustryPage() {
               First impressions matter at 35,000 feet and on the ground. Get a sharp, confident headshot for airline applications, charter company pages, flight school bios, and LinkedIn, without coordinating a photographer around your flight schedule.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Pilot Headshot
               </Link>
               <Link
@@ -311,7 +311,7 @@ export default function PilotsIndustryPage() {
             Get a headshot that helps you stand out to airlines, clients, and students.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Pilot Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

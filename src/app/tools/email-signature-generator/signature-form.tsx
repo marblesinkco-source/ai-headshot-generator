@@ -292,7 +292,7 @@ export function SignatureForm() {
             TailorPic generates studio-quality photos from selfies — From $1.99
           </p>
           <Link
-            href="/auth/register"
+            href="/auth/register?redirect=/headshots"
             className={buttonVariants({ className: 'mt-4' })}
           >
             Create my headshot

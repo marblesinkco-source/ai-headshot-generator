@@ -188,7 +188,7 @@ export function OutfitPreview() {
         </div>
 
         <div className="mt-12 text-center">
-          <Link href="/auth/register" className={cn(buttonVariants({ variant: 'primary', size: 'lg' }))}>
+          <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ variant: 'primary', size: 'lg' }))}>
             Start Creating
             <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
           </Link>

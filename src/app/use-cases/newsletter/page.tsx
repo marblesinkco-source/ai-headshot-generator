@@ -173,7 +173,7 @@ export default function NewsletterUseCasePage() {
               {"Readers subscribe to people, not just publications. Get a crisp, professional author photo for your newsletter from a handful of selfies, delivered in about 2 hours, starting at just $1.99."}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 {"Get Your Author Headshot"}
               </Link>
               <Link
@@ -324,7 +324,7 @@ export default function NewsletterUseCasePage() {
             {"Turn subscribers into a community with a photo they recognize. Starting at just $1.99."}
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               {"Get Your Author Headshot"}
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

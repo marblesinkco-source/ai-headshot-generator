@@ -156,7 +156,7 @@ export default function EngineersIndustryPage() {
               Your code and your designs speak for you, but your photo is the first thing people see on LinkedIn, GitHub, and conference pages. Get a sharp, credible headshot from a few selfies, with no photographer and no weekend lost.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Engineer Headshot
               </Link>
               <Link
@@ -307,7 +307,7 @@ export default function EngineersIndustryPage() {
             Get polished headshots for LinkedIn, GitHub, and your next talk from a few selfies.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Engineer Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

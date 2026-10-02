@@ -89,7 +89,7 @@ export default function AgeFilterPage() {
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-tp-muted sm:text-lg">
             Tired eyes and harsh lighting can add years. TailorPic&apos;s AI applies a subtle age adjustment so your professional headshot looks fresh, energized and still unmistakably you.
           </p>
-          <Link href="/auth/register" className={buttonVariants({ size: 'lg', className: 'mt-8' })}>
+          <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ size: 'lg', className: 'mt-8' })}>
             Try TailorPic AI Headshots
           </Link>
         </div>
@@ -165,7 +165,7 @@ export default function AgeFilterPage() {
           <p className="mt-3 text-tp-muted">
             Upload a few selfies and get studio-quality professional headshots in hours, from $1.99.
           </p>
-          <Link href="/auth/register" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
+          <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
             Get AI Headshots
           </Link>
         </div>

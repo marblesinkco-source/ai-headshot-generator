@@ -89,7 +89,7 @@ export default function PhotoRestorationPage() {
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-tp-muted sm:text-lg">
             Faded colors, scratches and grain make old photos unusable. TailorPic&apos;s AI learns from them and generates fresh, high-quality professional headshots with clean detail and natural color.
           </p>
-          <Link href="/auth/register" className={buttonVariants({ size: 'lg', className: 'mt-8' })}>
+          <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ size: 'lg', className: 'mt-8' })}>
             Try TailorPic AI Headshots
           </Link>
         </div>
@@ -165,7 +165,7 @@ export default function PhotoRestorationPage() {
           <p className="mt-3 text-tp-muted">
             Upload a few photos and get studio-quality professional headshots in hours, from $1.99.
           </p>
-          <Link href="/auth/register" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
+          <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
             Get AI Headshots
           </Link>
         </div>

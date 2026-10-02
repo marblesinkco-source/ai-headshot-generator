@@ -272,7 +272,7 @@ export default function ChangelogPage() {
             Professional AI headshots from $1.99. No subscription required.
           </p>
           <Link
-            href="/auth/register"
+            href="/auth/register?redirect=/headshots"
             className="mt-6 inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-6 py-3 text-sm font-medium text-tp-black transition-colors hover:bg-tp-bronze/90"
           >
             Get started

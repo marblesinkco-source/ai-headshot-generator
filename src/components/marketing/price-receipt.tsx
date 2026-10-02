@@ -11,10 +11,11 @@ import { cn } from '@/lib/utils';
 const packages = CATEGORIES.headshots.packages;
 
 export function PriceReceipt() {
-  const [selectedIdx, setSelectedIdx] = useState(
-    packages.findIndex((p) => p.recommended) ?? 4
-  );
-  const pkg = packages[selectedIdx];
+  const [selectedIdx, setSelectedIdx] = useState(() => {
+    const idx = packages.findIndex((p) => p.recommended);
+    return idx >= 0 ? idx : Math.min(4, packages.length - 1);
+  });
+  const pkg = packages[selectedIdx] ?? packages[0];
   const perPhoto = pkg.price / pkg.outputCount;
 
   return (

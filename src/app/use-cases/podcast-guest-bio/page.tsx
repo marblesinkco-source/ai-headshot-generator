@@ -173,7 +173,7 @@ export default function PodcastGuestBioUseCasePage() {
               {"Hosts ask guests for a photo and bio, and your headshot is often the first thing listeners see. Get a crisp portrait from a few selfies, delivered in about 2 hours, from $1.99."}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 {"Get Your Guest Headshot"}
               </Link>
               <Link
@@ -324,7 +324,7 @@ export default function PodcastGuestBioUseCasePage() {
             {"Send hosts a headshot you are proud of. Starting at just $1.99."}
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               {"Get Your Guest Headshot"}
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

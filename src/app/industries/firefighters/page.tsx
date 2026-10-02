@@ -161,7 +161,7 @@ export default function FirefightersIndustryPage() {
               You show up when the community needs you most. Get a confident, professional headshot for department rosters, promotion packets, and career profiles without a photo session.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Firefighter Headshot
               </Link>
               <Link
@@ -312,7 +312,7 @@ export default function FirefightersIndustryPage() {
             Get a headshot that reflects your service and professionalism.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Firefighter Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

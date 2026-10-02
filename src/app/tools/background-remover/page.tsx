@@ -13,7 +13,7 @@ import { BackgroundRemoverDemo } from '@/components/tools/tool-demos';
 const title = 'Free AI Background Remover for Photos and Headshots';
 const description = 'Remove backgrounds from your photos instantly with AI. Perfect for professional headshots, product photos and social media with clean, natural-looking edges.';
 const path = '/tools/background-remover';
-const ctaHref = '/auth/register';
+const ctaHref = '/auth/register?redirect=/headshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

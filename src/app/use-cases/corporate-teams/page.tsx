@@ -155,7 +155,7 @@ export default function CorporateTeamsUseCasePage() {
               Give your entire team polished, consistent headshots without scheduling a photographer. Each person uploads selfies on their own time, and everyone gets matching professional photos. Starting at $1.99 per person.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Team Headshots
               </Link>
               <Link
@@ -306,7 +306,7 @@ export default function CorporateTeamsUseCasePage() {
             Give every team member a polished headshot that matches, no matter where they are located. Starting at $1.99 per person.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Team Headshots
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

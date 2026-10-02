@@ -156,7 +156,7 @@ export default function TeachersIndustryPage() {
               Parents, students, and colleagues look you up before they ever meet you. Get warm, professional headshots for your school website and academic profiles from a few selfies, with no photographer and no lost planning period.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Educator Headshot
               </Link>
               <Link
@@ -307,7 +307,7 @@ export default function TeachersIndustryPage() {
             Get polished headshots for your school site and academic profiles from a few selfies.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Educator Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

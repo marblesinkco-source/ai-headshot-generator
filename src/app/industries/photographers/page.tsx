@@ -160,7 +160,7 @@ export default function PhotographersIndustryPage() {
               You spend your career making others look their best. Now get a headshot that reflects your own creative vision, without asking a colleague for a favor or booking a separate session.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Photographer Headshot
               </Link>
               <Link
@@ -311,7 +311,7 @@ export default function PhotographersIndustryPage() {
             Get a headshot that matches the quality you deliver to every client.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Photographer Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

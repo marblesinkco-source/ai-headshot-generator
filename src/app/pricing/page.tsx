@@ -193,7 +193,7 @@ export default function PricingPage() {
             teams pay {TEAM_SMALL} or {TEAM_LARGE} per person.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
+            <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
               Get your headshots from {BASE_PRICE_DISPLAY}
             </Link>
             <Link href="/team-headshots" className={buttonVariants({ variant: 'outline', size: 'lg' })}>
@@ -296,7 +296,7 @@ export default function PricingPage() {
             ))}
           </div>
           <div className="mt-10 text-center">
-            <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
+            <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
               Get your headshots from {BASE_PRICE_DISPLAY}
             </Link>
           </div>

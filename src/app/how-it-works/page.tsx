@@ -247,7 +247,7 @@ export default function HowItWorksPage() {
             results in about 2 hours.
           </p>
           <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <Link href="/auth/register">
+            <Link href="/auth/register?redirect=/headshots">
               <Button size="lg" className="bg-tp-bronze text-tp-black hover:bg-tp-bronze/90">
                 Get Started
               </Button>
@@ -621,7 +621,7 @@ export default function HowItWorksPage() {
             Transform your photos with studio-quality AI headshots. Your new headshots are just a few selfies away.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register">
+            <Link href="/auth/register?redirect=/headshots">
               <Button
                 size="lg"
                 className="bg-tp-bronze text-tp-black hover:bg-tp-bronze/90"

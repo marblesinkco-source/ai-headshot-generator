@@ -126,7 +126,7 @@ export default function FAQPage() {
               Contact Us
             </Link>
             <Link
-              href="/auth/register"
+              href="/auth/register?redirect=/headshots"
               className="inline-flex items-center justify-center rounded-tp-button border border-tp-line px-8 py-3 text-sm font-semibold text-tp-ink transition-all hover:bg-tp-paper"
             >
               Get Started

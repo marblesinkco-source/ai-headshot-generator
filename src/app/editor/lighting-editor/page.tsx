@@ -102,7 +102,7 @@ export default function LightingEditorPage() {
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-tp-muted sm:text-lg">
             Bad lighting ruins good photos. TailorPic&apos;s AI replaces harsh shadows, yellow indoor bulbs and overexposed faces with soft, studio-style light in your headshots.
           </p>
-          <Link href="/auth/register" className={buttonVariants({ size: 'lg', className: 'mt-8' })}>
+          <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ size: 'lg', className: 'mt-8' })}>
             Try TailorPic AI Headshots
           </Link>
         </div>
@@ -178,7 +178,7 @@ export default function LightingEditorPage() {
           <p className="mt-3 text-tp-muted">
             Upload a few selfies and get professionally lit headshots in hours, from $1.99.
           </p>
-          <Link href="/auth/register" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
+          <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
             Get AI Headshots
           </Link>
         </div>

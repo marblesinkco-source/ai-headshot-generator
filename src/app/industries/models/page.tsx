@@ -160,7 +160,7 @@ export default function ModelsIndustryPage() {
               Agencies and casting directors review hundreds of submissions. Get clean, polished portraits for your digital submissions, portfolio, and social profiles, ready whenever an opportunity appears.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Model Headshot
               </Link>
               <Link
@@ -311,7 +311,7 @@ export default function ModelsIndustryPage() {
             Get a set of portraits that helps your submissions stand out.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Model Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

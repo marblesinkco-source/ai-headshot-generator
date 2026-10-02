@@ -155,7 +155,7 @@ export default function DatingAppsUseCasePage() {
               Your dating profile photo is your first impression. Get natural, flattering photos that look like you on your best day, from a few quick selfies. No photographer, no awkward poses. Starting at just $1.99.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Dating Photos
               </Link>
               <Link
@@ -306,7 +306,7 @@ export default function DatingAppsUseCasePage() {
             Stop losing matches to bad photos. Get a set of natural, flattering dating profile pictures in about 2 hours, from $1.99.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Dating Photos
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

@@ -630,7 +630,7 @@ export default function IndustriesPage() {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link
-                href="/auth/register"
+                href="/auth/register?redirect=/headshots"
                 className={cn(
                   buttonVariants({ size: 'lg' }),
                   'bg-tp-bronze text-tp-black shadow-none hover:bg-tp-beige'

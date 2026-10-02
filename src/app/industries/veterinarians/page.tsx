@@ -160,7 +160,7 @@ export default function VeterinariansIndustryPage() {
               Pet owners trust the people who care for their family. Get a friendly, professional headshot for your clinic website and profiles, without taking time away from your patients.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Veterinarian Headshot
               </Link>
               <Link
@@ -311,7 +311,7 @@ export default function VeterinariansIndustryPage() {
             Get a headshot that shows the skill and compassion you bring to every patient.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Veterinarian Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

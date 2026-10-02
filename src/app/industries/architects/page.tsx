@@ -160,7 +160,7 @@ export default function ArchitectsIndustryPage() {
               You design spaces that inspire. Your headshot should reflect that same attention to detail. Get polished, intentional portraits from a few selfies, without leaving the studio.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Architect Headshot
               </Link>
               <Link
@@ -311,7 +311,7 @@ export default function ArchitectsIndustryPage() {
             Get polished headshots for your firm website, proposals, and profiles from a few selfies.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Architect Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

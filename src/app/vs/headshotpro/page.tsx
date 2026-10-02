@@ -304,7 +304,7 @@ export default function VsHeadshotProPage() {
             delivered in hours with TailorPic.
           </p>
           <Link
-            href="/auth/register"
+            href="/auth/register?redirect=/headshots"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-tp-bronze-ink px-8 py-4 text-base font-semibold text-white shadow-lg transition-all hover:bg-tp-ink hover:shadow-xl"
           >
             Get Started

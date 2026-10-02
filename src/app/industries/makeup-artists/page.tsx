@@ -160,7 +160,7 @@ export default function MakeupArtistsIndustryPage() {
               Clients trust the artist whose own image is polished. Get a flawless headshot for your portfolio, booking page, and social profiles, without coordinating a full photo shoot.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Makeup Artist Headshot
               </Link>
               <Link
@@ -311,7 +311,7 @@ export default function MakeupArtistsIndustryPage() {
             Get a headshot that helps more clients book with confidence.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Makeup Artist Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

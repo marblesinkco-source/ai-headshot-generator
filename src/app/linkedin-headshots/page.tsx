@@ -219,7 +219,7 @@ export default function LinkedInHeadshotsPage() {
               ))}
             </ul>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row lg:items-start">
-              <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
+              <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
                 Get your LinkedIn headshot
                 <ArrowRight className="h-4 w-4" />
               </Link>
@@ -423,7 +423,7 @@ export default function LinkedInHeadshotsPage() {
             ))}
           </div>
           <div className="mt-10 text-center">
-            <Link href="/auth/register" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
+            <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
               Create your LinkedIn headshot
               <ArrowRight className="h-4 w-4" />
             </Link>
@@ -493,7 +493,7 @@ export default function LinkedInHeadshotsPage() {
             Upload a few selfies and show up with a profile photo you are proud of.
           </p>
           <Link
-            href="/auth/register"
+            href="/auth/register?redirect=/headshots"
             className={`${buttonVariants({ variant: 'secondary', size: 'lg' })} mt-8 bg-tp-bronze text-tp-ink hover:bg-tp-beige`}
           >
             Get started

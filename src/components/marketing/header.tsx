@@ -14,7 +14,7 @@ const categories = getActiveCategories();
 
 // Ordered along the decision funnel: understand (How It Works) -> see proof (Samples) -> decide (Pricing) -> learn more (Blog)
 const navLinks = [
-  { label: 'How It Works', href: '/#how-it-works' },
+  { label: 'How It Works', href: '/how-it-works' },
   { label: 'Samples', href: '/samples' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Blog', href: '/blog' },

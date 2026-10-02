@@ -160,7 +160,7 @@ export default function GraphicDesignersIndustryPage() {
               Clients hire designers who look like they have taste. Get a polished, distinctive headshot for your portfolio, proposals, and profiles, without a photo shoot.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Designer Headshot
               </Link>
               <Link
@@ -311,7 +311,7 @@ export default function GraphicDesignersIndustryPage() {
             Get a headshot that matches the care you put into your work.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Designer Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

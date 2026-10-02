@@ -160,7 +160,7 @@ export default function ScientistsIndustryPage() {
               Your work speaks for itself, but collaborators, funders, and editors still look at your face first. Get a credible, approachable headshot for every lab page, grant portal, and conference program, without booking a photographer.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Scientist Headshot
               </Link>
               <Link
@@ -311,7 +311,7 @@ export default function ScientistsIndustryPage() {
             Get a headshot that helps collaborators, funders, and readers trust your work.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Scientist Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

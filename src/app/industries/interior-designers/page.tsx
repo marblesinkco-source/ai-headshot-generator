@@ -159,7 +159,7 @@ export default function InteriorDesignersIndustryPage() {
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
               Clients invite you into their homes, so they want to trust you first. Get a polished, stylish headshot for your portfolio site, Instagram, and proposals without scheduling a photo shoot.</p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Designer Headshot
               </Link>
               <Link
@@ -310,7 +310,7 @@ export default function InteriorDesignersIndustryPage() {
             Get a headshot that helps clients trust your eye before they meet you.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Designer Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

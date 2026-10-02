@@ -157,7 +157,7 @@ export default function SecurityPage() {
               no-selling policy -- so you can get professional headshots with confidence.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register">
+              <Link href="/auth/register?redirect=/headshots">
                 <Button size="lg" className="gap-2">
                   Get Your Headshot
                   <ArrowRight className="h-4 w-4" />
@@ -336,7 +336,7 @@ export default function SecurityPage() {
             protected, never shared, and automatically deleted.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register">
+            <Link href="/auth/register?redirect=/headshots">
               <Button size="lg" className="gap-2">
                 Get Your Professional Headshot
                 <ArrowRight className="h-4 w-4" />

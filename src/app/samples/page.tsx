@@ -234,7 +234,7 @@ export default function SamplesPage() {
             </p>
             <div className="mt-8 flex flex-col items-center gap-3">
               <Link
-                href="/auth/register"
+                href="/auth/register?redirect=/headshots"
                 className={cn(
                   buttonVariants({ size: 'lg' }),
                   'rounded-tp-button bg-tp-bronze text-white hover:bg-tp-bronze-ink'
@@ -336,7 +336,7 @@ export default function SamplesPage() {
 
             <div className="mt-12 text-center">
               <Link
-                href="/auth/register"
+                href="/auth/register?redirect=/headshots"
                 className={cn(
                   buttonVariants({ size: 'lg' }),
                   'rounded-tp-button bg-tp-bronze text-white hover:bg-tp-bronze-ink'
@@ -395,7 +395,7 @@ export default function SamplesPage() {
             </div>
             <div className="mt-12 text-center">
               <Link
-                href="/auth/register"
+                href="/auth/register?redirect=/headshots"
                 className={cn(
                   buttonVariants({ size: 'lg' }),
                   'rounded-tp-button bg-tp-bronze text-white hover:bg-tp-bronze-ink'
@@ -528,7 +528,7 @@ export default function SamplesPage() {
             </div>
             <div className="mt-8 text-center">
               <Link
-                href="/auth/register"
+                href="/auth/register?redirect=/headshots"
                 className={cn(
                   buttonVariants({ size: 'lg' }),
                   'rounded-tp-button bg-tp-bronze text-white hover:bg-tp-bronze-ink'
@@ -558,7 +558,7 @@ export default function SamplesPage() {
             </p>
             <div className="mt-8">
               <Link
-                href="/auth/register"
+                href="/auth/register?redirect=/headshots"
                 className={cn(
                   buttonVariants({ size: 'lg' }),
                   'rounded-tp-button bg-tp-bronze text-white hover:bg-tp-bronze-ink'

@@ -241,7 +241,7 @@ function LoginContent() {
           {/* Register link */}
           <p className="mt-6 text-center text-sm text-tp-muted">
             Don&apos;t have an account?{' '}
-            <Link href="/auth/register" className="font-medium text-tp-bronze-ink hover:text-tp-bronze transition-colors">
+            <Link href="/auth/register?redirect=/headshots" className="font-medium text-tp-bronze-ink hover:text-tp-bronze transition-colors">
               Create one
             </Link>
           </p>

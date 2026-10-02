@@ -160,7 +160,7 @@ export default function InsuranceAgentsIndustryPage() {
               Clients buy protection from someone they trust. Get a confident, approachable headshot for your agency site, business cards, and LinkedIn, without booking a photographer.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Agent Headshot
               </Link>
               <Link
@@ -311,7 +311,7 @@ export default function InsuranceAgentsIndustryPage() {
             Get a headshot that helps more prospects request a quote.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Agent Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

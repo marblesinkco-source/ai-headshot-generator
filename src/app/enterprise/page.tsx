@@ -222,7 +222,7 @@ export default function EnterprisePage() {
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link
-                href="/auth/register"
+                href="/auth/register?redirect=/headshots"
                 className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-8 py-4 text-base font-semibold text-tp-black shadow-lg shadow-tp-bronze/20 transition-all hover:-translate-y-0.5 hover:bg-tp-bronze/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2 focus-visible:ring-offset-tp-black"
               >
                 Get Started <ArrowRight className="h-4 w-4" />
@@ -448,8 +448,8 @@ export default function EnterprisePage() {
           </p>
           <div className="grid gap-6 sm:grid-cols-3">
             {[
-              { name: 'Small Team', range: '5-15 people', price: '$39', per: 'per person', features: ['40+ photos each', 'Consistent style', 'HD resolution', 'Email support'], href: '/auth/register' },
-              { name: 'Company', range: '16-50 people', price: '$29', per: 'per person', features: ['40+ photos each', 'Brand guidelines', '4K resolution', 'Priority support'], popular: true, href: '/auth/register' },
+              { name: 'Small Team', range: '5-15 people', price: '$39', per: 'per person', features: ['40+ photos each', 'Consistent style', 'HD resolution', 'Email support'], href: '/auth/register?redirect=/headshots' },
+              { name: 'Company', range: '16-50 people', price: '$29', per: 'per person', features: ['40+ photos each', 'Brand guidelines', '4K resolution', 'Priority support'], popular: true, href: '/auth/register?redirect=/headshots' },
               { name: 'Enterprise', range: '50+ people', price: 'Custom', per: 'contact us', features: ['Custom photo packages', 'Admin dashboard', 'Custom onboarding', 'Dedicated manager', 'Invoiced billing'], href: '/contact' },
             ].map((plan) => (
               <div
@@ -660,7 +660,7 @@ export default function EnterprisePage() {
           </ul>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
-              href="/auth/register"
+              href="/auth/register?redirect=/headshots"
               className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:-translate-y-0.5 hover:bg-tp-bronze/90 hover:shadow-lg"
             >
               Get Started <ArrowRight className="h-4 w-4" />

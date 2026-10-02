@@ -160,7 +160,7 @@ export default function EventPlannersIndustryPage() {
               Clients hand you their most important moments. Get a polished, personable headshot that shows them you are organized and trustworthy, for your website, proposals, vendor directories, and social media.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Event Planner Headshot
               </Link>
               <Link
@@ -311,7 +311,7 @@ export default function EventPlannersIndustryPage() {
             Get a headshot that earns trust and helps more couples and companies say yes.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Event Planner Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

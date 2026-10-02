@@ -160,7 +160,7 @@ export default function ActorsIndustryPage() {
               Your headshot is your first audition. Get casting-ready portraits that show your range and match your current look, from a few selfies, without the cost of a traditional session.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Actor Headshot
               </Link>
               <Link
@@ -311,7 +311,7 @@ export default function ActorsIndustryPage() {
             Get casting-ready headshots from a few selfies, at a fraction of the cost of a traditional session.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Actor Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

@@ -352,7 +352,7 @@ export default function ReviewsPage() {
             </p>
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link
-                href="/auth/register"
+                href="/auth/register?redirect=/headshots"
                 className={buttonVariants({
                   variant: 'primary',
                   size: 'lg',

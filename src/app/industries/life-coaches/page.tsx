@@ -160,7 +160,7 @@ export default function LifeCoachesIndustryPage() {
               Clients open up to a coach they feel safe with. Get a warm, credible headshot that shows up on your website, programs, and social profiles, without a photo shoot.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Life Coach Headshot
               </Link>
               <Link
@@ -311,7 +311,7 @@ export default function LifeCoachesIndustryPage() {
             Get a headshot that helps more people take the first step.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Life Coach Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

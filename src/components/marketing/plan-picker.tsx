@@ -9,6 +9,13 @@ import { Check, ChevronRight } from 'lucide-react';
 
 const headshots = CATEGORIES.headshots;
 
+if (headshots.packages.length < 6) {
+  throw new Error(
+    `plan-picker expects at least 6 headshot packages but found ${headshots.packages.length}. ` +
+    'Update this component after changing the package list in categories.ts.',
+  );
+}
+
 const USE_CASES = [
   { id: 'single', label: 'Quick single photo', description: 'Just need one headshot' },
   { id: 'personal', label: 'Personal branding', description: 'LinkedIn, resume, portfolio' },

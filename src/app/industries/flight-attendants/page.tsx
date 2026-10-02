@@ -160,7 +160,7 @@ export default function FlightAttendantsIndustryPage() {
               Airlines look for a welcoming, polished presence. Get a friendly, professional headshot for applications, LinkedIn, and crew profiles, without booking a studio.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Cabin Crew Headshot
               </Link>
               <Link
@@ -311,7 +311,7 @@ export default function FlightAttendantsIndustryPage() {
             Get a headshot that shows the poise and warmth of great cabin crew.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Cabin Crew Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

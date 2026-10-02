@@ -159,7 +159,7 @@ export default function SalesProfessionalsIndustryPage() {
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
               Buyers research you before they reply. Get a confident, trustworthy headshot for LinkedIn, email signatures, and CRM profiles that helps prospects say yes to the meeting.</p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Sales Headshot
               </Link>
               <Link
@@ -310,7 +310,7 @@ export default function SalesProfessionalsIndustryPage() {
             Get a headshot that earns trust and helps more conversations turn into meetings.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Sales Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

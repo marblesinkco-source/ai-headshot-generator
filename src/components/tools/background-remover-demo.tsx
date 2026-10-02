@@ -59,7 +59,7 @@ export function BackgroundRemoverDemo() {
           <p className="text-center text-sm text-tp-muted">
             This is a preview. Full background removal is available after sign-up.
           </p>
-          <Link href="/auth/register" className={cn(buttonVariants({ variant: 'primary', size: 'md' }))}>
+          <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ variant: 'primary', size: 'md' }))}>
             Try Full Background Remover
           </Link>
         </div>

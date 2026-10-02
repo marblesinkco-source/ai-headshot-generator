@@ -172,7 +172,7 @@ export default function SecurityGuardsIndustryPage() {
               Employers and clients trust security professionals who look reliable and alert. Get a polished, credible headshot for your resume, LinkedIn, and company profiles without arranging a photographer.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Security Headshot
               </Link>
               <Link
@@ -323,7 +323,7 @@ export default function SecurityGuardsIndustryPage() {
             Get a headshot that earns trust and helps you move your career forward.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Security Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>
