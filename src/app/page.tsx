@@ -89,6 +89,10 @@ const OutfitPreview = dynamic(
   () => import('@/components/marketing/outfit-preview').then((m) => m.OutfitPreview),
   { loading: () => <SectionSkeleton height="h-[600px]" /> }
 );
+const ResultsGallery = dynamic(
+  () => import('@/components/marketing/results-gallery').then((m) => m.ResultsGallery),
+  { loading: () => <SectionSkeleton height="h-[700px]" /> }
+);
 const ActivityFeed = dynamic(
   () => import('@/components/marketing/activity-feed').then((m) => m.ActivityFeed),
   { loading: () => <SectionSkeleton height="h-12" /> }
@@ -111,6 +115,7 @@ export default function LandingPage() {
       <ActivityFeed />
       <StyleShowcase />
       <OutfitPreview />
+      <ResultsGallery />
       <TrustBadges />
       <TrustStrip />
       <BeforeAfterShowcase />
