@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
+import { TeamGridIllustration } from '@/components/marketing/illustrations';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
@@ -227,6 +228,12 @@ export default function TeamHeadshotsPage() {
                 <p className="mt-2 text-sm text-tp-muted leading-relaxed">{s.desc}</p>
               </div>
             ))}
+          </div>
+          <div className="mt-14 mx-auto max-w-md">
+            <TeamGridIllustration className="w-full h-auto" />
+            <p className="mt-3 text-center text-sm text-tp-muted">
+              One shared style and background, applied to every team member.
+            </p>
           </div>
         </div>
       </section>

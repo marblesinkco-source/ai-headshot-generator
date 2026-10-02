@@ -190,3 +190,159 @@ export function CategoryFallbackIllustration({ seed = 0, className = '' }: { see
     </svg>
   );
 }
+
+/** Team consistency — 3x2 grid of matching portrait cards, one highlighted as primary. */
+export function TeamGridIllustration({ className = '' }: { className?: string }) {
+  const xs = [12, 114, 216];
+  const ys = [11, 105];
+  return (
+    <svg viewBox="0 0 320 200" className={className} role="img" aria-label="A team of matching professional portraits" fill="none">
+      {ys.map((y, r) =>
+        xs.map((x, c) => {
+          const primary = r === 0 && c === 1;
+          return (
+            <g key={`${r}-${c}`}>
+              <rect
+                x={x}
+                y={y}
+                width="92"
+                height="84"
+                rx="12"
+                fill={primary ? BEIGE : PAPER}
+                fillOpacity={primary ? 0.6 : 1}
+                stroke={primary ? BRONZE_INK : BEIGE}
+                strokeWidth={primary ? 2 : 1}
+              />
+              <Bust x={x + 46} y={y + 38} scale={0.85} fill={primary ? BRONZE_INK : BRONZE} />
+              <rect x={x + 26} y={y + 73} width="40" height="4" rx="2" fill={primary ? BRONZE_INK : BEIGE} />
+            </g>
+          );
+        })
+      )}
+    </svg>
+  );
+}
+
+/** Enterprise dashboard — dark sidebar, header bar and a grid of team portraits. */
+export function EnterpriseIllustration({ className = '' }: { className?: string }) {
+  const cols = [131, 234, 337];
+  const rows = [100, 190];
+  return (
+    <svg viewBox="0 0 400 260" className={className} role="img" aria-label="Team dashboard showing a grid of team headshots" fill="none">
+      <defs>
+        {rows.map((cy, r) =>
+          cols.map((cx, c) => (
+            <clipPath key={`${r}-${c}`} id={`tp-ent-clip-${r}-${c}`}>
+              <circle cx={cx} cy={cy} r="30" />
+            </clipPath>
+          ))
+        )}
+      </defs>
+      <rect x="0" y="0" width="400" height="260" rx="16" fill={PAPER} stroke={BEIGE} />
+      <path d="M16 0h48v260H16a16 16 0 01-16-16V16A16 16 0 0116 0z" fill={INK} />
+      <circle cx="32" cy="26" r="8" fill={BRONZE} />
+      {[60, 92, 124, 156].map((y, i) => (
+        <g key={y}>
+          <circle cx="22" cy={y} r="3" fill={i === 0 ? BRONZE : BRONZE_INK} />
+          <rect x="30" y={y - 2} width="22" height="4" rx="2" fill={i === 0 ? BRONZE : BRONZE_INK} fillOpacity={i === 0 ? 1 : 0.7} />
+        </g>
+      ))}
+      <rect x="80" y="16" width="308" height="28" rx="8" fill={BEIGE} fillOpacity="0.55" />
+      <rect x="92" y="26" width="70" height="8" rx="4" fill={INK} fillOpacity="0.75" />
+      <rect x="338" y="24" width="38" height="12" rx="6" fill={BRONZE} />
+      {rows.map((cy, r) =>
+        cols.map((cx, c) => {
+          const highlighted = r === 0 && c === 1;
+          return (
+            <g key={`${r}-${c}`}>
+              <circle cx={cx} cy={cy} r="30" fill={highlighted ? BEIGE : '#fff'} stroke={BEIGE} />
+              <g clipPath={`url(#tp-ent-clip-${r}-${c})`}>
+                <Bust x={cx} y={cy + 4} scale={0.8} fill={highlighted ? BRONZE_INK : BRONZE} />
+              </g>
+              {highlighted && <circle cx={cx} cy={cy} r="35" stroke={BRONZE} strokeWidth="3" />}
+              <rect x={cx - 20} y={cy + 40} width="40" height="5" rx="2.5" fill={INK} fillOpacity="0.7" />
+              <rect x={cx - 14} y={cy + 49} width="28" height="4" rx="2" fill={BEIGE} />
+            </g>
+          );
+        })
+      )}
+    </svg>
+  );
+}
+
+/** Before / after — casual selfie vs. polished studio portrait. */
+export function BeforeAfterIllustration({ className = '' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 280 140" className={className} role="img" aria-label="A casual selfie transformed into a polished studio portrait" fill="none">
+      <defs>
+        <linearGradient id="tp-ba-studio" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor={PAPER} />
+          <stop offset="100%" stopColor={BRONZE} />
+        </linearGradient>
+        <clipPath id="tp-ba-clip-before">
+          <path d="M26 66c2-24 22-40 44-38 24 2 38 22 36 44-2 24-22 40-46 38-22-2-36-20-34-44z" />
+        </clipPath>
+        <clipPath id="tp-ba-clip-after">
+          <circle cx="214" cy="70" r="46" />
+        </clipPath>
+      </defs>
+      {/* Before: messy, off-center */}
+      <path d="M26 66c2-24 22-40 44-38 24 2 38 22 36 44-2 24-22 40-46 38-22-2-36-20-34-44z" fill={BEIGE} fillOpacity="0.5" />
+      <g clipPath="url(#tp-ba-clip-before)">
+        <g transform="rotate(-8 60 80)">
+          <Bust x={56} y={78} scale={1.1} fill={BRONZE} opacity={0.85} />
+        </g>
+      </g>
+      <path d="M24 64c3-26 24-42 47-40M104 50c6 8 7 20 4 30M30 92c8 16 24 26 42 26" stroke={BRONZE_INK} strokeWidth="1.3" strokeLinecap="round" strokeDasharray="3 4" />
+      <path d="M40 22l8 6M92 26l-6 8M20 108l9-3" stroke={BRONZE_INK} strokeOpacity="0.5" strokeWidth="1.2" strokeLinecap="round" />
+      {/* Arrow */}
+      <circle cx="140" cy="70" r="14" fill={INK} />
+      <path d="M133 70h13m0 0l-5-5m5 5l-5 5" stroke={BRONZE} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      {/* After: clean, centered, studio gradient */}
+      <circle cx="214" cy="70" r="46" fill="url(#tp-ba-studio)" />
+      <g clipPath="url(#tp-ba-clip-after)">
+        <Bust x={214} y={72} scale={1.25} fill={BRONZE_INK} />
+      </g>
+      <circle cx="214" cy="70" r="46" stroke={BRONZE_INK} strokeWidth="2" />
+      <circle cx="252" cy="34" r="9" fill={INK} />
+      <path d="M247.5 34l3 3 5-6" stroke={BRONZE} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+/** Pricing tiers — three ascending cards, the middle one highlighted. */
+export function PricingVisualIllustration({ className = '' }: { className?: string }) {
+  const cards = [
+    { x: 6, y: 50, w: 62, h: 84, s: 0.7 },
+    { x: 78, y: 30, w: 76, h: 104, s: 0.9 },
+    { x: 164, y: 10, w: 90, h: 124, s: 1.1 },
+  ];
+  return (
+    <svg viewBox="0 0 260 140" className={className} role="img" aria-label="Three pricing tiers of increasing size" fill="none">
+      {cards.map((c, i) => {
+        const highlighted = i === 1;
+        const cx = c.x + c.w / 2;
+        const lineY = c.y + c.h * 0.68;
+        return (
+          <g key={i}>
+            <rect
+              x={c.x}
+              y={c.y}
+              width={c.w}
+              height={c.h}
+              rx="10"
+              fill={highlighted ? BEIGE : PAPER}
+              fillOpacity={highlighted ? 0.6 : 1}
+              stroke={highlighted ? BRONZE_INK : BEIGE}
+              strokeWidth={highlighted ? 2 : 1}
+            />
+            <Bust x={cx} y={c.y + c.h * 0.34} scale={c.s} fill={highlighted ? BRONZE_INK : BRONZE} />
+            <rect x={c.x + c.w * 0.18} y={lineY} width={c.w * 0.64} height="4" rx="2" fill={highlighted ? BRONZE_INK : INK} fillOpacity={highlighted ? 1 : 0.7} />
+            <rect x={c.x + c.w * 0.26} y={lineY + 9} width={c.w * 0.48} height="4" rx="2" fill={BEIGE} />
+            <rect x={c.x + c.w * 0.32} y={lineY + 18} width={c.w * 0.36} height="4" rx="2" fill={BEIGE} />
+          </g>
+        );
+      })}
+    </svg>
+  );
+}

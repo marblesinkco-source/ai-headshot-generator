@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { VideoTestimonials } from '@/components/marketing/video-testimonials';
@@ -17,7 +18,6 @@ import {
   Clock,
   Palette,
   ShieldCheck,
-  Upload,
   Image as ImageIcon,
   Sun,
   Brush,
@@ -77,6 +77,44 @@ const sampleEntries: SampleEntry[] = [
   { id: 14, category: 'Family & Pets', style: 'Pet Portrait Studio', gradient: gradientPalettes[8] },
 ];
 
+const sampleImages: Record<number, string> = {
+  1: '/images/categories/headshots.jpg', // Classic Studio
+  2: '/images/categories/linkedin-team.jpg', // Modern Minimal
+  3: '/brand/tailorpic/web/portrait-man-after.webp', // Executive Portrait
+  4: '/images/categories/linkedin-team.jpg', // Team Headshot
+  5: '/brand/tailorpic/web/portrait-woman-editorial.webp', // Creative Professional
+  6: '/brand/tailorpic/web/portrait-man-editorial.webp', // Editorial Portrait
+  7: '/brand/tailorpic/web/portrait-woman-after.webp', // Playful Studio
+  8: '/images/categories/dating.jpg', // Outdoor Natural
+  9: '/images/categories/real-estate.jpg', // Urban Lifestyle
+  10: '/images/categories/couple-engagement.jpg', // Golden Hour
+  11: '/images/categories/graduation.jpg', // Cap & Gown Classic
+  12: '/images/categories/graduation.jpg', // Modern Academic (reuse)
+  13: '/images/categories/family-portraits.jpg', // Warm & Candid
+  14: '/images/categories/pet-portraits.jpg', // Pet Portrait Studio
+};
+
+const styleGroupImages: Record<string, string[]> = {
+  Corporate: [
+    '/images/categories/linkedin-team.jpg',
+    '/brand/tailorpic/web/portrait-man-after.webp',
+    '/images/categories/headshots.jpg',
+  ],
+  Creative: [
+    '/brand/tailorpic/web/portrait-woman-editorial.webp',
+    '/brand/tailorpic/web/portrait-woman-after.webp',
+  ],
+  Casual: [
+    '/images/categories/dating.jpg',
+    '/images/categories/real-estate.jpg',
+    '/images/categories/couple-engagement.jpg',
+  ],
+  Academic: [
+    '/images/categories/graduation.jpg',
+    '/images/categories/graduation.jpg',
+  ],
+};
+
 const qualityBadges = [
   { icon: Monitor, label: '4K Resolution' },
   { icon: Palette, label: '40+ Styles' },
@@ -135,9 +173,9 @@ const comparisonRows = [
 ];
 
 const beforeAfterCards = [
-  { style: 'LinkedIn Headshot', gradientBefore: 'from-tp-line to-tp-beige', gradientAfter: 'from-tp-bronze to-tp-bronze-ink' },
-  { style: 'Corporate Team', gradientBefore: 'from-tp-line to-tp-beige', gradientAfter: 'from-tp-ink to-tp-bronze-ink' },
-  { style: 'Dating Profile', gradientBefore: 'from-tp-line to-tp-beige', gradientAfter: 'from-tp-beige to-tp-bronze' },
+  { style: 'LinkedIn Headshot', before: '/brand/tailorpic/web/portrait-woman-before.webp', after: '/brand/tailorpic/web/portrait-woman-after.webp' },
+  { style: 'Corporate Team', before: '/brand/tailorpic/web/portrait-man-before.webp', after: '/brand/tailorpic/web/portrait-man-after.webp' },
+  { style: 'Dating Profile', before: '/brand/tailorpic/web/portrait-woman-creative-before.webp', after: '/brand/tailorpic/web/portrait-woman-editorial.webp' },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -245,10 +283,17 @@ export default function SamplesPage() {
                   key={entry.id}
                   className="group relative overflow-hidden rounded-tp-card border border-tp-line bg-tp-paper transition-shadow hover:shadow-md"
                 >
-                  {/* Gradient placeholder */}
+                  {/* Sample image (AI-generated concept) */}
                   <div
-                    className={`relative aspect-[3/4] bg-gradient-to-br ${entry.gradient}`}
+                    className={`relative aspect-[3/4] overflow-hidden bg-gradient-to-br ${entry.gradient}`}
                   >
+                    <Image
+                      src={sampleImages[entry.id]}
+                      alt={`${entry.style} - AI generated concept portrait`}
+                      fill
+                      sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
+                      className="object-cover"
+                    />
                     {/* AI Generated watermark */}
                     <div className="absolute inset-0 flex items-center justify-center">
                       <span className="rotate-[-20deg] select-none text-lg font-semibold tracking-widest text-tp-paper/30">
@@ -313,7 +358,7 @@ export default function SamplesPage() {
                 Popular Styles
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-tp-muted">
-                Pick a look that fits where your photo will be used. Placeholders below are illustrative, not real results.
+                Pick a look that fits where your photo will be used. Images below are AI-generated concepts, not real results.
               </p>
             </div>
             <div className="mt-12 space-y-12">
@@ -322,14 +367,23 @@ export default function SamplesPage() {
                   <h3 className="font-display text-2xl font-normal text-tp-ink">{group.name}</h3>
                   <p className="mt-1 text-sm text-tp-muted">{group.blurb}</p>
                   <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3">
-                    {group.styles.map((s) => (
+                    {group.styles.map((s, idx) => (
                       <div key={s.label} className="overflow-hidden rounded-tp-card border border-tp-line bg-white">
-                        <div className={`relative aspect-[4/3] bg-gradient-to-br ${s.gradient}`}>
+                        <div className={`relative aspect-[4/3] overflow-hidden bg-gradient-to-br ${s.gradient}`}>
+                          {styleGroupImages[group.name]?.[idx] && (
+                            <Image
+                              src={styleGroupImages[group.name][idx]}
+                              alt={`${s.label} - AI generated concept portrait`}
+                              fill
+                              sizes="(min-width: 640px) 33vw, 50vw"
+                              className="object-cover"
+                            />
+                          )}
                           <span className="absolute left-3 top-3 rounded-tp-button bg-white/90 px-2.5 py-1 text-xs font-semibold text-tp-ink">
                             {group.name}
                           </span>
-                          <span className="absolute bottom-3 right-3 text-xs font-medium tracking-widest text-white/60">
-                            PLACEHOLDER
+                          <span className="absolute bottom-3 right-3 rounded-tp-button bg-tp-black/50 px-2 py-0.5 text-xs font-medium tracking-widest text-white">
+                            AI GENERATED CONCEPT
                           </span>
                         </div>
                         <p className="p-3 text-sm font-semibold text-tp-ink">{s.label}</p>
@@ -370,15 +424,14 @@ export default function SamplesPage() {
                   <div className="flex w-full items-center gap-3">
                     {/* Before */}
                     <div className="flex-1">
-                      <div
-                        className={`relative aspect-square overflow-hidden rounded-tp-button bg-gradient-to-br ${card.gradientBefore}`}
-                      >
-                        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                          <Upload className="h-6 w-6 text-tp-muted" />
-                          <span className="text-xs font-medium text-tp-muted">
-                            Upload
-                          </span>
-                        </div>
+                      <div className="relative aspect-square overflow-hidden rounded-tp-button bg-tp-beige">
+                        <Image
+                          src={card.before}
+                          alt={`${card.style} - example input photo (AI generated concept)`}
+                          fill
+                          sizes="(min-width: 640px) 16vw, 40vw"
+                          className="object-cover"
+                        />
                       </div>
                     </div>
 
@@ -387,15 +440,17 @@ export default function SamplesPage() {
 
                     {/* After */}
                     <div className="flex-1">
-                      <div
-                        className={`relative aspect-square overflow-hidden rounded-tp-button bg-gradient-to-br ${card.gradientAfter}`}
-                      >
-                        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                          <ImageIcon className="h-6 w-6 text-white/40" />
-                          <span className="text-xs font-medium text-white/40">
-                            Result
-                          </span>
-                        </div>
+                      <div className="relative aspect-square overflow-hidden rounded-tp-button bg-tp-beige">
+                        <Image
+                          src={card.after}
+                          alt={`${card.style} - AI generated concept result`}
+                          fill
+                          sizes="(min-width: 640px) 16vw, 40vw"
+                          className="object-cover"
+                        />
+                        <span className="absolute bottom-2 right-2 rounded-tp-button bg-tp-black/50 px-1.5 py-0.5 text-[10px] font-medium tracking-widest text-white">
+                          AI CONCEPT
+                        </span>
                       </div>
                     </div>
                   </div>

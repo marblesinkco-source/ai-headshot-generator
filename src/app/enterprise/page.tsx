@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
+import { EnterpriseIllustration } from '@/components/marketing/illustrations';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
@@ -233,6 +234,9 @@ export default function EnterprisePage() {
                 Contact Sales
               </Link>
             </div>
+          </div>
+          <div className="mx-auto mt-14 max-w-xl">
+            <EnterpriseIllustration className="w-full h-auto" />
           </div>
         </div>
       </section>
