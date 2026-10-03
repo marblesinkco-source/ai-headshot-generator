@@ -12,7 +12,6 @@ import {
   DollarSign,
   CalendarX,
   ImageOff,
-  Star,
   Shield,
   ArrowRight,
   Calculator,

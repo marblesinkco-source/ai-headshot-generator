@@ -14,7 +14,6 @@ import {
   CalendarX,
   ImageOff,
   Building2,
-  Star,
   TrendingUp,
   Sparkles,
   ArrowRight,

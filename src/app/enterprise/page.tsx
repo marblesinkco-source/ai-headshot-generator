@@ -30,7 +30,6 @@ import {
   CalendarX,
   ImageOff,
   DollarSign,
-  Star,
   RefreshCw,
   Linkedin,
   Clock,

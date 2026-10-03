@@ -14,7 +14,6 @@ import {
   CalendarX,
   ImageOff,
   Scale,
-  Star,
   Shield,
   Sparkles,
   ArrowRight,
