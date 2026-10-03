@@ -1,43 +1,28 @@
 # TailorPic — Progress Tracker
 
-## Current Session: 2026-10-03 (V3 Master Uygulaması)
+## Current Session: 2026-10-03 (V3 Master + Temizlik/Optimizasyon)
 
 ### Baseline
-- HEAD: `54dce7c` (14 revert commit ile VISUAL MATCH MASTER iptal edildi)
+- HEAD: `3103455` (Phase E tamamlandı)
 - CI: PASS, Vercel: PASS
 
-### Phase A — Audit Sonuçları
+### Tamamlanan Fazlar
+- **Phase A** — Audit: 3 paralel ajan denetimi, kritik bug fix'ler (commit: 88c8848)
+- **Phase B** — Design System: tp-* token'lar, tipografi, spacing (tailwind.config + globals.css)
+- **Phase C** — Navigation: 3-kolon mega menü, scroll-compact, mobile nav
+- **Phase D** — Homepage: 36→11 bölüm, V3 Master sırasına uygun (commit: 90f3bb5)
+- **Phase E** — Category Pages: V3 şablonu + 12 kategori içeriği. Canlı doğrulama: /headshots, /dating-photos, /pet-portraits ✓ (commit: ab597d9, 3103455)
 
-#### KRİTİK HATALAR (hemen düzeltilecek)
-1. `/api/upload` orderId'yi UUID olarak validate ediyor ama order ID'ler nanoid → upload her zaman 400 döner
-2. Stripe webhook event'i işlemeden önce "processed" olarak kaydediyor → başarısız işlem + retry = ödeme alınıp sipariş pending kalır
-3. Replicate webhook REPLICATE_WEBHOOK_SECRET yoksa signature doğrulama atlanıyor
+### Aktif Görev Listesi (Kullanıcı talimatı 2026-10-03)
+1. [ ] `/examples → /samples` canonical düzeltme
+2. [ ] Footer sadeleştirme
+3. [ ] Get Started → checkout'a ürün/paket bilgisi taşıma
+4. [ ] Category URL canonical sistemi
+5. [ ] Blog duplicate SEO temizliği
+6. [ ] 375/390/430 mobil test
+7. [ ] Image loading / Core Web Vitals kontrolü
+8. [ ] Final production acceptance test (auth E2E hariç)
 
-#### YÜKSEK ÖNCELİK
-4. Homepage 36 bölüm içeriyor — V3'e göre yeniden yapılandırılacak
-5. Trust/social proof 6 yerde tekrar ediyor
-6. 4 adet "biz vs alternatifler" karşılaştırma bölümü çakışıyor
-7. 3 fiyatlandırma bloğu arka arkaya
-
-#### ORTA ÖNCELİK
-8. /auth/reset-password middleware redirect listesinde → şifre sıfırlama bozulabilir
-9. Credit insert başarısız olursa webhook hata vermiyor → ödeme alınır, kredi verilmez
-10. Standalone refund policy yok (guarantee'ye redirect)
-11. TEAM_PRICES ile linkedin-team paket fiyatları uyumsuz
-12. "2 hours" teslimat süresi doğrulanmamış iddia
-
-#### DÜŞÜK ÖNCELİK
-13. Kullanılmayan bileşenler: guarantee-badge, social-proof-toast, social-proof-toast-lazy
-14. package-lock.json yok
-15. Çoğaltılmış icon/OG kaynakları
-
-### Mevcut Durum
-- 306 sayfa (page.tsx)
-- 51 marketing bileşeni
-- 12 kategori (4 Professional + 4 Personal + 4 Creative) ✓
-- 6 headshot paketi ($1.99 → $89.90) ✓
-- Kırık import/link: YOK ✓
-- Dead route: YOK ✓
-
-### Sonraki Adım
-feat-A tamamlandı → Kritik bug fix'ler → Phase B/C/D başlayacak
+### Notlar
+- Yeni tasarım İSTENMİYOR — sadece temizlik/optimizasyon
+- Authenticated E2E (Stripe + AI generation) ayrıca yapılacak

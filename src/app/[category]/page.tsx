@@ -292,7 +292,7 @@ export default async function CategoryPage({ params }: Props) {
                 look like they were taken in a professional studio.
               </p>
               <Link
-                href={`/examples`}
+                href={`/samples`}
                 className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-tp-bronze-ink transition-colors hover:text-tp-ink"
               >
                 View More Examples
@@ -311,7 +311,7 @@ export default async function CategoryPage({ params }: Props) {
               Sample Gallery
             </h2>
             <Link
-              href="/examples"
+              href="/samples"
               className="inline-flex items-center gap-1.5 text-sm font-medium text-tp-bronze-ink transition-colors hover:text-tp-ink"
             >
               View More Examples
@@ -457,7 +457,7 @@ export default async function CategoryPage({ params }: Props) {
                       </li>
                     ))}
                   </ul>
-                  <Link href={`/auth/register?redirect=/${slug}`} className="mt-6 block">
+                  <Link href={`/auth/register?redirect=/${slug}&package=${pkg.id}`} className="mt-6 block">
                     <Button
                       variant={pkg.recommended ? 'primary' : 'outline'}
                       size="md"

@@ -37,8 +37,8 @@
       "name": "Phase E — 12 Category Pages",
       "description": "Tek reusable şablon + category data: breadcrumb, hero, benefits, before-after, gallery, use cases, how-it-works, pricing teaser, FAQ, related, CTA",
       "dependencies": ["feat-D"],
-      "status": "not-started",
-      "evidence": ""
+      "status": "done",
+      "evidence": "V3 Master §5 şablonu uygulandı. [category]/page.tsx tamamen yeniden yazıldı (~400 satır). category-content.ts 12 kategori için özel içerik (731 satır). Bölüm sırası: Hero→Before&After→Sample Gallery→Perfect For→How It Works→Pricing Teaser→FAQ Preview→Related→CTA. CI PASS + Vercel PASS. Canlı doğrulama: /headshots, /dating-photos, /pet-portraits tam çalışıyor. Commit: ab597d9 (page.tsx), 3103455 (category-content.ts)"
     },
     {
       "id": "feat-F",
