@@ -30,7 +30,7 @@
       "description": "Hero / quick chooser / customization / before-after / categories / pricing / FAQ / footer — V3 Master sırasına uygun",
       "dependencies": ["feat-C"],
       "status": "done",
-      "evidence": "Homepage 36 bölümden 11 bölüme düşürüldü. V3 Master §7 sırasına uygun yapılandırıldı. CI PASS, Vercel PASS. Commit: 90f3bb5. Canlı site doğrulaması beklemede (tarayıcı bağlantısı yok)."
+      "evidence": "Homepage 36 bölümden 11 bölüme düşürüldü. V3 Master §7 sırasına uygun yapılandırıldı. CI PASS, Vercel PASS. Commit: 90f3bb5."
     },
     {
       "id": "feat-E",
@@ -38,7 +38,15 @@
       "description": "Tek reusable şablon + category data: breadcrumb, hero, benefits, before-after, gallery, use cases, how-it-works, pricing teaser, FAQ, related, CTA",
       "dependencies": ["feat-D"],
       "status": "done",
-      "evidence": "V3 Master §5 şablonu uygulandı. [category]/page.tsx tamamen yeniden yazıldı (~400 satır). category-content.ts 12 kategori için özel içerik (731 satır). Bölüm sırası: Hero→Before&After→Sample Gallery→Perfect For→How It Works→Pricing Teaser→FAQ Preview→Related→CTA. CI PASS + Vercel PASS. Canlı doğrulama: /headshots, /dating-photos, /pet-portraits tam çalışıyor. Commit: ab597d9 (page.tsx), 3103455 (category-content.ts)"
+      "evidence": "V3 Master §5 şablonu uygulandı. [category]/page.tsx tamamen yeniden yazıldı (~400 satır). category-content.ts 12 kategori için özel içerik (731 satır). CI PASS + Vercel PASS. Canlı doğrulama: /headshots, /dating-photos, /pet-portraits tam çalışıyor. Commit: ab597d9, 3103455"
+    },
+    {
+      "id": "feat-H",
+      "name": "Phase H — Cleanup + Optimization",
+      "description": "URL canonical, footer sadeleştirme, checkout funnel, mobil QA, CWV, acceptance test",
+      "dependencies": ["feat-E"],
+      "status": "done",
+      "evidence": "8 görev tamamlandı: (1) /examples→/samples 301 redirect + link fix, (2) Footer 5→4 sütun ~50→22 link, (3) Checkout URL'ye &package= parametresi, (4) Category canonical doğrulandı, (5) Blog SEO temiz, (6) 375/390/430px mobil test PASS, (7) Image/CWV audit temiz — next/image doğru, priority doğru, CLS düşük, (8) Final acceptance: tüm linkler çalışıyor, 404 düzgün, pricing 6 paket doğru. Commit: b0e720b. Canlı doğrulama tamamlandı."
     },
     {
       "id": "feat-F",
@@ -53,14 +61,6 @@
       "name": "Phase G — Funnel",
       "description": "Signup / signin / checkout / upload / generation / results akışı",
       "dependencies": ["feat-F"],
-      "status": "not-started",
-      "evidence": ""
-    },
-    {
-      "id": "feat-H",
-      "name": "Phase H — Cleanup",
-      "description": "Broken/unused/redundant components, dead links, duplicate sections, console errors temizliği",
-      "dependencies": ["feat-D"],
       "status": "not-started",
       "evidence": ""
     },

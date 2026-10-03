@@ -3,7 +3,7 @@
 ## Current Session: 2026-10-03 (V3 Master + Temizlik/Optimizasyon)
 
 ### Baseline
-- HEAD: `3103455` (Phase E tamamlandı)
+- HEAD: `b0e720b` (Temizlik/Optimizasyon görevleri tamamlandı)
 - CI: PASS, Vercel: PASS
 
 ### Tamamlanan Fazlar
@@ -13,16 +13,23 @@
 - **Phase D** — Homepage: 36→11 bölüm, V3 Master sırasına uygun (commit: 90f3bb5)
 - **Phase E** — Category Pages: V3 şablonu + 12 kategori içeriği. Canlı doğrulama: /headshots, /dating-photos, /pet-portraits ✓ (commit: ab597d9, 3103455)
 
-### Aktif Görev Listesi (Kullanıcı talimatı 2026-10-03)
-1. [ ] `/examples → /samples` canonical düzeltme
-2. [ ] Footer sadeleştirme
-3. [ ] Get Started → checkout'a ürün/paket bilgisi taşıma
-4. [ ] Category URL canonical sistemi
-5. [ ] Blog duplicate SEO temizliği
-6. [ ] 375/390/430 mobil test
-7. [ ] Image loading / Core Web Vitals kontrolü
-8. [ ] Final production acceptance test (auth E2E hariç)
+### Temizlik/Optimizasyon Görevleri (Tamamlandı ✓)
+1. [x] `/examples → /samples` canonical düzeltme — 301 redirect + in-code link fix
+2. [x] Footer sadeleştirme — 5→4 sütun, ~50→22 link, quickLinks strip kaldırıldı
+3. [x] Get Started → checkout'a ürün/paket bilgisi taşıma — `&package=${pkg.id}` eklendi
+4. [x] Category URL canonical sistemi — metadataBase + alternates zaten mevcut, doğrulandı
+5. [x] Blog duplicate SEO temizliği — duplicate content yok, doğrulandı
+6. [x] 375/390/430 mobil test — Hero, Before&After, Gallery, PerfectFor, HowItWorks, FAQ, Related, Footer tüm genişliklerde temiz
+7. [x] Image loading / Core Web Vitals kontrolü — next/image doğru kullanılıyor, priority doğru, CLS riski düşük, animate-fade-in yok
+8. [x] Final production acceptance test (auth E2E hariç) — Tüm footer/header linkleri doğru, /examples redirect çalışıyor, pricing 6 paket doğru, 404 sayfası düzgün, kırık link yok
+
+### Commit: b0e720b
+- `/examples → /samples` redirect (next.config.mjs)
+- Footer 5→4 sütun sadeleştirme
+- Category page `/examples` → `/samples` link fix
+- Category page checkout URL'ye `&package=` parametresi eklendi
 
 ### Notlar
 - Yeni tasarım İSTENMİYOR — sadece temizlik/optimizasyon
 - Authenticated E2E (Stripe + AI generation) ayrıca yapılacak
+- Font loading: Google Fonts `display=swap` — CLS riski düşük ama `next/font`'a geçiş ileride düşünülebilir
