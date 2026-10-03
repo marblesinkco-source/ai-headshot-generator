@@ -63,7 +63,7 @@ const comparisonRows: FeatureRow[] = [
   { feature: 'Broad Editing Toolset', tailorpic: 'Not the focus', competitor: true },
   { feature: 'Dedicated AI Headshot Generation', tailorpic: true, competitor: 'Limited' },
   { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: 'Varies by plan' },
-  { feature: 'Photo Categories', tailorpic: '11 categories', competitor: 'No dedicated headshot categories' },
+  { feature: 'Photo Categories', tailorpic: '12 categories', competitor: 'No dedicated headshot categories' },
   { feature: 'Professional Headshot Styles', tailorpic: true, competitor: 'Limited' },
   { feature: 'Dating Photos', tailorpic: true, competitor: 'Limited' },
   { feature: 'Pet Portraits', tailorpic: true, competitor: false },
@@ -94,7 +94,7 @@ const whyCards = [
     icon: LayoutGrid,
     title: '11 Categories, Up to 160 Photos',
     description:
-      'Get a full set of photos across 11 categories including business, dating, pet portraits, and e-commerce, with no editing skills required.',
+      'Get a full set of photos across 12 categories including business, dating, pet portraits, and e-commerce, with no editing skills required.',
   },
 ];
 
@@ -115,7 +115,7 @@ const faqs = [
   {
     question: 'How many photos do I get with TailorPic compared to Fotor?',
     answer:
-      'Every TailorPic order includes photos across 11 categories. With Fotor the number of results varies by plan, since AI headshots are one tool among many in a general photo editor.',
+      'Every TailorPic order includes photos across 12 categories. With Fotor the number of results varies by plan, since AI headshots are one tool among many in a general photo editor.',
   },
   {
     question: 'How quickly will I receive my photos?',

@@ -116,7 +116,7 @@ const values = [
 
 const stats = [
   { value: '40+', label: 'Photos per order' },
-  { value: '11+', label: 'Photo categories' },
+  { value: '12', label: 'Photo categories' },
   { value: '<2hr', label: 'Typical delivery' },
   { value: '$1.99', label: 'Starting price' },
 ];

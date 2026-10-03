@@ -20,7 +20,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs Secta Labs: AI Headshot Generator Comparison' },
   description:
-    'Compare TailorPic vs Secta Labs for AI headshots. TailorPic starts at $1.99 with photos, 11 categories and a satisfaction guarantee.',
+    'Compare TailorPic vs Secta Labs for AI headshots. TailorPic starts at $1.99 with photos, 12 categories and a satisfaction guarantee.',
   alternates: { canonical: '/vs/secta' },
   openGraph: generateOGMetadata({ title: 'TailorPic vs Secta Labs: AI Headshot Generator Comparison', description: 'Compare TailorPic and Secta Labs for AI headshots. Pricing, categories, delivery, and guarantees side by side.', path: '/vs/secta', type: 'vs' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic vs Secta Labs: AI Headshot Generator Comparison', description: 'Compare TailorPic and Secta Labs for AI headshots. Pricing, categories, delivery, and guarantees side by side.', type: 'vs' }),
@@ -61,7 +61,7 @@ const comparisonRows: FeatureRow[] = [
   { feature: 'Starting Price', tailorpic: 'From $1.99', competitor: '~$49+' },
   { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: 'Varies by plan' },
   { feature: 'Delivery Time', tailorpic: 'Under 2 hours', competitor: 'Varies by plan' },
-  { feature: 'Photo Categories', tailorpic: '11 categories', competitor: 'Fewer categories' },
+  { feature: 'Photo Categories', tailorpic: '12 categories', competitor: 'Fewer categories' },
   { feature: 'Satisfaction Guarantee', tailorpic: 'Yes', competitor: 'Check current terms' },
   { feature: 'Industry-Specific Solutions', tailorpic: true, competitor: 'Limited' },
   { feature: 'Pet Portraits', tailorpic: true, competitor: false },
@@ -81,7 +81,7 @@ const whyCards = [
     icon: LayoutGrid,
     title: '11 Categories, Not Just Headshots',
     description:
-      'Secta Labs centers on professional headshots. TailorPic covers 11 categories — business, dating, pet portraits, e-commerce and more — so one service fits every need.',
+      'Secta Labs centers on professional headshots. TailorPic covers 12 categories — business, dating, pet portraits, e-commerce and more — so one service fits every need.',
   },
   {
     icon: Sparkles,
@@ -114,7 +114,7 @@ const faqs = [
   {
     question: 'How many photos do I get with TailorPic?',
     answer:
-      'Every TailorPic order includes photos across 11 categories. Secta Labs\' photo count varies by plan and it centers on professional headshots with fewer categories.',
+      'Every TailorPic order includes photos across 12 categories. Secta Labs\' photo count varies by plan and it centers on professional headshots with fewer categories.',
   },
   {
     question: 'How long does delivery take?',
@@ -129,7 +129,7 @@ const faqs = [
   {
     question: 'How does TailorPic train my photos, and is it easy to use?',
     answer:
-      'TailorPic trains a personalized LoRA model on your own selfies, so the results are built around your actual face rather than a generic template. You upload your photos, pick your categories, and the generation runs automatically. Upload a few selfies, choose from 11 categories, and your photos arrive without any design or editing work on your part. There is nothing to learn and no tools to configure.',
+      'TailorPic trains a personalized LoRA model on your own selfies, so the results are built around your actual face rather than a generic template. You upload your photos, pick your categories, and the generation runs automatically. Upload a few selfies, choose from 12 categories, and your photos arrive without any design or editing work on your part. There is nothing to learn and no tools to configure.',
   },
 ];
 

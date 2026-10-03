@@ -28,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -42,7 +42,7 @@ const productJsonLd = {
 };
 
 const intro =
-  "Photomatic offers AI-powered portrait and photo generation. TailorPic is built around a dedicated model trained on your selfies, generating professional headshots in 11 categories with one-time packages from $1.99.";
+  "Photomatic offers AI-powered portrait and photo generation. TailorPic is built around a dedicated model trained on your selfies, generating professional headshots in 12 categories with one-time packages from $1.99.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
@@ -87,7 +87,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   },
   {
     "label": "Style variety",
-    "tailorpic": "11 categories in one order",
+    "tailorpic": "12 categories in one order",
     "other": "Check their site for available styles"
   },
   {
@@ -103,7 +103,7 @@ const differences = [
     "body": "TailorPic packages start from $1.99, with no subscription to manage."
   },
   {
-    "title": "11 categories in one order",
+    "title": "12 categories in one order",
     "body": "A single TailorPic order covers business, dating, creative and more, so you can reuse one upload across many needs."
   },
   {
@@ -138,7 +138,7 @@ const faqs = [
   },
   {
     "question": "How does TailorPic create headshots?",
-    "answer": "It fine-tunes a dedicated LoRA model on your selfies, then generates photos across 11 categories."
+    "answer": "It fine-tunes a dedicated LoRA model on your selfies, then generates photos across 12 categories."
   },
   {
     "question": "How long does TailorPic take?",
@@ -289,7 +289,7 @@ export default function VsPhotomaticPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
+              Professional photos across 12 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

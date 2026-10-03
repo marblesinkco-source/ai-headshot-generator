@@ -28,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -42,7 +42,7 @@ const productJsonLd = {
 };
 
 const intro =
-  "Snapseed is Google's mobile photo editor with tools for adjusting and retouching images. TailorPic is built for people who want finished headshots: it trains a personal model on your selfies and generates professional portraits in 11 categories.";
+  "Snapseed is Google's mobile photo editor with tools for adjusting and retouching images. TailorPic is built for people who want finished headshots: it trains a personal model on your selfies and generates professional portraits in 12 categories.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
@@ -104,7 +104,7 @@ const differences = [
   },
   {
     "title": "Built for headshots",
-    "body": "TailorPic is tuned for faces and professional looks across 11 categories, while Snapseed is a general-purpose editor."
+    "body": "TailorPic is tuned for faces and professional looks across 12 categories, while Snapseed is a general-purpose editor."
   },
   {
     "title": "A low entry price",
@@ -289,7 +289,7 @@ export default function VsSnapseedPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
+              Professional photos across 12 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

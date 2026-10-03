@@ -28,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -42,7 +42,7 @@ const productJsonLd = {
 };
 
 const intro =
-  "Photo Lab is an app of effects, frames, filters and AI photo transformations for casual fun. TailorPic is built for professional portraits: it trains a personal model on your selfies and generates headshots in 11 categories.";
+  "Photo Lab is an app of effects, frames, filters and AI photo transformations for casual fun. TailorPic is built for professional portraits: it trains a personal model on your selfies and generates headshots in 12 categories.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
@@ -100,7 +100,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 const differences = [
   {
     "title": "Professional, not playful",
-    "body": "Photo Lab is tuned for fun effects and montages. TailorPic is tuned for faces and professional looks across 11 categories."
+    "body": "Photo Lab is tuned for fun effects and montages. TailorPic is tuned for faces and professional looks across 12 categories."
   },
   {
     "title": "Generates new photos, not effects",
@@ -150,7 +150,7 @@ const faqs = [
   },
   {
     "question": "Does TailorPic do fun effects?",
-    "answer": "TailorPic focuses on realistic portraits, with creative looks as one of its 11 categories. Photo Lab is the specialist for playful effects."
+    "answer": "TailorPic focuses on realistic portraits, with creative looks as one of its 12 categories. Photo Lab is the specialist for playful effects."
   }
 ];
 
@@ -289,7 +289,7 @@ export default function VsPhotolabPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
+              Professional photos across 12 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

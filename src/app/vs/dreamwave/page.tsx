@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Dreamwave";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  'Compare TailorPic vs Dreamwave for AI headshots. TailorPic starts from $1.99 across 11 categories; Dreamwave starts around $35 for up to 300.';
+  'Compare TailorPic vs Dreamwave for AI headshots. TailorPic starts from $1.99 across 12 categories; Dreamwave starts around $35 for up to 300.';
 const path = '/vs/dreamwave';
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -44,7 +44,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "~$35 starting, with a $99 premium tier" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Up to 300 headshots depending on plan" },
   { label: "Delivery time", tailorpic: "24 hours", other: "About 5 minutes" },
-  { label: "Categories / styles", tailorpic: "11 categories (business, dating, creative, pets and more)", other: "Multiple professional backgrounds and outfits" },
+  { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Multiple professional backgrounds and outfits" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
   { label: "One-time vs subscription", tailorpic: "One-time payment, no subscription", other: "One-time packages; free redos included" },
   { label: "Team features", tailorpic: "Team and enterprise options available", other: "Team options may be available; check their site" },
@@ -52,7 +52,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 
 const differences = [
   { title: "Price to get started", body: "TailorPic packages start from $1.99, compared with Dreamwave's ~$35 entry price and its $99 premium tier." },
-  { title: "Volume vs variety", body: "Dreamwave can produce up to 300 headshots. TailorPic delivers photos but spreads them across 11 categories, from business and dating to creative looks." },
+  { title: "Volume vs variety", body: "Dreamwave can produce up to 300 headshots. TailorPic delivers photos but spreads them across 12 categories, from business and dating to creative looks." },
   { title: "Speed", body: "Dreamwave returns results in about 5 minutes. TailorPic takes up to 24 hours because each model is fine-tuned with LoRA on your own photos." },
   { title: "Training approach", body: "TailorPic trains a personal LoRA model for a close likeness. Dreamwave offers free redos, which helps if a first batch misses the mark." },
 ];
@@ -75,7 +75,7 @@ const useCases = {
 const faqs = [
   { question: "Is TailorPic cheaper than Dreamwave?", answer: "Yes. TailorPic packages start from $1.99, while Dreamwave starts at around $35, with a $99 premium tier. Dreamwave pricing may change, so check their site." },
   { question: "Which is faster, TailorPic or Dreamwave?", answer: "Dreamwave is faster, with turnaround of about 5 minutes. TailorPic delivers within 24 hours because it fine-tunes a LoRA model on your photos." },
-  { question: "How many photos do I get with each?", answer: "TailorPic includes photos across 11 categories. Dreamwave offers up to 300 headshots depending on the plan you choose." },
+  { question: "How many photos do I get with each?", answer: "TailorPic includes photos across 12 categories. Dreamwave offers up to 300 headshots depending on the plan you choose." },
   { question: "Is TailorPic a subscription?", answer: "No. TailorPic packages are one-time payments starting at $1.99 with no recurring fees." },
 ];
 
@@ -104,7 +104,7 @@ export default function Page() {
               TailorPic <span className="text-tp-bronze">vs</span> {competitor}
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">
-              Dreamwave offers high volume and fast turnaround at a higher price. TailorPic gives you polished, LoRA-trained photos across 11 categories (up to 160 per order), from $1.99.
+              Dreamwave offers high volume and fast turnaround at a higher price. TailorPic gives you polished, LoRA-trained photos across 12 categories (up to 160 per order), from $1.99.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
@@ -215,7 +215,7 @@ export default function Page() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
+              Professional photos across 12 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

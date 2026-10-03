@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "HeadMagic";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs HeadMagic. Both are AI headshot services; TailorPic delivers headshots across 11 categories from $1.99 with no subscription.";
+  "Compare TailorPic vs HeadMagic. Both are AI headshot services; TailorPic delivers headshots across 12 categories from $1.99 with no subscription.";
 const path = '/vs/headmagic';
 const canonicalUrl = 'https://www.tailorpic.com/vs/headmagic';
 
@@ -28,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -87,7 +87,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   },
   {
     "label": "Pets, family and creative categories",
-    "tailorpic": "Included across 11 categories",
+    "tailorpic": "Included across 12 categories",
     "other": "Check their site for available categories"
   },
   {
@@ -100,7 +100,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 const differences = [
   {
     "title": "Same goal, different packaging",
-    "body": "Both services aim at professional headshots from selfies. TailorPic bundles photos across 11 categories."
+    "body": "Both services aim at professional headshots from selfies. TailorPic bundles photos across 12 categories."
   },
   {
     "title": "One-time price",
@@ -150,7 +150,7 @@ const faqs = [
   },
   {
     "question": "Can I use the photos for LinkedIn?",
-    "answer": "Yes. TailorPic has a dedicated business and LinkedIn category among its 11 categories."
+    "answer": "Yes. TailorPic has a dedicated business and LinkedIn category among its 12 categories."
   }
 ];
 
@@ -289,7 +289,7 @@ export default function VsHeadmagicPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
+              Professional photos across 12 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

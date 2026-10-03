@@ -17,6 +17,7 @@ const navLinks = [
   { label: 'How It Works', href: '/how-it-works' },
   { label: 'Examples', href: '/samples' },
   { label: 'Pricing', href: '/pricing' },
+  { label: 'Enterprise', href: '/enterprise' },
   { label: 'Blog', href: '/blog' },
 ];
 
@@ -27,7 +28,6 @@ const secondaryLinks = [
   { label: 'Contact', href: '/contact' },
   { label: 'Reviews', href: '/reviews' },
   { label: 'Compare', href: '/vs' },
-  { label: 'Enterprise', href: '/enterprise' },
   { label: 'Industries', href: '/industries' },
   { label: 'Tools', href: '/tools' },
   { label: 'Security', href: '/security' },

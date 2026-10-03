@@ -69,7 +69,7 @@ const steps = [
     tips: [
       'The training process takes approximately 2 hours',
       'Each photo is generated at studio-quality resolution',
-      'You can choose from 11+ style categories',
+      'You can choose from 12 style categories',
       'The AI preserves your natural features while enhancing lighting and composition',
       'Every result is unique — no templates or stock overlays',
     ],
@@ -159,7 +159,7 @@ const youNeed = [
 
 const youGet = [
   { icon: LayoutGrid, title: '40+ photos', description: 'A full set of professional photos generated from one upload.' },
-  { icon: Layers, title: 'Multiple styles', description: 'Choose from 11+ style categories, from corporate headshots to creative portraits.' },
+  { icon: Layers, title: 'Multiple styles', description: 'Choose from 12 style categories, from corporate headshots to creative portraits.' },
   { icon: MonitorUp, title: 'High-resolution files', description: 'Download in 4K resolution, ready for web profiles and print.' },
   { icon: BadgeCheck, title: 'Commercial rights', description: 'Use your photos on LinkedIn, your website, business cards and more.' },
 ];

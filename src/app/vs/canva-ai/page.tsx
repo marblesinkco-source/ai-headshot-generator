@@ -64,7 +64,7 @@ const comparisonRows: FeatureRow[] = [
   { feature: 'Photorealistic Headshots from Selfies', tailorpic: true, competitor: 'Limited' },
   { feature: 'Design Templates and Layouts', tailorpic: 'Not the focus', competitor: true },
   { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: 'Varies by use' },
-  { feature: 'Photo Categories', tailorpic: '11 categories', competitor: 'No dedicated headshot categories' },
+  { feature: 'Photo Categories', tailorpic: '12 categories', competitor: 'No dedicated headshot categories' },
   { feature: 'Professional Headshot Styles', tailorpic: true, competitor: 'Limited' },
   { feature: 'Dating Photos', tailorpic: true, competitor: false },
   { feature: 'Pet Portraits', tailorpic: true, competitor: 'Illustrated styles' },
@@ -116,7 +116,7 @@ const faqs = [
   {
     question: 'How many photos do I get with TailorPic?',
     answer:
-      'Every TailorPic order includes photos across 11 categories. With Canva, the number of images depends on your plan and how you use its AI tools, as it is a general design platform rather than a headshot service.',
+      'Every TailorPic order includes photos across 12 categories. With Canva, the number of images depends on your plan and how you use its AI tools, as it is a general design platform rather than a headshot service.',
   },
   {
     question: 'How long does it take to get my headshots?',
@@ -131,7 +131,7 @@ const faqs = [
   {
     question: 'How is TailorPic different from Canva\'s AI tools in how it works?',
     answer:
-      'TailorPic trains a personalized LoRA model on your own selfies, so the results are built around your actual face rather than a generic template. You upload your photos, pick your categories, and the generation runs automatically. Canva is a design platform with AI features, while TailorPic is built only for realistic headshots. Upload a few selfies, choose from 11 categories, and your photos arrive without any design or editing work on your part. There is nothing to learn and no tools to configure.',
+      'TailorPic trains a personalized LoRA model on your own selfies, so the results are built around your actual face rather than a generic template. You upload your photos, pick your categories, and the generation runs automatically. Canva is a design platform with AI features, while TailorPic is built only for realistic headshots. Upload a few selfies, choose from 12 categories, and your photos arrive without any design or editing work on your part. There is nothing to learn and no tools to configure.',
   },
 ];
 

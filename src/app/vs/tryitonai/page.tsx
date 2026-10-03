@@ -60,7 +60,7 @@ const comparisonRows: FeatureRow[] = [
   { feature: 'Starting Price', tailorpic: 'From $1.99', competitor: '$17+' },
   { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: 'Varies by plan' },
   { feature: 'Delivery Time', tailorpic: 'Under 2 hours', competitor: 'Minutes (per their site)' },
-  { feature: 'Photo Categories', tailorpic: '11 categories', competitor: 'Headshots and more' },
+  { feature: 'Photo Categories', tailorpic: '12 categories', competitor: 'Headshots and more' },
   { feature: 'Satisfaction Guarantee', tailorpic: 'Yes', competitor: 'Check their terms' },
   { feature: 'Team / Enterprise Plans', tailorpic: true, competitor: true },
   { feature: 'Pet Portraits', tailorpic: true, competitor: false },
@@ -113,7 +113,7 @@ const faqs = [
   {
     question: 'How many photos do I get with TailorPic?',
     answer:
-      'Every TailorPic order includes photos across 11 categories. Try It On AI\'s photo count varies by plan.',
+      'Every TailorPic order includes photos across 12 categories. Try It On AI\'s photo count varies by plan.',
   },
   {
     question: 'How long does delivery take?',
@@ -128,7 +128,7 @@ const faqs = [
   {
     question: 'How does TailorPic train my photos, and is it easy to use?',
     answer:
-      'TailorPic trains a personalized LoRA model on your own selfies, so the results are built around your actual face rather than a generic template. You upload your photos, pick your categories, and the generation runs automatically. Upload a few selfies, choose from 11 categories, and your photos arrive without any design or editing work on your part. There is nothing to learn and no tools to configure.',
+      'TailorPic trains a personalized LoRA model on your own selfies, so the results are built around your actual face rather than a generic template. You upload your photos, pick your categories, and the generation runs automatically. Upload a few selfies, choose from 12 categories, and your photos arrive without any design or editing work on your part. There is nothing to learn and no tools to configure.',
   },
 ];
 

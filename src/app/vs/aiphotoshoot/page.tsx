@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "AIPhotoShoot";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs AIPhotoShoot. AIPhotoShoot offers AI photo shoots; TailorPic delivers headshots across 11 categories from $1.99.";
+  "Compare TailorPic vs AIPhotoShoot. AIPhotoShoot offers AI photo shoots; TailorPic delivers headshots across 12 categories from $1.99.";
 const path = '/vs/aiphotoshoot';
 const canonicalUrl = 'https://www.tailorpic.com/vs/aiphotoshoot';
 
@@ -28,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -42,7 +42,7 @@ const productJsonLd = {
 };
 
 const intro =
-  "AIPhotoShoot offers AI-generated photo shoots. TailorPic takes a similar approach, training a personal model on your selfies and delivering photos across 11 categories.";
+  "AIPhotoShoot offers AI-generated photo shoots. TailorPic takes a similar approach, training a personal model on your selfies and delivering photos across 12 categories.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
@@ -87,7 +87,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   },
   {
     "label": "Themed scenes and shoots",
-    "tailorpic": "Included as part of 11 categories",
+    "tailorpic": "Included as part of 12 categories",
     "other": "A likely focus; check their site"
   },
   {
@@ -100,7 +100,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 const differences = [
   {
     "title": "Shoot-style variety, one upload",
-    "body": "TailorPic spreads photos across 11 categories so one upload covers work, social and creative looks."
+    "body": "TailorPic spreads photos across 12 categories so one upload covers work, social and creative looks."
   },
   {
     "title": "Personal model on your selfies",
@@ -289,7 +289,7 @@ export default function VsAiphotoshootPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
+              Professional photos across 12 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

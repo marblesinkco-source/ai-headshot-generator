@@ -115,7 +115,7 @@ const faqs = [
   {
     question: 'How many photos do I get compared to HeadshotPro?',
     answer:
-      'Both services include photos. TailorPic spreads them across 11 categories, including dating, pet portraits, e-commerce, and family portraits, while HeadshotPro focuses on professional headshots.',
+      'Both services include photos. TailorPic spreads them across 12 categories, including dating, pet portraits, e-commerce, and family portraits, while HeadshotPro focuses on professional headshots.',
   },
   {
     question: 'How long does delivery take?',
@@ -130,7 +130,7 @@ const faqs = [
   {
     question: 'How does TailorPic train my photos, and is it easy to use?',
     answer:
-      'TailorPic trains a personalized LoRA model on your own selfies, so the results are built around your actual face rather than a generic template. You upload your photos, pick your categories, and the generation runs automatically. Upload a few selfies, choose from 11 categories, and your photos arrive without any design or editing work on your part. There is nothing to learn and no tools to configure.',
+      'TailorPic trains a personalized LoRA model on your own selfies, so the results are built around your actual face rather than a generic template. You upload your photos, pick your categories, and the generation runs automatically. Upload a few selfies, choose from 12 categories, and your photos arrive without any design or editing work on your part. There is nothing to learn and no tools to configure.',
   },
 ];
 

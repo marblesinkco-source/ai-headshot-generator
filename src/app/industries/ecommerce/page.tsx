@@ -165,7 +165,7 @@ export default function EcommerceLandingPage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 text-center">
             {[
-              { value: '11+', label: 'photo styles for products & people' },
+              { value: '12', label: 'photo styles for products & people' },
               { value: '40+', label: 'photos per session' },
               { value: '$1.99', label: 'starting price vs $200+ studios' },
               { value: '<2hrs', label: 'average delivery time' },

@@ -20,7 +20,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs ProfilePhoto.ai: AI Headshot Comparison' },
   description:
-    'Compare TailorPic vs ProfilePhoto.ai for AI photos. TailorPic starts at $1.99 with photos, 11 categories and a satisfaction guarantee.',
+    'Compare TailorPic vs ProfilePhoto.ai for AI photos. TailorPic starts at $1.99 with photos, 12 categories and a satisfaction guarantee.',
   alternates: { canonical: '/vs/profilephoto' },
   openGraph: generateOGMetadata({ title: 'TailorPic vs ProfilePhoto.ai: AI Headshot Comparison', description: 'Compare TailorPic and ProfilePhoto.ai for AI photos. Pricing, styles, delivery, and guarantees side by side.', path: '/vs/profilephoto', type: 'vs' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic vs ProfilePhoto.ai: AI Headshot Comparison', description: 'Compare TailorPic and ProfilePhoto.ai for AI photos. Pricing, styles, delivery, and guarantees side by side.', type: 'vs' }),
@@ -61,7 +61,7 @@ const comparisonRows: FeatureRow[] = [
   { feature: 'Starting Price', tailorpic: 'From $1.99', competitor: '~$15+' },
   { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: 'Varies by plan' },
   { feature: 'Delivery Time', tailorpic: 'Under 2 hours', competitor: 'Varies by plan' },
-  { feature: 'Photo Categories', tailorpic: '11 categories', competitor: 'Limited styles' },
+  { feature: 'Photo Categories', tailorpic: '12 categories', competitor: 'Limited styles' },
   { feature: 'Satisfaction Guarantee', tailorpic: 'Yes', competitor: 'Check current terms' },
   { feature: 'Industry-Specific Solutions', tailorpic: true, competitor: 'Limited' },
   { feature: 'LinkedIn-Ready Headshots', tailorpic: true, competitor: true },
@@ -81,7 +81,7 @@ const whyCards = [
     icon: LayoutGrid,
     title: 'Beyond LinkedIn',
     description:
-      'ProfilePhoto.ai focuses on LinkedIn-style photos with limited style options. TailorPic offers 11 categories including dating, pet portraits, and e-commerce.',
+      'ProfilePhoto.ai focuses on LinkedIn-style photos with limited style options. TailorPic offers 12 categories including dating, pet portraits, and e-commerce.',
   },
   {
     icon: Sparkles,
@@ -114,7 +114,7 @@ const faqs = [
   {
     question: 'How many photos do I get with TailorPic?',
     answer:
-      'Every TailorPic order includes photos across 11 categories. ProfilePhoto.ai\'s photo count varies by plan and its styles are more limited, with a focus on LinkedIn-style photos.',
+      'Every TailorPic order includes photos across 12 categories. ProfilePhoto.ai\'s photo count varies by plan and its styles are more limited, with a focus on LinkedIn-style photos.',
   },
   {
     question: 'How long does delivery take?',
@@ -129,7 +129,7 @@ const faqs = [
   {
     question: 'How does TailorPic create my photos, and is it easy to use?',
     answer:
-      'TailorPic trains a personalized LoRA model on your own selfies, so the results are built around your actual face rather than a generic template. You upload your photos, pick your categories, and the generation runs automatically. Upload a few selfies, choose from 11 categories, and your photos arrive without any design or editing work on your part. There is nothing to learn and no tools to configure.',
+      'TailorPic trains a personalized LoRA model on your own selfies, so the results are built around your actual face rather than a generic template. You upload your photos, pick your categories, and the generation runs automatically. Upload a few selfies, choose from 12 categories, and your photos arrive without any design or editing work on your part. There is nothing to learn and no tools to configure.',
   },
 ];
 

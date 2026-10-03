@@ -17,7 +17,7 @@ const metrics = [
   },
   {
     icon: Camera,
-    value: "11+ Photo Categories",
+    value: "12 Photo Categories",
     description: "Professional, creative & lifestyle",
   },
   {

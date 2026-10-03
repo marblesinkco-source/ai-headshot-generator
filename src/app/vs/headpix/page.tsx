@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "HeadPix";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs HeadPix for AI headshots. TailorPic delivers photos in 11 categories from $1.99 with no subscription.";
+  "Compare TailorPic vs HeadPix for AI headshots. TailorPic delivers photos in 12 categories from $1.99 with no subscription.";
 const path = '/vs/headpix';
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -47,7 +47,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Confirm current pricing on their site" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on the package" },
   { label: "Delivery time", tailorpic: "Within 24 hours", other: "Varies by package" },
-  { label: "Categories / styles", tailorpic: "11 categories", other: "Primarily professional headshot styles" },
+  { label: "Categories / styles", tailorpic: "12 categories", other: "Primarily professional headshot styles" },
   { label: "Training method", tailorpic: "Personal LoRA fine-tuning", other: "Not publicly detailed" },
   { label: "Pricing model", tailorpic: "One-time, no subscription", other: "Check packages on their site" },
   { label: "LinkedIn-ready business photos", tailorpic: "Dedicated business category", other: "Core focus" },
@@ -79,7 +79,7 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is TailorPic a good HeadPix alternative?", answer: "If you want lower upfront cost and more categories, yes. TailorPic packages start from $1.99 and span 11 categories." },
+  { question: "Is TailorPic a good HeadPix alternative?", answer: "If you want lower upfront cost and more categories, yes. TailorPic packages start from $1.99 and span 12 categories." },
   { question: "Does TailorPic offer a refund?", answer: "Yes, there is a satisfaction guarantee." },
   { question: "How long does delivery take?", answer: "Within 24 hours after your photos are processed." },
   { question: "Are the photos suitable for LinkedIn?", answer: "Yes. The business category is designed for LinkedIn, resumes and company pages." },
@@ -221,7 +221,7 @@ export default function VsHeadpixPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
+              Professional photos across 12 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

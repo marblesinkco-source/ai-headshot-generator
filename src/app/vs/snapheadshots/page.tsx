@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -44,7 +44,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Approximately $9.99" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Varies by package; check their site" },
   { label: "Delivery time", tailorpic: "24 hours", other: "Check their site" },
-  { label: "Categories / styles", tailorpic: "11 categories (business, dating, creative, pets and more)", other: "Basic headshot styles" },
+  { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Basic headshot styles" },
   { label: "Editor tools", tailorpic: "Built-in editing tools", other: "Check their site" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
   { label: "One-time vs subscription", tailorpic: "One-time payment, no subscription", other: "Check their site for current billing terms" },
@@ -53,7 +53,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 
 const differences = [
   { title: "Lower entry price, more output", body: "SnapHeadshots is approximately $9.99. TailorPic starts at $1.99 with packages up to 160 photos, so you have more to choose from." },
-  { title: "Category variety", body: "TailorPic spans 11 categories, including business, dating and creative looks. SnapHeadshots is focused on basic headshot generation." },
+  { title: "Category variety", body: "TailorPic spans 12 categories, including business, dating and creative looks. SnapHeadshots is focused on basic headshot generation." },
   { title: "Editor tools", body: "TailorPic includes editor tools so you can refine your results, rather than relying only on the raw generated images." },
   { title: "Personalization", body: "TailorPic trains a personal LoRA model on your photos for a close likeness." },
 ];
@@ -75,7 +75,7 @@ const useCases = {
 
 const faqs = [
   { question: "Is TailorPic cheaper than SnapHeadshots?", answer: "TailorPic starts from $1.99 and SnapHeadshots is approximately $9.99. Pricing may change, so check their site." },
-  { question: "What do I get with TailorPic that is extra?", answer: "TailorPic includes photos across 11 categories plus editor tools." },
+  { question: "What do I get with TailorPic that is extra?", answer: "TailorPic includes photos across 12 categories plus editor tools." },
   { question: "Is TailorPic a subscription?", answer: "No. TailorPic packages are one-time payments starting at $1.99 with no recurring fees." },
   { question: "How fast does TailorPic deliver?", answer: "TailorPic delivers within 24 hours because it fine-tunes a LoRA model on your photos." },
 ];
@@ -105,7 +105,7 @@ export default function Page() {
               TailorPic <span className="text-tp-bronze">vs</span> {competitor}
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">
-              SnapHeadshots offers basic headshot generation. TailorPic adds more photos, 11 categories and editor tools from $1.99.
+              SnapHeadshots offers basic headshot generation. TailorPic adds more photos, 12 categories and editor tools from $1.99.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
@@ -216,7 +216,7 @@ export default function Page() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
+              Professional photos across 12 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

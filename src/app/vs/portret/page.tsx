@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Portret";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs Portret for AI portraits and headshots. TailorPic offers photos in 11 categories from $1.99 with a personal LoRA model.";
+  "Compare TailorPic vs Portret for AI portraits and headshots. TailorPic offers photos in 12 categories from $1.99 with a personal LoRA model.";
 const path = '/vs/portret';
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -41,13 +41,13 @@ const productJsonLd = {
 };
 
 const intro =
-  "Portret is a portrait-focused AI tool. TailorPic takes a wider approach, pairing a personal LoRA model with 11 categories for work, dating, creative and commercial use.";
+  "Portret is a portrait-focused AI tool. TailorPic takes a wider approach, pairing a personal LoRA model with 12 categories for work, dating, creative and commercial use.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Confirm current pricing on their site" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on the plan" },
   { label: "Delivery time", tailorpic: "Within 24 hours", other: "Varies by plan" },
-  { label: "Categories / styles", tailorpic: "11 categories", other: "Portrait-oriented styles" },
+  { label: "Categories / styles", tailorpic: "12 categories", other: "Portrait-oriented styles" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your selfies", other: "Not publicly detailed" },
   { label: "Pricing model", tailorpic: "One-time payment", other: "Check for packages or subscriptions" },
   { label: "Artistic / creative looks", tailorpic: "Creative category included", other: "Portrait styles may lean artistic" },
@@ -58,7 +58,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 
 const differences = [
   { title: "Portrait art vs practical photos", body: "If you want a stylised portrait, a portrait-first tool may fit. TailorPic balances creative looks with practical business and dating shots." },
-  { title: "Low entry price, many uses", body: "Packages from $1.99 cover photos in 11 categories, which is useful if you need more than one kind of image." },
+  { title: "Low entry price, many uses", body: "Packages from $1.99 cover photos in 12 categories, which is useful if you need more than one kind of image." },
   { title: "Personal likeness", body: "TailorPic trains on your own photos, aiming for a recognisable result rather than a generic face." },
   { title: "Turnaround", body: "TailorPic takes up to 24 hours. Choose a faster service only if speed outweighs likeness and variety for you." },
 ];
@@ -221,7 +221,7 @@ export default function VsPortretPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
+              Professional photos across 12 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

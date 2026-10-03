@@ -63,7 +63,7 @@ const comparisonRows: FeatureRow[] = [
   { feature: 'Creates New Headshots from Selfies', tailorpic: true, competitor: 'Limited' },
   { feature: 'Enhances / Upscales Existing Photos', tailorpic: 'Not the focus', competitor: true },
   { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: 'Varies by plan' },
-  { feature: 'Photo Categories', tailorpic: '11 categories', competitor: 'No dedicated categories' },
+  { feature: 'Photo Categories', tailorpic: '12 categories', competitor: 'No dedicated categories' },
   { feature: 'Professional Headshot Styles', tailorpic: true, competitor: 'Limited' },
   { feature: 'Dating Photos', tailorpic: true, competitor: 'Limited' },
   { feature: 'Pet Portraits', tailorpic: true, competitor: false },
@@ -115,7 +115,7 @@ const faqs = [
   {
     question: 'How many photos do I get with TailorPic compared to Remini?',
     answer:
-      'TailorPic packages include from 1 to 160 new photos across 11 categories. Remini is a photo enhancer that improves images you already have, and what you get varies by plan.',
+      'TailorPic packages include from 1 to 160 new photos across 12 categories. Remini is a photo enhancer that improves images you already have, and what you get varies by plan.',
   },
   {
     question: 'How long does it take to get my headshots?',
@@ -130,7 +130,7 @@ const faqs = [
   {
     question: 'How does TailorPic work compared to Remini\'s enhancement?',
     answer:
-      'TailorPic trains a personalized LoRA model on your own selfies, so the results are built around your actual face rather than a generic template. You upload your photos, pick your categories, and the generation runs automatically. Remini sharpens and restores existing photos, while TailorPic creates new professional headshots from your selfies. Upload a few selfies, choose from 11 categories, and your photos arrive without any design or editing work on your part. There is nothing to learn and no tools to configure.',
+      'TailorPic trains a personalized LoRA model on your own selfies, so the results are built around your actual face rather than a generic template. You upload your photos, pick your categories, and the generation runs automatically. Remini sharpens and restores existing photos, while TailorPic creates new professional headshots from your selfies. Upload a few selfies, choose from 12 categories, and your photos arrive without any design or editing work on your part. There is nothing to learn and no tools to configure.',
   },
 ];
 

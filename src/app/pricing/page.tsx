@@ -124,7 +124,7 @@ const OG_DESCRIPTION =
 
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic Pricing: AI Headshots from $1.99' },
-  description: `${siteConfig.name} pricing: AI photos from ${BASE_PRICE_DISPLAY}, no subscription. Choose a single package across 11 categories or save with credit packs.`,
+  description: `${siteConfig.name} pricing: AI photos from ${BASE_PRICE_DISPLAY}, no subscription. Choose a single package across 12 categories or save with credit packs.`,
   alternates: { canonical: '/pricing' },
   openGraph: generateOGMetadata({
     title: `Pricing | ${siteConfig.name}`,

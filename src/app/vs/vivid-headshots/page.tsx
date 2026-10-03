@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Vivid Headshots";
 const title = 'TailorPic vs Vivid Headshots: AI Headshot Comparison';
 const description =
-  "Compare TailorPic vs Vivid Headshots for AI headshots. TailorPic offers photos in 11 categories from $1.99 with a satisfaction guarantee.";
+  "Compare TailorPic vs Vivid Headshots for AI headshots. TailorPic offers photos in 12 categories from $1.99 with a satisfaction guarantee.";
 const path = '/vs/vivid-headshots';
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -47,7 +47,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Confirm current pricing on their site" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on the plan" },
   { label: "Delivery time", tailorpic: "Within 24 hours", other: "Varies by plan" },
-  { label: "Categories / styles", tailorpic: "11 categories", other: "Headshot-focused style options" },
+  { label: "Categories / styles", tailorpic: "12 categories", other: "Headshot-focused style options" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
   { label: "Pricing model", tailorpic: "One-time payment", other: "Check for packages or subscriptions" },
   { label: "Colour and style variety", tailorpic: "Business, dating, creative and more", other: "Varies by plan" },
@@ -57,7 +57,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 ];
 
 const differences = [
-  { title: "Vivid looks, practical price", body: "TailorPic gives you a wide set of looks across 11 categories, with one-time packages starting at $1.99." },
+  { title: "Vivid looks, practical price", body: "TailorPic gives you a wide set of looks across 12 categories, with one-time packages starting at $1.99." },
   { title: "More than one use case", body: "A single upload can produce business, dating, creative, pet and product images." },
   { title: "Trained on you", body: "The LoRA model learns from your own photos, which helps keep the result recognisable across styles." },
   { title: "Guarantee", body: "A satisfaction guarantee lets you try TailorPic with limited risk." },
@@ -221,7 +221,7 @@ export default function VsVividHeadshotsPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
+              Professional photos across 12 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

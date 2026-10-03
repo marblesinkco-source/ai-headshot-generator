@@ -59,7 +59,7 @@ const steps = [
     icon: Sparkles,
     title: 'AI generates your headshots',
     description:
-      'Our AI learns your features and creates 40+ professional photos across 11+ categories. Most orders are ready within 2 hours.',
+      'Our AI learns your features and creates 40+ professional photos across 12 categories. Most orders are ready within 2 hours.',
   },
   {
     icon: Download,
@@ -83,7 +83,7 @@ const headshotTypes = [
 const trialComparison = [
   { label: 'Price', free: 'Free tools: $0', paid: 'from $1.99 per person' },
   { label: 'Teams', free: 'Usually one photo at a time', paid: '$39 (5-15 people) or $29 (16-50 people)' },
-  { label: 'Output', free: 'Often a few photos, sometimes watermarked', paid: 'photos across 11+ categories' },
+  { label: 'Output', free: 'Often a few photos, sometimes watermarked', paid: 'photos across 12 categories' },
   { label: 'Risk', free: 'No payment, but no guarantee of quality', paid: 'One-time payment, no subscription' },
   { label: 'Subscription', free: 'Varies by tool', paid: 'None. One-time payment, no subscription to cancel' },
 ];
@@ -139,7 +139,7 @@ const faqs = [
   },
   {
     question: 'How many photos do I get?',
-    answer: 'You get photos across 11+ categories, including professional headshots, LinkedIn photos and more.',
+    answer: 'You get photos across 12 categories, including professional headshots, LinkedIn photos and more.',
   },
   {
     question: 'Can I use the headshots on LinkedIn and my resume?',

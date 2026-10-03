@@ -60,7 +60,7 @@ const comparisonRows: FeatureRow[] = [
   { feature: 'Starting Price', tailorpic: 'From $1.99', competitor: '$35 (Basic plan)' },
   { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: '20 on Basic plan' },
   { feature: 'Delivery Time', tailorpic: 'Under 2 hours', competitor: '1 to 2 hours by plan' },
-  { feature: 'Photo Categories', tailorpic: '11 categories', competitor: 'Headshot-focused' },
+  { feature: 'Photo Categories', tailorpic: '12 categories', competitor: 'Headshot-focused' },
   { feature: 'Satisfaction Guarantee', tailorpic: 'Yes', competitor: 'Yes (7 days, terms apply)' },
   { feature: 'Team / Enterprise Plans', tailorpic: true, competitor: true },
   { feature: 'Pet Portraits', tailorpic: true, competitor: false },
@@ -113,7 +113,7 @@ const faqs = [
   {
     question: 'How many photos do I get compared to BetterPic?',
     answer:
-      'TailorPic includes photos in every order across 11 categories. BetterPic\'s Basic plan includes 20 photos, with larger plans offering more.',
+      'TailorPic includes photos in every order across 12 categories. BetterPic\'s Basic plan includes 20 photos, with larger plans offering more.',
   },
   {
     question: 'How fast will I get my photos?',
@@ -128,7 +128,7 @@ const faqs = [
   {
     question: 'How does TailorPic create my photos, and is it easy to use?',
     answer:
-      'TailorPic trains a personalized LoRA model on your own selfies, so the results are built around your actual face rather than a generic template. You upload your photos, pick your categories, and the generation runs automatically. Upload a few selfies, choose from 11 categories, and your photos arrive without any design or editing work on your part. There is nothing to learn and no tools to configure.',
+      'TailorPic trains a personalized LoRA model on your own selfies, so the results are built around your actual face rather than a generic template. You upload your photos, pick your categories, and the generation runs automatically. Upload a few selfies, choose from 12 categories, and your photos arrive without any design or editing work on your part. There is nothing to learn and no tools to configure.',
   },
 ];
 

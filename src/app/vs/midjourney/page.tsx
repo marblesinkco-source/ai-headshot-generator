@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -47,7 +47,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Subscription-based; check their site" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on prompts and plan limits" },
   { label: "Delivery time", tailorpic: "Within 24 hours", other: "Varies by mode and queue" },
-  { label: "Categories / styles", tailorpic: "11 categories (business, dating, creative, pets and more)", other: "Artistic and photorealistic imagery of all kinds" },
+  { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Artistic and photorealistic imagery of all kinds" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Prompt-based generation; not a model trained on your face" },
   { label: "Pricing model", tailorpic: "One-time payment, no subscription", other: "Check their site for current plans" },
   { label: "Built for headshots", tailorpic: "Yes, purpose-built workflow", other: "General art tool, not specialized for headshots" },
@@ -221,7 +221,7 @@ export default function VsMidjourneyPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
+              Professional photos across 12 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

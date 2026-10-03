@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Epik";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs Epik for AI headshots. TailorPic starts from $1.99 across 11 categories with LoRA-trained likeness and no subscription.";
+  "Compare TailorPic vs Epik for AI headshots. TailorPic starts from $1.99 across 12 categories with LoRA-trained likeness and no subscription.";
 const path = '/vs/epik-ai';
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -47,7 +47,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Varies by plan; check the app store listing" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on the pack you pick" },
   { label: "Delivery time", tailorpic: "Within 24 hours", other: "Varies by pack" },
-  { label: "Categories / styles", tailorpic: "11 categories (business, dating, creative, pets and more)", other: "Headshot pack inside a mobile photo app" },
+  { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Headshot pack inside a mobile photo app" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
   { label: "Pricing model", tailorpic: "One-time payment, no subscription", other: "Check whether packs or subscriptions apply" },
   { label: "Dating and social photos", tailorpic: "Dedicated dating category", other: "Style availability varies" },
@@ -80,7 +80,7 @@ const useCases = {
 
 const faqs = [
   { question: "Is TailorPic cheaper than Epik?", answer: "TailorPic packages start from $1.99 and go up to 160 photos. Epik pricing varies by plan and can change, so compare against their current price page." },
-  { question: "What makes TailorPic different from Epik?", answer: "TailorPic is a dedicated headshot generator that trains a personal LoRA model on your photos and outputs 11 categories, rather than one headshot pack in a mobile app." },
+  { question: "What makes TailorPic different from Epik?", answer: "TailorPic is a dedicated headshot generator that trains a personal LoRA model on your photos and outputs 12 categories, rather than one headshot pack in a mobile app." },
   { question: "How long does TailorPic take?", answer: "Delivery is within 24 hours, since a dedicated model is fine-tuned on your uploads." },
   { question: "Do I need a subscription with TailorPic?", answer: "No. Every package is a single one-time payment (from $1.99) with no recurring fees." },
   { question: "Can I use the photos on LinkedIn?", answer: "Yes. The business category is built for LinkedIn, resumes and company pages." },
@@ -221,7 +221,7 @@ export default function VsEpikAiPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
+              Professional photos across 12 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

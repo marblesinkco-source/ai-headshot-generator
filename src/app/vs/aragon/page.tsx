@@ -61,7 +61,7 @@ const comparisonRows: FeatureRow[] = [
   { feature: 'Starting Price', tailorpic: 'From $1.99', competitor: '$29' },
   { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: '40+' },
   { feature: 'Delivery Time', tailorpic: 'Under 2 hours', competitor: 'Under 2 hours' },
-  { feature: 'Photo Categories', tailorpic: '11 categories', competitor: 'Limited styles' },
+  { feature: 'Photo Categories', tailorpic: '12 categories', competitor: 'Limited styles' },
   { feature: 'Satisfaction Guarantee', tailorpic: 'Yes', competitor: 'Yes' },
   { feature: 'Team / Enterprise Plans', tailorpic: true, competitor: true },
   { feature: 'Pet Portraits', tailorpic: true, competitor: false },
@@ -114,7 +114,7 @@ const faqs = [
   {
     question: 'How many photos do I get with TailorPic compared to Aragon AI?',
     answer:
-      'Every TailorPic order includes photos across 11 categories, including business, dating, pet portraits, and e-commerce. Aragon AI also offers photos but with a more limited set of styles.',
+      'Every TailorPic order includes photos across 12 categories, including business, dating, pet portraits, and e-commerce. Aragon AI also offers photos but with a more limited set of styles.',
   },
   {
     question: 'How long does delivery take?',
@@ -129,7 +129,7 @@ const faqs = [
   {
     question: 'How does TailorPic train my headshots, and is it easy to use?',
     answer:
-      'TailorPic trains a personalized LoRA model on your own selfies, so the results are built around your actual face rather than a generic template. You upload your photos, pick your categories, and the generation runs automatically. Upload a few selfies, choose from 11 categories, and your photos arrive without any design or editing work on your part. There is nothing to learn and no tools to configure.',
+      'TailorPic trains a personalized LoRA model on your own selfies, so the results are built around your actual face rather than a generic template. You upload your photos, pick your categories, and the generation runs automatically. Upload a few selfies, choose from 12 categories, and your photos arrive without any design or editing work on your part. There is nothing to learn and no tools to configure.',
   },
 ];
 

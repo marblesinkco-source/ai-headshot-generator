@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -46,7 +46,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Focus", tailorpic: "Headshots and profile photos", other: "Selfie retouching, reshaping and AI enhancement" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Edit your own photos; no headshot generation" },
   { label: "Delivery time", tailorpic: "24 hours", other: "Instant edits on your existing photos" },
-  { label: "Categories / styles", tailorpic: "11 categories (business, dating, creative, pets and more)", other: "Editing tools and filters, not headshot categories" },
+  { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Editing tools and filters, not headshot categories" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "No personal model; applies edits to existing photos" },
   { label: "Ongoing cost", tailorpic: "None after your one-time payment (from $1.99)", other: "Recurring subscription for VIP features" },
   { label: "Platform", tailorpic: "Web-based, works on any device", other: "Mobile app (iOS and Android)" },
@@ -106,7 +106,7 @@ export default function Page() {
               TailorPic <span className="text-tp-bronze">vs</span> {competitor}
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">
-              Facetune is a popular selfie editor for retouching and enhancing existing photos. TailorPic is a headshot specialist: realistic, LoRA-trained photos across 11 categories (up to 160 per order), from $1.99.
+              Facetune is a popular selfie editor for retouching and enhancing existing photos. TailorPic is a headshot specialist: realistic, LoRA-trained photos across 12 categories (up to 160 per order), from $1.99.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
@@ -217,7 +217,7 @@ export default function Page() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
+              Professional photos across 12 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

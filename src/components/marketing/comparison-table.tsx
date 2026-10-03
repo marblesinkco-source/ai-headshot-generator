@@ -39,7 +39,7 @@ const rows: {
     icon: Sparkles,
     traditional: { text: '1 – 2 backgrounds', ok: false },
     otherAi: { text: 'Varies by provider' },
-    tailorpic: { text: '11 categories, multiple styles', ok: true },
+    tailorpic: { text: '12 categories, multiple styles', ok: true },
   },
   {
     feature: 'Number of Photos',

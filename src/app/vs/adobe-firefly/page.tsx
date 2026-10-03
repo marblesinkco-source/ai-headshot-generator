@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 11 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -47,7 +47,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Varies by Adobe plan; check their site" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on your prompts and credits" },
   { label: "Delivery time", tailorpic: "Within 24 hours", other: "Varies by task" },
-  { label: "Categories / styles", tailorpic: "11 categories (business, dating, creative, pets and more)", other: "General-purpose image generation and editing" },
+  { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "General-purpose image generation and editing" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Generates from prompts; not built around a personal model of your face" },
   { label: "Pricing model", tailorpic: "One-time payment, no subscription", other: "Adobe plan or credit-based; check their site" },
   { label: "Built for headshots", tailorpic: "Yes, purpose-built workflow", other: "General-purpose tool, not specialized for headshots" },
@@ -59,7 +59,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 const differences = [
   { title: "Specialized vs general-purpose", body: "Firefly covers a wide range of image tasks. TailorPic does one thing, headshots, so the whole workflow is tuned for it." },
   { title: "Your face, not a prompt", body: "TailorPic fine-tunes a LoRA model on your own selfies. A prompt-based tool has no built-in knowledge of what you look like." },
-  { title: "No prompt writing", body: "You upload photos and get results across 11 categories. There is no prompt craft or trial and error involved." },
+  { title: "No prompt writing", body: "You upload photos and get results across 12 categories. There is no prompt craft or trial and error involved." },
   { title: "Trade-off on flexibility", body: "If you need broad creative editing alongside images, Firefly's wider toolset inside Adobe apps may fit better than a headshot-only service." },
 ];
 
@@ -221,7 +221,7 @@ export default function VsAdobeFireflyPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 11 categories from $1.99. No subscription, delivered within 24 hours.
+              Professional photos across 12 categories from $1.99. No subscription, delivered within 24 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
