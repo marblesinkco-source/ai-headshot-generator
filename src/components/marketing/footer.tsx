@@ -25,7 +25,7 @@ const photoTypeLinks: FooterLink[] = [
   { label: 'Graduation', href: '/graduation-photos' },
   { label: 'AI Avatars', href: '/avatars' },
   { label: 'Pet Portraits', href: '/pet-portraits' },
-  { label: 'All Categories', href: '/use-cases' },
+  { label: 'All Photo Types', href: '/pricing' },
 ];
 
 const resourceLinks: FooterLink[] = [

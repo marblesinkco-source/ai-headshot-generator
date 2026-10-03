@@ -562,6 +562,13 @@ export function Header() {
               >
                 Dashboard <span aria-hidden="true" className="text-lg leading-none">&#8599;</span>
               </Link>
+              <Link
+                href="/dashboard/settings"
+                className="flex min-h-[44px] items-center justify-center gap-2 rounded-tp-button border border-tp-line px-6 py-3 text-sm font-medium text-tp-ink hover:bg-white transition-colors"
+                onClick={() => closeMobile()}
+              >
+                Settings
+              </Link>
               <button
                 onClick={() => { closeMobile(); handleSignOut(); }}
                 disabled={loggingOut}
@@ -573,7 +580,7 @@ export function Header() {
           ) : (
             <div className="grid gap-1">
               <Link
-                href="/auth/register"
+                href="/auth/register?redirect=/dashboard/upload"
                 className="flex min-h-[48px] items-center justify-center gap-3 rounded-tp-button bg-tp-bronze px-6 py-3 text-sm font-semibold text-tp-black shadow-md shadow-tp-black/15 transition-colors hover:bg-tp-beige"
                 onClick={() => closeMobile()}
               >
