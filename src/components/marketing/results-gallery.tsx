@@ -100,7 +100,7 @@ export function ResultsGallery() {
         {/* CTA */}
         <div className="mt-10 text-center">
           <Link
-            href="/auth/register"
+            href="/auth/register?redirect=/dashboard/upload"
             className={buttonVariants({ variant: 'primary', size: 'lg' })}
           >
             Create Your Headshots

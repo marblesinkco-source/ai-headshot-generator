@@ -243,7 +243,7 @@ export function PlanPicker() {
               </ul>
               <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                 <Link
-                  href="/auth/register"
+                  href="/auth/register?redirect=/dashboard/upload"
                   className={buttonVariants({
                     variant: 'primary',
                     size: 'lg',

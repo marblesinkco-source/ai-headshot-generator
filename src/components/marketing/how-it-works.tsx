@@ -118,7 +118,7 @@ export function HowItWorks() {
 
       <div className="mt-10 lg:mt-14 flex flex-col items-center gap-3 text-center">
         <Link
-          href="/auth/register"
+          href="/auth/register?redirect=/dashboard/upload"
           className={`${buttonVariants({ variant: 'primary', size: 'lg' })} bg-tp-ink text-tp-paper rounded-tp-button gap-2`}
         >
           Get Started in Under 5 Minutes
