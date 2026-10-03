@@ -7,6 +7,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import {
   ArrowRight,
   CheckCircle2,
@@ -31,7 +32,7 @@ import {
 /* ------------------------------------------------------------------ */
 
 const OG_TITLE = `Why ${siteConfig.name} — Professional AI Headshots`;
-const OG_DESCRIPTION = `Discover why ${siteConfig.name} is the smartest way to get professional headshots. Studio quality from $1.99, ready in hours, with a satisfaction guarantee.`;
+const OG_DESCRIPTION = `Discover why ${siteConfig.name} is the smartest way to get professional headshots. Studio quality from ${BASE_PRICE_DISPLAY}, ready in hours, with a satisfaction guarantee.`;
 
 export const metadata: Metadata = {
   title: { absolute: 'Why TailorPic: Professional AI Headshots Done Right' },
@@ -59,7 +60,7 @@ const valueProps = [
   {
     icon: DollarSign,
     title: 'Unbeatable Price',
-    stat: '$1.99',
+    stat: BASE_PRICE_DISPLAY,
     description:
       'One-time payment, no subscriptions. Traditional studios typically charge $200–$500 for a single session with far fewer photos.',
   },
@@ -118,7 +119,7 @@ const comparisonRows: ComparisonRow[] = [
     feature: 'Starting price',
     traditional: '$200–$500+',
     otherAI: '$20–$60',
-    tailorpic: '$1.99',
+    tailorpic: BASE_PRICE_DISPLAY,
   },
   {
     feature: 'Turnaround time',
@@ -256,7 +257,7 @@ export default function WhyTailorPicPage() {
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige/80">
               Studio-quality professional headshots powered by AI&mdash;delivered
-              in hours, not weeks, starting at just $1.99. No photographer, no
+              in hours, not weeks, starting at just {BASE_PRICE_DISPLAY}. No photographer, no
               appointment, no compromise.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -579,7 +580,7 @@ export default function WhyTailorPicPage() {
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
             <p className="mt-4 text-sm text-tp-beige/60">
-              Starting at $1.99 &middot; No subscription required
+              Starting at {BASE_PRICE_DISPLAY} &middot; No subscription required
             </p>
           </div>
         </section>

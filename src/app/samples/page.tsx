@@ -11,6 +11,7 @@ import { BreadcrumbSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { siteConfig } from '@/config/site';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import {
   ArrowRight,
   Sparkles,
@@ -169,7 +170,7 @@ const qualityFeatures = [
 const comparisonRows = [
   { feature: '40+ styles', ours: 'Every order includes photos across multiple style categories.', check: 'How many distinct styles are included?' },
   { feature: 'Hours, not days', ours: 'Results are delivered in hours rather than days.', check: 'What is the stated turnaround time?' },
-  { feature: 'One-time payment', ours: 'Pay once, from $1.99. No subscription.', check: 'Is it a one-time fee or a recurring plan?' },
+  { feature: 'One-time payment', ours: `Pay once, from ${BASE_PRICE_DISPLAY}. No subscription.`, check: 'Is it a one-time fee or a recurring plan?' },
 ];
 
 const beforeAfterCards = [
@@ -230,7 +231,7 @@ export default function SamplesPage() {
               Browse AI-generated concept portraits by category. All photos shown are AI-generated concept images.
             </p>
             <p className="mx-auto mt-3 max-w-xl text-base font-medium text-tp-bronze-ink">
-              Get photos starting at $1.99, one-time, no subscription.
+              Get photos starting at {BASE_PRICE_DISPLAY}, one-time, no subscription.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3">
               <Link
@@ -554,7 +555,7 @@ export default function SamplesPage() {
               Ready to create yours?
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-tp-beige/80">
-              Upload your photos and get studio-quality AI portraits &mdash; from a single photo to a set of 160 &mdash; starting at $1.99.
+              Upload your photos and get studio-quality AI portraits &mdash; from a single photo to a set of 160 &mdash; starting at {BASE_PRICE_DISPLAY}.
             </p>
             <div className="mt-8">
               <Link
