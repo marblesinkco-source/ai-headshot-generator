@@ -24,7 +24,6 @@ import {
   RefreshCw,
   Trash2,
   FileCheck,
-  Quote,
 } from 'lucide-react';
 
 /* ------------------------------------------------------------------ */
@@ -517,38 +516,34 @@ export default function WhyTailorPicPage() {
           </div>
         </section>
 
-        {/* ---- Illustrative Testimonial ---- */}
+        {/* ---- How It Works ---- */}
         <section className="border-y border-tp-line bg-white py-20 sm:py-28">
-          <div className="mx-auto max-w-3xl px-4 sm:px-6">
-            <div className="rounded-tp-card border border-tp-line bg-tp-paper p-8 sm:p-10">
-              <Quote
-                className="h-8 w-8 text-tp-bronze/40"
-                aria-hidden="true"
-              />
-              <blockquote className="mt-4 font-display text-xl leading-relaxed text-tp-ink sm:text-2xl">
-                &ldquo;I needed a professional headshot for a new role but
-                couldn&rsquo;t justify spending $300 at a studio. With{' '}
-                {siteConfig.name}, I uploaded a few selfies before lunch and had
-                dozens of polished options by the afternoon. My recruiter
-                actually asked which photographer I used.&rdquo;
-              </blockquote>
-              <div className="mt-6 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-tp-bronze/20 text-sm font-semibold text-tp-bronze-ink">
-                  S.K.
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 text-center">
+            <h2 className="font-display text-3xl font-normal text-tp-ink sm:text-4xl">
+              Studio-Quality in 3 Simple Steps
+            </h2>
+            <div className="mt-10 grid gap-8 sm:grid-cols-3">
+              <div>
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-tp-bronze/10 text-lg font-semibold text-tp-bronze-ink">
+                  1
                 </div>
-                <div>
-                  <p className="text-sm font-semibold text-tp-ink">
-                    Sarah K.
-                  </p>
-                  <p className="text-xs text-tp-muted">
-                    Marketing Manager
-                  </p>
-                </div>
+                <h3 className="mt-4 text-base font-semibold text-tp-ink">Upload Selfies</h3>
+                <p className="mt-2 text-sm text-tp-muted">Take a few casual selfies with your phone — no studio visit needed.</p>
               </div>
-              <p className="mt-4 text-xs text-tp-muted italic">
-                This is an illustrative testimonial based on common customer
-                experiences. Individual results may vary.
-              </p>
+              <div>
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-tp-bronze/10 text-lg font-semibold text-tp-bronze-ink">
+                  2
+                </div>
+                <h3 className="mt-4 text-base font-semibold text-tp-ink">AI Generates</h3>
+                <p className="mt-2 text-sm text-tp-muted">Our AI creates professional headshots in multiple styles and backgrounds.</p>
+              </div>
+              <div>
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-tp-bronze/10 text-lg font-semibold text-tp-bronze-ink">
+                  3
+                </div>
+                <h3 className="mt-4 text-base font-semibold text-tp-ink">Download & Use</h3>
+                <p className="mt-2 text-sm text-tp-muted">Get your headshots in under 2 hours, ready for LinkedIn, team pages, and more.</p>
+              </div>
             </div>
           </div>
         </section>
