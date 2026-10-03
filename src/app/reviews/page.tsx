@@ -7,20 +7,28 @@ import { BreadcrumbSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
-import { Quote, CreditCard, Image as ImageIcon, ArrowRight } from 'lucide-react';
+import {
+  Briefcase,
+  Users,
+  Palette,
+  Linkedin,
+  CreditCard,
+  Image as ImageIcon,
+  ArrowRight,
+} from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 
-const pageTitle = 'TailorPic Testimonials: How Professionals Use AI Headshots';
-const pageDescription = `See how professionals use ${siteConfig.name} for headshots, team photos, LinkedIn profiles and more. Illustrative testimonials covering real use cases.`;
+const pageTitle = 'How Professionals Use AI Headshots | TailorPic';
+const pageDescription = `See how professionals use ${siteConfig.name} for headshots, team photos, LinkedIn profiles and more. Use cases across industries.`;
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
   description: pageDescription,
   keywords: [
-    'AI headshot reviews',
-    'AI headshot feedback',
-    'professional headshot testimonials',
-    `${siteConfig.name} reviews`,
-    'AI team headshots feedback',
+    'AI headshot use cases',
+    'professional headshot scenarios',
+    `${siteConfig.name} use cases`,
+    'AI team headshots',
     'AI LinkedIn headshots',
   ],
   alternates: { canonical: '/reviews' },
@@ -35,140 +43,118 @@ export const metadata: Metadata = {
   }),
 };
 
-/* ------------------------------------------------------------------ */
-/*  NOTE: These are illustrative testimonials for demonstration        */
-/*  purposes. They are not verified reviews. Names use first name +    */
-/*  last initial format. No real people or companies referenced.       */
-/* ------------------------------------------------------------------ */
-
-type Review = {
-  name: string;
+type UseCase = {
+  icon: LucideIcon;
   role: string;
-  quote: string;
+  scenario: string;
   tag: string;
-  initialBg: string;
 };
 
-const reviews: Review[] = [
+const useCases: UseCase[] = [
   {
-    name: 'Sarah M.',
-    role: 'Marketing Director',
-    quote:
-      'I uploaded a few casual selfies before a conference and got back headshots that looked like I had spent an afternoon at a studio. My LinkedIn profile finally matches my actual role.',
+    icon: Linkedin,
+    role: 'Job Seekers',
+    scenario:
+      'Upload a few casual selfies before applying for new roles and get back polished headshots that make your LinkedIn profile stand out to recruiters — no studio visit needed.',
     tag: 'LinkedIn',
-    initialBg: 'bg-tp-bronze/20 text-tp-bronze-ink',
   },
   {
-    name: 'James R.',
-    role: 'Startup Founder',
-    quote:
-      'We needed consistent headshots for our pitch deck and website. Every co-founder uploaded their own photos and the results looked cohesive without anyone leaving their desk.',
+    icon: Briefcase,
+    role: 'Startup Founders',
+    scenario:
+      'Get consistent headshots for your pitch deck and website. Every co-founder uploads their own photos and the results look cohesive without anyone leaving their desk.',
     tag: 'Business',
-    initialBg: 'bg-blue-100 text-blue-700',
   },
   {
-    name: 'Priya K.',
-    role: 'UX Designer',
-    quote:
-      'As a creative professional, I wanted headshots that felt polished but still showed personality. The variety of styles let me pick ones that fit my portfolio site perfectly.',
+    icon: Palette,
+    role: 'Designers & Creatives',
+    scenario:
+      'Find headshots that feel polished but still show personality. The variety of styles lets you pick ones that fit your portfolio site and creative brand.',
     tag: 'Creative',
-    initialBg: 'bg-purple-100 text-purple-700',
   },
   {
-    name: 'Michael T.',
-    role: 'Sales Manager',
-    quote:
-      'Updated headshots for my entire team in one afternoon. No more mismatched photos in our CRM and email signatures. The consistency makes us look like the professional outfit we are.',
+    icon: Users,
+    role: 'Sales Teams',
+    scenario:
+      'Update headshots for your entire team in one afternoon. No more mismatched photos in CRM and email signatures — consistent photos that project professionalism.',
     tag: 'Teams',
-    initialBg: 'bg-green-100 text-green-700',
   },
   {
-    name: 'Elena V.',
-    role: 'Real Estate Agent',
-    quote:
-      'First impressions matter in real estate. I got headshots that project trust and approachability without the hassle of booking a photographer between showings.',
+    icon: Briefcase,
+    role: 'Real Estate Agents',
+    scenario:
+      'First impressions matter in real estate. Get headshots that project trust and approachability without the hassle of booking a photographer between showings.',
     tag: 'Business',
-    initialBg: 'bg-rose-100 text-rose-700',
   },
   {
-    name: 'David L.',
-    role: 'Software Engineer',
-    quote:
-      'I had been using the same blurry conference photo for three years. Took five minutes to upload selfies and I finally have a headshot I am not embarrassed by on LinkedIn.',
+    icon: Linkedin,
+    role: 'Software Engineers',
+    scenario:
+      'Replace that blurry conference photo from three years ago. Upload selfies in five minutes and get a headshot you can be proud of on LinkedIn and GitHub.',
     tag: 'LinkedIn',
-    initialBg: 'bg-sky-100 text-sky-700',
   },
   {
-    name: 'Rachel W.',
-    role: 'HR Director',
-    quote:
-      'Onboarding twelve new hires last quarter meant twelve headshots needed fast. Everyone had matching photos on our team page within their first week. The process was seamless.',
+    icon: Users,
+    role: 'HR & People Teams',
+    scenario:
+      'Onboarding new hires means headshots needed fast. Everyone gets matching photos on the team page within their first week — the process is seamless.',
     tag: 'Teams',
-    initialBg: 'bg-amber-100 text-amber-700',
   },
   {
-    name: 'Carlos F.',
-    role: 'Freelance Photographer',
-    quote:
-      'I was skeptical as a photographer myself, but the quality surprised me. For quick professional headshots when you cannot schedule a proper shoot, this is genuinely useful.',
+    icon: Palette,
+    role: 'Photographers',
+    scenario:
+      'For quick professional headshots when you cannot schedule a proper shoot, AI-generated options provide genuinely useful quality and variety.',
     tag: 'Creative',
-    initialBg: 'bg-teal-100 text-teal-700',
   },
   {
-    name: 'Aisha N.',
-    role: 'Management Consultant',
-    quote:
-      'Clients expect polished profiles. I needed updated headshots for a new firm bio and conference speaker page. Had them within hours, not weeks.',
+    icon: Briefcase,
+    role: 'Management Consultants',
+    scenario:
+      'Clients expect polished profiles. Get updated headshots for firm bios and conference speaker pages within hours, not weeks.',
     tag: 'Business',
-    initialBg: 'bg-indigo-100 text-indigo-700',
   },
   {
-    name: 'Tom B.',
-    role: 'Financial Advisor',
-    quote:
-      'Trust is everything in financial services. These headshots strike the right balance between professional authority and personal warmth. My clients comment on how approachable I look.',
+    icon: Linkedin,
+    role: 'Financial Advisors',
+    scenario:
+      'Trust is everything in financial services. Get headshots that strike the right balance between professional authority and personal warmth.',
     tag: 'LinkedIn',
-    initialBg: 'bg-orange-100 text-orange-700',
   },
   {
-    name: 'Nina S.',
-    role: 'Content Creator',
-    quote:
-      'I rotate through different headshots for different platforms. The variety in one order means I have options for YouTube, Instagram, and my personal website without looking like stock photos.',
+    icon: Palette,
+    role: 'Content Creators',
+    scenario:
+      'Rotate through different headshots for different platforms. The variety in one order means options for YouTube, Instagram, and your personal website.',
     tag: 'Creative',
-    initialBg: 'bg-pink-100 text-pink-700',
   },
   {
-    name: 'Robert H.',
-    role: 'VP of Engineering',
-    quote:
-      'Our engineering team is fully remote across four time zones. Getting everyone to a photographer was never going to happen. Now every profile in Slack and GitHub looks professional and consistent.',
+    icon: Users,
+    role: 'Remote Engineering Teams',
+    scenario:
+      'Fully remote team across multiple time zones? Getting everyone to a photographer is impossible. Now every profile in Slack and GitHub looks professional and consistent.',
     tag: 'Teams',
-    initialBg: 'bg-cyan-100 text-cyan-700',
   },
   {
-    name: 'Laura C.',
-    role: 'Attorney',
-    quote:
-      'I needed headshots for our firm directory and bar association profile. The results were polished enough to use across all platforms without any retouching.',
+    icon: Briefcase,
+    role: 'Attorneys',
+    scenario:
+      'Get headshots for firm directories and bar association profiles. Polished enough to use across all platforms without any retouching.',
     tag: 'Business',
-    initialBg: 'bg-emerald-100 text-emerald-700',
   },
   {
-    name: 'Kevin P.',
-    role: 'Product Manager',
-    quote:
-      'Switched jobs and needed a fresh headshot fast. The whole process from upload to finished photos took less time than my morning commute. LinkedIn profile updated same day.',
+    icon: Linkedin,
+    role: 'Product Managers',
+    scenario:
+      'Switching jobs means needing a fresh headshot fast. The whole process from upload to finished photos takes less time than a morning commute.',
     tag: 'LinkedIn',
-    initialBg: 'bg-violet-100 text-violet-700',
   },
   {
-    name: 'Danielle G.',
-    role: 'Operations Lead',
-    quote:
-      'We rolled this out to our entire department of twenty-five people. The per-person cost compared to a studio shoot saved us thousands, and the photos look just as good on our website.',
+    icon: Users,
+    role: 'Operations Leaders',
+    scenario:
+      'Roll out headshots for an entire department. The per-person cost compared to a studio shoot saves thousands, and the photos look just as good on the company website.',
     tag: 'Teams',
-    initialBg: 'bg-lime-100 text-lime-700',
   },
 ];
 
@@ -179,31 +165,21 @@ const trustItems = [
   { icon: ImageIcon, label: 'Up to 160 Photos' },
 ];
 
-function ReviewCard({ review }: { review: Review }) {
-  const initial = review.name[0];
+function UseCaseCard({ useCase }: { useCase: UseCase }) {
+  const Icon = useCase.icon;
   return (
-    <figure className="break-inside-avoid rounded-tp-card border border-tp-line bg-white p-6">
+    <div className="break-inside-avoid rounded-tp-card border border-tp-line bg-white p-6">
       <div className="mb-4 flex items-center justify-between">
         <span className="rounded-tp-button bg-tp-beige/40 px-2.5 py-1 text-xs font-medium text-tp-bronze-ink">
-          {review.tag}
+          {useCase.tag}
         </span>
-        <Quote className="h-6 w-6 text-tp-beige" aria-hidden="true" />
+        <Icon className="h-5 w-5 text-tp-beige" aria-hidden="true" />
       </div>
-      <blockquote className="text-[15px] leading-relaxed text-tp-ink/80">
-        &ldquo;{review.quote}&rdquo;
-      </blockquote>
-      <figcaption className="mt-5 flex items-center gap-3 border-t border-tp-line pt-4">
-        <span
-          className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-semibold ${review.initialBg}`}
-        >
-          {initial}
-        </span>
-        <div>
-          <p className="font-semibold text-tp-ink">{review.name}</p>
-          <p className="text-sm text-tp-muted">{review.role}</p>
-        </div>
-      </figcaption>
-    </figure>
+      <h3 className="text-base font-semibold text-tp-ink">{useCase.role}</h3>
+      <p className="mt-2 text-[15px] leading-relaxed text-tp-ink/80">
+        {useCase.scenario}
+      </p>
+    </div>
   );
 }
 
@@ -213,7 +189,7 @@ export default function ReviewsPage() {
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
-          { name: 'Reviews', url: `${siteConfig.url}/reviews` },
+          { name: 'Use Cases', url: `${siteConfig.url}/reviews` },
         ]}
       />
       <Header />
@@ -222,19 +198,16 @@ export default function ReviewsPage() {
         <section className="px-4 pb-10 pt-28 text-center sm:pt-32">
           <div className="mx-auto max-w-3xl">
             <p className="inline-flex items-center gap-2 rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-4 py-1.5 text-sm font-medium text-tp-bronze-ink">
-              <Quote className="h-4 w-4" />
-              Customer Feedback
+              <Briefcase className="h-4 w-4" />
+              Use Cases
             </p>
             <h1 className="mt-8 font-display text-4xl font-normal tracking-tight text-tp-ink sm:text-5xl md:text-6xl">
-              What Professionals{' '}
-              <span className="italic text-tp-bronze-ink">Are Saying</span>
+              How Professionals{' '}
+              <span className="italic text-tp-bronze-ink">Use TailorPic</span>
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-lg text-tp-muted">
               See how people across industries use {siteConfig.name} for headshots,
               team photos, LinkedIn profiles and creative projects.
-            </p>
-            <p className="mx-auto mt-4 max-w-xl rounded-tp-button border border-tp-line bg-white px-4 py-3 text-sm text-tp-ink/80">
-              * Illustrative testimonials for demonstration purposes.
             </p>
             <div className="mx-auto mt-8 max-w-xs">
               <BeforeAfterIllustration className="w-full h-auto" />
@@ -257,7 +230,7 @@ export default function ReviewsPage() {
           </div>
         </section>
 
-        {/* Filter tabs + Reviews grid (CSS-only tabs) */}
+        {/* Filter tabs + Use case grid (CSS-only tabs) */}
         <section className="py-12">
           <div className="reviews-filter-group">
             {/* Hidden radio inputs for CSS-only tab filtering */}
@@ -269,13 +242,13 @@ export default function ReviewsPage() {
                 id={`filter-${tab.toLowerCase()}`}
                 className="peer sr-only"
                 defaultChecked={i === 0}
-                aria-label={`Show ${tab} reviews`}
+                aria-label={`Show ${tab} use cases`}
               />
             ))}
 
             {/* Tab nav */}
             <nav
-              aria-label="Filter reviews by category"
+              aria-label="Filter use cases by category"
               className="mb-10 px-4"
             >
               <div className="mx-auto flex max-w-2xl flex-wrap justify-center gap-2">
@@ -293,25 +266,18 @@ export default function ReviewsPage() {
 
             {/* All tab content */}
             <div className="mx-auto max-w-6xl px-4 sm:px-6">
-              {filterTabs.map((tab, i) => {
+              {filterTabs.map((tab) => {
                 const filtered =
-                  tab === 'All' ? reviews : reviews.filter((r) => r.tag === tab);
-                /*
-                 * CSS-only visibility: each panel corresponds to the Nth radio.
-                 * We use the group of radio + sibling selectors via a wrapper
-                 * approach. Since pure CSS sibling selectors across arbitrary
-                 * depths are complex, we use a simple inline style trick with
-                 * the :has() pseudo-class in a style tag below.
-                 */
+                  tab === 'All' ? useCases : useCases.filter((r) => r.tag === tab);
                 return (
                   <div
                     key={tab}
                     data-tab={tab.toLowerCase()}
                     className="hidden columns-1 gap-6 sm:columns-2 lg:columns-3"
                   >
-                    {filtered.map((review) => (
-                      <div key={review.name} className="mb-6 break-inside-avoid">
-                        <ReviewCard review={review} />
+                    {filtered.map((useCase) => (
+                      <div key={useCase.role} className="mb-6 break-inside-avoid">
+                        <UseCaseCard useCase={useCase} />
                       </div>
                     ))}
                   </div>
@@ -333,11 +299,6 @@ export default function ReviewsPage() {
               }}
             />
           </div>
-
-          <p className="mx-auto mt-10 max-w-2xl px-4 text-center text-xs text-tp-muted">
-            * Illustrative testimonials for demonstration purposes. Names and roles
-            are representative. No real individuals or companies are referenced.
-          </p>
         </section>
 
         {/* CTA section */}
@@ -352,7 +313,7 @@ export default function ReviewsPage() {
             </p>
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link
-                href="/auth/register?redirect=/headshots"
+                href="/auth/register?redirect=/dashboard/upload"
                 className={buttonVariants({
                   variant: 'primary',
                   size: 'lg',

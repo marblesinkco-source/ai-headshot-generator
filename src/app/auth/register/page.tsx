@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { createClient } from '@/lib/supabase/client';
 import { Button } from '@/components/ui/button';
-import { Check, Star } from 'lucide-react';
+import { Check } from 'lucide-react';
 
 export default function RegisterPage() {
   return (
@@ -378,19 +378,13 @@ function RegisterContent() {
 
           {/* Value card */}
           <figure className="rounded-tp-card border border-white/10 bg-white/5 p-6">
-            <div className="flex items-center gap-1 mb-3" aria-label="5 out of 5 stars">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-tp-bronze text-tp-bronze" />
-              ))}
-            </div>
             <blockquote className="font-display font-normal text-xl leading-snug text-tp-paper">
-              &ldquo;Studio-quality headshots without the studio. Skip the photographer, keep the polish.&rdquo;
+              Studio-quality headshots without the studio. Skip the photographer, keep the polish.
             </blockquote>
             <figcaption className="mt-4 text-xs text-tp-beige/80">
-              From $1.99 &middot; No subscription
+              From $1.99 &middot; No subscription &middot; Ready in under 2 hours
             </figcaption>
           </figure>
-          <p className="mt-6 text-sm text-tp-beige/70">Trusted by professionals worldwide</p>
         </div>
       </div>
     </div>

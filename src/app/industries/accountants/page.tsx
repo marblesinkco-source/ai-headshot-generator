@@ -285,27 +285,27 @@ export default function AccountantsIndustryPage() {
         </div>
       </section>
 
-      {/* Testimonial */}
+      {/* CTA */}
       <section className="bg-tp-black py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <div className="flex items-center justify-center gap-1">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="h-5 w-5 fill-tp-bronze text-tp-bronze" />
-              ))}
-            </div>
-            <blockquote className="mt-6 font-display text-2xl font-normal italic leading-relaxed text-tp-paper sm:text-3xl">
-              &ldquo;We onboarded twelve new staff last busy season and every single one had a
-              matching headshot on our website within their first week. The consistency across
-              our team page finally looks like the professional firm we are.&rdquo;
-            </blockquote>
-            <div className="mt-8">
-              <p className="font-semibold text-tp-bronze">Rachel T.</p>
-              <p className="mt-1 text-sm text-tp-beige/60">Managing Partner, CPA Firm</p>
-            </div>
-            <p className="mt-4 text-xs text-tp-beige/40">
-              * Illustrative testimonial for demonstration purposes.
+            <h2 className="font-display text-3xl font-normal tracking-tight text-tp-paper sm:text-4xl">
+              Ready to Upgrade Your Professional Image?
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-tp-beige/70">
+              Get studio-quality headshots delivered in under 2 hours — no appointment, no studio, no hassle. Starting from just $1.99.
             </p>
+            <div className="mt-10">
+              <a
+                href="/auth/register?redirect=/dashboard/upload"
+                className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-8 py-4 text-base font-semibold text-tp-black transition-colors hover:bg-tp-bronze/90"
+              >
+                Get Your Headshots
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </section>
