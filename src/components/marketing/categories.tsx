@@ -54,6 +54,10 @@ const CATEGORY_IMAGES: Record<string, { src: string; alt: string }> = {
     src: '/images/categories/real-estate.jpg',
     alt: 'Luxurious modern living room interior',
   },
+  avatars: {
+    src: '/images/categories/avatars.jpg',
+    alt: 'AI avatar style variations of a portrait',
+  },
 };
 
 // Top categories get a "Popular" badge
