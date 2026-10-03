@@ -33,3 +33,58 @@
 - Yeni tasarım İSTENMİYOR — sadece temizlik/optimizasyon
 - Authenticated E2E (Stripe + AI generation) ayrıca yapılacak
 - Font loading: Google Fonts `display=swap` — CLS riski düşük ama `next/font`'a geçiş ileride düşünülebilir
+
+---
+
+## Oturum: 2026-10-04 (Site Sağlığı Denetimi + QA)
+
+### Baseline
+- HEAD: `51f9cad` (Navigation düzeltmeleri)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### 1. Price Centralization (Commit: 79da7a2)
+- `src/app/(marketing)/why-tailorpic/page.tsx`: 5 hardcoded `$1.99` → `BASE_PRICE_DISPLAY` + 1 OG description
+- `src/app/samples/page.tsx`: 3 hardcoded `$1.99` → `BASE_PRICE_DISPLAY`
+
+#### 2. Navigation Düzeltmeleri (Commit: 51f9cad)
+- `src/components/marketing/header.tsx`: Mobile bottom CTA'ya `?redirect=/dashboard/upload` parametresi eklendi
+- `src/components/marketing/header.tsx`: Mobile logged-in menüye Settings linki eklendi
+- `src/components/marketing/footer.tsx`: "All Categories" → "All Photo Types" (duplikat link düzeltmesi)
+
+#### 3. SEO Denetimi
+- 21 kritik sayfa paralel ajan ile denetlendi — tümü tam metadata'ya sahip
+
+#### 4. Canlı Site QA (Chrome Browser)
+14 sayfa/özellik doğrulandı:
+- ✅ Homepage — hero, nav, CTA'lar
+- ✅ /why-tailorpic — değer önerileri, fiyat ($1.99)
+- ✅ /samples — fiyat, kategori filtreleri
+- ✅ /pricing — 6 paket, CTA'lar
+- ✅ /help — arama, kategoriler
+- ✅ /how-it-works — 3-adım süreç
+- ✅ /headshots — breadcrumb, görseller
+- ✅ /enterprise — hero, CTA'lar
+- ✅ /reviews — use case'ler
+- ✅ /faq — filtreler, SSS listesi
+- ✅ /contact — iletişim kartları
+- ✅ /blog — kategori filtreleri, blog yazıları
+- ✅ Footer — 5 sütun, tüm linkler
+- ✅ Photo Types mega menü — 3 kategori dropdown
+
+### Feature List Durumu
+- Phase A-E, H: done (önceki oturumlardan)
+- Phase F: done ✓ (bu oturum — price centralization)
+- Phase I: done ✓ (bu oturum — SEO denetimi)
+- Phase J: done ✓ (bu oturum — canlı site QA)
+- Phase G (Funnel): not-started — Stripe/Supabase bağlantıları gerekli (owner action)
+
+### Kalan Owner Action'lar
+1. Stripe webhook endpoint kurulumu
+2. Supabase tablo/RLS yapılandırması
+3. OAuth provider'lar (Google/Apple)
+4. Resend email servisi
+5. Replicate API key
+6. Domain DNS (tailorpic.com → Vercel)
+7. Vercel environment variables

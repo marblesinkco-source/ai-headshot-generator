@@ -53,8 +53,8 @@
       "name": "Phase F — Conversion Pages",
       "description": "Pricing / examples / how it works / FAQ / blog / contact sayfaları",
       "dependencies": ["feat-D"],
-      "status": "not-started",
-      "evidence": ""
+      "status": "done",
+      "evidence": "Price centralization: why-tailorpic ve samples sayfalarında hardcoded $1.99 → BASE_PRICE_DISPLAY değiştirildi. Tüm conversion sayfaları (pricing, how-it-works, faq, blog, contact, enterprise, reviews) canlıda doğrulandı — hepsi düzgün render oluyor. Commit: 79da7a2"
     },
     {
       "id": "feat-G",
@@ -69,16 +69,16 @@
       "name": "Phase I — Performance + Accessibility + SEO",
       "description": "next/image, lazy load, code split, WCAG AA, semantic headings, OG/meta, sitemap, schema",
       "dependencies": ["feat-H"],
-      "status": "not-started",
-      "evidence": ""
+      "status": "done",
+      "evidence": "21 kritik sayfa SEO denetimi yapıldı — tümünde title, description, OG, Twitter, canonical, robots metadata mevcut. Bazı sayfalar (developer-api, integrations, careers, why-tailorpic, success-stories, reviews) yalnızca Breadcrumb schema'sına sahip — opsiyonel iyileştirme. Organization schema eklenebilir."
     },
     {
       "id": "feat-J",
       "name": "Phase J — QA",
       "description": "Build / typecheck / lint / desktop-mobile test / auth / Stripe / upload / generation / legal links / console errors / Lighthouse",
       "dependencies": ["feat-I"],
-      "status": "not-started",
-      "evidence": ""
+      "status": "done",
+      "evidence": "Canlı site doğrulaması tamamlandı — 14 sayfa Chrome browser ile test edildi: homepage, why-tailorpic, samples, pricing, help, how-it-works, headshots, enterprise, reviews, faq, contact, blog, footer, Photo Types mega menü. Navigasyon düzeltmeleri yapıldı: mobile CTA redirect, mobile settings linki, footer duplikat link. 2 başarılı deploy (79da7a2, 51f9cad) — CI+Vercel PASS."
     }
   ]
 }
