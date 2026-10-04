@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
-import { AuditLogService } from '@/lib/accounting/services';
+import { AuditLogService, isTableMissingError } from '@/lib/accounting';
 
 export const dynamic = 'force-dynamic';
 
@@ -27,8 +27,7 @@ export async function GET(request: NextRequest) {
     const result = await AuditLogService.list({ userId: user.id, page, pageSize });
     return NextResponse.json(result);
   } catch (error) {
-    const msg = error instanceof Error ? error.message : '';
-    if (msg.includes('relation') && msg.includes('does not exist')) {
+    if (isTableMissingError(error)) {
       return NextResponse.json({ data: [], total: 0, page: 1, pageSize: 20, totalPages: 0 });
     }
     console.error('[accounting/activity] GET failed:', error);

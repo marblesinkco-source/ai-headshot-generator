@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
-import { AccountingService } from '@/lib/accounting/services';
+import { AccountingService, isTableMissingError } from '@/lib/accounting';
 
 export const dynamic = 'force-dynamic';
 
@@ -15,8 +15,7 @@ export async function GET(_request: NextRequest) {
     const summary = await AccountingService.getSummary(user.id);
     return NextResponse.json(summary);
   } catch (error) {
-    const msg = error instanceof Error ? error.message : '';
-    if (msg.includes('relation') && msg.includes('does not exist')) {
+    if (isTableMissingError(error)) {
       return NextResponse.json({
         totalSpent: 0, grossPurchases: 0, netSpend: 0, totalRefunds: 0, totalDisputes: 0,
         pendingTransactions: 0, availableCredits: 0, currency: 'usd',

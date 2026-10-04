@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
-import { BillingProfileService } from '@/lib/accounting/services';
+import { BillingProfileService, isTableMissingError } from '@/lib/accounting';
 import type { BillingProfileType } from '@/types/accounting';
 import type { UpdateBillingProfileParams } from '@/lib/accounting/services/billing-profile-service';
 
@@ -19,8 +19,7 @@ export async function GET(_request: NextRequest) {
     const profiles = await BillingProfileService.list(user.id);
     return NextResponse.json(profiles);
   } catch (error) {
-    const msg = error instanceof Error ? error.message : '';
-    if (msg.includes('relation') && msg.includes('does not exist')) {
+    if (isTableMissingError(error)) {
       return NextResponse.json([]);
     }
     console.error('[accounting/billing-profile] GET failed:', error);
@@ -109,8 +108,7 @@ export async function PUT(request: NextRequest) {
 
     return NextResponse.json(profile);
   } catch (error) {
-    const msg = error instanceof Error ? error.message : '';
-    if (msg.includes('relation') && msg.includes('does not exist')) {
+    if (isTableMissingError(error)) {
       return NextResponse.json({ error: 'Accounting tables not yet initialized.' }, { status: 503 });
     }
     console.error('[accounting/billing-profile] PUT failed:', error);

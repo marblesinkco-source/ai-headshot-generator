@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
-import { ExportService } from '@/lib/accounting/services';
+import { ExportService, isTableMissingError } from '@/lib/accounting';
 import type { ExportFilters, ExportFormat } from '@/types/accounting';
 
 export const dynamic = 'force-dynamic';
@@ -48,8 +48,7 @@ export async function POST(request: NextRequest) {
       },
     });
   } catch (error) {
-    const msg = error instanceof Error ? error.message : '';
-    if (msg.includes('relation') && msg.includes('does not exist')) {
+    if (isTableMissingError(error)) {
       return new NextResponse('No data available — accounting tables not yet initialized.', {
         status: 200,
         headers: { 'Content-Type': 'text/plain' },

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
-import { CreditLedgerService } from '@/lib/accounting/services';
+import { CreditLedgerService, isTableMissingError } from '@/lib/accounting';
 
 export const dynamic = 'force-dynamic';
 
@@ -31,8 +31,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({ entries, balance });
   } catch (error) {
-    const msg = error instanceof Error ? error.message : '';
-    if (msg.includes('relation') && msg.includes('does not exist')) {
+    if (isTableMissingError(error)) {
       return NextResponse.json({ entries: [], balance: 0 });
     }
     console.error('[accounting/credits] GET failed:', error);

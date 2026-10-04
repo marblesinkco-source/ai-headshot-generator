@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
-import { TransactionService } from '@/lib/accounting/services';
+import { TransactionService, isTableMissingError } from '@/lib/accounting';
 
 export const dynamic = 'force-dynamic';
 
@@ -35,8 +35,7 @@ export async function GET(
 
     return NextResponse.json(transaction);
   } catch (error) {
-    const msg = error instanceof Error ? error.message : '';
-    if (msg.includes('relation') && msg.includes('does not exist')) {
+    if (isTableMissingError(error)) {
       return NextResponse.json({ error: 'Transaction not found' }, { status: 404 });
     }
     console.error('[accounting/transactions/[id]] GET failed:', error);
