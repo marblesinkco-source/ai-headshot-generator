@@ -271,6 +271,7 @@ export default async function CategoryPage({ params }: Props) {
                       className="h-full w-full object-cover"
                       style={{ objectPosition: img.objectPosition }}
                       sizes="(min-width: 1024px) 20vw, 0px"
+                      priority={i < 2}
                     />
                   </div>
                 ))}
