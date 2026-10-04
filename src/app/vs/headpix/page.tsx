@@ -59,7 +59,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 const differences = [
   { title: "Professional focus vs full range", body: "HeadPix is centred on professional headshots. TailorPic adds dating, creative, pet and e-commerce categories to the same order." },
   { title: "Entry cost", body: "Packages starting at from $1.99 keep the barrier low if you just want to try AI headshots." },
-  { title: "Risk reduction", body: "TailorPic offers a satisfaction guarantee, so you can judge the results before committing." },
+  { title: "Risk reduction", body: "TailorPic offers a quality commitment, so you can judge the results before committing." },
   { title: "Speed", body: "TailorPic can take up to 24 hours. If a same-day deadline matters, confirm HeadPix turnaround on their site." },
 ];
 
@@ -67,7 +67,7 @@ const useCases = {
   tailorpic: [
     "Headshots plus dating and creative photos",
     "A low one-time price",
-    "A satisfaction guarantee",
+    "A quality commitment",
     "Personal LoRA-trained likeness",
   ],
   other: [
@@ -80,7 +80,7 @@ const useCases = {
 
 const faqs = [
   { question: "Is TailorPic a good HeadPix alternative?", answer: "If you want lower upfront cost and more categories, yes. TailorPic packages start from $1.99 and span 12 categories." },
-  { question: "Does TailorPic offer a refund?", answer: "Yes, there is a satisfaction guarantee." },
+  { question: "Does TailorPic offer a refund?", answer: "Yes, there is a quality commitment." },
   { question: "How long does delivery take?", answer: "Within 24 hours after your photos are processed." },
   { question: "Are the photos suitable for LinkedIn?", answer: "Yes. The business category is designed for LinkedIn, resumes and company pages." },
   { question: "Do I need to subscribe?", answer: "No. Every package is a single one-time payment (from $1.99)." },

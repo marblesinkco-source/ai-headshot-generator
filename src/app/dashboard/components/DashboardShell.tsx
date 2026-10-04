@@ -128,14 +128,14 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
         {/* Sidebar header */}
         <div className="flex h-16 items-center gap-2.5 border-b border-tp-line/50 px-6">
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-tp-black">
+            <div className="flex h-8 w-8 items-center justify-center rounded-tp-button bg-tp-black">
               <span className="text-sm font-bold text-tp-bronze">T</span>
             </div>
             <span className="font-semibold text-tp-black">{siteConfig.name}</span>
           </Link>
           <button
             onClick={() => setSidebarOpen(false)}
-            className="ml-auto rounded-lg p-1 text-tp-muted hover:bg-tp-paper lg:hidden"
+            className="ml-auto rounded-tp-button p-1 text-tp-muted hover:bg-tp-paper lg:hidden"
           >
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -156,7 +156,7 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
                 key={item.href}
                 href={item.href}
                 onClick={() => setSidebarOpen(false)}
-                className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
+                className={`flex items-center gap-3 rounded-tp-button px-3 py-2.5 text-sm font-medium transition-colors ${
                   isActive
                     ? 'bg-tp-black text-tp-bronze'
                     : 'text-tp-muted hover:bg-tp-paper hover:text-tp-bronze-ink'
@@ -197,7 +197,7 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
         <header className="flex h-16 items-center justify-between border-b border-tp-line/50 bg-white px-4 lg:px-8">
           <button
             onClick={() => setSidebarOpen(true)}
-            className="rounded-lg p-2 text-tp-muted hover:bg-tp-paper lg:hidden"
+            className="rounded-tp-button p-2 text-tp-muted hover:bg-tp-paper lg:hidden"
           >
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -209,7 +209,7 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
           <button
             onClick={handleLogout}
             disabled={loggingOut}
-            className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-tp-muted hover:bg-tp-paper hover:text-tp-bronze-ink transition-colors disabled:opacity-50"
+            className="flex items-center gap-2 rounded-tp-button px-3 py-2 text-sm text-tp-muted hover:bg-tp-paper hover:text-tp-bronze-ink transition-colors disabled:opacity-50"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />

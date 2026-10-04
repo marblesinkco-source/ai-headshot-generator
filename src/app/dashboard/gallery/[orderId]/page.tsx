@@ -167,7 +167,7 @@ export default function OrderGalleryPage() {
         <div className="flex items-center gap-4">
           <Link
             href="/dashboard/gallery"
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-tp-line text-tp-muted hover:bg-tp-paper transition-colors"
+            className="flex h-9 w-9 items-center justify-center rounded-tp-button border border-tp-line text-tp-muted hover:bg-tp-paper transition-colors"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -208,7 +208,7 @@ export default function OrderGalleryPage() {
 
       {/* Filter Tabs */}
       {headshots.length > 0 && (
-        <div className="flex gap-1 rounded-lg bg-tp-paper p-1 w-fit">
+        <div className="flex gap-1 rounded-tp-button bg-tp-paper p-1 w-fit">
           <button
             onClick={() => setFilter('all')}
             className={`rounded-md px-4 py-1.5 text-sm font-medium transition-colors ${
@@ -230,7 +230,7 @@ export default function OrderGalleryPage() {
 
       {/* Gallery Grid */}
       {filteredHeadshots.length === 0 ? (
-        <div className="rounded-xl border border-tp-line bg-white px-6 py-16 text-center shadow-sm">
+        <div className="rounded-tp-card border border-tp-line bg-white px-6 py-16 text-center shadow-sm">
           {filter === 'favorites' ? (
             <>
               <p className="text-sm text-tp-muted">No favorites yet. Click the heart icon on any headshot to save it.</p>
@@ -260,7 +260,7 @@ export default function OrderGalleryPage() {
           {filteredHeadshots.map((headshot, idx) => (
             <div
               key={headshot.id}
-              className="mb-4 break-inside-avoid group relative cursor-pointer overflow-hidden rounded-xl border border-tp-line bg-white shadow-sm transition-all hover:shadow-md"
+              className="mb-4 break-inside-avoid group relative cursor-pointer overflow-hidden rounded-tp-card border border-tp-line bg-white shadow-sm transition-all hover:shadow-md"
             >
               <img
                 src={headshot.thumbnailUrl}
@@ -278,7 +278,7 @@ export default function OrderGalleryPage() {
                     e.stopPropagation();
                     handleDownloadSingle(headshot.imageUrl, idx);
                   }}
-                  className="rounded-lg bg-white/90 p-2 text-tp-ink hover:bg-white transition-colors"
+                  className="rounded-tp-button bg-white/90 p-2 text-tp-ink hover:bg-white transition-colors"
                   title="Download"
                 >
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -290,7 +290,7 @@ export default function OrderGalleryPage() {
                     e.stopPropagation();
                     toggleFavorite(headshot.id);
                   }}
-                  className="rounded-lg bg-white/90 p-2 transition-colors hover:bg-white"
+                  className="rounded-tp-button bg-white/90 p-2 transition-colors hover:bg-white"
                   title={headshot.isFavorite ? 'Remove from favorites' : 'Add to favorites'}
                 >
                   <svg

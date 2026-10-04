@@ -276,7 +276,7 @@ function UploadContent() {
                     <button
                       key={cat.id}
                       onClick={() => handleCategorySelect(cat.id)}
-                      className={`group relative rounded-xl border-2 bg-white p-5 text-left shadow-sm transition-all hover:shadow-md hover:border-tp-line ${
+                      className={`group relative rounded-tp-card border-2 bg-white p-5 text-left shadow-sm transition-all hover:shadow-md hover:border-tp-line ${
                         selectedCategory === cat.id
                           ? 'border-tp-black ring-2 ring-tp-beige/30'
                           : 'border-tp-line'
@@ -334,7 +334,7 @@ function UploadContent() {
             {categoryPackages.map((pkg) => (
               <div
                 key={pkg.id}
-                className={`relative rounded-xl border-2 bg-white p-6 shadow-sm transition-all cursor-pointer hover:shadow-md ${
+                className={`relative rounded-tp-card border-2 bg-white p-6 shadow-sm transition-all cursor-pointer hover:shadow-md ${
                   selectedPackage === pkg.id
                     ? 'border-tp-black ring-2 ring-tp-beige/30'
                     : pkg.recommended
@@ -386,7 +386,7 @@ function UploadContent() {
           </div>
           {/* Avatar Bundle Upsell */}
           {selectedCategory === 'avatars' && selectedPackage === 'avatar-starter' && (
-            <div className="relative overflow-hidden rounded-xl border-2 border-purple-300 bg-gradient-to-r from-purple-50 to-fuchsia-50 p-5 shadow-sm">
+            <div className="relative overflow-hidden rounded-tp-card border-2 border-purple-300 bg-gradient-to-r from-purple-50 to-fuchsia-50 p-5 shadow-sm">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-start gap-3">
                   <span className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-lg">🎁</span>
@@ -421,7 +421,7 @@ function UploadContent() {
 
           {/* Cross-sell: Add Avatar Pack to any non-avatar order */}
           {selectedCategory && selectedCategory !== 'avatars' && selectedPackage && (
-            <div className="relative overflow-hidden rounded-xl border-2 border-purple-200 bg-gradient-to-r from-purple-50/80 to-fuchsia-50/80 p-5 shadow-sm">
+            <div className="relative overflow-hidden rounded-tp-card border-2 border-purple-200 bg-gradient-to-r from-purple-50/80 to-fuchsia-50/80 p-5 shadow-sm">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-start gap-3">
                   <span className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-lg">🎭</span>
@@ -456,7 +456,7 @@ function UploadContent() {
           )}
 
           {error && (
-            <div className="rounded-lg bg-red-50 border border-red-200 p-3 text-sm text-red-700">{error}</div>
+            <div className="rounded-tp-button bg-red-50 border border-red-200 p-3 text-sm text-red-700">{error}</div>
           )}
         </div>
       )}
@@ -499,7 +499,7 @@ function UploadContent() {
 
       {/* Step 4: Generate */}
       {currentStep === 4 && (
-        <div className="rounded-xl border border-tp-line bg-white p-8 text-center shadow-sm">
+        <div className="rounded-tp-card border border-tp-line bg-white p-8 text-center shadow-sm">
           {generationStatus ? (
             <div className="space-y-6">
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-tp-paper">
@@ -583,7 +583,7 @@ function UploadContent() {
                 {uploadedCount} photos uploaded. Our AI will train a personalized model on your photos, then generate your {category?.outputLabel || 'AI photos'}. This takes about 15-20 minutes.
               </p>
               {error && (
-                <div className="rounded-lg bg-red-50 border border-red-200 p-3 text-sm text-red-700">{error}</div>
+                <div className="rounded-tp-button bg-red-50 border border-red-200 p-3 text-sm text-red-700">{error}</div>
               )}
               <Button
                 variant="primary"

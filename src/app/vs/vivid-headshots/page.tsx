@@ -11,7 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 const competitor = "Vivid Headshots";
 const title = 'TailorPic vs Vivid Headshots: AI Headshot Comparison';
 const description =
-  "Compare TailorPic vs Vivid Headshots for AI headshots. TailorPic offers photos in 12 categories from $1.99 with a satisfaction guarantee.";
+  "Compare TailorPic vs Vivid Headshots for AI headshots. TailorPic offers photos in 12 categories from $1.99.";
 const path = '/vs/vivid-headshots';
 
 export const metadata: Metadata = {
@@ -60,14 +60,14 @@ const differences = [
   { title: "Vivid looks, practical price", body: "TailorPic gives you a wide set of looks across 12 categories, with one-time packages starting at $1.99." },
   { title: "More than one use case", body: "A single upload can produce business, dating, creative, pet and product images." },
   { title: "Trained on you", body: "The LoRA model learns from your own photos, which helps keep the result recognisable across styles." },
-  { title: "Guarantee", body: "A satisfaction guarantee lets you try TailorPic with limited risk." },
+  { title: "Guarantee", body: "A quality commitment lets you try TailorPic with limited risk." },
 ];
 
 const useCases = {
   tailorpic: [
     "Many looks from a single low payment",
     "A model trained on your own face",
-    "A satisfaction guarantee",
+    "A quality commitment",
     "Options for work, dating and products",
   ],
   other: [
@@ -82,7 +82,7 @@ const faqs = [
   { question: "How does TailorPic pricing compare to Vivid Headshots?", answer: "TailorPic packages start from $1.99 and go up to 160 photos. Check Vivid Headshots' current pricing, as it may change." },
   { question: "What categories does TailorPic support?", answer: "Eleven, including business, dating, creative, pet portraits and e-commerce photos." },
   { question: "How quickly will I get my photos?", answer: "Within 24 hours." },
-  { question: "Is there a satisfaction guarantee?", answer: "Yes, TailorPic offers a satisfaction guarantee." },
+  { question: "Is there a quality commitment?", answer: "Yes, TailorPic offers a quality commitment." },
   { question: "Is it a subscription?", answer: "No, every package is a one-time payment starting at $1.99." },
 ];
 

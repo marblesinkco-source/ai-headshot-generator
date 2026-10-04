@@ -138,7 +138,7 @@ export default function SettingsClient() {
       </div>
 
       {/* Profile Section */}
-      <div className="rounded-2xl border border-tp-line bg-white shadow-sm">
+      <div className="rounded-tp-dialog border border-tp-line bg-white shadow-sm">
         <div className="border-b border-tp-line/50 px-6 py-4">
           <h2 className="font-semibold text-tp-ink">Profile</h2>
         </div>
@@ -152,7 +152,7 @@ export default function SettingsClient() {
               type="email"
               value={user?.email || ''}
               disabled
-              className="block w-full rounded-lg border border-tp-line bg-tp-paper px-3.5 py-2.5 text-sm text-tp-muted"
+              className="block w-full rounded-tp-button border border-tp-line bg-tp-paper px-3.5 py-2.5 text-sm text-tp-muted"
             />
             <p className="mt-1 text-xs text-tp-muted">Email cannot be changed.</p>
           </div>
@@ -166,13 +166,13 @@ export default function SettingsClient() {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-tp-ink placeholder-tp-muted shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
+              className="block w-full rounded-tp-button border border-tp-line px-3.5 py-2.5 text-sm text-tp-ink placeholder-tp-muted shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
               placeholder="Your full name"
             />
           </div>
 
           {message && (
-            <div className={`rounded-lg border p-3 text-sm ${
+            <div className={`rounded-tp-button border p-3 text-sm ${
               message.type === 'success'
                 ? 'bg-green-50 border-green-200 text-green-700'
                 : 'bg-red-50 border-red-200 text-red-700'
@@ -189,7 +189,7 @@ export default function SettingsClient() {
 
       {/* Password Section (only for email users) */}
       {!isOAuthUser && (
-        <div className="rounded-2xl border border-tp-line bg-white shadow-sm">
+        <div className="rounded-tp-dialog border border-tp-line bg-white shadow-sm">
           <div className="border-b border-tp-line/50 px-6 py-4">
             <h2 className="font-semibold text-tp-ink">Change Password</h2>
           </div>
@@ -205,7 +205,7 @@ export default function SettingsClient() {
                 minLength={8}
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
-                className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-tp-ink placeholder-tp-muted shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
+                className="block w-full rounded-tp-button border border-tp-line px-3.5 py-2.5 text-sm text-tp-ink placeholder-tp-muted shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
                 placeholder="At least 8 characters"
               />
             </div>
@@ -221,13 +221,13 @@ export default function SettingsClient() {
                 minLength={8}
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-tp-ink placeholder-tp-muted shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
+                className="block w-full rounded-tp-button border border-tp-line px-3.5 py-2.5 text-sm text-tp-ink placeholder-tp-muted shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
                 placeholder="Repeat your new password"
               />
             </div>
 
             {passwordMessage && (
-              <div className={`rounded-lg border p-3 text-sm ${
+              <div className={`rounded-tp-button border p-3 text-sm ${
                 passwordMessage.type === 'success'
                   ? 'bg-green-50 border-green-200 text-green-700'
                   : 'bg-red-50 border-red-200 text-red-700'
@@ -244,7 +244,7 @@ export default function SettingsClient() {
       )}
 
       {/* Data & Privacy Section */}
-      <div className="rounded-2xl border border-tp-line bg-white shadow-sm">
+      <div className="rounded-tp-dialog border border-tp-line bg-white shadow-sm">
         <div className="border-b border-tp-line/50 px-6 py-4">
           <h2 className="font-semibold text-tp-ink">Data &amp; Privacy</h2>
         </div>
@@ -265,7 +265,7 @@ export default function SettingsClient() {
       </div>
 
       {/* Danger Zone */}
-      <div className="rounded-2xl border border-red-200 bg-white shadow-sm">
+      <div className="rounded-tp-dialog border border-red-200 bg-white shadow-sm">
         <div className="border-b border-red-100 px-6 py-4">
           <h2 className="font-semibold text-red-700">Danger Zone</h2>
         </div>
@@ -274,7 +274,7 @@ export default function SettingsClient() {
             Permanently delete your account and all associated data, including orders, generated photos, and uploaded images. This action cannot be undone.
           </p>
           {showDeleteConfirm ? (
-            <div className="rounded-lg bg-red-50 border border-red-200 p-4 space-y-3">
+            <div className="rounded-tp-button bg-red-50 border border-red-200 p-4 space-y-3">
               <p className="text-sm font-medium text-red-800">
                 This will permanently delete your account and all data. Type <strong>DELETE</strong> to confirm.
               </p>
@@ -283,13 +283,13 @@ export default function SettingsClient() {
                 value={deleteConfirmText}
                 onChange={(e) => setDeleteConfirmText(e.target.value)}
                 placeholder="Type DELETE to confirm"
-                className="block w-full rounded-lg border border-red-300 px-3.5 py-2.5 text-sm text-tp-ink placeholder-tp-muted focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-200 transition-colors"
+                className="block w-full rounded-tp-button border border-red-300 px-3.5 py-2.5 text-sm text-tp-ink placeholder-tp-muted focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-200 transition-colors"
               />
               <div className="flex gap-3">
                 <button
                   onClick={handleDeleteAccount}
                   disabled={deleteConfirmText !== 'DELETE' || deleteLoading}
-                  className="rounded-lg bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="rounded-tp-button bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {deleteLoading ? 'Deleting…' : 'Yes, delete my account'}
                 </button>
@@ -298,7 +298,7 @@ export default function SettingsClient() {
                     setShowDeleteConfirm(false);
                     setDeleteConfirmText('');
                   }}
-                  className="rounded-lg border border-tp-line bg-white px-4 py-2 text-sm font-medium text-tp-ink hover:bg-tp-paper transition-colors"
+                  className="rounded-tp-button border border-tp-line bg-white px-4 py-2 text-sm font-medium text-tp-ink hover:bg-tp-paper transition-colors"
                 >
                   Cancel
                 </button>
@@ -307,7 +307,7 @@ export default function SettingsClient() {
           ) : (
             <button
               onClick={() => setShowDeleteConfirm(true)}
-              className="rounded-lg border border-red-300 px-4 py-2 text-sm font-medium text-red-700 hover:bg-red-50 transition-colors"
+              className="rounded-tp-button border border-red-300 px-4 py-2 text-sm font-medium text-red-700 hover:bg-red-50 transition-colors"
             >
               Delete account
             </button>

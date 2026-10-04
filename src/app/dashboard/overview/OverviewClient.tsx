@@ -146,7 +146,7 @@ export default function OverviewClient() {
         {statCards.map((card) => (
           <div
             key={card.label}
-            className="rounded-xl border border-tp-line bg-white p-6 shadow-sm"
+            className="rounded-tp-card border border-tp-line bg-white p-6 shadow-sm"
           >
             <div className="flex items-center justify-between">
               <p className="text-sm font-medium text-tp-muted">{card.label}</p>
@@ -158,7 +158,7 @@ export default function OverviewClient() {
       </div>
 
       {/* Recent Orders */}
-      <div className="rounded-xl border border-tp-line bg-white shadow-sm">
+      <div className="rounded-tp-card border border-tp-line bg-white shadow-sm">
         <div className="flex items-center justify-between border-b border-tp-line px-6 py-4">
           <h2 className="text-lg font-semibold text-tp-ink">Recent Orders</h2>
           <Link href="/dashboard/gallery" className="text-sm font-medium text-tp-bronze-ink hover:text-tp-bronze">
@@ -185,7 +185,7 @@ export default function OverviewClient() {
                 className="flex items-center justify-between px-6 py-4 hover:bg-tp-paper transition-colors"
               >
                 <div className="flex items-center gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-tp-paper">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-tp-button bg-tp-paper">
                     <svg className="h-5 w-5 text-tp-bronze" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
                     </svg>

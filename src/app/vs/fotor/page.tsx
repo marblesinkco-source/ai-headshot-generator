@@ -68,7 +68,7 @@ const comparisonRows: FeatureRow[] = [
   { feature: 'Dating Photos', tailorpic: true, competitor: 'Limited' },
   { feature: 'Pet Portraits', tailorpic: true, competitor: false },
   { feature: 'E-Commerce Product Photos', tailorpic: true, competitor: 'Via general editing tools' },
-  { feature: 'Satisfaction Guarantee', tailorpic: 'Yes', competitor: 'Varies by plan' },
+  { feature: 'Quality Commitment', tailorpic: 'Free regeneration', competitor: 'Varies by plan' },
 ];
 
 const whyCards = [
@@ -125,7 +125,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription like Fotor?',
     answer:
-      'No. TailorPic packages are one-time payments starting at $1.99 with no renewals and a satisfaction guarantee. Fotor is typically offered as a monthly or annual subscription.',
+      'No. TailorPic packages are one-time payments starting at $1.99 with no renewals. Fotor is typically offered as a monthly or annual subscription.',
   },
   {
     question: 'How does TailorPic train its AI, and do I need editing skills?',

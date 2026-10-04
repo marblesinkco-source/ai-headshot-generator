@@ -20,7 +20,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs ProfilePhoto.ai: AI Headshot Comparison' },
   description:
-    'Compare TailorPic vs ProfilePhoto.ai for AI photos. TailorPic starts at $1.99 with photos, 12 categories and a satisfaction guarantee.',
+    'Compare TailorPic vs ProfilePhoto.ai for AI photos. TailorPic starts at $1.99 with photos, 12 categories.',
   alternates: { canonical: '/vs/profilephoto' },
   openGraph: generateOGMetadata({ title: 'TailorPic vs ProfilePhoto.ai: AI Headshot Comparison', description: 'Compare TailorPic and ProfilePhoto.ai for AI photos. Pricing, styles, delivery, and guarantees side by side.', path: '/vs/profilephoto', type: 'vs' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic vs ProfilePhoto.ai: AI Headshot Comparison', description: 'Compare TailorPic and ProfilePhoto.ai for AI photos. Pricing, styles, delivery, and guarantees side by side.', type: 'vs' }),
@@ -62,7 +62,7 @@ const comparisonRows: FeatureRow[] = [
   { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: 'Varies by plan' },
   { feature: 'Delivery Time', tailorpic: 'Under 2 hours', competitor: 'Varies by plan' },
   { feature: 'Photo Categories', tailorpic: '12 categories', competitor: 'Limited styles' },
-  { feature: 'Satisfaction Guarantee', tailorpic: 'Yes', competitor: 'Check current terms' },
+  { feature: 'Quality Commitment', tailorpic: 'Free regeneration', competitor: 'Check current terms' },
   { feature: 'Industry-Specific Solutions', tailorpic: true, competitor: 'Limited' },
   { feature: 'LinkedIn-Ready Headshots', tailorpic: true, competitor: true },
   { feature: 'Pet Portraits', tailorpic: true, competitor: false },
@@ -87,7 +87,7 @@ const whyCards = [
     icon: Sparkles,
     title: 'Up to 160 Photos in Under 2 Hours',
     description:
-      'Get a full set of photos in under 2 hours, backed by a satisfaction guarantee.',
+      'Get a full set of photos in under 2 hours.',
   },
   {
     icon: Target,
@@ -124,7 +124,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription or a one-time purchase?',
     answer:
-      'TailorPic packages are one-time payments starting at $1.99 with no recurring charges, backed by a satisfaction guarantee.',
+      'TailorPic packages are one-time payments starting at $1.99 with no recurring charges.',
   },
   {
     question: 'How does TailorPic create my photos, and is it easy to use?',

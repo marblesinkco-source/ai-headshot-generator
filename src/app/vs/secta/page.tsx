@@ -20,7 +20,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs Secta Labs: AI Headshot Generator Comparison' },
   description:
-    'Compare TailorPic vs Secta Labs for AI headshots. TailorPic starts at $1.99 with photos, 12 categories and a satisfaction guarantee.',
+    'Compare TailorPic vs Secta Labs for AI headshots. TailorPic starts at $1.99 with photos, 12 categories.',
   alternates: { canonical: '/vs/secta' },
   openGraph: generateOGMetadata({ title: 'TailorPic vs Secta Labs: AI Headshot Generator Comparison', description: 'Compare TailorPic and Secta Labs for AI headshots. Pricing, categories, delivery, and guarantees side by side.', path: '/vs/secta', type: 'vs' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic vs Secta Labs: AI Headshot Generator Comparison', description: 'Compare TailorPic and Secta Labs for AI headshots. Pricing, categories, delivery, and guarantees side by side.', type: 'vs' }),
@@ -62,7 +62,7 @@ const comparisonRows: FeatureRow[] = [
   { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: 'Varies by plan' },
   { feature: 'Delivery Time', tailorpic: 'Under 2 hours', competitor: 'Varies by plan' },
   { feature: 'Photo Categories', tailorpic: '12 categories', competitor: 'Fewer categories' },
-  { feature: 'Satisfaction Guarantee', tailorpic: 'Yes', competitor: 'Check current terms' },
+  { feature: 'Quality Commitment', tailorpic: 'Free regeneration', competitor: 'Check current terms' },
   { feature: 'Industry-Specific Solutions', tailorpic: true, competitor: 'Limited' },
   { feature: 'Pet Portraits', tailorpic: true, competitor: false },
   { feature: 'Dating Photos', tailorpic: true, competitor: 'Limited' },
@@ -87,7 +87,7 @@ const whyCards = [
     icon: Sparkles,
     title: 'Up to 160 Photos in Under 2 Hours',
     description:
-      'Get photos delivered in under 2 hours, backed by a satisfaction guarantee so you can order with confidence.',
+      'Get photos delivered in under 2 hours so you can order with confidence.',
   },
   {
     icon: Target,
@@ -124,7 +124,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription or a one-time purchase?',
     answer:
-      'TailorPic packages are one-time payments starting at $1.99 with no subscription, backed by a satisfaction guarantee.',
+      'TailorPic packages are one-time payments starting at $1.99 with no subscription.',
   },
   {
     question: 'How does TailorPic train my photos, and is it easy to use?',

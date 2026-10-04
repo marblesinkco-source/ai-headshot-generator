@@ -175,7 +175,7 @@ export default function OrderDetailPage() {
       <div className="flex items-center gap-4">
         <Link
           href="/dashboard/gallery"
-          className="flex h-9 w-9 items-center justify-center rounded-lg border border-tp-line text-tp-muted hover:bg-tp-paper transition-colors"
+          className="flex h-9 w-9 items-center justify-center rounded-tp-button border border-tp-line text-tp-muted hover:bg-tp-paper transition-colors"
         >
           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -188,7 +188,7 @@ export default function OrderDetailPage() {
       </div>
 
       {/* Status Card */}
-      <div className="rounded-2xl border border-tp-line bg-white p-8 shadow-sm text-center">
+      <div className="rounded-tp-dialog border border-tp-line bg-white p-8 shadow-sm text-center">
         <div className="text-4xl">{statusInfo.icon}</div>
         <h2 className="mt-4 text-xl font-display font-normal text-tp-ink">{statusInfo.title}</h2>
         <p className="mt-2 text-sm text-tp-muted max-w-md mx-auto">{statusInfo.description}</p>
@@ -264,7 +264,7 @@ export default function OrderDetailPage() {
       </div>
 
       {/* Order Summary */}
-      <div className="rounded-2xl border border-tp-line bg-white shadow-sm">
+      <div className="rounded-tp-dialog border border-tp-line bg-white shadow-sm">
         <div className="border-b border-tp-line/50 px-6 py-4">
           <h3 className="font-semibold text-tp-ink">Order Summary</h3>
         </div>

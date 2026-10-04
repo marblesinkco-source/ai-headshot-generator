@@ -81,7 +81,7 @@ const useCases = {
 const faqs = [
   { question: "What is the best AI headshot generator?", answer: "It depends on budget and needs. TailorPic is built for low cost, likeness quality and variety, with photos across 12 categories from $1.99." },
   { question: "How is TailorPic different from generic AI headshot generators?", answer: "It fine-tunes a LoRA model on your own photos instead of relying on fixed templates, and it covers categories beyond business." },
-  { question: "What should I compare before buying?", answer: "Look at photo count, training method, turnaround, satisfaction guarantee and whether pricing is one-time or recurring." },
+  { question: "What should I compare before buying?", answer: "Look at photo count, training method, turnaround, quality commitment and whether pricing is one-time or recurring." },
   { question: "How many photos will I receive?", answer: "TailorPic delivers photos within 24 hours." },
   { question: "Is there a subscription?", answer: "No. TailorPic packages are one-time payments starting at $1.99." },
 ];

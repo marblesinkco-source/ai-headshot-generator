@@ -188,7 +188,7 @@ export default function IntegrationsPage() {
                         <Icon className="h-5 w-5" aria-hidden="true" />
                       </div>
                       <span className="rounded-full border border-tp-bronze/40 bg-tp-beige px-3 py-1 text-xs font-semibold text-tp-bronze-ink">
-                        Coming Soon
+                        Available
                       </span>
                     </div>
                     <h3 className="mt-5 font-display text-xl text-tp-ink">

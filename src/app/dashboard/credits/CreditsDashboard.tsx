@@ -61,7 +61,7 @@ export default function CreditsDashboard() {
 
   if (error || !data) {
     return (
-      <div className="rounded-xl border border-red-200 bg-red-50 p-6 text-center text-red-700">
+      <div className="rounded-tp-card border border-red-200 bg-red-50 p-6 text-center text-red-700">
         {error || 'An error occurred.'}
       </div>
     );
@@ -82,7 +82,7 @@ export default function CreditsDashboard() {
         </div>
         <Link
           href="/pricing"
-          className="inline-flex items-center gap-2 rounded-lg bg-tp-black px-4 py-2.5 text-sm font-medium text-tp-bronze transition-colors hover:bg-tp-ink"
+          className="inline-flex items-center gap-2 rounded-tp-button bg-tp-black px-4 py-2.5 text-sm font-medium text-tp-bronze transition-colors hover:bg-tp-ink"
         >
           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -94,21 +94,21 @@ export default function CreditsDashboard() {
       {/* Balance Cards */}
       <div className="grid gap-4 sm:grid-cols-3">
         {/* Available Balance */}
-        <div className="rounded-xl border border-tp-line/50 bg-white p-6">
+        <div className="rounded-tp-card border border-tp-line/50 bg-white p-6">
           <p className="text-sm font-medium text-tp-muted">Available Balance</p>
           <p className="mt-2 text-3xl font-bold text-tp-black">{data.balance}</p>
           <p className="mt-1 text-xs text-tp-muted">credits remaining</p>
         </div>
 
         {/* Total Used */}
-        <div className="rounded-xl border border-tp-line/50 bg-white p-6">
+        <div className="rounded-tp-card border border-tp-line/50 bg-white p-6">
           <p className="text-sm font-medium text-tp-muted">Total Used</p>
           <p className="mt-2 text-3xl font-bold text-tp-bronze-ink">{data.totalUsed}</p>
           <p className="mt-1 text-xs text-tp-muted">credits consumed</p>
         </div>
 
         {/* Usage */}
-        <div className="rounded-xl border border-tp-line/50 bg-white p-6">
+        <div className="rounded-tp-card border border-tp-line/50 bg-white p-6">
           <p className="text-sm font-medium text-tp-muted">Usage</p>
           <p className="mt-2 text-3xl font-bold text-tp-black">{usagePercent}%</p>
           <div className="mt-3 h-2 rounded-full bg-tp-paper">
@@ -124,7 +124,7 @@ export default function CreditsDashboard() {
       <section>
         <h2 className="mb-4 text-lg font-semibold text-tp-black">Active Packages</h2>
         {data.packages.length === 0 ? (
-          <div className="rounded-xl border border-dashed border-tp-line bg-white p-8 text-center">
+          <div className="rounded-tp-card border border-dashed border-tp-line bg-white p-8 text-center">
             <p className="text-tp-muted">No active credit packages.</p>
             <Link
               href="/pricing"
@@ -151,7 +151,7 @@ export default function CreditsDashboard() {
               return (
                 <div
                   key={pkg.id}
-                  className="rounded-xl border border-tp-line/50 bg-white p-5"
+                  className="rounded-tp-card border border-tp-line/50 bg-white p-5"
                 >
                   <div className="flex items-start justify-between">
                     <div>
@@ -200,11 +200,11 @@ export default function CreditsDashboard() {
       <section>
         <h2 className="mb-4 text-lg font-semibold text-tp-black">Recent Transactions</h2>
         {data.transactions.length === 0 ? (
-          <div className="rounded-xl border border-dashed border-tp-line bg-white p-8 text-center">
+          <div className="rounded-tp-card border border-dashed border-tp-line bg-white p-8 text-center">
             <p className="text-tp-muted">No transactions yet.</p>
           </div>
         ) : (
-          <div className="overflow-hidden rounded-xl border border-tp-line/50 bg-white">
+          <div className="overflow-hidden rounded-tp-card border border-tp-line/50 bg-white">
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>

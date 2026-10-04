@@ -61,7 +61,7 @@ const comparisonRows: FeatureRow[] = [
   { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: 'Varies by plan' },
   { feature: 'Delivery Time', tailorpic: 'Under 2 hours', competitor: 'Minutes (per their site)' },
   { feature: 'Photo Categories', tailorpic: '12 categories', competitor: 'Headshots and more' },
-  { feature: 'Satisfaction Guarantee', tailorpic: 'Yes', competitor: 'Check their terms' },
+  { feature: 'Quality Commitment', tailorpic: 'Free regeneration', competitor: 'Check their terms' },
   { feature: 'Team / Enterprise Plans', tailorpic: true, competitor: true },
   { feature: 'Pet Portraits', tailorpic: true, competitor: false },
   { feature: 'Dating Photos', tailorpic: true, competitor: 'Limited' },
@@ -92,7 +92,7 @@ const whyCards = [
     icon: Target,
     title: 'Industry-Specific Solutions',
     description:
-      'TailorPic offers tailored solutions for real estate agents, lawyers, e-commerce brands, and more, backed by a satisfaction guarantee.',
+      'TailorPic offers tailored solutions for real estate agents, lawyers, e-commerce brands, and more.',
   },
 ];
 
@@ -123,7 +123,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription or a one-time purchase?',
     answer:
-      'TailorPic packages are one-time payments starting at $1.99 with no subscription, and every order has a satisfaction guarantee.',
+      'TailorPic packages are one-time payments starting at $1.99 with no subscription.',
   },
   {
     question: 'How does TailorPic train my photos, and is it easy to use?',
@@ -278,7 +278,7 @@ export default function VsTryItOnAiPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-ink">Ready to Switch?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-muted">
-              Get professional AI photos starting at just $1.99 with a satisfaction guarantee. No subscriptions, no hidden fees
+              Get professional AI photos starting at just $1.99. No subscriptions, no hidden fees
               — just great photos delivered in under 2 hours.
             </p>
             <div className="mt-8">

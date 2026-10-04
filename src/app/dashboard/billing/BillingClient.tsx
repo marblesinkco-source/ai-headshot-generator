@@ -73,7 +73,7 @@ export default function BillingClient() {
       </div>
 
       {/* Current plan */}
-      <div className="rounded-2xl border border-tp-line bg-white p-6">
+      <div className="rounded-tp-dialog border border-tp-line bg-white p-6">
         <h2 className="font-display text-xl font-normal text-tp-ink">Your Plan</h2>
         <p className="mt-2 text-sm text-tp-ink">
           One-time payment — no subscription and no recurring charges.
@@ -89,24 +89,24 @@ export default function BillingClient() {
 
       {/* Summary Cards */}
       <div className="grid gap-4 sm:grid-cols-3">
-        <div className="rounded-2xl border border-tp-line bg-white p-6">
+        <div className="rounded-tp-dialog border border-tp-line bg-white p-6">
           <p className="text-sm font-medium text-tp-muted">Total Spent</p>
           <p className="mt-2 text-3xl font-bold text-tp-ink">
             {formatPrice(totalSpent)}
           </p>
         </div>
-        <div className="rounded-2xl border border-tp-line bg-white p-6">
+        <div className="rounded-tp-dialog border border-tp-line bg-white p-6">
           <p className="text-sm font-medium text-tp-muted">Total Orders</p>
           <p className="mt-2 text-3xl font-bold text-tp-ink">{orders.length}</p>
         </div>
-        <div className="rounded-2xl border border-tp-line bg-white p-6">
+        <div className="rounded-tp-dialog border border-tp-line bg-white p-6">
           <p className="text-sm font-medium text-tp-muted">Completed</p>
           <p className="mt-2 text-3xl font-bold text-tp-ink">{completedCount}</p>
         </div>
       </div>
 
       {/* Orders Table */}
-      <div className="rounded-2xl border border-tp-line bg-white shadow-sm">
+      <div className="rounded-tp-dialog border border-tp-line bg-white shadow-sm">
         <div className="border-b border-tp-line px-6 py-4">
           <h2 className="font-display text-xl font-normal text-tp-ink">Order History</h2>
         </div>

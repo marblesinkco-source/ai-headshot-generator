@@ -28,7 +28,7 @@ import {
 
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic API: AI Headshot Generation for Developers' },
-  description: `Integrate AI headshot generation into your own app. The ${siteConfig.name} API is in development. Request early access to be notified when it launches.`,
+  description: `Integrate AI headshot generation into your own app with the ${siteConfig.name} API. Request early access to add professional headshots to your platform.`,
   alternates: { canonical: '/developer-api' },
   openGraph: generateOGMetadata({ title: 'TailorPic API: AI Headshot Generation for Developers', description: `Add professional AI headshots to your platform with the upcoming ${siteConfig.name} REST API. Request early access today.`, path: '/developer-api' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic API: AI Headshot Generation for Developers', description: `Integrate AI headshot generation into your app. Request early access to the upcoming ${siteConfig.name} API.` }),
@@ -495,7 +495,7 @@ export default function ApiPage() {
           </div>
         </section>
 
-        {/* -- Coming Soon Notice -------------------------------------- */}
+        {/* -- Early Access Notice -------------------------------------- */}
         <section className="bg-tp-paper py-10">
           <div className="mx-auto flex max-w-3xl items-start justify-center gap-3 px-4 text-center">
             <Clock
@@ -503,8 +503,8 @@ export default function ApiPage() {
               className="mt-0.5 hidden h-5 w-5 shrink-0 text-tp-bronze-ink sm:block"
             />
             <p className="text-sm text-tp-muted">
-              The {siteConfig.name} API is currently in development. Request
-              early access to be notified when it launches.
+              Request early access to the {siteConfig.name} API and be among
+              the first to integrate AI headshot generation into your platform.
             </p>
           </div>
         </section>

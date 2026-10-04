@@ -88,7 +88,7 @@ export default function OrdersPage() {
           <div className="h-8 w-8 animate-spin rounded-full border-2 border-tp-black border-t-transparent" />
         </div>
       ) : orders.length === 0 ? (
-        <div className="rounded-2xl border border-tp-line bg-white px-6 py-16 text-center">
+        <div className="rounded-tp-dialog border border-tp-line bg-white px-6 py-16 text-center">
           <p className="text-sm font-medium text-tp-ink">No orders yet</p>
           <p className="mt-1 text-sm text-tp-muted">
             Browse our categories and create your first AI photos.
@@ -132,7 +132,7 @@ export default function OrdersPage() {
           </div>
 
           {filtered.length === 0 ? (
-            <div className="rounded-2xl border border-tp-line bg-white px-6 py-12 text-center">
+            <div className="rounded-tp-dialog border border-tp-line bg-white px-6 py-12 text-center">
               <p className="text-sm text-tp-muted">No orders match this filter.</p>
               <button
                 onClick={() => setFilter('all')}
@@ -152,7 +152,7 @@ export default function OrdersPage() {
                 return (
                   <li
                     key={order.id}
-                    className="rounded-2xl border border-tp-line bg-white p-5 shadow-sm sm:p-6"
+                    className="rounded-tp-dialog border border-tp-line bg-white p-5 shadow-sm sm:p-6"
                   >
                     <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                       <div className="min-w-0 space-y-1">

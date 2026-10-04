@@ -68,7 +68,7 @@ const comparisonRows: ComparisonRow[] = [
   { feature: 'E-Commerce Photos', tailorpic: true, headshotpro: false },
   { feature: 'Family Portraits', tailorpic: true, headshotpro: false },
   { feature: 'Team Plans', tailorpic: true, headshotpro: true },
-  { feature: 'Satisfaction Guarantee', tailorpic: 'Yes', headshotpro: 'Yes' },
+  { feature: 'Quality Commitment', tailorpic: 'Free regeneration', headshotpro: 'Yes' },
 ];
 
 const advantages = [
@@ -125,7 +125,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription?',
     answer:
-      'No. TailorPic packages are one-time payments starting at $1.99 with no subscription and a satisfaction guarantee.',
+      'No. TailorPic packages are one-time payments starting at $1.99 with no subscription.',
   },
   {
     question: 'How does TailorPic train my photos, and is it easy to use?',
@@ -311,7 +311,7 @@ export default function VsHeadshotProPage() {
             <ArrowRight className="h-5 w-5" />
           </Link>
           <p className="mt-4 text-sm text-tp-muted">
-            Starting at $1.99 &middot; No subscription &middot; satisfaction guarantee
+            Starting at $1.99 &middot; No subscription &middot; quality commitment
           </p>
         </div>
       </section>
