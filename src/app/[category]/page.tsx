@@ -61,24 +61,31 @@ export default async function CategoryPage({ params }: Props) {
   // Object-position overrides: show head + shoulders + upper body in the collage cards
   const collagePositions = ['50% 10%', '50% 15%', '50% 20%', '50% 5%'];
   const heroCollageImages: { src: string; alt: string; objectPosition: string }[] = (() => {
-    const pool: { src: string; alt: string }[] = [];
-    // Start with gallery items (deduplicated by src)
+    const catImages: { src: string; alt: string }[] = [];
+    const supplementImages: { src: string; alt: string }[] = [];
     const seen = new Set<string>();
+    // Collect gallery items (category-specific)
     for (const g of galleryItems) {
       if (!seen.has(g.src)) {
         seen.add(g.src);
-        pool.push({ src: g.src, alt: g.alt });
+        catImages.push({ src: g.src, alt: g.alt });
       }
     }
-    // Supplement with brand portraits for variety
+    // Collect brand portraits for variety
     for (const s of heroCollageSupplements) {
-      if (pool.length >= 4) break;
-      if (!seen.has(s.src)) {
-        seen.add(s.src);
-        pool.push({ src: s.src, alt: s.alt });
-      }
+      if (seen.has(s.src)) continue;
+      seen.add(s.src);
+      supplementImages.push({ src: s.src, alt: s.alt });
     }
-    // Fallback: repeat hero with varied crops if still < 4
+    // When gallery has fewer than 4 images, put wider-framed brand portraits first
+    // so they appear in the larger collage slots; category image goes last
+    let pool: { src: string; alt: string }[];
+    if (catImages.length >= 4) {
+      pool = catImages;
+    } else {
+      pool = [...supplementImages.slice(0, 4 - catImages.length), ...catImages];
+    }
+    // Fallback if still < 4
     while (pool.length < 4) {
       pool.push({
         src: heroSrc,
