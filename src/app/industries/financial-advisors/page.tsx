@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
@@ -158,7 +160,7 @@ export default function FinancialAdvisorsIndustryPage() {
         <div className="relative mx-auto max-w-5xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <p className="inline-flex items-center gap-2 rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-4 py-1.5 text-sm font-medium text-tp-bronze">
-              <LineChart className="h-4 w-4" />
+              <Image src={portrait(getIndustryVisual("financial-advisors").heroPortraitId)} alt={getIndustryVisual("financial-advisors").alt} width={20} height={20} className="h-5 w-5 rounded-full object-cover" />
               For Financial Advisors &amp; Wealth Managers
             </p>
             <h1 className="mt-8 font-display text-4xl font-normal italic leading-tight text-tp-paper sm:text-5xl lg:text-6xl">
@@ -186,6 +188,18 @@ export default function FinancialAdvisorsIndustryPage() {
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} className="h-4 w-4 fill-tp-bronze text-tp-bronze" />
               ))}
+            </div>
+          
+            {/* Hero portrait */}
+            <div className="mx-auto mt-12 h-32 w-32 overflow-hidden rounded-full ring-4 ring-tp-bronze/20 sm:h-40 sm:w-40">
+              <Image
+                src={portrait(getIndustryVisual("financial-advisors").heroPortraitId)}
+                alt={getIndustryVisual("financial-advisors").alt}
+                width={320}
+                height={427}
+                className="h-full w-full object-cover"
+                priority
+              />
             </div>
           </div>
         </div>

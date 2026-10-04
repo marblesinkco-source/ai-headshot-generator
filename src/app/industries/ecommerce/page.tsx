@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
@@ -5,7 +7,7 @@ import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, ProductSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
-  ShoppingBag, Camera, Clock, Shield, Star, ArrowRight,
+  Camera, Clock, Shield, Star, ArrowRight,
   Users, Palette, Zap, TrendingUp, Package, CheckCircle,
 } from 'lucide-react';
 
@@ -78,7 +80,7 @@ export default function EcommerceLandingPage() {
         </div>
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-4 py-1.5 text-xs font-semibold text-tp-bronze mb-6">
-            <ShoppingBag className="h-3.5 w-3.5" />
+            <Image src={portrait(getIndustryVisual("ecommerce").heroPortraitId)} alt={getIndustryVisual("ecommerce").alt} width={20} height={20} className="h-5 w-5 rounded-full object-cover" />
             E-Commerce
           </div>
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-white leading-tight tracking-tight">
@@ -102,6 +104,18 @@ export default function EcommerceLandingPage() {
             >
               View Pricing
             </Link>
+          
+            {/* Hero portrait */}
+            <div className="mx-auto mt-12 h-32 w-32 overflow-hidden rounded-full ring-4 ring-tp-bronze/20 sm:h-40 sm:w-40">
+              <Image
+                src={portrait(getIndustryVisual("ecommerce").heroPortraitId)}
+                alt={getIndustryVisual("ecommerce").alt}
+                width={320}
+                height={427}
+                className="h-full w-full object-cover"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>

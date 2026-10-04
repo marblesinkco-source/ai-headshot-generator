@@ -3,14 +3,16 @@
 // Never hard-code image paths in components
 //
 // Notes
-// - Only one real photo per category exists today (/images/categories/{id}.jpg), so every
-//   slot of a category points at that file and differs only by object-position. When new
-//   art lands, change `src` here and nothing else.
+// - People-centric categories use diverse Unsplash stock portraits from stock-portraits.ts.
+//   Non-people categories (pets, rooms, products, cards) keep local images.
 // - Portraits here are AI-generated concepts or stock photos, never testimonial evidence.
 // - Keys are CategoryId values from src/config/categories.ts (not URL slugs). Use
 //   getCategoryVisualsBySlug() when you only have the route slug.
+// - Before/after pairs use the same portrait — consumers apply CSS `filter: grayscale(1)`
+//   on the "before" src to simulate an unprocessed casual snapshot.
 
 import { CATEGORIES, type CategoryId } from '@/config/categories';
+import { portrait, landscape, square } from '@/config/stock-portraits';
 
 export interface ImageAsset {
   src: string;
@@ -60,8 +62,35 @@ function asset(src: string, alt: string, pos: Pos): ImageAsset {
   };
 }
 
-/** Build a full CategoryVisuals block from one base photo. */
-function fromBase(id: CategoryId, alt: string, pos: Pos, galleryAlt?: string[]): CategoryVisuals {
+/** Build a portrait asset from an Unsplash photo ID (3:4 crop). */
+function portraitAsset(photoId: string, alt: string): ImageAsset {
+  return asset(portrait(photoId), alt, POS.portrait);
+}
+
+/** Build a square asset from an Unsplash photo ID (1:1 crop). */
+function squareAsset(photoId: string, alt: string): ImageAsset {
+  return asset(square(photoId), alt, POS.portrait);
+}
+
+/** Build a landscape asset from an Unsplash photo ID (4:3 crop). */
+function landscapeAsset(photoId: string, alt: string): ImageAsset {
+  return asset(landscape(photoId), alt, POS.portrait);
+}
+
+/**
+ * Build a before/after pair from a single Unsplash portrait.
+ * The "before" uses the same URL — consumers apply CSS `filter: grayscale(1)`
+ * to simulate an unprocessed casual snapshot. The "after" is the polished result.
+ */
+function stockBeforeAfter(photoId: string, altBefore: string, altAfter: string): BeforeAfterPair {
+  return {
+    before: portraitAsset(photoId, altBefore),
+    after: portraitAsset(photoId, altAfter),
+  };
+}
+
+/** Build a full CategoryVisuals block from one local base photo (non-people categories). */
+function fromLocalBase(id: CategoryId, alt: string, pos: Pos): CategoryVisuals {
   const src = `${CATEGORY_IMG}/${id}.jpg`;
   const make = () => asset(src, alt, pos);
   return {
@@ -69,18 +98,9 @@ function fromBase(id: CategoryId, alt: string, pos: Pos, galleryAlt?: string[]):
     quickCard: make(),
     heroDesktop: make(),
     heroMobile: make(),
-    gallery: (galleryAlt ?? [alt]).map((a) => asset(src, a, pos)),
+    gallery: [make()],
   };
 }
-
-/** Brand portraits available for hero collage supplements. */
-export const heroCollageSupplements: ImageAsset[] = [
-  asset(`${BRAND_WEB}/portrait-woman-after.webp`, 'AI-generated studio portrait of a woman', POS.portrait),
-  asset(`${BRAND_WEB}/portrait-man-after.webp`, 'AI-generated executive portrait of a man', POS.portrait),
-  asset(`${BRAND_WEB}/portrait-woman-editorial.webp`, 'AI-generated editorial portrait', POS.portrait),
-  asset(`${BRAND_WEB}/portrait-man-editorial.webp`, 'AI-generated editorial portrait of a man', POS.portrait),
-  asset(`${BRAND_WEB}/portrait-woman-creative-after.webp`, 'Editorial-style AI portrait', POS.portrait),
-];
 
 /* ------------------------------------------------------------------ */
 /*  Homepage / brand assets (/brand/tailorpic/web)                     */
@@ -160,16 +180,25 @@ export const blogDefaults = {
 
 /* ------------------------------------------------------------------ */
 /*  Per-category registry                                              */
+/*                                                                     */
+/*  Unsplash portrait assignments — each photo ID appears in ONE       */
+/*  category only. Non-people categories use local /images/ files.     */
 /* ------------------------------------------------------------------ */
 
 export const categoryVisuals: Record<string, CategoryVisuals> = {
+  /* ------ headshots: corporate professionals ------ */
   headshots: {
-    ...fromBase('headshots', 'Professional woman in business attire', POS.portrait),
+    megaMenu: squareAsset('photo-1573496359142-b8d87734a5a2', 'Professional woman in navy blazer'),
+    quickCard: landscapeAsset('photo-1560250097-0b93528c311a', 'Businessman in dark suit'),
+    heroDesktop: portraitAsset('photo-1573496359142-b8d87734a5a2', 'Professional woman in navy blazer'),
+    heroMobile: portraitAsset('photo-1573496359142-b8d87734a5a2', 'Professional woman in navy blazer'),
     gallery: [
-      brandPortraits.womanAfter,
-      brandPortraits.manAfter,
-      brandPortraits.womanEditorial,
-      asset(`${CATEGORY_IMG}/headshots.jpg`, 'Professional woman in business attire', POS.portrait),
+      portraitAsset('photo-1580489944761-15a19d654956', 'Confident woman in professional attire'),
+      portraitAsset('photo-1507003211169-0a1dd7228f2d', 'Man with warm smile in casual business wear'),
+      portraitAsset('photo-1494790108377-be9c29b29330', 'Young professional woman with blonde hair'),
+      portraitAsset('photo-1472099645785-5658abf4ff4e', 'Professional man with glasses'),
+      portraitAsset('photo-1519085360753-af0119f7cbe7', 'Young man in crisp white shirt'),
+      portraitAsset('photo-1438761681033-6461ffad8d80', 'Mature professional woman'),
     ],
     beforeAfter: {
       before: homeBeforeAfterPairs[0].before,
@@ -177,33 +206,108 @@ export const categoryVisuals: Record<string, CategoryVisuals> = {
     },
   },
 
-  dating: fromBase('dating', 'Confident woman smiling warmly', POS.portrait),
+  /* ------ dating: approachable, natural portraits ------ */
+  dating: {
+    megaMenu: squareAsset('photo-1534528741775-53994a69daeb', 'Woman with natural hairstyle'),
+    quickCard: landscapeAsset('photo-1539571696357-5a69c17a67c6', 'Relaxed man in casual wear'),
+    heroDesktop: portraitAsset('photo-1534528741775-53994a69daeb', 'Woman with natural hairstyle'),
+    heroMobile: portraitAsset('photo-1534528741775-53994a69daeb', 'Woman with natural hairstyle'),
+    gallery: [
+      portraitAsset('photo-1517841905240-472988babdf9', 'Creative professional woman'),
+      portraitAsset('photo-1506794778202-cad84cf45f1d', 'Young man with creative style'),
+      portraitAsset('photo-1488426862026-3ee34a7d66df', 'Woman with bright creative expression'),
+      portraitAsset('photo-1552374196-c4e7ffc6e126', 'Man with relaxed confident pose'),
+      portraitAsset('photo-1524504388940-b1c1722653e1', 'Man with creative casual look'),
+      portraitAsset('photo-1531746020798-e6953c6e8e04', 'Woman with artistic style'),
+    ],
+    beforeAfter: stockBeforeAfter(
+      'photo-1500648767791-00dcc994a43e',
+      'Casual photo before AI enhancement',
+      'Polished dating profile photo',
+    ),
+  },
 
-  'pet-portraits': fromBase('pet-portraits', 'Two golden retriever puppies sitting on grass with orange flowers', POS.pet),
+  /* ------ pet-portraits (non-people, local image) ------ */
+  'pet-portraits': fromLocalBase('pet-portraits', 'Two golden retriever puppies sitting on grass with orange flowers', POS.pet),
 
+  /* ------ linkedin-team: corporate team members ------ */
   'linkedin-team': {
-    ...fromBase('linkedin-team', 'Corporate team collaborating in modern office', POS.group),
+    megaMenu: squareAsset('photo-1522075469751-3a6694fb2f61', 'Professional in team environment'),
+    quickCard: landscapeAsset('photo-1580894732444-8ecded7900cd', 'Team member with friendly smile'),
+    heroDesktop: portraitAsset('photo-1522075469751-3a6694fb2f61', 'Professional in team environment'),
+    heroMobile: portraitAsset('photo-1522075469751-3a6694fb2f61', 'Professional in team environment'),
+    gallery: [
+      portraitAsset('photo-1530268729831-4b0b9e170218', 'Professional woman in modern office'),
+      portraitAsset('photo-1487412720507-e7ab37603c6f', 'Woman professional at work'),
+      portraitAsset('photo-1542190891-2093d38760f2', 'Professional with confident stance'),
+      portraitAsset('photo-1508214751196-bcfd4ca60f91', 'Elegant professional woman'),
+      portraitAsset('photo-1566492031773-4f4e44671857', 'Distinguished man in suit'),
+      portraitAsset('photo-1545167622-3a6ac756afa4', 'Young professional with modern style'),
+    ],
     beforeAfter: {
       before: homeBeforeAfterPairs[1].before,
       after: homeBeforeAfterPairs[1].after,
     },
   },
 
-  'baby-shower': fromBase('baby-shower', 'Mother holding and kissing a baby in a nursery room', POS.portrait),
+  /* ------ baby-shower (non-people, local image) ------ */
+  'baby-shower': fromLocalBase('baby-shower', 'Mother holding and kissing a baby in a nursery room', POS.portrait),
 
-  graduation: fromBase('graduation', 'Two graduates celebrating on campus steps wearing caps and gowns', POS.group),
+  /* ------ graduation: fresh, youthful portraits ------ */
+  graduation: {
+    megaMenu: squareAsset('photo-1548142813-c348350df52b', 'Young woman in sophisticated look'),
+    quickCard: landscapeAsset('photo-1603415526960-f7e0328c63b1', 'Man with professional headshot look'),
+    heroDesktop: portraitAsset('photo-1548142813-c348350df52b', 'Young woman in sophisticated look'),
+    heroMobile: portraitAsset('photo-1548142813-c348350df52b', 'Young woman in sophisticated look'),
+    gallery: [
+      portraitAsset('photo-1567532939604-b6b5b0db2604', 'Professional woman headshot'),
+      portraitAsset('photo-1557862921-37829c790f19', 'Man in professional portrait'),
+      portraitAsset('photo-1551836022-d5d88e9218df', 'Woman with professional corporate look'),
+      portraitAsset('photo-1568602471122-7832951cc4c5', 'Young man in smart casual'),
+      portraitAsset('photo-1573497019940-1c28c88b4f3e', 'Woman in professional setting'),
+      portraitAsset('photo-1556157382-97ede2916cd2', 'Professional in formal business attire'),
+    ],
+    beforeAfter: stockBeforeAfter(
+      'photo-1504257432389-52343af06ae3',
+      'Casual photo before AI graduation portrait',
+      'Polished AI graduation portrait',
+    ),
+  },
 
-  'holiday-cards': fromBase('holiday-cards', 'Family decorating a Christmas tree together under staircase', POS.group),
+  /* ------ holiday-cards (non-people, local image) ------ */
+  'holiday-cards': fromLocalBase('holiday-cards', 'Family decorating a Christmas tree together under staircase', POS.group),
 
-  'family-portraits': fromBase('family-portraits', 'Happy family portrait together', POS.group),
+  /* ------ family-portraits (non-people, local image) ------ */
+  'family-portraits': fromLocalBase('family-portraits', 'Happy family portrait together', POS.group),
 
-  'couple-engagement': fromBase('couple-engagement', 'Romantic couple engagement portrait', POS.group),
+  /* ------ couple-engagement (non-people, local image) ------ */
+  'couple-engagement': fromLocalBase('couple-engagement', 'Romantic couple engagement portrait', POS.group),
 
-  'real-estate': fromBase('real-estate', 'Modern living room interior with sofa and wooden staircase', POS.room),
+  /* ------ real-estate (non-people, local image) ------ */
+  'real-estate': fromLocalBase('real-estate', 'Modern living room interior with sofa and wooden staircase', POS.room),
 
-  'ecommerce-product': fromBase('ecommerce-product', 'Luxury chronograph watch on polished wooden surface', POS.product),
+  /* ------ ecommerce-product (non-people, local image) ------ */
+  'ecommerce-product': fromLocalBase('ecommerce-product', 'Luxury chronograph watch on polished wooden surface', POS.product),
 
-  avatars: fromBase('avatars', 'AI avatar style variations of a portrait', POS.portrait),
+  /* ------ avatars: diverse creative faces ------ */
+  avatars: {
+    megaMenu: squareAsset('photo-1559839734-2b71ea197ec2', 'Portrait with professional styling'),
+    quickCard: landscapeAsset('photo-1612349317150-e413f6a5b16d', 'Portrait with creative styling'),
+    heroDesktop: portraitAsset('photo-1559839734-2b71ea197ec2', 'Portrait with professional styling'),
+    heroMobile: portraitAsset('photo-1559839734-2b71ea197ec2', 'Portrait with professional styling'),
+    gallery: [
+      portraitAsset('photo-1622253692010-333f2da6031d', 'Portrait for avatar generation'),
+      portraitAsset('photo-1573496799652-408c2ac9fe98', 'Woman portrait for avatar styling'),
+      portraitAsset('photo-1519345182560-3f2917c472ef', 'Man portrait for avatar transformation'),
+      portraitAsset('photo-1544005313-94ddf0286df2', 'Woman with warm expression for avatar'),
+      portraitAsset('photo-1559839734-2b71ea197ec2', 'Portrait with versatile styling'),
+    ],
+    beforeAfter: stockBeforeAfter(
+      'photo-1573496799652-408c2ac9fe98',
+      'Original selfie before avatar transformation',
+      'AI-generated avatar portrait',
+    ),
+  },
 };
 
 /* ------------------------------------------------------------------ */

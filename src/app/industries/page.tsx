@@ -7,7 +7,9 @@ import { siteConfig } from '@/config/site';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
-import { Building2, Scale, ShoppingBag, Stethoscope, Lightbulb, Calculator, ArrowRight, Heart, Zap, Monitor, GraduationCap, Camera, Clapperboard, SmilePlus, TrendingUp, Ruler, Target, Brain, Dumbbell, Music, PawPrint, Users, Handshake, Mic, Palette, Newspaper, Shield, Plane, Calendar, BookOpen, Leaf, Globe, BarChart3, Award, Briefcase, FileCheck, UserCheck, Star } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { getIndustryVisual, square } from '@/config/stock-portraits';
 
 const PAGE_TITLE = 'AI Headshots by Industry: Guides for Every Profession';
 const PAGE_DESCRIPTION =
@@ -33,7 +35,6 @@ export const metadata: Metadata = {
 
 const industries = [
   {
-    icon: Building2,
     name: 'Real Estate',
     description:
       'Professional headshots that build trust with buyers and sellers. MLS-ready, team-consistent photos.',
@@ -41,7 +42,6 @@ const industries = [
     cta: 'For Agents',
   },
   {
-    icon: Scale,
     name: 'Law Firms',
     description:
       'Authoritative portraits for attorneys and partners. Bar-compliant, firm-wide consistency.',
@@ -49,7 +49,6 @@ const industries = [
     cta: 'For Attorneys',
   },
   {
-    icon: ShoppingBag,
     name: 'E-Commerce',
     description:
       'Studio-quality product photos for your online store. Marketplace-ready for Amazon, Shopify, Etsy.',
@@ -57,7 +56,6 @@ const industries = [
     cta: 'For Sellers',
   },
   {
-    icon: Stethoscope,
     name: 'Healthcare',
     description:
       'Trustworthy headshots for doctors, dentists, and medical professionals. Privacy-conscious, patient-friendly.',
@@ -65,7 +63,6 @@ const industries = [
     cta: 'For Doctors',
   },
   {
-    icon: Lightbulb,
     name: 'Consultants',
     description:
       'Executive portraits that convey expertise and credibility. Perfect for advisory firms and freelance consultants.',
@@ -73,7 +70,6 @@ const industries = [
     cta: 'For Consultants',
   },
   {
-    icon: Calculator,
     name: 'Accountants',
     description:
       'Professional headshots for CPAs and financial professionals. Build client trust with polished, consistent imagery.',
@@ -81,7 +77,6 @@ const industries = [
     cta: 'For Accountants',
   },
   {
-    icon: Heart,
     name: 'Nurses',
     description:
       'Professional headshots for nurses and healthcare staff. Hospital ID-ready, LinkedIn-polished, team-consistent.',
@@ -89,7 +84,6 @@ const industries = [
     cta: 'For Nurses',
   },
   {
-    icon: Monitor,
     name: 'Engineers',
     description:
       'Professional headshots for software, civil and mechanical engineers. Perfect for LinkedIn, GitHub and conference bios.',
@@ -97,7 +91,6 @@ const industries = [
     cta: 'For Engineers',
   },
   {
-    icon: GraduationCap,
     name: 'Teachers',
     description:
       'Professional headshots for teachers and educators. School websites, academic profiles and conference materials.',
@@ -105,7 +98,6 @@ const industries = [
     cta: 'For Teachers',
   },
   {
-    icon: Camera,
     name: 'Photographers',
     description:
       'Professional headshots for photographers and creatives. Portfolio-ready, brand-consistent imagery for your own marketing.',
@@ -113,7 +105,6 @@ const industries = [
     cta: 'For Photographers',
   },
   {
-    icon: Clapperboard,
     name: 'Actors',
     description:
       'Casting-ready headshots for actors and performers. Multiple looks, expressions and styling for auditions and reels.',
@@ -121,7 +112,6 @@ const industries = [
     cta: 'For Actors',
   },
   {
-    icon: SmilePlus,
     name: 'Dentists',
     description:
       'Trustworthy headshots for dentists and dental professionals. Patient-friendly portraits for practice websites and directories.',
@@ -129,7 +119,6 @@ const industries = [
     cta: 'For Dentists',
   },
   {
-    icon: TrendingUp,
     name: 'Financial Advisors',
     description:
       'Credible, polished headshots for financial advisors and wealth managers. Build client trust with professional imagery.',
@@ -137,7 +126,6 @@ const industries = [
     cta: 'For Advisors',
   },
   {
-    icon: Ruler,
     name: 'Architects',
     description:
       'Professional headshots for architects and designers. Portfolio-ready imagery for firm websites and industry publications.',
@@ -145,7 +133,6 @@ const industries = [
     cta: 'For Architects',
   },
   {
-    icon: Target,
     name: 'Coaches',
     description:
       'Professional headshots for life coaches and business consultants. Build credibility for your website, speaking engagements and social media.',
@@ -153,7 +140,6 @@ const industries = [
     cta: 'For Coaches',
   },
   {
-    icon: BookOpen,
     name: 'Professors',
     description:
       'Professional headshots for professors and academics. Polished portraits for faculty pages, conference bios and research profiles.',
@@ -161,7 +147,6 @@ const industries = [
     cta: 'For Professors',
   },
   {
-    icon: UserCheck,
     name: 'Recruiters',
     description:
       'Approachable headshots for recruiters and talent professionals. Build candidate trust on LinkedIn and in every outreach message.',
@@ -169,7 +154,6 @@ const industries = [
     cta: 'For Recruiters',
   },
   {
-    icon: Award,
     name: 'Public Speakers',
     description:
       'Media-kit-ready headshots for keynote speakers and trainers. Keep a polished portrait ready for event programs and speaker bureaus.',
@@ -177,7 +161,6 @@ const industries = [
     cta: 'For Speakers',
   },
   {
-    icon: Briefcase,
     name: 'Executives',
     description:
       'Authoritative headshots for C-suite executives. Leadership-page-ready portraits for investor materials, press and LinkedIn.',
@@ -185,7 +168,6 @@ const industries = [
     cta: 'For Executives',
   },
   {
-    icon: FileCheck,
     name: 'Notaries',
     description:
       'Trustworthy headshots for notaries and legal professionals. Build client confidence on websites, directories and business cards.',
@@ -193,7 +175,6 @@ const industries = [
     cta: 'For Notaries',
   },
   {
-    icon: Brain,
     name: 'Therapists',
     description:
       'Warm, approachable headshots for therapists and counselors. Create trust before the first session with calming, professional portraits.',
@@ -201,7 +182,6 @@ const industries = [
     cta: 'For Therapists',
   },
   {
-    icon: Dumbbell,
     name: 'Fitness Trainers',
     description:
       'Dynamic headshots for personal trainers and fitness professionals. Energetic, confident portraits for gym profiles and social media.',
@@ -209,7 +189,6 @@ const industries = [
     cta: 'For Trainers',
   },
   {
-    icon: Music,
     name: 'Musicians',
     description:
       'Creative headshots for musicians and artists. Album-ready, press kit and social media portraits that capture your artistic identity.',
@@ -217,7 +196,6 @@ const industries = [
     cta: 'For Musicians',
   },
   {
-    icon: PawPrint,
     name: 'Veterinarians',
     description:
       'Trustworthy headshots for veterinarians and animal care professionals. Warm, approachable portraits for clinic websites and directories.',
@@ -225,7 +203,6 @@ const industries = [
     cta: 'For Vets',
   },
   {
-    icon: Users,
     name: 'HR Professionals',
     description:
       'Professional headshots for HR managers and recruiters. Build trust with candidates and colleagues through polished, approachable portraits.',
@@ -233,7 +210,6 @@ const industries = [
     cta: 'For HR',
   },
   {
-    icon: Handshake,
     name: 'Sales Professionals',
     description:
       'Confident, trustworthy headshots for sales teams. Close more deals with professional portraits that build instant credibility.',
@@ -241,7 +217,6 @@ const industries = [
     cta: 'For Sales',
   },
   {
-    icon: Mic,
     name: 'Podcasters',
     description:
       'Eye-catching headshots for podcasters and content creators. Perfect for show art, guest bios and social media promotion.',
@@ -249,7 +224,6 @@ const industries = [
     cta: 'For Podcasters',
   },
   {
-    icon: Palette,
     name: 'Interior Designers',
     description:
       'Creative, polished headshots for interior designers. Portfolio-ready portraits for firm websites and design publications.',
@@ -257,7 +231,6 @@ const industries = [
     cta: 'For Designers',
   },
   {
-    icon: Newspaper,
     name: 'Journalists',
     description:
       'Professional headshots for journalists and media professionals. Byline-ready portraits for articles, broadcasts and press credentials.',
@@ -265,7 +238,6 @@ const industries = [
     cta: 'For Journalists',
   },
   {
-    icon: Shield,
     name: 'Pharmacists',
     description:
       'Trustworthy headshots for pharmacists and pharmacy teams. Patient-friendly portraits for pharmacy websites, directories and LinkedIn.',
@@ -273,7 +245,6 @@ const industries = [
     cta: 'For Pharmacists',
   },
   {
-    icon: Plane,
     name: 'Pilots & Aviation',
     description:
       'Confident headshots for pilots and aviation professionals. Sharp portraits for airline applications, crew profiles and LinkedIn.',
@@ -281,7 +252,6 @@ const industries = [
     cta: 'For Pilots',
   },
   {
-    icon: Calendar,
     name: 'Event Planners',
     description:
       'Polished, personable headshots for event and wedding planners. Win clients with portraits for your website, proposals and vendor listings.',
@@ -289,7 +259,6 @@ const industries = [
     cta: 'For Planners',
   },
   {
-    icon: TrendingUp,
     name: 'Marketing Professionals',
     description:
       'Modern headshots for marketers and brand leaders. Build your personal brand on LinkedIn, speaker pages and agency sites.',
@@ -297,7 +266,6 @@ const industries = [
     cta: 'For Marketers',
   },
   {
-    icon: BookOpen,
     name: 'Authors & Writers',
     description:
       'Author photos for novelists, nonfiction writers and bloggers. Book-jacket, Amazon author page and press kit ready.',
@@ -305,7 +273,6 @@ const industries = [
     cta: 'For Authors',
   },
   {
-    icon: Heart,
     name: 'Chiropractors',
     description:
       'Professional headshots for chiropractors and clinics. Patient-friendly portraits for practice websites and Google profiles.',
@@ -313,7 +280,6 @@ const industries = [
     cta: 'For Chiropractors',
   },
   {
-    icon: Shield,
     name: 'Insurance Agents',
     description:
       'Trustworthy headshots for insurance agents and brokers. Agency-ready portraits for websites, cards and LinkedIn.',
@@ -321,7 +287,6 @@ const industries = [
     cta: 'For Agents',
   },
   {
-    icon: Leaf,
     name: 'Nutritionists',
     description:
       'Fresh, approachable headshots for nutritionists and dietitians. Ideal for practice sites, telehealth and social media.',
@@ -329,7 +294,6 @@ const industries = [
     cta: 'For Nutritionists',
   },
   {
-    icon: Users,
     name: 'Social Workers',
     description:
       'Warm, credible headshots for social workers and case managers. Polished for LinkedIn, agency pages and practice profiles.',
@@ -337,7 +301,6 @@ const industries = [
     cta: 'For Social Workers',
   },
   {
-    icon: Globe,
     name: 'Translators',
     description:
       'Professional headshots for translators and interpreters. Marketplace-ready portraits for ProZ, LinkedIn and portfolio sites.',
@@ -345,7 +308,6 @@ const industries = [
     cta: 'For Translators',
   },
   {
-    icon: Brain,
     name: "Psychologists",
     description:
       "Warm, credible headshots for clinical and counseling psychologists. Practice-website and directory ready.",
@@ -353,7 +315,6 @@ const industries = [
     cta: "For Psychologists",
   },
   {
-    icon: Building2,
     name: "Real Estate Brokers",
     description:
       "Confident portraits for brokers and brokerage owners. Listings, signage and team pages.",
@@ -361,7 +322,6 @@ const industries = [
     cta: "For Brokers",
   },
   {
-    icon: Plane,
     name: "Flight Attendants",
     description:
       "Polished, friendly headshots for cabin crew. Airline applications and LinkedIn ready.",
@@ -369,7 +329,6 @@ const industries = [
     cta: "For Cabin Crew",
   },
   {
-    icon: Palette,
     name: "Graphic Designers",
     description:
       "Distinctive portraits for designers. Portfolio, Behance and LinkedIn ready.",
@@ -377,7 +336,6 @@ const industries = [
     cta: "For Designers",
   },
   {
-    icon: BarChart3,
     name: "Data Scientists",
     description:
       "Sharp, approachable headshots for data scientists and ML engineers. LinkedIn, GitHub and conference bios.",
@@ -385,7 +343,6 @@ const industries = [
     cta: "For Data Scientists",
   },
   {
-    icon: Lightbulb,
     name: 'Scientists',
     description:
       'Professional headshots for scientists and researchers. Polished portraits for lab pages, grant applications and conference bios.',
@@ -393,7 +350,6 @@ const industries = [
     cta: 'For Scientists',
   },
   {
-    icon: Handshake,
     name: 'Politicians',
     description:
       'Professional headshots for politicians and candidates. Trustworthy portraits for campaign sites, official profiles and press kits.',
@@ -401,7 +357,6 @@ const industries = [
     cta: 'For Politicians',
   },
   {
-    icon: Heart,
     name: 'Chefs',
     description:
       'Professional headshots for chefs and culinary professionals. Portraits for restaurant sites, press features and social media.',
@@ -409,7 +364,6 @@ const industries = [
     cta: 'For Chefs',
   },
   {
-    icon: Camera,
     name: 'Models',
     description:
       'Professional headshots for models and talent. Clean portraits for agency submissions, portfolios and comp cards.',
@@ -417,7 +371,6 @@ const industries = [
     cta: 'For Models',
   },
   {
-    icon: Dumbbell,
     name: 'Personal Trainers',
     description:
       'Professional headshots for personal trainers. Energetic portraits for gym profiles, booking pages and social media.',
@@ -425,7 +378,6 @@ const industries = [
     cta: 'For Trainers',
   },
   {
-    icon: BookOpen,
     name: 'Librarians',
     description:
       'Friendly headshots for public, academic and school librarians. Portraits for staff directories, library sites and LinkedIn.',
@@ -433,7 +385,6 @@ const industries = [
     cta: 'For Librarians',
   },
   {
-    icon: Shield,
     name: 'Firefighters',
     description:
       'Confident headshots for firefighters and fire officers. Portraits for department rosters, promotion packets and career profiles.',
@@ -441,7 +392,6 @@ const industries = [
     cta: 'For Firefighters',
   },
   {
-    icon: Heart,
     name: 'Paramedics',
     description:
       'Credible headshots for paramedics and EMTs. Approachable portraits for agency pages, credentialing and job applications.',
@@ -449,7 +399,6 @@ const industries = [
     cta: 'For Paramedics',
   },
   {
-    icon: Zap,
     name: 'Electricians',
     description:
       'Professional headshots for electricians and contractors. Build customer trust on your website, Google profile and estimates.',
@@ -457,7 +406,6 @@ const industries = [
     cta: 'For Electricians',
   },
   {
-    icon: Briefcase,
     name: 'Plumbers',
     description:
       'Professional headshots for plumbers and plumbing contractors. Friendly portraits for websites, local listings and quotes.',
@@ -465,7 +413,6 @@ const industries = [
     cta: 'For Plumbers',
   },
   {
-    icon: Users,
     name: 'Barbers',
     description:
       'Professional headshots for barbers and barbershop owners. Sharp portraits for booking pages, shop websites and Instagram.',
@@ -473,7 +420,6 @@ const industries = [
     cta: 'For Barbers',
   },
   {
-    icon: Heart,
     name: 'Florists',
     description:
       'Professional headshots for florists and floral designers. Warm portraits for wedding inquiries, shop sites and social media.',
@@ -481,7 +427,6 @@ const industries = [
     cta: 'For Florists',
   },
   {
-    icon: Star,
     name: 'Bartenders',
     description:
       'Professional headshots for bartenders and mixologists. Polished portraits for resumes, LinkedIn and event bookings.',
@@ -489,7 +434,6 @@ const industries = [
     cta: 'For Bartenders',
   },
   {
-    icon: Award,
     name: 'Tattoo Artists',
     description:
       'Professional headshots for tattoo artists and studio owners. Confident portraits for portfolios, booking pages and social profiles.',
@@ -497,7 +441,6 @@ const industries = [
     cta: 'For Tattoo Artists',
   },
   {
-    icon: Shield,
     name: 'Security Guards',
     description:
       'Professional headshots for security guards and officers. Credible portraits for resumes, LinkedIn and company profiles.',
@@ -505,7 +448,6 @@ const industries = [
     cta: 'For Security Pros',
   },
   {
-    icon: Music,
     name: 'DJs',
     description:
       'Professional headshots for DJs and producers. Press-kit ready portraits for booking pages, lineups and social profiles.',
@@ -513,7 +455,6 @@ const industries = [
     cta: 'For DJs',
   },
   {
-    icon: Palette,
     name: 'Makeup Artists',
     description:
       'Professional headshots for makeup artists. Polished portraits for portfolios, booking pages and Instagram.',
@@ -521,7 +462,6 @@ const industries = [
     cta: 'For Makeup Artists',
   },
   {
-    icon: Globe,
     name: 'Tour Guides',
     description:
       'Professional headshots for tour guides. Friendly portraits for booking platforms, guide profiles and websites.',
@@ -529,7 +469,6 @@ const industries = [
     cta: 'For Tour Guides',
   },
   {
-    icon: Heart,
     name: 'Life Coaches',
     description:
       'Professional headshots for life coaches. Warm, credible portraits for websites, programs and social media.',
@@ -537,7 +476,6 @@ const industries = [
     cta: 'For Life Coaches',
   },
   {
-    icon: Leaf,
     name: 'Yoga Instructors',
     description:
       'Professional headshots for yoga instructors. Calm, welcoming portraits for studio pages and class schedules.',
@@ -595,15 +533,24 @@ export default function IndustriesPage() {
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {industries.map((ind) => (
+            {industries.map((ind) => {
+              const slug = ind.href.replace('/industries/', '');
+              const visual = getIndustryVisual(slug);
+              return (
               <Link
                 key={ind.name}
                 href={ind.href}
                 aria-label={`${ind.name}: ${ind.cta}`}
                 className="group rounded-tp-card border border-tp-line bg-white p-7 transition-all hover:border-tp-bronze hover:shadow-md hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-black mb-5 transition-colors group-hover:bg-tp-ink">
-                  <ind.icon className="h-6 w-6 text-tp-bronze" />
+                <div className="relative h-16 w-16 overflow-hidden rounded-full mb-5 ring-2 ring-tp-line group-hover:ring-tp-bronze transition-all">
+                  <Image
+                    src={square(visual.cardPortraitId)}
+                    alt={visual.alt}
+                    width={64}
+                    height={64}
+                    className="h-full w-full object-cover"
+                  />
                 </div>
                 <h2 className="font-display font-normal text-xl text-tp-ink">{ind.name}</h2>
                 <p className="mt-2 text-sm text-tp-muted leading-relaxed">
@@ -613,7 +560,8 @@ export default function IndustriesPage() {
                   {ind.cta} <ArrowRight className="h-4 w-4" />
                 </span>
               </Link>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
