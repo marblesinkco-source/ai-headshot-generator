@@ -128,7 +128,7 @@ export const homeBeforeAfterPairs: HomeBeforeAfter[] = [
       POS.portrait,
     ),
     after: asset(
-      `${BRAND_WEB}/portrait-woman-editorial.webp`,
+      `${BRAND_WEB}/portrait-woman-creative-after.webp`,
       'Editorial-style AI portrait of a woman for a creative portfolio',
       POS.portrait,
     ),
