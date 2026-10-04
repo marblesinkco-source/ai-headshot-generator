@@ -182,7 +182,7 @@ export default function OrderDetailPage() {
           </svg>
         </Link>
         <div>
-          <h1 className="text-xl font-bold text-tp-ink">Order Details</h1>
+          <h1 className="text-xl font-display font-normal text-tp-ink">Order Details</h1>
           <p className="text-sm text-tp-muted">Order #{orderId.slice(0, 8)}</p>
         </div>
       </div>
@@ -190,7 +190,7 @@ export default function OrderDetailPage() {
       {/* Status Card */}
       <div className="rounded-2xl border border-tp-line bg-white p-8 shadow-sm text-center">
         <div className="text-4xl">{statusInfo.icon}</div>
-        <h2 className="mt-4 text-xl font-bold text-tp-ink">{statusInfo.title}</h2>
+        <h2 className="mt-4 text-xl font-display font-normal text-tp-ink">{statusInfo.title}</h2>
         <p className="mt-2 text-sm text-tp-muted max-w-md mx-auto">{statusInfo.description}</p>
         <div className="mt-4">
           <OrderStatusBadge status={order.status} />

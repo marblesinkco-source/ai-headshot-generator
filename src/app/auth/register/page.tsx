@@ -366,7 +366,7 @@ function RegisterContent() {
           </h2>
 
           <ul className="space-y-5 mb-10">
-            {['Upload selfies, get professional photos', '40+ photos per session', 'Ready in under 2 hours'].map((t) => (
+            {['Upload selfies, get professional photos', 'Up to 160 photos per session', 'Ready in about 2 hours'].map((t) => (
               <li key={t} className="flex items-start gap-3">
                 <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-tp-bronze/20">
                   <Check className="h-3 w-3 text-tp-bronze" />

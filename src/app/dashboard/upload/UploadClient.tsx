@@ -212,7 +212,7 @@ function UploadContent() {
   return (
     <div className="mx-auto max-w-5xl space-y-8">
       <div>
-        <h1 className="text-2xl font-bold text-tp-black">Create New Photos</h1>
+        <h1 className="font-display text-2xl font-normal text-tp-black">Create New Photos</h1>
         <p className="mt-1 text-sm text-tp-muted">Choose a category, pick your package, upload photos, and let AI do the magic.</p>
       </div>
 

@@ -69,7 +69,7 @@ const comparisonRows: FeatureRow[] = [
   { feature: 'Dating Photos', tailorpic: true, competitor: false },
   { feature: 'Pet Portraits', tailorpic: true, competitor: 'Illustrated styles' },
   { feature: 'E-Commerce Product Photos', tailorpic: true, competitor: 'Via design templates' },
-  { feature: 'Free Tier', tailorpic: 'Coming Soon', competitor: 'Yes' },
+  { feature: 'Lowest Plan', tailorpic: 'From $1.99 (1 photo)', competitor: 'Free tier available' },
 ];
 
 const whyCards = [

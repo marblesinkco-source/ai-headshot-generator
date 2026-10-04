@@ -128,7 +128,7 @@ export default function OverviewClient() {
       {/* Welcome */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-tp-ink">Welcome back, {userName}</h1>
+          <h1 className="text-2xl font-display font-normal text-tp-ink">Welcome back, {userName}</h1>
           <p className="mt-1 text-sm text-tp-muted">Here&apos;s what&apos;s happening with your photos.</p>
         </div>
         <Link href="/dashboard/upload">

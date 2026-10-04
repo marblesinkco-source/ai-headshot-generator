@@ -359,13 +359,13 @@ export default function StudentsPage() {
         </div>
       </section>
 
-      {/* Social Proof / Stats */}
+      {/* How It Works — quick steps */}
       <section className="px-4 py-16 sm:py-20">
         <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-3">
           {[
-            { value: '10,000+', label: 'Students trust TailorPic' },
-            { value: '< 30 min', label: 'Average delivery time' },
-            { value: '4.8/5', label: 'Average customer rating' },
+            { value: '3 Steps', label: 'Upload, generate, download' },
+            { value: 'From $1.99', label: 'One-time payment, no subscription' },
+            { value: 'Up to 160', label: 'Professional headshots per order' },
           ].map((stat) => (
             <div
               key={stat.label}

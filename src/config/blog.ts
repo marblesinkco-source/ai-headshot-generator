@@ -5191,7 +5191,7 @@ export const blogPosts: BlogPost[] = [
       <p>Companies with both office and remote employees often struggle with visual consistency. AI headshot tools solve this by applying the same style, background, and lighting to everyone's photo, regardless of where they uploaded their selfies. For team coordination, see our <a href="/use-cases/website-team-page">team page use case</a>.</p>
 
       <h2>Multiple Platforms, One Upload</h2>
-      <p>Remote workers typically need photos for Slack, Microsoft Teams, Zoom, Google Meet, LinkedIn, the company website, and sometimes client-facing portals. TailorPic generates 40+ photos across multiple styles from a single upload, so you can use a different crop or look for each platform while maintaining a consistent identity. See our guides for <a href="/use-cases/zoom">Zoom</a> and <a href="/use-cases/microsoft-teams">Microsoft Teams</a>.</p>
+      <p>Remote workers typically need photos for Slack, Microsoft Teams, Zoom, Google Meet, LinkedIn, the company website, and sometimes client-facing portals. TailorPic generates up to 160 photos across multiple styles from a single upload, so you can use a different crop or look for each platform while maintaining a consistent identity. See our guides for <a href="/use-cases/zoom">Zoom</a> and <a href="/use-cases/microsoft-teams">Microsoft Teams</a>.</p>
 
       <h2>Cost and Convenience</h2>
       <p>A traditional headshot session costs $150–$500 plus travel time. TailorPic packages start at <a href="/pricing">$1.99</a> and deliver in about 2 hours. For remote workers who are already saving their company money on office space, the AI headshot is a practical, low-cost way to maintain a professional image.</p>

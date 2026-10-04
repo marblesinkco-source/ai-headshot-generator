@@ -133,7 +133,7 @@ export default function SettingsClient() {
   return (
     <div className="mx-auto max-w-2xl space-y-8">
       <div>
-        <h1 className="text-2xl font-bold text-tp-ink">Settings</h1>
+        <h1 className="text-2xl font-display font-normal text-tp-ink">Settings</h1>
         <p className="mt-1 text-sm text-tp-muted">Manage your account and preferences.</p>
       </div>
 

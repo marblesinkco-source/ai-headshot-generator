@@ -175,7 +175,7 @@ export default function OrderGalleryPage() {
           </Link>
           <div>
             <div className="flex items-center gap-3">
-              <h1 className="text-xl font-bold text-tp-ink capitalize">{order.packageId} Package</h1>
+              <h1 className="text-xl font-display font-normal text-tp-ink capitalize">{order.packageId} Package</h1>
               <OrderStatusBadge status={order.status} />
             </div>
             <p className="text-sm text-tp-muted">

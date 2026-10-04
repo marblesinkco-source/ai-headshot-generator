@@ -158,7 +158,7 @@ const youNeed = [
 ];
 
 const youGet = [
-  { icon: LayoutGrid, title: '40+ photos', description: 'A full set of professional photos generated from one upload.' },
+  { icon: LayoutGrid, title: 'Up to 160 photos', description: 'A full set of professional photos generated from one upload.' },
   { icon: Layers, title: 'Multiple styles', description: 'Choose from 12 style categories, from corporate headshots to creative portraits.' },
   { icon: MonitorUp, title: 'High-resolution files', description: 'Download in 4K resolution, ready for web profiles and print.' },
   { icon: BadgeCheck, title: 'Commercial rights', description: 'Use your photos on LinkedIn, your website, business cards and more.' },

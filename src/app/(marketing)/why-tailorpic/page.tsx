@@ -74,7 +74,7 @@ const valueProps = [
   {
     icon: Images,
     title: 'Massive Variety',
-    stat: '40+ photos',
+    stat: 'Up to 160',
     description:
       'Get headshots across multiple backgrounds, outfits, and styles from a single set of selfies. A studio session rarely offers that range.',
   },
