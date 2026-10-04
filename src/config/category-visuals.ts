@@ -166,10 +166,10 @@ export const categoryVisuals: Record<string, CategoryVisuals> = {
   headshots: {
     ...fromBase('headshots', 'Professional woman in business attire', POS.portrait),
     gallery: [
-      asset(`${CATEGORY_IMG}/headshots.jpg`, 'Professional woman in business attire', POS.portrait),
-      brandPortraits.manAfter,
       brandPortraits.womanAfter,
+      brandPortraits.manAfter,
       brandPortraits.womanEditorial,
+      asset(`${CATEGORY_IMG}/headshots.jpg`, 'Professional woman in business attire', POS.portrait),
     ],
     beforeAfter: {
       before: homeBeforeAfterPairs[0].before,
