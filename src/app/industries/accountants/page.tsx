@@ -7,22 +7,11 @@ import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, ProductSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
-import {
-  Clock,
-  Users,
-  CheckCircle,
-  DollarSign,
-  CalendarX,
-  ImageOff,
-  Shield,
-  ArrowRight,
-  UserPlus,
-  BadgeCheck,
-  RefreshCw,
-} from 'lucide-react';
+import { CheckCircle, ArrowRight } from 'lucide-react';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
+import { ContentPhoto } from '@/components/marketing/content-photo';
 export const metadata: Metadata = {
   title: { absolute: 'AI Headshots for Accountants & CPAs | TailorPic' },
   description:
@@ -35,19 +24,16 @@ export const metadata: Metadata = {
 
 const painPoints = [
   {
-    icon: CalendarX,
     title: 'Tax Season Never Ends',
     description:
       'Between tax deadlines, audits, and quarterly filings, accountants are perpetually busy. Scheduling a studio session feels impossible — especially during Q1 and Q4 crunch time.',
   },
   {
-    icon: ImageOff,
     title: 'Inconsistent Firm Photos',
     description:
       'Partners photographed five years ago, associates shot last month, and new hires with no headshot at all. Your team page looks like a patchwork instead of a unified, trustworthy firm.',
   },
   {
-    icon: DollarSign,
     title: 'High Cost Per Person',
     description:
       'Professional studio sessions run $300-700+ per person. For a growing firm that adds staff every year, the cost of keeping everyone current is hard to justify — especially when you advise clients on spending wisely.',
@@ -56,37 +42,31 @@ const painPoints = [
 
 const benefits = [
   {
-    icon: Users,
     title: 'Firm-Wide Consistency',
     description:
       'Give every team member — from senior partner to new hire — a headshot with matching style, background, and quality. Your team page will finally look cohesive.',
   },
   {
-    icon: BadgeCheck,
     title: 'CPA Directory Ready',
     description:
       'Meet the photo requirements for state CPA society directories, professional association listings, and credential verification platforms with properly formatted headshots.',
   },
   {
-    icon: Shield,
     title: 'Professional & Approachable',
     description:
       'Strike the right balance between professional authority and personal warmth. Clients want to trust you with their finances and feel comfortable in your office.',
   },
   {
-    icon: UserPlus,
     title: 'Quick Updates for New Hires',
     description:
       'New staff member starting Monday? They upload selfies on day one and have matching headshots by lunch. No scheduling, no studio visit, no delay on updating your website.',
   },
   {
-    icon: Clock,
     title: '2-Hour Delivery',
     description:
       'Upload selfies between client calls and receive polished headshots the same day. No blocked calendar time, no travel to a photography studio.',
   },
   {
-    icon: RefreshCw,
     title: 'Easy Annual Refreshes',
     description:
       'Keep your firm looking current with affordable annual photo updates. As staff changes and styles evolve, your online presence stays fresh and professional.',
@@ -234,15 +214,12 @@ export default function AccountantsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {painPoints.map((point) => {
-              const Icon = point.icon;
               return (
                 <div
                   key={point.title}
                   className="rounded-tp-card border border-tp-line bg-tp-paper/50 p-6"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-muted/10">
-                    <Icon className="h-6 w-6 text-tp-muted" />
-                  </div>
+                  <ContentPhoto slug="accountants" seed={point.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{point.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{point.description}</p>
                 </div>
@@ -279,15 +256,12 @@ export default function AccountantsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="accountants" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Award, Briefcase, Check, Globe, MessageSquare, Shield, Sparkles, Star, Upload, Users } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Insurance Agents | TailorPic";
 const pageDescription =
   'Professional AI headshots for insurance agents and brokers. Earn client trust on your agency website, business cards, and LinkedIn with a polished portrait.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Shield,
     title: "Build Client Confidence",
     description: "Insurance is a trust business. A professional, friendly headshot helps prospects feel safe reaching out for a quote.",
   },
   {
-    icon: Globe,
     title: "Agency Website & Directories",
     description: "High-resolution portraits sized for your agent page, carrier directories, and local listings.",
   },
   {
-    icon: Briefcase,
     title: "Business Cards & Print",
     description: "Sharp files suited to business cards, mailers, brochures, and signage.",
   },
   {
-    icon: Users,
     title: "Consistent Agency Branding",
     description: "Give every agent a matching look so your agency appears unified and established.",
   },
   {
-    icon: MessageSquare,
     title: "Social Media & Email Signatures",
     description: "Stay visible on Facebook, LinkedIn, and email with a headshot that looks like you on your best day.",
   },
   {
-    icon: Award,
     title: "Skip the Photo Shoot",
     description: "Traditional shoots cost hundreds and take weeks. Get professional results from home on your own time.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself. Vary your angles and expressions so the AI captures your natural personality.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick backgrounds and looks that fit your agency, from classic office to bright and approachable.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for your website, cards, and profiles.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Shield,
     title: "Independent Agents",
     description: "Stand out from large carriers with a personal, trustworthy presence.",
   },
   {
-    icon: Users,
     title: "Agency Teams",
     description: "Keep every producer and account manager photo consistent.",
   },
   {
-    icon: Briefcase,
     title: "Brokers & Account Executives",
     description: "Look credible in proposals, LinkedIn, and commercial client outreach.",
   },
   {
-    icon: Award,
     title: "New Agents",
     description: "Build a professional image quickly while growing your book of business.",
   },
@@ -229,15 +217,12 @@ export default function InsuranceAgentsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="insurance-agents" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -258,12 +243,9 @@ export default function InsuranceAgentsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="insurance-agents" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -285,10 +267,9 @@ export default function InsuranceAgentsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="insurance-agents" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

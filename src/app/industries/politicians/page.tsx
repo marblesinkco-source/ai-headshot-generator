@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Briefcase, Camera, Check, Globe, Layers, Shield, Sparkles, Star, Upload, Users } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Politicians & Candidates | TailorPic";
 const pageDescription =
   'Professional AI headshots for politicians, candidates and public officials. Portraits for campaign sites, official profiles, press kits and social media.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Star,
     title: "Campaign Website & Materials",
     description: "High-resolution portraits sized for your homepage, mailers, yard signs, and donation pages.",
   },
   {
-    icon: Shield,
     title: "Credible & Trustworthy Look",
     description: "Choose styles that convey steadiness and integrity, helping voters feel confident in who you are.",
   },
   {
-    icon: Globe,
     title: "Official & Government Profiles",
     description: "Keep a polished image ready for council pages, legislative directories, and agency websites.",
   },
   {
-    icon: Camera,
     title: "Press Kit & Media Ready",
     description: "Reporters and event hosts ask for a headshot on short notice. Have a professional image on hand at all times.",
   },
   {
-    icon: Layers,
     title: "Consistent Across Platforms",
     description: "Use matching portraits on social media, newsletters, and endorsement pages so your public image looks cohesive.",
   },
   {
-    icon: Briefcase,
     title: "Save Campaign Budget",
     description: "Every dollar counts in a race. Skip the photographer and get a professional result for a fraction of the cost.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself. Vary your angles and expressions so the AI captures your natural look.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick backgrounds and looks that suit public service, from classic formal to warm and approachable.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for your website, press kit, and social profiles.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Star,
     title: "Candidates & Campaigns",
     description: "Launch your website and materials quickly with a professional portrait.",
   },
   {
-    icon: Shield,
     title: "Elected Officials",
     description: "Refresh your official portrait for directories and constituent communications.",
   },
   {
-    icon: Users,
     title: "Staffers & Communications Teams",
     description: "Keep team and leadership headshots consistent across the office.",
   },
   {
-    icon: Globe,
     title: "Advocates & Local Leaders",
     description: "Present yourself credibly for boards, commissions, and community campaigns.",
   },
@@ -229,15 +217,12 @@ export default function PoliticiansIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="politicians" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -258,12 +243,9 @@ export default function PoliticiansIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="politicians" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -285,10 +267,9 @@ export default function PoliticiansIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="politicians" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

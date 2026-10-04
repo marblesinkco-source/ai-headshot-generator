@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Award, Brain, Briefcase, Check, Globe, Heart, Layers, MessageCircle, Sparkles, Star, Upload, Users } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Psychologists | TailorPic";
 const pageDescription =
   'Professional AI headshots for clinical, counseling and research psychologists. Build trust on your practice website, directory listings and LinkedIn.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Heart,
     title: "Build Comfort Before the First Session",
     description: "People researching therapy often look at photos first. A calm, approachable portrait helps prospective clients feel at ease reaching out.",
   },
   {
-    icon: Globe,
     title: "Practice Website Ready",
     description: "High-resolution portraits sized for your homepage, About page, and services pages so your practice looks cohesive.",
   },
   {
-    icon: MessageCircle,
     title: "Directory & Listing Profiles",
     description: "Keep a consistent image ready for therapist directories, insurance panels, and referral networks.",
   },
   {
-    icon: Award,
     title: "Signal Credibility & Expertise",
     description: "A polished portrait supports your credentials and helps referral sources and clients see you as an established professional.",
   },
   {
-    icon: Layers,
     title: "Consistent Across Platforms",
     description: "Use matching headshots on LinkedIn, email signatures, telehealth platforms, and social media.",
   },
   {
-    icon: Briefcase,
     title: "Skip the Studio Session",
     description: "Traditional photo sessions cost time and money. Get a professional result from home on your own schedule.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself. Vary your angles and expressions so the AI captures your natural personality.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick looks that fit your practice, from soft and welcoming to polished and clinical.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for your website and profiles.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Brain,
     title: "Clinical Psychologists",
     description: "Present a calm, trustworthy image on your practice website and therapist directory listings.",
   },
   {
-    icon: Heart,
     title: "Counseling Psychologists",
     description: "Help new clients feel welcomed before their first appointment.",
   },
   {
-    icon: Award,
     title: "Researchers & Academics",
     description: "Keep a polished portrait ready for university pages, publications, and conference bios.",
   },
   {
-    icon: Users,
     title: "Group Practice Teams",
     description: "Give every clinician a consistent, matching headshot for your team page.",
   },
@@ -229,15 +217,12 @@ export default function PsychologistsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="psychologists" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -258,12 +243,9 @@ export default function PsychologistsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="psychologists" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -285,10 +267,9 @@ export default function PsychologistsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="psychologists" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

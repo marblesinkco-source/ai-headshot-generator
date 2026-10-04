@@ -2,18 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import {
-  Award,
-  Briefcase,
-  Camera,
-  Check,
-  Globe,
-  Layers,
-  Sparkles,
-  Star,
-  Upload,
-  Users,
-} from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -22,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Bartenders & Mixologists | TailorPic";
 const pageDescription =
   'Professional AI headshots for bartenders, mixologists and bar managers. Land better jobs and events with a polished portrait for your resume and LinkedIn.';
@@ -37,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Briefcase,
     title: "Stand Out in Job Applications",
     description: "Hiring managers scan hundreds of applications. A professional portrait on your resume and LinkedIn helps you get the interview.",
   },
   {
-    icon: Star,
     title: "Private Event & Catering Bookings",
     description: "Clients booking a mobile bar want to see who will serve their guests. A confident headshot builds trust fast.",
   },
   {
-    icon: Camera,
     title: "Instagram & Personal Brand",
     description: "Keep fresh images ready for your profile, cocktail content, and brand collaborations.",
   },
   {
-    icon: Award,
     title: "Competitions & Brand Ambassador Work",
     description: "Competition entries and spirits brand programs ask for a professional portrait and bio. Always be ready.",
   },
   {
-    icon: Globe,
     title: "Bar Website & Team Pages",
     description: "Get portraits sized for your venue's team page, menu features, and press mentions.",
   },
   {
-    icon: Layers,
     title: "Skip the Photo Shoot",
     description: "Late shifts make scheduling hard. Get a professional result from home on your own time.",
   },
@@ -70,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself. Vary your angles and expressions so the AI captures your natural personality.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick backgrounds and looks that fit your style, from classic speakeasy to clean modern studio.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for your resume, LinkedIn, and social profiles.",
   },
@@ -88,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Star,
     title: "Craft Mixologists",
     description: "Present your expertise with a portrait that matches the quality of your cocktails.",
   },
   {
-    icon: Users,
     title: "Bar Managers & Owners",
     description: "Give yourself and your team a professional look for press and team pages.",
   },
   {
-    icon: Briefcase,
     title: "Mobile & Event Bartenders",
     description: "Win private bookings with a trustworthy, polished portrait.",
   },
   {
-    icon: Award,
     title: "Brand Ambassadors & Competitors",
     description: "Keep a professional portrait ready for competitions and sponsor profiles.",
   },
@@ -240,15 +217,12 @@ export default function BartendersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="bartenders" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -269,12 +243,9 @@ export default function BartendersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="bartenders" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -296,10 +267,9 @@ export default function BartendersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="bartenders" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

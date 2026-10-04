@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Briefcase, Check, FileCheck, Globe, Layers, Sparkles, Star, Target, Upload, UserCheck, Users } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Tour Guides | TailorPic";
 const pageDescription =
   'Professional AI headshots for tour guides, travel hosts and excursion leaders. Build traveler trust on booking platforms and your own website.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Globe,
     title: "Booking Platform Profiles",
     description: "Platforms like marketplace listings and tour company sites show your face. A friendly portrait boosts clicks and bookings.",
   },
   {
-    icon: UserCheck,
     title: "Build Traveler Trust",
     description: "Guests are meeting a stranger abroad. A warm, professional photo makes them feel safe.",
   },
   {
-    icon: FileCheck,
     title: "Licensing & Badge Profiles",
     description: "Keep a clean, recognizable portrait ready for guide licenses, badges, and company directories.",
   },
   {
-    icon: Star,
     title: "Stand Out in Reviews",
     description: "A consistent image across listings and reviews makes you memorable to repeat guests.",
   },
   {
-    icon: Layers,
     title: "Multiple Looks",
     description: "Get outdoor, casual, and polished options for different tours and audiences.",
   },
   {
-    icon: Briefcase,
     title: "Skip the Photo Shoot",
     description: "No photographer needed. Get a professional result from your phone selfies.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself. Vary your angles and expressions so the AI captures your natural personality.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick backgrounds and looks that fit your work, from bright and outdoorsy to polished and professional.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for your website, profiles, and social media.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Globe,
     title: "City & Walking Guides",
     description: "Approachable portraits for marketplace and tour listings.",
   },
   {
-    icon: Users,
     title: "Museum & Heritage Guides",
     description: "Credible headshots for institutional staff pages.",
   },
   {
-    icon: Target,
     title: "Adventure & Outdoor Guides",
     description: "Confident, friendly photos for excursion operators.",
   },
   {
-    icon: Star,
     title: "Independent Travel Hosts",
     description: "Consistent branding for your own website and social media.",
   },
@@ -229,15 +217,12 @@ export default function TourGuidesIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="tour-guides" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -258,12 +243,9 @@ export default function TourGuidesIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="tour-guides" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -285,10 +267,9 @@ export default function TourGuidesIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="tour-guides" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

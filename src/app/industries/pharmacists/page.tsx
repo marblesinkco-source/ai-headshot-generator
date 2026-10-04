@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Award, Briefcase, Check, Clock, Globe, GraduationCap, Sparkles, Star, Upload, UserCheck, Users } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Pharmacists | TailorPic";
 const pageDescription =
   'Professional AI headshots for retail, hospital, clinical and independent pharmacists. Build patient trust on your pharmacy website, LinkedIn and profiles.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: UserCheck,
     title: "Build Patient Confidence",
     description: "Patients rely on pharmacists for advice on their health. A warm, credible headshot helps them feel comfortable asking questions and returning to your pharmacy.",
   },
   {
-    icon: Globe,
     title: "Pharmacy Website & Directory Ready",
     description: "High-resolution portraits sized for your team page, store locator, and online directories so your staff looks consistent everywhere.",
   },
   {
-    icon: Briefcase,
     title: "Polished LinkedIn Presence",
     description: "Stand out to recruiters, hospital systems, and industry peers with a professional profile photo that reflects your clinical expertise.",
   },
   {
-    icon: Award,
     title: "Show Your Professional Credentials",
     description: "Pair a confident portrait with your PharmD and certifications on conference bios, publications, and speaker pages.",
   },
   {
-    icon: Users,
     title: "Consistent Team Imagery",
     description: "Give your entire pharmacy team matching backgrounds and styling without coordinating schedules around a photographer.",
   },
   {
-    icon: Clock,
     title: "Skip the Scheduling Hassle",
     description: "Pharmacy hours are long and unpredictable. Get professional results from home on your own timeline, with no studio visit needed.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself. Vary your angles and expressions so the AI captures your natural, approachable look.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick backgrounds and looks that suit your practice, from a clean clinical setting to a polished corporate portrait.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for your pharmacy website, directories, and social profiles.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: UserCheck,
     title: "Retail & Community Pharmacists",
     description: "Put a friendly, trusted face on your store's website and local listings.",
   },
   {
-    icon: Briefcase,
     title: "Hospital & Clinical Pharmacists",
     description: "Present a professional image on hospital directories and care-team pages.",
   },
   {
-    icon: Award,
     title: "Pharmacy Owners",
     description: "Build a consistent brand across your website, marketing, and staff profiles.",
   },
   {
-    icon: GraduationCap,
     title: "Residents & Students",
     description: "Make a strong first impression on residency applications and LinkedIn.",
   },
@@ -229,15 +217,12 @@ export default function PharmacistsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="pharmacists" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -258,12 +243,9 @@ export default function PharmacistsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="pharmacists" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -285,10 +267,9 @@ export default function PharmacistsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="pharmacists" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

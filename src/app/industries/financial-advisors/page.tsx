@@ -2,20 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import {
-  BadgeDollarSign,
-  Briefcase,
-  Building2,
-  Check,
-  GraduationCap,
-  Handshake,
-  LineChart,
-  ShieldCheck,
-  Sparkles,
-  Star,
-  Upload,
-  Users,
-} from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -24,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = 'AI Headshots for Financial Advisors & Planners | TailorPic';
 const pageDescription =
   'Professional AI headshots for financial advisors, wealth managers and planners. Trustworthy portraits for LinkedIn, firm websites and client presentations.';
@@ -39,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Handshake,
     title: "Trust From the First Impression",
     description: "Clients hand you their financial future. A professional, confident headshot establishes credibility before the first meeting or call.",
   },
   {
-    icon: Building2,
     title: "Firm Website & Bio Pages",
     description: "Clean, well-lit portraits on neutral backgrounds that look polished on your firm's team page, RIA directory, and broker-dealer profiles.",
   },
   {
-    icon: LineChart,
     title: "LinkedIn & Professional Networks",
     description: "Financial advisors with professional headshots on LinkedIn receive significantly more profile views and connection requests from prospects.",
   },
   {
-    icon: ShieldCheck,
     title: "Compliance-Friendly Photos",
     description: "Straightforward, professional portraits that meet the conservative visual standards expected in wealth management and financial services.",
   },
   {
-    icon: BadgeDollarSign,
     title: "Client Presentations & Reports",
     description: "Add your headshot to quarterly reports, financial plans, and client-facing documents to personalize the experience.",
   },
   {
-    icon: Briefcase,
     title: "Seminars & Speaking Events",
     description: "Use your headshot for event marketing, conference bios, and webinar promotions to build recognition across channels.",
   },
@@ -72,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear photos in good light. Business attire or smart casual both work. Vary angles and expressions slightly.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick suit and tie, business professional, or a polished business casual look with a background that fits your brand.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for your website, LinkedIn, and client materials.",
   },
@@ -90,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: LineChart,
     title: "Financial Advisors & CFPs",
     description: "Project competence and trustworthiness on your firm bio, LinkedIn, and marketing materials.",
   },
   {
-    icon: BadgeDollarSign,
     title: "Wealth Managers",
     description: "Give high-net-worth clients the polished image they expect from their advisory team.",
   },
   {
-    icon: GraduationCap,
     title: "New Advisors",
     description: "Build your professional brand from day one with a headshot that conveys experience beyond your years.",
   },
   {
-    icon: Users,
     title: "Advisory Firms & Teams",
     description: "Give your entire team consistent headshots for the firm website without scheduling a group photo day.",
   },
@@ -238,15 +213,12 @@ export default function FinancialAdvisorsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="financial-advisors" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -267,12 +239,9 @@ export default function FinancialAdvisorsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="financial-advisors" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -294,10 +263,9 @@ export default function FinancialAdvisorsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="financial-advisors" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

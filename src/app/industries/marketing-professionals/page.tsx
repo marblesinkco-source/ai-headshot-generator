@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Briefcase, Check, Layers, Layout, Sparkles, Star, Target, TrendingUp, Upload, Users, Video, Zap } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Marketing Professionals | TailorPic";
 const pageDescription =
   'Professional AI headshots for marketers, brand managers, growth leads and agency teams. Strengthen your personal brand on LinkedIn and speaker pages.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: TrendingUp,
     title: "Grow Your Personal Brand",
     description: "Thought leadership starts with recognition. A consistent, professional headshot makes you memorable across posts, articles, and comments.",
   },
   {
-    icon: Briefcase,
     title: "LinkedIn Profile That Converts",
     description: "Recruiters, clients, and partners check your profile first. A crisp portrait helps you stand out and earn more inbound opportunities.",
   },
   {
-    icon: Video,
     title: "Speaker & Webinar Bios",
     description: "Conferences and webinars ask for a headshot and bio. Keep a polished image ready for every event and guest feature.",
   },
   {
-    icon: Layers,
     title: "On-Brand Backgrounds",
     description: "Match your portrait to your company or personal brand palette with backgrounds that feel intentional across every channel.",
   },
   {
-    icon: Users,
     title: "Consistent Team Imagery",
     description: "Give your agency or in-house team matching headshots for About pages, pitch decks, and press materials without a group shoot.",
   },
   {
-    icon: Zap,
     title: "Fast Turnaround",
     description: "Campaign deadlines do not wait. Get professional results in about 2 hours instead of weeks of scheduling.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself. Vary your angles and expressions so the AI captures your natural personality.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick backgrounds and looks that fit your brand voice, from creative and modern to polished and executive.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for LinkedIn, your website, and speaker pages.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: TrendingUp,
     title: "Growth & Digital Marketers",
     description: "Build authority on LinkedIn and in industry communities.",
   },
   {
-    icon: Layout,
     title: "Brand & Creative Leads",
     description: "Show your brand sensibility with a stylish, modern portrait.",
   },
   {
-    icon: Users,
     title: "Agency Teams",
     description: "Give your whole team consistent, professional headshots for your agency site.",
   },
   {
-    icon: Target,
     title: "CMOs & Marketing Directors",
     description: "Project executive credibility on speaker pages and press features.",
   },
@@ -229,15 +217,12 @@ export default function MarketingProfessionalsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="marketing-professionals" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -258,12 +243,9 @@ export default function MarketingProfessionalsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="marketing-professionals" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -285,10 +267,9 @@ export default function MarketingProfessionalsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="marketing-professionals" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

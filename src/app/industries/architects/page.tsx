@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Award, Briefcase, Building2, Check, GraduationCap, Landmark, PenTool, Ruler, Sparkles, Star, Upload, UserCheck, Users } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Architects & Designers | TailorPic";
 const pageDescription =
   'Professional AI headshots for architects, interior designers and design professionals. Portraits for firm websites, AIA profiles, proposals and LinkedIn.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: PenTool,
     title: "Reflect Your Design Sensibility",
     description: "Your headshot should match the quality and intentionality you bring to every project. Get a portrait that looks as polished as your portfolio.",
   },
   {
-    icon: Building2,
     title: "Firm Website & Team Pages",
     description: "Clean, consistent headshots for your firm's About page that present a unified, professional image to potential clients and collaborators.",
   },
   {
-    icon: Briefcase,
     title: "Project Proposals & RFPs",
     description: "Include a professional headshot in project proposals, qualifications packages, and competition submissions to put a face to your expertise.",
   },
   {
-    icon: Landmark,
     title: "AIA & Directory Profiles",
     description: "Stand out on AIA directories, Houzz, and architecture firm listings with a headshot that reflects your professional standards.",
   },
   {
-    icon: Award,
     title: "Speaking & Publication Bios",
     description: "Use your headshot for conference speaker bios, award submissions, published articles, and lecture announcements.",
   },
   {
-    icon: UserCheck,
     title: "LinkedIn & Networking",
     description: "A strong professional headshot on LinkedIn helps you connect with developers, clients, and fellow architects who find you through search.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear photos in good light. Business casual or professional attire works well. Vary angles and expressions slightly.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick a polished professional, creative, or refined casual look with a background that complements your firm's brand.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for your website, proposals, and professional profiles.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Ruler,
     title: "Licensed Architects",
     description: "Update your firm bio, AIA profile, and LinkedIn with a portrait that matches the quality of your work.",
   },
   {
-    icon: PenTool,
     title: "Interior Designers",
     description: "Show clients the creative professional behind their space with a headshot for your portfolio and Houzz profile.",
   },
   {
-    icon: GraduationCap,
     title: "Architecture Students",
     description: "Prepare for internship applications and your first firm position with a professional headshot on a student budget.",
   },
   {
-    icon: Users,
     title: "Design Firms & Studios",
     description: "Give your entire team consistent headshots for the firm website without pulling everyone from their projects for a photo day.",
   },
@@ -229,15 +217,12 @@ export default function ArchitectsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="architects" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -258,12 +243,9 @@ export default function ArchitectsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="architects" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -285,10 +267,9 @@ export default function ArchitectsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="architects" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

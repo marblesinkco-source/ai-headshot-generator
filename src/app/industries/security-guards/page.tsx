@@ -2,19 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import {
-  Award,
-  Briefcase,
-  Check,
-  FileCheck,
-  Globe,
-  Shield,
-  Sparkles,
-  Star,
-  Upload,
-  UserCheck,
-  Users,
-} from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -23,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Security Guards & Officers | TailorPic";
 const pageDescription =
   'Professional AI headshots for security guards, officers, and security company owners. Get a credible portrait for ID profiles, resumes, and LinkedIn.';
@@ -38,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Shield,
     title: "Project Reliability and Authority",
     description: "Trust is the core of your job. A composed, professional portrait shows employers and clients you are dependable.",
   },
   {
-    icon: FileCheck,
     title: "Resume & Job Applications",
     description: "Security firms and in-house teams review many applicants. A clean headshot helps your application stand out.",
   },
   {
-    icon: Briefcase,
     title: "LinkedIn & Professional Networks",
     description: "Build a credible online presence for career moves into supervision, management, or consulting.",
   },
   {
-    icon: Award,
     title: "Advance Into Leadership",
     description: "Supervisors and security directors need a polished image for team pages, proposals, and client introductions.",
   },
   {
-    icon: Users,
     title: "Consistent Company Team Pages",
     description: "Security firm owners can give every officer a matching headshot style for websites and client materials.",
   },
   {
-    icon: Globe,
     title: "Skip the Photo Shoot",
     description: "Shift work makes scheduling hard. Get a professional result from home on your own time.",
   },
@@ -71,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself. Vary your angles and expressions so the AI captures your natural personality.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick backgrounds and looks that fit your role, from classic corporate to clean neutral studio.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for your resume, LinkedIn, and company profiles.",
   },
@@ -89,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Shield,
     title: "Security Guards & Officers",
     description: "Bring a dependable, professional look to applications and company profiles.",
   },
   {
-    icon: Users,
     title: "Security Supervisors",
     description: "Present yourself as a leader on team pages and internal directories.",
   },
   {
-    icon: Briefcase,
     title: "Security Company Owners",
     description: "Give your firm and team a credible face for websites and proposals.",
   },
   {
-    icon: UserCheck,
     title: "Close Protection & Consultants",
     description: "Keep a polished portrait ready for client introductions and bios.",
   },
@@ -241,15 +217,12 @@ export default function SecurityGuardsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="security-guards" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -270,12 +243,9 @@ export default function SecurityGuardsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="security-guards" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -297,10 +267,9 @@ export default function SecurityGuardsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="security-guards" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

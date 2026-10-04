@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Aperture, BookOpen, Briefcase, Camera, Check, Image as ImageIcon, Layers, Sparkles, Star, Upload, UserCheck, Users } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Photographers | TailorPic";
 const pageDescription =
   'Professional AI headshots for photographers, videographers and creative professionals. Polished portraits for your portfolio, website and social media.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Camera,
     title: "Show Your Creative Identity",
     description: "Your headshot should reflect the same visual quality you deliver to clients. Get a portrait that matches your artistic brand and aesthetic standards.",
   },
   {
-    icon: Aperture,
     title: "Multiple Looks, One Session",
     description: "Generate headshots in different styles, from editorial and moody to clean and corporate, so you have the right image for every platform.",
   },
   {
-    icon: Image,
     title: "Portfolio & Website Ready",
     description: "High-resolution portraits sized for your About page, photography portfolio, and directory listings on platforms like The Knot or Thumbtack.",
   },
   {
-    icon: Briefcase,
     title: "Booking Pages & Proposals",
     description: "A strong headshot on your booking page and client proposals builds trust before the first meeting and helps convert inquiries into sessions.",
   },
   {
-    icon: Layers,
     title: "Consistent Across Platforms",
     description: "Use matching headshots on Instagram, your website, Google Business Profile, and photography directories for a cohesive personal brand.",
   },
   {
-    icon: UserCheck,
     title: "No Need to Ask a Colleague",
     description: "Skip the awkward favor of asking another photographer to shoot your headshot. Upload a few selfies and get studio-quality results on your own schedule.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear photos in good light. Vary angles and expressions slightly. Casual or professional attire both work.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick from editorial, clean, or creative looks with backgrounds that match your brand identity.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for your website, social media, and directory profiles.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Camera,
     title: "Wedding Photographers",
     description: "Put a polished face on The Knot, WeddingWire, and your own site to win couples over before the consultation.",
   },
   {
-    icon: Aperture,
     title: "Portrait & Commercial Photographers",
     description: "Show potential clients you understand great portraiture with a headshot that demonstrates your eye for quality.",
   },
   {
-    icon: BookOpen,
     title: "Photography Students",
     description: "Build your professional presence early with a headshot for your emerging portfolio and LinkedIn.",
   },
   {
-    icon: Users,
     title: "Studios & Creative Teams",
     description: "Give your entire team consistent headshots for the studio website without scheduling a separate shoot day.",
   },
@@ -229,15 +217,12 @@ export default function PhotographersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="photographers" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -258,12 +243,9 @@ export default function PhotographersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="photographers" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -285,10 +267,9 @@ export default function PhotographersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="photographers" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

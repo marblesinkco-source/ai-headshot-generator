@@ -2,20 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import {
-  Briefcase,
-  Building2,
-  Check,
-  GraduationCap,
-  Heart,
-  ShieldCheck,
-  Smile,
-  Sparkles,
-  Star,
-  Stethoscope,
-  Upload,
-  Users,
-} from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -24,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Dentists & Dental Staff | TailorPic";
 const pageDescription =
   'Professional AI headshots for dentists, orthodontists, hygienists and dental staff. Trustworthy portraits for practice websites, directories and marketing.';
@@ -39,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Smile,
     title: "Warm, Approachable Portraits",
     description: "Patients choose dentists they feel comfortable with. Your headshot conveys warmth and confidence before they ever sit in your chair.",
   },
   {
-    icon: Building2,
     title: "Practice Website Ready",
     description: "Clean, professionally lit headshots on neutral backgrounds that look polished on your Meet the Team page and Google Business Profile.",
   },
   {
-    icon: ShieldCheck,
     title: "White Coat or Business Attire",
     description: "Choose a lab coat for clinical credibility or a blazer for a more personal touch. You can generate both from the same selfies.",
   },
   {
-    icon: Briefcase,
     title: "Insurance & Directory Listings",
     description: "Stand out on insurance provider directories, Healthgrades, Zocdoc, and other platforms where patients compare providers.",
   },
   {
-    icon: Heart,
     title: "Patient Trust at First Glance",
     description: "A professional headshot on your new-patient forms, welcome emails, and office signage helps patients feel at ease before their appointment.",
   },
   {
-    icon: Users,
     title: "Consistent Team Photos",
     description: "Give your entire office, from front desk staff to associates, matching headshots without coordinating schedules for a group photo session.",
   },
@@ -72,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear photos in good light. Vary angles and expressions slightly. Scrubs, lab coat, or casual attire all work.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick white coat, business professional, or both, plus a background that suits your practice branding.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for your website, directories, and office displays.",
   },
@@ -90,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Stethoscope,
     title: "General Dentists",
     description: "Update your practice website, Google listing, and insurance directories with a polished, current headshot.",
   },
   {
-    icon: Smile,
     title: "Orthodontists & Specialists",
     description: "Show patients the confident, credentialed professional behind their treatment plan.",
   },
   {
-    icon: GraduationCap,
     title: "New Associates & Graduates",
     description: "Start your career with a professional photo for job applications and your first practice website bio.",
   },
   {
-    icon: Users,
     title: "Dental Office Teams",
     description: "Give every team member, from hygienists to office managers, consistent headshots for the practice website.",
   },
@@ -242,15 +217,12 @@ export default function DentistsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="dentists" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -271,12 +243,9 @@ export default function DentistsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="dentists" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -298,10 +267,9 @@ export default function DentistsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="dentists" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

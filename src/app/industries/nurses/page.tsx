@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Briefcase, Building2, Camera, Check, GraduationCap, Heart, ShieldCheck, Sparkles, Star, Upload, UserCheck, Users } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Nurses & Healthcare Staff | TailorPic";
 const pageDescription =
   'Professional AI headshots for nurses, nurse practitioners, nursing students and healthcare staff. Scrubs or formal portraits for hospital IDs and LinkedIn.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Camera,
     title: "Scrubs or Formal Portraits",
     description: "Choose clinical scrubs for unit pages and ID badges, or a blazer and blouse for leadership, education, and advanced practice profiles.",
   },
   {
-    icon: ShieldCheck,
     title: "Privacy-Conscious Process",
     description: "We only use the selfies you upload. No patient information or clinical settings are ever involved.",
   },
   {
-    icon: Building2,
     title: "Hospital ID & Directory Ready",
     description: "Clean, front-facing framing on neutral backgrounds that suits staff directories, badge photos, and department pages. Check your employer's photo rules first.",
   },
   {
-    icon: Briefcase,
     title: "LinkedIn & Job Applications",
     description: "Stand out for travel nursing, NP roles, and management positions with a profile photo that looks confident and approachable.",
   },
   {
-    icon: UserCheck,
     title: "Approachable, Trustworthy Look",
     description: "Warm expressions and natural lighting convey the compassion and competence patients expect from their care team.",
   },
   {
-    icon: GraduationCap,
     title: "Great for Students & New Grads",
     description: "Nursing students can put a professional photo on residency applications and first-job profiles without a studio budget.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear photos with your phone in good light. Vary angles and expressions slightly. Scrubs or casual clothes are fine.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick scrubs, business professional, or both, plus a background that fits your workplace.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for your badge, resume, and LinkedIn.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Heart,
     title: "Registered Nurses",
     description: "Update your unit page, badge, and LinkedIn with a consistent professional look.",
   },
   {
-    icon: UserCheck,
     title: "Nurse Practitioners",
     description: "Show patients and referring providers a polished, credentialed image.",
   },
   {
-    icon: GraduationCap,
     title: "Nursing Students",
     description: "Prepare for residency and new-grad applications with a photo that shows you are ready.",
   },
   {
-    icon: Users,
     title: "Healthcare Staff & Teams",
     description: "Give an entire department matching headshots without coordinating a photographer.",
   },
@@ -225,15 +213,12 @@ export default function NursesIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="nurses" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -254,12 +239,9 @@ export default function NursesIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="nurses" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -281,10 +263,9 @@ export default function NursesIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="nurses" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

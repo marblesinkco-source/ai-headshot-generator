@@ -7,23 +7,10 @@ import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, ProductSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
-import {
-  Camera,
-  Clock,
-  Users,
-  CheckCircle,
-  DollarSign,
-  CalendarX,
-  ImageOff,
-  Scale,
-  Shield,
-  Sparkles,
-  ArrowRight,
-  Briefcase,
-  Award,
-} from 'lucide-react';
+import { CheckCircle, Scale, ArrowRight } from 'lucide-react';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 export const metadata: Metadata = {
   title: { absolute: 'AI Headshots for Lawyers & Law Firms | TailorPic' },
   description:
@@ -36,19 +23,16 @@ export const metadata: Metadata = {
 
 const painPoints = [
   {
-    icon: DollarSign,
     title: 'Expensive Photographer Sessions',
     description:
       'Professional legal headshots cost $300-800+ per attorney. For a mid-size firm with dozens of partners and associates, that adds up to thousands every time photos need updating.',
   },
   {
-    icon: CalendarX,
     title: 'Coordinating Busy Schedules',
     description:
       'Between court appearances, depositions, and client meetings, scheduling a photo session across an entire firm is nearly impossible — especially when new associates join quarterly.',
   },
   {
-    icon: ImageOff,
     title: 'Outdated Website Photos',
     description:
       'Most firm websites feature headshots that are 5-10 years old. Mismatched photos from different eras undermine the polished, unified image your firm works hard to project.',
@@ -57,37 +41,31 @@ const painPoints = [
 
 const benefits = [
   {
-    icon: Users,
     title: 'Consistent Firm Branding',
     description:
       'Give every attorney — from senior partner to summer associate — a unified, professional look. Same lighting, same style, same quality across your entire roster.',
   },
   {
-    icon: Shield,
     title: 'Professional Authority',
     description:
       'Project the competence and gravitas clients expect. Our AI delivers headshots with the polished, confident look that builds immediate credibility.',
   },
   {
-    icon: Award,
     title: 'Bar Association Compliance',
     description:
       'Headshots that meet state bar directory requirements and professional standards. High-resolution, properly formatted, and appropriate for legal contexts.',
   },
   {
-    icon: Clock,
     title: 'Same-Day Turnaround',
     description:
       'New partner joining next week? No problem. Upload selfies from a phone and receive polished headshots within hours — no studio appointment needed.',
   },
   {
-    icon: Sparkles,
     title: 'Multiple Professional Styles',
     description:
       'Get headshots tailored to every context — formal for the firm website, approachable for LinkedIn, authoritative for conference materials and publications.',
   },
   {
-    icon: Briefcase,
     title: 'Easy Team Onboarding',
     description:
       'Streamline the new-hire process. Each attorney uploads their own selfies on their own time, and the firm gets consistent results without coordination overhead.',
@@ -245,15 +223,12 @@ export default function LawyersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {painPoints.map((point) => {
-              const Icon = point.icon;
               return (
                 <div
                   key={point.title}
                   className="rounded-tp-card border border-tp-line bg-tp-paper/50 p-6"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-muted/10">
-                    <Icon className="h-6 w-6 text-tp-muted" />
-                  </div>
+                  <ContentPhoto slug="lawyers" seed={point.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{point.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{point.description}</p>
                 </div>
@@ -290,15 +265,12 @@ export default function LawyersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="lawyers" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -340,27 +312,23 @@ export default function LawyersIndustryPage() {
             {[
               {
                 step: '01',
-                icon: Camera,
                 title: 'Upload Your Selfies',
                 description:
                   'Take 4-10 casual selfies with your phone. Different angles, natural light — our AI handles the rest. Do it between meetings or from home.',
               },
               {
                 step: '02',
-                icon: Sparkles,
                 title: 'AI Creates Your Headshots',
                 description:
                   'Our AI trains a custom model on your features and generates polished, authoritative headshots suited for the legal profession.',
               },
               {
                 step: '03',
-                icon: CheckCircle,
                 title: 'Download & Use Everywhere',
                 description:
                   'Receive high-resolution headshots within hours. Use them on your firm website, bar directory, LinkedIn, publications, and more.',
               },
             ].map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.step} className="text-center">
                   <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-tp-card bg-tp-black">

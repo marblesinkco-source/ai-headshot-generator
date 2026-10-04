@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Activity, Calendar, Check, Dumbbell, Megaphone, Sparkles, Star, Target, Trophy, Upload, Users, Video } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = 'AI Headshots for Fitness Trainers & Coaches | TailorPic';
 const pageDescription =
   'Professional AI headshots for personal trainers, fitness coaches, yoga instructors and gym owners. Stand out on Instagram, booking apps and your website.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Dumbbell,
     title: "Look Strong and Approachable",
     description: "Show potential clients the energy and confidence they want from a trainer, without needing a gym photoshoot.",
   },
   {
-    icon: Megaphone,
     title: "Instagram & Social Ready",
     description: "Get portraits sized for profile photos, reels covers, and promo posts so your social presence looks consistent.",
   },
   {
-    icon: Calendar,
     title: "Booking Apps & Gym Profiles",
     description: "Use a clean headshot on Mindbody, your gym's trainer page, and scheduling links to turn visitors into booked sessions.",
   },
   {
-    icon: Trophy,
     title: "Highlight Your Credibility",
     description: "A professional image next to your certifications tells clients you take your craft and their results seriously.",
   },
   {
-    icon: Video,
     title: "Online Coaching Brand",
     description: "Build a polished face for virtual programs, YouTube channels, and membership sites that supports online clients.",
   },
   {
-    icon: Target,
     title: "Flexible Styles for Your Niche",
     description: "Choose athletic, studio, or professional looks depending on whether you coach strength, yoga, running, or wellness.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself. Mix in a few smiling and confident expressions from different angles.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick a look that matches your coaching style, from athletic and energetic to clean and professional.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for Instagram, your booking page, and your gym profile.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Dumbbell,
     title: "Personal Trainers",
     description: "Win more inquiries with a headshot that looks as strong as the results you promise.",
   },
   {
-    icon: Activity,
     title: "Yoga & Pilates Instructors",
     description: "Show a calm, welcoming presence on studio sites and class booking apps.",
   },
   {
-    icon: Trophy,
     title: "Online & Nutrition Coaches",
     description: "Build credibility for remote programs with a polished, consistent personal brand.",
   },
   {
-    icon: Users,
     title: "Gym & Studio Owners",
     description: "Give your whole coaching team matching headshots for the website without a group shoot.",
   },
@@ -229,15 +217,12 @@ export default function FitnessTrainersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="fitness-trainers" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -258,12 +243,9 @@ export default function FitnessTrainersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="fitness-trainers" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -285,10 +267,9 @@ export default function FitnessTrainersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="fitness-trainers" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

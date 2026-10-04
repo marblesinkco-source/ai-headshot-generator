@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Briefcase, Camera, Check, Film, Mic, Sparkles, Star, Upload, UserCheck, Users } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Actors & Performers | TailorPic";
 const pageDescription =
   'Professional AI headshots for actors, models, and performers. Get casting-ready portraits for auditions, talent profiles, and agencies.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Film,
     title: "Range of Expressions & Moods",
     description: "Generate headshots that show different sides of your range, from warm and approachable commercial looks to intense and dramatic character portraits.",
   },
   {
-    icon: Camera,
     title: "Casting Director Ready",
     description: "Clean, well-lit portraits on neutral backgrounds that meet the formatting expectations of casting platforms like Actors Access and Backstage.",
   },
   {
-    icon: Film,
     title: "Multiple Looks Without Wardrobe Changes",
     description: "Get theatrical, commercial, and lifestyle headshots from a single upload, so you have the right photo for every audition type.",
   },
   {
-    icon: UserCheck,
     title: "Authentic to Your Current Look",
     description: "Our AI works from your real selfies, so your headshots match how you actually look today. No more outdated photos that surprise casting directors.",
   },
   {
-    icon: Briefcase,
     title: "Theater & Stage Profiles",
     description: "Bold, expressive portraits that work for playbills, theater company websites, and stage production marketing materials.",
   },
   {
-    icon: Mic,
     title: "Budget-Friendly for Emerging Talent",
     description: "Professional headshots typically cost hundreds of dollars per session. Get studio-quality results at a fraction of the price while you build your career.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear photos in natural light. Show your current look with varied angles and subtle expression changes.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Select commercial, theatrical, or lifestyle looks with backgrounds suited to your casting goals.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for casting profiles, your agent, and social media.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Film,
     title: "Film & TV Actors",
     description: "Get clean, natural headshots that match what casting directors expect on Actors Access and self-tape submissions.",
   },
   {
-    icon: Briefcase,
     title: "Theater Performers",
     description: "Bold, expressive portraits for playbills, company bios, and audition submissions.",
   },
   {
-    icon: Mic,
     title: "Voice Actors & Hosts",
     description: "A professional headshot for your website, talent profiles, and podcast pages.",
   },
   {
-    icon: Users,
     title: "Models & Influencers",
     description: "Polished portraits for agency comp cards, brand pitches, and social media profiles.",
   },
@@ -229,15 +217,12 @@ export default function ActorsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="actors" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -258,12 +243,9 @@ export default function ActorsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="actors" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -285,10 +267,9 @@ export default function ActorsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="actors" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

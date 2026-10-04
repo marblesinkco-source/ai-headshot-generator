@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Award, Briefcase, Camera, Check, FileCheck, Globe, Sparkles, Star, Upload, UserCheck, Users, Zap } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -12,6 +12,7 @@ import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Plumbers | TailorPic";
 const pageDescription =
   'Professional AI headshots for plumbers, plumbing contractors and apprentices. Earn customer trust on your website, Google profile and marketing.';
@@ -27,32 +28,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: UserCheck,
     title: "Friendly and Reliable",
     description: "Show customers the dependable professional who will show up on time and get the job done.",
   },
   {
-    icon: Globe,
     title: "Website & Local Listings",
     description: "Portraits sized for your homepage, Google Business Profile, and directories like Angi and Yelp.",
   },
   {
-    icon: FileCheck,
     title: "Quotes & Service Proposals",
     description: "Add your portrait to quotes and proposals to make your business feel personal and established.",
   },
   {
-    icon: Camera,
     title: "Vans, Flyers & Print",
     description: "High-resolution images work for vehicle graphics, door hangers, and mailers.",
   },
   {
-    icon: Star,
     title: "Stand Out From Competitors",
     description: "In a crowded local market, a real, professional face sets your business apart from faceless ads.",
   },
   {
-    icon: Zap,
     title: "Fast and Affordable",
     description: "Skip the studio. Take selfies at home and get a professional result in about 2 hours.",
   },
@@ -60,17 +55,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself. Vary your angles and expressions so the AI captures your natural look.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick a background and look that fit your business, from friendly and casual to crisp and professional.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for your website, listings, and print.",
   },
@@ -78,22 +70,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: UserCheck,
     title: "Residential Plumbers",
     description: "Friendly portraits that build trust with homeowners on your site and listings.",
   },
   {
-    icon: Briefcase,
     title: "Plumbing Contractors",
     description: "Professional headshots for bids, proposals, and company pages.",
   },
   {
-    icon: Users,
     title: "Apprentices & Journeymen",
     description: "Polished images for job applications, union profiles, and LinkedIn.",
   },
   {
-    icon: Award,
     title: "Master Plumbers & Business Owners",
     description: "Authoritative portraits for team pages, press, and trade associations.",
   },
@@ -230,15 +218,12 @@ export default function PlumbersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="plumbers" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -259,12 +244,9 @@ export default function PlumbersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="plumbers" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -286,10 +268,9 @@ export default function PlumbersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="plumbers" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

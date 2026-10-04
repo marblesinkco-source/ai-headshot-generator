@@ -7,21 +7,10 @@ import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, ProductSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
-import {
-  Clock,
-  CheckCircle,
-  DollarSign,
-  CalendarX,
-  ImageOff,
-  Shield,
-  ArrowRight,
-  Building2,
-  UserCheck,
-  Palette,
-  RefreshCw,
-} from 'lucide-react';
+import { CheckCircle, ArrowRight } from 'lucide-react';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 export const metadata: Metadata = {
   title: { absolute: 'AI Headshots for Doctors & Physicians | TailorPic' },
   description:
@@ -34,19 +23,16 @@ export const metadata: Metadata = {
 
 const painPoints = [
   {
-    icon: CalendarX,
     title: 'Impossible Schedules',
     description:
       'Between rounds, surgeries, and patient appointments, finding time for a professional photo session is nearly impossible. Coordinating an entire department is even harder.',
   },
   {
-    icon: DollarSign,
     title: 'Expensive Studio Sessions',
     description:
       'Traditional medical portrait photography costs $400-1,000+ per physician. For a practice or hospital department, updating everyone means thousands of dollars and wasted clinical hours.',
   },
   {
-    icon: ImageOff,
     title: 'Inconsistent Practice Photos',
     description:
       'When each doctor gets their headshot at a different time and place, your website and directory end up with a patchwork of mismatched backgrounds, lighting, and styles.',
@@ -55,37 +41,31 @@ const painPoints = [
 
 const benefits = [
   {
-    icon: Building2,
     title: 'Hospital Website Ready',
     description:
       'High-resolution headshots formatted for hospital directories, department pages, and physician finder tools. Consistent backgrounds that match your institution\'s brand.',
   },
   {
-    icon: Shield,
     title: 'Privacy-Conscious Service',
     description:
       'Our process only uses the selfies you upload — no patient data, no clinical settings. Your photos are processed securely and delivered directly to you.',
   },
   {
-    icon: UserCheck,
     title: 'Insurance Panel Photos',
     description:
       'Meet insurance directory photo requirements with professional, properly formatted headshots that help patients find and trust their provider.',
   },
   {
-    icon: Palette,
     title: 'White Coat & Professional Styles',
     description:
       'Choose from multiple attire options including white coat, scrubs, or business professional — whatever fits your specialty and practice setting.',
   },
   {
-    icon: Clock,
     title: '2-Hour Delivery',
     description:
       'Upload selfies between patients, receive polished headshots the same day. No need to block out clinic time or travel to a photography studio.',
   },
   {
-    icon: RefreshCw,
     title: 'Easy Updates for New Staff',
     description:
       'New residents, fellows, or attending physicians can get matching headshots on day one. Keep your team page current without scheduling group sessions.',
@@ -232,15 +212,12 @@ export default function DoctorsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {painPoints.map((point) => {
-              const Icon = point.icon;
               return (
                 <div
                   key={point.title}
                   className="rounded-tp-card border border-tp-line bg-tp-paper/50 p-6"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-muted/10">
-                    <Icon className="h-6 w-6 text-tp-muted" />
-                  </div>
+                  <ContentPhoto slug="doctors" seed={point.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{point.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{point.description}</p>
                 </div>
@@ -277,15 +254,12 @@ export default function DoctorsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="doctors" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>

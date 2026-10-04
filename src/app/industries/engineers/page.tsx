@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Briefcase, Building2, Check, GraduationCap, Layers, Monitor, Sparkles, Star, Upload, UserCheck, Users, Zap } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Engineers & Tech Professionals | TailorPic";
 const pageDescription =
   'Professional AI headshots for software, civil and mechanical engineers and tech professionals. Ready for LinkedIn, GitHub, conference bios and team pages.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Briefcase,
     title: "LinkedIn Profiles That Get Replies",
     description: "A confident, approachable photo helps recruiters and collaborators take your profile seriously.",
   },
   {
-    icon: Monitor,
     title: "GitHub & Developer Profiles",
     description: "Square-crop friendly portraits that look crisp as a small avatar on GitHub, Stack Overflow, and social profiles.",
   },
   {
-    icon: Users,
     title: "Startup Team Pages",
     description: "Give your whole founding team matching headshots for your About page and investor decks, with no coordination headaches.",
   },
   {
-    icon: Layers,
     title: "Conference & Speaker Bios",
     description: "High-resolution images suitable for speaker pages, program guides, and slide decks.",
   },
   {
-    icon: Zap,
     title: "Fast, No Studio Needed",
     description: "Upload selfies and get headshots in about 2 hours, so you can get back to shipping.",
   },
   {
-    icon: Building2,
     title: "Consistent Company Branding",
     description: "Match backgrounds and style across a team so engineering pages look unified and professional.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear photos with your phone in good light. Vary angles and expressions slightly. Casual clothes are fine.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick business casual, a tech-forward look, or formal attire, and a background that fits your brand.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for LinkedIn, GitHub, and your team page.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Monitor,
     title: "Software Engineers",
     description: "Refresh your LinkedIn, GitHub, and personal site with a polished photo.",
   },
   {
-    icon: Building2,
     title: "Civil & Mechanical Engineers",
     description: "Add a professional image to firm websites, proposals, and licensure profiles.",
   },
   {
-    icon: GraduationCap,
     title: "Students & New Grads",
     description: "Stand out in internship and first-job applications without a studio budget.",
   },
   {
-    icon: UserCheck,
     title: "Founders & Tech Leads",
     description: "Look credible on pitch decks, podcasts, and conference stages.",
   },
@@ -225,15 +213,12 @@ export default function EngineersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="engineers" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -254,12 +239,9 @@ export default function EngineersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="engineers" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -281,10 +263,9 @@ export default function EngineersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="engineers" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

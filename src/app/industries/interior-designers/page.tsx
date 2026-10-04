@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Award, Briefcase, Check, Home, Layers, Palette, Sofa, Sparkles, Star, Upload } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Interior Designers | TailorPic";
 const pageDescription =
   'Professional AI headshots for interior designers, decorators and home stylists. Build trust on your portfolio, social profiles and proposals.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Palette,
     title: "Portfolio & About Page",
     description: "Potential clients want to meet the designer behind the rooms. A refined portrait adds personality to your portfolio site.",
   },
   {
-    icon: Home,
     title: "Trust for In-Home Projects",
     description: "Homeowners are choosing someone to work in their space. An approachable, professional photo helps them feel at ease.",
   },
   {
-    icon: Sofa,
     title: "Social & Press Features",
     description: "Design blogs, magazines, and Instagram features often ask for a headshot. Keep a polished image ready.",
   },
   {
-    icon: Award,
     title: "Premium Positioning",
     description: "Clients investing in full-service design expect a professional presence. A refined portrait supports your pricing.",
   },
   {
-    icon: Layers,
     title: "Matches Your Aesthetic",
     description: "Choose backgrounds and looks that complement your studio style, from warm and natural to bold and modern.",
   },
   {
-    icon: Briefcase,
     title: "Skip the Expensive Shoot",
     description: "Brand shoots cost hundreds and take weeks to schedule. Get a professional result from home on your own timeline.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself. Vary your angles and expressions so the AI captures your natural personality.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick backgrounds and looks that match your design style, from airy and minimal to rich and eclectic.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for your portfolio, proposals, and social profiles.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Palette,
     title: "Residential Designers",
     description: "Put a warm, credible face on your website and client proposals.",
   },
   {
-    icon: Home,
     title: "Home Stagers & Decorators",
     description: "Stand out on listings and social media with a polished, friendly portrait.",
   },
   {
-    icon: Sofa,
     title: "Furniture & Decor Brand Founders",
     description: "Give your brand a face on product pages, press kits, and About sections.",
   },
   {
-    icon: Briefcase,
     title: "Commercial & Hospitality Designers",
     description: "Show executive polish on firm websites, award submissions, and speaker bios.",
   },
@@ -228,15 +216,12 @@ export default function InteriorDesignersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="interior-designers" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -257,12 +242,9 @@ export default function InteriorDesignersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="interior-designers" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -284,10 +266,9 @@ export default function InteriorDesignersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="interior-designers" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

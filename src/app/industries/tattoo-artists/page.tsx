@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Award, Briefcase, Camera, Check, Globe, Shield, Sparkles, Star, Target, Upload, Users } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Tattoo Artists | TailorPic";
 const pageDescription =
   'Professional AI headshots for tattoo artists and studio owners. Build trust with new clients on your portfolio, booking page and social media.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Shield,
     title: "Build Trust Before the Consultation",
     description: "Getting a tattoo is personal. A professional portrait helps new clients feel confident about booking with you.",
   },
   {
-    icon: Camera,
     title: "Portfolio & Instagram Profiles",
     description: "Pair your artwork with a strong portrait on your profile, link-in-bio page, and flash day promotions.",
   },
   {
-    icon: Globe,
     title: "Studio Website & Booking Pages",
     description: "High-resolution portraits for your artist page, booking forms, and Google Business listing.",
   },
   {
-    icon: Award,
     title: "Signal Professionalism",
     description: "A clean, confident image shows clients you run a serious, hygienic, professional practice.",
   },
   {
-    icon: Users,
     title: "Consistent Studio Team Page",
     description: "Give every artist in your studio a matching headshot style for your website and print materials.",
   },
   {
-    icon: Briefcase,
     title: "Skip the Photo Shoot",
     description: "Booked-out calendars leave no spare days. Get a professional result from home on your own time.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself. Vary your angles and expressions so the AI captures your natural personality.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick backgrounds and looks that fit your style, from moody and dramatic to clean and bright.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for your portfolio, booking page, and social profiles.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Award,
     title: "Resident Tattoo Artists",
     description: "Stand out on your studio page with a portrait that matches your craft.",
   },
   {
-    icon: Users,
     title: "Studio Owners",
     description: "Present your team with a consistent, professional look for clients and press.",
   },
   {
-    icon: Target,
     title: "Guest & Traveling Artists",
     description: "Keep a polished portrait ready for every guest spot announcement.",
   },
   {
-    icon: Star,
     title: "Apprentices & Emerging Artists",
     description: "Launch your career with a professional portrait for applications and portfolios.",
   },
@@ -229,15 +217,12 @@ export default function TattooArtistsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="tattoo-artists" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -258,12 +243,9 @@ export default function TattooArtistsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="tattoo-artists" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -285,10 +267,9 @@ export default function TattooArtistsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="tattoo-artists" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

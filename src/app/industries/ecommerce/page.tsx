@@ -6,12 +6,10 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, ProductSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
-import {
-  Camera, Clock, Shield, Star, ArrowRight,
-  Users, Palette, Zap, TrendingUp, Package, CheckCircle,
-} from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 export const metadata: Metadata = {
   title: { absolute: 'AI Product Photography for E-Commerce | TailorPic' },
   description:

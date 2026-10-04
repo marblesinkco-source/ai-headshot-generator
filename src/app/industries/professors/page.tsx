@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Award, BookOpen, Briefcase, Check, Globe, Layers, Sparkles, Star, Upload, UserCheck, Users } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Professors & Academics | TailorPic";
 const pageDescription =
   'Professional AI headshots for professors, lecturers, researchers and academics. Update faculty pages, conference bios and Google Scholar profiles.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: BookOpen,
     title: "Faculty & Department Pages",
     description: "Replace the outdated photo on your department profile with a current, credible portrait that matches the quality of your research.",
   },
   {
-    icon: Award,
     title: "Conference & Speaker Bios",
     description: "Organizers request a headshot and bio weeks ahead. Keep a high-resolution image ready for programs, panels, and keynote listings.",
   },
   {
-    icon: Globe,
     title: "Research Profiles Online",
     description: "Use one consistent portrait across Google Scholar, ORCID, ResearchGate, LinkedIn, and personal lab websites.",
   },
   {
-    icon: UserCheck,
     title: "Approachable Authority",
     description: "Students and collaborators respond to a portrait that feels both knowledgeable and welcoming.",
   },
   {
-    icon: Layers,
     title: "Grant & Media Ready",
     description: "Press offices, grant portals, and journal editorial boards often need a professional image on short notice.",
   },
   {
-    icon: Briefcase,
     title: "Skip the Campus Photo Queue",
     description: "No waiting for a photo day or paying for an outside shoot. Get a professional result from home on your own schedule.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself. Vary your angles and expressions so the AI captures your natural look.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick backgrounds and looks that fit your work as a professor, from approachable to polished.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for your website, profiles, and printed materials.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: BookOpen,
     title: "Tenured & Tenure-Track Faculty",
     description: "Keep your department profile and promotion materials looking current and professional.",
   },
   {
-    icon: UserCheck,
     title: "Lecturers & Adjuncts",
     description: "Stand out on course pages, LinkedIn, and job applications with a polished portrait.",
   },
   {
-    icon: Award,
     title: "Researchers & Postdocs",
     description: "Prepare for conferences and the job market with a headshot that reflects your expertise.",
   },
   {
-    icon: Users,
     title: "Deans & Department Chairs",
     description: "Keep leadership photos consistent across university websites and announcements.",
   },
@@ -229,15 +217,12 @@ export default function ProfessorsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="professors" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -258,12 +243,9 @@ export default function ProfessorsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="professors" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -285,10 +267,9 @@ export default function ProfessorsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="professors" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

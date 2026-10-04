@@ -7,21 +7,10 @@ import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, ProductSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
-import {
-  CheckCircle,
-  DollarSign,
-  CalendarX,
-  ImageOff,
-  Shield,
-  ArrowRight,
-  Presentation,
-  Globe,
-  Handshake,
-  Layers,
-  Zap,
-} from 'lucide-react';
+import { CheckCircle, ArrowRight } from 'lucide-react';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 export const metadata: Metadata = {
   title: { absolute: 'AI Headshots for Consultants & Advisors | TailorPic' },
   description:
@@ -34,19 +23,16 @@ export const metadata: Metadata = {
 
 const painPoints = [
   {
-    icon: CalendarX,
     title: 'Always on the Road',
     description:
       'Between client sites, workshops, and conferences, consultants rarely have time to sit for a studio session. By the time you schedule one, you need the headshot yesterday.',
   },
   {
-    icon: DollarSign,
     title: 'Multiple Looks, Multiple Costs',
     description:
       'You need different headshots for LinkedIn, your website, proposals, and speaking bios. Traditional studios charge $300-600+ per session — and that only covers one style.',
   },
   {
-    icon: ImageOff,
     title: 'Credibility Gap',
     description:
       'A low-quality or outdated headshot on a proposal or LinkedIn profile quietly undermines your authority. Clients are evaluating you before the first meeting even starts.',
@@ -55,37 +41,31 @@ const painPoints = [
 
 const benefits = [
   {
-    icon: Presentation,
     title: 'Boardroom-Ready Portraits',
     description:
       'Polished, executive-style headshots that convey authority and expertise — perfect for proposals, pitch decks, and consulting firm websites.',
   },
   {
-    icon: Handshake,
     title: 'Casual Professional Options',
     description:
       'Approachable yet polished headshots for LinkedIn, personal websites, and networking profiles. Show clients you are both competent and easy to work with.',
   },
   {
-    icon: Globe,
     title: 'Speaking Engagement Shots',
     description:
       'Dynamic, confident headshots designed for conference bios, event programs, and speaker pages. Stand out on the agenda before you take the stage.',
   },
   {
-    icon: Zap,
     title: 'Quick Turnaround',
     description:
       'Upload selfies from your phone and receive finished headshots within 2 hours. Perfect for last-minute proposals or conference deadlines.',
   },
   {
-    icon: Layers,
     title: 'Multiple Styles in One Order',
     description:
       'Get several distinct looks from a single upload — formal, approachable, creative. Cover every use case without multiple photo sessions.',
   },
   {
-    icon: Shield,
     title: 'Personal Brand Consistency',
     description:
       'Maintain a cohesive visual identity across all platforms. Same quality, same professionalism, whether it is your LinkedIn or a client-facing deck.',
@@ -232,15 +212,12 @@ export default function ConsultantsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {painPoints.map((point) => {
-              const Icon = point.icon;
               return (
                 <div
                   key={point.title}
                   className="rounded-tp-card border border-tp-line bg-tp-paper/50 p-6"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-muted/10">
-                    <Icon className="h-6 w-6 text-tp-muted" />
-                  </div>
+                  <ContentPhoto slug="consultants" seed={point.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{point.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{point.description}</p>
                 </div>
@@ -277,15 +254,12 @@ export default function ConsultantsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="consultants" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>

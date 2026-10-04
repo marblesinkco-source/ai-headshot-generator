@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Award, Briefcase, Check, Globe, Layers, Shield, Sparkles, Star, Upload, Users } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for HR Professionals | TailorPic";
 const pageDescription =
   'Professional AI headshots for HR managers, recruiters and talent leaders. Build trust on LinkedIn, careers pages and internal profiles.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Users,
     title: "Approachable First Impressions",
     description: "Candidates often look you up before an interview. A warm, professional headshot helps set a welcoming tone from the very first touchpoint.",
   },
   {
-    icon: Briefcase,
     title: "LinkedIn Recruiting Presence",
     description: "Recruiters live on LinkedIn. A clear, current photo makes your outreach messages feel more credible and human.",
   },
   {
-    icon: Shield,
     title: "Credibility for Sensitive Conversations",
     description: "HR handles important topics. A confident, trustworthy portrait supports the authority your role requires.",
   },
   {
-    icon: Globe,
     title: "Careers Page & Employer Brand",
     description: "Put a real face on your team page, job postings, and employer branding so candidates see who they would work with.",
   },
   {
-    icon: Layers,
     title: "Consistent Across Platforms",
     description: "Use matching portraits on your email signature, internal directory, conference bios, and social profiles.",
   },
   {
-    icon: Award,
     title: "Skip the Scheduling Hassle",
     description: "No coordinating photographers or calendars. Get a professional result from home on your own timeline.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself. Vary your angles and expressions so the AI captures your natural, friendly look.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick backgrounds and looks that fit your workplace, from relaxed and welcoming to polished and corporate.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for LinkedIn, your careers page, and your email signature.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Users,
     title: "Recruiters & Talent Acquisition",
     description: "Make outreach feel personal and trustworthy with a photo candidates can connect with.",
   },
   {
-    icon: Briefcase,
     title: "HR Managers & Generalists",
     description: "Project approachable authority across internal profiles and company pages.",
   },
   {
-    icon: Shield,
     title: "HR Directors & CHROs",
     description: "Show executive presence on leadership pages, conference bios, and press mentions.",
   },
   {
-    icon: Award,
     title: "People & Culture Leads",
     description: "Represent your culture with a photo that feels warm, current, and on brand.",
   },
@@ -228,15 +216,12 @@ export default function HrProfessionalsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="hr-professionals" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -257,12 +242,9 @@ export default function HrProfessionalsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="hr-professionals" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -284,10 +266,9 @@ export default function HrProfessionalsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="hr-professionals" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

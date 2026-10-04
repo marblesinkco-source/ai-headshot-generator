@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Award, Check, Globe, Headphones, Layers, Mic, Radio, Sparkles, Star, Upload } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Podcasters | TailorPic";
 const pageDescription =
   'Professional AI headshots for podcast hosts, guests, and audio creators. Put a polished face on your show site, media kit, and social profiles with a portrait.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Mic,
     title: "Show Website & About Page",
     description: "Listeners and sponsors visit your site to learn who you are. A professional host photo makes your show feel established.",
   },
   {
-    icon: Headphones,
     title: "Guest Appearances",
     description: "When you are invited on other shows, hosts ask for a headshot and bio. Keep a polished image ready to send.",
   },
   {
-    icon: Radio,
     title: "Promo Graphics & Social Posts",
     description: "Use clean portraits for episode announcements, quote cards, and social promotion across platforms.",
   },
   {
-    icon: Award,
     title: "Sponsor & Media Kit Ready",
     description: "Advertisers want to see who they are partnering with. A professional portrait strengthens your media kit.",
   },
   {
-    icon: Layers,
     title: "Consistent Personal Brand",
     description: "Match your headshot to your show colors with backgrounds that work across artwork, YouTube, and newsletters.",
   },
   {
-    icon: Globe,
     title: "Skip the Expensive Shoot",
     description: "Hosting is often a side project. Get a professional result at home without paying for a photographer.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself. Vary your angles and expressions so the AI captures your natural personality.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick backgrounds and looks that fit your show, from bright and playful to moody and editorial.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for show art, guest bios, and social profiles.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Mic,
     title: "Solo & Interview Hosts",
     description: "Put a recognizable face on your show website and podcast directory profiles.",
   },
   {
-    icon: Headphones,
     title: "Frequent Podcast Guests",
     description: "Keep a professional image ready for every guest bio request.",
   },
   {
-    icon: Radio,
     title: "Audio Network Producers",
     description: "Create consistent portraits for multiple hosts on your network pages.",
   },
   {
-    icon: Star,
     title: "Video Podcasters & Streamers",
     description: "Use a polished portrait for thumbnails, channel art, and social previews.",
   },
@@ -228,15 +216,12 @@ export default function PodcastersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="podcasters" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -257,12 +242,9 @@ export default function PodcastersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="podcasters" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -284,10 +266,9 @@ export default function PodcastersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="podcasters" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

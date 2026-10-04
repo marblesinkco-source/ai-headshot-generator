@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Award, Briefcase, Check, FileCheck, Globe, Layers, Sparkles, Star, Upload, UserCheck, Users } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Notaries & Legal Professionals | TailorPic";
 const pageDescription =
   'Professional AI headshots for notaries, paralegals, and legal professionals. Build client trust on websites, directories, and LinkedIn with a polished portrait.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: FileCheck,
     title: "Credibility for Signing Services",
     description: "Mobile notaries and signing agents are often chosen from an online listing. A professional portrait signals reliability.",
   },
   {
-    icon: Globe,
     title: "Website & Directory Listings",
     description: "Use a consistent headshot on your website, Google Business profile, and notary directories.",
   },
   {
-    icon: UserCheck,
     title: "Approachable and Trustworthy",
     description: "Choose a style that feels friendly yet serious, reassuring clients handling sensitive paperwork.",
   },
   {
-    icon: Briefcase,
     title: "LinkedIn & Referral Networks",
     description: "Real estate agents, law firms, and title companies refer to notaries they recognize and trust.",
   },
   {
-    icon: Layers,
     title: "Business Cards & Marketing",
     description: "High-resolution files work for business cards, flyers, email signatures, and social media.",
   },
   {
-    icon: Award,
     title: "Skip the Studio Session",
     description: "Get a polished result from home without paying for a photographer or losing billable hours.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself. Vary your angles and expressions so the AI captures your natural look.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick backgrounds and looks that fit your work as a notarie, from approachable to polished.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for your website, profiles, and printed materials.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: FileCheck,
     title: "Mobile Notaries & Signing Agents",
     description: "Stand out in directories and search results with a dependable, professional portrait.",
   },
   {
-    icon: Briefcase,
     title: "Paralegals & Legal Assistants",
     description: "Keep a polished image ready for firm websites and LinkedIn.",
   },
   {
-    icon: Users,
     title: "Title & Escrow Professionals",
     description: "Present a consistent, credible team photo style to clients and partners.",
   },
   {
-    icon: UserCheck,
     title: "Legal Document Preparers",
     description: "Build client confidence on your website and marketing materials.",
   },
@@ -229,15 +217,12 @@ export default function NotariesIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="notaries" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -258,12 +243,9 @@ export default function NotariesIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="notaries" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -285,10 +267,9 @@ export default function NotariesIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="notaries" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

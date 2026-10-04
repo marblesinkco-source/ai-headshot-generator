@@ -7,21 +7,10 @@ import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, ProductSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
-import {
-  Camera,
-  Clock,
-  Users,
-  CheckCircle,
-  DollarSign,
-  CalendarX,
-  ImageOff,
-  Building2,
-  TrendingUp,
-  Sparkles,
-  ArrowRight,
-} from 'lucide-react';
+import { Users, CheckCircle, ArrowRight } from 'lucide-react';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 export const metadata: Metadata = {
   title: { absolute: 'AI Headshots for Real Estate Agents | TailorPic' },
   description:
@@ -34,19 +23,16 @@ export const metadata: Metadata = {
 
 const painPoints = [
   {
-    icon: DollarSign,
     title: 'Expensive Studio Sessions',
     description:
       'Traditional real estate headshots cost $200-500+ per agent. Multiply that across an entire brokerage and the costs become staggering.',
   },
   {
-    icon: CalendarX,
     title: 'Impossible Scheduling',
     description:
       'Coordinating photographers with agents who are always on the road showing properties is a logistical nightmare that drags on for weeks.',
   },
   {
-    icon: ImageOff,
     title: 'Inconsistent Team Photos',
     description:
       'When each agent books their own photographer, your brokerage ends up with a patchwork of styles, backgrounds, and quality levels.',
@@ -55,37 +41,31 @@ const painPoints = [
 
 const benefits = [
   {
-    icon: CheckCircle,
     title: 'MLS-Ready Photos',
     description:
       'Every headshot meets MLS dimension and quality requirements out of the box. Upload directly to your MLS profile, Zillow, Realtor.com, and more.',
   },
   {
-    icon: Users,
     title: 'Consistent Team Branding',
     description:
       'Give your entire brokerage a unified, polished look. Same lighting, same style, same professional standard across every agent.',
   },
   {
-    icon: Building2,
     title: 'Build Your Personal Brand',
     description:
       'Stand out on yard signs, business cards, email signatures, and social media with headshots that convey trust and expertise.',
   },
   {
-    icon: Clock,
     title: 'Ready in Hours, Not Weeks',
     description:
       'Skip the scheduling back-and-forth. Upload selfies from your phone and receive polished, professional headshots the same day.',
   },
   {
-    icon: Sparkles,
     title: 'Multiple Looks, One Session',
     description:
       'Get headshots for every use case — formal for MLS, approachable for social media, branded for your brokerage materials.',
   },
   {
-    icon: TrendingUp,
     title: 'Proven ROI',
     description:
       'Professional photos are not a vanity expense. They directly impact inquiry rates, listing appointments, and client trust.',
@@ -243,15 +223,12 @@ export default function RealEstateIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {painPoints.map((point) => {
-              const Icon = point.icon;
               return (
                 <div
                   key={point.title}
                   className="rounded-tp-card border border-tp-line bg-tp-paper/50 p-6"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-muted/10">
-                    <Icon className="h-6 w-6 text-tp-muted" />
-                  </div>
+                  <ContentPhoto slug="real-estate" seed={point.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{point.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{point.description}</p>
                 </div>
@@ -288,15 +265,12 @@ export default function RealEstateIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="real-estate" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -338,27 +312,23 @@ export default function RealEstateIndustryPage() {
             {[
               {
                 step: '01',
-                icon: Camera,
                 title: 'Upload Your Selfies',
                 description:
                   'Take 4-10 casual selfies with your phone. Different angles, natural light, everyday clothes — our AI handles the rest.',
               },
               {
                 step: '02',
-                icon: Sparkles,
                 title: 'AI Does the Magic',
                 description:
                   'Our AI trains a custom model on your features and generates polished, professional headshots in your chosen style.',
               },
               {
                 step: '03',
-                icon: CheckCircle,
                 title: 'Download & Use Everywhere',
                 description:
                   'Get MLS-ready, high-resolution headshots delivered to your dashboard within hours. Download and start using immediately.',
               },
             ].map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.step} className="text-center">
                   <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-tp-card bg-tp-black">

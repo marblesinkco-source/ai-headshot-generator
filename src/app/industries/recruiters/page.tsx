@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Award, Briefcase, Check, Globe, Layers, Sparkles, Star, Upload, UserCheck, Users } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Recruiters | TailorPic";
 const pageDescription =
   'Professional AI headshots for recruiters and talent acquisition professionals. Build candidate trust on LinkedIn, job boards and outreach emails.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: UserCheck,
     title: "Higher Candidate Trust",
     description: "Profiles with a friendly professional photo feel more legitimate, which helps passive candidates open your messages.",
   },
   {
-    icon: Briefcase,
     title: "LinkedIn Recruiter Profile",
     description: "Make your headline photo the strongest part of your outreach with a portrait that looks approachable and confident.",
   },
   {
-    icon: Globe,
     title: "Agency & Job Board Pages",
     description: "Use consistent images on your agency team page, job postings, and employer branding content.",
   },
   {
-    icon: Award,
     title: "Personal Brand in Talent",
     description: "Top recruiters are known by name. A polished portrait supports your reputation with both clients and candidates.",
   },
   {
-    icon: Layers,
     title: "Email Signature & Outreach",
     description: "Add a headshot to signatures and calendar invites so candidates recognize you on interview day.",
   },
   {
-    icon: Check,
     title: "Fast and Affordable",
     description: "Skip the photographer and the scheduling. Get a professional result in hours, not weeks.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself. Vary your angles and expressions so the AI captures your natural look.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick backgrounds and looks that fit your work as a recruiter, from approachable to polished.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for your website, profiles, and printed materials.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: UserCheck,
     title: "In-House Talent Acquisition",
     description: "Represent your employer brand with a friendly, professional face for candidates.",
   },
   {
-    icon: Briefcase,
     title: "Agency & Headhunting Recruiters",
     description: "Stand out in crowded inboxes with a headshot that builds instant credibility.",
   },
   {
-    icon: Users,
     title: "Executive Search Consultants",
     description: "Project polish and discretion for senior-level candidates and clients.",
   },
   {
-    icon: Award,
     title: "Freelance & Independent Recruiters",
     description: "Build a personal brand that wins clients without a photo shoot budget.",
   },
@@ -229,15 +217,12 @@ export default function RecruitersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="recruiters" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -258,12 +243,9 @@ export default function RecruitersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="recruiters" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -285,10 +267,9 @@ export default function RecruitersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="recruiters" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Award, Briefcase, Camera, Check, Globe, Layers, Sparkles, Star, Upload, Users, Zap } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Models & Talent | TailorPic";
 const pageDescription =
   'Professional AI headshots for models and talent. Polished portraits for agency submissions, portfolios, comp cards, and social media.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Camera,
     title: "Agency Submissions",
     description: "Clean, natural portraits that meet the simple digital-snap style many agencies request from new talent.",
   },
   {
-    icon: Layers,
     title: "Portfolio & Digital Comp Cards",
     description: "Add variety to your book with different backgrounds and looks, all generated from one set of selfies.",
   },
   {
-    icon: Star,
     title: "Social Media Presence",
     description: "Keep your Instagram and personal brand fresh with new portraits between professional shoots.",
   },
   {
-    icon: Globe,
     title: "Casting Platforms",
     description: "Keep polished images ready for casting sites, talent directories, and profile updates.",
   },
   {
-    icon: Zap,
     title: "Fast Refreshes",
     description: "Update your look whenever your style changes without waiting to schedule a photographer.",
   },
   {
-    icon: Briefcase,
     title: "Save on Test Shoots",
     description: "Test shoots and retouching add up quickly. Get a professional result at a fraction of the cost.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos with minimal makeup and natural light. Vary your angles so the AI captures your real features.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick backgrounds and looks for different markets, from clean studio to editorial and lifestyle.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for submissions and profiles.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Camera,
     title: "New & Aspiring Models",
     description: "Build an initial portfolio and submit to agencies without an expensive test shoot.",
   },
   {
-    icon: Star,
     title: "Working Models",
     description: "Keep digital comp cards and social profiles current between bookings.",
   },
   {
-    icon: Users,
     title: "Influencers & Brand Ambassadors",
     description: "Maintain a consistent, polished look across sponsored content and media kits.",
   },
   {
-    icon: Award,
     title: "Talent & Commercial Actors",
     description: "Keep extra portraits ready for casting platforms and representation pitches.",
   },
@@ -229,15 +217,12 @@ export default function ModelsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="models" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -258,12 +243,9 @@ export default function ModelsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="models" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -285,10 +267,9 @@ export default function ModelsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="models" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

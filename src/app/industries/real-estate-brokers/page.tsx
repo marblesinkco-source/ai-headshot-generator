@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Award, Briefcase, Building2, Check, Globe, Layers, Sparkles, Star, Upload, Users } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Real Estate Brokers | TailorPic";
 const pageDescription =
   'Professional AI headshots for real estate brokers and brokerage owners. Build authority on listings, team pages, and signage with a polished portrait.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Building2,
     title: "Lead With Authority",
     description: "Brokers set the tone for the whole office. A confident portrait signals experience to clients and prospective agents.",
   },
   {
-    icon: Globe,
     title: "Listings & Marketing Ready",
     description: "High-resolution portraits sized for listing flyers, property sites, email campaigns, and social posts.",
   },
   {
-    icon: Users,
     title: "Team & Recruiting Pages",
     description: "Keep a consistent look across your leadership page and agent roster to help attract new talent.",
   },
   {
-    icon: Award,
     title: "Signage & Print",
     description: "Crisp files suitable for yard signs, billboards, business cards, and brochures.",
   },
   {
-    icon: Layers,
     title: "Consistent Personal Brand",
     description: "Use matching headshots on your brokerage site, portals, LinkedIn, and email signatures.",
   },
   {
-    icon: Briefcase,
     title: "Skip the Photo Shoot",
     description: "Traditional shoots cost hundreds and take weeks to book. Get a professional result from your own home.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself. Vary your angles and expressions so the AI captures your natural personality.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick looks that fit your market, from bright and approachable to polished and executive.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for your website and profiles.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Building2,
     title: "Managing Brokers",
     description: "Present a confident leadership image on your brokerage website and recruiting materials.",
   },
   {
-    icon: Users,
     title: "Brokerage Owners",
     description: "Keep your brand consistent across offices, signage, and marketing.",
   },
   {
-    icon: Briefcase,
     title: "Team Leaders",
     description: "Give your team a matching look that builds recognition in your market.",
   },
   {
-    icon: Award,
     title: "Associate & Commercial Brokers",
     description: "Stand out on listings and proposals with a portrait that reflects your expertise.",
   },
@@ -229,15 +217,12 @@ export default function RealEstateBrokersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="real-estate-brokers" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -258,12 +243,9 @@ export default function RealEstateBrokersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="real-estate-brokers" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -285,10 +267,9 @@ export default function RealEstateBrokersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="real-estate-brokers" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

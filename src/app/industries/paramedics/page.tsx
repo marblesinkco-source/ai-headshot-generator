@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Award, Briefcase, Check, FileCheck, Globe, Heart, Sparkles, Star, Upload, UserCheck, Users, Zap } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -12,6 +12,7 @@ import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Paramedics & EMTs | TailorPic";
 const pageDescription =
   'Professional AI headshots for paramedics, EMTs, and EMS leaders. Get a credible, caring portrait for agency pages, credentials, and LinkedIn.';
@@ -27,32 +28,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Heart,
     title: "Calm and Caring Presence",
     description: "Choose a look that shows the compassion and composure patients and colleagues rely on.",
   },
   {
-    icon: FileCheck,
     title: "Credentialing & Badges",
     description: "Clean portraits for ID badges, licensure files, and agency profiles.",
   },
   {
-    icon: Globe,
     title: "Agency Website & Recruitment",
     description: "Give your EMS agency a professional team page that helps attract new hires.",
   },
   {
-    icon: Briefcase,
     title: "Job Applications & Advancement",
     description: "Support moves into flight medicine, supervision, or hospital roles with a polished portrait.",
   },
   {
-    icon: Users,
     title: "Education & Instructor Bios",
     description: "Teaching CPR, EMT courses, or community classes? Keep a professional bio photo ready.",
   },
   {
-    icon: Zap,
     title: "Fits Around Your Shifts",
     description: "Skip the studio booking. Take selfies at home and get results in about 2 hours.",
   },
@@ -60,17 +55,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself between shifts. Vary your angles and expressions for natural results.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick a background and look that suit your goals, from friendly community style to formal leadership portrait.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for agency pages and profiles.",
   },
@@ -78,22 +70,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Heart,
     title: "Paramedics",
     description: "Professional portraits for agency pages, credentialing, and LinkedIn.",
   },
   {
-    icon: UserCheck,
     title: "EMTs & AEMTs",
     description: "Polished images for job applications and career advancement.",
   },
   {
-    icon: Award,
     title: "EMS Supervisors & Directors",
     description: "Authoritative headshots for leadership pages, reports, and conferences.",
   },
   {
-    icon: Users,
     title: "EMS Instructors",
     description: "Credible portraits for course listings, training sites, and speaker bios.",
   },
@@ -230,15 +218,12 @@ export default function ParamedicsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="paramedics" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -259,12 +244,9 @@ export default function ParamedicsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="paramedics" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -286,10 +268,9 @@ export default function ParamedicsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="paramedics" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

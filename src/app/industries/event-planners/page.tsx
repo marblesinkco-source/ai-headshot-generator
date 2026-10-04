@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Briefcase, Calendar, Check, Clock, FileText, Globe, Heart, Layers, Sparkles, Star, Upload, Users } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Event Planners | TailorPic";
 const pageDescription =
   'Professional AI headshots for wedding planners, corporate event planners and agencies. Win more clients with a polished portrait for your website and proposals.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Heart,
     title: "Win Client Trust Early",
     description: "Couples and corporate clients want a planner they feel comfortable with. A warm, confident headshot helps them picture working with you.",
   },
   {
-    icon: Globe,
     title: "Website & Portfolio Ready",
     description: "High-resolution portraits sized for your About page, hero image, and portfolio so your personal brand looks intentional.",
   },
   {
-    icon: FileText,
     title: "Proposals & Pitch Decks",
     description: "Add a professional portrait to client proposals, RFP responses, and sponsor decks to make your team feel real and credible.",
   },
   {
-    icon: Users,
     title: "Vendor Directories & Listings",
     description: "Wedding and event marketplaces reward profiles with a professional photo. Stand out in directories and referral networks.",
   },
   {
-    icon: Layers,
     title: "Consistent Personal Brand",
     description: "Match your headshot to your brand colors with backgrounds that work across Instagram, Pinterest, email signatures, and LinkedIn.",
   },
   {
-    icon: Clock,
     title: "No Time for a Photo Shoot",
     description: "Event season leaves little room for scheduling a photographer. Get professional results from home, on your own timeline.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself. Vary your angles and expressions so the AI captures your natural personality.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick looks that match your brand, from bright and approachable to elegant and polished.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for your website, proposals, and social profiles.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Heart,
     title: "Wedding Planners",
     description: "Project warmth and organization on your website and vendor listings.",
   },
   {
-    icon: Briefcase,
     title: "Corporate Event Planners",
     description: "Present a professional image to corporate clients and stakeholders.",
   },
   {
-    icon: Calendar,
     title: "Event Agency Teams",
     description: "Give your whole team matching headshots for your agency site and pitches.",
   },
   {
-    icon: Sparkles,
     title: "Independent Coordinators",
     description: "Look established on social media and in vendor directories from day one.",
   },
@@ -229,15 +217,12 @@ export default function EventPlannersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="event-planners" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -258,12 +243,9 @@ export default function EventPlannersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="event-planners" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -285,10 +267,9 @@ export default function EventPlannersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="event-planners" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

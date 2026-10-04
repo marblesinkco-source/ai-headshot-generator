@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Award, Briefcase, Camera, Check, Globe, Heart, Layers, Sparkles, Star, Upload, Users } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Makeup Artists | TailorPic";
 const pageDescription =
   'Professional AI headshots for makeup artists, beauty freelancers and salon pros. Build a polished portfolio, booking page and Instagram presence.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Camera,
     title: "Portfolio & About Page",
     description: "A polished portrait gives brides, brands, and agencies a face to connect with your work.",
   },
   {
-    icon: Globe,
     title: "Booking Site & Instagram",
     description: "Consistent, high-resolution images for your booking page, link-in-bio, and social grid.",
   },
   {
-    icon: Heart,
     title: "Approachable and Professional",
     description: "Clients sit in your chair trusting you. A warm, credible headshot builds that trust early.",
   },
   {
-    icon: Award,
     title: "Justify Premium Rates",
     description: "Bridal and editorial clients expect a professional presence to match premium pricing.",
   },
   {
-    icon: Layers,
     title: "Brand-Matched Backgrounds",
     description: "Choose backgrounds that fit your studio palette across cards, menus, and websites.",
   },
   {
-    icon: Briefcase,
     title: "Skip the Photo Shoot",
     description: "No hiring a photographer or finding a model. Get a professional result at home.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself. Vary your angles and expressions so the AI captures your natural personality.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick backgrounds and looks that fit your work, from bright and natural to polished and editorial.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for your website, profiles, and social media.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Heart,
     title: "Bridal Makeup Artists",
     description: "Warm portraits for wedding booking pages and vendor directories.",
   },
   {
-    icon: Camera,
     title: "Editorial & Fashion MUAs",
     description: "Sharp headshots for agency profiles and credits.",
   },
   {
-    icon: Star,
     title: "Salon & Counter Artists",
     description: "Consistent photos for team pages and brand websites.",
   },
   {
-    icon: Users,
     title: "Freelance Beauty Pros",
     description: "Stand out on booking platforms and social media.",
   },
@@ -229,15 +217,12 @@ export default function MakeupArtistsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="makeup-artists" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -258,12 +243,9 @@ export default function MakeupArtistsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="makeup-artists" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -285,10 +267,9 @@ export default function MakeupArtistsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="makeup-artists" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

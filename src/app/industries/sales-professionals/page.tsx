@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Award, Briefcase, Check, Handshake, Layers, Sparkles, Star, Target, TrendingUp, Upload } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Sales Professionals | TailorPic";
 const pageDescription =
   'Professional AI headshots for sales reps, account executives and sales leaders. Build trust on LinkedIn, email signatures and proposals.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: TrendingUp,
     title: "Stronger LinkedIn Outreach",
     description: "Prospects check your profile after every message. A professional headshot makes your outreach feel credible and worth answering.",
   },
   {
-    icon: Handshake,
     title: "Build Rapport Early",
     description: "A friendly, confident photo helps buyers feel they already know you, which warms up cold outreach and intro calls.",
   },
   {
-    icon: Target,
     title: "Stand Out in a Crowded Inbox",
     description: "Email signatures and CRM contact cards with a clear photo are more memorable than a blank avatar.",
   },
   {
-    icon: Briefcase,
     title: "Proposal & Deck Ready",
     description: "Add a polished portrait to proposals, pitch decks, and meeting invites so your team looks prepared.",
   },
   {
-    icon: Layers,
     title: "Consistent Personal Brand",
     description: "Use matching portraits across LinkedIn, social selling posts, webinar pages, and your company profile.",
   },
   {
-    icon: Award,
     title: "Skip the Photo Shoot",
     description: "Traditional shoots cost time and money. Get a professional result from your own home on your own timeline.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself. Vary your angles and expressions so the AI captures your natural confidence.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick backgrounds and looks that fit your market, from approachable and casual to sharp and executive.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for LinkedIn, email signatures, and sales decks.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: TrendingUp,
     title: "Account Executives & SDRs",
     description: "Make every outreach message feel more credible with a polished profile photo.",
   },
   {
-    icon: Handshake,
     title: "Account Managers",
     description: "Keep long-term client relationships personal with a current, friendly portrait.",
   },
   {
-    icon: Target,
     title: "Sales Leaders & VPs",
     description: "Show executive presence on leadership pages, conference bios, and investor materials.",
   },
   {
-    icon: Briefcase,
     title: "Independent Reps & Agents",
     description: "Stand out on your own site and LinkedIn without hiring a photographer.",
   },
@@ -228,15 +216,12 @@ export default function SalesProfessionalsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="sales-professionals" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -257,12 +242,9 @@ export default function SalesProfessionalsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="sales-professionals" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -284,10 +266,9 @@ export default function SalesProfessionalsIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="sales-professionals" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

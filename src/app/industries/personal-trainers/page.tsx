@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Award, Briefcase, Check, Heart, Layers, Sparkles, Star, Target, Upload, Users, Zap } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Personal Trainers | TailorPic";
 const pageDescription =
   'Professional AI headshots for personal trainers and strength coaches. Polished portraits for gym profiles, booking pages and social media that attract clients.';
@@ -26,32 +27,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Target,
     title: "Booking Page & Website",
     description: "Energetic, approachable portraits that help new clients feel comfortable booking a first session.",
   },
   {
-    icon: Users,
     title: "Gym & Studio Profiles",
     description: "Keep a polished image ready for facility trainer pages, staff directories, and class schedules.",
   },
   {
-    icon: Zap,
     title: "Social Media Presence",
     description: "Build a recognizable brand with matching portraits across Instagram, TikTok, and YouTube.",
   },
   {
-    icon: Award,
     title: "Show Your Credibility",
     description: "Pair a professional portrait with your certifications to signal expertise and reliability.",
   },
   {
-    icon: Layers,
     title: "Consistent Personal Brand",
     description: "Match your headshot to your brand colors across flyers, programs, and email signatures.",
   },
   {
-    icon: Briefcase,
     title: "Skip the Expensive Shoot",
     description: "Photo shoots take time away from paying clients. Get a professional result from home on your own timeline.",
   },
@@ -59,17 +54,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself. Vary your angles and expressions so the AI captures your natural energy.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick backgrounds and looks that fit your training style, from bright gym settings to clean professional studio.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for your website, gym profile, and social pages.",
   },
@@ -77,22 +69,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Zap,
     title: "Independent Personal Trainers",
     description: "Stand out on your booking page and local search with a professional portrait.",
   },
   {
-    icon: Users,
     title: "Gym-Based Trainers",
     description: "Keep your facility profile fresh and consistent with your personal brand.",
   },
   {
-    icon: Heart,
     title: "Online Coaches",
     description: "Build trust with remote clients through a warm, credible headshot.",
   },
   {
-    icon: Target,
     title: "Strength & Specialty Coaches",
     description: "Show your authority in niches like powerlifting, rehab, and sports performance.",
   },
@@ -229,15 +217,12 @@ export default function PersonalTrainersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="personal-trainers" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -258,12 +243,9 @@ export default function PersonalTrainersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="personal-trainers" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -285,10 +267,9 @@ export default function PersonalTrainersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="personal-trainers" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>

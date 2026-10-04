@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Award, Briefcase, Check, Globe, Heart, Shield, Sparkles, Star, Upload, Users } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -12,6 +12,7 @@ import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
+import { ContentPhoto } from '@/components/marketing/content-photo';
 const pageTitle = "AI Headshots for Firefighters | TailorPic";
 const pageDescription =
   'Professional AI headshots for firefighters, fire officers and fire service leaders. A confident portrait for department websites, promotions and LinkedIn.';
@@ -27,32 +28,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Shield,
     title: "Trusted and Confident",
     description: "Project the steadiness and reliability your community expects from those who protect it.",
   },
   {
-    icon: Award,
     title: "Promotion & Command Packets",
     description: "Include a polished portrait in promotion packets, award nominations, and officer candidate applications.",
   },
   {
-    icon: Globe,
     title: "Department Website & Roster",
     description: "Clean, consistent portraits for station pages, rosters, and community outreach materials.",
   },
   {
-    icon: Users,
     title: "Recruitment Materials",
     description: "Help your department attract new recruits with authentic, professional faces of your team.",
   },
   {
-    icon: Briefcase,
     title: "Career Transition Ready",
     description: "Moving into training, inspection, or consulting? Keep a professional headshot ready for LinkedIn and applications.",
   },
   {
-    icon: Heart,
     title: "Community & Media Features",
     description: "Be ready when local press, school visits, or fundraisers ask for a headshot and bio.",
   },
@@ -60,17 +55,14 @@ const benefits = [
 
 const steps = [
   {
-    icon: Upload,
     title: "Upload 6-10 Selfies",
     description: "Take clear, well-lit photos of yourself. Vary your angles and expressions so the AI captures your natural look.",
   },
   {
-    icon: Sparkles,
     title: "Choose Your Style",
     description: "Pick a background and look that fit your goals, from approachable community portraits to formal command style.",
   },
   {
-    icon: Check,
     title: "Download Your Headshots",
     description: "Receive high-resolution headshots in about 2 hours, ready for rosters, packets, and profiles.",
   },
@@ -78,22 +70,18 @@ const steps = [
 
 const audiences = [
   {
-    icon: Shield,
     title: "Career Firefighters",
     description: "Professional portraits for promotion boards, rosters, and LinkedIn.",
   },
   {
-    icon: Heart,
     title: "Volunteer Firefighters",
     description: "Polished images for volunteer recruitment pages and community events.",
   },
   {
-    icon: Award,
     title: "Fire Officers & Chiefs",
     description: "Authoritative headshots for leadership pages, budget presentations, and press.",
   },
   {
-    icon: Briefcase,
     title: "Fire Prevention & Training Staff",
     description: "Credible portraits for instructor bios, inspection programs, and conferences.",
   },
@@ -230,15 +218,12 @@ export default function FirefightersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => {
-              const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
                   className="tp-card rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="firefighters" seed={benefit.title} className="h-12 w-12 rounded-xl" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{benefit.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{benefit.description}</p>
                 </div>
@@ -259,12 +244,9 @@ export default function FirefightersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-black">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="firefighters" seed={step.title} className="mx-auto h-14 w-14 rounded-full" />
                   <p className="mt-4 text-sm font-semibold text-tp-bronze-ink">Step {index + 1}</p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{step.description}</p>
@@ -286,10 +268,9 @@ export default function FirefightersIndustryPage() {
           </div>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {audiences.map((item) => {
-              const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                  <Icon className="h-6 w-6 text-tp-bronze" />
+                  <ContentPhoto slug="firefighters" seed={item.title} className="h-10 w-10 rounded-lg" />
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{item.description}</p>
                 </div>
