@@ -58,14 +58,16 @@ export default async function CategoryPage({ params }: Props) {
   const galleryItems = visuals?.gallery ?? [];
 
   // Build 4 distinct images for the hero collage (never repeat the same image 4x)
+  // Object-position is overridden here to show wider framing (head + shoulders + upper body)
+  const collagePositions = ['50% 15%', '50% 20%', '50% 25%', '50% 10%'];
   const heroCollageImages: { src: string; alt: string; objectPosition: string }[] = (() => {
-    const pool: { src: string; alt: string; objectPosition: string }[] = [];
+    const pool: { src: string; alt: string }[] = [];
     // Start with gallery items (deduplicated by src)
     const seen = new Set<string>();
     for (const g of galleryItems) {
       if (!seen.has(g.src)) {
         seen.add(g.src);
-        pool.push({ src: g.src, alt: g.alt, objectPosition: g.desktopObjectPosition });
+        pool.push({ src: g.src, alt: g.alt });
       }
     }
     // Supplement with brand portraits for variety
@@ -73,19 +75,20 @@ export default async function CategoryPage({ params }: Props) {
       if (pool.length >= 4) break;
       if (!seen.has(s.src)) {
         seen.add(s.src);
-        pool.push({ src: s.src, alt: s.alt, objectPosition: s.desktopObjectPosition });
+        pool.push({ src: s.src, alt: s.alt });
       }
     }
     // Fallback: repeat hero with varied crops if still < 4
-    const fallbackPositions = ['50% 20%', '50% 45%', '50% 65%', '50% 35%'];
     while (pool.length < 4) {
       pool.push({
         src: heroSrc,
         alt: heroAsset?.alt ?? `${cat.name} example`,
-        objectPosition: fallbackPositions[pool.length % fallbackPositions.length],
       });
     }
-    return pool.slice(0, 4);
+    return pool.slice(0, 4).map((img, i) => ({
+      ...img,
+      objectPosition: collagePositions[i],
+    }));
   })();
 
   const lowestPrice = Math.min(...cat.packages.map((p) => p.price));
