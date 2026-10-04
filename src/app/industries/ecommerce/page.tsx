@@ -6,7 +6,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, ProductSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
@@ -123,14 +123,14 @@ export default function EcommerceLandingPage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 text-center">
             {[
-              { icon: Camera, text: 'White Background Ready' },
-              { icon: Clock, text: 'Under 2 Hours' },
-              { icon: Shield, text: 'Commercial License' },
-              { icon: Star, text: 'Satisfaction Guaranteed' },
-            ].map((item) => (
-              <div key={item.text} className="flex items-center justify-center gap-2 text-xs font-medium text-tp-muted">
-                <item.icon className="h-4 w-4 text-tp-bronze" />
-                {item.text}
+              'White Background Ready',
+              'Under 2 Hours',
+              'Commercial License',
+              'Satisfaction Guaranteed',
+            ].map((text) => (
+              <div key={text} className="flex items-center justify-center gap-2 text-xs font-medium text-tp-muted">
+                <Check className="h-4 w-4 text-tp-bronze" />
+                {text}
               </div>
             ))}
           </div>
@@ -202,17 +202,15 @@ export default function EcommerceLandingPage() {
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { icon: Package, title: 'Marketplace-Ready', desc: 'White background photos optimized for Amazon, Shopify, Etsy, and eBay requirements.' },
-              { icon: Palette, title: 'Multiple Angles & Styles', desc: 'Lifestyle shots, flat lays, and clean product-on-white — all from one upload.' },
-              { icon: TrendingUp, title: 'Higher Conversion Rates', desc: 'Professional product images help build buyer trust and drive more sales.' },
-              { icon: Zap, title: '2-Hour Turnaround', desc: 'Launch new products the same day. No waiting weeks for a photographer.' },
-              { icon: Users, title: 'Scale Your Catalog', desc: 'Whether you have 10 or 1,000 products, AI handles them all consistently.' },
-              { icon: CheckCircle, title: 'Consistent Branding', desc: 'Every product photo matches your brand style. No more visual inconsistency.' },
+              { title: 'Marketplace-Ready', desc: 'White background photos optimized for Amazon, Shopify, Etsy, and eBay requirements.' },
+              { title: 'Multiple Angles & Styles', desc: 'Lifestyle shots, flat lays, and clean product-on-white — all from one upload.' },
+              { title: 'Higher Conversion Rates', desc: 'Professional product images help build buyer trust and drive more sales.' },
+              { title: '2-Hour Turnaround', desc: 'Launch new products the same day. No waiting weeks for a photographer.' },
+              { title: 'Scale Your Catalog', desc: 'Whether you have 10 or 1,000 products, AI handles them all consistently.' },
+              { title: 'Consistent Branding', desc: 'Every product photo matches your brand style. No more visual inconsistency.' },
             ].map((benefit) => (
               <div key={benefit.title} className="rounded-tp-card border border-tp-line p-6 hover:border-tp-bronze/30 transition-colors">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-tp-black mb-4">
-                  <benefit.icon className="h-5 w-5 text-tp-bronze" />
-                </div>
+                <ContentPhoto slug="ecommerce" seed={benefit.title} className="h-10 w-10 rounded-xl mb-4" />
                 <h3 className="text-base font-semibold text-tp-ink">{benefit.title}</h3>
                 <p className="mt-2 text-sm text-tp-muted leading-relaxed">{benefit.desc}</p>
               </div>

@@ -331,9 +331,7 @@ export default function RealEstateIndustryPage() {
             ].map((item) => {
               return (
                 <div key={item.step} className="text-center">
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-tp-card bg-tp-black">
-                    <Icon className="h-7 w-7 text-tp-bronze" />
-                  </div>
+                  <ContentPhoto slug="real-estate" seed={item.title} className="mx-auto h-16 w-16 rounded-tp-card" />
                   <p className="mt-4 text-xs font-bold uppercase tracking-widest text-tp-bronze">
                     Step {item.step}
                   </p>
