@@ -193,3 +193,33 @@
 
 ### Commit: b9a8788
 - Emoji ikonları kaldırıldı, thumbnail görseller ve SVG ikonlarla değiştirildi
+
+---
+
+## Oturum: 2026-10-04 (Creative Portfolio Before/After Düzeltmesi)
+
+### Baseline
+- HEAD: `8732670`
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### 1. Creative Portfolio "After" Görseli Oluşturuldu (Commit: 943ad4e)
+- **Sorun**: Before/After showcase'deki Creative Portfolio kartında before ve after farklı kişileri gösteriyordu
+  - Before: `portrait-woman-creative-before.webp` (siyah blazerli kadın, Unver Test Platform)
+  - After: `portrait-woman-editorial.webp` (farklı bir kadın — close-up editorial)
+- **Çözüm**: Before görselinden PIL ile editorial tarzda "after" versiyonu oluşturuldu
+  - `portrait-woman-creative-after.webp` (96KB, 1024x1024)
+  - Tighter crop (yüz + omuzlar, marka yazıları kaldırıldı)
+  - Warm editorial color grading (kırmızı/turuncu boost, mavi azaltma)
+  - Moderate bokeh arka plan (yüz keskin, kenarlar yumuşak)
+  - Contrast/sharpness/vignette ayarları
+- `category-visuals.ts` güncellendi: Creative Portfolio after → `portrait-woman-creative-after.webp`
+
+#### 2. Canlı Site Doğrulaması (Chrome Browser)
+- ✅ Homepage Before/After bölümü — 3 kart doğru görünüyor
+- ✅ Creative Portfolio kartı — aynı kişi hem before hem after tarafında
+- ✅ LinkedIn Profile ve Corporate Team kartları etkilenmedi
+
+### Commit: 943ad4e
+- Creative Portfolio before/after eşleşmesi düzeltildi — yeni after görseli oluşturuldu
