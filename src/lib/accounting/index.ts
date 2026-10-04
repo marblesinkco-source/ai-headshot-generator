@@ -17,7 +17,9 @@ export function isTableMissingError(error: unknown): boolean {
   const code = typeof e.code === 'string' ? e.code : '';
   return (
     code === '42P01' ||
+    code === 'PGRST205' ||
     msg.includes('42P01') ||
+    msg.includes('Could not find the') ||
     (msg.includes('relation') && msg.includes('does not exist'))
   );
 }
