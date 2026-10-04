@@ -12,7 +12,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { siteConfig } from '@/config/site';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
-import { getPortraitByIndex, portrait } from '@/config/stock-portraits';
+import { portrait, contentPhoto } from '@/config/stock-portraits';
 import {
   ArrowRight,
   Sparkles,
@@ -81,49 +81,52 @@ const sampleEntries: SampleEntry[] = [
 
 type SampleImage = { src: string; alt: string };
 
-/** Get a unique portrait image for each sample card using the stock portrait registry. */
-function samplePortrait(index: number): SampleImage {
-  const p = getPortraitByIndex(index);
-  return { src: portrait(p.id), alt: p.label };
-}
-
-/* Each of the 14 cards gets a unique portrait (indices 0–13 from the stock collection). */
+/**
+ * Category-appropriate image mappings — each sample card gets
+ * an image matching its category (professional, pet, lifestyle, etc.)
+ * instead of sequential indexing from the corporate portrait pool.
+ */
 const sampleImages: Record<number, SampleImage> = {
-  1: samplePortrait(0),   // Classic Studio
-  2: samplePortrait(1),   // Modern Minimal
-  3: samplePortrait(2),   // Executive Portrait
-  4: samplePortrait(3),   // Team Headshot
-  5: samplePortrait(4),   // Creative Professional
-  6: samplePortrait(5),   // Editorial Portrait
-  7: samplePortrait(6),   // Playful Studio
-  8: samplePortrait(7),   // Outdoor Natural
-  9: samplePortrait(8),   // Urban Lifestyle
-  10: samplePortrait(9),  // Golden Hour
-  11: samplePortrait(10), // Cap & Gown Classic
-  12: samplePortrait(11), // Modern Academic
-  13: samplePortrait(12), // Warm & Candid
-  14: samplePortrait(13), // Pet Portrait Studio
+  // Professional — corporate headshots
+  1: { src: portrait('photo-1573496359142-b8d87734a5a2'), alt: 'Professional woman in navy blazer (Classic Studio, AI-generated concept)' },
+  2: { src: portrait('photo-1560250097-0b93528c311a'), alt: 'Businessman in dark suit (Modern Minimal, AI-generated concept)' },
+  3: { src: portrait('photo-1566492031773-4f4e44671857'), alt: 'Distinguished man in suit (Executive Portrait, AI-generated concept)' },
+  4: { src: portrait('photo-1522075469751-3a6694fb2f61'), alt: 'Professional in team environment (Team Headshot, AI-generated concept)' },
+  // Creative — artistic, expressive portraits
+  5: { src: portrait('photo-1531746020798-e6953c6e8e04'), alt: 'Creative professional with artistic style (AI-generated concept)' },
+  6: { src: portrait('photo-1524504388940-b1c1722653e1'), alt: 'Man with creative casual look (Editorial Portrait, AI-generated concept)' },
+  7: { src: portrait('photo-1488426862026-3ee34a7d66df'), alt: 'Woman with bright creative expression (Playful Studio, AI-generated concept)' },
+  // Lifestyle — outdoor, casual, warm
+  8: { src: portrait('photo-1506863530036-1efeddceb993'), alt: 'Woman enjoying golden hour outdoors (Outdoor Natural, AI-generated concept)' },
+  9: { src: portrait('photo-1529626455594-4ff0802cfb7e'), alt: 'Man with relaxed confident smile outdoors (Urban Lifestyle, AI-generated concept)' },
+  10: { src: portrait('photo-1519345182560-3f2917c472ef'), alt: 'Professional outdoors in warm light (Golden Hour, AI-generated concept)' },
+  // Academic — education, campus portraits
+  11: { src: portrait('photo-1544005313-94ddf0286df2'), alt: 'Educator with warm expression (Cap & Gown Classic, AI-generated concept)' },
+  12: { src: portrait('photo-1568602471122-7832951cc4c5'), alt: 'Male educator in smart casual (Modern Academic, AI-generated concept)' },
+  // Family & Pets — warm family scenes and actual pet photos
+  13: { src: portrait('photo-1609220136736-443140cffec6'), alt: 'Happy family portrait together (Warm & Candid, AI-generated concept)' },
+  14: { src: contentPhoto('photo-1587300003388-59208cc962cb'), alt: 'Golden retriever with friendly expression (Pet Portrait Studio, AI-generated concept)' },
 };
 
-/* Style group images also use unique portraits (indices 14+). */
+/* Style group images — each group uses category-appropriate portraits */
 const styleGroupImages: Record<string, SampleImage[]> = {
   Corporate: [
-    samplePortrait(14),
-    samplePortrait(15),
-    samplePortrait(16),
+    { src: portrait('photo-1580489944761-15a19d654956'), alt: 'Confident woman in professional attire' },
+    { src: portrait('photo-1507003211169-0a1dd7228f2d'), alt: 'Man with warm smile in casual business wear' },
+    { src: portrait('photo-1500648767791-00dcc994a43e'), alt: 'Man with confident expression' },
   ],
   Creative: [
-    samplePortrait(17),
-    samplePortrait(18),
+    { src: portrait('photo-1552374196-c4e7ffc6e126'), alt: 'Man with relaxed confident pose' },
+    { src: portrait('photo-1517841905240-472988babdf9'), alt: 'Creative professional woman' },
   ],
   Casual: [
-    samplePortrait(19),
-    samplePortrait(20),
-    samplePortrait(21),
+    { src: portrait('photo-1573496799652-408c2ac9fe98'), alt: 'Professional woman in natural setting' },
+    { src: portrait('photo-1539571696357-5a69c17a67c6'), alt: 'Casual professional in relaxed wear' },
+    { src: portrait('photo-1511895426328-dc8714191300'), alt: 'Joyful family moment outdoors' },
   ],
   Academic: [
-    samplePortrait(22),
-    samplePortrait(23),
+    { src: portrait('photo-1545167622-3a6ac756afa4'), alt: 'Young professional with modern style' },
+    { src: portrait('photo-1508214751196-bcfd4ca60f91'), alt: 'Elegant professional woman' },
   ],
 };
 

@@ -41,6 +41,17 @@ export function wide(photoId: string): string {
   return unsplash(photoId, 1200, 675, 'face');
 }
 
+/** Content photo — uses entropy-based crop instead of face-crop.
+ *  Ideal for pets, products, scenes where face detection fails. */
+export function contentPhoto(photoId: string, w = 800, h = 1067): string {
+  return unsplash(photoId, w, h, 'entropy');
+}
+
+/** 1:1 content square — entropy crop for non-face subjects */
+export function contentSquare(photoId: string): string {
+  return unsplash(photoId, 400, 400, 'entropy');
+}
+
 /* ------------------------------------------------------------------ */
 /*  Portrait collection — diverse age, gender, ethnicity               */
 /*                                                                     */
@@ -51,7 +62,7 @@ export function wide(photoId: string): string {
 export interface StockPortrait {
   id: string;       // Unsplash photo path (photo-XXXX or just the hash)
   label: string;    // Descriptive alt text (no names)
-  category: 'corporate' | 'creative' | 'medical' | 'legal' | 'tech' | 'education' | 'realestate' | 'casual' | 'team';
+  category: 'corporate' | 'creative' | 'medical' | 'legal' | 'tech' | 'education' | 'realestate' | 'casual' | 'team' | 'pet' | 'family' | 'lifestyle';
 }
 
 /**
@@ -116,6 +127,23 @@ export const STOCK_PORTRAITS: StockPortrait[] = [
   { id: 'photo-1567532939604-b6b5b0db2604', label: 'Professional woman headshot', category: 'corporate' },
   { id: 'photo-1557862921-37829c790f19', label: 'Man in professional portrait', category: 'corporate' },
   { id: 'photo-1551836022-d5d88e9218df', label: 'Woman with professional corporate look', category: 'corporate' },
+
+  // Pet portraits — use contentPhoto() for these, NOT portrait()
+  { id: 'photo-1587300003388-59208cc962cb', label: 'Golden retriever with friendly expression', category: 'pet' },
+  { id: 'photo-1543466835-00a7907e9de1', label: 'Happy dog outdoors in natural light', category: 'pet' },
+  { id: 'photo-1514888286974-6c03e2ca1dba', label: 'Orange tabby cat with bright eyes', category: 'pet' },
+  { id: 'photo-1548199973-03cce0bbc87b', label: 'Two dogs running together playfully', category: 'pet' },
+  { id: 'photo-1583337130417-13571c78e6f3', label: 'Adorable puppy portrait', category: 'pet' },
+
+  // Family & Warm — use portrait() for people, contentPhoto() for group scenes
+  { id: 'photo-1609220136736-443140cffec6', label: 'Happy family portrait together', category: 'family' },
+  { id: 'photo-1581579438747-104c53d7fbc4', label: 'Mother and child sharing a warm moment', category: 'family' },
+  { id: 'photo-1511895426328-dc8714191300', label: 'Joyful family moment outdoors', category: 'family' },
+
+  // Lifestyle / Outdoor / Casual
+  { id: 'photo-1506863530036-1efeddceb993', label: 'Woman enjoying golden hour outdoors', category: 'lifestyle' },
+  { id: 'photo-1529626455594-4ff0802cfb7e', label: 'Man with relaxed confident smile outdoors', category: 'lifestyle' },
+  { id: 'photo-1496345875659-11f7dd282d1d', label: 'Man in casual outdoor setting with warm light', category: 'lifestyle' },
 ];
 
 /* ------------------------------------------------------------------ */
