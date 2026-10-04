@@ -2,8 +2,10 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { formatDate } from '@/lib/utils';
+import { getBlogCover } from '@/config/stock-portraits';
 
 export interface BlogListingPost {
   slug: string;
@@ -14,209 +16,17 @@ export interface BlogListingPost {
   readingTime: string;
 }
 
-/* ---------- Tag-based decorative SVG covers ---------- */
-
-const BRAND = {
-  paper: '#F8F5EF',
-  beige: '#DCCDBB',
-  bronze: '#C9A98A',
-  bronzeInk: '#76563D',
-  ink: '#171613',
-  muted: '#5F5A54',
-  line: '#DFD6CC',
-};
-
-function CameraPattern() {
+function BlogCover({ slug, className }: { slug: string; className?: string }) {
+  const coverUrl = getBlogCover(slug);
   return (
-    <>
-      {/* Viewfinder / portrait frame */}
-      <rect x="70" y="50" width="60" height="70" rx="6" fill="none" stroke={BRAND.bronzeInk} strokeWidth="2" opacity="0.5" />
-      <circle cx="100" cy="78" r="16" fill="none" stroke={BRAND.bronze} strokeWidth="2" opacity="0.6" />
-      <circle cx="100" cy="78" r="8" fill={BRAND.bronze} opacity="0.25" />
-      {/* Shoulders silhouette */}
-      <ellipse cx="100" cy="110" rx="28" ry="14" fill={BRAND.beige} opacity="0.5" />
-      {/* Decorative dots */}
-      <circle cx="40" cy="35" r="3" fill={BRAND.bronze} opacity="0.3" />
-      <circle cx="160" cy="35" r="3" fill={BRAND.bronze} opacity="0.3" />
-      <circle cx="40" cy="125" r="3" fill={BRAND.bronze} opacity="0.3" />
-      <circle cx="160" cy="125" r="3" fill={BRAND.bronze} opacity="0.3" />
-      {/* Corner accents */}
-      <line x1="30" y1="30" x2="50" y2="30" stroke={BRAND.line} strokeWidth="1.5" opacity="0.6" />
-      <line x1="30" y1="30" x2="30" y2="50" stroke={BRAND.line} strokeWidth="1.5" opacity="0.6" />
-      <line x1="170" y1="130" x2="150" y2="130" stroke={BRAND.line} strokeWidth="1.5" opacity="0.6" />
-      <line x1="170" y1="130" x2="170" y2="110" stroke={BRAND.line} strokeWidth="1.5" opacity="0.6" />
-    </>
-  );
-}
-
-function SplitPattern() {
-  return (
-    <>
-      {/* Two halves with a divider */}
-      <rect x="30" y="40" width="55" height="80" rx="8" fill={BRAND.beige} opacity="0.4" />
-      <rect x="115" y="40" width="55" height="80" rx="8" fill={BRAND.bronze} opacity="0.2" />
-      {/* VS divider */}
-      <line x1="100" y1="35" x2="100" y2="125" stroke={BRAND.bronzeInk} strokeWidth="1.5" strokeDasharray="4 4" opacity="0.4" />
-      <circle cx="100" cy="80" r="12" fill={BRAND.paper} stroke={BRAND.bronzeInk} strokeWidth="1.5" opacity="0.6" />
-      {/* Abstract face silhouettes */}
-      <circle cx="57" cy="65" r="10" fill={BRAND.bronzeInk} opacity="0.15" />
-      <circle cx="143" cy="65" r="10" fill={BRAND.bronzeInk} opacity="0.15" />
-      {/* Arrows */}
-      <line x1="40" y1="100" x2="70" y2="100" stroke={BRAND.bronze} strokeWidth="1.5" opacity="0.4" />
-      <line x1="130" y1="100" x2="160" y2="100" stroke={BRAND.bronze} strokeWidth="1.5" opacity="0.4" />
-    </>
-  );
-}
-
-function GridPattern() {
-  return (
-    <>
-      {/* People grid - 3x2 abstract avatars */}
-      {[0, 1, 2].map((col) =>
-        [0, 1].map((row) => (
-          <g key={`${col}-${row}`}>
-            <rect
-              x={45 + col * 40}
-              y={40 + row * 45}
-              width="30"
-              height="35"
-              rx="6"
-              fill={BRAND.beige}
-              opacity={0.3 + (col + row) * 0.1}
-            />
-            <circle
-              cx={60 + col * 40}
-              cy={52 + row * 45}
-              r="7"
-              fill={BRAND.bronzeInk}
-              opacity={0.15 + row * 0.05}
-            />
-          </g>
-        )),
-      )}
-      {/* Connecting lines */}
-      <line x1="60" y1="75" x2="100" y2="75" stroke={BRAND.line} strokeWidth="1" opacity="0.5" />
-      <line x1="100" y1="75" x2="140" y2="75" stroke={BRAND.line} strokeWidth="1" opacity="0.5" />
-      <line x1="100" y1="40" x2="100" y2="120" stroke={BRAND.line} strokeWidth="1" opacity="0.3" />
-    </>
-  );
-}
-
-function GraphPattern() {
-  return (
-    <>
-      {/* Axes */}
-      <line x1="40" y1="120" x2="160" y2="120" stroke={BRAND.muted} strokeWidth="1.5" opacity="0.3" />
-      <line x1="40" y1="120" x2="40" y2="35" stroke={BRAND.muted} strokeWidth="1.5" opacity="0.3" />
-      {/* Bar chart */}
-      <rect x="55" y="85" width="14" height="35" rx="2" fill={BRAND.beige} opacity="0.6" />
-      <rect x="78" y="65" width="14" height="55" rx="2" fill={BRAND.bronze} opacity="0.5" />
-      <rect x="101" y="50" width="14" height="70" rx="2" fill={BRAND.bronzeInk} opacity="0.3" />
-      <rect x="124" y="70" width="14" height="50" rx="2" fill={BRAND.bronze} opacity="0.4" />
-      {/* Trend line */}
-      <polyline
-        points="62,80 85,60 108,45 131,65"
-        fill="none"
-        stroke={BRAND.bronzeInk}
-        strokeWidth="2"
-        opacity="0.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+    <div className={`relative overflow-hidden bg-tp-paper ${className ?? ''}`}>
+      <Image
+        src={coverUrl}
+        alt=""
+        fill
+        sizes="(min-width: 1024px) 50vw, (min-width: 640px) 50vw, 100vw"
+        className="object-cover"
       />
-      {/* Dots on line */}
-      <circle cx="62" cy="80" r="3" fill={BRAND.bronzeInk} opacity="0.5" />
-      <circle cx="85" cy="60" r="3" fill={BRAND.bronzeInk} opacity="0.5" />
-      <circle cx="108" cy="45" r="3" fill={BRAND.bronzeInk} opacity="0.5" />
-      <circle cx="131" cy="65" r="3" fill={BRAND.bronzeInk} opacity="0.5" />
-    </>
-  );
-}
-
-function ToolsPattern() {
-  return (
-    <>
-      {/* Wrench shape */}
-      <rect x="55" y="55" width="8" height="50" rx="3" fill={BRAND.bronze} opacity="0.35" transform="rotate(-30 59 80)" />
-      <circle cx="55" cy="50" r="10" fill="none" stroke={BRAND.bronze} strokeWidth="2.5" opacity="0.35" />
-      {/* Gear */}
-      <circle cx="130" cy="70" r="16" fill="none" stroke={BRAND.bronzeInk} strokeWidth="2" opacity="0.3" />
-      <circle cx="130" cy="70" r="8" fill={BRAND.beige} opacity="0.4" />
-      {/* Gear teeth */}
-      {[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => (
-        <rect
-          key={angle}
-          x="128"
-          y="52"
-          width="4"
-          height="6"
-          rx="1"
-          fill={BRAND.bronzeInk}
-          opacity="0.25"
-          transform={`rotate(${angle} 130 70)`}
-        />
-      ))}
-      {/* Decorative dots */}
-      <circle cx="90" cy="110" r="2.5" fill={BRAND.bronze} opacity="0.3" />
-      <circle cx="100" cy="110" r="2.5" fill={BRAND.bronze} opacity="0.2" />
-      <circle cx="110" cy="110" r="2.5" fill={BRAND.bronze} opacity="0.3" />
-    </>
-  );
-}
-
-function AbstractPattern() {
-  return (
-    <>
-      {/* Overlapping circles */}
-      <circle cx="80" cy="70" r="30" fill={BRAND.beige} opacity="0.35" />
-      <circle cx="110" cy="65" r="24" fill={BRAND.bronze} opacity="0.2" />
-      <circle cx="95" cy="95" r="18" fill={BRAND.bronzeInk} opacity="0.1" />
-      {/* Scattered dots */}
-      <circle cx="45" cy="45" r="3" fill={BRAND.bronze} opacity="0.3" />
-      <circle cx="155" cy="50" r="4" fill={BRAND.beige} opacity="0.5" />
-      <circle cx="150" cy="115" r="3" fill={BRAND.bronze} opacity="0.25" />
-      <circle cx="50" cy="110" r="2" fill={BRAND.bronzeInk} opacity="0.2" />
-      {/* Horizontal lines */}
-      <line x1="40" y1="130" x2="80" y2="130" stroke={BRAND.line} strokeWidth="1" opacity="0.4" />
-      <line x1="120" y1="35" x2="160" y2="35" stroke={BRAND.line} strokeWidth="1" opacity="0.4" />
-    </>
-  );
-}
-
-type BlogCoverVariant = 'camera' | 'split' | 'grid' | 'graph' | 'tools' | 'abstract';
-
-function tagToVariant(tags: string[]): BlogCoverVariant {
-  const first = (tags[0] ?? '').toLowerCase();
-  if (['linkedin', 'tips'].some((k) => first.includes(k))) return 'camera';
-  if (['comparison', 'ai photography'].some((k) => first.includes(k))) return 'split';
-  if (['teams', 'branding', 'team'].some((k) => first.includes(k))) return 'grid';
-  if (['research'].some((k) => first.includes(k))) return 'graph';
-  if (['diy'].some((k) => first.includes(k))) return 'tools';
-  return 'abstract';
-}
-
-const VARIANT_MAP: Record<BlogCoverVariant, () => JSX.Element> = {
-  camera: CameraPattern,
-  split: SplitPattern,
-  grid: GridPattern,
-  graph: GraphPattern,
-  tools: ToolsPattern,
-  abstract: AbstractPattern,
-};
-
-function BlogCover({ tags, className }: { tags: string[]; className?: string }) {
-  const variant = tagToVariant(tags);
-  const Pattern = VARIANT_MAP[variant];
-  return (
-    <div className={`flex items-center justify-center bg-gradient-to-br from-tp-paper via-tp-beige/30 to-tp-bronze/10 ${className ?? ''}`}>
-      <svg
-        viewBox="0 0 200 160"
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-full w-full max-h-40 max-w-[250px]"
-        aria-hidden="true"
-        role="presentation"
-      >
-        <Pattern />
-      </svg>
     </div>
   );
 }
@@ -334,7 +144,7 @@ export function BlogListing({ posts }: { posts: BlogListingPost[] }) {
       {/* Featured post */}
       <article className="group relative overflow-hidden rounded-tp-card border border-tp-line bg-white shadow-sm transition-all hover:border-tp-bronze/40 hover:shadow-lg">
         <div className="grid md:grid-cols-2">
-          <BlogCover tags={featured.tags} className="aspect-[16/9] md:aspect-auto md:min-h-[320px]" />
+          <BlogCover slug={featured.slug} className="aspect-[16/9] md:aspect-auto md:min-h-[320px]" />
           <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
             <span className="mb-3 inline-block w-fit rounded-tp-button bg-tp-bronze px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
               Featured Post
@@ -408,7 +218,7 @@ export function BlogListing({ posts }: { posts: BlogListingPost[] }) {
             href={`/blog/${post.slug}`}
             className="group rounded-tp-card border border-tp-line bg-white shadow-sm transition-all hover:border-tp-bronze/40 hover:shadow-lg"
           >
-            <BlogCover tags={post.tags} className="aspect-[16/9] rounded-t-tp-card" />
+            <BlogCover slug={post.slug} className="aspect-[16/9] rounded-t-tp-card" />
             <div className="p-5">
               <div className="mb-3 flex flex-wrap gap-2">
                 {post.tags.slice(0, 2).map((tag) => (

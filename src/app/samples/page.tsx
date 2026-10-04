@@ -12,7 +12,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { siteConfig } from '@/config/site';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
-import { categoryVisuals, getCategoryImage, brandPortraits } from '@/config/category-visuals';
+import { getPortraitByIndex, portrait } from '@/config/stock-portraits';
 import {
   ArrowRight,
   Sparkles,
@@ -81,50 +81,49 @@ const sampleEntries: SampleEntry[] = [
 
 type SampleImage = { src: string; alt: string };
 
-/** Resolve a category slot from the registry, falling back to the category file. */
-function categoryImage(catId: string, slot: 'quickCard' | 'gallery' = 'quickCard'): SampleImage {
-  const asset = getCategoryImage(catId, slot) ?? categoryVisuals[catId]?.quickCard;
-  return {
-    src: asset?.src ?? `/images/categories/${catId}.jpg`,
-    alt: asset?.alt ?? 'AI-generated concept portrait',
-  };
+/** Get a unique portrait image for each sample card using the stock portrait registry. */
+function samplePortrait(index: number): SampleImage {
+  const p = getPortraitByIndex(index);
+  return { src: portrait(p.id), alt: p.label };
 }
 
+/* Each of the 14 cards gets a unique portrait (indices 0–13 from the stock collection). */
 const sampleImages: Record<number, SampleImage> = {
-  1: categoryImage('headshots'), // Classic Studio
-  2: categoryImage('linkedin-team'), // Modern Minimal
-  3: brandPortraits.manAfter, // Executive Portrait
-  4: categoryImage('linkedin-team'), // Team Headshot
-  5: brandPortraits.womanEditorial, // Creative Professional
-  6: brandPortraits.manEditorial, // Editorial Portrait
-  7: brandPortraits.womanAfter, // Playful Studio
-  8: categoryImage('dating'), // Outdoor Natural
-  9: categoryImage('avatars'), // Urban Lifestyle (was real-estate: wrong subject)
-  10: categoryImage('couple-engagement'), // Golden Hour
-  11: categoryImage('graduation'), // Cap & Gown Classic
-  12: categoryImage('headshots'), // Modern Academic (was duplicate graduation)
-  13: categoryImage('family-portraits'), // Warm & Candid
-  14: categoryImage('pet-portraits'), // Pet Portrait Studio
+  1: samplePortrait(0),   // Classic Studio
+  2: samplePortrait(1),   // Modern Minimal
+  3: samplePortrait(2),   // Executive Portrait
+  4: samplePortrait(3),   // Team Headshot
+  5: samplePortrait(4),   // Creative Professional
+  6: samplePortrait(5),   // Editorial Portrait
+  7: samplePortrait(6),   // Playful Studio
+  8: samplePortrait(7),   // Outdoor Natural
+  9: samplePortrait(8),   // Urban Lifestyle
+  10: samplePortrait(9),  // Golden Hour
+  11: samplePortrait(10), // Cap & Gown Classic
+  12: samplePortrait(11), // Modern Academic
+  13: samplePortrait(12), // Warm & Candid
+  14: samplePortrait(13), // Pet Portrait Studio
 };
 
+/* Style group images also use unique portraits (indices 14+). */
 const styleGroupImages: Record<string, SampleImage[]> = {
   Corporate: [
-    categoryImage('linkedin-team'),
-    brandPortraits.manAfter,
-    categoryImage('headshots'),
+    samplePortrait(14),
+    samplePortrait(15),
+    samplePortrait(16),
   ],
   Creative: [
-    brandPortraits.womanEditorial,
-    brandPortraits.womanAfter,
+    samplePortrait(17),
+    samplePortrait(18),
   ],
   Casual: [
-    categoryImage('dating'),
-    categoryImage('avatars'), // was real-estate: wrong subject
-    categoryImage('couple-engagement'),
+    samplePortrait(19),
+    samplePortrait(20),
+    samplePortrait(21),
   ],
   Academic: [
-    categoryImage('graduation'),
-    categoryImage('headshots'), // was duplicate graduation
+    samplePortrait(22),
+    samplePortrait(23),
   ],
 };
 
