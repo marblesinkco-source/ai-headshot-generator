@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Aperture, BookOpen, Briefcase, Camera, Check, Image, Layers, Sparkles, Star, Upload, UserCheck, Users } from 'lucide-react';
+import { Aperture, BookOpen, Briefcase, Camera, Check, Image as ImageIcon, Layers, Sparkles, Star, Upload, UserCheck, Users } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';

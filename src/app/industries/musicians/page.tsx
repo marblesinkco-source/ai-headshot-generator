@@ -5,7 +5,7 @@ import Link from 'next/link';
 import {
   Check,
   Globe,
-  Image,
+  ImageIcon,
   Megaphone,
   Mic,
   Music,
