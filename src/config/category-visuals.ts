@@ -170,7 +170,7 @@ export const categoryVisuals: Record<string, CategoryVisuals> = {
 
   dating: fromBase('dating', 'Confident woman smiling warmly', POS.portrait),
 
-  'pet-portraits': fromBase('pet-portraits', 'Dog and cat silhouettes in a warm studio setting', POS.pet),
+  'pet-portraits': fromBase('pet-portraits', 'Two golden retriever puppies sitting on grass with orange flowers', POS.pet),
 
   'linkedin-team': {
     ...fromBase('linkedin-team', 'Corporate team collaborating in modern office', POS.group),
@@ -180,19 +180,19 @@ export const categoryVisuals: Record<string, CategoryVisuals> = {
     },
   },
 
-  'baby-shower': fromBase('baby-shower', 'Baby shower invitation card mockup with pastel decorations', POS.card),
+  'baby-shower': fromBase('baby-shower', 'Mother holding and kissing a baby in a nursery room', POS.portrait),
 
-  graduation: fromBase('graduation', 'Graduation cap and diploma illustration', POS.portrait),
+  graduation: fromBase('graduation', 'Two graduates celebrating on campus steps wearing caps and gowns', POS.group),
 
-  'holiday-cards': fromBase('holiday-cards', 'Holiday greeting card with festive tree and wreath design', POS.card),
+  'holiday-cards': fromBase('holiday-cards', 'Family decorating a Christmas tree together under staircase', POS.group),
 
   'family-portraits': fromBase('family-portraits', 'Happy family portrait together', POS.group),
 
   'couple-engagement': fromBase('couple-engagement', 'Romantic couple engagement portrait', POS.group),
 
-  'real-estate': fromBase('real-estate', 'Empty room interior ready for virtual staging', POS.room),
+  'real-estate': fromBase('real-estate', 'Modern living room interior with sofa and wooden staircase', POS.room),
 
-  'ecommerce-product': fromBase('ecommerce-product', 'Product photography with bottle, box and watch on studio surface', POS.product),
+  'ecommerce-product': fromBase('ecommerce-product', 'Luxury chronograph watch on polished wooden surface', POS.product),
 
   avatars: fromBase('avatars', 'AI avatar style variations of a portrait', POS.portrait),
 };

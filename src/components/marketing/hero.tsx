@@ -150,7 +150,7 @@ export function Hero() {
               className="flex items-center gap-3 border border-tp-line bg-[#FEFCF8] rounded-xl min-h-[70px] sm:min-h-[84px] p-3 text-left hover:border-tp-bronze-ink transition-colors"
               onClick={() => categoryDialog.current?.close()}
             >
-              <div className="w-[52px] h-[52px] sm:w-[60px] sm:h-[60px] rounded-lg overflow-hidden flex-shrink-0 bg-gradient-to-br from-tp-beige to-tp-line">
+              <div className="w-[60px] h-[60px] sm:w-[72px] sm:h-[72px] rounded-lg overflow-hidden flex-shrink-0 bg-gradient-to-br from-tp-beige to-tp-line">
                 <Image
                   src={categoryVisuals[cat.id]?.quickCard?.src ?? `/images/categories/${cat.id}.jpg`}
                   alt={categoryVisuals[cat.id]?.quickCard?.alt ?? cat.name}
@@ -207,10 +207,10 @@ function QuickCategories({
           <Link
             key={cat.id}
             href={`/${cat.slug}`}
-            className="group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink border border-tp-line bg-[#FEFCF8] rounded-xl overflow-hidden flex flex-row lg:flex-col min-h-[69px] lg:min-h-0 items-stretch transition-all duration-150 hover:-translate-y-[3px] hover:border-tp-bronze-ink"
+            className="group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink border border-tp-line bg-[#FEFCF8] rounded-xl overflow-hidden flex flex-row lg:flex-col min-h-[85px] lg:min-h-0 items-stretch transition-all duration-150 hover:-translate-y-[3px] hover:border-tp-bronze-ink"
           >
             {/* Category thumbnail */}
-            <div className="w-[59px] lg:w-full h-[69px] lg:h-[98px] bg-gradient-to-br from-tp-beige to-tp-line flex-shrink-0 overflow-hidden">
+            <div className="w-[72px] lg:w-full h-[85px] lg:h-[130px] bg-gradient-to-br from-tp-beige to-tp-line flex-shrink-0 overflow-hidden">
               <Image
                 src={categoryVisuals[cat.id]?.quickCard?.src ?? `/images/categories/${cat.id}.jpg`}
                 alt={categoryVisuals[cat.id]?.quickCard?.alt ?? cat.name}
@@ -220,7 +220,7 @@ function QuickCategories({
                 sizes="(max-width: 1024px) 59px, 16vw"
               />
             </div>
-            <span className="flex items-center justify-between gap-1.5 px-2 py-2 lg:px-3 lg:py-3 text-[11px] font-semibold flex-1 min-h-0 lg:min-h-[52px]">
+            <span className="flex items-center justify-between gap-1.5 px-2.5 py-2.5 lg:px-3 lg:py-3 text-[12px] font-semibold flex-1 min-h-0 lg:min-h-[48px]">
               <span className="max-w-[calc(100%-16px)]">{cat.shortName}</span>
               <i className="not-italic text-[15px] lg:text-[18px]" aria-hidden="true">&#8599;</i>
             </span>
