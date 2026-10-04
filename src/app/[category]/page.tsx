@@ -9,7 +9,7 @@ import { Footer } from '@/components/marketing/footer';
 import { Button } from '@/components/ui/button';
 import { getActiveCategories, getCategoryBySlug } from '@/config/categories';
 import { getCategoryContent } from '@/config/category-content';
-import { getCategoryVisuals, getCategoryImage, categoryVisuals, heroCollageSupplements } from '@/config/category-visuals';
+import { getCategoryVisuals, getCategoryImage, categoryVisuals } from '@/config/category-visuals';
 import { siteConfig } from '@/config/site';
 import { formatPrice } from '@/lib/utils';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
@@ -57,46 +57,12 @@ export default async function CategoryPage({ params }: Props) {
   const afterSrc = afterAsset?.src ?? heroSrc;
   const galleryItems = visuals?.gallery ?? [];
 
-  // Build 4 distinct images for the hero collage (never repeat the same image 4x)
-  // Object-position overrides: show head + shoulders + upper body in the collage cards
-  const collagePositions = ['50% 10%', '50% 15%', '50% 20%', '50% 5%'];
-  const heroCollageImages: { src: string; alt: string; objectPosition: string }[] = (() => {
-    const catImages: { src: string; alt: string }[] = [];
-    const supplementImages: { src: string; alt: string }[] = [];
-    const seen = new Set<string>();
-    // Collect gallery items (category-specific)
-    for (const g of galleryItems) {
-      if (!seen.has(g.src)) {
-        seen.add(g.src);
-        catImages.push({ src: g.src, alt: g.alt });
-      }
-    }
-    // Collect brand portraits for variety
-    for (const s of heroCollageSupplements) {
-      if (seen.has(s.src)) continue;
-      seen.add(s.src);
-      supplementImages.push({ src: s.src, alt: s.alt });
-    }
-    // When gallery has fewer than 4 images, put wider-framed brand portraits first
-    // so they appear in the larger collage slots; category image goes last
-    let pool: { src: string; alt: string }[];
-    if (catImages.length >= 4) {
-      pool = catImages;
-    } else {
-      pool = [...supplementImages.slice(0, 4 - catImages.length), ...catImages];
-    }
-    // Fallback if still < 4
-    while (pool.length < 4) {
-      pool.push({
-        src: heroSrc,
-        alt: heroAsset?.alt ?? `${cat.name} example`,
-      });
-    }
-    return pool.slice(0, 4).map((img, i) => ({
-      ...img,
-      objectPosition: collagePositions[i],
-    }));
-  })();
+  // Determine unique gallery images for collage (only use collage when 4+ unique images exist)
+  const uniqueGallery = galleryItems.filter(
+    (g, i, arr) => arr.findIndex((x) => x.src === g.src) === i,
+  );
+  const useCollage = uniqueGallery.length >= 4;
+  const collageImages = useCollage ? uniqueGallery.slice(0, 4) : [];
 
   const lowestPrice = Math.min(...cat.packages.map((p) => p.price));
 
@@ -260,32 +226,63 @@ export default async function CategoryPage({ params }: Props) {
               </div>
             </div>
 
-            {/* Right: Image collage — 4 distinct images */}
+            {/* Mobile hero image */}
+            <div className="lg:hidden mt-8 overflow-hidden rounded-2xl bg-tp-beige aspect-[4/3] max-h-[300px]">
+              <Image
+                src={heroSrc}
+                alt={heroAsset?.alt ?? `${cat.name} example`}
+                width={800}
+                height={600}
+                className="h-full w-full object-cover"
+                style={{ objectPosition: heroAsset?.mobileObjectPosition ?? '50% 30%' }}
+                sizes="100vw"
+                priority
+              />
+            </div>
+
+            {/* Desktop: Category hero image */}
             <div className="relative hidden lg:block">
-              <div className="grid grid-cols-2 gap-3">
-                {heroCollageImages.map((img, i) => (
-                  <div
-                    key={i}
-                    className={`overflow-hidden rounded-tp-card bg-tp-warm ${
-                      i === 0 ? 'aspect-[4/5] col-span-1' :
-                      i === 1 ? 'aspect-[5/4] col-span-1 mt-8' :
-                      i === 2 ? 'aspect-[5/4] col-span-1' :
-                      'aspect-[4/5] col-span-1 -mt-8'
-                    }`}
-                  >
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      width={400}
-                      height={i % 2 === 0 ? 533 : 400}
-                      className="h-full w-full object-cover"
-                      style={{ objectPosition: img.objectPosition }}
-                      sizes="(min-width: 1024px) 20vw, 0px"
-                      priority={i < 2}
-                    />
-                  </div>
-                ))}
-              </div>
+              {useCollage ? (
+                /* Collage — only when 4+ unique gallery images exist */
+                <div className="grid grid-cols-2 gap-3">
+                  {collageImages.map((img, i) => (
+                    <div
+                      key={i}
+                      className={`overflow-hidden rounded-tp-card bg-tp-beige ${
+                        i === 0 ? 'aspect-[4/5] col-span-1' :
+                        i === 1 ? 'aspect-[5/4] col-span-1 mt-8' :
+                        i === 2 ? 'aspect-[5/4] col-span-1' :
+                        'aspect-[4/5] col-span-1 -mt-8'
+                      }`}
+                    >
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        width={400}
+                        height={i % 2 === 0 ? 533 : 400}
+                        className="h-full w-full object-cover"
+                        style={{ objectPosition: img.desktopObjectPosition }}
+                        sizes="(min-width: 1024px) 20vw, 0px"
+                        priority={i < 2}
+                      />
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                /* Single large image — shows the category's own photo prominently */
+                <div className="overflow-hidden rounded-[40px_18px_18px_18px] bg-tp-beige aspect-[3/4] max-h-[520px]">
+                  <Image
+                    src={heroSrc}
+                    alt={heroAsset?.alt ?? `${cat.name} example`}
+                    width={800}
+                    height={600}
+                    className="h-full w-full object-cover"
+                    style={{ objectPosition: heroAsset?.desktopObjectPosition ?? '50% 30%' }}
+                    sizes="(min-width: 1024px) 40vw, 0px"
+                    priority
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
