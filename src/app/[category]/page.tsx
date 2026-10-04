@@ -9,7 +9,7 @@ import { Footer } from '@/components/marketing/footer';
 import { Button } from '@/components/ui/button';
 import { getActiveCategories, getCategoryBySlug } from '@/config/categories';
 import { getCategoryContent } from '@/config/category-content';
-import { getCategoryVisuals, getCategoryImage, categoryVisuals } from '@/config/category-visuals';
+import { getCategoryVisuals, getCategoryImage, categoryVisuals, heroCollageSupplements } from '@/config/category-visuals';
 import { siteConfig } from '@/config/site';
 import { formatPrice } from '@/lib/utils';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
@@ -56,6 +56,38 @@ export default async function CategoryPage({ params }: Props) {
   const beforeSrc = beforeAsset?.src ?? heroSrc;
   const afterSrc = afterAsset?.src ?? heroSrc;
   const galleryItems = visuals?.gallery ?? [];
+
+  // Build 4 distinct images for the hero collage (never repeat the same image 4x)
+  const heroCollageImages: { src: string; alt: string; objectPosition: string }[] = (() => {
+    const pool: { src: string; alt: string; objectPosition: string }[] = [];
+    // Start with gallery items (deduplicated by src)
+    const seen = new Set<string>();
+    for (const g of galleryItems) {
+      if (!seen.has(g.src)) {
+        seen.add(g.src);
+        pool.push({ src: g.src, alt: g.alt, objectPosition: g.desktopObjectPosition });
+      }
+    }
+    // Supplement with brand portraits for variety
+    for (const s of heroCollageSupplements) {
+      if (pool.length >= 4) break;
+      if (!seen.has(s.src)) {
+        seen.add(s.src);
+        pool.push({ src: s.src, alt: s.alt, objectPosition: s.desktopObjectPosition });
+      }
+    }
+    // Fallback: repeat hero with varied crops if still < 4
+    const fallbackPositions = ['50% 20%', '50% 45%', '50% 65%', '50% 35%'];
+    while (pool.length < 4) {
+      pool.push({
+        src: heroSrc,
+        alt: heroAsset?.alt ?? `${cat.name} example`,
+        objectPosition: fallbackPositions[pool.length % fallbackPositions.length],
+      });
+    }
+    return pool.slice(0, 4);
+  })();
+
   const lowestPrice = Math.min(...cat.packages.map((p) => p.price));
 
   const allCategories = getActiveCategories();
@@ -218,26 +250,26 @@ export default async function CategoryPage({ params }: Props) {
               </div>
             </div>
 
-            {/* Right: Image collage placeholder */}
+            {/* Right: Image collage — 4 distinct images */}
             <div className="relative hidden lg:block">
               <div className="grid grid-cols-2 gap-3">
-                {[1, 2, 3, 4].map((i) => (
+                {heroCollageImages.map((img, i) => (
                   <div
                     key={i}
                     className={`overflow-hidden rounded-tp-card bg-tp-warm ${
-                      i === 1 ? 'aspect-[3/4] col-span-1' :
-                      i === 2 ? 'aspect-square col-span-1 mt-8' :
-                      i === 3 ? 'aspect-square col-span-1' :
+                      i === 0 ? 'aspect-[3/4] col-span-1' :
+                      i === 1 ? 'aspect-square col-span-1 mt-8' :
+                      i === 2 ? 'aspect-square col-span-1' :
                       'aspect-[3/4] col-span-1 -mt-8'
                     }`}
                   >
                     <Image
-                      src={heroSrc}
-                      alt={heroAsset?.alt ?? `${cat.name} example ${i}`}
-                      width={320}
-                      height={i % 2 === 1 ? 427 : 320}
+                      src={img.src}
+                      alt={img.alt}
+                      width={400}
+                      height={i % 2 === 0 ? 533 : 400}
                       className="h-full w-full object-cover"
-                      style={heroAsset?.desktopObjectPosition ? { objectPosition: heroAsset.desktopObjectPosition } : undefined}
+                      style={{ objectPosition: img.objectPosition }}
                       sizes="(min-width: 1024px) 20vw, 0px"
                     />
                   </div>

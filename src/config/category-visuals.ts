@@ -40,7 +40,7 @@ export interface CategoryVisuals {
 type Pos = { desktop: string; mobile: string };
 
 const POS = {
-  portrait: { desktop: '50% 38%', mobile: '50% 28%' }, // eyes near upper third
+  portrait: { desktop: '50% 30%', mobile: '50% 25%' }, // head + shoulders visible
   product: { desktop: '50% 50%', mobile: '50% 50%' },
   room: { desktop: '50% 45%', mobile: '50% 45%' }, // architectural center
   card: { desktop: '50% 50%', mobile: '50% 50%' }, // fully visible
@@ -72,6 +72,15 @@ function fromBase(id: CategoryId, alt: string, pos: Pos, galleryAlt?: string[]):
     gallery: (galleryAlt ?? [alt]).map((a) => asset(src, a, pos)),
   };
 }
+
+/** Brand portraits available for hero collage supplements. */
+export const heroCollageSupplements: ImageAsset[] = [
+  asset(`${BRAND_WEB}/portrait-woman-after.webp`, 'AI-generated studio portrait of a woman', POS.portrait),
+  asset(`${BRAND_WEB}/portrait-man-after.webp`, 'AI-generated executive portrait of a man', POS.portrait),
+  asset(`${BRAND_WEB}/portrait-woman-editorial.webp`, 'AI-generated editorial portrait', POS.portrait),
+  asset(`${BRAND_WEB}/portrait-man-editorial.webp`, 'AI-generated editorial portrait of a man', POS.portrait),
+  asset(`${BRAND_WEB}/portrait-woman-creative-after.webp`, 'Editorial-style AI portrait', POS.portrait),
+];
 
 /* ------------------------------------------------------------------ */
 /*  Homepage / brand assets (/brand/tailorpic/web)                     */
