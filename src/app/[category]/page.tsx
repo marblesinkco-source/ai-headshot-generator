@@ -170,7 +170,16 @@ export default async function CategoryPage({ params }: Props) {
             {/* Left: Copy */}
             <div className="max-w-xl">
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-tp-line bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-tp-bronze-ink">
-                <span className="text-base">{cat.icon}</span>
+                <span className="inline-block w-5 h-5 rounded-full overflow-hidden flex-shrink-0">
+                  <Image
+                    src={categoryVisuals[cat.id]?.megaMenu?.src ?? `/images/categories/${cat.id}.jpg`}
+                    alt=""
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-cover"
+                    sizes="20px"
+                  />
+                </span>
                 {cat.name}
               </div>
 
@@ -595,9 +604,18 @@ export default async function CategoryPage({ params }: Props) {
               </Button>
             </Link>
             <div className="flex items-center gap-6 text-sm text-tp-beige/60">
-              <span>⚡ Fast results</span>
-              <span>🔒 Secure &amp; private</span>
-              <span>✅ 100% satisfaction</span>
+              <span className="inline-flex items-center gap-1.5">
+                <Sparkles className="h-3.5 w-3.5 text-tp-bronze" />
+                Fast results
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <ShieldCheck className="h-3.5 w-3.5 text-tp-bronze" />
+                Secure &amp; private
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <Clock className="h-3.5 w-3.5 text-tp-bronze" />
+                100% satisfaction
+              </span>
             </div>
           </div>
         </div>

@@ -2,8 +2,10 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Check, Zap, Lock, Star } from 'lucide-react';
 import { getActiveCategories, type Category } from '@/config/categories';
+import { categoryVisuals } from '@/config/category-visuals';
 import { formatPrice } from '@/lib/utils';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -70,7 +72,18 @@ export function Pricing() {
                   : 'bg-white text-tp-muted hover:bg-tp-paper border border-tp-line'
               )}
             >
-              {cat.icon} {cat.name}
+              <span className="inline-block w-5 h-5 rounded-full overflow-hidden flex-shrink-0">
+                <Image
+                  src={categoryVisuals[cat.id]?.megaMenu?.src ?? `/images/categories/${cat.id}.jpg`}
+                  alt=""
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover"
+                  sizes="20px"
+                  loading="lazy"
+                />
+              </span>
+              {cat.name}
             </button>
           ))}
           <Link
