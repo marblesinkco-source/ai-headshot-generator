@@ -127,10 +127,12 @@ export default function DashboardShell({ children, user }: DashboardShellProps) 
       >
         {/* Sidebar header */}
         <div className="flex h-16 items-center gap-2.5 border-b border-tp-line/50 px-6">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-tp-black">
-            <span className="text-sm font-bold text-tp-bronze">T</span>
-          </div>
-          <span className="font-semibold text-tp-black">{siteConfig.name}</span>
+          <Link href="/" className="flex items-center gap-2.5">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-tp-black">
+              <span className="text-sm font-bold text-tp-bronze">T</span>
+            </div>
+            <span className="font-semibold text-tp-black">{siteConfig.name}</span>
+          </Link>
           <button
             onClick={() => setSidebarOpen(false)}
             className="ml-auto rounded-lg p-1 text-tp-muted hover:bg-tp-paper lg:hidden"
