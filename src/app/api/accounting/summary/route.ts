@@ -22,6 +22,9 @@ export async function GET(_request: NextRequest) {
       });
     }
     console.error('[accounting/summary] GET failed:', error);
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+    const debugInfo = typeof error === 'object' && error !== null
+      ? { message: (error as Record<string,unknown>).message, code: (error as Record<string,unknown>).code, name: (error as Record<string,unknown>).name, type: typeof error, isError: error instanceof Error }
+      : { raw: String(error), type: typeof error };
+    return NextResponse.json({ error: 'Internal server error', _debug: debugInfo }, { status: 500 });
   }
 }
