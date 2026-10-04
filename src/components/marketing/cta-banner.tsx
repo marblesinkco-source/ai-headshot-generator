@@ -17,7 +17,7 @@ export function CTABanner() {
 
   return (
     <>
-      <section className="py-16 sm:py-20">
+      <section className="py-tp-section-sm lg:py-tp-section">
         <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
           <div className="relative overflow-hidden rounded-tp-card bg-tp-black p-8 sm:p-12 lg:p-20 text-center">
             {/* Decorative gradient */}
@@ -35,7 +35,7 @@ export function CTABanner() {
               <span className="inline-flex items-center gap-2 rounded-full border border-tp-bronze/40 bg-tp-bronze/15 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-tp-bronze">
                 Ready when you are
               </span>
-              <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-tp-paper leading-tight tracking-[-0.03em]">
+              <h2 className="mt-5 font-display text-[28px] sm:text-[36px] lg:text-[44px] font-normal text-tp-paper leading-tight tracking-[-0.03em]">
                 Skip the studio. Get headshots you&rsquo;ll actually use.
               </h2>
               <p className="mt-4 text-tp-beige/70 text-base sm:text-lg max-w-xl mx-auto">

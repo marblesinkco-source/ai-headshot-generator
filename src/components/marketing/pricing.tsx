@@ -32,28 +32,18 @@ export function Pricing() {
   const hasExpress = packages.length >= 4 && entryPackage !== undefined;
 
   return (
-    <section id="pricing" className="relative bg-tp-paper/40 py-24 sm:py-32">
+    <section id="pricing" className="relative bg-tp-paper/40 py-tp-section lg:py-tp-section-lg">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Value proposition (no fake urgency) */}
-        <div className="mx-auto mb-10 max-w-xl rounded-tp-card border border-tp-line bg-tp-paper p-4 text-center">
-          <p className="text-sm font-semibold text-tp-bronze-ink">
-            One-time price. No subscription. Yours to keep.
-          </p>
-          <p className="mt-1 text-xs text-tp-muted">
-            Studio-quality photos without the studio booking, travel or wardrobe changes.
-          </p>
-        </div>
-
         {/* Section header */}
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
-            Pricing
+          <p className="uppercase text-[11px] font-semibold tracking-[0.25em] text-tp-bronze-ink">
+            Simple Pricing
           </p>
-          <h2 className="mt-3 font-display font-normal text-3xl tracking-tight text-tp-black sm:text-4xl">
+          <h2 className="mt-3 font-display text-[30px] sm:text-[40px] font-normal tracking-[-0.03em] text-tp-ink leading-tight">
             Choose Your Plan
           </h2>
-          <p className="mt-4 text-lg text-tp-muted">
-            One-time payment. No subscription. Your photos are yours forever.
+          <p className="mt-4 text-[15px] text-tp-muted leading-relaxed max-w-lg mx-auto">
+            One-time payment, no subscription. Studio-quality photos without the studio booking, travel or wardrobe changes.
           </p>
         </div>
 

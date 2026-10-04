@@ -32,17 +32,17 @@ export function FAQ() {
   };
 
   return (
-    <section id="faq" className="bg-tp-paper py-24 sm:py-32">
+    <section id="faq" className="bg-tp-paper py-tp-section lg:py-tp-section-lg">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
+          <p className="uppercase text-[11px] font-semibold tracking-[0.25em] text-tp-bronze-ink">
             FAQ
           </p>
-          <h2 className="mt-3 font-display text-3xl font-normal tracking-tight text-tp-ink sm:text-4xl">
+          <h2 className="mt-3 font-display text-[30px] sm:text-[40px] font-normal tracking-[-0.03em] text-tp-ink leading-tight">
             Frequently Asked Questions
           </h2>
-          <p className="mt-4 text-lg text-tp-muted">
+          <p className="mt-4 text-[15px] text-tp-muted leading-relaxed">
             Everything you need to know about our AI photo service.
           </p>
         </div>

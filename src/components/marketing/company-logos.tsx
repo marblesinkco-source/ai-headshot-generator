@@ -20,20 +20,20 @@ export function CompanyLogos() {
   return (
     <section
       aria-labelledby="industries-heading"
-      className="w-full py-14 md:py-16"
+      className="w-full py-tp-section-sm lg:py-tp-section"
     >
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="text-center mb-8 md:mb-10">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-tp-bronze-ink mb-3">
+      <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
+        <div className="text-center mb-10 lg:mb-12">
+          <p className="uppercase text-[11px] font-semibold tracking-[0.25em] text-tp-bronze-ink mb-3">
             Built for professionals
           </p>
           <h2
             id="industries-heading"
-            className="font-display text-2xl md:text-3xl text-tp-ink mb-3"
+            className="font-display text-[30px] md:text-[40px] font-normal tracking-[-0.03em] text-tp-ink leading-tight"
           >
-            Professional headshots for every industry
+            Headshots for every industry
           </h2>
-          <p className="text-tp-muted text-base">
+          <p className="mt-4 text-[15px] text-tp-muted leading-relaxed">
             Professional-grade results for teams of all sizes
           </p>
         </div>

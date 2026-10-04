@@ -15,16 +15,16 @@ export function Categories() {
   const categories = getActiveCategories();
 
   return (
-    <section id="categories" className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 py-10 lg:py-16">
-      <div className="text-center mb-12">
+    <section id="categories" className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 py-tp-section-sm lg:py-tp-section">
+      <div className="text-center mb-10 lg:mb-14">
         <p className="uppercase text-[11px] font-semibold tracking-[0.25em] text-tp-bronze-ink mb-3">
           Choose Your Photo Type
         </p>
-        <h2 className="font-display text-[33px] lg:text-[42px] leading-tight tracking-[-0.03em] font-normal text-tp-ink">
+        <h2 className="font-display text-[30px] lg:text-[40px] leading-tight tracking-[-0.03em] font-normal text-tp-ink">
           AI Photos for Every Occasion
         </h2>
-        <p className="mt-4 text-[15px] text-tp-muted max-w-lg mx-auto">
-          From professional headshots to virtual staging — choose your category and let AI create stunning results tailored to you.
+        <p className="mt-4 text-[15px] text-tp-muted max-w-lg mx-auto leading-relaxed">
+          From professional headshots to creative portraits — choose your category and let AI create stunning results tailored to you.
         </p>
       </div>
 

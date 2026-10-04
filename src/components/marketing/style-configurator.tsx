@@ -3,7 +3,7 @@
 import { useState, useCallback } from 'react';
 import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
-import { Shuffle, ArrowRight, Palette } from 'lucide-react';
+import { Shuffle, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const BACKDROPS = [
@@ -37,20 +37,20 @@ export function StyleConfigurator() {
   const fit = OUTFITS[outfit];
 
   return (
-    <section className="bg-tp-beige/30 py-20 sm:py-28" aria-labelledby="configurator-heading">
+    <section className="bg-tp-beige/25 py-tp-section" aria-labelledby="configurator-heading">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center">
-          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-tp-bronze/15">
-            <Palette className="h-6 w-6 text-tp-bronze-ink" />
-          </div>
+          <p className="uppercase text-[11px] font-semibold tracking-[0.25em] text-tp-bronze-ink mb-3">
+            Customize Your Style
+          </p>
           <h2
             id="configurator-heading"
-            className="font-display text-3xl font-normal tracking-tight text-tp-ink sm:text-4xl"
+            className="font-display text-[30px] sm:text-[40px] font-normal tracking-[-0.03em] text-tp-ink leading-tight"
           >
             Design Your Look
           </h2>
-          <p className="mt-3 text-base text-tp-muted">
+          <p className="mt-4 text-[15px] text-tp-muted leading-relaxed">
             Mix backdrops and outfits to preview your headshot style. Every plan includes multiple combinations.
           </p>
         </div>

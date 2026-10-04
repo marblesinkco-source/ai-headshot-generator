@@ -34,7 +34,7 @@ export function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="scroll-mt-24 mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 py-10 lg:py-[68px]"
+      className="scroll-mt-24 mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 py-tp-section-sm lg:py-tp-section"
     >
       <div className="flex justify-between items-end gap-4 mb-8 lg:mb-12">
         <div>
@@ -42,7 +42,7 @@ export function HowItWorks() {
             <Sparkles className="h-3 w-3" aria-hidden="true" />
             3 simple steps
           </span>
-          <h2 className="font-display text-[28px] lg:text-[40px] leading-tight tracking-[-0.03em] font-normal text-tp-ink">
+          <h2 className="font-display text-[30px] lg:text-[40px] leading-tight tracking-[-0.03em] font-normal text-tp-ink">
             How it works
           </h2>
         </div>
@@ -60,7 +60,7 @@ export function HowItWorks() {
             <li key={step.number} className="relative flex flex-col items-stretch">
               <article className="relative h-full overflow-hidden rounded-tp-card border border-tp-line bg-tp-paper p-6 lg:p-8">
                 <span
-                  className="pointer-events-none absolute -right-2 -top-6 select-none font-display text-[140px] leading-none text-tp-beige/60 lg:text-[180px]"
+                  className="pointer-events-none absolute -right-2 -top-4 select-none font-display text-[110px] leading-none text-tp-beige/40 lg:text-[140px]"
                   aria-hidden="true"
                 >
                   {step.number}

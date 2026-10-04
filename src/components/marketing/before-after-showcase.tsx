@@ -141,25 +141,25 @@ function ComparisonSlider({
 
 export function BeforeAfterShowcase() {
   return (
-    <section className="bg-tp-paper py-20 sm:py-28" aria-labelledby="before-after-heading">
+    <section className="bg-tp-paper py-tp-section" aria-labelledby="before-after-heading">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-tp-bronze-ink">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-tp-bronze-ink">
             Before &amp; After
           </p>
           <h2
             id="before-after-heading"
-            className="mt-3 font-display text-3xl font-normal tracking-tight text-tp-ink sm:text-5xl"
+            className="mt-3 font-display text-[30px] sm:text-[40px] font-normal tracking-[-0.03em] text-tp-ink leading-tight"
           >
             See the Transformation
           </h2>
-          <p className="mt-4 text-base text-tp-muted">
+          <p className="mt-4 text-[15px] text-tp-muted leading-relaxed">
             Drag the slider to compare. From an everyday selfie to a polished,
             professional headshot.
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="mt-10 lg:mt-14 grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
           {homeBeforeAfterPairs.map(({ label, detail, before, after }) => (
             <figure
               key={label}
