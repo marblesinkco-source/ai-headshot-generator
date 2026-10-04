@@ -1,12 +1,19 @@
-// Decorative inline SVG illustrations (no external assets, CSP-safe, no hooks → server/client safe).
-// Colors use brand hex values from tailwind.config.ts tokens via currentColor / explicit token hexes.
-// tp-bronze #C9A98A · tp-bronze-ink #76563D · tp-beige #DCCDBB · tp-paper #F8F5EF · tp-ink #171613
+// Marketing illustrations — a mix of inline SVG patterns/icons (HeroPattern, TrustGlyph)
+// and Unsplash-photo components that replaced the old SVG bust silhouettes.
+// Unsplash is whitelisted in next.config.mjs remotePatterns.
+
+import Image from 'next/image';
+import { portrait, square } from '@/config/stock-portraits';
 
 const BRONZE = '#C9A98A';
 const BRONZE_INK = '#76563D';
 const BEIGE = '#DCCDBB';
 const PAPER = '#F8F5EF';
 const INK = '#171613';
+
+/* ------------------------------------------------------------------ */
+/*  SVG-only components (no busts — kept as inline SVG)                */
+/* ------------------------------------------------------------------ */
 
 /** Subtle dot + grid pattern for the hero background (tp-bronze at low opacity). */
 export function HeroPattern({ className = '' }: { className?: string }) {
@@ -35,77 +42,6 @@ export function HeroPattern({ className = '' }: { className?: string }) {
         <rect width="100%" height="100%" fill="url(#tp-hero-grid)" />
         <rect width="100%" height="100%" fill="url(#tp-hero-dots)" />
       </g>
-    </svg>
-  );
-}
-
-/** Generic professional bust silhouette. */
-function Bust({ x = 0, y = 0, scale = 1, fill = BRONZE_INK, opacity = 1 }: { x?: number; y?: number; scale?: number; fill?: string; opacity?: number }) {
-  return (
-    <g transform={`translate(${x} ${y}) scale(${scale})`} opacity={opacity}>
-      <circle cx="0" cy="-14" r="13" fill={fill} />
-      <path d="M-26 34c0-17 11-27 26-27s26 10 26 27z" fill={fill} />
-    </g>
-  );
-}
-
-/** Step 1 — pick a style: three stacked style cards, one selected. */
-export function StepStyleIllustration({ className = '' }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 160 110" className={className} role="img" aria-label="Choose a photo style" fill="none">
-      <rect x="8" y="22" width="44" height="64" rx="8" fill={PAPER} stroke={BEIGE} />
-      <Bust x={30} y={50} scale={0.6} fill={BEIGE} />
-      <rect x="108" y="22" width="44" height="64" rx="8" fill={PAPER} stroke={BEIGE} />
-      <Bust x={130} y={50} scale={0.6} fill={BEIGE} />
-      <rect x="48" y="10" width="64" height="88" rx="10" fill={PAPER} stroke={BRONZE_INK} strokeWidth="1.5" />
-      <rect x="54" y="16" width="52" height="56" rx="6" fill={BEIGE} fillOpacity="0.55" />
-      <Bust x={80} y={52} scale={0.95} />
-      <rect x="56" y="80" width="30" height="5" rx="2.5" fill={INK} fillOpacity="0.75" />
-      <rect x="56" y="88" width="20" height="4" rx="2" fill={BRONZE} />
-      <circle cx="104" cy="18" r="9" fill={INK} />
-      <path d="M99.5 18l3 3 5-6" stroke={BRONZE} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-/** Step 2 — upload selfies: photo grid with an upload arrow. */
-export function StepUploadIllustration({ className = '' }: { className?: string }) {
-  const tiles = [
-    [14, 34], [58, 34], [102, 34],
-    [14, 70], [58, 70],
-  ];
-  return (
-    <svg viewBox="0 0 160 110" className={className} role="img" aria-label="Upload your selfies" fill="none">
-      {tiles.map(([x, y], i) => (
-        <g key={i}>
-          <rect x={x} y={y} width="40" height="30" rx="6" fill={PAPER} stroke={BEIGE} />
-          <circle cx={x + 20} cy={y + 12} r="6" fill={i % 2 ? BRONZE : BEIGE} />
-          <path d={`M${x + 9} ${y + 28}c0-7 5-10 11-10s11 3 11 10z`} fill={i % 2 ? BRONZE : BEIGE} />
-        </g>
-      ))}
-      <rect x="102" y="70" width="40" height="30" rx="6" fill={PAPER} stroke={BRONZE_INK} strokeDasharray="4 3" />
-      <path d="M122 92V78m0 0l-5 5m5-5l5 5" stroke={BRONZE_INK} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="122" cy="16" r="12" fill={INK} />
-      <path d="M122 21v-9m0 0l-4 4m4-4l4 4" stroke={BRONZE} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M94 16h-20M70 16h-4" stroke={BRONZE} strokeWidth="1.5" strokeLinecap="round" strokeDasharray="1 5" />
-    </svg>
-  );
-}
-
-/** Step 3 — download portraits: before/after pair with download badge. */
-export function StepDownloadIllustration({ className = '' }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 160 110" className={className} role="img" aria-label="Download your portraits" fill="none">
-      <rect x="10" y="26" width="52" height="66" rx="8" fill={PAPER} stroke={BEIGE} />
-      <circle cx="36" cy="52" r="10" fill={BEIGE} />
-      <path d="M17 88c0-14 8-22 19-22s19 8 19 22z" fill={BEIGE} />
-      <path d="M68 59h22m0 0l-5-5m5 5l-5 5" stroke={BRONZE_INK} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      <rect x="96" y="12" width="54" height="80" rx="9" fill={INK} />
-      <rect x="101" y="17" width="44" height="58" rx="6" fill={BRONZE} fillOpacity="0.28" />
-      <Bust x={123} y={50} scale={1} fill={BRONZE} />
-      <rect x="104" y="80" width="38" height="6" rx="3" fill={BRONZE} />
-      <circle cx="140" cy="92" r="11" fill={BRONZE} stroke={PAPER} strokeWidth="2" />
-      <path d="M140 87v8m0 0l-3.5-3.5m3.5 3.5l3.5-3.5" stroke={INK} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -146,309 +82,25 @@ export function TrustGlyph({ kind, className = '' }: { kind: 'no-subscription' |
   );
 }
 
-/** Fallback illustration for category cards with no photo (replaces emoji). Varies by id for visual rhythm. */
-export function CategoryFallbackIllustration({ seed = 0, className = '' }: { seed?: number; className?: string }) {
-  const variant = seed % 3;
-  const uid = `tp-cat-${seed}`;
+/** FAQ — three overlapping chat bubbles with question marks. */
+export function FAQIllustration({ className = '' }: { className?: string }) {
   return (
-    <svg viewBox="0 0 400 300" className={className} role="presentation" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <linearGradient id={`${uid}-bg`} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor={PAPER} />
-          <stop offset="100%" stopColor={BEIGE} />
-        </linearGradient>
-        <pattern id={`${uid}-dots`} width="18" height="18" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1.1" fill={BRONZE} fillOpacity="0.45" />
-        </pattern>
-      </defs>
-      <rect width="400" height="300" fill={`url(#${uid}-bg)`} />
-      <rect width="400" height="300" fill={`url(#${uid}-dots)`} />
-      {variant === 0 && (
-        <g>
-          <circle cx="200" cy="150" r="96" fill={BRONZE} fillOpacity="0.2" />
-          <circle cx="200" cy="150" r="68" fill="none" stroke={BRONZE_INK} strokeOpacity="0.35" strokeDasharray="3 7" />
-          <Bust x={200} y={150} scale={2.2} />
-        </g>
-      )}
-      {variant === 1 && (
-        <g>
-          <rect x="110" y="70" width="180" height="150" rx="18" fill={INK} />
-          <circle cx="200" cy="145" r="42" fill="none" stroke={BRONZE} strokeWidth="6" />
-          <circle cx="200" cy="145" r="22" fill={BRONZE} fillOpacity="0.35" />
-          <rect x="250" y="82" width="22" height="12" rx="4" fill={BRONZE} />
-          <rect x="165" y="56" width="70" height="20" rx="8" fill={INK} />
-        </g>
-      )}
-      {variant === 2 && (
-        <g>
-          <rect x="95" y="80" width="86" height="120" rx="12" fill={PAPER} stroke={BEIGE} strokeWidth="2" transform="rotate(-8 138 140)" />
-          <rect x="219" y="80" width="86" height="120" rx="12" fill={PAPER} stroke={BEIGE} strokeWidth="2" transform="rotate(8 262 140)" />
-          <rect x="157" y="62" width="86" height="130" rx="12" fill={PAPER} stroke={BRONZE_INK} strokeWidth="2" />
-          <Bust x={200} y={118} scale={1.3} />
-        </g>
-      )}
+    <svg viewBox="0 0 260 160" className={className} aria-hidden="true" focusable="false" fill="none">
+      <path d="M46 72C46 52 60 46 82 48" stroke={BRONZE} strokeWidth="1.5" strokeLinecap="round" strokeDasharray="1 5" />
+      <path d="M216 86C216 66 202 58 178 58" stroke={BRONZE} strokeWidth="1.5" strokeLinecap="round" strokeDasharray="1 5" />
+      <path d="M74 128C92 140 120 142 140 134" stroke={BRONZE} strokeWidth="1.5" strokeLinecap="round" strokeDasharray="1 5" />
+      <path d="M26 72h40a12 12 0 0112 12v22a12 12 0 01-12 12H44l-12 12v-12h-6a12 12 0 01-12-12V84a12 12 0 0112-12z" fill={PAPER} stroke={BRONZE_INK} strokeWidth="1.5" strokeLinejoin="round" />
+      <QMark x={46} y={92} scale={0.7} color={BRONZE_INK} />
+      <path d="M200 86h30a12 12 0 0112 12v20a12 12 0 01-12 12h-4v12l-12-12h-14a12 12 0 01-12-12V98a12 12 0 0112-12z" fill={BEIGE} fillOpacity="0.55" stroke={BRONZE} strokeWidth="1.5" strokeLinejoin="round" />
+      <QMark x={209} y={104} scale={0.62} color={BRONZE_INK} />
+      <path d="M96 20h68a16 16 0 0116 16v44a16 16 0 01-16 16h-44l-18 18V96h-6a16 16 0 01-16-16V36a16 16 0 0116-16z" fill={INK} stroke={BRONZE} strokeWidth="1.5" strokeLinejoin="round" />
+      <QMark x={130} y={50} scale={1.25} color={BRONZE} />
+      <circle cx="236" cy="38" r="3" fill={BRONZE} fillOpacity="0.6" />
+      <circle cx="22" cy="40" r="2.5" fill={BEIGE} />
     </svg>
   );
 }
 
-/** Team consistency — 3x2 grid of matching portrait cards, one highlighted as primary. */
-export function TeamGridIllustration({ className = '' }: { className?: string }) {
-  const xs = [12, 114, 216];
-  const ys = [11, 105];
-  return (
-    <svg viewBox="0 0 320 200" className={className} role="img" aria-label="A team of matching professional portraits" fill="none">
-      {ys.map((y, r) =>
-        xs.map((x, c) => {
-          const primary = r === 0 && c === 1;
-          return (
-            <g key={`${r}-${c}`}>
-              <rect
-                x={x}
-                y={y}
-                width="92"
-                height="84"
-                rx="12"
-                fill={primary ? BEIGE : PAPER}
-                fillOpacity={primary ? 0.6 : 1}
-                stroke={primary ? BRONZE_INK : BEIGE}
-                strokeWidth={primary ? 2 : 1}
-              />
-              <Bust x={x + 46} y={y + 38} scale={0.85} fill={primary ? BRONZE_INK : BRONZE} />
-              <rect x={x + 26} y={y + 73} width="40" height="4" rx="2" fill={primary ? BRONZE_INK : BEIGE} />
-            </g>
-          );
-        })
-      )}
-    </svg>
-  );
-}
-
-/** Enterprise dashboard — dark sidebar, header bar and a grid of team portraits. */
-export function EnterpriseIllustration({ className = '' }: { className?: string }) {
-  const cols = [131, 234, 337];
-  const rows = [100, 190];
-  return (
-    <svg viewBox="0 0 400 260" className={className} role="img" aria-label="Team dashboard showing a grid of team headshots" fill="none">
-      <defs>
-        {rows.map((cy, r) =>
-          cols.map((cx, c) => (
-            <clipPath key={`${r}-${c}`} id={`tp-ent-clip-${r}-${c}`}>
-              <circle cx={cx} cy={cy} r="30" />
-            </clipPath>
-          ))
-        )}
-      </defs>
-      <rect x="0" y="0" width="400" height="260" rx="16" fill={PAPER} stroke={BEIGE} />
-      <path d="M16 0h48v260H16a16 16 0 01-16-16V16A16 16 0 0116 0z" fill={INK} />
-      <circle cx="32" cy="26" r="8" fill={BRONZE} />
-      {[60, 92, 124, 156].map((y, i) => (
-        <g key={y}>
-          <circle cx="22" cy={y} r="3" fill={i === 0 ? BRONZE : BRONZE_INK} />
-          <rect x="30" y={y - 2} width="22" height="4" rx="2" fill={i === 0 ? BRONZE : BRONZE_INK} fillOpacity={i === 0 ? 1 : 0.7} />
-        </g>
-      ))}
-      <rect x="80" y="16" width="308" height="28" rx="8" fill={BEIGE} fillOpacity="0.55" />
-      <rect x="92" y="26" width="70" height="8" rx="4" fill={INK} fillOpacity="0.75" />
-      <rect x="338" y="24" width="38" height="12" rx="6" fill={BRONZE} />
-      {rows.map((cy, r) =>
-        cols.map((cx, c) => {
-          const highlighted = r === 0 && c === 1;
-          return (
-            <g key={`${r}-${c}`}>
-              <circle cx={cx} cy={cy} r="30" fill={highlighted ? BEIGE : '#fff'} stroke={BEIGE} />
-              <g clipPath={`url(#tp-ent-clip-${r}-${c})`}>
-                <Bust x={cx} y={cy + 4} scale={0.8} fill={highlighted ? BRONZE_INK : BRONZE} />
-              </g>
-              {highlighted && <circle cx={cx} cy={cy} r="35" stroke={BRONZE} strokeWidth="3" />}
-              <rect x={cx - 20} y={cy + 40} width="40" height="5" rx="2.5" fill={INK} fillOpacity="0.7" />
-              <rect x={cx - 14} y={cy + 49} width="28" height="4" rx="2" fill={BEIGE} />
-            </g>
-          );
-        })
-      )}
-    </svg>
-  );
-}
-
-/** Before / after — casual selfie vs. polished studio portrait. */
-export function BeforeAfterIllustration({ className = '' }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 280 140" className={className} role="img" aria-label="A casual selfie transformed into a polished studio portrait" fill="none">
-      <defs>
-        <linearGradient id="tp-ba-studio" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor={PAPER} />
-          <stop offset="100%" stopColor={BRONZE} />
-        </linearGradient>
-        <clipPath id="tp-ba-clip-before">
-          <path d="M26 66c2-24 22-40 44-38 24 2 38 22 36 44-2 24-22 40-46 38-22-2-36-20-34-44z" />
-        </clipPath>
-        <clipPath id="tp-ba-clip-after">
-          <circle cx="214" cy="70" r="46" />
-        </clipPath>
-      </defs>
-      {/* Before: messy, off-center */}
-      <path d="M26 66c2-24 22-40 44-38 24 2 38 22 36 44-2 24-22 40-46 38-22-2-36-20-34-44z" fill={BEIGE} fillOpacity="0.5" />
-      <g clipPath="url(#tp-ba-clip-before)">
-        <g transform="rotate(-8 60 80)">
-          <Bust x={56} y={78} scale={1.1} fill={BRONZE} opacity={0.85} />
-        </g>
-      </g>
-      <path d="M24 64c3-26 24-42 47-40M104 50c6 8 7 20 4 30M30 92c8 16 24 26 42 26" stroke={BRONZE_INK} strokeWidth="1.3" strokeLinecap="round" strokeDasharray="3 4" />
-      <path d="M40 22l8 6M92 26l-6 8M20 108l9-3" stroke={BRONZE_INK} strokeOpacity="0.5" strokeWidth="1.2" strokeLinecap="round" />
-      {/* Arrow */}
-      <circle cx="140" cy="70" r="14" fill={INK} />
-      <path d="M133 70h13m0 0l-5-5m5 5l-5 5" stroke={BRONZE} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      {/* After: clean, centered, studio gradient */}
-      <circle cx="214" cy="70" r="46" fill="url(#tp-ba-studio)" />
-      <g clipPath="url(#tp-ba-clip-after)">
-        <Bust x={214} y={72} scale={1.25} fill={BRONZE_INK} />
-      </g>
-      <circle cx="214" cy="70" r="46" stroke={BRONZE_INK} strokeWidth="2" />
-      <circle cx="252" cy="34" r="9" fill={INK} />
-      <path d="M247.5 34l3 3 5-6" stroke={BRONZE} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-/** LinkedIn profile card — a profile header with a polished headshot and connection info. */
-export function LinkedInProfileIllustration({ className = '' }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 300 180" className={className} role="img" aria-label="LinkedIn profile with a professional headshot" fill="none">
-      {/* Card background */}
-      <rect x="10" y="10" width="280" height="160" rx="12" fill={PAPER} stroke={BEIGE} strokeWidth="1.5" />
-      {/* Banner stripe */}
-      <rect x="10" y="10" width="280" height="50" rx="12" fill={INK} />
-      <rect x="10" y="40" width="280" height="20" fill={INK} />
-      {/* Profile photo circle */}
-      <circle cx="70" cy="62" r="32" fill={PAPER} stroke={PAPER} strokeWidth="4" />
-      <circle cx="70" cy="62" r="28" fill={BEIGE} fillOpacity="0.5" />
-      <Bust x={70} y={66} scale={0.85} />
-      {/* Name + title */}
-      <rect x="116" y="66" width="90" height="6" rx="3" fill={INK} fillOpacity="0.85" />
-      <rect x="116" y="78" width="60" height="5" rx="2.5" fill={BRONZE} />
-      {/* Connection count */}
-      <rect x="116" y="92" width="40" height="4" rx="2" fill={BEIGE} />
-      {/* CTA buttons */}
-      <rect x="40" y="118" width="70" height="24" rx="12" fill={INK} />
-      <rect x="53" y="127" width="44" height="6" rx="3" fill={BRONZE} />
-      <rect x="120" y="118" width="70" height="24" rx="12" fill="none" stroke={INK} strokeWidth="1.5" />
-      <rect x="133" y="127" width="44" height="6" rx="3" fill={INK} fillOpacity="0.6" />
-      {/* Checkmark badge */}
-      <circle cx="252" cy="34" r="10" fill={BRONZE_INK} />
-      <path d="M247 34l3.5 3.5 5.5-7" stroke={PAPER} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      {/* Stats row */}
-      <rect x="40" y="152" width="220" height="4" rx="2" fill={BEIGE} fillOpacity="0.7" />
-    </svg>
-  );
-}
-
-/** About mission — globe with multiple diverse busts around it, representing accessibility. */
-export function AboutMissionIllustration({ className = '' }: { className?: string }) {
-  const people = [
-    { x: 60, y: 70, s: 0.65, f: BRONZE_INK },
-    { x: 140, y: 40, s: 0.8, f: BRONZE },
-    { x: 220, y: 70, s: 0.65, f: BRONZE_INK },
-    { x: 90, y: 120, s: 0.55, f: BRONZE },
-    { x: 190, y: 120, s: 0.55, f: BRONZE },
-  ];
-  return (
-    <svg viewBox="0 0 280 160" className={className} role="img" aria-label="People around the world accessing professional photos" fill="none">
-      {/* Central dotted circle — globe metaphor */}
-      <circle cx="140" cy="80" r="50" stroke={BEIGE} strokeWidth="1.5" strokeDasharray="4 4" />
-      <circle cx="140" cy="80" r="35" stroke={BEIGE} strokeWidth="1" strokeDasharray="3 4" />
-      {/* Connecting lines from people to center */}
-      {people.map((p, i) => (
-        <line key={i} x1={p.x} y1={p.y - 10} x2={140} y2={80} stroke={BEIGE} strokeWidth="1" strokeDasharray="2 3" />
-      ))}
-      {/* People */}
-      {people.map((p, i) => (
-        <g key={i}>
-          <circle cx={p.x} cy={p.y - 14 * p.s} r={16 * p.s} fill={PAPER} stroke={BEIGE} strokeWidth="1" />
-          <Bust x={p.x} y={p.y} scale={p.s} fill={p.f} />
-        </g>
-      ))}
-      {/* Center sparkle / AI symbol */}
-      <circle cx="140" cy="80" r="14" fill={INK} />
-      <path d="M135 80h10M140 75v10" stroke={BRONZE} strokeWidth="2" strokeLinecap="round" />
-      <circle cx="133" cy="73" r="2" fill={BRONZE} fillOpacity="0.5" />
-      <circle cx="147" cy="73" r="2" fill={BRONZE} fillOpacity="0.5" />
-      <circle cx="133" cy="87" r="2" fill={BRONZE} fillOpacity="0.5" />
-      <circle cx="147" cy="87" r="2" fill={BRONZE} fillOpacity="0.5" />
-    </svg>
-  );
-}
-
-/** Free trial — phone with upload arrow + star badge, conveying easy & affordable. */
-export function FreeTrialIllustration({ className = '' }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 240 160" className={className} role="img" aria-label="Upload selfies and get headshots affordably" fill="none">
-      {/* Phone outline */}
-      <rect x="80" y="8" width="80" height="144" rx="14" fill={PAPER} stroke={BEIGE} strokeWidth="1.5" />
-      {/* Screen */}
-      <rect x="88" y="24" width="64" height="100" rx="4" fill={BEIGE} fillOpacity="0.35" />
-      {/* Bust in screen */}
-      <Bust x={120} y={76} scale={1} />
-      {/* Upload arrow on left */}
-      <g opacity="0.7">
-        <circle cx="40" cy="80" r="20" fill={BEIGE} fillOpacity="0.5" />
-        <path d="M40 90V72m0 0l-6 6m6-6l6 6" stroke={BRONZE_INK} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      </g>
-      {/* Arrow from upload to phone */}
-      <path d="M62 80h16" stroke={BRONZE_INK} strokeWidth="1.5" strokeDasharray="3 3" />
-      {/* Star/sparkle on right */}
-      <g opacity="0.7">
-        <circle cx="200" cy="80" r="20" fill={BEIGE} fillOpacity="0.5" />
-        <path d="M200 66l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill={BRONZE_INK} />
-      </g>
-      {/* Arrow from phone to star */}
-      <path d="M162 80h18" stroke={BRONZE_INK} strokeWidth="1.5" strokeDasharray="3 3" />
-      {/* Price badge */}
-      <rect x="90" y="128" width="60" height="16" rx="8" fill={INK} />
-      <rect x="100" y="133" width="40" height="6" rx="3" fill={BRONZE} />
-      {/* Top notch */}
-      <rect x="104" y="12" width="32" height="6" rx="3" fill={BEIGE} fillOpacity="0.6" />
-    </svg>
-  );
-}
-
-/** Pricing tiers — three ascending cards, the middle one highlighted. */
-export function PricingVisualIllustration({ className = '' }: { className?: string }) {
-  const cards = [
-    { x: 6, y: 50, w: 62, h: 84, s: 0.7 },
-    { x: 78, y: 30, w: 76, h: 104, s: 0.9 },
-    { x: 164, y: 10, w: 90, h: 124, s: 1.1 },
-  ];
-  return (
-    <svg viewBox="0 0 260 140" className={className} role="img" aria-label="Three pricing tiers of increasing size" fill="none">
-      {cards.map((c, i) => {
-        const highlighted = i === 1;
-        const cx = c.x + c.w / 2;
-        const lineY = c.y + c.h * 0.68;
-        return (
-          <g key={i}>
-            <rect
-              x={c.x}
-              y={c.y}
-              width={c.w}
-              height={c.h}
-              rx="10"
-              fill={highlighted ? BEIGE : PAPER}
-              fillOpacity={highlighted ? 0.6 : 1}
-              stroke={highlighted ? BRONZE_INK : BEIGE}
-              strokeWidth={highlighted ? 2 : 1}
-            />
-            <Bust x={cx} y={c.y + c.h * 0.34} scale={c.s} fill={highlighted ? BRONZE_INK : BRONZE} />
-            <rect x={c.x + c.w * 0.18} y={lineY} width={c.w * 0.64} height="4" rx="2" fill={highlighted ? BRONZE_INK : INK} fillOpacity={highlighted ? 1 : 0.7} />
-            <rect x={c.x + c.w * 0.26} y={lineY + 9} width={c.w * 0.48} height="4" rx="2" fill={BEIGE} />
-            <rect x={c.x + c.w * 0.32} y={lineY + 18} width={c.w * 0.36} height="4" rx="2" fill={BEIGE} />
-          </g>
-        );
-      })}
-    </svg>
-  );
-}
-
-/** Question mark glyph drawn as a stroke path, centered on (x, y). */
 function QMark({ x = 0, y = 0, scale = 1, color = BRONZE_INK, dot = color }: { x?: number; y?: number; scale?: number; color?: string; dot?: string }) {
   return (
     <g transform={`translate(${x} ${y}) scale(${scale})`}>
@@ -458,213 +110,14 @@ function QMark({ x = 0, y = 0, scale = 1, color = BRONZE_INK, dot = color }: { x
   );
 }
 
-/** FAQ — three overlapping chat bubbles with question marks, joined by dotted lines. */
-export function FAQIllustration({ className = '' }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 260 160" className={className} aria-hidden="true" focusable="false" fill="none">
-      {/* Dotted connections */}
-      <path d="M46 72C46 52 60 46 82 48" stroke={BRONZE} strokeWidth="1.5" strokeLinecap="round" strokeDasharray="1 5" />
-      <path d="M216 86C216 66 202 58 178 58" stroke={BRONZE} strokeWidth="1.5" strokeLinecap="round" strokeDasharray="1 5" />
-      <path d="M74 128C92 140 120 142 140 134" stroke={BRONZE} strokeWidth="1.5" strokeLinecap="round" strokeDasharray="1 5" />
-      {/* Left small bubble */}
-      <path d="M26 72h40a12 12 0 0112 12v22a12 12 0 01-12 12H44l-12 12v-12h-6a12 12 0 01-12-12V84a12 12 0 0112-12z" fill={PAPER} stroke={BRONZE_INK} strokeWidth="1.5" strokeLinejoin="round" />
-      <QMark x={46} y={92} scale={0.7} color={BRONZE_INK} />
-      {/* Right small bubble */}
-      <path d="M200 86h30a12 12 0 0112 12v20a12 12 0 01-12 12h-4v12l-12-12h-14a12 12 0 01-12-12V98a12 12 0 0112-12z" fill={BEIGE} fillOpacity="0.55" stroke={BRONZE} strokeWidth="1.5" strokeLinejoin="round" />
-      <QMark x={209} y={104} scale={0.62} color={BRONZE_INK} />
-      {/* Center large bubble */}
-      <path d="M96 20h68a16 16 0 0116 16v44a16 16 0 01-16 16h-44l-18 18V96h-6a16 16 0 01-16-16V36a16 16 0 0116-16z" fill={INK} stroke={BRONZE} strokeWidth="1.5" strokeLinejoin="round" />
-      <QMark x={130} y={50} scale={1.25} color={BRONZE} />
-      {/* Accent dots */}
-      <circle cx="236" cy="38" r="3" fill={BRONZE} fillOpacity="0.6" />
-      <circle cx="22" cy="40" r="2.5" fill={BEIGE} />
-    </svg>
-  );
-}
-
-/** Tools — photo frame with crop handles, scissors on the left, magic wand on the right (for dark backgrounds). */
-export function ToolsIllustration({ className = '' }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 280 160" className={className} aria-hidden="true" focusable="false" fill="none">
-      {/* Frame */}
-      <rect x="90" y="30" width="100" height="100" rx="6" fill={PAPER} fillOpacity="0.06" stroke={PAPER} strokeOpacity="0.55" strokeWidth="1.5" />
-      <path d="M123.3 30v100M156.7 30v100M90 63.3h100M90 96.7h100" stroke={PAPER} strokeOpacity="0.18" strokeWidth="1" strokeDasharray="3 4" />
-      <Bust x={140} y={88} scale={1.15} fill={BRONZE} opacity={0.7} />
-      {/* Crop handles */}
-      <g stroke={BRONZE} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M82 46V22h24" />
-        <path d="M174 22h24v24" />
-        <path d="M82 114v24h24" />
-        <path d="M198 114v24h-24" />
-      </g>
-      {/* Scissors */}
-      <g strokeLinecap="round" strokeLinejoin="round">
-        <path d="M33 101L50 56" stroke={PAPER} strokeWidth="2.5" />
-        <path d="M47 101L30 56" stroke={PAPER} strokeWidth="2.5" />
-        <circle cx="30" cy="109" r="8" stroke={BRONZE} strokeWidth="2.5" />
-        <circle cx="50" cy="109" r="8" stroke={BRONZE} strokeWidth="2.5" />
-        <circle cx="40" cy="82" r="2.2" fill={BRONZE} />
-      </g>
-      <path d="M60 84h18" stroke={BRONZE} strokeWidth="1.5" strokeLinecap="round" strokeDasharray="1 5" />
-      {/* Magic wand */}
-      <path d="M212 122l26-38" stroke={PAPER} strokeWidth="5" strokeLinecap="round" />
-      <path d="M232 92l6-8" stroke={BRONZE} strokeWidth="5" strokeLinecap="round" />
-      <path d="M252 46l3.5 10.5L266 60l-10.5 3.5L252 74l-3.5-10.5L238 60l10.5-3.5z" fill={BRONZE} />
-      <path d="M229 38v8M225 42h8" stroke={PAPER} strokeOpacity="0.8" strokeWidth="1.5" strokeLinecap="round" />
-      <path d="M268 90v8M264 94h8" stroke={PAPER} strokeOpacity="0.8" strokeWidth="1.5" strokeLinecap="round" />
-      <circle cx="222" cy="64" r="2" fill={BRONZE} fillOpacity="0.7" />
-    </svg>
-  );
-}
-
-/** Technology — pipeline from a casual selfie, through a neural-network hexagon, to a polished headshot. */
-export function TechnologyIllustration({ className = '' }: { className?: string }) {
-  const layers = [
-    [[134, 68], [134, 92]],
-    [[150, 60], [150, 80], [150, 100]],
-    [[166, 72], [166, 88]],
-  ];
-  const links: Array<[number[], number[]]> = [];
-  for (let l = 0; l < layers.length - 1; l++) {
-    for (const a of layers[l]) for (const b of layers[l + 1]) links.push([a, b]);
-  }
-  return (
-    <svg viewBox="0 0 300 160" className={className} aria-hidden="true" focusable="false" fill="none">
-      <defs>
-        <clipPath id="tp-tech-clip-l">
-          <circle cx="48" cy="80" r="35" />
-        </clipPath>
-        <clipPath id="tp-tech-clip-r">
-          <circle cx="252" cy="80" r="35" />
-        </clipPath>
-      </defs>
-      {/* Input: casual selfie */}
-      <circle cx="48" cy="80" r="36" fill={BEIGE} fillOpacity="0.3" stroke={BEIGE} strokeWidth="1.5" strokeDasharray="4 4" />
-      <g clipPath="url(#tp-tech-clip-l)">
-        <g transform="rotate(-10 50 90)">
-          <Bust x={46} y={88} scale={0.95} fill={BRONZE} opacity={0.85} />
-        </g>
-      </g>
-      {/* Arrows */}
-      <path d="M90 80h22m0 0l-5-5m5 5l-5 5" stroke={BRONZE_INK} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M188 80h22m0 0l-5-5m5 5l-5 5" stroke={BRONZE_INK} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      {/* Neural hexagon */}
-      <path d="M150 44l31 18v36l-31 18-31-18V62z" fill={INK} stroke={BRONZE} strokeWidth="1.5" strokeLinejoin="round" />
-      {links.map(([a, b], i) => (
-        <line key={i} x1={a[0]} y1={a[1]} x2={b[0]} y2={b[1]} stroke={BRONZE} strokeOpacity="0.55" strokeWidth="1" />
-      ))}
-      {layers.flat().map(([cx, cy], i) => (
-        <circle key={i} cx={cx} cy={cy} r="3" fill={BRONZE} />
-      ))}
-      {/* Output: polished headshot */}
-      <circle cx="252" cy="80" r="36" fill={BEIGE} fillOpacity="0.6" stroke={BRONZE_INK} strokeWidth="2" />
-      <g clipPath="url(#tp-tech-clip-r)">
-        <Bust x={252} y={86} scale={1.05} fill={BRONZE_INK} />
-      </g>
-      <circle cx="278" cy="52" r="9" fill={INK} />
-      <path d="M273.5 52l3 3 5-6" stroke={BRONZE} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-/** Photo tips — phone taking a selfie with a head-and-shoulders guide, window light rays behind. */
-export function PhotoTipsIllustration({ className = '' }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 260 180" className={className} aria-hidden="true" focusable="false" fill="none">
-      {/* Window */}
-      <rect x="10" y="14" width="96" height="120" rx="6" fill={BRONZE} fillOpacity="0.12" stroke={BEIGE} strokeWidth="1.5" />
-      <path d="M58 14v120M10 74h96" stroke={BEIGE} strokeWidth="1.5" />
-      <rect x="4" y="134" width="108" height="6" rx="3" fill={BEIGE} />
-      <circle cx="32" cy="40" r="8" fill={BRONZE} fillOpacity="0.55" />
-      {/* Light rays */}
-      <g stroke={BRONZE} strokeWidth="1.5" strokeLinecap="round" strokeDasharray="4 5" strokeOpacity="0.8">
-        <path d="M108 36l36 28" />
-        <path d="M108 64l36 28" />
-        <path d="M108 92l36 26" />
-      </g>
-      {/* Phone */}
-      <rect x="148" y="18" width="92" height="152" rx="16" fill={INK} />
-      <rect x="154" y="28" width="80" height="132" rx="10" fill={PAPER} />
-      <rect x="154" y="28" width="80" height="132" rx="10" fill={BEIGE} fillOpacity="0.35" />
-      <rect x="178" y="21" width="32" height="4" rx="2" fill={BRONZE_INK} />
-      <Bust x={194} y={100} scale={1.2} fill={BRONZE} opacity={0.55} />
-      {/* Head-and-shoulders guide */}
-      <ellipse cx="194" cy="82" rx="20" ry="24" stroke={BRONZE_INK} strokeWidth="1.5" strokeDasharray="4 3" />
-      <path d="M160 152c0-26 14-38 34-38s34 12 34 38" stroke={BRONZE_INK} strokeWidth="1.5" strokeLinecap="round" strokeDasharray="4 3" />
-      <path d="M160 40h10M160 40v10M228 40h-10M228 40v10" stroke={BRONZE_INK} strokeWidth="1.5" strokeLinecap="round" />
-      {/* Sparkle */}
-      <path d="M124 16l2.4 7.2L134 25.6l-7.6 2.4L124 35l-2.4-7-7.6-2.4 7.6-2.4z" fill={BRONZE} />
-    </svg>
-  );
-}
-
-/** Use cases — staggered LinkedIn card, resume and ID badge, each with a headshot. */
-export function UseCasesIllustration({ className = '' }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 300 160" className={className} aria-hidden="true" focusable="false" fill="none">
-      <defs>
-        <clipPath id="tp-uc-clip-a">
-          <circle cx="38" cy="48" r="14" />
-        </clipPath>
-        <clipPath id="tp-uc-clip-b">
-          <circle cx="122" cy="72" r="15" />
-        </clipPath>
-        <clipPath id="tp-uc-clip-c">
-          <circle cx="236" cy="62" r="24" />
-        </clipPath>
-      </defs>
-      {/* LinkedIn card */}
-      <rect x="10" y="16" width="116" height="84" rx="10" fill={PAPER} stroke={BEIGE} strokeWidth="1.5" />
-      <rect x="10" y="16" width="116" height="26" rx="10" fill={INK} />
-      <rect x="10" y="30" width="116" height="12" fill={INK} />
-      <circle cx="38" cy="48" r="16" fill={PAPER} />
-      <circle cx="38" cy="48" r="14" fill={BEIGE} />
-      <g clipPath="url(#tp-uc-clip-a)">
-        <Bust x={38} y={55} scale={0.5} />
-      </g>
-      <rect x="24" y="68" width="56" height="5" rx="2.5" fill={INK} fillOpacity="0.85" />
-      <rect x="24" y="78" width="38" height="4" rx="2" fill={BRONZE} />
-      <rect x="24" y="88" width="34" height="7" rx="3.5" fill={INK} />
-      {/* Resume */}
-      <rect x="96" y="44" width="100" height="104" rx="8" fill={PAPER} stroke={BEIGE} strokeWidth="1.5" />
-      <circle cx="122" cy="72" r="15" fill={BEIGE} />
-      <g clipPath="url(#tp-uc-clip-b)">
-        <Bust x={122} y={79} scale={0.52} />
-      </g>
-      <circle cx="122" cy="72" r="15" stroke={BRONZE_INK} strokeWidth="1.2" />
-      <rect x="144" y="62" width="40" height="5" rx="2.5" fill={INK} fillOpacity="0.85" />
-      <rect x="144" y="72" width="28" height="4" rx="2" fill={BRONZE} />
-      <rect x="108" y="94" width="76" height="1.5" rx="0.75" fill={BEIGE} />
-      <rect x="108" y="104" width="76" height="4" rx="2" fill={BEIGE} />
-      <rect x="108" y="114" width="64" height="4" rx="2" fill={BEIGE} />
-      <rect x="108" y="124" width="70" height="4" rx="2" fill={BEIGE} />
-      <rect x="108" y="134" width="50" height="4" rx="2" fill={BEIGE} />
-      {/* ID badge */}
-      <rect x="186" y="12" width="100" height="120" rx="10" fill={INK} stroke={PAPER} strokeWidth="2" />
-      <rect x="225" y="20" width="22" height="5" rx="2.5" fill={BRONZE} fillOpacity="0.5" />
-      <circle cx="236" cy="62" r="24" fill={BRONZE} fillOpacity="0.25" />
-      <g clipPath="url(#tp-uc-clip-c)">
-        <Bust x={236} y={70} scale={0.9} fill={BRONZE} />
-      </g>
-      <circle cx="236" cy="62" r="24" stroke={BRONZE} strokeWidth="1.5" />
-      <rect x="210" y="94" width="52" height="6" rx="3" fill={BRONZE} />
-      <rect x="218" y="105" width="36" height="4" rx="2" fill={BEIGE} fillOpacity="0.6" />
-      <rect x="210" y="116" width="52" height="8" rx="2" fill={BRONZE} fillOpacity="0.4" />
-    </svg>
-  );
-}
-
-/** Blog — open journal with abstract text, a camera lens overlapping bottom-right and a sparkle. */
+/** Blog — open journal with camera lens and sparkle. */
 export function BlogIllustration({ className = '' }: { className?: string }) {
   return (
     <svg viewBox="0 0 240 160" className={className} aria-hidden="true" focusable="false" fill="none">
-      {/* Page stack */}
       <path d="M28 124c32-8 78-6 92 2c14-8 60-10 92-2" stroke={BEIGE} strokeWidth="1.5" strokeLinecap="round" />
-      {/* Open pages */}
       <path d="M120 38c-14-8-60-10-92-2v82c32-8 78-6 92 2z" fill={PAPER} stroke={BRONZE_INK} strokeWidth="1.5" strokeLinejoin="round" />
       <path d="M120 38c14-8 60-10 92-2v82c-32-8-78-6-92 2z" fill={PAPER} stroke={BRONZE_INK} strokeWidth="1.5" strokeLinejoin="round" />
       <path d="M120 38v82" stroke={BRONZE_INK} strokeWidth="1.5" />
-      {/* Left page text */}
       <g stroke={BEIGE} strokeWidth="3" strokeLinecap="round">
         <path d="M40 56h62" />
         <path d="M40 68h62" />
@@ -672,7 +125,6 @@ export function BlogIllustration({ className = '' }: { className?: string }) {
         <path d="M40 92h58" />
         <path d="M40 104h38" />
       </g>
-      {/* Right page: heading, image, text */}
       <path d="M134 54h40" stroke={INK} strokeOpacity="0.8" strokeWidth="4" strokeLinecap="round" />
       <path d="M134 66h58" stroke={BEIGE} strokeWidth="3" strokeLinecap="round" />
       <rect x="134" y="78" width="30" height="22" rx="3" fill={BEIGE} fillOpacity="0.6" stroke={BRONZE} />
@@ -680,16 +132,552 @@ export function BlogIllustration({ className = '' }: { className?: string }) {
       <path d="M137 98c2-6 6-8 12-8s9 3 12 8z" fill={BRONZE_INK} />
       <path d="M172 84h20M172 94h16" stroke={BEIGE} strokeWidth="3" strokeLinecap="round" />
       <path d="M134 108h40" stroke={BEIGE} strokeWidth="3" strokeLinecap="round" />
-      {/* Camera lens */}
       <circle cx="192" cy="116" r="28" fill={PAPER} />
       <circle cx="192" cy="116" r="26" fill={INK} />
       <circle cx="192" cy="116" r="19" stroke={BRONZE} strokeWidth="3" />
       <circle cx="192" cy="116" r="11" fill={BRONZE} fillOpacity="0.3" stroke={BRONZE} strokeWidth="1.5" />
       <circle cx="186" cy="110" r="3" fill={PAPER} fillOpacity="0.85" />
-      {/* Sparkle */}
       <path d="M210 14l2.8 8.2L221 25l-8.2 2.8L210 36l-2.8-8.2L199 25l8.2-2.8z" fill={BRONZE} />
       <circle cx="228" cy="44" r="2" fill={BRONZE} fillOpacity="0.7" />
       <circle cx="192" cy="18" r="1.5" fill={BRONZE_INK} />
     </svg>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Photo-based components (replaced SVG bust illustrations)           */
+/*  Each uses Unsplash portraits via stock-portraits helpers.          */
+/* ------------------------------------------------------------------ */
+
+/** Reusable portrait card with rounded corners and brand border. */
+function PortraitCard({
+  photoId,
+  alt,
+  size = 'portrait',
+  className = '',
+  highlight = false,
+}: {
+  photoId: string;
+  alt: string;
+  size?: 'portrait' | 'square';
+  className?: string;
+  highlight?: boolean;
+}) {
+  const src = size === 'square' ? square(photoId) : portrait(photoId);
+  return (
+    <div
+      className={`relative overflow-hidden rounded-tp-card ${
+        highlight ? 'ring-2 ring-tp-bronze' : 'ring-1 ring-tp-line'
+      } ${className}`}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        width={size === 'square' ? 400 : 800}
+        height={size === 'square' ? 400 : 1067}
+        className="h-full w-full object-cover"
+        sizes="(max-width: 640px) 50vw, 200px"
+      />
+    </div>
+  );
+}
+
+/** Step 1 — pick a style: three portrait thumbnails, center one selected. */
+export function StepStyleIllustration({ className = '' }: { className?: string }) {
+  return (
+    <div className={`flex items-end justify-center gap-2 ${className}`} role="img" aria-label="Choose a photo style">
+      <PortraitCard photoId="photo-1573496359142-b8d87734a5a2" alt="Professional woman" size="square" className="h-16 w-12 opacity-60" />
+      <div className="relative">
+        <PortraitCard photoId="photo-1560250097-0b93528c311a" alt="Businessman in suit" size="square" className="h-20 w-16" highlight />
+        <div className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-tp-ink">
+          <svg viewBox="0 0 16 16" className="h-3 w-3" fill="none" stroke="#C9A98A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M3 8l3.5 3.5L13 5" />
+          </svg>
+        </div>
+      </div>
+      <PortraitCard photoId="photo-1494790108377-be9c29b29330" alt="Young professional woman" size="square" className="h-16 w-12 opacity-60" />
+    </div>
+  );
+}
+
+/** Step 2 — upload selfies: grid of portrait thumbnails with an upload placeholder. */
+export function StepUploadIllustration({ className = '' }: { className?: string }) {
+  const photos = [
+    { id: 'photo-1507003211169-0a1dd7228f2d', alt: 'Man with warm smile' },
+    { id: 'photo-1580489944761-15a19d654956', alt: 'Confident woman' },
+    { id: 'photo-1534528741775-53994a69daeb', alt: 'Woman with natural hairstyle' },
+    { id: 'photo-1472099645785-5658abf4ff4e', alt: 'Professional man' },
+    { id: 'photo-1519085360753-af0119f7cbe7', alt: 'Young man' },
+  ];
+  return (
+    <div className={`grid grid-cols-3 gap-1.5 ${className}`} role="img" aria-label="Upload your selfies">
+      {photos.map((p) => (
+        <PortraitCard key={p.id} photoId={p.id} alt={p.alt} size="square" className="aspect-square w-full" />
+      ))}
+      <div className="flex aspect-square w-full items-center justify-center rounded-tp-card border-2 border-dashed border-tp-bronze-ink bg-tp-paper">
+        <svg viewBox="0 0 24 24" className="h-5 w-5 text-tp-bronze-ink" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 19V5m0 0l-5 5m5-5l5 5" />
+        </svg>
+      </div>
+    </div>
+  );
+}
+
+/** Step 3 — download portraits: before/after pair with arrow. */
+export function StepDownloadIllustration({ className = '' }: { className?: string }) {
+  return (
+    <div className={`flex items-center justify-center gap-2 ${className}`} role="img" aria-label="Download your portraits">
+      <div className="relative h-16 w-12 overflow-hidden rounded-lg border border-tp-line bg-tp-beige/30">
+        <Image
+          src={square('photo-1507003211169-0a1dd7228f2d')}
+          alt="Casual selfie"
+          width={96}
+          height={96}
+          className="h-full w-full object-cover opacity-60 grayscale-[30%]"
+          sizes="48px"
+        />
+      </div>
+      <svg viewBox="0 0 32 32" className="h-6 w-6 shrink-0" fill="none">
+        <circle cx="16" cy="16" r="12" fill={INK} />
+        <path d="M11 16h9m0 0l-4-4m4 4l-4 4" stroke={BRONZE} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+      <div className="relative">
+        <PortraitCard photoId="photo-1560250097-0b93528c311a" alt="Polished professional headshot" size="square" className="h-20 w-16" highlight />
+        <div className="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-tp-bronze ring-2 ring-tp-paper">
+          <svg viewBox="0 0 16 16" className="h-3 w-3" fill="none" stroke={INK} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M8 4v7m0 0l-3-3m3 3l3-3" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** Fallback illustration for category cards with no photo. */
+export function CategoryFallbackIllustration({ seed = 0, className = '' }: { seed?: number; className?: string }) {
+  // Pick a portrait deterministically based on seed
+  const photos = [
+    'photo-1573496359142-b8d87734a5a2',
+    'photo-1560250097-0b93528c311a',
+    'photo-1580489944761-15a19d654956',
+    'photo-1507003211169-0a1dd7228f2d',
+    'photo-1494790108377-be9c29b29330',
+    'photo-1539571696357-5a69c17a67c6',
+    'photo-1519085360753-af0119f7cbe7',
+    'photo-1534528741775-53994a69daeb',
+    'photo-1556157382-97ede2916cd2',
+    'photo-1544005313-94ddf0286df2',
+  ];
+  const photoId = photos[seed % photos.length];
+  return (
+    <div className={`relative overflow-hidden bg-gradient-to-br from-tp-paper to-tp-beige ${className}`}>
+      <Image
+        src={portrait(photoId)}
+        alt="Professional headshot example"
+        width={400}
+        height={300}
+        className="h-full w-full object-cover"
+        sizes="(max-width: 640px) 100vw, 400px"
+      />
+      {/* Subtle dot overlay for brand consistency */}
+      <div className="pointer-events-none absolute inset-0 opacity-10" style={{
+        backgroundImage: `radial-gradient(circle, ${BRONZE} 1px, transparent 1px)`,
+        backgroundSize: '18px 18px',
+      }} />
+    </div>
+  );
+}
+
+/** Team consistency — 3x2 grid of matching portrait cards. */
+export function TeamGridIllustration({ className = '' }: { className?: string }) {
+  const team = [
+    { id: 'photo-1573496359142-b8d87734a5a2', alt: 'Professional woman in navy blazer' },
+    { id: 'photo-1560250097-0b93528c311a', alt: 'Businessman in dark suit' },
+    { id: 'photo-1494790108377-be9c29b29330', alt: 'Young professional woman' },
+    { id: 'photo-1507003211169-0a1dd7228f2d', alt: 'Man with warm smile' },
+    { id: 'photo-1580489944761-15a19d654956', alt: 'Confident woman' },
+    { id: 'photo-1519085360753-af0119f7cbe7', alt: 'Young man in white shirt' },
+  ];
+  return (
+    <div className={`grid grid-cols-3 gap-2 ${className}`} role="img" aria-label="A team of matching professional portraits">
+      {team.map((p, i) => (
+        <PortraitCard key={p.id} photoId={p.id} alt={p.alt} size="square" className="aspect-square w-full" highlight={i === 1} />
+      ))}
+    </div>
+  );
+}
+
+/** Enterprise dashboard — dark card with a grid of team portrait circles. */
+export function EnterpriseIllustration({ className = '' }: { className?: string }) {
+  const members = [
+    { id: 'photo-1573496359142-b8d87734a5a2', alt: 'Team member' },
+    { id: 'photo-1560250097-0b93528c311a', alt: 'Team member' },
+    { id: 'photo-1534528741775-53994a69daeb', alt: 'Team member' },
+    { id: 'photo-1507003211169-0a1dd7228f2d', alt: 'Team member' },
+    { id: 'photo-1494790108377-be9c29b29330', alt: 'Team member' },
+    { id: 'photo-1472099645785-5658abf4ff4e', alt: 'Team member' },
+  ];
+  return (
+    <div className={`overflow-hidden rounded-tp-card bg-tp-paper ring-1 ring-tp-line ${className}`} role="img" aria-label="Team dashboard showing headshots">
+      {/* Simulated sidebar + header */}
+      <div className="flex">
+        <div className="w-12 shrink-0 bg-tp-ink p-2">
+          <div className="mx-auto h-4 w-4 rounded-full bg-tp-bronze" />
+          <div className="mt-4 space-y-2">
+            {[0, 1, 2].map((i) => (
+              <div key={i} className="h-1.5 rounded-full bg-tp-bronze-ink" style={{ opacity: i === 0 ? 1 : 0.5 }} />
+            ))}
+          </div>
+        </div>
+        <div className="flex-1">
+          <div className="flex items-center justify-between border-b border-tp-line bg-tp-beige/30 px-3 py-2">
+            <div className="h-2 w-16 rounded bg-tp-ink/60" />
+            <div className="h-3 w-10 rounded-full bg-tp-bronze" />
+          </div>
+          <div className="grid grid-cols-3 gap-2 p-3">
+            {members.map((m, i) => (
+              <div key={m.id} className="flex flex-col items-center">
+                <div className={`relative h-10 w-10 overflow-hidden rounded-full ${i === 1 ? 'ring-2 ring-tp-bronze' : 'ring-1 ring-tp-line'}`}>
+                  <Image src={square(m.id)} alt={m.alt} width={80} height={80} className="h-full w-full object-cover" sizes="40px" />
+                </div>
+                <div className="mt-1 h-1 w-6 rounded bg-tp-ink/50" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** Before / after — casual selfie vs. polished studio portrait. */
+export function BeforeAfterIllustration({ className = '' }: { className?: string }) {
+  return (
+    <div className={`flex items-center justify-center gap-3 ${className}`} role="img" aria-label="A casual selfie transformed into a polished studio portrait">
+      {/* Before */}
+      <div className="relative h-24 w-20 rotate-[-4deg] overflow-hidden rounded-xl border-2 border-dashed border-tp-line bg-tp-beige/30">
+        <Image
+          src={square('photo-1507003211169-0a1dd7228f2d')}
+          alt="Casual selfie"
+          width={160}
+          height={200}
+          className="h-full w-full object-cover opacity-70 grayscale-[20%]"
+          sizes="80px"
+        />
+      </div>
+      {/* Arrow */}
+      <svg viewBox="0 0 32 32" className="h-7 w-7 shrink-0" fill="none">
+        <circle cx="16" cy="16" r="14" fill={INK} />
+        <path d="M10 16h11m0 0l-5-5m5 5l-5 5" stroke={BRONZE} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+      {/* After */}
+      <div className="relative h-28 w-[88px] overflow-hidden rounded-xl ring-2 ring-tp-bronze">
+        <Image
+          src={portrait('photo-1560250097-0b93528c311a')}
+          alt="Polished studio headshot"
+          width={176}
+          height={224}
+          className="h-full w-full object-cover"
+          sizes="88px"
+        />
+        <div className="absolute right-1 top-1 flex h-5 w-5 items-center justify-center rounded-full bg-tp-ink">
+          <svg viewBox="0 0 16 16" className="h-3 w-3" fill="none" stroke="#C9A98A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M3 8l3.5 3.5L13 5" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** LinkedIn profile card — profile header with a real headshot. */
+export function LinkedInProfileIllustration({ className = '' }: { className?: string }) {
+  return (
+    <div className={`overflow-hidden rounded-tp-card bg-tp-paper ring-1 ring-tp-line ${className}`} role="img" aria-label="LinkedIn profile with a professional headshot">
+      {/* Banner */}
+      <div className="h-10 bg-tp-ink" />
+      {/* Profile */}
+      <div className="relative px-3 pb-3">
+        <div className="-mt-6 mb-2 flex items-end gap-3">
+          <div className="h-14 w-14 shrink-0 overflow-hidden rounded-full border-2 border-tp-paper ring-1 ring-tp-line">
+            <Image
+              src={square('photo-1573496359142-b8d87734a5a2')}
+              alt="Professional headshot"
+              width={112}
+              height={112}
+              className="h-full w-full object-cover"
+              sizes="56px"
+            />
+          </div>
+          <div className="mb-1 flex-1">
+            <div className="h-2 w-20 rounded bg-tp-ink/80" />
+            <div className="mt-1.5 h-1.5 w-14 rounded bg-tp-bronze" />
+          </div>
+          <div className="absolute right-3 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-tp-bronze-ink">
+            <svg viewBox="0 0 16 16" className="h-3 w-3" fill="none" stroke={PAPER} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M3 8l3.5 3.5L13 5" />
+            </svg>
+          </div>
+        </div>
+        <div className="mt-1 h-1 w-10 rounded bg-tp-beige" />
+        <div className="mt-2 flex gap-2">
+          <div className="h-5 w-16 rounded-full bg-tp-ink" />
+          <div className="h-5 w-16 rounded-full border border-tp-ink" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** About mission — diverse portrait circles connected by dotted lines. */
+export function AboutMissionIllustration({ className = '' }: { className?: string }) {
+  const people = [
+    { id: 'photo-1573496359142-b8d87734a5a2', alt: 'Professional woman', pos: 'left-4 top-2' },
+    { id: 'photo-1560250097-0b93528c311a', alt: 'Businessman', pos: 'left-1/2 -translate-x-1/2 top-0' },
+    { id: 'photo-1534528741775-53994a69daeb', alt: 'Woman with natural hairstyle', pos: 'right-4 top-2' },
+    { id: 'photo-1507003211169-0a1dd7228f2d', alt: 'Man with warm smile', pos: 'left-8 bottom-0' },
+    { id: 'photo-1494790108377-be9c29b29330', alt: 'Young professional woman', pos: 'right-8 bottom-0' },
+  ];
+  return (
+    <div className={`relative ${className}`} role="img" aria-label="People around the world accessing professional photos" style={{ minHeight: 120 }}>
+      {/* Center AI symbol */}
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-tp-ink">
+          <svg viewBox="0 0 16 16" className="h-4 w-4" fill="none" stroke="#C9A98A" strokeWidth="2" strokeLinecap="round">
+            <path d="M4 8h8M8 4v8" />
+          </svg>
+        </div>
+      </div>
+      {/* People circles */}
+      {people.map((p) => (
+        <div key={p.id} className={`absolute ${p.pos} h-10 w-10 overflow-hidden rounded-full border border-tp-beige`}>
+          <Image src={square(p.id)} alt={p.alt} width={80} height={80} className="h-full w-full object-cover" sizes="40px" />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/** Free trial — phone frame with a portrait inside, upload + sparkle icons. */
+export function FreeTrialIllustration({ className = '' }: { className?: string }) {
+  return (
+    <div className={`flex items-center justify-center gap-3 ${className}`} role="img" aria-label="Upload selfies and get headshots affordably">
+      {/* Upload icon */}
+      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-tp-beige/50">
+        <svg viewBox="0 0 24 24" className="h-5 w-5 text-tp-bronze-ink" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 19V5m0 0l-5 5m5-5l5 5" />
+        </svg>
+      </div>
+      {/* Phone */}
+      <div className="relative overflow-hidden rounded-2xl bg-tp-paper ring-1 ring-tp-line" style={{ width: 80, height: 140 }}>
+        <div className="mx-auto mt-1 h-1.5 w-8 rounded-full bg-tp-beige/60" />
+        <div className="mx-2 mt-1.5 overflow-hidden rounded-lg" style={{ height: 100 }}>
+          <Image
+            src={portrait('photo-1560250097-0b93528c311a')}
+            alt="Professional headshot on phone"
+            width={152}
+            height={200}
+            className="h-full w-full object-cover"
+            sizes="76px"
+          />
+        </div>
+        <div className="mx-auto mt-1.5 h-3 w-14 rounded-full bg-tp-ink">
+          <div className="mx-auto h-full w-10 rounded-full bg-tp-bronze opacity-80" />
+        </div>
+      </div>
+      {/* Sparkle */}
+      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-tp-beige/50">
+        <svg viewBox="0 0 24 24" className="h-5 w-5 text-tp-bronze-ink" fill="none">
+          <path d="M12 2l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="currentColor" />
+        </svg>
+      </div>
+    </div>
+  );
+}
+
+/** Pricing tiers — three ascending portrait cards. */
+export function PricingVisualIllustration({ className = '' }: { className?: string }) {
+  const tiers = [
+    { id: 'photo-1494790108377-be9c29b29330', alt: 'Lite plan portrait', h: 'h-16' },
+    { id: 'photo-1560250097-0b93528c311a', alt: 'Professional plan portrait', h: 'h-20' },
+    { id: 'photo-1573496359142-b8d87734a5a2', alt: 'Executive plan portrait', h: 'h-24' },
+  ];
+  return (
+    <div className={`flex items-end justify-center gap-2 ${className}`} role="img" aria-label="Three pricing tiers of increasing size">
+      {tiers.map((t, i) => (
+        <div key={t.id} className="flex flex-col items-center gap-1">
+          <PortraitCard photoId={t.id} alt={t.alt} size="square" className={`w-16 ${t.h}`} highlight={i === 1} />
+          <div className="h-1 w-8 rounded-full" style={{ backgroundColor: i === 1 ? BRONZE_INK : BEIGE }} />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/** Tools — photo in a frame with crop-handle corners. */
+export function ToolsIllustration({ className = '' }: { className?: string }) {
+  return (
+    <div className={`flex items-center justify-center ${className}`} aria-hidden="true">
+      <div className="relative">
+        {/* Portrait in frame */}
+        <div className="overflow-hidden rounded-lg bg-tp-paper/5 ring-1 ring-tp-paper/50" style={{ width: 100, height: 100 }}>
+          <Image
+            src={square('photo-1560250097-0b93528c311a')}
+            alt=""
+            width={200}
+            height={200}
+            className="h-full w-full object-cover opacity-70"
+            sizes="100px"
+          />
+          {/* Grid overlay */}
+          <div className="pointer-events-none absolute inset-0" style={{
+            backgroundImage: `linear-gradient(to right, rgba(248,245,239,0.18) 1px, transparent 1px), linear-gradient(to bottom, rgba(248,245,239,0.18) 1px, transparent 1px)`,
+            backgroundSize: '33.33% 33.33%',
+          }} />
+        </div>
+        {/* Crop handles */}
+        <svg className="pointer-events-none absolute -inset-3" viewBox="0 0 130 130" fill="none">
+          <g stroke={BRONZE} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M8 30V8h22" />
+            <path d="M100 8h22v22" />
+            <path d="M8 100v22h22" />
+            <path d="M122 100v22h-22" />
+          </g>
+        </svg>
+      </div>
+    </div>
+  );
+}
+
+/** Technology — selfie to AI to polished headshot pipeline. */
+export function TechnologyIllustration({ className = '' }: { className?: string }) {
+  return (
+    <div className={`flex items-center justify-center gap-2 ${className}`} aria-hidden="true">
+      {/* Input: casual */}
+      <div className="h-16 w-16 overflow-hidden rounded-full border-2 border-dashed border-tp-beige">
+        <Image
+          src={square('photo-1507003211169-0a1dd7228f2d')}
+          alt=""
+          width={128}
+          height={128}
+          className="h-full w-full rotate-[-6deg] scale-110 object-cover opacity-80"
+          sizes="64px"
+        />
+      </div>
+      {/* Arrow */}
+      <svg viewBox="0 0 24 16" className="h-3 w-6 shrink-0" fill="none">
+        <path d="M2 8h18m0 0l-5-5m5 5l-5 5" stroke={BRONZE_INK} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+      {/* AI hexagon */}
+      <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-tp-ink">
+        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke={BRONZE} strokeWidth="1.5" strokeLinejoin="round">
+          <path d="M12 2l9 5v10l-9 5-9-5V7z" />
+          <circle cx="12" cy="9" r="1.5" fill={BRONZE} />
+          <circle cx="8" cy="14" r="1.5" fill={BRONZE} />
+          <circle cx="16" cy="14" r="1.5" fill={BRONZE} />
+          <path d="M12 9l-4 5m4-5l4 5m-8 0h8" />
+        </svg>
+      </div>
+      {/* Arrow */}
+      <svg viewBox="0 0 24 16" className="h-3 w-6 shrink-0" fill="none">
+        <path d="M2 8h18m0 0l-5-5m5 5l-5 5" stroke={BRONZE_INK} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+      {/* Output: polished */}
+      <div className="relative h-16 w-16 overflow-hidden rounded-full ring-2 ring-tp-bronze-ink">
+        <Image
+          src={square('photo-1560250097-0b93528c311a')}
+          alt=""
+          width={128}
+          height={128}
+          className="h-full w-full object-cover"
+          sizes="64px"
+        />
+        <div className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-tp-ink">
+          <svg viewBox="0 0 12 12" className="h-2.5 w-2.5" fill="none" stroke="#C9A98A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M2 6l2.5 2.5L10 4" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** Photo tips — phone with a portrait and composition guides. */
+export function PhotoTipsIllustration({ className = '' }: { className?: string }) {
+  return (
+    <div className={`flex items-center justify-center gap-4 ${className}`} aria-hidden="true">
+      {/* Window light hint */}
+      <div className="hidden sm:block">
+        <svg viewBox="0 0 50 70" className="h-16 w-auto" fill="none">
+          <rect x="2" y="2" width="46" height="60" rx="4" fill={BRONZE} fillOpacity="0.12" stroke={BEIGE} strokeWidth="1.5" />
+          <path d="M25 2v60M2 32h46" stroke={BEIGE} strokeWidth="1" />
+          <circle cx="14" cy="16" r="4" fill={BRONZE} fillOpacity="0.5" />
+        </svg>
+      </div>
+      {/* Phone with portrait */}
+      <div className="relative overflow-hidden rounded-2xl bg-tp-ink" style={{ width: 90, height: 150 }}>
+        <div className="mx-auto mt-1.5 h-1 w-8 rounded-full bg-tp-bronze-ink" />
+        <div className="m-1.5 mt-1 overflow-hidden rounded-xl" style={{ height: 126 }}>
+          <Image
+            src={portrait('photo-1580489944761-15a19d654956')}
+            alt=""
+            width={172}
+            height={252}
+            className="h-full w-full object-cover opacity-60"
+            sizes="86px"
+          />
+          {/* Head guide overlay */}
+          <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 90 150" fill="none">
+            <ellipse cx="45" cy="56" rx="16" ry="20" stroke={BRONZE_INK} strokeWidth="1.5" strokeDasharray="4 3" />
+            <path d="M20 130c0-22 10-32 25-32s25 10 25 32" stroke={BRONZE_INK} strokeWidth="1.5" strokeDasharray="4 3" strokeLinecap="round" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** Use cases — LinkedIn card, resume and ID badge with real portrait photos. */
+export function UseCasesIllustration({ className = '' }: { className?: string }) {
+  return (
+    <div className={`flex items-start justify-center gap-2 ${className}`} aria-hidden="true">
+      {/* LinkedIn card */}
+      <div className="w-24 overflow-hidden rounded-lg bg-tp-paper ring-1 ring-tp-line">
+        <div className="h-5 bg-tp-ink" />
+        <div className="relative px-2 pb-2">
+          <div className="-mt-3 mb-1 h-7 w-7 overflow-hidden rounded-full border border-tp-paper">
+            <Image src={square('photo-1573496359142-b8d87734a5a2')} alt="" width={56} height={56} className="h-full w-full object-cover" sizes="28px" />
+          </div>
+          <div className="h-1 w-12 rounded bg-tp-ink/80" />
+          <div className="mt-1 h-1 w-8 rounded bg-tp-bronze" />
+        </div>
+      </div>
+      {/* Resume */}
+      <div className="w-20 rounded-lg bg-tp-paper p-2 ring-1 ring-tp-line">
+        <div className="flex gap-1.5">
+          <div className="h-7 w-7 overflow-hidden rounded-full ring-1 ring-tp-bronze-ink">
+            <Image src={square('photo-1560250097-0b93528c311a')} alt="" width={56} height={56} className="h-full w-full object-cover" sizes="28px" />
+          </div>
+          <div className="flex-1 space-y-1 pt-1">
+            <div className="h-1 w-full rounded bg-tp-ink/70" />
+            <div className="h-1 w-3/4 rounded bg-tp-bronze" />
+          </div>
+        </div>
+        <div className="mt-2 space-y-1">
+          <div className="h-0.5 w-full rounded bg-tp-beige" />
+          <div className="h-1 w-full rounded bg-tp-beige" />
+          <div className="h-1 w-4/5 rounded bg-tp-beige" />
+          <div className="h-1 w-full rounded bg-tp-beige" />
+        </div>
+      </div>
+      {/* ID badge */}
+      <div className="w-20 rounded-lg bg-tp-ink p-2 ring-1 ring-tp-paper/30">
+        <div className="mx-auto h-10 w-10 overflow-hidden rounded-full ring-1 ring-tp-bronze">
+          <Image src={square('photo-1494790108377-be9c29b29330')} alt="" width={80} height={80} className="h-full w-full object-cover" sizes="40px" />
+        </div>
+        <div className="mx-auto mt-1.5 h-1 w-10 rounded bg-tp-bronze" />
+        <div className="mx-auto mt-1 h-0.5 w-7 rounded bg-tp-beige/50" />
+      </div>
+    </div>
   );
 }

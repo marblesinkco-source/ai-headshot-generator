@@ -326,7 +326,7 @@ export default async function CategoryPage({ params }: Props) {
                     src={beforeSrc}
                     alt={beforeAsset?.alt ?? `Before - ${cat.name}`}
                     fill
-                    className="object-cover opacity-80 grayscale-[30%]"
+                    className="object-cover grayscale"
                     style={(beforeAsset ?? heroAsset)?.desktopObjectPosition ? { objectPosition: (beforeAsset ?? heroAsset)?.desktopObjectPosition } : undefined}
                     sizes="(min-width: 768px) 25vw, 50vw"
                   />

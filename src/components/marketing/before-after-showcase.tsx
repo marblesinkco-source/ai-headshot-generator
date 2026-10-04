@@ -89,7 +89,7 @@ function ComparisonSlider({
           alt={before.alt}
           fill
           sizes={IMAGE_SIZES}
-          className="object-cover"
+          className="object-cover grayscale"
           draggable={false}
         />
       </div>

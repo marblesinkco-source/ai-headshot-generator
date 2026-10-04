@@ -118,57 +118,43 @@ export interface HomeBeforeAfter extends BeforeAfterPair {
   detail: string;
 }
 
-/** Homepage before/after pairs (mirrors before-after-showcase.tsx EXAMPLES). */
+/** Homepage before/after pairs — same Unsplash portrait for both sides;
+ *  consumers apply CSS `filter: grayscale(1)` on the "before" image. */
 export const homeBeforeAfterPairs: HomeBeforeAfter[] = [
   {
     label: 'LinkedIn Profile',
     detail: 'Clean, approachable, ready for recruiters',
-    before: asset(
-      `${BRAND_WEB}/portrait-woman-before.webp`,
-      'Casual selfie of a woman before AI processing',
-      POS.portrait,
-    ),
-    after: asset(
-      `${BRAND_WEB}/portrait-woman-after.webp`,
-      'Polished AI headshot of a woman for a LinkedIn profile',
-      POS.portrait,
+    ...stockBeforeAfter(
+      'photo-1580489944761-15a19d654956',
+      'Casual selfie before AI processing',
+      'Polished AI headshot for a LinkedIn profile',
     ),
   },
   {
     label: 'Corporate Team',
     detail: 'Consistent look across your whole company',
-    before: asset(
-      `${BRAND_WEB}/portrait-man-before.webp`,
-      'Casual selfie of a man before AI processing',
-      POS.portrait,
-    ),
-    after: asset(
-      `${BRAND_WEB}/portrait-man-after.webp`,
-      'Polished AI headshot of a man for a corporate team page',
-      POS.portrait,
+    ...stockBeforeAfter(
+      'photo-1507003211169-0a1dd7228f2d',
+      'Casual selfie before AI processing',
+      'Polished AI headshot for a corporate team page',
     ),
   },
   {
     label: 'Creative Portfolio',
     detail: 'Distinctive style that still feels polished',
-    before: asset(
-      `${BRAND_WEB}/portrait-woman-creative-before.webp`,
-      'Professional woman before AI processing',
-      POS.portrait,
-    ),
-    after: asset(
-      `${BRAND_WEB}/portrait-woman-creative-after.webp`,
-      'Editorial-style AI portrait of a woman for a creative portfolio',
-      POS.portrait,
+    ...stockBeforeAfter(
+      'photo-1531746020798-e6953c6e8e04',
+      'Casual photo before AI processing',
+      'Editorial-style AI portrait for a creative portfolio',
     ),
   },
 ];
 
 /** Extra brand portraits usable in galleries (samples page). */
 export const brandPortraits = {
-  manAfter: asset(`${BRAND_WEB}/portrait-man-after.webp`, 'AI-generated executive portrait of a man', POS.portrait),
-  manEditorial: asset(`${BRAND_WEB}/portrait-man-editorial.webp`, 'AI-generated editorial portrait of a man', POS.portrait),
-  womanAfter: asset(`${BRAND_WEB}/portrait-woman-after.webp`, 'AI-generated studio portrait of a woman', POS.portrait),
+  manAfter: portraitAsset('photo-1507003211169-0a1dd7228f2d', 'AI-generated executive portrait of a man'),
+  manEditorial: portraitAsset('photo-1560250097-0b93528c311a', 'AI-generated editorial portrait of a man'),
+  womanAfter: portraitAsset('photo-1580489944761-15a19d654956', 'AI-generated studio portrait of a woman'),
   womanEditorial: homeHero,
 } as const;
 
@@ -200,10 +186,11 @@ export const categoryVisuals: Record<string, CategoryVisuals> = {
       portraitAsset('photo-1519085360753-af0119f7cbe7', 'Young man in crisp white shirt'),
       portraitAsset('photo-1438761681033-6461ffad8d80', 'Mature professional woman'),
     ],
-    beforeAfter: {
-      before: homeBeforeAfterPairs[0].before,
-      after: homeBeforeAfterPairs[0].after,
-    },
+    beforeAfter: stockBeforeAfter(
+      'photo-1580489944761-15a19d654956',
+      'Casual selfie before AI processing',
+      'Polished AI headshot',
+    ),
   },
 
   /* ------ dating: approachable, natural portraits ------ */
@@ -244,10 +231,11 @@ export const categoryVisuals: Record<string, CategoryVisuals> = {
       portraitAsset('photo-1566492031773-4f4e44671857', 'Distinguished man in suit'),
       portraitAsset('photo-1545167622-3a6ac756afa4', 'Young professional with modern style'),
     ],
-    beforeAfter: {
-      before: homeBeforeAfterPairs[1].before,
-      after: homeBeforeAfterPairs[1].after,
-    },
+    beforeAfter: stockBeforeAfter(
+      'photo-1507003211169-0a1dd7228f2d',
+      'Casual selfie before AI processing',
+      'Polished AI headshot for a team page',
+    ),
   },
 
   /* ------ baby-shower (non-people, local image) ------ */

@@ -185,9 +185,9 @@ const comparisonRows = [
 ];
 
 const beforeAfterCards = [
-  { style: 'LinkedIn Headshot', before: '/brand/tailorpic/web/portrait-woman-before.webp', after: '/brand/tailorpic/web/portrait-woman-after.webp' },
-  { style: 'Corporate Team', before: '/brand/tailorpic/web/portrait-man-before.webp', after: '/brand/tailorpic/web/portrait-man-after.webp' },
-  { style: 'Dating Profile', before: '/brand/tailorpic/web/portrait-woman-creative-before.webp', after: '/brand/tailorpic/web/portrait-woman-editorial.webp' },
+  { style: 'LinkedIn Headshot', src: portrait('photo-1580489944761-15a19d654956') },
+  { style: 'Corporate Team', src: portrait('photo-1507003211169-0a1dd7228f2d') },
+  { style: 'Dating Profile', src: portrait('photo-1531746020798-e6953c6e8e04') },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -434,15 +434,15 @@ export default function SamplesPage() {
               {beforeAfterCards.map((card, i) => (
                 <div key={i} className="flex flex-col items-center gap-4">
                   <div className="flex w-full items-center gap-3">
-                    {/* Before */}
+                    {/* Before (same image, grayscale filter) */}
                     <div className="flex-1">
                       <div className="relative aspect-square overflow-hidden rounded-tp-button bg-tp-beige">
                         <Image
-                          src={card.before}
+                          src={card.src}
                           alt={`${card.style} - example input photo (AI generated concept)`}
                           fill
                           sizes="(min-width: 640px) 16vw, 40vw"
-                          className="object-cover"
+                          className="object-cover grayscale"
                         />
                       </div>
                     </div>
@@ -450,11 +450,11 @@ export default function SamplesPage() {
                     {/* Arrow */}
                     <ArrowRight className="h-5 w-5 shrink-0 text-tp-bronze" />
 
-                    {/* After */}
+                    {/* After (full color) */}
                     <div className="flex-1">
                       <div className="relative aspect-square overflow-hidden rounded-tp-button bg-tp-beige">
                         <Image
-                          src={card.after}
+                          src={card.src}
                           alt={`${card.style} - AI generated concept result`}
                           fill
                           sizes="(min-width: 640px) 16vw, 40vw"
