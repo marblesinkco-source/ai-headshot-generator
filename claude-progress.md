@@ -1,5 +1,46 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-05 (AI Pipeline Kritik Düzeltmeler + Altyapı Kurulumu)
+
+### Baseline
+- HEAD (önceki): `c7a0f12` (accounting mobile/accessibility)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### 1. AI Generation Pipeline — 7 Kritik Düzeltme (Commit: 441f963)
+
+**src/config/ai.ts:**
+- guidance_scale: 7.5-8.0 → 3.5 (Flux-dev flow matching, NOT classifier-free guidance)
+- 4K resolution: 2048x2720 → 1088x1440 (Flux-dev ~1440px max)
+- NEGATIVE_PROMPT: `@deprecated` olarak işaretlendi (Flux-dev desteklemiyor)
+- 11. stil eklendi: 'finance' (Executive 160 foto hedefi: 11×15=165)
+
+**src/app/api/ai/webhook/route.ts (~540 satır yeniden yazıldı):**
+- Training webhook idempotency: generated_headshots count kontrolü
+- Generation webhook idempotency: headshot.status kontrolü
+- Tier kalite mapping düzeltildi: index≥5→4K, ≥3→HD, <3→standard
+- Tier stil/arka plan sayıları: TailorPic1(1×1), Lite(1×5), Basic(2×5), Starter(4×10), Pro(8×10), Executive(11×15)
+- buildCategoryPrompt(): switch/case + catch-all regex cleanup
+- negative_prompt prediction input'tan kaldırıldı
+
+**src/app/api/ai/generate/route.ts:**
+- Atomic double-submit guard: WHERE status='uploading' + .single()
+- Race condition engellendi (iki eşzamanlı istek)
+
+**src/app/api/cron/retry-stuck/route.ts:**
+- Stuck threshold: 30dk → 15dk
+- Training succeeded + webhook missed → kendi webhook endpoint'ini çağırarak re-trigger
+- Generations exist + all finished → order status reconciliation
+- reTriggered counter eklendi
+
+#### 2. Deploy Doğrulaması
+- CI: PASS ✅
+- Vercel: PASS ✅
+- Commit: 441f963
+
+---
+
 ## Oturum: 2026-10-05 (Accounting & Transaction Center — Final)
 
 ### Baseline

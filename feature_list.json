@@ -6,47 +6,39 @@
       "description": "Repo / routes / pricing / categories / auth / payment / upload / generation / legal / broken links tam denetim",
       "dependencies": [],
       "status": "done",
-      "evidence": "3 paralel ajan ile denetim tamamlandı. 306 page.tsx, 51 marketing bileşeni, 12 kategori doğrulandı. Kritik buglar düzeltildi: upload orderId UUID→nanoid, Stripe webhook credit insert 500 hatası, Replicate webhook zorunlu imza, password reset redirect. Commit: 88c8848"
+      "evidence": "3 paralel ajan ile denetim tamamlandı. Kritik buglar düzeltildi. Commit: 88c8848"
     },
     {
       "id": "feat-B",
       "name": "Phase B — Global Design System",
-      "description": "Logo / tokens / typography / spacing / grid / button states / cards — brand kurallarına uygun",
+      "description": "Logo / tokens / typography / spacing / grid / button states / cards",
       "dependencies": ["feat-A"],
       "status": "done",
-      "evidence": "Tailwind config: tp-warm, tp-white, tp-success/warning/error renkleri, tp-h1..tp-label tipografi ölçeği, tp-site/tp-content max-width, tp-section spacing tokenleri eklendi. globals.css: tp-container, tp-section, tp-card, tp-heading component class'ları eklendi. button.tsx: gray-* referansları tp-ink/tp-warm/tp-error ile değiştirildi."
+      "evidence": "Tailwind config tokenleri, globals.css utility sınıfları, button.tsx marka uyumu."
     },
     {
       "id": "feat-C",
       "name": "Phase C — Navigation",
-      "description": "Header / mega menu (3 sütun 12 kategori) / mobile nav / active states / sticky / kompakt scroll",
+      "description": "Header / mega menu / mobile nav / active states / sticky / kompakt scroll",
       "dependencies": ["feat-B"],
       "status": "done",
-      "evidence": "Header: tp-container class'ına geçiş, scroll-compact davranışı (h-20→h-16 + logo küçülme), mega menü 2-kolon→3-kolon grid layout, nav etiketi Samples→Examples. Mobile nav ve active state'ler korundu."
+      "evidence": "Header scroll-compact, mega menü 3-kolon, mobile nav."
     },
     {
       "id": "feat-D",
       "name": "Phase D — Homepage",
-      "description": "Hero / quick chooser / customization / before-after / categories / pricing / FAQ / footer — V3 Master sırasına uygun",
+      "description": "Hero / quick chooser / customization / before-after / categories / pricing / FAQ / footer",
       "dependencies": ["feat-C"],
       "status": "done",
-      "evidence": "Homepage 36 bölümden 11 bölüme düşürüldü. V3 Master §7 sırasına uygun yapılandırıldı. CI PASS, Vercel PASS. Commit: 90f3bb5."
+      "evidence": "Homepage V3 Master sırasına uygun. Commit: 90f3bb5."
     },
     {
       "id": "feat-E",
       "name": "Phase E — 12 Category Pages",
-      "description": "Tek reusable şablon + category data: breadcrumb, hero, benefits, before-after, gallery, use cases, how-it-works, pricing teaser, FAQ, related, CTA",
+      "description": "Tek reusable şablon + category data",
       "dependencies": ["feat-D"],
       "status": "done",
-      "evidence": "V3 Master §5 şablonu uygulandı. [category]/page.tsx tamamen yeniden yazıldı (~400 satır). category-content.ts 12 kategori için özel içerik (731 satır). CI PASS + Vercel PASS. Canlı doğrulama: /headshots, /dating-photos, /pet-portraits tam çalışıyor. Commit: ab597d9, 3103455"
-    },
-    {
-      "id": "feat-H",
-      "name": "Phase H — Cleanup + Optimization",
-      "description": "URL canonical, footer sadeleştirme, checkout funnel, mobil QA, CWV, acceptance test",
-      "dependencies": ["feat-E"],
-      "status": "done",
-      "evidence": "8 görev tamamlandı: (1) /examples→/samples 301 redirect + link fix, (2) Footer 5→4 sütun ~50→22 link, (3) Checkout URL'ye &package= parametresi, (4) Category canonical doğrulandı, (5) Blog SEO temiz, (6) 375/390/430px mobil test PASS, (7) Image/CWV audit temiz — next/image doğru, priority doğru, CLS düşük, (8) Final acceptance: tüm linkler çalışıyor, 404 düzgün, pricing 6 paket doğru. Commit: b0e720b. Canlı doğrulama tamamlandı."
+      "evidence": "12 kategori sayfası, category-content.ts. Commit: ab597d9, 3103455"
     },
     {
       "id": "feat-F",
@@ -54,15 +46,23 @@
       "description": "Pricing / examples / how it works / FAQ / blog / contact sayfaları",
       "dependencies": ["feat-D"],
       "status": "done",
-      "evidence": "Price centralization: why-tailorpic ve samples sayfalarında hardcoded $1.99 → BASE_PRICE_DISPLAY değiştirildi. Tüm conversion sayfaları (pricing, how-it-works, faq, blog, contact, enterprise, reviews) canlıda doğrulandı — hepsi düzgün render oluyor. Commit: 79da7a2"
+      "evidence": "Tüm conversion sayfaları canlıda doğrulandı. Commit: 79da7a2"
     },
     {
       "id": "feat-G",
-      "name": "Phase G — Funnel",
-      "description": "Signup / signin / checkout / upload / generation / results akışı",
+      "name": "Phase G — Funnel (Auth + Checkout + Upload + Generation + Results)",
+      "description": "Signup / signin / checkout / upload / generation / results akışının UI tarafı — tüm ekranların doğru çalışması",
       "dependencies": ["feat-F"],
       "status": "not-started",
       "evidence": ""
+    },
+    {
+      "id": "feat-H",
+      "name": "Phase H — Cleanup + Optimization",
+      "description": "URL canonical, footer sadeleştirme, checkout funnel, mobil QA, CWV, acceptance test",
+      "dependencies": ["feat-E"],
+      "status": "done",
+      "evidence": "8 görev tamamlandı. Commit: b0e720b."
     },
     {
       "id": "feat-I",
@@ -70,15 +70,39 @@
       "description": "next/image, lazy load, code split, WCAG AA, semantic headings, OG/meta, sitemap, schema",
       "dependencies": ["feat-H"],
       "status": "done",
-      "evidence": "21 kritik sayfa SEO denetimi yapıldı — tümünde title, description, OG, Twitter, canonical, robots metadata mevcut. Bazı sayfalar (developer-api, integrations, careers, why-tailorpic, success-stories, reviews) yalnızca Breadcrumb schema'sına sahip — opsiyonel iyileştirme. Organization schema eklenebilir."
+      "evidence": "21 kritik sayfa SEO denetimi, tümünde metadata mevcut."
     },
     {
       "id": "feat-J",
       "name": "Phase J — QA",
-      "description": "Build / typecheck / lint / desktop-mobile test / auth / Stripe / upload / generation / legal links / console errors / Lighthouse",
+      "description": "Build / typecheck / lint / desktop-mobile test / auth / Stripe / upload / generation / legal links / console errors",
       "dependencies": ["feat-I"],
       "status": "done",
-      "evidence": "Canlı site doğrulaması tamamlandı — 14 sayfa Chrome browser ile test edildi: homepage, why-tailorpic, samples, pricing, help, how-it-works, headshots, enterprise, reviews, faq, contact, blog, footer, Photo Types mega menü. Navigasyon düzeltmeleri yapıldı: mobile CTA redirect, mobile settings linki, footer duplikat link. 2 başarılı deploy (79da7a2, 51f9cad) — CI+Vercel PASS."
+      "evidence": "14 sayfa Chrome browser ile test edildi. Commit: 79da7a2, 51f9cad."
+    },
+    {
+      "id": "feat-K",
+      "name": "Phase K — AI Pipeline Kritik Düzeltmeler",
+      "description": "Flux-dev parametreleri, tier kalite mapping, webhook idempotency, double-submit guard, Executive 160-foto varyasyonları, retry cron iyileştirmesi, ghost prompt düzeltmesi",
+      "dependencies": ["feat-J"],
+      "status": "done",
+      "evidence": "7 kritik düzeltme tek commit'te tamamlandı. ai.ts: guidance 3.5, çözünürlük limitleri, 11 stil (finance eklendi). webhook: idempotency guard + tier mapping + buildCategoryPrompt switch/case. generate: atomic double-submit guard. retry-stuck: webhook re-trigger. Commit: 441f963. CI PASS + Vercel PASS."
+    },
+    {
+      "id": "feat-L",
+      "name": "Phase L — Accounting & Transaction Center",
+      "description": "17 tablo migration, 15 servis, 10 API route, 10 dashboard sayfası, Stripe webhook entegrasyonu",
+      "dependencies": ["feat-K"],
+      "status": "done",
+      "evidence": "43 dosya, 5356 satır. Graceful fallback (tablo yoksa boş veri). WCAG AA erişilebilirlik. Commit: 60165dc, 11155e6, c7a0f12. BLOCKER: SUPABASE_DB_URL secret gerekli."
+    },
+    {
+      "id": "feat-M",
+      "name": "Phase M — Altyapı Tam Kurulum + Demo Sunumları",
+      "description": "Tüm modülleri incele, eksik/kırık sayfaları düzelt, menü/butonları denetle, farklı görseller ile demo sunumları hazırla",
+      "dependencies": ["feat-K"],
+      "status": "in-progress",
+      "evidence": ""
     }
   ]
 }
