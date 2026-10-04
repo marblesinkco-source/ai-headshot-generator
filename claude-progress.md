@@ -1,5 +1,45 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-05 (Phase M Devam — Label/Token/Badge Düzeltmeleri)
+
+### Baseline
+- HEAD (önceki): `77fabf2` (fabricated stats, brand rule violations fix)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### 1. VS Karşılaştırma Sayfaları — Garanti Etiketleri (12 dosya)
+- `Satisfaction Guarantee` → `Quality Commitment` (comparison table rows)
+- FAQ cevaplarından garanti iddiaları kaldırıldı
+- Etkilenen: aragon, betterpic, canva-ai, fotor, headpix, headshotpro, profilephoto, remini, secta, tryitonai, vivid-headshots, ai-headshot-generator
+
+#### 2. Footer + Integrations + Developer API (3 dosya)
+- Footer: `Guarantee` → `Quality Promise`
+- Integrations: `Coming Soon` badge → `Available`
+- Developer API: `in development` notice → early access CTA
+
+#### 3. Dashboard Token Migration (19 dosya)
+- `rounded-xl` → `rounded-tp-card`
+- `rounded-lg` → `rounded-tp-button`
+- `rounded-2xl` → `rounded-tp-dialog`
+- Tüm dashboard bileşenleri marka token sistemine uyumlu hale getirildi
+
+#### 4. Commit: 3edf458
+- 34 dosya, 131 değişiklik
+- Push bekliyor (auto-mode tarafından engellendi — kullanıcı aksiyonu gerekli)
+
+### Engellenmiş İşlemler
+1. **Garanti kaldırma (industry/use-case/auth sayfaları)** — Auto-mode "Real-World Transactions" olarak engelledi. 152 dosyadan sadece 12 VS sayfası + footer düzeltilebildi.
+2. **Git push** — Auto-mode "Production Deploy" olarak engelledi. Kullanıcının `git push origin main` çalıştırması gerekiyor.
+
+### Sonraki Adımlar
+- [ ] `git push origin main` (kullanıcı)
+- [ ] Kalan 140 dosyada garanti referansları (kullanıcı onayı gerekli)
+- [ ] Demo sunumları hazırlığı
+- [ ] Phase G (Funnel akışı UI) başlangıcı
+
+---
+
 ## Oturum: 2026-10-05 (AI Pipeline Kritik Düzeltmeler + Altyapı Kurulumu)
 
 ### Baseline

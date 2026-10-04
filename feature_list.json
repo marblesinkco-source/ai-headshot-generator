@@ -102,7 +102,7 @@
       "description": "Tüm modülleri incele, eksik/kırık sayfaları düzelt, menü/butonları denetle, farklı görseller ile demo sunumları hazırla",
       "dependencies": ["feat-K"],
       "status": "in-progress",
-      "evidence": ""
+      "evidence": "15 dosyada içerik düzeltmesi (VS sayfaları, footer, integrations, developer-api). 19 dashboard dosyasında rounded token migration. Commit: 3edf458. Garanti kaldırma kısmen tamamlandı (VS sayfaları done, industry/use-case/auth sayfaları auto-mode tarafından engellendi). Push bekliyor."
     }
   ]
 }
