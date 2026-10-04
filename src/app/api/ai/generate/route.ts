@@ -95,6 +95,31 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // ─── Double-submit guard: atomically claim the order ────────────────────
+    // Use a conditional update (WHERE status = 'uploading') to prevent race
+    // conditions when two requests hit simultaneously.
+    const { createAdminClient: createAdmin } = await import('@/lib/supabase/server');
+    const adminForClaim = createAdmin();
+    const { data: claimResult, error: claimError } = await adminForClaim
+      .from('orders')
+      .update({
+        status: 'processing',
+        started_at: new Date().toISOString(),
+      })
+      .eq('id', orderId)
+      .eq('status', 'uploading') // atomic: only succeeds if still 'uploading'
+      .select('id')
+      .single();
+
+    if (claimError || !claimResult) {
+      // Another request already claimed this order
+      logger.warn(`[ai-generate] Double-submit blocked for order ${orderId}`);
+      return NextResponse.json(
+        { error: 'This order is already being processed' },
+        { status: 409 }
+      );
+    }
+
     // Resolve category and package from the new category-based config
     const categoryId = (order.category_id || 'headshots') as CategoryId;
     const category = getCategoryById(categoryId);
@@ -214,19 +239,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Update order status to training
-    const { error: statusError } = await supabase
-      .from('orders')
-      .update({
-        status: 'processing',
-        started_at: new Date().toISOString(),
-      })
-      .eq('id', orderId);
-    if (statusError) {
-      logger.error('Failed to mark order as processing', statusError, { orderId });
-      return NextResponse.json({ error: 'Failed to start AI training. Please try again.' }, { status: 500 });
-    }
-
+    // Order status already set to 'processing' by the double-submit guard above.
     // Start LoRA fine-tuning via Replicate
     const triggerWord = `sks${orderId.replace(/[^a-zA-Z0-9]/g, '').slice(0, 8)}`;
     const webhookUrl = `${siteConfig.url}/api/ai/webhook?type=training&orderId=${orderId}&categoryId=${categoryId}&packageId=${order.package_id}&triggerWord=${triggerWord}`;

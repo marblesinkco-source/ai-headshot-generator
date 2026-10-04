@@ -1,12 +1,17 @@
 /**
  * GET & POST /api/cron/retry-stuck
  *
- * Retries orders stuck in 'processing' status for over 30 minutes.
- * Protected by CRON_SECRET. Runs daily via Vercel Cron.
+ * Retries orders stuck in 'processing' status for over 15 minutes.
+ * Protected by CRON_SECRET. Runs daily via Vercel Cron (Hobby plan minimum).
+ * Consider upgrading to Pro for more frequent checks (every 15 min ideal).
  * Vercel Cron calls with GET; manual calls can use POST.
  *
- * Retry policy: max 3 retries, exponential backoff (30min, 1h, 2h).
+ * Retry policy: max 3 retries.
  * After 3 failures → marks as 'failed' and notifies admin.
+ *
+ * Key improvement: if training succeeded on Replicate but webhook was missed,
+ * this cron now re-triggers the generation fan-out instead of just incrementing
+ * the retry count.
  */
 
 import { NextRequest, NextResponse } from 'next/server';
@@ -38,13 +43,14 @@ async function handleRetryStuck(request: NextRequest) {
 
   const supabase = createAdminClient();
   const now = new Date();
-  const stuckThreshold = new Date(now.getTime() - 30 * 60 * 1000); // 30 min ago
+  // 15 minutes threshold (matches typical training time)
+  const stuckThreshold = new Date(now.getTime() - 15 * 60 * 1000);
 
   try {
-    // Find orders stuck in 'processing' for over 30 minutes
+    // Find orders stuck in 'processing' for over 15 minutes
     const { data: stuckOrders, error: queryError } = await supabase
       .from('orders')
-      .select('id, user_id, training_id, retry_count, started_at, category_id, package_id, trigger_word')
+      .select('id, user_id, training_id, retry_count, started_at, category_id, package_id, trigger_word, lora_url')
       .eq('status', 'processing')
       .lt('started_at', stuckThreshold.toISOString())
       .order('started_at', { ascending: true })
@@ -61,6 +67,7 @@ async function handleRetryStuck(request: NextRequest) {
 
     let retried = 0;
     let failed = 0;
+    let reTriggered = 0;
 
     for (const order of stuckOrders) {
       const retryCount = (order.retry_count || 0) + 1;
@@ -109,22 +116,118 @@ async function handleRetryStuck(request: NextRequest) {
       // Check training status on Replicate
       if (order.training_id && process.env.REPLICATE_API_TOKEN) {
         try {
-          const replicate = new Replicate({ auth: process.env.REPLICATE_API_TOKEN });
-          const training = await replicate.trainings.get(order.training_id);
+          const replicateClient = new Replicate({ auth: process.env.REPLICATE_API_TOKEN });
+          const training = await replicateClient.trainings.get(order.training_id);
 
           if (training.status === 'succeeded') {
-            // Training actually succeeded but webhook was missed
-            // The webhook handler will process it
-            logger.info(`[retry-stuck] Order ${order.id} training succeeded — webhook may have been missed`);
+            // ─── Training succeeded but webhook was missed ──────────────
+            // Check if generation was already started (idempotency)
+            const { count: existingGens } = await supabase
+              .from('generated_headshots')
+              .select('id', { count: 'exact', head: true })
+              .eq('order_id', order.id);
 
-            // For now, just update retry count and let the next cycle check again
-            await supabase
-              .from('orders')
-              .update({
-                retry_count: retryCount,
-                last_retry_at: now.toISOString(),
-              })
-              .eq('id', order.id);
+            if (existingGens && existingGens > 0) {
+              // Generations already exist — check if any are still processing
+              const { count: pendingGens } = await supabase
+                .from('generated_headshots')
+                .select('id', { count: 'exact', head: true })
+                .eq('order_id', order.id)
+                .eq('status', 'processing');
+
+              if (pendingGens === 0) {
+                // All generations finished but order stuck — update order status
+                const { count: completedGens } = await supabase
+                  .from('generated_headshots')
+                  .select('id', { count: 'exact', head: true })
+                  .eq('order_id', order.id)
+                  .eq('status', 'completed');
+
+                const finalStatus = (completedGens || 0) > 0 ? 'completed' : 'failed';
+                await supabase
+                  .from('orders')
+                  .update({
+                    status: finalStatus,
+                    headshot_count: completedGens || 0,
+                    completed_at: now.toISOString(),
+                    retry_count: retryCount,
+                    last_retry_at: now.toISOString(),
+                  })
+                  .eq('id', order.id);
+
+                logger.info(`[retry-stuck] Order ${order.id} reconciled: ${completedGens} completed generations → ${finalStatus}`);
+                reTriggered++;
+              } else {
+                // Some generations still pending — just update retry count
+                await supabase
+                  .from('orders')
+                  .update({ retry_count: retryCount, last_retry_at: now.toISOString() })
+                  .eq('id', order.id);
+                logger.info(`[retry-stuck] Order ${order.id} has ${pendingGens} pending generations — waiting`);
+              }
+            } else {
+              // No generations exist — webhook was completely missed!
+              // Re-invoke the webhook handler by calling it internally
+              logger.info(`[retry-stuck] Order ${order.id} training succeeded but no generations found — re-triggering via webhook`);
+
+              try {
+                const { siteConfig } = await import('@/config/site');
+                const webhookUrl = `${siteConfig.url}/api/ai/webhook?type=training&orderId=${order.id}&categoryId=${order.category_id || 'headshots'}&packageId=${order.package_id}&triggerWord=${order.trigger_word || 'sks'}`;
+
+                // Build the payload that the training webhook would have sent
+                let trainingOutput: unknown = null;
+                if (training.output) {
+                  trainingOutput = training.output;
+                }
+
+                // Store LoRA URL if not already stored
+                if (!order.lora_url && training.output) {
+                  const loraUrl = typeof training.output === 'string'
+                    ? training.output
+                    : (training.output as Record<string, unknown>).weights || (training.output as Record<string, unknown>).version;
+                  if (loraUrl) {
+                    await supabase
+                      .from('orders')
+                      .update({ lora_url: loraUrl as string })
+                      .eq('id', order.id);
+                  }
+                }
+
+                // Call our own webhook endpoint to trigger generation
+                const webhookBody = JSON.stringify({
+                  id: order.training_id,
+                  status: 'succeeded',
+                  output: trainingOutput,
+                  error: null,
+                });
+
+                // Use internal fetch if webhook secret available
+                if (process.env.REPLICATE_WEBHOOK_SECRET) {
+                  const response = await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: webhookBody,
+                  });
+
+                  if (response.ok) {
+                    logger.info(`[retry-stuck] Successfully re-triggered generation for order ${order.id}`);
+                    reTriggered++;
+                  } else {
+                    logger.error(`[retry-stuck] Failed to re-trigger generation for order ${order.id}: ${response.status}`);
+                  }
+                }
+              } catch (retriggerErr) {
+                logger.error(`[retry-stuck] Failed to re-trigger generation for order ${order.id}:`, retriggerErr);
+              }
+
+              await supabase
+                .from('orders')
+                .update({ retry_count: retryCount, last_retry_at: now.toISOString() })
+                .eq('id', order.id);
+            }
+
             retried++;
             continue;
           } else if (training.status === 'failed' || training.status === 'canceled') {
@@ -140,7 +243,7 @@ async function handleRetryStuck(request: NextRequest) {
             failed++;
             continue;
           }
-          // Still processing — just update retry count
+          // Still processing on Replicate — just update retry count
         } catch (replicateErr) {
           logger.error(`[retry-stuck] Failed to check training ${order.training_id}:`, replicateErr);
         }
@@ -158,12 +261,13 @@ async function handleRetryStuck(request: NextRequest) {
       retried++;
     }
 
-    logger.info(`[retry-stuck] Processed ${stuckOrders.length} stuck orders: ${retried} retried, ${failed} failed`);
+    logger.info(`[retry-stuck] Processed ${stuckOrders.length} stuck orders: ${retried} retried, ${reTriggered} re-triggered, ${failed} failed`);
 
     return NextResponse.json({
       message: 'Stuck orders processed',
       total: stuckOrders.length,
       retried,
+      reTriggered,
       failed,
     });
   } catch (error) {

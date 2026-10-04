@@ -27,6 +27,7 @@ export const STYLES = [
   { id: 'real_estate', name: 'Real Estate', prompt: 'wearing polished professional attire with a warm and trustworthy smile' },
   { id: 'healthcare', name: 'Healthcare', prompt: 'wearing professional medical or healthcare attire with a compassionate expression' },
   { id: 'legal', name: 'Legal', prompt: 'wearing formal legal attire with a confident and composed demeanor' },
+  { id: 'finance', name: 'Finance', prompt: 'wearing a tailored pinstripe suit with a sharp and decisive expression' },
 ] as const;
 
 export type BackgroundId = (typeof BACKGROUNDS)[number]['id'];
@@ -34,27 +35,39 @@ export type StyleId = (typeof STYLES)[number]['id'];
 
 export const BASE_PROMPT_TEMPLATE = `A professional headshot portrait photograph of a person. {style_prompt}. Set against a {background_prompt}. The photograph should have sharp focus on the face, professional studio-quality lighting, and a natural skin tone. Shot with an 85mm lens at f/2.8 for a flattering perspective and pleasant background blur.`;
 
+/**
+ * Quality settings tuned for Flux-dev model:
+ * - guidance_scale: 3.0-3.5 optimal (Flux-dev uses flow matching, not classifier-free guidance)
+ * - max resolution: ~1440px on longest side (model limit)
+ * - steps: 28-35 is optimal for Flux-dev (diminishing returns beyond 35)
+ *
+ * NOTE: Flux-dev does NOT support negative prompts — they are ignored by the model.
+ */
 export const QUALITY_SETTINGS: Record<string, { width: number; height: number; steps: number; guidanceScale: number }> = {
   standard: {
     width: 768,
     height: 1024,
-    steps: 30,
-    guidanceScale: 7.5,
+    steps: 28,
+    guidanceScale: 3.5,
   },
   hd: {
     width: 1024,
-    height: 1360,
-    steps: 40,
-    guidanceScale: 7.5,
+    height: 1344,
+    steps: 30,
+    guidanceScale: 3.5,
   },
   '4k': {
-    width: 2048,
-    height: 2720,
-    steps: 50,
-    guidanceScale: 8.0,
+    width: 1088,
+    height: 1440,
+    steps: 35,
+    guidanceScale: 3.5,
   },
 };
 
+/**
+ * @deprecated Flux-dev does not support negative prompts. Kept for API compatibility
+ * but should NOT be passed to prediction input. Will be removed in a future update.
+ */
 export const NEGATIVE_PROMPT =
   'deformed, distorted, disfigured, poorly drawn face, bad anatomy, wrong anatomy, extra limb, missing limb, floating limbs, mutated hands, extra fingers, blurry, low quality, watermark, text, logo, cartoon, 3d render, anime, illustration';
 

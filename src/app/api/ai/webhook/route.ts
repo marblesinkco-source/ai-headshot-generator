@@ -112,6 +112,17 @@ async function handleTrainingComplete(
     return NextResponse.json({ received: true });
   }
 
+  // ─── Idempotency guard: check if generation was already launched ──────────
+  const { count: existingGenerations } = await supabase
+    .from('generated_headshots')
+    .select('id', { count: 'exact', head: true })
+    .eq('order_id', orderId);
+
+  if (existingGenerations && existingGenerations > 0) {
+    logger.info(`[ai-webhook] Idempotency: order ${orderId} already has ${existingGenerations} generation rows — skipping duplicate training webhook`);
+    return NextResponse.json({ received: true, skipped: 'idempotent' });
+  }
+
   // Training succeeded! Extract LoRA weights and start generation
   const url = new URL(request.url);
   const categoryId = (url.searchParams.get('categoryId') || 'headshots') as CategoryId;
@@ -201,21 +212,55 @@ async function handleTrainingComplete(
   const catPkg = category.packages.find((p) => p.id === packageId);
   const maxOutputs = catPkg?.outputCount ?? order.output_count ?? 40;
 
-  // Select backgrounds and styles based on tier
+  // ─── Tier-aware quality mapping ───────────────────────────────────────────
+  // Headshots tier ladder (indexes 0-5):
+  //   0: TailorPic 1  → standard
+  //   1: Lite          → standard
+  //   2: Basic         → standard
+  //   3: Starter       → hd
+  //   4: Professional  → hd
+  //   5: Executive     → 4k
   const tierIndex = category.packages.findIndex((p) => p.id === packageId);
-  const bgCount = tierIndex === 0 ? 5 : tierIndex === 1 ? 10 : BACKGROUNDS.length;
-  const styleCount = tierIndex === 0 ? 3 : tierIndex === 1 ? 6 : STYLES.length;
 
-  const selectedBackgrounds = BACKGROUNDS.slice(0, bgCount);
-  const selectedStyles = STYLES.slice(0, styleCount);
+  const quality = tierIndex >= 5
+    ? QUALITY_SETTINGS['4k']
+    : tierIndex >= 3
+      ? QUALITY_SETTINGS.hd
+      : QUALITY_SETTINGS.standard;
 
-  // Build prompt using category template
-  const quality =
-    tierIndex === 2
-      ? QUALITY_SETTINGS['4k']
-      : tierIndex === 1
-        ? QUALITY_SETTINGS.hd
-        : QUALITY_SETTINGS.standard;
+  // ─── Tier-aware style & background selection ──────────────────────────────
+  // Lower tiers get fewer combinations; top tiers get all
+  let bgCount: number;
+  let styleCount: number;
+
+  if (tierIndex <= 0) {
+    // TailorPic 1 (1 photo): 1 style × 1 background
+    bgCount = 1;
+    styleCount = 1;
+  } else if (tierIndex === 1) {
+    // Lite (5 photos): 5 backgrounds × 1 style = 5
+    bgCount = 5;
+    styleCount = 1;
+  } else if (tierIndex === 2) {
+    // Basic (10 photos): 5 backgrounds × 2 styles = 10
+    bgCount = 5;
+    styleCount = 2;
+  } else if (tierIndex === 3) {
+    // Starter (40 photos): 10 backgrounds × 4 styles = 40
+    bgCount = 10;
+    styleCount = 4;
+  } else if (tierIndex === 4) {
+    // Professional (80 photos): 10 backgrounds × 8 styles = 80
+    bgCount = 10;
+    styleCount = 8;
+  } else {
+    // Executive (160 photos): 15 backgrounds × 11 styles = 165 (cap at maxOutputs)
+    bgCount = BACKGROUNDS.length;
+    styleCount = STYLES.length;
+  }
+
+  const selectedBackgrounds = BACKGROUNDS.slice(0, Math.min(bgCount, BACKGROUNDS.length));
+  const selectedStyles = STYLES.slice(0, Math.min(styleCount, STYLES.length));
 
   // Generate style x background combinations up to maxOutputs
   const generations: Array<{ styleId: string; backgroundId: string; prompt: string }> = [];
@@ -231,7 +276,7 @@ async function handleTrainingComplete(
         triggerWord,
         style.prompt,
         bg.prompt,
-        category.negativePrompt
+        categoryId
       );
 
       generations.push({
@@ -250,8 +295,7 @@ async function handleTrainingComplete(
   const launchResults = await Promise.allSettled(
     generations.map(async ({ styleId, backgroundId, prompt }) => {
       try {
-        // Use the trained model version if available (preferred),
-        // or pass lora weights URL to flux-dev
+        // Flux-dev prediction input — no negative_prompt (Flux-dev ignores it)
         const predictionInput: Record<string, unknown> = {
           prompt,
           width: quality.width,
@@ -307,7 +351,7 @@ async function handleTrainingComplete(
   ).length;
 
   logger.info(
-    `[ai-webhook] Training complete for order ${orderId}. Launched ${successCount}/${generations.length} generation predictions.`
+    `[ai-webhook] Training complete for order ${orderId}. Launched ${successCount}/${generations.length} generation predictions (tier ${tierIndex}, quality ${tierIndex >= 5 ? '4k' : tierIndex >= 3 ? 'hd' : 'standard'}).`
   );
 
   if (successCount === 0) {
@@ -336,13 +380,19 @@ async function handleGenerationComplete(
   // Look up the generation record
   const { data: headshot, error: lookupError } = await supabase
     .from('generated_headshots')
-    .select('id, order_id, user_id')
+    .select('id, order_id, user_id, status')
     .eq('prediction_id', predictionId)
     .single();
 
   if (lookupError || !headshot) {
     logger.error('Headshot not found for prediction:', predictionId);
     return NextResponse.json({ received: true }, { status: 200 });
+  }
+
+  // ─── Idempotency: skip if already processed ──────────────────────────────
+  if (headshot.status === 'completed' || headshot.status === 'failed') {
+    logger.info(`[ai-webhook] Generation ${predictionId} already ${headshot.status} — skipping duplicate webhook`);
+    return NextResponse.json({ received: true, skipped: 'idempotent' });
   }
 
   if (status === 'succeeded') {
@@ -455,23 +505,59 @@ async function handleGenerationComplete(
 
 /**
  * Build a category-aware prompt using the category's template and LoRA trigger word.
+ *
+ * NOTE: Flux-dev does NOT support negative prompts, so we do not inject one.
+ * The _categoryId parameter is used for category-specific placeholder handling.
  */
 function buildCategoryPrompt(
   template: string,
   triggerWord: string,
   stylePrompt: string,
   backgroundPrompt: string,
-  _negativePrompt: string
+  categoryId: string
 ): string {
   // Replace template placeholders with actual content
   let prompt = template
     .replace('{style_prompt}', stylePrompt)
-    .replace('{background_prompt}', backgroundPrompt)
-    .replace('{scene_prompt}', backgroundPrompt)
-    .replace('{theme_prompt}', backgroundPrompt)
-    .replace('{furniture_prompt}', stylePrompt)
-    .replace('{room_type}', 'room')
-    .replace('{holiday_type}', 'holiday');
+    .replace('{background_prompt}', backgroundPrompt);
+
+  // Category-specific placeholder handling
+  switch (categoryId) {
+    case 'dating':
+    case 'couple-engagement':
+      // {scene_prompt} → background context
+      prompt = prompt.replace('{scene_prompt}', backgroundPrompt);
+      break;
+
+    case 'baby-shower':
+    case 'holiday-cards':
+      // {theme_prompt} → background/mood context
+      prompt = prompt.replace('{theme_prompt}', backgroundPrompt);
+      break;
+
+    case 'real-estate':
+      // {room_type} → derive from background context or default
+      prompt = prompt
+        .replace('{room_type}', 'modern living space')
+        .replace('{furniture_prompt}', stylePrompt);
+      break;
+
+    case 'avatars':
+      // {character_prompt} → style-based character description
+      prompt = prompt.replace('{character_prompt}', stylePrompt);
+      break;
+
+    default:
+      break;
+  }
+
+  // Holiday-specific: replace {holiday_type} if still present
+  if (prompt.includes('{holiday_type}')) {
+    prompt = prompt.replace('{holiday_type}', 'festive holiday');
+  }
+
+  // Clean up any remaining unreplaced placeholders
+  prompt = prompt.replace(/\{[a-z_]+\}/g, '');
 
   // Inject the LoRA trigger word
   // Replace "a person" / "of a person" with the trigger word for face-based categories
