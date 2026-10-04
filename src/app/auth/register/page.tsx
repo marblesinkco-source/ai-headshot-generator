@@ -318,7 +318,7 @@ function RegisterContent() {
                 size="md"
                 className="w-full"
                 loading={loading}
-                disabled={oauthLoading}
+                disabled={!!oauthLoading}
               >
                 Create account
               </Button>

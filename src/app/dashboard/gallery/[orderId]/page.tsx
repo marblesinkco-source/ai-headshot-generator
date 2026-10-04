@@ -38,6 +38,7 @@ export default function OrderGalleryPage() {
   const [filter, setFilter] = useState<'all' | 'favorites'>('all');
   const [modalIndex, setModalIndex] = useState<number | null>(null);
   const [downloading, setDownloading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const supabase = createClient();
 
@@ -63,7 +64,7 @@ export default function OrderGalleryPage() {
         );
       }
     } catch {
-      // silently fail
+      setError('Failed to load gallery. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -114,7 +115,7 @@ export default function OrderGalleryPage() {
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
     } catch {
-      // show nothing for now
+      setError('Download failed. Please try again.');
     } finally {
       setDownloading(false);
     }
@@ -133,7 +134,7 @@ export default function OrderGalleryPage() {
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
     } catch {
-      // silently fail
+      setError('Download failed. Please try again.');
     }
   }
 
@@ -162,6 +163,12 @@ export default function OrderGalleryPage() {
 
   return (
     <div className="space-y-6">
+      {error && (
+        <div className="flex items-center justify-between rounded-tp-button border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+          <span>{error}</span>
+          <button onClick={() => setError(null)} className="ml-3 text-red-500 hover:text-red-700">&times;</button>
+        </div>
+      )}
       {/* Order Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-4">

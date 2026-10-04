@@ -19,7 +19,8 @@ export default function LoginPage() {
 function LoginContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const redirectTo = searchParams.get('redirect') || '/dashboard';
+  const rawRedirect = searchParams.get('redirect') || '/dashboard';
+  const redirectTo = rawRedirect.startsWith('/') && !rawRedirect.startsWith('//') ? rawRedirect : '/dashboard';
   const authError = searchParams.get('error');
 
   const [email, setEmail] = useState('');
@@ -226,7 +227,7 @@ function LoginContent() {
                 size="md"
                 className="w-full"
                 loading={loading}
-                disabled={oauthLoading}
+                disabled={!!oauthLoading}
               >
                 Sign in
               </Button>
