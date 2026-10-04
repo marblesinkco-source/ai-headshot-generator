@@ -58,8 +58,8 @@ export default async function CategoryPage({ params }: Props) {
   const galleryItems = visuals?.gallery ?? [];
 
   // Build 4 distinct images for the hero collage (never repeat the same image 4x)
-  // Object-position is overridden here to show wider framing (head + shoulders + upper body)
-  const collagePositions = ['50% 15%', '50% 20%', '50% 25%', '50% 10%'];
+  // Object-position overrides: show head + shoulders + upper body in the collage cards
+  const collagePositions = ['50% 10%', '50% 15%', '50% 20%', '50% 5%'];
   const heroCollageImages: { src: string; alt: string; objectPosition: string }[] = (() => {
     const pool: { src: string; alt: string }[] = [];
     // Start with gallery items (deduplicated by src)
@@ -260,10 +260,10 @@ export default async function CategoryPage({ params }: Props) {
                   <div
                     key={i}
                     className={`overflow-hidden rounded-tp-card bg-tp-warm ${
-                      i === 0 ? 'aspect-[3/4] col-span-1' :
-                      i === 1 ? 'aspect-square col-span-1 mt-8' :
-                      i === 2 ? 'aspect-square col-span-1' :
-                      'aspect-[3/4] col-span-1 -mt-8'
+                      i === 0 ? 'aspect-[4/5] col-span-1' :
+                      i === 1 ? 'aspect-[5/4] col-span-1 mt-8' :
+                      i === 2 ? 'aspect-[5/4] col-span-1' :
+                      'aspect-[4/5] col-span-1 -mt-8'
                     }`}
                   >
                     <Image
