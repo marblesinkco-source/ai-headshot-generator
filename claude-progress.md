@@ -1,5 +1,85 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-05 (Accounting & Transaction Center — Final)
+
+### Baseline
+- HEAD (önceki): `11155e6` (accounting webhook + graceful fallback)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### 1. Mobile Responsive + Accessibility Düzeltmeleri (Commit: c7a0f12)
+- WCAG AA renk kontrastı: `tp-success` (#16A34A, 3.3:1) → `#15803D` (~5:1) yeşil metin
+- WCAG AA renk kontrastı: kırmızı badge metin `#B91C1C` (~5:1)
+- Dokunma hedefleri: tüm buton/link/input'lara `min-h-[44px]`
+- iOS auto-zoom engelleme: input'larda `text-base sm:text-sm`
+- Tablo overflow güvenliği: `overflow-hidden` → `overflow-x-auto` (tüm tablolar)
+- ARIA: spinner'a `aria-hidden="true"`, form'a `aria-label`, truncated metin'e `title`
+- Tab navigation: aktif tab otomatik scroll, doğru sizing
+- Responsive padding: Card `p-4 sm:p-6`, balance text `text-4xl sm:text-5xl`
+
+#### 2. Deploy Doğrulaması
+- CI: PASS ✅
+- Vercel: PASS ✅
+
+### Accounting & Transaction Center — Toplam Özet
+
+#### Teslim Edilen Dosyalar (5,356 satır toplam)
+| Kategori | Dosya Sayısı | Açıklama |
+|---|---|---|
+| Migration SQL | 2 | 17 tablo, 10 enum, RLS politikaları (701 satır) |
+| TypeScript Types | 1 | 708 satır, tüm entity ve DTO tipleri |
+| Service Layer | 16 | 15 servis + barrel export |
+| Provider Adapter | 2 | StripeAdapter + registry |
+| API Routes | 10 | REST endpoints + sub-routes |
+| Dashboard Pages | 10 | UI sayfaları + detail view |
+| Layout + Components | 2 | Shared UI helpers + sub-navigation |
+| **Toplam** | **43 dosya** | |
+
+#### Dashboard Sayfaları
+1. `/dashboard/accounting` — redirect to overview
+2. `/dashboard/accounting/overview` — KPI kartları + son işlemler
+3. `/dashboard/accounting/transactions` — filtrelenebilir işlem listesi
+4. `/dashboard/accounting/transactions/[id]` — işlem detayı
+5. `/dashboard/accounting/credits` — kredi bakiyesi + ledger
+6. `/dashboard/accounting/documents` — fatura/makbuz (tab'lı)
+7. `/dashboard/accounting/refunds` — iade ve dispute takibi
+8. `/dashboard/accounting/billing` — fatura profili formu
+9. `/dashboard/accounting/export` — CSV/JSON export
+10. `/dashboard/accounting/activity` — audit log
+
+#### Servis Katmanı (15 servis)
+TransactionService, OrderService, InvoiceService, ReceiptService, CreditLedgerService, RefundService, DisputeService, PayoutService, TaxService, FxService, BillingProfileService, ExportService, ReconciliationService, AuditLogService, AccountingService (facade)
+
+#### Güvenlik Özellikleri
+- Tüm API route'ları auth kontrolü (`createClient()` + `getUser()`)
+- RLS politikaları (her tablo user_id bazlı)
+- Graceful fallback: tablo yoksa boş veri döner (production'da migration öncesi hata vermez)
+- Stripe webhook entegrasyonu (mevcut `checkout.session.completed` handler'a eklendi)
+
+#### Erişilebilirlik (WCAG AA)
+- ✅ Renk kontrastı 4.5:1+ (tüm metin)
+- ✅ 44px minimum dokunma hedefi (tüm interaktif)
+- ✅ iOS auto-zoom engellendi (text-base input)
+- ✅ ARIA etiketleri (form, spinner, truncated metin)
+- ✅ Responsive tablolar (overflow-x-auto)
+
+### Dış Engeller (Owner Aksiyonu Gerekli)
+
+1. **SUPABASE_DB_URL secret** — GitHub Actions'a eklenmeli:
+   - Supabase → Project Settings → Database → Connection string (Session pooler)
+   - GitHub → Repo Settings → Secrets → `SUPABASE_DB_URL`
+   - Sonra: `gh api repos/marblesinkco-source/ai-headshot-generator/actions/workflows/372759827/dispatches -f ref=main -f "inputs[mode]=apply"`
+
+2. **Tablolar oluşturulana kadar** dashboard boş veri gösterir (tasarım gereği graceful fallback)
+
+### Commit'ler
+- `60165dc` — feat: add Accounting & Transaction Center (43 dosya, migration, types, services, API, dashboard)
+- `11155e6` — feat: integrate accounting with Stripe webhook + graceful API fallback
+- `c7a0f12` — fix: accounting dashboard mobile responsiveness + accessibility
+
+---
+
 ## Oturum: 2026-10-04 (Tam Site Denetimi — %100 Temiz)
 
 ### Baseline
