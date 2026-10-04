@@ -34,6 +34,7 @@ const resourceLinks: FooterLink[] = [
   { label: 'Compare Tools', href: '/vs' },
   { label: 'Industries', href: '/industries' },
   { label: 'Use Cases', href: '/use-cases' },
+  { label: 'Locations', href: '/locations' },
   { label: 'Developer API', href: '/developer-api' },
 ];
 
