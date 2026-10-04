@@ -1,5 +1,57 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-04 (Hero Collage Orantı + Menü Denetimi)
+
+### Baseline
+- HEAD: `026ffa9`
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### 1. Hero Collage Lazy Loading Düzeltmesi (Commit: 6afae05)
+- Above-fold hero collage görselleri blank/beige gösteriliyordu
+- Next.js Image'lara `priority={i < 2}` eklendi (ilk 2 görsel eager load)
+
+#### 2. Hero Collage Orantı İyileştirmesi (Commits: aa91cad, c1f193a)
+- Aspect ratioları `aspect-[3/4]`/`aspect-square` → `aspect-[4/5]`/`aspect-[5/4]` yapıldı
+- Object-position'lar `['50% 10%', '50% 15%', '50% 20%', '50% 5%']` — baş + omuz + üst gövde
+- Daha geniş çerçeveleme ile yüzler aşırı yakın kırpılmadan görünüyor
+
+#### 3. Headshots Gallery Sıralaması (Commit: 3609843)
+- Brand portreler (geniş çerçeveli) ilk sıralara taşındı
+- Kategori fotoğrafı son slota yerleştirildi
+
+#### 4. Tek-Görsel Kategoriler İçin Collage Algoritması (Commit: 084d1b3)
+- Gallery'de 4'ten az görsel olan kategoriler için brand portreler ilk slotlara
+- Kategori fotoğrafı son slota — böylece geniş çerçeveli portreler büyük kartlarda
+- Tüm 12 kategori sayfası için çalışıyor
+
+#### 5. Buton/Link Denetimi
+- Ajan denetimi: tüm sayfalar tarandı — SIFIR kırık buton/link bulundu
+- Tüm 19+ route HTTP 200 döndürüyor
+- Tüm formlar handler'lara sahip
+- Tüm hash anchor'lar resolve oluyor
+
+#### 6. Mega Menü + QuickCategories Doğrulaması (Canlı Site)
+- ✅ Mega menü 12 kategori: doğru thumbnail + alt text
+- ✅ QuickCategories 6 featured: doğru görseller
+- ✅ /headshots — 4 farklı portre, brand portreler geniş çerçeveli ✅
+- ✅ /dating-photos — brand portreler ilk slotlarda ✅
+- ✅ /family-portraits — brand portreler geniş çerçeveli ✅
+- ✅ /pet-portraits — brand portreler ilk slotlarda ✅
+- ✅ /graduation-photos — brand portreler geniş çerçeveli ✅
+- ✅ /avatars — DOM doğrulandı, 4 farklı görsel ✅
+
+### Commits
+- `6afae05` — Fix hero collage lazy loading (priority prop)
+- `aa91cad` — Widen hero collage framing
+- `c1f193a` — Wider aspect ratios + higher crop
+- `3609843` — Reorder headshots gallery (brand portraits first)
+- `084d1b3` — Brand portraits first for all single-image categories
+- Tümü: CI PASS, Vercel PASS
+
+---
+
 ## Oturum: 2026-10-04 (Gerçek Fotoğraflar + Thumbnail Büyütme)
 
 ### Baseline
