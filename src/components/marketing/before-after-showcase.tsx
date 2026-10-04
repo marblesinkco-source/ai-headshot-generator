@@ -2,29 +2,7 @@
 
 import { useCallback, useRef, useState } from 'react';
 import Image from 'next/image';
-
-const BASE = '/brand/tailorpic/web';
-
-const EXAMPLES = [
-  {
-    label: 'LinkedIn Profile',
-    detail: 'Clean, approachable, ready for recruiters',
-    before: { src: `${BASE}/portrait-woman-before.webp`, alt: 'Casual selfie of a woman before AI processing' },
-    after: { src: `${BASE}/portrait-woman-after.webp`, alt: 'Polished AI headshot of a woman for a LinkedIn profile' },
-  },
-  {
-    label: 'Corporate Team',
-    detail: 'Consistent look across your whole company',
-    before: { src: `${BASE}/portrait-man-before.webp`, alt: 'Casual selfie of a man before AI processing' },
-    after: { src: `${BASE}/portrait-man-after.webp`, alt: 'Polished AI headshot of a man for a corporate team page' },
-  },
-  {
-    label: 'Creative Portfolio',
-    detail: 'Distinctive style that still feels polished',
-    before: { src: `${BASE}/portrait-woman-creative-before.webp`, alt: 'Professional woman before AI processing' },
-    after: { src: `${BASE}/portrait-woman-editorial.webp`, alt: 'Editorial-style AI portrait of a woman for a creative portfolio' },
-  },
-] as const;
+import { homeBeforeAfterPairs } from '@/config/category-visuals';
 
 const IMAGE_SIZES = '(min-width: 768px) 30vw, 90vw';
 
@@ -182,7 +160,7 @@ export function BeforeAfterShowcase() {
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-          {EXAMPLES.map(({ label, detail, before, after }) => (
+          {homeBeforeAfterPairs.map(({ label, detail, before, after }) => (
             <figure
               key={label}
               className="overflow-hidden rounded-tp-card border border-tp-line bg-white"

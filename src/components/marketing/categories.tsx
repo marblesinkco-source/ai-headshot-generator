@@ -1,64 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getActiveCategories, CATEGORY_GROUPS } from '@/config/categories';
+import { categoryVisuals } from '@/config/category-visuals';
 import { CategoryFallbackIllustration } from '@/components/marketing/illustrations';
 
 // Tiny neutral beige 8x6 SVG placeholder shown while category images load
 const BLUR_DATA_URL =
   'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDYiPjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjYiIGZpbGw9IiNFOERGRDAiLz48L3N2Zz4=';
-
-// Category images — downloaded locally during build (see scripts/download-category-images.mjs)
-// All photos sourced from Unsplash (free for commercial use)
-const CATEGORY_IMAGES: Record<string, { src: string; alt: string }> = {
-  headshots: {
-    src: '/images/categories/headshots.jpg',
-    alt: 'Professional woman in business attire',
-  },
-  dating: {
-    src: '/images/categories/dating.jpg',
-    alt: 'Confident woman smiling warmly',
-  },
-  'pet-portraits': {
-    src: '/images/categories/pet-portraits.jpg',
-    alt: 'Adorable golden retriever portrait',
-  },
-  'family-portraits': {
-    src: '/images/categories/family-portraits.jpg',
-    alt: 'Happy family portrait together',
-  },
-  'ecommerce-product': {
-    src: '/images/categories/ecommerce-product.jpg',
-    alt: 'Elegant product photography setup',
-  },
-  'linkedin-team': {
-    src: '/images/categories/linkedin-team.jpg',
-    alt: 'Corporate team collaborating in modern office',
-  },
-  'couple-engagement': {
-    src: '/images/categories/couple-engagement.jpg',
-    alt: 'Romantic couple engagement portrait',
-  },
-  graduation: {
-    src: '/images/categories/graduation.jpg',
-    alt: 'Proud graduate celebrating achievement',
-  },
-  'baby-shower': {
-    src: '/images/categories/baby-shower.jpg',
-    alt: 'Sweet newborn baby portrait',
-  },
-  'holiday-cards': {
-    src: '/images/categories/holiday-cards.jpg',
-    alt: 'Warm family moment by the Christmas tree',
-  },
-  'real-estate': {
-    src: '/images/categories/real-estate.jpg',
-    alt: 'Luxurious modern living room interior',
-  },
-  avatars: {
-    src: '/images/categories/avatars.jpg',
-    alt: 'AI avatar style variations of a portrait',
-  },
-};
 
 // Top categories get a "Popular" badge
 const POPULAR_IDS = new Set<string>(['headshots', 'dating', 'pet-portraits']);
@@ -101,7 +49,8 @@ export function Categories() {
               {/* Mobile: 2-col, Tablet: 3-col, Desktop: 4-col */}
               <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
                 {groupCategories.map((cat) => {
-                  const image = CATEGORY_IMAGES[cat.id];
+                  const vis = categoryVisuals[cat.id];
+                  const image = vis?.quickCard;
                   const popular = POPULAR_IDS.has(cat.id);
                   const maxOutput = Math.max(0, ...cat.packages.map((p) => p.outputCount));
                   const fromPrice = ((cat.packages[0]?.price || 0) / 100)

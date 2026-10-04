@@ -9,6 +9,7 @@ import { Footer } from '@/components/marketing/footer';
 import { Button } from '@/components/ui/button';
 import { getActiveCategories, getCategoryBySlug } from '@/config/categories';
 import { getCategoryContent } from '@/config/category-content';
+import { getCategoryVisuals, getCategoryImage, categoryVisuals } from '@/config/category-visuals';
 import { siteConfig } from '@/config/site';
 import { formatPrice } from '@/lib/utils';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
@@ -46,6 +47,15 @@ export default async function CategoryPage({ params }: Props) {
   }
 
   const content = getCategoryContent(cat.id);
+  const visuals = getCategoryVisuals(cat.id);
+  const fallbackSrc = `/images/categories/${cat.id}.jpg`;
+  const heroAsset = visuals?.heroDesktop ?? getCategoryImage(cat.id, 'heroDesktop');
+  const heroSrc = heroAsset?.src ?? fallbackSrc;
+  const beforeAsset = visuals?.beforeAfter?.before;
+  const afterAsset = visuals?.beforeAfter?.after;
+  const beforeSrc = beforeAsset?.src ?? heroSrc;
+  const afterSrc = afterAsset?.src ?? heroSrc;
+  const galleryItems = visuals?.gallery ?? [];
   const lowestPrice = Math.min(...cat.packages.map((p) => p.price));
 
   const allCategories = getActiveCategories();
@@ -102,7 +112,7 @@ export default async function CategoryPage({ params }: Props) {
     '@type': 'Product',
     name: cat.name,
     description: cat.seoDescription,
-    image: `${siteConfig.url}/images/categories/${cat.id}.jpg`,
+    image: `${siteConfig.url}${heroSrc}`,
     sku: cat.id,
     brand: {
       '@type': 'Brand',
@@ -213,11 +223,12 @@ export default async function CategoryPage({ params }: Props) {
                     }`}
                   >
                     <Image
-                      src={`/images/categories/${cat.id}.jpg`}
-                      alt={`${cat.name} example ${i}`}
+                      src={heroSrc}
+                      alt={heroAsset?.alt ?? `${cat.name} example ${i}`}
                       width={320}
                       height={i % 2 === 1 ? 427 : 320}
                       className="h-full w-full object-cover"
+                      style={heroAsset?.desktopObjectPosition ? { objectPosition: heroAsset.desktopObjectPosition } : undefined}
                       sizes="(min-width: 1024px) 20vw, 0px"
                     />
                   </div>
@@ -263,10 +274,11 @@ export default async function CategoryPage({ params }: Props) {
                     Before
                   </div>
                   <Image
-                    src={`/images/categories/${cat.id}.jpg`}
-                    alt={`Before - ${cat.name}`}
+                    src={beforeSrc}
+                    alt={beforeAsset?.alt ?? `Before - ${cat.name}`}
                     fill
                     className="object-cover opacity-80 grayscale-[30%]"
+                    style={(beforeAsset ?? heroAsset)?.desktopObjectPosition ? { objectPosition: (beforeAsset ?? heroAsset)?.desktopObjectPosition } : undefined}
                     sizes="(min-width: 768px) 25vw, 50vw"
                   />
                 </div>
@@ -275,10 +287,11 @@ export default async function CategoryPage({ params }: Props) {
                     After
                   </div>
                   <Image
-                    src={`/images/categories/${cat.id}.jpg`}
-                    alt={`After - ${cat.name}`}
+                    src={afterSrc}
+                    alt={afterAsset?.alt ?? `After - ${cat.name}`}
                     fill
                     className="object-cover"
+                    style={(afterAsset ?? heroAsset)?.desktopObjectPosition ? { objectPosition: (afterAsset ?? heroAsset)?.desktopObjectPosition } : undefined}
                     sizes="(min-width: 768px) 25vw, 50vw"
                   />
                 </div>
@@ -320,21 +333,25 @@ export default async function CategoryPage({ params }: Props) {
           </div>
 
           <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-            {Array.from({ length: 6 }).map((_, i) => (
+            {Array.from({ length: 6 }).map((_, i) => {
+              const g = galleryItems.length > 0 ? galleryItems[i % galleryItems.length] : undefined;
+              return (
               <div
                 key={i}
                 className="aspect-square overflow-hidden rounded-tp-button bg-tp-warm"
               >
                 <Image
-                  src={`/images/categories/${cat.id}.jpg`}
-                  alt={`${cat.name} sample ${i + 1}`}
+                  src={g?.src ?? fallbackSrc}
+                  alt={g?.alt ?? `${cat.name} sample ${i + 1}`}
                   width={240}
                   height={240}
                   className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                  style={g?.desktopObjectPosition ? { objectPosition: g.desktopObjectPosition } : undefined}
                   sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 50vw"
                 />
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -542,11 +559,12 @@ export default async function CategoryPage({ params }: Props) {
               >
                 <div className="aspect-[4/3] overflow-hidden bg-tp-warm">
                   <Image
-                    src={`/images/categories/${related.id}.jpg`}
-                    alt={related.name}
+                    src={categoryVisuals[related.id]?.quickCard?.src ?? `/images/categories/${related.id}.jpg`}
+                    alt={categoryVisuals[related.id]?.quickCard?.alt ?? related.name}
                     width={280}
                     height={210}
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    style={categoryVisuals[related.id]?.quickCard?.desktopObjectPosition ? { objectPosition: categoryVisuals[related.id]?.quickCard?.desktopObjectPosition } : undefined}
                     sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 50vw"
                   />
                 </div>

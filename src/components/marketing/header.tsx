@@ -9,6 +9,7 @@ import { getActiveCategories, CATEGORY_GROUPS } from '@/config/categories';
 import { createClient } from '@/lib/supabase/client';
 import type { User } from '@supabase/supabase-js';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+import { categoryVisuals } from '@/config/category-visuals';
 
 const categories = getActiveCategories();
 
@@ -241,8 +242,8 @@ export function Header() {
                             >
                               <div className="h-9 w-9 flex-shrink-0 overflow-hidden rounded-lg bg-gradient-to-br from-tp-beige to-tp-line">
                                 <Image
-                                  src={`/images/categories/${cat.id}.jpg`}
-                                  alt={cat.name}
+                                  src={categoryVisuals[cat.id]?.megaMenu?.src ?? `/images/categories/${cat.id}.jpg`}
+                                  alt={categoryVisuals[cat.id]?.megaMenu?.alt ?? cat.name}
                                   width={72}
                                   height={72}
                                   className="h-full w-full object-cover"
@@ -510,7 +511,7 @@ export function Header() {
                     >
                       <div className="h-9 w-9 flex-shrink-0 overflow-hidden rounded-md bg-gradient-to-br from-tp-beige to-tp-line">
                         <Image
-                          src={`/images/categories/${cat.id}.jpg`}
+                          src={categoryVisuals[cat.id]?.megaMenu?.src ?? `/images/categories/${cat.id}.jpg`}
                           alt=""
                           width={72}
                           height={72}

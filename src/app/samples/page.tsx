@@ -12,6 +12,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { siteConfig } from '@/config/site';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+import { categoryVisuals, getCategoryImage, brandPortraits } from '@/config/category-visuals';
 import {
   ArrowRight,
   Sparkles,
@@ -78,41 +79,52 @@ const sampleEntries: SampleEntry[] = [
   { id: 14, category: 'Family & Pets', style: 'Pet Portrait Studio', gradient: gradientPalettes[8] },
 ];
 
-const sampleImages: Record<number, string> = {
-  1: '/images/categories/headshots.jpg', // Classic Studio
-  2: '/images/categories/linkedin-team.jpg', // Modern Minimal
-  3: '/brand/tailorpic/web/portrait-man-after.webp', // Executive Portrait
-  4: '/images/categories/linkedin-team.jpg', // Team Headshot
-  5: '/brand/tailorpic/web/portrait-woman-editorial.webp', // Creative Professional
-  6: '/brand/tailorpic/web/portrait-man-editorial.webp', // Editorial Portrait
-  7: '/brand/tailorpic/web/portrait-woman-after.webp', // Playful Studio
-  8: '/images/categories/dating.jpg', // Outdoor Natural
-  9: '/images/categories/real-estate.jpg', // Urban Lifestyle
-  10: '/images/categories/couple-engagement.jpg', // Golden Hour
-  11: '/images/categories/graduation.jpg', // Cap & Gown Classic
-  12: '/images/categories/graduation.jpg', // Modern Academic (reuse)
-  13: '/images/categories/family-portraits.jpg', // Warm & Candid
-  14: '/images/categories/pet-portraits.jpg', // Pet Portrait Studio
+type SampleImage = { src: string; alt: string };
+
+/** Resolve a category slot from the registry, falling back to the category file. */
+function categoryImage(catId: string, slot: 'quickCard' | 'gallery' = 'quickCard'): SampleImage {
+  const asset = getCategoryImage(catId, slot) ?? categoryVisuals[catId]?.quickCard;
+  return {
+    src: asset?.src ?? `/images/categories/${catId}.jpg`,
+    alt: asset?.alt ?? 'AI-generated concept portrait',
+  };
+}
+
+const sampleImages: Record<number, SampleImage> = {
+  1: categoryImage('headshots'), // Classic Studio
+  2: categoryImage('linkedin-team'), // Modern Minimal
+  3: brandPortraits.manAfter, // Executive Portrait
+  4: categoryImage('linkedin-team'), // Team Headshot
+  5: brandPortraits.womanEditorial, // Creative Professional
+  6: brandPortraits.manEditorial, // Editorial Portrait
+  7: brandPortraits.womanAfter, // Playful Studio
+  8: categoryImage('dating'), // Outdoor Natural
+  9: categoryImage('avatars'), // Urban Lifestyle (was real-estate: wrong subject)
+  10: categoryImage('couple-engagement'), // Golden Hour
+  11: categoryImage('graduation'), // Cap & Gown Classic
+  12: categoryImage('headshots'), // Modern Academic (was duplicate graduation)
+  13: categoryImage('family-portraits'), // Warm & Candid
+  14: categoryImage('pet-portraits'), // Pet Portrait Studio
 };
 
-const styleGroupImages: Record<string, string[]> = {
+const styleGroupImages: Record<string, SampleImage[]> = {
   Corporate: [
-    '/images/categories/linkedin-team.jpg',
-    '/brand/tailorpic/web/portrait-man-after.webp',
-    '/images/categories/headshots.jpg',
+    categoryImage('linkedin-team'),
+    brandPortraits.manAfter,
+    categoryImage('headshots'),
   ],
   Creative: [
-    '/brand/tailorpic/web/portrait-woman-editorial.webp',
-    '/brand/tailorpic/web/portrait-woman-after.webp',
+    brandPortraits.womanEditorial,
+    brandPortraits.womanAfter,
   ],
   Casual: [
-    '/images/categories/dating.jpg',
-    '/images/categories/real-estate.jpg',
-    '/images/categories/couple-engagement.jpg',
+    categoryImage('dating'),
+    categoryImage('avatars'), // was real-estate: wrong subject
+    categoryImage('couple-engagement'),
   ],
   Academic: [
-    '/images/categories/graduation.jpg',
-    '/images/categories/graduation.jpg',
+    categoryImage('graduation'),
+    categoryImage('headshots'), // was duplicate graduation
   ],
 };
 
@@ -289,8 +301,8 @@ export default function SamplesPage() {
                     className={`relative aspect-[3/4] overflow-hidden bg-gradient-to-br ${entry.gradient}`}
                   >
                     <Image
-                      src={sampleImages[entry.id]}
-                      alt={`${entry.style} - AI generated concept portrait`}
+                      src={sampleImages[entry.id].src}
+                      alt={`${sampleImages[entry.id].alt} (${entry.style}, AI-generated concept)`}
                       fill
                       sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
                       className="object-cover"
@@ -373,8 +385,8 @@ export default function SamplesPage() {
                         <div className={`relative aspect-[4/3] overflow-hidden bg-gradient-to-br ${s.gradient}`}>
                           {styleGroupImages[group.name]?.[idx] && (
                             <Image
-                              src={styleGroupImages[group.name][idx]}
-                              alt={`${s.label} - AI generated concept portrait`}
+                              src={styleGroupImages[group.name][idx].src}
+                              alt={`${styleGroupImages[group.name][idx].alt} (${s.label}, AI-generated concept)`}
                               fill
                               sizes="(min-width: 640px) 33vw, 50vw"
                               className="object-cover"

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { getActiveCategories, FEATURED_CATEGORIES } from '@/config/categories';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { HeroPattern } from '@/components/marketing/illustrations';
+import { homeHero, categoryVisuals } from '@/config/category-visuals';
 
 const categories = getActiveCategories();
 const quickCategories = categories.filter((c) =>
@@ -95,11 +96,12 @@ export function Hero() {
             {/* Hero Art */}
             <div className="relative overflow-hidden rounded-[160px_14px_14px_14px] bg-tp-beige min-h-[432px] lg:min-h-[508px] self-stretch mt-2.5 order-4 lg:order-2">
               <Image
-                src="/brand/tailorpic/web/portrait-woman-editorial.webp"
-                alt="AI-generated editorial portrait"
+                src={homeHero.src}
+                alt={homeHero.alt}
                 width={503}
                 height={743}
-                className="absolute inset-0 w-full h-full object-cover object-[50%_58%]"
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{ objectPosition: homeHero.desktopObjectPosition }}
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 priority
               />
@@ -150,8 +152,8 @@ export function Hero() {
             >
               <div className="w-[52px] h-[52px] sm:w-[60px] sm:h-[60px] rounded-lg overflow-hidden flex-shrink-0 bg-gradient-to-br from-tp-beige to-tp-line">
                 <Image
-                  src={`/images/categories/${cat.id}.jpg`}
-                  alt={cat.name}
+                  src={categoryVisuals[cat.id]?.quickCard?.src ?? `/images/categories/${cat.id}.jpg`}
+                  alt={categoryVisuals[cat.id]?.quickCard?.alt ?? cat.name}
                   width={120}
                   height={120}
                   className="w-full h-full object-cover"
@@ -210,8 +212,8 @@ function QuickCategories({
             {/* Category thumbnail */}
             <div className="w-[59px] lg:w-full h-[69px] lg:h-[98px] bg-gradient-to-br from-tp-beige to-tp-line flex-shrink-0 overflow-hidden">
               <Image
-                src={`/images/categories/${cat.id}.jpg`}
-                alt={cat.name}
+                src={categoryVisuals[cat.id]?.quickCard?.src ?? `/images/categories/${cat.id}.jpg`}
+                alt={categoryVisuals[cat.id]?.quickCard?.alt ?? cat.name}
                 width={800}
                 height={600}
                 className="w-full h-full object-cover"
