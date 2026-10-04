@@ -88,3 +88,65 @@
 5. Replicate API key
 6. Domain DNS (tailorpic.com → Vercel)
 7. Vercel environment variables
+
+---
+
+## Oturum: 2026-10-04 (V4 Visual Rebuild — Merkezi Görsel Registry)
+
+### Baseline
+- HEAD: `dc80b4b`
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### 1. Merkezi Görsel Veri Kaynağı (Commit: f50d64d)
+- `src/config/category-visuals.ts` oluşturuldu (233 satır) — tüm görsel slotları için tek kaynak
+- Interface'ler: `ImageAsset`, `BeforeAfterPair`, `CategoryVisuals`, `HomeBeforeAfter`
+- Object-position presetleri: portrait, product, room, card, group, pet
+- 12 kategori + homepage hero + before/after + brand portraits + blog defaults
+- Yardımcı fonksiyonlar: `getCategoryVisuals()`, `getCategoryVisualsBySlug()`, `getCategoryImage()`
+
+#### 2. Kategori Görselleri Değiştirildi (6 adet)
+- pet-portraits.jpg → Köpek+kedi siluetleri
+- baby-shower.jpg → 5x7 davetiye kartı mockup
+- graduation.jpg → Mezuniyet kepi + diploma
+- holiday-cards.jpg → Noel tebrik kartı
+- real-estate.jpg → Boş oda iç mekan
+- ecommerce-product.jpg → Şişe, kutu, saat stüdyo
+- `scripts/generate_category_images.py` ile PIL'de üretildi
+
+#### 3. Bileşenler Merkezi Registry'ye Bağlandı
+- `categories.tsx` — CATEGORY_IMAGES kaldırıldı → `categoryVisuals[cat.id]?.quickCard`
+- `header.tsx` — Mega-menü thumbnail'leri → `categoryVisuals[cat.id]?.megaMenu`
+- `hero.tsx` — Homepage hero → `homeHero`, quick chooser → `categoryVisuals`
+- `before-after-showcase.tsx` — Hardcoded EXAMPLES → `homeBeforeAfterPairs`
+- `[category]/page.tsx` — Hero/before-after/gallery/related → `getCategoryVisuals()`
+- `samples/page.tsx` — sampleImages/styleGroupImages → registry, semantik uyumsuzluklar düzeltildi
+
+#### 4. Canlı Site Doğrulaması
+- ✅ Homepage hero — registry'den geliyor
+- ✅ Quick category chooser — 6 kategori doğru görseller
+- ✅ Kategori kartları (Professional/Personal/Creative) — 12 kategori doğru
+- ✅ Mega-menü — 3 sütun, thumbnail'ler registry'den
+- ✅ /headshots — hero görselleri doğru yükleniyor
+- ✅ /samples — gallery görselleri registry'den, filtreler çalışıyor
+
+### V4 Visual Rebuild İlerleme
+- [x] Step 1: Visual inventory (audit)
+- [x] Step 2: Slot-ratio specification
+- [x] Step 3: Semantic mismatch list
+- [x] Step 4: Asset curation/generation
+- [x] Step 5: Central visual data registry
+- [x] Step 6: Mega-menu thumbnails
+- [x] Step 7: Homepage quick chooser
+- [x] Step 8: Homepage hero/before-after
+- [x] Step 9: Samples page
+- [ ] Step 10-13: Remaining category pages (connected but need more diverse assets)
+- [ ] Step 14: Backdrop/outfit selectors
+- [ ] Step 15: Blog imagery
+- [ ] Step 16: Auth showcase
+- [ ] Step 17-19: Mobile crops, performance, screenshot QA
+- [ ] Step 20: Production build verification
+
+### Commit: f50d64d
+- Central visual data registry + 6 bileşen bağlantısı + 6 görsel değişimi
