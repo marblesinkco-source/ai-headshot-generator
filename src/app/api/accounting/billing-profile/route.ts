@@ -19,6 +19,10 @@ export async function GET(_request: NextRequest) {
     const profiles = await BillingProfileService.list(user.id);
     return NextResponse.json(profiles);
   } catch (error) {
+    const msg = error instanceof Error ? error.message : '';
+    if (msg.includes('relation') && msg.includes('does not exist')) {
+      return NextResponse.json([]);
+    }
     console.error('[accounting/billing-profile] GET failed:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
@@ -105,6 +109,10 @@ export async function PUT(request: NextRequest) {
 
     return NextResponse.json(profile);
   } catch (error) {
+    const msg = error instanceof Error ? error.message : '';
+    if (msg.includes('relation') && msg.includes('does not exist')) {
+      return NextResponse.json({ error: 'Accounting tables not yet initialized.' }, { status: 503 });
+    }
     console.error('[accounting/billing-profile] PUT failed:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }

@@ -48,6 +48,13 @@ export async function POST(request: NextRequest) {
       },
     });
   } catch (error) {
+    const msg = error instanceof Error ? error.message : '';
+    if (msg.includes('relation') && msg.includes('does not exist')) {
+      return new NextResponse('No data available — accounting tables not yet initialized.', {
+        status: 200,
+        headers: { 'Content-Type': 'text/plain' },
+      });
+    }
     console.error('[accounting/export] POST failed:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }

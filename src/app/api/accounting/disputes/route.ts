@@ -27,6 +27,10 @@ export async function GET(request: NextRequest) {
     const result = await DisputeService.list(user.id, page, pageSize);
     return NextResponse.json(result);
   } catch (error) {
+    const msg = error instanceof Error ? error.message : '';
+    if (msg.includes('relation') && msg.includes('does not exist')) {
+      return NextResponse.json({ data: [], total: 0, page: 1, pageSize: 20, totalPages: 0 });
+    }
     console.error('[accounting/disputes] GET failed:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }

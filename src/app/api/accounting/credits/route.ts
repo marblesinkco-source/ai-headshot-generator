@@ -31,6 +31,10 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({ entries, balance });
   } catch (error) {
+    const msg = error instanceof Error ? error.message : '';
+    if (msg.includes('relation') && msg.includes('does not exist')) {
+      return NextResponse.json({ entries: [], balance: 0 });
+    }
     console.error('[accounting/credits] GET failed:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }

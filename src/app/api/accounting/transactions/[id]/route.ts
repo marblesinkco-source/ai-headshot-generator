@@ -35,6 +35,10 @@ export async function GET(
 
     return NextResponse.json(transaction);
   } catch (error) {
+    const msg = error instanceof Error ? error.message : '';
+    if (msg.includes('relation') && msg.includes('does not exist')) {
+      return NextResponse.json({ error: 'Transaction not found' }, { status: 404 });
+    }
     console.error('[accounting/transactions/[id]] GET failed:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }

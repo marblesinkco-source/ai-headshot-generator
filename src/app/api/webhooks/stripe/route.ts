@@ -14,6 +14,7 @@ import {
 } from '@/lib/emails';
 import { nanoid } from 'nanoid';
 import { logger } from '@/lib/logger';
+import { TransactionService } from '@/lib/accounting';
 
 export const maxDuration = 30;
 
@@ -204,6 +205,29 @@ export async function POST(request: NextRequest) {
             }
           }
 
+          // Record financial transaction (best-effort; never fails the webhook)
+          try {
+            await TransactionService.createFromOrder({
+              userId,
+              orderId,
+              amount: session.amount_total || 0,
+              currency: session.currency || 'usd',
+              provider: 'stripe',
+              externalId: session.id,
+              transactionType: 'credit_purchase',
+              serviceType: 'credit_purchase',
+              categorySlug: categoryId,
+              packageCode: packageId,
+              quantity: 1,
+              paymentMethodType: session.payment_method_types?.[0],
+              processorPaymentId: session.payment_intent as string,
+              description: `Payment for ${creditPkg?.name || packageId}`,
+            });
+          } catch (txError) {
+            logger.error('[stripe-webhook] Failed to record financial transaction:', txError);
+            // Don't fail the webhook — the order was already updated
+          }
+
           break;
         }
 
@@ -239,6 +263,29 @@ export async function POST(request: NextRequest) {
             logger.error('Failed to send confirmation email:', emailError);
             // Don't fail the webhook for email errors
           }
+        }
+
+        // Record financial transaction (best-effort; never fails the webhook)
+        try {
+          await TransactionService.createFromOrder({
+            userId,
+            orderId,
+            amount: session.amount_total || 0,
+            currency: session.currency || 'usd',
+            provider: 'stripe',
+            externalId: session.id,
+            transactionType: 'sale',
+            serviceType: 'headshot_generation',
+            categorySlug: categoryId,
+            packageCode: packageId,
+            quantity: 1,
+            paymentMethodType: session.payment_method_types?.[0],
+            processorPaymentId: session.payment_intent as string,
+            description: `Payment for ${pkgName}`,
+          });
+        } catch (txError) {
+          logger.error('[stripe-webhook] Failed to record financial transaction:', txError);
+          // Don't fail the webhook — the order was already updated
         }
 
         break;
@@ -418,6 +465,22 @@ export async function POST(request: NextRequest) {
             }
           } catch (emailError) {
             logger.error('Failed to send refund confirmation email:', emailError);
+          }
+
+          // Record refund transaction once (best-effort; never fails the webhook)
+          try {
+            await TransactionService.createFromOrder({
+              userId: refundOrder.user_id,
+              orderId: refundOrder.id,
+              amount: -(charge.amount_refunded || 0),
+              currency: charge.currency,
+              provider: 'stripe',
+              externalId: charge.id,
+              transactionType: 'refund',
+              description: `Refund for order ${refundOrder.id}`,
+            });
+          } catch (txError) {
+            logger.error('[stripe-webhook] Failed to record refund transaction:', txError);
           }
         }
 
