@@ -122,14 +122,14 @@ export default function BillingPage() {
           <legend className={label}>Profile type</legend>
           <div className="flex gap-6">
             {(['individual', 'business'] as const).map((t) => (
-              <label key={t} className="flex items-center gap-2 text-sm text-tp-ink">
+              <label key={t} className="flex min-h-[44px] cursor-pointer items-center gap-2 text-sm text-tp-ink">
                 <input
                   type="radio"
                   name="profile_type"
                   value={t}
                   checked={form.profile_type === t}
                   onChange={() => update('profile_type', t)}
-                  className="accent-tp-bronze-ink"
+                  className="h-5 w-5 accent-tp-bronze-ink"
                 />
                 {t === 'individual' ? 'Individual' : 'Business'}
               </label>
@@ -172,13 +172,13 @@ export default function BillingPage() {
           <p className="mt-4 text-sm text-tp-error" role="alert">{saveError}</p>
         ) : null}
         {saved ? (
-          <p className="mt-4 text-sm text-tp-success" role="status">Billing profile saved.</p>
+          <p className="mt-4 text-sm text-[#15803D]" role="status">Billing profile saved.</p>
         ) : null}
 
         <button
           type="submit"
           disabled={saving}
-          className="mt-6 rounded-tp-button bg-tp-black px-6 py-2.5 text-sm font-medium text-tp-bronze disabled:opacity-60"
+          className="mt-6 rounded-tp-button bg-tp-black px-6 py-2.5 min-h-[44px] text-sm font-medium text-tp-bronze disabled:opacity-60"
         >
           {saving ? 'Saving...' : 'Save billing profile'}
         </button>

@@ -60,9 +60,9 @@ export function readRows<T>(body: unknown): T[] {
 }
 
 const BADGE_CLASSES: Record<StatusColor, string> = {
-  green: 'bg-tp-success/10 text-tp-success',
+  green: 'bg-tp-success/10 text-[#15803D]',
   yellow: 'bg-tp-warning/15 text-tp-bronze-ink',
-  red: 'bg-tp-error/10 text-tp-error',
+  red: 'bg-tp-error/10 text-[#B91C1C]',
   blue: 'bg-tp-bronze/25 text-tp-bronze-ink',
   gray: 'bg-tp-warm text-tp-muted',
 };
@@ -91,14 +91,14 @@ export function PageHeading({ title, description }: { title: string; description
 
 export function Card({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <div className={cn('rounded-tp-card border border-tp-line/30 bg-white p-6', className)}>{children}</div>
+    <div className={cn('rounded-tp-card border border-tp-line/30 bg-white p-4 sm:p-6', className)}>{children}</div>
   );
 }
 
 export function LoadingState({ label = 'Loading...' }: { label?: string }) {
   return (
     <div className="flex items-center justify-center gap-3 py-12 text-sm text-tp-muted" role="status" aria-live="polite">
-      <span className="h-4 w-4 animate-spin rounded-full border-2 border-tp-line border-t-tp-bronze-ink" />
+      <span className="h-4 w-4 animate-spin rounded-full border-2 border-tp-line border-t-tp-bronze-ink" aria-hidden="true" />
       {label}
     </div>
   );
@@ -112,7 +112,7 @@ export function ErrorState({ message, onRetry }: { message: string; onRetry?: ()
         <button
           type="button"
           onClick={onRetry}
-          className="mt-3 rounded-tp-button border border-tp-error/40 px-4 py-2 font-medium hover:bg-tp-error/10"
+          className="mt-3 rounded-tp-button border border-tp-error/40 px-4 py-2 min-h-[44px] font-medium hover:bg-tp-error/10"
         >
           Try again
         </button>
@@ -142,7 +142,7 @@ export function Pagination({
 }) {
   if (totalPages <= 1) return null;
   const btn =
-    'rounded-tp-button border border-tp-line px-4 py-2 text-sm font-medium text-tp-ink hover:bg-tp-paper disabled:cursor-not-allowed disabled:opacity-40';
+    'rounded-tp-button border border-tp-line px-4 py-2 min-h-[44px] text-sm font-medium text-tp-ink hover:bg-tp-paper disabled:cursor-not-allowed disabled:opacity-40';
   return (
     <nav className="mt-6 flex items-center justify-between gap-3" aria-label="Pagination">
       <p className="text-sm text-tp-muted">
@@ -162,7 +162,7 @@ export function Pagination({
 }
 
 export const inputClass =
-  'w-full rounded-tp-button border border-tp-line bg-white px-3 py-2 text-sm text-tp-ink placeholder:text-tp-muted focus:border-tp-bronze-ink focus:outline-none focus:ring-1 focus:ring-tp-bronze-ink';
+  'w-full rounded-tp-button border border-tp-line bg-white px-3 py-2 min-h-[44px] text-base sm:text-sm text-tp-ink placeholder:text-tp-muted focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink';
 
 export const tableHeadClass = 'px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-tp-muted';
 export const tableCellClass = 'px-4 py-3 text-sm text-tp-ink';

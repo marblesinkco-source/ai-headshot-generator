@@ -74,7 +74,7 @@ export default function CreditsPage() {
         <>
           <Card className="mb-8">
             <p className="text-sm text-tp-muted">Current balance</p>
-            <p className="mt-2 font-display text-5xl font-normal text-tp-black">{balance ?? 0}</p>
+            <p className="mt-2 font-display text-4xl sm:text-5xl font-normal text-tp-black">{balance ?? 0}</p>
             <p className="mt-1 text-sm text-tp-muted">credits</p>
           </Card>
 
@@ -82,7 +82,7 @@ export default function CreditsPage() {
             <EmptyState message="Your credit activity will appear here after your first purchase." />
           ) : (
             <>
-              <div className="hidden overflow-hidden rounded-tp-card border border-tp-line/30 bg-white md:block">
+              <div className="hidden overflow-x-auto rounded-tp-card border border-tp-line/30 bg-white md:block">
                 <table className="min-w-full divide-y divide-tp-line/40">
                   <thead className="bg-tp-paper">
                     <tr>
@@ -103,7 +103,7 @@ export default function CreditsPage() {
                           className={cn(
                             tableCellClass,
                             'font-medium',
-                            e.credits_delta >= 0 ? 'text-tp-success' : 'text-tp-error',
+                            e.credits_delta >= 0 ? 'text-[#15803D]' : 'text-tp-error',
                           )}
                         >
                           {formatDelta(e.credits_delta)}
@@ -122,7 +122,7 @@ export default function CreditsPage() {
                   <li key={e.id} className="rounded-tp-card border border-tp-line/30 bg-white p-4">
                     <div className="flex items-center justify-between gap-3">
                       <Badge color="gray">{humanize(e.event_type)}</Badge>
-                      <span className={cn('text-sm font-medium', e.credits_delta >= 0 ? 'text-tp-success' : 'text-tp-error')}>
+                      <span className={cn('text-sm font-medium', e.credits_delta >= 0 ? 'text-[#15803D]' : 'text-tp-error')}>
                         {formatDelta(e.credits_delta)}
                       </span>
                     </div>

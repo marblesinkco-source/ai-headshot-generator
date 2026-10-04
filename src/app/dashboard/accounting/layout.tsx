@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -17,6 +18,11 @@ const TABS = [
 
 export default function AccountingLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname() ?? '';
+  const activeRef = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    activeRef.current?.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+  }, [pathname]);
 
   return (
     <div className="mx-auto w-full max-w-6xl">
@@ -25,17 +31,22 @@ export default function AccountingLayout({ children }: { children: React.ReactNo
         <p className="mt-1 text-sm text-tp-muted">Transactions, documents, credits and billing details.</p>
       </header>
 
-      <nav aria-label="Accounting sections" className="mb-8 -mx-4 overflow-x-auto border-b border-tp-line/60 px-4 sm:mx-0 sm:px-0">
-        <ul className="flex min-w-max gap-6">
+      <nav
+        aria-label="Accounting sections"
+        className="relative mb-8 -mx-4 overflow-x-auto border-b border-tp-line/60 px-4 sm:mx-0 sm:px-0"
+        style={{ WebkitOverflowScrolling: 'touch' }}
+      >
+        <ul className="flex min-w-max gap-1 sm:gap-4">
           {TABS.map((tab) => {
             const active = pathname === tab.href || pathname.startsWith(`${tab.href}/`);
             return (
               <li key={tab.href}>
                 <Link
+                  ref={active ? activeRef : undefined}
                   href={tab.href}
                   aria-current={active ? 'page' : undefined}
                   className={cn(
-                    '-mb-px block whitespace-nowrap border-b-2 pb-3 text-sm font-medium transition-colors',
+                    '-mb-px inline-flex min-h-[44px] items-center whitespace-nowrap border-b-2 px-2 text-sm font-medium transition-colors',
                     active
                       ? 'border-tp-bronze text-tp-bronze-ink'
                       : 'border-transparent text-tp-muted hover:text-tp-ink',

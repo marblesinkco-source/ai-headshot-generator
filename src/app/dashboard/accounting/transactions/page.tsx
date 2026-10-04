@@ -87,13 +87,13 @@ export default function TransactionsPage() {
     setPage(1);
   }
 
-  const label = 'mb-1 block text-xs font-medium text-tp-muted';
+  const label = 'mb-1 block text-sm font-medium text-tp-muted';
 
   return (
     <div>
       <PageHeading title="Transactions" description="Every payment, refund and adjustment on your account." />
 
-      <form onSubmit={submit} className="mb-6 rounded-tp-card border border-tp-line/30 bg-white p-4">
+      <form onSubmit={submit} aria-label="Filter transactions" className="mb-6 rounded-tp-card border border-tp-line/30 bg-white p-4">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <label htmlFor="tx-search" className={label}>Search</label>
@@ -160,13 +160,13 @@ export default function TransactionsPage() {
           </div>
         </div>
         <div className="mt-4 flex gap-2">
-          <button type="submit" className="rounded-tp-button bg-tp-black px-5 py-2 text-sm font-medium text-tp-bronze">
+          <button type="submit" className="rounded-tp-button bg-tp-black px-5 py-2 min-h-[44px] text-sm font-medium text-tp-bronze">
             Apply filters
           </button>
           <button
             type="button"
             onClick={reset}
-            className="rounded-tp-button border border-tp-line px-5 py-2 text-sm font-medium text-tp-ink hover:bg-tp-paper"
+            className="rounded-tp-button border border-tp-line px-5 py-2 min-h-[44px] text-sm font-medium text-tp-ink hover:bg-tp-paper"
           >
             Reset
           </button>
@@ -207,7 +207,7 @@ export default function TransactionsPage() {
                         {tx.human_id}
                       </Link>
                     </td>
-                    <td className={`${tableCellClass} max-w-xs truncate`}>{tx.description ?? '-'}</td>
+                    <td className={`${tableCellClass} max-w-xs truncate`} title={tx.description ?? undefined}>{tx.description ?? '-'}</td>
                     <td className={tableCellClass}>{TRANSACTION_TYPE_LABELS[tx.transaction_type] ?? tx.transaction_type}</td>
                     <td className={tableCellClass}>{formatPrice(tx.gross_amount, tx.original_currency)}</td>
                     <td className={tableCellClass}>

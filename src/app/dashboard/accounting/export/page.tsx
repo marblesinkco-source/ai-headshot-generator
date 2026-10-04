@@ -84,14 +84,14 @@ export default function ExportPage() {
           <legend className={label}>Format</legend>
           <div className="flex gap-6">
             {FORMATS.map((f) => (
-              <label key={f.value} className="flex items-center gap-2 text-sm text-tp-ink">
+              <label key={f.value} className="flex min-h-[44px] cursor-pointer items-center gap-2 text-sm text-tp-ink">
                 <input
                   type="radio"
                   name="format"
                   value={f.value}
                   checked={format === f.value}
                   onChange={() => setFormat(f.value)}
-                  className="accent-tp-bronze-ink"
+                  className="h-5 w-5 accent-tp-bronze-ink"
                 />
                 {f.label}
               </label>
@@ -103,11 +103,11 @@ export default function ExportPage() {
           <legend className={label}>Date range</legend>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label htmlFor="export-from" className="mb-1 block text-xs text-tp-muted">From</label>
+              <label htmlFor="export-from" className="mb-1 block text-sm text-tp-muted">From</label>
               <input id="export-from" type="date" className={inputClass} value={from} max={to || undefined} onChange={(e) => setFrom(e.target.value)} />
             </div>
             <div>
-              <label htmlFor="export-to" className="mb-1 block text-xs text-tp-muted">To</label>
+              <label htmlFor="export-to" className="mb-1 block text-sm text-tp-muted">To</label>
               <input id="export-to" type="date" className={inputClass} value={to} min={from || undefined} onChange={(e) => setTo(e.target.value)} />
             </div>
           </div>
@@ -115,15 +115,15 @@ export default function ExportPage() {
 
         <fieldset>
           <legend className={label}>Transaction types</legend>
-          <p className="mb-3 text-xs text-tp-muted">Leave all unchecked to include every type.</p>
+          <p className="mb-3 text-sm text-tp-muted">Leave all unchecked to include every type.</p>
           <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
             {TYPES.map((t) => (
-              <label key={t} className="flex items-center gap-2 text-sm text-tp-ink">
+              <label key={t} className="flex min-h-[44px] cursor-pointer items-center gap-2 text-sm text-tp-ink">
                 <input
                   type="checkbox"
                   checked={types.includes(t)}
                   onChange={() => toggleType(t)}
-                  className="accent-tp-bronze-ink"
+                  className="h-5 w-5 accent-tp-bronze-ink"
                 />
                 {TRANSACTION_TYPE_LABELS[t]}
               </label>
@@ -132,12 +132,12 @@ export default function ExportPage() {
         </fieldset>
 
         {error ? <p className="text-sm text-tp-error" role="alert">{error}</p> : null}
-        {done ? <p className="text-sm text-tp-success" role="status">Your export has been downloaded.</p> : null}
+        {done ? <p className="text-sm text-[#15803D]" role="status">Your export has been downloaded.</p> : null}
 
         <button
           type="submit"
           disabled={busy}
-          className="rounded-tp-button bg-tp-black px-6 py-2.5 text-sm font-medium text-tp-bronze disabled:opacity-60"
+          className="rounded-tp-button bg-tp-black px-6 py-2.5 min-h-[44px] text-sm font-medium text-tp-bronze disabled:opacity-60"
         >
           {busy ? 'Preparing export...' : 'Download export'}
         </button>
