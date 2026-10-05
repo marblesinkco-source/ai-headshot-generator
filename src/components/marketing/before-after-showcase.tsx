@@ -2,6 +2,7 @@
 
 import { useCallback, useRef, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { homeBeforeAfterPairs } from '@/config/category-visuals';
 
 const IMAGE_SIZES = '(min-width: 768px) 30vw, 90vw';
@@ -176,6 +177,12 @@ export function BeforeAfterShowcase() {
 
         <p className="mt-8 text-center text-xs text-tp-muted">
           Results based on AI-generated concept images. Individual results vary.
+        </p>
+
+        <p className="mt-3 text-center">
+          <Link href="/samples" className="text-sm text-tp-bronze-ink hover:underline">
+            See more examples →
+          </Link>
         </p>
       </div>
     </section>

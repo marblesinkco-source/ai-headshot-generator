@@ -50,6 +50,14 @@ const StudioComparison = dynamic(
   () => import('@/components/marketing/studio-comparison').then((m) => m.StudioComparison),
   { loading: () => <SectionSkeleton height="h-[500px] md:h-[400px]" /> }
 );
+const SavingsCalculator = dynamic(
+  () => import('@/components/marketing/savings-calculator').then((m) => m.SavingsCalculator),
+  { loading: () => <SectionSkeleton height="h-[600px] md:h-[500px]" /> }
+);
+const AIComparison = dynamic(
+  () => import('@/components/marketing/ai-comparison').then((m) => m.AIComparison),
+  { loading: () => <SectionSkeleton height="h-[500px] md:h-[400px]" /> }
+);
 const HowItWorks = dynamic(
   () => import('@/components/marketing/how-it-works').then((m) => m.HowItWorks),
   { loading: () => <SectionSkeleton height="h-[600px] md:h-[400px]" /> }
@@ -118,7 +126,13 @@ export default function LandingPage() {
       {/* 8.5. Studio vs TailorPic Comparison */}
       <StudioComparison />
 
-      {/* 9. How It Works */}
+      {/* 9. Savings Calculator — cost argument reinforced */}
+      <SavingsCalculator />
+
+      {/* 9.5. AI Comparison — why purpose-built AI beats generic */}
+      <AIComparison />
+
+      {/* 10. How It Works */}
       <HowItWorks />
 
       {/* 10. Pricing Overview */}

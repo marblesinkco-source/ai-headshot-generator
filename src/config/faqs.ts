@@ -45,7 +45,7 @@ export const faqs = [
     category: 'Pricing',
     question: 'Is this a subscription? Are there hidden fees?',
     answer:
-      'No. Every package is a one-time payment at the price shown. There is no subscription, nothing renews automatically, and no hidden fees.',
+      'No. Every package is a one-time payment at the price shown. There is no subscription, nothing renews automatically, and no hidden fees. See all plans at tailorpic.com/pricing.',
   },
   {
     category: 'Pricing',

@@ -159,6 +159,14 @@
       "dependencies": ["feat-G"],
       "status": "done",
       "evidence": "2 batch commit: 383acc3 (hero CTA fiyat, studio comparison tablosu, pricing CTA fix, trust badges genişletme, sticky/banner CTA redirect fix), f91d754 (mid-page CTA how-it-works, HowItWorks/Pricing/Privacy/CTA-Banner/SocialProofBar iyileştirmeleri, dinamik fiyatlı CTA butonları, uydurma iddia temizliği). CI PASS + Vercel PASS. Canlı doğrulama tamam."
+    },
+    {
+      "id": "feat-T",
+      "name": "Phase T — Conversion Toolkit & Trust Reinforcement",
+      "description": "Savings calculator, AI araçları karşılaştırma tablosu, FAQ pricing link, samples CTA, guarantee bölümü güçlendirme",
+      "dependencies": ["feat-S"],
+      "status": "done",
+      "evidence": "5 dosya (+290 satır). savings-calculator.tsx: interaktif tasarruf hesaplayıcı (stüdyo vs TailorPic, TEAM_PRICES entegrasyonu, 1-50 kişi slider). ai-comparison.tsx: 8 satırlık Generic AI vs TailorPic karşılaştırma tablosu. faqs.ts: pricing FAQ'ya /pricing linki. before-after-showcase.tsx: /samples CTA linki. page.tsx: SavingsCalculator + AIComparison dinamik import ve homepage entegrasyonu."
     }
   ]
 }
