@@ -1,5 +1,62 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-05 (Phase N — Self-Optimization Engine)
+
+### Baseline
+- HEAD: `b25f198` (site-wide expert audit)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### Self-Optimization Engine — 4 Katmanlı Mimari
+
+**Katman 1: Veri Toplama**
+- `supabase/migrations/20261005_self_optimization.sql` — 7 tablo (page_views, click_events, conversions, ab_tests, ab_test_assignments, optimization_log, dynamic_rankings) + RLS + indeksler
+- `src/app/api/analytics/track/route.ts` — POST endpoint (page_view/click/conversion)
+- `src/hooks/use-analytics.ts` — Otomatik sayfa görüntüleme, UTM, duration, click/conversion tracking
+- `src/components/analytics-provider.tsx` — Suspense boundary ile layout entegrasyonu
+
+**Katman 2: Karar Motoru**
+- `src/lib/optimization/ab-testing.ts` — A/B test servisi (deterministic session hashing)
+- `src/lib/optimization/dynamic-ranking.ts` — Kategori sıralama + paket öne çıkarma + hero variant
+- `src/hooks/use-ab-test.ts` — Client-side A/B test hook
+
+**Katman 3: Yürütme**
+- `src/app/api/cron/optimize/route.ts` — Günlük optimizasyon cron (03:00 UTC)
+  - 7 günlük metrik analizi
+  - Conversion rate bazlı kategori sıralaması
+  - Gelir bazlı paket öne çıkarma
+  - `optimization_log` ve `dynamic_rankings` tablolarına kayıt
+
+**Katman 4: Raporlama**
+- `src/app/api/analytics/metrics/route.ts` — Auth-protected metrik API
+- `src/app/dashboard/insights/page.tsx` — Server component + loading skeleton
+- `src/app/dashboard/insights/insights-client.tsx` — Tam dashboard paneli
+  - Özet kartları (sayfa görüntüleme, tıklama, dönüşüm, gelir)
+  - Top sayfalar bar chart
+  - Cihaz dağılımı
+  - Dönüşüm funnel (7 adım)
+  - Optimizasyon geçmişi
+  - A/B test durumu
+  - Dönem seçici (7/14/30 gün)
+  - Türkçe UI
+
+**Entegrasyon**
+- `vercel.json` — Optimize cron eklendi
+- `src/app/layout.tsx` — AnalyticsProvider eklendi
+- `src/app/dashboard/components/DashboardShell.tsx` — AI Insights nav item eklendi
+
+### Deploy
+- Commit: `15d8b5a` — 17 dosya, +1597 satır
+- CI: PASS ✅
+- Vercel: PASS ✅
+- Canlı doğrulama: /dashboard/insights yükleniyor — başlık, dönem seçici, özet kartları, boş veri mesajları tümü doğru ✅
+
+### Dış Engeller
+- `SUPABASE_DB_URL` — Migration uygulanmadan tablolar oluşturulmaz, dashboard boş veri gösterir (graceful fallback)
+
+---
+
 ## Oturum: 2026-10-05 (Site-Wide Expert Audit — 71 Dosya İyileştirmesi)
 
 ### Baseline

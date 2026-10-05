@@ -109,8 +109,8 @@
       "name": "Phase N — Self-Optimization Engine",
       "description": "Supabase veri toplama tabloları, event tracking hook/API, dinamik kategori/paket sıralama, A/B test framework, hero/CTA rotasyon, günlük optimizasyon cron, dashboard AI Insights paneli",
       "dependencies": ["feat-M"],
-      "status": "in-progress",
-      "evidence": ""
+      "status": "done",
+      "evidence": "17 dosya (13 yeni, 4 değiştirilmiş), +1597 satır. Migration SQL (7 tablo + RLS + indeksler), tracking API (page_view/click/conversion), metrics API (auth-protected), useAnalytics hook (auto page view + UTM + duration), useAbTest hook (deterministic hashing), A/B test service, dynamic ranking service, optimize cron (günlük 03:00 UTC), AI Insights dashboard (Türkçe UI, özet kartlar, funnel, optimizasyon geçmişi). Graceful fallback (tablo yoksa boş veri). Commit: 15d8b5a. CI PASS + Vercel PASS. Canlı doğrulama: /dashboard/insights sayfası başarıyla yükleniyor — başlık, dönem seçici, özet kartları, boş veri mesajları tümü doğru."
     }
   ]
 }
