@@ -10,7 +10,6 @@ import {
   Palette,
   Shield,
   Sparkles,
-  Star,
   Upload,
   Users,
 } from 'lucide-react';
@@ -199,11 +198,7 @@ export default function NonprofitFundraisingUseCasePage() {
                 View Pricing
               </Link>
             </div>
-            <div className="mt-8 flex items-center justify-center gap-1" aria-hidden="true">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-tp-bronze text-tp-bronze" />
               ))}
-            </div>
           </div>
         </div>
       </section>

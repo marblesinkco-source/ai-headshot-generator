@@ -395,10 +395,10 @@ function UploadContent() {
                       Upgrade to 50 Avatars — Best Value
                     </h4>
                     <p className="mt-0.5 text-sm text-tp-muted">
-                      Add <strong className="text-tp-bronze-ink">20 more avatars</strong> with 5 extra style categories + 4K resolution for just <strong className="text-tp-bronze-ink">$6.00 more</strong>
+                      Add <strong className="text-tp-bronze-ink">20 more avatars</strong> with 5 extra style categories + 4K resolution for just <strong className="text-tp-bronze-ink">{formatPrice(1590 - 990)} more</strong>
                     </p>
                     <p className="mt-1 text-xs text-tp-muted">
-                      Total: $15.90 instead of $16.50 if purchased separately
+                      50 avatars for just {formatPrice(1590)} total
                     </p>
                   </div>
                 </div>
@@ -413,7 +413,7 @@ function UploadContent() {
                     handleCheckout('avatar-mega');
                   }}
                 >
-                  Get 50 Avatars — $15.90
+                  Get 50 Avatars — {formatPrice(1590)}
                 </Button>
               </div>
             </div>

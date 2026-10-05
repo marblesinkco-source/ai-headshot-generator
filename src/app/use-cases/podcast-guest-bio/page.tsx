@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Briefcase, Check, Clock, Crop, GraduationCap, Mic, Shield, Sparkles, Star, Upload, Users } from 'lucide-react';
+import { Briefcase, Check, Clock, Crop, GraduationCap, Mic, Shield, Sparkles, Upload, Users, Star } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
@@ -186,11 +186,7 @@ export default function PodcastGuestBioUseCasePage() {
                 View Pricing
               </Link>
             </div>
-            <div className="mt-8 flex items-center justify-center gap-1" aria-hidden="true">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-tp-bronze text-tp-bronze" />
               ))}
-            </div>
           </div>
         </div>
       </section>

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getIndustryVisual, portrait } from '@/config/stock-portraits';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Check, Star } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -163,11 +163,7 @@ export default function NotariesIndustryPage() {
                 View Pricing
               </Link>
             </div>
-            <div className="mt-8 flex items-center justify-center gap-1" aria-hidden="true">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-tp-bronze text-tp-bronze" />
               ))}
-            </div>
           
             {/* Hero portrait */}
             <div className="mx-auto mt-12 h-32 w-32 overflow-hidden rounded-full ring-4 ring-tp-bronze/20 sm:h-40 sm:w-40">

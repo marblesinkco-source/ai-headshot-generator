@@ -9,8 +9,8 @@ import {
   RefreshCw,
   Shield,
   Smile,
-  Sparkles,
   Star,
+  Sparkles,
   Upload,
 } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
@@ -198,11 +198,7 @@ export default function DatingProfilePhotoUseCasePage() {
                 View Pricing
               </Link>
             </div>
-            <div className="mt-8 flex items-center justify-center gap-1" aria-hidden="true">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-tp-bronze text-tp-bronze" />
               ))}
-            </div>
           </div>
         </div>
       </section>

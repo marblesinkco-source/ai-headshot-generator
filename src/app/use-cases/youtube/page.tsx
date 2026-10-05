@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Camera, Check, Eye, Image, Palette, Play, Shield, Sparkles, Star, TrendingUp, Upload, Users, Video } from 'lucide-react';
+import { Camera, Check, Eye, Image, Palette, Play, Shield, Sparkles, TrendingUp, Upload, Users, Video } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
@@ -172,11 +172,7 @@ export default function YouTubeUseCasePage() {
                 View Pricing
               </Link>
             </div>
-            <div className="mt-8 flex items-center justify-center gap-1" aria-hidden="true">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-tp-bronze text-tp-bronze" />
               ))}
-            </div>
           </div>
         </div>
       </section>
