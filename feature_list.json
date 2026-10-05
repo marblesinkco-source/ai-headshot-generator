@@ -151,6 +151,14 @@
       "dependencies": ["feat-R"],
       "status": "done",
       "evidence": "10 dosya, +109/-98 satır. Auth: login h1+redirect forwarding, register/forgot/reset kırık JSX error banner düzeltmesi, tüm sayfalar role=\"alert\"+brand tokens. Dashboard: gallery/orders renk token uyumu, font-semibold→font-medium, photo-uploader overlay+checkmark. Upload: hardcoded fiyatlar→config (getPackageById), avatar upsell/cross-sell dinamik hesaplama, step indicator aria-label, tüm green/red→brand tokens. Zoom: stray '))}' JSX düzeltmesi. Commit: 4ec036c. CI PASS + Vercel PASS. Canlı doğrulama: upload wizard, zoom sayfası, dashboard navigasyonu tümü çalışıyor."
+    },
+    {
+      "id": "feat-S",
+      "name": "Phase S — Sales-Driven Conversion Boost",
+      "description": "Rakip analizi, aciliyet/kıtlık unsurları, güçlendirilmiş CTA'lar, sosyal kanıt iyileştirmeleri, dönüşüm optimizasyonları, enerji ve hırs odaklı sayfa güncellemeleri",
+      "dependencies": ["feat-G"],
+      "status": "in-progress",
+      "evidence": ""
     }
   ]
 }

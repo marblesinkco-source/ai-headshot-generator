@@ -11,7 +11,7 @@ import { categoryVisuals } from '@/config/category-visuals';
 
 const categories = getActiveCategories();
 
-const trustPoints = ['No subscription', '2-hour delivery'];
+const trustPoints = ['No subscription', '~2-hour delivery', 'Satisfaction guarantee'];
 
 export function CTABanner() {
   const categoryDialog = useRef<HTMLDialogElement>(null);
@@ -58,13 +58,13 @@ export function CTABanner() {
 
               <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
                 <Link
-                  href="/auth/register"
+                  href="/auth/register?redirect=%2Fdashboard%2Fupload"
                   className={cn(
                     buttonVariants({ variant: 'primary', size: 'lg' }),
                     'group h-14 gap-3 bg-tp-bronze px-10 text-base font-semibold text-tp-black shadow-lg shadow-tp-bronze/20 transition-all duration-200 hover:-translate-y-0.5 cta-ring hover:bg-tp-bronze hover:shadow-xl hover:shadow-tp-bronze/30'
                   )}
                 >
-                  Get my headshots{' '}
+                  Start now &mdash; {BASE_PRICE_DISPLAY}{' '}
                   <span aria-hidden="true" className="text-lg transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">&#8599;</span>
                 </Link>
                 <button

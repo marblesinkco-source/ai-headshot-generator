@@ -47,7 +47,7 @@ export function HeroPattern({ className = '' }: { className?: string }) {
 }
 
 /** Custom trust-badge glyphs (stroke icons, 24x24, currentColor). */
-export function TrustGlyph({ kind, className = '' }: { kind: 'no-subscription' | 'auto-delete' | 'commercial' | 'one-time'; className?: string }) {
+export function TrustGlyph({ kind, className = '' }: { kind: 'no-subscription' | 'auto-delete' | 'commercial' | 'one-time' | 'guarantee'; className?: string }) {
   const common = { fill: 'none', stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };
   return (
     <svg viewBox="0 0 24 24" className={className} aria-hidden="true" focusable="false" {...common}>
@@ -76,6 +76,13 @@ export function TrustGlyph({ kind, className = '' }: { kind: 'no-subscription' |
           <rect x="3" y="6" width="18" height="12" rx="3" />
           <path d="M3 10h18M7 15h4" />
           <circle cx="17" cy="15" r="1" />
+        </>
+      )}
+      {kind === 'guarantee' && (
+        <>
+          <circle cx="12" cy="10" r="6" />
+          <path d="M8.5 14.5L7 21l5-2.5L17 21l-1.5-6.5" />
+          <path d="M9.5 10l1.5 1.5 3-3" />
         </>
       )}
     </svg>

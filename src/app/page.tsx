@@ -46,6 +46,10 @@ const SpeedComparison = dynamic(
   () => import('@/components/marketing/speed-comparison').then((m) => m.SpeedComparison),
   { loading: () => <SectionSkeleton height="h-[620px] md:h-[500px]" /> }
 );
+const StudioComparison = dynamic(
+  () => import('@/components/marketing/studio-comparison').then((m) => m.StudioComparison),
+  { loading: () => <SectionSkeleton height="h-[500px] md:h-[400px]" /> }
+);
 const HowItWorks = dynamic(
   () => import('@/components/marketing/how-it-works').then((m) => m.HowItWorks),
   { loading: () => <SectionSkeleton height="h-[600px] md:h-[400px]" /> }
@@ -110,6 +114,9 @@ export default function LandingPage() {
 
       {/* 8. Speed Comparison */}
       <SpeedComparison />
+
+      {/* 8.5. Studio vs TailorPic Comparison */}
+      <StudioComparison />
 
       {/* 9. How It Works */}
       <HowItWorks />

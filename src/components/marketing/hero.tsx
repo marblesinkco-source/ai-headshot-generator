@@ -38,7 +38,7 @@ export function Hero() {
               </h1>
 
               <p className="text-[16px] text-tp-ink/75 leading-[1.7] max-w-[460px] mb-8">
-                Upload a few selfies and get studio-quality headshots in about 2 hours &mdash; from a single photo to a full set of 160. Pay once, no subscription.
+                Look your best on LinkedIn, your website and everywhere it matters. Upload a few selfies, get studio-quality results in ~2 hours. Pay once &mdash; no subscription.
               </p>
 
               <div className="flex flex-wrap items-center gap-3 mb-5">
@@ -46,7 +46,7 @@ export function Hero() {
                   href="/auth/register?redirect=/dashboard/upload"
                   className="inline-flex items-center gap-4 rounded-tp-button bg-tp-black px-8 py-4 text-[15px] font-semibold text-tp-paper shadow-md transition-[transform,box-shadow,border-color,background-color] hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl hover:animate-cta-pulse motion-reduce:hover:animate-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze whitespace-nowrap"
                 >
-                  Get My Headshots <span aria-hidden="true" className="text-[20px] leading-none">&#8599;</span>
+                  Get My Headshots &mdash; {BASE_PRICE_DISPLAY} <span aria-hidden="true" className="text-[20px] leading-none">&#8599;</span>
                 </Link>
                 <a
                   href="#how-it-works"
@@ -61,7 +61,7 @@ export function Hero() {
                 {[
                   { label: `From ${BASE_PRICE_DISPLAY}, one-time`, d: 'M12 8c-1.7 0-3 .9-3 2s1.3 2 3 2 3 .9 3 2-1.3 2-3 2m0-8V6m0 12v-2m9-4a9 9 0 11-18 0 9 9 0 0118 0z' },
                   { label: 'Ready in ~2 hours', d: 'M12 6v6l4 2m5-2a9 9 0 11-18 0 9 9 0 0118 0z' },
-                  { label: 'No subscription', d: 'M20 6L9 17l-5-5' },
+                  { label: 'Satisfaction guarantee', d: 'M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z' },
                 ].map((t) => (
                   <span key={t.label} className="inline-flex items-center gap-1.5">
                     <svg className="h-3.5 w-3.5 text-tp-bronze-ink" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d={t.d} /></svg>

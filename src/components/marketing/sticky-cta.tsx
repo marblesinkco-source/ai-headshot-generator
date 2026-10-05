@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
-export function StickyCTA({ href = '/auth/register' }: { href?: string }) {
+export function StickyCTA({ href = '/auth/register?redirect=%2Fdashboard%2Fupload' }: { href?: string }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export function StickyCTA({ href = '/auth/register' }: { href?: string }) {
         tabIndex={visible ? 0 : -1}
         className="shrink-0 rounded-tp-button bg-tp-bronze px-4 py-2 text-sm font-semibold text-tp-black transition-colors hover:bg-tp-beige focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-paper"
       >
-        Get my headshots
+        Start now &#8599;
       </Link>
     </div>
   );

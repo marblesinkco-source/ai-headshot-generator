@@ -31,6 +31,19 @@ export function Pricing() {
       : undefined;
   const hasExpress = packages.length >= 4 && entryPackage !== undefined;
 
+  // Lowest per-photo cost among non-entry packages (computed from config, no hardcoded numbers).
+  const perPhoto = (p: { price: number; outputCount: number }) => p.price / p.outputCount;
+  const nonEntry = packages.filter(
+    (p) => entryPackage !== undefined && p.id !== entryPackage.id && p.outputCount > 0
+  );
+  const bestValuePackage =
+    nonEntry.length > 0
+      ? nonEntry.reduce((min, p) => (perPhoto(p) < perPhoto(min) ? p : min), nonEntry[0])
+      : undefined;
+  const registerHref = `/auth/register?redirect=${encodeURIComponent(
+    `/dashboard/upload?category=${activeCategory.id}`
+  )}`;
+
   return (
     <section id="pricing" className="relative bg-tp-paper/40 py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -148,6 +161,12 @@ export function Pricing() {
                       That&apos;s just {formatPrice(Math.round(pkg.price / pkg.outputCount))} per photo
                     </p>
                   )}
+                  {isRecommended && bestValuePackage?.id === pkg.id && (
+                    <p className="mt-2 inline-flex w-fit items-center gap-1 rounded-full border border-tp-bronze/40 bg-tp-bronze/10 px-2.5 py-0.5 text-[11px] font-semibold text-tp-bronze-ink">
+                      <Check className="h-3 w-3" aria-hidden="true" />
+                      Best value per photo
+                    </p>
+                  )}
                 </CardHeader>
 
                 <CardContent className="flex-1 space-y-4">
@@ -178,7 +197,7 @@ export function Pricing() {
 
                 <CardFooter className="flex-col items-stretch">
                   <Link
-                    href={`/auth/register?redirect=/${activeCategory.slug}`}
+                    href={registerHref}
                     className={cn(
                       buttonVariants({ variant: isRecommended ? 'primary' : 'outline' }),
                       'w-full transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze',

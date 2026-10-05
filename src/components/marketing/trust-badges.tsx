@@ -5,13 +5,14 @@ const badges = [
   { kind: 'auto-delete' as const, label: 'Photos Auto-Deleted in 30 Days' },
   { kind: 'commercial' as const, label: 'Full Commercial Rights' },
   { kind: 'one-time' as const, label: 'One-Time Payment' },
+  { kind: 'guarantee' as const, label: 'Satisfaction Guarantee' },
 ];
 
 export function TrustBadges() {
   return (
     <section aria-label="Why choose TailorPic" className="py-12 sm:py-16">
       <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
-        <ul className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
+        <ul className="grid grid-cols-2 gap-3 lg:grid-cols-5 lg:gap-4">
           {badges.map((badge) => (
             <li
               key={badge.label}
