@@ -9,6 +9,8 @@ import { ExitIntentPopupLazy } from '@/components/marketing/exit-intent-popup-la
 import { OrganizationSchema } from '@/components/structured-data';
 import { GoogleAnalytics } from '@/components/analytics/google-analytics';
 import { AnalyticsProvider } from '@/components/analytics-provider';
+import { Suspense } from 'react';
+import { LiveChat } from '@/components/marketing/live-chat';
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -68,7 +70,7 @@ export const metadata: Metadata = {
 
 // Next 14: themeColor must live in the viewport export (metadata.themeColor is deprecated).
 export const viewport: Viewport = {
-  themeColor: '#0B0B0B',
+  themeColor: '#1A1A1A',
 };
 
 const SUPABASE_ORIGIN = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -106,6 +108,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <CookieConsent />
           <ExitIntentPopupLazy />
         </ToastProvider>
+        {/* Tawk.to live chat — only loads when NEXT_PUBLIC_TAWKTO_ID is set */}
+        <Suspense fallback={null}>
+          <LiveChat />
+        </Suspense>
         {/* Vercel Analytics — only loads when NEXT_PUBLIC_VERCEL_ANALYTICS_ID is set */}
         {process.env.NEXT_PUBLIC_VERCEL_ANALYTICS_ID && (
           <Script
