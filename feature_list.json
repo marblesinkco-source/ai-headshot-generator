@@ -135,6 +135,22 @@
       "dependencies": ["feat-P"],
       "status": "done",
       "evidence": "9 dosya, +90/-127 satır. Avatars: $1.99→$9.90 (config'den), 5 CTA redirect düzeltmesi. Team-headshots: 7 CTA redirect. Blog+Changelog: kırık formlar→EmailCapture. Email-capture: res.ok check, hidrasyon fix, error state. Credit-packages: dinamik kategori sayısı, iç içe Link/Button düzeltmesi. Categories: View all→/pricing. CTA-banner: dialog a→Link. Pricing-toggle: Talk to us→/contact. Commit: 0a027a8. CI PASS + Vercel PASS. Canlı doğrulama: avatar fiyatları $9.90/$15.90 doğru, blog EmailCapture çalışıyor."
+    },
+    {
+      "id": "feat-R",
+      "name": "Phase R — Rakip Özellik Entegrasyonu & UX İyileştirmeleri",
+      "description": "CTA redirect düzeltmeleri (281 dosya), uydurma yıldız puanları temizliği (116 sayfa), fiyat düzeltmeleri, canlı sohbet (Tawk.to), PWA manifest, back-to-top, social share, breadcrumbs navigasyonu, download format seçici, bileşenlerin sayfalara entegrasyonu",
+      "dependencies": ["feat-Q"],
+      "status": "done",
+      "evidence": "7 commit: 0a5b9ef (281 dosya CTA redirect), 9010b17 (yıldız temizliği + fiyat düzeltmesi), 8033787 (live chat + PWA), ebcce88 (back-to-top + social share), 0cb2769 (breadcrumbs + download format selector bileşenleri), 40304a9 (124 sayfaya breadcrumbs + blog/kategori'ye social share entegrasyonu). CI PASS + Vercel PASS. Canlı doğrulama: breadcrumbs, social share, back-to-top, exit-intent popup tümü çalışıyor."
+    },
+    {
+      "id": "feat-G",
+      "name": "Phase G — Funnel (Auth + Checkout + Upload + Generation + Results)",
+      "description": "Signup / signin / checkout / upload / generation / results akışının UI tarafı — tüm ekranların doğru çalışması",
+      "dependencies": ["feat-R"],
+      "status": "not-started",
+      "evidence": ""
     }
   ]
 }
