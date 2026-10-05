@@ -1,5 +1,40 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-05 (Phase G — Funnel UI İyileştirmeleri)
+
+### Baseline
+- HEAD: `0b81646` (harness update + Phase R complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### Auth Sayfaları
+- **Login**: h1 eklendi, redirect forwarding düzeltildi, error banner role="alert" + brand tokens
+- **Register/Forgot/Reset**: Kırık JSX error banner düzeltildi (sed'in bozduğu çift className)
+- Tüm auth sayfalarında green/red renk → tp-bronze/tp-beige brand token
+
+#### Dashboard Sayfaları
+- **Gallery [orderId]**: Error banner, processing spinner, favorite heart → brand tokens
+- **Gallery index**: font-semibold → font-medium
+- **Orders [orderId]**: Pipeline step renkleri, heading font, error state role="alert"
+- **Photo-uploader**: Overlay renkleri, done checkmark → brand tokens
+
+#### Upload Funnel (UploadClient.tsx)
+- Hardcoded fiyatlar → config'den dinamik (getPackageById)
+- Avatar upsell/cross-sell fiyatları config'den hesaplanıyor
+- Step indicator nav aria-label, tüm green/red → brand tokens
+
+#### Diğer
+- **use-cases/zoom**: Stray '))}' JSX hatası düzeltildi
+
+### Sonuç
+- Commit: `4ec036c` — 10 dosya, +109/-98 satır
+- CI: PASS
+- Vercel: PASS
+- Canlı doğrulama: upload wizard, zoom sayfası, dashboard navigasyonu tümü çalışıyor
+
+---
+
 ## Oturum: 2026-10-05 (Phase P — Performance & Aesthetic Excellence)
 
 ### Baseline

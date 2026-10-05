@@ -149,8 +149,8 @@
       "name": "Phase G — Funnel (Auth + Checkout + Upload + Generation + Results)",
       "description": "Signup / signin / checkout / upload / generation / results akışının UI tarafı — tüm ekranların doğru çalışması",
       "dependencies": ["feat-R"],
-      "status": "not-started",
-      "evidence": ""
+      "status": "done",
+      "evidence": "10 dosya, +109/-98 satır. Auth: login h1+redirect forwarding, register/forgot/reset kırık JSX error banner düzeltmesi, tüm sayfalar role=\"alert\"+brand tokens. Dashboard: gallery/orders renk token uyumu, font-semibold→font-medium, photo-uploader overlay+checkmark. Upload: hardcoded fiyatlar→config (getPackageById), avatar upsell/cross-sell dinamik hesaplama, step indicator aria-label, tüm green/red→brand tokens. Zoom: stray '))}' JSX düzeltmesi. Commit: 4ec036c. CI PASS + Vercel PASS. Canlı doğrulama: upload wizard, zoom sayfası, dashboard navigasyonu tümü çalışıyor."
     }
   ]
 }
