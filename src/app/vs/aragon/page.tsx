@@ -81,13 +81,13 @@ const whyCards = [
     icon: LayoutGrid,
     title: 'More Categories',
     description:
-      'Choose from 11 distinct photo categories including business, dating, pet portraits, and e-commerce — far more variety than Aragon AI offers.',
+      'Choose from 12 photo categories including business, dating, pet portraits, and e-commerce — far more variety than Aragon AI offers.',
   },
   {
     icon: Sparkles,
-    title: 'Same Quality, Lower Price',
+    title: 'Low Entry Price',
     description:
-      'Both platforms deliver high-quality AI headshots in under 2 hours. TailorPic matches the output quality at a fraction of the cost.',
+      'TailorPic packages are one-time payments that start from $1.99 for a single photo and scale up to 160. Compare package sizes, not just the starting price, and check Aragon AI for its current plans.',
   },
   {
     icon: Target,

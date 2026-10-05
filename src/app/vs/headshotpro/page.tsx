@@ -44,7 +44,7 @@ const quickBadges = [
   },
   {
     label: 'Photo Categories',
-    ours: '11',
+    ours: '12',
     theirs: 'Limited',
     icon: Layers,
   },
@@ -61,8 +61,8 @@ interface ComparisonRow {
 const comparisonRows: ComparisonRow[] = [
   { feature: 'Starting Price', tailorpic: 'From $1.99', headshotpro: '$29' },
   { feature: 'Photos per Session', tailorpic: '1 to 160', headshotpro: '40+' },
-  { feature: 'Delivery', tailorpic: 'Under 2 hours', headshotpro: 'Under 2 hours' },
-  { feature: 'Photo Categories', tailorpic: '11', headshotpro: 'Professional only' },
+  { feature: 'Delivery', tailorpic: 'About 2 hours', headshotpro: 'Check their site' },
+  { feature: 'Photo Categories', tailorpic: '12', headshotpro: 'Professional only' },
   { feature: 'Pet Portraits', tailorpic: true, headshotpro: false },
   { feature: 'Dating Photos', tailorpic: true, headshotpro: false },
   { feature: 'E-Commerce Photos', tailorpic: true, headshotpro: false },
@@ -74,13 +74,13 @@ const comparisonRows: ComparisonRow[] = [
 const advantages = [
   {
     icon: DollarSign,
-    title: 'Lower Price',
+    title: 'Low Entry Price',
     description:
-      'Get the same quality AI headshots starting at $1.99 instead of $29. No subscription needed — just a simple one-time payment.',
+      'TailorPic starts from $1.99 for a single photo, with larger one-time packages up to 160 photos. HeadshotPro starts higher and includes more photos in its entry plan, so compare package sizes as well as price. No subscription needed with TailorPic.',
   },
   {
     icon: Layers,
-    title: '11 Photo Categories',
+    title: '12 Photo Categories',
     description:
       'Go beyond professional headshots. TailorPic offers dating photos, pet portraits, e-commerce product shots, family portraits, and more.',
   },

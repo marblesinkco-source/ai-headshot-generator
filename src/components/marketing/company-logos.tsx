@@ -14,7 +14,7 @@ export function CompanyLogos() {
   return (
     <section
       aria-labelledby="industries-heading"
-      className="w-full py-tp-section-sm lg:py-tp-section"
+      className="w-full py-20 lg:py-24"
     >
       <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
         <div className="text-center mb-10 lg:mb-12">
@@ -38,7 +38,7 @@ export function CompanyLogos() {
             return (
               <li
                 key={slug}
-                className="flex flex-col items-center gap-3 rounded-2xl border border-tp-line bg-tp-paper px-4 py-6 text-center shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-tp-bronze"
+                className="flex flex-col items-center gap-3 rounded-tp-card border border-tp-line bg-tp-paper px-4 py-6 text-center shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-tp-bronze"
               >
                 <div className="relative h-[80px] w-[80px] overflow-hidden rounded-full ring-2 ring-tp-line">
                   <Image

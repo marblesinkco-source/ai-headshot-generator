@@ -17,7 +17,7 @@ export default function AuthError({
   return (
     <div className="flex min-h-[60vh] items-center justify-center bg-tp-paper px-4 py-12">
       <div className="w-full max-w-md rounded-tp-card border border-tp-line bg-white p-8 text-center">
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-tp-bronze-ink">Account</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-tp-bronze-ink">Account</p>
         <h1 className="mt-3 font-display text-3xl font-normal text-tp-black">We couldn&apos;t load this page</h1>
         <p className="mt-3 text-sm leading-relaxed text-tp-muted">
           Something went wrong on our end. Please try again in a moment.

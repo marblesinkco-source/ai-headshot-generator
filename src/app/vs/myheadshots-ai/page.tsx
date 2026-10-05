@@ -41,7 +41,7 @@ const productJsonLd = {
 };
 
 const intro =
-  "My Headshots AI is one of many tools aimed at professional profile photos. TailorPic focuses on a simple one-time price, LoRA-trained likeness and 11 photo categories beyond the standard corporate headshot.";
+  "My Headshots AI is one of many tools aimed at professional profile photos. TailorPic focuses on a simple one-time price, LoRA-trained likeness and 12 photo categories beyond the standard corporate headshot.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Varies by plan; confirm on their site" },

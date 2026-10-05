@@ -349,7 +349,7 @@ function UploadContent() {
                   </span>
                 )}
                 <h3 className="text-lg font-semibold text-tp-ink">{pkg.name}</h3>
-                <p className="mt-2 text-3xl font-bold text-tp-black">
+                <p className="mt-2 font-display text-3xl font-normal text-tp-black">
                   {formatPrice(pkg.price, pkg.currency)}
                 </p>
                 <ul className="mt-4 space-y-2 text-sm text-tp-muted">
@@ -386,16 +386,16 @@ function UploadContent() {
           </div>
           {/* Avatar Bundle Upsell */}
           {selectedCategory === 'avatars' && selectedPackage === 'avatar-starter' && (
-            <div className="relative overflow-hidden rounded-tp-card border-2 border-purple-300 bg-gradient-to-r from-purple-50 to-fuchsia-50 p-5 shadow-sm">
+            <div className="relative overflow-hidden rounded-tp-card border-2 border-tp-bronze bg-tp-paper p-5 shadow-sm">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-start gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-lg">🎁</span>
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-tp-beige/40 text-lg">🎁</span>
                   <div>
                     <h4 className="font-semibold text-tp-ink">
                       Upgrade to 50 Avatars — Best Value
                     </h4>
                     <p className="mt-0.5 text-sm text-tp-muted">
-                      Add <strong className="text-purple-700">20 more avatars</strong> with 5 extra style categories + 4K resolution for just <strong className="text-purple-700">$6.00 more</strong>
+                      Add <strong className="text-tp-bronze-ink">20 more avatars</strong> with 5 extra style categories + 4K resolution for just <strong className="text-tp-bronze-ink">$6.00 more</strong>
                     </p>
                     <p className="mt-1 text-xs text-tp-muted">
                       Total: $15.90 instead of $16.50 if purchased separately
@@ -405,7 +405,7 @@ function UploadContent() {
                 <Button
                   variant="primary"
                   size="md"
-                  className="whitespace-nowrap bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 border-0"
+                  className="whitespace-nowrap bg-tp-black text-tp-bronze hover:bg-tp-ink border-0"
                   loading={checkoutLoading === 'avatar-mega'}
                   disabled={checkoutLoading !== null && checkoutLoading !== 'avatar-mega'}
                   onClick={() => {
@@ -421,16 +421,16 @@ function UploadContent() {
 
           {/* Cross-sell: Add Avatar Pack to any non-avatar order */}
           {selectedCategory && selectedCategory !== 'avatars' && selectedPackage && (
-            <div className="relative overflow-hidden rounded-tp-card border-2 border-purple-200 bg-gradient-to-r from-purple-50/80 to-fuchsia-50/80 p-5 shadow-sm">
+            <div className="relative overflow-hidden rounded-tp-card border-2 border-tp-line bg-tp-paper p-5 shadow-sm">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-start gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-lg">🎭</span>
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-tp-beige/40 text-lg">🎭</span>
                   <div>
                     <h4 className="font-semibold text-tp-ink">
                       Add AI Avatars — Special Bundle Price
                     </h4>
                     <p className="mt-0.5 text-sm text-tp-muted">
-                      Get <strong className="text-purple-700">30 unique AI avatars</strong> of yourself for just <strong className="text-purple-700">$7.90</strong> <span className="line-through text-tp-muted/70">$9.90</span> — 20% off when bundled!
+                      Get <strong className="text-tp-bronze-ink">30 unique AI avatars</strong> of yourself for just <strong className="text-tp-bronze-ink">$7.90</strong> <span className="line-through text-tp-muted/70">$9.90</span> — 20% off when bundled!
                     </p>
                     <p className="mt-1 text-xs text-tp-muted">
                       Fantasy, Anime, Cyberpunk & 12 more styles — your face, every universe
@@ -440,7 +440,7 @@ function UploadContent() {
                 <Button
                   variant="primary"
                   size="md"
-                  className="whitespace-nowrap bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 border-0"
+                  className="whitespace-nowrap bg-tp-black text-tp-bronze hover:bg-tp-ink border-0"
                   loading={checkoutLoading === 'avatar-starter'}
                   disabled={checkoutLoading !== null && checkoutLoading !== 'avatar-starter'}
                   onClick={() => {

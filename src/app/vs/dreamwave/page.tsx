@@ -73,7 +73,7 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is TailorPic cheaper than Dreamwave?", answer: "Yes. TailorPic packages start from $1.99, while Dreamwave starts at around $35, with a $99 premium tier. Dreamwave pricing may change, so check their site." },
+  { question: "Is TailorPic cheaper than Dreamwave?", answer: "Our entry price is lower, but the packages are not like-for-like: TailorPic starts from $1.99 for a single photo and goes up to 160 photos, while Dreamwave starts at around $35, with a $99 premium tier. Dreamwave pricing may change, so check their site." },
   { question: "Which is faster, TailorPic or Dreamwave?", answer: "Dreamwave is faster, with turnaround of about 5 minutes. TailorPic delivers within 24 hours because it fine-tunes a LoRA model on your photos." },
   { question: "How many photos do I get with each?", answer: "TailorPic includes photos across 12 categories. Dreamwave offers up to 300 headshots depending on the plan you choose." },
   { question: "Is TailorPic a subscription?", answer: "No. TailorPic packages are one-time payments starting at $1.99 with no recurring fees." },

@@ -4,9 +4,9 @@ import Image from 'next/image';
 import type { Metadata } from 'next';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { Camera, Sparkles, Clock, ShieldCheck, ChevronRight } from 'lucide-react';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { Button } from '@/components/ui/button';
 import { getActiveCategories, getCategoryBySlug } from '@/config/categories';
 import { getCategoryContent } from '@/config/category-content';
 import { getCategoryVisuals, getCategoryImage, categoryVisuals } from '@/config/category-visuals';
@@ -65,10 +65,15 @@ export default async function CategoryPage({ params }: Props) {
   const collageImages = useCollage ? uniqueGallery.slice(0, 4) : [];
 
   const lowestPrice = Math.min(...cat.packages.map((p) => p.price));
+  // After signup, send people to the upload flow for THIS category (not back to this marketing page).
+  const startHref = `/auth/register?redirect=${encodeURIComponent(`/dashboard/upload?category=${cat.id}`)}`;
 
   const allCategories = getActiveCategories();
+  // Next six categories after this one (wraps), so each page links to a different set.
+  const currentIndex = allCategories.findIndex((c) => c.id === cat.id);
   const relatedCategories = allCategories
     .filter((c) => c.id !== cat.id)
+    .map((c, i, arr) => arr[(i + currentIndex) % arr.length])
     .slice(0, 6);
 
   // Pick top 3 packages for the pricing teaser: entry, recommended, and one more
@@ -95,11 +100,11 @@ export default async function CategoryPage({ params }: Props) {
     },
     {
       question: 'How long does it take?',
-      answer: 'About 2 hours from upload to download. You will receive an email notification as soon as your photos are ready.',
+      answer: 'Most orders are ready in about 2 hours. You will receive an email as soon as your photos are ready.',
     },
     {
-      question: 'Can I get a refund?',
-      answer: 'Yes, we offer a satisfaction guarantee. If you are not satisfied with your results, contact our support team for a full refund.',
+      question: 'What if I am not happy with the results?',
+      answer: 'Every package includes regenerations, and our support team will work with you until the results are right. See our Quality Promise for details.',
     },
     {
       question: 'What resolution are the photos?',
@@ -120,7 +125,7 @@ export default async function CategoryPage({ params }: Props) {
     '@type': 'Product',
     name: cat.name,
     description: cat.seoDescription,
-    image: `${siteConfig.url}${heroSrc}`,
+    image: heroSrc.startsWith('http') ? heroSrc : `${siteConfig.url}${heroSrc}`,
     sku: cat.id,
     brand: {
       '@type': 'Brand',
@@ -136,15 +141,6 @@ export default async function CategoryPage({ params }: Props) {
       seller: {
         '@type': 'Organization',
         name: siteConfig.name,
-      },
-      hasMerchantReturnPolicy: {
-        '@type': 'MerchantReturnPolicy',
-        applicableCountry: 'US',
-        returnPolicyCategory:
-          'https://schema.org/MerchantReturnFiniteReturnWindow',
-        merchantReturnDays: 14,
-        returnMethod: 'https://schema.org/ReturnByMail',
-        returnFees: 'https://schema.org/FreeReturn',
       },
     },
   };
@@ -174,7 +170,7 @@ export default async function CategoryPage({ params }: Props) {
             <span className="text-tp-ink">{cat.name}</span>
           </nav>
 
-          <div className="grid items-start gap-12 lg:grid-cols-2">
+          <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
             {/* Left: Copy */}
             <div className="max-w-xl">
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-tp-line bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-tp-bronze-ink">
@@ -213,17 +209,21 @@ export default async function CategoryPage({ params }: Props) {
                 </ul>
               )}
 
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-                <Link href={`/auth/register?redirect=/${slug}`}>
-                  <Button size="lg" variant="primary">
-                    Get Started
-                    <ChevronRight className="ml-1 h-4 w-4" />
-                  </Button>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <Link href={startHref} className={`${buttonVariants({ size: 'lg', variant: 'primary' })} w-full sm:w-auto`}>
+                  Get Started
+                  <ChevronRight className="ml-1 h-4 w-4" />
                 </Link>
-                <span className="text-sm text-tp-muted">
-                  From {formatPrice(lowestPrice, 'usd')} · 100% Satisfaction Guarantee
-                </span>
+                <a href="#packages" className={`${buttonVariants({ size: 'lg', variant: 'outline' })} w-full sm:w-auto`}>
+                  See Packages
+                </a>
               </div>
+              <p className="mt-4 text-sm text-tp-muted">
+                From {formatPrice(lowestPrice, 'usd')} ·{' '}
+                <Link href="/guarantee" className="underline-offset-2 transition-colors hover:text-tp-ink hover:underline">
+                  Regenerations included
+                </Link>
+              </p>
             </div>
 
             {/* Mobile hero image */}
@@ -291,9 +291,9 @@ export default async function CategoryPage({ params }: Props) {
         <div className="relative mt-12 border-t border-tp-line/40 bg-tp-paper/80 py-6 backdrop-blur-sm sm:mt-16">
           <div className="mx-auto grid max-w-tp-site grid-cols-2 gap-4 px-4 sm:grid-cols-4 sm:gap-6 sm:px-6 lg:px-8">
             {[
-              { icon: Camera, text: 'Studio-quality results using advanced AI' },
+              { icon: Camera, text: 'Studio-style results from your own photos' },
               { icon: Sparkles, text: 'Multiple styles and backgrounds' },
-              { icon: Clock, text: 'Ready in about 2 hours' },
+              { icon: Clock, text: 'Typically ready in about 2 hours' },
               { icon: ShieldCheck, text: 'Secure and private' },
             ].map((item) => (
               <div key={item.text} className="flex items-start gap-3">
@@ -305,22 +305,47 @@ export default async function CategoryPage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── BEFORE & AFTER ── */}
-      <section className="bg-white py-16 sm:py-20">
+      {/* ── BENEFITS ── */}
+      {content && content.benefits.length > 0 && (
+        <section className="bg-white py-16 sm:py-20">
+          <div className="mx-auto max-w-tp-site px-4 sm:px-6 lg:px-8">
+            <h2 className="max-w-2xl font-display text-2xl font-normal text-tp-black sm:text-3xl">
+              {content.benefitsHeadline}
+            </h2>
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {content.benefits.map((b) => (
+                <div
+                  key={b.title}
+                  className="rounded-tp-card border border-tp-line bg-tp-paper/60 p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  <span aria-hidden="true" className="flex h-11 w-11 items-center justify-center rounded-full bg-tp-warm text-xl">
+                    {b.icon}
+                  </span>
+                  <h3 className="mt-4 text-base font-semibold text-tp-ink">{b.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-tp-muted">{b.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── EXAMPLE OUTPUT ── */}
+      <section className="border-t border-tp-line/40 bg-tp-paper py-16 sm:py-20">
         <div className="mx-auto max-w-tp-site px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-baseline justify-between gap-4">
             <h2 className="font-display text-2xl font-normal text-tp-black sm:text-3xl">
-              Before &amp; After
-              <span className="ml-3 text-base font-sans text-tp-muted">– See the Transformation</span>
+              Example Transformation
+              <span className="ml-3 font-sans text-base text-tp-muted">Illustrative concept</span>
             </h2>
           </div>
 
           <div className="mt-10 grid items-center gap-8 md:grid-cols-2">
-            <div className="relative overflow-hidden rounded-tp-card border border-tp-line bg-tp-paper">
+            <div className="relative overflow-hidden rounded-tp-card border border-tp-line bg-white">
               <div className="grid grid-cols-2">
                 <div className="relative aspect-[3/4] bg-tp-warm">
                   <div className="absolute bottom-3 left-3 rounded-full bg-tp-black/70 px-3 py-1 text-xs font-medium text-white">
-                    Before
+                    Original
                   </div>
                   <Image
                     src={beforeSrc}
@@ -333,7 +358,7 @@ export default async function CategoryPage({ params }: Props) {
                 </div>
                 <div className="relative aspect-[3/4] bg-tp-warm">
                   <div className="absolute bottom-3 right-3 rounded-full bg-tp-bronze px-3 py-1 text-xs font-medium text-white">
-                    After
+                    AI style
                   </div>
                   <Image
                     src={afterSrc}
@@ -349,9 +374,9 @@ export default async function CategoryPage({ params }: Props) {
 
             <div>
               <p className="text-lg leading-relaxed text-tp-muted">
-                Turn your everyday photos into stunning, professional results.
-                Our AI enhances lighting, refines backgrounds, and creates {cat.outputLabel} that
-                look like they were taken in a professional studio.
+                Upload everyday photos and get {cat.outputLabel} styled to the look you choose.
+                These examples are AI-generated concepts that show the kind of style on offer.
+                They are not customer results, and your output will depend on your uploads.
               </p>
               <Link
                 href={`/samples`}
@@ -365,8 +390,9 @@ export default async function CategoryPage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── SAMPLE GALLERY ── */}
-      <section className="border-t border-tp-line/40 bg-tp-paper py-16 sm:py-20">
+      {/* ── SAMPLE GALLERY (only when there are enough distinct images) ── */}
+      {uniqueGallery.length >= 3 && (
+      <section className="border-t border-tp-line/40 bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-tp-site px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-baseline justify-between gap-4">
             <h2 className="font-display text-2xl font-normal text-tp-black sm:text-3xl">
@@ -382,20 +408,19 @@ export default async function CategoryPage({ params }: Props) {
           </div>
 
           <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-            {Array.from({ length: 6 }).map((_, i) => {
-              const g = galleryItems.length > 0 ? galleryItems[i % galleryItems.length] : undefined;
+            {uniqueGallery.slice(0, 6).map((g, i) => {
               return (
               <div
-                key={i}
+                key={g.src}
                 className="aspect-square overflow-hidden rounded-tp-button bg-tp-warm"
               >
                 <Image
-                  src={g?.src ?? fallbackSrc}
-                  alt={g?.alt ?? `${cat.name} sample ${i + 1}`}
+                  src={g.src}
+                  alt={g.alt ?? `${cat.name} sample ${i + 1}`}
                   width={240}
                   height={240}
                   className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
-                  style={g?.desktopObjectPosition ? { objectPosition: g.desktopObjectPosition } : undefined}
+                  style={g.desktopObjectPosition ? { objectPosition: g.desktopObjectPosition } : undefined}
                   sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 50vw"
                 />
               </div>
@@ -404,26 +429,27 @@ export default async function CategoryPage({ params }: Props) {
           </div>
         </div>
       </section>
+      )}
 
       {/* ── PERFECT FOR (Use Cases) ── */}
       {useCases.length > 0 && (
-        <section className="bg-white py-16 sm:py-20">
+        <section className="border-t border-tp-line/40 bg-tp-paper py-16 sm:py-20">
           <div className="mx-auto max-w-tp-site px-4 sm:px-6 lg:px-8">
             <h2 className="font-display text-2xl font-normal text-tp-black sm:text-3xl">
               Perfect For
             </h2>
 
-            <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+            <div className="mt-10 grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 md:grid-cols-3">
               {useCases.slice(0, 6).map((uc) => (
                 <div
                   key={uc.title}
-                  className="flex flex-col items-center rounded-tp-button border border-tp-line bg-tp-paper/60 px-4 py-5 text-center transition-shadow hover:shadow-md"
+                  className="flex flex-col items-center rounded-tp-button border border-tp-line bg-white px-4 py-5 text-center transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
                 >
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-tp-warm text-tp-bronze-ink">
                     <Sparkles className="h-5 w-5" />
                   </div>
-                  <h3 className="mt-3 text-sm font-semibold text-tp-ink">{uc.title}</h3>
-                  <p className="mt-1 text-xs text-tp-muted line-clamp-2">{uc.description}</p>
+                  <h3 className="mt-3 text-base font-semibold text-tp-ink">{uc.title}</h3>
+                  <p className="mt-1 text-sm text-tp-muted">{uc.description}</p>
                 </div>
               ))}
             </div>
@@ -432,15 +458,15 @@ export default async function CategoryPage({ params }: Props) {
       )}
 
       {/* ── HOW IT WORKS ── */}
-      <section className="border-t border-tp-line/40 bg-tp-paper py-16 sm:py-20">
+      <section className="border-t border-tp-line/40 bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-tp-site px-4 sm:px-6 lg:px-8">
           <h2 className="text-center font-display text-2xl font-normal text-tp-black sm:text-3xl">
             How It Works
           </h2>
 
-          <div className={`mt-12 grid gap-6 sm:gap-4 ${
+          <div className={`mt-12 grid gap-8 sm:gap-4 ${
             howItWorks.length === 4
-              ? 'sm:grid-cols-4'
+              ? 'sm:grid-cols-2 lg:grid-cols-4'
               : 'sm:grid-cols-3'
           }`}>
             {howItWorks.map((item, i) => (
@@ -452,7 +478,7 @@ export default async function CategoryPage({ params }: Props) {
                   </div>
                 )}
 
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-tp-black text-lg font-bold text-tp-bronze">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-tp-black text-lg font-semibold text-tp-bronze">
                   {item.step}
                 </div>
                 <h3 className="mt-4 text-sm font-semibold text-tp-ink sm:text-base">{item.title}</h3>
@@ -464,19 +490,21 @@ export default async function CategoryPage({ params }: Props) {
       </section>
 
       {/* ── PRICING TEASER ── */}
-      <section className="bg-white py-16 sm:py-20">
+      <section id="packages" className="scroll-mt-24 border-t border-tp-line/40 bg-tp-paper py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-center font-display text-2xl font-normal text-tp-black sm:text-3xl">
             Choose Your Package
           </h2>
           <p className="mt-3 text-center text-tp-muted">
-            Choose the plan that fits your needs. Live pricing from TailorPic.
+            Pick the package that fits. Prices are one-time, not a subscription.
           </p>
 
           <div className={`mt-10 grid gap-5 ${
-            teaserPackages.length <= 3
-              ? 'sm:grid-cols-3'
-              : 'sm:grid-cols-2 lg:grid-cols-4'
+            teaserPackages.length === 2
+              ? 'mx-auto max-w-3xl md:grid-cols-2'
+              : teaserPackages.length === 3
+                ? 'md:grid-cols-3'
+                : 'sm:grid-cols-2 lg:grid-cols-4'
           }`}>
             {teaserPackages.map((pkg) => {
               const entryPrice = Math.min(...cat.packages.map((p) => p.price));
@@ -485,7 +513,7 @@ export default async function CategoryPage({ params }: Props) {
               return (
                 <div
                   key={pkg.id}
-                  className={`relative rounded-tp-card border-2 bg-white p-6 shadow-sm transition-shadow hover:shadow-lg ${
+                  className={`relative flex flex-col rounded-tp-card border-2 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg ${
                     pkg.recommended
                       ? 'border-tp-bronze ring-2 ring-tp-beige/30'
                       : isEntry
@@ -499,15 +527,15 @@ export default async function CategoryPage({ params }: Props) {
                     </span>
                   )}
                   {isEntry && !pkg.recommended && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-tp-bronze px-4 py-0.5 text-xs font-medium text-white">
-                      Try It
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-tp-bronze-ink px-4 py-0.5 text-xs font-medium text-white">
+                      {pkg.outputCount === 1 ? 'Try It' : 'Lowest Price'}
                     </span>
                   )}
                   <h3 className="text-lg font-semibold text-tp-ink">{pkg.name}</h3>
-                  <p className="mt-3 text-3xl font-bold text-tp-black">
+                  <p className="mt-3 text-3xl font-semibold text-tp-black">
                     {formatPrice(pkg.price, pkg.currency, true)}
                   </p>
-                  <ul className="mt-5 space-y-2.5 text-sm text-tp-muted">
+                  <ul className="mb-6 mt-5 space-y-2.5 text-sm text-tp-muted">
                     <li className="flex items-center gap-2">
                       <svg className="h-4 w-4 flex-shrink-0 text-tp-success" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
@@ -523,14 +551,11 @@ export default async function CategoryPage({ params }: Props) {
                       </li>
                     ))}
                   </ul>
-                  <Link href={`/auth/register?redirect=/${slug}&package=${pkg.id}`} className="mt-6 block">
-                    <Button
-                      variant={pkg.recommended ? 'primary' : 'outline'}
-                      size="md"
-                      className="w-full"
-                    >
-                      {isEntry ? 'Try It' : 'Get Started'}
-                    </Button>
+                  <Link
+                    href={startHref}
+                    className={`${buttonVariants({ variant: pkg.recommended ? 'primary' : 'outline', size: 'md' })} mt-auto w-full`}
+                  >
+                    {pkg.outputCount === 1 ? 'Try 1 Photo' : `Get ${pkg.name}`}
                   </Link>
                 </div>
               );
@@ -538,7 +563,7 @@ export default async function CategoryPage({ params }: Props) {
           </div>
 
           <p className="mt-6 text-center text-sm text-tp-muted">
-            Simple, transparent pricing for everyone.{' '}
+            Compare every package and what each includes.{' '}
             <Link href="/pricing" className="font-medium text-tp-bronze-ink underline-offset-2 hover:underline">
               View all packages
             </Link>
@@ -547,11 +572,11 @@ export default async function CategoryPage({ params }: Props) {
       </section>
 
       {/* ── FAQ PREVIEW ── */}
-      <section className="border-t border-tp-line/40 bg-tp-paper py-16 sm:py-20">
+      <section className="border-t border-tp-line/40 bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-baseline justify-between gap-4">
             <h2 className="font-display text-2xl font-normal text-tp-black sm:text-3xl">
-              FAQ Preview
+              Frequently Asked Questions
             </h2>
             <Link
               href="/faq"
@@ -566,9 +591,9 @@ export default async function CategoryPage({ params }: Props) {
             {faqItems.slice(0, 4).map((item) => (
               <details
                 key={item.question}
-                className="group rounded-tp-button border border-tp-line bg-white"
+                className="group rounded-tp-button border border-tp-line bg-tp-paper/60 transition-colors hover:border-tp-bronze/50"
               >
-                <summary className="flex cursor-pointer items-center justify-between gap-4 px-6 py-4 font-medium text-tp-ink list-none [&::-webkit-details-marker]:hidden">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 rounded-tp-button px-5 py-4 font-medium text-tp-ink list-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze sm:px-6 [&::-webkit-details-marker]:hidden">
                   {item.question}
                   <svg
                     className="h-5 w-5 flex-shrink-0 text-tp-muted transition-transform group-open:rotate-180"
@@ -580,7 +605,7 @@ export default async function CategoryPage({ params }: Props) {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                   </svg>
                 </summary>
-                <div className="px-6 pb-5 text-sm leading-relaxed text-tp-muted">
+                <div className="px-5 pb-5 text-sm leading-relaxed text-tp-muted sm:px-6">
                   {item.answer}
                 </div>
               </details>
@@ -590,7 +615,7 @@ export default async function CategoryPage({ params }: Props) {
       </section>
 
       {/* ── RELATED PHOTO TYPES ── */}
-      <section className="bg-white py-16 sm:py-20">
+      <section className="border-t border-tp-line/40 bg-tp-paper py-16 sm:py-20">
         <div className="mx-auto max-w-tp-site px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-baseline justify-between gap-4">
             <h2 className="font-display text-2xl font-normal text-tp-black sm:text-3xl">
@@ -599,12 +624,12 @@ export default async function CategoryPage({ params }: Props) {
             <span className="text-sm text-tp-muted">Explore other photo types you might like.</span>
           </div>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
             {relatedCategories.map((related) => (
               <Link
                 key={related.id}
                 href={`/${related.slug}`}
-                className="group overflow-hidden rounded-tp-card border border-tp-line bg-white transition-shadow hover:shadow-lg"
+                className="group overflow-hidden rounded-tp-card border border-tp-line bg-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze"
               >
                 <div className="aspect-[4/3] overflow-hidden bg-tp-warm">
                   <Image
@@ -619,7 +644,7 @@ export default async function CategoryPage({ params }: Props) {
                 </div>
                 <div className="p-4">
                   <h3 className="text-sm font-semibold text-tp-ink">{related.shortName}</h3>
-                  <p className="mt-1 text-xs text-tp-muted line-clamp-1">{related.tagline}</p>
+                  <p className="mt-1 text-xs text-tp-muted line-clamp-2">{related.tagline}</p>
                 </div>
               </Link>
             ))}
@@ -631,19 +656,17 @@ export default async function CategoryPage({ params }: Props) {
       <section className="bg-tp-black py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl font-normal text-white sm:text-4xl">
-            Turn Your Photos Into<br className="hidden sm:block" /> Something Extraordinary.
+            Ready to Create Your<br className="hidden sm:block" /> {cat.shortName}?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-tp-beige/80">
-            Upload your photos and get AI-generated {cat.outputLabel} in hours, not days.
+            Upload your photos and get AI-generated {cat.outputLabel}, typically in about 2 hours.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href={`/auth/register?redirect=/${slug}`}>
-              <Button size="lg" variant="primary">
-                Get Started
-                <ChevronRight className="ml-1 h-4 w-4" />
-              </Button>
+            <Link href={startHref} className={`${buttonVariants({ size: 'lg', variant: 'primary' })} w-full sm:w-auto`}>
+              Get Started
+              <ChevronRight className="ml-1 h-4 w-4" />
             </Link>
-            <div className="flex items-center gap-6 text-sm text-tp-beige/60">
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-tp-beige/60">
               <span className="inline-flex items-center gap-1.5">
                 <Sparkles className="h-3.5 w-3.5 text-tp-bronze" />
                 Fast results
@@ -654,7 +677,7 @@ export default async function CategoryPage({ params }: Props) {
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Clock className="h-3.5 w-3.5 text-tp-bronze" />
-                100% satisfaction
+                Regenerations included
               </span>
             </div>
           </div>

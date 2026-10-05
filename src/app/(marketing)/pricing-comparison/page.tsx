@@ -58,12 +58,12 @@ if (headshots.packages.length < 6) {
     `Update this page when changing the package list.`
   );
 }
-const tailorpic1Package = headshots.packages[0]; // TailorPic 1: $1.99, 1 headshot
-const litePackage = headshots.packages[1]; // Lite: $9.90, 5 headshots
-const basicPackage = headshots.packages[2]; // Basic: $19.90, 10 headshots
-const starterPackage = headshots.packages[3]; // Starter: $29.90, 40 headshots
-const proPackage = headshots.packages[4]; // Professional: $49.90, 80 headshots
-const execPackage = headshots.packages[5]; // Executive: $89.90, 160 headshots
+const tailorpic1Package = headshots.packages.find((p) => p.id === 'headshots-tailorpic1') ?? headshots.packages[0] ?? headshots.packages[headshots.packages.length - 1]; // TailorPic 1: $1.99, 1 headshot
+const litePackage = headshots.packages.find((p) => p.id === 'headshots-lite') ?? headshots.packages[0] ?? headshots.packages[headshots.packages.length - 1]; // Lite: $9.90, 5 headshots
+const basicPackage = headshots.packages.find((p) => p.id === 'headshots-express') ?? headshots.packages[0] ?? headshots.packages[headshots.packages.length - 1]; // Basic: $19.90, 10 headshots
+const starterPackage = headshots.packages.find((p) => p.id === 'headshots-starter') ?? headshots.packages[0] ?? headshots.packages[headshots.packages.length - 1]; // Starter: $29.90, 40 headshots
+const proPackage = headshots.packages.find((p) => p.id === 'headshots-professional') ?? headshots.packages[0] ?? headshots.packages[headshots.packages.length - 1]; // Professional: $49.90, 80 headshots
+const execPackage = headshots.packages.find((p) => p.id === 'headshots-executive') ?? headshots.packages[0] ?? headshots.packages[headshots.packages.length - 1]; // Executive: $89.90, 160 headshots
 
 function perPhotoPrice(cents: number, count: number): string {
   return `$${(cents / 100 / count).toFixed(2)}`;

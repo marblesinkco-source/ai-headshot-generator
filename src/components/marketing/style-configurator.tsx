@@ -37,7 +37,7 @@ export function StyleConfigurator() {
   const fit = OUTFITS[outfit];
 
   return (
-    <section className="bg-tp-beige/25 py-tp-section" aria-labelledby="configurator-heading">
+    <section className="bg-tp-beige/25 py-20 lg:py-24" aria-labelledby="configurator-heading">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center">
@@ -68,7 +68,7 @@ export function StyleConfigurator() {
                     type="button"
                     onClick={() => setBackdrop(i)}
                     className={cn(
-                      'group flex flex-col items-center gap-2 rounded-tp-button border-2 p-2.5 transition-all',
+                      'group flex flex-col items-center gap-2 rounded-tp-button border-2 p-2.5 transition-all hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink',
                       backdrop === i
                         ? 'border-tp-bronze shadow-md'
                         : 'border-transparent hover:border-tp-line'
@@ -99,7 +99,7 @@ export function StyleConfigurator() {
                     type="button"
                     onClick={() => setOutfit(i)}
                     className={cn(
-                      'group flex flex-col items-center gap-2 rounded-tp-button border-2 p-2.5 transition-all',
+                      'group flex flex-col items-center gap-2 rounded-tp-button border-2 p-2.5 transition-all hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink',
                       outfit === i
                         ? 'border-tp-bronze shadow-md'
                         : 'border-transparent hover:border-tp-line'
@@ -122,7 +122,7 @@ export function StyleConfigurator() {
             <button
               type="button"
               onClick={randomize}
-              className="inline-flex items-center gap-2 rounded-tp-button border border-tp-line px-4 py-2.5 text-sm font-medium text-tp-muted transition-colors hover:border-tp-bronze/50 hover:text-tp-ink"
+              className="inline-flex items-center gap-2 rounded-tp-button border border-tp-line px-4 py-2.5 text-sm font-medium text-tp-muted transition-colors hover:border-tp-bronze hover:text-tp-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
             >
               <Shuffle className="h-4 w-4" />
               Surprise Me

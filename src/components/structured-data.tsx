@@ -258,7 +258,7 @@ export function HowToSchema() {
         '@type': 'HowToStep',
         position: 1,
         name: 'Upload Your Selfies',
-        text: 'Upload 10-20 casual selfies. Our AI learns your unique features from different angles and lighting.',
+        text: 'Upload 4-10 casual selfies. Our AI learns your unique features from different angles and lighting.',
       },
       {
         '@type': 'HowToStep',

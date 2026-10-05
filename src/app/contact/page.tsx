@@ -60,7 +60,7 @@ const faqs = [
   },
   {
     q: 'How many photos do I need to upload?',
-    a: 'We recommend 8 to 12 clear selfies that follow our photo guidelines. More variety in angles, lighting and expression gives better results.',
+    a: 'Upload 4 to 10 clear selfies that follow our photo guidelines. More variety in angles, lighting and expression gives better results.',
   },
   {
     q: 'What happens to my uploaded photos?',

@@ -15,10 +15,10 @@ const steps = [
   {
     number: '2',
     label: 'Step 2',
-    title: 'Upload 10–20 selfies',
+    title: 'Upload 4–10 selfies',
     Illustration: StepUploadIllustration,
     description:
-      'Add 10–20 clear, well-lit selfies (8 minimum) with different angles and expressions. Our AI learns your features from them, and your uploads are auto-deleted within 30 days.',
+      'Add 4–10 clear, well-lit selfies with different angles and expressions. Our AI learns your features from them, and your uploads are auto-deleted within 30 days.',
   },
   {
     number: '3',
@@ -34,7 +34,7 @@ export function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="scroll-mt-24 mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 py-tp-section-sm lg:py-tp-section"
+      className="scroll-mt-24 mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 py-20 lg:py-24"
     >
       <div className="flex justify-between items-end gap-4 mb-8 lg:mb-12">
         <div>
@@ -58,7 +58,7 @@ export function HowItWorks() {
           const isLast = index === steps.length - 1;
           return (
             <li key={step.number} className="relative flex flex-col items-stretch">
-              <article className="relative h-full overflow-hidden rounded-tp-card border border-tp-line bg-tp-paper p-6 lg:p-8">
+              <article className="relative h-full overflow-hidden rounded-tp-card border border-tp-line bg-tp-paper p-6 transition-all duration-300 hover:-translate-y-1 hover:border-tp-bronze hover:shadow-lg hover:shadow-tp-bronze/10 motion-reduce:transition-none motion-reduce:hover:translate-y-0 lg:p-8">
                 <span
                   className="pointer-events-none absolute -right-2 -top-4 select-none font-display text-[110px] leading-none text-tp-beige/40 lg:text-[140px]"
                   aria-hidden="true"
@@ -119,9 +119,9 @@ export function HowItWorks() {
       <div className="mt-10 lg:mt-14 flex flex-col items-center gap-3 text-center">
         <Link
           href="/auth/register?redirect=/dashboard/upload"
-          className={`${buttonVariants({ variant: 'primary', size: 'lg' })} bg-tp-ink text-tp-paper rounded-tp-button gap-2`}
+          className={`${buttonVariants({ variant: 'primary', size: 'lg' })} bg-tp-ink text-tp-paper rounded-tp-button gap-2 transition-all duration-200 hover:-translate-y-0.5 hover:bg-tp-black hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze`}
         >
-          Get Started in Under 5 Minutes
+          Start My Headshots
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </Link>
         <p className="m-0 text-[11px] lg:text-xs text-tp-muted">

@@ -41,7 +41,7 @@ const productJsonLd = {
 };
 
 const intro =
-  "Vivid Headshots is another option in the AI headshot market. TailorPic stands out with one-time pricing from $1.99, personal LoRA training and 11 photo categories.";
+  "Vivid Headshots is another option in the AI headshot market. TailorPic stands out with one-time pricing from $1.99, personal LoRA training and 12 photo categories.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Confirm current pricing on their site" },

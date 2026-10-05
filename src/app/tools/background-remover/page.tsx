@@ -96,17 +96,17 @@ export default function Page() {
         <div className="mx-auto grid max-w-5xl gap-5 md:grid-cols-3">
           <div className="rounded-tp-card border border-tp-line bg-white p-6">
             <span className="flex h-11 w-11 items-center justify-center rounded-tp-button bg-tp-beige/40 text-tp-bronze-ink"><Zap className="h-5 w-5" aria-hidden="true" /></span>
-            <h2 className="mt-4 text-lg font-semibold text-tp-ink">Instant Results</h2>
+            <h2 className="mt-4 font-display text-xl font-normal text-tp-ink">Instant Results</h2>
             <p className="mt-2 text-sm leading-relaxed text-tp-muted">Clean cutouts in seconds, with no editing skills or manual selection needed.</p>
           </div>
           <div className="rounded-tp-card border border-tp-line bg-white p-6">
             <span className="flex h-11 w-11 items-center justify-center rounded-tp-button bg-tp-beige/40 text-tp-bronze-ink"><Sparkles className="h-5 w-5" aria-hidden="true" /></span>
-            <h2 className="mt-4 text-lg font-semibold text-tp-ink">HD Quality</h2>
+            <h2 className="mt-4 font-display text-xl font-normal text-tp-ink">HD Quality</h2>
             <p className="mt-2 text-sm leading-relaxed text-tp-muted">Crisp edges around hair and shoulders, preserved at full resolution.</p>
           </div>
           <div className="rounded-tp-card border border-tp-line bg-white p-6">
             <span className="flex h-11 w-11 items-center justify-center rounded-tp-button bg-tp-beige/40 text-tp-bronze-ink"><BadgeCheck className="h-5 w-5" aria-hidden="true" /></span>
-            <h2 className="mt-4 text-lg font-semibold text-tp-ink">No Watermark</h2>
+            <h2 className="mt-4 font-display text-xl font-normal text-tp-ink">No Watermark</h2>
             <p className="mt-2 text-sm leading-relaxed text-tp-muted">Download your finished image clean, ready for LinkedIn, resumes and stores.</p>
           </div>
         </div>

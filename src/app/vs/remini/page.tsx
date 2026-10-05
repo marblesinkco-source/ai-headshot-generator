@@ -86,9 +86,9 @@ const whyCards = [
   },
   {
     icon: LayoutGrid,
-    title: '11 Photo Categories',
+    title: '12 Photo Categories',
     description:
-      'Choose from 11 distinct categories including business, dating, pet portraits, and e-commerce. Remini does not organize its output into professional style categories.',
+      'Choose from 12 distinct categories including business, dating, pet portraits, and e-commerce. Remini does not organize its output into professional style categories.',
   },
   {
     icon: Sparkles,

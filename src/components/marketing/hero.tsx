@@ -50,7 +50,7 @@ export function Hero() {
                 </Link>
                 <a
                   href="#how-it-works"
-                  className="inline-flex items-center gap-2.5 rounded-tp-button border border-tp-line bg-transparent px-6 py-3.5 text-sm font-semibold text-tp-ink transition-all hover:bg-tp-beige/30 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
+                  className="inline-flex items-center gap-2.5 rounded-tp-button border border-tp-line bg-transparent px-6 py-3.5 text-sm font-semibold text-tp-ink transition-all hover:-translate-y-0.5 hover:border-tp-bronze-ink hover:bg-tp-beige/30 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
                 >
                   See How It Works <span aria-hidden="true" className="text-[18px] leading-none">&#8595;</span>
                 </a>
@@ -61,7 +61,7 @@ export function Hero() {
                 {[
                   { label: `From ${BASE_PRICE_DISPLAY}, one-time`, d: 'M12 8c-1.7 0-3 .9-3 2s1.3 2 3 2 3 .9 3 2-1.3 2-3 2m0-8V6m0 12v-2m9-4a9 9 0 11-18 0 9 9 0 0118 0z' },
                   { label: 'Ready in ~2 hours', d: 'M12 6v6l4 2m5-2a9 9 0 11-18 0 9 9 0 0118 0z' },
-                  { label: 'No credit card needed', d: 'M20 6L9 17l-5-5' },
+                  { label: 'No subscription', d: 'M20 6L9 17l-5-5' },
                 ].map((t) => (
                   <span key={t.label} className="inline-flex items-center gap-1.5">
                     <svg className="h-3.5 w-3.5 text-tp-bronze-ink" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d={t.d} /></svg>
@@ -94,7 +94,7 @@ export function Hero() {
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 priority
               />
-              <span className="absolute right-4 bottom-3 bg-tp-black/75 text-white text-[11px] tracking-[0.01em] px-2.5 py-1.5 rounded-md">
+              <span className="absolute right-4 bottom-3 bg-tp-black/75 text-tp-paper text-[11px] tracking-[0.01em] px-2.5 py-1.5 rounded-md">
                 AI-generated concept image
               </span>
             </div>

@@ -37,12 +37,12 @@ import {
 
 export const metadata: Metadata = {
   title: { absolute: 'How TailorPic Works: Upload Selfies, Get AI Headshots' },
-  description: 'Learn how TailorPic creates professional AI photos in 3 steps: upload selfies, let our AI train on your features, and download 40+ high-resolution photos.',
+  description: 'Learn how TailorPic creates professional AI photos in 3 steps: upload selfies, let our AI train on your features, and download high-resolution photos from a single upload.',
   alternates: { canonical: '/how-it-works' },
   openGraph: generateOGMetadata({ title: `How It Works | ${siteConfig.name}`, description: 
-      'Upload your selfies, our AI trains a custom model on your features, and you get 40+ professional photos in about 2 hours.', path: '/how-it-works' }),
+      'Upload your selfies, our AI trains a custom model on your features, and you get professional photos in about 2 hours.', path: '/how-it-works' }),
   twitter: generateTwitterMetadata({ title: `How It Works | ${siteConfig.name}`, description: 
-      'Upload selfies, let our AI train on your features, and download 40+ professional photos in about 2 hours.' }),
+      'Upload selfies, let our AI train on your features, and download professional photos in about 2 hours.' }),
 };
 
 const steps = [
@@ -51,7 +51,7 @@ const steps = [
     icon: Upload,
     title: 'Upload Your Selfies',
     description:
-      'Start by uploading 10 to 20 casual selfies of yourself. These can be taken with your phone — no professional photos needed. Our AI uses these images to learn your unique facial features, skin tone, hair, and overall appearance from multiple perspectives.',
+      'Start by uploading 4 to 10 casual selfies of yourself. These can be taken with your phone — no professional photos needed. Our AI uses these images to learn your unique facial features, skin tone, hair, and overall appearance from multiple perspectives.',
     tips: [
       'Use natural lighting for the clearest results',
       'Include photos from different angles (front, slight left, slight right)',
@@ -65,10 +65,10 @@ const steps = [
     icon: Sparkles,
     title: 'AI Creates Your Photos',
     description:
-      'Once you upload your selfies, our AI trains a custom model specifically on your features. This is not a generic filter or a face swap — it is a personalized AI model that understands what makes you look like you. It then generates 40+ professional photos across your chosen styles, from corporate headshots to creative portraits.',
+      'Once you upload your selfies, our AI trains a custom model specifically on your features. This is not a generic filter or a face swap — it is a personalized AI model that understands what makes you look like you. It then generates professional photos (from 1 to 160, depending on your package) across your chosen styles, from corporate headshots to creative portraits.',
     tips: [
-      'The training process takes approximately 2 hours',
-      'Each photo is generated at studio-quality resolution',
+      'Training and generation take about 2 hours for most orders',
+      'Every package includes HD resolution',
       'You can choose from 12 style categories',
       'The AI preserves your natural features while enhancing lighting and composition',
       'Every result is unique — no templates or stock overlays',
@@ -79,10 +79,10 @@ const steps = [
     icon: Download,
     title: 'Download & Use',
     description:
-      'Browse your complete gallery of AI-generated photos once they are ready. Favorite the ones you love most, then download them in full 4K resolution. Your photos come with full commercial rights — use them anywhere you need a professional image.',
+      'Browse your complete gallery of AI-generated photos once they are ready. Favorite the ones you love most, then download them in high resolution (4K on the Executive package). Your photos come with full commercial rights — use them anywhere you need a professional image.',
     tips: [
       'Download individual photos or your entire gallery at once',
-      'All images are delivered in high-resolution 4K quality',
+      'High-resolution downloads on every package, 4K on Executive',
       'Perfect for LinkedIn, dating apps, personal websites, and print',
       'Full commercial usage rights included with every photo',
       'Photos are stored securely for 30 days after delivery',
@@ -101,7 +101,7 @@ const differentiators = [
     icon: Palette,
     title: 'Multiple Styles',
     description:
-      'Get 40+ professional photos across a wide range of styles in a single session — headshots, creative, casual, and more.',
+      'Get up to 160 professional photos across a range of styles in a single session — headshots, creative, casual, and more.',
   },
   {
     icon: Zap,
@@ -128,11 +128,11 @@ const whyChooseUs = [
     icon: Timer,
     title: 'Fast Turnaround',
     description:
-      'Your photos are ready in under 2 hours, with an email when they are done.',
+      'Most orders are ready in about 2 hours, with an email when they are done.',
   },
   {
     icon: LayoutGrid,
-    title: '40+ Professional Styles',
+    title: 'Variety From One Upload',
     description:
       'Get a variety of looks from a single upload, from corporate to casual.',
   },
@@ -160,7 +160,7 @@ const youNeed = [
 const youGet = [
   { icon: LayoutGrid, title: 'Up to 160 photos', description: 'A full set of professional photos generated from one upload.' },
   { icon: Layers, title: 'Multiple styles', description: 'Choose from 12 style categories, from corporate headshots to creative portraits.' },
-  { icon: MonitorUp, title: 'High-resolution files', description: 'Download in 4K resolution, ready for web profiles and print.' },
+  { icon: MonitorUp, title: 'High-resolution files', description: 'HD downloads on every package, 4K on Executive.' },
   { icon: BadgeCheck, title: 'Commercial rights', description: 'Use your photos on LinkedIn, your website, business cards and more.' },
 ];
 
@@ -191,7 +191,7 @@ const faqs = [
   {
     question: 'How many selfies do I need to upload?',
     answer:
-      'We recommend 10 to 20 selfies for the best results. More variety in angles and lighting helps our AI learn your features more accurately. You can upload as few as 8, but quality improves with more input photos.',
+      'Upload 4 to 10 clear selfies. More variety in angles, lighting and expression helps our AI learn your features more accurately, so use the full 10 if you have good shots.',
   },
   {
     question: 'How long does it take to get my photos?',
@@ -216,7 +216,7 @@ const faqs = [
   {
     question: 'What resolution are the photos?',
     answer:
-      'Photos are delivered in high-resolution 4K quality, suited to web profiles and print.',
+      'Every package includes HD resolution. The Executive package delivers 4K, suited to print and large displays.',
   },
 ];
 

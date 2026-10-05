@@ -46,7 +46,7 @@ const helpCategories: HelpCategory[] = [
       {
         question: 'How do I get started with TailorPic?',
         answer:
-          'Create an account, upload 10–20 selfies of yourself, choose a headshot style, and our AI will generate professional photos tailored to you. The whole process takes just a few minutes to set up.',
+          'Create an account, upload 4–10 selfies of yourself, choose a headshot style, and our AI will generate professional photos tailored to you. The whole process takes just a few minutes to set up.',
       },
       {
         question: 'Do I need to create an account?',
@@ -74,7 +74,7 @@ const helpCategories: HelpCategory[] = [
       {
         question: 'How do I upload my photos?',
         answer:
-          'After signing in, navigate to the upload area and drag-and-drop or select your selfies. You need a minimum of 8 photos, but we recommend 10–20 for the best results. The uploader accepts JPEG, PNG, and HEIC formats.',
+          'After signing in, navigate to the upload area and drag-and-drop or select your selfies. You need a minimum of 4 photos and can upload up to 10; we recommend using all 10 for the best results. The uploader accepts JPEG, PNG, and HEIC formats.',
       },
       {
         question: 'What kind of photos should I upload?',
@@ -84,7 +84,7 @@ const helpCategories: HelpCategory[] = [
       {
         question: 'How many photos do I need to upload?',
         answer:
-          'We require a minimum of 8 photos, but 10–20 photos produce the best results. More variety helps the AI learn your features accurately.',
+          'We require a minimum of 4 photos and accept up to 10; more variety gives the best results. More variety helps the AI learn your features accurately.',
       },
       {
         question: 'What should I avoid in my photos?',

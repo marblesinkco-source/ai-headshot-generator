@@ -41,7 +41,7 @@ const productJsonLd = {
 };
 
 const intro =
-  "PFPMaker generates profile pictures and headshots. TailorPic focuses on a simple one-time price, LoRA-trained likeness and 11 photo categories beyond the standard profile picture.";
+  "PFPMaker generates profile pictures and headshots. TailorPic focuses on a simple one-time price, LoRA-trained likeness and 12 photo categories beyond the standard profile picture.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Varies by plan; check their site" },

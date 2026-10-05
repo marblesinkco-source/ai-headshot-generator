@@ -93,7 +93,7 @@ const whyCards = [
   },
   {
     icon: LayoutGrid,
-    title: '11 Categories for Every Use',
+    title: '12 Categories for Every Use',
     description:
       'From business and dating to pet portraits and e-commerce, get photos in styles that suit each purpose without designing anything yourself.',
   },

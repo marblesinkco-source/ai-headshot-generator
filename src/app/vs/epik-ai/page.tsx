@@ -41,7 +41,7 @@ const productJsonLd = {
 };
 
 const intro =
-  "Epik is a mobile AI photo app that offers a headshot pack. TailorPic focuses on a simple one-time price, LoRA-trained likeness and 11 photo categories beyond a single headshot pack.";
+  "Epik is a mobile AI photo app that offers a headshot pack. TailorPic focuses on a simple one-time price, LoRA-trained likeness and 12 photo categories beyond a single headshot pack.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Varies by plan; check the app store listing" },

@@ -79,7 +79,7 @@ const whyCards = [
   },
   {
     icon: LayoutGrid,
-    title: '11 Categories, Not Just Headshots',
+    title: '12 Categories, Not Just Headshots',
     description:
       'Secta Labs centers on professional headshots. TailorPic covers 12 categories — business, dating, pet portraits, e-commerce and more — so one service fits every need.',
   },

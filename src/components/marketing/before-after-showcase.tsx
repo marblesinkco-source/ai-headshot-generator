@@ -54,7 +54,7 @@ function ComparisonSlider({
   return (
     <div
       ref={containerRef}
-      className="relative aspect-[3/4] w-full cursor-col-resize select-none overflow-hidden rounded-t-tp-card bg-tp-beige touch-pan-y"
+      className="relative aspect-[3/4] w-full cursor-col-resize select-none overflow-hidden rounded-t-tp-card bg-tp-beige touch-pan-y focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze"
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
@@ -141,7 +141,7 @@ function ComparisonSlider({
 
 export function BeforeAfterShowcase() {
   return (
-    <section className="bg-tp-paper py-tp-section" aria-labelledby="before-after-heading">
+    <section className="bg-tp-paper py-20 lg:py-24" aria-labelledby="before-after-heading">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-tp-bronze-ink">
@@ -163,7 +163,7 @@ export function BeforeAfterShowcase() {
           {homeBeforeAfterPairs.map(({ label, detail, before, after }) => (
             <figure
               key={label}
-              className="overflow-hidden rounded-tp-card border border-tp-line bg-white"
+              className="overflow-hidden rounded-tp-card border border-tp-line bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-tp-bronze/10 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
             >
               <ComparisonSlider before={before} after={after} />
               <figcaption className="border-t border-tp-line px-4 py-4 text-center">

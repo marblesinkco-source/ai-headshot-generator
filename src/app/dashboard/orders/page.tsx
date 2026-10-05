@@ -46,6 +46,7 @@ export default function OrdersPage() {
   const [orders, setOrders] = useState<OrderRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState<StatusFilter>('all');
+  const [loadError, setLoadError] = useState<string | null>(null);
 
   const supabase = useMemo(() => createClient(), []);
 
@@ -59,12 +60,13 @@ export default function OrdersPage() {
         return;
       }
 
-      const { data } = await supabase
+      const { data, error } = await supabase
         .from('orders')
         .select('id, package_id, category_id, status, amount, currency, created_at')
         .eq('user_id', user.id)
         .order('created_at', { ascending: false });
 
+      if (error) setLoadError('We could not load your orders. Please refresh the page.');
       setOrders((data || []) as OrderRow[]);
       setLoading(false);
     }
@@ -83,8 +85,14 @@ export default function OrdersPage() {
         </p>
       </div>
 
+      {loadError && (
+        <div role="alert" className="rounded-tp-button border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+          {loadError}
+        </div>
+      )}
+
       {loading ? (
-        <div className="flex items-center justify-center py-20">
+        <div className="flex items-center justify-center py-20" role="status" aria-label="Loading orders">
           <div className="h-8 w-8 animate-spin rounded-full border-2 border-tp-black border-t-transparent" />
         </div>
       ) : orders.length === 0 ? (
@@ -116,7 +124,7 @@ export default function OrdersPage() {
                   role="tab"
                   aria-selected={active}
                   onClick={() => setFilter(f.value)}
-                  className={`shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
+                  className={`shrink-0 min-h-[44px] rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
                     active
                       ? 'border-tp-black bg-tp-black text-white'
                       : 'border-tp-line bg-white text-tp-muted hover:bg-tp-paper'
@@ -176,7 +184,7 @@ export default function OrdersPage() {
                       </div>
 
                       <div className="flex items-center justify-between gap-4 sm:flex-col sm:items-end sm:justify-center">
-                        <span className="text-lg font-bold text-tp-ink">
+                        <span className="text-lg font-semibold text-tp-ink">
                           {formatPrice(order.amount, order.currency)}
                         </span>
                         <div className="flex gap-2">

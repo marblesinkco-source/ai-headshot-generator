@@ -104,7 +104,7 @@ const differences = [
   },
   {
     "title": "Purpose-built categories",
-    "body": "TailorPic organizes results into 11 professional and personal categories instead of leaving you to write prompts."
+    "body": "TailorPic organizes results into 12 professional and personal categories instead of leaving you to write prompts."
   },
   {
     "title": "Predictable price",

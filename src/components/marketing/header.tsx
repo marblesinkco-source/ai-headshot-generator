@@ -142,10 +142,15 @@ export function Header() {
   const userName = user?.user_metadata?.full_name || user?.email?.split('@')[0] || '';
   const userAvatar = user?.user_metadata?.avatar_url;
 
-  // Close dropdowns with Escape
+  const megaTrigger = useRef<HTMLButtonElement>(null);
+  const megaOpenRef = useRef(false);
+  megaOpenRef.current = megaOpen;
+
+  // Close dropdowns with Escape (focus returns to the trigger)
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (e.key === 'Escape') {
+        if (megaOpenRef.current) megaTrigger.current?.focus();
         setMegaOpen(false);
         setUserMenuOpen(false);
       }
@@ -197,10 +202,10 @@ export function Header() {
             ref={megaRef}
           >
             <button
-              className="flex items-center gap-1 text-[13px] font-semibold text-tp-ink transition-colors hover:text-tp-bronze-ink whitespace-nowrap"
+              ref={megaTrigger}
+              className="flex items-center gap-1 rounded-sm text-[13px] font-semibold text-tp-ink transition-colors hover:text-tp-bronze-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2 whitespace-nowrap"
               onClick={() => setMegaOpen((v) => !v)}
               aria-expanded={megaOpen}
-              aria-haspopup="true"
               aria-controls="photo-types-menu"
             >
               Photo Types
@@ -211,7 +216,7 @@ export function Header() {
 
             {/* Mega dropdown */}
             <div
-              className="absolute left-1/2 top-full -translate-x-1/2 pt-3"
+              className={`absolute left-1/2 top-full -translate-x-1/2 pt-3 ${megaOpen ? '' : 'pointer-events-none'}`}
             >
               <div
                 id="photo-types-menu"
@@ -309,7 +314,6 @@ export function Header() {
                 className="flex items-center gap-2.5 rounded-full border border-tp-line/60 bg-white py-1.5 pl-1.5 pr-4 transition-all hover:border-tp-bronze/40 hover:shadow-sm"
                 onClick={() => setUserMenuOpen((v) => !v)}
                 aria-expanded={userMenuOpen}
-                aria-haspopup="true"
               >
                 {userAvatar ? (
                   <Image

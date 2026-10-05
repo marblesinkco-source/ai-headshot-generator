@@ -41,7 +41,7 @@ const productJsonLd = {
 };
 
 const intro =
-  "ProfilePicture.AI is a dedicated AI profile photo generator. TailorPic focuses on a simple one-time price, LoRA-trained likeness and 11 photo categories beyond the standard profile photo.";
+  "ProfilePicture.AI is a dedicated AI profile photo generator. TailorPic focuses on a simple one-time price, LoRA-trained likeness and 12 photo categories beyond the standard profile photo.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Varies by plan; confirm on their site" },

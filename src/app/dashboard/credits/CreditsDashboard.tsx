@@ -96,21 +96,21 @@ export default function CreditsDashboard() {
         {/* Available Balance */}
         <div className="rounded-tp-card border border-tp-line/50 bg-white p-6">
           <p className="text-sm font-medium text-tp-muted">Available Balance</p>
-          <p className="mt-2 text-3xl font-bold text-tp-black">{data.balance}</p>
+          <p className="mt-2 font-display text-3xl font-normal text-tp-black">{data.balance}</p>
           <p className="mt-1 text-xs text-tp-muted">credits remaining</p>
         </div>
 
         {/* Total Used */}
         <div className="rounded-tp-card border border-tp-line/50 bg-white p-6">
           <p className="text-sm font-medium text-tp-muted">Total Used</p>
-          <p className="mt-2 text-3xl font-bold text-tp-bronze-ink">{data.totalUsed}</p>
+          <p className="mt-2 font-display text-3xl font-normal text-tp-bronze-ink">{data.totalUsed}</p>
           <p className="mt-1 text-xs text-tp-muted">credits consumed</p>
         </div>
 
         {/* Usage */}
         <div className="rounded-tp-card border border-tp-line/50 bg-white p-6">
           <p className="text-sm font-medium text-tp-muted">Usage</p>
-          <p className="mt-2 text-3xl font-bold text-tp-black">{usagePercent}%</p>
+          <p className="mt-2 font-display text-3xl font-normal text-tp-black">{usagePercent}%</p>
           <div className="mt-3 h-2 rounded-full bg-tp-paper">
             <div
               className="h-2 rounded-full bg-tp-bronze transition-all"

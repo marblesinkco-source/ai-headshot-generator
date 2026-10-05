@@ -28,6 +28,7 @@ export default function SettingsClient() {
 
   // Data export
   const [exportLoading, setExportLoading] = useState(false);
+  const [dataMessage, setDataMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data: { user } }) => {
@@ -42,11 +43,17 @@ export default function SettingsClient() {
 
   async function handleUpdateProfile(e: React.FormEvent) {
     e.preventDefault();
-    setLoading(true);
     setMessage(null);
 
+    const trimmedName = name.trim();
+    if (trimmedName.length < 2) {
+      setMessage({ type: 'error', text: 'Please enter your full name (at least 2 characters).' });
+      return;
+    }
+    setLoading(true);
+
     const { error } = await supabase.auth.updateUser({
-      data: { full_name: name },
+      data: { full_name: trimmedName },
     });
 
     if (error) {
@@ -90,6 +97,7 @@ export default function SettingsClient() {
 
   async function handleExportData() {
     setExportLoading(true);
+    setDataMessage(null);
     try {
       const res = await fetch('/api/account/export');
       if (!res.ok) {
@@ -106,13 +114,14 @@ export default function SettingsClient() {
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
     } catch (err) {
-      alert(err instanceof Error ? err.message : 'Failed to export data. Please try again.');
+      setDataMessage({ type: 'error', text: err instanceof Error ? err.message : 'Failed to export data. Please try again.' });
     }
     setExportLoading(false);
   }
 
   async function handleDeleteAccount() {
     setDeleteLoading(true);
+    setDataMessage(null);
     try {
       const res = await fetch('/api/account/delete', { method: 'POST' });
       const data = await res.json();
@@ -123,7 +132,7 @@ export default function SettingsClient() {
       await supabase.auth.signOut();
       router.push('/?deleted=1');
     } catch (err) {
-      alert(err instanceof Error ? err.message : 'Failed to delete account. Please contact support.');
+      setDataMessage({ type: 'error', text: err instanceof Error ? err.message : 'Failed to delete account. Please contact support.' });
       setDeleteLoading(false);
     }
   }
@@ -140,7 +149,7 @@ export default function SettingsClient() {
       {/* Profile Section */}
       <div className="rounded-tp-dialog border border-tp-line bg-white shadow-sm">
         <div className="border-b border-tp-line/50 px-6 py-4">
-          <h2 className="font-semibold text-tp-ink">Profile</h2>
+          <h2 className="font-display text-xl font-normal text-tp-ink">Profile</h2>
         </div>
         <form onSubmit={handleUpdateProfile} className="space-y-4 p-6">
           <div>
@@ -165,6 +174,8 @@ export default function SettingsClient() {
               id="name"
               type="text"
               value={name}
+              maxLength={80}
+              autoComplete="name"
               onChange={(e) => setName(e.target.value)}
               className="block w-full rounded-tp-button border border-tp-line px-3.5 py-2.5 text-sm text-tp-ink placeholder-tp-muted shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
               placeholder="Your full name"
@@ -172,7 +183,7 @@ export default function SettingsClient() {
           </div>
 
           {message && (
-            <div className={`rounded-tp-button border p-3 text-sm ${
+            <div role={message?.type === 'error' ? 'alert' : 'status'} className={`rounded-tp-button border p-3 text-sm ${
               message.type === 'success'
                 ? 'bg-green-50 border-green-200 text-green-700'
                 : 'bg-red-50 border-red-200 text-red-700'
@@ -191,7 +202,7 @@ export default function SettingsClient() {
       {!isOAuthUser && (
         <div className="rounded-tp-dialog border border-tp-line bg-white shadow-sm">
           <div className="border-b border-tp-line/50 px-6 py-4">
-            <h2 className="font-semibold text-tp-ink">Change Password</h2>
+            <h2 className="font-display text-xl font-normal text-tp-ink">Change Password</h2>
           </div>
           <form onSubmit={handleChangePassword} className="space-y-4 p-6">
             <div>
@@ -203,6 +214,7 @@ export default function SettingsClient() {
                 type="password"
                 required
                 minLength={8}
+                autoComplete="new-password"
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
                 className="block w-full rounded-tp-button border border-tp-line px-3.5 py-2.5 text-sm text-tp-ink placeholder-tp-muted shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
@@ -219,6 +231,7 @@ export default function SettingsClient() {
                 type="password"
                 required
                 minLength={8}
+                autoComplete="new-password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 className="block w-full rounded-tp-button border border-tp-line px-3.5 py-2.5 text-sm text-tp-ink placeholder-tp-muted shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
@@ -246,7 +259,7 @@ export default function SettingsClient() {
       {/* Data & Privacy Section */}
       <div className="rounded-tp-dialog border border-tp-line bg-white shadow-sm">
         <div className="border-b border-tp-line/50 px-6 py-4">
-          <h2 className="font-semibold text-tp-ink">Data &amp; Privacy</h2>
+          <h2 className="font-display text-xl font-normal text-tp-ink">Data &amp; Privacy</h2>
         </div>
         <div className="p-6 space-y-4">
           <p className="text-sm text-tp-muted">
@@ -261,18 +274,28 @@ export default function SettingsClient() {
           >
             Download my data
           </Button>
+          {dataMessage && (
+            <div role="alert" className="rounded-tp-button border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+              {dataMessage.text}
+            </div>
+          )}
         </div>
       </div>
 
       {/* Danger Zone */}
       <div className="rounded-tp-dialog border border-red-200 bg-white shadow-sm">
         <div className="border-b border-red-100 px-6 py-4">
-          <h2 className="font-semibold text-red-700">Danger Zone</h2>
+          <h2 className="font-display text-xl font-normal text-red-700">Danger Zone</h2>
         </div>
         <div className="p-6">
           <p className="text-sm text-tp-muted mb-4">
             Permanently delete your account and all associated data, including orders, generated photos, and uploaded images. This action cannot be undone.
           </p>
+          {dataMessage && showDeleteConfirm && (
+            <div role="alert" className="mb-3 rounded-tp-button border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+              {dataMessage.text}
+            </div>
+          )}
           {showDeleteConfirm ? (
             <div className="rounded-tp-button bg-red-50 border border-red-200 p-4 space-y-3">
               <p className="text-sm font-medium text-red-800">

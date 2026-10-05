@@ -15,7 +15,7 @@ export function Categories() {
   const categories = getActiveCategories();
 
   return (
-    <section id="categories" className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 py-tp-section-sm lg:py-tp-section">
+    <section id="categories" className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 py-20 lg:py-24">
       <div className="text-center mb-10 lg:mb-14">
         <p className="uppercase text-[11px] font-semibold tracking-[0.25em] text-tp-bronze-ink mb-3">
           Choose Your Photo Type

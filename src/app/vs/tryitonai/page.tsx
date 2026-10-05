@@ -80,7 +80,7 @@ const whyCards = [
     icon: LayoutGrid,
     title: 'Purpose-Built Categories',
     description:
-      'Choose from 11 distinct categories including business headshots, dating, pet portraits, and e-commerce, each with its own tailored style.',
+      'Choose from 12 distinct categories including business headshots, dating, pet portraits, and e-commerce, each with its own tailored style.',
   },
   {
     icon: ImageIcon,

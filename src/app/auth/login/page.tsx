@@ -73,8 +73,8 @@ function LoginContent() {
   }
 
   const bulletPoints = [
-    'Studio-quality headshots in under 2 hours',
-    '11 photo categories for every occasion',
+    'Upload a few selfies, get professional portraits',
+    'Pay once per order, no subscription',
   ];
 
   return (
@@ -235,7 +235,7 @@ function LoginContent() {
 
             {/* Trust signals */}
             <p className="mt-6 pt-5 border-t border-tp-line/40 text-center text-xs text-tp-muted">
-              256-bit encryption · No subscription required
+              No subscription required
             </p>
           </div>
 

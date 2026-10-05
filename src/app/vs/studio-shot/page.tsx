@@ -74,7 +74,7 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is TailorPic cheaper than StudioShot?", answer: "Yes. TailorPic starts from $1.99, while StudioShot starts at approximately $29. Pricing may change, so check their site." },
+  { question: "Is TailorPic cheaper than StudioShot?", answer: "Our entry price is lower, but the packages are not like-for-like: TailorPic starts from $1.99 for a single photo and goes up to 160 photos, while StudioShot starts at approximately $29. Pricing may change, so check their site." },
   { question: "How many photos does StudioShot include?", answer: "StudioShot advertises 100+ headshots. TailorPic includes photos across 12 categories." },
   { question: "Which delivers faster?", answer: "TailorPic delivers within 24 hours. Check StudioShot's site for its current delivery times." },
   { question: "Is TailorPic a subscription?", answer: "No. TailorPic packages are one-time payments starting at $1.99 with no recurring fees." },

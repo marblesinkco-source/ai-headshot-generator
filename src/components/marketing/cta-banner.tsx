@@ -7,6 +7,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { getActiveCategories } from '@/config/categories';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+import { categoryVisuals } from '@/config/category-visuals';
 
 const categories = getActiveCategories();
 
@@ -17,7 +18,7 @@ export function CTABanner() {
 
   return (
     <>
-      <section className="py-tp-section-sm lg:py-tp-section">
+      <section className="py-20 lg:py-24">
         <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
           <div className="relative overflow-hidden rounded-tp-card bg-tp-black p-8 sm:p-12 lg:p-20 text-center">
             {/* Decorative gradient */}
@@ -69,7 +70,7 @@ export function CTABanner() {
                 <button
                   type="button"
                   onClick={() => categoryDialog.current?.showModal()}
-                  className="text-sm font-medium text-tp-beige underline underline-offset-4 transition-colors hover:text-tp-paper"
+                  className="rounded-tp-button px-2 py-2 text-sm font-medium text-tp-beige underline underline-offset-4 transition-colors hover:text-tp-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze"
                 >
                   Browse categories
                 </button>
@@ -117,8 +118,8 @@ export function CTABanner() {
             >
               <div className="w-[52px] h-[52px] rounded-lg overflow-hidden flex-shrink-0 bg-gradient-to-br from-tp-beige to-tp-line">
                 <Image
-                  src={`/images/categories/${cat.id}.jpg`}
-                  alt={cat.name}
+                  src={categoryVisuals[cat.id]?.quickCard?.src ?? `/images/categories/${cat.id}.jpg`}
+                  alt={categoryVisuals[cat.id]?.quickCard?.alt ?? cat.name}
                   width={120}
                   height={120}
                   className="w-full h-full object-cover"

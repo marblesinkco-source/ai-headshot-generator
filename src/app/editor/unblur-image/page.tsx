@@ -34,7 +34,7 @@ const jsonLd = {
 };
 
 const steps = [
-  { icon: Upload, title: 'Upload your photos', body: 'Share 10–20 selfies (minimum 8). Slightly soft or out-of-focus shots are fine as long as your face is visible.' },
+  { icon: Upload, title: 'Upload your photos', body: 'Share 4–10 selfies. Slightly soft or out-of-focus shots are fine as long as your face is visible.' },
   { icon: Sparkles, title: 'AI rebuilds sharp detail', body: 'Our AI learns your features across all your photos and generates new headshots with crisp focus.' },
   { icon: Check, title: 'Download sharp headshots', body: 'Get high-resolution results ready for LinkedIn, résumés and company pages.' },
 ];

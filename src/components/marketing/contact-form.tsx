@@ -5,7 +5,7 @@ import { useState } from 'react';
 const departments = ['General', 'Sales / Enterprise', 'Support', 'Press / Media', 'Partnerships'];
 
 const fieldClass =
-  'mt-2 w-full rounded-tp-button border border-tp-line bg-white px-4 py-3 text-sm text-tp-ink focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/30';
+  'mt-2 w-full rounded-tp-button border border-tp-line bg-white px-4 py-3 text-sm text-tp-ink focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/30 hover:border-tp-bronze/60 placeholder:text-tp-muted [&:user-invalid]:border-red-600 [&:user-invalid]:ring-red-600/20';
 
 export function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
@@ -44,13 +44,13 @@ export function ContactForm() {
           <svg className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" /></svg>
         </span>
         <h3 className="mt-4 font-display text-xl font-normal text-tp-ink">Message sent</h3>
-        <p className="mt-2 text-sm text-tp-muted">Thanks for reaching out. We will get back to you by email within 24 hours.</p>
+        <p className="mt-2 text-sm text-tp-muted">Thanks for reaching out. We aim to reply by email within 1 business day.</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-6 rounded-tp-card border border-tp-line bg-white p-6 shadow-sm sm:p-10">
+    <form onSubmit={onSubmit} aria-busy={status === 'sending'} className="space-y-6 rounded-tp-card border border-tp-line bg-white p-6 shadow-sm sm:p-10">
       <label className="block text-sm font-medium text-tp-ink">
         Department *
         <select name="department" required defaultValue="General" className={fieldClass}>
@@ -66,7 +66,7 @@ export function ContactForm() {
         </label>
         <label className="block text-sm font-medium text-tp-ink">
           Email *
-          <input name="email" type="email" required maxLength={254} autoComplete="email" className={fieldClass} />
+          <input name="email" type="email" required placeholder="you@example.com" maxLength={254} autoComplete="email" className={fieldClass} />
         </label>
       </div>
       <label className="block text-sm font-medium text-tp-ink">
@@ -75,15 +75,15 @@ export function ContactForm() {
       </label>
       <label className="block text-sm font-medium text-tp-ink">
         Message *
-        <textarea name="message" required maxLength={5000} rows={6} className={fieldClass} />
+        <textarea name="message" required maxLength={5000} rows={6} placeholder="How can we help?" className={fieldClass} />
       </label>
       {status === 'error' && (
-        <p role="alert" className="text-sm text-red-700">{error}</p>
+        <p role="alert" className="rounded-tp-button border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">{error}</p>
       )}
       <button
         type="submit"
         disabled={status === 'sending'}
-        className="inline-flex w-full sm:w-auto items-center justify-center rounded-tp-button bg-tp-black px-8 py-3.5 text-sm font-semibold text-tp-bronze shadow-sm transition-all hover:bg-tp-black/90 disabled:opacity-60"
+        className="inline-flex w-full sm:w-auto items-center justify-center rounded-tp-button bg-tp-black px-8 py-3.5 text-sm font-semibold text-tp-bronze shadow-sm transition-all hover:bg-tp-black/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status === 'sending' ? 'Sending...' : 'Send Message'}
       </button>

@@ -86,7 +86,7 @@ const whyCards = [
     icon: LayoutGrid,
     title: 'More Categories',
     description:
-      'Choose from 11 distinct photo categories including business, dating, pet portraits, and e-commerce, well beyond a headshot-only workflow.',
+      'Choose from 12 distinct photo categories including business, dating, pet portraits, and e-commerce, well beyond a headshot-only workflow.',
   },
   {
     icon: Target,

@@ -666,7 +666,7 @@ export const blogPosts: BlogPost[] = [
       <p>Finally, think about the consequences of a miss. If a studio session produces only one or two usable frames, you may have to book again. If an AI run produces results that do not look quite like you, the usual fix is to upload better source photos and regenerate. Either way, take the review step seriously. Ask a trusted colleague or friend to pick their favorites, because other people often choose a better photo of you than you would choose yourself.</p>
 
       <h2>Try an AI Headshot With TailorPic</h2>
-      <p>If the AI route sounds right for you, TailorPic makes it straightforward. Upload a handful of selfies, choose from 11 photo categories including <a href="/styles">professional headshots</a>, and receive your portraits typically within a couple of hours. Plans begin at $1.99, your uploads are automatically deleted after 30 days, and there is a satisfaction guarantee if you are not happy. Have questions first? The <a href="/faq">FAQ</a> covers the most common ones, and you can read more <a href="/about">about TailorPic</a>. When you are ready, <a href="/auth/register">upload your selfies</a> and see the results for yourself.</p>
+      <p>If the AI route sounds right for you, TailorPic makes it straightforward. Upload a handful of selfies, choose from 12 photo categories including <a href="/styles">professional headshots</a>, and receive your portraits typically within a couple of hours. Plans begin at $1.99, your uploads are automatically deleted after 30 days, and there is a satisfaction guarantee if you are not happy. Have questions first? The <a href="/faq">FAQ</a> covers the most common ones, and you can read more <a href="/about">about TailorPic</a>. When you are ready, <a href="/auth/register">upload your selfies</a> and see the results for yourself.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-03-15',
@@ -1028,7 +1028,7 @@ export const blogPosts: BlogPost[] = [
       <p>Think, too, about the full set of materials that will carry your image. Your firm's website, your bar directory listing, your conference bio and your email signature all benefit from the same photo, or at least from photos with the same look. When prospective clients see a consistent face and style in every place they encounter you, they perceive stability, which is a quality people look for in legal counsel. Keep a high-resolution master file and a few pre-cropped versions so you are never tempted to substitute a low-quality image at the last minute.</p>
 
       <h2>Get a Professional Attorney Headshot With TailorPic</h2>
-      <p>TailorPic generates polished, professional headshots from a handful of selfies, with styles suited to legal and corporate settings. Choose from 11 photo categories, including <a href="/styles">professional headshots</a>, and receive your portraits typically within a couple of hours. Plans start at $1.99, your uploaded photos are automatically deleted after 30 days, and you are covered by a satisfaction guarantee. Review plans on the <a href="/pricing">pricing page</a>, see the <a href="/faq">FAQ</a> or <a href="/about">learn more about us</a>, then <a href="/auth/register">upload your selfies</a> to get started.</p>
+      <p>TailorPic generates polished, professional headshots from a handful of selfies, with styles suited to legal and corporate settings. Choose from 12 photo categories, including <a href="/styles">professional headshots</a>, and receive your portraits typically within a couple of hours. Plans start at $1.99, your uploaded photos are automatically deleted after 30 days, and you are covered by a satisfaction guarantee. Review plans on the <a href="/pricing">pricing page</a>, see the <a href="/faq">FAQ</a> or <a href="/about">learn more about us</a>, then <a href="/auth/register">upload your selfies</a> to get started.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-06-01',
@@ -3572,7 +3572,7 @@ export const blogPosts: BlogPost[] = [
       <p>AI headshot generators bridge this gap. For a fraction of studio costs your entire team can have consistent, polished portraits that project the professionalism your mission deserves.</p>
 
       <h2>Building Donor Trust Through Visuals</h2>
-      <p>Research shows that websites with real team photos receive more engagement than those with stock images. When a potential donor sees the faces behind the mission, they connect with your organization on a personal level. Consistent backgrounds and lighting across all team photos reinforce brand cohesion.</p>
+      <p>Many organizations find that real team photos feel more personal than stock images. When a potential donor sees the faces behind the mission, they connect with your organization on a personal level. Consistent backgrounds and lighting across all team photos reinforce brand cohesion.</p>
       <p>This is especially important for small nonprofits competing for grant funding. A polished online presence can be the deciding factor when a foundation evaluates your organizational capacity.</p>
 
       <h2>Getting Your Team on Board</h2>
@@ -3588,7 +3588,7 @@ export const blogPosts: BlogPost[] = [
       <p>That savings compounds when you factor in the time staff spend organizing shoots, reviewing proofs and handling retakes.</p>
 
       <h2>Getting Started</h2>
-      <p>Start by asking each team member for 10 to 20 clear, well-lit selfies (minimum 8) — natural light, plain background, no sunglasses. Upload them to TailorPic's <a href="/editor">AI Photo Editor</a>, pick a style that matches your brand and download the results. Update your website, social channels and annual report in a single afternoon.</p>
+      <p>Start by asking each team member for 4 to 10 clear, well-lit selfies — natural light, plain background, no sunglasses. Upload them to TailorPic's <a href="/editor">AI Photo Editor</a>, pick a style that matches your brand and download the results. Update your website, social channels and annual report in a single afternoon.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-12-25',
@@ -3657,7 +3657,7 @@ export const blogPosts: BlogPost[] = [
       <p>Our <a href="/blog/executive-headshot-guide">executive headshot guide</a> covers posing and wardrobe in detail.</p>
 
       <h2>A Practical Rollout Plan</h2>
-      <p>Send a short instruction sheet asking everyone for 10 to 20 clear, well-lit selfies (minimum 8) with a plain background. Have each person upload them to the <a href="/editor">TailorPic editor</a>, choose the agreed style and share their favorite result. Collect the finals in a shared folder and update your site, deck and social profiles in one go.</p>
+      <p>Send a short instruction sheet asking everyone for 4 to 10 clear, well-lit selfies with a plain background. Have each person upload them to the <a href="/editor">TailorPic editor</a>, choose the agreed style and share their favorite result. Collect the finals in a shared folder and update your site, deck and social profiles in one go.</p>
       <p>Repeat the process for each new hire during onboarding so your team page never falls out of date. Start at <a href="/">tailorpic.com</a>.</p>
     `,
     author: 'TailorPic Team',
@@ -4083,7 +4083,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h2>How to Get Your Perfect Industry Headshot</h2>
-      <p>TailorPic offers 11 photo categories including business, creative, dating and more. Upload a few selfies and receive up to 160 professional photos tailored to your needs. <a href="/auth/register">Get started from $1.99</a>.</p>
+      <p>TailorPic offers 12 photo categories including business, creative, dating and more. Upload a few selfies and receive up to 160 professional photos tailored to your needs. <a href="/auth/register">Get started from $1.99</a>.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-02-22',

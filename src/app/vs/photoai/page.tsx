@@ -75,7 +75,7 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is TailorPic cheaper than PhotoAI?", answer: "Yes for most headshot needs. TailorPic starts from $1.99, while PhotoAI is a subscription starting at approximately $29 per month. PhotoAI pricing may change, so check their site." },
+  { question: "Is TailorPic cheaper than PhotoAI?", answer: "Our entry price is lower, but the packages are not like-for-like: TailorPic starts from $1.99 for a single photo and goes up to 160 photos, while PhotoAI is a subscription starting at approximately $29 per month. PhotoAI pricing may change, so check their site." },
   { question: "Is PhotoAI only for headshots?", answer: "No. PhotoAI generates various types of AI photos, not just headshots. TailorPic is focused on headshots and profile photos." },
   { question: "Is TailorPic a subscription?", answer: "No. TailorPic packages are one-time payments starting at $1.99 with no recurring fees." },
   { question: "How many photos does TailorPic include?", answer: "TailorPic includes photos across 12 categories, delivered within 24 hours." },

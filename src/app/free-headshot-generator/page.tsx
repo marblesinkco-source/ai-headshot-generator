@@ -53,7 +53,7 @@ const steps = [
     icon: Upload,
     title: 'Upload your selfies',
     description:
-      'Add 10-20 casual selfies from your phone (minimum 8). Good light and a clear view of your face is all you need.',
+      'Add 4-10 casual selfies from your phone. Good light and a clear view of your face is all you need.',
   },
   {
     icon: Sparkles,
@@ -135,7 +135,7 @@ const faqs = [
   {
     question: 'What do I need to get started?',
     answer:
-      'Upload 10-20 selfies from your phone (minimum 8). Use good natural light, face the camera, and include a few different angles and expressions.',
+      'Upload 4-10 selfies from your phone. Use good natural light, face the camera, and include a few different angles and expressions.',
   },
   {
     question: 'How many photos do I get?',

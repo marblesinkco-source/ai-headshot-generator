@@ -41,7 +41,7 @@ const productJsonLd = {
 };
 
 const intro =
-  "Supawork AI is an AI suite where headshots are one feature among many tools. TailorPic is built around one job: a simple one-time price, LoRA-trained likeness and 11 photo categories.";
+  "Supawork AI is an AI suite where headshots are one feature among many tools. TailorPic is built around one job: a simple one-time price, LoRA-trained likeness and 12 photo categories.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Varies by plan; check their site" },

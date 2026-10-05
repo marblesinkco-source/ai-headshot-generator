@@ -91,17 +91,17 @@ export default function BillingClient() {
       <div className="grid gap-4 sm:grid-cols-3">
         <div className="rounded-tp-dialog border border-tp-line bg-white p-6">
           <p className="text-sm font-medium text-tp-muted">Total Spent</p>
-          <p className="mt-2 text-3xl font-bold text-tp-ink">
+          <p className="mt-2 font-display text-3xl font-normal text-tp-ink">
             {formatPrice(totalSpent)}
           </p>
         </div>
         <div className="rounded-tp-dialog border border-tp-line bg-white p-6">
           <p className="text-sm font-medium text-tp-muted">Total Orders</p>
-          <p className="mt-2 text-3xl font-bold text-tp-ink">{orders.length}</p>
+          <p className="mt-2 font-display text-3xl font-normal text-tp-ink">{orders.length}</p>
         </div>
         <div className="rounded-tp-dialog border border-tp-line bg-white p-6">
           <p className="text-sm font-medium text-tp-muted">Completed</p>
-          <p className="mt-2 text-3xl font-bold text-tp-ink">{completedCount}</p>
+          <p className="mt-2 font-display text-3xl font-normal text-tp-ink">{completedCount}</p>
         </div>
       </div>
 

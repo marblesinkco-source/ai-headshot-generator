@@ -8,7 +8,7 @@ import { getActiveCategories, type Category } from '@/config/categories';
 import { categoryVisuals } from '@/config/category-visuals';
 import { formatPrice } from '@/lib/utils';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -32,7 +32,7 @@ export function Pricing() {
   const hasExpress = packages.length >= 4 && entryPackage !== undefined;
 
   return (
-    <section id="pricing" className="relative bg-tp-paper/40 py-tp-section lg:py-tp-section-lg">
+    <section id="pricing" className="relative bg-tp-paper/40 py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="mx-auto max-w-2xl text-center">
@@ -59,7 +59,7 @@ export function Pricing() {
                 'rounded-full px-4 py-2 text-sm font-medium transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink',
                 activeCategory.id === cat.id
                   ? 'bg-tp-black text-tp-bronze shadow-md'
-                  : 'bg-white text-tp-muted hover:bg-tp-paper border border-tp-line'
+                  : 'bg-white text-tp-muted hover:-translate-y-0.5 hover:border-tp-bronze hover:bg-tp-paper border border-tp-line'
               )}
             >
               <span className="inline-block w-5 h-5 rounded-full overflow-hidden flex-shrink-0">
@@ -105,7 +105,7 @@ export function Pricing() {
               <Card
                 key={pkg.id}
                 className={cn(
-                  'relative flex flex-col',
+                  'relative flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0',
                   isRecommended &&
                     'z-10 border-tp-bronze bg-white shadow-xl shadow-tp-bronze/20 ring-2 ring-tp-bronze/60 scale-[1.02] lg:scale-105',
                   isExpress &&
@@ -143,7 +143,7 @@ export function Pricing() {
                     </span>
                     <span className="text-sm text-tp-muted">one-time</span>
                   </div>
-                  {pkg.outputCount > 0 && (
+                  {pkg.outputCount > 1 && (
                     <p className="mt-1 text-[12px] text-tp-muted">
                       That&apos;s just {formatPrice(Math.round(pkg.price / pkg.outputCount))} per photo
                     </p>
@@ -155,17 +155,11 @@ export function Pricing() {
                   <div className="rounded-xl bg-tp-paper p-4 text-sm">
                     <div className="flex justify-between py-1">
                       <span className="text-tp-muted">{activeCategory.outputLabel}</span>
-                      <span className="font-semibold text-tp-black">{pkg.outputCount}+</span>
+                      <span className="font-semibold text-tp-black">{pkg.outputCount}</span>
                     </div>
                     <div className="flex justify-between border-t border-tp-line/50 py-1 pt-2">
                       <span className="text-tp-muted">AI Training</span>
                       <span className="font-semibold text-tp-black">Personalized</span>
-                    </div>
-                    <div className="flex justify-between border-t border-tp-line/50 py-1 pt-2">
-                      <span className="text-tp-muted">Resolution</span>
-                      <span className="font-semibold uppercase text-tp-black">
-                        {isExpress ? 'Standard' : pkg.price >= 5000 ? '4K' : 'HD'}
-                      </span>
                     </div>
                   </div>
 
@@ -183,18 +177,17 @@ export function Pricing() {
                 </CardContent>
 
                 <CardFooter className="flex-col items-stretch">
-                  <Link href={`/auth/register?redirect=/${activeCategory.slug}`} className="w-full">
-                    <Button
-                      variant={isRecommended ? 'primary' : 'outline'}
-                      className={cn(
-                        'w-full',
-                        isRecommended &&
-                          'h-12 bg-tp-black text-tp-paper font-semibold hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl hover:animate-cta-pulse motion-reduce:hover:animate-none',
-                        isExpress && 'border-tp-bronze/50 text-tp-bronze-ink hover:bg-tp-bronze/5'
-                      )}
-                    >
-                      {isExpress ? 'Try It' : 'Get Started'}
-                    </Button>
+                  <Link
+                    href={`/auth/register?redirect=/${activeCategory.slug}`}
+                    className={cn(
+                      buttonVariants({ variant: isRecommended ? 'primary' : 'outline' }),
+                      'w-full transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze',
+                      isRecommended &&
+                        'h-12 bg-tp-black text-tp-paper font-semibold hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl hover:animate-cta-pulse motion-reduce:hover:animate-none',
+                      isExpress && 'border-tp-bronze/50 text-tp-bronze-ink hover:bg-tp-bronze/5'
+                    )}
+                  >
+                    {isExpress ? 'Try It' : 'Get Started'}
                   </Link>
                   <p className="mt-3 flex w-full items-center justify-center gap-1 text-xs text-tp-muted">
                     <Lock className="h-3 w-3" aria-hidden="true" />

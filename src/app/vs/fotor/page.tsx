@@ -92,7 +92,7 @@ const whyCards = [
   },
   {
     icon: LayoutGrid,
-    title: '11 Categories, Up to 160 Photos',
+    title: '12 Categories, Up to 160 Photos',
     description:
       'Get a full set of photos across 12 categories including business, dating, pet portraits, and e-commerce, with no editing skills required.',
   },

@@ -73,7 +73,7 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is TailorPic cheaper than HeadshotsByAI?", answer: "Yes. TailorPic starts from $1.99, compared with around $29 for HeadshotsByAI. Both avoid subscriptions." },
+  { question: "Is TailorPic cheaper than HeadshotsByAI?", answer: "Our entry price is lower, but the packages are not like-for-like: TailorPic starts from $1.99 for a single photo and goes up to 160 photos, compared with around $29 for HeadshotsByAI. Both avoid subscriptions." },
   { question: "Do I get more photos with HeadshotsByAI?", answer: "HeadshotsByAI includes 100+ headshots versus up to 160 from TailorPic. TailorPic spreads its photos over 12 categories." },
   { question: "Which delivers faster?", answer: "HeadshotsByAI delivers in about 10 minutes. TailorPic delivers within 24 hours because it fine-tunes a LoRA model for each customer." },
   { question: "Does TailorPic offer edit credits?", answer: "TailorPic focuses on fine-tuning a model of your face to get accurate results from the start. HeadshotsByAI offers edit credits for adjustments after generation." },
@@ -104,7 +104,7 @@ export default function Page() {
               TailorPic <span className="text-tp-bronze">vs</span> {competitor}
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">
-              HeadshotsByAI is a one-time purchase with 100+ headshots and edit credits. TailorPic starts from $1.99 and covers 11 photo categories.
+              HeadshotsByAI is a one-time purchase with 100+ headshots and edit credits. TailorPic starts from $1.99 and covers 12 photo categories.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

@@ -116,7 +116,7 @@ export default function FAQPage() {
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl text-tp-black">Still Have Questions?</h2>
           <p className="mt-4 text-tp-muted">
-            Our support team is happy to help. Reach out and we will get back to you within hours.
+            Our support team is happy to help. Reach out and we aim to respond within 1 business day.
           </p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link

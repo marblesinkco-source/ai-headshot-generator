@@ -326,14 +326,14 @@ function RegisterContent() {
 
             {/* Trust signals */}
             <ul className="mt-5 grid grid-cols-1 gap-2 rounded-tp-button border border-tp-line bg-tp-paper px-4 py-3 text-xs text-tp-ink sm:grid-cols-3 sm:gap-1 sm:text-center">
-              {['Secure checkout', 'Ready in under 2 hours'].map((t) => (
+              {['Secure checkout via Stripe', 'No subscription'].map((t) => (
                 <li key={t} className="flex items-center gap-1.5 sm:flex-col sm:gap-1">
                   <Check className="h-3.5 w-3.5 shrink-0 text-tp-bronze-ink" aria-hidden="true" />
                   <span className="font-medium">{t}</span>
                 </li>
               ))}
             </ul>
-            <p className="mt-3 text-center text-xs text-tp-muted">256-bit encryption &middot; Your photos stay private</p>
+            <p className="mt-3 text-center text-xs text-tp-muted">See our Privacy Policy for how your photos are handled</p>
 
             <p className="mt-3 text-center text-xs text-tp-muted">
               By signing up, you agree to our{' '}
@@ -366,7 +366,7 @@ function RegisterContent() {
           </h2>
 
           <ul className="space-y-5 mb-10">
-            {['Upload selfies, get professional photos', 'Up to 160 photos per session', 'Ready in about 2 hours'].map((t) => (
+            {['Upload selfies, get professional photos', 'Up to 160 photos per session', 'Delivered to your dashboard'].map((t) => (
               <li key={t} className="flex items-start gap-3">
                 <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-tp-bronze/20">
                   <Check className="h-3 w-3 text-tp-bronze" />
@@ -382,7 +382,7 @@ function RegisterContent() {
               Studio-quality headshots without the studio. Skip the photographer, keep the polish.
             </blockquote>
             <figcaption className="mt-4 text-xs text-tp-beige/80">
-              From $1.99 &middot; No subscription &middot; Ready in under 2 hours
+              From $1.99 &middot; No subscription
             </figcaption>
           </figure>
         </div>

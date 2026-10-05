@@ -47,7 +47,7 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
       },
       {
         title: 'Ready in Hours, Not Days',
-        description: 'Skip the booking, commute, and editing wait. Get results the same day.',
+        description: 'Skip the booking, commute, and retouching queue. Most orders are ready in about 2 hours.',
         icon: '⚡',
       },
       {
@@ -57,7 +57,7 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
       },
       {
         title: 'Fraction of the Cost',
-        description: 'Professional headshot sessions cost $200–$500+. Start here from $1.99.',
+        description: 'Skip the studio booking. Try one photo from $1.99, or go up to 160 photos on the largest package.',
         icon: '💰',
       },
     ],
@@ -84,11 +84,11 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
       },
       {
         question: 'What if I am not satisfied?',
-        answer: 'We offer a satisfaction guarantee. If you are not happy with your results, contact our support team for a full refund.',
+        answer: 'Every package includes regenerations, and our support team will work with you until the photos are right. See our Quality Promise for details.',
       },
       {
         question: 'Do you keep my photos?',
-        answer: 'Your uploaded photos and generated headshots are automatically deleted within 30 days. We never use your photos for training or share them with third parties.',
+        answer: 'Your uploaded photos and temporary training data are deleted within 30 days of order completion. See our Privacy Policy for the full details.',
       },
     ],
     howItWorks: [
@@ -102,8 +102,8 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
     benefitsHeadline: 'Stand Out on Every Dating App',
     benefits: [
       {
-        title: 'More Matches, Guaranteed',
-        description: 'Quality photos are the #1 factor in getting matches. Look your best without looking fake.',
+        title: 'Photos That Look Like You',
+        description: 'Show up as the best, most recent version of yourself, not a heavily filtered one.',
         icon: '💘',
       },
       {
@@ -123,7 +123,7 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
       },
     ],
     useCases: [
-      { title: 'Tinder', description: 'Eye-catching photos that make people swipe right.' },
+      { title: 'Tinder', description: 'Clear, friendly photos for your first slot.' },
       { title: 'Bumble', description: 'Show confidence and authenticity in your profile.' },
       { title: 'Hinge', description: 'Fill every prompt slot with a great photo.' },
       { title: 'Coffee Meets Bagel', description: 'Quality photos that match a quality conversation.' },
@@ -137,11 +137,11 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
       },
       {
         question: 'How many photos should I use on my profile?',
-        answer: 'Dating experts recommend 5–7 photos showing variety. Our packages give you plenty to choose from.',
+        answer: 'Most profiles work well with a handful of varied photos: a clear face shot, a full-body shot, and a few that show your interests. Our packages give you plenty to choose from.',
       },
       {
         question: 'Can people tell these are AI-generated?',
-        answer: 'Our photos are designed to look natural and authentic. They are indistinguishable from photos taken by a skilled photographer.',
+        answer: 'The photos are AI-generated and designed to look natural. Some apps ask you to use recent, accurate photos of yourself, so choose images that still look like you.',
       },
       {
         question: 'What kind of selfies should I upload?',
@@ -149,13 +149,13 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
       },
       {
         question: 'Do you keep my photos private?',
-        answer: 'Absolutely. Your photos are automatically deleted within 30 days and are never shared or used for training.',
+        answer: 'Your uploaded photos and temporary training data are deleted within 30 days of order completion. See our Privacy Policy for details.',
       },
     ],
     howItWorks: [
       { step: '1', title: 'Upload Your Photos', description: 'Upload 5–10 casual selfies. Mix close-ups and full body shots for best variety.' },
       { step: '2', title: 'AI Creates Your Profile Photos', description: 'Our AI generates natural-looking photos with flattering lighting, diverse settings, and authentic expressions.' },
-      { step: '3', title: 'Update Your Profile', description: 'Download your favorites and watch the matches roll in. Works with Tinder, Bumble, Hinge, and more.' },
+      { step: '3', title: 'Update Your Profile', description: 'Download your favorites and update your profile. Use them on Tinder, Bumble, Hinge, and any other app.' },
     ],
   },
 
@@ -179,7 +179,7 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
       },
       {
         title: 'Any Pet Welcome',
-        description: 'Dogs, cats, rabbits, birds — if you can photograph it, we can portrait it.',
+        description: 'Dogs, cats, rabbits, birds and more. If your pet\'s face is clearly visible in your photos, you can start.',
         icon: '🐾',
       },
     ],
@@ -225,7 +225,7 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
       },
       {
         title: 'No Scheduling Hassle',
-        description: 'Skip coordinating a photographer for 50 people. Each person uploads on their own time.',
+        description: 'Skip coordinating a photographer for the whole team. Each person uploads on their own time.',
         icon: '📅',
       },
       {
@@ -234,8 +234,8 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
         icon: '🏢',
       },
       {
-        title: 'Massive Cost Savings',
-        description: 'Professional team photo sessions cost $100+ per person. Get it for as low as $13/person.',
+        title: 'Lower Cost Per Person',
+        description: 'Per-person cost drops as your team grows, with no photographer to schedule.',
         icon: '💵',
       },
     ],
@@ -285,8 +285,8 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
         icon: '🌸',
       },
       {
-        title: 'Instant Download',
-        description: 'No waiting for a designer. Get your invitations in hours, ready to send.',
+        title: 'Download When Ready',
+        description: 'No back-and-forth with a designer. Download your invitations when they are ready and send them.',
         icon: '⚡',
       },
       {
@@ -308,7 +308,7 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
       },
       {
         question: 'Can I customize the text?',
-        answer: 'Popular and Premium packages include editable text, so you can add your event details, date, and custom message.',
+        answer: 'The Popular package includes editable text, so you can add your event details, date, and custom message.',
       },
       {
         question: 'What themes are available?',
@@ -330,8 +330,8 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
     benefitsHeadline: 'Celebrate Your Achievement',
     benefits: [
       {
-        title: 'Cap & Gown Included',
-        description: 'AI adds academic regalia perfectly matched to your school colors.',
+        title: 'Cap & Gown Added for You',
+        description: 'AI adds a cap and gown for you. Popular adds multiple gown colors, and Premium adds custom school colors.',
         icon: '🎓',
       },
       {
@@ -345,8 +345,8 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
         icon: '📨',
       },
       {
-        title: 'Affordable Alternative',
-        description: 'Professional graduation photography costs $150+. Start here from $19.90.',
+        title: 'No Studio Appointment',
+        description: 'Start from $19.90 for 10 photos, with no studio appointment.',
         icon: '💰',
       },
     ],
@@ -360,7 +360,7 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
     faqItems: [
       {
         question: 'Will the cap and gown match my school?',
-        answer: 'Premium packages include custom school color matching. Express and Basic packages use standard black academic regalia.',
+        answer: 'Premium includes custom school colors. Popular includes multiple gown colors. See the package list above for what each tier offers.',
       },
       {
         question: 'Can I choose different backgrounds?',
@@ -386,8 +386,8 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
     benefitsHeadline: 'Spread Joy with Custom Cards',
     benefits: [
       {
-        title: 'Every Holiday Covered',
-        description: 'Christmas, Eid, Bayram, New Year, Thanksgiving — designs for every celebration.',
+        title: 'Many Celebrations',
+        description: 'Christmas, Eid, Bayram, New Year, Thanksgiving and more.',
         icon: '🎄',
       },
       {
@@ -416,7 +416,7 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
     faqItems: [
       {
         question: 'What holidays do you support?',
-        answer: 'We offer designs for Christmas, Eid/Bayram, New Year, Thanksgiving, Hanukkah, Diwali, and more. Premium packages include all holiday themes.',
+        answer: 'We offer designs for Christmas, Eid/Bayram, New Year, Thanksgiving and more. Express and Basic include a limited number of themes; Popular and Premium include all of them.',
       },
       {
         question: 'Can I include my pets in the card?',
@@ -513,8 +513,8 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
         icon: '💑',
       },
       {
-        title: 'Engagement Session Alternative',
-        description: 'Professional engagement sessions cost $300+. Start here from $19.90.',
+        title: 'No Session to Schedule',
+        description: 'Start from $19.90 for 10 photos, with no session to schedule.',
         icon: '💍',
       },
     ],
@@ -564,13 +564,13 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
         icon: '🛋️',
       },
       {
-        title: 'MLS-Ready Quality',
-        description: 'High-resolution output that meets MLS listing requirements.',
+        title: 'High-Resolution Output',
+        description: 'High-resolution output for listing sites. Check your local MLS rules, and disclose virtual staging.',
         icon: '📋',
       },
       {
-        title: '10x Cheaper Than Physical Staging',
-        description: 'Physical staging costs $2,000–$5,000+ per property. Virtual staging starts at $19.90.',
+        title: 'Virtual Staging From $19.90',
+        description: 'Stage listing photos without renting furniture or scheduling movers. Packages start at $19.90 for 10 photos.',
         icon: '💰',
       },
     ],
@@ -630,7 +630,7 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
       },
       {
         title: 'No Studio Needed',
-        description: 'Professional product photography costs $25–$50 per photo. Start here from $19.90 for 10 photos.',
+        description: 'Skip the studio and the shipping. Packages start at $19.90 for 10 photos.',
         icon: '💡',
       },
     ],
@@ -670,13 +670,13 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
     benefitsHeadline: 'Your Face, Every Universe',
     benefits: [
       {
-        title: '50+ Unique Styles',
-        description: 'Fantasy, anime, cyberpunk, Renaissance, superhero — every universe imaginable.',
+        title: 'Up to 15 Style Categories',
+        description: 'Fantasy, anime, cyberpunk, Renaissance, superhero and more, depending on your package.',
         icon: '🌌',
       },
       {
-        title: 'Your Exact Likeness',
-        description: 'Not a generic avatar. It is YOUR face, recognizable in every style.',
+        title: 'Built From Your Face',
+        description: 'Not a generic avatar. Your selfies guide every style, so the result is recognizably you.',
         icon: '🪞',
       },
       {
@@ -693,7 +693,7 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
     useCases: [
       { title: 'Profile Pictures', description: 'Unique avatars for social media, Discord, and gaming platforms.' },
       { title: 'Messaging Apps', description: 'Custom stickers and profile photos for WhatsApp, Telegram, and more.' },
-      { title: 'NFT Art', description: 'Create unique avatar art in various artistic styles.' },
+      { title: 'Gaming Profiles', description: 'A custom avatar for your gamer tag and streaming channels.' },
       { title: 'Gift', description: 'Surprise someone with avatars of themselves in fun styles.' },
       { title: 'Content Creation', description: 'Unique character designs for YouTube, Twitch, and social media.' },
     ],
@@ -704,7 +704,7 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
       },
       {
         question: 'Will the avatars look like me?',
-        answer: 'Yes! Our AI preserves your exact facial features and likeness across every avatar style.',
+        answer: 'The AI is trained on your selfies to keep your likeness across styles. Results vary by style and by the quality of your uploads.',
       },
       {
         question: 'What styles are available?',

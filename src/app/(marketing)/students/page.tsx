@@ -61,7 +61,7 @@ const faqs = [
   {
     question: 'How many selfies do I need to upload?',
     answer:
-      'Upload 10 to 20 clear selfies from different angles (minimum 8). Well-lit photos with your face clearly visible produce the best results. Your phone camera is all you need.',
+      'Upload 4 to 10 clear selfies from different angles. Well-lit photos with your face clearly visible produce the best results. Your phone camera is all you need.',
   },
   {
     question: 'Can I use the same headshot for LinkedIn and graduate school applications?',

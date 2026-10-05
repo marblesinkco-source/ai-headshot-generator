@@ -49,7 +49,7 @@ const pricingFaqs = [
   {
     question: 'Do I need to upload many selfies?',
     answer:
-      'Upload around 10-20 selfies from different angles for the best results. A minimum of 8 photos is required.',
+      'Upload 4 to 10 clear selfies from different angles. More variety gives the AI more to work with, so use the full 10 if you have good shots.',
   },
   {
     question: 'Can I use the headshots commercially?',
@@ -99,7 +99,7 @@ const includedFeatures = [
   {
     title: 'Process',
     items: [
-      'Upload 10-20 selfies (minimum 8)',
+      'Upload 4-10 selfies from your phone',
       'No studio visit, no scheduling',
       'Delivered in hours',
     ],
@@ -222,6 +222,57 @@ export default function PricingPage() {
       <PricingViewToggle individual={<Pricing />} />
 
       <TrustBadges />
+
+      {/* Headshot package ladder */}
+      <section className="py-16" aria-labelledby="ladder-heading">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 id="ladder-heading" className="text-center font-display text-3xl font-normal text-tp-black sm:text-4xl">
+            Headshot packages side by side
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-center text-base text-tp-muted">
+            One-time prices. The cost per photo falls as the package grows.
+          </p>
+          <div className="mt-10 overflow-x-auto rounded-tp-card border border-tp-line bg-white">
+            <table className="w-full min-w-[640px] text-left text-sm">
+              <caption className="sr-only">Headshot packages compared by price, photo count and features</caption>
+              <thead>
+                <tr className="border-b border-tp-line bg-tp-paper text-tp-ink">
+                  <th scope="col" className="px-5 py-4 font-semibold">Package</th>
+                  <th scope="col" className="px-5 py-4 font-semibold">Price</th>
+                  <th scope="col" className="px-5 py-4 font-semibold">Photos</th>
+                  <th scope="col" className="px-5 py-4 font-semibold">Per photo</th>
+                  <th scope="col" className="px-5 py-4 font-semibold">Included</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-tp-line">
+                {HEADSHOT_PACKAGES.map((p) => (
+                  <tr
+                    key={p.id}
+                    className={
+                      p.recommended
+                        ? 'bg-tp-bronze/10 transition-colors'
+                        : 'transition-colors hover:bg-tp-paper/60'
+                    }
+                  >
+                    <th scope="row" className="px-5 py-4 font-medium text-tp-ink">
+                      {p.name}
+                      {p.recommended && (
+                        <span className="ml-2 rounded-full bg-tp-black px-2 py-0.5 text-xs font-semibold text-tp-bronze">
+                          Recommended
+                        </span>
+                      )}
+                    </th>
+                    <td className="px-5 py-4 font-semibold text-tp-ink">{formatPrice(p.price, 'usd')}</td>
+                    <td className="px-5 py-4 text-tp-muted">{p.outputCount}</td>
+                    <td className="px-5 py-4 text-tp-muted">{formatPrice(Math.round(p.price / p.outputCount), 'usd')}</td>
+                    <td className="px-5 py-4 text-tp-muted">{p.features.join(', ')}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
 
       {/* Feature comparison */}
       <section className="py-16" aria-labelledby="compare-heading">

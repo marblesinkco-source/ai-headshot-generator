@@ -326,9 +326,9 @@ export default function EnterprisePage() {
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 text-center">
             {[
               { value: '40+', label: 'Photos per person' },
-              { value: '< 2hrs', label: 'From upload to download' },
+              { value: '~2 hrs', label: 'Typical upload to download' },
               { value: '$29', label: 'Per person for 16-50 teams' },
-              { value: '100%', label: 'Consistent team look' },
+              { value: '1 style', label: 'Shared across your whole team' },
             ].map((stat) => (
               <div key={stat.label}>
                 <p className="text-3xl font-bold text-tp-bronze sm:text-4xl">{stat.value}</p>

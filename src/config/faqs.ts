@@ -15,7 +15,7 @@ export const faqs = [
     category: 'Product',
     question: 'How good is the quality compared to a real photographer?',
     answer:
-      'Our AI produces studio-quality results that are virtually indistinguishable from professional photography. We use state-of-the-art generative AI trained on millions of professional portraits. The Executive plan delivers images in 4K resolution, suitable for print and large displays.',
+      'Our AI aims for studio-style results, and quality depends heavily on the selfies you upload. Every package includes HD resolution, and the Executive plan delivers 4K, suitable for print and large displays. Results are AI-generated portraits, so review them before using them professionally.',
   },
   {
     category: 'Product',
@@ -27,7 +27,7 @@ export const faqs = [
     category: 'Privacy',
     question: 'Is my data private and secure?',
     answer:
-      'Absolutely. Your photos are encrypted in transit and at rest. We never share your images with third parties. Your AI model and all generated photos are automatically deleted from our servers 30 days after delivery. You can also request immediate deletion at any time.',
+      'Yes. Your photos are encrypted in transit and at rest. We never sell your images, and they are processed only by the service providers listed on our Subprocessors page, solely to generate your results. Your AI model and all generated photos are automatically deleted from our servers 30 days after delivery. You can also request immediate deletion at any time.',
   },
   {
     category: 'Privacy',
@@ -75,13 +75,13 @@ export const faqs = [
     category: 'Privacy',
     question: 'Do you sell or share my photos?',
     answer:
-      'No. We never sell or share your photos with third parties. They are used only to generate your headshots. See our Security page and Privacy Policy for details.',
+      'No. We never sell your photos. They are used only to generate your headshots and are processed only by the providers on our Subprocessors page. See our Security page and Privacy Policy for details.',
   },
   {
     category: 'Privacy',
     question: 'How are my photos encrypted?',
     answer:
-      'Your data is encrypted in transit with TLS 1.3 and at rest with AES-256.',
+      'Your data is encrypted in transit (TLS) and at rest. See our Security page for details.',
   },
   {
     category: 'Privacy',
@@ -93,7 +93,7 @@ export const faqs = [
     category: 'Delivery',
     question: 'Can I get my photos faster?',
     answer:
-      'The Lite ($9.90) and Basic ($19.90) packages include 24-hour delivery. Most other orders are completed within 2 hours, and you will receive an email as soon as your photos are ready to download.',
+      'Most orders are completed within about 2 hours, and you will receive an email as soon as your photos are ready to download. Lite ($9.90) and Basic ($19.90) list 24-hour delivery as their delivery window, so allow up to a day for those. Priority support is included with the Executive package.',
   },
   {
     category: 'Refund',

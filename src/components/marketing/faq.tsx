@@ -32,7 +32,7 @@ export function FAQ() {
   };
 
   return (
-    <section id="faq" className="bg-tp-paper py-tp-section lg:py-tp-section-lg">
+    <section id="faq" className="bg-tp-paper py-20 lg:py-24">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center">

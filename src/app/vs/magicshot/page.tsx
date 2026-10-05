@@ -41,7 +41,7 @@ const productJsonLd = {
 };
 
 const intro =
-  "MagicShot is another AI headshot generator. TailorPic focuses on a simple one-time price, LoRA-trained likeness and 11 photo categories beyond the standard professional headshot.";
+  "MagicShot is another AI headshot generator. TailorPic focuses on a simple one-time price, LoRA-trained likeness and 12 photo categories beyond the standard professional headshot.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Varies by package; check their site" },

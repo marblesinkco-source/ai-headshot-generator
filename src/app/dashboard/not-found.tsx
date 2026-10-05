@@ -4,7 +4,7 @@ export default function DashboardNotFound() {
   return (
     <main id="main-content" className="flex min-h-[60vh] items-center justify-center px-4 py-12">
       <div className="w-full max-w-md rounded-tp-card border border-tp-line bg-white p-8 text-center">
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-tp-bronze-ink">Error 404</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-tp-bronze-ink">Error 404</p>
         <h1 className="mt-3 font-display text-3xl font-normal text-tp-black">Page not found</h1>
         <p className="mt-3 text-sm leading-relaxed text-tp-muted">
           We couldn&apos;t find that page in your dashboard. It may have been moved or removed.

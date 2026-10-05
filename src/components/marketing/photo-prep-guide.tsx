@@ -86,7 +86,7 @@ export function PhotoPrepGuide() {
             How many photos should I upload?
           </p>
           <p className="mx-auto mt-2 max-w-lg text-sm text-tp-muted">
-            Upload <strong className="text-tp-ink">10–20 photos</strong> with
+            Upload <strong className="text-tp-ink">4–10 photos</strong> with
             varied angles, expressions, and lighting. More variety gives our AI
             more to work with — and better results.
           </p>

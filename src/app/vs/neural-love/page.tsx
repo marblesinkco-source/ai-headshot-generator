@@ -100,7 +100,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 const differences = [
   {
     "title": "Focused on your face",
-    "body": "Neural.love is a broad toolbox. TailorPic is purpose-built to keep your likeness across 11 professional categories."
+    "body": "Neural.love is a broad toolbox. TailorPic is purpose-built to keep your likeness across 12 professional categories."
   },
   {
     "title": "No prompt engineering",

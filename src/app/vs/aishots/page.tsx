@@ -41,7 +41,7 @@ const productJsonLd = {
 };
 
 const intro =
-  "AiShots is one of several AI photo generators. TailorPic focuses on a simple one-time price, LoRA-trained likeness and 11 photo categories, so a single upload can cover LinkedIn, dating and creative profiles.";
+  "AiShots is one of several AI photo generators. TailorPic focuses on a simple one-time price, LoRA-trained likeness and 12 photo categories, so a single upload can cover LinkedIn, dating and creative profiles.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Varies by plan; confirm on their site" },
