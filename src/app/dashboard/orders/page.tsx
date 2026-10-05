@@ -165,7 +165,7 @@ export default function OrdersPage() {
                     <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                       <div className="min-w-0 space-y-1">
                         <div className="flex flex-wrap items-center gap-2">
-                          <h2 className="text-base font-semibold capitalize text-tp-ink">
+                          <h2 className="font-display text-base font-normal capitalize text-tp-ink">
                             {pkg ? pkg.name : order.package_id}
                           </h2>
                           <OrderStatusBadge status={order.status} />

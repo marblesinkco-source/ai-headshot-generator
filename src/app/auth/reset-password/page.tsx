@@ -107,7 +107,7 @@ function ResetPasswordContent() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h2 className="mt-4 text-lg font-semibold text-tp-black">Password updated!</h2>
+              <h2 className="font-display mt-4 text-lg font-normal text-tp-black">Password updated!</h2>
               <p className="mt-2 text-sm text-tp-muted">
                 Your password has been reset. Redirecting you to the dashboard...
               </p>
@@ -126,7 +126,7 @@ function ResetPasswordContent() {
             </div>
           ) : (
             <>
-              <h2 className="text-lg font-semibold text-tp-black">Set new password</h2>
+              <h2 className="font-display text-lg font-normal text-tp-black">Set new password</h2>
               <p className="mt-1 text-sm text-tp-muted">
                 Enter your new password below.
               </p>

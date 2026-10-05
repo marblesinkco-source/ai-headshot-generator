@@ -152,7 +152,7 @@ export default function OrderGalleryPage() {
   if (!order) {
     return (
       <div className="py-20 text-center">
-        <h2 className="text-lg font-semibold text-tp-ink">Order not found</h2>
+        <h2 className="font-display text-lg font-normal text-tp-ink">Order not found</h2>
         <p className="mt-2 text-sm text-tp-muted">This order may not exist or you don&apos;t have access.</p>
         <Link href="/dashboard/gallery" className="mt-4 inline-block">
           <Button variant="outline" size="sm">Back to Orders</Button>

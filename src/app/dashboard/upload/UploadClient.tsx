@@ -258,7 +258,7 @@ function UploadContent() {
       {/* Step 1: Category Selection */}
       {currentStep === 1 && (
         <div className="space-y-6">
-          <h2 className="text-lg font-semibold text-tp-black">What would you like to create?</h2>
+          <h2 className="font-display text-lg font-normal text-tp-black">What would you like to create?</h2>
 
           {CATEGORY_GROUPS.map((group) => {
             const groupCategories = activeCategories.filter((c) =>
@@ -319,7 +319,7 @@ function UploadContent() {
               Back
             </button>
             <span className="text-2xl">{category.icon}</span>
-            <h2 className="text-lg font-semibold text-tp-black">
+            <h2 className="font-display text-lg font-normal text-tp-black">
               {category.name} — Choose Your Package
             </h2>
           </div>
@@ -465,7 +465,7 @@ function UploadContent() {
       {currentStep === 3 && orderId && (
         <div className="space-y-6">
           <div>
-            <h2 className="text-lg font-semibold text-tp-black">Upload Your Photos</h2>
+            <h2 className="font-display text-lg font-normal text-tp-black">Upload Your Photos</h2>
             <p className="mt-1 text-sm text-tp-muted">
               {category?.uploadInstructions ||
                 'Upload 4-10 clear photos. Include different angles and expressions for best results.'}

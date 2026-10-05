@@ -75,7 +75,7 @@ export default function CreditsDashboard() {
       {/* Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="font-display text-2xl font-semibold text-tp-black">Credits</h1>
+          <h1 className="font-display text-2xl font-normal text-tp-black">Credits</h1>
           <p className="mt-1 text-sm text-tp-muted">
             Manage your credit balance and view transaction history.
           </p>
@@ -122,7 +122,7 @@ export default function CreditsDashboard() {
 
       {/* Active Packages */}
       <section>
-        <h2 className="mb-4 text-lg font-semibold text-tp-black">Active Packages</h2>
+        <h2 className="font-display mb-4 text-lg font-normal text-tp-black">Active Packages</h2>
         {data.packages.length === 0 ? (
           <div className="rounded-tp-card border border-dashed border-tp-line bg-white p-8 text-center">
             <p className="text-tp-muted">No active credit packages.</p>
@@ -198,7 +198,7 @@ export default function CreditsDashboard() {
 
       {/* Transaction History */}
       <section>
-        <h2 className="mb-4 text-lg font-semibold text-tp-black">Recent Transactions</h2>
+        <h2 className="font-display mb-4 text-lg font-normal text-tp-black">Recent Transactions</h2>
         {data.transactions.length === 0 ? (
           <div className="rounded-tp-card border border-dashed border-tp-line bg-white p-8 text-center">
             <p className="text-tp-muted">No transactions yet.</p>

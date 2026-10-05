@@ -304,7 +304,7 @@ export function InsightsClient() {
                 <span className={`text-xs px-2 py-0.5 rounded-full ${
                   test.status === 'active' ? 'bg-emerald-50 text-emerald-600' :
                   test.status === 'completed' ? 'bg-blue-50 text-blue-600' :
-                  'bg-gray-50 text-gray-600'
+                  'bg-tp-paper text-tp-muted'
                 }`}>
                   {test.status === 'active' ? 'Aktif' : test.status === 'completed' ? 'Tamamlandı' : 'Duraklatıldı'}
                 </span>
