@@ -1,5 +1,39 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-05 (Phase U — Gallery, Guarantee & Conversion Anchoring)
+
+### Baseline
+- HEAD: `df041c2` (Phase T complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### Yeni Bileşenler
+- **guarantee-section.tsx** (YENİ): 3 kartlı garanti bölümü
+  - Satisfaction Guarantee, Secure & Private, One-Time Payment
+  - Inline SVG ikonları (shield, lock, receipt), tp-bronze renk
+  - "Read our full guarantee →" linki /guarantee'ye
+  - Server component, factual copy (uydurma iddia yok)
+
+#### Mevcut Bileşen İyileştirmeleri
+- **stats-counter.tsx**: Kategori sayısı 11+ → 12 düzeltmesi (suffix kaldırıldı)
+- **pricing.tsx**: Per-photo cost tüm paketlerde gösterildi (outputCount>1 → outputCount>0, "That's just" prefix kaldırıldı)
+
+#### Homepage Entegrasyonu (page.tsx)
+- GuaranteeSection: Pricing sonrası, TrustBadges öncesi
+- StatsCounter: HowItWorks sonrası, Pricing öncesi
+
+#### Bug Fix
+- Duplicate `src/app/(marketing)/samples/page.tsx` silindi — mevcut `/samples` route ile çakışıyordu
+
+### Sonuç
+- Commit: `807f3d3` (Phase U features), `9229a0b` (route fix)
+- CI: PASS ✅
+- Vercel: PASS ✅
+- Canlı doğrulama: GuaranteeSection (3 kart), StatsCounter (160/12/<2hrs/$1.99), per-photo pricing ($0.75/$0.62/$0.56) — tümü doğru ✅
+
+---
+
 ## Oturum: 2026-10-05 (Phase T — Conversion Toolkit & Trust Reinforcement)
 
 ### Baseline
