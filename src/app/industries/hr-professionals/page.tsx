@@ -149,7 +149,7 @@ export default function HrProfessionalsIndustryPage() {
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
               You represent your company to every candidate and employee. Get a polished, approachable headshot for LinkedIn, your careers page, and internal profiles, without booking a photo shoot.</p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your HR Headshot
               </Link>
               <Link
@@ -305,7 +305,7 @@ export default function HrProfessionalsIndustryPage() {
             Get a headshot that helps candidates and colleagues feel welcome from the first interaction.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your HR Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

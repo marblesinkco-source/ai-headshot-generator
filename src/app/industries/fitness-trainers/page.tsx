@@ -150,7 +150,7 @@ export default function FitnessTrainersIndustryPage() {
               Clients pick a trainer they believe in. Get a confident, energetic headshot for your profile, booking page, and social feed, without booking a photographer or hitting the studio.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Trainer Headshot
               </Link>
               <Link
@@ -306,7 +306,7 @@ export default function FitnessTrainersIndustryPage() {
             Get a headshot that shows the energy and professionalism you bring to every workout.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Trainer Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

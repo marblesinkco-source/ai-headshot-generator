@@ -150,7 +150,7 @@ export default function AuthorsIndustryPage() {
               Readers connect with the person behind the words. Get a polished author photo for your book jacket, Amazon author page, press kit, and website, without booking a studio session.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Author Headshot
               </Link>
               <Link
@@ -306,7 +306,7 @@ export default function AuthorsIndustryPage() {
             Get a headshot that helps your books and your brand stand out.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Author Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

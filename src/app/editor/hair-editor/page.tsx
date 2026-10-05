@@ -102,7 +102,7 @@ export default function HairEditorPage() {
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-tp-muted sm:text-lg">
             Bad hair day in every selfie? TailorPic&apos;s AI tidies flyaways, adds natural volume and keeps hair looking sharp and professional in your headshots.
           </p>
-          <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ size: 'lg', className: 'mt-8' })}>
+          <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ size: 'lg', className: 'mt-8' })}>
             Try TailorPic AI Headshots
           </Link>
         </div>
@@ -178,7 +178,7 @@ export default function HairEditorPage() {
           <p className="mt-3 text-tp-muted">
             Upload a few selfies and get polished professional headshots in hours, from $1.99.
           </p>
-          <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
+          <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
             Get AI Headshots
           </Link>
         </div>

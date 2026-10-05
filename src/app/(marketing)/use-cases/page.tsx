@@ -318,7 +318,7 @@ export default function UseCasesPage() {
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
-              href="/auth/register?redirect=/headshots"
+              href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
               className={cn(
                 buttonVariants({ size: 'lg' }),
                 'bg-tp-bronze text-tp-black shadow-none hover:bg-tp-bronze/90'

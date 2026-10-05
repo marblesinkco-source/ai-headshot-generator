@@ -101,7 +101,7 @@ export default function ClothingChangerPage() {
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-tp-muted sm:text-lg">
             Casual tees and mismatched outfits undercut a great photo. TailorPic&apos;s AI dresses you in attire that matches industry standards, so your headshot looks ready for work.
           </p>
-          <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ size: 'lg', className: 'mt-8' })}>
+          <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ size: 'lg', className: 'mt-8' })}>
             Try TailorPic AI Headshots
           </Link>
         </div>
@@ -177,7 +177,7 @@ export default function ClothingChangerPage() {
           <p className="mt-3 text-tp-muted">
             Upload a few selfies and get studio-quality professional headshots in hours, from $1.99.
           </p>
-          <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
+          <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
             Get AI Headshots
           </Link>
         </div>

@@ -146,7 +146,7 @@ export default function FinancialAdvisorsIndustryPage() {
               Clients trust you with their wealth. Your headshot is often the first thing they see on your website, LinkedIn, or a referral email. Make it count with a portrait that conveys competence and confidence.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Advisor Headshot
               </Link>
               <Link
@@ -302,7 +302,7 @@ export default function FinancialAdvisorsIndustryPage() {
             Get polished headshots for your firm website, LinkedIn, and client presentations from a few selfies.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Advisor Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

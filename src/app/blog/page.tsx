@@ -255,7 +255,7 @@ export default function BlogPage() {
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="/auth/register?redirect=/headshots"
+              href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
               className="group inline-flex items-center gap-3 rounded-tp-button border border-tp-bronze bg-tp-bronze px-8 py-3.5 text-sm font-semibold text-tp-black shadow-md shadow-tp-bronze/20 transition-all hover:-translate-y-0.5 hover:shadow-lg"
             >
               Get Started

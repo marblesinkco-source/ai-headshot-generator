@@ -102,7 +102,7 @@ export default function RealismEnhancerPage() {
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-tp-muted sm:text-lg">
             Many AI photos look airbrushed and artificial. TailorPic&apos;s AI focuses on real skin texture, believable detail and natural proportions so your headshots look like real photography.
           </p>
-          <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ size: 'lg', className: 'mt-8' })}>
+          <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ size: 'lg', className: 'mt-8' })}>
             Try TailorPic AI Headshots
           </Link>
         </div>
@@ -178,7 +178,7 @@ export default function RealismEnhancerPage() {
           <p className="mt-3 text-tp-muted">
             Upload a few selfies and get natural, studio-quality headshots in hours, from $1.99.
           </p>
-          <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
+          <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
             Get AI Headshots
           </Link>
         </div>

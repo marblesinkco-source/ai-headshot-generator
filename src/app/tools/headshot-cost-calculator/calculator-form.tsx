@@ -260,7 +260,7 @@ export function CalculatorForm() {
               ))}
             </ul>
             <div className="mt-6 flex flex-col gap-2 sm:flex-row">
-              <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ size: 'lg', className: 'w-full sm:w-auto' })}>
+              <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ size: 'lg', className: 'w-full sm:w-auto' })}>
                 Get Started <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               {r.enterprise && (

@@ -283,7 +283,7 @@ export default function VsBetterPicPage() {
             </p>
             <div className="mt-8">
               <Button asChild size="lg" className="bg-tp-bronze-ink hover:bg-tp-bronze-ink/90 text-white">
-                <Link href="/auth/register?redirect=/headshots">Get Started</Link>
+                <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots">Get Started</Link>
               </Button>
             </div>
           </div>

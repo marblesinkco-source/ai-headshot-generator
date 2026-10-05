@@ -150,7 +150,7 @@ export default function MarketingProfessionalsIndustryPage() {
               You build brands for a living, so your own should look sharp. Get a polished, modern headshot for LinkedIn, speaker bios, agency pages, and bylines, without waiting on a photographer.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Marketing Headshot
               </Link>
               <Link
@@ -306,7 +306,7 @@ export default function MarketingProfessionalsIndustryPage() {
             Get a headshot that helps your expertise get noticed.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Marketing Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

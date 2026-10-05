@@ -197,7 +197,7 @@ export default function ToolsPage() {
               headshots in hours, starting at just $1.99.
             </p>
             <Link
-              href="/auth/register?redirect=/headshots"
+              href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
               className="mt-6 inline-flex items-center justify-center gap-2 rounded-tp-button bg-tp-black px-8 py-3.5 text-sm font-semibold text-tp-bronze transition-all hover:-translate-y-0.5 hover:shadow-lg"
             >
               Get Your AI Headshots

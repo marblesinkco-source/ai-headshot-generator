@@ -155,7 +155,7 @@ export default function PersonalBrandingUseCasePage() {
               Your personal brand deserves a visual identity as strong as your expertise. Get a library of polished, on-brand photos from a few quick selfies. No studio, no photographer, no scheduling hassle. Starting at $1.99.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Build Your Brand Photos
               </Link>
               <Link
@@ -306,7 +306,7 @@ export default function PersonalBrandingUseCasePage() {
             Get a complete set of on-brand photos for your website, social profiles, and marketing materials. Starting at just $1.99.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Build Your Brand Photos
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

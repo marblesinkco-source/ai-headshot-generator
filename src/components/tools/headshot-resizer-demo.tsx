@@ -79,7 +79,7 @@ export function HeadshotResizerDemo() {
             Selected: <span className="font-semibold">{preset.label}</span>, {preset.w} × {preset.h} px
           </p>
           <p className="text-center text-sm text-tp-muted">Full resizing with your photos after sign-up.</p>
-          <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ variant: 'primary', size: 'md' }))}>
+          <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ variant: 'primary', size: 'md' }))}>
             Resize Your Headshot
           </Link>
         </div>

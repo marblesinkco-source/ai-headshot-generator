@@ -184,7 +184,7 @@ export default function GovernmentIdPhotoUseCasePage() {
               {"Need a clean, front-facing portrait for a profile, badge, or application? Get a polished photo from a handful of selfies, delivered in about 2 hours, starting at just $1.99. Official government IDs have their own rules, explained below."}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 {"Get Your Clean Portrait"}
               </Link>
               <Link
@@ -335,7 +335,7 @@ export default function GovernmentIdPhotoUseCasePage() {
             {"Get a tidy front-facing photo for badges and profiles. Starting at just $1.99."}
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               {"Get Your Clean Portrait"}
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

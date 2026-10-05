@@ -13,7 +13,7 @@ import { HeadshotResizerDemo } from '@/components/tools/tool-demos';
 const title = 'Free Headshot Resizer: LinkedIn, Passport & ID Sizes';
 const description = 'Resize your headshot for LinkedIn, Facebook, Twitter, passport and corporate ID photos. Free size guide and resizing tool by TailorPic.';
 const path = '/tools/headshot-resizer';
-const ctaHref = '/auth/register?redirect=/headshots';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

@@ -140,7 +140,7 @@ export function PriceReceipt() {
         {/* CTA */}
         <div className="mt-6 text-center">
           <Link
-            href="/auth/register?redirect=/headshots"
+            href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
             className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'w-full sm:w-auto')}
           >
             Get My {pkg.outputCount}+ Headshots

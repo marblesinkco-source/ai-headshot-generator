@@ -175,7 +175,7 @@ export default function AboutPage() {
             delivered in hours.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ size: 'lg' })}>
+            <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ size: 'lg' })}>
               Try it yourself
             </Link>
             <Link href="/samples" className={buttonVariants({ variant: 'outline', size: 'lg' })}>
@@ -433,7 +433,7 @@ export default function AboutPage() {
             </Link>.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ size: 'lg' })}>
+            <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ size: 'lg' })}>
               Try it yourself
             </Link>
             <Link href="/contact" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

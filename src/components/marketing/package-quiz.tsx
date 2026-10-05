@@ -73,7 +73,7 @@ function getRecommendation(state: QuizState) {
       title: rec.name,
       price: formatPrice(rec.price),
       reason: `${rec.outputCount}+ headshots with ${rec.features[0]} and ${rec.features[1]}. Enough to find your favorites.`,
-      href: '/auth/register?redirect=/headshots',
+      href: '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots',
       ctaText: 'Get Started',
     };
   } else if (state.photoCount === 'many') {
@@ -85,7 +85,7 @@ function getRecommendation(state: QuizState) {
       title: rec.name,
       price: formatPrice(rec.price),
       reason: `${rec.outputCount}+ headshots in 4K with ${rec.features[0]}, ${rec.features[1]}, plus LinkedIn banner and priority support.`,
-      href: '/auth/register?redirect=/headshots',
+      href: '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots',
       ctaText: 'Get Started',
     };
   } else {
@@ -97,7 +97,7 @@ function getRecommendation(state: QuizState) {
       title: rec.name,
       price: formatPrice(rec.price),
       reason: `Our most popular pick: ${rec.outputCount}+ headshots with ${rec.features[0]} and ${rec.features[1]}. Great balance of variety and value.`,
-      href: '/auth/register?redirect=/headshots',
+      href: '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots',
       ctaText: 'Get Started',
     };
   }

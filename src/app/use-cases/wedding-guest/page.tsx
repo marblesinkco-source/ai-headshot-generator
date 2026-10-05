@@ -173,7 +173,7 @@ export default function WeddingGuestUseCasePage() {
               {"Look great for the celebration without booking a shoot. Get elegant, dressed-up portraits from a handful of selfies, delivered in about 2 hours, starting at just $1.99."}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 {"Get Your Event Photos"}
               </Link>
               <Link
@@ -324,7 +324,7 @@ export default function WeddingGuestUseCasePage() {
             {"Get a dressed-up portrait for the big day. Starting at just $1.99."}
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               {"Get Your Event Photos"}
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

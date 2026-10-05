@@ -160,7 +160,7 @@ export default function LawyersIndustryPage() {
               the qualities clients look for before they ever walk through your door.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register?redirect=/headshots">
+              <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots">
                 <Button size="lg" className="gap-2">
                   Get Your Headshots
                   <ArrowRight className="h-4 w-4" />
@@ -449,7 +449,7 @@ export default function LawyersIndustryPage() {
             Studio-quality headshots starting at just $1.99.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register?redirect=/headshots">
+            <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots">
               <Button size="lg" className="gap-2">
                 Create Your Headshots Now
                 <ArrowRight className="h-4 w-4" />

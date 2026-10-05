@@ -91,7 +91,7 @@ export default function EcommerceLandingPage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
-              href="/auth/register?redirect=/headshots"
+              href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
               className="inline-flex items-center gap-2 rounded-xl bg-tp-bronze px-6 py-3.5 text-sm font-semibold text-tp-black transition-all hover:bg-tp-bronze/90"
             >
               Get Product Photos <ArrowRight className="h-4 w-4" />
@@ -266,7 +266,7 @@ export default function EcommerceLandingPage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
-              href="/auth/register?redirect=/headshots"
+              href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
               className="inline-flex items-center gap-2 rounded-xl bg-tp-black px-7 py-3.5 text-sm font-semibold text-tp-bronze transition-all hover:-translate-y-0.5 hover:shadow-lg"
             >
               Get Started <ArrowRight className="h-4 w-4" />

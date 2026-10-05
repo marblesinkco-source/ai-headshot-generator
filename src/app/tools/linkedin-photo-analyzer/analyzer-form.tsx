@@ -269,7 +269,7 @@ export function AnalyzerForm() {
             lighting and professional framing.
           </p>
           <Link
-            href="/auth/register?redirect=/headshots"
+            href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
             className={buttonVariants({ size: 'lg', className: 'mt-5 w-full sm:w-auto' })}
           >
             Get AI Headshots — From $1.99 <ArrowRight className="h-4 w-4" aria-hidden="true" />

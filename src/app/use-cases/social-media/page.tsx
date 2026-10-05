@@ -155,7 +155,7 @@ export default function SocialMediaUseCasePage() {
               Your profile photo is the first thing people notice on every platform. Get polished, eye-catching photos for Instagram, Twitter, TikTok, and beyond, from a few quick selfies. Starting at just $1.99.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Social Media Photos
               </Link>
               <Link
@@ -306,7 +306,7 @@ export default function SocialMediaUseCasePage() {
             Get profile photos that make people stop scrolling and start following. Multiple styles for every platform, from $1.99.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Social Media Photos
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

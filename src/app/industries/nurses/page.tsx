@@ -146,7 +146,7 @@ export default function NursesIndustryPage() {
               From hospital ID badges to LinkedIn, your photo is part of how patients, colleagues, and recruiters see you. Get polished, approachable headshots from a few selfies, with no studio visit after a twelve-hour shift.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+              <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
                 Get Your Nurse Headshot
               </Link>
               <Link
@@ -302,7 +302,7 @@ export default function NursesIndustryPage() {
             Get polished headshots for your badge, resume, and LinkedIn from a few selfies.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register?redirect=/headshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
+            <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
               Get Your Nurse Headshot
             </Link>
             <Link href="/pricing" className={buttonVariants({ variant: 'outline', size: 'lg' })}>

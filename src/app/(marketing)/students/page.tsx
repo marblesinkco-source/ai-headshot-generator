@@ -199,7 +199,7 @@ export default function StudentsPage() {
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
-              href="/auth/register?redirect=/headshots"
+              href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
               className={`${buttonVariants({ variant: 'secondary', size: 'lg' })} bg-tp-bronze text-tp-ink hover:bg-tp-beige`}
             >
               Start Your Career Strong
@@ -338,7 +338,7 @@ export default function StudentsPage() {
               </div>
               <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                 <Link
-                  href="/auth/register?redirect=/headshots"
+                  href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
                   className={buttonVariants({ variant: 'primary', size: 'lg' })}
                 >
                   Get started for $1.99
@@ -463,7 +463,7 @@ export default function StudentsPage() {
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
-              href="/auth/register?redirect=/headshots"
+              href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
               className={`${buttonVariants({ variant: 'secondary', size: 'lg' })} bg-tp-bronze text-tp-ink hover:bg-tp-beige`}
             >
               Get your student headshot

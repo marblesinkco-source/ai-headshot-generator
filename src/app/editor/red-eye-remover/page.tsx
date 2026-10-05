@@ -89,7 +89,7 @@ export default function RedEyeRemoverPage() {
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-tp-muted sm:text-lg">
             Red pupils and flash glare make a good moment look unprofessional. TailorPic&apos;s AI restores natural eye color and soft lighting so your headshot looks clear and alive.
           </p>
-          <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ size: 'lg', className: 'mt-8' })}>
+          <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ size: 'lg', className: 'mt-8' })}>
             Try TailorPic AI Headshots
           </Link>
         </div>
@@ -165,7 +165,7 @@ export default function RedEyeRemoverPage() {
           <p className="mt-3 text-tp-muted">
             Upload a few selfies and get studio-quality professional headshots in hours, from $1.99.
           </p>
-          <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
+          <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
             Get AI Headshots
           </Link>
         </div>

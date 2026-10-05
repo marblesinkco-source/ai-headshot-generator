@@ -108,7 +108,7 @@ export default function LocationsPage() {
             </p>
             <div className="mt-8">
               <Link
-                href="/auth/register?redirect=/headshots"
+                href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
                 className={buttonVariants({ size: 'lg' })}
               >
                 Get Started — From {BASE_PRICE_DISPLAY}

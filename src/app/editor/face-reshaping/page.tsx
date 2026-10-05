@@ -89,7 +89,7 @@ export default function FaceReshapingPage() {
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-tp-muted sm:text-lg">
             Close-up selfies stretch and flatten your face. TailorPic&apos;s AI applies subtle contouring and jawline refinement so your headshot is flattering and still unmistakably you.
           </p>
-          <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ size: 'lg', className: 'mt-8' })}>
+          <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ size: 'lg', className: 'mt-8' })}>
             Try TailorPic AI Headshots
           </Link>
         </div>
@@ -165,7 +165,7 @@ export default function FaceReshapingPage() {
           <p className="mt-3 text-tp-muted">
             Upload a few selfies and get studio-quality professional headshots in hours, from $1.99.
           </p>
-          <Link href="/auth/register?redirect=/headshots" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
+          <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
             Get AI Headshots
           </Link>
         </div>

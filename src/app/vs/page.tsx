@@ -191,7 +191,7 @@ export default function VsIndexPage() {
                 Browse comparisons
               </a>
               <Link
-                href="/auth/register?redirect=/headshots"
+                href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
                 className="inline-flex items-center gap-2 rounded-tp-button bg-tp-black px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-tp-ink"
               >
                 Try TailorPic <ArrowRight className="h-4 w-4" />
@@ -244,7 +244,7 @@ export default function VsIndexPage() {
             </p>
             <div className="mt-8">
               <Link
-                href="/auth/register?redirect=/headshots"
+                href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
                 className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:bg-tp-bronze/90"
               >
                 Get started <ArrowRight className="h-4 w-4" />

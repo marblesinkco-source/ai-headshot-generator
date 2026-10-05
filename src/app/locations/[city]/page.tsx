@@ -106,7 +106,7 @@ export default async function CityPage({ params }: Props) {
             </p>
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link
-                href="/auth/register?redirect=/headshots"
+                href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
                 className={buttonVariants({ size: 'lg' })}
               >
                 Get Your Headshots
@@ -242,7 +242,7 @@ export default async function CityPage({ params }: Props) {
             </p>
             <div className="mt-8">
               <Link
-                href="/auth/register?redirect=/headshots"
+                href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
                 className={buttonVariants({ size: 'lg' })}
               >
                 Start Now — From {BASE_PRICE_DISPLAY}
