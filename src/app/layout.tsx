@@ -8,6 +8,7 @@ import { CookieConsent } from '@/components/cookie-consent';
 import { ExitIntentPopupLazy } from '@/components/marketing/exit-intent-popup-lazy';
 import { OrganizationSchema } from '@/components/structured-data';
 import { GoogleAnalytics } from '@/components/analytics/google-analytics';
+import { AnalyticsProvider } from '@/components/analytics-provider';
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -99,7 +100,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* GA4 + Consent Mode v2 — only renders when NEXT_PUBLIC_GA_MEASUREMENT_ID is set */}
         <GoogleAnalytics />
         <ToastProvider>
-          {children}
+          <AnalyticsProvider>
+            {children}
+          </AnalyticsProvider>
           <CookieConsent />
           <ExitIntentPopupLazy />
         </ToastProvider>

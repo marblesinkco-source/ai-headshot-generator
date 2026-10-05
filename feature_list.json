@@ -103,6 +103,14 @@
       "dependencies": ["feat-K"],
       "status": "done",
       "evidence": "5 paralel uzman ajan ile site-wide audit: 71 dosya iyileştirildi (+477/-345 satır). Homepage: spacing, micro-interactions, pricing fix. Kategori: CTA yönlendirme, JSON-LD, benefits. Dönüşüm: pricing tablosu, FAQ, VS düzeltmeleri. Nav: mega-menu, ARIA, button/card token. Dashboard: sidebar a11y, error handling, auth copy. İçerik doğruluğu: 4-10 selfie, 12 kategori, uydurma iddia temizliği. Commit: b25f198. CI PASS + Vercel PASS. Canlı doğrulama tamam. BLOCKER: REPLICATE_API_TOKEN, SUPABASE_DB_URL, VERCEL_TOKEN secret'ları hâlâ eksik."
+    },
+    {
+      "id": "feat-N",
+      "name": "Phase N — Self-Optimization Engine",
+      "description": "Supabase veri toplama tabloları, event tracking hook/API, dinamik kategori/paket sıralama, A/B test framework, hero/CTA rotasyon, günlük optimizasyon cron, dashboard AI Insights paneli",
+      "dependencies": ["feat-M"],
+      "status": "in-progress",
+      "evidence": ""
     }
   ]
 }
