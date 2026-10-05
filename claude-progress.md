@@ -1,5 +1,38 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-05 (Phase S — Sales-Driven Conversion Boost)
+
+### Baseline
+- HEAD: `4ec036c` (Phase G complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### Batch 1 (Commit: 383acc3)
+- **Hero CTA**: "Get My Headshots — $1.99" fiyat eklendi, trust strip "Satisfaction guarantee" eklendi
+- **Studio Comparison tablosu**: Yeni bileşen — 8 satır karşılaştırma, CTA, trust notu
+- **Pricing**: CTA redirect düzeltmesi (encodeURIComponent), "Best value per photo" pill
+- **Trust Badges**: 5. badge "Satisfaction Guarantee" + TrustGlyph guarantee ikonu
+- **CTA Banner**: Redirect düzeltmesi, trustPoints genişletildi
+- **Sticky CTA**: Redirect düzeltmesi
+
+#### Batch 2 (Commit: f91d754)
+- **How-it-works page**: Mid-page CTA (bg-tp-black, "Get Started — $1.99")
+- **HowItWorks bileşen**: CTA'ya fiyat eklendi ("Start My Headshots — $1.99")
+- **Studio Comparison**: Subtitle güncellendi ("Results in ~2 hours, not weeks"), CTA "Get Your Photos Today", trust notu eklendi
+- **CTA Banner**: Headline güncellendi ("Start today, get headshots in ~2 hours")
+- **Pricing**: Subtitle'a "Results in ~2 hours" eklendi, dinamik CTA butonları (fiyat + foto sayısı)
+- **Privacy Section**: Başlık güçlendirildi, "Start with confidence" CTA eklendi
+- **SocialProofBar**: Uydurma "Save up to 95%" → doğrulanabilir "Save vs. studio photoshoots"
+
+### Sonuç
+- Commit'ler: `383acc3`, `f91d754`
+- CI: PASS (her iki commit)
+- Vercel: PASS (her iki commit)
+- Canlı doğrulama: Homepage tüm değişiklikler doğrulandı (SocialProofBar, Studio Comparison, HowItWorks CTA, Pricing kartları, Privacy CTA, CTA Banner)
+
+---
+
 ## Oturum: 2026-10-05 (Phase G — Funnel UI İyileştirmeleri)
 
 ### Baseline

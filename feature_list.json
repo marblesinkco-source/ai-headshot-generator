@@ -157,8 +157,8 @@
       "name": "Phase S — Sales-Driven Conversion Boost",
       "description": "Rakip analizi, aciliyet/kıtlık unsurları, güçlendirilmiş CTA'lar, sosyal kanıt iyileştirmeleri, dönüşüm optimizasyonları, enerji ve hırs odaklı sayfa güncellemeleri",
       "dependencies": ["feat-G"],
-      "status": "in-progress",
-      "evidence": ""
+      "status": "done",
+      "evidence": "2 batch commit: 383acc3 (hero CTA fiyat, studio comparison tablosu, pricing CTA fix, trust badges genişletme, sticky/banner CTA redirect fix), f91d754 (mid-page CTA how-it-works, HowItWorks/Pricing/Privacy/CTA-Banner/SocialProofBar iyileştirmeleri, dinamik fiyatlı CTA butonları, uydurma iddia temizliği). CI PASS + Vercel PASS. Canlı doğrulama tamam."
     }
   ]
 }
