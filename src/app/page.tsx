@@ -42,6 +42,26 @@ const CTABanner = dynamic(
   () => import('@/components/marketing/cta-banner').then((m) => m.CTABanner),
   { loading: () => <SectionSkeleton height="h-64" /> }
 );
+const SocialProofBar = dynamic(
+  () => import('@/components/marketing/social-proof-bar').then((m) => m.SocialProofBar),
+  { loading: () => <SectionSkeleton height="h-[120px]" /> }
+);
+const WhyTailorPic = dynamic(
+  () => import('@/components/marketing/why-tailorpic').then((m) => m.WhyTailorPic),
+  { loading: () => <SectionSkeleton height="h-[400px]" /> }
+);
+const SpeedComparison = dynamic(
+  () => import('@/components/marketing/speed-comparison').then((m) => m.SpeedComparison),
+  { loading: () => <SectionSkeleton height="h-[500px]" /> }
+);
+const PrivacySection = dynamic(
+  () => import('@/components/marketing/privacy-section').then((m) => m.PrivacySection),
+  { loading: () => <SectionSkeleton height="h-[400px]" /> }
+);
+// Fixed-position mobile bar: no skeleton needed
+const StickyCTA = dynamic(
+  () => import('@/components/marketing/sticky-cta').then((m) => m.StickyCTA)
+);
 
 export default function LandingPage() {
   return (
@@ -57,32 +77,47 @@ export default function LandingPage() {
       {/* 2. Hero — premium editorial image + 2 CTAs */}
       <Hero />
 
-      {/* 3. Quick Photo Type Chooser — 12 categories grouped */}
+      {/* 3. Social Proof Bar — immediately after hero */}
+      <SocialProofBar />
+
+      {/* 4. Why TailorPic — differentiators early */}
+      <WhyTailorPic />
+
+      {/* 5. Quick Photo Type Chooser — 12 categories grouped */}
       <Categories />
 
-      {/* 4. Style & Customization Preview */}
+      {/* 6. Style & Customization Preview */}
       <StyleConfigurator />
 
-      {/* 5. Before / After Comparison */}
+      {/* 7. Before / After Comparison */}
       <BeforeAfterShowcase />
 
-      {/* 6. How It Works */}
+      {/* 8. Speed Comparison */}
+      <SpeedComparison />
+
+      {/* 9. How It Works */}
       <HowItWorks />
 
-      {/* 7. Pricing Overview */}
+      {/* 10. Pricing Overview */}
       <Pricing />
 
-      {/* 8. Trust & Integrations */}
+      {/* 11. Trust & Integrations */}
       <TrustBadges />
       <CompanyLogos />
 
-      {/* 9. FAQ Preview */}
+      {/* 12. Privacy & Security */}
+      <PrivacySection />
+
+      {/* 13. FAQ Preview */}
       <FAQ />
 
-      {/* 10. Newsletter / Final CTA */}
+      {/* 14. Newsletter / Final CTA */}
       <CTABanner />
 
-      {/* 11. Footer */}
+      {/* 15. Mobile sticky CTA (fixed bottom bar) */}
+      <StickyCTA />
+
+      {/* 16. Footer */}
       <Footer />
     </main>
   );
