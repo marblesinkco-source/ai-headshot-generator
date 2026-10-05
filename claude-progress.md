@@ -1,5 +1,65 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-05 (Site-Wide Expert Audit — 71 Dosya İyileştirmesi)
+
+### Baseline
+- HEAD: `f56971c` (chore: update harness — full site audit + live verification complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler — 5 Paralel Uzman Ajan
+
+#### 1. Homepage Uzman Denetimi
+- Bölüm spacing'leri standartlaştırıldı (py-20 lg:py-24)
+- Kart, pricing, before/after hover micro-interactions eklendi
+- Pricing'de iç içe geçmiş interactive elementler düzeltildi (Button inside Link)
+- Fotoğraf sayıları doğru gösterime geçirildi (1+ ve 40+ yerine kesin rakamlar)
+- Doğrulanamayan "Get Started in Under 5 Minutes" kaldırıldı
+- Trust strip güncellendi ("No credit card needed" → "No subscription")
+
+#### 2. Kategori Sayfaları Uzman Denetimi
+- CTA'lar artık /dashboard/upload?category={id}'ye yönlendiriyor (marketing sayfasına değil)
+- Sahte return-by-mail JSON-LD politikası kaldırıldı (dijital ürün)
+- Her kategori için 4 kartlı benefits bölümü eklendi
+- Before/After "AI concept" olarak etiketlendi
+- İlişkili kategoriler döngüsel gösterime geçirildi
+
+#### 3. Dönüşüm Sayfaları Uzman Denetimi
+- Pricing sayfasına config'den paket karşılaştırma tablosu eklendi
+- pricing-comparison: ID ile paket bulma (build-breaking index hatası önlendi)
+- How-it-works: yükleme sayısı düzeltildi (10-20 → 4-10), fotoğraf sayıları eşleştirildi
+- FAQ: doğrulanamayan şifreleme/eğitim iddiaları kaldırıldı
+- VS sayfaları: yanıltıcı fiyat karşılaştırmaları düzeltildi
+- Contact form: validation styling, focus states, hata/başarı mesajları
+- Locations: kırık /upload CTA'ları → /auth/register
+
+#### 4. Navigasyon & Paylaşılan Bileşenler
+- Header mega-menu: kapalıyken görünmez tıklama engeli düzeltildi
+- Header: Escape focus dönüşü, görünür focus ring, ARIA düzeltmeleri
+- Button lg boyut: h-13 → h-12 (h-13 Tailwind'de yok)
+- Card: rounded-2xl → rounded-tp-card marka token
+
+#### 5. Dashboard & Funnel Uzman Denetimi
+- Sidebar: aria-current, 44px tap targets, Escape ile kapanma, 100dvh
+- Overview: error banner, loading status, güvenli no-user çıkışı
+- Orders: hata yönetimi, 44px filtre tab'ları
+- Settings: inline error'lar (alert() yerine), isim validasyonu
+- Auth sayfaları: doğrulanamayan şifreleme/gizlilik iddiaları kaldırıldı
+- Upload: off-brand mor gradyanlar marka token'larına dönüştürüldü
+
+#### 6. İçerik Doğruluğu (Tüm Modüller)
+- Yükleme selfie sayısı tüm sayfalarda gerçek 4-10 config'e hizalandı
+- Kategori sayısı 11 → 12 olarak düzeltildi
+- Uydurma fiyat karşılaştırmaları ve sonuç garantileri kaldırıldı
+- Blog: kaynaksız "Research shows" iddiaları yumuşatıldı
+
+### Deploy
+- Commit: `b25f198` — 71 dosya, +477/-345 satır
+- CI: PASS
+- Vercel: PASS
+- Canlı site doğrulaması: Homepage, Pricing, Headshots, How-It-Works, Dashboard — tümü çalışıyor
+
+---
+
 ## Oturum: 2026-10-05 (Ön Hazırlık Tamamlama + Canlı Site Doğrulaması)
 
 ### Baseline
