@@ -94,7 +94,7 @@ function LoginContent() {
                 priority
               />
             </Link>
-            <p className="mt-3 text-sm text-tp-muted">Sign in to your account</p>
+            <h1 className="mt-3 text-sm font-medium text-tp-muted">Sign in to your account</h1>
           </div>
 
           {/* Card */}
@@ -216,7 +216,7 @@ function LoginContent() {
               </div>
 
               {error && (
-                <div className="rounded-lg bg-red-50 border border-red-200 p-3 text-sm text-red-700">
+                <div role="alert" className="rounded-tp-button border border-tp-line bg-tp-paper p-3 text-sm text-red-700">
                   {error}
                 </div>
               )}
@@ -242,7 +242,7 @@ function LoginContent() {
           {/* Register link */}
           <p className="mt-6 text-center text-sm text-tp-muted">
             Don&apos;t have an account?{' '}
-            <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className="font-medium text-tp-bronze-ink hover:text-tp-bronze transition-colors">
+            <Link href={`/auth/register?redirect=${encodeURIComponent(redirectTo)}`} className="font-medium text-tp-bronze-ink hover:text-tp-bronze transition-colors">
               Create one
             </Link>
           </p>

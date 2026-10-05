@@ -53,8 +53,8 @@ export default function ForgotPasswordPage() {
         <div className="rounded-tp-card border border-tp-line/60 bg-white p-8 shadow-sm">
           {sent ? (
             <div className="text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-green-100">
-                <svg className="h-7 w-7 text-green-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-beige/30">
+                <svg className="h-7 w-7 text-tp-bronze" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                 </svg>
               </div>
@@ -94,7 +94,7 @@ export default function ForgotPasswordPage() {
                 </div>
 
                 {error && (
-                  <div className="rounded-lg bg-red-50 border border-red-200 p-3 text-sm text-red-700">
+                  <div role="alert" className="rounded-tp-button border border-tp-line bg-tp-paper p-3 text-sm text-red-700">
                     {error}
                   </div>
                 )}

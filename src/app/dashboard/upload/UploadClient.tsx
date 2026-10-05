@@ -7,6 +7,7 @@ import {
   getActiveCategories,
   getCategoryById,
   getCategoryPackages,
+  getPackageById,
   CATEGORY_GROUPS,
   type CategoryId,
 } from '@/config/categories';
@@ -217,7 +218,7 @@ function UploadContent() {
       </div>
 
       {/* Step Indicator */}
-      <div className="flex items-center justify-between">
+      <nav aria-label="Progress" className="flex items-center justify-between">
         {STEPS.map((step, idx) => (
           <div key={step.num} className="flex flex-1 items-center">
             <div className="flex items-center gap-2">
@@ -253,7 +254,7 @@ function UploadContent() {
             )}
           </div>
         ))}
-      </div>
+      </nav>
 
       {/* Step 1: Category Selection */}
       {currentStep === 1 && (
@@ -354,14 +355,14 @@ function UploadContent() {
                 </p>
                 <ul className="mt-4 space-y-2 text-sm text-tp-muted">
                   <li className="flex items-center gap-2">
-                    <svg className="h-4 w-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <svg className="h-4 w-4 text-tp-bronze flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                     {pkg.outputCount} {category.outputLabel}
                   </li>
                   {pkg.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-2">
-                      <svg className="h-4 w-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                      <svg className="h-4 w-4 text-tp-bronze flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
                       {feature}
@@ -385,78 +386,89 @@ function UploadContent() {
             ))}
           </div>
           {/* Avatar Bundle Upsell */}
-          {selectedCategory === 'avatars' && selectedPackage === 'avatar-starter' && (
-            <div className="relative overflow-hidden rounded-tp-card border-2 border-tp-bronze bg-tp-paper p-5 shadow-sm">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <div className="flex items-start gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-tp-beige/40 text-lg">🎁</span>
-                  <div>
-                    <h4 className="font-semibold text-tp-ink">
-                      Upgrade to 50 Avatars — Best Value
-                    </h4>
-                    <p className="mt-0.5 text-sm text-tp-muted">
-                      Add <strong className="text-tp-bronze-ink">20 more avatars</strong> with 5 extra style categories + 4K resolution for just <strong className="text-tp-bronze-ink">{formatPrice(1590 - 990)} more</strong>
-                    </p>
-                    <p className="mt-1 text-xs text-tp-muted">
-                      50 avatars for just {formatPrice(1590)} total
-                    </p>
+          {selectedCategory === 'avatars' && selectedPackage === 'avatar-starter' && (() => {
+            const starterPkg = getPackageById('avatars', 'avatar-starter');
+            const megaPkg = getPackageById('avatars', 'avatar-mega');
+            if (!starterPkg || !megaPkg) return null;
+            return (
+              <div className="relative overflow-hidden rounded-tp-card border-2 border-tp-bronze bg-tp-paper p-5 shadow-sm">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="flex items-start gap-3">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-tp-beige/40 text-lg" aria-hidden="true">🎁</span>
+                    <div>
+                      <h4 className="font-semibold text-tp-ink">
+                        Upgrade to {megaPkg.outputCount} Avatars — Best Value
+                      </h4>
+                      <p className="mt-0.5 text-sm text-tp-muted">
+                        Add <strong className="text-tp-bronze-ink">{megaPkg.outputCount - starterPkg.outputCount} more avatars</strong> with 5 extra style categories + 4K resolution for just <strong className="text-tp-bronze-ink">{formatPrice(megaPkg.price - starterPkg.price)} more</strong>
+                      </p>
+                      <p className="mt-1 text-xs text-tp-muted">
+                        {megaPkg.outputCount} avatars for just {formatPrice(megaPkg.price)} total
+                      </p>
+                    </div>
                   </div>
+                  <Button
+                    variant="primary"
+                    size="md"
+                    className="whitespace-nowrap bg-tp-black text-tp-bronze hover:bg-tp-ink border-0"
+                    loading={checkoutLoading === 'avatar-mega'}
+                    disabled={checkoutLoading !== null && checkoutLoading !== 'avatar-mega'}
+                    onClick={() => {
+                      setSelectedPackage('avatar-mega');
+                      handleCheckout('avatar-mega');
+                    }}
+                  >
+                    Get {megaPkg.outputCount} Avatars — {formatPrice(megaPkg.price)}
+                  </Button>
                 </div>
-                <Button
-                  variant="primary"
-                  size="md"
-                  className="whitespace-nowrap bg-tp-black text-tp-bronze hover:bg-tp-ink border-0"
-                  loading={checkoutLoading === 'avatar-mega'}
-                  disabled={checkoutLoading !== null && checkoutLoading !== 'avatar-mega'}
-                  onClick={() => {
-                    setSelectedPackage('avatar-mega');
-                    handleCheckout('avatar-mega');
-                  }}
-                >
-                  Get 50 Avatars — {formatPrice(1590)}
-                </Button>
               </div>
-            </div>
-          )}
+            );
+          })()}
 
           {/* Cross-sell: Add Avatar Pack to any non-avatar order */}
-          {selectedCategory && selectedCategory !== 'avatars' && selectedPackage && (
-            <div className="relative overflow-hidden rounded-tp-card border-2 border-tp-line bg-tp-paper p-5 shadow-sm">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <div className="flex items-start gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-tp-beige/40 text-lg">🎭</span>
-                  <div>
-                    <h4 className="font-semibold text-tp-ink">
-                      Add AI Avatars — Special Bundle Price
-                    </h4>
-                    <p className="mt-0.5 text-sm text-tp-muted">
-                      Get <strong className="text-tp-bronze-ink">30 unique AI avatars</strong> of yourself for just <strong className="text-tp-bronze-ink">$7.90</strong> <span className="line-through text-tp-muted/70">$9.90</span> — 20% off when bundled!
-                    </p>
-                    <p className="mt-1 text-xs text-tp-muted">
-                      Fantasy, Anime, Cyberpunk & 12 more styles — your face, every universe
-                    </p>
+          {selectedCategory && selectedCategory !== 'avatars' && selectedPackage && (() => {
+            const avatarPkg = getPackageById('avatars', 'avatar-starter');
+            if (!avatarPkg) return null;
+            const originalPrice = formatPrice(avatarPkg.price);
+            const discountedPrice = formatPrice(Math.round(avatarPkg.price * 0.8));
+            return (
+              <div className="relative overflow-hidden rounded-tp-card border-2 border-tp-line bg-tp-paper p-5 shadow-sm">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="flex items-start gap-3">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-tp-beige/40 text-lg" aria-hidden="true">🎭</span>
+                    <div>
+                      <h4 className="font-semibold text-tp-ink">
+                        Add AI Avatars — Special Bundle Price
+                      </h4>
+                      <p className="mt-0.5 text-sm text-tp-muted">
+                        Get <strong className="text-tp-bronze-ink">{avatarPkg.outputCount} unique AI avatars</strong> of yourself for just <strong className="text-tp-bronze-ink">{discountedPrice}</strong> <span className="line-through text-tp-muted/70">{originalPrice}</span> — 20% off when bundled!
+                      </p>
+                      <p className="mt-1 text-xs text-tp-muted">
+                        Fantasy, Anime, Cyberpunk & 12 more styles — your face, every universe
+                      </p>
+                    </div>
                   </div>
+                  <Button
+                    variant="primary"
+                    size="md"
+                    className="whitespace-nowrap bg-tp-black text-tp-bronze hover:bg-tp-ink border-0"
+                    loading={checkoutLoading === 'avatar-starter'}
+                    disabled={checkoutLoading !== null && checkoutLoading !== 'avatar-starter'}
+                    onClick={() => {
+                      setSelectedCategory('avatars' as CategoryId);
+                      setSelectedPackage('avatar-starter');
+                      handleCheckout('avatar-starter', 'AVATAR20');
+                    }}
+                  >
+                    Add Avatars — {discountedPrice}
+                  </Button>
                 </div>
-                <Button
-                  variant="primary"
-                  size="md"
-                  className="whitespace-nowrap bg-tp-black text-tp-bronze hover:bg-tp-ink border-0"
-                  loading={checkoutLoading === 'avatar-starter'}
-                  disabled={checkoutLoading !== null && checkoutLoading !== 'avatar-starter'}
-                  onClick={() => {
-                    setSelectedCategory('avatars' as CategoryId);
-                    setSelectedPackage('avatar-starter');
-                    handleCheckout('avatar-starter', 'AVATAR20');
-                  }}
-                >
-                  Add Avatars — $3.90
-                </Button>
               </div>
-            </div>
-          )}
+            );
+          })()}
 
           {error && (
-            <div className="rounded-tp-button bg-red-50 border border-red-200 p-3 text-sm text-red-700">{error}</div>
+            <div role="alert" className="rounded-tp-button border border-tp-line bg-tp-paper p-3 text-sm text-red-700">{error}</div>
           )}
         </div>
       )}
@@ -504,7 +516,7 @@ function UploadContent() {
             <div className="space-y-6">
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-tp-paper">
                 {progressPhase === 'completed' ? (
-                  <svg className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                  <svg className="h-8 w-8 text-tp-bronze" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 ) : (
@@ -541,7 +553,7 @@ function UploadContent() {
 
               {/* Phase indicators */}
               <div className="mx-auto flex max-w-sm items-center justify-center gap-6 text-xs">
-                <div className={`flex items-center gap-1.5 ${progressPhase === 'training' ? 'text-tp-bronze font-medium' : progressPercent > 50 ? 'text-green-600' : 'text-tp-muted'}`}>
+                <div className={`flex items-center gap-1.5 ${progressPhase === 'training' ? 'text-tp-bronze font-medium' : progressPercent > 50 ? 'text-tp-bronze-ink' : 'text-tp-muted'}`}>
                   {progressPercent > 50 ? (
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
@@ -554,7 +566,7 @@ function UploadContent() {
                   AI Training
                 </div>
                 <div className="h-px w-8 bg-tp-line" />
-                <div className={`flex items-center gap-1.5 ${progressPhase === 'generating' ? 'text-tp-bronze font-medium' : progressPhase === 'completed' ? 'text-green-600' : 'text-tp-muted'}`}>
+                <div className={`flex items-center gap-1.5 ${progressPhase === 'generating' ? 'text-tp-bronze font-medium' : progressPhase === 'completed' ? 'text-tp-bronze-ink' : 'text-tp-muted'}`}>
                   {progressPhase === 'completed' ? (
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
@@ -573,8 +585,8 @@ function UploadContent() {
             </div>
           ) : (
             <div className="space-y-4">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-green-50">
-                <svg className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-tp-beige/30">
+                <svg className="h-8 w-8 text-tp-bronze" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
@@ -583,7 +595,7 @@ function UploadContent() {
                 {uploadedCount} photos uploaded. Our AI will train a personalized model on your photos, then generate your {category?.outputLabel || 'AI photos'}. This takes about 15-20 minutes.
               </p>
               {error && (
-                <div className="rounded-tp-button bg-red-50 border border-red-200 p-3 text-sm text-red-700">{error}</div>
+                <div role="alert" className="rounded-tp-button border border-tp-line bg-tp-paper p-3 text-sm text-red-700">{error}</div>
               )}
               <Button
                 variant="primary"

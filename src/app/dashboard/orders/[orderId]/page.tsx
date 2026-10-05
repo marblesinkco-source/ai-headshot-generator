@@ -107,7 +107,7 @@ export default function OrderDetailPage() {
 
   if (error || !order) {
     return (
-      <div className="py-20 text-center">
+      <div role="alert" className="py-20 text-center">
         <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-paper">
           <svg className="h-7 w-7 text-tp-muted" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
@@ -219,7 +219,7 @@ export default function OrderDetailPage() {
             <div className="flex items-center justify-center gap-3 text-xs">
               <div className={`flex items-center gap-1.5 ${
                 pipeline.phase === 'training' ? 'text-tp-bronze font-medium' :
-                pipeline.progress > 50 ? 'text-green-600' : 'text-tp-muted'
+                pipeline.progress > 50 ? 'text-tp-bronze-ink' : 'text-tp-muted'
               }`}>
                 {pipeline.progress > 50 ? (
                   <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
@@ -237,7 +237,7 @@ export default function OrderDetailPage() {
               </svg>
               <div className={`flex items-center gap-1.5 ${
                 pipeline.phase === 'generating' ? 'text-tp-bronze font-medium' :
-                pipeline.phase === 'completed' ? 'text-green-600' : 'text-tp-muted'
+                pipeline.phase === 'completed' ? 'text-tp-bronze-ink' : 'text-tp-muted'
               }`}>
                 {pipeline.phase === 'completed' ? (
                   <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
@@ -266,7 +266,7 @@ export default function OrderDetailPage() {
       {/* Order Summary */}
       <div className="rounded-tp-dialog border border-tp-line bg-white shadow-sm">
         <div className="border-b border-tp-line/50 px-6 py-4">
-          <h3 className="font-semibold text-tp-ink">Order Summary</h3>
+          <h3 className="font-medium text-tp-ink">Order Summary</h3>
         </div>
         <div className="divide-y divide-tp-line/50">
           <div className="flex items-center justify-between px-6 py-3.5">

@@ -185,7 +185,6 @@ export default function ZoomUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

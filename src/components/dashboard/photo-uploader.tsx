@@ -194,7 +194,7 @@ export function PhotoUploader({ orderId, onUploadComplete }: PhotoUploaderProps)
 
               {/* Error overlay */}
               {file.status === 'error' && (
-                <div className="absolute inset-0 flex items-center justify-center bg-red-500/40">
+                <div className="absolute inset-0 flex items-center justify-center bg-tp-ink/60" role="alert" aria-label={file.error || 'Upload failed'}>
                   <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
                   </svg>
@@ -203,7 +203,7 @@ export function PhotoUploader({ orderId, onUploadComplete }: PhotoUploaderProps)
 
               {/* Done checkmark */}
               {file.status === 'done' && (
-                <div className="absolute bottom-1 right-1 flex h-5 w-5 items-center justify-center rounded-full bg-green-500">
+                <div className="absolute bottom-1 right-1 flex h-5 w-5 items-center justify-center rounded-full bg-tp-bronze">
                   <svg className="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                   </svg>

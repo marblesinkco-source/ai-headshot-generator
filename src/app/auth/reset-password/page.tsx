@@ -102,8 +102,8 @@ function ResetPasswordContent() {
         <div className="rounded-tp-card border border-tp-line/60 bg-white p-8 shadow-sm">
           {success ? (
             <div className="text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-green-100">
-                <svg className="h-7 w-7 text-green-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-beige/30">
+                <svg className="h-7 w-7 text-tp-bronze" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
@@ -165,7 +165,7 @@ function ResetPasswordContent() {
                 </div>
 
                 {error && (
-                  <div className="rounded-lg bg-red-50 border border-red-200 p-3 text-sm text-red-700">
+                  <div role="alert" className="rounded-tp-button border border-tp-line bg-tp-paper p-3 text-sm text-red-700">
                     {error}
                   </div>
                 )}
