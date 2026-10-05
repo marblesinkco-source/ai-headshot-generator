@@ -3,6 +3,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { EmailCapture } from '@/components/marketing/email-capture';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
@@ -14,7 +15,6 @@ import {
   Zap,
   ImagePlus,
   ArrowRight,
-  Mail,
   Layers,
 } from 'lucide-react';
 
@@ -233,35 +233,7 @@ export default function ChangelogPage() {
         </div>
 
         {/* Subscribe to updates */}
-        <div className="mt-16 rounded-tp-card border border-tp-line bg-tp-beige/40 p-8 text-center sm:p-10">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-tp-bronze/30 bg-tp-bronze/10">
-            <Mail className="h-5 w-5 text-tp-bronze-ink" />
-          </div>
-          <h2 className="mt-4 font-display text-2xl font-normal text-tp-black">
-            Subscribe to updates
-          </h2>
-          <p className="mx-auto mt-2 max-w-md text-sm text-tp-muted">
-            Get notified when we ship new features and improvements. No spam,
-            unsubscribe anytime.
-          </p>
-          <form
-            className="mx-auto mt-6 flex max-w-md flex-col gap-3 sm:flex-row"
-            action="#"
-          >
-            <input
-              type="email"
-              placeholder="you@company.com"
-              aria-label="Email address"
-              className="flex-1 rounded-tp-button border border-tp-line bg-white px-4 py-2.5 text-sm text-tp-ink placeholder:text-tp-muted/80 focus:border-tp-bronze focus:outline-none focus:ring-1 focus:ring-tp-bronze"
-            />
-            <button
-              type="submit"
-              className="inline-flex items-center justify-center gap-2 rounded-tp-button bg-tp-black px-5 py-2.5 text-sm font-medium text-tp-paper transition-colors hover:bg-tp-ink"
-            >
-              Subscribe
-            </button>
-          </form>
-        </div>
+        <EmailCapture className="mt-16" />
 
         {/* CTA */}
         <div className="mt-10 rounded-tp-card bg-tp-black p-8 text-center sm:p-10">

@@ -110,7 +110,7 @@ export function CTABanner() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
           {categories.map((cat) => (
-            <a
+            <Link
               key={cat.id}
               href={`/${cat.slug}`}
               className="flex items-center gap-3 border border-tp-line bg-tp-paper rounded-tp-button min-h-[70px] p-3 text-left hover:border-tp-bronze-ink transition-colors"
@@ -130,7 +130,7 @@ export function CTABanner() {
                 <strong className="block text-[13px]">{cat.name}</strong>
                 <small className="text-[11px] text-tp-muted">{cat.tagline}</small>
               </span>
-            </a>
+            </Link>
           ))}
         </div>
       </dialog>

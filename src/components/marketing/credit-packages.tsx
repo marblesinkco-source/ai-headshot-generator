@@ -3,11 +3,14 @@ import { Check, Sparkles, Zap } from 'lucide-react';
 import { CREDIT_PACKAGES } from '@/config/credits';
 import { formatPrice } from '@/lib/utils';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button';
+import { getActiveCategories } from '@/config/categories';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
 export function CreditPackages() {
+  const categoryCount = getActiveCategories().length;
+
   return (
     <section className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -94,7 +97,7 @@ export function CreditPackages() {
                     </div>
                     <div className="flex justify-between border-t border-tp-line/50 py-1 pt-2">
                       <span className="text-tp-muted">Categories</span>
-                      <span className="font-semibold text-tp-black">All 11</span>
+                      <span className="font-semibold text-tp-black">All {categoryCount}</span>
                     </div>
                     <div className="flex justify-between border-t border-tp-line/50 py-1 pt-2">
                       <span className="text-tp-muted">Validity</span>
@@ -114,13 +117,16 @@ export function CreditPackages() {
                 </CardContent>
 
                 <CardFooter>
-                  <Link href="/auth/login?redirect=/dashboard/credits" className="w-full">
-                    <Button
-                      variant={isRecommended ? 'primary' : 'outline'}
-                      className="w-full"
-                    >
-                      Get {pkg.credits} Credits
-                    </Button>
+                  <Link
+                    href="/auth/login?redirect=/dashboard/credits"
+                    className={cn(
+                      buttonVariants({
+                        variant: isRecommended ? 'primary' : 'outline',
+                      }),
+                      'w-full'
+                    )}
+                  >
+                    Get {pkg.credits} Credits
                   </Link>
                 </CardFooter>
               </Card>

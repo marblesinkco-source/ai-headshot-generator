@@ -157,7 +157,7 @@ export default function TeamHeadshotsPage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
-              href="/auth/register?redirect=/headshots"
+              href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dlinkedin-team"
               className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:bg-tp-bronze/90"
             >
               Get Started <ArrowRight className="h-4 w-4" />
@@ -261,7 +261,7 @@ export default function TeamHeadshotsPage() {
                 unit: '/person',
                 features: ['Per-person ordering', 'Choose your style', 'High-resolution downloads'],
                 cta: 'Get Started',
-                href: '/auth/register?redirect=/headshots',
+                href: '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dlinkedin-team',
                 featured: false,
               },
               {
@@ -271,7 +271,7 @@ export default function TeamHeadshotsPage() {
                 unit: '/person',
                 features: ['Everything in Individual', 'Consistent team background', 'Admin dashboard'],
                 cta: 'Get Started',
-                href: '/auth/register?redirect=/headshots',
+                href: '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dlinkedin-team',
                 featured: false,
               },
               {
@@ -281,7 +281,7 @@ export default function TeamHeadshotsPage() {
                 unit: '/person',
                 features: ['Everything in Small Team', 'Brand guidelines applied', 'Bulk download'],
                 cta: 'Get Started',
-                href: '/auth/register?redirect=/headshots',
+                href: '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dlinkedin-team',
                 featured: true,
               },
               {
@@ -408,7 +408,7 @@ export default function TeamHeadshotsPage() {
                 note: 'one-time, per person',
                 featured: false,
                 cta: 'Get Started',
-                href: '/auth/register?redirect=/headshots',
+                href: '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dlinkedin-team',
                 rows: [
                   { text: '40+ headshots per person', on: true },
                   { text: 'Choose your own style', on: true },
@@ -425,7 +425,7 @@ export default function TeamHeadshotsPage() {
                 note: 'per person: $39 for 5-15 people, $29 for 16-50',
                 featured: true,
                 cta: 'Start a Team Order',
-                href: '/auth/register?redirect=/headshots',
+                href: '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dlinkedin-team',
                 rows: [
                   { text: '40+ headshots per person', on: true },
                   { text: 'One shared style for the whole team', on: true },
@@ -719,7 +719,7 @@ export default function TeamHeadshotsPage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
-              href="/auth/register?redirect=/headshots"
+              href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dlinkedin-team"
               className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:-translate-y-0.5 hover:bg-tp-bronze/90 hover:shadow-lg"
             >
               Get Started <ArrowRight className="h-4 w-4" />

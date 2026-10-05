@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, type FormEvent } from 'react';
+import { useEffect, useState, type FormEvent } from 'react';
 import { X } from 'lucide-react';
 
 const STORAGE_KEY = 'tp_newsletter_emails';
@@ -27,36 +27,41 @@ function saveEmailLocally(email: string) {
 export function EmailCapture({ variant = 'card', className = '' }: EmailCaptureProps) {
   const isBanner = variant === 'banner';
   const [email, setEmail] = useState('');
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [dismissed, setDismissed] = useState(() => {
-    if (!isBanner || typeof window === 'undefined') return false;
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [dismissed, setDismissed] = useState(false);
+
+  // Read localStorage after mount so server and client first render match.
+  useEffect(() => {
+    if (!isBanner) return;
     try {
-      return localStorage.getItem(DISMISS_KEY) === '1';
+      if (localStorage.getItem(DISMISS_KEY) === '1') setDismissed(true);
     } catch {
-      return false;
+      // ignore
     }
-  });
+  }, [isBanner]);
 
   if (dismissed) return null;
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const value = email.trim();
-    if (!value || loading) return;
-    setLoading(true);
-    saveEmailLocally(value);
+    if (!value || status === 'loading') return;
+    setStatus('loading');
     try {
-      await fetch('/api/newsletter', {
+      const res = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: value }),
       });
+      if (!res.ok) {
+        setStatus('error');
+        return;
+      }
+      saveEmailLocally(value);
+      setStatus('success');
     } catch {
-      // placeholder endpoint; local copy already stored
+      setStatus('error');
     }
-    setLoading(false);
-    setSubmitted(true);
   }
 
   function dismiss() {
@@ -97,7 +102,7 @@ export function EmailCapture({ variant = 'card', className = '' }: EmailCaptureP
         </div>
 
         <div className="w-full lg:max-w-md">
-          {submitted ? (
+          {status === 'success' ? (
             <p
               role="status"
               className="rounded-tp-button border border-tp-bronze/50 bg-white px-4 py-3 text-sm font-medium text-tp-bronze-ink"
@@ -121,12 +126,17 @@ export function EmailCapture({ variant = 'card', className = '' }: EmailCaptureP
               />
               <button
                 type="submit"
-                disabled={loading}
+                disabled={status === 'loading'}
                 className="rounded-tp-button bg-tp-black px-6 py-3 text-sm font-semibold text-tp-bronze transition-colors hover:bg-tp-black/90 disabled:opacity-60"
               >
-                {loading ? 'Joining...' : 'Subscribe'}
+                {status === 'loading' ? 'Joining...' : 'Subscribe'}
               </button>
             </form>
+          )}
+          {status === 'error' && (
+            <p role="alert" className="mt-2 text-sm text-red-700">
+              Something went wrong. Please check your email and try again.
+            </p>
           )}
         </div>
       </div>

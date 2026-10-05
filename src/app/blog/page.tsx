@@ -6,6 +6,7 @@ import { Footer } from '@/components/marketing/footer';
 import { BlogIllustration } from '@/components/marketing/illustrations';
 import { siteConfig } from '@/config/site';
 import { getAllBlogPosts } from '@/config/blog';
+import { EmailCapture } from '@/components/marketing/email-capture';
 import { BlogListing } from '@/components/blog/blog-listing';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { ArrowRight, Camera, Sparkles, BookOpen } from 'lucide-react';
@@ -237,43 +238,8 @@ export default function BlogPage() {
 
       {/* ── Newsletter Section ── */}
       <section className="border-y border-tp-line bg-tp-paper">
-        <div className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6 sm:py-20 lg:px-8">
-          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-tp-bronze-ink">
-            Newsletter
-          </span>
-          <h2 className="font-display text-3xl font-normal tracking-tight text-tp-ink sm:text-4xl">
-            Subscribe to our newsletter
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-tp-muted">
-            Subscribe to our newsletter for professional image tips. Get actionable
-            advice on headshots, personal branding, and AI photography delivered
-            straight to your inbox.
-          </p>
-          <form
-            action="/api/newsletter"
-            method="POST"
-            className="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row"
-          >
-            <label htmlFor="blog-page-newsletter-email" className="sr-only">
-              Email address
-            </label>
-            <input
-              id="blog-page-newsletter-email"
-              type="email"
-              name="email"
-              required
-              autoComplete="email"
-              placeholder="you@example.com"
-              className="w-full flex-1 rounded-tp-button border border-tp-line bg-white px-4 py-3 text-sm text-tp-ink placeholder:text-tp-muted/80 focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/30"
-            />
-            <button
-              type="submit"
-              className="rounded-tp-button bg-tp-black px-6 py-3 text-sm font-semibold text-tp-paper shadow-md shadow-tp-black/15 transition-all hover:-translate-y-0.5 hover:shadow-lg"
-            >
-              Subscribe
-            </button>
-          </form>
-          <p className="mt-3 text-xs text-tp-muted">No spam, ever. Unsubscribe anytime.</p>
+        <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+          <EmailCapture />
         </div>
       </section>
 

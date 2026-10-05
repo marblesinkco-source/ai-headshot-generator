@@ -125,10 +125,10 @@ export function Categories() {
 
       <div className="mt-12 text-center">
         <Link
-          href="/use-cases"
+          href="/pricing"
           className="inline-flex items-center gap-2 rounded-tp-button border border-tp-ink px-6 py-3 text-sm font-semibold text-tp-ink transition-colors duration-200 hover:bg-tp-ink hover:text-tp-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze"
         >
-          View all categories
+          View all categories &amp; pricing
           <span aria-hidden="true">&rarr;</span>
         </Link>
       </div>
