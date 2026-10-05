@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowDown, ArrowRight, Clock, Sparkles } from 'lucide-react';
+import { ArrowDown, ArrowRight, Clock } from 'lucide-react';
 import { StepStyleIllustration, StepUploadIllustration, StepDownloadIllustration } from '@/components/marketing/illustrations';
 import { buttonVariants } from '@/components/ui/button';
 
@@ -38,11 +38,10 @@ export function HowItWorks() {
     >
       <div className="flex justify-between items-end gap-4 mb-8 lg:mb-12">
         <div>
-          <span className="inline-flex items-center gap-1.5 mb-3 rounded-full border border-tp-line bg-tp-paper px-3 py-1 text-[11px] lg:text-xs font-medium text-tp-bronze-ink">
-            <Sparkles className="h-3 w-3" aria-hidden="true" />
+          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-tp-bronze-ink">
             3 simple steps
-          </span>
-          <h2 className="font-display text-[30px] lg:text-[40px] leading-tight tracking-[-0.03em] font-normal text-tp-ink">
+          </p>
+          <h2 className="font-display text-[30px] sm:text-[40px] font-normal tracking-[-0.03em] text-tp-ink leading-tight">
             How it works
           </h2>
         </div>
@@ -58,7 +57,7 @@ export function HowItWorks() {
           const isLast = index === steps.length - 1;
           return (
             <li key={step.number} className="relative flex flex-col items-stretch">
-              <article className="relative h-full overflow-hidden rounded-tp-card border border-tp-line bg-tp-paper p-6 transition-all duration-300 hover:-translate-y-1 hover:border-tp-bronze hover:shadow-lg hover:shadow-tp-bronze/10 motion-reduce:transition-none motion-reduce:hover:translate-y-0 lg:p-8">
+              <article className="relative h-full overflow-hidden rounded-tp-card border border-tp-line bg-tp-paper p-6 transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-tp-bronze hover:shadow-lg hover:shadow-tp-bronze/10 motion-reduce:transition-none motion-reduce:hover:translate-y-0 lg:p-8">
                 <span
                   className="pointer-events-none absolute -right-2 -top-4 select-none font-display text-[110px] leading-none text-tp-beige/40 lg:text-[140px]"
                   aria-hidden="true"
@@ -87,7 +86,7 @@ export function HowItWorks() {
                 <h3 className="relative font-display font-normal text-[22px] lg:text-[26px] leading-tight mt-5 lg:mt-6 mb-2 lg:mb-3 text-tp-ink">
                   {step.title}
                 </h3>
-                <p className="relative m-0 text-sm lg:text-[15px] leading-[1.7] text-tp-muted">
+                <p className="relative m-0 text-sm lg:text-[15px] leading-relaxed text-tp-muted">
                   {step.description}
                 </p>
               </article>

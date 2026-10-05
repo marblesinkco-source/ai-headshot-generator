@@ -69,7 +69,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-manrope)', 'Inter', 'Arial', 'system-ui', 'sans-serif'],
-        display: ['"Instrument Serif"', 'Georgia', '"Times New Roman"', 'serif'],
+        display: ['var(--font-display)', '"Instrument Serif"', 'Georgia', '"Times New Roman"', 'serif'],
       },
       fontSize: {
         // V3 Design System typography scale (ref image §3)

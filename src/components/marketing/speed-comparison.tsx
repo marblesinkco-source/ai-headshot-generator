@@ -59,18 +59,18 @@ export function SpeedComparison() {
   return (
     <section
       ref={sectionRef}
-      className="bg-tp-paper py-20 sm:py-28"
+      className="bg-tp-paper py-20 lg:py-24"
       aria-labelledby="speed-heading"
     >
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-tp-bronze-ink">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-tp-bronze-ink">
             Time Is Money
           </p>
           <h2
             id="speed-heading"
-            className="mt-3 font-display text-3xl font-normal tracking-tight text-tp-ink sm:text-5xl"
+            className="mt-3 font-display text-[30px] sm:text-[40px] font-normal tracking-[-0.03em] text-tp-ink leading-tight"
           >
             Get Results Faster
           </h2>
@@ -90,7 +90,7 @@ export function SpeedComparison() {
                 className={`rounded-tp-card border p-5 sm:p-6 ${
                   item.highlight
                     ? 'border-tp-bronze bg-tp-bronze/5 shadow-sm'
-                    : 'border-tp-line bg-white'
+                    : 'border-tp-line bg-tp-paper'
                 }`}
               >
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
@@ -124,9 +124,9 @@ export function SpeedComparison() {
                     <div className="flex-1">
                       <div className="h-8 overflow-hidden rounded-full bg-tp-beige/30">
                         <div
-                          className={`h-full rounded-full ${item.barColor} transition-all duration-1000 ease-out`}
+                          className={`h-full rounded-full ${item.barColor} origin-left transition-transform duration-1000 ease-out motion-reduce:transition-none`}
                           style={{
-                            width: visible ? `${item.barWidth}%` : '0%',
+                            transform: `scaleX(${visible ? item.barWidth / 100 : 0})`,
                           }}
                         />
                       </div>

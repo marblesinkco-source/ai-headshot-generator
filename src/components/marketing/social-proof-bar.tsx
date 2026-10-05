@@ -38,8 +38,8 @@ const css = `
   to { opacity: 1; transform: translateY(0); }
 }
 @keyframes tp-spb-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 169, 138, 0.0); }
-  50% { box-shadow: 0 0 0 6px rgba(201, 169, 138, 0.22); }
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--tp-bronze) 0%, transparent); }
+  50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--tp-bronze) 22%, transparent); }
 }
 .tp-spb-item { opacity: 0; }
 .tp-spb-visible .tp-spb-item {
@@ -92,7 +92,7 @@ export function SocialProofBar() {
       }`}
     >
       <style>{css}</style>
-      <div className="mx-auto max-w-6xl px-4 py-6 sm:py-5">
+      <div className="mx-auto max-w-6xl px-4 py-5 sm:py-6">
         <ul className="grid grid-cols-2 gap-y-5 gap-x-4 sm:grid-cols-3 lg:grid-cols-5 sm:gap-x-6">
           {metrics.map((metric, i) => {
             const Icon = metric.icon;

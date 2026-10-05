@@ -119,6 +119,14 @@
       "dependencies": ["feat-N"],
       "status": "done",
       "evidence": "Rakip analizi (6 platform: Aragon, HeadshotPro, Secta, BetterPic, ProPhotos, ProfilePhoto). 5 mevcut bileşen homepage'e eklendi: SocialProofBar (hero sonrası), WhyTailorPic (yeni, 3 farklılaştırıcı kart), SpeedComparison (Before/After sonrası), PrivacySection (TrustBadges sonrası), StickyCTA (mobil sticky bar). Optimized section sıralaması (16 bölüm). Commit: b79b619. CI PASS + Vercel PASS. Canlı doğrulama: tüm yeni bölümler www.tailorpic.com'da doğru sırada yükleniyor."
+    },
+    {
+      "id": "feat-P",
+      "name": "Phase P — Performance & Aesthetic Excellence",
+      "description": "Font self-hosting, dynamic imports, GPU-accelerated animations, scroll reveal system, visual consistency standardization, image optimization",
+      "dependencies": ["feat-O"],
+      "status": "in-progress",
+      "evidence": ""
     }
   ]
 }

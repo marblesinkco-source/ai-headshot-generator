@@ -31,13 +31,13 @@ const learnMoreLinks = [
 
 export function PrivacySection() {
   return (
-    <section aria-label="Privacy and security" className="bg-tp-black py-16 sm:py-20 lg:py-24">
+    <section aria-label="Privacy and security" className="bg-tp-black py-20 lg:py-24">
       <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
         <div className="mx-auto max-w-2xl text-center">
           <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-tp-bronze/15">
             <ShieldCheck className="h-6 w-6 text-tp-bronze" aria-hidden="true" />
           </span>
-          <h2 className="font-display mt-5 text-3xl font-normal tracking-tight text-tp-paper sm:text-4xl lg:text-5xl">
+          <h2 className="font-display mt-5 text-[30px] sm:text-[40px] font-normal tracking-[-0.03em] leading-tight text-tp-paper">
             Your photos stay yours
           </h2>
           <p className="mt-4 text-base leading-relaxed text-tp-beige/80">
@@ -49,12 +49,12 @@ export function PrivacySection() {
           {commitments.map((item) => (
             <li
               key={item.title}
-              className="rounded-tp-card border border-white/10 bg-white/5 px-6 py-7"
+              className="rounded-tp-card border border-tp-paper/10 bg-tp-paper/5 px-6 py-7"
             >
               <span className="flex h-11 w-11 items-center justify-center rounded-full bg-tp-bronze/15">
                 <item.icon className="h-5 w-5 text-tp-bronze" aria-hidden="true" />
               </span>
-              <h3 className="mt-5 text-lg font-semibold text-tp-paper">{item.title}</h3>
+              <h3 className="mt-5 font-display text-[22px] font-normal text-tp-paper">{item.title}</h3>
               <p className="mt-2 text-[15px] leading-relaxed text-tp-beige/80">
                 {item.description}
               </p>

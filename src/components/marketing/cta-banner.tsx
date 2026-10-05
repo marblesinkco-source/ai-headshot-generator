@@ -29,14 +29,14 @@ export function CTABanner() {
             />
             <div
               aria-hidden="true"
-              className="absolute inset-0 opacity-[0.07] [background-image:radial-gradient(#C9A98A_1px,transparent_1px)] [background-size:22px_22px]"
+              className="absolute inset-0 opacity-[0.07] [background-image:radial-gradient(var(--tp-bronze)_1px,transparent_1px)] [background-size:22px_22px]"
             />
 
             <div className="relative z-10">
               <span className="inline-flex items-center gap-2 rounded-full border border-tp-bronze/40 bg-tp-bronze/15 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-tp-bronze">
                 Ready when you are
               </span>
-              <h2 className="mt-5 font-display text-[28px] sm:text-[36px] lg:text-[44px] font-normal text-tp-paper leading-tight tracking-[-0.03em]">
+              <h2 className="mt-5 font-display text-[30px] sm:text-[40px] font-normal text-tp-paper leading-tight tracking-[-0.03em]">
                 Skip the studio. Get headshots you&rsquo;ll actually use.
               </h2>
               <p className="mt-4 text-tp-beige/70 text-base sm:text-lg max-w-xl mx-auto">
@@ -61,7 +61,7 @@ export function CTABanner() {
                   href="/auth/register"
                   className={cn(
                     buttonVariants({ variant: 'primary', size: 'lg' }),
-                    'group h-14 gap-3 bg-tp-bronze px-10 text-base font-semibold text-tp-black shadow-lg shadow-tp-bronze/20 transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.03] hover:animate-cta-pulse hover:bg-tp-bronze hover:shadow-xl hover:shadow-tp-bronze/30'
+                    'group h-14 gap-3 bg-tp-bronze px-10 text-base font-semibold text-tp-black shadow-lg shadow-tp-bronze/20 transition-all duration-200 hover:-translate-y-0.5 cta-ring hover:bg-tp-bronze hover:shadow-xl hover:shadow-tp-bronze/30'
                   )}
                 >
                   Get my headshots{' '}
@@ -113,7 +113,7 @@ export function CTABanner() {
             <a
               key={cat.id}
               href={`/${cat.slug}`}
-              className="flex items-center gap-3 border border-tp-line bg-[#FEFCF8] rounded-tp-button min-h-[70px] p-3 text-left hover:border-tp-bronze-ink transition-colors"
+              className="flex items-center gap-3 border border-tp-line bg-tp-paper rounded-tp-button min-h-[70px] p-3 text-left hover:border-tp-bronze-ink transition-colors"
               onClick={() => categoryDialog.current?.close()}
             >
               <div className="w-[52px] h-[52px] rounded-lg overflow-hidden flex-shrink-0 bg-gradient-to-br from-tp-beige to-tp-line">

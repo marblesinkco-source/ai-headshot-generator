@@ -65,7 +65,7 @@ export function FAQ() {
                   'inline-flex items-center gap-2 rounded-tp-button border px-4 py-2 text-sm font-medium transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink',
                   active
                     ? 'border-tp-ink bg-tp-ink text-tp-paper'
-                    : 'border-tp-line bg-white text-tp-muted hover:border-tp-bronze hover:text-tp-ink'
+                    : 'border-tp-line bg-tp-paper text-tp-muted hover:border-tp-bronze hover:text-tp-ink'
                 )}
               >
                 {c}
@@ -96,7 +96,7 @@ export function FAQ() {
               <li
                 key={key}
                 className={cn(
-                  'rounded-tp-card border bg-white transition-colors duration-300',
+                  'rounded-tp-card border bg-tp-paper transition-colors duration-300',
                   open ? 'border-tp-bronze' : 'border-tp-line hover:border-tp-beige'
                 )}
               >

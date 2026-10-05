@@ -44,13 +44,13 @@ export function Hero() {
               <div className="flex flex-wrap items-center gap-3 mb-5">
                 <Link
                   href="/auth/register?redirect=/dashboard/upload"
-                  className="inline-flex items-center gap-4 rounded-tp-button bg-tp-black px-8 py-4 text-[15px] font-semibold text-tp-paper shadow-md transition-all hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl hover:animate-cta-pulse motion-reduce:hover:animate-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze whitespace-nowrap"
+                  className="inline-flex items-center gap-4 rounded-tp-button bg-tp-black px-8 py-4 text-[15px] font-semibold text-tp-paper shadow-md transition-[transform,box-shadow,border-color,background-color] hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl hover:animate-cta-pulse motion-reduce:hover:animate-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze whitespace-nowrap"
                 >
                   Get My Headshots <span aria-hidden="true" className="text-[20px] leading-none">&#8599;</span>
                 </Link>
                 <a
                   href="#how-it-works"
-                  className="inline-flex items-center gap-2.5 rounded-tp-button border border-tp-line bg-transparent px-6 py-3.5 text-sm font-semibold text-tp-ink transition-all hover:-translate-y-0.5 hover:border-tp-bronze-ink hover:bg-tp-beige/30 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
+                  className="inline-flex items-center gap-2.5 rounded-tp-button border border-tp-line bg-transparent px-6 py-3.5 text-sm font-semibold text-tp-ink transition-[transform,box-shadow,border-color,background-color] hover:-translate-y-0.5 hover:border-tp-bronze-ink hover:bg-tp-beige/30 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
                 >
                   See How It Works <span aria-hidden="true" className="text-[18px] leading-none">&#8595;</span>
                 </a>
@@ -94,7 +94,7 @@ export function Hero() {
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 priority
               />
-              <span className="absolute right-4 bottom-3 bg-tp-black/75 text-tp-paper text-[11px] tracking-[0.01em] px-2.5 py-1.5 rounded-md">
+              <span className="absolute right-4 bottom-3 bg-tp-black/75 text-tp-paper text-[11px] tracking-[0.01em] px-2.5 py-1.5 rounded-tp-button">
                 AI-generated concept image
               </span>
             </div>
@@ -136,10 +136,10 @@ export function Hero() {
             <Link
               key={cat.id}
               href={`/${cat.slug}`}
-              className="flex items-center gap-3 border border-tp-line bg-[#FEFCF8] rounded-xl min-h-[70px] sm:min-h-[84px] p-3 text-left hover:border-tp-bronze-ink transition-colors"
+              className="flex items-center gap-3 border border-tp-line bg-tp-paper rounded-tp-card min-h-[70px] sm:min-h-[84px] p-3 text-left hover:border-tp-bronze-ink transition-colors"
               onClick={() => categoryDialog.current?.close()}
             >
-              <div className="w-[60px] h-[60px] sm:w-[72px] sm:h-[72px] rounded-lg overflow-hidden flex-shrink-0 bg-gradient-to-br from-tp-beige to-tp-line">
+              <div className="w-[60px] h-[60px] sm:w-[72px] sm:h-[72px] rounded-tp-button overflow-hidden flex-shrink-0 bg-gradient-to-br from-tp-beige to-tp-line">
                 <Image
                   src={categoryVisuals[cat.id]?.quickCard?.src ?? `/images/categories/${cat.id}.jpg`}
                   alt={categoryVisuals[cat.id]?.quickCard?.alt ?? cat.name}
@@ -196,17 +196,18 @@ function QuickCategories({
           <Link
             key={cat.id}
             href={`/${cat.slug}`}
-            className="group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink border border-tp-line bg-[#FEFCF8] rounded-xl overflow-hidden flex flex-row lg:flex-col min-h-[85px] lg:min-h-0 items-stretch transition-all duration-150 hover:-translate-y-[3px] hover:border-tp-bronze-ink"
+            className="group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink border border-tp-line bg-tp-paper rounded-tp-card overflow-hidden flex flex-row lg:flex-col min-h-[85px] lg:min-h-0 items-stretch transition-[transform,box-shadow,border-color] duration-150 hover:-translate-y-[3px] hover:border-tp-bronze-ink"
           >
             {/* Category thumbnail */}
             <div className="w-[72px] lg:w-full h-[85px] lg:h-[130px] bg-gradient-to-br from-tp-beige to-tp-line flex-shrink-0 overflow-hidden">
               <Image
                 src={categoryVisuals[cat.id]?.quickCard?.src ?? `/images/categories/${cat.id}.jpg`}
                 alt={categoryVisuals[cat.id]?.quickCard?.alt ?? cat.name}
-                width={800}
-                height={600}
+                width={160}
+                height={120}
                 className="w-full h-full object-cover"
                 sizes="(max-width: 1024px) 59px, 16vw"
+                loading="lazy"
               />
             </div>
             <span className="flex items-center justify-between gap-1.5 px-2.5 py-2.5 lg:px-3 lg:py-3 text-[12px] font-semibold flex-1 min-h-0 lg:min-h-[48px]">

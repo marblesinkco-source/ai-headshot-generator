@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight, Camera, DollarSign, Zap } from 'lucide-react'
 import { BASE_PRICE_DISPLAY } from '@/config/pricing'
+import { Reveal } from '@/components/ui/reveal'
 
 const DIFFERENTIATORS = [
   {
@@ -36,7 +37,7 @@ export function WhyTailorPic() {
   return (
     <section
       aria-labelledby="why-tailorpic-heading"
-      className="bg-tp-paper py-16 sm:py-20 lg:py-24"
+      className="bg-tp-paper py-20 lg:py-24"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
@@ -57,9 +58,11 @@ export function WhyTailorPic() {
 
         <ul className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3 lg:gap-6">
           {DIFFERENTIATORS.map(
-            ({ icon: Icon, label, stat, statLabel, title, body, compare }) => (
-              <li
+            ({ icon: Icon, label, stat, statLabel, title, body, compare }, i) => (
+              <Reveal
+                as="li"
                 key={title}
+                index={i}
                 className="flex flex-col rounded-tp-card border border-tp-line bg-tp-paper p-6 sm:p-8"
               >
                 <div className="flex items-center gap-3">
@@ -86,7 +89,7 @@ export function WhyTailorPic() {
                 <p className="mt-6 border-t border-tp-line pt-4 text-sm text-tp-muted">
                   {compare}
                 </p>
-              </li>
+              </Reveal>
             ),
           )}
         </ul>

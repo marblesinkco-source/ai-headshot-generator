@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Manrope } from 'next/font/google';
+import { Manrope, Instrument_Serif } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
 import { siteConfig } from '@/config/site';
@@ -16,8 +16,13 @@ const manrope = Manrope({
   display: 'swap',
 });
 
-// Instrument Serif from Google Fonts doesn't support `next/font/google` well for italic-only,
-// so we load it via CSS @import in globals.css and reference the variable here.
+const instrumentSerif = Instrument_Serif({
+  weight: '400',
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+  variable: '--font-display',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: {
@@ -66,20 +71,15 @@ export const viewport: Viewport = {
   themeColor: '#0B0B0B',
 };
 
-const FONT_CSS_URL =
-  'https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap';
 const SUPABASE_ORIGIN = process.env.NEXT_PUBLIC_SUPABASE_URL
   ? new URL(process.env.NEXT_PUBLIC_SUPABASE_URL).origin
   : null;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={manrope.variable} suppressHydrationWarning>
+    <html lang="en" className={`${manrope.variable} ${instrumentSerif.variable}`} suppressHydrationWarning>
       <head>
-        {/* Instrument Serif: preconnect + non-chained stylesheet (replaces CSS @import, font-display: swap in URL) */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="stylesheet" href={FONT_CSS_URL} />
+        {/* Instrument Serif now self-hosted via next/font — no external stylesheet needed */}
         {SUPABASE_ORIGIN && (
           <>
             <link rel="preconnect" href={SUPABASE_ORIGIN} crossOrigin="anonymous" />

@@ -9,7 +9,7 @@ const badges = [
 
 export function TrustBadges() {
   return (
-    <section aria-label="Why choose TailorPic" className="py-8 sm:py-10">
+    <section aria-label="Why choose TailorPic" className="py-12 sm:py-16">
       <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
         <ul className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
           {badges.map((badge) => (

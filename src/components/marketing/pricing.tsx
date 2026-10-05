@@ -59,7 +59,7 @@ export function Pricing() {
                 'rounded-full px-4 py-2 text-sm font-medium transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink',
                 activeCategory.id === cat.id
                   ? 'bg-tp-black text-tp-bronze shadow-md'
-                  : 'bg-white text-tp-muted hover:-translate-y-0.5 hover:border-tp-bronze hover:bg-tp-paper border border-tp-line'
+                  : 'bg-tp-paper text-tp-muted hover:-translate-y-0.5 hover:border-tp-bronze hover:bg-tp-paper border border-tp-line'
               )}
             >
               <span className="inline-block w-5 h-5 rounded-full overflow-hidden flex-shrink-0">
@@ -78,7 +78,7 @@ export function Pricing() {
           ))}
           <Link
             href="/#categories"
-            className="rounded-full border border-tp-line bg-white px-4 py-2 text-sm font-medium text-tp-muted transition-all hover:bg-tp-paper"
+            className="rounded-full border border-tp-line bg-tp-paper px-4 py-2 text-sm font-medium text-tp-muted transition-all hover:bg-tp-paper"
           >
             All Categories &rarr;
           </Link>
@@ -105,9 +105,9 @@ export function Pricing() {
               <Card
                 key={pkg.id}
                 className={cn(
-                  'relative flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0',
+                  'relative flex flex-col transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0',
                   isRecommended &&
-                    'z-10 border-tp-bronze bg-white shadow-xl shadow-tp-bronze/20 ring-2 ring-tp-bronze/60 scale-[1.02] lg:scale-105',
+                    'z-10 border-tp-bronze bg-tp-paper shadow-xl shadow-tp-bronze/20 ring-2 ring-tp-bronze/60 scale-[1.02] lg:scale-105',
                   isExpress &&
                     'border-dashed border-tp-bronze/30'
                 )}
@@ -122,7 +122,7 @@ export function Pricing() {
                 )}
                 {isExpress && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <Badge variant="outline" className="border-tp-bronze/50 bg-white text-tp-bronze-ink">
+                    <Badge variant="outline" className="border-tp-bronze/50 bg-tp-paper text-tp-bronze-ink">
                       <Zap className="mr-1 h-3 w-3" />
                       Quick Try
                     </Badge>
@@ -183,7 +183,7 @@ export function Pricing() {
                       buttonVariants({ variant: isRecommended ? 'primary' : 'outline' }),
                       'w-full transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze',
                       isRecommended &&
-                        'h-12 bg-tp-black text-tp-paper font-semibold hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl hover:animate-cta-pulse motion-reduce:hover:animate-none',
+                        'h-12 bg-tp-black text-tp-paper font-semibold hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl cta-ring',
                       isExpress && 'border-tp-bronze/50 text-tp-bronze-ink hover:bg-tp-bronze/5'
                     )}
                   >
