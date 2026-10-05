@@ -1,5 +1,56 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-05 (Ön Hazırlık Tamamlama + Canlı Site Doğrulaması)
+
+### Baseline
+- HEAD: `eca3177` (chore: update harness — AI visual generation infrastructure complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### 1. Kapsamlı Kod Tabanı Denetimi (3 Paralel Ajan)
+- **Route/Config Tutarlılık**: 318+ sayfa, 12 kategori, 6 paket, 31 API route — SORUN YOK
+- **Link/Buton Denetimi**: Kırık link yok, href="" veya href="#" yok, mega menü kategorilerle eşleşiyor, footer linkleri geçerli — SORUN YOK
+- **GitHub Actions/Secrets**: 5 workflow (CI, db-migrate, vercel-logs, cleanup-branch, generate-visuals). Eksik secret'lar tespit edildi
+
+#### 2. Canlı Site Doğrulaması (Chrome Browser — 20+ Sayfa)
+Tüm sayfalar başarıyla yüklendi ve doğrulandı:
+- ✅ Homepage (hero, navigasyon, CTA'lar çalışıyor)
+- ✅ Pricing (6 paket, fiyatlar doğru)
+- ✅ Samples (galeri, kategori filtreleri)
+- ✅ How It Works (3 adımlık süreç)
+- ✅ Enterprise (takım fiyatlandırma)
+- ✅ Blog (yazılar, kategoriler)
+- ✅ FAQ (5 kategori tab'ı)
+- ✅ Contact (form, iletişim bilgileri)
+- ✅ About (takım, misyon)
+- ✅ /headshots kategori sayfası (breadcrumb, hero, görseller)
+- ✅ /dating-photos kategori sayfası
+- ✅ Pricing Comparison
+- ✅ Locations (20 şehir, eyalete göre gruplu)
+- ✅ VS Hub (80 karşılaştırma)
+- ✅ Use Cases
+- ✅ Privacy Policy
+- ✅ Dashboard Overview (sipariş verileri, kullanıcı bilgisi)
+- ✅ Dashboard Orders (sipariş listesi, filtreler)
+- ✅ Dashboard Settings (profil, Data & Privacy)
+- ✅ Auth yönlendirmesi (giriş yapılmışsa dashboard'a)
+
+#### 3. Tespit Edilen Sorunlar
+- `/categories/professional-headshots` → 404 (doğru URL: `/headshots`) — bu bir sorun DEĞİL, tasarım gereği dinamik rota `[category]` slug kullanıyor
+
+### Dış Engeller (Owner Aksiyonu Gerekli)
+1. **REPLICATE_API_TOKEN** — GitHub Actions'a eklenmeli (AI görsel üretimi için)
+2. **SUPABASE_DB_URL** — GitHub Actions'a eklenmeli (veritabanı migration'ları için)
+3. **VERCEL_TOKEN** — GitHub Actions'a eklenmeli (Vercel log erişimi için)
+
+### Sonraki Adımlar
+- [ ] Phase G: Funnel UI (Signup/signin/checkout/upload/generation/results) — status: not-started
+- [ ] Demo sunumları: Farklı görseller ile modül sunumları
+- [ ] Dış secret'ların eklenmesi (kullanıcı aksiyonu)
+
+---
+
 ## Oturum: 2026-10-05 (AI Görsel Üretim Altyapısı)
 
 ### Baseline

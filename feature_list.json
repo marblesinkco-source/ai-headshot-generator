@@ -102,7 +102,7 @@
       "description": "Tüm modülleri incele, eksik/kırık sayfaları düzelt, menü/butonları denetle, farklı görseller ile demo sunumları hazırla",
       "dependencies": ["feat-K"],
       "status": "in-progress",
-      "evidence": "VS sayfaları + footer + integrations + developer-api düzeltmeleri. Dashboard rounded token migration. Funnel güvenlik düzeltmeleri. 20 şehir SEO landing sayfası. AI görsel üretim altyapısı: visual-manifest.ts (50+ spec), generate-site-visuals.ts (Replicate CLI), generate-visuals.yml (GH Actions workflow), generated-images.ts (fallback helpers). Dry-run PASS. Commit: 9d5c570. CI PASS + Vercel PASS."
+      "evidence": "VS sayfaları + footer + integrations + developer-api düzeltmeleri. Dashboard rounded token migration. Funnel güvenlik düzeltmeleri. 20 şehir SEO landing sayfası. AI görsel üretim altyapısı: visual-manifest.ts (50+ spec), generate-site-visuals.ts (Replicate CLI), generate-visuals.yml (GH Actions workflow), generated-images.ts (fallback helpers). Dry-run PASS. Commit: 9d5c570. 3 paralel ajan ile tam kod tabanı denetimi: 318+ sayfa, 31 API route, 12 kategori — sorun yok. Canlı site doğrulaması: 20+ kritik sayfa Chrome ile test edildi — tümü çalışıyor. CI PASS + Vercel PASS. BLOCKER: REPLICATE_API_TOKEN, SUPABASE_DB_URL, VERCEL_TOKEN secret'ları eksik."
     }
   ]
 }
