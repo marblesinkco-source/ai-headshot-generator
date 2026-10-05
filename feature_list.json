@@ -111,6 +111,14 @@
       "dependencies": ["feat-M"],
       "status": "done",
       "evidence": "17 dosya (13 yeni, 4 değiştirilmiş), +1597 satır. Migration SQL (7 tablo + RLS + indeksler), tracking API (page_view/click/conversion), metrics API (auth-protected), useAnalytics hook (auto page view + UTM + duration), useAbTest hook (deterministic hashing), A/B test service, dynamic ranking service, optimize cron (günlük 03:00 UTC), AI Insights dashboard (Türkçe UI, özet kartlar, funnel, optimizasyon geçmişi). Graceful fallback (tablo yoksa boş veri). Commit: 15d8b5a. CI PASS + Vercel PASS. Canlı doğrulama: /dashboard/insights sayfası başarıyla yükleniyor — başlık, dönem seçici, özet kartları, boş veri mesajları tümü doğru."
+    },
+    {
+      "id": "feat-O",
+      "name": "Phase O — Rakip Analizi & Homepage Optimizasyonu",
+      "description": "6 rakip platform analizi, 10 veri-dayalı iyileştirme, mevcut 42 bileşenden 5 tanesinin homepage'e eklenmesi, yeni WhyTailorPic bileşeni, section sıralaması optimizasyonu",
+      "dependencies": ["feat-N"],
+      "status": "done",
+      "evidence": "Rakip analizi (6 platform: Aragon, HeadshotPro, Secta, BetterPic, ProPhotos, ProfilePhoto). 5 mevcut bileşen homepage'e eklendi: SocialProofBar (hero sonrası), WhyTailorPic (yeni, 3 farklılaştırıcı kart), SpeedComparison (Before/After sonrası), PrivacySection (TrustBadges sonrası), StickyCTA (mobil sticky bar). Optimized section sıralaması (16 bölüm). Commit: b79b619. CI PASS + Vercel PASS. Canlı doğrulama: tüm yeni bölümler www.tailorpic.com'da doğru sırada yükleniyor."
     }
   ]
 }
