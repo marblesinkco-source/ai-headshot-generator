@@ -3,7 +3,8 @@ import Link from 'next/link';
 import { Briefcase, Check, Clock, Eye, Mail, MessageCircle, Monitor, Shield, Sparkles, Upload, UserCheck, Users } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
+import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
+import { FAQSchema, ProductSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
@@ -133,14 +134,12 @@ export default function EmailSignatureUseCasePage() {
         slug="use-cases/email-signature"
       />
       <FAQSchema items={faqs} />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Home', url: siteConfig.url },
-          { name: 'Use Cases', url: `${siteConfig.url}/use-cases` },
-          { name: 'Email Signature', url: `${siteConfig.url}/use-cases/email-signature` },
-        ]}
-      />
       <Header />
+      <div className="bg-tp-paper pt-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Use Cases', href: '/use-cases' }, { label: 'Email Signature' }]} currentPath="/use-cases/email-signature" />
+        </div>
+      </div>
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-tp-black pt-16">

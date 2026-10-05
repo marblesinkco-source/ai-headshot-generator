@@ -3,7 +3,8 @@ import Link from 'next/link';
 import { BadgeCheck, Briefcase, Camera, Check, Clock, Code2, Globe, Palette, Shield, TrendingUp, Upload, Users } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
+import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
+import { FAQSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
@@ -147,14 +148,12 @@ export default function UpworkFiverrUseCasePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
       />
       <FAQSchema items={faqs} />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Home', url: siteConfig.url },
-          { name: 'Use Cases', url: `${siteConfig.url}/use-cases` },
-          { name: "Freelance Platforms", url: `${siteConfig.url}/use-cases/upwork-fiverr` },
-        ]}
-      />
       <Header />
+      <div className="bg-tp-paper pt-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Use Cases', href: '/use-cases' }, { label: 'Freelance Platforms' }]} currentPath="/use-cases/upwork-fiverr" />
+        </div>
+      </div>
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-tp-black pt-16">

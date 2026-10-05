@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { EmailCapture } from '@/components/marketing/email-capture';
+import { SocialShare } from '@/components/marketing/social-share';
 import { siteConfig } from '@/config/site';
 import { getBlogPost, getAllBlogPosts } from '@/config/blog';
 import { ArticleSchema, BreadcrumbSchema } from '@/components/structured-data';
@@ -154,6 +155,10 @@ export default async function BlogPostPage({ params }: Props) {
             className="prose prose-gray max-w-none prose-headings:font-display prose-headings:font-normal prose-headings:text-tp-ink prose-p:text-tp-muted prose-p:leading-relaxed prose-a:text-tp-bronze-ink prose-a:underline prose-a:underline-offset-2 hover:prose-a:text-tp-bronze prose-strong:text-tp-ink prose-li:text-tp-muted"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
+          <div className="mt-12 flex flex-wrap items-center gap-3 border-t border-tp-line pt-6">
+            <span className="text-sm font-medium text-tp-ink">Share this article</span>
+            <SocialShare url={`${siteConfig.url}/blog/${post.slug}`} title={post.title} />
+          </div>
           <EmailCapture variant="banner" className="mt-12" />
         </div>
 

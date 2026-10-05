@@ -7,6 +7,7 @@ import { Camera, Sparkles, Clock, ShieldCheck, ChevronRight } from 'lucide-react
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { SocialShare } from '@/components/marketing/social-share';
 import { getActiveCategories, getCategoryBySlug } from '@/config/categories';
 import { getCategoryContent } from '@/config/category-content';
 import { getCategoryVisuals, getCategoryImage, categoryVisuals } from '@/config/category-visuals';
@@ -649,6 +650,14 @@ export default async function CategoryPage({ params }: Props) {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── SHARE ── */}
+      <section className="border-t border-tp-line bg-tp-paper py-8">
+        <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-3 px-4 sm:px-6 lg:px-8">
+          <span className="text-sm font-medium text-tp-ink">Share {cat.shortName}</span>
+          <SocialShare url={`${siteConfig.url}/${cat.slug}`} title={cat.seoTitle} />
         </div>
       </section>
 

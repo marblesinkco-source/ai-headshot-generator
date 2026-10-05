@@ -3,7 +3,8 @@ import Link from 'next/link';
 import { Briefcase, Building2, Check, Clock, Globe, Layout, Shield, Sparkles, Upload, UserCheck, Users } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
+import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
+import { FAQSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
@@ -147,14 +148,12 @@ export default function WebsiteTeamPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
       />
       <FAQSchema items={faqs} />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Home', url: siteConfig.url },
-          { name: 'Use Cases', url: `${siteConfig.url}/use-cases` },
-          { name: "Website Team Pages", url: `${siteConfig.url}/use-cases/website-team-page` },
-        ]}
-      />
       <Header />
+      <div className="bg-tp-paper pt-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Use Cases', href: '/use-cases' }, { label: 'Website Team Pages' }]} currentPath="/use-cases/website-team-page" />
+        </div>
+      </div>
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-tp-black pt-16">

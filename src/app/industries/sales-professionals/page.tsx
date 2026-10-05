@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { Check } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
+import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
+import { FAQSchema, ProductSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
@@ -124,14 +125,12 @@ export default function SalesProfessionalsIndustryPage() {
         slug="industries/sales-professionals"
       />
       <FAQSchema items={faqs} />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Home', url: siteConfig.url },
-          { name: 'Industries', url: `${siteConfig.url}/industries` },
-          { name: "Sales Professionals", url: `${siteConfig.url}/industries/sales-professionals` },
-        ]}
-      />
       <Header />
+      <div className="bg-tp-paper pt-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Sales Professionals' }]} currentPath="/industries/sales-professionals" />
+        </div>
+      </div>
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-tp-black pt-16">

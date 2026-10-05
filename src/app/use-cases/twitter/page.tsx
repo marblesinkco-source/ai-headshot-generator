@@ -3,7 +3,8 @@ import Link from 'next/link';
 import { AtSign, Check, Globe, MessageCircle, Pen, Shield, Sparkles, Target, Upload, Users, Zap } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
+import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
+import { FAQSchema, ProductSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
@@ -129,14 +130,12 @@ export default function TwitterUseCasePage() {
         slug="use-cases/twitter"
       />
       <FAQSchema items={faqs} />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Home', url: siteConfig.url },
-          { name: 'Use Cases', url: `${siteConfig.url}/use-cases` },
-          { name: 'X (Twitter)', url: `${siteConfig.url}/use-cases/twitter` },
-        ]}
-      />
       <Header />
+      <div className="bg-tp-paper pt-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Use Cases', href: '/use-cases' }, { label: 'X (Twitter)' }]} currentPath="/use-cases/twitter" />
+        </div>
+      </div>
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-tp-black pt-16">

@@ -3,7 +3,8 @@ import Link from 'next/link';
 import { Building, Check, HeadphonesIcon, Monitor, Shield, Smile, Sparkles, Target, Upload, Users, Video } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
+import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
+import { FAQSchema, ProductSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
@@ -129,14 +130,12 @@ export default function SlackUseCasePage() {
         slug="use-cases/slack"
       />
       <FAQSchema items={faqs} />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Home', url: siteConfig.url },
-          { name: 'Use Cases', url: `${siteConfig.url}/use-cases` },
-          { name: 'Slack & Teams', url: `${siteConfig.url}/use-cases/slack` },
-        ]}
-      />
       <Header />
+      <div className="bg-tp-paper pt-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Use Cases', href: '/use-cases' }, { label: 'Slack & Teams' }]} currentPath="/use-cases/slack" />
+        </div>
+      </div>
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-tp-black pt-16">

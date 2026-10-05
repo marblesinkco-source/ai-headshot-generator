@@ -11,18 +11,30 @@ export interface BreadcrumbItem {
  * Reusable breadcrumb navigation — server component.
  *
  * The first item should always be { label: "Home", href: "/" }.
- * The last item has no `href` (current page).
+ * The last item has no `href` (current page) — pass `currentPath`
+ * so the JSON-LD schema points to the correct page URL.
  *
  * On mobile, when there are more than 3 items, middle items are
  * collapsed to an ellipsis so only the first item, "...", the
  * penultimate item, and the last item are visible.
  */
-export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
-  const schemaItems = items.map((item) => ({
+export function Breadcrumbs({
+  items,
+  currentPath,
+}: {
+  items: BreadcrumbItem[];
+  /** Canonical path for the current (last) page, e.g. "/industries/insurance-agents" */
+  currentPath?: string;
+}) {
+  const schemaItems = items.map((item, idx) => ({
     name: item.label,
     url: item.href
       ? `${siteConfig.url}${item.href}`
-      : `${siteConfig.url}`,
+      : currentPath
+        ? `${siteConfig.url}${currentPath}`
+        : idx === items.length - 1 && items.length > 1
+          ? `${siteConfig.url}`
+          : `${siteConfig.url}`,
   }));
 
   const lastIndex = items.length - 1;

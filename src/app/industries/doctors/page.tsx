@@ -4,7 +4,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema, ProductSchema, FAQSchema } from '@/components/structured-data';
+import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
+import { ProductSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { CheckCircle, ArrowRight } from 'lucide-react';
@@ -123,12 +124,12 @@ export default function DoctorsIndustryPage() {
         slug="industries/doctors"
       />
       <FAQSchema items={faqs} />
-      <BreadcrumbSchema items={[
-        { name: 'Home', url: siteConfig.url },
-        { name: 'Industries', url: `${siteConfig.url}/industries` },
-        { name: 'Doctors', url: `${siteConfig.url}/industries/doctors` },
-      ]} />
       <Header />
+      <div className="bg-tp-paper pt-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Doctors' }]} currentPath="/industries/doctors" />
+        </div>
+      </div>
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-tp-black pt-16">
