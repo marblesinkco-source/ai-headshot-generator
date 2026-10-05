@@ -62,6 +62,10 @@ const HowItWorks = dynamic(
   () => import('@/components/marketing/how-it-works').then((m) => m.HowItWorks),
   { loading: () => <SectionSkeleton height="h-[600px] md:h-[400px]" /> }
 );
+const StatsCounter = dynamic(
+  () => import('@/components/marketing/stats-counter').then((m) => m.StatsCounter),
+  { loading: () => <SectionSkeleton height="h-[200px] sm:h-[240px]" /> }
+);
 const Pricing = dynamic(
   () => import('@/components/marketing/pricing').then((m) => m.Pricing),
   { loading: () => <SectionSkeleton height="h-[800px] md:h-[600px]" /> }
@@ -73,6 +77,10 @@ const TrustBadges = dynamic(
 const CompanyLogos = dynamic(
   () => import('@/components/marketing/company-logos').then((m) => m.CompanyLogos),
   { loading: () => <SectionSkeleton height="h-[120px]" /> }
+);
+const GuaranteeSection = dynamic(
+  () => import('@/components/marketing/guarantee-section').then((m) => m.GuaranteeSection),
+  { loading: () => <SectionSkeleton height="h-[400px] md:h-[320px]" /> }
 );
 const PrivacySection = dynamic(
   () => import('@/components/marketing/privacy-section').then((m) => m.PrivacySection),
@@ -135,10 +143,16 @@ export default function LandingPage() {
       {/* 10. How It Works */}
       <HowItWorks />
 
-      {/* 10. Pricing Overview */}
+      {/* 10.5. Stats at a Glance — animated counters */}
+      <StatsCounter />
+
+      {/* 11. Pricing Overview */}
       <Pricing />
 
-      {/* 11. Trust & Integrations */}
+      {/* 11. Satisfaction Guarantee */}
+      <GuaranteeSection />
+
+      {/* 12. Trust & Integrations */}
       <TrustBadges />
       <CompanyLogos />
 

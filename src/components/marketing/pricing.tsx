@@ -156,9 +156,9 @@ export function Pricing() {
                     </span>
                     <span className="text-sm text-tp-muted">one-time</span>
                   </div>
-                  {pkg.outputCount > 1 && (
-                    <p className="mt-1 text-[12px] text-tp-muted">
-                      That&apos;s just {formatPrice(Math.round(pkg.price / pkg.outputCount))} per photo
+                  {pkg.outputCount > 0 && (
+                    <p className="mt-1 text-xs text-tp-muted">
+                      {formatPrice(Math.round(pkg.price / pkg.outputCount), 'usd')} per photo
                     </p>
                   )}
                   {isRecommended && bestValuePackage?.id === pkg.id && (
