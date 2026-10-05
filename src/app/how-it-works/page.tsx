@@ -7,6 +7,7 @@ import { BeforeAfterIllustration } from '@/components/marketing/illustrations';
 import { HowToSchema, BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import {
   Upload,
   Sparkles,
@@ -346,6 +347,27 @@ export default function HowItWorksPage() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* Mid-page CTA */}
+      <section className="bg-tp-black py-12 sm:py-16">
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-display font-normal text-3xl sm:text-4xl text-tp-paper">
+            Ready to see the difference?
+          </h2>
+          <p className="mt-3 text-base text-tp-beige">
+            Upload a few selfies and get your photos in ~2 hours.
+          </p>
+          <Link
+            href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
+            className="mt-8 inline-flex items-center justify-center rounded-tp-button bg-tp-paper px-8 py-3.5 text-base font-semibold text-tp-ink transition-all duration-200 hover:-translate-y-0.5 hover:bg-tp-beige focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze"
+          >
+            Get Started — {BASE_PRICE_DISPLAY}
+          </Link>
+          <p className="mt-4 text-sm text-tp-beige">
+            One-time payment · No subscription
+          </p>
         </div>
       </section>
 

@@ -38,10 +38,10 @@ export function PrivacySection() {
             <ShieldCheck className="h-6 w-6 text-tp-bronze" aria-hidden="true" />
           </span>
           <h2 className="font-display mt-5 text-[30px] sm:text-[40px] font-normal tracking-[-0.03em] leading-tight text-tp-paper">
-            Your photos stay yours
+            Your Photos Stay Private — Always
           </h2>
           <p className="mt-4 text-base leading-relaxed text-tp-beige/80">
-            Four clear commitments on how we handle your photos.
+            We never train our AI on your photos. Four clear commitments.
           </p>
         </div>
 
@@ -74,6 +74,13 @@ export function PrivacySection() {
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           ))}
+          <Link
+            href="/auth/register?redirect=%2Fdashboard%2Fupload"
+            className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-6 py-3 text-sm font-semibold text-tp-black transition-all hover:-translate-y-0.5 hover:bg-tp-bronze/90 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze"
+          >
+            Start with confidence
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </section>

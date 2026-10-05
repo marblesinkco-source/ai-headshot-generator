@@ -28,7 +28,7 @@ const metrics = [
   {
     icon: Tag,
     value: `From ${BASE_PRICE_DISPLAY}`,
-    description: "Save up to 95% vs studios",
+    description: "Save vs. studio photoshoots",
   },
 ] as const;
 

@@ -27,7 +27,7 @@ export function StudioComparison() {
             Studio photoshoot vs. TailorPic
           </h2>
           <p className="mt-3 text-tp-muted text-base max-w-lg mx-auto">
-            A fraction of the cost and time.
+            A fraction of the cost. Results in ~2 hours, not weeks.
           </p>
         </div>
 
@@ -74,8 +74,9 @@ export function StudioComparison() {
             href="/auth/register?redirect=%2Fdashboard%2Fupload"
             className="inline-flex items-center gap-2 rounded-tp-button bg-tp-black px-8 py-3.5 text-[15px] font-semibold text-tp-paper shadow-md transition-all hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze"
           >
-            Try TailorPic now <span aria-hidden="true" className="text-lg">↗</span>
+            Get Your Photos Today <span aria-hidden="true" className="text-lg">↗</span>
           </Link>
+          <p className="mt-3 text-sm text-tp-muted">One-time payment · No subscription · Full commercial rights</p>
         </div>
       </div>
     </section>

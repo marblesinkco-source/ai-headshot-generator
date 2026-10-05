@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowDown, ArrowRight, Clock } from 'lucide-react';
 import { StepStyleIllustration, StepUploadIllustration, StepDownloadIllustration } from '@/components/marketing/illustrations';
 import { buttonVariants } from '@/components/ui/button';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const steps = [
   {
@@ -120,7 +121,7 @@ export function HowItWorks() {
           href="/auth/register?redirect=/dashboard/upload"
           className={`${buttonVariants({ variant: 'primary', size: 'lg' })} bg-tp-ink text-tp-paper rounded-tp-button gap-2 transition-all duration-200 hover:-translate-y-0.5 hover:bg-tp-black hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze`}
         >
-          Start My Headshots
+          Start My Headshots — {BASE_PRICE_DISPLAY}
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </Link>
         <p className="m-0 text-[11px] lg:text-xs text-tp-muted">

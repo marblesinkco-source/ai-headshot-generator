@@ -56,7 +56,7 @@ export function Pricing() {
             Choose Your Plan
           </h2>
           <p className="mt-4 text-[15px] text-tp-muted leading-relaxed max-w-lg mx-auto">
-            One-time payment, no subscription. Studio-quality photos without the studio booking, travel or wardrobe changes.
+            One-time payment, no subscription. Studio-quality photos without the studio booking, travel or wardrobe changes. Results in ~2 hours.
           </p>
         </div>
 
@@ -206,7 +206,11 @@ export function Pricing() {
                       isExpress && 'border-tp-bronze/50 text-tp-bronze-ink hover:bg-tp-bronze/5'
                     )}
                   >
-                    {isExpress ? 'Try It' : 'Get Started'}
+                    {isRecommended
+                      ? `Get ${pkg.outputCount} ${pkg.outputCount === 1 ? 'Photo' : 'Photos'} — ${formatPrice(pkg.price)}`
+                      : isExpress
+                        ? `Try ${pkg.outputCount} ${pkg.outputCount === 1 ? 'Photo' : 'Photos'} — ${formatPrice(pkg.price)}`
+                        : `Get ${pkg.outputCount} ${pkg.outputCount === 1 ? 'Photo' : 'Photos'}`}
                   </Link>
                   <p className="mt-3 flex w-full items-center justify-center gap-1 text-xs text-tp-muted">
                     <Lock className="h-3 w-3" aria-hidden="true" />
@@ -222,7 +226,7 @@ export function Pricing() {
         {hasExpress && entryPackage && (
           <p className="mt-6 text-center text-sm text-tp-muted">
             <Zap className="mr-1 inline h-3.5 w-3.5 text-tp-bronze" />
-            Start with {entryPackage.name} to preview your results, then upgrade anytime.
+            Start with {entryPackage.name} for just {formatPrice(entryPackage.price)} to preview your results, then upgrade anytime.
           </p>
         )}
 

@@ -37,7 +37,7 @@ export function CTABanner() {
                 Ready when you are
               </span>
               <h2 className="mt-5 font-display text-[30px] sm:text-[40px] font-normal text-tp-paper leading-tight tracking-[-0.03em]">
-                Skip the studio. Get headshots you&rsquo;ll actually use.
+                Skip the studio. Start today, get headshots in ~2 hours.
               </h2>
               <p className="mt-4 text-tp-beige/70 text-base sm:text-lg max-w-xl mx-auto">
                 Upload a few selfies and get polished, studio-quality portraits for LinkedIn, your resume and more.
