@@ -10,7 +10,13 @@ import { OrganizationSchema } from '@/components/structured-data';
 import { GoogleAnalytics } from '@/components/analytics/google-analytics';
 import { AnalyticsProvider } from '@/components/analytics-provider';
 import { Suspense } from 'react';
+import dynamic from 'next/dynamic';
 import { LiveChat } from '@/components/marketing/live-chat';
+
+const BackToTop = dynamic(
+  () => import('@/components/marketing/back-to-top').then((m) => m.BackToTop),
+  { ssr: false },
+);
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -108,6 +114,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <CookieConsent />
           <ExitIntentPopupLazy />
         </ToastProvider>
+        <BackToTop />
         {/* Tawk.to live chat — only loads when NEXT_PUBLIC_TAWKTO_ID is set */}
         <Suspense fallback={null}>
           <LiveChat />
