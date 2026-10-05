@@ -11,7 +11,9 @@
     "lint": "next lint",
     "db:migrate": "tsx src/database/migrations/run.ts",
     "db:seed": "tsx src/database/seed/run.ts",
-    "stripe:listen": "stripe listen --forward-to localhost:3000/api/webhooks/stripe"
+    "stripe:listen": "stripe listen --forward-to localhost:3000/api/webhooks/stripe",
+    "generate:visuals": "tsx scripts/generate-site-visuals.ts",
+    "generate:visuals:dry": "tsx scripts/generate-site-visuals.ts --dry-run"
   },
   "dependencies": {
     "next": "^14.2.0",
