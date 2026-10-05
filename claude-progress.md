@@ -1,5 +1,40 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-05 (AI Görsel Üretim Altyapısı)
+
+### Baseline
+- HEAD (önceki): `085dc1f` (chore: update harness progress)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### 1. AI Görsel Üretim Altyapısı (Commit: 9d5c570)
+- **`src/config/visual-manifest.ts`**: 50+ görsel spec — 14 farklı demografik profil (cinsiyet, yaş, etnisite)
+- **`scripts/generate-site-visuals.ts`**: Replicate Flux-dev CLI aracı — concurrency kontrolü, retry, dry-run
+- **`.github/workflows/generate-visuals.yml`**: GitHub Actions workflow — dispatch ile kategori/id seçimi
+- **`src/config/generated-images.ts`**: Component helper fonksiyonları — Unsplash fallback ile
+- **`package.json`**: `generate:visuals` ve `generate:visuals:dry` script'leri
+- **`public/images/generated/`**: Dizin yapısı (samples/, hero/, before-after/, styles/, blog/, og/)
+
+#### 2. Workflow Test
+- ✅ Dry-run workflow: PASS (run 37289966683) — prompt'lar doğru üretiliyor
+- ❌ Gerçek generation: FAIL (run 37290101611) — `REPLICATE_API_TOKEN` secret eksik
+
+#### 3. Deploy Doğrulaması
+- CI: PASS ✅
+- Vercel: PASS ✅
+
+### Dış Engeller (Owner Aksiyonu Gerekli)
+1. **REPLICATE_API_TOKEN** — GitHub Actions'a eklenmeli:
+   - Replicate.com → Account Settings → API Tokens
+   - GitHub → Repo Settings → Secrets → `REPLICATE_API_TOKEN`
+   - Sonra: `gh api repos/marblesinkco-source/ai-headshot-generator/actions/workflows/generate-visuals.yml/dispatches -f ref=main`
+
+### Commit: 9d5c570
+- AI görsel üretim altyapısı — 6 dosya, 938 satır
+
+---
+
 ## Oturum: 2026-10-05 (Phase M Devam — Competitor Features + Güvenlik)
 
 ### Baseline
