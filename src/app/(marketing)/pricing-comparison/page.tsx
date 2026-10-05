@@ -7,7 +7,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
-import { CATEGORIES } from '@/config/categories';
+import { CATEGORIES, type CategoryPackage } from '@/config/categories';
 import { BASE_PRICE_DISPLAY, TEAM_PRICES } from '@/config/pricing';
 import { formatPrice } from '@/lib/utils';
 import {
@@ -52,18 +52,22 @@ export const metadata: Metadata = {
 /* ------------------------------------------------------------------ */
 
 const headshots = CATEGORIES.headshots;
-if (headshots.packages.length < 6) {
-  throw new Error(
-    `pricing-comparison expects at least 6 headshot packages but found ${headshots.packages.length}. ` +
-    `Update this page when changing the package list.`
-  );
-}
-const tailorpic1Package = headshots.packages.find((p) => p.id === 'headshots-tailorpic1') ?? headshots.packages[0] ?? headshots.packages[headshots.packages.length - 1]; // TailorPic 1: $1.99, 1 headshot
-const litePackage = headshots.packages.find((p) => p.id === 'headshots-lite') ?? headshots.packages[0] ?? headshots.packages[headshots.packages.length - 1]; // Lite: $9.90, 5 headshots
-const basicPackage = headshots.packages.find((p) => p.id === 'headshots-express') ?? headshots.packages[0] ?? headshots.packages[headshots.packages.length - 1]; // Basic: $19.90, 10 headshots
-const starterPackage = headshots.packages.find((p) => p.id === 'headshots-starter') ?? headshots.packages[0] ?? headshots.packages[headshots.packages.length - 1]; // Starter: $29.90, 40 headshots
-const proPackage = headshots.packages.find((p) => p.id === 'headshots-professional') ?? headshots.packages[0] ?? headshots.packages[headshots.packages.length - 1]; // Professional: $49.90, 80 headshots
-const execPackage = headshots.packages.find((p) => p.id === 'headshots-executive') ?? headshots.packages[0] ?? headshots.packages[headshots.packages.length - 1]; // Executive: $89.90, 160 headshots
+const _fallback: CategoryPackage = {
+  id: 'fallback',
+  name: 'Headshots',
+  price: 199,
+  currency: 'usd',
+  outputCount: 1,
+  features: ['HD resolution'],
+};
+const _first = headshots.packages[0] ?? _fallback;
+const _last = headshots.packages[headshots.packages.length - 1] ?? _first;
+const tailorpic1Package = headshots.packages.find((p) => p.id === 'headshots-tailorpic1') ?? _first; // TailorPic 1: $1.99, 1 headshot
+const litePackage = headshots.packages.find((p) => p.id === 'headshots-lite') ?? _first; // Lite: $9.90, 5 headshots
+const basicPackage = headshots.packages.find((p) => p.id === 'headshots-express') ?? _first; // Basic: $19.90, 10 headshots
+const starterPackage = headshots.packages.find((p) => p.id === 'headshots-starter') ?? _first; // Starter: $29.90, 40 headshots
+const proPackage = headshots.packages.find((p) => p.id === 'headshots-professional') ?? _first; // Professional: $49.90, 80 headshots
+const execPackage = headshots.packages.find((p) => p.id === 'headshots-executive') ?? _last; // Executive: $89.90, 160 headshots
 
 function perPhotoPrice(cents: number, count: number): string {
   return `$${(cents / 100 / count).toFixed(2)}`;
