@@ -1,5 +1,41 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-05 (Phase T — Conversion Toolkit & Trust Reinforcement)
+
+### Baseline
+- HEAD: `e3773b5` (harness update — Phase S complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### Yeni Bileşenler
+- **savings-calculator.tsx** (YENİ): İnteraktif tasarruf hesaplayıcı — stüdyo maliyeti vs TailorPic karşılaştırması
+  - 1–50 kişi slider + sayı girişi
+  - Stüdyo maliyeti $100–$1000 aralığı
+  - TEAM_PRICES entegrasyonu (5–15 kişi: $39/kişi, 16–50: $29/kişi)
+  - Professional paket ID ile lookup (array index değil — build güvenliği)
+  - "YOU SAVE" vurgu kartı + "Get Started" CTA + "$1.99" notu
+- **ai-comparison.tsx** (YENİ): 8 satırlık Generic AI vs TailorPic karşılaştırma tablosu
+  - Training, Face accuracy, Professional quality, Background options, Consistency, Ease of use, Commercial rights, Price
+  - TailorPic sütununda check ikonları
+  - "Try TailorPic Now" CTA + güven notu
+
+#### Mevcut Bileşen İyileştirmeleri
+- **faqs.ts**: Pricing FAQ cevabına "/pricing" linki eklendi
+- **before-after-showcase.tsx**: "See more examples →" linki /samples'a eklendi
+
+#### Homepage Entegrasyonu (page.tsx)
+- SavingsCalculator + AIComparison dinamik import olarak eklendi
+- Yerleşim: StudioComparison → SavingsCalculator → AIComparison → HowItWorks
+
+### Sonuç
+- Commit: `df041c2` — 6 dosya, +317 satır
+- CI: PASS ✅
+- Vercel: PASS ✅
+- Canlı doğrulama: SavingsCalculator ($300.10 tasarruf, slider, CTA), AIComparison (8 satır tablo, check ikonları, CTA) — tümü doğru çalışıyor ✅
+
+---
+
 ## Oturum: 2026-10-05 (Phase S — Sales-Driven Conversion Boost)
 
 ### Baseline
