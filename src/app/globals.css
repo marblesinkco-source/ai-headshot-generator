@@ -264,6 +264,21 @@ dialog.tp-nav-dialog[open][data-closing]::backdrop {
   .reveal { opacity: 1; transform: none; }
 }
 
+/* ── CSS-only scroll reveal (progressive enhancement, no JS) ── */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .scroll-fade-in {
+      animation: scrollFadeIn ease-out both;
+      animation-timeline: view();
+      animation-range: entry 10% entry 90%;
+    }
+    @keyframes scrollFadeIn {
+      from { opacity: 0.15; transform: translateY(16px); }
+      to   { opacity: 1;    transform: none; }
+    }
+  }
+}
+
 /* ── Consistent card hover lift ──────────────────────────────── */
 .tp-lift {
   transition: transform 0.25s ease-out, box-shadow 0.25s ease-out, border-color 0.25s ease-out;

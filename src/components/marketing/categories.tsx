@@ -61,7 +61,7 @@ export function Categories() {
                     <Link
                       key={cat.id}
                       href={`/${cat.slug}`}
-                      className="group relative flex flex-col overflow-hidden rounded-tp-card border border-tp-line bg-tp-paper transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-tp-bronze hover:shadow-xl hover:shadow-tp-bronze/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                      className="scroll-fade-in group relative flex flex-col overflow-hidden rounded-tp-card border border-tp-line bg-tp-paper transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-tp-bronze hover:shadow-xl hover:shadow-tp-bronze/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze motion-reduce:transition-none motion-reduce:hover:translate-y-0"
                     >
                       {/* Thumbnail area */}
                       <div className="relative aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-tp-paper to-tp-beige">

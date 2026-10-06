@@ -80,7 +80,7 @@ export function GuaranteeSection() {
           {items.map(({ Icon, title, description }) => (
             <li
               key={title}
-              className="rounded-tp-card border border-tp-line bg-white p-6 lg:p-8"
+              className="scroll-fade-in rounded-tp-card border border-tp-line bg-white p-6 lg:p-8"
             >
               <span className="flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-beige text-tp-bronze">
                 <Icon />

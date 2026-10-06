@@ -57,7 +57,7 @@ export function HowItWorks() {
           const Illustration = step.Illustration;
           const isLast = index === steps.length - 1;
           return (
-            <li key={step.number} className="relative flex flex-col items-stretch">
+            <li key={step.number} className="scroll-fade-in relative flex flex-col items-stretch">
               <article className="relative h-full overflow-hidden rounded-tp-card border border-tp-line bg-tp-paper p-6 transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-tp-bronze hover:shadow-lg hover:shadow-tp-bronze/10 motion-reduce:transition-none motion-reduce:hover:translate-y-0 lg:p-8">
                 <span
                   className="pointer-events-none absolute -right-2 -top-4 select-none font-display text-[110px] leading-none text-tp-beige/40 lg:text-[140px]"

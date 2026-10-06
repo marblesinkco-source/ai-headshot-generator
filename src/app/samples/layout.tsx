@@ -5,7 +5,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: { absolute: 'AI Photo Samples & Gallery: See TailorPic AI Results' },
   description: `Browse examples of ${siteConfig.name} AI-generated photos across all categories. See what AI can create for LinkedIn, Corporate, Dating, Real Estate, and more.`,
-  alternates: { canonical: '/samples' },
+  alternates: { canonical: 'https://www.tailorpic.com/samples' },
   robots: { index: true, follow: true },
   openGraph: generateOGMetadata({
     title: 'AI Photo Samples & Gallery: See TailorPic AI Results',

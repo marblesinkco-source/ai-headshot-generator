@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Unsubscribed from the TailorPic Newsletter' },
   description: 'You have been unsubscribed from TailorPic emails. You can resubscribe at any time.',
   robots: { index: false, follow: false },
+  alternates: { canonical: 'https://www.tailorpic.com/newsletter/unsubscribed' },
 };
 
 export default function UnsubscribedPage() {

@@ -96,7 +96,7 @@ export function FAQ() {
               <li
                 key={key}
                 className={cn(
-                  'rounded-tp-card border bg-tp-paper transition-colors duration-300',
+                  'scroll-fade-in rounded-tp-card border bg-tp-paper transition-colors duration-300',
                   open ? 'border-tp-bronze' : 'border-tp-line hover:border-tp-beige'
                 )}
               >

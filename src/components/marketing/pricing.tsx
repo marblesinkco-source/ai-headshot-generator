@@ -118,7 +118,7 @@ export function Pricing() {
               <Card
                 key={pkg.id}
                 className={cn(
-                  'relative flex flex-col transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0',
+                  'scroll-fade-in relative flex flex-col transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0',
                   isRecommended &&
                     'z-10 border-tp-bronze bg-tp-paper shadow-xl shadow-tp-bronze/20 ring-2 ring-tp-bronze/60 scale-[1.02] lg:scale-105',
                   isExpress &&
