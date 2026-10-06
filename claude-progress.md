@@ -1,5 +1,41 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-06 (Phase AG — Sitemap Fixes, Free Tools, Trust & Affiliate Fix)
+
+### Baseline
+- HEAD: `62aa33a` (Phase AF complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### Sitemap Düzeltmeleri
+- 5 eksik sayfa eklendi: `/refund-policy`, `/headshots`, `/locations`, `/status`, `/tools/linkedin-about-generator`
+
+#### LinkedIn About Generator (Ücretsiz Araç)
+- `src/app/tools/linkedin-about-generator/page.tsx` — Server component
+- `src/components/tools/linkedin-about-generator.tsx` — Client component
+- Template-tabanlı (API çağrısı yok), 4 ton seçeneği, kopyala butonu
+- Breadcrumb: Home → Tools → LinkedIn About Generator
+
+#### System Status Sayfası
+- `src/app/(marketing)/status/page.tsx` — 5 servis listesi
+- Website, AI Generation Engine, Payment Processing, User Dashboard, API
+- Bilgilendirme amaçlı, gerçek zamanlı izleme değil
+
+#### Affiliate Sayfası Düzeltmesi
+- Tüm "up to 30% commission" ifadeleri "competitive commissions" olarak değiştirildi (8 yerde)
+- Uydurma rakam politikası ihlali giderildi
+
+#### Footer Güncellemesi
+- Company bölümüne "System Status" linki eklendi
+
+### Sonuç
+- Commit: c24612f
+- CI: PASS, Vercel: PASS
+- Live doğrulama: /status ✓, /affiliate ✓, /tools/linkedin-about-generator ✓
+
+---
+
 ## Oturum: 2026-10-06 (Phase AF — Trust Strip & Team Use-Case Pages)
 
 ### Baseline

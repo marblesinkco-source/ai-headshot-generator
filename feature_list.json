@@ -263,6 +263,14 @@
       "dependencies": ["feat-AE"],
       "status": "done",
       "evidence": "Commit 62aa33a. DataPrivacyStrip on pricing (2x) + category pages. 5 team use-case pages + index at /teams. Footer + sitemap updated. CI PASS, Vercel PASS. Live verified: /teams, /teams/team-directory, /pricing (DataPrivacyStrip visible)."
+    },
+    {
+      "id": "feat-AG",
+      "name": "Phase AG — Sitemap Fixes, Free Tools, Trust & Affiliate Fix",
+      "description": "5 missing sitemap entries, LinkedIn About Generator free tool, System Status page, affiliate page fabricated-number fix, footer System Status link.",
+      "dependencies": ["feat-AF"],
+      "status": "done",
+      "evidence": "Commit c24612f. Sitemap: +5 entries (/refund-policy, /headshots, /locations, /status, /tools/linkedin-about-generator). LinkedIn About Generator: template-based, no API. Status page: 5 services listed. Affiliate: all 'up to 30%' → 'competitive commissions'. Footer: System Status link added. CI PASS, Vercel PASS. Live verified: /status, /affiliate, /tools/linkedin-about-generator."
     }
   ]
 }
