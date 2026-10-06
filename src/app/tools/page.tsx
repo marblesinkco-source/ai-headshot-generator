@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal, Users, CheckSquare, CircleUser, AlignLeft, Compass, Crop, Sun, BookOpen } from 'lucide-react';
+import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal, Users, CheckSquare, CircleUser, AlignLeft, Compass, Crop, Sun, BookOpen, Globe, FileDown, LayoutGrid } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { ToolsIllustration } from '@/components/marketing/illustrations';
@@ -141,6 +141,27 @@ const tools = [
       'A visual guide to lighting, framing, background, expression and attire — five categories of tips for the perfect selfie.',
     href: '/tools/headshot-dos-donts',
     icon: BookOpen,
+  },
+  {
+    title: 'Passport & ID Photo Maker',
+    description:
+      'Crop your photo to passport and ID sizes for the US, UK, EU, India, Canada, Australia and China, or enter a custom size. Free and private.',
+    href: '/tools/passport-photo-maker',
+    icon: Globe,
+  },
+  {
+    title: 'Headshot Photo Compressor',
+    description:
+      'Compress your headshot to a target file size without losing visible quality. Set a size limit or use manual quality control.',
+    href: '/tools/headshot-compressor',
+    icon: FileDown,
+  },
+  {
+    title: 'Headshot Collage Maker',
+    description:
+      'Combine 2 to 6 photos into one image. Compare headshots side by side, build a team grid or make a before and after.',
+    href: '/tools/headshot-collage',
+    icon: LayoutGrid,
   },
 ];
 

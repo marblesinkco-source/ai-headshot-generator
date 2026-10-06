@@ -1,0 +1,104 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import dynamic from 'next/dynamic';
+import { Sun, Smile, Image as ImageIcon, Glasses } from 'lucide-react';
+import { Header } from '@/components/marketing/header';
+import { Footer } from '@/components/marketing/footer';
+import { BreadcrumbSchema } from '@/components/structured-data';
+import { siteConfig } from '@/config/site';
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+
+const PassportPhotoMaker = dynamic(() => import('@/components/tools/passport-photo-maker'), {
+  ssr: false,
+  loading: () => (
+    <div className="mx-auto max-w-5xl" aria-busy="true" aria-label="Loading photo maker">
+      <div className="grid gap-6 lg:grid-cols-2">
+        <div className="h-96 rounded-tp-card border border-tp-line bg-white" />
+        <div className="h-96 rounded-tp-card border border-tp-line bg-white" />
+      </div>
+    </div>
+  ),
+});
+
+const title = 'Free Passport & ID Photo Maker | TailorPic';
+const description =
+  'Crop your photo to passport and ID photo sizes for the US, UK, EU, India, Canada, Australia and China, or enter a custom size. Free, and everything runs in your browser.';
+const path = '/tools/passport-photo-maker';
+const ctaHref = '/auth/register?redirect=/dashboard/upload';
+
+export const metadata: Metadata = {
+  title: { absolute: title },
+  description,
+  alternates: { canonical: path },
+  openGraph: generateOGMetadata({ title, description, path }),
+  twitter: generateTwitterMetadata({ title, description }),
+};
+
+const tips = [
+  { icon: Sun, title: 'Even, natural light', text: 'Face a window or soft light source so there are no harsh shadows on your face or the background.' },
+  { icon: Smile, title: 'Neutral expression', text: 'Look straight at the camera with your mouth closed and eyes open. Most authorities ask for a neutral face.' },
+  { icon: ImageIcon, title: 'Plain background', text: 'Stand in front of a plain, light wall. Check your issuing authority for the exact background colour it requires.' },
+  { icon: Glasses, title: 'Check the rules', text: 'Rules on glasses, headwear and print size differ by country. Always confirm with the official source before you submit.' },
+];
+
+export default function Page() {
+  return (
+    <main id="main-content" className="min-h-screen bg-tp-paper">
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: siteConfig.url },
+          { name: 'Free Tools', url: `${siteConfig.url}/tools` },
+          { name: 'Passport Photo Maker', url: `${siteConfig.url}${path}` },
+        ]}
+      />
+      <Header />
+
+      <section className="px-4 pb-10 pt-16 sm:px-6 md:pt-24">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-tp-bronze-ink">Free tool</p>
+          <h1 className="font-display font-normal text-4xl leading-tight text-tp-ink sm:text-5xl md:text-6xl">Free Passport &amp; ID Photo Maker</h1>
+          <p className="mx-auto mt-5 max-w-2xl text-base text-tp-muted sm:text-lg">
+            Crop your photo to common passport and ID sizes, then download it or print a 4x6 sheet. Your photo is processed in your browser and never uploaded.
+          </p>
+        </div>
+      </section>
+
+      <section className="px-4 pb-12 sm:px-6">
+        <PassportPhotoMaker />
+      </section>
+
+      <section className="px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Tips for a better ID photo</h2>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {tips.map((t) => (
+              <div key={t.title} className="rounded-tp-card border border-tp-line bg-white p-6">
+                <span className="flex h-11 w-11 items-center justify-center rounded-tp-button bg-tp-beige/40 text-tp-bronze-ink">
+                  <t.icon className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <h3 className="mt-4 font-display text-xl font-normal text-tp-ink">{t.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-tp-muted">{t.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 pb-20 pt-6 sm:px-6">
+        <div className="mx-auto max-w-3xl rounded-tp-dialog bg-tp-ink px-6 py-12 text-center sm:px-10">
+          <h2 className="font-display font-normal text-3xl text-tp-paper sm:text-4xl">Want a professional headshot too?</h2>
+          <p className="mx-auto mt-3 max-w-xl text-sm text-tp-beige sm:text-base">
+            TailorPic creates studio-style AI headshots from your selfies for LinkedIn, resumes and more.
+          </p>
+          <Link href={ctaHref} className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'mt-7 bg-tp-bronze text-tp-black hover:bg-tp-beige')}>
+            Try TailorPic →
+          </Link>
+        </div>
+      </section>
+
+      <Footer />
+    </main>
+  );
+}
