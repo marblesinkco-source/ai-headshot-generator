@@ -1,5 +1,41 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-07 (Phase BA — 3 New Marketing Components)
+
+### Baseline
+- HEAD: `5e9b3eb` (Phase AZ complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### StyleConfigurator Named Export Fix
+- `src/components/marketing/style-configurator.tsx` — `export default` → `export function` (named export)
+- Homepage dynamic import `.then(m => m.StyleConfigurator)` uyumu sağlandı
+
+#### StudioComparisonV2 (Yeni Marketing Component)
+- `src/components/marketing/studio-comparison-v2.tsx` — Server component
+- Traditional Studio vs TailorPic AI karşılaştırma tablosu (7 kriter)
+- Homepage'e (StyleConfigurator sonrası) ve /headshots'a (value props sonrası) entegre
+
+#### ProcessingTimeline (Yeni Marketing Component)  
+- `src/components/marketing/processing-timeline.tsx` — Server component
+- 4-step timeline: Upload (~2 min) → AI Processing (~90 min) → Review (~5 min) → Download (Instant)
+- Desktop: 4-column grid, horizontal connectors. Mobile: vertical stack
+- /headshots sayfasına entegre (How It Works sonrası)
+
+#### 12→10 Style Düzeltmesi (4 dosya)
+- studio-comparison-v2.tsx: "12 styles" → "Up to 10 styles"
+- processing-timeline.tsx: "12 professional styles" → "up to 10 professional styles"
+- how-it-works/page.tsx: 2 occurrence düzeltildi
+
+### Deploy
+- Commit: `dc4309a` — feat: add 3 new marketing components (Phase BA)
+- 6 files changed, 396 insertions, 147 deletions
+- CI: PASS, Vercel: PASS
+- Canlı doğrulama: homepage + /headshots + /how-it-works çalışıyor
+
+---
+
 ## Oturum: 2026-10-07 (Phase AZ — LinkedIn Photo Checker, Headshot Quality Score & Profile Picture Maker)
 
 ### Baseline

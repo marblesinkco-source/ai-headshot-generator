@@ -423,6 +423,14 @@
       "dependencies": ["feat-AY"],
       "status": "done",
       "evidence": "/tools/linkedin-photo-checker: 6 checks (dimensions ≥400x400, aspect 1:1, filesize ≤8MB, resolution, brightness luminance, face centering contrast centroid), score 0-100, circle preview, optimized square PNG download. /tools/headshot-quality-score: 5 criteria scored 0-100 (framing 16x16 grid, lighting L/R half, background outer 20% variance, sharpness Laplacian 3x3, contrast brightness stddev), circular SVG gauge, horizontal progress bars, semi-transparent overlay (rule-of-thirds + subject box). /tools/profile-picture-maker: 9 platform presets (LinkedIn 400x400 / Instagram 320x320 / Facebook 170x170 / Twitter 400x400 / YouTube 800x800 / Zoom 400x400 / Slack 512x512 / WhatsApp 500x500 / Discord 128x128), draggable/resizable crop, circle/square preview, individual PNG or ZIP download. Tools index'e 3 entry (toplam 39) + sitemap'e 3 URL. Commit: 5e9b3eb. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa + tools index tümü çalışıyor."
+    },
+    {
+      "id": "feat-BA",
+      "name": "Phase BA — 3 New Marketing Components (StyleConfigurator, StudioComparisonV2, ProcessingTimeline)",
+      "description": "3 yeni marketing component: StyleConfigurator (interactive backdrop+style preview, named export fix), StudioComparisonV2 (Traditional Studio vs TailorPic AI karşılaştırma), ProcessingTimeline (4-step upload→download timeline). Homepage ve /headshots sayfalarına entegrasyon. 12→10 style düzeltmesi (4 dosya).",
+      "dependencies": ["feat-AZ"],
+      "status": "done",
+      "evidence": "StyleConfigurator: 8 backdrop swatch + 6 style pill, SVG silhouette preview, named export fix for dynamic import compat. StudioComparisonV2: Server component, Traditional vs AI comparison table with 7 criteria. ProcessingTimeline: 4-step ordered list (Upload ~2min → AI Processing ~90min → Review ~5min → Download Instant), desktop 4-col grid with horizontal connectors, mobile vertical stack. Homepage: StudioComparisonV2 after StyleConfigurator. /headshots: StudioComparisonV2 after value props, StyleConfigurator + ProcessingTimeline after How It Works. 12→10 style fix: studio-comparison-v2.tsx, processing-timeline.tsx, how-it-works/page.tsx (2 occurrences). Commit: dc4309a. CI PASS + Vercel PASS. Canlı doğrulama: homepage + /headshots + /how-it-works tümü çalışıyor."
     }
   ]
 }
