@@ -367,6 +367,14 @@
       "dependencies": ["feat-AR"],
       "status": "done",
       "evidence": "3 yeni araç sayfası: /tools/bio-generator (4 ton × 4 varyasyon, short/medium/long, copy+regenerate), /tools/linkedin-banner-maker (7 template, renk/metin/headshot upload, PNG download), /tools/virtual-background-maker (8 canvas template, renk/blur/brightness/warmth, text overlay, 1920x1080+1280x720 download). Tools index'e 3 entry + sitemap'e 3 URL. Commit: e600ea7. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa + tools index tümü çalışıyor."
+    },
+    {
+      "id": "feat-AT",
+      "name": "Phase AT — OpenToWork Frame, Circle Cropper & EXIF Viewer Free Tools",
+      "description": "3 yeni client-side free tool: #OpenToWork Frame Maker (canvas ring overlay, 3 preset + custom), Circle Photo Cropper (transparent/solid bg, zoom/drag), Photo EXIF Viewer & Remover (hand-written parser, GPS warning, strip metadata). Tools index + sitemap güncellemesi.",
+      "dependencies": ["feat-AS"],
+      "status": "done",
+      "evidence": "3 yeni araç sayfası: /tools/open-to-work-frame (#OpenToWork/#Hiring ring, thickness slider, text toggle), /tools/circle-photo-cropper (200-1000px, checkerboard preview, transparent/solid bg), /tools/exif-viewer (DataView EXIF parser, GPS presence warning, quality slider strip). Tools index'e 3 entry + sitemap'e 3 URL. Commit: d8b0468. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa + tools index tümü çalışıyor."
     }
   ]
 }

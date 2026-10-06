@@ -1,5 +1,39 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-06 (Phase AT — OpenToWork Frame, Circle Cropper & EXIF Viewer)
+
+### Baseline
+- HEAD: `e600ea7` (Phase AS complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### #OpenToWork Frame Maker (Yeni Free Tool)
+- `src/components/tools/open-to-work-frame.tsx` — Canvas-based 500x500, circular crop + ring overlay
+- `src/app/tools/open-to-work-frame/page.tsx` — Server component, BreadcrumbSchema, 4 tip kartı
+- 3 preset (#OpenToWork, #Hiring, Custom), ring thickness slider, text toggle, PNG download
+
+#### Circle Photo Cropper (Yeni Free Tool)
+- `src/components/tools/circle-photo-cropper.tsx` — Canvas circle crop, transparent/solid bg
+- `src/app/tools/circle-photo-cropper/page.tsx` — Server component, BreadcrumbSchema, 4 tip kartı
+- 200-1000px output, zoom 1x-3x, drag reposition, checkerboard preview
+
+#### Photo EXIF Viewer & Remover (Yeni Free Tool)
+- `src/components/tools/exif-viewer.tsx` — Hand-written DataView EXIF parser (no npm)
+- `src/app/tools/exif-viewer/page.tsx` — Server component, BreadcrumbSchema, 4 tip kartı
+- Make/model/date/ISO/aperture/GPS detection, strip metadata via canvas, quality slider
+
+#### Tools Index & Sitemap
+- `src/app/tools/page.tsx` — 3 yeni tool kartı eklendi (Eye, ShieldCheck ikonları)
+- `src/app/sitemap.ts` — 3 yeni URL eklendi
+
+### Commit & Deploy
+- Commit: `d8b0468` — feat: add OpenToWork frame, circle cropper, EXIF viewer tools
+- CI: PASS, Vercel: PASS
+- Canlı doğrulama: 3 sayfa + tools index tümü çalışıyor
+
+---
+
 ## Oturum: 2026-10-06 (Phase AS — Bio Generator, LinkedIn Banner & Virtual Background)
 
 ### Baseline
