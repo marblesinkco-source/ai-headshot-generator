@@ -1882,6 +1882,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/tools/pencil-sketch`,
+      lastModified: new Date('2026-10-07'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/tools/photo-border-maker`,
+      lastModified: new Date('2026-10-07'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/tools/batch-photo-resizer`,
+      lastModified: new Date('2026-10-07'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/headshot-sizes`,
       lastModified: new Date('2026-10-06'),
       changeFrequency: 'monthly',

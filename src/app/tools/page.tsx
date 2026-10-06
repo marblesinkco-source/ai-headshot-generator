@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal, Users, CheckSquare, CircleUser, AlignLeft, Compass, Crop, Sun, BookOpen, Globe, FileDown, LayoutGrid, FileText, Palette, Layers, Eye, ShieldCheck, FileImage, Smartphone, CreditCard, Type, Pipette, Printer, Focus } from 'lucide-react';
+import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal, Users, CheckSquare, CircleUser, AlignLeft, Compass, Crop, Sun, BookOpen, Globe, FileDown, LayoutGrid, FileText, Palette, Layers, Eye, ShieldCheck, FileImage, Smartphone, CreditCard, Type, Pipette, Printer, Focus, PenTool, ImagePlus } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { ToolsIllustration } from '@/components/marketing/illustrations';
@@ -260,6 +260,27 @@ const tools = [
       'Check your photo\'s embedded DPI, view pixel dimensions, and calculate print sizes at any resolution. Free and runs in your browser.',
     href: '/tools/dpi-checker',
     icon: Printer,
+  },
+  {
+    title: 'Pencil Sketch Converter',
+    description:
+      'Convert any photo into a realistic pencil sketch drawing. Choose sketch styles, adjust line thickness and intensity. Free and runs in your browser.',
+    href: '/tools/pencil-sketch',
+    icon: PenTool,
+  },
+  {
+    title: 'Photo Border & Frame Maker',
+    description:
+      'Add professional borders and frames to your photos. Choose from 8 preset styles or customize your own. Free and runs in your browser.',
+    href: '/tools/photo-border-maker',
+    icon: Layers,
+  },
+  {
+    title: 'Batch Photo Resizer',
+    description:
+      'Resize multiple photos at once with platform presets for LinkedIn, Instagram, Facebook, and more. Download individually or as a ZIP. Free and runs in your browser.',
+    href: '/tools/batch-photo-resizer',
+    icon: ImagePlus,
   },
 ];
 
