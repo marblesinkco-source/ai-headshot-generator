@@ -1,5 +1,31 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-06 (Phase AV — Image Watermark Maker)
+
+### Baseline
+- HEAD: `cadcd46` (Phase AU complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### Image Watermark & Text Overlay Maker (Yeni Free Tool)
+- `src/components/tools/watermark-maker.tsx` — Canvas-based watermark overlay
+- `src/app/tools/watermark-maker/page.tsx` — Server component, BreadcrumbSchema, 4 tip kartı
+- Custom text, 5 font family, color picker, opacity/rotation slider
+- 9-position grid + drag placement, single/tiled mode, diagonal pattern
+- Spacing control for tiled mode, PNG download
+
+#### Tools Index & Sitemap
+- `src/app/tools/page.tsx` — 1 yeni tool kartı eklendi (toplam 29 araç)
+- `src/app/sitemap.ts` — 1 yeni URL eklendi
+
+### Commit & Deploy
+- Commit: `05b8fae` — feat: add image watermark maker free tool
+- CI: PASS, Vercel: PASS
+- Canlı doğrulama: sayfa + tools index kartı çalışıyor
+
+---
+
 ## Oturum: 2026-10-06 (Phase AU — Image Converter, Social Resizer & Business Card)
 
 ### Baseline

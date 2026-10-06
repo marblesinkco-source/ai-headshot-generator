@@ -383,6 +383,14 @@
       "dependencies": ["feat-AT"],
       "status": "done",
       "evidence": "3 yeni araç sayfası: /tools/image-format-converter (HEIC/WebP/PNG/BMP/TIFF input, JPG/PNG/WebP output, quality slider), /tools/social-media-resizer (12 platform preset, zoom/drag crop, individual + batch PNG download), /tools/business-card-generator (4 template, 7 input field, headshot upload, PNG + vCard 3.0 download). Tools index'e 3 entry + sitemap'e 3 URL. Commit: cadcd46. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa + tools index tümü çalışıyor."
+    },
+    {
+      "id": "feat-AV",
+      "name": "Phase AV — Image Watermark Maker Free Tool",
+      "description": "Yeni client-side free tool: Image Watermark & Text Overlay Maker (custom text, font/size/color/opacity/rotation, 9-position grid + drag, single/tiled mode, diagonal pattern, spacing control). Tools index + sitemap güncellemesi.",
+      "dependencies": ["feat-AU"],
+      "status": "done",
+      "evidence": "/tools/watermark-maker: custom text watermark, 5 font family, color picker, opacity/rotation slider, 9-position grid + drag, single/tiled mode, diagonal pattern, spacing control, PNG download. Tools index'e 1 entry (toplam 29) + sitemap'e 1 URL. Commit: 05b8fae. CI PASS + Vercel PASS. Canlı doğrulama: sayfa + tools index kartı çalışıyor."
     }
   ]
 }
