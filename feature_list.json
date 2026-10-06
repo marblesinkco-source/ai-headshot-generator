@@ -335,6 +335,14 @@
       "dependencies": ["feat-AN"],
       "status": "done",
       "evidence": "31 FAQ questions (7 categories: Product, Pricing, Teams, Privacy, Technical, Delivery, Refund), FaqSearch component with debounced search, mobile focus trap + aria-label toggle on header, Share Your Experience section on reviews page with Trustpilot/ProductHunt/G2. Commit: 9b11c29. CI PASS + Vercel PASS. Live verified FAQ search and reviews page."
+    },
+    {
+      "id": "feat-AP",
+      "name": "Phase AP — Navigation Fixes & Conversion Tools",
+      "description": "Footer redirect link düzeltmeleri, Referral Program sayfası, LinkedIn Photo Analyzer free tool, pricing delivery time & popularity badges",
+      "dependencies": ["feat-AO"],
+      "status": "in-progress",
+      "evidence": ""
     }
   ]
 }

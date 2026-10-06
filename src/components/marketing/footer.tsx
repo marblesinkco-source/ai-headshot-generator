@@ -43,7 +43,7 @@ const resourceLinks: FooterLink[] = [
   { label: 'Industries', href: '/industries' },
   { label: 'Use Cases', href: '/use-cases' },
   { label: 'For Students', href: '/students' },
-  { label: 'For Teams', href: '/for-teams' },
+  { label: 'For Teams', href: '/team-headshots' },
   { label: 'Team Use Cases', href: '/teams' },
   { label: 'Headshot Sizes', href: '/headshot-sizes' },
   { label: 'Developer API', href: '/developer-api' },

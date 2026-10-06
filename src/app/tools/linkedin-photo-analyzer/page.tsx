@@ -1,83 +1,99 @@
 import type { Metadata } from 'next';
-import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { buttonVariants } from '@/components/ui/button';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
-import { AnalyzerForm } from './analyzer-form';
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
-const title = 'Free LinkedIn Photo Analyzer: Score Your Profile Photo';
+const LinkedInPhotoAnalyzer = dynamic(() => import('@/components/tools/linkedin-photo-analyzer'), {
+  ssr: false,
+  loading: () => (
+    <div className="mx-auto h-64 w-full max-w-3xl animate-pulse rounded-tp-card border border-tp-line bg-white" aria-hidden="true" />
+  ),
+});
+
+const title = 'Free LinkedIn Photo Analyzer | TailorPic';
 const description =
-  'Get an instant score and actionable tips for your LinkedIn profile photo. Free analysis of lighting, background, framing and professionalism by TailorPic.';
+  'Analyze your LinkedIn profile photo quality for free. Check resolution, aspect ratio, brightness, centering and file size right in your browser.';
+const path = '/tools/linkedin-photo-analyzer';
+const ctaHref = '/auth/register?redirect=/dashboard/upload';
 
 export const metadata: Metadata = {
   title: { absolute: title },
   description,
-  alternates: { canonical: '/tools/linkedin-photo-analyzer' },
-  openGraph: generateOGMetadata({ title: title, description: description, path: '/tools/linkedin-photo-analyzer' }),
-  twitter: generateTwitterMetadata({ title: title, description: description }),
+  alternates: { canonical: path },
+  openGraph: generateOGMetadata({ title, description, path }),
+  twitter: generateTwitterMetadata({ title, description }),
 };
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebApplication',
-  name: 'LinkedIn Photo Analyzer',
-  description,
-  url: `${siteConfig.url}/tools/linkedin-photo-analyzer`,
-  applicationCategory: 'BusinessApplication',
-  operatingSystem: 'Any',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-  publisher: { '@type': 'Organization', name: siteConfig.name, url: siteConfig.url },
-};
+const tips = [
+  { title: 'Use soft, even light', body: 'Face a window or shoot in open shade so your face is evenly lit without harsh shadows.' },
+  { title: 'Frame your head and shoulders', body: 'Your face should fill a good part of the frame and sit near the center, since LinkedIn shows a small circular crop.' },
+  { title: 'Keep the background simple', body: 'A plain or softly blurred background keeps attention on you.' },
+  { title: 'Upload a sharp, square image', body: 'Use an original at least 400 x 400 px, under 8 MB, and crop it to roughly 1:1 before uploading.' },
+];
 
 export default function LinkedInPhotoAnalyzerPage() {
   return (
-    <main id="main-content" className="min-h-screen bg-white">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+    <main id="main-content" className="min-h-screen bg-tp-paper">
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
-          { name: 'LinkedIn Photo Analyzer', url: `${siteConfig.url}/tools/linkedin-photo-analyzer` },
+          { name: 'Free Tools', url: `${siteConfig.url}/tools` },
+          { name: 'LinkedIn Photo Analyzer', url: `${siteConfig.url}${path}` },
         ]}
       />
       <Header />
 
-      <section className="relative overflow-hidden pt-16">
-        <div className="pointer-events-none absolute -top-24 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-tp-bronze/10 blur-3xl" />
-        <div className="relative mx-auto max-w-4xl px-4 py-14 text-center sm:px-6 sm:py-20 lg:px-8">
-          <p className="text-sm font-semibold uppercase tracking-wide text-tp-bronze-ink">Free tool</p>
-          <h1 className="mt-3 text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-5xl">
-            LinkedIn Photo Analyzer
+      <section className="px-4 pb-10 pt-16 sm:px-6 md:pt-24">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-tp-bronze-ink">Free tool</p>
+          <h1 className="font-display font-normal text-4xl leading-tight text-tp-ink sm:text-5xl md:text-6xl">
+            Free LinkedIn Photo Analyzer
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-tp-muted sm:text-lg">
-            Answer 8 quick questions about your current profile photo and get an instant score out of
-            100, plus specific tips to fix whatever is holding it back. No upload needed.
+          <p className="mx-auto mt-5 max-w-2xl text-base text-tp-muted sm:text-lg">
+            Upload your profile photo to check its resolution, shape, brightness, centering and file size. Everything
+            runs in your browser, so your photo stays on your device.
           </p>
+        </div>
+        <div className="mt-10 px-0">
+          <LinkedInPhotoAnalyzer />
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-4 pb-16 sm:px-6 lg:px-8">
-        <AnalyzerForm />
+      <section className="px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">
+            LinkedIn photo tips
+          </h2>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2">
+            {tips.map((t) => (
+              <div key={t.title} className="rounded-tp-card border border-tp-line bg-white p-6">
+                <h3 className="font-semibold text-tp-ink">{t.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-tp-muted">{t.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
-      <section className="border-t border-tp-line bg-tp-paper">
-        <div className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
-          <h2 className="text-2xl font-display font-normal text-tp-ink sm:text-3xl">
-            Skip the checklist. Get a photo that passes every test.
+      <section className="px-4 pb-20 pt-6 sm:px-6">
+        <div className="mx-auto max-w-3xl rounded-tp-dialog bg-tp-ink px-6 py-12 text-center sm:px-10">
+          <h2 className="font-display font-normal text-3xl text-tp-paper sm:text-4xl">
+            Want a professional headshot that scores 100%?
           </h2>
-          <p className="mt-3 text-tp-muted">
-            Upload a few selfies and get studio-quality LinkedIn headshots in hours, from $1.99.
+          <p className="mx-auto mt-3 max-w-xl text-sm text-tp-beige sm:text-base">
+            TailorPic turns your selfies into AI-generated professional headshots, from $1.99.
           </p>
           <Link
-            href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
-            className={buttonVariants({ size: 'lg', className: 'mt-6' })}
+            href={ctaHref}
+            className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'mt-7 bg-tp-bronze text-tp-black hover:bg-tp-beige')}
           >
-            Get AI Headshots — From $1.99
+            Get yours with TailorPic
           </Link>
         </div>
       </section>

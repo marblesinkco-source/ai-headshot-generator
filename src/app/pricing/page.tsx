@@ -237,11 +237,14 @@ export default function PricingPage() {
                   <th scope="col" className="px-5 py-4 font-semibold">Price</th>
                   <th scope="col" className="px-5 py-4 font-semibold">Photos</th>
                   <th scope="col" className="px-5 py-4 font-semibold">Per photo</th>
+                  <th scope="col" className="px-5 py-4 font-semibold">Delivery</th>
                   <th scope="col" className="px-5 py-4 font-semibold">Included</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-tp-line">
-                {HEADSHOT_PACKAGES.map((p) => (
+                {HEADSHOT_PACKAGES.map((p) => {
+                  const delivery = p.outputCount <= 1 ? '~30 min' : p.outputCount <= 10 ? '~1 hour' : '~2 hours';
+                  return (
                   <tr
                     key={p.id}
                     className={
@@ -251,19 +254,23 @@ export default function PricingPage() {
                     }
                   >
                     <th scope="row" className="px-5 py-4 font-medium text-tp-ink">
-                      {p.name}
-                      {p.recommended && (
-                        <span className="ml-2 rounded-full bg-tp-black px-2 py-0.5 text-xs font-semibold text-tp-bronze">
-                          Recommended
-                        </span>
-                      )}
+                      <span className="flex items-center gap-2 flex-wrap">
+                        {p.name}
+                        {p.recommended && (
+                          <span className="rounded-full bg-tp-black px-2 py-0.5 text-xs font-semibold text-tp-bronze">
+                            Most Popular
+                          </span>
+                        )}
+                      </span>
                     </th>
                     <td className="px-5 py-4 font-semibold text-tp-ink">{formatPrice(p.price, 'usd')}</td>
                     <td className="px-5 py-4 text-tp-muted">{p.outputCount}</td>
                     <td className="px-5 py-4 text-tp-muted">{formatPrice(Math.round(p.price / p.outputCount), 'usd')}</td>
+                    <td className="px-5 py-4 text-tp-muted">{delivery}</td>
                     <td className="px-5 py-4 text-tp-muted">{p.features.join(', ')}</td>
                   </tr>
-                ))}
+                  );
+                })}
               </tbody>
             </table>
           </div>
