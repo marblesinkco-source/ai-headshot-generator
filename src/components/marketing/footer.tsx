@@ -29,6 +29,7 @@ const photoTypeLinks: FooterLink[] = [
   { label: 'AI Avatars', href: '/avatars' },
   { label: 'Pet Portraits', href: '/pet-portraits' },
   { label: 'All Photo Types', href: '/pricing' },
+  { label: 'Photo Styles', href: '/styles' },
 ];
 
 const resourceLinks: FooterLink[] = [
