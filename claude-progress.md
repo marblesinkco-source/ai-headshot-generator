@@ -1,5 +1,37 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-07 (Phase AW — Color Palette Extractor & DPI Checker)
+
+### Baseline
+- HEAD: `05b8fae` (Phase AV complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### Color Palette Extractor (Yeni Free Tool)
+- `src/components/tools/color-palette-extractor.tsx` — Canvas histogram-based dominant color extraction
+- `src/app/tools/color-palette-extractor/page.tsx` — Server component, BreadcrumbSchema, 4 tip kartı
+- 32x32x32 RGB buckets, merge similar (distance<50), max 8 colors, brightness sort
+- HEX/RGB copy, CSS variables copy, full palette HEX list copy, PNG strip download
+
+#### Image DPI Checker (Yeni Free Tool)
+- `src/components/tools/dpi-checker.tsx` — Hand-written DataView DPI parser
+- `src/app/tools/dpi-checker/page.tsx` — Server component, BreadcrumbSchema, 4 tip kartı
+- JPEG JFIF APP0 + EXIF XResolution/YResolution + PNG pHYs chunk parsing
+- Print size calculator (72/150/300 DPI presets), quality badges (emerald/amber/red)
+- Common print sizes table with quality grades
+
+#### Tools Index & Sitemap
+- `src/app/tools/page.tsx` — 2 yeni tool kartı eklendi (toplam 31 araç)
+- `src/app/sitemap.ts` — 2 yeni URL eklendi
+
+### Commit & Deploy
+- Commit: `b49d825` — feat: add color palette extractor and image DPI checker free tools
+- CI: PASS, Vercel: PASS
+- Canlı doğrulama: 3 sayfa çalışıyor (color-palette-extractor, dpi-checker, tools index)
+
+---
+
 ## Oturum: 2026-10-06 (Phase AV — Image Watermark Maker)
 
 ### Baseline

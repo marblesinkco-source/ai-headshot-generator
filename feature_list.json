@@ -391,6 +391,14 @@
       "dependencies": ["feat-AU"],
       "status": "done",
       "evidence": "/tools/watermark-maker: custom text watermark, 5 font family, color picker, opacity/rotation slider, 9-position grid + drag, single/tiled mode, diagonal pattern, spacing control, PNG download. Tools index'e 1 entry (toplam 29) + sitemap'e 1 URL. Commit: 05b8fae. CI PASS + Vercel PASS. Canlı doğrulama: sayfa + tools index kartı çalışıyor."
+    },
+    {
+      "id": "feat-AW",
+      "name": "Phase AW — Color Palette Extractor & DPI Checker Free Tools",
+      "description": "2 yeni client-side free tool: Color Palette Extractor (histogram bucketing, HEX/RGB, CSS vars copy, PNG strip download), Image DPI Checker (hand-written JPEG/PNG DPI parser, print size calculator, quality badges). Tools index + sitemap güncellemesi.",
+      "dependencies": ["feat-AV"],
+      "status": "done",
+      "evidence": "/tools/color-palette-extractor: Canvas histogram 32x32x32 RGB buckets, merge distance<50, max 8 colors, HEX/RGB copy, CSS vars copy, PNG strip download. /tools/dpi-checker: DataView JPEG JFIF/EXIF + PNG pHYs parser, print size calculator (72/150/300 presets), quality badges (emerald/amber/red), common print sizes table. Tools index'e 2 entry (toplam 31) + sitemap'e 2 URL. Commit: b49d825. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa çalışıyor."
     }
   ]
 }
