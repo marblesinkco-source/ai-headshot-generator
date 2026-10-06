@@ -1,5 +1,30 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-06 (Phase Z — High-Impact Conversion Features)
+
+### Baseline
+- HEAD: `84afd63` (Phase Y complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### Yeni Bileşenler
+- `headshot-in-context.tsx`: 4-tab mockup (LinkedIn/Resume/Email Signature/Slack) — AI headshot'ın farklı platformlarda nasıl göründüğünü gösterir
+- `package-visualizer.tsx`: İnteraktif paket seçici — photo grid, özellik listesi, per-photo cost, savePackageIntent entegrasyonu
+- `return-visitor-banner.tsx`: localStorage tabanlı banner — tekrar ziyaretçilere seçtikleri paketi hatırlatır (7 gün expiry, dismiss desteği)
+
+#### Entegrasyonlar
+- headshots kategori sayfasına HeadshotInContext + PackageVisualizer eklendi
+- Root layout'a ReturnVisitorBanner (dynamic import, SSR disabled) eklendi
+
+### Sonuç
+- Commit: `9ee8b28`
+- CI: PASS ✅
+- Vercel: PASS ✅
+- Canlı doğrulama: TAMAM ✅ (Professional paketi: 80 photos, $0.62/photo, +68 more grid, LinkedIn mockup tabları)
+
+---
+
 ## Oturum: 2026-10-06 (Phase Y — Trust & Conversion Boosters)
 
 ### Baseline

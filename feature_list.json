@@ -207,6 +207,22 @@
       "dependencies": ["feat-X"],
       "status": "done",
       "evidence": "4 yeni bileşen: trust-badges-inline.tsx (Satisfaction Guarantee + Secure Payment + ~2 Hour Delivery), privacy-assurance.tsx (30-gün silme + satılmaz + eğitilmez), style-preview-grid.tsx (12 stil kartı, div-based, 404 yok), photo-quality-checker.tsx (çözünürlük/boyut/oran kontrolü). 4 entegrasyon: pricing (2x trust badge), UploadClient (privacy), [category] (headshots-only style grid), photo-uploader (quality checker). Commit: 84afd63. CI PASS + Vercel PASS. Canlı doğrulama: trust badges pricing'de, style grid headshots'ta doğru."
+    },
+    {
+      "id": "feat-Z",
+      "name": "Phase Z — High-Impact Conversion Features",
+      "description": "HeadshotInContext (4-tab mockup: LinkedIn/Resume/Email/Slack), PackageVisualizer (interaktif paket seçici + photo grid + per-photo cost), ReturnVisitorBanner (localStorage 7-gün intent)",
+      "dependencies": ["feat-Y"],
+      "status": "done",
+      "evidence": "3 yeni bileşen + 2 entegrasyon: headshot-in-context.tsx (tabbed mockup, illustrative concept disclaimer), package-visualizer.tsx (6 paket pill, feature listesi, photo grid, savePackageIntent entegrasyonu), return-visitor-banner.tsx (localStorage, 7-gün expiry, dismiss desteği, global layout'a dynamic import). [category]/page.tsx: headshots-only HeadshotInContext + PackageVisualizer. layout.tsx: ReturnVisitorBanner. Commit: 9ee8b28. CI PASS + Vercel PASS. Canlı doğrulama: tüm bileşenler headshots sayfasında doğru çalışıyor."
+    },
+    {
+      "id": "feat-AA",
+      "name": "Phase AA — Profession Landing Pages",
+      "description": "6 SEO-optimized meslek sayfası: /headshots/for-lawyers, /headshots/for-realtors, /headshots/for-developers, /headshots/for-doctors, /headshots/for-consultants, /headshots/for-executives. Dinamik şablon + professions.ts config.",
+      "dependencies": ["feat-Z"],
+      "status": "in-progress",
+      "evidence": "professions.ts config (6 meslek tanımı) + for-[profession]/page.tsx template oluşturuldu. Deploy bekleniyor."
     }
   ]
 }
