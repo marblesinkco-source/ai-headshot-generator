@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal, Users, CheckSquare, CircleUser, AlignLeft, Compass, Crop, Sun, BookOpen, Globe, FileDown, LayoutGrid, FileText, Palette, Layers, Eye, ShieldCheck, FileImage, Smartphone, CreditCard, Type, Pipette, Printer } from 'lucide-react';
+import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal, Users, CheckSquare, CircleUser, AlignLeft, Compass, Crop, Sun, BookOpen, Globe, FileDown, LayoutGrid, FileText, Palette, Layers, Eye, ShieldCheck, FileImage, Smartphone, CreditCard, Type, Pipette, Printer, Focus } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { ToolsIllustration } from '@/components/marketing/illustrations';
@@ -239,6 +239,20 @@ const tools = [
       'Upload a photo and extract its dominant colors as HEX and RGB codes. Copy a single color or the whole palette, and download it as a PNG strip.',
     href: '/tools/color-palette-extractor',
     icon: Pipette,
+  },
+  {
+    title: 'Photo Background Blur',
+    description:
+      'Blur the background of any photo while keeping your subject sharp. Adjust blur intensity and focus area. Free and runs in your browser.',
+    href: '/tools/background-blur',
+    icon: Focus,
+  },
+  {
+    title: 'Photo Filters & Effects',
+    description:
+      'Preview 12 filters on your own photo, adjust the intensity and download the result as a PNG. Free and runs in your browser.',
+    href: '/tools/photo-filters',
+    icon: Palette,
   },
   {
     title: 'Image DPI Checker',
