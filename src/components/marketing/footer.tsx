@@ -31,6 +31,8 @@ const photoTypeLinks: FooterLink[] = [
 const resourceLinks: FooterLink[] = [
   { label: 'Help Center', href: '/help' },
   { label: 'Photo Tips', href: '/photo-tips' },
+  { label: 'What to Wear', href: '/what-to-wear' },
+  { label: 'Free Tools', href: '/tools' },
   { label: 'Compare Tools', href: '/vs' },
   { label: 'Industries', href: '/industries' },
   { label: 'Use Cases', href: '/use-cases' },

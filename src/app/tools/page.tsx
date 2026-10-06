@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal } from 'lucide-react';
+import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal, Users } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { ToolsIllustration } from '@/components/marketing/illustrations';
@@ -78,6 +78,13 @@ const tools = [
       'Create a professional email signature with your headshot, name, title, and contact info. Works with Gmail, Outlook, and more.',
     href: '/tools/email-signature-generator',
     icon: Mail,
+  },
+  {
+    title: 'Team Headshot ROI Calculator',
+    description:
+      'Enter your team size and photographer quote to compare costs and time saved with TailorPic team pricing.',
+    href: '/tools/team-headshot-calculator',
+    icon: Users,
   },
 ];
 
