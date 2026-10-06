@@ -247,6 +247,14 @@
       "dependencies": ["feat-AC"],
       "status": "done",
       "evidence": "Commit 4f64f4b, CI PASS, Vercel PASS, live site verified"
+    },
+    {
+      "id": "feat-AE",
+      "name": "Phase AE — Press Kit, Backgrounds & Gap Pages",
+      "description": "4 new pages: Gift Cards, Before & After, Press & Media, Backgrounds. Footer + sitemap updated.",
+      "dependencies": ["feat-AD"],
+      "status": "done",
+      "evidence": "Commits: b77ebf5 (gift-cards), b18b24b (before-after + footer + sitemap), 2bbd440 (press), 4d015d1 (backgrounds), 01b8c21 (footer + sitemap finalization). CI PASS, Vercel PASS."
     }
   ]
 }
