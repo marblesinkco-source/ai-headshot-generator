@@ -15,7 +15,13 @@ import { getAllProfessionSlugs, getProfessionBySlug, type ProfessionPage } from 
 import { getCategoryBySlug } from '@/config/categories';
 
 interface Props {
-  params: Promise<{ category: string; profession: string }>;
+  params: Promise<{ profession: string }>;
+}
+
+/** Strip the `for-` prefix from the URL slug to get the profession config key */
+function parseProfessionSlug(rawSlug: string): string | null {
+  if (rawSlug.startsWith('for-')) return rawSlug.slice(4);
+  return null;
 }
 
 /* ── Style metadata for recommended style cards ── */
@@ -40,13 +46,14 @@ function getStyleMeta(slug: string) {
 
 /* ── Static params ── */
 export async function generateStaticParams() {
-  return getAllProfessionSlugs().map((slug) => ({ category: 'headshots', profession: slug }));
+  return getAllProfessionSlugs().map((slug) => ({ profession: `for-${slug}` }));
 }
 
 /* ── SEO metadata ── */
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { category, profession: slug } = await params;
-  if (category !== 'headshots') return {};
+  const { profession: rawSlug } = await params;
+  const slug = parseProfessionSlug(rawSlug);
+  if (!slug) return {};
   const prof = getProfessionBySlug(slug);
   if (!prof) return {};
 
@@ -79,10 +86,10 @@ const STEPS = [
 ];
 
 export default async function ProfessionLandingPage({ params }: Props) {
-  const { category, profession: slug } = await params;
+  const { profession: rawSlug } = await params;
+  const slug = parseProfessionSlug(rawSlug);
 
-  // Only headshots category has profession landing pages
-  if (category !== 'headshots') {
+  if (!slug) {
     notFound();
   }
 
