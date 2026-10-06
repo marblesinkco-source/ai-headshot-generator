@@ -399,6 +399,14 @@
       "dependencies": ["feat-AV"],
       "status": "done",
       "evidence": "/tools/color-palette-extractor: Canvas histogram 32x32x32 RGB buckets, merge distance<50, max 8 colors, HEX/RGB copy, CSS vars copy, PNG strip download. /tools/dpi-checker: DataView JPEG JFIF/EXIF + PNG pHYs parser, print size calculator (72/150/300 presets), quality badges (emerald/amber/red), common print sizes table. Tools index'e 2 entry (toplam 31) + sitemap'e 2 URL. Commit: b49d825. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa çalışıyor."
+    },
+    {
+      "id": "feat-AX",
+      "name": "Phase AX — Photo Background Blur & Photo Filters Free Tools",
+      "description": "2 yeni client-side free tool: Photo Background Blur (canvas blur+ellipse clip, 8 resize handle, drag/move focus area), Photo Filters & Effects (12 pixel-manipulation filtre, intensity slider, seeded grain). Tools index + sitemap güncellemesi.",
+      "dependencies": ["feat-AW"],
+      "status": "done",
+      "evidence": "/tools/background-blur: Canvas ctx.filter blur + ellipse clip, 8 handle resize, pointer drag/move, export at original resolution (capped 4096px). /tools/photo-filters: 12 filters (grayscale/sepia/vintage/warm/cool/contrast/soft/dramatic/vivid/matte/bwfilm), pixel-level ImageData manipulation, intensity blend, 80x80 thumbnail previews, seeded random grain. Tools index'e 2 entry (toplam 33) + sitemap'e 2 URL. Commit: 4807212. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa çalışıyor."
     }
   ]
 }

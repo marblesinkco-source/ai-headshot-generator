@@ -1,5 +1,37 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-07 (Phase AX — Photo Background Blur & Photo Filters)
+
+### Baseline
+- HEAD: `b49d825` (Phase AW complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### Photo Background Blur (Yeni Free Tool)
+- `src/components/tools/background-blur.tsx` — Canvas blur + ellipse clip focus area
+- `src/app/tools/background-blur/page.tsx` — Server component, BreadcrumbSchema, 4 tip kartı
+- ctx.filter blur for background, ctx.clip() ellipse for sharp original
+- 8 resize handles (nw/n/ne/e/se/s/sw/w), pointer drag/move
+- Export at original resolution (capped 4096px)
+
+#### Photo Filters & Effects (Yeni Free Tool)
+- `src/components/tools/photo-filters.tsx` — Canvas pixel-level manipulation
+- `src/app/tools/photo-filters/page.tsx` — Server component, BreadcrumbSchema, 4 tip kartı
+- 12 filters: original, grayscale, sepia, vintage, warm, cool, contrast, soft, dramatic, vivid, matte, bwfilm
+- Intensity slider, 80x80 thumbnail previews, seeded random grain (no flicker)
+
+#### Tools Index & Sitemap
+- `src/app/tools/page.tsx` — 2 yeni tool kartı eklendi (toplam 33 araç)
+- `src/app/sitemap.ts` — 2 yeni URL eklendi
+
+### Commit & Deploy
+- Commit: `4807212` — feat: add photo background blur and photo filters free tools
+- CI: PASS, Vercel: PASS
+- Canlı doğrulama: 3 sayfa çalışıyor (background-blur, photo-filters, tools index)
+
+---
+
 ## Oturum: 2026-10-07 (Phase AW — Color Palette Extractor & DPI Checker)
 
 ### Baseline
