@@ -272,7 +272,7 @@ export function Header() {
                     className="text-[12px] font-semibold text-tp-bronze-ink hover:text-tp-black transition-colors"
                     onClick={() => setMegaOpen(false)}
                   >
-                    View All Pricing &rarr;
+                    View All Photo Types &rarr;
                   </Link>
                 </div>
               </div>

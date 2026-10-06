@@ -46,17 +46,9 @@ const SpeedComparison = dynamic(
   () => import('@/components/marketing/speed-comparison').then((m) => m.SpeedComparison),
   { loading: () => <SectionSkeleton height="h-[620px] md:h-[500px]" /> }
 );
-const StudioComparison = dynamic(
-  () => import('@/components/marketing/studio-comparison').then((m) => m.StudioComparison),
-  { loading: () => <SectionSkeleton height="h-[500px] md:h-[400px]" /> }
-);
 const SavingsCalculator = dynamic(
   () => import('@/components/marketing/savings-calculator').then((m) => m.SavingsCalculator),
   { loading: () => <SectionSkeleton height="h-[600px] md:h-[500px]" /> }
-);
-const AIComparison = dynamic(
-  () => import('@/components/marketing/ai-comparison').then((m) => m.AIComparison),
-  { loading: () => <SectionSkeleton height="h-[500px] md:h-[400px]" /> }
 );
 const HowItWorks = dynamic(
   () => import('@/components/marketing/how-it-works').then((m) => m.HowItWorks),
@@ -145,16 +137,8 @@ export default function LandingPage() {
       {/* 8. Speed Comparison */}
       <SpeedComparison />
 
-      {/* 8.5. Studio vs TailorPic Comparison */}
-      {/* Removed: redundant with SavingsCalculator */}
-      {/* <StudioComparison /> */}
-
       {/* 9. Savings Calculator — cost argument reinforced */}
       <SavingsCalculator />
-
-      {/* 9.5. AI Comparison — why purpose-built AI beats generic */}
-      {/* Removed: redundant with SavingsCalculator */}
-      {/* <AIComparison /> */}
 
       {/* 10. How It Works */}
       <HowItWorks />
