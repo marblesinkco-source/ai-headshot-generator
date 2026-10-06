@@ -6,7 +6,8 @@ import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
-import { VsDirectory, type VsGroup } from './vs-directory';
+import { VsDirectory } from './vs-directory';
+import { vsGroups as groups } from './vs-groups';
 
 const title = 'TailorPic vs Alternatives: Compare AI Headshot Tools';
 const description =
@@ -19,113 +20,6 @@ export const metadata: Metadata = {
   openGraph: generateOGMetadata({ title, description, path: '/vs', type: 'vs' }),
   twitter: generateTwitterMetadata({ title, description, type: 'vs' }),
 };
-
-const groups: VsGroup[] = [
-  {
-    id: 'headshot',
-    title: 'AI headshot tools',
-    blurb:
-      'Services built specifically for professional headshots and profile photos.',
-    entries: [
-      { slug: 'ai-headshot-generator', name: 'AI Headshot Generator' },
-      { slug: 'aiphotoshoot', name: 'AIPhotoShoot' },
-      { slug: 'aishots', name: 'AiShots' },
-      { slug: 'aragon', name: 'Aragon AI' },
-      { slug: 'betterpic', name: 'BetterPic' },
-      { slug: 'fotor-ai-headshot', name: 'Fotor AI Headshot' },
-      { slug: 'headmagic', name: 'HeadMagic' },
-      { slug: 'headphotopro', name: 'HeadPhotoPro' },
-      { slug: 'headpix', name: 'HeadPix' },
-      { slug: 'headshot-ai', name: 'Headshot AI' },
-      { slug: 'headshotpro', name: 'HeadshotPro' },
-      { slug: 'headshotsbyai', name: 'HeadshotsByAI' },
-      { slug: 'instaheadshots', name: 'InstaHeadshots' },
-      { slug: 'magicshot', name: 'MagicShot' },
-      { slug: 'myheadshots-ai', name: 'My Headshots AI' },
-      { slug: 'passport-photo-ai', name: 'Passport Photo AI' },
-      { slug: 'pfpmaker', name: 'PFPMaker' },
-      { slug: 'photoai', name: 'PhotoAI' },
-      { slug: 'photomatic', name: 'Photomatic' },
-      { slug: 'picofme', name: 'PicofMe' },
-      { slug: 'pictura', name: 'Pictura AI' },
-      { slug: 'portret', name: 'Portret' },
-      { slug: 'profilephoto', name: 'ProfilePhoto.ai' },
-      { slug: 'profilepicture-ai', name: 'ProfilePicture.AI' },
-      { slug: 'prophotos-ai', name: 'ProPhotos AI' },
-      { slug: 'secta', name: 'Secta Labs' },
-      { slug: 'snapheadshots', name: 'SnapHeadshots' },
-      { slug: 'studio-shot', name: 'StudioShot' },
-      { slug: 'supawork-ai', name: 'Supawork AI' },
-      { slug: 'the-multiverse-ai', name: 'The Multiverse AI' },
-      { slug: 'tryitonai', name: 'Try It On AI' },
-      { slug: 'vivid-headshots', name: 'Vivid Headshots' },
-    ],
-  },
-  {
-    id: 'general',
-    title: 'General AI image generators',
-    blurb:
-      'Broad text-to-image and creative AI platforms that can produce portraits among many other things.',
-    entries: [
-      { slug: 'adobe-firefly', name: 'Adobe Firefly' },
-      { slug: 'artbreeder', name: 'Artbreeder' },
-      { slug: 'chatgpt-image', name: 'ChatGPT Image Generation' },
-      { slug: 'clipdrop', name: 'ClipDrop' },
-      { slug: 'craiyon', name: 'Craiyon' },
-      { slug: 'dall-e', name: 'DALL-E' },
-      { slug: 'deepart', name: 'DeepArt' },
-      { slug: 'dreamwave', name: 'Dreamwave' },
-      { slug: 'hotpot-ai', name: 'Hotpot.ai' },
-      { slug: 'icon8-ai', name: 'Icons8 AI' },
-      { slug: 'imagine-ai', name: 'Imagine AI' },
-      { slug: 'leonardo-ai', name: 'Leonardo AI' },
-      { slug: 'copilot-designer', name: 'Microsoft Copilot Designer' },
-      { slug: 'midjourney', name: 'Midjourney' },
-      { slug: 'neural-love', name: 'Neural.love' },
-      { slug: 'nightcafe', name: 'NightCafe' },
-      { slug: 'pixar-style', name: 'Pixar-Style AI Portrait Tools' },
-      { slug: 'runway-ml', name: 'RunwayML' },
-      { slug: 'stable-diffusion', name: 'Stable Diffusion' },
-      { slug: 'wondershare-ai', name: 'Wondershare AI' },
-    ],
-  },
-  {
-    id: 'editors',
-    title: 'Photo editors and retouching apps',
-    blurb:
-      'Editing, enhancement and filter tools that work on photos you already have.',
-    entries: [
-      { slug: 'lightroom', name: 'Adobe Lightroom' },
-      { slug: 'photoshop', name: 'Adobe Photoshop' },
-      { slug: 'befunky', name: 'BeFunky' },
-      { slug: 'canva-ai', name: 'Canva AI' },
-      { slug: 'epik-ai', name: 'Epik' },
-      { slug: 'faceapp', name: 'FaceApp' },
-      { slug: 'facetune', name: 'Facetune' },
-      { slug: 'facetune2', name: 'Facetune 2' },
-      { slug: 'fotor', name: 'Fotor AI' },
-      { slug: 'imglarger', name: 'ImgLarger' },
-      { slug: 'kapwing', name: 'Kapwing' },
-      { slug: 'lensa', name: 'Lensa' },
-      { slug: 'luminar-ai', name: 'Luminar AI' },
-      { slug: 'meitu', name: 'Meitu' },
-      { slug: 'photolab', name: 'Photo Lab' },
-      { slug: 'photodirector', name: 'PhotoDirector' },
-      { slug: 'photoroom', name: 'PhotoRoom' },
-      { slug: 'picsart', name: 'Picsart' },
-      { slug: 'pixelcut', name: 'Pixelcut' },
-      { slug: 'pixlr', name: 'Pixlr' },
-      { slug: 'prequel-app', name: 'Prequel' },
-      { slug: 'prisma-app', name: 'Prisma' },
-      { slug: 'reface-ai', name: 'Reface AI' },
-      { slug: 'remini', name: 'Remini' },
-      { slug: 'remove-bg', name: 'Remove.bg' },
-      { slug: 'snapseed', name: 'Snapseed' },
-      { slug: 'topaz-ai', name: 'Topaz Labs' },
-      { slug: 'youcan-ai', name: 'YouCam Perfect' },
-    ],
-  },
-];
 
 const differentiators = [
   {

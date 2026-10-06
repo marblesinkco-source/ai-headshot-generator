@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { StyleFilter } from '@/components/marketing/style-filter';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import { getAllPhotoStyles, type PhotoStyle } from '@/config/styles';
@@ -269,27 +270,10 @@ export default function StylesPage() {
         </section>
       )}
 
-      {groups.map((group) => (
-        <section key={group.id} id={group.id} className="scroll-mt-24 py-12">
-          <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-8 max-w-2xl">
-              <h2 className="font-display font-normal text-3xl text-tp-ink sm:text-4xl">{group.title}</h2>
-              <p className="mt-2 text-tp-muted">{group.blurb}</p>
-            </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {group.items.map((style) => (
-                <StyleCard key={style.slug} style={style} />
-              ))}
-            </div>
-            <div className="mt-8 flex flex-col items-start justify-between gap-4 rounded-tp-card border border-tp-line bg-white p-6 sm:flex-row sm:items-center">
-              <p className="font-display font-normal text-xl text-tp-ink">
-                Like a {group.title.toLowerCase()} look? Create yours from a few selfies.
-              </p>
-              <CtaButton>Get my headshots</CtaButton>
-            </div>
-          </div>
-        </section>
-      ))}
+      <StyleFilter
+        styles={styles}
+        categories={groups.map(({ id, title, blurb, slugs }) => ({ id, title, blurb, slugs }))}
+      />
 
       <section id="cant-decide" className="scroll-mt-24 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">

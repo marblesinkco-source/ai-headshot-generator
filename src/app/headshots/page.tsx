@@ -5,7 +5,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
-import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, FAQSchema, PricingProductSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import { formatPrice } from '@/lib/utils';
 import { CATEGORIES } from '@/config/categories';
@@ -95,6 +95,7 @@ const faqItems = [
 export default function HeadshotsLandingPage() {
   return (
     <main id="main-content" className="min-h-screen">
+      <PricingProductSchema path="/headshots" />
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
