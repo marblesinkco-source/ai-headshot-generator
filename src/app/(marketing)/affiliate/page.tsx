@@ -21,7 +21,7 @@ import {
 } from 'lucide-react';
 
 const AFFILIATE_OG_TITLE = `Affiliate Program | ${siteConfig.name}`;
-const AFFILIATE_OG_DESCRIPTION = `Partner with ${siteConfig.name} and earn up to 30% commission promoting AI headshots. Referral tracking dashboard and monthly payouts.`;
+const AFFILIATE_OG_DESCRIPTION = `Partner with ${siteConfig.name} and earn competitive commissions promoting AI headshots. Referral tracking dashboard and monthly payouts.`;
 
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic Affiliate Program: Earn on Every Referred Sale' },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: generateOGMetadata({
     title: AFFILIATE_OG_TITLE,
     description: AFFILIATE_OG_DESCRIPTION,
-    subtitle: 'Earn up to 30% commission per sale',
+    subtitle: 'Earn competitive commissions per sale',
     path: '/affiliate',
   }),
   twitter: generateTwitterMetadata({
@@ -54,7 +54,7 @@ const whyPartner = [
     icon: DollarSign,
     title: 'Competitive Commissions',
     description:
-      'Earn up to 30% commission on every sale you refer. A generous cookie window ensures you get credited even if the customer returns days later.',
+      'Earn competitive commissions on every sale you refer. A generous cookie window ensures you get credited even if the customer returns days later.',
   },
   {
     icon: Zap,
@@ -115,7 +115,7 @@ const trustSignals = [
 const affiliateFaqs = [
   {
     question: 'How much commission can I earn?',
-    answer: 'You can earn up to 30% commission on every qualifying sale you refer. Your exact rate is confirmed when your application is approved.',
+    answer: 'You earn competitive commissions on every qualifying sale you refer. Your exact rate is confirmed when your application is approved.',
   },
   {
     question: 'How and when do I get paid?',
@@ -170,7 +170,7 @@ export default function AffiliatePage() {
               <span className="text-tp-bronze">{siteConfig.name}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige/80">
-              Earn up to 30% commission on every sale you refer. Join our
+              Earn competitive commissions on every sale you refer. Join our
               affiliate program and turn your audience into a revenue stream
               while helping people look their professional best.
             </p>
@@ -193,7 +193,7 @@ export default function AffiliatePage() {
               Commission Structure
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-tp-muted">
-              Earn up to 30% commission on every qualifying sale. Our program
+              Earn competitive commissions on every qualifying sale. Our program
               features a generous cookie window so you get credited even when
               customers take their time to decide. Commissions are tracked in
               real time and paid out monthly once you reach the minimum
@@ -204,7 +204,7 @@ export default function AffiliatePage() {
                 Your commission
               </p>
               <p className="mt-3 font-display text-6xl text-tp-bronze sm:text-7xl">
-                Up to 30%
+                Competitive
               </p>
               <p className="mt-3 text-tp-beige/80">
                 on every qualifying sale you refer. Your exact rate is confirmed on approval.
@@ -213,10 +213,10 @@ export default function AffiliatePage() {
             <div className="mx-auto mt-6 grid max-w-3xl gap-6 sm:grid-cols-3">
               <div className="rounded-tp-card border border-tp-line bg-tp-paper p-6 text-center">
                 <span className="font-display text-3xl text-tp-bronze-ink">
-                  Up to 30%
+                  Competitive
                 </span>
                 <p className="mt-2 text-sm text-tp-muted">
-                  Commission per sale
+                  Commission rate
                 </p>
               </div>
               <div className="rounded-tp-card border border-tp-line bg-tp-paper p-6 text-center">

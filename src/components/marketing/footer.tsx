@@ -57,6 +57,7 @@ const companyLinks: FooterLink[] = [
   { label: 'Press', href: '/press' },
   { label: 'Careers', href: '/careers' },
   { label: 'Partners', href: '/partners' },
+  { label: 'System Status', href: '/status' },
 ];
 
 const legalLinks: FooterLink[] = [
