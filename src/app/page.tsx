@@ -25,6 +25,8 @@ function SectionSkeleton({ height }: { height: string }) {
   );
 }
 
+import StudioComparisonV2 from '@/components/marketing/studio-comparison-v2';
+
 // Below-the-fold sections: lazy load for performance
 const SocialProofBar = dynamic(
   () => import('@/components/marketing/social-proof-bar').then((m) => m.SocialProofBar),
@@ -133,6 +135,9 @@ export default function LandingPage() {
 
       {/* 6. Style & Customization Preview */}
       <StyleConfigurator />
+
+      {/* 7.5. Studio Comparison — AI vs Traditional */}
+      <StudioComparisonV2 />
 
       {/* 8. Speed Comparison */}
       <SpeedComparison />

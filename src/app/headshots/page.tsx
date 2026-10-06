@@ -13,8 +13,11 @@ import { CATEGORIES } from '@/config/categories';
 import { PROFESSIONS } from '@/config/professions';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import StudioComparisonV2 from '@/components/marketing/studio-comparison-v2';
+import ProcessingTimeline from '@/components/marketing/processing-timeline';
 
 const StickyCTA = dynamic(() => import('@/components/marketing/sticky-cta').then(m => ({ default: m.StickyCTA })), { ssr: false });
+const StyleConfigurator = dynamic(() => import('@/components/marketing/style-configurator').then(m => ({ default: m.StyleConfigurator })), { ssr: false });
 
 const PAGE_TITLE = 'AI Professional Headshots | Studio-Quality Portraits from Selfies | TailorPic';
 const PAGE_DESC =
@@ -192,6 +195,9 @@ export default function HeadshotsLandingPage() {
         </div>
       </section>
 
+      {/* ── Studio Comparison ── */}
+      <StudioComparisonV2 />
+
       {/* ── Professions by Industry ── */}
       <section className="bg-tp-paper py-20 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -286,6 +292,12 @@ export default function HeadshotsLandingPage() {
           </div>
         </div>
       </section>
+
+      {/* ── Style Configurator ── */}
+      <StyleConfigurator />
+
+      {/* ── Processing Timeline ── */}
+      <ProcessingTimeline />
 
       {/* ── Full Pricing Ladder ── */}
       <section className="border-t border-tp-line/40 bg-tp-paper py-20 sm:py-24">

@@ -1,186 +1,161 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
-import { Shuffle, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-const BACKDROPS = [
-  { id: 'studio-gray', label: 'Studio Gray', gradient: 'from-[#E8E6E0] to-[#C8C6C0]' },
-  { id: 'warm-beige', label: 'Warm Beige', gradient: 'from-[#F5F0E8] to-[#E0D5C5]' },
-  { id: 'navy-pro', label: 'Navy Pro', gradient: 'from-[#1F3A5F] to-[#0F2240]' },
-  { id: 'soft-white', label: 'Soft White', gradient: 'from-[#F8F8F6] to-[#EEECE8]' },
-  { id: 'forest', label: 'Forest Green', gradient: 'from-[#2D5A3D] to-[#1A3A28]' },
-  { id: 'modern-teal', label: 'Modern Teal', gradient: 'from-[#DDE5EE] to-[#B8CDE0]' },
-] as const;
+interface Backdrop {
+  name: string;
+  color: string;
+}
 
-const OUTFITS = [
-  { id: 'dark-suit', label: 'Dark Suit', color: '#1B2A4A' },
-  { id: 'light-blazer', label: 'Light Blazer', color: '#D5D0C8' },
-  { id: 'black-crew', label: 'Black Crew', color: '#16161A' },
-  { id: 'navy-polo', label: 'Navy Polo', color: '#2C3E50' },
-  { id: 'charcoal', label: 'Charcoal', color: '#3D3D3D' },
-  { id: 'cream-knit', label: 'Cream Knit', color: '#E8E0D5' },
-] as const;
+const BACKDROPS: Backdrop[] = [
+  { name: 'Studio White', color: '#F5F5F5' },
+  { name: 'Studio Gray', color: '#D4D4D4' },
+  { name: 'Navy Blue', color: '#1E3A5F' },
+  { name: 'Charcoal', color: '#2D2D2D' },
+  { name: 'Warm Beige', color: '#E8DCC8' },
+  { name: 'Forest Green', color: '#2D4A3E' },
+  { name: 'Burgundy', color: '#5C1A1A' },
+  { name: 'Light Blue', color: '#B8D4E3' },
+];
+
+const STYLES = ['Professional', 'Creative', 'Corporate', 'Casual', 'Executive', 'Academic'];
+
+/** Perceived luminance (0-1) so the silhouette contrasts with any backdrop. */
+function isLight(hex: string): boolean {
+  const n = parseInt(hex.slice(1), 16);
+  const r = (n >> 16) & 255;
+  const g = (n >> 8) & 255;
+  const b = n & 255;
+  return (0.299 * r + 0.587 * g + 0.114 * b) / 255 > 0.6;
+}
 
 export function StyleConfigurator() {
-  const [backdrop, setBackdrop] = useState(0);
-  const [outfit, setOutfit] = useState(0);
+  const [backdropIndex, setBackdropIndex] = useState(2);
+  const [styleIndex, setStyleIndex] = useState(0);
 
-  const randomize = useCallback(() => {
-    setBackdrop(Math.floor(Math.random() * BACKDROPS.length));
-    setOutfit(Math.floor(Math.random() * OUTFITS.length));
-  }, []);
-
-  const bg = BACKDROPS[backdrop];
-  const fit = OUTFITS[outfit];
+  const backdrop = BACKDROPS[backdropIndex] ?? BACKDROPS[0];
+  const style = STYLES[styleIndex] ?? STYLES[0];
+  const silhouette = isLight(backdrop.color) ? '#2D2D2D' : '#FFFFFF';
 
   return (
-    <section className="bg-tp-beige/25 py-20 lg:py-24" aria-labelledby="configurator-heading">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        {/* Header */}
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="uppercase text-[11px] font-semibold tracking-[0.25em] text-tp-bronze-ink mb-3">
-            Customize Your Style
-          </p>
-          <h2
-            id="configurator-heading"
-            className="font-display text-[30px] sm:text-[40px] font-normal tracking-[-0.03em] text-tp-ink leading-tight"
-          >
-            Design Your Look
+    <section className="border-t border-tp-line/40 bg-white py-16 sm:py-20">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <h2 className="font-display text-2xl font-normal text-tp-black sm:text-3xl">
+            Design Your Perfect Headshot
           </h2>
-          <p className="mt-4 text-[15px] text-tp-muted leading-relaxed">
-            Mix backdrops and outfits to preview your headshot style. Every plan includes multiple combinations.
+          <p className="mx-auto mt-3 max-w-2xl text-tp-muted">
+            Pick a backdrop and a style to preview the look you want before you start.
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 items-start gap-10 lg:grid-cols-[1fr_280px]">
-          {/* Controls */}
-          <div className="space-y-8">
-            {/* Backdrops */}
-            <div>
-              <p className="mb-3 text-sm font-semibold text-tp-ink">Choose a Backdrop</p>
-              <div className="grid grid-cols-3 gap-3 sm:grid-cols-6">
-                {BACKDROPS.map((b, i) => (
+        {/* Preview (first on mobile, centered between/above on desktop) */}
+        <div className="mt-10 flex flex-col items-center">
+          <div
+            role="img"
+            aria-label={`Preview: ${style} style on ${backdrop.name}`}
+            className="relative h-[350px] w-[280px] overflow-hidden rounded-tp-card border border-tp-line shadow-md transition-colors duration-300"
+            style={{ backgroundColor: backdrop.color }}
+          >
+            <svg
+              viewBox="0 0 280 350"
+              className="absolute inset-0 h-full w-full"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <g fill={silhouette} fillOpacity="0.85">
+                <ellipse cx="140" cy="125" rx="52" ry="62" />
+                <path d="M30 350 C30 262 78 226 140 226 C202 226 250 262 250 350 Z" />
+              </g>
+            </svg>
+          </div>
+          <p className="mt-4 text-center text-base font-medium text-tp-ink" aria-live="polite">
+            {style} style on {backdrop.name}
+          </p>
+          <p className="mt-1 text-center text-xs italic text-tp-muted">
+            Illustrative concept — actual results use AI generation
+          </p>
+        </div>
+
+        {/* Selectors */}
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+          <div className="rounded-tp-card border border-tp-line bg-tp-beige p-5 sm:p-6">
+            <h3 className="font-display text-xl font-normal text-tp-black">Background</h3>
+            <div className="mt-4 grid grid-cols-4 gap-3" role="radiogroup" aria-label="Background">
+              {BACKDROPS.map((b, i) => {
+                const active = i === backdropIndex;
+                return (
                   <button
-                    key={b.id}
+                    key={b.name}
                     type="button"
-                    onClick={() => setBackdrop(i)}
-                    className={cn(
-                      'group flex flex-col items-center gap-2 rounded-tp-button border-2 p-2.5 transition-all hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink',
-                      backdrop === i
-                        ? 'border-tp-bronze shadow-md'
-                        : 'border-transparent hover:border-tp-line'
-                    )}
-                    aria-pressed={backdrop === i}
+                    role="radio"
+                    aria-checked={active}
+                    aria-label={b.name}
+                    onClick={() => setBackdropIndex(i)}
+                    className="group flex flex-col items-center gap-1.5 focus-visible:outline-none"
                   >
-                    <div
+                    <span
                       className={cn(
-                        'h-10 w-10 rounded-full bg-gradient-to-br shadow-inner',
-                        b.gradient
+                        'block h-12 w-12 rounded-tp-button border border-tp-line transition-all group-focus-visible:ring-2 group-focus-visible:ring-tp-bronze group-focus-visible:ring-offset-2 sm:h-14 sm:w-14',
+                        active
+                          ? 'ring-2 ring-tp-bronze ring-offset-2 ring-offset-tp-beige'
+                          : 'group-hover:ring-2 group-hover:ring-tp-line group-hover:ring-offset-2 group-hover:ring-offset-tp-beige'
                       )}
+                      style={{ backgroundColor: b.color }}
                     />
-                    <span className="text-[11px] font-medium leading-tight text-tp-muted group-hover:text-tp-ink">
-                      {b.label}
+                    <span
+                      className={cn(
+                        'text-center text-[11px] leading-tight sm:text-xs',
+                        active ? 'font-medium text-tp-ink' : 'text-tp-muted'
+                      )}
+                    >
+                      {b.name}
                     </span>
                   </button>
-                ))}
-              </div>
+                );
+              })}
             </div>
+          </div>
 
-            {/* Outfits */}
-            <div>
-              <p className="mb-3 text-sm font-semibold text-tp-ink">Choose an Outfit</p>
-              <div className="grid grid-cols-3 gap-3 sm:grid-cols-6">
-                {OUTFITS.map((o, i) => (
+          <div className="rounded-tp-card border border-tp-line bg-tp-beige p-5 sm:p-6">
+            <h3 className="font-display text-xl font-normal text-tp-black">Style</h3>
+            <div className="mt-4 flex flex-wrap gap-2" role="radiogroup" aria-label="Style">
+              {STYLES.map((s, i) => {
+                const active = i === styleIndex;
+                return (
                   <button
-                    key={o.id}
+                    key={s}
                     type="button"
-                    onClick={() => setOutfit(i)}
+                    role="radio"
+                    aria-checked={active}
+                    onClick={() => setStyleIndex(i)}
                     className={cn(
-                      'group flex flex-col items-center gap-2 rounded-tp-button border-2 p-2.5 transition-all hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink',
-                      outfit === i
-                        ? 'border-tp-bronze shadow-md'
-                        : 'border-transparent hover:border-tp-line'
+                      'rounded-full px-4 py-2 text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2 focus-visible:ring-offset-tp-beige',
+                      active
+                        ? 'bg-tp-paper font-medium text-tp-ink ring-2 ring-tp-bronze'
+                        : 'bg-tp-paper/60 text-tp-muted hover:bg-tp-paper hover:text-tp-ink'
                     )}
-                    aria-pressed={outfit === i}
                   >
-                    <div
-                      className="h-10 w-10 rounded-full shadow-inner"
-                      style={{ backgroundColor: o.color }}
-                    />
-                    <span className="text-[11px] font-medium leading-tight text-tp-muted group-hover:text-tp-ink">
-                      {o.label}
-                    </span>
+                    {s}
                   </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Surprise me */}
-            <button
-              type="button"
-              onClick={randomize}
-              className="inline-flex items-center gap-2 rounded-tp-button border border-tp-line px-4 py-2.5 text-sm font-medium text-tp-muted transition-colors hover:border-tp-bronze hover:text-tp-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
-            >
-              <Shuffle className="h-4 w-4" />
-              Surprise Me
-            </button>
-          </div>
-
-          {/* Preview */}
-          <div className="mx-auto w-full max-w-[280px] lg:mx-0">
-            <div
-              className={cn(
-                'relative aspect-[3/4] overflow-hidden rounded-tp-card bg-gradient-to-br shadow-lg transition-all duration-500',
-                bg.gradient
-              )}
-            >
-              {/* Shoulders */}
-              <div
-                className="absolute bottom-0 left-1/2 h-[35%] w-[75%] -translate-x-1/2 rounded-t-[45%] transition-colors duration-500"
-                style={{ backgroundColor: fit.color }}
-              />
-              {/* Neck */}
-              <div className="absolute bottom-[32%] left-1/2 h-[8%] w-[14%] -translate-x-1/2 rounded-md bg-tp-beige/70" />
-              {/* Head */}
-              <div className="absolute bottom-[37%] left-1/2 aspect-square w-[30%] -translate-x-1/2 rounded-full bg-tp-beige/70 shadow-inner" />
-              {/* Glow */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-white/10" />
-              {/* Labels */}
-              <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-                <span className="rounded-tp-button bg-white/90 px-2 py-0.5 text-[10px] font-semibold text-tp-ink backdrop-blur-sm">
-                  {bg.label}
-                </span>
-                <span className="rounded-tp-button bg-tp-black/80 px-2 py-0.5 text-[10px] font-semibold text-tp-paper backdrop-blur-sm">
-                  {fit.label}
-                </span>
-              </div>
-              {/* Disclosure */}
-              <span className="absolute right-2 top-2 rounded-tp-button bg-tp-black/60 px-1.5 py-0.5 text-[9px] text-tp-paper/80">
-                Preview concept
-              </span>
-            </div>
-
-            {/* CTA under preview */}
-            <div className="mt-4 text-center">
-              <Link
-                href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
-                className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'w-full')}
-              >
-                Get This Look
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-              <p className="mt-2 text-[11px] text-tp-muted">
-                From $1.99 · Your uploaded photo, your chosen style
-              </p>
+                );
+              })}
             </div>
           </div>
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <Link
+            href="/auth/register?redirect=/dashboard/upload"
+            className={cn(buttonVariants({ size: 'lg' }))}
+          >
+            Create This Look →
+          </Link>
         </div>
       </div>
     </section>
   );
 }
-
-export default StyleConfigurator;
