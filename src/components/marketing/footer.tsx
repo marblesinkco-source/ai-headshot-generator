@@ -35,6 +35,7 @@ const resourceLinks: FooterLink[] = [
   { label: 'Photo Tips', href: '/photo-tips' },
   { label: 'What to Wear', href: '/what-to-wear' },
   { label: 'Selfie Guide', href: '/selfie-guide' },
+  { label: 'Backgrounds', href: '/backgrounds' },
   { label: 'Free Tools', href: '/tools' },
   { label: 'Compare Tools', href: '/vs' },
   { label: 'Industries', href: '/industries' },
@@ -52,6 +53,7 @@ const companyLinks: FooterLink[] = [
   { label: 'Reviews', href: '/reviews' },
   { label: 'Enterprise', href: '/enterprise' },
   { label: 'Referral Program', href: '/referral' },
+  { label: 'Press', href: '/press' },
   { label: 'Careers', href: '/careers' },
   { label: 'Partners', href: '/partners' },
 ];
