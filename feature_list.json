@@ -183,6 +183,14 @@
       "dependencies": ["feat-U"],
       "status": "done",
       "evidence": "Batch 1 (ef2e2eb): hero CTA 'From' eklendi, SocialProofBar tutarlılık, StickyCTA masaüstü genişletme, pricing sayfasına PackageQuiz+GuaranteeSection, homepage'den StudioComparison+AIComparison kaldırıldı, PhotoPrepGuide+PackageQuiz eklendi. Batch 2 (f0c5f50): samples 'AI-generated concept' etiketleri→'style example' düzeltmesi, UseCaseChips homepage entegrasyonu, PriceReceipt pricing sayfası entegrasyonu. CI PASS + Vercel PASS (her iki batch)."
+    },
+    {
+      "id": "feat-W",
+      "name": "Phase W — SEO & Micro-Interaction Polish",
+      "description": "Canonical URL'ler (10 sayfa), sitemap lastModified (287 entry), CSS-only scroll-fade-in animasyon sistemi (5 bileşen: categories, how-it-works, guarantee, pricing, FAQ)",
+      "dependencies": ["feat-V"],
+      "status": "done",
+      "evidence": "10 sayfaya canonical URL eklendi (help, samples, gate, newsletter/unsubscribed, auth/forgot-password, auth/login, auth/register, auth/reset-password, for-teams, refund-policy). sitemap.ts: 287 statik entry'ye lastModified eklendi. globals.css: CSS-only scroll-fade-in (animation-timeline: view(), progressive enhancement, reduced-motion saygılı). 5 bileşene scroll-fade-in class eklendi. Commit: 4efd2ae. CI PASS + Vercel PASS. Canlı doğrulama: tüm bölümler sorunsuz, animasyonlar çalışıyor."
     }
   ]
 }

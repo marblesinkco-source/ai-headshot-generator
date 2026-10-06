@@ -507,7 +507,7 @@ export default function EnterprisePage() {
             </p>
             <div className="mt-10">
               <a
-                href="/auth/register?redirect=/dashboard/upload"
+                href="/contact"
                 className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-8 py-4 text-base font-semibold text-tp-black transition-colors hover:bg-tp-bronze/90"
               >
                 Get Enterprise Quote

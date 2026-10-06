@@ -344,7 +344,7 @@ export default function LinkedInHeadshotsPage() {
                 <Camera className="h-10 w-10 text-tp-muted" aria-hidden="true" />
               </div>
               <figcaption className="mt-3 text-center text-sm text-tp-muted">
-                <span className="font-semibold text-tp-ink">Before:</span> everyday selfie (placeholder)
+                <span className="font-semibold text-tp-ink">Before:</span> everyday selfie
               </figcaption>
             </figure>
             <figure>
@@ -352,12 +352,12 @@ export default function LinkedInHeadshotsPage() {
                 <Sparkles className="h-10 w-10 text-tp-bronze-ink" aria-hidden="true" />
               </div>
               <figcaption className="mt-3 text-center text-sm text-tp-muted">
-                <span className="font-semibold text-tp-ink">After:</span> professional headshot (placeholder)
+                <span className="font-semibold text-tp-ink">After:</span> professional headshot
               </figcaption>
             </figure>
           </div>
           <p className="mt-3 text-center text-xs text-tp-muted">
-            Illustrative placeholders. <Link href="/samples" className="underline hover:text-tp-bronze-ink">See real sample photos</Link>.
+            Illustrations only — not actual results. <Link href="/samples" className="underline hover:text-tp-bronze-ink">See real style examples</Link>.
           </p>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {transformation.map((t, i) => (

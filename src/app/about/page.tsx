@@ -104,7 +104,7 @@ const values = [
     icon: Gem,
     title: 'Quality',
     description:
-      'AI-powered, studio-quality results that look like you.',
+      'Every portrait is trained on your unique features, producing studio-quality results that genuinely look like you — not a generic filter.',
   },
   {
     icon: Clock,
