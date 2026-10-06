@@ -11,10 +11,10 @@ const productLinks: FooterLink[] = [
   { label: 'How It Works', href: '/how-it-works' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Samples', href: '/samples' },
+  { label: 'Technology', href: '/technology' },
   { label: 'Quality Promise', href: '/guarantee' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Changelog', href: '/changelog' },
 ];
 
 const photoTypeLinks: FooterLink[] = [
@@ -34,15 +34,18 @@ const resourceLinks: FooterLink[] = [
   { label: 'Compare Tools', href: '/vs' },
   { label: 'Industries', href: '/industries' },
   { label: 'Use Cases', href: '/use-cases' },
-  { label: 'Locations', href: '/locations' },
+  { label: 'For Students', href: '/students' },
+  { label: 'For Teams', href: '/for-teams' },
   { label: 'Developer API', href: '/developer-api' },
 ];
 
 const companyLinks: FooterLink[] = [
   { label: 'About', href: '/about' },
+  { label: 'Why TailorPic', href: '/why-tailorpic' },
   { label: 'Contact', href: '/contact' },
   { label: 'Reviews', href: '/reviews' },
   { label: 'Enterprise', href: '/enterprise' },
+  { label: 'Referral Program', href: '/referral' },
   { label: 'Careers', href: '/careers' },
   { label: 'Partners', href: '/partners' },
 ];

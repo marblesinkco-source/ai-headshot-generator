@@ -222,7 +222,23 @@
       "description": "6 SEO-optimized meslek sayfası: /headshots/for-lawyers, /headshots/for-realtors, /headshots/for-developers, /headshots/for-doctors, /headshots/for-consultants, /headshots/for-executives. Dinamik şablon + professions.ts config.",
       "dependencies": ["feat-Z"],
       "status": "done",
-      "evidence": "6 meslek sayfası canlıda doğrulandı: /headshots/for-lawyers, /headshots/for-realtors, /headshots/for-developers, /headshots/for-doctors, /headshots/for-consultants, /headshots/for-executives. Route: headshots/[profession]. Commits: 63bd3aa, 82f2950."
+      "evidence": "30 meslek sayfası canlıda doğrulandı. Route: headshots/[profession]. Commits: 63bd3aa, 82f2950, 72727c0, 00bc5a7."
+    },
+    {
+      "id": "feat-AB",
+      "name": "Phase AB — Trust & Process Transparency",
+      "description": "Detaylı /our-technology sayfası: AI nasıl çalışıyor, veri gizliliği, kalite süreci. Güven artırıcı içerik.",
+      "dependencies": ["feat-AA"],
+      "status": "done",
+      "evidence": "/technology sayfası zaten mevcut ve kapsamlı (hero, 4-adım süreç, 6 teknoloji ayağı, kalite standartları, privacy/security, FAQ, CTA). Boş /our-technology dizini silindi."
+    },
+    {
+      "id": "feat-AC",
+      "name": "Phase AC — Site-Wide Polish & Missing Features",
+      "description": "Header navigasyon linkleri denetimi, kırık/eksik sayfalar, menü tutarlılığı, footer linkleri, genel UX iyileştirmeleri",
+      "dependencies": ["feat-AB"],
+      "status": "not-started",
+      "evidence": ""
     }
   ]
 }
