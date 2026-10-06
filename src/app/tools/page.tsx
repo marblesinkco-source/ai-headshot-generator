@@ -86,6 +86,13 @@ const tools = [
     href: '/tools/team-headshot-calculator',
     icon: Users,
   },
+  {
+    title: 'LinkedIn Headline Generator',
+    description:
+      'Generate 5 LinkedIn headline ideas from your job title, industry and skills. Free, no account needed.',
+    href: '/tools/linkedin-headline-generator',
+    icon: Linkedin,
+  },
 ];
 
 export default function ToolsPage() {
