@@ -1,5 +1,57 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-06 (Phase Y — Trust & Conversion Boosters)
+
+### Baseline
+- HEAD: `92b3696` (Phase X complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### Yeni Bileşenler
+- `trust-badges-inline.tsx`: 3 rozet (Satisfaction Guarantee, Secure Payment, ~2 Hour Delivery), pricing sayfasında 2 yerde
+- `privacy-assurance.tsx`: ShieldCheck + 30-gün silme + satılmaz + eğitilmez, upload sayfasında
+- `style-preview-grid.tsx`: 12 stil kartı (corporate→old-money), Lucide ikonları, headshots kategorisinde
+- `photo-quality-checker.tsx`: Çözünürlük (<512px), boyut (>10MB/<50KB), oran (>3:1) kontrolleri, upload'da
+
+#### Düzeltmeler
+- style-preview-grid: Link→div (olmayan /styles/ rotalarına 404 önlendi)
+
+### Sonuç
+- Commit: `84afd63`
+- CI: PASS ✅
+- Vercel: PASS ✅
+- Canlı doğrulama: TAMAM ✅ (pricing trust badges, headshots style grid)
+
+---
+
+## Oturum: 2026-10-06 (Phase X — Content Polish & Dead Code Cleanup)
+
+### Baseline
+- HEAD: `4efd2ae` (Phase W complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### Content Fixes
+- LinkedIn headshots: before/after figcaption'lardan "(placeholder)" etiketleri kaldırıldı
+- LinkedIn headshots: açıklama metni güncellendi ("Illustrations only — not actual results. See real style examples")
+- Enterprise: "Get Enterprise Quote" CTA href'i /auth/register... → /contact olarak düzeltildi
+- About: "Quality" değer açıklaması genişletildi (tek cümle → tam paragraf)
+
+#### Dead Code Cleanup
+- 6 kullanılmayan bileşen silindi (grep ile hiçbirinin import edilmediği doğrulandı):
+  - ai-vs-generic.tsx, studio-vs-ai.tsx, savings-highlight.tsx
+  - comparison-table.tsx, trust-strip.tsx, plan-picker.tsx
+
+### Sonuç
+- Commit: `92b3696`
+- CI: PASS ✅
+- Vercel: PASS ✅
+- Canlı doğrulama: TAMAM ✅ (linkedin placeholder düzeltmesi, enterprise CTA, about quality)
+
+---
+
 ## Oturum: 2026-10-06 (Phase W — SEO & Micro-Interaction Polish)
 
 ### Baseline

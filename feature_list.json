@@ -191,6 +191,22 @@
       "dependencies": ["feat-V"],
       "status": "done",
       "evidence": "10 sayfaya canonical URL eklendi (help, samples, gate, newsletter/unsubscribed, auth/forgot-password, auth/login, auth/register, auth/reset-password, for-teams, refund-policy). sitemap.ts: 287 statik entry'ye lastModified eklendi. globals.css: CSS-only scroll-fade-in (animation-timeline: view(), progressive enhancement, reduced-motion saygılı). 5 bileşene scroll-fade-in class eklendi. Commit: 4efd2ae. CI PASS + Vercel PASS. Canlı doğrulama: tüm bölümler sorunsuz, animasyonlar çalışıyor."
+    },
+    {
+      "id": "feat-X",
+      "name": "Phase X — Content Polish & Dead Code Cleanup",
+      "description": "LinkedIn placeholder metin düzeltmesi, Enterprise CTA /contact'a yönlendirme, About Quality açıklaması genişletme, 6 kullanılmayan bileşen silme",
+      "dependencies": ["feat-W"],
+      "status": "done",
+      "evidence": "LinkedIn headshots: '(placeholder)' etiketleri kaldırıldı. Enterprise: 'Get Enterprise Quote' CTA href /contact'a güncellendi. About: Quality değer açıklaması genişletildi. 6 kullanılmayan bileşen silindi (ai-vs-generic, studio-vs-ai, savings-highlight, comparison-table, trust-strip, plan-picker). Commit: 92b3696. CI PASS + Vercel PASS. Canlı doğrulama: tüm düzeltmeler doğrulandı."
+    },
+    {
+      "id": "feat-Y",
+      "name": "Phase Y — Trust & Conversion Boosters",
+      "description": "Trust badges inline (pricing 2x), privacy assurance (upload), style preview grid (headshots 12 stil), photo quality checker (upload)",
+      "dependencies": ["feat-X"],
+      "status": "done",
+      "evidence": "4 yeni bileşen: trust-badges-inline.tsx (Satisfaction Guarantee + Secure Payment + ~2 Hour Delivery), privacy-assurance.tsx (30-gün silme + satılmaz + eğitilmez), style-preview-grid.tsx (12 stil kartı, div-based, 404 yok), photo-quality-checker.tsx (çözünürlük/boyut/oran kontrolü). 4 entegrasyon: pricing (2x trust badge), UploadClient (privacy), [category] (headshots-only style grid), photo-uploader (quality checker). Commit: 84afd63. CI PASS + Vercel PASS. Canlı doğrulama: trust badges pricing'de, style grid headshots'ta doğru."
     }
   ]
 }
