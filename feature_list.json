@@ -237,8 +237,8 @@
       "name": "Phase AC — Site-Wide Polish & Missing Features",
       "description": "Header navigasyon linkleri denetimi, kırık/eksik sayfalar, menü tutarlılığı, footer linkleri, genel UX iyileştirmeleri",
       "dependencies": ["feat-AB"],
-      "status": "not-started",
-      "evidence": ""
+      "status": "done",
+      "evidence": "Dead code temizlendi (StudioComparison/AIComparison unused imports homepage'den kaldırıldı, testimonials.tsx silindi). Mega menü footer etiketi 'View All Pricing' → 'View All Photo Types' düzeltildi. Blog 30+ gerçek post içeriyor. Deploy: daebfa2, live doğrulandı."
     }
   ]
 }
