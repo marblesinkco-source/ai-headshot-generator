@@ -407,6 +407,14 @@
       "dependencies": ["feat-AW"],
       "status": "done",
       "evidence": "/tools/background-blur: Canvas ctx.filter blur + ellipse clip, 8 handle resize, pointer drag/move, export at original resolution (capped 4096px). /tools/photo-filters: 12 filters (grayscale/sepia/vintage/warm/cool/contrast/soft/dramatic/vivid/matte/bwfilm), pixel-level ImageData manipulation, intensity blend, 80x80 thumbnail previews, seeded random grain. Tools index'e 2 entry (toplam 33) + sitemap'e 2 URL. Commit: 4807212. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa çalışıyor."
+    },
+    {
+      "id": "feat-AY",
+      "name": "Phase AY — Pencil Sketch, Photo Border Maker & Batch Resizer Free Tools",
+      "description": "3 yeni client-side free tool: Pencil Sketch Converter (grayscale→invert→blur→dodge blend, 4 stil, line thickness/intensity), Photo Border & Frame Maker (8 preset, custom colors/width/padding, shadow/glow, rounded corners), Batch Photo Resizer (multi-file, 8 platform preset, percentage/max-width/exact modes, ZIP download). Tools index + sitemap güncellemesi.",
+      "dependencies": ["feat-AX"],
+      "status": "done",
+      "evidence": "/tools/pencil-sketch: 4 sketch styles (Light/Medium/Dark/Charcoal), 3-pass separable box blur, color dodge blend, line thickness 1-40, intensity 0-100. /tools/photo-border-maker: 8 preset frames (Clean White/Classic Black/Gold/Silver/Polaroid/Film Strip/Vintage/Modern), solid/gradient/double border, shadow/glow effect, rounded corners, PRNG rough edges. /tools/batch-photo-resizer: Up to 20 files, 8 platform presets (LinkedIn/Instagram/Facebook/Twitter/YouTube/Passport), 4 resize modes, inline ZIP builder (DataView/ArrayBuffer). Tools index'e 3 entry (toplam 36) + sitemap'e 3 URL. Commit: 6b2f2b2. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa çalışıyor."
     }
   ]
 }

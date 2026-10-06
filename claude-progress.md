@@ -1,5 +1,46 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-07 (Phase AY — Pencil Sketch, Photo Border Maker & Batch Resizer)
+
+### Baseline
+- HEAD: `d520b2c` (Phase AX complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### Pencil Sketch Converter (Yeni Free Tool)
+- `src/components/tools/pencil-sketch.tsx` — Canvas-based grayscale→invert→blur→dodge blend
+- `src/app/tools/pencil-sketch/page.tsx` — Server component, BreadcrumbSchema, 4 tip kartı
+- 4 sketch styles: Light Sketch, Medium Sketch, Dark Sketch, Charcoal
+- Line thickness slider (1-40), intensity slider (0-100) blending
+- 3-pass separable box blur, contrast/brightness/gamma per style
+
+#### Photo Border & Frame Maker (Yeni Free Tool)
+- `src/components/tools/photo-border-maker.tsx` — Canvas-based border/frame maker
+- `src/app/tools/photo-border-maker/page.tsx` — Server component, BreadcrumbSchema, 4 tip kartı
+- 8 preset frames: Clean White, Classic Black, Gold, Silver, Polaroid, Film Strip, Vintage, Modern
+- Solid/Gradient/Double border modes, shadow/glow effects, rounded corners
+- Deterministic PRNG for vintage rough edges
+
+#### Batch Photo Resizer (Yeni Free Tool)
+- `src/components/tools/batch-photo-resizer.tsx` — Canvas-based multi-file resizer
+- `src/app/tools/batch-photo-resizer/page.tsx` — Server component, BreadcrumbSchema, 4 tip kartı
+- 4 resize modes: percentage, max width, max height, exact dimensions
+- 8 platform presets: LinkedIn, Instagram, Facebook, Twitter/X, YouTube, Passport
+- Multi-file upload (max 20), individual PNG or ZIP download (inline ZIP builder)
+
+#### Tools Index & Sitemap
+- `src/app/tools/page.tsx` — 3 yeni tool kartı eklendi (toplam 36 araç), PenTool+ImagePlus import
+- `src/app/sitemap.ts` — 3 yeni URL eklendi
+- Icon fix: Frame → Layers (photo-border-maker page.tsx)
+
+### Commit & Deploy
+- Commit: `6b2f2b2` — feat: add 3 new free tools — Pencil Sketch, Photo Border Maker, Batch Resizer
+- CI: PASS, Vercel: PASS
+- Canlı doğrulama: 4 sayfa çalışıyor (pencil-sketch, photo-border-maker, batch-photo-resizer, tools index)
+
+---
+
 ## Oturum: 2026-10-07 (Phase AX — Photo Background Blur & Photo Filters)
 
 ### Baseline
