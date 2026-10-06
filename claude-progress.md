@@ -1,5 +1,39 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-06 (Phase AF — Trust Strip & Team Use-Case Pages)
+
+### Baseline
+- HEAD: `01b8c21` (Phase AE complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### DataPrivacyStrip Component
+- Reusable trust strip: "Photos deleted after 30 days", "Never used for AI training", "Your data stays private"
+- Entegrasyon: pricing sayfası (2x), kategori sayfaları
+
+#### Team Use-Case Pages (5 + index)
+- `/teams` index: 5 use-case kartlı grid
+- `/teams/team-directory` — Team directory headshot use case
+- `/teams/employee-onboarding` — New hire onboarding
+- `/teams/corporate-events` — Corporate events
+- `/teams/website-redesign` — Website redesign
+- `/teams/brand-consistency` — Brand consistency
+- Her biri: hero, pain points, benefits, how-it-works, team pricing, FAQ, CTA
+- `dynamicParams = false` (404 on unknown slugs)
+
+#### Footer & Sitemap
+- Footer: "Team Use Cases" → Resources, already had "Backgrounds" and "Press"
+- Sitemap: `/teams` + 5 use-case slugları eklendi
+
+### Sonuç
+- Commit: 62aa33a
+- CI: PASS
+- Vercel: PASS
+- Canlı doğrulama: /teams, /teams/team-directory, /pricing (DataPrivacyStrip) ✅
+
+---
+
 ## Oturum: 2026-10-06 (Phase AE — Press Kit, Backgrounds & Gap Pages)
 
 ### Baseline

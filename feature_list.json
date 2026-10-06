@@ -255,6 +255,14 @@
       "dependencies": ["feat-AD"],
       "status": "done",
       "evidence": "Commits: b77ebf5 (gift-cards), b18b24b (before-after + footer + sitemap), 2bbd440 (press), 4d015d1 (backgrounds), 01b8c21 (footer + sitemap finalization). CI PASS, Vercel PASS."
+    },
+    {
+      "id": "feat-AF",
+      "name": "Phase AF — Trust Strip & Team Use-Case Pages",
+      "description": "DataPrivacyStrip component (3 trust assurances near CTAs), 5 team workflow pages (team-directory, employee-onboarding, corporate-events, website-redesign, brand-consistency), teams index page.",
+      "dependencies": ["feat-AE"],
+      "status": "done",
+      "evidence": "Commit 62aa33a. DataPrivacyStrip on pricing (2x) + category pages. 5 team use-case pages + index at /teams. Footer + sitemap updated. CI PASS, Vercel PASS. Live verified: /teams, /teams/team-directory, /pricing (DataPrivacyStrip visible)."
     }
   ]
 }
