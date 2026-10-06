@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal, Users } from 'lucide-react';
+import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal, Users, CheckSquare, CircleUser, AlignLeft } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { ToolsIllustration } from '@/components/marketing/illustrations';
@@ -92,6 +92,27 @@ const tools = [
       'Generate 5 LinkedIn headline ideas from your job title, industry and skills. Free, no account needed.',
     href: '/tools/linkedin-headline-generator',
     icon: Linkedin,
+  },
+  {
+    title: 'LinkedIn About Generator',
+    description:
+      'Generate a professional LinkedIn About section from your job title, industry and skills. Pick a tone and get a polished draft.',
+    href: '/tools/linkedin-about-generator',
+    icon: AlignLeft,
+  },
+  {
+    title: 'Photo Upload Checklist',
+    description:
+      'Go through 16 quick checks on lighting, composition, quality and subject before uploading your photos for AI headshots.',
+    href: '/tools/photo-checklist',
+    icon: CheckSquare,
+  },
+  {
+    title: 'Profile Picture Maker',
+    description:
+      'Crop, resize and position your photo for any platform — LinkedIn, Instagram, Slack, Zoom and more. Download as PNG.',
+    href: '/tools/pfp-maker',
+    icon: CircleUser,
   },
 ];
 
