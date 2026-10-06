@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal, Users, CheckSquare, CircleUser, AlignLeft, Compass } from 'lucide-react';
+import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal, Users, CheckSquare, CircleUser, AlignLeft, Compass, Crop, Sun, BookOpen } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { ToolsIllustration } from '@/components/marketing/illustrations';
@@ -120,6 +120,27 @@ const tools = [
       'Answer 5 quick questions about your industry, goals and vibe to discover which AI headshot style is the best fit for you.',
     href: '/tools/style-finder-quiz',
     icon: Compass,
+  },
+  {
+    title: 'LinkedIn Photo Cropper',
+    description:
+      'Crop your photo to the perfect 400 x 400 LinkedIn dimensions with a circular preview. Zoom, drag and download as PNG.',
+    href: '/tools/linkedin-photo-cropper',
+    icon: Crop,
+  },
+  {
+    title: 'Photo Enhancement Preview',
+    description:
+      'Upload a photo and preview auto brightness, contrast and saturation corrections. See how small adjustments improve your headshot.',
+    href: '/tools/photo-enhance-preview',
+    icon: Sun,
+  },
+  {
+    title: 'Headshot Dos & Don\'ts',
+    description:
+      'A visual guide to lighting, framing, background, expression and attire — five categories of tips for the perfect selfie.',
+    href: '/tools/headshot-dos-donts',
+    icon: BookOpen,
   },
 ];
 
