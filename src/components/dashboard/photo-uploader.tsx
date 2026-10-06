@@ -3,6 +3,7 @@
 import { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { cn } from '@/lib/utils';
+import { PhotoQualityChecker } from '@/components/upload/photo-quality-checker';
 
 interface UploadedFile {
   id: string;
@@ -172,54 +173,61 @@ export function PhotoUploader({ orderId, onUploadComplete }: PhotoUploaderProps)
       {files.length > 0 && (
         <div className="grid grid-cols-3 gap-3 sm:grid-cols-5">
           {files.map((file) => (
-            <div key={file.id} className="group relative aspect-square overflow-hidden rounded-lg border border-tp-line bg-tp-paper">
-              <img
-                src={file.preview}
-                alt="Upload preview"
-                className="h-full w-full object-cover"
-                decoding="async"
-              />
+            <div key={file.id} className="group">
+              <div className="relative aspect-square overflow-hidden rounded-lg border border-tp-line bg-tp-paper">
+                <img
+                  src={file.preview}
+                  alt="Upload preview"
+                  className="h-full w-full object-cover"
+                  decoding="async"
+                />
 
-              {/* Progress overlay */}
-              {file.status === 'uploading' && (
-                <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-                  <div className="h-1.5 w-3/4 overflow-hidden rounded-full bg-white/30">
-                    <div
-                      className="h-full rounded-full bg-white transition-all duration-300"
-                      style={{ width: `${file.progress}%` }}
-                    />
+                {/* Progress overlay */}
+                {file.status === 'uploading' && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+                    <div className="h-1.5 w-3/4 overflow-hidden rounded-full bg-white/30">
+                      <div
+                        className="h-full rounded-full bg-white transition-all duration-300"
+                        style={{ width: `${file.progress}%` }}
+                      />
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
 
-              {/* Error overlay */}
-              {file.status === 'error' && (
-                <div className="absolute inset-0 flex items-center justify-center bg-tp-ink/60" role="alert" aria-label={file.error || 'Upload failed'}>
-                  <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
-                  </svg>
-                </div>
-              )}
+                {/* Error overlay */}
+                {file.status === 'error' && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-tp-ink/60" role="alert" aria-label={file.error || 'Upload failed'}>
+                    <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                    </svg>
+                  </div>
+                )}
 
-              {/* Done checkmark */}
-              {file.status === 'done' && (
-                <div className="absolute bottom-1 right-1 flex h-5 w-5 items-center justify-center rounded-full bg-tp-bronze">
-                  <svg className="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                  </svg>
-                </div>
-              )}
+                {/* Done checkmark */}
+                {file.status === 'done' && (
+                  <div className="absolute bottom-1 right-1 flex h-5 w-5 items-center justify-center rounded-full bg-tp-bronze">
+                    <svg className="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                  </div>
+                )}
 
-              {/* Remove button */}
-              {file.status !== 'uploading' && (
-                <button
-                  onClick={() => removeFile(file.id)}
-                  className="absolute right-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-black/60 text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80"
-                >
-                  <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
+                {/* Remove button */}
+                {file.status !== 'uploading' && (
+                  <button
+                    onClick={() => removeFile(file.id)}
+                    className="absolute right-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-black/60 text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80"
+                  >
+                    <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                )}
+              </div>
+
+              {/* Quality feedback */}
+              {(file.status === 'done' || file.status === 'pending') && (
+                <PhotoQualityChecker file={file.file} previewUrl={file.preview} />
               )}
             </div>
           ))}

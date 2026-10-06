@@ -20,6 +20,7 @@ import { ChevronDown, Check, Lock, CreditCard, BadgeCheck, Minus } from 'lucide-
 import { PricingViewToggle } from '@/components/marketing/pricing-view-toggle';
 import { PricingComparisonBar } from '@/components/marketing/pricing-comparison-bar';
 import { GuaranteeSection } from '@/components/marketing/guarantee-section';
+import { TrustBadgesInline } from '@/components/marketing/trust-badges-inline';
 import dynamic from 'next/dynamic';
 
 const PackageQuiz = dynamic(() => import('@/components/marketing/package-quiz'), { ssr: false });
@@ -210,6 +211,7 @@ export default function PricingPage() {
               See team pricing
             </Link>
           </div>
+          <TrustBadgesInline className="mt-5" />
           <div className="mx-auto mt-10 max-w-xs">
             <PricingVisualIllustration className="w-full h-auto" />
           </div>
@@ -364,6 +366,7 @@ export default function PricingPage() {
             <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
               Get your headshots from {BASE_PRICE_DISPLAY}
             </Link>
+            <TrustBadgesInline className="mt-4" />
           </div>
         </div>
       </section>

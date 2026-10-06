@@ -15,6 +15,7 @@ import { formatPrice } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { PhotoUploader } from '@/components/dashboard/photo-uploader';
 import { PhotoGuidelines, PhotoQuickTips } from '@/components/upload/photo-guidelines';
+import { PrivacyAssurance } from '@/components/ui/privacy-assurance';
 
 type Step = 1 | 2 | 3 | 4;
 
@@ -492,6 +493,8 @@ function UploadContent() {
             orderId={orderId}
             onUploadComplete={(count) => setUploadedCount(count)}
           />
+
+          <PrivacyAssurance />
 
           <div className="flex justify-end">
             <Button
