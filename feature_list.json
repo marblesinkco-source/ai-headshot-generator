@@ -299,10 +299,10 @@
     {
       "id": "feat-AK",
       "name": "Phase AK — Advanced Competitor Features",
-      "description": "Rakip analiz sonuçlarına göre eksik kalan üst segment özellikler: ROI calculator iyileştirme, industry sayfaları genişletme, advanced free tools, conversion optimizasyonları.",
+      "description": "Rakip analiz sonuçlarına göre eksik kalan üst segment özellikler: Style Finder Quiz, OrganizationSchema temizliği, conversion optimizasyonları.",
       "dependencies": ["feat-AJ"],
       "status": "in-progress",
-      "evidence": ""
+      "evidence": "Style Finder Quiz live: /tools/style-finder-quiz (5 soru → 16 stil + paket önerisi). OrganizationSchema fabricated data temizlendi. Commit: 3594c4e"
     }
   ]
 }
