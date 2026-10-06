@@ -282,6 +282,27 @@ const tools = [
     href: '/tools/batch-photo-resizer',
     icon: ImagePlus,
   },
+  {
+    title: 'LinkedIn Photo Checker',
+    description:
+      'Check if your LinkedIn profile photo meets recommended standards. Get instant feedback on dimensions, aspect ratio, brightness, and composition. Free and runs in your browser.',
+    href: '/tools/linkedin-photo-checker',
+    icon: CheckSquare,
+  },
+  {
+    title: 'Headshot Quality Score',
+    description:
+      'Get an instant quality score for your headshot. Analyzes framing, lighting, background, sharpness, and contrast with actionable tips. Free and runs in your browser.',
+    href: '/tools/headshot-quality-score',
+    icon: Eye,
+  },
+  {
+    title: 'Profile Picture Maker',
+    description:
+      'Crop and resize your photo for LinkedIn, Instagram, Facebook, Twitter/X, YouTube, Zoom, Slack, and more. Download one or all sizes as a ZIP. Free and runs in your browser.',
+    href: '/tools/profile-picture-maker',
+    icon: CircleUser,
+  },
 ];
 
 export default function ToolsPage() {
