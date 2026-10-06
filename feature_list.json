@@ -221,8 +221,8 @@
       "name": "Phase AA — Profession Landing Pages",
       "description": "6 SEO-optimized meslek sayfası: /headshots/for-lawyers, /headshots/for-realtors, /headshots/for-developers, /headshots/for-doctors, /headshots/for-consultants, /headshots/for-executives. Dinamik şablon + professions.ts config.",
       "dependencies": ["feat-Z"],
-      "status": "in-progress",
-      "evidence": "professions.ts config (6 meslek tanımı) + for-[profession]/page.tsx template oluşturuldu. Deploy bekleniyor."
+      "status": "done",
+      "evidence": "6 meslek sayfası canlıda doğrulandı: /headshots/for-lawyers, /headshots/for-realtors, /headshots/for-developers, /headshots/for-doctors, /headshots/for-consultants, /headshots/for-executives. Route: headshots/[profession]. Commits: 63bd3aa, 82f2950."
     }
   ]
 }

@@ -1,5 +1,36 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-06 (Phase AA — Profession Landing Pages)
+
+### Baseline
+- HEAD: `9ee8b28` (Phase Z complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### Yeni Sayfalar
+- `src/config/professions.ts`: 6 meslek yapılandırması (lawyers, realtors, developers, doctors, consultants, executives)
+- `src/app/headshots/[profession]/page.tsx`: Dinamik şablon — Hero, Trust Bar, Why It Matters, Use Cases, Recommended Styles (3'lü grid), How It Works (3 adım), Pricing Teaser (3 paket), FAQs (5 soru), Related Professions, Final CTA
+
+#### Route Sorunları ve Çözüm
+- İlk deneme: `src/app/headshots/for-[profession]/` → 404 (static segment `[category]` tarafından yakalandı)
+- İkinci deneme: `src/app/[category]/for-[profession]/` → 404 (partial dynamic segment App Router'da desteklenmiyor)
+- Final çözüm: `src/app/headshots/[profession]/` + `for-` prefix strip — çalışıyor ✅
+
+### Sonuç
+- Commits: `63bd3aa`, `b487856`, `836a7a4`, `82f2950`
+- CI: PASS ✅
+- Vercel: PASS ✅
+- Canlı doğrulama: 6/6 sayfa çalışıyor ✅
+  - /headshots/for-lawyers ✅
+  - /headshots/for-realtors ✅
+  - /headshots/for-developers ✅
+  - /headshots/for-doctors ✅
+  - /headshots/for-consultants ✅
+  - /headshots/for-executives ✅
+
+---
+
 ## Oturum: 2026-10-06 (Phase Z — High-Impact Conversion Features)
 
 ### Baseline
