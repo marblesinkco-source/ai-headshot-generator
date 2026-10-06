@@ -1,5 +1,39 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-06 (Phase AH — Photo Checklist & PFP Maker Free Tools)
+
+### Baseline
+- HEAD: `c24612f` (Phase AG complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### Photo Upload Quality Checklist
+- `src/app/tools/photo-checklist/page.tsx` + `src/components/tools/photo-checklist.tsx`
+- 16 maddelik interaktif checklist (Lighting, Composition, Technical Quality, Subject)
+- Progress bar, 3 durum bandı (Not Ready / Almost There / Ready to Upload)
+- Tamamen istemci tarafında, API çağrısı yok
+
+#### Profile Picture Maker (PFP Maker)
+- `src/app/tools/pfp-maker/page.tsx` + `src/components/tools/pfp-maker.tsx`
+- Canvas tabanlı kırpma/boyutlandırma aracı
+- 7 platform preseti (LinkedIn, Instagram, Twitter/X, Facebook, Slack, Zoom, Teams + Custom)
+- Dairesel kırpma, zoom, sürükle-konumla, PNG olarak indirme
+- Tamamen tarayıcıda çalışır, fotoğraf sunucuya gönderilmez
+
+#### Duplicate Cost Calculator Kaldırıldı
+- `src/app/tools/cost-calculator/` silindi — zaten `headshot-cost-calculator` mevcut
+
+#### Sitemap Güncellemesi
+- +2 yeni giriş: `/tools/photo-checklist`, `/tools/pfp-maker`
+
+### Sonuç
+- Commit: b9e369e
+- CI: PASS, Vercel: PASS
+- Live doğrulama: /tools/photo-checklist ✓, /tools/pfp-maker ✓
+
+---
+
 ## Oturum: 2026-10-06 (Phase AG — Sitemap Fixes, Free Tools, Trust & Affiliate Fix)
 
 ### Baseline

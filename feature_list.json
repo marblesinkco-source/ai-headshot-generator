@@ -271,6 +271,14 @@
       "dependencies": ["feat-AF"],
       "status": "done",
       "evidence": "Commit c24612f. Sitemap: +5 entries (/refund-policy, /headshots, /locations, /status, /tools/linkedin-about-generator). LinkedIn About Generator: template-based, no API. Status page: 5 services listed. Affiliate: all 'up to 30%' → 'competitive commissions'. Footer: System Status link added. CI PASS, Vercel PASS. Live verified: /status, /affiliate, /tools/linkedin-about-generator."
+    },
+    {
+      "id": "feat-AH",
+      "name": "Phase AH — Photo Checklist & PFP Maker Free Tools",
+      "description": "Photo Upload Quality Checklist (16-item interactive tool across 4 categories), Profile Picture Maker (browser-only canvas crop/resize tool with platform presets).",
+      "dependencies": ["feat-AG"],
+      "status": "done",
+      "evidence": "Commit b9e369e. Photo Checklist at /tools/photo-checklist: 16 checks, progress bar, 3 status bands. PFP Maker at /tools/pfp-maker: 7 platform presets, circular crop, zoom, drag-reposition, download as PNG. Both client-side only, no API. Sitemap updated (+2 entries). CI PASS, Vercel PASS. Live verified: /tools/photo-checklist ✓, /tools/pfp-maker ✓."
     }
   ]
 }
