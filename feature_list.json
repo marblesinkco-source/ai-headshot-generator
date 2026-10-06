@@ -175,6 +175,14 @@
       "dependencies": ["feat-T"],
       "status": "done",
       "evidence": "4 dosya değiştirildi, 1 yeni bileşen. guarantee-section.tsx: 3 kartlı garanti bölümü (Satisfaction Guarantee, Secure & Private, One-Time Payment). stats-counter.tsx: kategori sayısı 11→12 düzeltmesi. pricing.tsx: per-photo cost tüm paketlerde gösterildi (outputCount>1→outputCount>0). page.tsx: GuaranteeSection + StatsCounter dinamik import. Duplicate (marketing)/samples/page.tsx silindi (route conflict fix). Commit: 807f3d3, 9229a0b. CI PASS + Vercel PASS. Canlı doğrulama: guarantee section, stats counter (160/12/<2hrs/$1.99), per-photo pricing ($0.75/$0.62/$0.56) tümü doğru."
+    },
+    {
+      "id": "feat-V",
+      "name": "Phase V — Professional Segment Upgrade",
+      "description": "Rakip analizi, gap analizi, CTA 'from' uyumu, sosyal kanıt tutarlılığı, pricing guarantee, homepage optimizasyonu, samples etiket düzeltmesi, UseCaseChips + PriceReceipt entegrasyonu",
+      "dependencies": ["feat-U"],
+      "status": "done",
+      "evidence": "Batch 1 (ef2e2eb): hero CTA 'From' eklendi, SocialProofBar tutarlılık, StickyCTA masaüstü genişletme, pricing sayfasına PackageQuiz+GuaranteeSection, homepage'den StudioComparison+AIComparison kaldırıldı, PhotoPrepGuide+PackageQuiz eklendi. Batch 2 (f0c5f50): samples 'AI-generated concept' etiketleri→'style example' düzeltmesi, UseCaseChips homepage entegrasyonu, PriceReceipt pricing sayfası entegrasyonu. CI PASS + Vercel PASS (her iki batch)."
     }
   ]
 }
