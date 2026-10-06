@@ -1810,6 +1810,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/tools/open-to-work-frame`,
+      lastModified: new Date('2026-10-06'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/tools/circle-photo-cropper`,
+      lastModified: new Date('2026-10-06'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/tools/exif-viewer`,
+      lastModified: new Date('2026-10-06'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/tools/linkedin-headline-generator`,
       lastModified: new Date('2026-10-06'),
       changeFrequency: 'monthly',

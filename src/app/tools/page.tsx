@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal, Users, CheckSquare, CircleUser, AlignLeft, Compass, Crop, Sun, BookOpen, Globe, FileDown, LayoutGrid, FileText, Palette, Layers } from 'lucide-react';
+import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal, Users, CheckSquare, CircleUser, AlignLeft, Compass, Crop, Sun, BookOpen, Globe, FileDown, LayoutGrid, FileText, Palette, Layers, Eye, ShieldCheck } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { ToolsIllustration } from '@/components/marketing/illustrations';
@@ -183,6 +183,27 @@ const tools = [
       'Create professional virtual backgrounds for Zoom, Teams and Google Meet. Pick a template, customize colors and download.',
     href: '/tools/virtual-background-maker',
     icon: Layers,
+  },
+  {
+    title: '#OpenToWork Frame Maker',
+    description:
+      'Add a #OpenToWork or #Hiring ring to your profile photo. Pick a color, adjust the ring thickness, and download as PNG.',
+    href: '/tools/open-to-work-frame',
+    icon: Eye,
+  },
+  {
+    title: 'Circle Photo Cropper',
+    description:
+      'Crop your photo into a perfect circle with transparent or solid background. Choose your size, zoom and position, then download as PNG.',
+    href: '/tools/circle-photo-cropper',
+    icon: CircleUser,
+  },
+  {
+    title: 'Photo EXIF Viewer & Remover',
+    description:
+      'View your photo\'s hidden metadata — camera, date, GPS location — and download a clean copy with all data stripped.',
+    href: '/tools/exif-viewer',
+    icon: ShieldCheck,
   },
 ];
 
