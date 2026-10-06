@@ -1,5 +1,48 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-06 (Phase AO — FAQ Enrichment & Competitive Edge)
+
+### Baseline
+- HEAD: `472dbd1` (Phase AN complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### FAQ Enrichment
+- `src/config/faqs.ts` — 14 yeni FAQ sorusu eklendi (toplam 31, 7 kategori: Product, Pricing, Teams, Privacy, Technical, Delivery, Refund)
+- Teams kategorisi: takım siparişi, tutarlı görünüm, farklı zamanlarda yükleme
+- Technical kategorisi: çözünürlük, dosya formatı, arka plan seçimi, akıllı telefon kamerası
+- Yeni Product, Delivery, Pricing, Refund soruları
+
+#### FAQ Search Component
+- `src/components/marketing/faq-search.tsx` — Yeni client component
+- Debounced arama (200ms), soru ve cevap metni üzerinde case-insensitive filtreleme
+- "X results for 'query'" sonuç gösterimi, "No results found" + Contact us linki
+- Boş arama normal kategorize görünümü render eder
+- Brand token'ları: tp-bronze, tp-line, rounded-tp-card, rounded-tp-button
+
+#### FAQ Page Integration
+- `src/app/faq/page.tsx` — FaqSearch next/dynamic ile entegre edildi
+- FAQSchema tüm 31 soruyu içeriyor
+
+#### Mobile Focus Trap (Header)
+- `src/components/marketing/header.tsx` — Mobile dialog focus management
+- Tab/Shift+Tab sarma, Escape ile kapatma, focus hamburger butona dönüş
+- Hamburger aria-label toggle: 'Open menu' / 'Close menu'
+- setMobileOpen(true) hamburger click'e eklendi (onToggle fallback)
+
+#### Reviews Page — Share Your Experience
+- `src/app/reviews/page.tsx` — "Share Your Experience" bölümü
+- Trustpilot, Product Hunt, G2 kartları (external links, no fabricated ratings)
+- sr-only "(opens in a new tab)" erişilebilirlik
+
+### Sonuç
+- Commit: 9b11c29
+- CI: PASS, Vercel: PASS
+- Live doğrulama: /faq ✓ (arama çalışıyor, 7 kategori), /reviews ✓ (Share Your Experience bölümü)
+
+---
+
 ## Oturum: 2026-10-06 (Phase AK — Advanced Competitor Features)
 
 ### Baseline

@@ -333,8 +333,8 @@
       "name": "Phase AO — FAQ Enrichment & Competitive Edge",
       "description": "FAQ page enrichment with more questions across categories, accessibility improvements, mobile dialog focus management, additional competitive features.",
       "dependencies": ["feat-AN"],
-      "status": "in-progress",
-      "evidence": ""
+      "status": "done",
+      "evidence": "31 FAQ questions (7 categories: Product, Pricing, Teams, Privacy, Technical, Delivery, Refund), FaqSearch component with debounced search, mobile focus trap + aria-label toggle on header, Share Your Experience section on reviews page with Trustpilot/ProductHunt/G2. Commit: 9b11c29. CI PASS + Vercel PASS. Live verified FAQ search and reviews page."
     }
   ]
 }
