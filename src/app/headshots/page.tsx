@@ -18,6 +18,18 @@ import ProcessingTimeline from '@/components/marketing/processing-timeline';
 
 const StickyCTA = dynamic(() => import('@/components/marketing/sticky-cta').then(m => ({ default: m.StickyCTA })), { ssr: false });
 const StyleConfigurator = dynamic(() => import('@/components/marketing/style-configurator').then(m => ({ default: m.StyleConfigurator })), { ssr: false });
+const BeforeAfterShowcase = dynamic(
+  () => import('@/components/marketing/before-after-showcase').then(m => ({ default: m.BeforeAfterShowcase })),
+  { ssr: false }
+);
+const SocialProofBar = dynamic(
+  () => import('@/components/marketing/social-proof-bar').then(m => ({ default: m.SocialProofBar })),
+  { ssr: false }
+);
+const HeadshotStyleGallery = dynamic(
+  () => import('@/components/marketing/headshot-style-gallery').then(m => ({ default: m.HeadshotStyleGallery })),
+  { ssr: false }
+);
 
 const PAGE_TITLE = 'AI Professional Headshots | Studio-Quality Portraits from Selfies | TailorPic';
 const PAGE_DESC =
@@ -171,6 +183,12 @@ export default function HeadshotsLandingPage() {
         </div>
       </section>
 
+      {/* ── Social Proof Bar ── */}
+      <SocialProofBar />
+
+      {/* ── Before / After Showcase ── */}
+      <BeforeAfterShowcase />
+
       {/* ── Value props ── */}
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -194,6 +212,9 @@ export default function HeadshotsLandingPage() {
           </div>
         </div>
       </section>
+
+      {/* ── Headshot Style Gallery ── */}
+      <HeadshotStyleGallery />
 
       {/* ── Studio Comparison ── */}
       <StudioComparisonV2 />
