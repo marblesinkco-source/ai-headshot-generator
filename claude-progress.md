@@ -1,5 +1,34 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-07 (Phase BB — HeadshotStyleGallery + BeforeAfter + SocialProof on /headshots)
+
+### Baseline
+- HEAD: `dc4309a` (Phase BA complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### HeadshotStyleGallery (Yeni Marketing Component)
+- `src/components/marketing/headshot-style-gallery.tsx` — 'use client' component
+- 8 stil kartı: Corporate, LinkedIn Pro, Studio Classic, Executive, Natural Light, Creative, Outdoor, Modern Minimal
+- Her kart: SVG silhouette (attire variant: formal/smart/casual/creative), renkli backdrop, gradient name badge
+- Hover/focus ile açıklama gösterimi
+- "Illustrative concepts" disclaimer + "Try These Styles →" CTA
+- Responsive grid: 2/3/4 sütun
+
+#### /headshots Sayfası Zenginleştirme
+- BeforeAfterShowcase dynamic import eklendi (before-after-showcase.tsx'ten)
+- SocialProofBar dynamic import eklendi (social-proof-bar.tsx'ten)
+- HeadshotStyleGallery dynamic import eklendi
+- Yeni section sırası: Hero → SocialProofBar → BeforeAfterShowcase → Value Props → HeadshotStyleGallery → StudioComparisonV2 → ...
+
+### Deploy
+- Commits: `57036b3` (harness), `c15872b` (headshot-style-gallery + /headshots enrichment)
+- CI: PASS, Vercel: PASS
+- Canlı doğrulama: /headshots — SocialProofBar (5 metrik), BeforeAfterShowcase (3 slider), HeadshotStyleGallery (8 stil kartı + CTA) tümü doğru render
+
+---
+
 ## Oturum: 2026-10-07 (Phase BA — 3 New Marketing Components)
 
 ### Baseline

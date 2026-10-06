@@ -431,6 +431,14 @@
       "dependencies": ["feat-AZ"],
       "status": "done",
       "evidence": "StyleConfigurator: 8 backdrop swatch + 6 style pill, SVG silhouette preview, named export fix for dynamic import compat. StudioComparisonV2: Server component, Traditional vs AI comparison table with 7 criteria. ProcessingTimeline: 4-step ordered list (Upload ~2min → AI Processing ~90min → Review ~5min → Download Instant), desktop 4-col grid with horizontal connectors, mobile vertical stack. Homepage: StudioComparisonV2 after StyleConfigurator. /headshots: StudioComparisonV2 after value props, StyleConfigurator + ProcessingTimeline after How It Works. 12→10 style fix: studio-comparison-v2.tsx, processing-timeline.tsx, how-it-works/page.tsx (2 occurrences). Commit: dc4309a. CI PASS + Vercel PASS. Canlı doğrulama: homepage + /headshots + /how-it-works tümü çalışıyor."
+    },
+    {
+      "id": "feat-BB",
+      "name": "Phase BB — HeadshotStyleGallery + /headshots Enrichment",
+      "description": "HeadshotStyleGallery (8 stil SVG kartı), BeforeAfterShowcase + SocialProofBar /headshots sayfasına eklenmesi.",
+      "dependencies": ["feat-BA"],
+      "status": "done",
+      "evidence": "HeadshotStyleGallery: 8 stil kartı (Corporate/LinkedIn Pro/Studio Classic/Executive/Natural Light/Creative/Outdoor/Modern Minimal), SVG silhouette with attire variants, responsive 2/3/4 grid. /headshots: +3 dynamic import (BeforeAfterShowcase, SocialProofBar, HeadshotStyleGallery). Commits: 57036b3, c15872b. CI PASS + Vercel PASS. Canlı doğrulama: tüm bileşenler doğru render."
     }
   ]
 }
