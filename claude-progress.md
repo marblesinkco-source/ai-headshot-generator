@@ -1,5 +1,39 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-06 (Phase AU — Image Converter, Social Resizer & Business Card)
+
+### Baseline
+- HEAD: `d8b0468` (Phase AT complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### Image Format Converter (Yeni Free Tool)
+- `src/components/tools/image-format-converter.tsx` — Canvas-based format conversion
+- `src/app/tools/image-format-converter/page.tsx` — Server component, BreadcrumbSchema, 4 tip kartı
+- HEIC/WebP/PNG/BMP/TIFF/AVIF/SVG input → JPG/PNG/WebP output, quality slider
+
+#### Social Media Image Resizer (Yeni Free Tool)
+- `src/components/tools/social-media-resizer.tsx` — Canvas multi-platform resize
+- `src/app/tools/social-media-resizer/page.tsx` — Server component, BreadcrumbSchema, 4 tip kartı
+- 12 platform preset, multi-select, zoom/drag crop, individual + batch PNG download
+
+#### Digital Business Card Generator (Yeni Free Tool)
+- `src/components/tools/business-card-generator.tsx` — Canvas 1050x600 card
+- `src/app/tools/business-card-generator/page.tsx` — Server component, BreadcrumbSchema, 4 tip kartı
+- 4 template, 7 input field, headshot upload, PNG + vCard 3.0 download
+
+#### Tools Index & Sitemap
+- `src/app/tools/page.tsx` — 3 yeni tool kartı eklendi (toplam 28 araç)
+- `src/app/sitemap.ts` — 3 yeni URL eklendi
+
+### Commit & Deploy
+- Commit: `cadcd46` — feat: add image converter, social resizer, business card tools
+- CI: PASS, Vercel: PASS
+- Canlı doğrulama: 3 sayfa + tools index tümü çalışıyor
+
+---
+
 ## Oturum: 2026-10-06 (Phase AT — OpenToWork Frame, Circle Cropper & EXIF Viewer)
 
 ### Baseline

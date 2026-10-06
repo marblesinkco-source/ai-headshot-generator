@@ -375,6 +375,14 @@
       "dependencies": ["feat-AS"],
       "status": "done",
       "evidence": "3 yeni araç sayfası: /tools/open-to-work-frame (#OpenToWork/#Hiring ring, thickness slider, text toggle), /tools/circle-photo-cropper (200-1000px, checkerboard preview, transparent/solid bg), /tools/exif-viewer (DataView EXIF parser, GPS presence warning, quality slider strip). Tools index'e 3 entry + sitemap'e 3 URL. Commit: d8b0468. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa + tools index tümü çalışıyor."
+    },
+    {
+      "id": "feat-AU",
+      "name": "Phase AU — Image Converter, Social Resizer & Business Card Free Tools",
+      "description": "3 yeni client-side free tool: Image Format Converter (HEIC/WebP/PNG/BMP→JPG/PNG/WebP, quality slider), Social Media Image Resizer (12 platform preset, multi-select, batch download), Digital Business Card Generator (4 template, headshot upload, PNG + vCard download). Tools index + sitemap güncellemesi.",
+      "dependencies": ["feat-AT"],
+      "status": "done",
+      "evidence": "3 yeni araç sayfası: /tools/image-format-converter (HEIC/WebP/PNG/BMP/TIFF input, JPG/PNG/WebP output, quality slider), /tools/social-media-resizer (12 platform preset, zoom/drag crop, individual + batch PNG download), /tools/business-card-generator (4 template, 7 input field, headshot upload, PNG + vCard 3.0 download). Tools index'e 3 entry + sitemap'e 3 URL. Commit: cadcd46. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa + tools index tümü çalışıyor."
     }
   ]
 }
