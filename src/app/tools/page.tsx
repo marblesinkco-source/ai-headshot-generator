@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal, Users, CheckSquare, CircleUser, AlignLeft, Compass, Crop, Sun, BookOpen, Globe, FileDown, LayoutGrid, FileText, Palette, Layers, Eye, ShieldCheck, FileImage, Smartphone, CreditCard, Type } from 'lucide-react';
+import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal, Users, CheckSquare, CircleUser, AlignLeft, Compass, Crop, Sun, BookOpen, Globe, FileDown, LayoutGrid, FileText, Palette, Layers, Eye, ShieldCheck, FileImage, Smartphone, CreditCard, Type, Pipette, Printer } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { ToolsIllustration } from '@/components/marketing/illustrations';
@@ -232,6 +232,20 @@ const tools = [
       'Add custom text watermarks to your photos. Choose font, size, color, opacity and position. Single or tiled pattern. Free and private.',
     href: '/tools/watermark-maker',
     icon: Type,
+  },
+  {
+    title: 'Color Palette Extractor',
+    description:
+      'Upload a photo and extract its dominant colors as HEX and RGB codes. Copy a single color or the whole palette, and download it as a PNG strip.',
+    href: '/tools/color-palette-extractor',
+    icon: Pipette,
+  },
+  {
+    title: 'Image DPI Checker',
+    description:
+      'Check your photo\'s embedded DPI, view pixel dimensions, and calculate print sizes at any resolution. Free and runs in your browser.',
+    href: '/tools/dpi-checker',
+    icon: Printer,
   },
 ];
 

@@ -1852,6 +1852,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/tools/color-palette-extractor`,
+      lastModified: new Date('2026-10-06'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/tools/dpi-checker`,
+      lastModified: new Date('2026-10-06'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/tools/linkedin-headline-generator`,
       lastModified: new Date('2026-10-06'),
       changeFrequency: 'monthly',
