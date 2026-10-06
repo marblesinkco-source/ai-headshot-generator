@@ -46,7 +46,7 @@ export function Hero() {
                   href="/auth/register?redirect=/dashboard/upload"
                   className="inline-flex items-center gap-4 rounded-tp-button bg-tp-black px-8 py-4 text-[15px] font-semibold text-tp-paper shadow-md transition-[transform,box-shadow,border-color,background-color] hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl hover:animate-cta-pulse motion-reduce:hover:animate-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze whitespace-nowrap"
                 >
-                  Get My Headshots &mdash; {BASE_PRICE_DISPLAY} <span aria-hidden="true" className="text-[20px] leading-none">&#8599;</span>
+                  Get My Headshots &mdash; From {BASE_PRICE_DISPLAY} <span aria-hidden="true" className="text-[20px] leading-none">&#8599;</span>
                 </Link>
                 <a
                   href="#how-it-works"

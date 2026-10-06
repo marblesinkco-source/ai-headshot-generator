@@ -62,6 +62,13 @@ const HowItWorks = dynamic(
   () => import('@/components/marketing/how-it-works').then((m) => m.HowItWorks),
   { loading: () => <SectionSkeleton height="h-[600px] md:h-[400px]" /> }
 );
+const PhotoPrepGuide = dynamic(() => import('@/components/marketing/photo-prep-guide'), {
+  loading: () => <SectionSkeleton height="h-[400px]" />,
+});
+const PackageQuiz = dynamic(() => import('@/components/marketing/package-quiz'), {
+  loading: () => <SectionSkeleton height="h-[500px]" />,
+  ssr: false,
+});
 const StatsCounter = dynamic(
   () => import('@/components/marketing/stats-counter').then((m) => m.StatsCounter),
   { loading: () => <SectionSkeleton height="h-[200px] sm:h-[240px]" /> }
@@ -132,19 +139,27 @@ export default function LandingPage() {
       <SpeedComparison />
 
       {/* 8.5. Studio vs TailorPic Comparison */}
-      <StudioComparison />
+      {/* Removed: redundant with SavingsCalculator */}
+      {/* <StudioComparison /> */}
 
       {/* 9. Savings Calculator — cost argument reinforced */}
       <SavingsCalculator />
 
       {/* 9.5. AI Comparison — why purpose-built AI beats generic */}
-      <AIComparison />
+      {/* Removed: redundant with SavingsCalculator */}
+      {/* <AIComparison /> */}
 
       {/* 10. How It Works */}
       <HowItWorks />
 
+      {/* 10.2. Photo Prep Guide — how to prepare photos */}
+      <PhotoPrepGuide />
+
       {/* 10.5. Stats at a Glance — animated counters */}
       <StatsCounter />
+
+      {/* 10.8. Package Quiz — recommendation before plans */}
+      <PackageQuiz />
 
       {/* 11. Pricing Overview */}
       <Pricing />

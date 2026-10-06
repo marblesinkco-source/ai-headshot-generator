@@ -8,7 +8,7 @@ const metrics = [
   {
     icon: Clock,
     value: "~2 Hour Delivery",
-    description: "Same-day turnaround",
+    description: "Results in ~2 hours",
   },
   {
     icon: Image,
@@ -23,7 +23,7 @@ const metrics = [
   {
     icon: ShieldCheck,
     value: "Secure Checkout",
-    description: "256-bit encrypted via Stripe",
+    description: "Secure checkout via Stripe",
   },
   {
     icon: Tag,

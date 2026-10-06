@@ -19,13 +19,13 @@ export function StickyCTA({ href = '/auth/register?redirect=%2Fdashboard%2Fuploa
     <div
       aria-hidden={!visible}
       className={cn(
-        'fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-3 bg-tp-ink px-4 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out md:hidden',
+        'fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-3 bg-tp-ink px-4 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out md:justify-center md:gap-6',
         visible ? 'translate-y-0' : 'pointer-events-none translate-y-full'
       )}
     >
       <div className="min-w-0">
         <p className="font-display text-sm font-medium leading-tight text-tp-paper">
-          Skip the studio: <span className="text-tp-bronze">{BASE_PRICE_DISPLAY} one-time</span>
+          Skip the studio: <span className="text-tp-bronze">From {BASE_PRICE_DISPLAY} one-time</span>
         </p>
       </div>
       <Link

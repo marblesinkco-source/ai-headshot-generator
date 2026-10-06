@@ -19,6 +19,10 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { ChevronDown, Check, Lock, CreditCard, BadgeCheck, Minus } from 'lucide-react';
 import { PricingViewToggle } from '@/components/marketing/pricing-view-toggle';
 import { PricingComparisonBar } from '@/components/marketing/pricing-comparison-bar';
+import { GuaranteeSection } from '@/components/marketing/guarantee-section';
+import dynamic from 'next/dynamic';
+
+const PackageQuiz = dynamic(() => import('@/components/marketing/package-quiz'), { ssr: false });
 
 const TEAM_SMALL = formatPrice(TEAM_PRICES.small.perPersonCents, 'usd', true);
 const TEAM_LARGE = formatPrice(TEAM_PRICES.large.perPersonCents, 'usd', true);
@@ -75,6 +79,11 @@ const pricingFaqs = [
     question: 'Are there any hidden fees?',
     answer:
       'No. The price you see at checkout is the price you pay. There are no extra charges for downloads, resolution or commercial use.',
+  },
+  {
+    question: 'What if I\'m not satisfied with the results?',
+    answer:
+      'We want you to be happy with your headshots. If the results don\'t meet your expectations, contact us and we\'ll work with you to regenerate them. Visit tailorpic.com/guarantee for full details.',
   },
 ];
 
@@ -221,7 +230,11 @@ export default function PricingPage() {
 
       <PricingViewToggle individual={<Pricing />} />
 
+      <PackageQuiz />
+
       <TrustBadges />
+
+      <GuaranteeSection />
 
       {/* Headshot package ladder */}
       <section className="py-16" aria-labelledby="ladder-heading">
