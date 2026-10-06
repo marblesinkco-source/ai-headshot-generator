@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { ArrowRight, Camera, Users, Briefcase, Clock, CheckCircle, Sparkles, Fingerprint } from 'lucide-react';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { Header } from '@/components/marketing/header';
@@ -12,6 +13,8 @@ import { CATEGORIES } from '@/config/categories';
 import { PROFESSIONS } from '@/config/professions';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+
+const StickyCTA = dynamic(() => import('@/components/marketing/sticky-cta').then(m => ({ default: m.StickyCTA })), { ssr: false });
 
 const PAGE_TITLE = 'AI Professional Headshots | Studio-Quality Portraits from Selfies | TailorPic';
 const PAGE_DESC =
@@ -527,6 +530,7 @@ export default function HeadshotsLandingPage() {
         </div>
       </section>
 
+      <StickyCTA href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" />
       <Footer />
     </main>
   );

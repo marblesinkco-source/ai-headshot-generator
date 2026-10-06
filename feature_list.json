@@ -303,6 +303,22 @@
       "dependencies": ["feat-AJ"],
       "status": "done",
       "evidence": "Style Finder Quiz live. Interactive style filter on /styles (search + category + use-case chips). Product/AggregateOffer JSON-LD on /pricing + /headshots. VS data extracted to shared module. Commits: 3594c4e, 1b8ea24. All verified live."
+    },
+    {
+      "id": "feat-AL",
+      "name": "Phase AL — Bug Fixes & UX Polish",
+      "description": "/headshots: full 6-package pricing table, Trust & Guarantee section, Related Resources, 2 new FAQ items, resolution claim fix, profession chip hover fix. /how-it-works: buttonVariants fix (invalid HTML), price reassurance. Header: avatar contrast fix. Footer: Photo Styles link.",
+      "dependencies": ["feat-AK"],
+      "status": "done",
+      "evidence": "Commits: 5e7e1e2 (footer Photo Styles link), cf110c3 (headshots pricing table, trust section, how-it-works buttonVariants fix, avatar contrast fix, resolution claim consistency). CI PASS, Vercel PASS. Live verified: /headshots ✓ (pricing table, trust cards, resources, FAQ), /how-it-works ✓ (hero CTA, price text, bottom CTA)."
+    },
+    {
+      "id": "feat-AM",
+      "name": "Phase AM — Remaining UX Improvements",
+      "description": "StickyCTA for /headshots and /how-it-works mobile, header direct Headshots link, homepage anchor nav improvements, schema enhancements.",
+      "dependencies": ["feat-AL"],
+      "status": "in-progress",
+      "evidence": ""
     }
   ]
 }

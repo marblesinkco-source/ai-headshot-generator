@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
@@ -9,6 +10,9 @@ import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { siteConfig } from '@/config/site';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+
+const StickyCTA = dynamic(() => import('@/components/marketing/sticky-cta').then(m => ({ default: m.StickyCTA })), { ssr: false });
+
 import {
   Upload,
   Sparkles,
@@ -27,7 +31,6 @@ import {
   BadgeCheck,
   Timer,
   LayoutGrid,
-  Undo2,
   ArrowRight,
   Smartphone,
   ImageIcon,
@@ -139,10 +142,10 @@ const whyChooseUs = [
       'Get a variety of looks from a single upload, from corporate to casual.',
   },
   {
-    icon: Undo2,
-    title: 'One-Time Payment',
+    icon: ShieldCheck,
+    title: 'Satisfaction Guarantee',
     description:
-      'Pay once for your package. No subscription and nothing to cancel.',
+      'Not happy with your headshots? We will work with you until you are.',
   },
 ];
 
@@ -153,7 +156,7 @@ const timeline = [
 ];
 
 const youNeed = [
-  { icon: Smartphone, title: 'Selfies from your phone', description: 'Casual shots are fine. We recommend 10 to 20 for the best likeness, and you can start with as few as 8.' },
+  { icon: Smartphone, title: 'Selfies from your phone', description: 'Casual shots are fine. Upload 4 to 10 photos with a variety of angles and expressions for the best results.' },
   { icon: Sun, title: 'Good lighting', description: 'Face a window or shoot outdoors in soft daylight so your features are even and clear.' },
   { icon: ImageIcon, title: 'A simple background', description: 'A plain, uncluttered wall works best, and changing it between shots helps the AI focus on you.' },
   { icon: Eye, title: 'A clear view of your face', description: 'No sunglasses, hats or heavy filters. Include a few different angles and expressions.' },
@@ -664,6 +667,7 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
+      <StickyCTA href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" />
       <Footer />
     </main>
   );
