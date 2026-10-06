@@ -1,5 +1,18 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-07 (Phase BC — Homepage Conversion Sections)
+
+### Tamamlanan
+- ProfessionChips: 12 meslek chip'i (Lawyer→Actor), BeforeAfterShowcase sonrasına yerleştirildi
+- ManyLooksSection: 5 sekmeli occasion galerisi (Professional/Social/Creative/Academic/Events), StyleConfigurator sonrasına
+- FreeToolsShowcase: 10 araç grid + cross-sell CTA, PackageQuiz sonrasına
+- Tüm bileşenler dynamic import ile homepage'e entegre
+- buttonVariants size 'md' → 'lg' düzeltildi
+- Commit: f446aed, CI PASS + Vercel PASS
+- Canlı doğrulama: 3 bileşen doğru render
+
+---
+
 ## Oturum: 2026-10-07 (Phase BB — HeadshotStyleGallery + BeforeAfter + SocialProof on /headshots)
 
 ### Baseline
