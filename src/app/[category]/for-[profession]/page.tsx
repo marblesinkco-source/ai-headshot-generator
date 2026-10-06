@@ -15,7 +15,7 @@ import { getAllProfessionSlugs, getProfessionBySlug, type ProfessionPage } from 
 import { getCategoryBySlug } from '@/config/categories';
 
 interface Props {
-  params: Promise<{ profession: string }>;
+  params: Promise<{ category: string; profession: string }>;
 }
 
 /* ── Style metadata for recommended style cards ── */
@@ -40,12 +40,13 @@ function getStyleMeta(slug: string) {
 
 /* ── Static params ── */
 export async function generateStaticParams() {
-  return getAllProfessionSlugs().map((slug) => ({ profession: slug }));
+  return getAllProfessionSlugs().map((slug) => ({ category: 'headshots', profession: slug }));
 }
 
 /* ── SEO metadata ── */
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { profession: slug } = await params;
+  const { category, profession: slug } = await params;
+  if (category !== 'headshots') return {};
   const prof = getProfessionBySlug(slug);
   if (!prof) return {};
 
@@ -78,7 +79,13 @@ const STEPS = [
 ];
 
 export default async function ProfessionLandingPage({ params }: Props) {
-  const { profession: slug } = await params;
+  const { category, profession: slug } = await params;
+
+  // Only headshots category has profession landing pages
+  if (category !== 'headshots') {
+    notFound();
+  }
+
   const prof = getProfessionBySlug(slug);
 
   if (!prof) {
