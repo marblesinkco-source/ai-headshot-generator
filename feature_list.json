@@ -317,6 +317,14 @@
       "name": "Phase AM — Remaining UX Improvements",
       "description": "StickyCTA for /headshots and /how-it-works mobile, header direct Headshots link, homepage anchor nav improvements, schema enhancements.",
       "dependencies": ["feat-AL"],
+      "status": "done",
+      "evidence": "StickyCTA dynamic import on /headshots + /how-it-works (headshots-specific redirect URL). Header: 'Headshots' as first navLinks item. /how-it-works: contradictory upload count fixed (10-20→4-10), duplicate whyChooseUs card replaced (One-Time Payment→Satisfaction Guarantee with ShieldCheck icon). Commit: b019c45. CI PASS + Vercel PASS. Live verified: all changes on www.tailorpic.com confirmed."
+    },
+    {
+      "id": "feat-AN",
+      "name": "Phase AN — Schema, Accessibility & Homepage Polish",
+      "description": "HowTo schema with totalTime, ItemList for professions, header aria-haspopup, homepage section reorder (BeforeAfter closer to hero), scroll-margin-top for anchor targets.",
+      "dependencies": ["feat-AM"],
       "status": "in-progress",
       "evidence": ""
     }

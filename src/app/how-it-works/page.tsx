@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BeforeAfterIllustration } from '@/components/marketing/illustrations';
-import { HowToSchema, BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { siteConfig } from '@/config/site';
@@ -225,15 +225,34 @@ const faqs = [
   },
 ];
 
+const howToJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to Get AI-Generated Professional Headshots',
+  description: 'Upload selfies, let AI create studio-quality headshots, download in about 2 hours.',
+  totalTime: 'PT2H',
+  estimatedCost: { '@type': 'MonetaryAmount', currency: 'USD', value: '1.99' },
+  tool: [{ '@type': 'HowToTool', name: 'Smartphone with camera' }],
+  step: steps.map((s) => ({
+    '@type': 'HowToStep',
+    position: s.number,
+    name: s.title,
+    text: s.description,
+  })),
+};
+
 export default function HowItWorksPage() {
   return (
     <main id="main-content" className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
+      />
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
         { name: 'How TailorPic Works: Upload Selfies, Get AI Headshots', url: `${siteConfig.url}/how-it-works` },
       ]} />
       <Header />
-      <HowToSchema />
       <FAQSchema items={faqs} />
 
       {/* Hero */}

@@ -119,6 +119,9 @@ export default function LandingPage() {
       {/* 3. Social Proof Bar — immediately after hero */}
       <SocialProofBar />
 
+      {/* 3.5. Before / After Comparison — proof right after hero */}
+      <BeforeAfterShowcase />
+
       {/* 4. Why TailorPic — differentiators early */}
       <WhyTailorPic />
 
@@ -130,9 +133,6 @@ export default function LandingPage() {
 
       {/* 6. Style & Customization Preview */}
       <StyleConfigurator />
-
-      {/* 7. Before / After Comparison */}
-      <BeforeAfterShowcase />
 
       {/* 8. Speed Comparison */}
       <SpeedComparison />

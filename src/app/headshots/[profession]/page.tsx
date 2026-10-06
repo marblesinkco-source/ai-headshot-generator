@@ -137,6 +137,21 @@ export default async function ProfessionLandingPage({ params }: Props) {
         slug={`headshots/for-${prof.slug}`}
       />
       <FAQSchema items={faqs} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            name: 'Professional Headshots by Profession',
+            itemListElement: getAllProfessionSlugs().map((s, i) => ({
+              '@type': 'ListItem',
+              position: i + 1,
+              url: `https://www.tailorpic.com/headshots/for-${s}`,
+            })),
+          }),
+        }}
+      />
       <Header />
 
       {/* Breadcrumbs */}

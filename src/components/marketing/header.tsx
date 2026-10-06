@@ -206,6 +206,7 @@ export function Header() {
               ref={megaTrigger}
               className="flex items-center gap-1 rounded-sm text-[13px] font-semibold text-tp-ink transition-colors hover:text-tp-bronze-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2 whitespace-nowrap"
               onClick={() => setMegaOpen((v) => !v)}
+              aria-haspopup="true"
               aria-expanded={megaOpen}
               aria-controls="photo-types-menu"
             >

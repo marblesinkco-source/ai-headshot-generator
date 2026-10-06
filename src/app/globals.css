@@ -312,3 +312,7 @@ dialog.tp-nav-dialog[open][data-closing]::backdrop {
   from { opacity: 0.6; transform: scale(1); }
   to { opacity: 0; transform: scale(1.1); }
 }
+
+[id] {
+  scroll-margin-top: 5rem;
+}
