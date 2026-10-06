@@ -1,6 +1,6 @@
 # TailorPic — Progress Tracker
 
-## Oturum: 2026-10-06 (Phase AK — Style Finder Quiz & Schema Cleanup)
+## Oturum: 2026-10-06 (Phase AK — Advanced Competitor Features)
 
 ### Baseline
 - HEAD: `a6d1668` (Phase AJ fix complete)
@@ -19,10 +19,28 @@
 - `src/components/structured-data.tsx` — Fabricated data kaldırıldı (foundingDate, address, areaServed)
 - `src/app/about/page.tsx` — Duplicate OrganizationSchema kaldırıldı (zaten layout.tsx'te global)
 
+#### Interactive Style Filter (/styles sayfası)
+- `src/components/marketing/style-filter.tsx` — Client-side interaktif filtre bileşeni
+- Arama kutusu (stil adı, açıklama, idealFor üzerinde arama)
+- Kategori chip'leri (All, Professional, Natural, Creative, Classic & Moody, Artistic)
+- Use-case chip'leri (LinkedIn, Company Website, Personal Brand, Dating, Portfolio, Social Media)
+- "Showing X of Y styles" canlı sayaç + "Clear filters" butonu
+- `src/app/styles/page.tsx` — StyleFilter entegrasyonu
+
+#### Product JSON-LD (Structured Data)
+- `PricingProductSchema` — Product/AggregateOffer JSON-LD, CATEGORIES.headshots.packages'ten gerçek fiyatlar
+- /pricing ve /headshots sayfalarına eklendi
+- `SoftwareApplicationSchema` genişletildi (name, description, url, free prop'ları)
+- Inline pricing schema kodu kaldırıldı, shared bileşene geçildi
+
+#### VS Data Refactor
+- `src/app/vs/vs-groups.ts` — 79 karşılaştırma verisi shared modüle çıkarıldı
+- `src/app/vs/page.tsx` — ~107 satır inline veri kaldırıldı, import ile değiştirildi
+
 ### Sonuç
-- Commit: 3594c4e
+- Commits: 3594c4e, 6c90117, 1b8ea24
 - CI: PASS, Vercel: PASS
-- Live doğrulama: /tools/style-finder-quiz ✓ (quiz tam çalışıyor, sonuç doğru), /tools ✓ (13 araç listeli)
+- Live doğrulama: /styles ✓ (filter çalışıyor, Creative 10/57 gösteriyor), /pricing ✓, /vs ✓, /headshots ✓
 
 ---
 

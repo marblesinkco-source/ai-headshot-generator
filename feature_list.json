@@ -299,10 +299,10 @@
     {
       "id": "feat-AK",
       "name": "Phase AK — Advanced Competitor Features",
-      "description": "Rakip analiz sonuçlarına göre eksik kalan üst segment özellikler: Style Finder Quiz, OrganizationSchema temizliği, conversion optimizasyonları.",
+      "description": "Rakip analiz sonuçlarına göre eksik kalan üst segment özellikler: Style Finder Quiz, OrganizationSchema temizliği, interaktif style filter, Product JSON-LD, VS refactor.",
       "dependencies": ["feat-AJ"],
-      "status": "in-progress",
-      "evidence": "Style Finder Quiz live: /tools/style-finder-quiz (5 soru → 16 stil + paket önerisi). OrganizationSchema fabricated data temizlendi. Commit: 3594c4e"
+      "status": "done",
+      "evidence": "Style Finder Quiz live. Interactive style filter on /styles (search + category + use-case chips). Product/AggregateOffer JSON-LD on /pricing + /headshots. VS data extracted to shared module. Commits: 3594c4e, 1b8ea24. All verified live."
     }
   ]
 }
