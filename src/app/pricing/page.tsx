@@ -23,6 +23,7 @@ import { GuaranteeSection } from '@/components/marketing/guarantee-section';
 import dynamic from 'next/dynamic';
 
 const PackageQuiz = dynamic(() => import('@/components/marketing/package-quiz'), { ssr: false });
+const PriceReceipt = dynamic(() => import('@/components/marketing/price-receipt'), { ssr: false });
 
 const TEAM_SMALL = formatPrice(TEAM_PRICES.small.perPersonCents, 'usd', true);
 const TEAM_LARGE = formatPrice(TEAM_PRICES.large.perPersonCents, 'usd', true);
@@ -379,6 +380,8 @@ export default function PricingPage() {
       <CreditPackages />
 
       <CostCalculator />
+
+      <PriceReceipt />
 
       <section className="pb-8">
         <div className="mx-auto max-w-sm px-4 sm:px-6 lg:px-8">

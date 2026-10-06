@@ -101,6 +101,10 @@ const CTABanner = dynamic(
   () => import('@/components/marketing/cta-banner').then((m) => m.CTABanner),
   { loading: () => <SectionSkeleton height="h-64" /> }
 );
+const UseCaseChips = dynamic(
+  () => import('@/components/marketing/use-case-chips').then((m) => m.UseCaseChips),
+  { loading: () => <SectionSkeleton height="h-[100px]" /> }
+);
 // Fixed-position mobile bar: no skeleton needed
 const StickyCTA = dynamic(
   () => import('@/components/marketing/sticky-cta').then((m) => m.StickyCTA)
@@ -128,6 +132,9 @@ export default function LandingPage() {
 
       {/* 5. Quick Photo Type Chooser — 12 categories grouped */}
       <Categories />
+
+      {/* 5.5. Use Case Chips — quick navigation by need */}
+      <UseCaseChips />
 
       {/* 6. Style & Customization Preview */}
       <StyleConfigurator />

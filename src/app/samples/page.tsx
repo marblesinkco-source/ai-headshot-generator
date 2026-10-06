@@ -26,9 +26,9 @@ import {
 } from 'lucide-react';
 
 /* ------------------------------------------------------------------ */
-/*  NOTE: All sample photos shown on this page are AI-generated       */
-/*  examples created for demonstration purposes. They do NOT          */
-/*  represent real customers or verified results.                     */
+/*  NOTE: Sample photos on this page are stock portraits from         */
+/*  Unsplash, used as illustrative examples. They do NOT represent    */
+/*  real customers or verified results.                               */
 /* ------------------------------------------------------------------ */
 
 /* ------------------------------------------------------------------ */
@@ -87,24 +87,24 @@ type SampleImage = { src: string; alt: string };
  */
 const sampleImages: Record<number, SampleImage> = {
   // Professional — corporate headshots
-  1: { src: portrait('photo-1573496359142-b8d87734a5a2'), alt: 'Professional woman in navy blazer (Classic Studio, AI-generated concept)' },
-  2: { src: portrait('photo-1560250097-0b93528c311a'), alt: 'Businessman in dark suit (Modern Minimal, AI-generated concept)' },
-  3: { src: portrait('photo-1566492031773-4f4e44671857'), alt: 'Distinguished man in suit (Executive Portrait, AI-generated concept)' },
-  4: { src: portrait('photo-1522075469751-3a6694fb2f61'), alt: 'Professional in team environment (Team Headshot, AI-generated concept)' },
+  1: { src: portrait('photo-1573496359142-b8d87734a5a2'), alt: 'Professional woman in navy blazer — Classic Studio style example' },
+  2: { src: portrait('photo-1560250097-0b93528c311a'), alt: 'Businessman in dark suit — Modern Minimal style example' },
+  3: { src: portrait('photo-1566492031773-4f4e44671857'), alt: 'Distinguished man in suit — Executive Portrait style example' },
+  4: { src: portrait('photo-1522075469751-3a6694fb2f61'), alt: 'Professional in team environment — Team Headshot style example' },
   // Creative — artistic, expressive portraits
-  5: { src: portrait('photo-1531746020798-e6953c6e8e04'), alt: 'Creative professional with artistic style (AI-generated concept)' },
-  6: { src: portrait('photo-1524504388940-b1c1722653e1'), alt: 'Man with creative casual look (Editorial Portrait, AI-generated concept)' },
-  7: { src: portrait('photo-1488426862026-3ee34a7d66df'), alt: 'Woman with bright creative expression (Playful Studio, AI-generated concept)' },
+  5: { src: portrait('photo-1531746020798-e6953c6e8e04'), alt: 'Creative professional with artistic style — style example' },
+  6: { src: portrait('photo-1524504388940-b1c1722653e1'), alt: 'Man with creative casual look — Editorial Portrait style example' },
+  7: { src: portrait('photo-1488426862026-3ee34a7d66df'), alt: 'Woman with bright creative expression — Playful Studio style example' },
   // Lifestyle — outdoor, casual, warm
-  8: { src: portrait('photo-1506863530036-1efeddceb993'), alt: 'Woman enjoying golden hour outdoors (Outdoor Natural, AI-generated concept)' },
-  9: { src: portrait('photo-1529626455594-4ff0802cfb7e'), alt: 'Man with relaxed confident smile outdoors (Urban Lifestyle, AI-generated concept)' },
-  10: { src: portrait('photo-1519345182560-3f2917c472ef'), alt: 'Professional outdoors in warm light (Golden Hour, AI-generated concept)' },
+  8: { src: portrait('photo-1506863530036-1efeddceb993'), alt: 'Woman enjoying golden hour outdoors — Outdoor Natural style example' },
+  9: { src: portrait('photo-1529626455594-4ff0802cfb7e'), alt: 'Man with relaxed confident smile outdoors — Urban Lifestyle style example' },
+  10: { src: portrait('photo-1519345182560-3f2917c472ef'), alt: 'Professional outdoors in warm light — Golden Hour style example' },
   // Academic — education, campus portraits
-  11: { src: portrait('photo-1544005313-94ddf0286df2'), alt: 'Educator with warm expression (Cap & Gown Classic, AI-generated concept)' },
-  12: { src: portrait('photo-1568602471122-7832951cc4c5'), alt: 'Male educator in smart casual (Modern Academic, AI-generated concept)' },
+  11: { src: portrait('photo-1544005313-94ddf0286df2'), alt: 'Educator with warm expression — Cap & Gown Classic style example' },
+  12: { src: portrait('photo-1568602471122-7832951cc4c5'), alt: 'Male educator in smart casual — Modern Academic style example' },
   // Family & Pets — warm family scenes and actual pet photos
-  13: { src: portrait('photo-1609220136736-443140cffec6'), alt: 'Happy family portrait together (Warm & Candid, AI-generated concept)' },
-  14: { src: contentPhoto('photo-1587300003388-59208cc962cb'), alt: 'Golden retriever with friendly expression (Pet Portrait Studio, AI-generated concept)' },
+  13: { src: portrait('photo-1609220136736-443140cffec6'), alt: 'Happy family portrait together — Warm & Candid style example' },
+  14: { src: contentPhoto('photo-1587300003388-59208cc962cb'), alt: 'Golden retriever with friendly expression — Pet Portrait style example' },
 };
 
 /* Style group images — each group uses category-appropriate portraits */
