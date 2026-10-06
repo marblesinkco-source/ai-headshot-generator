@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
+import { BeforeAfterGallery } from '@/components/marketing/before-after-gallery';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
@@ -30,7 +31,7 @@ import {
 
 const PAGE_TITLE = 'Before & After: AI Headshot Transformation';
 const PAGE_DESCRIPTION =
-  'See how TailorPic transforms casual selfies into studio-quality professional headshots. Explore the AI-powered process that enhances lighting, background, composition, and more.';
+  'See how TailorPic transforms casual selfies into studio-quality professional headshots. Drag the slider to compare before and after results.';
 
 export const metadata: Metadata = {
   title: { absolute: `${PAGE_TITLE} | ${siteConfig.name}` },
@@ -171,7 +172,48 @@ const stats: { icon: IconType; value: string; label: string }[] = [
   },
 ];
 
+const faqs = [
+  {
+    question: 'How realistic are the AI headshots compared to studio photos?',
+    answer:
+      'Our AI produces headshots that are comparable to professional studio photography. The AI handles lighting, background, composition, and subtle retouching — the same adjustments a professional photographer would make in post-processing.',
+  },
+  {
+    question: 'What kind of selfies work best for the AI transformation?',
+    answer:
+      'Clear, well-lit photos taken at eye level work best. Natural daylight, a neutral expression, and a simple background help the AI produce the best results. You can upload 4–10 selfies for the AI to work with.',
+  },
+  {
+    question: 'Can I choose different backgrounds and styles?',
+    answer:
+      'Yes. TailorPic offers multiple style options including corporate, creative, casual, executive, outdoor, and classic studio looks. Each style adjusts the background, lighting tone, and overall feel of your headshot.',
+  },
+  {
+    question: 'How long does it take to get my AI headshots?',
+    answer:
+      'Most orders are delivered in under 2 hours. You receive a set of professionally enhanced headshots ready for LinkedIn, resumes, company directories, and other professional platforms.',
+  },
+  {
+    question: 'Are the before/after examples on this page real?',
+    answer:
+      'The images shown are AI-generated concept illustrations using stock photography. They demonstrate the type of transformation our AI performs. Individual results vary based on the quality of your uploaded photos.',
+  },
+];
+
 export default function BeforeAfterPage() {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <main id="main-content" className="min-h-screen">
       <BreadcrumbSchema
@@ -179,6 +221,10 @@ export default function BeforeAfterPage() {
           { name: 'Home', url: siteConfig.url },
           { name: 'Before & After', url: `${siteConfig.url}/before-after` },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Header />
 
@@ -194,10 +240,13 @@ export default function BeforeAfterPage() {
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
             From casual selfies to studio-quality professional headshots
-            &mdash; here&apos;s what our AI does.
+            &mdash; drag the slider to compare.
           </p>
         </div>
       </section>
+
+      {/* Interactive Before & After Gallery */}
+      <BeforeAfterGallery />
 
       {/* The Process */}
       <section className="bg-white py-16 sm:py-20">
@@ -351,6 +400,30 @@ export default function BeforeAfterPage() {
                 </div>
                 <div className="mt-1 text-sm text-tp-muted">{label}</div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <h2 className="font-display font-normal text-3xl text-tp-ink sm:text-4xl">
+              Frequently Asked Questions
+            </h2>
+          </div>
+          <div className="divide-y divide-tp-line">
+            {faqs.map((faq) => (
+              <details key={faq.question} className="group py-5">
+                <summary className="flex cursor-pointer items-center justify-between text-base font-semibold text-tp-ink">
+                  {faq.question}
+                  <ChevronRight className="h-5 w-5 shrink-0 text-tp-muted transition-transform group-open:rotate-90" aria-hidden="true" />
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">
+                  {faq.answer}
+                </p>
+              </details>
             ))}
           </div>
         </div>

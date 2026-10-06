@@ -150,6 +150,64 @@ export const homeBeforeAfterPairs: HomeBeforeAfter[] = [
   },
 ];
 
+/** Dedicated before/after page — 6 pairs for more diversity. */
+export const dedicatedBeforeAfterPairs: HomeBeforeAfter[] = [
+  {
+    label: 'LinkedIn Profile',
+    detail: 'Clean, approachable, ready for recruiters',
+    ...stockBeforeAfter(
+      'photo-1580489944761-15a19d654956',
+      'Casual selfie before AI processing',
+      'Polished AI headshot for a LinkedIn profile',
+    ),
+  },
+  {
+    label: 'Corporate Team',
+    detail: 'Consistent look across your whole company',
+    ...stockBeforeAfter(
+      'photo-1507003211169-0a1dd7228f2d',
+      'Casual selfie before AI processing',
+      'Polished AI headshot for a corporate team page',
+    ),
+  },
+  {
+    label: 'Creative Portfolio',
+    detail: 'Distinctive style that still feels polished',
+    ...stockBeforeAfter(
+      'photo-1531746020798-e6953c6e8e04',
+      'Casual photo before AI processing',
+      'Editorial-style AI portrait for a creative portfolio',
+    ),
+  },
+  {
+    label: 'Medical Professional',
+    detail: 'Trustworthy, approachable healthcare look',
+    ...stockBeforeAfter(
+      'photo-1559839734-2b71ea197ec2',
+      'Casual photo before AI processing',
+      'Professional AI headshot for a medical profile',
+    ),
+  },
+  {
+    label: 'Tech & Startup',
+    detail: 'Modern, confident, Silicon Valley ready',
+    ...stockBeforeAfter(
+      'photo-1506794778202-cad84cf45f1d',
+      'Casual photo before AI processing',
+      'Professional AI headshot for a tech profile',
+    ),
+  },
+  {
+    label: 'Real Estate Agent',
+    detail: 'Warm, trustworthy, client-facing look',
+    ...stockBeforeAfter(
+      'photo-1573496799652-408c2ac9fe98',
+      'Casual photo before AI processing',
+      'Professional AI headshot for real estate marketing',
+    ),
+  },
+];
+
 /** Extra brand portraits usable in galleries (samples page). */
 export const brandPortraits = {
   manAfter: portraitAsset('photo-1507003211169-0a1dd7228f2d', 'AI-generated executive portrait of a man'),
