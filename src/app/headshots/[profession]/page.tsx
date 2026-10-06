@@ -391,9 +391,16 @@ export default async function ProfessionLandingPage({ params }: Props) {
             Headshots for Other Professionals
           </h2>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            {getAllProfessionSlugs()
-              .filter((s) => s !== prof.slug)
-              .map((s) => {
+            {(() => {
+              const others = getAllProfessionSlugs().filter((s) => s !== prof.slug);
+              // Show a diverse, deterministic subset: pick evenly from the list
+              const step = Math.max(1, Math.floor(others.length / 8));
+              const selected: string[] = [];
+              for (let i = 0; selected.length < 8 && i < others.length; i += step) {
+                selected.push(others[i]);
+              }
+              return selected;
+            })().map((s) => {
                 const p = getProfessionBySlug(s);
                 if (!p) return null;
                 return (
