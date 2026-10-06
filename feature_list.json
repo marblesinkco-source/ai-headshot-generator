@@ -351,6 +351,14 @@
       "dependencies": ["feat-AP"],
       "status": "done",
       "evidence": "3 yeni araç sayfası: /tools/linkedin-photo-cropper (canvas crop, zoom 1x-3x, PNG download), /tools/photo-enhance-preview (auto enhance, manual sliders, sharpen, before/after), /tools/headshot-dos-donts (5 kategori do/don't kartları, checklist, 5 FAQ). Tools index'e 3 yeni entry + sitemap'e 3 yeni URL. Commit: 9bb985e. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa + tools index tümü çalışıyor."
+    },
+    {
+      "id": "feat-AR",
+      "name": "Phase AR — Passport Photo, Compressor & Collage Free Tools",
+      "description": "3 yeni client-side free tool: Passport & ID Photo Maker (7 ülke preset + custom), Headshot Photo Compressor (quality slider + target presets), Headshot Collage Maker (2-6 foto, çoklu layout). Tools index + sitemap güncellemesi.",
+      "dependencies": ["feat-AQ"],
+      "status": "done",
+      "evidence": "3 yeni araç sayfası: /tools/passport-photo-maker (7 ülke preset, face guide oval, zoom, 4x6 print sheet), /tools/headshot-compressor (quality 10-100, target presets, binary search), /tools/headshot-collage (2-6 foto, gap/bg control, labels). Tools index'e 3 entry + sitemap'e 3 URL. Commit: 10bdff8. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa + tools index tümü çalışıyor."
     }
   ]
 }

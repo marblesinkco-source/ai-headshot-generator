@@ -1,5 +1,42 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-06 (Phase AR — Passport Photo, Compressor & Collage Free Tools)
+
+### Baseline
+- HEAD: `9bb985e` (Phase AQ complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### Passport & ID Photo Maker (Yeni Free Tool)
+- `src/components/tools/passport-photo-maker.tsx` — Canvas-based crop, 7 ülke preset (US/UK/EU/India/Canada/Australia/China) + Custom
+- `src/app/tools/passport-photo-maker/page.tsx` — Server component, BreadcrumbSchema, 4 tip kartı
+- Face guide oval overlay, zoom 1x-3x, drag to reposition, PNG download, 4x6 printable sheet
+
+#### Headshot Photo Compressor (Yeni Free Tool)
+- `src/components/tools/headshot-compressor.tsx` — Quality slider 10-100, target presets (100KB/200KB/500KB/1MB), binary search compression
+- `src/app/tools/headshot-compressor/page.tsx` — Server component, BreadcrumbSchema, 4 tip kartı
+
+#### Headshot Collage Maker (Yeni Free Tool)
+- `src/components/tools/headshot-collage.tsx` — 2-6 foto, çoklu layout, gap/bg control, optional labels
+- `src/app/tools/headshot-collage/page.tsx` — Server component, BreadcrumbSchema, 4 tip kartı
+
+#### Entegrasyonlar
+- `src/app/tools/page.tsx` — 3 yeni araç eklendi (Globe, FileDown, LayoutGrid ikonları)
+- `src/app/sitemap.ts` — 3 yeni URL eklendi
+
+#### Icon Düzeltmeleri
+- headshot-compressor page: Gauge→SlidersHorizontal, Maximize2→Crop (lucide-react güvenlik)
+- headshot-collage component: Grid→LayoutGrid (lucide-react güvenlik)
+- tools index: Stamp→Globe (lucide-react güvenlik)
+
+### Sonuç
+- Commit: 10bdff8
+- CI: PASS, Vercel: PASS
+- Live doğrulama: /tools/passport-photo-maker ✓, /tools/headshot-compressor ✓, /tools/headshot-collage ✓, /tools index ✓
+
+---
+
 ## Oturum: 2026-10-06 (Phase AQ — Client-Side Free Tools Expansion)
 
 ### Baseline
