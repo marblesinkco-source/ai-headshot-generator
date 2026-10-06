@@ -1,5 +1,41 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-06 (Phase AQ — Client-Side Free Tools Expansion)
+
+### Baseline
+- HEAD: `9bb985e` (Phase AQ code deployed, verification pending)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### LinkedIn Photo Cropper (Yeni Free Tool)
+- `src/components/tools/linkedin-photo-cropper.tsx` — Canvas-based 400x400 crop
+  - Circular preview overlay, zoom slider (1x-3x), drag to reposition (mouse + touch)
+  - PNG download as `<name>-linkedin-400x400.png`
+- `src/app/tools/linkedin-photo-cropper/page.tsx` — Server component, BreadcrumbSchema, 4 tip kartı
+
+#### Photo Enhancement Preview (Yeni Free Tool)
+- `src/components/tools/photo-enhance-preview.tsx` — Client-side canvas filters
+  - Auto brightness correction, manual sliders (brightness/contrast/saturation ±50)
+  - Sharpen checkbox (unsharp mask), before/after slider, JPG download
+- `src/app/tools/photo-enhance-preview/page.tsx` — Server component, BreadcrumbSchema, 4 tip kartı
+
+#### Headshot Dos & Don'ts (Yeni Free Guide)
+- `src/app/tools/headshot-dos-donts/page.tsx` — Static server component
+  - 5 kategori: Lighting, Framing, Background, Expression, Attire
+  - Do (yeşil) / Don't (kırmızı) kartları, quick reference checklist, 5 FAQ
+
+#### Entegrasyonlar
+- `src/app/tools/page.tsx` — 3 yeni araç eklendi (Crop, Sun, BookOpen ikonları)
+- `src/app/sitemap.ts` — 3 yeni URL eklendi (priority 0.7, monthly)
+
+### Sonuç
+- Commit: 9bb985e
+- CI: PASS, Vercel: PASS
+- Live doğrulama: /tools/linkedin-photo-cropper ✓, /tools/photo-enhance-preview ✓, /tools/headshot-dos-donts ✓, /tools index ✓
+
+---
+
 ## Oturum: 2026-10-06 (Phase AP — Navigation Fixes & Conversion Tools)
 
 ### Baseline
