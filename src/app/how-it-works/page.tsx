@@ -5,7 +5,8 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BeforeAfterIllustration } from '@/components/marketing/illustrations';
 import { HowToSchema, BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
-import { Button } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 import { siteConfig } from '@/config/site';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import {
@@ -248,12 +249,16 @@ export default function HowItWorksPage() {
             results in about 2 hours.
           </p>
           <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots">
-              <Button size="lg" className="bg-tp-bronze text-tp-black hover:bg-tp-bronze/90">
-                Get Started
-              </Button>
+            <Link
+              href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
+              className={cn(buttonVariants({ size: 'lg' }), 'bg-tp-bronze text-tp-black hover:bg-tp-bronze/90')}
+            >
+              Get Started
             </Link>
           </div>
+          <p className="mt-5 text-center text-sm text-tp-beige/50">
+            From {BASE_PRICE_DISPLAY} &middot; One-time payment &middot; No subscription
+          </p>
         </div>
       </section>
 
@@ -643,22 +648,17 @@ export default function HowItWorksPage() {
             Transform your photos with studio-quality AI headshots. Your new headshots are just a few selfies away.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots">
-              <Button
-                size="lg"
-                className="bg-tp-bronze text-tp-black hover:bg-tp-bronze/90"
-              >
-                Create Your Photos
-              </Button>
+            <Link
+              href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
+              className={cn(buttonVariants({ size: 'lg' }), 'bg-tp-bronze text-tp-black hover:bg-tp-bronze/90')}
+            >
+              Create Your Photos
             </Link>
-            <Link href="/pricing">
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-tp-beige/30 text-tp-beige hover:bg-white/10"
-              >
-                View Pricing
-              </Button>
+            <Link
+              href="/pricing"
+              className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'border-tp-beige/30 text-tp-beige hover:bg-white/10')}
+            >
+              View Pricing
             </Link>
           </div>
         </div>

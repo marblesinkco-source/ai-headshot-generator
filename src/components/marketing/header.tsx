@@ -325,7 +325,7 @@ export function Header() {
                     referrerPolicy="no-referrer"
                   />
                 ) : (
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-tp-bronze text-sm font-bold text-white">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-tp-bronze text-sm font-bold text-tp-black">
                     {userInitial}
                   </span>
                 )}
@@ -418,7 +418,7 @@ export function Header() {
                   referrerPolicy="no-referrer"
                 />
               ) : (
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-tp-bronze text-sm font-bold text-white">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-tp-bronze text-sm font-bold text-tp-black">
                   {userInitial}
                 </span>
               )}

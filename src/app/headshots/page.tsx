@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { ArrowRight, Camera, Users, Briefcase, Clock, CheckCircle, Sparkles } from 'lucide-react';
+import { ArrowRight, Camera, Users, Briefcase, Clock, CheckCircle, Sparkles, Fingerprint } from 'lucide-react';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
@@ -90,6 +90,14 @@ const faqItems = [
     q: 'Are there headshots for specific professions?',
     a: 'Yes. TailorPic offers profession-specific headshot pages with recommended styles and use cases for over 30 professions, from lawyers and doctors to engineers and coaches.',
   },
+  {
+    q: 'What is your refund policy?',
+    a: 'We offer a satisfaction guarantee on every package. If you are not happy with your headshots, reach out and we will work with you to make it right. See our guarantee page for details.',
+  },
+  {
+    q: 'Is my data safe?',
+    a: 'Yes. Your photos are processed securely, never sold or shared, and automatically deleted within 30 days. Payment is handled through Stripe. See our security page for full details.',
+  },
 ];
 
 export default function HeadshotsLandingPage() {
@@ -165,11 +173,11 @@ export default function HeadshotsLandingPage() {
               { icon: Camera, title: '40+ Styles', desc: 'Corporate, creative, outdoor, executive and more' },
               { icon: Users, title: '30+ Professions', desc: 'Tailored recommendations for your field' },
               { icon: Clock, title: '~2 Hour Delivery', desc: 'No scheduling, no studio visits needed' },
-              { icon: Sparkles, title: '4K Resolution', desc: 'Print-ready with full commercial license' },
+              { icon: Sparkles, title: 'HD & 4K Quality', desc: 'Print-ready with full commercial license' },
             ].map((item) => (
               <div key={item.title} className="flex items-start gap-4 rounded-tp-card border border-tp-line bg-tp-paper p-5">
                 <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-tp-black">
-                  <item.icon className="h-5 w-5 text-tp-bronze" />
+                  <item.icon className="h-5 w-5 text-tp-bronze" aria-hidden="true" />
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold text-tp-ink">{item.title}</h3>
@@ -211,7 +219,7 @@ export default function HeadshotsLandingPage() {
                       <Link
                         key={slug}
                         href={`/headshots/for-${slug}`}
-                        className="inline-flex items-center gap-1.5 rounded-tp-button border border-tp-line bg-white px-4 py-2.5 text-sm text-tp-ink transition-all hover:border-tp-bronze/40 hover:bg-tp-beige hover:text-tp-bronze-ink"
+                        className="group inline-flex items-center gap-1.5 rounded-tp-button border border-tp-line bg-white px-4 py-2.5 text-sm text-tp-ink transition-all hover:border-tp-bronze/40 hover:bg-tp-beige hover:text-tp-bronze-ink"
                       >
                         {prof.profession}
                         <ArrowRight className="h-3 w-3 opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0" />
@@ -252,7 +260,7 @@ export default function HeadshotsLandingPage() {
               {
                 step: '03',
                 title: 'Get Your Headshots',
-                desc: 'Receive studio-quality headshots in about 2 hours. Download in 4K, ready for any platform.',
+                desc: 'Receive studio-quality headshots in about 2 hours. HD on every package, 4K on Executive. Ready for any platform.',
               },
             ].map((item) => (
               <div key={item.step} className="text-center">
@@ -276,9 +284,9 @@ export default function HeadshotsLandingPage() {
         </div>
       </section>
 
-      {/* ── Pricing Preview ── */}
+      {/* ── Full Pricing Ladder ── */}
       <section className="border-t border-tp-line/40 bg-tp-paper py-20 sm:py-24">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
               Packages
@@ -292,67 +300,82 @@ export default function HeadshotsLandingPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 sm:grid-cols-3">
-            {/* Entry */}
-            {entryPackage && (
-              <div className="rounded-tp-card border border-tp-line bg-white p-6">
-                <h3 className="text-lg font-semibold text-tp-ink">{entryPackage.name}</h3>
-                <p className="mt-1 text-2xl font-semibold text-tp-bronze-ink">
-                  {formatPrice(entryPackage.price)}
-                </p>
-                <p className="mt-1 text-sm text-tp-muted">
-                  {entryPackage.outputCount} headshot &middot; Try before you commit
-                </p>
-                <ul className="mt-4 space-y-2">
-                  {entryPackage.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm text-tp-ink">
-                      <CheckCircle className="h-4 w-4 flex-shrink-0 text-tp-bronze" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+          {/* Package ladder table */}
+          <div className="overflow-x-auto -mx-4 sm:mx-0">
+            <table className="w-full text-left text-sm">
+              <thead>
+                <tr className="border-b border-tp-line">
+                  <th className="px-4 py-3 font-semibold text-tp-ink">Package</th>
+                  <th className="px-4 py-3 font-semibold text-tp-ink text-right">Photos</th>
+                  <th className="px-4 py-3 font-semibold text-tp-ink text-right">Price</th>
+                  <th className="px-4 py-3 font-semibold text-tp-ink text-right hidden sm:table-cell">Per Photo</th>
+                  <th className="px-4 py-3"></th>
+                </tr>
+              </thead>
+              <tbody>
+                {headshots.packages.map((pkg) => {
+                  const perPhoto = pkg.outputCount > 0 ? Math.round(pkg.price / pkg.outputCount) : pkg.price;
+                  return (
+                    <tr
+                      key={pkg.id}
+                      className={cn(
+                        'border-b border-tp-line/60 transition-colors hover:bg-tp-beige/40',
+                        pkg.recommended && 'bg-tp-bronze/[0.04]'
+                      )}
+                    >
+                      <td className="px-4 py-4">
+                        <div className="flex items-center gap-2">
+                          <span className="font-semibold text-tp-ink">{pkg.name}</span>
+                          {pkg.recommended && (
+                            <span className="rounded-full bg-tp-bronze px-2 py-0.5 text-[10px] font-semibold text-tp-black">
+                              Popular
+                            </span>
+                          )}
+                        </div>
+                      </td>
+                      <td className="px-4 py-4 text-right text-tp-ink tabular-nums">
+                        {pkg.outputCount} {pkg.outputCount === 1 ? 'photo' : 'photos'}
+                      </td>
+                      <td className="px-4 py-4 text-right font-semibold text-tp-bronze-ink tabular-nums">
+                        {formatPrice(pkg.price)}
+                      </td>
+                      <td className="px-4 py-4 text-right text-tp-muted tabular-nums hidden sm:table-cell">
+                        {formatPrice(perPhoto)}/photo
+                      </td>
+                      <td className="px-4 py-4 text-right">
+                        <Link
+                          href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
+                          className={cn(
+                            'inline-flex items-center gap-1 rounded-tp-button px-3 py-1.5 text-xs font-semibold transition-colors',
+                            pkg.recommended
+                              ? 'bg-tp-bronze text-tp-black hover:bg-tp-bronze/90'
+                              : 'border border-tp-line text-tp-ink hover:border-tp-bronze/40 hover:text-tp-bronze-ink'
+                          )}
+                        >
+                          Choose
+                        </Link>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
 
-            {/* Recommended */}
-            {recommendedPackage && (
-              <div className="relative rounded-tp-card border-2 border-tp-bronze bg-white p-6 shadow-lg shadow-tp-bronze/10">
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-tp-bronze px-3 py-0.5 text-xs font-semibold text-tp-black">
-                  Most Popular
-                </span>
-                <h3 className="text-lg font-semibold text-tp-ink">{recommendedPackage.name}</h3>
-                <p className="mt-1 text-2xl font-semibold text-tp-bronze-ink">
-                  {formatPrice(recommendedPackage.price)}
-                </p>
-                <p className="mt-1 text-sm text-tp-muted">
-                  {recommendedPackage.outputCount} headshots &middot;{' '}
-                  {formatPrice(Math.round(recommendedPackage.price / recommendedPackage.outputCount))}/photo
-                </p>
-                <ul className="mt-4 space-y-2">
-                  {recommendedPackage.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm text-tp-ink">
-                      <CheckCircle className="h-4 w-4 flex-shrink-0 text-tp-bronze" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {/* View all */}
-            <div className="flex flex-col items-center justify-center rounded-tp-card border border-dashed border-tp-line bg-tp-beige/50 p-6 text-center">
-              <Briefcase className="h-8 w-8 text-tp-bronze/60 mb-3" />
-              <h3 className="text-lg font-semibold text-tp-ink">Need More?</h3>
-              <p className="mt-2 text-sm text-tp-muted leading-relaxed">
-                Up to 160 headshots per package. Team pricing available for 5+ people.
-              </p>
-              <Link
-                href="/pricing"
-                className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-tp-bronze-ink hover:text-tp-ink transition-colors"
-              >
-                See All Packages <ArrowRight className="h-3.5 w-3.5" />
-              </Link>
-            </div>
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm">
+            <Link
+              href="/pricing"
+              className="inline-flex items-center gap-2 font-semibold text-tp-bronze-ink hover:text-tp-ink transition-colors"
+            >
+              Compare All Categories <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+            <span className="text-tp-muted hidden sm:inline">&middot;</span>
+            <Link
+              href="/for-teams"
+              className="inline-flex items-center gap-2 font-semibold text-tp-bronze-ink hover:text-tp-ink transition-colors"
+            >
+              Team Pricing (5+ people) <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
           </div>
         </div>
       </section>
@@ -374,7 +397,7 @@ export default function HeadshotsLandingPage() {
                 key={item.q}
                 className="group rounded-tp-card border border-tp-line bg-tp-paper transition-shadow hover:shadow-sm"
               >
-                <summary className="flex cursor-pointer items-center justify-between gap-4 px-6 py-5 text-[15px] font-semibold text-tp-ink">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 px-6 py-5 text-[15px] font-semibold text-tp-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2 rounded-tp-card">
                   {item.q}
                   <svg
                     className="h-4 w-4 flex-shrink-0 text-tp-muted transition-transform group-open:rotate-180"
@@ -390,6 +413,79 @@ export default function HeadshotsLandingPage() {
                   {item.a}
                 </div>
               </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Trust & Guarantee ── */}
+      <section className="bg-white border-t border-tp-line/40 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 sm:grid-cols-3">
+            <div className="rounded-tp-card border border-tp-line bg-tp-paper p-6 text-center">
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black mb-4">
+                <CheckCircle className="h-6 w-6 text-tp-bronze" />
+              </div>
+              <h3 className="text-sm font-semibold text-tp-ink">Satisfaction Guarantee</h3>
+              <p className="mt-2 text-sm text-tp-muted leading-relaxed">
+                Not happy with your headshots? We&apos;ll work with you until you are.
+              </p>
+              <Link href="/guarantee" className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-tp-bronze-ink hover:text-tp-ink transition-colors">
+                Learn more <ArrowRight className="h-3 w-3" />
+              </Link>
+            </div>
+            <div className="rounded-tp-card border border-tp-line bg-tp-paper p-6 text-center">
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black mb-4">
+                <Fingerprint className="h-6 w-6 text-tp-bronze" />
+              </div>
+              <h3 className="text-sm font-semibold text-tp-ink">Secure &amp; Private</h3>
+              <p className="mt-2 text-sm text-tp-muted leading-relaxed">
+                Photos deleted within 30 days. Never sold or shared. Stripe-secured payments.
+              </p>
+              <Link href="/security" className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-tp-bronze-ink hover:text-tp-ink transition-colors">
+                Security details <ArrowRight className="h-3 w-3" />
+              </Link>
+            </div>
+            <div className="rounded-tp-card border border-tp-line bg-tp-paper p-6 text-center">
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black mb-4">
+                <Briefcase className="h-6 w-6 text-tp-bronze" />
+              </div>
+              <h3 className="text-sm font-semibold text-tp-ink">Commercial License</h3>
+              <p className="mt-2 text-sm text-tp-muted leading-relaxed">
+                Use your headshots anywhere — LinkedIn, company sites, business cards, press materials.
+              </p>
+              <Link href="/terms" className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-tp-bronze-ink hover:text-tp-ink transition-colors">
+                License terms <ArrowRight className="h-3 w-3" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Related Resources ── */}
+      <section className="bg-tp-paper border-t border-tp-line/40 py-12 sm:py-14">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="font-display font-normal text-xl sm:text-2xl text-tp-ink text-center mb-8">
+            Helpful Resources
+          </h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            {[
+              { label: 'Selfie Guide', href: '/selfie-guide' },
+              { label: 'What to Wear', href: '/what-to-wear' },
+              { label: 'Photo Tips', href: '/photo-tips' },
+              { label: 'Headshot Sizes', href: '/headshot-sizes' },
+              { label: 'Before & After', href: '/before-after' },
+              { label: 'Photo Styles', href: '/styles' },
+              { label: 'Background Options', href: '/backgrounds' },
+              { label: 'Team Headshots', href: '/team-headshots' },
+            ].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="inline-flex items-center gap-1.5 rounded-tp-button border border-tp-line bg-white px-4 py-2.5 text-sm text-tp-ink transition-all hover:border-tp-bronze/40 hover:bg-tp-beige hover:text-tp-bronze-ink"
+              >
+                {link.label}
+              </Link>
             ))}
           </div>
         </div>
