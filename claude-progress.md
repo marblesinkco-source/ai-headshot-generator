@@ -1,5 +1,43 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-07 (Phase AZ — LinkedIn Photo Checker, Headshot Quality Score & Profile Picture Maker)
+
+### Baseline
+- HEAD: `6b2f2b2` (Phase AY complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### LinkedIn Photo Checker (Yeni Free Tool)
+- `src/components/tools/linkedin-photo-checker.tsx` — Canvas-based LinkedIn photo analyzer
+- `src/app/tools/linkedin-photo-checker/page.tsx` — Server component, BreadcrumbSchema, 4 tip kartı
+- 6 checks: Dimensions (≥400x400), Aspect Ratio (1:1), File Size (≤8MB), Resolution, Brightness, Face Centering
+- Pass/Warn/Fail icons, overall score 0-100, circle preview, optimized square PNG download
+
+#### Headshot Quality Score (Yeni Free Tool)
+- `src/components/tools/headshot-quality-score.tsx` — Canvas-based headshot quality analyzer
+- `src/app/tools/headshot-quality-score/page.tsx` — Server component, BreadcrumbSchema, 4 tip kartı
+- 5 criteria: Framing (16x16 grid), Lighting Balance (L/R half), Background Simplicity (outer 20% variance), Sharpness (Laplacian 3x3), Contrast (brightness stddev)
+- Circular SVG gauge, horizontal progress bars, semi-transparent SVG overlay (rule-of-thirds + subject box)
+
+#### Profile Picture Maker (Yeni Free Tool)
+- `src/components/tools/profile-picture-maker.tsx` — Canvas-based multi-platform cropper
+- `src/app/tools/profile-picture-maker/page.tsx` — Server component, BreadcrumbSchema, 4 tip kartı
+- 9 platforms: LinkedIn (400x400), Instagram (320x320), Facebook (170x170), Twitter/X (400x400), YouTube (800x800), Zoom (400x400), Slack (512x512 square), WhatsApp (500x500), Discord (128x128)
+- Draggable/resizable crop with corner handles, circle/square preview, individual PNG or ZIP download
+
+#### Tools Index & Sitemap
+- `src/app/tools/page.tsx` — 3 yeni entry eklendi (toplam 39 araç)
+- `src/app/sitemap.ts` — 3 yeni URL eklendi
+
+### Deploy
+- Commit: `5e9b3eb`
+- CI: PASS
+- Vercel: PASS
+- Canlı doğrulama: 3 yeni araç sayfası + tools index tümü çalışıyor
+
+---
+
 ## Oturum: 2026-10-07 (Phase AY — Pencil Sketch, Photo Border Maker & Batch Resizer)
 
 ### Baseline

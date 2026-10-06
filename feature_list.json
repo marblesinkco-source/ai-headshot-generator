@@ -415,6 +415,14 @@
       "dependencies": ["feat-AX"],
       "status": "done",
       "evidence": "/tools/pencil-sketch: 4 sketch styles (Light/Medium/Dark/Charcoal), 3-pass separable box blur, color dodge blend, line thickness 1-40, intensity 0-100. /tools/photo-border-maker: 8 preset frames (Clean White/Classic Black/Gold/Silver/Polaroid/Film Strip/Vintage/Modern), solid/gradient/double border, shadow/glow effect, rounded corners, PRNG rough edges. /tools/batch-photo-resizer: Up to 20 files, 8 platform presets (LinkedIn/Instagram/Facebook/Twitter/YouTube/Passport), 4 resize modes, inline ZIP builder (DataView/ArrayBuffer). Tools index'e 3 entry (toplam 36) + sitemap'e 3 URL. Commit: 6b2f2b2. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa çalışıyor."
+    },
+    {
+      "id": "feat-AZ",
+      "name": "Phase AZ — LinkedIn Photo Checker, Headshot Quality Score & Profile Picture Maker Free Tools",
+      "description": "3 yeni client-side free tool: LinkedIn Photo Checker (6-point analysis: dimensions/aspect/filesize/resolution/brightness/centering), Headshot Quality Score (5-criteria scorer: framing/lighting/background/sharpness/contrast + SVG overlay), Profile Picture Maker (9-platform crop: LinkedIn/Instagram/Facebook/Twitter/YouTube/Zoom/Slack/WhatsApp/Discord + ZIP download). Tools index + sitemap güncellemesi.",
+      "dependencies": ["feat-AY"],
+      "status": "done",
+      "evidence": "/tools/linkedin-photo-checker: 6 checks (dimensions ≥400x400, aspect 1:1, filesize ≤8MB, resolution, brightness luminance, face centering contrast centroid), score 0-100, circle preview, optimized square PNG download. /tools/headshot-quality-score: 5 criteria scored 0-100 (framing 16x16 grid, lighting L/R half, background outer 20% variance, sharpness Laplacian 3x3, contrast brightness stddev), circular SVG gauge, horizontal progress bars, semi-transparent overlay (rule-of-thirds + subject box). /tools/profile-picture-maker: 9 platform presets (LinkedIn 400x400 / Instagram 320x320 / Facebook 170x170 / Twitter 400x400 / YouTube 800x800 / Zoom 400x400 / Slack 512x512 / WhatsApp 500x500 / Discord 128x128), draggable/resizable crop, circle/square preview, individual PNG or ZIP download. Tools index'e 3 entry (toplam 39) + sitemap'e 3 URL. Commit: 5e9b3eb. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa + tools index tümü çalışıyor."
     }
   ]
 }
