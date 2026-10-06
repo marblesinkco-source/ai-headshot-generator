@@ -287,6 +287,22 @@
       "dependencies": ["feat-AH"],
       "status": "done",
       "evidence": "Commits: bb0f9c2 (tools index +3 tools), c93864a (before-after gallery: 6 ComparisonSlider, 5 FAQ, FAQPage schema). CI PASS, Vercel PASS. Live verified: /before-after ✓, /tools ✓."
+    },
+    {
+      "id": "feat-AJ",
+      "name": "Phase AJ — Font Consistency & Dead Code Cleanup",
+      "description": "96+ h1/h2 font-normal ekleme, 2 kullanılmayan bileşen silme, footer link ekleme, sitemap duplicate düzeltme, CSS variable fix.",
+      "dependencies": ["feat-AI"],
+      "status": "done",
+      "evidence": "Commits: d96eeaf (font-normal + cleanup — BUILD FAILED), a6d1668 (CSS variable fix). CI PASS, Vercel PASS. Live verified."
+    },
+    {
+      "id": "feat-AK",
+      "name": "Phase AK — Advanced Competitor Features",
+      "description": "Rakip analiz sonuçlarına göre eksik kalan üst segment özellikler: ROI calculator iyileştirme, industry sayfaları genişletme, advanced free tools, conversion optimizasyonları.",
+      "dependencies": ["feat-AJ"],
+      "status": "in-progress",
+      "evidence": ""
     }
   ]
 }

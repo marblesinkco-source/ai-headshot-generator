@@ -214,6 +214,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${baseUrl}/tools/style-finder-quiz`,
+      lastModified: new Date('2026-10-06'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
       url: `${baseUrl}/security`,
       lastModified: new Date('2026-10-06'),
       changeFrequency: 'monthly',

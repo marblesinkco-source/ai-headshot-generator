@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal, Users, CheckSquare, CircleUser, AlignLeft } from 'lucide-react';
+import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal, Users, CheckSquare, CircleUser, AlignLeft, Compass } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { ToolsIllustration } from '@/components/marketing/illustrations';
@@ -113,6 +113,13 @@ const tools = [
       'Crop, resize and position your photo for any platform — LinkedIn, Instagram, Slack, Zoom and more. Download as PNG.',
     href: '/tools/pfp-maker',
     icon: CircleUser,
+  },
+  {
+    title: 'Style Finder Quiz',
+    description:
+      'Answer 5 quick questions about your industry, goals and vibe to discover which AI headshot style is the best fit for you.',
+    href: '/tools/style-finder-quiz',
+    icon: Compass,
   },
 ];
 

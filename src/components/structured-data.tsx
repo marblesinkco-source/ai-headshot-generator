@@ -10,7 +10,6 @@ export function OrganizationSchema() {
     url: siteConfig.url,
     logo: `${siteConfig.url}/brand/tailorpic/icons/profile-dark-512.png`,
     description: siteConfig.description,
-    foundingDate: '2024',
     sameAs: [
       siteConfig.links.twitter,
       siteConfig.links.linkedin,
@@ -24,11 +23,6 @@ export function OrganizationSchema() {
       email: siteConfig.supportEmail,
       contactType: 'customer support',
     },
-    address: {
-      '@type': 'PostalAddress',
-      addressCountry: 'US',
-    },
-    areaServed: 'Worldwide',
   };
 
   return (

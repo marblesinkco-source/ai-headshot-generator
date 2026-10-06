@@ -1,5 +1,33 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-06 (Phase AJ — Font Consistency & Dead Code Cleanup)
+
+### Baseline
+- HEAD: `c93864a` (Phase AI complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### Site-Wide Font-Normal Consistency
+- 96+ h1/h2 başlığında `font-display` sınıfına `font-normal` eklendi (brand convention)
+- Batch sed komutu CSS property `font-display: swap`'ı da bozdu (`--font-display font-normal` olarak)
+- `src/app/layout.tsx` line 36: CSS variable adı düzeltildi
+
+#### Dead Code Cleanup
+- `src/components/marketing/ai-comparison.tsx` silindi (kullanılmıyordu)
+- `src/components/marketing/studio-comparison.tsx` silindi (kullanılmıyordu)
+
+#### Footer & Sitemap Düzeltmeleri
+- Footer'a Changelog ve Integrations linkleri eklendi
+- Sitemap'ten duplicate `/trust` entry kaldırıldı
+
+### Sonuç
+- Commitler: d96eeaf (polish + font-normal — BUILD FAILED), a6d1668 (CSS variable fix — BUILD PASSED)
+- CI: PASS, Vercel: PASS
+- Live doğrulama: tailorpic.com ✓ (fontlar doğru, site çalışıyor)
+
+---
+
 ## Oturum: 2026-10-06 (Phase AI — Before/After Enhancement & Tools Index)
 
 ### Baseline

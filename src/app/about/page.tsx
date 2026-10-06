@@ -5,7 +5,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
-import { BreadcrumbSchema, OrganizationSchema } from '@/components/structured-data';
+import { BreadcrumbSchema } from '@/components/structured-data';
 import { AboutMissionIllustration } from '@/components/marketing/illustrations';
 import {
   Shield,
@@ -154,7 +154,6 @@ export default function AboutPage() {
           { name: 'About', url: `${siteConfig.url}/about` },
         ]}
       />
-      <OrganizationSchema />
       <Header />
 
       {/* Hero */}
