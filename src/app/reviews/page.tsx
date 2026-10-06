@@ -15,6 +15,7 @@ import {
   CreditCard,
   Image as ImageIcon,
   ArrowRight,
+  ExternalLink,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -165,6 +166,12 @@ const trustItems = [
   { icon: ImageIcon, label: 'Up to 160 Photos' },
 ];
 
+const reviewPlatforms = [
+  { name: 'Trustpilot', href: 'https://www.trustpilot.com', label: 'Review on Trustpilot' },
+  { name: 'Product Hunt', href: 'https://www.producthunt.com', label: 'Review on Product Hunt' },
+  { name: 'G2', href: 'https://www.g2.com', label: 'Review on G2' },
+];
+
 function UseCaseCard({ useCase }: { useCase: UseCase }) {
   const Icon = useCase.icon;
   return (
@@ -298,6 +305,40 @@ export default function ReviewsPage() {
                   .join('\n'),
               }}
             />
+          </div>
+        </section>
+
+        {/* Review Us */}
+        <section className="px-4 pb-16 sm:px-6" aria-labelledby="review-us-heading">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2
+              id="review-us-heading"
+              className="font-display text-3xl font-normal text-tp-ink md:text-4xl"
+            >
+              Share Your Experience
+            </h2>
+            <p className="mx-auto mt-3 max-w-lg text-tp-muted">
+              If you enjoyed TailorPic, we&apos;d love to hear from you on these platforms.
+            </p>
+            <ul className="mt-8 grid gap-4 sm:grid-cols-3">
+              {reviewPlatforms.map((p) => (
+                <li key={p.name}>
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex h-full min-h-[88px] flex-col items-center justify-center gap-1 rounded-tp-card border border-tp-line bg-white p-5 transition-colors hover:border-tp-bronze/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
+                  >
+                    <span className="font-semibold text-tp-ink">{p.name}</span>
+                    <span className="inline-flex items-center gap-1.5 text-sm text-tp-bronze-ink">
+                      {p.label}
+                      <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                      <span className="sr-only">(opens in a new tab)</span>
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 

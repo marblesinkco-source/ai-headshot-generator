@@ -325,6 +325,14 @@
       "name": "Phase AN — Schema, Accessibility & Homepage Polish",
       "description": "HowTo schema with totalTime, ItemList for professions, header aria-haspopup, homepage section reorder (BeforeAfter closer to hero), scroll-margin-top for anchor targets.",
       "dependencies": ["feat-AM"],
+      "status": "done",
+      "evidence": "HowTo JSON-LD (totalTime/estimatedCost/tool), ItemList for 30 professions, header aria-haspopup, BeforeAfterShowcase moved after SocialProofBar, scroll-margin-top 5rem. Commit: 472dbd1. CI PASS + Vercel PASS. Live verified."
+    },
+    {
+      "id": "feat-AO",
+      "name": "Phase AO — FAQ Enrichment & Competitive Edge",
+      "description": "FAQ page enrichment with more questions across categories, accessibility improvements, mobile dialog focus management, additional competitive features.",
+      "dependencies": ["feat-AN"],
       "status": "in-progress",
       "evidence": ""
     }

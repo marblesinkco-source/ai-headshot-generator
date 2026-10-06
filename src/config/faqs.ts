@@ -101,6 +101,89 @@ export const faqs = [
     answer:
       'Contact our support team and we will work with you to resolve the issue under our satisfaction guarantee.',
   },
+  {
+    category: 'Teams',
+    question: 'Can I order headshots for my team?',
+    answer:
+      'Yes. Our team packages start at $39 per person for groups of 5–15, and $29 per person for groups of 16–50. Every team member uploads their own selfies and receives individually styled headshots with a consistent look. Visit our Teams page for details.',
+  },
+  {
+    category: 'Teams',
+    question: 'How do team headshots maintain a consistent look?',
+    answer:
+      'When you order team headshots, all members receive photos with the same background style and color treatment. Each person still gets individually generated portraits based on their own selfies, so the results look natural while matching your brand.',
+  },
+  {
+    category: 'Teams',
+    question: 'Can team members upload photos at different times?',
+    answer:
+      'Yes. Each team member receives their own upload link and can submit their selfies whenever convenient. Photos are generated individually, so there is no need to coordinate timing.',
+  },
+  {
+    category: 'Technical',
+    question: 'What resolution are the photos?',
+    answer:
+      'Standard packages deliver HD resolution (1024×1440 pixels), suitable for web, LinkedIn, and email signatures. The Executive package delivers 4K resolution (2176×2880 pixels), suitable for print, large displays, and marketing materials.',
+  },
+  {
+    category: 'Technical',
+    question: 'What file format do I receive?',
+    answer: 'All photos are delivered as high-quality JPEG files. If you need a different format, contact support.',
+  },
+  {
+    category: 'Technical',
+    question: 'Can I choose specific backgrounds?',
+    answer:
+      'Yes. Each package includes a set number of background options. Higher-tier packages offer more backgrounds, from solid studio colors to gradient and environmental settings. See the package comparison on our pricing page.',
+  },
+  {
+    category: 'Technical',
+    question: 'Do I need a professional camera?',
+    answer:
+      'No. A modern smartphone camera is all you need. Our AI is designed to work with casual selfies taken in everyday settings. Just follow our upload tips for best results.',
+  },
+  {
+    category: 'Product',
+    question: 'How many selfies should I upload?',
+    answer:
+      'Upload between 4 and 10 selfies for best results. Include a mix of angles (front, slight left, slight right) and expressions. More variety helps the AI capture your features accurately.',
+  },
+  {
+    category: 'Product',
+    question: 'Can I use the photos on social media?',
+    answer:
+      'Yes. You own full rights to all generated photos with no licensing restrictions. Use them on LinkedIn, Instagram, Twitter, Facebook, your website, or any other platform.',
+  },
+  {
+    category: 'Product',
+    question: 'What if I wear glasses?',
+    answer:
+      'Include photos both with and without glasses if possible. If you always wear glasses, upload selfies with them on — the AI will incorporate them naturally into your headshots.',
+  },
+  {
+    category: 'Delivery',
+    question: 'Will I be notified when my photos are ready?',
+    answer:
+      'Yes. You will receive an email notification as soon as your photos are ready to download. You can also check your dashboard at any time for real-time status updates.',
+  },
+  {
+    category: 'Pricing',
+    question: 'Do you offer discounts for large teams?',
+    answer:
+      'Yes. Teams of 16–50 members receive a reduced rate of $29 per person. For groups larger than 50, contact us for a custom enterprise quote.',
+  },
+  {
+    category: 'Pricing',
+    question: 'Can I upgrade my package after purchase?',
+    answer:
+      'Contact our support team to discuss upgrading. We will work with you to find the best solution based on your needs.',
+  },
+  {
+    category: 'Refund',
+    question: 'What does the satisfaction guarantee cover?',
+    answer:
+      'If you are not happy with your photos, reach out to our support team. We will work with you to regenerate your photos or find another resolution. See our refund policy for full details.',
+  },
 ];
 
-export const faqCategories = ['Product', 'Pricing', 'Privacy', 'Delivery', 'Refund'] as const;
+export const faqCategories = ['Product', 'Pricing', 'Teams', 'Privacy', 'Technical', 'Delivery', 'Refund'] as const;

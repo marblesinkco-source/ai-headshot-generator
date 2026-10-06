@@ -52,6 +52,7 @@ export function Header() {
   const router = useRouter();
   const pathname = usePathname();
   const mobileDialog = useRef<HTMLDialogElement>(null);
+  const mobileButton = useRef<HTMLButtonElement>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
@@ -119,6 +120,54 @@ export function Header() {
       clearTimeout(closeTimer.current);
     };
   }, []);
+
+  // Mobile menu focus management: focus first element on open, trap Tab, Escape closes,
+  // and return focus to the hamburger button on close.
+  const wasMobileOpen = useRef(false);
+  useEffect(() => {
+    const dialog = mobileDialog.current;
+    if (!mobileOpen) {
+      if (wasMobileOpen.current) {
+        wasMobileOpen.current = false;
+        mobileButton.current?.focus();
+      }
+      return;
+    }
+    wasMobileOpen.current = true;
+    if (!dialog) return;
+
+    const selector =
+      'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+    const getFocusable = () =>
+      Array.from(dialog.querySelectorAll<HTMLElement>(selector)).filter(
+        (el) => el.offsetParent !== null || el === document.activeElement,
+      );
+
+    getFocusable()[0]?.focus();
+
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeMobile();
+        return;
+      }
+      if (e.key !== 'Tab') return;
+      const items = getFocusable();
+      if (items.length === 0) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      const active = document.activeElement;
+      if (e.shiftKey && (active === first || !dialog!.contains(active))) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && (active === last || !dialog!.contains(active))) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [mobileOpen]);
 
   useEffect(() => {
     const supabase = createClient();
@@ -434,9 +483,10 @@ export function Header() {
             </Link>
           )}
           <button
+            ref={mobileButton}
             className="flex h-[46px] w-[46px] items-center justify-center rounded-tp-button border border-tp-line bg-transparent transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
-            onClick={() => mobileDialog.current?.showModal()}
-            aria-label="Open navigation menu"
+            onClick={() => { setMobileOpen(true); mobileDialog.current?.showModal(); }}
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-haspopup="dialog"
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav-dialog"

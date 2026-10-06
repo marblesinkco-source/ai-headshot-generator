@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { FAQIllustration } from '@/components/marketing/illustrations';
@@ -7,6 +8,8 @@ import { faqs, faqCategories } from '@/config/faqs';
 import { siteConfig } from '@/config/site';
 import { FAQSchema, BreadcrumbSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+
+const FaqSearch = dynamic(() => import('@/components/marketing/faq-search'));
 
 const DESCRIPTION = 'Answers about TailorPic AI headshots: how it works, pricing, privacy and delivery time. Find what you need quickly.';
 
@@ -77,30 +80,10 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* Categorized FAQ (native details/summary: accessible, no JS) */}
+      {/* Searchable categorized FAQ (native details/summary, server-rendered) */}
       <section className="bg-tp-paper/40 py-16 sm:py-20">
-        <div className="mx-auto max-w-3xl space-y-14 px-4 sm:px-6 lg:px-8">
-          {groups.map((g) => (
-            <div key={g.category} id={slug(g.category)} className="scroll-mt-24">
-              <h2 className="font-display font-normal text-2xl text-tp-black sm:text-3xl">{g.category}</h2>
-              <div className="mt-6 divide-y divide-tp-line/50 rounded-tp-card border border-tp-line bg-white">
-                {g.items.map((faq) => (
-                  <details key={faq.question} className="group">
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-tp-paper/50 [&::-webkit-details-marker]:hidden">
-                      <span className="text-base font-medium text-tp-black">{faq.question}</span>
-                      <span
-                        aria-hidden="true"
-                        className="text-xl leading-none text-tp-bronze-ink transition-transform group-open:rotate-45"
-                      >
-                        +
-                      </span>
-                    </summary>
-                    <p className="px-6 pb-5 text-base leading-relaxed text-tp-muted">{faq.answer}</p>
-                  </details>
-                ))}
-              </div>
-            </div>
-          ))}
+        <FaqSearch faqs={faqs} groups={groups} />
+        <div className="mx-auto mt-14 max-w-3xl px-4 sm:px-6 lg:px-8">
           <p className="text-center text-sm text-tp-muted">
             See also our{' '}
             <Link href="/security" className="font-medium text-tp-bronze-ink underline underline-offset-2">
