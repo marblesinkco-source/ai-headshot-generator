@@ -9,6 +9,8 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { SocialShare } from '@/components/marketing/social-share';
 import { StylePreviewGrid } from '@/components/marketing/style-preview-grid';
+import { HeadshotInContext } from '@/components/marketing/headshot-in-context';
+import { PackageVisualizer } from '@/components/marketing/package-visualizer';
 import { getActiveCategories, getCategoryBySlug } from '@/config/categories';
 import { getCategoryContent } from '@/config/category-content';
 import { getCategoryVisuals, getCategoryImage, categoryVisuals } from '@/config/category-visuals';
@@ -394,6 +396,8 @@ export default async function CategoryPage({ params }: Props) {
 
       {/* ── STYLE PREVIEW (headshots only) ── */}
       {cat.id === 'headshots' && <StylePreviewGrid />}
+      {cat.id === 'headshots' && <HeadshotInContext />}
+      {cat.id === 'headshots' && <PackageVisualizer packages={cat.packages} />}
 
       {/* ── SAMPLE GALLERY (only when there are enough distinct images) ── */}
       {uniqueGallery.length >= 3 && (

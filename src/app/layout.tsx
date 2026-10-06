@@ -18,6 +18,11 @@ const BackToTop = dynamic(
   { ssr: false },
 );
 
+const ReturnVisitorBanner = dynamic(
+  () => import('@/components/marketing/return-visitor-banner').then((m) => m.ReturnVisitorBanner),
+  { ssr: false },
+);
+
 const manrope = Manrope({
   subsets: ['latin'],
   variable: '--font-manrope',
@@ -115,6 +120,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <ExitIntentPopupLazy />
         </ToastProvider>
         <BackToTop />
+        <ReturnVisitorBanner />
         {/* Tawk.to live chat — only loads when NEXT_PUBLIC_TAWKTO_ID is set */}
         <Suspense fallback={null}>
           <LiveChat />
