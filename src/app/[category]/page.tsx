@@ -11,6 +11,7 @@ import { SocialShare } from '@/components/marketing/social-share';
 import { StylePreviewGrid } from '@/components/marketing/style-preview-grid';
 import { HeadshotInContext } from '@/components/marketing/headshot-in-context';
 import { PackageVisualizer } from '@/components/marketing/package-visualizer';
+import { DataPrivacyStrip } from '@/components/marketing/data-privacy-strip';
 import { getActiveCategories, getCategoryBySlug } from '@/config/categories';
 import { getCategoryContent } from '@/config/category-content';
 import { getCategoryVisuals, getCategoryImage, categoryVisuals } from '@/config/category-visuals';
@@ -570,6 +571,8 @@ export default async function CategoryPage({ params }: Props) {
               );
             })}
           </div>
+
+          <DataPrivacyStrip className="mx-auto mt-8 max-w-3xl" />
 
           <p className="mt-6 text-center text-sm text-tp-muted">
             Compare every package and what each includes.{' '}

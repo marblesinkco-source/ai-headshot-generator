@@ -21,6 +21,7 @@ import { PricingViewToggle } from '@/components/marketing/pricing-view-toggle';
 import { PricingComparisonBar } from '@/components/marketing/pricing-comparison-bar';
 import { GuaranteeSection } from '@/components/marketing/guarantee-section';
 import { TrustBadgesInline } from '@/components/marketing/trust-badges-inline';
+import { DataPrivacyStrip } from '@/components/marketing/data-privacy-strip';
 import dynamic from 'next/dynamic';
 
 const PackageQuiz = dynamic(() => import('@/components/marketing/package-quiz'), { ssr: false });
@@ -233,6 +234,10 @@ export default function PricingPage() {
 
       <PricingViewToggle individual={<Pricing />} />
 
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <DataPrivacyStrip className="mt-8" />
+      </div>
+
       <PackageQuiz />
 
       <TrustBadges />
@@ -367,6 +372,7 @@ export default function PricingPage() {
               Get your headshots from {BASE_PRICE_DISPLAY}
             </Link>
             <TrustBadgesInline className="mt-4" />
+            <DataPrivacyStrip className="mx-auto mt-6 max-w-3xl" />
           </div>
         </div>
       </section>

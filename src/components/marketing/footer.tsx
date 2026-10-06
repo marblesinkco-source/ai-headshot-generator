@@ -42,6 +42,7 @@ const resourceLinks: FooterLink[] = [
   { label: 'Use Cases', href: '/use-cases' },
   { label: 'For Students', href: '/students' },
   { label: 'For Teams', href: '/for-teams' },
+  { label: 'Team Use Cases', href: '/teams' },
   { label: 'Headshot Sizes', href: '/headshot-sizes' },
   { label: 'Developer API', href: '/developer-api' },
 ];
