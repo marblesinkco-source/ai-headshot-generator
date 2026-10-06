@@ -99,6 +99,18 @@ const UseCaseChips = dynamic(
   () => import('@/components/marketing/use-case-chips').then((m) => m.UseCaseChips),
   { loading: () => <SectionSkeleton height="h-[100px]" /> }
 );
+const ProfessionChips = dynamic(
+  () => import('@/components/marketing/profession-chips').then((m) => m.ProfessionChips),
+  { loading: () => <SectionSkeleton height="h-[80px]" /> }
+);
+const ManyLooksSection = dynamic(
+  () => import('@/components/marketing/many-looks-section').then((m) => m.ManyLooksSection),
+  { loading: () => <SectionSkeleton height="h-[600px] md:h-[500px]" /> }
+);
+const FreeToolsShowcase = dynamic(
+  () => import('@/components/marketing/free-tools-showcase').then((m) => ({ default: m.FreeToolsShowcase })),
+  { loading: () => <SectionSkeleton height="h-[500px] md:h-[400px]" /> }
+);
 // Fixed-position mobile bar: no skeleton needed
 const StickyCTA = dynamic(
   () => import('@/components/marketing/sticky-cta').then((m) => m.StickyCTA)
@@ -124,6 +136,9 @@ export default function LandingPage() {
       {/* 3.5. Before / After Comparison — proof right after hero */}
       <BeforeAfterShowcase />
 
+      {/* 3.7. Profession Chips — quick navigation by role */}
+      <ProfessionChips />
+
       {/* 4. Why TailorPic — differentiators early */}
       <WhyTailorPic />
 
@@ -135,6 +150,9 @@ export default function LandingPage() {
 
       {/* 6. Style & Customization Preview */}
       <StyleConfigurator />
+
+      {/* 6.5. One Photo, Many Looks — occasion-based gallery */}
+      <ManyLooksSection />
 
       {/* 7.5. Studio Comparison — AI vs Traditional */}
       <StudioComparisonV2 />
@@ -156,6 +174,9 @@ export default function LandingPage() {
 
       {/* 10.8. Package Quiz — recommendation before plans */}
       <PackageQuiz />
+
+      {/* 10.9. Free Tools Showcase — cross-sell free tools */}
+      <FreeToolsShowcase />
 
       {/* 11. Pricing Overview */}
       <Pricing />
