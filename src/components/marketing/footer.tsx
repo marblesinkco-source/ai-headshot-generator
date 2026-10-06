@@ -11,8 +11,10 @@ const productLinks: FooterLink[] = [
   { label: 'How It Works', href: '/how-it-works' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Samples', href: '/samples' },
+  { label: 'Before & After', href: '/before-after' },
   { label: 'Technology', href: '/technology' },
   { label: 'Quality Promise', href: '/guarantee' },
+  { label: 'Gift Cards', href: '/gift-cards' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Blog', href: '/blog' },
 ];

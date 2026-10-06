@@ -239,6 +239,14 @@
       "dependencies": ["feat-AB"],
       "status": "done",
       "evidence": "Dead code temizlendi (StudioComparison/AIComparison unused imports homepage'den kaldırıldı, testimonials.tsx silindi). Mega menü footer etiketi 'View All Pricing' → 'View All Photo Types' düzeltildi. Blog 30+ gerçek post içeriyor. Deploy: daebfa2, live doğrulandı."
+    },
+    {
+      "id": "feat-AD",
+      "name": "Phase AD — Competitor Feature Gap Implementation",
+      "description": "6 new pages: Team Headshot ROI Calculator, What to Wear Guide, Trust Center, Selfie Guide, LinkedIn Headline Generator, Headshot Size Guide. All deployed and verified.",
+      "dependencies": ["feat-AC"],
+      "status": "done",
+      "evidence": "Commit 4f64f4b, CI PASS, Vercel PASS, live site verified"
     }
   ]
 }
