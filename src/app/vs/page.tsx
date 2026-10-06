@@ -175,7 +175,7 @@ export default function VsIndexPage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
               {total} comparisons
             </p>
-            <h1 className="mt-4 font-display text-5xl tracking-tight text-tp-ink sm:text-6xl lg:text-7xl">
+            <h1 className="mt-4 font-display font-normal text-5xl tracking-tight text-tp-ink sm:text-6xl lg:text-7xl">
               TailorPic vs the alternatives
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-muted">
@@ -209,7 +209,7 @@ export default function VsIndexPage() {
         <section className="bg-white py-16 md:py-24">
           <div className="mx-auto max-w-6xl px-4">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="font-display text-3xl text-tp-ink sm:text-4xl md:text-5xl">
+              <h2 className="font-display font-normal text-3xl text-tp-ink sm:text-4xl md:text-5xl">
                 Why consider TailorPic
               </h2>
               <p className="mt-4 text-tp-muted">
@@ -226,7 +226,7 @@ export default function VsIndexPage() {
                   <span className="flex h-11 w-11 items-center justify-center rounded-tp-button bg-tp-black text-tp-bronze">
                     <d.icon className="h-5 w-5" aria-hidden="true" />
                   </span>
-                  <h3 className="mt-4 font-display text-2xl text-tp-ink">{d.title}</h3>
+                  <h3 className="mt-4 font-display font-normal text-2xl text-tp-ink">{d.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">{d.body}</p>
                 </li>
               ))}
@@ -236,7 +236,7 @@ export default function VsIndexPage() {
 
         <section className="bg-tp-black py-16 md:py-24">
           <div className="mx-auto max-w-3xl px-4 text-center">
-            <h2 className="font-display text-3xl text-white sm:text-4xl md:text-5xl">
+            <h2 className="font-display font-normal text-3xl text-white sm:text-4xl md:text-5xl">
               See the difference with your own photos
             </h2>
             <p className="mt-4 text-tp-beige/70">

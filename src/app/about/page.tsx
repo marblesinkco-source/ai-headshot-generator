@@ -315,7 +315,7 @@ export default function AboutPage() {
                   className="rounded-tp-card border border-tp-line bg-tp-paper p-6"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="font-display text-4xl text-tp-bronze-ink">{i + 1}</span>
+                    <span className="font-display font-normal text-4xl text-tp-bronze-ink">{i + 1}</span>
                     <Icon className="h-5 w-5 text-tp-bronze-ink" />
                   </div>
                   <h3 className="mt-4 text-base font-semibold text-tp-ink">{step.title}</h3>

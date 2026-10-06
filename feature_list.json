@@ -279,6 +279,14 @@
       "dependencies": ["feat-AG"],
       "status": "done",
       "evidence": "Commit b9e369e. Photo Checklist at /tools/photo-checklist: 16 checks, progress bar, 3 status bands. PFP Maker at /tools/pfp-maker: 7 platform presets, circular crop, zoom, drag-reposition, download as PNG. Both client-side only, no API. Sitemap updated (+2 entries). CI PASS, Vercel PASS. Live verified: /tools/photo-checklist ✓, /tools/pfp-maker ✓."
+    },
+    {
+      "id": "feat-AI",
+      "name": "Phase AI — Before/After Enhancement & Tools Index",
+      "description": "Before/After sayfasına 6 interaktif slider galerisi + FAQ + FAQPage JSON-LD, tools index'e 3 yeni araç eklenmesi.",
+      "dependencies": ["feat-AH"],
+      "status": "done",
+      "evidence": "Commits: bb0f9c2 (tools index +3 tools), c93864a (before-after gallery: 6 ComparisonSlider, 5 FAQ, FAQPage schema). CI PASS, Vercel PASS. Live verified: /before-after ✓, /tools ✓."
     }
   ]
 }

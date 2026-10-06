@@ -220,7 +220,7 @@ export default function ApiPage() {
               <Terminal className="h-3.5 w-3.5" />
               Developer API
             </span>
-            <h1 className="font-display text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
+            <h1 className="font-display font-normal text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
               Build with AI <span className="text-tp-bronze">Headshots</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/80">
@@ -257,7 +257,7 @@ export default function ApiPage() {
                 <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-tp-bronze">
                   Quick Start
                 </span>
-                <h2 className="font-display text-3xl text-white sm:text-4xl">
+                <h2 className="font-display font-normal text-3xl text-white sm:text-4xl">
                   A few lines of code
                 </h2>
                 <p className="mt-4 leading-relaxed text-tp-beige/70">
@@ -309,7 +309,7 @@ export default function ApiPage() {
         <section className="border-b border-tp-line bg-white py-20 sm:py-28">
           <div className="mx-auto max-w-6xl px-4">
             <div className="text-center">
-              <h2 className="font-display text-3xl text-tp-ink sm:text-4xl">
+              <h2 className="font-display font-normal text-3xl text-tp-ink sm:text-4xl">
                 What You Can Build
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-tp-muted">
@@ -325,7 +325,7 @@ export default function ApiPage() {
                   <div className="flex h-11 w-11 items-center justify-center rounded-tp-button bg-tp-bronze/10 transition-colors group-hover:bg-tp-bronze/20">
                     <item.icon className="h-5 w-5 text-tp-bronze-ink" />
                   </div>
-                  <h3 className="mt-5 font-display text-lg text-tp-ink">
+                  <h3 className="mt-5 font-display font-normal text-lg text-tp-ink">
                     {item.title}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">
@@ -341,7 +341,7 @@ export default function ApiPage() {
         <section className="border-b border-tp-line bg-tp-paper py-20 sm:py-28">
           <div className="mx-auto max-w-6xl px-4">
             <div className="text-center">
-              <h2 className="font-display text-3xl text-tp-ink sm:text-4xl">
+              <h2 className="font-display font-normal text-3xl text-tp-ink sm:text-4xl">
                 How It Works
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-tp-muted">
@@ -366,7 +366,7 @@ export default function ApiPage() {
                   <p className="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-tp-bronze-ink">
                     Step {step.number}
                   </p>
-                  <h3 className="mt-2 font-display text-xl text-tp-ink">
+                  <h3 className="mt-2 font-display font-normal text-xl text-tp-ink">
                     {step.title}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-tp-muted">
@@ -382,7 +382,7 @@ export default function ApiPage() {
         <section className="border-b border-tp-line bg-white py-20 sm:py-28">
           <div className="mx-auto max-w-6xl px-4">
             <div className="text-center">
-              <h2 className="font-display text-3xl text-tp-ink sm:text-4xl">
+              <h2 className="font-display font-normal text-3xl text-tp-ink sm:text-4xl">
                 Planned API Features
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-tp-muted">
@@ -400,7 +400,7 @@ export default function ApiPage() {
                     <feature.icon className="h-5 w-5 text-tp-bronze-ink" />
                   </div>
                   <div>
-                    <h3 className="font-display text-lg text-tp-ink">
+                    <h3 className="font-display font-normal text-lg text-tp-ink">
                       {feature.title}
                     </h3>
                     <p className="mt-1.5 text-sm leading-relaxed text-tp-muted">
@@ -417,7 +417,7 @@ export default function ApiPage() {
         <section className="border-b border-tp-line bg-tp-paper py-20 sm:py-28">
           <div className="mx-auto max-w-6xl px-4">
             <div className="text-center">
-              <h2 className="font-display text-3xl text-tp-ink sm:text-4xl">
+              <h2 className="font-display font-normal text-3xl text-tp-ink sm:text-4xl">
                 Pricing Plans
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-tp-muted">
@@ -439,10 +439,10 @@ export default function ApiPage() {
                       Recommended
                     </span>
                   )}
-                  <h3 className="font-display text-xl text-tp-ink">
+                  <h3 className="font-display font-normal text-xl text-tp-ink">
                     {plan.name}
                   </h3>
-                  <p className="mt-3 font-display text-2xl text-tp-bronze-ink">
+                  <p className="mt-3 font-display font-normal text-2xl text-tp-bronze-ink">
                     {plan.price}
                   </p>
                   <p className="mt-2 text-sm text-tp-muted">
@@ -476,7 +476,7 @@ export default function ApiPage() {
             className="pointer-events-none absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-tp-bronze/30 to-transparent"
           />
           <div className="mx-auto max-w-3xl px-4 text-center">
-            <h2 className="font-display text-3xl text-white sm:text-4xl">
+            <h2 className="font-display font-normal text-3xl text-white sm:text-4xl">
               Get API Access
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige/80">

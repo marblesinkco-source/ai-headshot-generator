@@ -90,7 +90,7 @@ export default function Page() {
       <section className="px-4 pb-10 pt-16 sm:px-6 md:pt-24">
         <div className="mx-auto max-w-3xl text-center">
           <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-tp-bronze-ink">Free tool</p>
-          <h1 className="font-display text-4xl leading-tight text-tp-ink sm:text-5xl md:text-6xl">Free Resume Photo Checker</h1>
+          <h1 className="font-display font-normal text-4xl leading-tight text-tp-ink sm:text-5xl md:text-6xl">Free Resume Photo Checker</h1>
           <p className="mx-auto mt-5 max-w-2xl text-base text-tp-muted sm:text-lg">Upload your photo to check if it's professional enough for your resume.</p>
         </div>
         <div className="mx-auto mt-10 max-w-2xl">
@@ -102,7 +102,7 @@ export default function Page() {
 
       <section className="px-4 py-12 sm:px-6">
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-center font-display text-3xl text-tp-ink sm:text-4xl">What we check</h2>
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">What we check</h2>
           <ul className="mt-8 space-y-3">
             {checks.map((c) => (
               <li key={c.title} className="flex items-start gap-4 rounded-tp-card border border-tp-line bg-white p-5">
@@ -120,7 +120,7 @@ export default function Page() {
 
       <section className="px-4 py-12 sm:px-6">
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-center font-display text-3xl text-tp-ink sm:text-4xl">Frequently asked questions</h2>
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Frequently asked questions</h2>
           <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
             {faqs.map((f) => (
               <details key={f.q} className="group p-5">
@@ -137,7 +137,7 @@ export default function Page() {
 
       <section className="px-4 pb-20 pt-6 sm:px-6">
         <div className="mx-auto max-w-3xl rounded-tp-dialog bg-tp-ink px-6 py-12 text-center sm:px-10">
-          <h2 className="font-display text-3xl text-tp-paper sm:text-4xl">Skip the guesswork</h2>
+          <h2 className="font-display font-normal text-3xl text-tp-paper sm:text-4xl">Skip the guesswork</h2>
           <p className="mx-auto mt-3 max-w-xl text-sm text-tp-beige sm:text-base">Get a headshot that passes every check, backed by our satisfaction guarantee.</p>
           <Link href={ctaHref} className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'mt-7 bg-tp-bronze text-tp-black hover:bg-tp-beige')}>
             Get a guaranteed professional headshot with TailorPic →

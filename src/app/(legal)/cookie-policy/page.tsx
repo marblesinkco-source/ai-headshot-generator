@@ -79,7 +79,7 @@ export default function CookiePolicyPage() {
           { name: 'Cookie Policy', url: `${siteConfig.url}/cookie-policy` },
         ]}
       />
-      <h1 className="font-display">Cookie Policy</h1>
+      <h1 className="font-display font-normal">Cookie Policy</h1>
       <p className="lead">Last updated: October 1, 2026</p>
 
       <p>
@@ -91,7 +91,7 @@ export default function CookiePolicyPage() {
         time.
       </p>
 
-      <h2 className="font-display">What Are Cookies</h2>
+      <h2 className="font-display font-normal">What Are Cookies</h2>
       <p>
         Cookies are small text files placed on your device when you visit a
         website. Cookies set by us are &quot;first-party cookies&quot;; cookies
@@ -100,7 +100,7 @@ export default function CookiePolicyPage() {
         pieces of data in your browser.
       </p>
 
-      <h2 className="font-display">Types of Cookies We Use</h2>
+      <h2 className="font-display font-normal">Types of Cookies We Use</h2>
 
       <h3>Essential</h3>
       <p>
@@ -132,7 +132,7 @@ export default function CookiePolicyPage() {
         update this policy and ask for your consent first.
       </p>
 
-      <h2 className="font-display">Cookies and Storage We Use</h2>
+      <h2 className="font-display font-normal">Cookies and Storage We Use</h2>
       <div className="not-prose overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
@@ -163,7 +163,7 @@ export default function CookiePolicyPage() {
         </table>
       </div>
 
-      <h2 className="font-display">Third-Party Services</h2>
+      <h2 className="font-display font-normal">Third-Party Services</h2>
       <ul>
         <li>
           <strong>Google Analytics</strong> &mdash; Loaded only with your consent
@@ -192,7 +192,7 @@ export default function CookiePolicyPage() {
         </li>
       </ul>
 
-      <h2 className="font-display">How to Manage Your Choices</h2>
+      <h2 className="font-display font-normal">How to Manage Your Choices</h2>
       <p>
         When you first visit, our banner lets you accept all, reject all, or
         customize your preferences. Your choice is saved in localStorage under{' '}
@@ -224,7 +224,7 @@ export default function CookiePolicyPage() {
         .
       </p>
 
-      <h2 className="font-display">Your Rights Under GDPR</h2>
+      <h2 className="font-display font-normal">Your Rights Under GDPR</h2>
       <p>
         If you are in the European Economic Area or the United Kingdom, you have
         the right to access, correct, or delete your personal data, and to
@@ -233,13 +233,13 @@ export default function CookiePolicyPage() {
         withdrawal.
       </p>
 
-      <h2 className="font-display">Changes to This Policy</h2>
+      <h2 className="font-display font-normal">Changes to This Policy</h2>
       <p>
         We may update this policy as our services or legal requirements change.
         We will update the &quot;Last updated&quot; date above when we do.
       </p>
 
-      <h2 className="font-display">Contact Us</h2>
+      <h2 className="font-display font-normal">Contact Us</h2>
       <p>
         Questions about our use of cookies? Email{' '}
         <a href="mailto:support@tailorpic.com">support@tailorpic.com</a>.

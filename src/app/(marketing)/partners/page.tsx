@@ -199,7 +199,7 @@ export default function PartnersPage() {
             <span className="mb-4 inline-block rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-4 py-1.5 text-sm font-medium tracking-wide text-tp-bronze">
               Partner Program
             </span>
-            <h1 className="font-display text-4xl italic leading-tight text-tp-paper sm:text-5xl lg:text-6xl">
+            <h1 className="font-display font-normal text-4xl italic leading-tight text-tp-paper sm:text-5xl lg:text-6xl">
               Partner with{' '}
               <span className="text-tp-bronze">TailorPic</span>
             </h1>
@@ -232,7 +232,7 @@ export default function PartnersPage() {
           className="bg-tp-paper py-20 sm:py-28"
         >
           <div className="mx-auto max-w-5xl px-4">
-            <h2 className="font-display text-center text-3xl italic text-tp-ink sm:text-4xl">
+            <h2 className="font-display font-normal text-center text-3xl italic text-tp-ink sm:text-4xl">
               Choose Your Partnership
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-center text-tp-muted">
@@ -279,7 +279,7 @@ export default function PartnersPage() {
         {/* ── Benefits ── */}
         <section className="border-y border-tp-line bg-tp-beige/20 py-20 sm:py-28">
           <div className="mx-auto max-w-5xl px-4">
-            <h2 className="font-display text-center text-3xl italic text-tp-ink sm:text-4xl">
+            <h2 className="font-display font-normal text-center text-3xl italic text-tp-ink sm:text-4xl">
               Why Partner With Us
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-center text-tp-muted">
@@ -310,7 +310,7 @@ export default function PartnersPage() {
         {/* ── How It Works ── */}
         <section className="bg-tp-paper py-20 sm:py-28">
           <div className="mx-auto max-w-5xl px-4">
-            <h2 className="font-display text-center text-3xl italic text-tp-ink sm:text-4xl">
+            <h2 className="font-display font-normal text-center text-3xl italic text-tp-ink sm:text-4xl">
               How It Works
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-center text-tp-muted">
@@ -346,7 +346,7 @@ export default function PartnersPage() {
         <section className="border-t border-tp-line bg-white py-20 sm:py-28">
           <div className="mx-auto max-w-3xl px-4">
             <div className="mb-12 text-center">
-              <h2 className="font-display text-3xl italic text-tp-ink sm:text-4xl">
+              <h2 className="font-display font-normal text-3xl italic text-tp-ink sm:text-4xl">
                 Partner Program FAQ
               </h2>
               <p className="mx-auto mt-4 max-w-lg text-tp-muted">
@@ -375,7 +375,7 @@ export default function PartnersPage() {
         {/* ── CTA ── */}
         <section className="bg-tp-black py-20 sm:py-28">
           <div className="mx-auto max-w-3xl px-4 text-center">
-            <h2 className="font-display text-3xl italic text-tp-paper sm:text-4xl">
+            <h2 className="font-display font-normal text-3xl italic text-tp-paper sm:text-4xl">
               Apply to the Partner Program
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-tp-beige/70">

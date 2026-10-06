@@ -45,7 +45,7 @@ export function ROICalculator({
     <section className="py-16 sm:py-20">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="rounded-tp-card border border-tp-line bg-tp-paper p-6 sm:p-10">
-          <h2 className="font-display text-2xl sm:text-3xl text-tp-ink text-center">
+          <h2 className="font-display font-normal text-2xl sm:text-3xl text-tp-ink text-center">
             Calculate Your Savings
           </h2>
 
@@ -55,7 +55,7 @@ export function ROICalculator({
               <label htmlFor="roi-team-size" className="text-sm font-medium text-tp-ink">
                 Team size
               </label>
-              <span className="font-display text-2xl text-tp-ink" aria-live="polite">
+              <span className="font-display font-normal text-2xl text-tp-ink" aria-live="polite">
                 {teamSize} {teamSize === 1 ? 'person' : 'people'}
               </span>
             </div>
@@ -121,7 +121,7 @@ export function ROICalculator({
                 <Camera className="h-4 w-4" aria-hidden="true" />
                 Traditional Photoshoot
               </div>
-              <p className="mt-3 font-display text-3xl text-tp-ink">{formatUSD(traditional)}</p>
+              <p className="mt-3 font-display font-normal text-3xl text-tp-ink">{formatUSD(traditional)}</p>
               <p className="mt-1 text-xs text-tp-muted">{formatUSD(TRADITIONAL_PER_PERSON)} per person</p>
             </div>
             <div className="rounded-tp-card border border-tp-bronze/40 bg-tp-bronze/10 p-5">
@@ -129,7 +129,7 @@ export function ROICalculator({
                 <Sparkles className="h-4 w-4" aria-hidden="true" />
                 TailorPic
               </div>
-              <p className="mt-3 font-display text-3xl text-tp-ink">{formatUSD(tailorpicCost)}</p>
+              <p className="mt-3 font-display font-normal text-3xl text-tp-ink">{formatUSD(tailorpicCost)}</p>
               <p className="mt-1 text-xs text-tp-muted">{formatUSD(perPerson)} per person</p>
             </div>
           </div>
@@ -137,7 +137,7 @@ export function ROICalculator({
           {/* Savings */}
           <div className="mt-8 rounded-tp-card bg-tp-black p-6 text-center">
             <p className="text-sm text-tp-beige/70">Your estimated savings</p>
-            <p className="mt-2 font-display text-5xl sm:text-6xl text-tp-bronze">
+            <p className="mt-2 font-display font-normal text-5xl sm:text-6xl text-tp-bronze">
               {formatUSD(savings)}
             </p>
             <p className="mt-2 text-sm text-tp-beige/70">

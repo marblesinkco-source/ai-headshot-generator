@@ -536,7 +536,7 @@ export default function PricingComparisonPage() {
                   <h3 className="text-lg font-semibold text-tp-ink">
                     {pkg.name}
                   </h3>
-                  <p className="font-display mt-2 text-3xl text-tp-bronze-ink">
+                  <p className="font-display font-normal mt-2 text-3xl text-tp-bronze-ink">
                     {formatPrice(pkg.price)}
                   </p>
                   <p className="mt-1 text-sm text-tp-muted">
@@ -567,7 +567,7 @@ export default function PricingComparisonPage() {
             </div>
 
             <div className="mt-12 rounded-tp-card border border-tp-line bg-white p-6 sm:p-8">
-              <h3 className="font-display text-xl text-tp-ink sm:text-2xl">
+              <h3 className="font-display font-normal text-xl text-tp-ink sm:text-2xl">
                 Traditional Studio Comparison
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-tp-muted">

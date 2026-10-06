@@ -152,7 +152,7 @@ export default function IntegrationsPage() {
             <span className="mb-4 inline-block rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-4 py-1.5 text-sm font-medium tracking-wide text-tp-bronze">
               Planned Integrations
             </span>
-            <h1 className="font-display text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
+            <h1 className="font-display font-normal text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
               Integrations &amp; <span className="text-tp-bronze">Partnerships</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige/80">
@@ -167,7 +167,7 @@ export default function IntegrationsPage() {
         <section className="bg-white py-20 sm:py-28">
           <div className="mx-auto max-w-6xl px-4">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="font-display text-3xl text-tp-ink sm:text-4xl">
+              <h2 className="font-display font-normal text-3xl text-tp-ink sm:text-4xl">
                 Where we want to connect
               </h2>
               <p className="mt-4 text-tp-muted">
@@ -191,7 +191,7 @@ export default function IntegrationsPage() {
                         Planned
                       </span>
                     </div>
-                    <h3 className="mt-5 font-display text-xl text-tp-ink">
+                    <h3 className="mt-5 font-display font-normal text-xl text-tp-ink">
                       {category.name}
                     </h3>
                     <p className="mt-1 text-sm font-medium text-tp-bronze-ink">
@@ -211,7 +211,7 @@ export default function IntegrationsPage() {
         <section className="bg-tp-paper py-20 sm:py-28">
           <div className="mx-auto max-w-5xl px-4">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="font-display text-3xl text-tp-ink sm:text-4xl">
+              <h2 className="font-display font-normal text-3xl text-tp-ink sm:text-4xl">
                 How integrations will work
               </h2>
               <p className="mt-4 text-tp-muted">
@@ -233,7 +233,7 @@ export default function IntegrationsPage() {
                     <p className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-tp-bronze-ink">
                       Step {step.number}
                     </p>
-                    <h3 className="mt-2 font-display text-xl text-tp-ink">
+                    <h3 className="mt-2 font-display font-normal text-xl text-tp-ink">
                       {step.title}
                     </h3>
                     <p className="mt-3 text-sm leading-relaxed text-tp-muted">
@@ -250,7 +250,7 @@ export default function IntegrationsPage() {
         <section className="bg-white py-20 sm:py-28">
           <div className="mx-auto max-w-6xl px-4">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="font-display text-3xl text-tp-ink sm:text-4xl">
+              <h2 className="font-display font-normal text-3xl text-tp-ink sm:text-4xl">
                 Partner with us
               </h2>
               <p className="mt-4 text-tp-muted">
@@ -270,7 +270,7 @@ export default function IntegrationsPage() {
                     <div className="flex h-11 w-11 items-center justify-center rounded-tp-button bg-tp-black text-tp-bronze">
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </div>
-                    <h3 className="mt-5 font-display text-xl text-tp-ink">
+                    <h3 className="mt-5 font-display font-normal text-xl text-tp-ink">
                       {type.title}
                     </h3>
                     <p className="mt-3 text-sm leading-relaxed text-tp-muted">
@@ -286,7 +286,7 @@ export default function IntegrationsPage() {
         {/* ── CTA ──────────────────────────────────────────────── */}
         <section className="bg-tp-black py-20 sm:py-24">
           <div className="mx-auto max-w-3xl px-4 text-center">
-            <h2 className="font-display text-3xl text-white sm:text-4xl">
+            <h2 className="font-display font-normal text-3xl text-white sm:text-4xl">
               Help shape what we build next
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige/80">

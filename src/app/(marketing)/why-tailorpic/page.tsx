@@ -307,7 +307,7 @@ export default function WhyTailorPicPage() {
                       aria-hidden="true"
                     />
                   </div>
-                  <p className="mt-4 font-display text-2xl text-tp-ink">
+                  <p className="mt-4 font-display font-normal text-2xl text-tp-ink">
                     {v.stat}
                   </p>
                   <h3 className="mt-1 text-lg font-semibold text-tp-ink">

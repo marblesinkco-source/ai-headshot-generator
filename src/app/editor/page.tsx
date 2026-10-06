@@ -187,7 +187,7 @@ export default function EditorIndexPage() {
           <p className="text-sm font-semibold uppercase tracking-wide text-tp-bronze-ink">
             AI-Powered Editing
           </p>
-          <h1 className="mt-3 font-display text-4xl italic tracking-tight text-tp-ink sm:text-6xl">
+          <h1 className="mt-3 font-display font-normal text-4xl italic tracking-tight text-tp-ink sm:text-6xl">
             AI Photo Editor
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-tp-muted sm:text-lg">
@@ -210,7 +210,7 @@ export default function EditorIndexPage() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-paper text-tp-bronze-ink">
                   <Icon className="h-6 w-6" />
                 </div>
-                <h2 className="mt-4 font-display text-xl text-tp-ink transition-colors group-hover:text-tp-bronze-ink">
+                <h2 className="mt-4 font-display font-normal text-xl text-tp-ink transition-colors group-hover:text-tp-bronze-ink">
                   {tool.name}
                 </h2>
                 <p className="mt-2 text-sm leading-relaxed text-tp-muted">{tool.description}</p>
@@ -225,7 +225,7 @@ export default function EditorIndexPage() {
 
       <section className="border-t border-tp-line bg-tp-paper">
         <div className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
-          <h2 className="font-display text-3xl text-tp-ink sm:text-4xl">
+          <h2 className="font-display font-normal text-3xl text-tp-ink sm:text-4xl">
             Skip the editing — get AI headshots
           </h2>
           <p className="mt-3 text-tp-muted">

@@ -196,7 +196,7 @@ export default function SecurityPage() {
               ['GDPR', 'Compliance tools built in'],
             ].map(([k, v]) => (
               <div key={k} className="rounded-tp-card border border-tp-line bg-white p-5 text-center">
-                <dt className="font-display text-2xl text-tp-ink sm:text-3xl">{k}</dt>
+                <dt className="font-display font-normal text-2xl text-tp-ink sm:text-3xl">{k}</dt>
                 <dd className="mt-1 text-xs text-tp-muted">{v}</dd>
               </div>
             ))}

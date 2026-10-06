@@ -130,7 +130,7 @@ export default function ReferralPage() {
             <Gift className="h-3.5 w-3.5" />
             Referral Program
           </div>
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-white leading-tight tracking-tight">
+          <h1 className="font-display font-normal text-4xl sm:text-5xl lg:text-6xl text-white leading-tight tracking-tight">
             Share TailorPic,
             <br className="hidden sm:block" />
             <span className="text-tp-bronze"> Get Rewarded</span>
@@ -163,7 +163,7 @@ export default function ReferralPage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
               Simple Process
             </p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               How It Works
             </h2>
             <p className="mt-4 text-tp-muted max-w-xl mx-auto">
@@ -200,7 +200,7 @@ export default function ReferralPage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
               Everyone Wins
             </p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               Benefits for Both of You
             </h2>
             <p className="mt-4 text-tp-muted max-w-xl mx-auto">
@@ -215,7 +215,7 @@ export default function ReferralPage() {
                 <Trophy className="h-3.5 w-3.5" />
                 For You
               </div>
-              <h3 className="text-xl font-display text-tp-ink mb-5">
+              <h3 className="text-xl font-display font-normal text-tp-ink mb-5">
                 Earn credits with every referral
               </h3>
               <ul className="space-y-4">
@@ -239,7 +239,7 @@ export default function ReferralPage() {
                 <Heart className="h-3.5 w-3.5" />
                 For Your Friend
               </div>
-              <h3 className="text-xl font-display text-tp-ink mb-5">
+              <h3 className="text-xl font-display font-normal text-tp-ink mb-5">
                 Save on professional headshots
               </h3>
               <ul className="space-y-4">
@@ -266,21 +266,21 @@ export default function ReferralPage() {
           <div className="rounded-tp-card border border-tp-line bg-tp-paper p-8 sm:p-12 text-center">
             <div className="flex items-center justify-center gap-6 sm:gap-10 mb-8">
               <div>
-                <p className="font-display text-3xl sm:text-4xl text-tp-ink">
+                <p className="font-display font-normal text-3xl sm:text-4xl text-tp-ink">
                   Unlimited
                 </p>
                 <p className="text-sm text-tp-muted mt-1">Referrals</p>
               </div>
               <div className="h-10 w-px bg-tp-line" />
               <div>
-                <p className="font-display text-3xl sm:text-4xl text-tp-ink">
+                <p className="font-display font-normal text-3xl sm:text-4xl text-tp-ink">
                   No Expiry
                 </p>
                 <p className="text-sm text-tp-muted mt-1">On Credits</p>
               </div>
               <div className="h-10 w-px bg-tp-line hidden sm:block" />
               <div className="hidden sm:block">
-                <p className="font-display text-3xl sm:text-4xl text-tp-ink">
+                <p className="font-display font-normal text-3xl sm:text-4xl text-tp-ink">
                   Both
                 </p>
                 <p className="text-sm text-tp-muted mt-1">Sides Earn</p>
@@ -302,7 +302,7 @@ export default function ReferralPage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
               Got Questions?
             </p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               Frequently Asked Questions
             </h2>
           </div>
@@ -332,7 +332,7 @@ export default function ReferralPage() {
         </div>
         <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <Gift className="h-10 w-10 text-tp-bronze mx-auto mb-6" />
-          <h2 className="font-display text-3xl sm:text-4xl text-white">
+          <h2 className="font-display font-normal text-3xl sm:text-4xl text-white">
             Ready to Start Referring?
           </h2>
           <p className="mt-5 text-lg text-tp-beige/60 max-w-xl mx-auto">

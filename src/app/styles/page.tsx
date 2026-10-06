@@ -142,7 +142,7 @@ function StyleCard({ style, featured = false }: { style: PhotoStyle; featured?: 
         featured ? 'border-tp-bronze' : 'border-tp-line'
       }`}
     >
-      <h3 className="font-display text-2xl text-tp-ink">{style.name}</h3>
+      <h3 className="font-display font-normal text-2xl text-tp-ink">{style.name}</h3>
       <p className="mt-2 text-sm leading-relaxed text-tp-muted">{style.description}</p>
       {useCase && (
         <p className="mt-4 rounded-tp-button bg-tp-paper px-3 py-2 text-sm text-tp-ink">
@@ -212,7 +212,7 @@ export default function StylesPage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
               Photo Styles
             </p>
-            <h1 className="mt-3 font-display text-4xl tracking-tight text-tp-ink sm:text-5xl">
+            <h1 className="mt-3 font-display font-normal text-4xl tracking-tight text-tp-ink sm:text-5xl">
               Choose Your Perfect Headshot Style
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
@@ -248,7 +248,7 @@ export default function StylesPage() {
                 <p className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
                   <Sparkles className="h-4 w-4" aria-hidden="true" /> Most Popular Styles
                 </p>
-                <h2 className="mt-2 font-display text-3xl text-tp-ink sm:text-4xl">
+                <h2 className="mt-2 font-display font-normal text-3xl text-tp-ink sm:text-4xl">
                   Start with a crowd favorite
                 </h2>
                 <p className="mt-3 text-tp-muted">
@@ -273,7 +273,7 @@ export default function StylesPage() {
         <section key={group.id} id={group.id} className="scroll-mt-24 py-12">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <div className="mb-8 max-w-2xl">
-              <h2 className="font-display text-3xl text-tp-ink sm:text-4xl">{group.title}</h2>
+              <h2 className="font-display font-normal text-3xl text-tp-ink sm:text-4xl">{group.title}</h2>
               <p className="mt-2 text-tp-muted">{group.blurb}</p>
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -282,7 +282,7 @@ export default function StylesPage() {
               ))}
             </div>
             <div className="mt-8 flex flex-col items-start justify-between gap-4 rounded-tp-card border border-tp-line bg-white p-6 sm:flex-row sm:items-center">
-              <p className="font-display text-xl text-tp-ink">
+              <p className="font-display font-normal text-xl text-tp-ink">
                 Like a {group.title.toLowerCase()} look? Create yours from a few selfies.
               </p>
               <CtaButton>Get my headshots</CtaButton>
@@ -294,7 +294,7 @@ export default function StylesPage() {
       <section id="cant-decide" className="scroll-mt-24 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-tp-card bg-tp-black p-8 text-center sm:p-12">
-            <h2 className="font-display text-3xl text-tp-paper sm:text-4xl">Can&apos;t decide?</h2>
+            <h2 className="font-display font-normal text-3xl text-tp-paper sm:text-4xl">Can&apos;t decide?</h2>
             <p className="mx-auto mt-4 max-w-2xl text-tp-beige">
               You do not have to pick just one. Different places call for different looks, so try
               a few styles and keep your favorites.
@@ -308,7 +308,7 @@ export default function StylesPage() {
                   >
                     <Link
                       href={`/styles/${style.slug}`}
-                      className="font-display text-xl text-tp-paper underline-offset-4 hover:underline"
+                      className="font-display font-normal text-xl text-tp-paper underline-offset-4 hover:underline"
                     >
                       {style.name}
                     </Link>

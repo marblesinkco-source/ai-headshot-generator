@@ -203,7 +203,7 @@ export default function AffiliatePage() {
               <p className="text-sm font-medium uppercase tracking-widest text-tp-bronze">
                 Your commission
               </p>
-              <p className="mt-3 font-display text-6xl text-tp-bronze sm:text-7xl">
+              <p className="mt-3 font-display font-normal text-6xl text-tp-bronze sm:text-7xl">
                 Competitive
               </p>
               <p className="mt-3 text-tp-beige/80">
@@ -212,7 +212,7 @@ export default function AffiliatePage() {
             </div>
             <div className="mx-auto mt-6 grid max-w-3xl gap-6 sm:grid-cols-3">
               <div className="rounded-tp-card border border-tp-line bg-tp-paper p-6 text-center">
-                <span className="font-display text-3xl text-tp-bronze-ink">
+                <span className="font-display font-normal text-3xl text-tp-bronze-ink">
                   Competitive
                 </span>
                 <p className="mt-2 text-sm text-tp-muted">
@@ -220,7 +220,7 @@ export default function AffiliatePage() {
                 </p>
               </div>
               <div className="rounded-tp-card border border-tp-line bg-tp-paper p-6 text-center">
-                <span className="font-display text-3xl text-tp-bronze-ink">
+                <span className="font-display font-normal text-3xl text-tp-bronze-ink">
                   Monthly
                 </span>
                 <p className="mt-2 text-sm text-tp-muted">
@@ -228,7 +228,7 @@ export default function AffiliatePage() {
                 </p>
               </div>
               <div className="rounded-tp-card border border-tp-line bg-tp-paper p-6 text-center">
-                <span className="font-display text-3xl text-tp-bronze-ink">
+                <span className="font-display font-normal text-3xl text-tp-bronze-ink">
                   Real-Time
                 </span>
                 <p className="mt-2 text-sm text-tp-muted">

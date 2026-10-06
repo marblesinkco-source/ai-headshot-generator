@@ -266,7 +266,7 @@ export default function EnterprisePage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
               Why Teams Choose TailorPic
             </p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               Four Reasons to Switch
             </h2>
           </div>
@@ -293,7 +293,7 @@ export default function EnterprisePage() {
       <section className="bg-tp-paper py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-14">
-            <h2 className="font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               The Team Headshot Problem
             </h2>
             <p className="mt-4 text-lg text-tp-muted">
@@ -346,7 +346,7 @@ export default function EnterprisePage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
               Use Cases
             </p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               Built for How Teams Actually Work
             </h2>
             <p className="mt-3 text-tp-muted max-w-xl mx-auto">
@@ -382,7 +382,7 @@ export default function EnterprisePage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
               Enterprise Features
             </p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               Everything Your Organization Needs
             </h2>
           </div>
@@ -411,7 +411,7 @@ export default function EnterprisePage() {
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               How It Works for Teams
             </h2>
           </div>
@@ -439,7 +439,7 @@ export default function EnterprisePage() {
           <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze mb-3">
             Pricing
           </p>
-          <h2 className="font-display text-3xl sm:text-4xl text-white mb-4">
+          <h2 className="font-display font-normal text-3xl sm:text-4xl text-white mb-4">
             Team Pricing That Scales
           </h2>
           <p className="text-tp-beige/60 mb-10 max-w-xl mx-auto">
@@ -527,7 +527,7 @@ export default function EnterprisePage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
               Security &amp; Privacy
             </p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               Your Team&apos;s Photos Stay Private
             </h2>
             <p className="mt-3 text-tp-muted max-w-xl mx-auto">
@@ -574,7 +574,7 @@ export default function EnterprisePage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
               Implementation
             </p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               From First Call to Team Launch
             </h2>
             <p className="mt-3 text-tp-muted max-w-xl mx-auto">
@@ -590,7 +590,7 @@ export default function EnterprisePage() {
             ].map((s, i) => (
               <li key={s.title} className="relative rounded-tp-card border border-tp-line bg-tp-paper/50 p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-tp-black font-display text-lg text-tp-bronze">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-tp-black font-display font-normal text-lg text-tp-bronze">
                     {i + 1}
                   </span>
                   <s.icon className="h-5 w-5 text-tp-bronze" aria-hidden="true" />
@@ -609,7 +609,7 @@ export default function EnterprisePage() {
           <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
             ROI
           </p>
-          <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+          <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
             See What Your Team Could Save
           </h2>
           <p className="mt-3 text-tp-muted">
@@ -624,7 +624,7 @@ export default function EnterprisePage() {
       {/* FAQ */}
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl text-tp-ink sm:text-4xl">Frequently Asked Questions</h2>
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Frequently Asked Questions</h2>
           <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
             {enterpriseFaqs.map((f) => (
               <details key={f.question} className="group p-5">
@@ -643,7 +643,7 @@ export default function EnterprisePage() {
       <section className="bg-tp-black py-20 sm:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <Globe className="h-10 w-10 text-tp-bronze mx-auto mb-4" aria-hidden="true" />
-          <h2 className="font-display text-3xl sm:text-4xl text-white">
+          <h2 className="font-display font-normal text-3xl sm:text-4xl text-white">
             Ready to Upgrade Your Team&apos;s Image?
           </h2>
           <p className="mt-4 text-lg text-tp-beige/70 max-w-2xl mx-auto">

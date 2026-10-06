@@ -273,7 +273,7 @@ export default function HowItWorksPage() {
                       <Icon className="h-6 w-6 text-tp-bronze-ink" aria-hidden="true" />
                     </div>
                     <p className="mt-3 text-base font-semibold text-tp-ink">{t.label}</p>
-                    <p className="mt-1 font-display text-2xl italic text-tp-bronze-ink">{t.time}</p>
+                    <p className="mt-1 font-display font-normal text-2xl italic text-tp-bronze-ink">{t.time}</p>
                     <p className="mt-1 text-sm text-tp-muted">{t.note}</p>
                   </div>
                   {i < timeline.length - 1 && (
@@ -302,13 +302,13 @@ export default function HowItWorksPage() {
                 >
                   <span
                     aria-hidden="true"
-                    className="pointer-events-none absolute -right-2 -top-6 select-none font-display text-[10rem] italic leading-none text-tp-beige sm:text-[14rem]"
+                    className="pointer-events-none absolute -right-2 -top-6 select-none font-display font-normal text-[10rem] italic leading-none text-tp-beige sm:text-[14rem]"
                   >
                     {step.number}
                   </span>
                   <div className="relative flex flex-col gap-6 sm:flex-row sm:gap-10">
                     <div className="flex shrink-0 items-center gap-4 sm:flex-col">
-                      <div className="flex h-20 w-20 items-center justify-center rounded-full bg-tp-black font-display text-4xl italic text-tp-bronze sm:h-24 sm:w-24 sm:text-5xl">
+                      <div className="flex h-20 w-20 items-center justify-center rounded-full bg-tp-black font-display font-normal text-4xl italic text-tp-bronze sm:h-24 sm:w-24 sm:text-5xl">
                         {step.number}
                       </div>
                       <div className="flex h-14 w-14 items-center justify-center rounded-tp-card bg-tp-paper sm:h-16 sm:w-16">

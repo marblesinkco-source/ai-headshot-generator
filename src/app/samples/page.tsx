@@ -531,7 +531,7 @@ export default function SamplesPage() {
                   key={row.feature}
                   className="grid gap-2 border-b border-tp-line px-6 py-5 last:border-b-0 sm:grid-cols-[1fr_1.5fr_1.5fr] sm:gap-4"
                 >
-                  <span className="font-display text-lg text-tp-ink">{row.feature}</span>
+                  <span className="font-display font-normal text-lg text-tp-ink">{row.feature}</span>
                   <span className="flex items-start gap-2 text-sm text-tp-ink">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-tp-bronze-ink" />
                     {row.ours}

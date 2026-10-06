@@ -189,7 +189,7 @@ export default function SuccessStoriesPage() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#C9A98A_0%,transparent_50%)]" />
           </div>
           <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-            <h1 className="font-display text-4xl leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <h1 className="font-display font-normal text-4xl leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
               Use Cases by Industry
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
@@ -220,7 +220,7 @@ export default function SuccessStoriesPage() {
         <section className="bg-white py-16 sm:py-24">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="font-display text-3xl text-tp-ink sm:text-4xl">
+              <h2 className="font-display font-normal text-3xl text-tp-ink sm:text-4xl">
                 Common Headshot Challenges, Solved
               </h2>
               <p className="mt-4 text-tp-muted">
@@ -246,7 +246,7 @@ export default function SuccessStoriesPage() {
                         <Icon className="h-5 w-5" />
                       </span>
                       <div className="min-w-0">
-                        <p className="font-display text-lg text-tp-ink">
+                        <p className="font-display font-normal text-lg text-tp-ink">
                           {s.industry}
                         </p>
                       </div>
@@ -298,7 +298,7 @@ export default function SuccessStoriesPage() {
         <section className="bg-tp-paper py-16 sm:py-24">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="font-display text-3xl text-tp-ink sm:text-4xl">
+              <h2 className="font-display font-normal text-3xl text-tp-ink sm:text-4xl">
                 Why professionals choose {siteConfig.name}
               </h2>
               <p className="mt-4 text-tp-muted">
@@ -319,7 +319,7 @@ export default function SuccessStoriesPage() {
                       aria-hidden="true"
                     />
                   </div>
-                  <p className="font-display text-2xl text-tp-ink">{v.stat}</p>
+                  <p className="font-display font-normal text-2xl text-tp-ink">{v.stat}</p>
                   <p className="text-xs font-semibold uppercase tracking-wider text-tp-bronze">
                     {v.label}
                   </p>
@@ -335,7 +335,7 @@ export default function SuccessStoriesPage() {
         {/* CTA */}
         <section className="bg-tp-black py-16 sm:py-20">
           <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-            <h2 className="font-display text-3xl text-white sm:text-4xl">
+            <h2 className="font-display font-normal text-3xl text-white sm:text-4xl">
               Ready to Upgrade Your Professional Image?
             </h2>
             <p className="mt-4 text-tp-beige/60">

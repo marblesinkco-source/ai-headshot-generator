@@ -98,7 +98,7 @@ export function PricingViewToggle({ individual }: { individual: ReactNode }) {
         <section className="py-12 sm:py-16">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="font-display text-3xl text-tp-black sm:text-4xl">
+              <h2 className="font-display font-normal text-3xl text-tp-black sm:text-4xl">
                 Team headshots, priced per person
               </h2>
               <p className="mt-4 text-base text-tp-muted">
@@ -121,7 +121,7 @@ export function PricingViewToggle({ individual }: { individual: ReactNode }) {
                   )}
                   <h3 className="text-lg font-semibold text-tp-ink">{t.name}</h3>
                   <p className="mt-1 text-sm text-tp-muted">{t.size}</p>
-                  <p className="mt-6 font-display text-5xl text-tp-black">{t.price}</p>
+                  <p className="mt-6 font-display font-normal text-5xl text-tp-black">{t.price}</p>
                   <p className="mt-2 text-sm text-tp-muted">{t.unit}</p>
                   <Link
                     href={t.price === 'Custom' ? '/contact' : '/auth/register'}

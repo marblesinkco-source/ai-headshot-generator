@@ -15,6 +15,7 @@ const productLinks: FooterLink[] = [
   { label: 'Technology', href: '/technology' },
   { label: 'Quality Promise', href: '/guarantee' },
   { label: 'Gift Cards', href: '/gift-cards' },
+  { label: 'Changelog', href: '/changelog' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Blog', href: '/blog' },
 ];
@@ -45,6 +46,7 @@ const resourceLinks: FooterLink[] = [
   { label: 'Team Use Cases', href: '/teams' },
   { label: 'Headshot Sizes', href: '/headshot-sizes' },
   { label: 'Developer API', href: '/developer-api' },
+  { label: 'Integrations', href: '/integrations' },
 ];
 
 const companyLinks: FooterLink[] = [

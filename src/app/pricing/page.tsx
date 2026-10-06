@@ -135,7 +135,7 @@ const OG_DESCRIPTION =
   'Affordable AI photo packages for every need. Professional headshots, dating photos, pet portraits and more.';
 
 export const metadata: Metadata = {
-  title: { absolute: 'TailorPic Pricing: AI Headshots from $1.99' },
+  title: { absolute: `TailorPic Pricing: AI Headshots from ${BASE_PRICE_DISPLAY}` },
   description: `${siteConfig.name} pricing: AI photos from ${BASE_PRICE_DISPLAY}, no subscription. Choose a single package across 12 categories or save with credit packs.`,
   alternates: { canonical: '/pricing' },
   openGraph: generateOGMetadata({
@@ -182,7 +182,7 @@ export default function PricingPage() {
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
-          { name: 'TailorPic Pricing: AI Headshots from $1.99', url: `${siteConfig.url}/pricing` },
+          { name: `TailorPic Pricing: AI Headshots from ${BASE_PRICE_DISPLAY}`, url: `${siteConfig.url}/pricing` },
         ]}
       />
       <Header />
@@ -348,7 +348,7 @@ export default function PricingPage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2
             id="included-heading"
-            className="text-center font-display text-3xl text-tp-black sm:text-4xl"
+            className="text-center font-display text-3xl font-normal text-tp-black sm:text-4xl"
           >
             What&apos;s included
           </h2>

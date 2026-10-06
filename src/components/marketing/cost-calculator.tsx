@@ -30,7 +30,7 @@ export function CostCalculator({ className }: { className?: string }) {
     <section className={cn('py-16', className)}>
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl text-tp-black sm:text-4xl">
+          <h2 className="font-display font-normal text-3xl text-tp-black sm:text-4xl">
             What does a professional headshot really cost?
           </h2>
         </div>
@@ -83,7 +83,7 @@ export function CostCalculator({ className }: { className?: string }) {
         </div>
 
         <div className="mt-6 rounded-tp-card border border-tp-line bg-tp-paper p-6 text-center">
-          <p className="font-display text-3xl text-tp-bronze-ink sm:text-4xl">
+          <p className="font-display font-normal text-3xl text-tp-bronze-ink sm:text-4xl">
             Save up to {fmt(savings)}
           </p>
           <p className="mt-1 text-sm text-tp-muted">

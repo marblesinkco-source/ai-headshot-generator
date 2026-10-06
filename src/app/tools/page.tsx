@@ -134,7 +134,7 @@ export default function ToolsPage() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-brand text-tp-bronze">
               Free Tools
             </p>
-            <h1 className="font-display text-4xl italic text-tp-paper sm:text-5xl">
+            <h1 className="font-display font-normal text-4xl italic text-tp-paper sm:text-5xl">
               Free AI Photo Tools
             </h1>
             <p className="mt-4 text-lg text-tp-beige/80">
@@ -160,7 +160,7 @@ export default function ToolsPage() {
               <p className="text-xs font-semibold uppercase tracking-brand text-tp-bronze-ink">
                 Featured
               </p>
-              <h2 className="mt-1 font-display text-2xl text-tp-ink transition-colors group-hover:text-tp-bronze-ink">
+              <h2 className="mt-1 font-display font-normal text-2xl text-tp-ink transition-colors group-hover:text-tp-bronze-ink">
                 Free AI Headshot Generator
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-tp-muted">
@@ -193,7 +193,7 @@ export default function ToolsPage() {
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-tp-line bg-tp-paper/80 text-tp-bronze-ink">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <h2 className="font-display text-xl text-tp-ink group-hover:text-tp-bronze-ink transition-colors">
+                  <h2 className="font-display font-normal text-xl text-tp-ink group-hover:text-tp-bronze-ink transition-colors">
                     {tool.title}
                   </h2>
                   <p className="mt-2 text-sm leading-relaxed text-tp-muted">
@@ -224,7 +224,7 @@ export default function ToolsPage() {
         {/* CTA */}
         <section className="border-t border-tp-line bg-white py-16 text-center">
           <div className="mx-auto max-w-2xl px-4">
-            <h2 className="font-display text-3xl text-tp-ink sm:text-4xl">
+            <h2 className="font-display font-normal text-3xl text-tp-ink sm:text-4xl">
               Want Studio-Quality AI Headshots?
             </h2>
             <p className="mt-3 text-tp-muted">

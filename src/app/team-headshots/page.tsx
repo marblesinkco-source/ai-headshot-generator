@@ -149,7 +149,7 @@ export default function TeamHeadshotsPage() {
           </div>
           <h1 className="font-display font-normal text-4xl sm:text-5xl lg:text-6xl text-white leading-tight tracking-tight">
             Professional Headshots{' '}
-            <em className="text-tp-bronze not-italic font-display italic">for Your Team</em>
+            <em className="text-tp-bronze not-italic font-display font-normal italic">for Your Team</em>
           </h1>
           <p className="mt-5 text-lg text-tp-beige/70 max-w-2xl mx-auto leading-relaxed">
             One order, consistent results. Your team uploads selfies, and our AI
@@ -301,9 +301,9 @@ export default function TeamHeadshotsPage() {
                   tier.featured ? 'border-tp-bronze' : 'border-tp-line'
                 }`}
               >
-                <h3 className="font-display text-xl text-tp-ink">{tier.name}</h3>
+                <h3 className="font-display font-normal text-xl text-tp-ink">{tier.name}</h3>
                 <p className="mt-1 text-sm text-tp-muted">{tier.size}</p>
-                <p className="mt-5 font-display text-3xl text-tp-ink">
+                <p className="mt-5 font-display font-normal text-3xl text-tp-ink">
                   {tier.price}
                   {tier.unit && (
                     <span className="ml-1 text-sm font-sans text-tp-muted">{tier.unit}</span>
@@ -353,18 +353,18 @@ export default function TeamHeadshotsPage() {
           <div className="grid gap-5 md:grid-cols-2">
             <div className="rounded-tp-card border border-tp-line bg-white p-6 sm:p-8">
               <Camera className="h-6 w-6 text-tp-muted mb-3" />
-              <h3 className="font-display text-xl text-tp-ink">Studio photography</h3>
+              <h3 className="font-display font-normal text-xl text-tp-ink">Studio photography</h3>
               <p className="mt-1 text-sm text-tp-muted">For 10 people</p>
-              <p className="mt-4 font-display text-3xl text-tp-muted">$2,000-$5,000+</p>
+              <p className="mt-4 font-display font-normal text-3xl text-tp-muted">$2,000-$5,000+</p>
               <p className="mt-3 text-sm text-tp-muted leading-relaxed">
                 Typical market estimate. Requires scheduling a shoot day, travel, and coordinating everyone&apos;s availability.
               </p>
             </div>
             <div className="rounded-tp-card border border-tp-bronze bg-tp-black p-6 sm:p-8">
               <Sparkles className="h-6 w-6 text-tp-bronze mb-3" />
-              <h3 className="font-display text-xl text-white">TailorPic Team Plan</h3>
+              <h3 className="font-display font-normal text-xl text-white">TailorPic Team Plan</h3>
               <p className="mt-1 text-sm text-tp-beige/70">For 10 people at $39 each</p>
-              <p className="mt-4 font-display text-3xl text-tp-bronze">$390</p>
+              <p className="mt-4 font-display font-normal text-3xl text-tp-bronze">$390</p>
               <p className="mt-3 text-sm text-tp-beige/70 leading-relaxed">
                 Everyone uploads selfies from wherever they are. No scheduling, no travel.
               </p>
@@ -443,8 +443,8 @@ export default function TeamHeadshotsPage() {
                   plan.featured ? 'border-tp-bronze' : 'border-tp-line'
                 }`}
               >
-                <h3 className="font-display text-2xl text-tp-ink">{plan.name}</h3>
-                <p className="mt-4 font-display text-4xl text-tp-ink">{plan.price}</p>
+                <h3 className="font-display font-normal text-2xl text-tp-ink">{plan.name}</h3>
+                <p className="mt-4 font-display font-normal text-4xl text-tp-ink">{plan.price}</p>
                 <p className="mt-1 text-sm text-tp-muted">{plan.note}</p>
                 <ul className="mt-6 mb-8 space-y-3 flex-1">
                   {plan.rows.map((r) => (
@@ -530,7 +530,7 @@ export default function TeamHeadshotsPage() {
                     Representative scenario
                   </span>
                 </div>
-                <h3 className="font-display text-lg text-tp-ink">{s.title}</h3>
+                <h3 className="font-display font-normal text-lg text-tp-ink">{s.title}</h3>
                 <p className="mt-2 text-sm text-tp-muted leading-relaxed">{s.desc}</p>
               </div>
             ))}
@@ -592,7 +592,7 @@ export default function TeamHeadshotsPage() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-tp-button bg-tp-black mb-4">
                   <item.icon className="h-5 w-5 text-tp-bronze" />
                 </div>
-                <h3 className="font-display text-lg text-tp-ink">{item.title}</h3>
+                <h3 className="font-display font-normal text-lg text-tp-ink">{item.title}</h3>
                 <p className="mt-2 text-sm text-tp-muted leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -672,7 +672,7 @@ export default function TeamHeadshotsPage() {
             ].map((t) => (
               <div key={t.title} className="rounded-tp-card border border-tp-line bg-white p-6 text-center">
                 <t.icon className="h-6 w-6 text-tp-bronze-ink mx-auto mb-3" />
-                <h3 className="font-display text-lg text-tp-ink">{t.title}</h3>
+                <h3 className="font-display font-normal text-lg text-tp-ink">{t.title}</h3>
                 <p className="mt-2 text-sm text-tp-muted leading-relaxed">{t.desc}</p>
               </div>
             ))}

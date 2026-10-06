@@ -430,7 +430,7 @@ export default function GlossaryPage() {
                     key={t.term}
                     className="rounded-tp-card border border-tp-line bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
                   >
-                    <dt className="font-display text-xl text-tp-ink">{t.term}</dt>
+                    <dt className="font-display font-normal text-xl text-tp-ink">{t.term}</dt>
                     <dd className="mt-2 text-sm leading-relaxed text-tp-muted">
                       {t.definition}
                       {t.link && (

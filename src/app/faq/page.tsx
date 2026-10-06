@@ -51,7 +51,7 @@ export default function FAQPage() {
         <div className="pointer-events-none absolute inset-0 bg-grid" />
         <div className="pointer-events-none absolute -top-24 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-tp-bronze/10 blur-3xl" />
         <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 sm:py-24 lg:px-8">
-          <h1 className="font-display text-4xl tracking-tight text-tp-black sm:text-5xl">
+          <h1 className="font-display font-normal text-4xl tracking-tight text-tp-black sm:text-5xl">
             Frequently Asked{' '}
             <span className="bg-gradient-to-r from-tp-bronze-ink to-tp-bronze bg-clip-text text-transparent">
               Questions
@@ -82,7 +82,7 @@ export default function FAQPage() {
         <div className="mx-auto max-w-3xl space-y-14 px-4 sm:px-6 lg:px-8">
           {groups.map((g) => (
             <div key={g.category} id={slug(g.category)} className="scroll-mt-24">
-              <h2 className="font-display text-2xl text-tp-black sm:text-3xl">{g.category}</h2>
+              <h2 className="font-display font-normal text-2xl text-tp-black sm:text-3xl">{g.category}</h2>
               <div className="mt-6 divide-y divide-tp-line/50 rounded-tp-card border border-tp-line bg-white">
                 {g.items.map((faq) => (
                   <details key={faq.question} className="group">
@@ -114,7 +114,7 @@ export default function FAQPage() {
       {/* Still have questions CTA */}
       <section className="py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="font-display text-3xl text-tp-black">Still Have Questions?</h2>
+          <h2 className="font-display font-normal text-3xl text-tp-black">Still Have Questions?</h2>
           <p className="mt-4 text-tp-muted">
             Our support team is happy to help. Reach out and we aim to respond within 1 business day.
           </p>

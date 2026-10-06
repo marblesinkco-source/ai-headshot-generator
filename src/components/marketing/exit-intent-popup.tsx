@@ -167,7 +167,7 @@ export function ExitIntentPopup() {
           </p>
           <h2
             id="tp-exit-title"
-            className="font-display mt-3 text-3xl leading-tight text-tp-paper sm:text-4xl"
+            className="font-display font-normal mt-3 text-3xl leading-tight text-tp-paper sm:text-4xl"
           >
             Wait! Get <span className="text-tp-bronze">10% off</span> your first order
           </h2>

@@ -207,7 +207,7 @@ function SectionHeading({
       <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-bronze/15">
         <Icon className="h-6 w-6 text-tp-bronze-ink" />
       </div>
-      <h2 className="font-display text-3xl text-tp-ink sm:text-4xl">{title}</h2>
+      <h2 className="font-display font-normal text-3xl text-tp-ink sm:text-4xl">{title}</h2>
       <p className="mx-auto mt-3 max-w-xl text-tp-muted">{intro}</p>
     </div>
   );
@@ -239,7 +239,7 @@ export default function PhotoTipsPage() {
             <Camera className="h-3.5 w-3.5" />
             Photo Guide
           </div>
-          <h1 className="font-display text-4xl leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="font-display font-normal text-4xl leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
             How to Take the Perfect Photo for AI Headshots
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
@@ -265,7 +265,7 @@ export default function PhotoTipsPage() {
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 text-center">
-            <h2 className="font-display text-3xl text-tp-ink sm:text-4xl">
+            <h2 className="font-display font-normal text-3xl text-tp-ink sm:text-4xl">
               The Quick Do&apos;s and Don&apos;ts
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-tp-muted">
@@ -274,7 +274,7 @@ export default function PhotoTipsPage() {
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             <div className="rounded-tp-card border border-tp-line bg-white p-6 sm:p-8">
-              <h3 className="font-display text-2xl text-tp-ink">Do</h3>
+              <h3 className="font-display font-normal text-2xl text-tp-ink">Do</h3>
               <ul className="mt-5 space-y-4">
                 {dos.map((item) => (
                   <li key={item} className="flex items-start gap-3">
@@ -290,7 +290,7 @@ export default function PhotoTipsPage() {
               </ul>
             </div>
             <div className="rounded-tp-card border border-tp-line bg-white p-6 sm:p-8">
-              <h3 className="font-display text-2xl text-tp-ink">
+              <h3 className="font-display font-normal text-2xl text-tp-ink">
                 Don&apos;t
               </h3>
               <ul className="mt-5 space-y-4">
@@ -378,7 +378,7 @@ export default function PhotoTipsPage() {
       {/* ── CTA ── */}
       <section className="bg-tp-black py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="font-display text-3xl text-white sm:text-4xl">
+          <h2 className="font-display font-normal text-3xl text-white sm:text-4xl">
             Ready to create your headshots?
           </h2>
           <p className="mt-4 text-tp-beige/60">

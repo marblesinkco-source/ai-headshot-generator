@@ -266,7 +266,7 @@ function LoginContent() {
         />
 
         <div className="relative z-10 max-w-sm">
-          <h2 className="font-display text-3xl text-tp-paper leading-tight mb-8">
+          <h2 className="font-display font-normal text-3xl text-tp-paper leading-tight mb-8">
             Transform Your Photos with AI
           </h2>
 

@@ -60,7 +60,7 @@ export function VsDirectory({ groups }: { groups: VsGroup[] }) {
 
       {filtered.length === 0 ? (
         <div className="mx-auto mt-10 max-w-xl rounded-tp-card border border-tp-line bg-white p-8 text-center">
-          <p className="font-display text-2xl text-tp-ink">No comparison found for &ldquo;{query}&rdquo;</p>
+          <p className="font-display font-normal text-2xl text-tp-ink">No comparison found for &ldquo;{query}&rdquo;</p>
           <p className="mt-2 text-sm text-tp-muted">
             Try a shorter name, or clear the search to browse everything.
           </p>
@@ -77,7 +77,7 @@ export function VsDirectory({ groups }: { groups: VsGroup[] }) {
           {filtered.map((g) => (
             <section key={g.id} aria-labelledby={`vs-${g.id}`}>
               <div className="mb-6 max-w-2xl">
-                <h2 id={`vs-${g.id}`} className="font-display text-3xl text-tp-ink sm:text-4xl">
+                <h2 id={`vs-${g.id}`} className="font-display font-normal text-3xl text-tp-ink sm:text-4xl">
                   {g.title}
                 </h2>
                 <p className="mt-2 text-tp-muted">{g.blurb}</p>

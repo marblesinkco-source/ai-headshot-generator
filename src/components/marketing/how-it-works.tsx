@@ -60,7 +60,7 @@ export function HowItWorks() {
             <li key={step.number} className="scroll-fade-in relative flex flex-col items-stretch">
               <article className="relative h-full overflow-hidden rounded-tp-card border border-tp-line bg-tp-paper p-6 transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-tp-bronze hover:shadow-lg hover:shadow-tp-bronze/10 motion-reduce:transition-none motion-reduce:hover:translate-y-0 lg:p-8">
                 <span
-                  className="pointer-events-none absolute -right-2 -top-4 select-none font-display text-[110px] leading-none text-tp-beige/40 lg:text-[140px]"
+                  className="pointer-events-none absolute -right-2 -top-4 select-none font-display font-normal text-[110px] leading-none text-tp-beige/40 lg:text-[140px]"
                   aria-hidden="true"
                 >
                   {step.number}
@@ -68,7 +68,7 @@ export function HowItWorks() {
 
                 <div className="relative flex items-center gap-4">
                   <span
-                    className="flex h-14 w-14 lg:h-[72px] lg:w-[72px] shrink-0 items-center justify-center rounded-full bg-tp-ink font-display text-[30px] lg:text-[40px] leading-none text-tp-bronze"
+                    className="flex h-14 w-14 lg:h-[72px] lg:w-[72px] shrink-0 items-center justify-center rounded-full bg-tp-ink font-display font-normal text-[30px] lg:text-[40px] leading-none text-tp-bronze"
                     aria-hidden="true"
                   >
                     {step.number}

@@ -82,9 +82,9 @@ export default function EcommerceLandingPage() {
             <Image src={portrait(getIndustryVisual("ecommerce").heroPortraitId)} alt={getIndustryVisual("ecommerce").alt} width={20} height={20} className="h-5 w-5 rounded-full object-cover" />
             E-Commerce
           </div>
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-white leading-tight tracking-tight">
+          <h1 className="font-display font-normal text-4xl sm:text-5xl lg:text-6xl text-white leading-tight tracking-tight">
             Product Photos That{' '}
-            <em className="text-tp-bronze not-italic font-display italic">Sell</em>
+            <em className="text-tp-bronze not-italic font-display font-normal italic">Sell</em>
           </h1>
           <p className="mt-5 text-lg text-tp-beige/70 max-w-2xl mx-auto leading-relaxed">
             Studio-quality product photography powered by AI. List faster, convert higher,
@@ -142,7 +142,7 @@ export default function EcommerceLandingPage() {
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               Product Photography Is Broken
             </h2>
             <p className="mt-3 text-tp-muted max-w-xl mx-auto">
@@ -197,7 +197,7 @@ export default function EcommerceLandingPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">Benefits</p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl text-tp-ink">
+            <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
               Why Sellers Choose TailorPic
             </h2>
           </div>
@@ -259,7 +259,7 @@ export default function EcommerceLandingPage() {
       {/* CTA */}
       <section className="py-20 sm:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-3xl sm:text-4xl text-tp-ink">
+          <h2 className="font-display font-normal text-3xl sm:text-4xl text-tp-ink">
             Your Products Deserve Better Photos
           </h2>
           <p className="mt-4 text-lg text-tp-muted">

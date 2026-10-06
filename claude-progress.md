@@ -1,5 +1,30 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-06 (Phase AI — Before/After Enhancement & Tools Index)
+
+### Baseline
+- HEAD: `b9e369e` (Phase AH complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### Tools Index Page Güncelleme
+- `src/app/tools/page.tsx` — 3 yeni araç eklendi: LinkedIn About Generator, Photo Upload Checklist, Profile Picture Maker
+- Toplam araç sayısı: 12
+
+#### Before & After Sayfası İyileştirmesi
+- `src/components/marketing/before-after-gallery.tsx` — Yeni ComparisonSlider bileşeni (sürükle-karşılaştır, pointer events, klavye okları, clipPath)
+- `src/config/category-visuals.ts` — 6 before/after çifti eklendi (LinkedIn, Corporate, Creative, Medical, Tech, Real Estate)
+- `src/app/(marketing)/before-after/page.tsx` — Interaktif galeri + 5 soruluk FAQ + FAQPage JSON-LD structured data
+- Tamamen erişilebilir: ARIA slider role, klavye navigasyonu
+
+### Sonuç
+- Commitler: bb0f9c2 (tools index), c93864a (before-after gallery + FAQ)
+- CI: PASS, Vercel: PASS (her ikisi)
+- Live doğrulama: /before-after ✓ (slider'lar çalışıyor), /tools ✓
+
+---
+
 ## Oturum: 2026-10-06 (Phase AH — Photo Checklist & PFP Maker Free Tools)
 
 ### Baseline

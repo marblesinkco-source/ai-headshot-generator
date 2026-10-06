@@ -264,7 +264,7 @@ export default function LinkedInHeadshotsPage() {
             {specs.map((sp) => (
               <div key={sp.label} className="rounded-tp-card border border-tp-line bg-white p-5">
                 <p className="text-xs font-medium uppercase tracking-wide text-tp-bronze-ink">{sp.label}</p>
-                <p className="font-display mt-2 text-xl font-semibold text-tp-ink">{sp.value}</p>
+                <p className="font-display font-normal mt-2 text-xl font-semibold text-tp-ink">{sp.value}</p>
                 <p className="mt-2 text-sm text-tp-muted">{sp.note}</p>
               </div>
             ))}
@@ -272,7 +272,7 @@ export default function LinkedInHeadshotsPage() {
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {practices.map((pr) => (
               <div key={pr.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                <h3 className="font-display text-lg font-semibold text-tp-ink">{pr.title}</h3>
+                <h3 className="font-display font-normal text-lg font-semibold text-tp-ink">{pr.title}</h3>
                 <p className="mt-2 text-sm text-tp-muted">{pr.description}</p>
               </div>
             ))}
@@ -288,7 +288,7 @@ export default function LinkedInHeadshotsPage() {
           </h2>
           <div className="mt-10 grid gap-6 md:grid-cols-5">
             <div className="rounded-tp-card border border-tp-line bg-white p-6 md:col-span-3">
-              <h3 className="font-display text-lg font-semibold text-tp-ink">Checklist</h3>
+              <h3 className="font-display font-normal text-lg font-semibold text-tp-ink">Checklist</h3>
               <ul className="mt-4 space-y-3">
                 {checklist.map((item) => (
                   <li key={item} className="flex gap-3 text-sm text-tp-muted">
@@ -299,7 +299,7 @@ export default function LinkedInHeadshotsPage() {
               </ul>
             </div>
             <div className="rounded-tp-card border border-tp-line bg-tp-paper p-6 md:col-span-2">
-              <h3 className="font-display text-lg font-semibold text-tp-ink">Best to avoid</h3>
+              <h3 className="font-display font-normal text-lg font-semibold text-tp-ink">Best to avoid</h3>
               <ul className="mt-4 space-y-3">
                 {avoid.map((item) => (
                   <li key={item} className="flex gap-3 text-sm text-tp-muted">
@@ -321,7 +321,7 @@ export default function LinkedInHeadshotsPage() {
             {features.map((f) => (
               <div key={f.title} className="rounded-tp-card border border-tp-line bg-white p-6">
                 <f.icon className="h-6 w-6 text-tp-bronze-ink" />
-                <h3 className="font-display mt-4 text-lg font-semibold text-tp-ink">{f.title}</h3>
+                <h3 className="font-display font-normal mt-4 text-lg font-semibold text-tp-ink">{f.title}</h3>
                 <p className="mt-2 text-sm text-tp-muted">{f.description}</p>
               </div>
             ))}
@@ -365,7 +365,7 @@ export default function LinkedInHeadshotsPage() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-tp-button bg-tp-beige/40 text-sm font-semibold text-tp-bronze-ink">
                   {i + 1}
                 </div>
-                <h3 className="font-display mt-4 text-lg font-semibold text-tp-ink">{t.title}</h3>
+                <h3 className="font-display font-normal mt-4 text-lg font-semibold text-tp-ink">{t.title}</h3>
                 <p className="mt-2 text-sm text-tp-muted">{t.description}</p>
               </div>
             ))}
@@ -385,7 +385,7 @@ export default function LinkedInHeadshotsPage() {
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {personas.map((p) => (
               <div key={p.title} className="rounded-tp-card border border-tp-line bg-white p-6">
-                <h3 className="font-display text-lg font-semibold text-tp-ink">{p.title}</h3>
+                <h3 className="font-display font-normal text-lg font-semibold text-tp-ink">{p.title}</h3>
                 <p className="mt-2 text-sm text-tp-muted">{p.description}</p>
               </div>
             ))}
@@ -415,7 +415,7 @@ export default function LinkedInHeadshotsPage() {
                 </span>
                 <div className="mt-4 flex items-center gap-3">
                   <sc.icon className="h-6 w-6 text-tp-bronze-ink" />
-                  <h3 className="font-display text-lg font-semibold text-tp-ink">{sc.label}</h3>
+                  <h3 className="font-display font-normal text-lg font-semibold text-tp-ink">{sc.label}</h3>
                 </div>
                 <p className="mt-3 text-sm text-tp-muted"><span className="font-semibold text-tp-ink">Situation:</span> {sc.situation}</p>
                 <p className="mt-2 text-sm text-tp-muted"><span className="font-semibold text-tp-ink">Goal:</span> {sc.outcome}</p>
@@ -457,7 +457,7 @@ export default function LinkedInHeadshotsPage() {
                 href={t.href}
                 className="group rounded-tp-card border border-tp-line bg-white p-5 transition-colors hover:border-tp-bronze"
               >
-                <h3 className="font-display flex items-center justify-between font-semibold text-tp-ink">
+                <h3 className="font-display font-normal flex items-center justify-between font-semibold text-tp-ink">
                   {t.title}
                   <ArrowRight className="h-4 w-4 text-tp-bronze-ink transition-transform group-hover:translate-x-1" />
                 </h3>

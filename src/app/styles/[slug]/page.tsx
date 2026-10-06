@@ -112,7 +112,7 @@ export default async function StylePage({ params }: Props) {
           <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
             Photo Style
           </p>
-          <h1 className="mt-3 font-display text-4xl tracking-tight text-tp-ink sm:text-5xl">
+          <h1 className="mt-3 font-display font-normal text-4xl tracking-tight text-tp-ink sm:text-5xl">
             {style.title}
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-lg text-tp-muted">
@@ -135,7 +135,7 @@ export default async function StylePage({ params }: Props) {
       {/* Features */}
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl tracking-tight text-tp-ink">
+          <h2 className="text-center font-display font-normal text-3xl tracking-tight text-tp-ink">
             What Makes {style.name} Different
           </h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -159,7 +159,7 @@ export default async function StylePage({ params }: Props) {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center gap-2">
             <Users className="h-6 w-6 text-tp-bronze-ink" />
-            <h2 className="font-display text-3xl tracking-tight text-tp-ink">
+            <h2 className="font-display font-normal text-3xl tracking-tight text-tp-ink">
               Ideal For
             </h2>
           </div>
@@ -182,7 +182,7 @@ export default async function StylePage({ params }: Props) {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center gap-2">
             <Lightbulb className="h-6 w-6 text-tp-bronze-ink" />
-            <h2 className="font-display text-3xl tracking-tight text-tp-ink">
+            <h2 className="font-display font-normal text-3xl tracking-tight text-tp-ink">
               Tips for Best Results
             </h2>
           </div>
@@ -203,7 +203,7 @@ export default async function StylePage({ params }: Props) {
       {categories.length > 0 && (
         <section className="bg-tp-paper py-16 sm:py-20">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-center font-display text-3xl tracking-tight text-tp-ink">
+            <h2 className="text-center font-display font-normal text-3xl tracking-tight text-tp-ink">
               Related Photo Categories
             </h2>
             <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -231,7 +231,7 @@ export default async function StylePage({ params }: Props) {
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-center gap-2">
               <BookOpen className="h-6 w-6 text-tp-bronze-ink" />
-              <h2 className="font-display text-3xl tracking-tight text-tp-ink">
+              <h2 className="font-display font-normal text-3xl tracking-tight text-tp-ink">
                 Related Guides
               </h2>
             </div>
@@ -255,7 +255,7 @@ export default async function StylePage({ params }: Props) {
       {/* CTA */}
       <section className="bg-tp-ink py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="font-display text-3xl tracking-tight text-white">
+          <h2 className="font-display font-normal text-3xl tracking-tight text-white">
             Get Your {style.name} Today
           </h2>
           <p className="mt-4 text-tp-beige">
