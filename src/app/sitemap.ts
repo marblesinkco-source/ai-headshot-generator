@@ -1846,6 +1846,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/tools/watermark-maker`,
+      lastModified: new Date('2026-10-06'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/tools/linkedin-headline-generator`,
       lastModified: new Date('2026-10-06'),
       changeFrequency: 'monthly',

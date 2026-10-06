@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal, Users, CheckSquare, CircleUser, AlignLeft, Compass, Crop, Sun, BookOpen, Globe, FileDown, LayoutGrid, FileText, Palette, Layers, Eye, ShieldCheck, FileImage, Smartphone, CreditCard } from 'lucide-react';
+import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal, Users, CheckSquare, CircleUser, AlignLeft, Compass, Crop, Sun, BookOpen, Globe, FileDown, LayoutGrid, FileText, Palette, Layers, Eye, ShieldCheck, FileImage, Smartphone, CreditCard, Type } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { ToolsIllustration } from '@/components/marketing/illustrations';
@@ -225,6 +225,13 @@ const tools = [
       'Create a professional digital business card with your headshot and contact details. Download as PNG or vCard (.vcf).',
     href: '/tools/business-card-generator',
     icon: CreditCard,
+  },
+  {
+    title: 'Image Watermark Maker',
+    description:
+      'Add custom text watermarks to your photos. Choose font, size, color, opacity and position. Single or tiled pattern. Free and private.',
+    href: '/tools/watermark-maker',
+    icon: Type,
   },
 ];
 
