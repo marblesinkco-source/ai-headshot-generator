@@ -1,5 +1,40 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-06 (Phase AP — Navigation Fixes & Conversion Tools)
+
+### Baseline
+- HEAD: `c7a24c4` (Phase AO complete)
+- CI: PASS, Vercel: PASS
+
+### Yapılan İşler
+
+#### Footer Link Düzeltmesi
+- `src/components/marketing/footer.tsx` — "For Teams" linki `/for-teams` → `/team-headshots` (gereksiz redirect kaldırıldı)
+
+#### LinkedIn Photo Analyzer (Yeni Free Tool)
+- `src/components/tools/linkedin-photo-analyzer.tsx` — Client-side canvas tabanlı analiz
+  - 5 kriter: Resolution (400px min), Aspect Ratio (1:1), Brightness (luminance), Subject Centering (grid), File Size (8MB max)
+  - Her kriter 20 puan: pass/warning/fail → toplam 100 puan
+  - Drag & drop + click upload, tamamen browser'da çalışır (fotoğraf sunucuya gitmez)
+- `src/app/tools/linkedin-photo-analyzer/page.tsx` — Sayfa rotası yeniden yazıldı (eski quiz-based analyzer kaldırıldı)
+- `src/app/tools/linkedin-photo-analyzer/analyzer-form.tsx` — Silindi (eski, kullanılmayan bileşen)
+
+#### Pricing Tablosu Geliştirmeleri
+- `src/app/pricing/page.tsx` — "Headshot packages side by side" tablosuna:
+  - Delivery sütunu eklendi (~30 min / ~1 hour / ~2 hours paket boyutuna göre)
+  - "Recommended" badge → "Most Popular" badge olarak güncellendi
+  - Flex wrap ile badge düzeni iyileştirildi
+
+#### Referral Sayfası
+- Zaten `(marketing)/referral/page.tsx` olarak mevcut, duplicate `/referral/page.tsx` oluşturulmuş ve build hatası vermiş → silindi
+
+### Sonuç
+- Commits: 2e5474e, c57f453
+- CI: PASS, Vercel: PASS
+- Live doğrulama: /pricing ✓ (delivery sütunu + Most Popular badge), /tools/linkedin-photo-analyzer ✓ (upload alanı çalışıyor), /referral ✓ (mevcut sayfa düzgün)
+
+---
+
 ## Oturum: 2026-10-06 (Phase AO — FAQ Enrichment & Competitive Edge)
 
 ### Baseline

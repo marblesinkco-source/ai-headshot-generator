@@ -341,8 +341,8 @@
       "name": "Phase AP — Navigation Fixes & Conversion Tools",
       "description": "Footer redirect link düzeltmeleri, Referral Program sayfası, LinkedIn Photo Analyzer free tool, pricing delivery time & popularity badges",
       "dependencies": ["feat-AO"],
-      "status": "in-progress",
-      "evidence": ""
+      "status": "done",
+      "evidence": "Footer /for-teams → /team-headshots fix, LinkedIn Photo Analyzer (client-side canvas analysis: resolution/aspect/brightness/centering/filesize scoring), Pricing table delivery time column + Most Popular badge. Referral page already existed in (marketing) group. Commits: 2e5474e, c57f453. CI PASS + Vercel PASS. Live verified all changes."
     }
   ]
 }
