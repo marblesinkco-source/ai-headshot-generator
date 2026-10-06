@@ -1792,6 +1792,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/tools/bio-generator`,
+      lastModified: new Date('2026-10-06'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/tools/linkedin-banner-maker`,
+      lastModified: new Date('2026-10-06'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/tools/virtual-background-maker`,
+      lastModified: new Date('2026-10-06'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/tools/linkedin-headline-generator`,
       lastModified: new Date('2026-10-06'),
       changeFrequency: 'monthly',

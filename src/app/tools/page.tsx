@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal, Users, CheckSquare, CircleUser, AlignLeft, Compass, Crop, Sun, BookOpen, Globe, FileDown, LayoutGrid } from 'lucide-react';
+import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal, Users, CheckSquare, CircleUser, AlignLeft, Compass, Crop, Sun, BookOpen, Globe, FileDown, LayoutGrid, FileText, Palette, Layers } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { ToolsIllustration } from '@/components/marketing/illustrations';
@@ -162,6 +162,27 @@ const tools = [
       'Combine 2 to 6 photos into one image. Compare headshots side by side, build a team grid or make a before and after.',
     href: '/tools/headshot-collage',
     icon: LayoutGrid,
+  },
+  {
+    title: 'Professional Bio Generator',
+    description:
+      'Generate a polished professional bio from your job title, skills and experience. Pick a tone, length and person, then copy.',
+    href: '/tools/bio-generator',
+    icon: FileText,
+  },
+  {
+    title: 'LinkedIn Banner Maker',
+    description:
+      'Design a 1584 × 396 LinkedIn banner with your name, tagline and colors. Choose a template, upload a headshot and download as PNG.',
+    href: '/tools/linkedin-banner-maker',
+    icon: Palette,
+  },
+  {
+    title: 'Virtual Background Maker',
+    description:
+      'Create professional virtual backgrounds for Zoom, Teams and Google Meet. Pick a template, customize colors and download.',
+    href: '/tools/virtual-background-maker',
+    icon: Layers,
   },
 ];
 
