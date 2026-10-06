@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal, Users, CheckSquare, CircleUser, AlignLeft, Compass, Crop, Sun, BookOpen, Globe, FileDown, LayoutGrid, FileText, Palette, Layers, Eye, ShieldCheck } from 'lucide-react';
+import { Camera, Scissors, FileCheck, Calculator, Linkedin, Mail, Sparkles, SlidersHorizontal, Users, CheckSquare, CircleUser, AlignLeft, Compass, Crop, Sun, BookOpen, Globe, FileDown, LayoutGrid, FileText, Palette, Layers, Eye, ShieldCheck, FileImage, Smartphone, CreditCard } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { ToolsIllustration } from '@/components/marketing/illustrations';
@@ -204,6 +204,27 @@ const tools = [
       'View your photo\'s hidden metadata — camera, date, GPS location — and download a clean copy with all data stripped.',
     href: '/tools/exif-viewer',
     icon: ShieldCheck,
+  },
+  {
+    title: 'Image Format Converter',
+    description:
+      'Convert photos between HEIC, WebP, PNG, BMP and JPG formats instantly in your browser. Adjust quality and preserve resolution.',
+    href: '/tools/image-format-converter',
+    icon: FileImage,
+  },
+  {
+    title: 'Social Media Image Resizer',
+    description:
+      'Resize your photo for LinkedIn, Instagram, Facebook, X, YouTube, Slack and Zoom. Pick platforms, crop, and download as PNG.',
+    href: '/tools/social-media-resizer',
+    icon: Smartphone,
+  },
+  {
+    title: 'Digital Business Card Generator',
+    description:
+      'Create a professional digital business card with your headshot and contact details. Download as PNG or vCard (.vcf).',
+    href: '/tools/business-card-generator',
+    icon: CreditCard,
   },
 ];
 
