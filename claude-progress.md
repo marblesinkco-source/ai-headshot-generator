@@ -1,5 +1,27 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-07 (Checkout Consent Checkbox — commit fe7806e)
+
+### Tamamlanan
+- **Checkout consent checkbox:** Tüm satın alma butonları için cayma hakkı feragati checkbox'ı eklendi
+  - İşaretlenmemiş (unchecked) başlıyor — müşteri aktif olarak onaylamalı
+  - İngilizce kapsamlı yasal metin: EU Directive 2011/83/EU Art.16(a) referansı
+  - 5 madde: kişiselleştirilmiş dijital hizmet, cayma hakkı feragati, AI output variability, iade/chargeback/kredi reddi (internet kesintisi, tarayıcı sorunu, yanlışlıkla satın alma dahil), açık onay beyanı
+  - Tüm checkout butonları disabled until consent checked (Select & Pay, avatar upsell, avatar cross-sell)
+  - Consent flag + timestamp Stripe metadata'ya kaydediliyor
+  - Kategori değiştiğinde consent sıfırlanıyor
+  - Terms of Service linki checkbox metninde
+- **Terms of Service güncellendi:** Yeni Section 6 "Refund Policy & Right of Withdrawal" eklendi
+  - Cayma hakkı feragati, iade yasağı, AI output variability, teknik arıza koşulları, chargeback maddesi
+  - Tüm bölüm numaraları güncellendi (6→13)
+  - Son güncelleme tarihi: October 7, 2026
+
+### Doğrulama
+- CI: PASS, Vercel: PASS
+- Canlı site doğrulandı: checkbox görünüyor, unchecked başlıyor, butonlar disabled, checkbox işaretlenince butonlar aktif, Terms of Service linki çalışıyor, Section 6 Terms sayfasında görünüyor
+
+---
+
 ## Oturum: 2026-10-07 (88→92 Conversion Funnel Optimization — commit 45c03b0)
 
 ### Tamamlanan
