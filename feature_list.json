@@ -12,7 +12,9 @@
       "id": "feat-B",
       "name": "Phase B — Global Design System",
       "description": "Logo / tokens / typography / spacing / grid / button states / cards",
-      "dependencies": ["feat-A"],
+      "dependencies": [
+        "feat-A"
+      ],
       "status": "done",
       "evidence": "Tailwind config tokenleri, globals.css utility sınıfları, button.tsx marka uyumu."
     },
@@ -20,7 +22,9 @@
       "id": "feat-C",
       "name": "Phase C — Navigation",
       "description": "Header / mega menu / mobile nav / active states / sticky / kompakt scroll",
-      "dependencies": ["feat-B"],
+      "dependencies": [
+        "feat-B"
+      ],
       "status": "done",
       "evidence": "Header scroll-compact, mega menü 3-kolon, mobile nav."
     },
@@ -28,7 +32,9 @@
       "id": "feat-D",
       "name": "Phase D — Homepage",
       "description": "Hero / quick chooser / customization / before-after / categories / pricing / FAQ / footer",
-      "dependencies": ["feat-C"],
+      "dependencies": [
+        "feat-C"
+      ],
       "status": "done",
       "evidence": "Homepage V3 Master sırasına uygun. Commit: 90f3bb5."
     },
@@ -36,7 +42,9 @@
       "id": "feat-E",
       "name": "Phase E — 12 Category Pages",
       "description": "Tek reusable şablon + category data",
-      "dependencies": ["feat-D"],
+      "dependencies": [
+        "feat-D"
+      ],
       "status": "done",
       "evidence": "12 kategori sayfası, category-content.ts. Commit: ab597d9, 3103455"
     },
@@ -44,7 +52,9 @@
       "id": "feat-F",
       "name": "Phase F — Conversion Pages",
       "description": "Pricing / examples / how it works / FAQ / blog / contact sayfaları",
-      "dependencies": ["feat-D"],
+      "dependencies": [
+        "feat-D"
+      ],
       "status": "done",
       "evidence": "Tüm conversion sayfaları canlıda doğrulandı. Commit: 79da7a2"
     },
@@ -52,7 +62,9 @@
       "id": "feat-G",
       "name": "Phase G — Funnel (Auth + Checkout + Upload + Generation + Results)",
       "description": "Signup / signin / checkout / upload / generation / results akışının UI tarafı — tüm ekranların doğru çalışması",
-      "dependencies": ["feat-F"],
+      "dependencies": [
+        "feat-F"
+      ],
       "status": "not-started",
       "evidence": ""
     },
@@ -60,7 +72,9 @@
       "id": "feat-H",
       "name": "Phase H — Cleanup + Optimization",
       "description": "URL canonical, footer sadeleştirme, checkout funnel, mobil QA, CWV, acceptance test",
-      "dependencies": ["feat-E"],
+      "dependencies": [
+        "feat-E"
+      ],
       "status": "done",
       "evidence": "8 görev tamamlandı. Commit: b0e720b."
     },
@@ -68,7 +82,9 @@
       "id": "feat-I",
       "name": "Phase I — Performance + Accessibility + SEO",
       "description": "next/image, lazy load, code split, WCAG AA, semantic headings, OG/meta, sitemap, schema",
-      "dependencies": ["feat-H"],
+      "dependencies": [
+        "feat-H"
+      ],
       "status": "done",
       "evidence": "21 kritik sayfa SEO denetimi, tümünde metadata mevcut."
     },
@@ -76,7 +92,9 @@
       "id": "feat-J",
       "name": "Phase J — QA",
       "description": "Build / typecheck / lint / desktop-mobile test / auth / Stripe / upload / generation / legal links / console errors",
-      "dependencies": ["feat-I"],
+      "dependencies": [
+        "feat-I"
+      ],
       "status": "done",
       "evidence": "14 sayfa Chrome browser ile test edildi. Commit: 79da7a2, 51f9cad."
     },
@@ -84,7 +102,9 @@
       "id": "feat-K",
       "name": "Phase K — AI Pipeline Kritik Düzeltmeler",
       "description": "Flux-dev parametreleri, tier kalite mapping, webhook idempotency, double-submit guard, Executive 160-foto varyasyonları, retry cron iyileştirmesi, ghost prompt düzeltmesi",
-      "dependencies": ["feat-J"],
+      "dependencies": [
+        "feat-J"
+      ],
       "status": "done",
       "evidence": "7 kritik düzeltme tek commit'te tamamlandı. ai.ts: guidance 3.5, çözünürlük limitleri, 11 stil (finance eklendi). webhook: idempotency guard + tier mapping + buildCategoryPrompt switch/case. generate: atomic double-submit guard. retry-stuck: webhook re-trigger. Commit: 441f963. CI PASS + Vercel PASS."
     },
@@ -92,7 +112,9 @@
       "id": "feat-L",
       "name": "Phase L — Accounting & Transaction Center",
       "description": "17 tablo migration, 15 servis, 10 API route, 10 dashboard sayfası, Stripe webhook entegrasyonu",
-      "dependencies": ["feat-K"],
+      "dependencies": [
+        "feat-K"
+      ],
       "status": "done",
       "evidence": "43 dosya, 5356 satır. Graceful fallback (tablo yoksa boş veri). WCAG AA erişilebilirlik. Commit: 60165dc, 11155e6, c7a0f12. BLOCKER: SUPABASE_DB_URL secret gerekli."
     },
@@ -100,7 +122,9 @@
       "id": "feat-M",
       "name": "Phase M — Altyapı Tam Kurulum + Demo Sunumları",
       "description": "Tüm modülleri incele, eksik/kırık sayfaları düzelt, menü/butonları denetle, farklı görseller ile demo sunumları hazırla",
-      "dependencies": ["feat-K"],
+      "dependencies": [
+        "feat-K"
+      ],
       "status": "done",
       "evidence": "5 paralel uzman ajan ile site-wide audit: 71 dosya iyileştirildi (+477/-345 satır). Homepage: spacing, micro-interactions, pricing fix. Kategori: CTA yönlendirme, JSON-LD, benefits. Dönüşüm: pricing tablosu, FAQ, VS düzeltmeleri. Nav: mega-menu, ARIA, button/card token. Dashboard: sidebar a11y, error handling, auth copy. İçerik doğruluğu: 4-10 selfie, 12 kategori, uydurma iddia temizliği. Commit: b25f198. CI PASS + Vercel PASS. Canlı doğrulama tamam. BLOCKER: REPLICATE_API_TOKEN, SUPABASE_DB_URL, VERCEL_TOKEN secret'ları hâlâ eksik."
     },
@@ -108,7 +132,9 @@
       "id": "feat-N",
       "name": "Phase N — Self-Optimization Engine",
       "description": "Supabase veri toplama tabloları, event tracking hook/API, dinamik kategori/paket sıralama, A/B test framework, hero/CTA rotasyon, günlük optimizasyon cron, dashboard AI Insights paneli",
-      "dependencies": ["feat-M"],
+      "dependencies": [
+        "feat-M"
+      ],
       "status": "done",
       "evidence": "17 dosya (13 yeni, 4 değiştirilmiş), +1597 satır. Migration SQL (7 tablo + RLS + indeksler), tracking API (page_view/click/conversion), metrics API (auth-protected), useAnalytics hook (auto page view + UTM + duration), useAbTest hook (deterministic hashing), A/B test service, dynamic ranking service, optimize cron (günlük 03:00 UTC), AI Insights dashboard (Türkçe UI, özet kartlar, funnel, optimizasyon geçmişi). Graceful fallback (tablo yoksa boş veri). Commit: 15d8b5a. CI PASS + Vercel PASS. Canlı doğrulama: /dashboard/insights sayfası başarıyla yükleniyor — başlık, dönem seçici, özet kartları, boş veri mesajları tümü doğru."
     },
@@ -116,7 +142,9 @@
       "id": "feat-O",
       "name": "Phase O — Rakip Analizi & Homepage Optimizasyonu",
       "description": "6 rakip platform analizi, 10 veri-dayalı iyileştirme, mevcut 42 bileşenden 5 tanesinin homepage'e eklenmesi, yeni WhyTailorPic bileşeni, section sıralaması optimizasyonu",
-      "dependencies": ["feat-N"],
+      "dependencies": [
+        "feat-N"
+      ],
       "status": "done",
       "evidence": "Rakip analizi (6 platform: Aragon, HeadshotPro, Secta, BetterPic, ProPhotos, ProfilePhoto). 5 mevcut bileşen homepage'e eklendi: SocialProofBar (hero sonrası), WhyTailorPic (yeni, 3 farklılaştırıcı kart), SpeedComparison (Before/After sonrası), PrivacySection (TrustBadges sonrası), StickyCTA (mobil sticky bar). Optimized section sıralaması (16 bölüm). Commit: b79b619. CI PASS + Vercel PASS. Canlı doğrulama: tüm yeni bölümler www.tailorpic.com'da doğru sırada yükleniyor."
     },
@@ -124,7 +152,9 @@
       "id": "feat-P",
       "name": "Phase P — Performance & Aesthetic Excellence",
       "description": "Font self-hosting, dynamic imports, GPU-accelerated animations, scroll reveal system, visual consistency standardization, image optimization",
-      "dependencies": ["feat-O"],
+      "dependencies": [
+        "feat-O"
+      ],
       "status": "done",
       "evidence": "18 dosya, +227/-78 satır. Font self-hosting (2 render-blocking request eliminasyonu), 6 yeni dynamic import, optimizePackageImports, AVIF/WebP, scroll reveal sistemi, scaleX GPU animasyonu, cta-ring, visual consistency standardizasyonu. Commit: 8ebf2f9. CI PASS + Vercel PASS. Canlı doğrulama: www.tailorpic.com tüm bölümler doğru."
     },
@@ -132,7 +162,9 @@
       "id": "feat-Q",
       "name": "Phase Q — Site-Wide QA & Bug Fixes",
       "description": "Avatar fiyat düzeltmesi, CTA redirect düzeltmeleri, kırık newsletter formları, email-capture hata yönetimi, hidrasyon düzeltmesi, dinamik kategori sayısı, link düzeltmeleri",
-      "dependencies": ["feat-P"],
+      "dependencies": [
+        "feat-P"
+      ],
       "status": "done",
       "evidence": "9 dosya, +90/-127 satır. Avatars: $1.99→$9.90 (config'den), 5 CTA redirect düzeltmesi. Team-headshots: 7 CTA redirect. Blog+Changelog: kırık formlar→EmailCapture. Email-capture: res.ok check, hidrasyon fix, error state. Credit-packages: dinamik kategori sayısı, iç içe Link/Button düzeltmesi. Categories: View all→/pricing. CTA-banner: dialog a→Link. Pricing-toggle: Talk to us→/contact. Commit: 0a027a8. CI PASS + Vercel PASS. Canlı doğrulama: avatar fiyatları $9.90/$15.90 doğru, blog EmailCapture çalışıyor."
     },
@@ -140,7 +172,9 @@
       "id": "feat-R",
       "name": "Phase R — Rakip Özellik Entegrasyonu & UX İyileştirmeleri",
       "description": "CTA redirect düzeltmeleri (281 dosya), uydurma yıldız puanları temizliği (116 sayfa), fiyat düzeltmeleri, canlı sohbet (Tawk.to), PWA manifest, back-to-top, social share, breadcrumbs navigasyonu, download format seçici, bileşenlerin sayfalara entegrasyonu",
-      "dependencies": ["feat-Q"],
+      "dependencies": [
+        "feat-Q"
+      ],
       "status": "done",
       "evidence": "7 commit: 0a5b9ef (281 dosya CTA redirect), 9010b17 (yıldız temizliği + fiyat düzeltmesi), 8033787 (live chat + PWA), ebcce88 (back-to-top + social share), 0cb2769 (breadcrumbs + download format selector bileşenleri), 40304a9 (124 sayfaya breadcrumbs + blog/kategori'ye social share entegrasyonu). CI PASS + Vercel PASS. Canlı doğrulama: breadcrumbs, social share, back-to-top, exit-intent popup tümü çalışıyor."
     },
@@ -148,7 +182,9 @@
       "id": "feat-G",
       "name": "Phase G — Funnel (Auth + Checkout + Upload + Generation + Results)",
       "description": "Signup / signin / checkout / upload / generation / results akışının UI tarafı — tüm ekranların doğru çalışması",
-      "dependencies": ["feat-R"],
+      "dependencies": [
+        "feat-R"
+      ],
       "status": "done",
       "evidence": "10 dosya, +109/-98 satır. Auth: login h1+redirect forwarding, register/forgot/reset kırık JSX error banner düzeltmesi, tüm sayfalar role=\"alert\"+brand tokens. Dashboard: gallery/orders renk token uyumu, font-semibold→font-medium, photo-uploader overlay+checkmark. Upload: hardcoded fiyatlar→config (getPackageById), avatar upsell/cross-sell dinamik hesaplama, step indicator aria-label, tüm green/red→brand tokens. Zoom: stray '))}' JSX düzeltmesi. Commit: 4ec036c. CI PASS + Vercel PASS. Canlı doğrulama: upload wizard, zoom sayfası, dashboard navigasyonu tümü çalışıyor."
     },
@@ -156,7 +192,9 @@
       "id": "feat-S",
       "name": "Phase S — Sales-Driven Conversion Boost",
       "description": "Rakip analizi, aciliyet/kıtlık unsurları, güçlendirilmiş CTA'lar, sosyal kanıt iyileştirmeleri, dönüşüm optimizasyonları, enerji ve hırs odaklı sayfa güncellemeleri",
-      "dependencies": ["feat-G"],
+      "dependencies": [
+        "feat-G"
+      ],
       "status": "done",
       "evidence": "2 batch commit: 383acc3 (hero CTA fiyat, studio comparison tablosu, pricing CTA fix, trust badges genişletme, sticky/banner CTA redirect fix), f91d754 (mid-page CTA how-it-works, HowItWorks/Pricing/Privacy/CTA-Banner/SocialProofBar iyileştirmeleri, dinamik fiyatlı CTA butonları, uydurma iddia temizliği). CI PASS + Vercel PASS. Canlı doğrulama tamam."
     },
@@ -164,7 +202,9 @@
       "id": "feat-T",
       "name": "Phase T — Conversion Toolkit & Trust Reinforcement",
       "description": "Savings calculator, AI araçları karşılaştırma tablosu, FAQ pricing link, samples CTA, guarantee bölümü güçlendirme",
-      "dependencies": ["feat-S"],
+      "dependencies": [
+        "feat-S"
+      ],
       "status": "done",
       "evidence": "5 dosya (+290 satır). savings-calculator.tsx: interaktif tasarruf hesaplayıcı (stüdyo vs TailorPic, TEAM_PRICES entegrasyonu, 1-50 kişi slider). ai-comparison.tsx: 8 satırlık Generic AI vs TailorPic karşılaştırma tablosu. faqs.ts: pricing FAQ'ya /pricing linki. before-after-showcase.tsx: /samples CTA linki. page.tsx: SavingsCalculator + AIComparison dinamik import ve homepage entegrasyonu."
     },
@@ -172,7 +212,9 @@
       "id": "feat-U",
       "name": "Phase U — Gallery, Guarantee & Conversion Anchoring",
       "description": "GuaranteeSection bileşeni, StatsCounter entegrasyonu (kategori sayısı düzeltmesi 11→12), per-photo cost gösterimi tüm paketlerde, duplicate /samples route düzeltmesi",
-      "dependencies": ["feat-T"],
+      "dependencies": [
+        "feat-T"
+      ],
       "status": "done",
       "evidence": "4 dosya değiştirildi, 1 yeni bileşen. guarantee-section.tsx: 3 kartlı garanti bölümü (Satisfaction Guarantee, Secure & Private, One-Time Payment). stats-counter.tsx: kategori sayısı 11→12 düzeltmesi. pricing.tsx: per-photo cost tüm paketlerde gösterildi (outputCount>1→outputCount>0). page.tsx: GuaranteeSection + StatsCounter dinamik import. Duplicate (marketing)/samples/page.tsx silindi (route conflict fix). Commit: 807f3d3, 9229a0b. CI PASS + Vercel PASS. Canlı doğrulama: guarantee section, stats counter (160/12/<2hrs/$1.99), per-photo pricing ($0.75/$0.62/$0.56) tümü doğru."
     },
@@ -180,7 +222,9 @@
       "id": "feat-V",
       "name": "Phase V — Professional Segment Upgrade",
       "description": "Rakip analizi, gap analizi, CTA 'from' uyumu, sosyal kanıt tutarlılığı, pricing guarantee, homepage optimizasyonu, samples etiket düzeltmesi, UseCaseChips + PriceReceipt entegrasyonu",
-      "dependencies": ["feat-U"],
+      "dependencies": [
+        "feat-U"
+      ],
       "status": "done",
       "evidence": "Batch 1 (ef2e2eb): hero CTA 'From' eklendi, SocialProofBar tutarlılık, StickyCTA masaüstü genişletme, pricing sayfasına PackageQuiz+GuaranteeSection, homepage'den StudioComparison+AIComparison kaldırıldı, PhotoPrepGuide+PackageQuiz eklendi. Batch 2 (f0c5f50): samples 'AI-generated concept' etiketleri→'style example' düzeltmesi, UseCaseChips homepage entegrasyonu, PriceReceipt pricing sayfası entegrasyonu. CI PASS + Vercel PASS (her iki batch)."
     },
@@ -188,7 +232,9 @@
       "id": "feat-W",
       "name": "Phase W — SEO & Micro-Interaction Polish",
       "description": "Canonical URL'ler (10 sayfa), sitemap lastModified (287 entry), CSS-only scroll-fade-in animasyon sistemi (5 bileşen: categories, how-it-works, guarantee, pricing, FAQ)",
-      "dependencies": ["feat-V"],
+      "dependencies": [
+        "feat-V"
+      ],
       "status": "done",
       "evidence": "10 sayfaya canonical URL eklendi (help, samples, gate, newsletter/unsubscribed, auth/forgot-password, auth/login, auth/register, auth/reset-password, for-teams, refund-policy). sitemap.ts: 287 statik entry'ye lastModified eklendi. globals.css: CSS-only scroll-fade-in (animation-timeline: view(), progressive enhancement, reduced-motion saygılı). 5 bileşene scroll-fade-in class eklendi. Commit: 4efd2ae. CI PASS + Vercel PASS. Canlı doğrulama: tüm bölümler sorunsuz, animasyonlar çalışıyor."
     },
@@ -196,7 +242,9 @@
       "id": "feat-X",
       "name": "Phase X — Content Polish & Dead Code Cleanup",
       "description": "LinkedIn placeholder metin düzeltmesi, Enterprise CTA /contact'a yönlendirme, About Quality açıklaması genişletme, 6 kullanılmayan bileşen silme",
-      "dependencies": ["feat-W"],
+      "dependencies": [
+        "feat-W"
+      ],
       "status": "done",
       "evidence": "LinkedIn headshots: '(placeholder)' etiketleri kaldırıldı. Enterprise: 'Get Enterprise Quote' CTA href /contact'a güncellendi. About: Quality değer açıklaması genişletildi. 6 kullanılmayan bileşen silindi (ai-vs-generic, studio-vs-ai, savings-highlight, comparison-table, trust-strip, plan-picker). Commit: 92b3696. CI PASS + Vercel PASS. Canlı doğrulama: tüm düzeltmeler doğrulandı."
     },
@@ -204,7 +252,9 @@
       "id": "feat-Y",
       "name": "Phase Y — Trust & Conversion Boosters",
       "description": "Trust badges inline (pricing 2x), privacy assurance (upload), style preview grid (headshots 12 stil), photo quality checker (upload)",
-      "dependencies": ["feat-X"],
+      "dependencies": [
+        "feat-X"
+      ],
       "status": "done",
       "evidence": "4 yeni bileşen: trust-badges-inline.tsx (Satisfaction Guarantee + Secure Payment + ~2 Hour Delivery), privacy-assurance.tsx (30-gün silme + satılmaz + eğitilmez), style-preview-grid.tsx (12 stil kartı, div-based, 404 yok), photo-quality-checker.tsx (çözünürlük/boyut/oran kontrolü). 4 entegrasyon: pricing (2x trust badge), UploadClient (privacy), [category] (headshots-only style grid), photo-uploader (quality checker). Commit: 84afd63. CI PASS + Vercel PASS. Canlı doğrulama: trust badges pricing'de, style grid headshots'ta doğru."
     },
@@ -212,7 +262,9 @@
       "id": "feat-Z",
       "name": "Phase Z — High-Impact Conversion Features",
       "description": "HeadshotInContext (4-tab mockup: LinkedIn/Resume/Email/Slack), PackageVisualizer (interaktif paket seçici + photo grid + per-photo cost), ReturnVisitorBanner (localStorage 7-gün intent)",
-      "dependencies": ["feat-Y"],
+      "dependencies": [
+        "feat-Y"
+      ],
       "status": "done",
       "evidence": "3 yeni bileşen + 2 entegrasyon: headshot-in-context.tsx (tabbed mockup, illustrative concept disclaimer), package-visualizer.tsx (6 paket pill, feature listesi, photo grid, savePackageIntent entegrasyonu), return-visitor-banner.tsx (localStorage, 7-gün expiry, dismiss desteği, global layout'a dynamic import). [category]/page.tsx: headshots-only HeadshotInContext + PackageVisualizer. layout.tsx: ReturnVisitorBanner. Commit: 9ee8b28. CI PASS + Vercel PASS. Canlı doğrulama: tüm bileşenler headshots sayfasında doğru çalışıyor."
     },
@@ -220,7 +272,9 @@
       "id": "feat-AA",
       "name": "Phase AA — Profession Landing Pages",
       "description": "6 SEO-optimized meslek sayfası: /headshots/for-lawyers, /headshots/for-realtors, /headshots/for-developers, /headshots/for-doctors, /headshots/for-consultants, /headshots/for-executives. Dinamik şablon + professions.ts config.",
-      "dependencies": ["feat-Z"],
+      "dependencies": [
+        "feat-Z"
+      ],
       "status": "done",
       "evidence": "30 meslek sayfası canlıda doğrulandı. Route: headshots/[profession]. Commits: 63bd3aa, 82f2950, 72727c0, 00bc5a7."
     },
@@ -228,7 +282,9 @@
       "id": "feat-AB",
       "name": "Phase AB — Trust & Process Transparency",
       "description": "Detaylı /our-technology sayfası: AI nasıl çalışıyor, veri gizliliği, kalite süreci. Güven artırıcı içerik.",
-      "dependencies": ["feat-AA"],
+      "dependencies": [
+        "feat-AA"
+      ],
       "status": "done",
       "evidence": "/technology sayfası zaten mevcut ve kapsamlı (hero, 4-adım süreç, 6 teknoloji ayağı, kalite standartları, privacy/security, FAQ, CTA). Boş /our-technology dizini silindi."
     },
@@ -236,7 +292,9 @@
       "id": "feat-AC",
       "name": "Phase AC — Site-Wide Polish & Missing Features",
       "description": "Header navigasyon linkleri denetimi, kırık/eksik sayfalar, menü tutarlılığı, footer linkleri, genel UX iyileştirmeleri",
-      "dependencies": ["feat-AB"],
+      "dependencies": [
+        "feat-AB"
+      ],
       "status": "done",
       "evidence": "Dead code temizlendi (StudioComparison/AIComparison unused imports homepage'den kaldırıldı, testimonials.tsx silindi). Mega menü footer etiketi 'View All Pricing' → 'View All Photo Types' düzeltildi. Blog 30+ gerçek post içeriyor. Deploy: daebfa2, live doğrulandı."
     },
@@ -244,7 +302,9 @@
       "id": "feat-AD",
       "name": "Phase AD — Competitor Feature Gap Implementation",
       "description": "6 new pages: Team Headshot ROI Calculator, What to Wear Guide, Trust Center, Selfie Guide, LinkedIn Headline Generator, Headshot Size Guide. All deployed and verified.",
-      "dependencies": ["feat-AC"],
+      "dependencies": [
+        "feat-AC"
+      ],
       "status": "done",
       "evidence": "Commit 4f64f4b, CI PASS, Vercel PASS, live site verified"
     },
@@ -252,7 +312,9 @@
       "id": "feat-AE",
       "name": "Phase AE — Press Kit, Backgrounds & Gap Pages",
       "description": "4 new pages: Gift Cards, Before & After, Press & Media, Backgrounds. Footer + sitemap updated.",
-      "dependencies": ["feat-AD"],
+      "dependencies": [
+        "feat-AD"
+      ],
       "status": "done",
       "evidence": "Commits: b77ebf5 (gift-cards), b18b24b (before-after + footer + sitemap), 2bbd440 (press), 4d015d1 (backgrounds), 01b8c21 (footer + sitemap finalization). CI PASS, Vercel PASS."
     },
@@ -260,7 +322,9 @@
       "id": "feat-AF",
       "name": "Phase AF — Trust Strip & Team Use-Case Pages",
       "description": "DataPrivacyStrip component (3 trust assurances near CTAs), 5 team workflow pages (team-directory, employee-onboarding, corporate-events, website-redesign, brand-consistency), teams index page.",
-      "dependencies": ["feat-AE"],
+      "dependencies": [
+        "feat-AE"
+      ],
       "status": "done",
       "evidence": "Commit 62aa33a. DataPrivacyStrip on pricing (2x) + category pages. 5 team use-case pages + index at /teams. Footer + sitemap updated. CI PASS, Vercel PASS. Live verified: /teams, /teams/team-directory, /pricing (DataPrivacyStrip visible)."
     },
@@ -268,7 +332,9 @@
       "id": "feat-AG",
       "name": "Phase AG — Sitemap Fixes, Free Tools, Trust & Affiliate Fix",
       "description": "5 missing sitemap entries, LinkedIn About Generator free tool, System Status page, affiliate page fabricated-number fix, footer System Status link.",
-      "dependencies": ["feat-AF"],
+      "dependencies": [
+        "feat-AF"
+      ],
       "status": "done",
       "evidence": "Commit c24612f. Sitemap: +5 entries (/refund-policy, /headshots, /locations, /status, /tools/linkedin-about-generator). LinkedIn About Generator: template-based, no API. Status page: 5 services listed. Affiliate: all 'up to 30%' → 'competitive commissions'. Footer: System Status link added. CI PASS, Vercel PASS. Live verified: /status, /affiliate, /tools/linkedin-about-generator."
     },
@@ -276,7 +342,9 @@
       "id": "feat-AH",
       "name": "Phase AH — Photo Checklist & PFP Maker Free Tools",
       "description": "Photo Upload Quality Checklist (16-item interactive tool across 4 categories), Profile Picture Maker (browser-only canvas crop/resize tool with platform presets).",
-      "dependencies": ["feat-AG"],
+      "dependencies": [
+        "feat-AG"
+      ],
       "status": "done",
       "evidence": "Commit b9e369e. Photo Checklist at /tools/photo-checklist: 16 checks, progress bar, 3 status bands. PFP Maker at /tools/pfp-maker: 7 platform presets, circular crop, zoom, drag-reposition, download as PNG. Both client-side only, no API. Sitemap updated (+2 entries). CI PASS, Vercel PASS. Live verified: /tools/photo-checklist ✓, /tools/pfp-maker ✓."
     },
@@ -284,7 +352,9 @@
       "id": "feat-AI",
       "name": "Phase AI — Before/After Enhancement & Tools Index",
       "description": "Before/After sayfasına 6 interaktif slider galerisi + FAQ + FAQPage JSON-LD, tools index'e 3 yeni araç eklenmesi.",
-      "dependencies": ["feat-AH"],
+      "dependencies": [
+        "feat-AH"
+      ],
       "status": "done",
       "evidence": "Commits: bb0f9c2 (tools index +3 tools), c93864a (before-after gallery: 6 ComparisonSlider, 5 FAQ, FAQPage schema). CI PASS, Vercel PASS. Live verified: /before-after ✓, /tools ✓."
     },
@@ -292,7 +362,9 @@
       "id": "feat-AJ",
       "name": "Phase AJ — Font Consistency & Dead Code Cleanup",
       "description": "96+ h1/h2 font-normal ekleme, 2 kullanılmayan bileşen silme, footer link ekleme, sitemap duplicate düzeltme, CSS variable fix.",
-      "dependencies": ["feat-AI"],
+      "dependencies": [
+        "feat-AI"
+      ],
       "status": "done",
       "evidence": "Commits: d96eeaf (font-normal + cleanup — BUILD FAILED), a6d1668 (CSS variable fix). CI PASS, Vercel PASS. Live verified."
     },
@@ -300,7 +372,9 @@
       "id": "feat-AK",
       "name": "Phase AK — Advanced Competitor Features",
       "description": "Rakip analiz sonuçlarına göre eksik kalan üst segment özellikler: Style Finder Quiz, OrganizationSchema temizliği, interaktif style filter, Product JSON-LD, VS refactor.",
-      "dependencies": ["feat-AJ"],
+      "dependencies": [
+        "feat-AJ"
+      ],
       "status": "done",
       "evidence": "Style Finder Quiz live. Interactive style filter on /styles (search + category + use-case chips). Product/AggregateOffer JSON-LD on /pricing + /headshots. VS data extracted to shared module. Commits: 3594c4e, 1b8ea24. All verified live."
     },
@@ -308,7 +382,9 @@
       "id": "feat-AL",
       "name": "Phase AL — Bug Fixes & UX Polish",
       "description": "/headshots: full 6-package pricing table, Trust & Guarantee section, Related Resources, 2 new FAQ items, resolution claim fix, profession chip hover fix. /how-it-works: buttonVariants fix (invalid HTML), price reassurance. Header: avatar contrast fix. Footer: Photo Styles link.",
-      "dependencies": ["feat-AK"],
+      "dependencies": [
+        "feat-AK"
+      ],
       "status": "done",
       "evidence": "Commits: 5e7e1e2 (footer Photo Styles link), cf110c3 (headshots pricing table, trust section, how-it-works buttonVariants fix, avatar contrast fix, resolution claim consistency). CI PASS, Vercel PASS. Live verified: /headshots ✓ (pricing table, trust cards, resources, FAQ), /how-it-works ✓ (hero CTA, price text, bottom CTA)."
     },
@@ -316,7 +392,9 @@
       "id": "feat-AM",
       "name": "Phase AM — Remaining UX Improvements",
       "description": "StickyCTA for /headshots and /how-it-works mobile, header direct Headshots link, homepage anchor nav improvements, schema enhancements.",
-      "dependencies": ["feat-AL"],
+      "dependencies": [
+        "feat-AL"
+      ],
       "status": "done",
       "evidence": "StickyCTA dynamic import on /headshots + /how-it-works (headshots-specific redirect URL). Header: 'Headshots' as first navLinks item. /how-it-works: contradictory upload count fixed (10-20→4-10), duplicate whyChooseUs card replaced (One-Time Payment→Satisfaction Guarantee with ShieldCheck icon). Commit: b019c45. CI PASS + Vercel PASS. Live verified: all changes on www.tailorpic.com confirmed."
     },
@@ -324,7 +402,9 @@
       "id": "feat-AN",
       "name": "Phase AN — Schema, Accessibility & Homepage Polish",
       "description": "HowTo schema with totalTime, ItemList for professions, header aria-haspopup, homepage section reorder (BeforeAfter closer to hero), scroll-margin-top for anchor targets.",
-      "dependencies": ["feat-AM"],
+      "dependencies": [
+        "feat-AM"
+      ],
       "status": "done",
       "evidence": "HowTo JSON-LD (totalTime/estimatedCost/tool), ItemList for 30 professions, header aria-haspopup, BeforeAfterShowcase moved after SocialProofBar, scroll-margin-top 5rem. Commit: 472dbd1. CI PASS + Vercel PASS. Live verified."
     },
@@ -332,7 +412,9 @@
       "id": "feat-AO",
       "name": "Phase AO — FAQ Enrichment & Competitive Edge",
       "description": "FAQ page enrichment with more questions across categories, accessibility improvements, mobile dialog focus management, additional competitive features.",
-      "dependencies": ["feat-AN"],
+      "dependencies": [
+        "feat-AN"
+      ],
       "status": "done",
       "evidence": "31 FAQ questions (7 categories: Product, Pricing, Teams, Privacy, Technical, Delivery, Refund), FaqSearch component with debounced search, mobile focus trap + aria-label toggle on header, Share Your Experience section on reviews page with Trustpilot/ProductHunt/G2. Commit: 9b11c29. CI PASS + Vercel PASS. Live verified FAQ search and reviews page."
     },
@@ -340,7 +422,9 @@
       "id": "feat-AP",
       "name": "Phase AP — Navigation Fixes & Conversion Tools",
       "description": "Footer redirect link düzeltmeleri, Referral Program sayfası, LinkedIn Photo Analyzer free tool, pricing delivery time & popularity badges",
-      "dependencies": ["feat-AO"],
+      "dependencies": [
+        "feat-AO"
+      ],
       "status": "done",
       "evidence": "Footer /for-teams → /team-headshots fix, LinkedIn Photo Analyzer (client-side canvas analysis: resolution/aspect/brightness/centering/filesize scoring), Pricing table delivery time column + Most Popular badge. Referral page already existed in (marketing) group. Commits: 2e5474e, c57f453. CI PASS + Vercel PASS. Live verified all changes."
     },
@@ -348,7 +432,9 @@
       "id": "feat-AQ",
       "name": "Phase AQ — Client-Side Free Tools Expansion",
       "description": "LinkedIn Photo Cropper (canvas 400x400, circular preview, zoom/drag), Photo Enhancement Preview (auto brightness/contrast/saturation, sharpen, before/after slider), Headshot Dos & Don'ts (5-category visual guide, quick checklist, FAQ). Tools index + sitemap updated.",
-      "dependencies": ["feat-AP"],
+      "dependencies": [
+        "feat-AP"
+      ],
       "status": "done",
       "evidence": "3 yeni araç sayfası: /tools/linkedin-photo-cropper (canvas crop, zoom 1x-3x, PNG download), /tools/photo-enhance-preview (auto enhance, manual sliders, sharpen, before/after), /tools/headshot-dos-donts (5 kategori do/don't kartları, checklist, 5 FAQ). Tools index'e 3 yeni entry + sitemap'e 3 yeni URL. Commit: 9bb985e. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa + tools index tümü çalışıyor."
     },
@@ -356,7 +442,9 @@
       "id": "feat-AR",
       "name": "Phase AR — Passport Photo, Compressor & Collage Free Tools",
       "description": "3 yeni client-side free tool: Passport & ID Photo Maker (7 ülke preset + custom), Headshot Photo Compressor (quality slider + target presets), Headshot Collage Maker (2-6 foto, çoklu layout). Tools index + sitemap güncellemesi.",
-      "dependencies": ["feat-AQ"],
+      "dependencies": [
+        "feat-AQ"
+      ],
       "status": "done",
       "evidence": "3 yeni araç sayfası: /tools/passport-photo-maker (7 ülke preset, face guide oval, zoom, 4x6 print sheet), /tools/headshot-compressor (quality 10-100, target presets, binary search), /tools/headshot-collage (2-6 foto, gap/bg control, labels). Tools index'e 3 entry + sitemap'e 3 URL. Commit: 10bdff8. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa + tools index tümü çalışıyor."
     },
@@ -364,7 +452,9 @@
       "id": "feat-AS",
       "name": "Phase AS — Bio Generator, LinkedIn Banner & Virtual Background Free Tools",
       "description": "3 yeni client-side free tool: Professional Bio Generator (4 ton, 3 uzunluk, 1./3. kişi), LinkedIn Banner Maker (1584x396 canvas, 7 template), Virtual Background Maker (8 prosedürel template, Zoom/Teams/Meet). Tools index + sitemap güncellemesi.",
-      "dependencies": ["feat-AR"],
+      "dependencies": [
+        "feat-AR"
+      ],
       "status": "done",
       "evidence": "3 yeni araç sayfası: /tools/bio-generator (4 ton × 4 varyasyon, short/medium/long, copy+regenerate), /tools/linkedin-banner-maker (7 template, renk/metin/headshot upload, PNG download), /tools/virtual-background-maker (8 canvas template, renk/blur/brightness/warmth, text overlay, 1920x1080+1280x720 download). Tools index'e 3 entry + sitemap'e 3 URL. Commit: e600ea7. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa + tools index tümü çalışıyor."
     },
@@ -372,7 +462,9 @@
       "id": "feat-AT",
       "name": "Phase AT — OpenToWork Frame, Circle Cropper & EXIF Viewer Free Tools",
       "description": "3 yeni client-side free tool: #OpenToWork Frame Maker (canvas ring overlay, 3 preset + custom), Circle Photo Cropper (transparent/solid bg, zoom/drag), Photo EXIF Viewer & Remover (hand-written parser, GPS warning, strip metadata). Tools index + sitemap güncellemesi.",
-      "dependencies": ["feat-AS"],
+      "dependencies": [
+        "feat-AS"
+      ],
       "status": "done",
       "evidence": "3 yeni araç sayfası: /tools/open-to-work-frame (#OpenToWork/#Hiring ring, thickness slider, text toggle), /tools/circle-photo-cropper (200-1000px, checkerboard preview, transparent/solid bg), /tools/exif-viewer (DataView EXIF parser, GPS presence warning, quality slider strip). Tools index'e 3 entry + sitemap'e 3 URL. Commit: d8b0468. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa + tools index tümü çalışıyor."
     },
@@ -380,7 +472,9 @@
       "id": "feat-AU",
       "name": "Phase AU — Image Converter, Social Resizer & Business Card Free Tools",
       "description": "3 yeni client-side free tool: Image Format Converter (HEIC/WebP/PNG/BMP→JPG/PNG/WebP, quality slider), Social Media Image Resizer (12 platform preset, multi-select, batch download), Digital Business Card Generator (4 template, headshot upload, PNG + vCard download). Tools index + sitemap güncellemesi.",
-      "dependencies": ["feat-AT"],
+      "dependencies": [
+        "feat-AT"
+      ],
       "status": "done",
       "evidence": "3 yeni araç sayfası: /tools/image-format-converter (HEIC/WebP/PNG/BMP/TIFF input, JPG/PNG/WebP output, quality slider), /tools/social-media-resizer (12 platform preset, zoom/drag crop, individual + batch PNG download), /tools/business-card-generator (4 template, 7 input field, headshot upload, PNG + vCard 3.0 download). Tools index'e 3 entry + sitemap'e 3 URL. Commit: cadcd46. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa + tools index tümü çalışıyor."
     },
@@ -388,7 +482,9 @@
       "id": "feat-AV",
       "name": "Phase AV — Image Watermark Maker Free Tool",
       "description": "Yeni client-side free tool: Image Watermark & Text Overlay Maker (custom text, font/size/color/opacity/rotation, 9-position grid + drag, single/tiled mode, diagonal pattern, spacing control). Tools index + sitemap güncellemesi.",
-      "dependencies": ["feat-AU"],
+      "dependencies": [
+        "feat-AU"
+      ],
       "status": "done",
       "evidence": "/tools/watermark-maker: custom text watermark, 5 font family, color picker, opacity/rotation slider, 9-position grid + drag, single/tiled mode, diagonal pattern, spacing control, PNG download. Tools index'e 1 entry (toplam 29) + sitemap'e 1 URL. Commit: 05b8fae. CI PASS + Vercel PASS. Canlı doğrulama: sayfa + tools index kartı çalışıyor."
     },
@@ -396,7 +492,9 @@
       "id": "feat-AW",
       "name": "Phase AW — Color Palette Extractor & DPI Checker Free Tools",
       "description": "2 yeni client-side free tool: Color Palette Extractor (histogram bucketing, HEX/RGB, CSS vars copy, PNG strip download), Image DPI Checker (hand-written JPEG/PNG DPI parser, print size calculator, quality badges). Tools index + sitemap güncellemesi.",
-      "dependencies": ["feat-AV"],
+      "dependencies": [
+        "feat-AV"
+      ],
       "status": "done",
       "evidence": "/tools/color-palette-extractor: Canvas histogram 32x32x32 RGB buckets, merge distance<50, max 8 colors, HEX/RGB copy, CSS vars copy, PNG strip download. /tools/dpi-checker: DataView JPEG JFIF/EXIF + PNG pHYs parser, print size calculator (72/150/300 presets), quality badges (emerald/amber/red), common print sizes table. Tools index'e 2 entry (toplam 31) + sitemap'e 2 URL. Commit: b49d825. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa çalışıyor."
     },
@@ -404,7 +502,9 @@
       "id": "feat-AX",
       "name": "Phase AX — Photo Background Blur & Photo Filters Free Tools",
       "description": "2 yeni client-side free tool: Photo Background Blur (canvas blur+ellipse clip, 8 resize handle, drag/move focus area), Photo Filters & Effects (12 pixel-manipulation filtre, intensity slider, seeded grain). Tools index + sitemap güncellemesi.",
-      "dependencies": ["feat-AW"],
+      "dependencies": [
+        "feat-AW"
+      ],
       "status": "done",
       "evidence": "/tools/background-blur: Canvas ctx.filter blur + ellipse clip, 8 handle resize, pointer drag/move, export at original resolution (capped 4096px). /tools/photo-filters: 12 filters (grayscale/sepia/vintage/warm/cool/contrast/soft/dramatic/vivid/matte/bwfilm), pixel-level ImageData manipulation, intensity blend, 80x80 thumbnail previews, seeded random grain. Tools index'e 2 entry (toplam 33) + sitemap'e 2 URL. Commit: 4807212. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa çalışıyor."
     },
@@ -412,7 +512,9 @@
       "id": "feat-AY",
       "name": "Phase AY — Pencil Sketch, Photo Border Maker & Batch Resizer Free Tools",
       "description": "3 yeni client-side free tool: Pencil Sketch Converter (grayscale→invert→blur→dodge blend, 4 stil, line thickness/intensity), Photo Border & Frame Maker (8 preset, custom colors/width/padding, shadow/glow, rounded corners), Batch Photo Resizer (multi-file, 8 platform preset, percentage/max-width/exact modes, ZIP download). Tools index + sitemap güncellemesi.",
-      "dependencies": ["feat-AX"],
+      "dependencies": [
+        "feat-AX"
+      ],
       "status": "done",
       "evidence": "/tools/pencil-sketch: 4 sketch styles (Light/Medium/Dark/Charcoal), 3-pass separable box blur, color dodge blend, line thickness 1-40, intensity 0-100. /tools/photo-border-maker: 8 preset frames (Clean White/Classic Black/Gold/Silver/Polaroid/Film Strip/Vintage/Modern), solid/gradient/double border, shadow/glow effect, rounded corners, PRNG rough edges. /tools/batch-photo-resizer: Up to 20 files, 8 platform presets (LinkedIn/Instagram/Facebook/Twitter/YouTube/Passport), 4 resize modes, inline ZIP builder (DataView/ArrayBuffer). Tools index'e 3 entry (toplam 36) + sitemap'e 3 URL. Commit: 6b2f2b2. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa çalışıyor."
     },
@@ -420,7 +522,9 @@
       "id": "feat-AZ",
       "name": "Phase AZ — LinkedIn Photo Checker, Headshot Quality Score & Profile Picture Maker Free Tools",
       "description": "3 yeni client-side free tool: LinkedIn Photo Checker (6-point analysis: dimensions/aspect/filesize/resolution/brightness/centering), Headshot Quality Score (5-criteria scorer: framing/lighting/background/sharpness/contrast + SVG overlay), Profile Picture Maker (9-platform crop: LinkedIn/Instagram/Facebook/Twitter/YouTube/Zoom/Slack/WhatsApp/Discord + ZIP download). Tools index + sitemap güncellemesi.",
-      "dependencies": ["feat-AY"],
+      "dependencies": [
+        "feat-AY"
+      ],
       "status": "done",
       "evidence": "/tools/linkedin-photo-checker: 6 checks (dimensions ≥400x400, aspect 1:1, filesize ≤8MB, resolution, brightness luminance, face centering contrast centroid), score 0-100, circle preview, optimized square PNG download. /tools/headshot-quality-score: 5 criteria scored 0-100 (framing 16x16 grid, lighting L/R half, background outer 20% variance, sharpness Laplacian 3x3, contrast brightness stddev), circular SVG gauge, horizontal progress bars, semi-transparent overlay (rule-of-thirds + subject box). /tools/profile-picture-maker: 9 platform presets (LinkedIn 400x400 / Instagram 320x320 / Facebook 170x170 / Twitter 400x400 / YouTube 800x800 / Zoom 400x400 / Slack 512x512 / WhatsApp 500x500 / Discord 128x128), draggable/resizable crop, circle/square preview, individual PNG or ZIP download. Tools index'e 3 entry (toplam 39) + sitemap'e 3 URL. Commit: 5e9b3eb. CI PASS + Vercel PASS. Canlı doğrulama: 3 sayfa + tools index tümü çalışıyor."
     },
@@ -428,7 +532,9 @@
       "id": "feat-BA",
       "name": "Phase BA — 3 New Marketing Components (StyleConfigurator, StudioComparisonV2, ProcessingTimeline)",
       "description": "3 yeni marketing component: StyleConfigurator (interactive backdrop+style preview, named export fix), StudioComparisonV2 (Traditional Studio vs TailorPic AI karşılaştırma), ProcessingTimeline (4-step upload→download timeline). Homepage ve /headshots sayfalarına entegrasyon. 12→10 style düzeltmesi (4 dosya).",
-      "dependencies": ["feat-AZ"],
+      "dependencies": [
+        "feat-AZ"
+      ],
       "status": "done",
       "evidence": "StyleConfigurator: 8 backdrop swatch + 6 style pill, SVG silhouette preview, named export fix for dynamic import compat. StudioComparisonV2: Server component, Traditional vs AI comparison table with 7 criteria. ProcessingTimeline: 4-step ordered list (Upload ~2min → AI Processing ~90min → Review ~5min → Download Instant), desktop 4-col grid with horizontal connectors, mobile vertical stack. Homepage: StudioComparisonV2 after StyleConfigurator. /headshots: StudioComparisonV2 after value props, StyleConfigurator + ProcessingTimeline after How It Works. 12→10 style fix: studio-comparison-v2.tsx, processing-timeline.tsx, how-it-works/page.tsx (2 occurrences). Commit: dc4309a. CI PASS + Vercel PASS. Canlı doğrulama: homepage + /headshots + /how-it-works tümü çalışıyor."
     },
@@ -436,7 +542,9 @@
       "id": "feat-BB",
       "name": "Phase BB — HeadshotStyleGallery + /headshots Enrichment",
       "description": "HeadshotStyleGallery (8 stil SVG kartı), BeforeAfterShowcase + SocialProofBar /headshots sayfasına eklenmesi.",
-      "dependencies": ["feat-BA"],
+      "dependencies": [
+        "feat-BA"
+      ],
       "status": "done",
       "evidence": "HeadshotStyleGallery: 8 stil kartı (Corporate/LinkedIn Pro/Studio Classic/Executive/Natural Light/Creative/Outdoor/Modern Minimal), SVG silhouette with attire variants, responsive 2/3/4 grid. /headshots: +3 dynamic import (BeforeAfterShowcase, SocialProofBar, HeadshotStyleGallery). Commits: 57036b3, c15872b. CI PASS + Vercel PASS. Canlı doğrulama: tüm bileşenler doğru render."
     },
@@ -444,7 +552,9 @@
       "id": "feat-BC",
       "name": "Phase BC — Homepage Conversion Sections",
       "description": "3 yeni homepage bileşeni: ProfessionChips (12 meslek chip'i), ManyLooksSection (5 sekmeli occasion galerisi), FreeToolsShowcase (10 araç grid + cross-sell CTA). Homepage entegrasyonu.",
-      "dependencies": ["feat-BB"],
+      "dependencies": [
+        "feat-BB"
+      ],
       "status": "done",
       "evidence": "ProfessionChips: 12 meslek (Lawyer/Realtor/Developer/Doctor/Consultant/Executive/Teacher/Accountant/Engineer/Sales Pro/Marketer/Actor), BeforeAfterShowcase sonrasına yerleştirildi. ManyLooksSection: 5 tab (Professional/Social & Dating/Creative & Portfolio/Academic & Medical/Events & Conferences), her tabda 3 SVG silhouette kart, StyleConfigurator sonrasına yerleştirildi. FreeToolsShowcase: 10 featured tool grid (Background Remover/Profile Picture Maker/LinkedIn Photo Checker/Photo Enhance Preview/Passport Photo Maker/Background Blur/Image Format Converter/Photo Filters/Batch Photo Resizer/Style Finder Quiz), 'View all 39 free tools' CTA, cross-sell line, PackageQuiz sonrasına yerleştirildi. Commit: f446aed. CI PASS + Vercel PASS. Canlı doğrulama: 3 bileşen homepage'de doğru render."
     },
@@ -452,7 +562,9 @@
       "id": "feat-BD",
       "name": "Phase BD — PricingToggle + AIProcessDemo + PlatformShowcase",
       "description": "Pricing bölümüne Individual/Teams toggle, AI süreç animasyonu demo bileşeni, 6 platform kartlı headshot kullanım alanları showcase.",
-      "dependencies": ["feat-BC"],
+      "dependencies": [
+        "feat-BC"
+      ],
       "status": "done",
       "evidence": "PricingToggle: Individual/Teams pill toggle, Teams modunda 3 kart (Small Team $39/person 5-15, Large Team $29/person 16-50 Best Value, Enterprise Custom 50+). AIProcessDemo: CSS-only 9s auto-advancing 3-step animation (Upload→AI Processing→Results), prefers-reduced-motion desteği, HowItWorks sonrasına yerleştirildi. PlatformShowcase: 6 platform kartı (LinkedIn/Zoom/Email Signature/Company Website/Slack-Teams/Resume), SVG mockup frame + avatar placeholder, CompanyLogos sonrasına yerleştirildi. Commit: 29a1179. CI PASS + Vercel PASS. Canlı doğrulama: 3 bileşen doğru render, Teams toggle çalışıyor."
     },
@@ -460,7 +572,9 @@
       "id": "feat-BE",
       "name": "Phase BE — Performance & Accessibility & Polish (82→90)",
       "description": "Image sizes optimizasyonu (content-photo, header logo, 64 industry page hero), ARIA slider iyileştirmeleri (before-after-showcase), focus states (categories, style-configurator), guarantee badge pricing altına eklendi.",
-      "dependencies": ["feat-BD"],
+      "dependencies": [
+        "feat-BD"
+      ],
       "status": "done",
       "evidence": "Performance: sizes attribute content-photo.tsx (50vw/100px), header.tsx logo (160px), 64 industry page hero portrait (160px). A11y: before-after-showcase ARIA slider (per-label, valuetext, Home/End/Up/Down keys, aria-hidden decorative elements, ring focus pattern), style-configurator aria-label on radios, categories focus-visible ring-offset. Trust: guarantee/refund summary badge under pricing (Satisfaction Guarantee + Secure Stripe + Results in minutes). Skip-to-content already existed in layout.tsx. Commit: bc9bcee. CI PASS + Vercel PASS. Canlı doğrulama: guarantee badge pricing altında görünüyor, before-after slider'lar çalışıyor."
     },
@@ -468,7 +582,9 @@
       "id": "feat-BF",
       "name": "Phase BF — Menu Simplification + Package Clarity + Mobile Polish",
       "description": "Header nav 6→4 link sadeleştirme, pricing sayfası credits vs packages explainer bölümü, hero/platform-showcase/free-tools/savings-calculator mobil layout düzeltmeleri.",
-      "dependencies": ["feat-BE"],
+      "dependencies": [
+        "feat-BE"
+      ],
       "status": "done",
       "evidence": "Header: navLinks 6→4 (Headshots/How It Works/Examples/Pricing), Enterprise+Blog secondaryLinks'e taşındı. Pricing: Bulk Savings / Save More with Credit Packs başlığı + Single Package vs Credit Pack yan yana açıklama kartları eklendi. Mobile: hero CTA w-full+justify-center sm:w-auto, platform-showcase grid-cols-1 sm:grid-cols-2, free-tools grid-cols-1 min-[400px]:grid-cols-2, savings-calculator text-3xl/4xl/5xl responsive scale, inner padding p-4 sm:p-6. Commit: 7a9fdbb. CI PASS + Vercel PASS. Canlı doğrulama: header 4 link, credits explainer bölümü doğru render."
     },
@@ -476,7 +592,9 @@
       "id": "feat-BG",
       "name": "Phase BG — Samples Page Fix + Cookie Banner UX",
       "description": "Samples sayfası before/after bölümü statikten interaktif BeforeAfterGallery'ye geçiş, cookie banner slim bar tasarımına geçiş.",
-      "dependencies": ["feat-BF"],
+      "dependencies": [
+        "feat-BF"
+      ],
       "status": "done",
       "evidence": "Samples /samples: statik grayscale before/after → BeforeAfterGallery (6 interaktif drag slider, SELFIE/AI HEADSHOT etiketleri, disclosure badge). Cookie banner: büyük kart overlay → ince alt bar (border-t, backdrop-blur-sm, compact butonlar: Manage/Decline/Accept tek satır). Preference panel: max-w-3xl → max-w-lg kompakt kart. Commit: a40e3c3. CI PASS + Vercel PASS. Canlı doğrulama: /samples slider'ları çalışıyor, cookie banner slim."
     },
@@ -484,9 +602,21 @@
       "id": "feat-BH",
       "name": "Phase BH — Social Proof + Dashboard Nav + Mobile QA + A11y",
       "description": "Homepage gerçek social proof güçlendirmesi, dashboard/accounting navigasyon görünürlüğü, 375/390/430px mobil QA, erişilebilirlik/performans polish.",
-      "dependencies": ["feat-BG"],
+      "dependencies": [
+        "feat-BG"
+      ],
       "status": "done",
       "evidence": "6 öncelik tamamlandı: (1) Samples sayfası interaktif slider (commit a40e3c3), (2) Social proof güçlendirme — review-platforms + SocialProofBar iyileştirmeleri (commit 1ce3348), (3) Cookie banner slim UX (commit a40e3c3), (4) Dashboard/accounting navigasyon (commit 1ce3348), (5) Mobile QA — sticky CTA safe-area, header mobile menu safe-area, touch target düzeltmeleri (commit 7a980e3), (6) A11y polish — tp-bronze→tp-bronze-ink kontrast (9 dosya), focus ring pattern düzeltmesi (9 dosya), aria-hidden ikonlar (commit 7a980e3). Canlı doğrulama: /headshots + homepage Chrome browser ile tam sayfa scroll testi tamamlandı."
+    },
+    {
+      "id": "feat-AUDIT-FIX",
+      "name": "Denetim Kritik Düzeltmeler",
+      "description": "Denetim raporu sonucu tespit edilen 3 kritik yasal çelişki + teslimat süresi tutarsızlığı düzeltildi",
+      "dependencies": [
+        "feat-BH"
+      ],
+      "status": "done",
+      "evidence": "96 dosyada düzeltme: privacy retention (30 gün tutarlı), 3rd party sharing (Replicate açıklaması), AI training dili (geçici model açıklaması), delivery time (~2hr standard). CI+Vercel PASS. Commit: 46fdecd. Canlı site doğrulandı."
     }
   ]
 }

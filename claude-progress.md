@@ -1,5 +1,26 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-07 (Site Denetimi + Kritik Düzeltmeler)
+
+### Kapsamlı Site Denetimi: 79/100
+- 4 paralel uzman ajan ile tam denetim yapıldı (SEO, UX, Brand, A11y)
+- Claude Docs'a rapor yazıldı: https://claude.ai/artifact/28CyNSnjngQZspGjcERK9i
+
+### Kritik Düzeltmeler (commit 46fdecd)
+- **Gizlilik çelişkisi:** Veri saklama "until you delete" → "30 gün otomatik silme" tutarlı hale getirildi
+- **3. taraf paylaşım:** "asla paylaşılmaz" → "sadece AI ortağımız Replicate ile" doğru ifade
+- **AI eğitim dili:** "asla eğitim için kullanılmaz" → "geçici kişisel model, işlem sonrası siliniyor"
+- **Teslimat süresi:** 96 dosyada "~2 saat tipik, 24 saat garanti" standardize edildi
+- CI+Vercel PASS, canlı site doğrulandı
+
+### Sonraki Adımlar
+- text-tp-bronze kontrast düzeltmesi (~1408 kullanım)
+- 26 eski focus pattern düzeltmesi
+- 282 raw rounded-* → tp-* token dönüşümü
+- Hardcoded fiyatlar config'den çekilmeli
+
+---
+
 ## Oturum: 2026-10-07 (Phase BH — Social Proof + Dashboard Nav + Mobile QA + A11y)
 
 ### Tamamlanan
