@@ -25,7 +25,23 @@ function getDeviceType(): string {
   return 'desktop';
 }
 
+/** Check whether the visitor has granted analytics consent via the cookie banner. */
+function hasAnalyticsConsent(): boolean {
+  if (typeof window === 'undefined') return false;
+  try {
+    const raw = localStorage.getItem('tp_cookie_consent');
+    if (!raw) return false; // no decision yet → do not track
+    const consent = JSON.parse(raw) as { analytics?: boolean };
+    return consent.analytics === true;
+  } catch {
+    return false;
+  }
+}
+
 async function sendEvent(data: Record<string, unknown>) {
+  // Respect the same cookie-consent toggle that controls Google Analytics
+  if (!hasAnalyticsConsent()) return;
+
   try {
     await fetch('/api/analytics/track', {
       method: 'POST',

@@ -2002,7 +2002,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/refund-policy`,
+      url: `${baseUrl}/guarantee`,
       lastModified: new Date('2026-10-06'),
       changeFrequency: 'yearly',
       priority: 0.3,
