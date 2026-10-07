@@ -15,6 +15,15 @@ const DISPUTE_TYPES: FinancialTransactionType[] = ['chargeback', 'dispute', 'cha
 
 const BATCH_SIZE = 1000;
 
+export class ExportFormatNotAvailableError extends Error {
+  format: string;
+  constructor(format: string, message: string) {
+    super(message);
+    this.name = 'ExportFormatNotAvailableError';
+    this.format = format;
+  }
+}
+
 const CSV_COLUMNS: { header: string; key: keyof FinancialTransaction }[] = [
   { header: 'ID', key: 'human_id' },
   { header: 'Date', key: 'occurred_at' },
@@ -77,17 +86,9 @@ export class ExportService {
           contentType: 'application/json',
         };
       case 'xlsx':
-        return {
-          data: 'XLSX export is not available yet: it requires an external spreadsheet library. Use CSV or JSON instead.',
-          filename: `tailorpic-transactions-${stamp}.txt`,
-          contentType: 'text/plain; charset=utf-8',
-        };
+        throw new ExportFormatNotAvailableError('xlsx', 'XLSX export is not available yet. Use CSV or JSON instead.');
       case 'pdf':
-        return {
-          data: 'PDF export is not available yet: it requires an external PDF library. Use CSV or JSON instead.',
-          filename: `tailorpic-transactions-${stamp}.txt`,
-          contentType: 'text/plain; charset=utf-8',
-        };
+        throw new ExportFormatNotAvailableError('pdf', 'PDF export is not available yet. Use CSV or JSON instead.');
       default:
         throw new Error(`Unsupported export format: ${String(format)}`);
     }

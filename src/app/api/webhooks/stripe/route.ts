@@ -14,7 +14,7 @@ import {
 } from '@/lib/emails';
 import { nanoid } from 'nanoid';
 import { logger } from '@/lib/logger';
-import { TransactionService } from '@/lib/accounting';
+import { TransactionService, InvoiceService, ReceiptService } from '@/lib/accounting';
 
 export const maxDuration = 30;
 
@@ -205,9 +205,9 @@ export async function POST(request: NextRequest) {
             }
           }
 
-          // Record financial transaction (best-effort; never fails the webhook)
+          // Record financial transaction + invoice + receipt (best-effort; never fails the webhook)
           try {
-            await TransactionService.createFromOrder({
+            const tx = await TransactionService.createFromOrder({
               userId,
               orderId,
               amount: session.amount_total || 0,
@@ -223,6 +223,32 @@ export async function POST(request: NextRequest) {
               processorPaymentId: session.payment_intent as string,
               description: `Payment for ${creditPkg?.name || packageId}`,
             });
+
+            // Auto-generate invoice and receipt
+            const totalAmount = session.amount_total || 0;
+            const currency = session.currency || 'usd';
+            try {
+              await InvoiceService.createFromTransaction({
+                userId,
+                transactionId: tx.id,
+                orderId,
+                subtotal: totalAmount,
+                total: totalAmount,
+                currency,
+              });
+            } catch (invErr) {
+              logger.error('[stripe-webhook] Failed to create invoice:', invErr);
+            }
+            try {
+              await ReceiptService.createFromTransaction({
+                userId,
+                transactionId: tx.id,
+                total: totalAmount,
+                currency,
+              });
+            } catch (rcptErr) {
+              logger.error('[stripe-webhook] Failed to create receipt:', rcptErr);
+            }
           } catch (txError) {
             logger.error('[stripe-webhook] Failed to record financial transaction:', txError);
             // Don't fail the webhook — the order was already updated
@@ -265,9 +291,9 @@ export async function POST(request: NextRequest) {
           }
         }
 
-        // Record financial transaction (best-effort; never fails the webhook)
+        // Record financial transaction + invoice + receipt (best-effort; never fails the webhook)
         try {
-          await TransactionService.createFromOrder({
+          const tx = await TransactionService.createFromOrder({
             userId,
             orderId,
             amount: session.amount_total || 0,
@@ -283,6 +309,32 @@ export async function POST(request: NextRequest) {
             processorPaymentId: session.payment_intent as string,
             description: `Payment for ${pkgName}`,
           });
+
+          // Auto-generate invoice and receipt
+          const totalAmount = session.amount_total || 0;
+          const currency = session.currency || 'usd';
+          try {
+            await InvoiceService.createFromTransaction({
+              userId,
+              transactionId: tx.id,
+              orderId,
+              subtotal: totalAmount,
+              total: totalAmount,
+              currency,
+            });
+          } catch (invErr) {
+            logger.error('[stripe-webhook] Failed to create invoice:', invErr);
+          }
+          try {
+            await ReceiptService.createFromTransaction({
+              userId,
+              transactionId: tx.id,
+              total: totalAmount,
+              currency,
+            });
+          } catch (rcptErr) {
+            logger.error('[stripe-webhook] Failed to create receipt:', rcptErr);
+          }
         } catch (txError) {
           logger.error('[stripe-webhook] Failed to record financial transaction:', txError);
           // Don't fail the webhook — the order was already updated

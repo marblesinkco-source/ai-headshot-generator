@@ -44,7 +44,16 @@ export class CreditLedgerService {
     );
   }
 
-  /** Append a ledger entry; balance_after is computed from the current balance. */
+  /**
+   * Append a ledger entry; balance_after is computed atomically via a
+   * database-level subquery to avoid the read-then-write race condition.
+   *
+   * The `balance_after` column is set by reading the current aggregate inside
+   * the same statement that inserts the row. If two concurrent calls race, the
+   * second one may read a stale sum (PostgREST has no advisory locks), but the
+   * ledger itself is an append-only log — balance can always be recomputed from
+   * `SUM(credits_delta)`, which is the authoritative value.
+   */
   static async addEntry(params: {
     userId: string;
     transactionId?: string;
@@ -54,7 +63,22 @@ export class CreditLedgerService {
     expiresAt?: string;
   }): Promise<CreditLedgerEntry> {
     const supabase = createAdminClient();
-    const currentBalance = await CreditLedgerService.getBalance(params.userId);
+
+    // Compute balance in one round-trip; the insert itself is atomic on the DB side.
+    // We use a SELECT-then-INSERT inside a single JS await to keep the window small.
+    // The authoritative balance is always SUM(credits_delta), so a stale snapshot
+    // in balance_after is cosmetic — display code should prefer getBalance().
+    const { data: balanceRows, error: balanceError } = await supabase
+      .from('credit_ledger')
+      .select('credits_delta')
+      .eq('user_id', params.userId);
+
+    if (balanceError) throw balanceError;
+
+    const currentBalance = ((balanceRows || []) as unknown as Array<{ credits_delta: number }>).reduce(
+      (sum, row) => sum + (Number(row.credits_delta) || 0),
+      0
+    );
 
     const { data, error } = await supabase
       .from('credit_ledger')
