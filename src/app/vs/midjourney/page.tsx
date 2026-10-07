@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered in under 2 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -46,7 +46,7 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Subscription-based; check their site" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on prompts and plan limits" },
-  { label: "Delivery time", tailorpic: "Within 24 hours", other: "Varies by mode and queue" },
+  { label: "Delivery time", tailorpic: "Results in ~2 hours", other: "Varies by mode and queue" },
   { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Artistic and photorealistic imagery of all kinds" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Prompt-based generation; not a model trained on your face" },
   { label: "Pricing model", tailorpic: "One-time payment, no subscription", other: "Check their site for current plans" },
@@ -82,7 +82,7 @@ const faqs = [
   { question: "Is TailorPic cheaper than Midjourney?", answer: "TailorPic packages start from $1.99 and go up to 160 photos. Midjourney is priced by plan and can change, so check their current pricing." },
   { question: "Can Midjourney make headshots of me?", answer: "Midjourney can produce portraits from prompts, but it is not trained on your face by default. TailorPic trains a personal LoRA model on your own photos." },
   { question: "Do I need Discord or prompting skill for TailorPic?", answer: "No. You upload your photos on the website and receive finished headshots, with no prompts to write." },
-  { question: "How long does TailorPic take?", answer: "Delivery is within 24 hours, since a dedicated model is fine-tuned on your uploads." },
+  { question: "How long does TailorPic take?", answer: "Results in ~2 hours, since a dedicated model is fine-tuned on your uploads." },
   { question: "Do I need a subscription with TailorPic?", answer: "No. Every package is a single one-time payment (from $1.99) with no recurring fees." },
 ];
 
@@ -221,7 +221,7 @@ export default function VsMidjourneyPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 12 categories from $1.99. No subscription, delivered within 24 hours.
+              Professional photos across 12 categories from $1.99. No subscription, results typically delivered in under 2 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

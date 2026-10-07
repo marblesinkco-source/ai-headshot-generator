@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered in under 2 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -43,7 +43,7 @@ const productJsonLd = {
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "~$29 one-time" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "100+ headshots" },
-  { label: "Delivery time", tailorpic: "24 hours", other: "About 10 minutes" },
+  { label: "Delivery time", tailorpic: "Results in ~2 hours", other: "About 10 minutes" },
   { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Professional headshot styles" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
   { label: "One-time vs subscription", tailorpic: "One-time payment, no subscription", other: "One-time payment" },
@@ -53,7 +53,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 const differences = [
   { title: "Price", body: "Both are one-time purchases, but TailorPic starts at $1.99 versus around $29 for HeadshotsByAI." },
   { title: "Quantity", body: "HeadshotsByAI includes 100+ headshots. TailorPic packages range from 1 to 160 photos, organized across 12 categories so you get variety, not just volume." },
-  { title: "Speed", body: "HeadshotsByAI delivers in about 10 minutes. TailorPic takes up to 24 hours while it trains a LoRA model on your photos." },
+  { title: "Speed", body: "HeadshotsByAI delivers in about 10 minutes. TailorPic typically takes under 2 hours while it trains a LoRA model on your photos." },
   { title: "Editing vs fine-tuning", body: "HeadshotsByAI offers edit credits to tweak results. TailorPic focuses on likeness up front through LoRA fine-tuning." },
 ];
 
@@ -75,7 +75,7 @@ const useCases = {
 const faqs = [
   { question: "Is TailorPic cheaper than HeadshotsByAI?", answer: "Our entry price is lower, but the packages are not like-for-like: TailorPic starts from $1.99 for a single photo and goes up to 160 photos, compared with around $29 for HeadshotsByAI. Both avoid subscriptions." },
   { question: "Do I get more photos with HeadshotsByAI?", answer: "HeadshotsByAI includes 100+ headshots versus up to 160 from TailorPic. TailorPic spreads its photos over 12 categories." },
-  { question: "Which delivers faster?", answer: "HeadshotsByAI delivers in about 10 minutes. TailorPic delivers within 24 hours because it fine-tunes a LoRA model for each customer." },
+  { question: "Which delivers faster?", answer: "HeadshotsByAI delivers in about 10 minutes. TailorPic results are ready in under 2 hours for most orders; guaranteed within 24 hours, since it fine-tunes a LoRA model for each customer." },
   { question: "Does TailorPic offer edit credits?", answer: "TailorPic focuses on fine-tuning a model of your face to get accurate results from the start. HeadshotsByAI offers edit credits for adjustments after generation." },
 ];
 
@@ -215,7 +215,7 @@ export default function Page() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 12 categories from $1.99. No subscription, delivered within 24 hours.
+              Professional photos across 12 categories from $1.99. No subscription, results typically delivered in under 2 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

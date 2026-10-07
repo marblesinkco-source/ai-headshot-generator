@@ -65,10 +65,10 @@ export default function PrivacyPage() {
         that create your custom images. After processing:
       </p>
       <ul>
-        <li>Training data and temporary models are deleted within 30 days of order completion</li>
-        <li>Generated images are stored in your account until you delete them</li>
+        <li>Your photos are used only to generate your personal headshots; the temporary model created for you is not used to serve other users</li>
+        <li>Training data, temporary models, uploaded photos and generated images are automatically deleted after 30 days; you can delete them sooner from your dashboard</li>
         <li>We do not use your photos to train general-purpose AI models</li>
-        <li>We do not sell or share your photos with third parties for their own purposes</li>
+        <li>We do not sell your photos. They are shared only with our AI processing partner (Replicate) to generate your headshots, and not for any other purpose</li>
       </ul>
 
       <h2>4. Third-Party Services</h2>
@@ -101,9 +101,9 @@ export default function PrivacyPage() {
 
       <h2>7. Data Retention</h2>
       <p>
-        We retain your account information as long as your account is active. Uploaded photos used for
-        AI training are deleted within 30 days of order completion. Generated images remain available
-        until you delete them or close your account.
+        We retain your account information as long as your account is active. Uploaded photos, temporary AI models and
+        generated images are automatically deleted 30 days after delivery. You can delete them sooner
+        from your dashboard or by closing your account.
       </p>
 
       <h2>8. Children&apos;s Privacy</h2>

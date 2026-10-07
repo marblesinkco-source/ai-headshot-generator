@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered in under 2 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -46,7 +46,7 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Confirm current pricing on their site" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on the plan" },
-  { label: "Delivery time", tailorpic: "Within 24 hours", other: "Varies by plan" },
+  { label: "Delivery time", tailorpic: "Results in ~2 hours", other: "Varies by plan" },
   { label: "Categories / styles", tailorpic: "12 categories", other: "Headshot-focused style options" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
   { label: "Pricing model", tailorpic: "One-time payment", other: "Check for packages or subscriptions" },
@@ -221,7 +221,7 @@ export default function VsVividHeadshotsPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 12 categories from $1.99. No subscription, delivered within 24 hours.
+              Professional photos across 12 categories from $1.99. No subscription, results typically delivered in under 2 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

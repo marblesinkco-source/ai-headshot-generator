@@ -46,7 +46,7 @@ const contactMethods = [
 const trustSignals = [
   { icon: Lock, title: 'Secure submission', text: 'Your message is sent over an encrypted connection.' },
   { icon: MailX, title: 'No spam', text: 'We only use your email to reply to your message.' },
-  { icon: ShieldCheck, title: 'Your data stays private', text: 'We never share your details with third parties.' },
+  { icon: ShieldCheck, title: 'Your data stays private', text: 'We never sell your details, and share them only with providers needed to deliver your service.' },
 ];
 
 const faqs = [
@@ -64,7 +64,7 @@ const faqs = [
   },
   {
     q: 'What happens to my uploaded photos?',
-    a: 'Your photos are encrypted in transit and at rest, and automatically deleted 30 days after delivery. You can also request earlier deletion by contacting support. We never share your data with third parties.',
+    a: 'Your photos are encrypted in transit and at rest, and automatically deleted 30 days after delivery. You can also delete them sooner from your dashboard. We never sell your data, and share it only with providers listed on our Subprocessors page.',
   },
   {
     q: 'Can I use the generated photos commercially?',

@@ -204,7 +204,7 @@ export default async function CityPage({ params }: Props) {
                 {
                   icon: Shield,
                   title: 'Privacy First',
-                  desc: 'Your photos are encrypted and never shared. Delete your data anytime from your dashboard.',
+                  desc: 'Your photos are encrypted, shared only with our AI processing partner for generation, and never sold. Delete your data anytime from your dashboard.',
                 },
                 {
                   icon: Camera,

@@ -156,7 +156,7 @@ const valueProps: ValueProp[] = [
     stat: 'Privacy',
     label: 'First approach',
     description:
-      'Your photos are processed securely and never shared. You control your images from upload to download.',
+      'Your photos are processed securely, shared only with our AI processing partner to generate your headshots, and never sold. You control your images from upload to download.',
   },
   {
     icon: Users,

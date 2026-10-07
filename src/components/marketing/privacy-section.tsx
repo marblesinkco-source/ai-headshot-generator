@@ -5,17 +5,17 @@ const commitments = [
   {
     icon: Trash2,
     title: 'Auto-deleted in 30 days',
-    description: 'Your uploaded selfies and generated headshots are automatically removed within 30 days.',
+    description: 'Your uploaded selfies, temporary AI model and generated headshots are automatically deleted after 30 days. Delete sooner anytime from your dashboard.',
   },
   {
     icon: ShieldCheck,
     title: 'Never sold',
-    description: 'We do not sell your data or your photos to anyone, ever.',
+    description: 'We do not sell your data or your photos.',
   },
   {
     icon: ShieldCheck,
-    title: 'Never used for training',
-    description: 'Your photos are used only to create your headshots, not to train AI models.',
+    title: 'Used only for your headshots',
+    description: 'Your photos are used only to generate your personal headshots. The temporary AI model created for you is automatically deleted after processing.',
   },
   {
     icon: Lock,
@@ -41,7 +41,7 @@ export function PrivacySection() {
             Your Photos Stay Private — Always
           </h2>
           <p className="mt-4 text-base leading-relaxed text-tp-beige/80">
-            We never train our AI on your photos. Four clear commitments.
+            Your photos are used only to generate your headshots. Four clear commitments.
           </p>
         </div>
 

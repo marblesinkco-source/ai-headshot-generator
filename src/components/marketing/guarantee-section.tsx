@@ -51,7 +51,7 @@ const items = [
     Icon: LockIcon,
     title: 'Secure & Private',
     description:
-      'Your photos are encrypted in transit. Uploaded photos used for AI training are deleted within 30 days of order completion.',
+      'Your photos are encrypted in transit. Uploaded photos and your temporary AI model are automatically deleted after 30 days.',
   },
   {
     Icon: ReceiptIcon,

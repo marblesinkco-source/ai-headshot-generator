@@ -114,7 +114,7 @@ const faqItems = [
   },
   {
     q: 'Is my data safe?',
-    a: 'Yes. Your photos are processed securely, never sold or shared, and automatically deleted within 30 days. Payment is handled through Stripe. See our security page for full details.',
+    a: 'Yes. Your photos are processed securely, never sold, shared only with our AI processing partner to generate your headshots, and automatically deleted after 30 days. Payment is handled through Stripe. See our security page for full details.',
   },
 ];
 
@@ -476,7 +476,7 @@ export default function HeadshotsLandingPage() {
               </div>
               <h3 className="text-sm font-semibold text-tp-ink">Secure &amp; Private</h3>
               <p className="mt-2 text-sm text-tp-muted leading-relaxed">
-                Photos deleted within 30 days. Never sold or shared. Stripe-secured payments.
+                Photos deleted after 30 days. Never sold. Stripe-secured payments.
               </p>
               <Link href="/security" className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-tp-bronze-ink hover:text-tp-ink transition-colors min-h-[44px]">
                 Security details <ArrowRight className="h-3.5 w-3.5" />

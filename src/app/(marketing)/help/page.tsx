@@ -196,7 +196,7 @@ const helpCategories: HelpCategory[] = [
       {
         question: 'How is my data handled?',
         answer:
-          'Your photos and personal data are encrypted in transit and at rest. We use industry-standard security practices and never share your photos with third parties.',
+          'Your photos and personal data are encrypted in transit and at rest. We use industry-standard security practices and share your photos only with our AI processing partner to generate your headshots. We never sell them.',
       },
       {
         question: 'Are you GDPR compliant?',
@@ -206,7 +206,7 @@ const helpCategories: HelpCategory[] = [
       {
         question: 'When are my photos deleted?',
         answer:
-          'Uploaded photos used for AI training are automatically deleted from our servers within 30 days of generation. You can also request immediate deletion from your account settings at any time.',
+          'Uploaded photos, your temporary AI model and generated photos are automatically deleted from our servers 30 days after delivery. You can also delete them sooner from your dashboard at any time.',
       },
       {
         question: 'Who can see my photos?',

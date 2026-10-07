@@ -88,7 +88,7 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
       },
       {
         question: 'Do you keep my photos?',
-        answer: 'Your uploaded photos and temporary training data are deleted within 30 days of order completion. See our Privacy Policy for the full details.',
+        answer: 'Your uploaded photos and temporary training data are automatically deleted 30 days after delivery, and you can delete them sooner from your dashboard. See our Privacy Policy for the full details.',
       },
     ],
     howItWorks: [
@@ -149,7 +149,7 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
       },
       {
         question: 'Do you keep my photos private?',
-        answer: 'Your uploaded photos and temporary training data are deleted within 30 days of order completion. See our Privacy Policy for details.',
+        answer: 'Your uploaded photos and temporary training data are automatically deleted 30 days after delivery, and you can delete them sooner from your dashboard. See our Privacy Policy for details.',
       },
     ],
     howItWorks: [

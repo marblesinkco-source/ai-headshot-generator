@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered in under 2 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -43,7 +43,7 @@ const productJsonLd = {
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Approximately $29" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "100+ headshots advertised" },
-  { label: "Delivery time", tailorpic: "24 hours", other: "Varies by plan; check their site" },
+  { label: "Delivery time", tailorpic: "Results in ~2 hours", other: "Varies by plan; check their site" },
   { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Professional headshot styles" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
   { label: "One-time vs subscription", tailorpic: "One-time payment, no subscription", other: "Check their site for current billing terms" },
@@ -54,7 +54,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 const differences = [
   { title: "Price", body: "TailorPic packages start from $1.99, compared with StudioShot's approximate $29 starting price." },
   { title: "Volume vs variety", body: "StudioShot advertises 100+ headshots. TailorPic delivers photos but spreads them across 12 categories, from business to dating and creative looks." },
-  { title: "Delivery", body: "TailorPic delivers within 24 hours. Check StudioShot's site for its current turnaround times for each plan." },
+  { title: "Delivery", body: "TailorPic results are ready in under 2 hours for most orders; guaranteed within 24 hours. Check StudioShot's site for its current turnaround times for each plan." },
   { title: "Personalization", body: "TailorPic trains a personal LoRA model on your photos for a close likeness." },
 ];
 
@@ -76,7 +76,7 @@ const useCases = {
 const faqs = [
   { question: "Is TailorPic cheaper than StudioShot?", answer: "Our entry price is lower, but the packages are not like-for-like: TailorPic starts from $1.99 for a single photo and goes up to 160 photos, while StudioShot starts at approximately $29. Pricing may change, so check their site." },
   { question: "How many photos does StudioShot include?", answer: "StudioShot advertises 100+ headshots. TailorPic includes photos across 12 categories." },
-  { question: "Which delivers faster?", answer: "TailorPic delivers within 24 hours. Check StudioShot's site for its current delivery times." },
+  { question: "Which delivers faster?", answer: "TailorPic results are ready in under 2 hours for most orders; guaranteed within 24 hours. Check StudioShot's site for its current delivery times." },
   { question: "Is TailorPic a subscription?", answer: "No. TailorPic packages are one-time payments starting at $1.99 with no recurring fees." },
 ];
 
@@ -105,7 +105,7 @@ export default function Page() {
               TailorPic <span className="text-tp-bronze">vs</span> {competitor}
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">
-              StudioShot advertises 100+ headshots at a higher price. TailorPic gives you polished photos across 12 categories (up to 160 per order), delivered within 24 hours, from $1.99.
+              StudioShot advertises 100+ headshots at a higher price. TailorPic gives you polished photos across 12 categories (up to 160 per order), results typically delivered in under 2 hours, from $1.99.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
@@ -216,7 +216,7 @@ export default function Page() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 12 categories from $1.99. No subscription, delivered within 24 hours.
+              Professional photos across 12 categories from $1.99. No subscription, results typically delivered in under 2 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

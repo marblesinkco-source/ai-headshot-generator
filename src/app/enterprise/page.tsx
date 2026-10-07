@@ -79,7 +79,7 @@ const enterpriseFaqs = [
   {
     question: 'How is our team\'s data protected?',
     answer:
-      'Uploaded photos are processed on secure infrastructure and automatically deleted within 30 days. We never sell your photos or share them with third parties.',
+      'Uploaded photos are processed on secure infrastructure and automatically deleted within 30 days. We never sell your photos, and share them only with our AI processing partner to generate your headshots.',
   },
   {
     question: 'Is data encrypted, and can we request GDPR or CCPA deletion?',
@@ -539,7 +539,7 @@ export default function EnterprisePage() {
               { icon: Lock, title: 'Encryption', desc: 'Data is encrypted at rest with AES-256 and in transit with TLS 1.3.' },
               { icon: Trash2, title: 'Automatic Data Deletion', desc: 'Original uploads and training data are permanently deleted within 30 days of delivery.' },
               { icon: FileCheck, title: 'GDPR & CCPA Requests', desc: 'Team members can request access, correction, or deletion of their personal data at any time.' },
-              { icon: Eye, title: 'No Selling or Sharing', desc: 'Photos are used only to generate your headshots. We never sell them or share them with third parties.' },
+              { icon: Eye, title: 'No Selling or Sharing', desc: 'Photos are used only to generate your headshots. We never sell them, and share them only with our AI processing partner to generate your headshots.' },
               { icon: ShieldCheck, title: 'Data Processing Agreement', desc: 'Need paperwork for procurement or legal review? Review our DPA and subprocessor list.' },
             ].map((item) => (
               <div key={item.title} className="rounded-tp-card border border-tp-line bg-white p-6">

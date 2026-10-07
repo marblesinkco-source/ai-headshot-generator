@@ -456,7 +456,7 @@ export const blogPosts: BlogPost[] = [
       <p>We use state-of-the-art diffusion models, fine-tuned with LoRA (Low-Rank Adaptation) techniques. This approach allows us to create highly personalized models without requiring thousands of training images — just 4-10 clear photos of your face.</p>
 
       <h2>Quality and Privacy</h2>
-      <p>Every generated image goes through quality checks to ensure professional standards. Your uploaded photos are encrypted end-to-end and automatically deleted 30 days after delivery. We never share your data with third parties.</p>
+      <p>Every generated image goes through quality checks to ensure professional standards. Your uploaded photos are encrypted end-to-end and automatically deleted 30 days after delivery. Your photos are shared only with our AI processing partners for headshot generation, and we do not sell them.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-12-15',
@@ -2394,7 +2394,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>Privacy and Data Handling</h2>
       <p>With traditional photography, your images are typically stored on the photographer's equipment and cloud storage. Policies vary widely: some photographers delete files after delivery, while others retain them indefinitely for portfolio use.</p>
-      <p>Reputable AI headshot services publish clear data handling policies. TailorPic, for example, processes your selfies to create the AI model and then allows you to delete your uploaded photos at any time. Before choosing any service, review their privacy policy and understand how long your images are retained and whether they are used for training.</p>
+      <p>Reputable AI headshot services publish clear data handling policies. TailorPic, for example, processes your selfies to create a temporary AI model, automatically deletes your uploaded photos after 30 days, and lets you delete them sooner from your dashboard. Before choosing any service, review their privacy policy and understand how long your images are retained and whether they are used for training.</p>
 
       <h2>When to Choose Traditional Photography</h2>
       <ul>
@@ -5254,7 +5254,7 @@ export const blogPosts: BlogPost[] = [
       <p>Be cautious of services that have no privacy policy, that claim to own your generated images, that require you to waive rights to your likeness, or that do not specify data retention timelines. Free services sometimes monetise user data in ways that paid services do not.</p>
 
       <h2>What TailorPic Does</h2>
-      <p>TailorPic processes your photos to generate headshots and does not use your images to train models for other users. You own the generated headshots with full commercial rights. For current details, check the <a href="/privacy">privacy policy</a> on the website.</p>
+      <p>TailorPic processes your photos to generate headshots and uses your images only to create your personal temporary model, which is deleted after processing, and does not use them to train models for other users. You own the generated headshots with full commercial rights. For current details, check the <a href="/privacy">privacy policy</a> on the website.</p>
 
       <h2>Best Practices for Users</h2>
       <p>Regardless of which service you use: read the privacy policy before uploading; use a service that clearly states data deletion timelines; avoid uploading photos that contain sensitive background information (documents, screens, addresses); and use a dedicated email if you prefer to keep the account separate from your main identity.</p>

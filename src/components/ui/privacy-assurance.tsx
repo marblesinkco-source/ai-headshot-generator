@@ -25,7 +25,7 @@ export function PrivacyAssurance({ compact = false, className }: PrivacyAssuranc
         aria-hidden="true"
       />
       <p>
-        Your photos are automatically deleted within 30 days. Never sold or used for training.{' '}
+        Your photos are automatically deleted after 30 days. Never sold, and used only to create your headshots.{' '}
         <Link
           href="/security"
           className="underline underline-offset-2 transition-colors hover:text-tp-bronze-ink"

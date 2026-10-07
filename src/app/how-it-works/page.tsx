@@ -90,7 +90,7 @@ const steps = [
       'High-resolution downloads on every package, 4K on Executive',
       'Perfect for LinkedIn, dating apps, personal websites, and print',
       'Full commercial usage rights included with every photo',
-      'Photos are stored securely for 30 days after delivery',
+      'Photos are stored securely, then automatically deleted 30 days after delivery',
     ],
   },
 ];

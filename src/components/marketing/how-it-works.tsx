@@ -19,7 +19,7 @@ const steps = [
     title: 'Upload 4–10 selfies',
     Illustration: StepUploadIllustration,
     description:
-      'Add 4–10 clear, well-lit selfies with different angles and expressions. Our AI learns your features from them, and your uploads are auto-deleted within 30 days.',
+      'Add 4–10 clear, well-lit selfies with different angles and expressions. Our AI learns your features from them, and your uploads are automatically deleted after 30 days.',
   },
   {
     number: '3',

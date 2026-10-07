@@ -106,7 +106,7 @@ const steps = [
     icon: Inbox,
     title: 'Get 30-50 unique avatars',
     desc: 'Your finished avatar collection lands in your inbox, ready to download.',
-    time: '24 hours',
+    time: '~2 hours (most orders)',
   },
 ];
 
@@ -161,7 +161,7 @@ const faqs = [
   {
     question: 'How long does delivery take?',
     answer:
-      'Your avatars are ready within 24 hours of uploading your selfies. We email you as soon as they are ready to download.',
+      'Most avatars are ready in about 2 hours. We guarantee delivery within 24 hours and email you as soon as they are ready to download.',
   },
   {
     question: "What is your satisfaction guarantee?",
@@ -232,7 +232,7 @@ export default function AvatarsPage() {
               </Link>
             </div>
             <p className="mt-8 text-sm text-white/80">
-              🔒 Your photos deleted in 30 days · satisfaction guarantee · Ready in 24 hours
+              🔒 Your photos deleted in 30 days · satisfaction guarantee · Results in ~2 hours
             </p>
           </div>
         </section>
@@ -517,7 +517,7 @@ export default function AvatarsPage() {
               </Link>
             </div>
             <p className="mt-6 text-sm text-white/80">
-              satisfaction guarantee · Ready in 24 hours
+              satisfaction guarantee · Results in ~2 hours
             </p>
           </div>
         </section>

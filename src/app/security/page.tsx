@@ -96,7 +96,7 @@ const securityFaqs = [
   {
     question: 'Does TailorPic sell or share my photos?',
     answer:
-      'No. We never sell or share your photos with third parties. Your photos are used solely to generate your headshots and for no other purpose.',
+      'No. We never sell your photos. They are shared only with our AI processing partner (see our Subprocessors page) solely to generate your headshots, and are not used for any other purpose.',
   },
   {
     question: 'What rights do I have over my generated headshots?',
@@ -333,7 +333,7 @@ export default function SecurityPage() {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
             Get studio-quality AI headshots with the peace of mind that your photos are
-            protected, never shared, and automatically deleted.
+            protected, never sold, and automatically deleted.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots">

@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and delivered within 24 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered in under 2 hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -43,7 +43,7 @@ const productJsonLd = {
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Approximately $9.99" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Varies by package; check their site" },
-  { label: "Delivery time", tailorpic: "24 hours", other: "Check their site" },
+  { label: "Delivery time", tailorpic: "Results in ~2 hours", other: "Check their site" },
   { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Basic headshot styles" },
   { label: "Editor tools", tailorpic: "Built-in editing tools", other: "Check their site" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
@@ -77,7 +77,7 @@ const faqs = [
   { question: "Is TailorPic cheaper than SnapHeadshots?", answer: "TailorPic starts from $1.99 and SnapHeadshots is approximately $9.99. Pricing may change, so check their site." },
   { question: "What do I get with TailorPic that is extra?", answer: "TailorPic includes photos across 12 categories plus editor tools." },
   { question: "Is TailorPic a subscription?", answer: "No. TailorPic packages are one-time payments starting at $1.99 with no recurring fees." },
-  { question: "How fast does TailorPic deliver?", answer: "TailorPic delivers within 24 hours because it fine-tunes a LoRA model on your photos." },
+  { question: "How fast does TailorPic deliver?", answer: "TailorPic results are ready in under 2 hours for most orders; guaranteed within 24 hours, since it fine-tunes a LoRA model on your photos." },
 ];
 
 export default function Page() {
@@ -216,7 +216,7 @@ export default function Page() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 12 categories from $1.99. No subscription, delivered within 24 hours.
+              Professional photos across 12 categories from $1.99. No subscription, results typically delivered in under 2 hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

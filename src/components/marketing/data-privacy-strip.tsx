@@ -1,8 +1,8 @@
 import { Lock, ShieldCheck, Trash2 } from 'lucide-react';
 
 const ITEMS = [
-  { icon: Trash2, label: 'Photos deleted after 30 days' },
-  { icon: ShieldCheck, label: 'Never used for AI training' },
+  { icon: Trash2, label: 'Photos auto-deleted after 30 days' },
+  { icon: ShieldCheck, label: 'Used only for your headshots' },
   { icon: Lock, label: 'Your data stays private' },
 ];
 

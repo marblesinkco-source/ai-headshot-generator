@@ -110,7 +110,7 @@ const faqs = [
   },
   {
     question: "Is my data kept private?",
-    answer: "We only process the selfies you upload to create your headshots. Your photos are never shared or used for other purposes.",
+    answer: "We only process the selfies you upload to create your headshots. Your photos are shared only with our AI processing partner to generate your headshots and are not sold or used for other purposes.",
   },
 ];
 

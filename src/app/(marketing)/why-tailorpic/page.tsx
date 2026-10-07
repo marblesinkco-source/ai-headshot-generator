@@ -174,7 +174,7 @@ const trustItems = [
     icon: Lock,
     title: 'Privacy-First',
     description:
-      'Your uploaded photos are processed securely and never shared with third parties. We follow GDPR-compliant practices.',
+      'Your uploaded photos are processed securely, shared only with our AI processing partner to generate your headshots, and never sold. We follow GDPR-compliant practices.',
   },
   {
     icon: FileCheck,
@@ -186,7 +186,7 @@ const trustItems = [
     icon: Trash2,
     title: 'Automatic Deletion',
     description:
-      'Your source photos are automatically deleted from our servers after 30 days. You stay in control of your data.',
+      'Your source photos are automatically deleted from our servers after 30 days, and you can delete them sooner from your dashboard. You stay in control of your data.',
   },
 ];
 

@@ -51,7 +51,7 @@ const benefits = [
   {
     icon: Shield,
     title: "Enterprise-Grade Privacy",
-    description: "Photos are processed securely and used only for headshot generation. Employee data is never shared with third parties.",
+    description: "Photos are processed securely and used only for headshot generation. Photos are shared only with our AI processing partner for headshot generation and are never sold.",
   },
 ];
 

@@ -77,7 +77,7 @@ const journey = [
   {
     icon: Trash2,
     title: 'Deletion',
-    desc: 'Training data and temporary models are deleted within 30 days of order completion. You can delete generated images or request account deletion yourself.',
+    desc: 'Uploaded photos, training data, temporary models and generated images are automatically deleted 30 days after delivery. You can delete them sooner from your dashboard or request account deletion.',
   },
 ];
 
@@ -108,7 +108,7 @@ const privacy = [
   {
     icon: Ban,
     title: 'We do not sell your data',
-    desc: 'We do not sell your personal information or your photos to third parties.',
+    desc: 'We do not sell your personal information or your photos.',
   },
   {
     icon: Eye,
@@ -125,7 +125,7 @@ const privacy = [
 const faqs = [
   {
     q: 'Are my photos used to train AI models?',
-    a: 'Your photos are used to build a temporary model that generates your own headshots. We do not use them to train general-purpose AI models, and the training data and temporary models are deleted within 30 days of order completion.',
+    a: 'Your photos are used to build a temporary model that generates your own headshots. We do not use them to train general-purpose AI models, and the training data and temporary models are automatically deleted 30 days after delivery.',
   },
   {
     q: 'Who can access my photos?',

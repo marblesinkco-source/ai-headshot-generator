@@ -161,8 +161,8 @@ const trustSignals = [
   },
   {
     icon: ShieldCheck,
-    title: 'Never used for training',
-    desc: 'Your photos are used only to create your headshots. They are never fed back into AI training data.',
+    title: 'Used only for your headshots',
+    desc: 'Your photos are used only to generate your personal headshots. The temporary AI model created for you is automatically deleted after processing.',
   },
 ];
 
@@ -173,7 +173,7 @@ const faqItems = [
   },
   {
     q: 'Are my photos used to train the AI?',
-    a: 'No. Your photos are processed solely to generate your headshots and are then deleted from our systems. They are never used to train or improve our AI models.',
+    a: 'Your photos are used only to generate your personal headshots. To do this we train a temporary AI model for you, which is not used for anyone else and is automatically deleted after processing. We do not use your photos to train general-purpose AI models. Uploaded photos are deleted after 30 days.',
   },
   {
     q: 'What resolution and quality can I expect?',

@@ -46,7 +46,7 @@ const benefits = [
   {
     icon: Shield,
     title: "Private and Secure",
-    description: "Your selfies are used only to generate your photos. We do not share your images or data with any third party.",
+    description: "Your selfies are used only to generate your photos. We share your images only with our AI processing partner to generate them, and we never sell them.",
   },
   {
     icon: MessageCircle,

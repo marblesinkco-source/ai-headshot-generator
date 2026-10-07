@@ -243,7 +243,7 @@ export default function PricingPage() {
               </thead>
               <tbody className="divide-y divide-tp-line">
                 {HEADSHOT_PACKAGES.map((p) => {
-                  const delivery = p.outputCount <= 1 ? '~30 min' : p.outputCount <= 10 ? '~1 hour' : '~2 hours';
+                  const delivery = '~2 hours';
                   return (
                   <tr
                     key={p.id}
