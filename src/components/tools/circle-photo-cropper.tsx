@@ -343,7 +343,7 @@ export default function CirclePhotoCropper() {
                   id="circle-size"
                   value={size}
                   onChange={(e) => setSize(parseInt(e.target.value, 10))}
-                  className="mt-2 w-full rounded-tp-button border border-tp-line bg-white px-3 py-2.5 text-sm text-tp-ink focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/30"
+                  className="mt-2 w-full rounded-tp-button border border-tp-line bg-white px-3 py-2.5 text-sm text-tp-ink focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/40"
                 >
                   {SIZES.map((s) => (
                     <option key={s} value={s}>

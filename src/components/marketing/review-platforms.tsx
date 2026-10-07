@@ -107,7 +107,7 @@ export function ReviewPlatforms() {
                 {platform.icon}
               </span>
               {platform.name}
-              <ExternalLink className="h-3.5 w-3.5 text-tp-muted/60 transition-colors group-hover:text-[var(--platform-color)]" strokeWidth={2} />
+              <ExternalLink className="h-3.5 w-3.5 text-tp-muted transition-colors group-hover:text-[var(--platform-color)]" strokeWidth={2} aria-hidden="true" />
             </a>
           ))}
         </div>

@@ -638,7 +638,7 @@ export function Header() {
         </div>
 
         {/* Sticky action bar: the primary CTA is always visible without scrolling */}
-        <div className="sticky bottom-0 z-10 border-t border-tp-line/60 bg-tp-paper px-5 pb-5 pt-3 rounded-b-[20px]">
+        <div className="sticky bottom-0 z-10 border-t border-tp-line/60 bg-tp-paper px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-3 rounded-b-[20px]">
           {user ? (
             <div className="grid gap-1">
               <Link

@@ -94,7 +94,7 @@ function NewsletterCta() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           disabled={status === 'loading'}
-          className="w-full flex-1 rounded-tp-button border border-tp-line bg-white px-4 py-2.5 text-sm text-tp-ink placeholder:text-tp-muted/80 focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/30"
+          className="w-full flex-1 rounded-tp-button border border-tp-line bg-white px-4 py-2.5 text-sm text-tp-ink placeholder:text-tp-muted/80 focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/40"
         />
         <button
           type="submit"

@@ -213,7 +213,7 @@ function parseInputs(f: FormState): Inputs | null {
 }
 
 const inputClass =
-  'w-full rounded-tp-button border border-tp-line bg-white px-4 py-3 text-sm text-tp-ink placeholder:text-tp-muted focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/30';
+  'w-full rounded-tp-button border border-tp-line bg-white px-4 py-3 text-sm text-tp-ink placeholder:text-tp-muted focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/40';
 
 export function LinkedInAboutGenerator() {
   const [form, setForm] = useState<FormState>({

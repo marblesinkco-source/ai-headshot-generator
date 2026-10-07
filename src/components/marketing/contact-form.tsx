@@ -5,7 +5,7 @@ import { useState } from 'react';
 const departments = ['General', 'Sales / Enterprise', 'Support', 'Press / Media', 'Partnerships'];
 
 const fieldClass =
-  'mt-2 w-full rounded-tp-button border border-tp-line bg-white px-4 py-3 text-sm text-tp-ink focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/30 hover:border-tp-bronze/60 placeholder:text-tp-muted [&:user-invalid]:border-red-600 [&:user-invalid]:ring-red-600/20';
+  'mt-2 w-full rounded-tp-button border border-tp-line bg-white px-4 py-3 text-sm text-tp-ink focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/40 hover:border-tp-bronze/60 placeholder:text-tp-muted [&:user-invalid]:border-red-600 [&:user-invalid]:ring-red-600/20';
 
 export function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');

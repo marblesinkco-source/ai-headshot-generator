@@ -47,7 +47,7 @@ export function SavingsCalculator() {
   const savingsCents = Math.max(0, studioCents - tailorpicCents);
 
   const inputClass =
-    'w-full rounded-tp-button border border-tp-line bg-tp-paper px-4 py-3 font-sans text-base text-tp-ink focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/30';
+    'w-full rounded-tp-button border border-tp-line bg-tp-paper px-4 py-3 font-sans text-base text-tp-ink focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/40';
 
   return (
     <section className="bg-tp-beige py-16 sm:py-20" aria-labelledby="savings-calculator-heading">

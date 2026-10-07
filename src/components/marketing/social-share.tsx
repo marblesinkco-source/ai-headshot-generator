@@ -76,7 +76,7 @@ export function SocialShare({ url, title, className = '' }: SocialShareProps) {
           rel="noopener noreferrer"
           title={link.label}
           aria-label={link.label}
-          className="inline-flex items-center justify-center w-9 h-9 rounded-tp-button border border-tp-line text-tp-muted transition-colors hover:text-tp-ink hover:border-tp-bronze"
+          className="inline-flex items-center justify-center w-9 h-9 rounded-tp-button border border-tp-line text-tp-muted transition-colors hover:text-tp-ink hover:border-tp-bronze focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
         >
           {link.icon}
         </a>
@@ -86,11 +86,11 @@ export function SocialShare({ url, title, className = '' }: SocialShareProps) {
         onClick={handleCopy}
         title={copied ? 'Copied!' : 'Copy link'}
         aria-label={copied ? 'Link copied to clipboard' : 'Copy link'}
-        className="inline-flex items-center justify-center h-9 rounded-tp-button border border-tp-line text-tp-muted transition-colors hover:text-tp-ink hover:border-tp-bronze px-3 gap-1.5"
+        className="inline-flex items-center justify-center h-9 rounded-tp-button border border-tp-line text-tp-muted transition-colors hover:text-tp-ink hover:border-tp-bronze px-3 gap-1.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
       >
-        <Link2 className="w-4 h-4" />
+        <Link2 className="w-4 h-4" aria-hidden="true" />
         {copied && (
-          <span className="text-xs font-medium text-tp-bronze">Copied!</span>
+          <span className="text-xs font-medium text-tp-bronze-ink">Copied!</span>
         )}
       </button>
     </div>

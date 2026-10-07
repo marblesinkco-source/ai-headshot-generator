@@ -145,7 +145,7 @@ export function StyleFilter({ styles, categories }: StyleFilterProps) {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search by style, look or use, e.g. LinkedIn, vintage, founder"
-                className="w-full rounded-tp-button border border-tp-line bg-tp-paper py-3 pl-11 pr-10 text-sm text-tp-ink placeholder:text-tp-muted focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/30"
+                className="w-full rounded-tp-button border border-tp-line bg-tp-paper py-3 pl-11 pr-10 text-sm text-tp-ink placeholder:text-tp-muted focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/40"
               />
               {query && (
                 <button

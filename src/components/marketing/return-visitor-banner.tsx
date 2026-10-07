@@ -59,7 +59,7 @@ export function ReturnVisitorBanner() {
       <div className="relative overflow-hidden rounded-tp-card border border-tp-bronze/30 bg-white p-4 shadow-lg">
         <button
           onClick={handleDismiss}
-          className="absolute right-2 top-2 rounded-full p-1 text-tp-muted hover:bg-tp-beige hover:text-tp-ink"
+          className="absolute right-2 top-2 rounded-full p-1 text-tp-muted hover:bg-tp-beige hover:text-tp-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
           aria-label="Dismiss"
         >
           <X className="h-4 w-4" />
@@ -74,7 +74,7 @@ export function ReturnVisitorBanner() {
 
         <Link
           href={`/dashboard/upload?category=${intent.categorySlug}`}
-          className="mt-3 inline-flex items-center gap-1.5 rounded-tp-button bg-tp-bronze px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-tp-bronze-ink"
+          className="mt-3 inline-flex items-center gap-1.5 rounded-tp-button bg-tp-bronze-ink px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-tp-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
         >
           Continue with {intent.packageName}
           <ArrowRight className="h-3.5 w-3.5" />

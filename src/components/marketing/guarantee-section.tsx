@@ -82,7 +82,7 @@ export function GuaranteeSection() {
               key={title}
               className="scroll-fade-in rounded-tp-card border border-tp-line bg-white p-6 lg:p-8"
             >
-              <span className="flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-beige text-tp-bronze">
+              <span className="flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-beige text-tp-bronze-ink">
                 <Icon />
               </span>
               <h3 className="mt-5 text-lg font-semibold text-tp-ink">{title}</h3>

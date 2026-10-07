@@ -333,7 +333,7 @@ export default function BusinessCardGenerator() {
                     placeholder={placeholder}
                     autoComplete={autoComplete}
                     maxLength={120}
-                    className="w-full rounded-tp-button border border-tp-line bg-tp-paper py-2.5 pl-10 pr-3 text-sm text-tp-ink placeholder:text-tp-muted/70 focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/30"
+                    className="w-full rounded-tp-button border border-tp-line bg-tp-paper py-2.5 pl-10 pr-3 text-sm text-tp-ink placeholder:text-tp-muted/70 focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/40"
                   />
                 </div>
               </div>

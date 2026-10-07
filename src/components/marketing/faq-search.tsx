@@ -72,7 +72,7 @@ export default function FaqSearch({ faqs, groups }: FaqSearchProps) {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search questions and answers"
             autoComplete="off"
-            className="w-full rounded-tp-button border border-tp-line bg-white py-3 pl-12 pr-4 text-base text-tp-ink placeholder:text-tp-muted focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/30"
+            className="w-full rounded-tp-button border border-tp-line bg-white py-3 pl-12 pr-4 text-base text-tp-ink placeholder:text-tp-muted focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/40"
           />
         </div>
         <p role="status" aria-live="polite" className="mt-3 min-h-[1.25rem] text-sm text-tp-muted">

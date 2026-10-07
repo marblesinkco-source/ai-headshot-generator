@@ -37,10 +37,10 @@ function LinkedInMockup() {
           <p className="text-[11px] text-tp-muted/70">San Francisco, CA · 500+ connections</p>
         </div>
         <div className="mt-3 flex gap-2">
-          <span className="rounded-full bg-tp-bronze px-3 py-1 text-[10px] font-medium text-white">
+          <span className="rounded-full bg-tp-bronze-ink px-3 py-1 text-[10px] font-medium text-white">
             Connect
           </span>
-          <span className="rounded-full border border-tp-bronze px-3 py-1 text-[10px] font-medium text-tp-bronze">
+          <span className="rounded-full border border-tp-bronze-ink px-3 py-1 text-[10px] font-medium text-tp-bronze-ink">
             Message
           </span>
         </div>
@@ -188,7 +188,7 @@ export function HeadshotInContext() {
           <ActiveMockup />
         </div>
 
-        <p className="mt-4 text-center text-xs text-tp-muted/70">
+        <p className="mt-4 text-center text-xs text-tp-muted">
           Illustrative concept — actual results may vary based on your uploaded photos.
         </p>
       </div>

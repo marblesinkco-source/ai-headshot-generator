@@ -363,7 +363,7 @@ export default function HeadshotsLandingPage() {
                         <div className="flex items-center gap-2">
                           <span className="font-semibold text-tp-ink">{pkg.name}</span>
                           {pkg.recommended && (
-                            <span className="rounded-full bg-tp-bronze px-2 py-0.5 text-[10px] font-semibold text-tp-black">
+                            <span className="rounded-full bg-tp-bronze px-2 py-0.5 text-xs font-semibold text-tp-black">
                               Popular
                             </span>
                           )}
@@ -382,7 +382,7 @@ export default function HeadshotsLandingPage() {
                         <Link
                           href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
                           className={cn(
-                            'inline-flex items-center gap-1 rounded-tp-button px-3 py-1.5 text-xs font-semibold transition-colors',
+                            'inline-flex items-center gap-1 rounded-tp-button px-4 py-2 min-h-[36px] text-sm font-semibold transition-colors',
                             pkg.recommended
                               ? 'bg-tp-bronze text-tp-black hover:bg-tp-bronze/90'
                               : 'border border-tp-line text-tp-ink hover:border-tp-bronze/40 hover:text-tp-bronze-ink'
@@ -466,8 +466,8 @@ export default function HeadshotsLandingPage() {
               <p className="mt-2 text-sm text-tp-muted leading-relaxed">
                 Not happy with your headshots? We&apos;ll work with you until you are.
               </p>
-              <Link href="/guarantee" className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-tp-bronze-ink hover:text-tp-ink transition-colors">
-                Learn more <ArrowRight className="h-3 w-3" />
+              <Link href="/guarantee" className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-tp-bronze-ink hover:text-tp-ink transition-colors min-h-[44px]">
+                Learn more <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>
             <div className="rounded-tp-card border border-tp-line bg-tp-paper p-6 text-center">
@@ -478,8 +478,8 @@ export default function HeadshotsLandingPage() {
               <p className="mt-2 text-sm text-tp-muted leading-relaxed">
                 Photos deleted within 30 days. Never sold or shared. Stripe-secured payments.
               </p>
-              <Link href="/security" className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-tp-bronze-ink hover:text-tp-ink transition-colors">
-                Security details <ArrowRight className="h-3 w-3" />
+              <Link href="/security" className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-tp-bronze-ink hover:text-tp-ink transition-colors min-h-[44px]">
+                Security details <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>
             <div className="rounded-tp-card border border-tp-line bg-tp-paper p-6 text-center">
@@ -490,8 +490,8 @@ export default function HeadshotsLandingPage() {
               <p className="mt-2 text-sm text-tp-muted leading-relaxed">
                 Use your headshots anywhere — LinkedIn, company sites, business cards, press materials.
               </p>
-              <Link href="/terms" className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-tp-bronze-ink hover:text-tp-ink transition-colors">
-                License terms <ArrowRight className="h-3 w-3" />
+              <Link href="/terms" className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-tp-bronze-ink hover:text-tp-ink transition-colors min-h-[44px]">
+                License terms <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>
           </div>
