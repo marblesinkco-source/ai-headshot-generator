@@ -39,9 +39,9 @@ const GRID = 16;
 const POINTS: Record<Status, number> = { pass: 1, warn: 0.5, fail: 0 };
 
 const STATUS_STYLES: Record<Status, { label: string; text: string; border: string; bg: string }> = {
-  pass: { label: 'Pass', text: 'text-emerald-600', border: 'border-emerald-600/30', bg: 'bg-emerald-600/10' },
-  warn: { label: 'Warning', text: 'text-amber-500', border: 'border-amber-500/40', bg: 'bg-amber-500/10' },
-  fail: { label: 'Fail', text: 'text-red-500', border: 'border-red-500/30', bg: 'bg-red-500/10' },
+  pass: { label: 'Pass', text: 'text-tp-success', border: 'border-tp-success/30', bg: 'bg-tp-success/10' },
+  warn: { label: 'Warning', text: 'text-tp-bronze-ink', border: 'border-tp-warning/40', bg: 'bg-tp-warning/10' },
+  fail: { label: 'Fail', text: 'text-tp-error', border: 'border-tp-error/30', bg: 'bg-tp-error/10' },
 };
 
 function StatusIcon({ status, className }: { status: Status; className?: string }) {
@@ -339,14 +339,14 @@ export default function LinkedInPhotoChecker() {
       {error && (
         <div
           role="alert"
-          className="mt-4 flex items-start justify-between gap-3 rounded-tp-button border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm"
+          className="mt-4 flex items-start justify-between gap-3 rounded-tp-button border border-tp-error/30 bg-tp-error/10 px-4 py-3 text-sm"
         >
-          <span className="text-red-500">{error}</span>
+          <span className="text-tp-error">{error}</span>
           <button
             type="button"
             onClick={() => setError(null)}
             aria-label="Dismiss error"
-            className="shrink-0 text-red-500"
+            className="shrink-0 text-tp-error"
           >
             <X className="h-4 w-4" aria-hidden="true" />
           </button>

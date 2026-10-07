@@ -61,7 +61,7 @@ export default function CreditsDashboard() {
 
   if (error || !data) {
     return (
-      <div className="rounded-tp-card border border-red-200 bg-red-50 p-6 text-center text-red-700">
+      <div className="rounded-tp-card border border-tp-error/30 bg-tp-error/10 p-6 text-center text-tp-error">
         {error || 'An error occurred.'}
       </div>
     );
@@ -163,8 +163,8 @@ export default function CreditsDashboard() {
                     <span
                       className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${
                         isExpiringSoon
-                          ? 'bg-amber-50 text-amber-700'
-                          : 'bg-emerald-50 text-emerald-700'
+                          ? 'bg-tp-warning/15 text-tp-bronze-ink'
+                          : 'bg-tp-success/10 text-tp-success'
                       }`}
                     >
                       {daysLeft}d left
@@ -233,7 +233,7 @@ export default function CreditsDashboard() {
                       </td>
                       <td
                         className={`whitespace-nowrap px-4 py-3 text-right font-medium ${
-                          tx.amount > 0 ? 'text-emerald-600' : 'text-tp-muted'
+                          tx.amount > 0 ? 'text-tp-success' : 'text-tp-muted'
                         }`}
                       >
                         {tx.amount > 0 ? '+' : ''}
@@ -256,10 +256,10 @@ export default function CreditsDashboard() {
 
 function TypeBadge({ type }: { type: string }) {
   const styles: Record<string, string> = {
-    purchase: 'bg-emerald-50 text-emerald-700',
-    use: 'bg-blue-50 text-blue-700',
-    refund: 'bg-amber-50 text-amber-700',
-    expire: 'bg-red-50 text-red-700',
+    purchase: 'bg-tp-success/10 text-tp-success',
+    use: 'bg-tp-beige text-tp-ink',
+    refund: 'bg-tp-warning/15 text-tp-bronze-ink',
+    expire: 'bg-tp-error/10 text-tp-error',
   };
 
   const labels: Record<string, string> = {

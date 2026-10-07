@@ -87,7 +87,7 @@ export function ReviewPlatforms() {
       <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-tp-bronze-ink">
-            See what people are saying
+            Find us on
           </p>
           <p className="mt-2 font-sans text-sm text-tp-muted sm:text-base">
             Check our profiles and share your experience

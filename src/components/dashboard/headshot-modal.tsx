@@ -78,7 +78,7 @@ export function HeadshotModal({
               title={current.isFavorite ? 'Remove from favorites' : 'Add to favorites'}
             >
               <svg
-                className={`h-5 w-5 ${current.isFavorite ? 'fill-red-500 text-red-500' : ''}`}
+                className={`h-5 w-5 ${current.isFavorite ? 'fill-tp-error text-tp-error' : ''}`}
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"

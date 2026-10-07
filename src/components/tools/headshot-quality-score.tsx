@@ -30,9 +30,9 @@ interface Analysis {
 const clamp = (v: number, min = 0, max = 100) => Math.min(max, Math.max(min, v));
 
 function scoreTone(score: number) {
-  if (score >= 80) return { text: 'text-emerald-600', bar: 'bg-emerald-600', stroke: 'stroke-emerald-600' };
-  if (score >= 50) return { text: 'text-amber-500', bar: 'bg-amber-500', stroke: 'stroke-amber-500' };
-  return { text: 'text-red-500', bar: 'bg-red-500', stroke: 'stroke-red-500' };
+  if (score >= 80) return { text: 'text-tp-success', bar: 'bg-tp-success', stroke: 'stroke-tp-success' };
+  if (score >= 50) return { text: 'text-tp-bronze-ink', bar: 'bg-tp-warning', stroke: 'stroke-tp-warning' };
+  return { text: 'text-tp-error', bar: 'bg-tp-error', stroke: 'stroke-tp-error' };
 }
 
 function verdict(score: number) {
@@ -382,7 +382,7 @@ export function HeadshotQualityScore() {
               onChange={(e) => handleFile(e.target.files?.[0])}
             />
             {error && (
-              <p role="alert" className="mt-4 flex items-center gap-2 text-sm text-red-500">
+              <p role="alert" className="mt-4 flex items-center gap-2 text-sm text-tp-error">
                 <AlertTriangle className="h-4 w-4 shrink-0" aria-hidden="true" />
                 {error}
               </p>
@@ -475,7 +475,7 @@ export function HeadshotQualityScore() {
                       </div>
                       <p className="mt-2 flex items-start gap-2 text-sm text-tp-muted">
                         {good ? (
-                          <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" aria-hidden="true" />
+                          <Check className="mt-0.5 h-4 w-4 shrink-0 text-tp-success" aria-hidden="true" />
                         ) : (
                           <AlertTriangle className={cn('mt-0.5 h-4 w-4 shrink-0', tone.text)} aria-hidden="true" />
                         )}
@@ -517,7 +517,7 @@ export function HeadshotQualityScore() {
           )
         )}
         {previewUrl && error && (
-          <p role="alert" className="mt-4 flex items-center gap-2 text-sm text-red-500">
+          <p role="alert" className="mt-4 flex items-center gap-2 text-sm text-tp-error">
             <X className="h-4 w-4 shrink-0" aria-hidden="true" />
             {error}
           </p>

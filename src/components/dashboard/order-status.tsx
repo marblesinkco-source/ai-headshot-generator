@@ -16,16 +16,16 @@ const STATUS_CONFIG: Record<OrderStatus, { label: string; className: string; pul
   },
   processing: {
     label: 'Processing',
-    className: 'bg-yellow-100 text-yellow-700',
+    className: 'bg-tp-warning/15 text-tp-bronze-ink',
     pulse: true,
   },
   completed: {
     label: 'Completed',
-    className: 'bg-green-100 text-green-700',
+    className: 'bg-tp-success/10 text-tp-success',
   },
   failed: {
     label: 'Failed',
-    className: 'bg-red-100 text-red-700',
+    className: 'bg-tp-error/10 text-tp-error',
   },
   refunded: {
     label: 'Refunded',
@@ -51,8 +51,8 @@ export function OrderStatusBadge({ status, className }: OrderStatusBadgeProps) {
     >
       {config.pulse && (
         <span className="relative flex h-2 w-2">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-yellow-400 opacity-75" />
-          <span className="relative inline-flex h-2 w-2 rounded-full bg-yellow-500" />
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-tp-warning opacity-75" />
+          <span className="relative inline-flex h-2 w-2 rounded-full bg-tp-warning" />
         </span>
       )}
       {config.label}

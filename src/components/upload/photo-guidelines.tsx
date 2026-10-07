@@ -61,7 +61,7 @@ function GuidelineColumn({
         <span
           className={cn(
             'flex h-6 w-6 items-center justify-center rounded-full',
-            isDo ? 'bg-green-100 text-green-600' : 'bg-red-100 text-red-600'
+            isDo ? 'bg-tp-success/10 text-tp-success' : 'bg-tp-error/10 text-tp-error'
           )}
         >
           <StatusIcon className="h-4 w-4" aria-hidden="true" />
@@ -74,7 +74,7 @@ function GuidelineColumn({
           return (
             <li key={item.label} className="flex items-start gap-3">
               <StatusIcon
-                className={cn('mt-0.5 h-4 w-4 shrink-0', isDo ? 'text-green-600' : 'text-red-600')}
+                className={cn('mt-0.5 h-4 w-4 shrink-0', isDo ? 'text-tp-success' : 'text-tp-error')}
                 aria-hidden="true"
               />
               <div className="min-w-0">

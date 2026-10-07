@@ -256,7 +256,7 @@ export default function FreeHeadshotGeneratorPage() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-tp-button bg-tp-beige/40 text-tp-bronze-ink">
                   <t.icon className="h-5 w-5" />
                 </div>
-                <h3 className="font-display font-normal mt-4 text-lg font-semibold text-tp-ink">{t.title}</h3>
+                <h3 className="font-display font-normal mt-4 text-lg text-tp-ink">{t.title}</h3>
                 <p className="mt-1 text-sm text-tp-muted">{t.description}</p>
               </div>
             ))}
@@ -275,7 +275,7 @@ export default function FreeHeadshotGeneratorPage() {
                   <step.icon className="h-5 w-5" />
                 </div>
                 <p className="mt-4 text-sm font-medium text-tp-bronze-ink">Step {i + 1}</p>
-                <h3 className="font-display font-normal mt-1 text-lg font-semibold text-tp-ink">{step.title}</h3>
+                <h3 className="font-display font-normal mt-1 text-lg text-tp-ink">{step.title}</h3>
                 <p className="mt-2 text-sm text-tp-muted">{step.description}</p>
               </div>
             ))}
@@ -293,7 +293,7 @@ export default function FreeHeadshotGeneratorPage() {
             {features.map((f) => (
               <div key={f.title} className="rounded-tp-card border border-tp-line bg-white p-6">
                 <f.icon className="h-6 w-6 text-tp-bronze-ink" />
-                <h3 className="font-display font-normal mt-4 text-lg font-semibold text-tp-ink">{f.title}</h3>
+                <h3 className="font-display font-normal mt-4 text-lg text-tp-ink">{f.title}</h3>
                 <p className="mt-2 text-sm text-tp-muted">{f.description}</p>
               </div>
             ))}
@@ -389,7 +389,7 @@ export default function FreeHeadshotGeneratorPage() {
                 href={s.href}
                 className="group rounded-tp-card border border-tp-line bg-white p-5 transition-colors hover:border-tp-bronze"
               >
-                <h3 className="font-display font-normal flex items-center justify-between font-semibold text-tp-ink">
+                <h3 className="font-display font-normal flex items-center justify-between text-tp-ink">
                   {s.label}
                   <ArrowRight className="h-4 w-4 text-tp-bronze-ink transition-transform group-hover:translate-x-1" />
                 </h3>

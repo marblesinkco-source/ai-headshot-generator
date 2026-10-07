@@ -5,7 +5,7 @@ import { useState } from 'react';
 const departments = ['General', 'Sales / Enterprise', 'Support', 'Press / Media', 'Partnerships'];
 
 const fieldClass =
-  'mt-2 w-full rounded-tp-button border border-tp-line bg-white px-4 py-3 text-sm text-tp-ink focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/40 hover:border-tp-bronze/60 placeholder:text-tp-muted [&:user-invalid]:border-red-600 [&:user-invalid]:ring-red-600/20';
+  'mt-2 w-full rounded-tp-button border border-tp-line bg-tp-white px-4 py-3 text-sm text-tp-ink focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/40 hover:border-tp-bronze/60 placeholder:text-tp-muted [&:user-invalid]:border-tp-error [&:user-invalid]:ring-tp-error/20';
 
 export function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
@@ -50,7 +50,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} aria-busy={status === 'sending'} className="space-y-6 rounded-tp-card border border-tp-line bg-white p-6 shadow-sm sm:p-10">
+    <form onSubmit={onSubmit} aria-busy={status === 'sending'} className="space-y-6 rounded-tp-card border border-tp-line bg-tp-white p-6 shadow-sm sm:p-10">
       <label className="block text-sm font-medium text-tp-ink">
         Department *
         <select name="department" required defaultValue="General" className={fieldClass}>
@@ -78,7 +78,7 @@ export function ContactForm() {
         <textarea name="message" required maxLength={5000} rows={6} placeholder="How can we help?" className={fieldClass} />
       </label>
       {status === 'error' && (
-        <p role="alert" className="rounded-tp-button border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">{error}</p>
+        <p role="alert" className="rounded-tp-button border border-tp-error/30 bg-tp-error/10 px-4 py-3 text-sm text-tp-error">{error}</p>
       )}
       <button
         type="submit"

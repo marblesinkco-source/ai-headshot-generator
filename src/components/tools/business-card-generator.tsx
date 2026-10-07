@@ -366,7 +366,7 @@ export default function BusinessCardGenerator() {
               )}
               <p className="mt-1.5 text-xs text-tp-muted">Cropped to a circle automatically. JPG, PNG or WebP up to 10 MB.</p>
               {error && (
-                <p role="alert" className="mt-2 text-sm text-red-700">
+                <p role="alert" className="mt-2 text-sm text-tp-error">
                   {error}
                 </p>
               )}

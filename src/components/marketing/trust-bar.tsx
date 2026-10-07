@@ -19,12 +19,12 @@ export interface TrustBarProps {
 // Defaults contain no invented user counts or ratings.
 // Pass a verified metric (e.g. { icon: Star, label: '4.9/5 Rating' }) via props when available.
 const DEFAULT_METRICS: TrustMetric[] = [
-  { icon: Clock, label: 'Ready in 24h' },
+  { icon: Clock, label: 'Ready in ~2 hours' },
   { icon: Lock, label: '256-bit Encrypted' },
 ];
 
 export function TrustBar({
-  heading = 'Professionals trust TailorPic',
+  heading = 'Why choose TailorPic',
   metrics = DEFAULT_METRICS,
   className,
 }: TrustBarProps) {

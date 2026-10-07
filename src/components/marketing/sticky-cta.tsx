@@ -24,7 +24,7 @@ export function StickyCTA({ href = '/auth/register?redirect=%2Fdashboard%2Fuploa
       )}
     >
       <div className="min-w-0">
-        <p className="font-display font-normal text-sm font-medium leading-tight text-tp-paper">
+        <p className="font-display font-normal text-sm leading-tight text-tp-paper">
           Skip the studio: <span className="text-tp-bronze">From {BASE_PRICE_DISPLAY} one-time</span>
         </p>
       </div>

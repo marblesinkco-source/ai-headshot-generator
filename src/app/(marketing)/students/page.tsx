@@ -238,7 +238,7 @@ export default function StudentsPage() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-tp-button bg-tp-beige/50">
                   <point.icon className="h-5 w-5 text-tp-bronze-ink" />
                 </div>
-                <h3 className="font-display font-normal mt-4 text-lg font-semibold text-tp-ink">
+                <h3 className="font-display font-normal mt-4 text-lg text-tp-ink">
                   {point.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-tp-muted">
@@ -266,7 +266,7 @@ export default function StudentsPage() {
                 className="rounded-tp-card border border-tp-line bg-white p-6"
               >
                 <uc.icon className="h-6 w-6 text-tp-bronze-ink" />
-                <h3 className="font-display font-normal mt-4 text-lg font-semibold text-tp-ink">
+                <h3 className="font-display font-normal mt-4 text-lg text-tp-ink">
                   {uc.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-tp-muted">
@@ -297,7 +297,7 @@ export default function StudentsPage() {
                   {i + 1}
                 </div>
                 <step.icon className="mt-4 h-6 w-6 text-tp-bronze-ink" />
-                <h3 className="font-display font-normal mt-3 text-lg font-semibold text-tp-ink">
+                <h3 className="font-display font-normal mt-3 text-lg text-tp-ink">
                   {step.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-tp-muted">

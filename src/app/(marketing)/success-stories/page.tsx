@@ -66,7 +66,7 @@ const scenarios: Scenario[] = [
     outcome:
       'Consistent, professional profiles across LinkedIn, GitHub, and conference bios updated the same day.',
     feature: 'AI Style Selection',
-    accentColor: 'bg-blue-500/10 text-blue-700',
+    accentColor: 'bg-tp-bronze/15 text-tp-bronze-ink',
   },
   {
     icon: Building2,
@@ -78,7 +78,7 @@ const scenarios: Scenario[] = [
     outcome:
       'An entire team directory refreshed within a week, with no disruption to patient care schedules.',
     feature: 'Team Batch Processing',
-    accentColor: 'bg-emerald-500/10 text-emerald-700',
+    accentColor: 'bg-tp-bronze/15 text-tp-bronze-ink',
   },
   {
     icon: LineChart,
@@ -90,7 +90,7 @@ const scenarios: Scenario[] = [
     outcome:
       'A cohesive personal brand across all client touchpoints without the cost of a professional shoot.',
     feature: 'Multiple Style Variations',
-    accentColor: 'bg-amber-500/10 text-amber-700',
+    accentColor: 'bg-tp-bronze/15 text-tp-bronze-ink',
   },
   {
     icon: Palette,
@@ -102,7 +102,7 @@ const scenarios: Scenario[] = [
     outcome:
       'Stand out on freelance platforms with a profile photo that attracts inbound project inquiries.',
     feature: 'Background Customization',
-    accentColor: 'bg-purple-500/10 text-purple-700',
+    accentColor: 'bg-tp-bronze/15 text-tp-bronze-ink',
   },
   {
     icon: Camera,
@@ -114,7 +114,7 @@ const scenarios: Scenario[] = [
     outcome:
       'A professional, up-to-date presence across all listing platforms and print materials year-round.',
     feature: 'Quick Regeneration',
-    accentColor: 'bg-rose-500/10 text-rose-700',
+    accentColor: 'bg-tp-bronze/15 text-tp-bronze-ink',
   },
   {
     icon: Scale,
@@ -126,7 +126,7 @@ const scenarios: Scenario[] = [
     outcome:
       'A new website launches on schedule with a cohesive team page that reinforces the refreshed brand identity.',
     feature: 'Consistent Style Presets',
-    accentColor: 'bg-sky-500/10 text-sky-700',
+    accentColor: 'bg-tp-bronze/15 text-tp-bronze-ink',
   },
 ];
 

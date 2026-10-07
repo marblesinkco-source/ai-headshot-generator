@@ -55,16 +55,16 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
               key={t.id}
               className={cn(
                 'flex items-start gap-3 rounded-tp-button border bg-white p-4 shadow-lg animate-in slide-in-from-right-full duration-300',
-                t.type === 'success' && 'border-green-200',
-                t.type === 'error' && 'border-red-200',
+                t.type === 'success' && 'border-tp-success/30',
+                t.type === 'error' && 'border-tp-error/30',
                 t.type === 'info' && 'border-tp-line'
               )}
             >
               <Icon
                 className={cn(
                   'h-5 w-5 mt-0.5 shrink-0',
-                  t.type === 'success' && 'text-green-600',
-                  t.type === 'error' && 'text-red-600',
+                  t.type === 'success' && 'text-tp-success',
+                  t.type === 'error' && 'text-tp-error',
                   t.type === 'info' && 'text-tp-bronze-ink'
                 )}
               />

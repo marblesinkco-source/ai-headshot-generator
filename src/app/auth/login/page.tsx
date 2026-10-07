@@ -216,7 +216,7 @@ function LoginContent() {
               </div>
 
               {error && (
-                <div role="alert" className="rounded-tp-button border border-tp-line bg-tp-paper p-3 text-sm text-red-700">
+                <div role="alert" className="rounded-tp-button border border-tp-error/30 bg-tp-error/10 p-3 text-sm text-tp-error">
                   {error}
                 </div>
               )}

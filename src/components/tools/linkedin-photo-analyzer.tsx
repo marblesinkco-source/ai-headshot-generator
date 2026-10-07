@@ -153,9 +153,9 @@ function analyzePixels(img: HTMLImageElement, file: File): Analysis {
 }
 
 const STATUS_STYLES: Record<Status, { label: string; icon: typeof CheckCircle2; badge: string }> = {
-  pass: { label: 'Pass', icon: CheckCircle2, badge: 'text-emerald-700' },
-  warning: { label: 'Warning', icon: AlertTriangle, badge: 'text-amber-700' },
-  fail: { label: 'Fail', icon: XCircle, badge: 'text-red-700' },
+  pass: { label: 'Pass', icon: CheckCircle2, badge: 'text-tp-success' },
+  warning: { label: 'Warning', icon: AlertTriangle, badge: 'text-tp-bronze-ink' },
+  fail: { label: 'Fail', icon: XCircle, badge: 'text-tp-error' },
 };
 
 function scoreSummary(score: number): string {
@@ -269,7 +269,7 @@ export default function LinkedInPhotoAnalyzer() {
       />
 
       {error && (
-        <p role="alert" className="mt-4 rounded-tp-button border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+        <p role="alert" className="mt-4 rounded-tp-button border border-tp-error/30 bg-tp-error/10 px-4 py-3 text-sm text-tp-error">
           {error}
         </p>
       )}

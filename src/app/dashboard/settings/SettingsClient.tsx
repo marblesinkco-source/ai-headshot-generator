@@ -185,8 +185,8 @@ export default function SettingsClient() {
           {message && (
             <div role={message?.type === 'error' ? 'alert' : 'status'} className={`rounded-tp-button border p-3 text-sm ${
               message.type === 'success'
-                ? 'bg-green-50 border-green-200 text-green-700'
-                : 'bg-red-50 border-red-200 text-red-700'
+                ? 'bg-tp-success/10 border-tp-success/30 text-tp-success'
+                : 'bg-tp-error/10 border-tp-error/30 text-tp-error'
             }`}>
               {message.text}
             </div>
@@ -242,8 +242,8 @@ export default function SettingsClient() {
             {passwordMessage && (
               <div className={`rounded-tp-button border p-3 text-sm ${
                 passwordMessage.type === 'success'
-                  ? 'bg-green-50 border-green-200 text-green-700'
-                  : 'bg-red-50 border-red-200 text-red-700'
+                  ? 'bg-tp-success/10 border-tp-success/30 text-tp-success'
+                  : 'bg-tp-error/10 border-tp-error/30 text-tp-error'
               }`}>
                 {passwordMessage.text}
               </div>
@@ -275,7 +275,7 @@ export default function SettingsClient() {
             Download my data
           </Button>
           {dataMessage && (
-            <div role="alert" className="rounded-tp-button border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+            <div role="alert" className="rounded-tp-button border border-tp-error/30 bg-tp-error/10 p-3 text-sm text-tp-error">
               {dataMessage.text}
             </div>
           )}
@@ -283,22 +283,22 @@ export default function SettingsClient() {
       </div>
 
       {/* Danger Zone */}
-      <div className="rounded-tp-dialog border border-red-200 bg-white shadow-sm">
-        <div className="border-b border-red-100 px-6 py-4">
-          <h2 className="font-display text-xl font-normal text-red-700">Danger Zone</h2>
+      <div className="rounded-tp-dialog border border-tp-error/30 bg-white shadow-sm">
+        <div className="border-b border-tp-error/20 px-6 py-4">
+          <h2 className="font-display text-xl font-normal text-tp-error">Danger Zone</h2>
         </div>
         <div className="p-6">
           <p className="text-sm text-tp-muted mb-4">
             Permanently delete your account and all associated data, including orders, generated photos, and uploaded images. This action cannot be undone.
           </p>
           {dataMessage && showDeleteConfirm && (
-            <div role="alert" className="mb-3 rounded-tp-button border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+            <div role="alert" className="mb-3 rounded-tp-button border border-tp-error/30 bg-tp-error/10 p-3 text-sm text-tp-error">
               {dataMessage.text}
             </div>
           )}
           {showDeleteConfirm ? (
-            <div className="rounded-tp-button bg-red-50 border border-red-200 p-4 space-y-3">
-              <p className="text-sm font-medium text-red-800">
+            <div className="rounded-tp-button bg-tp-error/10 border border-tp-error/30 p-4 space-y-3">
+              <p className="text-sm font-medium text-tp-error">
                 This will permanently delete your account and all data. Type <strong>DELETE</strong> to confirm.
               </p>
               <input
@@ -306,13 +306,13 @@ export default function SettingsClient() {
                 value={deleteConfirmText}
                 onChange={(e) => setDeleteConfirmText(e.target.value)}
                 placeholder="Type DELETE to confirm"
-                className="block w-full rounded-tp-button border border-red-300 px-3.5 py-2.5 text-sm text-tp-ink placeholder-tp-muted focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-200 transition-colors"
+                className="block w-full rounded-tp-button border border-tp-error/40 px-3.5 py-2.5 text-sm text-tp-ink placeholder-tp-muted focus:border-tp-error focus:outline-none focus:ring-2 focus:ring-tp-error/20 transition-colors"
               />
               <div className="flex gap-3">
                 <button
                   onClick={handleDeleteAccount}
                   disabled={deleteConfirmText !== 'DELETE' || deleteLoading}
-                  className="rounded-tp-button bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="rounded-tp-button bg-tp-error px-4 py-2 text-sm font-medium text-white hover:bg-tp-error/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {deleteLoading ? 'Deleting…' : 'Yes, delete my account'}
                 </button>
@@ -330,7 +330,7 @@ export default function SettingsClient() {
           ) : (
             <button
               onClick={() => setShowDeleteConfirm(true)}
-              className="rounded-tp-button border border-red-300 px-4 py-2 text-sm font-medium text-red-700 hover:bg-red-50 transition-colors"
+              className="rounded-tp-button border border-tp-error/40 px-4 py-2 text-sm font-medium text-tp-error hover:bg-tp-error/10 transition-colors"
             >
               Delete account
             </button>

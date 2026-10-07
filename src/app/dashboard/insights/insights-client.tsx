@@ -119,7 +119,7 @@ export function InsightsClient() {
       </div>
 
       {error && (
-        <div className="bg-amber-50 border border-amber-200 rounded-tp-card p-4 text-amber-800 text-sm">
+        <div className="bg-tp-warning/15 border border-tp-warning/30 rounded-tp-card p-4 text-tp-bronze-ink text-sm">
           {error}
         </div>
       )}
@@ -130,19 +130,19 @@ export function InsightsClient() {
           icon={<BarChart3 className="w-5 h-5" />}
           label="Sayfa Görüntüleme"
           value={formatNumber(summary.totalPageViews)}
-          color="text-blue-600 bg-blue-50"
+          color="text-tp-ink bg-tp-beige"
         />
         <SummaryCard
           icon={<MousePointerClick className="w-5 h-5" />}
           label="Tıklama"
           value={formatNumber(summary.totalClicks)}
-          color="text-emerald-600 bg-emerald-50"
+          color="text-tp-success bg-tp-success/10"
         />
         <SummaryCard
           icon={<TrendingUp className="w-5 h-5" />}
           label="Dönüşüm"
           value={formatNumber(summary.totalConversions)}
-          color="text-purple-600 bg-purple-50"
+          color="text-tp-bronze-ink bg-tp-warning/15"
         />
         <SummaryCard
           icon={<Zap className="w-5 h-5" />}
@@ -302,8 +302,8 @@ export function InsightsClient() {
                   {test.description && <p className="text-xs text-tp-muted mt-0.5">{test.description}</p>}
                 </div>
                 <span className={`text-xs px-2 py-0.5 rounded-full ${
-                  test.status === 'active' ? 'bg-emerald-50 text-emerald-600' :
-                  test.status === 'completed' ? 'bg-blue-50 text-blue-600' :
+                  test.status === 'active' ? 'bg-tp-success/10 text-tp-success' :
+                  test.status === 'completed' ? 'bg-tp-beige text-tp-ink' :
                   'bg-tp-paper text-tp-muted'
                 }`}>
                   {test.status === 'active' ? 'Aktif' : test.status === 'completed' ? 'Tamamlandı' : 'Duraklatıldı'}

@@ -111,7 +111,7 @@ export function PhotoQualityChecker({ file, previewUrl }: PhotoQualityCheckerPro
         result.level === 'good'
           ? 'bg-tp-beige/60 text-tp-bronze-ink'
           : result.level === 'warning'
-            ? 'bg-amber-50 text-amber-700'
+            ? 'bg-tp-warning/10 text-tp-bronze-ink'
             : 'bg-tp-paper text-tp-ink'
       }`}
     >

@@ -149,7 +149,7 @@
 
   /* ── V3 Design System: Card ──────────────────────────────────── */
   .tp-card {
-    @apply rounded-tp-card border border-tp-line bg-white p-6 transition-all duration-300;
+    @apply rounded-tp-card border border-tp-line bg-tp-white p-6 transition-all duration-300;
   }
   .tp-card-hover:hover {
     @apply -translate-y-1 border-tp-beige shadow-lg shadow-tp-bronze/8;

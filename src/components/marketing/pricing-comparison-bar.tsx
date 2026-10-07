@@ -34,18 +34,15 @@ export function PricingComparisonBar() {
     >
       <div className="mx-auto flex h-[60px] max-w-5xl items-center justify-between gap-2 px-3 sm:gap-4 sm:px-6">
         <p className="min-w-0 flex-1 text-xs leading-tight text-tp-paper sm:text-sm">
-          <span className="text-tp-paper/70">
-            <span className="hidden sm:inline">Studio photoshoot: </span>
-            <span className="sm:hidden">Studio: </span>
-            $200+
+          <span className="font-semibold">
+            <span className="hidden sm:inline">AI headshots from {BASE_PRICE_DISPLAY}</span>
+            <span className="sm:hidden">From {BASE_PRICE_DISPLAY}</span>
           </span>
           <span className="mx-1.5 text-tp-bronze" aria-hidden="true">
             &middot;
           </span>
-          <span className="font-semibold">
-            <span className="hidden sm:inline">AI headshots: </span>
-            <span className="sm:hidden">AI: </span>
-            From {BASE_PRICE_DISPLAY}
+          <span className="text-tp-paper/70">
+            Up to 160 photos · One-time payment
           </span>
         </p>
         <Link

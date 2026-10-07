@@ -452,7 +452,7 @@ export function Header() {
                       <button
                         onClick={handleSignOut}
                         disabled={loggingOut}
-                        className="flex w-full items-center gap-2.5 px-4 py-2.5 text-[13px] text-red-600 hover:bg-red-50 transition-colors disabled:opacity-50"
+                        className="flex w-full items-center gap-2.5 px-4 py-2.5 text-[13px] text-tp-error hover:bg-tp-error/5 transition-colors disabled:opacity-50"
                       >
                         <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
@@ -676,7 +676,7 @@ export function Header() {
               <button
                 onClick={() => { closeMobile(); handleSignOut(); }}
                 disabled={loggingOut}
-                className="flex min-h-[44px] w-full items-center justify-center gap-2 rounded-tp-button border border-red-200 px-6 py-3 text-sm font-medium text-red-600 hover:bg-red-50 transition-colors disabled:opacity-50"
+                className="flex min-h-[44px] w-full items-center justify-center gap-2 rounded-tp-button border border-tp-error/30 px-6 py-3 text-sm font-medium text-tp-error hover:bg-tp-error/5 transition-colors disabled:opacity-50"
               >
                 {loggingOut ? 'Signing out...' : 'Sign out'}
               </button>

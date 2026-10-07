@@ -134,7 +134,7 @@ export function EmailCapture({ variant = 'card', className = '' }: EmailCaptureP
             </form>
           )}
           {status === 'error' && (
-            <p role="alert" className="mt-2 text-sm text-red-700">
+            <p role="alert" className="mt-2 text-sm text-tp-error">
               Something went wrong. Please check your email and try again.
             </p>
           )}

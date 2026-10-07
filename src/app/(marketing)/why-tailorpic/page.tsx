@@ -197,7 +197,7 @@ const trustItems = [
 function StatusCell({ value }: { value: RowStatus }) {
   if (value === 'yes') {
     return (
-      <span className="inline-flex items-center gap-1.5 text-sm font-medium text-green-700">
+      <span className="inline-flex items-center gap-1.5 text-sm font-medium text-tp-success">
         <CheckCircle2 className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
         Yes
       </span>
@@ -205,7 +205,7 @@ function StatusCell({ value }: { value: RowStatus }) {
   }
   if (value === 'no') {
     return (
-      <span className="inline-flex items-center gap-1.5 text-sm font-medium text-red-600">
+      <span className="inline-flex items-center gap-1.5 text-sm font-medium text-tp-error">
         <XCircle className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
         No
       </span>
@@ -213,7 +213,7 @@ function StatusCell({ value }: { value: RowStatus }) {
   }
   if (value === 'partial') {
     return (
-      <span className="inline-flex items-center gap-1.5 text-sm font-medium text-amber-600">
+      <span className="inline-flex items-center gap-1.5 text-sm font-medium text-tp-warning">
         <MinusCircle className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
         Limited
       </span>

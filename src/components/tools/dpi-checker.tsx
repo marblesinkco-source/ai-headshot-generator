@@ -37,18 +37,18 @@ const PRINT_SIZES = [
 const QUALITY_META: Record<Quality, { label: string; badge: string; dot: string }> = {
   excellent: {
     label: 'Excellent for print',
-    badge: 'border-emerald-300 bg-emerald-50 text-emerald-800',
-    dot: 'bg-emerald-600',
+    badge: 'border-tp-success/30 bg-tp-success/10 text-tp-success',
+    dot: 'bg-tp-success',
   },
   good: {
     label: 'Good for web, acceptable for print',
-    badge: 'border-amber-300 bg-amber-50 text-amber-800',
-    dot: 'bg-amber-500',
+    badge: 'border-tp-warning/30 bg-tp-warning/10 text-tp-bronze-ink',
+    dot: 'bg-tp-warning',
   },
   low: {
     label: 'Low resolution — best for screen only',
-    badge: 'border-red-300 bg-red-50 text-red-800',
-    dot: 'bg-red-600',
+    badge: 'border-tp-error/30 bg-tp-error/10 text-tp-error',
+    dot: 'bg-tp-error',
   },
 };
 

@@ -130,7 +130,7 @@ export function PhotoUploader({ orderId, onUploadComplete }: PhotoUploaderProps)
         <p className="text-sm text-tp-muted">
           <span className="font-medium text-tp-ink">{totalUploaded || files.filter((f) => f.status === 'done').length}</span> of {MAX_FILES} photos
           {totalUploaded < 4 && (
-            <span className="ml-2 text-amber-600">(minimum 4 required)</span>
+            <span className="ml-2 text-tp-bronze-ink">(minimum 4 required)</span>
           )}
         </p>
       </div>

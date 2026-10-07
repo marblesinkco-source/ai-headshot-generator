@@ -115,10 +115,10 @@ const values = [
 ];
 
 const stats = [
-  { value: '40+', label: 'Photos per order' },
+  { value: 'Up to 160', label: 'Photos per order' },
   { value: '12', label: 'Photo categories' },
-  { value: '<2hr', label: 'Typical delivery' },
-  { value: '$1.99', label: 'Starting price' },
+  { value: '~2 hours', label: 'Typical delivery' },
+  { value: 'From $1.99', label: 'Starting price' },
 ];
 
 const explore = [
