@@ -12,6 +12,7 @@ import { cn } from '@/lib/utils';
 import { siteConfig } from '@/config/site';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { portrait, contentPhoto } from '@/config/stock-portraits';
+import { BeforeAfterGallery } from '@/components/marketing/before-after-gallery';
 import {
   ArrowRight,
   Sparkles,
@@ -186,11 +187,6 @@ const comparisonRows = [
   { feature: 'One-time payment', ours: `Pay once, from ${BASE_PRICE_DISPLAY}. No subscription.`, check: 'Is it a one-time fee or a recurring plan?' },
 ];
 
-const beforeAfterCards = [
-  { style: 'LinkedIn Headshot', src: portrait('photo-1580489944761-15a19d654956') },
-  { style: 'Corporate Team', src: portrait('photo-1507003211169-0a1dd7228f2d') },
-  { style: 'Dating Profile', src: portrait('photo-1531746020798-e6953c6e8e04') },
-];
 
 /* ------------------------------------------------------------------ */
 /*  Page                                                              */
@@ -422,58 +418,8 @@ export default function SamplesPage() {
           </div>
         </section>
 
-        {/* ── Before / After ───────────────────────────── */}
-        <section className="border-t border-tp-line bg-tp-paper px-4 py-16 md:py-20">
-          <div className="mx-auto max-w-5xl text-center">
-            <h2 className="font-display text-3xl font-normal tracking-tight text-tp-ink sm:text-4xl">
-              From Selfie to Studio Quality
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-tp-muted">
-              Upload your everyday photos and receive polished, professional results powered by AI.
-            </p>
-
-            <div className="mt-12 grid gap-8 sm:grid-cols-3">
-              {beforeAfterCards.map((card, i) => (
-                <div key={i} className="flex flex-col items-center gap-4">
-                  <div className="flex w-full items-center gap-3">
-                    {/* Before (same image, grayscale filter) */}
-                    <div className="flex-1">
-                      <div className="relative aspect-square overflow-hidden rounded-tp-button bg-tp-beige">
-                        <Image
-                          src={card.src}
-                          alt={`${card.style} - example input photo (AI generated concept)`}
-                          fill
-                          sizes="(min-width: 640px) 16vw, 40vw"
-                          className="object-cover grayscale"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Arrow */}
-                    <ArrowRight className="h-5 w-5 shrink-0 text-tp-bronze" />
-
-                    {/* After (full color) */}
-                    <div className="flex-1">
-                      <div className="relative aspect-square overflow-hidden rounded-tp-button bg-tp-beige">
-                        <Image
-                          src={card.src}
-                          alt={`${card.style} - AI generated concept result`}
-                          fill
-                          sizes="(min-width: 640px) 16vw, 40vw"
-                          className="object-cover"
-                        />
-                        <span className="absolute bottom-2 right-2 rounded-tp-button bg-tp-black/50 px-1.5 py-0.5 text-[10px] font-medium tracking-widest text-white">
-                          AI CONCEPT
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-sm font-medium text-tp-ink">{card.style}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* ── Before / After (interactive drag sliders) ── */}
+        <BeforeAfterGallery />
 
         {/* ── Quality Badges ───────────────────────────── */}
         <section className="border-t border-tp-line bg-white px-4 py-14">

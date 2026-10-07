@@ -131,40 +131,32 @@ export function CookieConsent() {
   if (!visible) return null;
 
   const primaryBtn =
-    'rounded-tp-button bg-tp-black px-4 py-2.5 text-sm font-medium text-tp-paper transition-colors hover:bg-tp-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2';
+    'rounded-tp-button bg-tp-black px-3.5 py-1.5 text-xs font-medium text-tp-paper transition-colors hover:bg-tp-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2 sm:px-4 sm:py-2 sm:text-sm';
   const secondaryBtn =
-    'rounded-tp-button border border-tp-line bg-white px-4 py-2.5 text-sm font-medium text-tp-ink transition-colors hover:bg-tp-paper focus:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2';
+    'rounded-tp-button border border-tp-line bg-white px-3.5 py-1.5 text-xs font-medium text-tp-ink transition-colors hover:bg-tp-paper focus:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2 sm:px-4 sm:py-2 sm:text-sm';
 
   return (
     <div
-      className="fixed inset-x-0 bottom-0 z-[9999] p-3 sm:p-4"
+      className="fixed inset-x-0 bottom-0 z-[9999]"
       role="dialog"
       aria-modal="false"
       aria-labelledby="tp-cookie-title"
     >
-      <div className="mx-auto max-w-3xl rounded-tp-card border border-tp-line bg-tp-paper shadow-lg shadow-tp-black/10">
-        {!showPreferences ? (
-          <div className="flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:gap-6 sm:p-5">
-            <div className="min-w-0 flex-1">
-              <h2 id="tp-cookie-title" className="text-sm font-display font-normal text-tp-black">
-                We use cookies
-              </h2>
-              <p className="mt-1 text-sm leading-relaxed text-tp-muted">
-                We use essential cookies to keep you signed in and the site working. With your
-                consent we also use analytics and marketing cookies to understand usage and
-                measure our ads. You can change or withdraw your choice at any time.{' '}
-                <Link
-                  href="/cookie-policy"
-                  className="font-medium text-tp-bronze-ink underline underline-offset-2 hover:text-tp-ink"
-                >
-                  Cookie Policy
-                </Link>
-              </p>
-            </div>
-            <div className="flex flex-col gap-2 sm:flex-shrink-0 sm:flex-row">
-              <button type="button" onClick={() => save(false, false)} className={secondaryBtn}>
-                Essential Only
-              </button>
+      {!showPreferences ? (
+        /* ── Slim banner — single row on desktop, stacked on mobile ── */
+        <div className="border-t border-tp-line bg-tp-paper/95 backdrop-blur-sm">
+          <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 px-4 py-3 sm:flex-row sm:gap-4">
+            <p className="min-w-0 flex-1 text-xs leading-relaxed text-tp-muted sm:text-sm">
+              <span id="tp-cookie-title" className="font-medium text-tp-ink">We use cookies</span>
+              {' '}to keep you signed in and improve the site.{' '}
+              <Link
+                href="/cookie-policy"
+                className="font-medium text-tp-bronze-ink underline-offset-2 hover:underline"
+              >
+                Learn more
+              </Link>
+            </p>
+            <div className="flex shrink-0 items-center gap-2">
               <button
                 type="button"
                 onClick={() => {
@@ -173,81 +165,84 @@ export function CookieConsent() {
                   setMarketing(!!stored?.marketing);
                   setShowPreferences(true);
                 }}
-                className={secondaryBtn}
+                className="rounded-tp-button px-3 py-1.5 text-xs font-medium text-tp-muted transition-colors hover:text-tp-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze"
               >
-                Manage Preferences
-              </button>
-              <button type="button" onClick={() => save(true, true)} className={primaryBtn}>
-                Accept All
-              </button>
-            </div>
-          </div>
-        ) : (
-          <div className="p-4 sm:p-5">
-            <h2 id="tp-cookie-title" className="mb-1 text-sm font-display font-normal text-tp-black">
-              Cookie preferences
-            </h2>
-            <p className="mb-2 text-xs text-tp-muted">
-              Choose which cookies you allow. Nothing except essential cookies is set until you
-              opt in.{' '}
-              <Link
-                href="/cookie-policy"
-                className="font-medium text-tp-bronze-ink underline underline-offset-2"
-              >
-                Cookie Policy
-              </Link>
-            </p>
-
-            <div className="flex items-center justify-between gap-4 border-b border-tp-line py-3">
-              <div>
-                <span className="text-sm font-medium text-tp-ink">Essential</span>
-                <p className="mt-0.5 text-xs text-tp-muted">
-                  Sign-in, security and your cookie choice. Required for the site to work.
-                </p>
-              </div>
-              <span className="flex-shrink-0 rounded bg-tp-line/50 px-2 py-0.5 text-xs font-medium text-tp-muted">
-                Always on
-              </span>
-            </div>
-
-            <div className="flex items-center justify-between gap-4 border-b border-tp-line py-3">
-              <div>
-                <span className="text-sm font-medium text-tp-ink">Analytics</span>
-                <p className="mt-0.5 text-xs text-tp-muted">
-                  Google Analytics: helps us understand how the site is used.
-                </p>
-              </div>
-              <Toggle checked={analytics} onChange={setAnalytics} label="Analytics cookies" />
-            </div>
-
-            <div className="flex items-center justify-between gap-4 py-3">
-              <div>
-                <span className="text-sm font-medium text-tp-ink">Marketing</span>
-                <p className="mt-0.5 text-xs text-tp-muted">
-                  Ad measurement, personalised ads and remarketing.
-                </p>
-              </div>
-              <Toggle checked={marketing} onChange={setMarketing} label="Marketing cookies" />
-            </div>
-
-            <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:justify-end">
-              <button
-                type="button"
-                onClick={() => setShowPreferences(false)}
-                className="px-3 py-2 text-sm font-medium text-tp-muted hover:text-tp-ink"
-              >
-                Back
+                Manage
               </button>
               <button type="button" onClick={() => save(false, false)} className={secondaryBtn}>
-                Essential Only
+                Decline
               </button>
-              <button type="button" onClick={() => save(analytics, marketing)} className={primaryBtn}>
-                Save Preferences
+              <button type="button" onClick={() => save(true, true)} className={primaryBtn}>
+                Accept
               </button>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      ) : (
+        /* ── Preference panel — compact card ── */
+        <div className="p-3 sm:p-4">
+          <div className="mx-auto max-w-lg rounded-tp-card border border-tp-line bg-tp-paper shadow-lg shadow-tp-black/10">
+            <div className="p-4">
+              <h2 id="tp-cookie-title" className="text-sm font-display font-normal text-tp-black">
+                Cookie preferences
+              </h2>
+              <p className="mt-1 text-xs text-tp-muted">
+                Choose which cookies you allow.{' '}
+                <Link
+                  href="/cookie-policy"
+                  className="font-medium text-tp-bronze-ink underline underline-offset-2"
+                >
+                  Cookie Policy
+                </Link>
+              </p>
+
+              <div className="mt-3 space-y-0 divide-y divide-tp-line">
+                <div className="flex items-center justify-between gap-4 py-2.5">
+                  <div>
+                    <span className="text-sm font-medium text-tp-ink">Essential</span>
+                    <p className="text-xs text-tp-muted">Sign-in, security. Always required.</p>
+                  </div>
+                  <span className="shrink-0 rounded bg-tp-line/50 px-2 py-0.5 text-xs font-medium text-tp-muted">
+                    Always on
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between gap-4 py-2.5">
+                  <div>
+                    <span className="text-sm font-medium text-tp-ink">Analytics</span>
+                    <p className="text-xs text-tp-muted">Helps us understand site usage.</p>
+                  </div>
+                  <Toggle checked={analytics} onChange={setAnalytics} label="Analytics cookies" />
+                </div>
+
+                <div className="flex items-center justify-between gap-4 py-2.5">
+                  <div>
+                    <span className="text-sm font-medium text-tp-ink">Marketing</span>
+                    <p className="text-xs text-tp-muted">Ad measurement and remarketing.</p>
+                  </div>
+                  <Toggle checked={marketing} onChange={setMarketing} label="Marketing cookies" />
+                </div>
+              </div>
+
+              <div className="mt-3 flex items-center justify-end gap-2">
+                <button
+                  type="button"
+                  onClick={() => setShowPreferences(false)}
+                  className="px-3 py-1.5 text-xs font-medium text-tp-muted hover:text-tp-ink"
+                >
+                  Back
+                </button>
+                <button type="button" onClick={() => save(false, false)} className={secondaryBtn}>
+                  Essential Only
+                </button>
+                <button type="button" onClick={() => save(analytics, marketing)} className={primaryBtn}>
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
