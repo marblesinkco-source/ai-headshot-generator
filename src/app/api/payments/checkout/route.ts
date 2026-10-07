@@ -38,6 +38,8 @@ const checkoutSchema = z.union([
     couponCode: z.string().optional(),
     successUrl: z.string().url().optional(),
     cancelUrl: z.string().url().optional(),
+    withdrawalConsentGiven: z.boolean().optional(),
+    consentTimestamp: z.string().optional(),
   }),
   // Legacy checkout (backward compatible)
   z.object({
@@ -176,9 +178,13 @@ export async function POST(request: NextRequest) {
       cancelUrl?: string;
       categoryId?: string;
       couponCode?: string;
+      withdrawalConsentGiven?: boolean;
+      consentTimestamp?: string;
     };
     const couponCode = 'couponCode' in parsed.data ? (parsed.data as { couponCode?: string }).couponCode : undefined;
     const categoryId = 'categoryId' in parsed.data ? (parsed.data as { categoryId: string }).categoryId : 'headshots';
+    const withdrawalConsent = 'withdrawalConsentGiven' in parsed.data ? (parsed.data as { withdrawalConsentGiven?: boolean }).withdrawalConsentGiven : undefined;
+    const consentTs = 'consentTimestamp' in parsed.data ? (parsed.data as { consentTimestamp?: string }).consentTimestamp : undefined;
 
     let pkgName: string;
     let pkgPrice: number;
@@ -270,6 +276,11 @@ export async function POST(request: NextRequest) {
         packageId,
         categoryId,
         userId: user.id,
+        ...(withdrawalConsent ? {
+          withdrawalConsentGiven: 'true',
+          consentTimestamp: consentTs || new Date().toISOString(),
+          consentText: 'Customer expressly requested immediate AI processing and waived right of withdrawal per EU Directive 2011/83/EU Art.16(a)',
+        } : {}),
       },
       success_url: successUrl || `${baseUrl}/dashboard/orders/${order.id}?status=success`,
       cancel_url: cancelUrl || `${baseUrl}/dashboard/upload?category=${categoryId}&status=cancelled`,

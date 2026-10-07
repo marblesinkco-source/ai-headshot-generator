@@ -49,6 +49,7 @@ function UploadContent() {
   const [generationStatus, setGenerationStatus] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [checkoutLoading, setCheckoutLoading] = useState<string | null>(null);
+  const [purchaseConsent, setPurchaseConsent] = useState(false);
 
   const supabase = createClient();
   const activeCategories = getActiveCategories();
@@ -95,6 +96,7 @@ function UploadContent() {
   function handleCategorySelect(catId: CategoryId) {
     setSelectedCategory(catId);
     setSelectedPackage(null);
+    setPurchaseConsent(false);
     setCurrentStep(2);
   }
 
@@ -112,6 +114,8 @@ function UploadContent() {
           categoryId: selectedCategory,
           packageId,
           ...(couponCode && { couponCode }),
+          withdrawalConsentGiven: true,
+          consentTimestamp: new Date().toISOString(),
         }),
       });
 
@@ -375,7 +379,7 @@ function UploadContent() {
                   size="md"
                   className="mt-6 w-full"
                   loading={checkoutLoading === pkg.id}
-                  disabled={checkoutLoading !== null && checkoutLoading !== pkg.id}
+                  disabled={!purchaseConsent || (checkoutLoading !== null && checkoutLoading !== pkg.id)}
                   onClick={(e) => {
                     e.stopPropagation();
                     handleCheckout(pkg.id);
@@ -413,7 +417,7 @@ function UploadContent() {
                     size="md"
                     className="whitespace-nowrap bg-tp-black text-tp-bronze hover:bg-tp-ink border-0"
                     loading={checkoutLoading === 'avatar-mega'}
-                    disabled={checkoutLoading !== null && checkoutLoading !== 'avatar-mega'}
+                    disabled={!purchaseConsent || (checkoutLoading !== null && checkoutLoading !== 'avatar-mega')}
                     onClick={() => {
                       setSelectedPackage('avatar-mega');
                       handleCheckout('avatar-mega');
@@ -454,7 +458,7 @@ function UploadContent() {
                     size="md"
                     className="whitespace-nowrap bg-tp-black text-tp-bronze hover:bg-tp-ink border-0"
                     loading={checkoutLoading === 'avatar-starter'}
-                    disabled={checkoutLoading !== null && checkoutLoading !== 'avatar-starter'}
+                    disabled={!purchaseConsent || (checkoutLoading !== null && checkoutLoading !== 'avatar-starter')}
                     onClick={() => {
                       setSelectedCategory('avatars' as CategoryId);
                       setSelectedPackage('avatar-starter');
@@ -467,6 +471,23 @@ function UploadContent() {
               </div>
             );
           })()}
+
+          {/* Purchase Consent — Right of Withdrawal Waiver */}
+          <div className="rounded-tp-card border border-tp-line bg-tp-paper p-4">
+            <label className="flex items-start gap-3 cursor-pointer select-none">
+              <input
+                type="checkbox"
+                checked={purchaseConsent}
+                onChange={(e) => setPurchaseConsent(e.target.checked)}
+                className="mt-0.5 h-5 w-5 flex-shrink-0 rounded border-tp-line text-tp-black accent-tp-black focus:ring-tp-bronze cursor-pointer"
+              />
+              <span className="text-xs leading-relaxed text-tp-ink">
+                I expressly request that the AI photo generation process begins immediately upon my purchase. I understand and accept that: (1) this is a personalized digital service that starts processing immediately after payment; (2) once processing begins, I waive my right of withdrawal / cooling-off period as permitted under applicable consumer protection laws (including EU Directive 2011/83/EU, Article 16(a)); (3) AI-generated results are produced through an automated, personalized process and may vary in output; (4) no refund, chargeback, or credit will be issued once processing has commenced, regardless of the reason — including but not limited to dissatisfaction with results, internet or service interruption, browser or device issues, session timeout, accidental purchase, or any other technical or personal circumstance; (5) by checking this box and completing my purchase, I provide my explicit prior consent to the immediate commencement of the service and acknowledge the loss of my right of withdrawal. See our{' '}
+                <a href="/terms" target="_blank" rel="noopener noreferrer" className="underline text-tp-bronze-ink hover:text-tp-black">Terms of Service</a>{' '}
+                for full details.
+              </span>
+            </label>
+          </div>
 
           {error && (
             <div role="alert" className="rounded-tp-button border border-tp-line bg-tp-paper p-3 text-sm text-red-700">{error}</div>
