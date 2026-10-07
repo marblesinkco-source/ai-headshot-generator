@@ -86,7 +86,7 @@
         "feat-H"
       ],
       "status": "done",
-      "evidence": "21 kritik sayfa SEO denetimi, tümünde metadata mevcut."
+      "evidence": "PageSpeed Mobile: 92/100 (hedef 90+). FCP 1.2s, LCP 3.3s, TBT 20ms, CLS 0, SI 2.4s. A11y 97, Best Practices 100, SEO 92, Agent Crawling 3/3. Commits: 8b1924a, dad8814. Doğrulandı: 7 Eki 2026."
     },
     {
       "id": "feat-J",
