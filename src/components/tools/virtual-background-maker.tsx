@@ -782,7 +782,7 @@ export default function VirtualBackgroundMaker() {
               value={text}
               onChange={(e) => setText(e.target.value)}
               placeholder="Company name or tagline"
-              className="mt-2 h-11 w-full rounded-tp-button border border-tp-line bg-white px-3 text-sm text-tp-ink placeholder:text-tp-muted focus:outline-none focus:ring-2 focus:ring-tp-bronze"
+              className="mt-2 h-11 w-full rounded-tp-button border border-tp-line bg-white px-3 text-sm text-tp-ink placeholder:text-tp-muted focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink"
             />
             <p className="mt-1 text-xs text-tp-muted">
               Text sits in a corner so it stays out of your frame. Long text shrinks to fit.

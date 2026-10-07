@@ -47,7 +47,7 @@ export function PriceReceipt() {
               id="receipt-package"
               value={selectedIdx}
               onChange={(e) => setSelectedIdx(Number(e.target.value))}
-              className="w-full appearance-none rounded-tp-button border border-tp-line bg-tp-paper px-4 py-3 pr-10 text-sm font-medium text-tp-ink transition-colors focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20"
+              className="w-full appearance-none rounded-tp-button border border-tp-line bg-tp-paper px-4 py-3 pr-10 text-sm font-medium text-tp-ink transition-colors focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/20"
             >
               {packages.map((p, i) => (
                 <option key={p.id} value={i}>

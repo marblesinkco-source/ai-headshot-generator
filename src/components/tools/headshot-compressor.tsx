@@ -337,7 +337,7 @@ export default function HeadshotCompressor() {
                     inputMode="numeric"
                     value={customKb}
                     onChange={(e) => setCustomKb(e.target.value)}
-                    className="h-10 w-28 rounded-tp-button border border-tp-line bg-white px-3 text-sm text-tp-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze"
+                    className="h-10 w-28 rounded-tp-button border border-tp-line bg-white px-3 text-sm text-tp-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink"
                   />
                 </div>
               )}
@@ -389,7 +389,7 @@ export default function HeadshotCompressor() {
                   placeholder="e.g. 1000"
                   value={maxDim}
                   onChange={(e) => setMaxDim(e.target.value)}
-                  className="h-10 w-32 rounded-tp-button border border-tp-line bg-white px-3 text-sm text-tp-ink placeholder:text-tp-muted focus:outline-none focus:ring-2 focus:ring-tp-bronze"
+                  className="h-10 w-32 rounded-tp-button border border-tp-line bg-white px-3 text-sm text-tp-ink placeholder:text-tp-muted focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink"
                 />
                 <span className="text-sm text-tp-muted">px on the longest side</span>
               </div>

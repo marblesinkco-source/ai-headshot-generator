@@ -105,7 +105,7 @@ export function CalculatorForm() {
               value={costInput}
               onChange={(e) => setCostInput(e.target.value)}
               aria-describedby="photographer-cost-help"
-              className="w-full rounded-tp-button border-2 border-tp-line bg-white py-3 pl-7 pr-3 text-tp-ink focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze focus:ring-offset-2"
+              className="w-full rounded-tp-button border-2 border-tp-line bg-white py-3 pl-7 pr-3 text-tp-ink focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink focus:ring-offset-2"
             />
           </div>
           <p id="photographer-cost-help" className="mt-2 text-xs leading-relaxed text-tp-muted">

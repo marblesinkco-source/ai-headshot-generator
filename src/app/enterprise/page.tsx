@@ -448,7 +448,7 @@ export default function EnterprisePage() {
           <div className="grid gap-6 sm:grid-cols-3">
             {[
               { name: 'Small Team', range: '5-15 people', price: '$39', per: 'per person', features: ['40+ photos each', 'Consistent style', 'HD resolution', 'Email support'], href: '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots' },
-              { name: 'Company', range: '16-50 people', price: '$29', per: 'per person', features: ['40+ photos each', 'Brand guidelines', '4K resolution', 'Priority support'], popular: true, href: '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots' },
+              { name: 'Business', range: '16-50 people', price: '$29', per: 'per person', features: ['40+ photos each', 'Brand guidelines', '4K resolution', 'Priority support'], popular: true, href: '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots' },
               { name: 'Enterprise', range: '50+ people', price: 'Custom', per: 'contact us', features: ['Custom photo packages', 'Admin dashboard', 'Custom onboarding', 'Dedicated manager', 'Invoiced billing'], href: '/contact' },
             ].map((plan) => (
               <div

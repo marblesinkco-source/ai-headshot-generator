@@ -137,7 +137,7 @@ export function HeadlineForm() {
   }
 
   const inputClass =
-    'mt-1.5 w-full rounded-tp-button border border-tp-line bg-white px-3 py-2.5 text-tp-ink placeholder:text-tp-muted focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/30';
+    'mt-1.5 w-full rounded-tp-button border border-tp-line bg-white px-3 py-2.5 text-tp-ink placeholder:text-tp-muted focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/30';
   const labelClass = 'block text-sm font-semibold text-tp-ink';
 
   return (

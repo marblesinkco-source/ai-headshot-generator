@@ -271,7 +271,7 @@ export function PfpMaker() {
                   value={customW}
                   onChange={(e) => setCustomW(e.target.value)}
                   aria-label="Custom width in pixels"
-                  className="w-24 rounded-tp-button border border-tp-line bg-white px-3 py-2 text-sm text-tp-ink focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/40"
+                  className="w-24 rounded-tp-button border border-tp-line bg-white px-3 py-2 text-sm text-tp-ink focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/40"
                 />
                 <span className="text-tp-muted" aria-hidden="true">
                   ×
@@ -284,7 +284,7 @@ export function PfpMaker() {
                   value={customH}
                   onChange={(e) => setCustomH(e.target.value)}
                   aria-label="Custom height in pixels"
-                  className="w-24 rounded-tp-button border border-tp-line bg-white px-3 py-2 text-sm text-tp-ink focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/40"
+                  className="w-24 rounded-tp-button border border-tp-line bg-white px-3 py-2 text-sm text-tp-ink focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/40"
                 />
                 <span className="text-xs text-tp-muted">px ({MIN_DIM}–{MAX_DIM})</span>
               </div>

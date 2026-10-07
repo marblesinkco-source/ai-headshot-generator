@@ -306,7 +306,7 @@ export default function OpenToWorkFrame() {
                     value={customText}
                     maxLength={MAX_TEXT}
                     onChange={(e) => setCustomText(e.target.value.slice(0, MAX_TEXT))}
-                    className="min-w-0 flex-1 rounded-tp-button border border-tp-line bg-white px-3 py-2 text-sm text-tp-ink focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/40"
+                    className="min-w-0 flex-1 rounded-tp-button border border-tp-line bg-white px-3 py-2 text-sm text-tp-ink focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/40"
                   />
                   <span className="text-xs text-tp-muted">
                     {customText.length}/{MAX_TEXT}

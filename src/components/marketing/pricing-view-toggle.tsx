@@ -10,14 +10,14 @@ type View = 'individual' | 'team';
 
 const TEAM_TIERS = [
   {
-    name: 'Small team',
+    name: 'Small Team',
     size: '5-15 people',
     price: '$39',
     unit: 'per person, one-time',
     highlight: false,
   },
   {
-    name: 'Growing team',
+    name: 'Business',
     size: '16-50 people',
     price: '$29',
     unit: 'per person, one-time',

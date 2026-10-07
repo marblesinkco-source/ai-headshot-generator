@@ -434,7 +434,7 @@ export default function DpiChecker() {
                     max={2400}
                     value={dpiInput}
                     onChange={(e) => setDpiInput(e.target.value)}
-                    className="w-28 rounded-tp-button border border-tp-line bg-white px-3 py-2 text-sm text-tp-ink focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/40"
+                    className="w-28 rounded-tp-button border border-tp-line bg-white px-3 py-2 text-sm text-tp-ink focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/40"
                   />
                   {[72, 150, 300].map((p) => (
                     <button

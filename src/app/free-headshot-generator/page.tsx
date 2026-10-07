@@ -130,7 +130,7 @@ const faqs = [
   {
     question: 'How much does TailorPic cost?',
     answer:
-      'Packages start from $1.99. Team pricing is $39 for 5-15 people and $29 for 16-50 people. There is no subscription.',
+      'Packages start from $1.99. Team pricing is $39 per person for 5-15 people and $29 per person for 16-50 people. There is no subscription.',
   },
   {
     question: 'What do I need to get started?',

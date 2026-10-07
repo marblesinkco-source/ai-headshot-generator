@@ -102,7 +102,7 @@ export function InsightsClient() {
           <select
             value={days}
             onChange={(e) => setDays(Number(e.target.value))}
-            className="text-sm border border-tp-line rounded-tp-button px-3 py-2 bg-white text-tp-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze/20"
+            className="text-sm border border-tp-line rounded-tp-button px-3 py-2 bg-white text-tp-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/20"
           >
             <option value={7}>Son 7 gün</option>
             <option value={14}>Son 14 gün</option>

@@ -50,7 +50,7 @@ export function VsDirectory({ groups }: { groups: VsGroup[] }) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search tools, e.g. HeadshotPro, Midjourney, Canva"
-            className="w-full rounded-tp-button border border-tp-line bg-white py-3.5 pl-12 pr-4 text-base text-tp-ink placeholder:text-tp-muted/80 focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/40"
+            className="w-full rounded-tp-button border border-tp-line bg-white py-3.5 pl-12 pr-4 text-base text-tp-ink placeholder:text-tp-muted/80 focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/40"
           />
         </div>
         <p className="mt-3 text-center text-sm text-tp-muted" aria-live="polite">

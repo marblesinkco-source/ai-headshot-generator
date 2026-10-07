@@ -18,7 +18,7 @@ const ROWS: ComparisonRow[] = [
   {
     label: 'Cost',
     icon: DollarSign,
-    studio: '$150–$500 per session',
+    studio: '$200–$500+ per session',
     tailorpic: `From ${BASE_PRICE_DISPLAY}`,
     studioEstimate: true,
   },

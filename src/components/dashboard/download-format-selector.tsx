@@ -222,7 +222,7 @@ export function DownloadFormatSelector({
               max={10000}
               value={customWidth}
               onChange={(e) => setCustomWidth(Math.max(1, Number(e.target.value)))}
-              className="w-24 rounded-tp-button border border-tp-line bg-white px-3 py-1.5 text-sm text-tp-ink focus:border-tp-bronze focus:outline-none"
+              className="w-24 rounded-tp-button border border-tp-line bg-white px-3 py-1.5 text-sm text-tp-ink focus:border-tp-bronze-ink focus:outline-none"
             />
           </label>
           <span className="mt-4 text-tp-muted">x</span>
@@ -234,7 +234,7 @@ export function DownloadFormatSelector({
               max={10000}
               value={customHeight}
               onChange={(e) => setCustomHeight(Math.max(1, Number(e.target.value)))}
-              className="w-24 rounded-tp-button border border-tp-line bg-white px-3 py-1.5 text-sm text-tp-ink focus:border-tp-bronze focus:outline-none"
+              className="w-24 rounded-tp-button border border-tp-line bg-white px-3 py-1.5 text-sm text-tp-ink focus:border-tp-bronze-ink focus:outline-none"
             />
           </label>
         </div>

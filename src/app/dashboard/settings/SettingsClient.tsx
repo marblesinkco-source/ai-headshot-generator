@@ -177,7 +177,7 @@ export default function SettingsClient() {
               maxLength={80}
               autoComplete="name"
               onChange={(e) => setName(e.target.value)}
-              className="block w-full rounded-tp-button border border-tp-line px-3.5 py-2.5 text-sm text-tp-ink placeholder-tp-muted shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
+              className="block w-full rounded-tp-button border border-tp-line px-3.5 py-2.5 text-sm text-tp-ink placeholder-tp-muted shadow-sm focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/20 transition-colors"
               placeholder="Your full name"
             />
           </div>
@@ -217,7 +217,7 @@ export default function SettingsClient() {
                 autoComplete="new-password"
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
-                className="block w-full rounded-tp-button border border-tp-line px-3.5 py-2.5 text-sm text-tp-ink placeholder-tp-muted shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
+                className="block w-full rounded-tp-button border border-tp-line px-3.5 py-2.5 text-sm text-tp-ink placeholder-tp-muted shadow-sm focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/20 transition-colors"
                 placeholder="At least 8 characters"
               />
             </div>
@@ -234,7 +234,7 @@ export default function SettingsClient() {
                 autoComplete="new-password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="block w-full rounded-tp-button border border-tp-line px-3.5 py-2.5 text-sm text-tp-ink placeholder-tp-muted shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
+                className="block w-full rounded-tp-button border border-tp-line px-3.5 py-2.5 text-sm text-tp-ink placeholder-tp-muted shadow-sm focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/20 transition-colors"
                 placeholder="Repeat your new password"
               />
             </div>

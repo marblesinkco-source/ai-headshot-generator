@@ -89,7 +89,7 @@ interface ComparisonRow {
 const comparisonRows: ComparisonRow[] = [
   {
     feature: 'Price range',
-    traditional: '$150 - $500+',
+    traditional: '$200 - $500+',
     otherAI: '$20 - $60',
     tailorpic: `${formatPrice(tailorpic1Package.price)} - ${formatPrice(execPackage.price)}`,
   },
@@ -358,7 +358,7 @@ export default function PricingComparisonPage() {
                         Traditional Studio
                       </div>
                       <span className="mt-1 block text-xs font-normal text-tp-muted">
-                        $150 - $500+
+                        $200 - $500+
                       </span>
                     </th>
                     <th className="px-6 py-4 text-sm font-semibold text-tp-ink">
@@ -431,7 +431,7 @@ export default function PricingComparisonPage() {
                     Traditional Studio
                   </h3>
                 </div>
-                <p className="mt-1 text-sm text-tp-muted">$150 - $500+</p>
+                <p className="mt-1 text-sm text-tp-muted">$200 - $500+</p>
                 <dl className="mt-4 space-y-3">
                   {comparisonRows.map((row) => (
                     <div

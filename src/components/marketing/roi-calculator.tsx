@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Camera, Sparkles } from 'lucide-react';
+import { TEAM_PRICES } from '@/config/pricing';
 
 const TRADITIONAL_PER_PERSON = 150;
 const MIN_TEAM = 5;
@@ -10,7 +11,7 @@ const MAX_TEAM = 100;
 
 /** Matches the enterprise pricing tiers on /enterprise */
 function tailorpicPerPerson(teamSize: number): number {
-  if (teamSize >= 50) return 19; // Enterprise — custom, use estimate
+  if (teamSize >= 50) return TEAM_PRICES.large.perPersonCents / 100; // Enterprise is custom; use the large-team rate
   if (teamSize >= 16) return 29;
   return 39; // 5-15
 }

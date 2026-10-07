@@ -255,7 +255,7 @@ function RegisterContent() {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-tp-black placeholder-tp-muted/60 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
+                  className="block w-full rounded-tp-button border border-tp-line px-3.5 py-2.5 text-sm text-tp-black placeholder-tp-muted/60 shadow-sm focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/20 transition-colors"
                   placeholder="John Doe"
                 />
               </div>
@@ -270,7 +270,7 @@ function RegisterContent() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-tp-black placeholder-tp-muted/60 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
+                  className="block w-full rounded-tp-button border border-tp-line px-3.5 py-2.5 text-sm text-tp-black placeholder-tp-muted/60 shadow-sm focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/20 transition-colors"
                   placeholder="you@example.com"
                 />
               </div>
@@ -286,7 +286,7 @@ function RegisterContent() {
                   minLength={8}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-tp-black placeholder-tp-muted/60 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
+                  className="block w-full rounded-tp-button border border-tp-line px-3.5 py-2.5 text-sm text-tp-black placeholder-tp-muted/60 shadow-sm focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/20 transition-colors"
                   placeholder="Min. 8 characters"
                 />
               </div>
@@ -301,7 +301,7 @@ function RegisterContent() {
                   required
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="block w-full rounded-lg border border-tp-line px-3.5 py-2.5 text-sm text-tp-black placeholder-tp-muted/60 shadow-sm focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/20 transition-colors"
+                  className="block w-full rounded-tp-button border border-tp-line px-3.5 py-2.5 text-sm text-tp-black placeholder-tp-muted/60 shadow-sm focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/20 transition-colors"
                   placeholder="Repeat your password"
                 />
               </div>

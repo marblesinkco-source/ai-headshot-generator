@@ -37,7 +37,7 @@ const chipBase =
 const chipOn = 'border-tp-ink bg-tp-ink text-white';
 const chipOff = 'border-tp-line bg-white text-tp-ink hover:border-tp-bronze';
 const inputBase =
-  'rounded-tp-button border border-tp-line bg-white px-3 py-2 text-sm text-tp-ink focus:border-tp-bronze focus:outline-none focus:ring-2 focus:ring-tp-bronze/40';
+  'rounded-tp-button border border-tp-line bg-white px-3 py-2 text-sm text-tp-ink focus:border-tp-bronze-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/40';
 
 export default function WatermarkMaker() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
