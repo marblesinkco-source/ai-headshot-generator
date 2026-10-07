@@ -94,7 +94,7 @@ const enterpriseFaqs = [
   {
     question: 'Is there a minimum team size for enterprise plans?',
     answer:
-      'Volume pricing is available for teams of 5 or more. Our Small Team plan covers 5-15 people, the Company plan covers 16-50, and our custom Enterprise plan is designed for organizations with 50+ people.',
+      'Volume pricing is available for teams of 5 or more. Our Small Team plan covers 5-15 people, the Business plan covers 16-50, and our custom Enterprise plan is designed for organizations with 50+ people.',
   },
   {
     question: 'Do you offer dedicated support for enterprise customers?',
@@ -125,7 +125,7 @@ const serviceSchema = {
     },
     {
       '@type': 'Offer',
-      name: 'Company (16-50 people)',
+      name: 'Business (16-50 people)',
       price: '29',
       priceCurrency: 'USD',
       eligibleQuantity: { '@type': 'QuantitativeValue', minValue: 16, maxValue: 50, unitText: 'people' },
