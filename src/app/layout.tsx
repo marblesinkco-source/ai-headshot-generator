@@ -9,9 +9,7 @@ import { ExitIntentPopupLazy } from '@/components/marketing/exit-intent-popup-la
 import { OrganizationSchema } from '@/components/structured-data';
 import { GoogleAnalytics } from '@/components/analytics/google-analytics';
 import { AnalyticsTrackingScript } from '@/components/analytics-provider';
-import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
-import { LiveChat } from '@/components/marketing/live-chat';
 
 const BackToTop = dynamic(
   () => import('@/components/marketing/back-to-top').then((m) => m.BackToTop),
@@ -20,6 +18,11 @@ const BackToTop = dynamic(
 
 const ReturnVisitorBanner = dynamic(
   () => import('@/components/marketing/return-visitor-banner').then((m) => m.ReturnVisitorBanner),
+  { ssr: false },
+);
+
+const LiveChat = dynamic(
+  () => import('@/components/marketing/live-chat').then((m) => m.LiveChat),
   { ssr: false },
 );
 
@@ -120,10 +123,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </ToastProvider>
         <BackToTop />
         <ReturnVisitorBanner />
-        {/* Tawk.to live chat — only loads when NEXT_PUBLIC_TAWKTO_ID is set */}
-        <Suspense fallback={null}>
-          <LiveChat />
-        </Suspense>
+        {/* Tawk.to live chat — lazy-loaded, only renders when NEXT_PUBLIC_TAWKTO_ID is set */}
+        <LiveChat />
         {/* Vercel Analytics — only loads when NEXT_PUBLIC_VERCEL_ANALYTICS_ID is set */}
         {process.env.NEXT_PUBLIC_VERCEL_ANALYTICS_ID && (
           <Script

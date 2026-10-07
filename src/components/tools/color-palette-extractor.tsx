@@ -252,6 +252,8 @@ export default function ColorPaletteExtractor() {
           <img
             src={previewUrl}
             alt="Your uploaded photo"
+            width={400}
+            height={400}
             className="block max-h-[420px] w-auto max-w-full rounded-tp-button"
           />
         ) : (

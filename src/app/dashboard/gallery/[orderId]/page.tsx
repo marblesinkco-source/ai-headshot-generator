@@ -269,9 +269,12 @@ export default function OrderGalleryPage() {
               key={headshot.id}
               className="mb-4 break-inside-avoid group relative cursor-pointer overflow-hidden rounded-tp-card border border-tp-line bg-white shadow-sm transition-all hover:shadow-md"
             >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={headshot.thumbnailUrl}
                 alt={`Headshot ${idx + 1}`}
+                width={400}
+                height={500}
                 className="w-full object-cover"
                 onClick={() => setModalIndex(idx)}
                 loading="lazy"
