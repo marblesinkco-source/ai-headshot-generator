@@ -1,5 +1,44 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-08 (Pre-Launch Critical Issues — commits 4aacc1a, 715375a)
+
+### Son Doğrulanmış Durum (8 Eki 2026)
+- **5 Lansman-Öncesi Kritik Sorun: 4/5 TAMAMLANDI, 1 KISMEN** ✅
+
+### Tamamlanan Düzeltmeler
+1. **404 HTTP yanıt kodu** ✅ — `src/app/[category]/page.tsx` → `export const dynamicParams = false` eklendi. Var olmayan `/nonexistent-category` artık HTTP 404 döndürüyor (commit 715375a)
+2. **Öncesi/sonrası aynı görsel** ✅ — `src/config/category-visuals.ts` güncellendi. Her before/after çifti artık farklı Unsplash fotoğrafları kullanıyor (commit 4aacc1a)
+3. **Çerez–analitik bağlantısı** ✅ — `src/hooks/use-analytics.ts` → `hasAnalyticsConsent()` fonksiyonu eklendi. GDPR uyumlu: izin verilmedikçe hiçbir event gönderilmiyor (commit 4aacc1a)
+4. **İade politikası yönlendirme tutarsızlığı** ✅ — `src/app/refund-policy/page.tsx` canonical URL `/guarantee` olarak düzeltildi, `src/app/sitemap.ts` güncellendi (commit 4aacc1a)
+5. **E2E kabul testi** 🟡 — Desktop tam doğrulandı, mobil viewport Chrome extension kısıtlaması nedeniyle test edilemedi
+
+### E2E Kabul Testi Sonuçları (Desktop)
+- 27 kritik public sayfa: HTTP 200 ✅
+- 8 dashboard/legal sayfa: HTTP 200 ✅
+- 404 doğrulama: Var olmayan sayfalar HTTP 404 döndürüyor ✅
+- /refund-policy → /guarantee yönlendirmesi çalışıyor ✅
+- Homepage: Hero, CTA, pricing bilgisi görsel doğrulandı ✅
+- Pricing: 6 paket doğru fiyatlarla gösteriliyor ✅
+- Before/After: Farklı görseller + interaktif slider ✅
+- Dashboard: Authenticated kullanıcı görünümü, stats, orders ✅
+- Upload akışı: Category → Package seçimi (4-adım stepper) ✅
+- Help Center: Arama + kategoriler ✅
+- Contact: Email, enterprise bilgi, form ✅
+- Samples gallery: Filtreler, AI disclosure, CTA ✅
+- How It Works sayfası ✅
+- Navigation Photo Types dropdown ✅
+
+### Test Edilemeyenler
+- Mobil viewport (390px): Chrome extension minimum viewport ~1536px kısıtlaması
+- Gerçek ödeme işlemi: Stripe canlı işlem gerektirir
+- İletişim formu gönderimi: Form submission izni gerektirir
+
+### Doğrulama
+- CI: PASS, Vercel: PASS (her iki commit)
+- Canlı site: Chrome browser ile 35+ sayfa doğrulandı
+
+---
+
 ## Oturum: 2026-10-07 (Accounting System Complete — commit 0833388)
 
 ### Son Doğrulanmış Durum (7 Eki 2026)
