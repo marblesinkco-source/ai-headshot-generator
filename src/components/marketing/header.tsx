@@ -303,6 +303,7 @@ export function Header() {
                                   height={72}
                                   className="h-full w-full object-cover"
                                   sizes="36px"
+                                  loading="lazy"
                                 />
                               </div>
                               <div className="min-w-0">
@@ -602,6 +603,7 @@ export function Header() {
                           height={72}
                           className="h-full w-full object-cover"
                           sizes="36px"
+                          loading="lazy"
                         />
                       </div>
                       <span className="text-[12px] font-semibold leading-tight">{cat.shortName}</span>

@@ -114,7 +114,7 @@ const nextConfig = {
     serverActions: {
       bodySizeLimit: '10mb',
     },
-    optimizePackageImports: ['lucide-react'],
+    optimizePackageImports: ['lucide-react', 'class-variance-authority', '@supabase/supabase-js'],
   },
 };
 

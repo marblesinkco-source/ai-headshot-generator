@@ -27,7 +27,7 @@ export function TrustBadgesInline({ className = '' }: { className?: string }) {
       {badges.map(({ Icon, label, ...rest }) => {
         const content = (
           <>
-            <Icon className="h-3.5 w-3.5 shrink-0 text-tp-bronze" aria-hidden="true" />
+            <Icon className="h-3.5 w-3.5 shrink-0 text-tp-bronze-ink" aria-hidden="true" />
             <span>{label}</span>
           </>
         );

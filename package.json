@@ -47,5 +47,13 @@
     "tsx": "^4.16.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.2.0"
-  }
+  },
+  "browserslist": [
+    "Chrome >= 90",
+    "Firefox >= 90",
+    "Safari >= 15",
+    "Edge >= 90",
+    "iOS >= 15",
+    "not dead"
+  ]
 }

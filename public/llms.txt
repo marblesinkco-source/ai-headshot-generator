@@ -1,0 +1,31 @@
+# TailorPic
+
+> AI-powered professional headshot generator. Upload a few selfies, get studio-quality professional photos in minutes.
+
+## About
+
+TailorPic transforms everyday selfies into polished, professional headshots using AI. Multiple styles are available for business, LinkedIn, creative and personal use.
+
+## Key Pages
+
+- [Home](https://www.tailorpic.com/)
+- [Pricing](https://www.tailorpic.com/pricing)
+- [How It Works](https://www.tailorpic.com/how-it-works)
+- [Samples](https://www.tailorpic.com/samples)
+- [FAQ](https://www.tailorpic.com/faq)
+- [About](https://www.tailorpic.com/about)
+- [Enterprise](https://www.tailorpic.com/enterprise)
+- [Team Headshots](https://www.tailorpic.com/team-headshots)
+- [LinkedIn Headshots](https://www.tailorpic.com/linkedin-headshots)
+- [Blog](https://www.tailorpic.com/blog)
+- [Privacy Policy](https://www.tailorpic.com/privacy)
+- [Terms of Service](https://www.tailorpic.com/terms)
+
+## Pricing
+
+Plans start from $1.99 for a single photo, with packages up to 160 photos at $89.90. Team pricing available for groups of 5 or more.
+
+## Contact
+
+- Email: support@tailorpic.com
+- Website: https://www.tailorpic.com

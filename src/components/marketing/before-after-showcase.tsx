@@ -196,7 +196,7 @@ export function BeforeAfterShowcase() {
 
         <p className="mt-3 text-center">
           <Link href="/samples" className="rounded-tp-button text-sm text-tp-bronze-ink hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2">
-            See more examples →
+            Browse AI headshot samples →
           </Link>
         </p>
       </div>

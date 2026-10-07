@@ -127,7 +127,7 @@ export function Pricing() {
                   <ul className="space-y-2.5">
                     {['80 headshots per person', '10 professional styles', 'Consistent team look', 'Admin dashboard access', 'Bulk download'].map((f) => (
                       <li key={f} className="flex items-center gap-2 text-sm text-tp-ink">
-                        <Check className="h-4 w-4 shrink-0 text-tp-bronze" />
+                        <Check className="h-4 w-4 shrink-0 text-tp-bronze-ink" />
                         {f}
                       </li>
                     ))}
@@ -144,7 +144,7 @@ export function Pricing() {
               <Card className="relative z-10 flex flex-col border-tp-bronze bg-tp-paper shadow-xl shadow-tp-bronze/20 ring-2 ring-tp-bronze/60 scale-[1.02] lg:scale-105">
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                   <span className="inline-flex items-center gap-1 rounded-full bg-tp-black px-3.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-tp-paper shadow-md whitespace-nowrap">
-                    <Star className="h-3 w-3 fill-tp-bronze text-tp-bronze" aria-hidden="true" />
+                    <Star className="h-3 w-3 fill-tp-bronze-ink text-tp-bronze-ink" aria-hidden="true" />
                     Best Value
                   </span>
                 </div>
@@ -164,7 +164,7 @@ export function Pricing() {
                   <ul className="space-y-2.5">
                     {['80 headshots per person', '10 professional styles', 'Consistent team look', 'Admin dashboard access', 'Bulk download', 'Priority support'].map((f) => (
                       <li key={f} className="flex items-center gap-2 text-sm text-tp-ink">
-                        <Check className="h-4 w-4 shrink-0 text-tp-bronze" />
+                        <Check className="h-4 w-4 shrink-0 text-tp-bronze-ink" />
                         {f}
                       </li>
                     ))}
@@ -200,7 +200,7 @@ export function Pricing() {
                   <ul className="space-y-2.5">
                     {['Unlimited headshots', 'All professional styles', 'Dedicated account manager', 'API access', 'SSO integration', 'Custom branding'].map((f) => (
                       <li key={f} className="flex items-center gap-2 text-sm text-tp-ink">
-                        <Check className="h-4 w-4 shrink-0 text-tp-bronze" />
+                        <Check className="h-4 w-4 shrink-0 text-tp-bronze-ink" />
                         {f}
                       </li>
                     ))}
@@ -304,7 +304,7 @@ export function Pricing() {
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                     <Badge variant="outline" className="border-tp-bronze/50 bg-tp-paper text-tp-bronze-ink">
                       {featuredPos === 0 && <Zap className="mr-1 h-3 w-3" />}
-                      {featuredPos === 2 && <Star className="mr-1 h-3 w-3 fill-tp-bronze text-tp-bronze" />}
+                      {featuredPos === 2 && <Star className="mr-1 h-3 w-3 fill-tp-bronze-ink text-tp-bronze-ink" />}
                       {featuredBadge}
                     </Badge>
                   </div>
@@ -313,7 +313,7 @@ export function Pricing() {
                 {isRecommended && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                     <span className="inline-flex items-center gap-1 rounded-full bg-tp-black px-3.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-tp-paper shadow-md whitespace-nowrap">
-                      <Star className="h-3 w-3 fill-tp-bronze text-tp-bronze" aria-hidden="true" />
+                      <Star className="h-3 w-3 fill-tp-bronze-ink text-tp-bronze-ink" aria-hidden="true" />
                       {featuredBadge || 'Most Popular'}
                     </span>
                   </div>
@@ -373,7 +373,7 @@ export function Pricing() {
                     <ul className="space-y-2.5 pt-2">
                       {pkg.features.map((f) => (
                         <li key={f} className="flex items-center gap-2 text-sm text-tp-ink">
-                          <Check className="h-4 w-4 shrink-0 text-tp-bronze" />
+                          <Check className="h-4 w-4 shrink-0 text-tp-bronze-ink" />
                           {f}
                         </li>
                       ))}

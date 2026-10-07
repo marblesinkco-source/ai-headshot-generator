@@ -185,7 +185,7 @@ export function BeforeAfterGallery() {
 
         <p className="mt-3 text-center">
           <Link href="/samples" className="text-sm text-tp-bronze-ink hover:underline">
-            See more examples &rarr;
+            Browse AI headshot samples &rarr;
           </Link>
         </p>
       </div>

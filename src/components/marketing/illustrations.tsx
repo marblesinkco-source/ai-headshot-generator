@@ -180,10 +180,11 @@ function PortraitCard({
       <Image
         src={src}
         alt={alt}
-        width={size === 'square' ? 400 : 800}
-        height={size === 'square' ? 400 : 1067}
+        width={size === 'square' ? 400 : 600}
+        height={size === 'square' ? 400 : 800}
         className="h-full w-full object-cover"
         sizes="(max-width: 640px) 50vw, 200px"
+        loading="lazy"
       />
     </div>
   );
