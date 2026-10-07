@@ -407,6 +407,36 @@ export function Header() {
                       Dashboard
                     </Link>
                     <Link
+                      href="/dashboard/gallery"
+                      className="flex items-center gap-2.5 px-4 py-2.5 text-[13px] text-tp-ink hover:bg-tp-paper transition-colors"
+                      onClick={() => setUserMenuOpen(false)}
+                    >
+                      <svg className="h-4 w-4 text-tp-muted" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+                      </svg>
+                      My Gallery
+                    </Link>
+                    <Link
+                      href="/dashboard/orders"
+                      className="flex items-center gap-2.5 px-4 py-2.5 text-[13px] text-tp-ink hover:bg-tp-paper transition-colors"
+                      onClick={() => setUserMenuOpen(false)}
+                    >
+                      <svg className="h-4 w-4 text-tp-muted" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                      </svg>
+                      Orders
+                    </Link>
+                    <Link
+                      href="/dashboard/billing"
+                      className="flex items-center gap-2.5 px-4 py-2.5 text-[13px] text-tp-ink hover:bg-tp-paper transition-colors"
+                      onClick={() => setUserMenuOpen(false)}
+                    >
+                      <svg className="h-4 w-4 text-tp-muted" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+                      </svg>
+                      Billing
+                    </Link>
+                    <Link
                       href="/dashboard/settings"
                       className="flex items-center gap-2.5 px-4 py-2.5 text-[13px] text-tp-ink hover:bg-tp-paper transition-colors"
                       onClick={() => setUserMenuOpen(false)}
@@ -618,13 +648,29 @@ export function Header() {
               >
                 Dashboard <span aria-hidden="true" className="text-lg leading-none">&#8599;</span>
               </Link>
-              <Link
-                href="/dashboard/settings"
-                className="flex min-h-[44px] items-center justify-center gap-2 rounded-tp-button border border-tp-line px-6 py-3 text-sm font-medium text-tp-ink hover:bg-white transition-colors"
-                onClick={() => closeMobile()}
-              >
-                Settings
-              </Link>
+              <div className="grid grid-cols-3 gap-1">
+                <Link
+                  href="/dashboard/gallery"
+                  className="flex min-h-[44px] items-center justify-center rounded-tp-button border border-tp-line px-3 py-2.5 text-[13px] font-medium text-tp-ink hover:bg-white transition-colors"
+                  onClick={() => closeMobile()}
+                >
+                  Gallery
+                </Link>
+                <Link
+                  href="/dashboard/orders"
+                  className="flex min-h-[44px] items-center justify-center rounded-tp-button border border-tp-line px-3 py-2.5 text-[13px] font-medium text-tp-ink hover:bg-white transition-colors"
+                  onClick={() => closeMobile()}
+                >
+                  Orders
+                </Link>
+                <Link
+                  href="/dashboard/billing"
+                  className="flex min-h-[44px] items-center justify-center rounded-tp-button border border-tp-line px-3 py-2.5 text-[13px] font-medium text-tp-ink hover:bg-white transition-colors"
+                  onClick={() => closeMobile()}
+                >
+                  Billing
+                </Link>
+              </div>
               <button
                 onClick={() => { closeMobile(); handleSignOut(); }}
                 disabled={loggingOut}

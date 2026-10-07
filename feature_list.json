@@ -471,6 +471,22 @@
       "dependencies": ["feat-BE"],
       "status": "done",
       "evidence": "Header: navLinks 6→4 (Headshots/How It Works/Examples/Pricing), Enterprise+Blog secondaryLinks'e taşındı. Pricing: Bulk Savings / Save More with Credit Packs başlığı + Single Package vs Credit Pack yan yana açıklama kartları eklendi. Mobile: hero CTA w-full+justify-center sm:w-auto, platform-showcase grid-cols-1 sm:grid-cols-2, free-tools grid-cols-1 min-[400px]:grid-cols-2, savings-calculator text-3xl/4xl/5xl responsive scale, inner padding p-4 sm:p-6. Commit: 7a9fdbb. CI PASS + Vercel PASS. Canlı doğrulama: header 4 link, credits explainer bölümü doğru render."
+    },
+    {
+      "id": "feat-BG",
+      "name": "Phase BG — Samples Page Fix + Cookie Banner UX",
+      "description": "Samples sayfası before/after bölümü statikten interaktif BeforeAfterGallery'ye geçiş, cookie banner slim bar tasarımına geçiş.",
+      "dependencies": ["feat-BF"],
+      "status": "done",
+      "evidence": "Samples /samples: statik grayscale before/after → BeforeAfterGallery (6 interaktif drag slider, SELFIE/AI HEADSHOT etiketleri, disclosure badge). Cookie banner: büyük kart overlay → ince alt bar (border-t, backdrop-blur-sm, compact butonlar: Manage/Decline/Accept tek satır). Preference panel: max-w-3xl → max-w-lg kompakt kart. Commit: a40e3c3. CI PASS + Vercel PASS. Canlı doğrulama: /samples slider'ları çalışıyor, cookie banner slim."
+    },
+    {
+      "id": "feat-BH",
+      "name": "Phase BH — Social Proof + Dashboard Nav + Mobile QA + A11y",
+      "description": "Homepage gerçek social proof güçlendirmesi, dashboard/accounting navigasyon görünürlüğü, 375/390/430px mobil QA, erişilebilirlik/performans polish.",
+      "dependencies": ["feat-BG"],
+      "status": "in-progress",
+      "evidence": ""
     }
   ]
 }

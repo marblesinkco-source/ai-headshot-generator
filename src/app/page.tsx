@@ -32,6 +32,10 @@ const SocialProofBar = dynamic(
   () => import('@/components/marketing/social-proof-bar').then((m) => m.SocialProofBar),
   { loading: () => <SectionSkeleton height="h-[100px] sm:h-[120px]" /> }
 );
+const ReviewPlatforms = dynamic(
+  () => import('@/components/marketing/review-platforms').then((m) => m.ReviewPlatforms),
+  { loading: () => <SectionSkeleton height="h-[140px]" /> }
+);
 const WhyTailorPic = dynamic(
   () => import('@/components/marketing/why-tailorpic').then((m) => m.WhyTailorPic),
   { loading: () => <SectionSkeleton height="h-[720px] md:h-[480px]" /> }
@@ -191,6 +195,9 @@ export default function LandingPage() {
 
       {/* 11. Pricing Overview */}
       <Pricing />
+
+      {/* 10.95. Review Platforms — real platform links */}
+      <ReviewPlatforms />
 
       {/* 11. Satisfaction Guarantee */}
       <GuaranteeSection />
