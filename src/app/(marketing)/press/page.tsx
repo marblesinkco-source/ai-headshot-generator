@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
+import { BASE_PRICE_DISPLAY, TEAM_PRICES } from '@/config/pricing';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
@@ -53,7 +54,7 @@ const brandColors = [
 const keyFacts = [
   {
     icon: DollarSign,
-    value: 'From $1.99',
+    value: `From ${BASE_PRICE_DISPLAY}`,
     label: 'Starting price per photo',
   },
   {
@@ -73,7 +74,7 @@ const keyFacts = [
   },
   {
     icon: Users,
-    value: '$29/person',
+    value: `$${TEAM_PRICES.large.perPersonCents / 100}/person`,
     label: 'Team pricing (16–50 people)',
   },
   {
@@ -174,7 +175,7 @@ export default function PressPage() {
               </p>
               <Link
                 href="/contact"
-                className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-tp-bronze hover:underline"
+                className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-tp-bronze-ink hover:underline"
               >
                 Request logo files
                 <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
@@ -193,7 +194,7 @@ export default function PressPage() {
                 {brandColors.map((c) => (
                   <div key={c.token} className="flex items-center gap-3">
                     <span
-                      className="inline-block h-8 w-8 flex-shrink-0 rounded-lg border border-tp-line"
+                      className="inline-block h-8 w-8 flex-shrink-0 rounded-tp-button border border-tp-line"
                       style={{ backgroundColor: c.hex }}
                       aria-hidden="true"
                     />
@@ -279,7 +280,7 @@ export default function PressPage() {
           </p>
           <a
             href={`mailto:${siteConfig.supportEmail}`}
-            className="mt-6 inline-flex items-center gap-2 text-lg font-medium text-tp-bronze hover:underline"
+            className="mt-6 inline-flex items-center gap-2 text-lg font-medium text-tp-bronze-ink hover:underline"
           >
             <Mail className="h-5 w-5" aria-hidden="true" />
             {siteConfig.supportEmail}
@@ -287,7 +288,7 @@ export default function PressPage() {
           <div className="mt-6">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-tp-ink hover:text-tp-bronze"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-tp-ink hover:text-tp-bronze-ink"
             >
               Or use our contact form
               <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />

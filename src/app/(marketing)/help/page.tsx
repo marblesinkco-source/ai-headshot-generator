@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { FAQSchema, BreadcrumbSchema } from '@/components/structured-data';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { siteConfig } from '@/config/site';
 import {
   Search,
@@ -56,7 +57,7 @@ const helpCategories: HelpCategory[] = [
       {
         question: 'How much does TailorPic cost?',
         answer:
-          'TailorPic starts at a one-time payment of $1.99. There are no subscriptions or recurring fees — you pay once and keep your photos forever.',
+          `TailorPic starts at a one-time payment of ${BASE_PRICE_DISPLAY}. There are no subscriptions or recurring fees — you pay once and keep your photos forever.`,
       },
       {
         question: 'What packages are available?',
@@ -393,7 +394,7 @@ export default function HelpCenterPage() {
             return (
               <div key={cat.id} id={cat.id} className="scroll-mt-24">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-tp-paper">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-tp-button bg-tp-paper">
                     <Icon className="h-4 w-4 text-tp-bronze-ink" />
                   </div>
                   <h2 className="font-display font-normal text-2xl text-tp-black sm:text-3xl">{cat.title}</h2>

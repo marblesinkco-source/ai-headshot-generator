@@ -26,7 +26,7 @@ function LinkedInMockup() {
       <div className="-mt-10 px-5 pb-5">
         <div className="flex items-end gap-3">
           <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-full border-4 border-white bg-tp-beige">
-            <div className="flex h-full w-full items-center justify-center text-2xl text-tp-bronze">
+            <div className="flex h-full w-full items-center justify-center text-2xl text-tp-bronze-ink">
               👤
             </div>
           </div>
@@ -53,8 +53,8 @@ function ResumeMockup() {
   return (
     <div className="mx-auto max-w-md overflow-hidden rounded-tp-card border border-tp-line bg-white p-6 shadow-sm">
       <div className="flex gap-4">
-        <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg bg-tp-beige">
-          <div className="flex h-full w-full items-center justify-center text-xl text-tp-bronze">
+        <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-tp-button bg-tp-beige">
+          <div className="flex h-full w-full items-center justify-center text-xl text-tp-bronze-ink">
             👤
           </div>
         </div>
@@ -89,7 +89,7 @@ function EmailMockup() {
       <div className="mt-5 border-t border-tp-line pt-4">
         <div className="flex items-center gap-3">
           <div className="h-12 w-12 flex-shrink-0 overflow-hidden rounded-full bg-tp-beige">
-            <div className="flex h-full w-full items-center justify-center text-lg text-tp-bronze">
+            <div className="flex h-full w-full items-center justify-center text-lg text-tp-bronze-ink">
               👤
             </div>
           </div>
@@ -109,8 +109,8 @@ function SlackMockup() {
     <div className="mx-auto max-w-md overflow-hidden rounded-tp-card border border-tp-line bg-white p-4 shadow-sm">
       <div className="space-y-3">
         <div className="flex items-start gap-2.5">
-          <div className="h-9 w-9 flex-shrink-0 overflow-hidden rounded-lg bg-tp-beige">
-            <div className="flex h-full w-full items-center justify-center text-sm text-tp-bronze">
+          <div className="h-9 w-9 flex-shrink-0 overflow-hidden rounded-tp-button bg-tp-beige">
+            <div className="flex h-full w-full items-center justify-center text-sm text-tp-bronze-ink">
               👤
             </div>
           </div>
@@ -125,7 +125,7 @@ function SlackMockup() {
           </div>
         </div>
         <div className="flex items-start gap-2.5">
-          <div className="h-9 w-9 flex-shrink-0 rounded-lg bg-tp-beige/50" />
+          <div className="h-9 w-9 flex-shrink-0 rounded-tp-button bg-tp-beige/50" />
           <div>
             <div className="flex items-baseline gap-2">
               <div className="h-2 w-16 rounded bg-tp-beige" />

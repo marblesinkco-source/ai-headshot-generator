@@ -35,7 +35,7 @@ export function VideoTestimonials() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
+          <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
             Use Cases
           </p>
           <h2 className="mt-3 font-display text-3xl font-normal tracking-tight text-tp-ink sm:text-4xl">

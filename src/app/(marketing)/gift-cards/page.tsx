@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
+import { formatPrice } from '@/config/pricing';
+import { CATEGORIES } from '@/config/categories';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
@@ -67,7 +69,7 @@ const steps = [
 const giftCards = [
   {
     name: 'Starter',
-    price: '$19.90',
+    price: formatPrice(CATEGORIES.headshots.packages[2].price),
     photos: 10,
     package: 'Basic',
     recommended: false,
@@ -75,7 +77,7 @@ const giftCards = [
   },
   {
     name: 'Popular',
-    price: '$29.90',
+    price: formatPrice(CATEGORIES.headshots.packages[3].price),
     photos: 40,
     package: 'Starter',
     recommended: false,
@@ -83,7 +85,7 @@ const giftCards = [
   },
   {
     name: 'Best Value',
-    price: '$49.90',
+    price: formatPrice(CATEGORIES.headshots.packages[4].price),
     photos: 80,
     package: 'Professional',
     recommended: true,
@@ -91,7 +93,7 @@ const giftCards = [
   },
   {
     name: 'Premium',
-    price: '$89.90',
+    price: formatPrice(CATEGORIES.headshots.packages[5].price),
     photos: 160,
     package: 'Executive',
     recommended: false,
@@ -211,7 +213,7 @@ export default function GiftCardsPage() {
       <section className="py-20 sm:py-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
+            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
               Simple Process
             </p>
             <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
@@ -247,7 +249,7 @@ export default function GiftCardsPage() {
       <section id="gift-options" className="bg-tp-paper py-20 sm:py-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
+            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
               Choose a Gift
             </p>
             <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
@@ -277,7 +279,7 @@ export default function GiftCardsPage() {
                   </div>
                 )}
                 <div className="text-center mb-4 pt-2">
-                  <p className="text-sm font-semibold text-tp-bronze uppercase tracking-wide">
+                  <p className="text-sm font-semibold text-tp-bronze-ink uppercase tracking-wide">
                     {card.name}
                   </p>
                   <p className="mt-2 text-3xl font-semibold text-tp-ink">
@@ -320,7 +322,7 @@ export default function GiftCardsPage() {
       <section className="py-20 sm:py-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
+            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
               Perfect For Every Occasion
             </p>
             <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
@@ -356,7 +358,7 @@ export default function GiftCardsPage() {
       <section className="bg-tp-paper py-20 sm:py-28">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
+            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
               Questions
             </p>
             <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">

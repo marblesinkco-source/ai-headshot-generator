@@ -6,6 +6,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
 import { ProductSchema, FAQSchema } from '@/components/structured-data';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { siteConfig } from '@/config/site';
 import { ArrowRight, Check } from 'lucide-react';
 
@@ -14,7 +15,7 @@ import { ContentPhoto } from '@/components/marketing/content-photo';
 export const metadata: Metadata = {
   title: { absolute: 'AI Product Photography for E-Commerce | TailorPic' },
   description:
-    'Professional product photos for your online store. AI-powered, studio-quality images from $1.99. Perfect for Shopify, Amazon, Etsy, and more.',
+    `Professional product photos for your online store. AI-powered, studio-quality images from ${BASE_PRICE_DISPLAY}. Perfect for Shopify, Amazon, Etsy, and more.`,
   alternates: { canonical: '/industries/ecommerce' },
   openGraph: generateOGMetadata({ title: 'AI Product Photography for E-Commerce | TailorPic', description: 'Studio-quality product photos in 2 hours. No photographer needed.', path: '/industries/ecommerce', type: 'industry' }),
   
@@ -50,7 +51,7 @@ const faqs = [
   {
     question: "How much does it cost, and what if I am not satisfied?",
     answer:
-      "Photos start at $1.99 with no subscription required. Every order includes full commercial usage rights.",
+      `Photos start at ${BASE_PRICE_DISPLAY} with no subscription required. Every order includes full commercial usage rights.`,
   },
 ];
 
@@ -181,7 +182,7 @@ export default function EcommerceLandingPage() {
             {[
               { value: '12', label: 'photo styles for products & people' },
               { value: '40+', label: 'photos per session' },
-              { value: '$1.99', label: 'starting price vs $200+ studios' },
+              { value: BASE_PRICE_DISPLAY, label: 'starting price vs $200+ studios' },
               { value: '<2hrs', label: 'average delivery time' },
             ].map((stat) => (
               <div key={stat.label}>

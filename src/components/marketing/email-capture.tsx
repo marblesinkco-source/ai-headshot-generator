@@ -85,7 +85,7 @@ export function EmailCapture({ variant = 'card', className = '' }: EmailCaptureP
           type="button"
           onClick={dismiss}
           aria-label="Dismiss newsletter banner"
-          className="absolute right-3 top-3 rounded-lg p-1.5 text-tp-muted transition-colors hover:text-tp-bronze-ink"
+          className="absolute right-3 top-3 rounded-tp-button p-1.5 text-tp-muted transition-colors hover:text-tp-bronze-ink"
         >
           <X className="h-4 w-4" />
         </button>

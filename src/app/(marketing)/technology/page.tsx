@@ -4,6 +4,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { TechnologyIllustration } from '@/components/marketing/illustrations';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { siteConfig } from '@/config/site';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -294,7 +295,7 @@ export default function TechnologyPage() {
             />
             {steps.map((s, i) => (
               <li key={s.title} className="relative text-center group">
-                <div className="relative mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-tp-black shadow-lg shadow-tp-black/10 transition-transform group-hover:-translate-y-0.5">
+                <div className="relative mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-tp-card bg-tp-black shadow-lg shadow-tp-black/10 transition-transform group-hover:-translate-y-0.5">
                   <s.icon className="h-7 w-7 text-tp-bronze" />
                   <span className="absolute -top-2.5 -right-2.5 flex h-7 w-7 items-center justify-center rounded-full bg-tp-bronze text-xs font-semibold text-tp-black shadow-sm">
                     {i + 1}
@@ -335,7 +336,7 @@ export default function TechnologyPage() {
                 key={pillar.title}
                 className="group rounded-tp-card border border-tp-line bg-white p-7 transition-all hover:border-tp-bronze/30 hover:shadow-md hover:shadow-tp-bronze/5"
               >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-black">
                   <pillar.icon className="h-6 w-6 text-tp-bronze" />
                 </div>
                 <h3 className="text-lg font-semibold text-tp-ink mb-2">
@@ -422,7 +423,7 @@ export default function TechnologyPage() {
                 key={t.title}
                 className="rounded-tp-card border border-tp-bronze/15 bg-gradient-to-b from-tp-ink to-tp-black p-6"
               >
-                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-tp-bronze/20 bg-tp-bronze/10">
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-tp-button border border-tp-bronze/20 bg-tp-bronze/10">
                   <t.icon className="h-5 w-5 text-tp-bronze" />
                 </div>
                 <h3 className="text-base font-semibold text-white mb-2">{t.title}</h3>
@@ -505,7 +506,7 @@ export default function TechnologyPage() {
             </Link>
           </div>
           <p className="mt-6 text-xs text-tp-beige/40">
-            Starting at $1.99 &middot; No subscription required
+            Starting at {BASE_PRICE_DISPLAY} &middot; No subscription required
           </p>
         </div>
       </section>

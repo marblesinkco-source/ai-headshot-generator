@@ -389,7 +389,7 @@ export default function HeadshotCollage() {
               <li key={p.id} className="rounded-tp-card border border-tp-line bg-white p-3">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-tp-button bg-tp-paper">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={p.url} alt={`Photo ${i + 1}: ${p.name}`} className="h-full w-full object-cover" />
+                  <img src={p.url} alt={`Photo ${i + 1}: ${p.name}`} loading="lazy" className="h-full w-full object-cover" />
                   <span className="absolute left-2 top-2 flex h-6 w-6 items-center justify-center rounded-full bg-tp-black text-xs font-semibold text-tp-bronze">
                     {i + 1}
                   </span>

@@ -301,7 +301,7 @@ export default function WhyTailorPicPage() {
                   key={v.title}
                   className="rounded-tp-card border border-tp-line bg-white p-6 transition hover:shadow-md"
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-tp-bronze/10">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-tp-button bg-tp-bronze/10">
                     <v.icon
                       className="h-5 w-5 text-tp-bronze-ink"
                       aria-hidden="true"

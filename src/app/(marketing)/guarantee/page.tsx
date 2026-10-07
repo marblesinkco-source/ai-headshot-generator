@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { buttonVariants } from '@/components/ui/button';
@@ -152,7 +153,7 @@ export default function GuaranteePage() {
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
+            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
               Quality First
             </p>
             <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
@@ -255,7 +256,7 @@ export default function GuaranteePage() {
                 'bg-tp-bronze text-tp-black hover:bg-tp-bronze/90'
               )}
             >
-              Get Started for $1.99 <ArrowRight className="h-4 w-4" />
+              Get Started for {BASE_PRICE_DISPLAY} <ArrowRight className="h-4 w-4" />
             </Link>
             <p className="mt-4 text-sm text-tp-beige/50">
               One-time payment. Satisfaction guaranteed.{' '}

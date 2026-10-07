@@ -319,7 +319,7 @@ export function Pricing() {
 
                 <CardContent className="flex-1 space-y-4">
                   {/* Key stats */}
-                  <div className="rounded-xl bg-tp-paper p-4 text-sm">
+                  <div className="rounded-tp-button bg-tp-paper p-4 text-sm">
                     <div className="flex justify-between py-1">
                       <span className="text-tp-muted">{activeCategory.outputLabel}</span>
                       <span className="font-semibold text-tp-black">{pkg.outputCount}</span>

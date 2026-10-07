@@ -292,10 +292,10 @@ export function Header() {
                               key={cat.id}
                               href={`/${cat.slug}`}
                               aria-current={catActive ? 'page' : undefined}
-                              className={`flex items-center gap-2.5 rounded-xl p-2 transition-colors hover:bg-tp-paper ${catActive ? 'bg-tp-paper' : ''}`}
+                              className={`flex items-center gap-2.5 rounded-tp-button p-2 transition-colors hover:bg-tp-paper ${catActive ? 'bg-tp-paper' : ''}`}
                               onClick={() => setMegaOpen(false)}
                             >
-                              <div className="h-9 w-9 flex-shrink-0 overflow-hidden rounded-lg bg-gradient-to-br from-tp-beige to-tp-line">
+                              <div className="h-9 w-9 flex-shrink-0 overflow-hidden rounded-tp-button bg-gradient-to-br from-tp-beige to-tp-line">
                                 <Image
                                   src={categoryVisuals[cat.id]?.megaMenu?.src ?? `/images/categories/${cat.id}.jpg`}
                                   alt={categoryVisuals[cat.id]?.megaMenu?.alt ?? cat.name}
@@ -391,7 +391,7 @@ export function Header() {
                   onMouseEnter={() => { clearTimeout(userMenuTimer.current); setUserMenuOpen(true); }}
                   onMouseLeave={() => { userMenuTimer.current = setTimeout(() => setUserMenuOpen(false), 200); }}
                 >
-                  <div className="w-56 rounded-xl border border-tp-line/60 bg-white py-2 shadow-xl shadow-tp-black/8">
+                  <div className="w-56 rounded-tp-button border border-tp-line/60 bg-white py-2 shadow-xl shadow-tp-black/8">
                     <div className="px-4 py-2 border-b border-tp-line/40">
                       <p className="text-[13px] font-semibold text-tp-ink truncate">{userName}</p>
                       <p className="text-[11px] text-tp-muted truncate">{user.email}</p>
@@ -476,7 +476,7 @@ export function Header() {
                 className="group inline-flex min-h-[44px] flex-shrink-0 items-center gap-3 whitespace-nowrap rounded-tp-button border border-tp-bronze bg-tp-bronze py-2.5 pl-5 pr-5 lg:pl-6 lg:pr-3 text-sm font-semibold text-tp-black shadow-md shadow-tp-black/15 transition-all hover:-translate-y-0.5 hover:bg-tp-beige hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
               >
                 Get Started
-                <span className="hidden rounded-lg bg-tp-black px-2.5 py-1 text-[12px] font-bold leading-none text-tp-paper lg:inline">
+                <span className="hidden rounded-tp-button bg-tp-black px-2.5 py-1 text-[12px] font-bold leading-none text-tp-paper lg:inline">
                   from {BASE_PRICE_DISPLAY}
                 </span>
               </Link>
@@ -589,7 +589,7 @@ export function Header() {
                       key={cat.id}
                       href={`/${cat.slug}`}
                       aria-current={catActive ? 'page' : undefined}
-                      className={`flex items-center gap-2.5 rounded-lg border bg-white p-2.5 min-h-[52px] transition-colors hover:border-tp-bronze-ink ${
+                      className={`flex items-center gap-2.5 rounded-tp-button border bg-white p-2.5 min-h-[52px] transition-colors hover:border-tp-bronze-ink ${
                         catActive ? 'border-tp-bronze-ink text-tp-bronze-ink' : 'border-tp-line/60'
                       }`}
                       onClick={() => closeMobile()}
@@ -687,7 +687,7 @@ export function Header() {
                 onClick={() => closeMobile()}
               >
                 Get Started
-                <span className="rounded-lg bg-tp-black px-2.5 py-1 text-[12px] font-bold leading-none text-tp-paper">from {BASE_PRICE_DISPLAY}</span>
+                <span className="rounded-tp-button bg-tp-black px-2.5 py-1 text-[12px] font-bold leading-none text-tp-paper">from {BASE_PRICE_DISPLAY}</span>
               </Link>
               <Link
                 href="/auth/login"

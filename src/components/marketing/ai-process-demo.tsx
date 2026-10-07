@@ -140,7 +140,7 @@ function StepVisual({ step }: { step: 1 | 2 | 3 }) {
           {UPLOADS.map((u, i) => (
             <div
               key={i}
-              className="d-anim a-pop flex h-14 w-12 items-end justify-center overflow-hidden rounded-lg border border-tp-line bg-tp-beige text-tp-muted sm:w-14"
+              className="d-anim a-pop flex h-14 w-12 items-end justify-center overflow-hidden rounded-tp-button border border-tp-line bg-tp-beige text-tp-muted sm:w-14"
               style={{ animationDelay: u.delay }}
             >
               <Silhouette pose={u.pose} className="h-12 w-12" />
@@ -208,7 +208,7 @@ function StepVisual({ step }: { step: 1 | 2 | 3 }) {
           <div
             key={i}
             className={cn(
-              'd-anim a-result relative flex h-[4.25rem] w-[4.5rem] items-end justify-center overflow-hidden rounded-lg sm:w-20',
+              'd-anim a-result relative flex h-[4.25rem] w-[4.5rem] items-end justify-center overflow-hidden rounded-tp-button sm:w-20',
               r.tile,
               r.figure
             )}

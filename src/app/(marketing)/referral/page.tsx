@@ -160,7 +160,7 @@ export default function ReferralPage() {
       <section id="how-it-works" className="py-20 sm:py-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
+            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
               Simple Process
             </p>
             <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
@@ -197,7 +197,7 @@ export default function ReferralPage() {
       <section className="bg-tp-paper py-20 sm:py-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
+            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
               Everyone Wins
             </p>
             <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
@@ -299,7 +299,7 @@ export default function ReferralPage() {
       <section className="bg-tp-paper py-20 sm:py-28">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze">
+            <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink">
               Got Questions?
             </p>
             <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">

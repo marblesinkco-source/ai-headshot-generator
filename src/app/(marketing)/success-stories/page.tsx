@@ -5,6 +5,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BeforeAfterIllustration } from '@/components/marketing/illustrations';
 import { BreadcrumbSchema } from '@/components/structured-data';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { siteConfig } from '@/config/site';
 import {
   ArrowRight,
@@ -263,7 +264,7 @@ export default function SuccessStoriesPage() {
                     {/* Challenge / Solution / Outcome */}
                     <div className="mt-5 flex-1 space-y-4">
                       <div>
-                        <h3 className="text-xs font-semibold uppercase tracking-wider text-tp-bronze">
+                        <h3 className="text-xs font-semibold uppercase tracking-wider text-tp-bronze-ink">
                           Challenge
                         </h3>
                         <p className="mt-1 text-sm leading-relaxed text-tp-muted">
@@ -271,7 +272,7 @@ export default function SuccessStoriesPage() {
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-xs font-semibold uppercase tracking-wider text-tp-bronze">
+                        <h3 className="text-xs font-semibold uppercase tracking-wider text-tp-bronze-ink">
                           Solution
                         </h3>
                         <p className="mt-1 text-sm leading-relaxed text-tp-muted">
@@ -279,7 +280,7 @@ export default function SuccessStoriesPage() {
                         </p>
                       </div>
                       <div>
-                        <h3 className="text-xs font-semibold uppercase tracking-wider text-tp-bronze">
+                        <h3 className="text-xs font-semibold uppercase tracking-wider text-tp-bronze-ink">
                           Outcome
                         </h3>
                         <p className="mt-1 text-sm leading-relaxed text-tp-muted">
@@ -313,14 +314,14 @@ export default function SuccessStoriesPage() {
                   key={v.label}
                   className="rounded-tp-card border border-tp-line bg-white p-6 text-center"
                 >
-                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black/5">
+                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-black/5">
                     <v.icon
                       className="h-5 w-5 text-tp-bronze"
                       aria-hidden="true"
                     />
                   </div>
                   <p className="font-display font-normal text-2xl text-tp-ink">{v.stat}</p>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-tp-bronze">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-tp-bronze-ink">
                     {v.label}
                   </p>
                   <p className="mt-3 text-sm leading-relaxed text-tp-muted">
@@ -340,7 +341,7 @@ export default function SuccessStoriesPage() {
             </h2>
             <p className="mt-4 text-tp-beige/60">
               Upload a few selfies and get studio-quality headshots delivered in
-              under 2 hours. Starting from just $1.99.
+              under 2 hours. Starting from just {BASE_PRICE_DISPLAY}.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link

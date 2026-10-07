@@ -116,7 +116,7 @@ export function CTABanner() {
               className="flex items-center gap-3 border border-tp-line bg-tp-paper rounded-tp-button min-h-[70px] p-3 text-left hover:border-tp-bronze-ink transition-colors"
               onClick={() => categoryDialog.current?.close()}
             >
-              <div className="w-[52px] h-[52px] rounded-lg overflow-hidden flex-shrink-0 bg-gradient-to-br from-tp-beige to-tp-line">
+              <div className="w-[52px] h-[52px] rounded-tp-button overflow-hidden flex-shrink-0 bg-gradient-to-br from-tp-beige to-tp-line">
                 <Image
                   src={categoryVisuals[cat.id]?.quickCard?.src ?? `/images/categories/${cat.id}.jpg`}
                   alt={categoryVisuals[cat.id]?.quickCard?.alt ?? cat.name}

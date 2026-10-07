@@ -200,10 +200,10 @@ export default function AffiliatePage() {
               threshold.
             </p>
             <div className="mx-auto mt-10 max-w-3xl rounded-tp-card bg-tp-black p-8 text-center sm:p-10">
-              <p className="text-sm font-medium uppercase tracking-widest text-tp-bronze">
+              <p className="text-sm font-medium uppercase tracking-widest text-tp-bronze-ink">
                 Your commission
               </p>
-              <p className="mt-3 font-display font-normal text-6xl text-tp-bronze sm:text-7xl">
+              <p className="mt-3 font-display font-normal text-6xl text-tp-bronze-ink sm:text-7xl">
                 Competitive
               </p>
               <p className="mt-3 text-tp-beige/80">
@@ -244,7 +244,7 @@ export default function AffiliatePage() {
           <div className="mx-auto grid max-w-5xl gap-6 px-4 sm:grid-cols-3">
             {trustSignals.map((t) => (
               <div key={t.title} className="flex items-start gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-tp-bronze/10">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-tp-button bg-tp-bronze/10">
                   <t.icon className="h-5 w-5 text-tp-bronze-ink" />
                 </div>
                 <div>
@@ -272,7 +272,7 @@ export default function AffiliatePage() {
                   key={item.title}
                   className="rounded-tp-card border border-tp-line bg-white p-6 transition hover:shadow-md"
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-tp-bronze/10">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-tp-button bg-tp-bronze/10">
                     <item.icon className="h-5 w-5 text-tp-bronze-ink" />
                   </div>
                   <h3 className="mt-4 text-lg font-semibold text-tp-ink">

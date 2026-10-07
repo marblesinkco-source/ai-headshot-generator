@@ -4,6 +4,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { BeforeAfterGallery } from '@/components/marketing/before-after-gallery';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
@@ -167,7 +168,7 @@ const stats: { icon: IconType; value: string; label: string }[] = [
   },
   {
     icon: DollarSign,
-    value: 'From $1.99',
+    value: `From ${BASE_PRICE_DISPLAY}`,
     label: 'Starting price',
   },
 ];

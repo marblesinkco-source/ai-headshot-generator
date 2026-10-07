@@ -74,7 +74,7 @@ export function HeadshotModal({
           <div className="flex items-center gap-2">
             <button
               onClick={() => onToggleFavorite(current.id)}
-              className="rounded-lg bg-white/10 p-2.5 text-white backdrop-blur-sm hover:bg-white/20 transition-colors"
+              className="rounded-tp-button bg-white/10 p-2.5 text-white backdrop-blur-sm hover:bg-white/20 transition-colors"
               title={current.isFavorite ? 'Remove from favorites' : 'Add to favorites'}
             >
               <svg
@@ -89,7 +89,7 @@ export function HeadshotModal({
             </button>
             <button
               onClick={() => onDownload(current.imageUrl, currentIndex)}
-              className="rounded-lg bg-white/10 p-2.5 text-white backdrop-blur-sm hover:bg-white/20 transition-colors"
+              className="rounded-tp-button bg-white/10 p-2.5 text-white backdrop-blur-sm hover:bg-white/20 transition-colors"
               title="Download"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -98,7 +98,7 @@ export function HeadshotModal({
             </button>
             <button
               onClick={onClose}
-              className="rounded-lg bg-white/10 p-2.5 text-white backdrop-blur-sm hover:bg-white/20 transition-colors"
+              className="rounded-tp-button bg-white/10 p-2.5 text-white backdrop-blur-sm hover:bg-white/20 transition-colors"
               title="Close"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -125,7 +125,7 @@ export function HeadshotModal({
           <img
             src={current.imageUrl}
             alt={`Headshot ${currentIndex + 1}`}
-            className="max-h-[80vh] max-w-[80vw] rounded-lg object-contain shadow-2xl"
+            className="max-h-[80vh] max-w-[80vw] rounded-tp-button object-contain shadow-2xl"
             decoding="async"
           />
 

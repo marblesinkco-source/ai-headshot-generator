@@ -139,7 +139,7 @@ export function PhotoUploader({ orderId, onUploadComplete }: PhotoUploaderProps)
       <div
         {...getRootProps()}
         className={cn(
-          'relative cursor-pointer rounded-xl border-2 border-dashed p-8 text-center transition-colors',
+          'relative cursor-pointer rounded-tp-button border-2 border-dashed p-8 text-center transition-colors',
           isDragActive
             ? 'border-tp-bronze bg-tp-paper'
             : files.length >= MAX_FILES
@@ -174,7 +174,7 @@ export function PhotoUploader({ orderId, onUploadComplete }: PhotoUploaderProps)
         <div className="grid grid-cols-3 gap-3 sm:grid-cols-5">
           {files.map((file) => (
             <div key={file.id} className="group">
-              <div className="relative aspect-square overflow-hidden rounded-lg border border-tp-line bg-tp-paper">
+              <div className="relative aspect-square overflow-hidden rounded-tp-button border border-tp-line bg-tp-paper">
                 <img
                   src={file.preview}
                   alt="Upload preview"

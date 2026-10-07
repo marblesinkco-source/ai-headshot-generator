@@ -646,7 +646,7 @@ export default function BatchPhotoResizer() {
                     className="flex flex-wrap items-center gap-3 rounded-tp-card border border-tp-line bg-white p-3 sm:flex-nowrap"
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={item.url} alt="" className="h-16 w-16 shrink-0 rounded-tp-button bg-tp-black object-cover" />
+                    <img src={item.url} alt="" loading="lazy" className="h-16 w-16 shrink-0 rounded-tp-button bg-tp-black object-cover" />
                     <div className="min-w-0 flex-1">
                       <p className="truncate text-sm font-medium text-tp-ink">{item.name}</p>
                       <p className="mt-0.5 text-xs tabular-nums text-tp-muted">

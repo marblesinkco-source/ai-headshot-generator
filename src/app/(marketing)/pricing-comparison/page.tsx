@@ -542,7 +542,7 @@ export default function PricingComparisonPage() {
                   <p className="mt-1 text-sm text-tp-muted">
                     {pkg.outputCount} {pkg.outputCount === 1 ? 'headshot' : 'headshots'} included
                   </p>
-                  <div className="mt-4 rounded-lg bg-tp-paper px-4 py-3">
+                  <div className="mt-4 rounded-tp-button bg-tp-paper px-4 py-3">
                     <span className="text-sm text-tp-muted">Per photo: </span>
                     <span className="font-semibold text-tp-ink">
                       {perPhotoPrice(pkg.price, pkg.outputCount)}
@@ -602,7 +602,7 @@ export default function PricingComparisonPage() {
                   key={reason.title}
                   className="rounded-tp-card border border-tp-line bg-white p-6 transition hover:shadow-md"
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-tp-bronze/10">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-tp-button bg-tp-bronze/10">
                     <reason.icon
                       className="h-5 w-5 text-tp-bronze-ink"
                       aria-hidden="true"
