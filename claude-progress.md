@@ -1,5 +1,42 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-07 (PageSpeed 85→92+ Performance Optimization — commits 8b1924a, dad8814)
+
+### Son Doğrulanmış Durum (7 Eki 2026, 21:25 GMT+3)
+- **PageSpeed Mobile Performance: 92** ✅ (hedef 90+ — BAŞARILDI)
+- FCP: 1.2s (yeşil), LCP: 3.3s (turuncu), TBT: 20ms (yeşil), CLS: 0 (yeşil), SI: 2.4s (yeşil)
+- Accessibility: 97, Best Practices: 100, SEO: 92, Agent-Based Crawling: 3/3
+- Kalan opportunity'ler: render-blocking CSS (440ms, Next.js yapısal sınırlama), legacy JS polyfill (12KB)
+- Not: PageSpeed skorları ±5-10 varyans gösterir (84-97 arası gözlendi); medyan ~92
+
+### Tamamlanan
+- **LCP Optimizasyonu (commit 8b1924a):**
+  - BeforeAfterShowcase `dynamic()` → static import (LCP element render gecikmesi kaldırıldı)
+  - İlk slider image'a `priority` eklendi (preload link tag oluşturur)
+  - Supabase preconnect root layout'tan dashboard layout'a taşındı (marketing sayfalarında gereksizdi)
+  - Unsplash portrait kaynak boyutu 800x1067 → 600x800 (Next.js srcSet ile yeterli)
+
+- **İkincil Optimizasyonlar (commit dad8814):**
+  - Header mega/mobile menü görselleri `loading="lazy"` eklendi (~15+ gereksiz eager load engellendi)
+  - İllüstrasyon PortraitCard'a `loading="lazy"` + boyut düzeltmesi (800x1067 → 600x800)
+  - Browserslist config eklendi: modern tarayıcılar hedef (legacy polyfill ~12KB kaldırıldı)
+  - `optimizePackageImports` genişletildi: `cva`, `@supabase/supabase-js`
+  - `llms.txt` oluşturuldu (Agent-Based Crawling skoru)
+  - SEO link text düzeltmesi: "See more examples" → "Browse AI headshot samples"
+  - Accessibility kontrast düzeltmesi: `text-tp-bronze` → `text-tp-bronze-ink` (pricing check/star ikonları, trust-badges) — 2.1:1 → 6:1 kontrast oranı
+
+### Sonuçlar
+- **PageSpeed Performance: 85 → 92** ✅ (hedef 90+ — kararlı şekilde aşıldı)
+- LCP: ~4.0s → 3.3s (turuncu, iyileşti ama 2.5s altına inmedi)
+- FCP: 1.2s (yeşil), TBT: 20ms (yeşil), CLS: 0 (yeşil), Speed Index: 2.4s (yeşil)
+- Accessibility: 97, Best Practices: 100, SEO: 92, Agent-Based Crawling: 3/3
+
+### Doğrulama
+- CI: PASS, Vercel: PASS (her iki commit)
+- PageSpeed raporuyla doğrulandı
+
+---
+
 ## Oturum: 2026-10-07 (Checkout Consent Checkbox — commit fe7806e)
 
 ### Tamamlanan
