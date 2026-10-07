@@ -1,5 +1,25 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-07 (Conversion Optimization — Homepage + Hero + Pricing)
+
+### Tamamlanan (commit 1526275)
+- **Homepage sadeleştirme:** 31 bölümden 12 odaklı bölüme düşürüldü
+  - Kaldırılan 16 bölüm: ProfessionChips, WhyTailorPic, UseCaseChips, StyleConfigurator, ManyLooksSection, StudioComparisonV2, SpeedComparison, SavingsCalculator, AIProcessDemo, PhotoPrepGuide, StatsCounter, PackageQuiz, FreeToolsShowcase, CompanyLogos, PlatformShowcase, PrivacySection
+  - Yeni sıra: Hero → SocialProofBar → BeforeAfter → HowItWorks → Categories → Pricing → ReviewPlatforms → Guarantee+Trust → FAQ → CTABanner → StickyCTA → Footer
+- **Hero mesajı güncellendi:**
+  - Eyebrow: "No studio needed."
+  - Başlık: "Professional Photos — Without a Studio"
+  - Alt metin: "Upload a few selfies and get studio-quality headshots for work, business and life. Ready in ~2 hours. Pay once — no subscription."
+- **Pricing sadeleştirme:** 3 öne çıkan paket varsayılan (Quick Start / Best Value / Premium) + "See more options" toggle ile tüm 6 pakete erişim
+- **Mobil sticky CTA:** Zaten mevcut ve doğru çalışıyor (From $1.99, Start now, safe-area-inset-bottom)
+
+### Doğrulama
+- CI: PASS
+- Vercel: PASS
+- Canlı site: Hero, section sırası, pricing toggle, sticky CTA — tümü doğrulandı
+
+---
+
 ## Oturum: 2026-10-07 (Tam Denetim + Fiyat Tutarlılığı + Token Düzeltmeleri)
 
 ### Kapsamlı Site Denetimi: 100/100 ✓
