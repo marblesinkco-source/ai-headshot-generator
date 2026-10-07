@@ -58,7 +58,7 @@ export function SavingsCalculator() {
           </p>
           <h2
             id="savings-calculator-heading"
-            className="mt-3 font-display text-4xl font-normal text-tp-black sm:text-5xl"
+            className="mt-3 font-display text-3xl font-normal text-tp-black sm:text-4xl md:text-5xl"
           >
             How much could you save?
           </h2>
@@ -171,11 +171,11 @@ export function SavingsCalculator() {
               </div>
             </dl>
 
-            <div className="mt-6 rounded-tp-card bg-tp-bronze/10 p-6 text-center">
+            <div className="mt-6 rounded-tp-card bg-tp-bronze/10 p-4 text-center sm:p-6">
               <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-tp-bronze-ink">
                 You save
               </p>
-              <p className="mt-2 font-display text-5xl font-normal text-tp-black sm:text-6xl">
+              <p className="mt-2 font-display text-4xl font-normal text-tp-black sm:text-5xl md:text-6xl">
                 {formatPrice(savingsCents, 'usd')}
               </p>
             </div>

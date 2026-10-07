@@ -13,26 +13,24 @@ import { categoryVisuals } from '@/config/category-visuals';
 
 const categories = getActiveCategories();
 
-// Ordered along the decision funnel: understand (How It Works) -> see proof (Examples) -> decide (Pricing) -> learn more (Blog)
+// Ordered along the decision funnel: understand (How It Works) -> see proof (Examples) -> decide (Pricing)
+// Blog and Enterprise are in the footer and mobile secondary links — desktop nav stays lean for new users.
 const navLinks = [
   { label: 'Headshots', href: '/headshots' },
   { label: 'How It Works', href: '/how-it-works' },
   { label: 'Examples', href: '/samples' },
   { label: 'Pricing', href: '/pricing' },
-  { label: 'Enterprise', href: '/enterprise' },
-  { label: 'Blog', href: '/blog' },
 ];
 
 // Secondary pages: reachable from the mobile menu (desktop keeps the nav compact; all are in the footer)
-// Support links first (FAQ, Contact), then evaluation, then company. Team Headshots lives in Photo Types.
+// Support links first, then discovery, then company.
 const secondaryLinks = [
   { label: 'FAQ', href: '/faq' },
   { label: 'Contact', href: '/contact' },
+  { label: 'Enterprise', href: '/enterprise' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Reviews', href: '/reviews' },
-  { label: 'Compare', href: '/vs' },
-  { label: 'Industries', href: '/industries' },
   { label: 'Tools', href: '/tools' },
-  { label: 'Security', href: '/security' },
   { label: 'About', href: '/about' },
 ];
 

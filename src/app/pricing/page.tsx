@@ -359,14 +359,45 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="mx-auto max-w-5xl px-4">
-        <div className="flex items-center gap-4">
-          <div className="h-px flex-1 bg-tp-line" />
-          <span className="text-sm font-medium text-tp-muted">or save with credits</span>
-          <div className="h-px flex-1 bg-tp-line" />
+      {/* Credits explainer */}
+      <section className="py-16 sm:py-20" aria-labelledby="credits-heading">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="uppercase text-[11px] font-semibold tracking-[0.25em] text-tp-bronze-ink">
+              Bulk Savings
+            </p>
+            <h2 id="credits-heading" className="mt-3 font-display text-[30px] sm:text-[40px] font-normal tracking-[-0.03em] text-tp-ink leading-tight">
+              Save More with Credit Packs
+            </h2>
+          </div>
+
+          {/* Package vs Credits explanation */}
+          <div className="mx-auto mt-8 grid max-w-3xl gap-4 sm:grid-cols-2">
+            <div className="rounded-tp-card border border-tp-line bg-white p-5">
+              <div className="flex items-center gap-2">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-tp-paper">
+                  <CreditCard className="h-4 w-4 text-tp-bronze-ink" aria-hidden="true" />
+                </div>
+                <h3 className="text-sm font-semibold text-tp-ink">Single Package</h3>
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-tp-muted">
+                Pick a package above, pay once, and receive your photos. Ideal when you need one set of headshots right now.
+              </p>
+            </div>
+            <div className="rounded-tp-card border border-tp-bronze/30 bg-tp-bronze/5 p-5">
+              <div className="flex items-center gap-2">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-tp-bronze/20">
+                  <BadgeCheck className="h-4 w-4 text-tp-bronze-ink" aria-hidden="true" />
+                </div>
+                <h3 className="text-sm font-semibold text-tp-ink">Credit Pack</h3>
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-tp-muted">
+                Buy credits in bulk at a discount (up to 52% off). Use them across multiple orders and categories — credits never expire.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
       <CreditPackages />
 

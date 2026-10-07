@@ -44,13 +44,13 @@ export function Hero() {
               <div className="flex flex-wrap items-center gap-3 mb-5">
                 <Link
                   href="/auth/register?redirect=/dashboard/upload"
-                  className="inline-flex items-center gap-4 rounded-tp-button bg-tp-black px-8 py-4 text-[15px] font-semibold text-tp-paper shadow-md transition-[transform,box-shadow,border-color,background-color] hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl hover:animate-cta-pulse motion-reduce:hover:animate-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze whitespace-nowrap"
+                  className="inline-flex w-full justify-center items-center gap-4 rounded-tp-button bg-tp-black px-6 py-4 text-[15px] font-semibold text-tp-paper shadow-md transition-[transform,box-shadow,border-color,background-color] hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl hover:animate-cta-pulse motion-reduce:hover:animate-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze sm:w-auto sm:px-8 whitespace-nowrap"
                 >
                   Get My Headshots &mdash; From {BASE_PRICE_DISPLAY} <span aria-hidden="true" className="text-[20px] leading-none">&#8599;</span>
                 </Link>
                 <a
                   href="#how-it-works"
-                  className="inline-flex items-center gap-2.5 rounded-tp-button border border-tp-line bg-transparent px-6 py-3.5 text-sm font-semibold text-tp-ink transition-[transform,box-shadow,border-color,background-color] hover:-translate-y-0.5 hover:border-tp-bronze-ink hover:bg-tp-beige/30 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
+                  className="inline-flex w-full justify-center items-center gap-2.5 rounded-tp-button border border-tp-line bg-transparent px-6 py-3.5 text-sm font-semibold text-tp-ink transition-[transform,box-shadow,border-color,background-color] hover:-translate-y-0.5 hover:border-tp-bronze-ink hover:bg-tp-beige/30 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink sm:w-auto"
                 >
                   See How It Works <span aria-hidden="true" className="text-[18px] leading-none">&#8595;</span>
                 </a>

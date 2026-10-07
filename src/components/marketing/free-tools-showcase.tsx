@@ -152,8 +152,8 @@ export function FreeToolsShowcase() {
           </p>
         </div>
 
-        <div className="mt-10 rounded-tp-card bg-tp-paper/60 p-4 sm:p-6">
-          <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-4">
+        <div className="mt-10 rounded-tp-card bg-tp-paper/60 p-3 sm:p-6">
+          <ul className="grid grid-cols-1 gap-3 min-[400px]:grid-cols-2 sm:grid-cols-3 sm:gap-4 md:grid-cols-4">
             {FEATURED_TOOLS.map((tool) => (
               <li key={tool.href}>
                 <Link
