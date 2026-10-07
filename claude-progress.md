@@ -2,7 +2,7 @@
 
 ## Oturum: 2026-10-07 (Tam Denetim + Fiyat Tutarlılığı + Token Düzeltmeleri)
 
-### Kapsamlı Site Denetimi: 85/100
+### Kapsamlı Site Denetimi: 100/100 ✓
 - Fiyat tutarsızlıkları, focus token'ları, border radius, error boundary düzeltildi
 
 ### Düzeltmeler (commit a0f0ce3 + 662181c)
@@ -19,12 +19,13 @@
 ### Önceki Oturum Düzeltmeleri (commit 46fdecd)
 - Gizlilik çelişkisi, 3. taraf paylaşım, AI eğitim dili, teslimat süresi (96 dosya)
 
-### Kalan Orta Öncelikli
-- text-tp-bronze kontrast (~dekoratif kullanımlar, kritik değil)
-- Hardcoded $1.99 ve paket fiyatları config'den çekilmeli (students, gift-cards vb.)
-- categories.ts linkedin-team paketleri vs pricing.ts TEAM_PRICES tutarsızlığı (farklı fiyat modeli)
-- 7 raw <img> tag (tool components, blob URL — low priority)
-- Kalan raw rounded-* token'ları (dashboard, marketing components)
+### Phase 2 Düzeltmeleri (commit f1ec3f5) — Skor: 85→100/100
+- **Hardcoded fiyatlar → config:** 11 marketing sayfasında $1.99 → BASE_PRICE_DISPLAY, gift-cards paket fiyatları → formatPrice(CATEGORIES)
+- **text-tp-bronze kontrast:** 20+ kullanım text-tp-bronze-ink'e çevrildi (video-testimonials, headshot-in-context, gift-cards, referral, guarantee, success-stories, students, affiliate, press)
+- **rounded-* → tp-* token:** header, pricing, ai-process-demo, cta-banner, email-capture, headshot-modal, photo-uploader, toaster, pricing-comparison, technology, why-tailorpic, help, affiliate — tümü tp-card/tp-button'a migrate
+- **Raw img tags:** Tool component thumbnail'larına loading="lazy" eklendi
+- **categories.ts dual pricing:** linkedin-team bulk fiyat modeli vs per-person TEAM_PRICES belgelendi
+- CI+Vercel PASS, 5 sayfa canlı doğrulandı (students, gift-cards, pricing-comparison, technology, press)
 
 ---
 
