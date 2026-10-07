@@ -81,27 +81,27 @@ export default function LandingPage() {
       {/* 2. Hero */}
       <Hero />
 
-      {/* 3. Social Proof Bar */}
-      <SocialProofBar />
-
-      {/* 4. Before / After Showcase */}
+      {/* 3. Before / After Showcase */}
       <BeforeAfterShowcase />
 
-      {/* 5. How It Works */}
+      {/* 4. How It Works */}
       <HowItWorks />
 
-      {/* 6. Categories */}
+      {/* 5. Categories */}
       <Categories />
 
-      {/* 7. Pricing */}
+      {/* 6. Pricing */}
       <Pricing />
 
-      {/* 8. Review Platforms */}
-      <ReviewPlatforms />
+      {/* 7. Social Proof Bar */}
+      <SocialProofBar />
 
-      {/* 9. Guarantee + Trust */}
+      {/* 8. Guarantee + Trust */}
       <GuaranteeSection />
       <TrustBadges />
+
+      {/* 9. Review Platforms */}
+      <ReviewPlatforms />
 
       {/* 10. FAQ */}
       <FAQ />

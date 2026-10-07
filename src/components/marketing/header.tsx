@@ -16,7 +16,6 @@ const categories = getActiveCategories();
 // Ordered along the decision funnel: understand (How It Works) -> see proof (Examples) -> decide (Pricing)
 // Blog and Enterprise are in the footer and mobile secondary links — desktop nav stays lean for new users.
 const navLinks = [
-  { label: 'Headshots', href: '/headshots' },
   { label: 'How It Works', href: '/how-it-works' },
   { label: 'Examples', href: '/samples' },
   { label: 'Pricing', href: '/pricing' },
@@ -27,6 +26,7 @@ const navLinks = [
 const secondaryLinks = [
   { label: 'FAQ', href: '/faq' },
   { label: 'Contact', href: '/contact' },
+  { label: 'Teams', href: '/team-headshots' },
   { label: 'Enterprise', href: '/enterprise' },
   { label: 'Blog', href: '/blog' },
   { label: 'Reviews', href: '/reviews' },
