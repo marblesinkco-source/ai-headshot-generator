@@ -1,5 +1,24 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-07 (Phase BD — PricingToggle + AIProcessDemo + PlatformShowcase)
+
+### Tamamlanan
+- PricingToggle: Pricing bölümüne Individual/Teams pill toggle eklendi
+  - Teams modunda 3 kart: Small Team ($39/person, 5-15), Large Team ($29/person, 16-50, Best Value), Enterprise (Custom, 50+)
+  - TEAM_PRICES config'den import, tutarlı fiyatlar
+- AIProcessDemo: CSS-only 3-step animasyonlu süreç görselleştirmesi
+  - 9s döngü: Upload (4 SVG silhouette + progress bar) → AI Processing (orbiting particles) → Results (4 styled thumbnails + checkmarks)
+  - prefers-reduced-motion desteği, inline scoped styles
+  - HowItWorks sonrasına yerleştirildi
+- PlatformShowcase: 6 platform kartlı headshot kullanım alanları
+  - LinkedIn Profile, Zoom/Video Calls, Email Signature, Company Website, Slack/Teams, Resume/CV
+  - Her kart: SVG mockup frame + avatar placeholder + ikon + açıklama
+  - CompanyLogos sonrasına yerleştirildi
+- Commit: 29a1179, CI PASS + Vercel PASS
+- Canlı doğrulama: 3 bileşen doğru render, Teams toggle çalışıyor
+
+---
+
 ## Oturum: 2026-10-07 (Phase BC — Homepage Conversion Sections)
 
 ### Tamamlanan

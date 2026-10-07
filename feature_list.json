@@ -447,6 +447,14 @@
       "dependencies": ["feat-BB"],
       "status": "done",
       "evidence": "ProfessionChips: 12 meslek (Lawyer/Realtor/Developer/Doctor/Consultant/Executive/Teacher/Accountant/Engineer/Sales Pro/Marketer/Actor), BeforeAfterShowcase sonrasına yerleştirildi. ManyLooksSection: 5 tab (Professional/Social & Dating/Creative & Portfolio/Academic & Medical/Events & Conferences), her tabda 3 SVG silhouette kart, StyleConfigurator sonrasına yerleştirildi. FreeToolsShowcase: 10 featured tool grid (Background Remover/Profile Picture Maker/LinkedIn Photo Checker/Photo Enhance Preview/Passport Photo Maker/Background Blur/Image Format Converter/Photo Filters/Batch Photo Resizer/Style Finder Quiz), 'View all 39 free tools' CTA, cross-sell line, PackageQuiz sonrasına yerleştirildi. Commit: f446aed. CI PASS + Vercel PASS. Canlı doğrulama: 3 bileşen homepage'de doğru render."
+    },
+    {
+      "id": "feat-BD",
+      "name": "Phase BD — PricingToggle + AIProcessDemo + PlatformShowcase",
+      "description": "Pricing bölümüne Individual/Teams toggle, AI süreç animasyonu demo bileşeni, 6 platform kartlı headshot kullanım alanları showcase.",
+      "dependencies": ["feat-BC"],
+      "status": "done",
+      "evidence": "PricingToggle: Individual/Teams pill toggle, Teams modunda 3 kart (Small Team $39/person 5-15, Large Team $29/person 16-50 Best Value, Enterprise Custom 50+). AIProcessDemo: CSS-only 9s auto-advancing 3-step animation (Upload→AI Processing→Results), prefers-reduced-motion desteği, HowItWorks sonrasına yerleştirildi. PlatformShowcase: 6 platform kartı (LinkedIn/Zoom/Email Signature/Company Website/Slack-Teams/Resume), SVG mockup frame + avatar placeholder, CompanyLogos sonrasına yerleştirildi. Commit: 29a1179. CI PASS + Vercel PASS. Canlı doğrulama: 3 bileşen doğru render, Teams toggle çalışıyor."
     }
   ]
 }
