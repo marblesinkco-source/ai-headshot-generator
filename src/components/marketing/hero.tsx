@@ -26,19 +26,18 @@ export function Hero() {
             {/* Copy */}
             <div className="pt-6 pb-6 lg:pt-[52px] lg:pb-[42px] relative z-10">
               <p className="uppercase text-[11px] font-semibold tracking-[0.25em] text-tp-bronze-ink mb-5">
-                Studio quality. Without the studio.
+                No studio needed.
               </p>
 
               <h1
                 id="tp-title"
                 className="font-display text-[clamp(44px,5.6vw,82px)] leading-[1.04] tracking-[-0.04em] font-normal mb-5 max-w-[680px]"
               >
-                Professional{' '}<em className="text-tp-bronze-ink not-italic font-normal font-display italic">AI&nbsp;Headshots</em><br />
-                in Under 2&nbsp;Hours
+                Professional Photos&nbsp;&mdash;{' '}<br className="hidden lg:inline" /><em className="text-tp-bronze-ink font-normal font-display italic">Without&nbsp;a&nbsp;Studio</em>
               </h1>
 
               <p className="text-[16px] text-tp-ink/75 leading-[1.7] max-w-[460px] mb-8">
-                Look your best on LinkedIn, your website and everywhere it matters. Upload a few selfies, get studio-quality results in ~2 hours. Pay once &mdash; no subscription.
+                Upload a few selfies and get studio-quality headshots for work, business and life. Ready in ~2&nbsp;hours. Pay once&nbsp;&mdash; no subscription.
               </p>
 
               <div className="flex flex-wrap items-center gap-3 mb-5">

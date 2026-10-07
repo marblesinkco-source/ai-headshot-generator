@@ -18,12 +18,27 @@ const categories = getActiveCategories();
 // Show a curated set of categories as tabs — synced with config/categories.ts FEATURED_CATEGORIES
 import { FEATURED_CATEGORIES as FEATURED_IDS } from '@/config/categories';
 
+// Indices of the 3 featured packages to show by default (when a category has >3 packages).
+// For headshots: TailorPic 1 (0), Professional (4), Executive (5).
+// For other categories: first, recommended, and last package.
+function getFeaturedIndices(pkgs: readonly { recommended?: boolean }[]): number[] {
+  if (pkgs.length <= 3) return pkgs.map((_, i) => i);
+  const recIdx = pkgs.findIndex((p) => p.recommended === true);
+  const lastIdx = pkgs.length - 1;
+  const indices = new Set([0, recIdx >= 0 ? recIdx : lastIdx - 1, lastIdx]);
+  return Array.from(indices).sort((a, b) => a - b);
+}
+
+// Badge labels for the 3 featured cards (by position in the featured set).
+const FEATURED_BADGES: Record<number, string> = { 0: 'Quick Start', 1: 'Best Value', 2: 'Premium' };
+
 export function Pricing() {
   const featured = categories.filter((c) => FEATURED_IDS.includes(c.id));
   const [activeCategory, setActiveCategory] = useState<Category>(
     featured[0] || categories[0]
   );
   const [pricingMode, setPricingMode] = useState<'individual' | 'teams'>('individual');
+  const [showAll, setShowAll] = useState(false);
 
   const packages = activeCategory.packages;
   // Entry tier = cheapest package in the category (TailorPic 1 for headshots, Express elsewhere).
@@ -215,7 +230,7 @@ export function Pricing() {
               key={cat.id}
               type="button"
               aria-pressed={activeCategory.id === cat.id}
-              onClick={() => setActiveCategory(cat)}
+              onClick={() => { setActiveCategory(cat); setShowAll(false); }}
               className={cn(
                 'rounded-full px-4 py-2 text-sm font-medium transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink',
                 activeCategory.id === cat.id
@@ -246,21 +261,32 @@ export function Pricing() {
         </div>
 
         {/* Cards */}
-        <div className={cn(
-          'mt-12 grid gap-6',
-          packages.length >= 5
-            ? 'sm:grid-cols-2 lg:grid-cols-3'
-            : packages.length === 4
-              ? 'sm:grid-cols-2 lg:grid-cols-4'
-              : packages.length === 3
-              ? 'lg:grid-cols-3'
-              : packages.length === 2
-                ? 'lg:grid-cols-2 max-w-3xl mx-auto'
-                : 'max-w-md mx-auto'
-        )}>
-          {packages.map((pkg) => {
+        {(() => {
+          const featuredIdx = getFeaturedIndices(packages);
+          const canCollapse = packages.length > 3;
+          const visiblePackages = canCollapse && !showAll
+            ? featuredIdx.map((i) => ({ pkg: packages[i], featuredPos: featuredIdx.indexOf(i) }))
+            : packages.map((pkg) => ({ pkg, featuredPos: -1 }));
+          const colClass = canCollapse && !showAll
+            ? 'lg:grid-cols-3'
+            : packages.length >= 5
+              ? 'sm:grid-cols-2 lg:grid-cols-3'
+              : packages.length === 4
+                ? 'sm:grid-cols-2 lg:grid-cols-4'
+                : packages.length === 3
+                  ? 'lg:grid-cols-3'
+                  : packages.length === 2
+                    ? 'lg:grid-cols-2 max-w-3xl mx-auto'
+                    : 'max-w-md mx-auto';
+
+          return (
+        <>
+        <div className={cn('mt-12 grid gap-6', colClass)}>
+          {visiblePackages.map(({ pkg, featuredPos }) => {
             const isRecommended = pkg.recommended === true;
             const isExpress = !isRecommended && entryPackage !== undefined && pkg.id === entryPackage.id;
+            // In collapsed (featured) view, show the featured badge; in expanded view, show original badges.
+            const featuredBadge = canCollapse && !showAll && featuredPos >= 0 ? FEATURED_BADGES[featuredPos] : undefined;
 
             return (
               <Card
@@ -269,19 +295,31 @@ export function Pricing() {
                   'scroll-fade-in relative flex flex-col transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0',
                   isRecommended &&
                     'z-10 border-tp-bronze bg-tp-paper shadow-xl shadow-tp-bronze/20 ring-2 ring-tp-bronze/60 scale-[1.02] lg:scale-105',
-                  isExpress &&
+                  !isRecommended && !featuredBadge && isExpress &&
                     'border-dashed border-tp-bronze/30'
                 )}
               >
+                {/* Featured badge (collapsed view) */}
+                {featuredBadge && !isRecommended && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <Badge variant="outline" className="border-tp-bronze/50 bg-tp-paper text-tp-bronze-ink">
+                      {featuredPos === 0 && <Zap className="mr-1 h-3 w-3" />}
+                      {featuredPos === 2 && <Star className="mr-1 h-3 w-3 fill-tp-bronze text-tp-bronze" />}
+                      {featuredBadge}
+                    </Badge>
+                  </div>
+                )}
+                {/* Recommended badge — show as "Best Value" in collapsed view, "Most Popular" in expanded */}
                 {isRecommended && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                     <span className="inline-flex items-center gap-1 rounded-full bg-tp-black px-3.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-tp-paper shadow-md whitespace-nowrap">
                       <Star className="h-3 w-3 fill-tp-bronze text-tp-bronze" aria-hidden="true" />
-                      Most Popular
+                      {featuredBadge || 'Most Popular'}
                     </span>
                   </div>
                 )}
-                {isExpress && (
+                {/* Express badge (expanded view only) */}
+                {!featuredBadge && isExpress && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                     <Badge variant="outline" className="border-tp-bronze/50 bg-tp-paper text-tp-bronze-ink">
                       <Zap className="mr-1 h-3 w-3" />
@@ -369,6 +407,36 @@ export function Pricing() {
             );
           })}
         </div>
+
+        {/* Show all / Show fewer toggle */}
+        {canCollapse && (
+          <div className="mt-8 text-center">
+            <button
+              type="button"
+              onClick={() => setShowAll((v) => !v)}
+              className="inline-flex items-center gap-1.5 rounded-tp-button border border-tp-line px-5 py-2.5 text-sm font-medium text-tp-bronze-ink transition-all hover:bg-tp-beige/60"
+            >
+              {showAll ? 'Show fewer' : 'See more options'}
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+                className={cn('transition-transform', showAll && 'rotate-180')}
+              >
+                <path d="M4 6l4 4 4-4" />
+              </svg>
+            </button>
+          </div>
+        )}
+        </>
+          );
+        })()}
 
         {/* Entry-tier upsell hint */}
         {hasExpress && entryPackage && (

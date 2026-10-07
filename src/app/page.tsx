@@ -25,79 +25,34 @@ function SectionSkeleton({ height }: { height: string }) {
   );
 }
 
-import StudioComparisonV2 from '@/components/marketing/studio-comparison-v2';
-
 // Below-the-fold sections: lazy load for performance
 const SocialProofBar = dynamic(
   () => import('@/components/marketing/social-proof-bar').then((m) => m.SocialProofBar),
   { loading: () => <SectionSkeleton height="h-[100px] sm:h-[120px]" /> }
 );
-const ReviewPlatforms = dynamic(
-  () => import('@/components/marketing/review-platforms').then((m) => m.ReviewPlatforms),
-  { loading: () => <SectionSkeleton height="h-[140px]" /> }
-);
-const WhyTailorPic = dynamic(
-  () => import('@/components/marketing/why-tailorpic').then((m) => m.WhyTailorPic),
-  { loading: () => <SectionSkeleton height="h-[720px] md:h-[480px]" /> }
-);
-const StyleConfigurator = dynamic(
-  () => import('@/components/marketing/style-configurator').then((m) => m.StyleConfigurator),
-  { loading: () => <SectionSkeleton height="h-[600px] md:h-[500px]" /> }
-);
 const BeforeAfterShowcase = dynamic(
   () => import('@/components/marketing/before-after-showcase').then((m) => m.BeforeAfterShowcase),
   { loading: () => <SectionSkeleton height="h-[500px] md:h-[400px]" /> }
-);
-const SpeedComparison = dynamic(
-  () => import('@/components/marketing/speed-comparison').then((m) => m.SpeedComparison),
-  { loading: () => <SectionSkeleton height="h-[620px] md:h-[500px]" /> }
-);
-const SavingsCalculator = dynamic(
-  () => import('@/components/marketing/savings-calculator').then((m) => m.SavingsCalculator),
-  { loading: () => <SectionSkeleton height="h-[600px] md:h-[500px]" /> }
 );
 const HowItWorks = dynamic(
   () => import('@/components/marketing/how-it-works').then((m) => m.HowItWorks),
   { loading: () => <SectionSkeleton height="h-[600px] md:h-[400px]" /> }
 );
-const PhotoPrepGuide = dynamic(() => import('@/components/marketing/photo-prep-guide'), {
-  loading: () => <SectionSkeleton height="h-[400px]" />,
-});
-const PackageQuiz = dynamic(() => import('@/components/marketing/package-quiz'), {
-  loading: () => <SectionSkeleton height="h-[500px]" />,
-  ssr: false,
-});
-const StatsCounter = dynamic(
-  () => import('@/components/marketing/stats-counter').then((m) => m.StatsCounter),
-  { loading: () => <SectionSkeleton height="h-[200px] sm:h-[240px]" /> }
-);
 const Pricing = dynamic(
   () => import('@/components/marketing/pricing').then((m) => m.Pricing),
   { loading: () => <SectionSkeleton height="h-[800px] md:h-[600px]" /> }
 );
-const TrustBadges = dynamic(
-  () => import('@/components/marketing/trust-badges').then((m) => m.TrustBadges),
-  { loading: () => <SectionSkeleton height="h-[200px]" /> }
-);
-const CompanyLogos = dynamic(
-  () => import('@/components/marketing/company-logos').then((m) => m.CompanyLogos),
-  { loading: () => <SectionSkeleton height="h-[120px]" /> }
-);
-const PlatformShowcase = dynamic(
-  () => import('@/components/marketing/platform-showcase').then((m) => ({ default: m.PlatformShowcase })),
-  { loading: () => <SectionSkeleton height="h-[600px] md:h-[500px]" /> }
-);
-const AIProcessDemo = dynamic(
-  () => import('@/components/marketing/ai-process-demo').then((m) => m.AIProcessDemo),
-  { loading: () => <SectionSkeleton height="h-[500px] md:h-[400px]" /> }
+const ReviewPlatforms = dynamic(
+  () => import('@/components/marketing/review-platforms').then((m) => m.ReviewPlatforms),
+  { loading: () => <SectionSkeleton height="h-[140px]" /> }
 );
 const GuaranteeSection = dynamic(
   () => import('@/components/marketing/guarantee-section').then((m) => m.GuaranteeSection),
   { loading: () => <SectionSkeleton height="h-[400px] md:h-[320px]" /> }
 );
-const PrivacySection = dynamic(
-  () => import('@/components/marketing/privacy-section').then((m) => m.PrivacySection),
-  { loading: () => <SectionSkeleton height="h-[520px] md:h-[400px]" /> }
+const TrustBadges = dynamic(
+  () => import('@/components/marketing/trust-badges').then((m) => m.TrustBadges),
+  { loading: () => <SectionSkeleton height="h-[200px]" /> }
 );
 const FAQ = dynamic(
   () => import('@/components/marketing/faq').then((m) => m.FAQ),
@@ -106,22 +61,6 @@ const FAQ = dynamic(
 const CTABanner = dynamic(
   () => import('@/components/marketing/cta-banner').then((m) => m.CTABanner),
   { loading: () => <SectionSkeleton height="h-64" /> }
-);
-const UseCaseChips = dynamic(
-  () => import('@/components/marketing/use-case-chips').then((m) => m.UseCaseChips),
-  { loading: () => <SectionSkeleton height="h-[100px]" /> }
-);
-const ProfessionChips = dynamic(
-  () => import('@/components/marketing/profession-chips').then((m) => m.ProfessionChips),
-  { loading: () => <SectionSkeleton height="h-[80px]" /> }
-);
-const ManyLooksSection = dynamic(
-  () => import('@/components/marketing/many-looks-section').then((m) => m.ManyLooksSection),
-  { loading: () => <SectionSkeleton height="h-[600px] md:h-[500px]" /> }
-);
-const FreeToolsShowcase = dynamic(
-  () => import('@/components/marketing/free-tools-showcase').then((m) => ({ default: m.FreeToolsShowcase })),
-  { loading: () => <SectionSkeleton height="h-[500px] md:h-[400px]" /> }
 );
 // Fixed-position mobile bar: no skeleton needed
 const StickyCTA = dynamic(
@@ -139,89 +78,41 @@ export default function LandingPage() {
       {/* 1. Header */}
       <Header />
 
-      {/* 2. Hero — premium editorial image + 2 CTAs */}
+      {/* 2. Hero */}
       <Hero />
 
-      {/* 3. Social Proof Bar — immediately after hero */}
+      {/* 3. Social Proof Bar */}
       <SocialProofBar />
 
-      {/* 3.5. Before / After Comparison — proof right after hero */}
+      {/* 4. Before / After Showcase */}
       <BeforeAfterShowcase />
 
-      {/* 3.7. Profession Chips — quick navigation by role */}
-      <ProfessionChips />
-
-      {/* 4. Why TailorPic — differentiators early */}
-      <WhyTailorPic />
-
-      {/* 5. Quick Photo Type Chooser — 12 categories grouped */}
-      <Categories />
-
-      {/* 5.5. Use Case Chips — quick navigation by need */}
-      <UseCaseChips />
-
-      {/* 6. Style & Customization Preview */}
-      <StyleConfigurator />
-
-      {/* 6.5. One Photo, Many Looks — occasion-based gallery */}
-      <ManyLooksSection />
-
-      {/* 7.5. Studio Comparison — AI vs Traditional */}
-      <StudioComparisonV2 />
-
-      {/* 8. Speed Comparison */}
-      <SpeedComparison />
-
-      {/* 9. Savings Calculator — cost argument reinforced */}
-      <SavingsCalculator />
-
-      {/* 10. How It Works */}
+      {/* 5. How It Works */}
       <HowItWorks />
 
-      {/* 10.1. AI Process Demo — animated visualization */}
-      <AIProcessDemo />
+      {/* 6. Categories */}
+      <Categories />
 
-      {/* 10.2. Photo Prep Guide — how to prepare photos */}
-      <PhotoPrepGuide />
-
-      {/* 10.5. Stats at a Glance — animated counters */}
-      <StatsCounter />
-
-      {/* 10.8. Package Quiz — recommendation before plans */}
-      <PackageQuiz />
-
-      {/* 10.9. Free Tools Showcase — cross-sell free tools */}
-      <FreeToolsShowcase />
-
-      {/* 11. Pricing Overview */}
+      {/* 7. Pricing */}
       <Pricing />
 
-      {/* 10.95. Review Platforms — real platform links */}
+      {/* 8. Review Platforms */}
       <ReviewPlatforms />
 
-      {/* 11. Satisfaction Guarantee */}
+      {/* 9. Guarantee + Trust */}
       <GuaranteeSection />
-
-      {/* 12. Trust & Integrations */}
       <TrustBadges />
-      <CompanyLogos />
 
-      {/* 12.5. Platform Showcase — where headshots are used */}
-      <PlatformShowcase />
-
-      {/* 12. Privacy & Security */}
-      <PrivacySection />
-
-      {/* 13. FAQ Preview */}
+      {/* 10. FAQ */}
       <FAQ />
 
-      {/* 14. Newsletter / Final CTA */}
+      {/* 11. Final CTA */}
       <CTABanner />
 
-      {/* 15. Mobile sticky CTA (fixed bottom bar) */}
+      {/* 12. Sticky CTA (fixed bottom bar) */}
       <StickyCTA />
 
-      {/* 16. Footer */}
+      {/* 13. Footer */}
       <Footer />
     </main>
   );
