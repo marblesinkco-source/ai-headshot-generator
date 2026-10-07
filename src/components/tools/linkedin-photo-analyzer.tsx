@@ -281,7 +281,7 @@ export default function LinkedInPhotoAnalyzer() {
               <div className="aspect-square overflow-hidden rounded-tp-card border border-tp-line bg-tp-paper">
                 {previewUrl ? (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img src={previewUrl} alt="Your uploaded profile photo" className="h-full w-full object-cover" />
+                  <img src={previewUrl} alt="Your uploaded profile photo" width={180} height={180} loading="lazy" className="h-full w-full object-cover" />
                 ) : (
                   <span className="flex h-full w-full items-center justify-center text-tp-muted">
                     <ImageIcon className="h-8 w-8" aria-hidden="true" />

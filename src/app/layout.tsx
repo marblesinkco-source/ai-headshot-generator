@@ -8,7 +8,7 @@ import { CookieConsent } from '@/components/cookie-consent';
 import { ExitIntentPopupLazy } from '@/components/marketing/exit-intent-popup-lazy';
 import { OrganizationSchema } from '@/components/structured-data';
 import { GoogleAnalytics } from '@/components/analytics/google-analytics';
-import { AnalyticsProvider } from '@/components/analytics-provider';
+import { AnalyticsTrackingScript } from '@/components/analytics-provider';
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import { LiveChat } from '@/components/marketing/live-chat';
@@ -113,9 +113,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* GA4 + Consent Mode v2 — only renders when NEXT_PUBLIC_GA_MEASUREMENT_ID is set */}
         <GoogleAnalytics />
         <ToastProvider>
-          <AnalyticsProvider>
-            {children}
-          </AnalyticsProvider>
+          <AnalyticsTrackingScript />
+          {children}
           <CookieConsent />
           <ExitIntentPopupLazy />
         </ToastProvider>

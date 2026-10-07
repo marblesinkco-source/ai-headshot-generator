@@ -399,7 +399,7 @@ export function HeadshotQualityScore() {
                 <div>
                   <div className="relative overflow-hidden rounded-tp-card border border-tp-line bg-tp-beige">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={previewUrl} alt="Your uploaded headshot with a composition grid overlay" className="block h-auto w-full" />
+                    <img src={previewUrl} alt="Your uploaded headshot with a composition grid overlay" width={400} height={400} loading="lazy" className="block h-auto w-full" />
                     <svg
                       viewBox="0 0 100 100"
                       preserveAspectRatio="none"

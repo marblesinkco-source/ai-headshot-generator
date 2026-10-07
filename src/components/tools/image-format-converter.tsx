@@ -236,7 +236,7 @@ export default function ImageFormatConverter() {
             <div>
               <div className="flex aspect-square items-center justify-center overflow-hidden rounded-tp-button border border-tp-line bg-tp-paper">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={previewUrl} alt="Preview of your uploaded image" className="max-h-full max-w-full object-contain" />
+                <img src={previewUrl} alt="Preview of your uploaded image" width={400} height={400} loading="lazy" className="max-h-full max-w-full object-contain" />
               </div>
               <dl className="mt-4 space-y-1.5 text-sm">
                 <div className="flex justify-between gap-3">

@@ -401,7 +401,7 @@ export default function HeadshotCompressor() {
           {resultUrl && (
             <div className="overflow-hidden rounded-tp-card border border-tp-line bg-white p-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={resultUrl} alt="Compressed preview" className="mx-auto max-h-80 w-auto rounded-tp-button" />
+              <img src={resultUrl} alt="Compressed preview" width={400} height={400} loading="lazy" className="mx-auto max-h-80 w-auto rounded-tp-button object-contain" />
             </div>
           )}
 

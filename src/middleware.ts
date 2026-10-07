@@ -46,9 +46,51 @@ const PROTECTED_PREFIXES = ["/dashboard"];
 /** Routes that authenticated users should not see (login, signup, etc.). */
 const AUTH_ROUTES = ["/auth/login", "/auth/register", "/auth/forgot-password"];
 
+/**
+ * Public marketing routes where we skip the Supabase session refresh
+ * entirely. This removes a server-side round-trip on every marketing
+ * page load, improving TTFB significantly.
+ *
+ * Only routes that NEVER need auth state should be listed here.
+ */
+const PUBLIC_SKIP_AUTH_PREFIXES = [
+  "/pricing",
+  "/faq",
+  "/about",
+  "/terms",
+  "/privacy",
+  "/contact",
+  "/blog",
+  "/samples",
+  "/headshots",
+  "/portraits",
+  "/avatars",
+  "/vs/",
+  "/for/",
+  "/tools/",
+  "/industry/",
+  "/use-case/",
+  "/editor/",
+  "/teams",
+  "/free-ai-headshot",
+  "/pricing-comparison",
+];
+
 export async function middleware(request: NextRequest) {
-  const { user, response } = await updateSession(request);
   const { pathname } = request.nextUrl;
+
+  // ── Fast-path for public marketing routes ──────────────────────
+  // Skip Supabase session refresh entirely — these pages never need
+  // auth state, so we avoid the server-side round-trip to Supabase.
+  const isPublicRoute =
+    pathname === "/" ||
+    PUBLIC_SKIP_AUTH_PREFIXES.some((prefix) => pathname.startsWith(prefix));
+
+  if (isPublicRoute && !TEST_MODE) {
+    return NextResponse.next();
+  }
+
+  const { user, response } = await updateSession(request);
 
   /* ---- TEST MODE GATE ---- */
   if (TEST_MODE) {
