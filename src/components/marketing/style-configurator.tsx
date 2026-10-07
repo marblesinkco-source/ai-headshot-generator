@@ -131,6 +131,7 @@ export function StyleConfigurator() {
                     type="button"
                     role="radio"
                     aria-checked={active}
+                    aria-label={`${s} style`}
                     onClick={() => setStyleIndex(i)}
                     className={cn(
                       'rounded-full px-4 py-2 text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2 focus-visible:ring-offset-tp-beige',

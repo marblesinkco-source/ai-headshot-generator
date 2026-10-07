@@ -379,6 +379,28 @@ export function Pricing() {
         )}
         </>)}
 
+        {/* Guarantee & refund summary */}
+        <div className="mx-auto mt-10 flex max-w-xl flex-wrap items-center justify-center gap-x-6 gap-y-3 rounded-tp-card border border-tp-line/50 bg-tp-beige/40 px-6 py-4">
+          <div className="flex items-center gap-2 text-sm text-tp-ink">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="text-tp-bronze-ink flex-shrink-0">
+              <path d="M12 3 4.5 6v5.5c0 4.4 3.1 8.2 7.5 9.5 4.4-1.3 7.5-5.1 7.5-9.5V6L12 3Z" />
+              <path d="m8.75 12 2.25 2.25L15.5 9.75" />
+            </svg>
+            <span><strong>Satisfaction Guarantee</strong> — free regeneration</span>
+          </div>
+          <div className="flex items-center gap-2 text-sm text-tp-ink">
+            <Lock className="h-4 w-4 flex-shrink-0 text-tp-bronze-ink" aria-hidden="true" />
+            <span>Secure Stripe checkout</span>
+          </div>
+          <div className="flex items-center gap-2 text-sm text-tp-ink">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="text-tp-bronze-ink flex-shrink-0">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 7v5l3 3" />
+            </svg>
+            <span>Results in minutes</span>
+          </div>
+        </div>
+
       </div>
     </section>
   );

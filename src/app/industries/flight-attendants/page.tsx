@@ -171,6 +171,7 @@ export default function FlightAttendantsIndustryPage() {
                 alt={getIndustryVisual("flight-attendants").alt}
                 width={320}
                 height={427}
+                sizes="160px"
                 className="h-full w-full object-cover"
                 priority
               />

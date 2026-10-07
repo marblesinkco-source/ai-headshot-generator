@@ -172,6 +172,7 @@ export default function PlumbersIndustryPage() {
                 alt={getIndustryVisual("plumbers").alt}
                 width={320}
                 height={427}
+                sizes="160px"
                 className="h-full w-full object-cover"
                 priority
               />

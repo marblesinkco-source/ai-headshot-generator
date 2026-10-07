@@ -12,9 +12,11 @@ const IMAGE_SIZES = '(min-width: 768px) 30vw, 90vw';
 /* ------------------------------------------------------------------ */
 
 function ComparisonSlider({
+  label,
   before,
   after,
 }: {
+  label: string;
   before: { src: string; alt: string };
   after: { src: string; alt: string };
 }) {
@@ -55,19 +57,26 @@ function ComparisonSlider({
   return (
     <div
       ref={containerRef}
-      className="relative aspect-[3/4] w-full cursor-col-resize select-none overflow-hidden rounded-t-tp-card bg-tp-beige touch-pan-y focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze"
+      className="relative aspect-[3/4] w-full cursor-col-resize select-none overflow-hidden rounded-t-tp-card bg-tp-beige touch-pan-y focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2"
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
       role="slider"
-      aria-label="Drag to compare before and after"
+      aria-label={`Before and after comparison: ${label}. Use left and right arrow keys to compare.`}
+      aria-orientation="horizontal"
       aria-valuenow={Math.round(position)}
       aria-valuemin={0}
       aria-valuemax={100}
+      aria-valuetext={`${Math.round(position)}% selfie shown, ${100 - Math.round(position)}% AI headshot shown`}
       tabIndex={0}
       onKeyDown={(e) => {
-        if (e.key === 'ArrowLeft') setPosition((p) => Math.max(0, p - 2));
-        if (e.key === 'ArrowRight') setPosition((p) => Math.min(100, p + 2));
+        const keys = ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'];
+        if (!keys.includes(e.key)) return;
+        e.preventDefault();
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') setPosition((p) => Math.max(0, p - 2));
+        if (e.key === 'ArrowRight' || e.key === 'ArrowUp') setPosition((p) => Math.min(100, p + 2));
+        if (e.key === 'Home') setPosition(0);
+        if (e.key === 'End') setPosition(100);
       }}
     >
       {/* After image (full background) */}
@@ -97,12 +106,14 @@ function ComparisonSlider({
 
       {/* Divider line */}
       <div
+        aria-hidden="true"
         className="absolute top-0 bottom-0 z-10 w-[2px] bg-white shadow-[0_0_6px_rgba(0,0,0,0.4)]"
         style={{ left: `${position}%`, transform: 'translateX(-50%)' }}
       />
 
       {/* Drag handle */}
       <div
+        aria-hidden="true"
         className="absolute top-1/2 z-20 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-tp-black shadow-lg"
         style={{ left: `${position}%` }}
       >
@@ -166,7 +177,7 @@ export function BeforeAfterShowcase() {
               key={label}
               className="overflow-hidden rounded-tp-card border border-tp-line bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-tp-bronze/10 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
             >
-              <ComparisonSlider before={before} after={after} />
+              <ComparisonSlider label={label} before={before} after={after} />
               <figcaption className="border-t border-tp-line px-4 py-4 text-center">
                 <span className="block text-sm font-medium text-tp-ink">{label}</span>
                 <span className="mt-1 block text-xs text-tp-muted">{detail}</span>
@@ -180,7 +191,7 @@ export function BeforeAfterShowcase() {
         </p>
 
         <p className="mt-3 text-center">
-          <Link href="/samples" className="text-sm text-tp-bronze-ink hover:underline">
+          <Link href="/samples" className="rounded-tp-button text-sm text-tp-bronze-ink hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2">
             See more examples →
           </Link>
         </p>

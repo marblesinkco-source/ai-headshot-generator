@@ -170,6 +170,7 @@ export default function DoctorsIndustryPage() {
                 alt={getIndustryVisual("doctors").alt}
                 width={320}
                 height={427}
+                sizes="160px"
                 className="h-full w-full object-cover"
                 priority
               />

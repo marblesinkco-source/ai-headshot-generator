@@ -181,6 +181,7 @@ export default function RealEstateIndustryPage() {
                 alt={getIndustryVisual("real-estate").alt}
                 width={320}
                 height={427}
+                sizes="160px"
                 className="h-full w-full object-cover"
                 priority
               />

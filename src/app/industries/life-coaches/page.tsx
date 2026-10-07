@@ -171,6 +171,7 @@ export default function LifeCoachesIndustryPage() {
                 alt={getIndustryVisual("life-coaches").alt}
                 width={320}
                 height={427}
+                sizes="160px"
                 className="h-full w-full object-cover"
                 priority
               />

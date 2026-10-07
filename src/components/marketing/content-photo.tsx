@@ -55,6 +55,7 @@ export function ContentPhoto({
         alt={alt}
         width={100}
         height={100}
+        sizes="(max-width: 640px) 50vw, 100px"
         className="h-full w-full object-cover"
       />
     </div>

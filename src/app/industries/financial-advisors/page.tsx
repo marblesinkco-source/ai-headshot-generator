@@ -167,6 +167,7 @@ export default function FinancialAdvisorsIndustryPage() {
                 alt={getIndustryVisual("financial-advisors").alt}
                 width={320}
                 height={427}
+                sizes="160px"
                 className="h-full w-full object-cover"
                 priority
               />

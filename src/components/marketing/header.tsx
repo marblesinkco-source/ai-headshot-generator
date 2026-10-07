@@ -239,6 +239,7 @@ export function Header() {
             alt="TailorPic"
             width={212}
             height={49}
+            sizes="160px"
             className={`w-auto transition-[height] duration-200 ${scrolled ? 'h-7 sm:h-8' : 'h-8 sm:h-9'}`}
             priority
           />
