@@ -15,10 +15,12 @@ function ComparisonSlider({
   label,
   before,
   after,
+  priority = false,
 }: {
   label: string;
   before: { src: string; alt: string };
   after: { src: string; alt: string };
+  priority?: boolean;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState(50);
@@ -87,6 +89,7 @@ function ComparisonSlider({
         sizes={IMAGE_SIZES}
         className="object-cover"
         draggable={false}
+        priority={priority}
       />
 
       {/* Before image (clipped by slider position) */}
@@ -101,6 +104,7 @@ function ComparisonSlider({
           sizes={IMAGE_SIZES}
           className="object-cover grayscale"
           draggable={false}
+          priority={priority}
         />
       </div>
 
@@ -172,12 +176,12 @@ export function BeforeAfterShowcase() {
         </div>
 
         <div className="mt-10 lg:mt-14 grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
-          {homeBeforeAfterPairs.map(({ label, detail, before, after }) => (
+          {homeBeforeAfterPairs.map(({ label, detail, before, after }, idx) => (
             <figure
               key={label}
               className="overflow-hidden rounded-tp-card border border-tp-line bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-tp-bronze/10 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
             >
-              <ComparisonSlider label={label} before={before} after={after} />
+              <ComparisonSlider label={label} before={before} after={after} priority={idx === 0} />
               <figcaption className="border-t border-tp-line px-4 py-4 text-center">
                 <span className="block text-sm font-medium text-tp-ink">{label}</span>
                 <span className="mt-1 block text-xs text-tp-muted">{detail}</span>

@@ -21,9 +21,9 @@ function unsplash(
   return `https://images.unsplash.com/${photoId}?w=${w}&h=${h}&fit=crop&crop=${crop}&auto=format&q=80`;
 }
 
-/** 3:4 portrait (headshots, hero) */
+/** 3:4 portrait (headshots, hero) — 600w is enough since Next.js Image generates srcSet */
 export function portrait(photoId: string): string {
-  return unsplash(photoId, 800, 1067, 'face');
+  return unsplash(photoId, 600, 800, 'face');
 }
 
 /** 4:3 landscape (cards, thumbnails) */

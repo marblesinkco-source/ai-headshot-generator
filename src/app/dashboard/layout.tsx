@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+const SUPABASE_ORIGIN = process.env.NEXT_PUBLIC_SUPABASE_URL
+  ? new URL(process.env.NEXT_PUBLIC_SUPABASE_URL).origin
+  : null;
+
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
   const supabase = await createClient();
   const {
@@ -21,14 +25,19 @@ export default async function DashboardLayout({ children }: { children: React.Re
   }
 
   return (
-    <DashboardShell
-      user={{
-        email: user.email,
-        fullName: user.user_metadata?.full_name ?? null,
-        avatarUrl: user.user_metadata?.avatar_url ?? null,
-      }}
-    >
-      {children}
-    </DashboardShell>
+    <>
+      {SUPABASE_ORIGIN && (
+        <link rel="preconnect" href={SUPABASE_ORIGIN} crossOrigin="anonymous" />
+      )}
+      <DashboardShell
+        user={{
+          email: user.email,
+          fullName: user.user_metadata?.full_name ?? null,
+          avatarUrl: user.user_metadata?.avatar_url ?? null,
+        }}
+      >
+        {children}
+      </DashboardShell>
+    </>
   );
 }

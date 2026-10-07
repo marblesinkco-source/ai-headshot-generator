@@ -3,6 +3,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import dynamic from 'next/dynamic';
 import { Header } from '@/components/marketing/header';
 import { Hero } from '@/components/marketing/hero';
+import { BeforeAfterShowcase } from '@/components/marketing/before-after-showcase';
 import { Categories } from '@/components/marketing/categories';
 import { faqs } from '@/config/faqs';
 import { Footer } from '@/components/marketing/footer';
@@ -29,10 +30,6 @@ function SectionSkeleton({ height }: { height: string }) {
 const SocialProofBar = dynamic(
   () => import('@/components/marketing/social-proof-bar').then((m) => m.SocialProofBar),
   { loading: () => <SectionSkeleton height="h-[100px] sm:h-[120px]" /> }
-);
-const BeforeAfterShowcase = dynamic(
-  () => import('@/components/marketing/before-after-showcase').then((m) => m.BeforeAfterShowcase),
-  { loading: () => <SectionSkeleton height="h-[500px] md:h-[400px]" /> }
 );
 const HowItWorks = dynamic(
   () => import('@/components/marketing/how-it-works').then((m) => m.HowItWorks),

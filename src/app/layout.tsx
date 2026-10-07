@@ -96,11 +96,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${manrope.variable} ${instrumentSerif.variable}`} suppressHydrationWarning>
       <head>
         {/* Instrument Serif now self-hosted via next/font — no external stylesheet needed */}
+        {/* dns-prefetch is cheap; preconnect moved to dashboard layout where Supabase is used */}
         {SUPABASE_ORIGIN && (
-          <>
-            <link rel="preconnect" href={SUPABASE_ORIGIN} crossOrigin="anonymous" />
-            <link rel="dns-prefetch" href={SUPABASE_ORIGIN} />
-          </>
+          <link rel="dns-prefetch" href={SUPABASE_ORIGIN} />
         )}
         {/* Stripe + analytics are only needed later (checkout / after consent): dns-prefetch only */}
         <link rel="dns-prefetch" href="https://js.stripe.com" />
