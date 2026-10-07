@@ -485,8 +485,8 @@
       "name": "Phase BH — Social Proof + Dashboard Nav + Mobile QA + A11y",
       "description": "Homepage gerçek social proof güçlendirmesi, dashboard/accounting navigasyon görünürlüğü, 375/390/430px mobil QA, erişilebilirlik/performans polish.",
       "dependencies": ["feat-BG"],
-      "status": "in-progress",
-      "evidence": ""
+      "status": "done",
+      "evidence": "6 öncelik tamamlandı: (1) Samples sayfası interaktif slider (commit a40e3c3), (2) Social proof güçlendirme — review-platforms + SocialProofBar iyileştirmeleri (commit 1ce3348), (3) Cookie banner slim UX (commit a40e3c3), (4) Dashboard/accounting navigasyon (commit 1ce3348), (5) Mobile QA — sticky CTA safe-area, header mobile menu safe-area, touch target düzeltmeleri (commit 7a980e3), (6) A11y polish — tp-bronze→tp-bronze-ink kontrast (9 dosya), focus ring pattern düzeltmesi (9 dosya), aria-hidden ikonlar (commit 7a980e3). Canlı doğrulama: /headshots + homepage Chrome browser ile tam sayfa scroll testi tamamlandı."
     }
   ]
 }
