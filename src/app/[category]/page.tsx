@@ -23,6 +23,9 @@ interface Props {
   params: Promise<{ category: string }>;
 }
 
+/** Only pre-defined category slugs are valid; everything else → 404 */
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   return getActiveCategories().map((cat) => ({
     category: cat.slug,
