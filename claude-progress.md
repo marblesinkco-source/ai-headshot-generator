@@ -1,23 +1,30 @@
 # TailorPic — Progress Tracker
 
-## Oturum: 2026-10-07 (Site Denetimi + Kritik Düzeltmeler)
+## Oturum: 2026-10-07 (Tam Denetim + Fiyat Tutarlılığı + Token Düzeltmeleri)
 
-### Kapsamlı Site Denetimi: 79/100
-- 4 paralel uzman ajan ile tam denetim yapıldı (SEO, UX, Brand, A11y)
-- Claude Docs'a rapor yazıldı: https://claude.ai/artifact/28CyNSnjngQZspGjcERK9i
+### Kapsamlı Site Denetimi: 85/100
+- Fiyat tutarsızlıkları, focus token'ları, border radius, error boundary düzeltildi
 
-### Kritik Düzeltmeler (commit 46fdecd)
-- **Gizlilik çelişkisi:** Veri saklama "until you delete" → "30 gün otomatik silme" tutarlı hale getirildi
-- **3. taraf paylaşım:** "asla paylaşılmaz" → "sadece AI ortağımız Replicate ile" doğru ifade
-- **AI eğitim dili:** "asla eğitim için kullanılmaz" → "geçici kişisel model, işlem sonrası siliniyor"
-- **Teslimat süresi:** 96 dosyada "~2 saat tipik, 24 saat garanti" standardize edildi
-- CI+Vercel PASS, canlı site doğrulandı
+### Düzeltmeler (commit a0f0ce3 + 662181c)
+- **Team tier adlandırma:** "Company"/"Growing team" → "Business" (16-50 kişi) tüm sayfalarda tutarlı
+- **FAQ eksik "per person":** free-headshot-generator'da "$39 for 5-15" → "$39 per person for 5-15"
+- **ROI calculator:** Hardcoded $19 → TEAM_PRICES config'den $29 (büyük takım fiyatı)
+- **Stüdyo fiyatı:** $150-$500 → $200-$500+ standardize (pricing-comparison, studio-comparison)
+- **30 eski focus pattern:** focus:*-tp-bronze → focus:*-tp-bronze-ink (auth, dashboard, tools, marketing)
+- **9 raw rounded-lg:** Auth sayfalarında → rounded-tp-button
+- **Marketing error.tsx:** Eksik error boundary oluşturuldu
+- **Enterprise schema+FAQ:** "Company" → "Business" tutarlılığı
+- CI+Vercel PASS x2, canlı site doğrulandı
 
-### Sonraki Adımlar
-- text-tp-bronze kontrast düzeltmesi (~1408 kullanım)
-- 26 eski focus pattern düzeltmesi
-- 282 raw rounded-* → tp-* token dönüşümü
-- Hardcoded fiyatlar config'den çekilmeli
+### Önceki Oturum Düzeltmeleri (commit 46fdecd)
+- Gizlilik çelişkisi, 3. taraf paylaşım, AI eğitim dili, teslimat süresi (96 dosya)
+
+### Kalan Orta Öncelikli
+- text-tp-bronze kontrast (~dekoratif kullanımlar, kritik değil)
+- Hardcoded $1.99 ve paket fiyatları config'den çekilmeli (students, gift-cards vb.)
+- categories.ts linkedin-team paketleri vs pricing.ts TEAM_PRICES tutarsızlığı (farklı fiyat modeli)
+- 7 raw <img> tag (tool components, blob URL — low priority)
+- Kalan raw rounded-* token'ları (dashboard, marketing components)
 
 ---
 
