@@ -79,6 +79,14 @@ const CompanyLogos = dynamic(
   () => import('@/components/marketing/company-logos').then((m) => m.CompanyLogos),
   { loading: () => <SectionSkeleton height="h-[120px]" /> }
 );
+const PlatformShowcase = dynamic(
+  () => import('@/components/marketing/platform-showcase').then((m) => ({ default: m.PlatformShowcase })),
+  { loading: () => <SectionSkeleton height="h-[600px] md:h-[500px]" /> }
+);
+const AIProcessDemo = dynamic(
+  () => import('@/components/marketing/ai-process-demo').then((m) => m.AIProcessDemo),
+  { loading: () => <SectionSkeleton height="h-[500px] md:h-[400px]" /> }
+);
 const GuaranteeSection = dynamic(
   () => import('@/components/marketing/guarantee-section').then((m) => m.GuaranteeSection),
   { loading: () => <SectionSkeleton height="h-[400px] md:h-[320px]" /> }
@@ -166,6 +174,9 @@ export default function LandingPage() {
       {/* 10. How It Works */}
       <HowItWorks />
 
+      {/* 10.1. AI Process Demo — animated visualization */}
+      <AIProcessDemo />
+
       {/* 10.2. Photo Prep Guide — how to prepare photos */}
       <PhotoPrepGuide />
 
@@ -187,6 +198,9 @@ export default function LandingPage() {
       {/* 12. Trust & Integrations */}
       <TrustBadges />
       <CompanyLogos />
+
+      {/* 12.5. Platform Showcase — where headshots are used */}
+      <PlatformShowcase />
 
       {/* 12. Privacy & Security */}
       <PrivacySection />

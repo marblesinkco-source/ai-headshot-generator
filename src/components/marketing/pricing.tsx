@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Check, Zap, Lock, Star } from 'lucide-react';
 import { getActiveCategories, type Category } from '@/config/categories';
 import { categoryVisuals } from '@/config/category-visuals';
+import { TEAM_PRICES } from '@/config/pricing';
 import { formatPrice } from '@/lib/utils';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
@@ -22,6 +23,7 @@ export function Pricing() {
   const [activeCategory, setActiveCategory] = useState<Category>(
     featured[0] || categories[0]
   );
+  const [pricingMode, setPricingMode] = useState<'individual' | 'teams'>('individual');
 
   const packages = activeCategory.packages;
   // Entry tier = cheapest package in the category (TailorPic 1 for headshots, Express elsewhere).
@@ -58,8 +60,154 @@ export function Pricing() {
           <p className="mt-4 text-[15px] text-tp-muted leading-relaxed max-w-lg mx-auto">
             One-time payment, no subscription. Studio-quality photos without the studio booking, travel or wardrobe changes. Results in ~2 hours.
           </p>
+
+          {/* Individual / Teams toggle */}
+          <div className="mt-6 inline-flex items-center rounded-full border border-tp-line bg-white p-1 shadow-sm">
+            <button
+              type="button"
+              onClick={() => setPricingMode('individual')}
+              className={cn(
+                'rounded-full px-5 py-2 text-sm font-medium transition-all',
+                pricingMode === 'individual'
+                  ? 'bg-tp-black text-tp-paper shadow-md'
+                  : 'text-tp-muted hover:text-tp-ink'
+              )}
+            >
+              Individuals
+            </button>
+            <button
+              type="button"
+              onClick={() => setPricingMode('teams')}
+              className={cn(
+                'rounded-full px-5 py-2 text-sm font-medium transition-all',
+                pricingMode === 'teams'
+                  ? 'bg-tp-black text-tp-paper shadow-md'
+                  : 'text-tp-muted hover:text-tp-ink'
+              )}
+            >
+              Teams
+            </button>
+          </div>
         </div>
 
+        {/* Teams pricing */}
+        {pricingMode === 'teams' && (
+          <div className="mt-12">
+            <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-3">
+              {/* Small team */}
+              <Card className="flex flex-col">
+                <CardHeader className="pb-4">
+                  <CardTitle className="font-display text-xl font-normal text-tp-black">
+                    Small Team
+                  </CardTitle>
+                  <p className="mt-1 text-sm text-tp-muted">{TEAM_PRICES.small.min}–{TEAM_PRICES.small.max} people</p>
+                  <div className="mt-4 flex items-baseline gap-1">
+                    <span className="font-display text-4xl font-normal tracking-tight text-tp-black">
+                      {formatPrice(TEAM_PRICES.small.perPersonCents)}
+                    </span>
+                    <span className="text-sm text-tp-muted">/ person</span>
+                  </div>
+                </CardHeader>
+                <CardContent className="flex-1 space-y-2.5">
+                  <ul className="space-y-2.5">
+                    {['80 headshots per person', '10 professional styles', 'Consistent team look', 'Admin dashboard access', 'Bulk download'].map((f) => (
+                      <li key={f} className="flex items-center gap-2 text-sm text-tp-ink">
+                        <Check className="h-4 w-4 shrink-0 text-tp-bronze" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardFooter className="flex-col items-stretch">
+                  <Link href="/team-headshots" className={cn(buttonVariants({ variant: 'outline' }), 'w-full')}>
+                    Get Team Pricing
+                  </Link>
+                </CardFooter>
+              </Card>
+
+              {/* Large team — recommended */}
+              <Card className="relative z-10 flex flex-col border-tp-bronze bg-tp-paper shadow-xl shadow-tp-bronze/20 ring-2 ring-tp-bronze/60 scale-[1.02] lg:scale-105">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="inline-flex items-center gap-1 rounded-full bg-tp-black px-3.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-tp-paper shadow-md whitespace-nowrap">
+                    <Star className="h-3 w-3 fill-tp-bronze text-tp-bronze" aria-hidden="true" />
+                    Best Value
+                  </span>
+                </div>
+                <CardHeader className="pb-4">
+                  <CardTitle className="font-display text-xl font-normal text-tp-black">
+                    Large Team
+                  </CardTitle>
+                  <p className="mt-1 text-sm text-tp-muted">{TEAM_PRICES.large.min}–{TEAM_PRICES.large.max} people</p>
+                  <div className="mt-4 flex items-baseline gap-1">
+                    <span className="font-display text-4xl font-normal tracking-tight text-tp-black">
+                      {formatPrice(TEAM_PRICES.large.perPersonCents)}
+                    </span>
+                    <span className="text-sm text-tp-muted">/ person</span>
+                  </div>
+                </CardHeader>
+                <CardContent className="flex-1 space-y-2.5">
+                  <ul className="space-y-2.5">
+                    {['80 headshots per person', '10 professional styles', 'Consistent team look', 'Admin dashboard access', 'Bulk download', 'Priority support'].map((f) => (
+                      <li key={f} className="flex items-center gap-2 text-sm text-tp-ink">
+                        <Check className="h-4 w-4 shrink-0 text-tp-bronze" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardFooter className="flex-col items-stretch">
+                  <Link
+                    href="/team-headshots"
+                    className={cn(
+                      buttonVariants({ variant: 'primary' }),
+                      'w-full h-12 bg-tp-black text-tp-paper font-semibold hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl cta-ring'
+                    )}
+                  >
+                    Get Team Pricing
+                  </Link>
+                </CardFooter>
+              </Card>
+
+              {/* Premium/Enterprise */}
+              <Card className="flex flex-col">
+                <CardHeader className="pb-4">
+                  <CardTitle className="font-display text-xl font-normal text-tp-black">
+                    Enterprise
+                  </CardTitle>
+                  <p className="mt-1 text-sm text-tp-muted">50+ people</p>
+                  <div className="mt-4 flex items-baseline gap-1">
+                    <span className="font-display text-4xl font-normal tracking-tight text-tp-black">
+                      Custom
+                    </span>
+                  </div>
+                </CardHeader>
+                <CardContent className="flex-1 space-y-2.5">
+                  <ul className="space-y-2.5">
+                    {['Unlimited headshots', 'All professional styles', 'Dedicated account manager', 'API access', 'SSO integration', 'Custom branding'].map((f) => (
+                      <li key={f} className="flex items-center gap-2 text-sm text-tp-ink">
+                        <Check className="h-4 w-4 shrink-0 text-tp-bronze" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardFooter className="flex-col items-stretch">
+                  <Link href="/contact" className={cn(buttonVariants({ variant: 'outline' }), 'w-full')}>
+                    Contact Sales
+                  </Link>
+                </CardFooter>
+              </Card>
+            </div>
+
+            <p className="mt-8 text-center text-sm text-tp-muted">
+              All team plans include consistent styling across members. One-time payment, no subscriptions.
+            </p>
+          </div>
+        )}
+
+        {/* Category tabs — visible only in individual mode */}
+        {pricingMode === 'individual' && (
+        <>
         {/* Category tabs */}
         <div className="mt-10 flex flex-wrap justify-center gap-2">
           {featured.map((cat) => (
@@ -229,6 +377,7 @@ export function Pricing() {
             Start with {entryPackage.name} for just {formatPrice(entryPackage.price)} to preview your results, then upgrade anytime.
           </p>
         )}
+        </>)}
 
       </div>
     </section>
