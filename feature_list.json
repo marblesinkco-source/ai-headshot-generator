@@ -116,7 +116,7 @@
         "feat-K"
       ],
       "status": "done",
-      "evidence": "43 dosya, 5356 satır. Graceful fallback (tablo yoksa boş veri). WCAG AA erişilebilirlik. Commit: 60165dc, 11155e6, c7a0f12. BLOCKER: SUPABASE_DB_URL secret gerekli."
+      "evidence": "43 dosya, 5356 satır. Graceful fallback (tablo yoksa boş veri). WCAG AA erişilebilirlik. Commit: 60165dc, 11155e6, c7a0f12, 0833388. Düzeltmeler: CreditLedgerService race condition belgelendi, ExportService 501 error handling, webhook invoice+receipt auto-generation. BLOCKER: SUPABASE_DB_URL secret gerekli (migration 007/008 henüz uygulanmadı)."
     },
     {
       "id": "feat-M",

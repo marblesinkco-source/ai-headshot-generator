@@ -1,5 +1,29 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-07 (Accounting System Complete — commit 0833388)
+
+### Son Doğrulanmış Durum (7 Eki 2026)
+- **Accounting & Transaction Center: KOD TAMAMLANDI** ✅
+- 13 servis (TransactionService, InvoiceService, ReceiptService, CreditLedgerService, RefundService, DisputeService, BillingProfileService, PayoutService, ExportService, AccountingService, ProviderAdapterService, TaxService, PaymentMethodService)
+- 9 API route (summary, transactions, transactions/[id], documents, credits, refunds, disputes, billing-profile, export, activity)
+- 8 dashboard sayfası (overview, transactions, transactions/[id], refunds, credits, documents, billing, export)
+- Stripe webhook → transaction + invoice + receipt otomatik oluşturma
+- ExportFormatNotAvailableError (XLSX/PDF → HTTP 501)
+- Tüm route'lar auth-protected + isTableMissingError graceful degradation
+- **BLOCKER:** Migration 007/008 production'a uygulanmadı — `SUPABASE_DB_URL` secret gerekli
+
+### Yapılan Düzeltmeler
+- **CreditLedgerService race condition:** balance_after cosmetic olarak belgelendi, SUM(credits_delta) authoritative
+- **ExportService fake .txt:** XLSX/PDF → ExportFormatNotAvailableError + HTTP 501
+- **Webhook invoice/receipt:** InvoiceService.createFromTransaction + ReceiptService.createFromTransaction eklendi (best-effort)
+- **database.ts:** 007+008 migration tüm tablo type'ları eklendi
+
+### Doğrulama
+- CI: PASS, Vercel: PASS
+- Canlı site: 4 accounting sayfası Chrome browser ile doğrulandı (graceful degradation — tablolar henüz yok)
+
+---
+
 ## Oturum: 2026-10-07 (PageSpeed 85→92+ Performance Optimization — commits 8b1924a, dad8814)
 
 ### Son Doğrulanmış Durum (7 Eki 2026, 21:25 GMT+3)

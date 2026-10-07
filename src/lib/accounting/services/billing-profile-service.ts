@@ -129,26 +129,42 @@ export class BillingProfileService {
     return data as unknown as BillingProfile;
   }
 
-  /** Make one profile the default and unset all others for the user */
+  /**
+   * Make one profile the default and unset all others for the user.
+   *
+   * Order matters: we SET the new default first so there is always at least
+   * one default profile.  Only then do we UNSET the previous ones.  If the
+   * unset step fails, the worst outcome is two profiles marked as default
+   * (harmless — queries ORDER BY is_default DESC LIMIT 1), whereas the
+   * reverse order could leave the user with zero defaults.
+   */
   static async setDefault(userId: string, id: string): Promise<void> {
     const supabase = createAdminClient();
 
     const existing = await BillingProfileService.getById(userId, id);
     if (!existing) throw new Error('Billing profile not found');
 
-    const { error: unsetError } = await supabase
-      .from('billing_profiles')
-      .update({ is_default: false, updated_at: new Date().toISOString() })
-      .eq('user_id', userId)
-      .neq('id', id)
-      .eq('is_default', true);
-    if (unsetError) throw unsetError;
+    const now = new Date().toISOString();
 
+    // Step 1: SET the target as default (guarantees at least one default)
     const { error: setError } = await supabase
       .from('billing_profiles')
-      .update({ is_default: true, updated_at: new Date().toISOString() })
+      .update({ is_default: true, updated_at: now })
       .eq('id', id)
       .eq('user_id', userId);
     if (setError) throw setError;
+
+    // Step 2: UNSET all others — safe even if it fails (two defaults > zero)
+    const { error: unsetError } = await supabase
+      .from('billing_profiles')
+      .update({ is_default: false, updated_at: now })
+      .eq('user_id', userId)
+      .neq('id', id)
+      .eq('is_default', true);
+    if (unsetError) {
+      console.error('[BillingProfileService.setDefault] Failed to unset previous defaults:', unsetError);
+      // Do not throw — the new default is already set, which is the critical path.
+      // Two profiles being marked default is a benign state that self-heals on the next setDefault call.
+    }
   }
 }

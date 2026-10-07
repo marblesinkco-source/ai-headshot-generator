@@ -43,7 +43,16 @@ export class PayoutService {
     return data as unknown as Payout | null;
   }
 
-  static async getTransactions(payoutId: string): Promise<PayoutTransaction[]> {
+  /**
+   * Get transactions for a payout, scoped to the owning user.
+   * First verifies the payout belongs to `userId` via getById(), so an
+   * arbitrary payoutId from another user returns an empty array.
+   */
+  static async getTransactions(userId: string, payoutId: string): Promise<PayoutTransaction[]> {
+    // Verify payout ownership before returning its transactions
+    const payout = await PayoutService.getById(userId, payoutId);
+    if (!payout) return [];
+
     const supabase = createAdminClient();
     const { data, error } = await supabase
       .from('payout_transactions')
