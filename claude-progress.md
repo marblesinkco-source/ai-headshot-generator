@@ -1,5 +1,30 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-07 (Phase BF — Menu Simplification + Package Clarity + Mobile Polish)
+
+### Tamamlanan
+- Header nav sadeleştirme: 6→4 desktop link (Photo Types dropdown, Headshots, How It Works, Examples, Pricing)
+  - Enterprise ve Blog secondaryLinks'e taşındı
+- Pricing sayfası credits explainer: "Bulk Savings / Save More with Credit Packs" bölümü
+  - Single Package vs Credit Pack yan yana açıklama kartları
+- Mobil layout düzeltmeleri (375-430px audit'e dayalı):
+  - hero.tsx: CTA butonları w-full + justify-center, sm:w-auto
+  - platform-showcase.tsx: grid-cols-1 sm:grid-cols-2 (eskiden grid-cols-2 dar kalıyordu)
+  - free-tools-showcase.tsx: grid-cols-1 min-[400px]:grid-cols-2, wrapper padding p-3 sm:p-6
+  - savings-calculator.tsx: heading text-3xl sm:text-4xl md:text-5xl, savings figure text-4xl sm:text-5xl md:text-6xl, inner box p-4 sm:p-6
+
+### Doğrulama
+- Commit: 7a9fdbb
+- CI: PASS
+- Vercel: PASS
+- Canlı site: Header 4 link doğru, credits explainer bölümü render ediyor
+
+### Sonraki
+- Kullanıcının 82/100 audit'inden kalan: blog pagination, E2E dashboard flow test
+- Daha fazla rakip özellik analizi ve uygulama
+
+---
+
 ## Oturum: 2026-10-07 (Phase BD — PricingToggle + AIProcessDemo + PlatformShowcase)
 
 ### Tamamlanan

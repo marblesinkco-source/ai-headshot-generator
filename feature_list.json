@@ -463,6 +463,14 @@
       "dependencies": ["feat-BD"],
       "status": "done",
       "evidence": "Performance: sizes attribute content-photo.tsx (50vw/100px), header.tsx logo (160px), 64 industry page hero portrait (160px). A11y: before-after-showcase ARIA slider (per-label, valuetext, Home/End/Up/Down keys, aria-hidden decorative elements, ring focus pattern), style-configurator aria-label on radios, categories focus-visible ring-offset. Trust: guarantee/refund summary badge under pricing (Satisfaction Guarantee + Secure Stripe + Results in minutes). Skip-to-content already existed in layout.tsx. Commit: bc9bcee. CI PASS + Vercel PASS. Canlı doğrulama: guarantee badge pricing altında görünüyor, before-after slider'lar çalışıyor."
+    },
+    {
+      "id": "feat-BF",
+      "name": "Phase BF — Menu Simplification + Package Clarity + Mobile Polish",
+      "description": "Header nav 6→4 link sadeleştirme, pricing sayfası credits vs packages explainer bölümü, hero/platform-showcase/free-tools/savings-calculator mobil layout düzeltmeleri.",
+      "dependencies": ["feat-BE"],
+      "status": "done",
+      "evidence": "Header: navLinks 6→4 (Headshots/How It Works/Examples/Pricing), Enterprise+Blog secondaryLinks'e taşındı. Pricing: Bulk Savings / Save More with Credit Packs başlığı + Single Package vs Credit Pack yan yana açıklama kartları eklendi. Mobile: hero CTA w-full+justify-center sm:w-auto, platform-showcase grid-cols-1 sm:grid-cols-2, free-tools grid-cols-1 min-[400px]:grid-cols-2, savings-calculator text-3xl/4xl/5xl responsive scale, inner padding p-4 sm:p-6. Commit: 7a9fdbb. CI PASS + Vercel PASS. Canlı doğrulama: header 4 link, credits explainer bölümü doğru render."
     }
   ]
 }
