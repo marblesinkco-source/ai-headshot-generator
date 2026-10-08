@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, Lock, ShieldCheck, Trash2 } from 'lucide-react';
+import { PAYMENT_PROVIDER } from '@/config/pricing';
 
 const commitments = [
   {
@@ -20,7 +21,7 @@ const commitments = [
   {
     icon: Lock,
     title: 'Encrypted storage',
-    description: 'Your data is encrypted in transit and at rest. Card details are handled by Stripe.',
+    description: `Your data is encrypted in transit and at rest. ${PAYMENT_PROVIDER.privacyStatement}`,
   },
 ] as const;
 

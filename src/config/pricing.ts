@@ -29,3 +29,52 @@ export const TEAM_PRICES = {
 
 /** "$1.99" */
 export const BASE_PRICE_DISPLAY = formatPrice(BASE_PRICE_CENTS, CURRENCY);
+
+/* ------------------------------------------------------------------ */
+/*  Upload requirements — single source of truth for marketing copy   */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Standard headshot upload requirements.
+ * Authoritative min/max lives in categories.ts per category.
+ * These constants are for consistent marketing copy across the site.
+ */
+export const UPLOAD_REQUIREMENTS = {
+  /** Main headshot categories (professional, linkedin, etc.) */
+  headshots: {
+    range: '4–10',
+    min: 4,
+    max: 10,
+    recommendation: '6–10',
+    instruction: 'Upload 4–10 clear selfies. We recommend 6–10 for best results.',
+    shortLabel: 'Upload 4–10 selfies',
+  },
+  /** Ultra-realistic / avatar categories */
+  ultraRealistic: {
+    range: '10–20',
+    min: 10,
+    max: 20,
+    recommendation: '10–15',
+    instruction: 'Upload 10–20 clear selfies from different angles. We recommend 10–15 for best results.',
+    shortLabel: 'Upload 10–20 selfies',
+  },
+} as const;
+
+/* ------------------------------------------------------------------ */
+/*  Payment provider — change once here when migrating Stripe→Paddle  */
+/* ------------------------------------------------------------------ */
+
+export const PAYMENT_PROVIDER = {
+  /** Display name shown in marketing copy */
+  name: 'Stripe',
+  /** Short checkout badge text */
+  checkoutBadge: 'Secure checkout via Stripe',
+  /** Longer trust copy */
+  trustStatement: 'Payments are processed by Stripe, a PCI-DSS Level 1 certified payment processor. Your card details are never stored on our servers.',
+  /** Privacy copy */
+  privacyStatement: 'Card details are handled by Stripe and never stored on our servers.',
+  /** URL to provider's security page (for legal references) */
+  securityUrl: 'https://stripe.com/docs/security',
+  /** URL to provider's privacy policy */
+  privacyUrl: 'https://stripe.com/privacy',
+} as const;

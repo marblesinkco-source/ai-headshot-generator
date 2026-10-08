@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Check, Zap, Lock, Star } from 'lucide-react';
 import { getActiveCategories, type Category } from '@/config/categories';
 import { categoryVisuals } from '@/config/category-visuals';
-import { TEAM_PRICES } from '@/config/pricing';
+import { TEAM_PRICES, PAYMENT_PROVIDER } from '@/config/pricing';
 import { formatPrice } from '@/lib/utils';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
@@ -400,7 +400,7 @@ export function Pricing() {
                   </Link>
                   <p className="mt-3 flex w-full items-center justify-center gap-1 text-xs text-tp-muted">
                     <Lock className="h-3 w-3" aria-hidden="true" />
-                    Secure checkout via Stripe
+                    {PAYMENT_PROVIDER.checkoutBadge}
                   </p>
                 </CardFooter>
               </Card>
@@ -458,7 +458,7 @@ export function Pricing() {
           </div>
           <div className="flex items-center gap-2 text-sm text-tp-ink">
             <Lock className="h-4 w-4 flex-shrink-0 text-tp-bronze-ink" aria-hidden="true" />
-            <span>Secure Stripe checkout</span>
+            <span>{PAYMENT_PROVIDER.checkoutBadge}</span>
           </div>
           <div className="flex items-center gap-2 text-sm text-tp-ink">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="text-tp-bronze-ink flex-shrink-0">
@@ -466,6 +466,19 @@ export function Pricing() {
               <path d="M12 7v5l3 3" />
             </svg>
             <span>Results in minutes</span>
+          </div>
+          <div className="flex items-center gap-2 text-sm text-tp-ink">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="text-tp-bronze-ink flex-shrink-0">
+              <path d="M17 7 7 17M7 7h10v10" />
+            </svg>
+            <span>No subscription</span>
+          </div>
+          <div className="flex items-center gap-2 text-sm text-tp-ink">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="text-tp-bronze-ink flex-shrink-0">
+              <path d="m8.75 12 2.25 2.25L15.5 9.75" />
+              <rect x="3" y="3" width="18" height="18" rx="3" />
+            </svg>
+            <span>Full commercial rights</span>
           </div>
         </div>
 

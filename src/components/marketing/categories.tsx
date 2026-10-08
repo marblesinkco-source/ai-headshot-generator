@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { getActiveCategories, CATEGORY_GROUPS } from '@/config/categories';
 import { categoryVisuals } from '@/config/category-visuals';
 import { CategoryFallbackIllustration } from '@/components/marketing/illustrations';
+import { TEAM_PRICES } from '@/config/pricing';
 
 // Tiny neutral beige 8x6 SVG placeholder shown while category images load
 const BLUR_DATA_URL =
@@ -53,9 +54,12 @@ export function Categories() {
                   const image = vis?.quickCard;
                   const popular = POPULAR_IDS.has(cat.id);
                   const maxOutput = Math.max(0, ...cat.packages.map((p) => p.outputCount));
-                  const fromPrice = ((cat.packages[0]?.price || 0) / 100)
-                    .toFixed(2)
-                    .replace(/\.00$/, '');
+                  const isTeam = cat.id === 'linkedin-team';
+                  const fromPrice = isTeam
+                    ? (TEAM_PRICES.large.perPersonCents / 100).toFixed(0)
+                    : ((cat.packages[0]?.price || 0) / 100)
+                        .toFixed(2)
+                        .replace(/\.00$/, '');
 
                   return (
                     <Link
@@ -107,7 +111,7 @@ export function Categories() {
                         </p>
                         <div className="mt-auto flex items-center justify-between pt-2 sm:pt-3">
                           <span className="text-[12px] sm:text-[13px] font-semibold text-tp-bronze-ink">
-                            From ${fromPrice}
+                            {isTeam ? `From $${fromPrice}/person` : `From $${fromPrice}`}
                           </span>
                           <span className="text-xs font-medium text-tp-bronze-ink opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100 group-focus-visible:opacity-100">
                             Explore &rarr;

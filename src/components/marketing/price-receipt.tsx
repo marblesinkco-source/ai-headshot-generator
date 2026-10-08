@@ -6,6 +6,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { Check, Receipt, ChevronDown, Clock, RefreshCcw } from 'lucide-react';
 import { CATEGORIES } from '@/config/categories';
 import { formatPrice } from '@/lib/utils';
+import { PAYMENT_PROVIDER } from '@/config/pricing';
 import { cn } from '@/lib/utils';
 
 const packages = CATEGORIES.headshots.packages;
@@ -146,7 +147,7 @@ export function PriceReceipt() {
             Get My {pkg.outputCount}+ Headshots
           </Link>
           <p className="mt-3 text-xs text-tp-muted">
-            Secure checkout powered by Stripe.
+            {PAYMENT_PROVIDER.checkoutBadge}.
           </p>
         </div>
       </div>

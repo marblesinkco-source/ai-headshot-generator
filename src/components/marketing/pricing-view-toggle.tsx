@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Check } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { PAYMENT_PROVIDER } from '@/config/pricing';
 
 type View = 'individual' | 'team';
 
@@ -44,7 +45,7 @@ const TEAM_PERKS = [
   'Consistent look across the whole team',
   'One-time payment per person, no subscription',
   'Full commercial rights',
-  'Secure Stripe checkout',
+  PAYMENT_PROVIDER.checkoutBadge,
 ];
 
 export function PricingViewToggle({ individual }: { individual: ReactNode }) {

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Camera, Clock, Image, ShieldCheck, Tag } from "lucide-react";
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+import { BASE_PRICE_DISPLAY, PAYMENT_PROVIDER } from '@/config/pricing';
 
 const metrics = [
   {
@@ -23,7 +23,7 @@ const metrics = [
   {
     icon: ShieldCheck,
     value: "Secure Checkout",
-    description: "Secure checkout via Stripe",
+    description: PAYMENT_PROVIDER.checkoutBadge,
   },
   {
     icon: Tag,

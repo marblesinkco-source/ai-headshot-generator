@@ -5,7 +5,8 @@ import './globals.css';
 import { siteConfig } from '@/config/site';
 import { ToastProvider } from '@/components/ui/toaster';
 import { CookieConsent } from '@/components/cookie-consent';
-import { ExitIntentPopupLazy } from '@/components/marketing/exit-intent-popup-lazy';
+// Exit-intent popup disabled — re-enable with behaviour-based triggers (45-60s delay, return visit, checkout abandonment)
+// import { ExitIntentPopupLazy } from '@/components/marketing/exit-intent-popup-lazy';
 import { OrganizationSchema } from '@/components/structured-data';
 import { GoogleAnalytics } from '@/components/analytics/google-analytics';
 import { AnalyticsTrackingScript } from '@/components/analytics-provider';
@@ -117,7 +118,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <AnalyticsTrackingScript />
           {children}
           <CookieConsent />
-          <ExitIntentPopupLazy />
+          {/* Exit-intent popup disabled — blocks primary sales funnel */}
         </ToastProvider>
         <BackToTop />
         <ReturnVisitorBanner />
