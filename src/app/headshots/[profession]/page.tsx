@@ -216,7 +216,7 @@ export default async function ProfessionLandingPage({ params }: Props) {
           </span>
           <span className="flex items-center gap-1.5">
             <CheckCircle className="h-4 w-4 text-tp-bronze" />
-            ~2 Hour Delivery
+            Fast Delivery
           </span>
           <span className="flex items-center gap-1.5">
             <CheckCircle className="h-4 w-4 text-tp-bronze" />

@@ -197,7 +197,7 @@ export default function HeadshotsLandingPage() {
             {[
               { icon: Camera, title: '40+ Styles', desc: 'Corporate, creative, outdoor, executive and more' },
               { icon: Users, title: '30+ Professions', desc: 'Tailored recommendations for your field' },
-              { icon: Clock, title: '~2 Hour Delivery', desc: 'No scheduling, no studio visits needed' },
+              { icon: Clock, title: 'Fast Delivery', desc: 'No scheduling, no studio visits needed' },
               { icon: Sparkles, title: 'HD & 4K Quality', desc: 'Print-ready with full commercial license' },
             ].map((item) => (
               <div key={item.title} className="flex items-start gap-4 rounded-tp-card border border-tp-line bg-tp-paper p-5">

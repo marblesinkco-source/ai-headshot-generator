@@ -28,11 +28,11 @@ const stats = [
   },
   {
     icon: Clock,
-    value: 2,
+    value: 0,
     suffix: '',
-    prefix: '~',
-    label: 'Hour Delivery',
-    description: 'Fast AI-powered processing',
+    prefix: '',
+    label: 'Delivery',
+    description: 'Most orders ready within hours',
   },
   {
     icon: Sparkles,
@@ -93,7 +93,7 @@ function StatItem({
         <Icon className="h-6 w-6 text-tp-bronze-ink" strokeWidth={1.5} aria-hidden="true" />
       </span>
       <p className="font-display text-[36px] sm:text-[44px] font-normal tracking-[-0.03em] text-tp-ink leading-none">
-        {prefix}{animate ? count : 0}{suffix}
+        {value === 0 ? 'Fast' : <>{prefix}{animate ? count : 0}{suffix}</>}
       </p>
       <p className="mt-1.5 text-sm font-semibold text-tp-ink tracking-wide">{label}</p>
       <p className="mt-1 text-xs text-tp-muted">{description}</p>

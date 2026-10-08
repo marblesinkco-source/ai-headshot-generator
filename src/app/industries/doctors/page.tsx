@@ -62,9 +62,9 @@ const benefits = [
       'Choose from multiple attire options including white coat, scrubs, or business professional — whatever fits your specialty and practice setting.',
   },
   {
-    title: '2-Hour Delivery',
+    title: 'Fast Delivery',
     description:
-      'Upload selfies between patients, receive polished headshots the same day. No need to block out clinic time or travel to a photography studio.',
+      'Upload selfies between patients, receive polished headshots within hours. No need to block out clinic time or travel to a photography studio.',
   },
   {
     title: 'Easy Updates for New Staff',

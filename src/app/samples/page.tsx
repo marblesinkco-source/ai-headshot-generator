@@ -133,7 +133,7 @@ const styleGroupImages: Record<string, SampleImage[]> = {
 const qualityBadges = [
   { icon: Monitor, label: '4K Resolution' },
   { icon: Palette, label: '40+ Styles' },
-  { icon: Clock, label: '2-Hour Delivery' },
+  { icon: Clock, label: 'Fast Delivery' },
   { icon: ShieldCheck, label: 'Commercial License' },
 ];
 

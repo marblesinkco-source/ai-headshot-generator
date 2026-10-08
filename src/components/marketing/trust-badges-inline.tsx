@@ -13,7 +13,7 @@ const badges = [
   },
   {
     Icon: Clock,
-    label: '~2 Hour Delivery',
+    label: 'Fast Delivery',
   },
 ] as const;
 

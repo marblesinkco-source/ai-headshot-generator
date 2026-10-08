@@ -63,9 +63,9 @@ const benefits = [
       'New staff member starting Monday? They upload selfies on day one and have matching headshots by lunch. No scheduling, no studio visit, no delay on updating your website.',
   },
   {
-    title: '2-Hour Delivery',
+    title: 'Fast Delivery',
     description:
-      'Upload selfies between client calls and receive polished headshots the same day. No blocked calendar time, no travel to a photography studio.',
+      'Upload selfies between client calls and receive polished headshots within hours. No blocked calendar time, no travel to a photography studio.',
   },
   {
     title: 'Easy Annual Refreshes',
