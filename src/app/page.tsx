@@ -31,9 +31,14 @@ const SocialProofBar = dynamic(
   () => import('@/components/marketing/social-proof-bar').then((m) => m.SocialProofBar),
   { loading: () => <SectionSkeleton height="h-[100px] sm:h-[120px]" /> }
 );
-const HowItWorks = dynamic(
-  () => import('@/components/marketing/how-it-works').then((m) => m.HowItWorks),
-  { loading: () => <SectionSkeleton height="h-[600px] md:h-[400px]" /> }
+// HowItWorks replaced by AIProcessDemo (animated version)
+const AIProcessDemo = dynamic(
+  () => import('@/components/marketing/ai-process-demo').then((m) => m.AIProcessDemo),
+  { loading: () => <SectionSkeleton height="h-[700px] md:h-[550px]" /> }
+);
+const HeadshotInContext = dynamic(
+  () => import('@/components/marketing/headshot-in-context').then((m) => m.HeadshotInContext),
+  { loading: () => <SectionSkeleton height="h-[500px] md:h-[400px]" /> }
 );
 const Pricing = dynamic(
   () => import('@/components/marketing/pricing').then((m) => m.Pricing),
@@ -105,8 +110,8 @@ export default function LandingPage() {
       {/* 3.5. Animated Stats */}
       <AnimatedStats />
 
-      {/* 4. How It Works */}
-      <HowItWorks />
+      {/* 4. How It Works — animated demo */}
+      <AIProcessDemo />
 
       {/* 5. Categories */}
       <Categories />
@@ -117,6 +122,9 @@ export default function LandingPage() {
 
       {/* 5.6. Use Cases */}
       <UseCases />
+
+      {/* 5.7. Headshot in Context — platform mockups */}
+      <HeadshotInContext />
 
       {/* Section divider */}
       <div className="mx-auto max-w-4xl px-8" aria-hidden="true"><div className="gold-line" /></div>
