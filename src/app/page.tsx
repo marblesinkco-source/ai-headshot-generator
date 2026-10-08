@@ -66,6 +66,10 @@ const StickyCTA = dynamic(
 const ScrollProgress = dynamic(
   () => import('@/components/marketing/scroll-progress').then((m) => m.ScrollProgress)
 );
+const AnimatedStats = dynamic(
+  () => import('@/components/marketing/animated-stats').then((m) => m.AnimatedStats),
+  { loading: () => <SectionSkeleton height="h-[200px] sm:h-[240px]" /> }
+);
 
 export default function LandingPage() {
   return (
@@ -82,6 +86,9 @@ export default function LandingPage() {
 
       {/* 3. Before / After Showcase */}
       <BeforeAfterShowcase />
+
+      {/* 3.5. Animated Stats */}
+      <AnimatedStats />
 
       {/* 4. How It Works */}
       <HowItWorks />
