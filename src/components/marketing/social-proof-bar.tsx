@@ -87,12 +87,12 @@ export function SocialProofBar() {
     <section
       ref={ref}
       aria-label="Why choose TailorPic"
-      className={`w-full bg-tp-paper border-y border-tp-line ${
+      className={`w-full bg-gradient-to-r from-tp-paper via-tp-beige/20 to-tp-paper border-y border-tp-line ${
         visible ? "tp-spb-visible" : ""
       }`}
     >
       <style>{css}</style>
-      <div className="mx-auto max-w-6xl px-4 py-5 sm:py-6">
+      <div className="mx-auto max-w-6xl px-4 py-6 sm:py-8">
         <ul className="grid grid-cols-2 gap-y-5 gap-x-4 sm:grid-cols-3 lg:grid-cols-5 sm:gap-x-6 lg:[&>li:not(:first-child)]:border-l lg:[&>li:not(:first-child)]:border-tp-line lg:[&>li:not(:first-child)]:pl-6">
           {metrics.map((metric, i) => {
             const Icon = metric.icon;
@@ -102,7 +102,7 @@ export function SocialProofBar() {
                 style={{ "--i": i } as React.CSSProperties}
                 className={`${enhanced ? "tp-spb-item" : ""} flex items-start gap-3`}
               >
-                <span className="tp-spb-icon mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-tp-beige/40">
+                <span className="tp-spb-icon mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full border border-tp-line/60 bg-gradient-to-br from-tp-paper to-tp-beige/50 shadow-sm">
                   <Icon
                     className="h-4 w-4 text-tp-bronze-ink"
                     strokeWidth={1.75}

@@ -73,12 +73,18 @@ export function UseCases() {
   }, []);
 
   return (
-    <section className="bg-tp-paper py-16 sm:py-20" aria-labelledby="use-cases-heading">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section
+      className="relative overflow-hidden bg-tp-paper py-16 sm:py-20"
+      aria-labelledby="use-cases-heading"
+    >
+      <div aria-hidden="true" className="tp-blob tp-blob-beige w-[500px] h-[500px] -top-40 -right-40" />
+      <div aria-hidden="true" className="tp-blob tp-blob-bronze w-[350px] h-[350px] -bottom-28 -left-28" />
+      <div className="relative mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
         <div className="scroll-fade-in mx-auto max-w-2xl text-center">
+          <p className="uppercase text-[11px] font-semibold tracking-[0.25em] text-tp-bronze-ink">Who It&apos;s For</p>
           <h2
             id="use-cases-heading"
-            className="font-display font-normal text-3xl text-tp-ink sm:text-4xl"
+            className="mt-3 font-display text-[30px] sm:text-[40px] font-normal tracking-[-0.03em] text-tp-ink leading-tight"
           >
             Who Uses TailorPic?
           </h2>
@@ -98,8 +104,8 @@ export function UseCases() {
               className="reveal"
               style={{ '--reveal-i': i } as CSSProperties}
             >
-              <div className="tp-lift h-full rounded-tp-card border border-tp-line bg-white p-6 transition-[border-color,box-shadow] duration-300 hover:border-tp-bronze/30 hover:shadow-md hover:shadow-tp-bronze/5 motion-reduce:transition-none">
-                <span className="tp-icon-hover flex h-11 w-11 items-center justify-center rounded-tp-button bg-tp-paper text-tp-bronze-ink transition-colors duration-200">
+              <div className="group tp-lift h-full rounded-tp-card border border-tp-line bg-white p-6 transition-[border-color,box-shadow] duration-300 hover:border-tp-bronze/30 hover:shadow-md hover:shadow-tp-bronze/5 motion-reduce:transition-none">
+                <span className="flex h-12 w-12 items-center justify-center rounded-full border border-tp-line bg-gradient-to-br from-tp-paper to-tp-beige/50 shadow-sm transition-all duration-300 group-hover:border-tp-bronze/40 text-tp-bronze-ink">
                   <Icon className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
                 </span>
                 <h3 className="mt-4 text-lg font-semibold text-tp-ink">{title}</h3>

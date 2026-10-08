@@ -78,6 +78,7 @@ export function FreeToolsHighlight() {
     >
       {/* Decorative blob */}
       <div aria-hidden="true" className="tp-blob tp-blob-beige w-[500px] h-[500px] -top-40 -right-40" />
+      <div aria-hidden="true" className="tp-blob tp-blob-bronze w-[350px] h-[350px] -bottom-28 -left-28" />
 
       <div className="relative mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
         <div className="mx-auto max-w-2xl text-center">
@@ -100,14 +101,14 @@ export function FreeToolsHighlight() {
             <Link
               key={tool.href}
               href={tool.href}
-              className={`group relative flex flex-col rounded-tp-card border border-tp-line bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-tp-bronze/40 hover:shadow-lg hover:shadow-tp-bronze/8 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze motion-reduce:transition-none motion-reduce:hover:translate-y-0 ${
+              className={`group relative flex flex-col rounded-tp-card border border-tp-line/60 bg-white/80 backdrop-blur-sm p-6 transition-all duration-300 hover:-translate-y-1 hover:border-tp-bronze/40 hover:shadow-lg hover:shadow-tp-bronze/8 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze motion-reduce:transition-none motion-reduce:hover:translate-y-0 ${
                 visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
               }`}
               style={{
                 transitionDelay: visible ? `${i * 80}ms` : '0ms',
               }}
             >
-              <span className="flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-beige text-tp-bronze-ink transition-colors duration-200 group-hover:bg-tp-bronze/15">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full border border-tp-line bg-gradient-to-br from-tp-paper to-tp-beige/50 text-tp-bronze-ink shadow-sm transition-all duration-300 group-hover:border-tp-bronze/40">
                 {tool.icon}
               </span>
               <h3 className="mt-4 text-[15px] font-semibold text-tp-ink group-hover:text-tp-bronze-ink transition-colors">
