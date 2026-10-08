@@ -64,6 +64,7 @@ const companyLinks: FooterLink[] = [
   { label: 'Press', href: '/press' },
   { label: 'Careers', href: '/careers' },
   { label: 'Partners', href: '/partners' },
+  { label: 'Success Stories', href: '/success-stories' },
   { label: 'System Status', href: '/status' },
 ];
 
@@ -76,6 +77,7 @@ const legalLinks: FooterLink[] = [
   { label: 'Subprocessors', href: '/subprocessors' },
   { label: 'Security', href: '/security' },
   { label: 'Accessibility', href: '/accessibility' },
+  { label: 'Trust Center', href: '/trust' },
   { label: 'KVKK Notice', href: '/kvkk' },
 ];
 

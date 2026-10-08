@@ -230,7 +230,7 @@ export function AIProcessDemo() {
   const paneClass = ['a-dot1', 'a-dot2', 'a-dot3'];
 
   return (
-    <section className="tp-demo bg-tp-beige py-16 sm:py-20" aria-labelledby="ai-process-demo-heading">
+    <section id="how-it-works" className="tp-demo bg-tp-beige py-16 sm:py-20 scroll-mt-20" aria-labelledby="ai-process-demo-heading">
       <style>{CSS}</style>
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">

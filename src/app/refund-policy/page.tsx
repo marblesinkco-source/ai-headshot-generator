@@ -4,6 +4,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { BreadcrumbSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
   title: 'Refund & Satisfaction Policy — TailorPic',
@@ -27,6 +28,12 @@ export default function RefundPolicyPage() {
   return (
     <>
       <Header />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: 'https://www.tailorpic.com' },
+          { name: 'Refund Policy', url: 'https://www.tailorpic.com/refund-policy' },
+        ]}
+      />
       <main
         id="main-content"
         className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
