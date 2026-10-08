@@ -3,10 +3,16 @@ import { BASE_PRICE } from '@/config/pricing';
 import { CATEGORIES } from '@/config/categories';
 
 // JSON-LD Structured Data for SEO
+/** Sanitize JSON-LD output to prevent XSS via script injection. */
+function safeJsonLd(data: object): string {
+  return JSON.stringify(data).replace(/</g, '\\u003c');
+}
+
 export function OrganizationSchema() {
   const data = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': `${siteConfig.url}/#organization`,
     name: siteConfig.name,
     url: siteConfig.url,
     logo: `${siteConfig.url}/brand/tailorpic/icons/profile-dark-512.png`,
@@ -29,7 +35,7 @@ export function OrganizationSchema() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(data) }}
     />
   );
 }
@@ -38,19 +44,39 @@ export function WebsiteSchema() {
   const data = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': `${siteConfig.url}/#website`,
     name: siteConfig.name,
     url: siteConfig.url,
     description: siteConfig.description,
     publisher: {
-      '@type': 'Organization',
-      name: siteConfig.name,
+      '@id': `${siteConfig.url}/#organization`,
     },
   };
 
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(data) }}
+    />
+  );
+}
+
+export function AboutPageSchema() {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    '@id': `${siteConfig.url}/about`,
+    name: `About ${siteConfig.name}`,
+    url: `${siteConfig.url}/about`,
+    description: `Learn about ${siteConfig.name} — AI-powered professional headshots without a photo studio.`,
+    isPartOf: { '@id': `${siteConfig.url}/#website` },
+    about: { '@id': `${siteConfig.url}/#organization` },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(data) }}
     />
   );
 }
@@ -102,7 +128,7 @@ export function ProductSchema({
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(data) }}
     />
   );
 }
@@ -150,7 +176,7 @@ export function PricingProductSchema({ path = '/pricing' }: { path?: string } = 
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, '\\u003c') }}
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(data) }}
     />
   );
 }
@@ -176,7 +202,7 @@ export function FAQSchema({
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(data) }}
     />
   );
 }
@@ -200,7 +226,7 @@ export function BreadcrumbSchema({
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(data) }}
     />
   );
 }
@@ -240,7 +266,7 @@ export function SoftwareApplicationSchema({
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(data) }}
     />
   );
 }
@@ -297,7 +323,7 @@ export function ArticleSchema({
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, '\\u003c') }}
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(data) }}
     />
   );
 }
@@ -334,7 +360,7 @@ export function HowToSchema() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(data) }}
     />
   );
 }
