@@ -385,7 +385,7 @@ export default function HowItWorksPage() {
             Ready to see the difference?
           </h2>
           <p className="mt-3 text-base text-tp-beige">
-            Upload a few selfies and get your photos in ~2 hours.
+            Upload a few selfies and get your photos within hours.
           </p>
           <Link
             href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"

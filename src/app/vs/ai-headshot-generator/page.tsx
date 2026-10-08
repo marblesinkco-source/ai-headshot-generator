@@ -46,7 +46,7 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Varies widely between tools" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Often a small set per package" },
-  { label: "Delivery time", tailorpic: "Results in ~2 hours", other: "Ranges from minutes to hours" },
+  { label: "Delivery time", tailorpic: "Results within hours", other: "Ranges from minutes to hours" },
   { label: "Categories / styles", tailorpic: "12 categories", other: "Usually a few business-focused styles" },
   { label: "Training method", tailorpic: "Personal LoRA fine-tuning", other: "Some use trained models, others use face-swap templates" },
   { label: "Pricing model", tailorpic: "One-time, no subscription", other: "Mix of packages and subscriptions" },

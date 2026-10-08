@@ -46,7 +46,7 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Varies by plan; check their site" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on prompts and plan limits" },
-  { label: "Delivery time", tailorpic: "Results in ~2 hours", other: "Varies by settings and queue" },
+  { label: "Delivery time", tailorpic: "Results within hours", other: "Varies by settings and queue" },
   { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Broad art styles, characters and concepts" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Portraits come from prompts and models; not trained on your photos by default" },
   { label: "Pricing model", tailorpic: "One-time payment, no subscription", other: "Check whether free, credit or subscription plans apply" },
@@ -81,7 +81,7 @@ const useCases = {
 const faqs = [
   { question: "Is TailorPic cheaper than Leonardo AI?", answer: "TailorPic packages start from $1.99 and go up to 160 photos. Leonardo AI pricing varies by plan and can change, so check their current pricing." },
   { question: "Can Leonardo AI make portraits of me?", answer: "Leonardo can generate portraits, but it is an AI art platform and does not automatically train on your photos. TailorPic trains a personal LoRA model on your selfies as part of the service." },
-  { question: "How long does TailorPic take?", answer: "Results in ~2 hours, since a dedicated model is fine-tuned on your uploads." },
+  { question: "How long does TailorPic take?", answer: "Results within hours, since a dedicated model is fine-tuned on your uploads." },
   { question: "Do I need to write prompts with TailorPic?", answer: "No. You upload your photos and receive finished headshots across 12 categories." },
   { question: "Do I need a subscription with TailorPic?", answer: "No. Every package is a single one-time payment (from $1.99) with no recurring fees." },
 ];

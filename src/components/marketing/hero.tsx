@@ -130,7 +130,7 @@ export function Hero() {
               >
                 {[
                   { label: `From ${BASE_PRICE_DISPLAY}, one-time`, d: 'M12 8c-1.7 0-3 .9-3 2s1.3 2 3 2 3 .9 3 2-1.3 2-3 2m0-8V6m0 12v-2m9-4a9 9 0 11-18 0 9 9 0 0118 0z' },
-                  { label: 'Ready in ~2 hours', d: 'M12 6v6l4 2m5-2a9 9 0 11-18 0 9 9 0 0118 0z' },
+                  { label: 'Typically within hours', d: 'M12 6v6l4 2m5-2a9 9 0 11-18 0 9 9 0 0118 0z' },
                   { label: 'Satisfaction guarantee', d: 'M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z' },
                 ].map((t) => (
                   <span key={t.label} className="inline-flex items-center gap-1.5">

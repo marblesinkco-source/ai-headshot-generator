@@ -45,7 +45,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Billing model", tailorpic: "One-time payment, no subscription", other: "Subscription (weekly, monthly or annual)" },
   { label: "Focus", tailorpic: "Headshots and profile photos", other: "Selfie retouching, reshaping and AI enhancement" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Edit your own photos; no headshot generation" },
-  { label: "Delivery time", tailorpic: "Results in ~2 hours", other: "Instant edits on your existing photos" },
+  { label: "Delivery time", tailorpic: "Results within hours", other: "Instant edits on your existing photos" },
   { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Editing tools and filters, not headshot categories" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "No personal model; applies edits to existing photos" },
   { label: "Ongoing cost", tailorpic: "None after your one-time payment (from $1.99)", other: "Recurring subscription for VIP features" },

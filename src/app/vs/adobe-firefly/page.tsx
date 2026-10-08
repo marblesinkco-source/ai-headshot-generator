@@ -46,7 +46,7 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Varies by Adobe plan; check their site" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on your prompts and credits" },
-  { label: "Delivery time", tailorpic: "Results in ~2 hours", other: "Varies by task" },
+  { label: "Delivery time", tailorpic: "Results within hours", other: "Varies by task" },
   { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "General-purpose image generation and editing" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Generates from prompts; not built around a personal model of your face" },
   { label: "Pricing model", tailorpic: "One-time payment, no subscription", other: "Adobe plan or credit-based; check their site" },
@@ -81,7 +81,7 @@ const useCases = {
 const faqs = [
   { question: "Is TailorPic cheaper than Adobe Firefly?", answer: "TailorPic packages start from $1.99 and go up to 160 photos. Firefly pricing depends on Adobe plans and credits and can change, so check their current pricing." },
   { question: "Can Adobe Firefly make headshots of me?", answer: "Firefly is a general-purpose image generator and is not specialized for headshots. TailorPic trains a LoRA model on your own photos specifically to keep your likeness." },
-  { question: "How long does TailorPic take?", answer: "Results in ~2 hours, since a dedicated model is fine-tuned on your uploads." },
+  { question: "How long does TailorPic take?", answer: "Results within hours, since a dedicated model is fine-tuned on your uploads." },
   { question: "Do I need design skills to use TailorPic?", answer: "No. You upload your photos and receive finished headshots, with no prompt writing." },
   { question: "Do I need a subscription with TailorPic?", answer: "No. Every package is a single one-time payment (from $1.99) with no recurring fees." },
 ];

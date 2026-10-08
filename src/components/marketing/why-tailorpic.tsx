@@ -16,10 +16,10 @@ const DIFFERENTIATORS = [
   {
     icon: Zap,
     label: 'Fastest delivery',
-    stat: '~2 hours',
+    stat: 'Within hours',
     statLabel: 'to your results',
     title: 'Fastest Delivery',
-    body: 'Your headshots are typically ready in about two hours, so you can update your profile today instead of waiting around.',
+    body: 'Your headshots are typically ready within hours, so you can update your profile today instead of waiting around.',
     compare: 'Others can take 24-48 hours or several days.',
   },
   {

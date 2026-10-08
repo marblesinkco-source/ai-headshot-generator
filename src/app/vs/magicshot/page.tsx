@@ -46,7 +46,7 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Varies by package; check their site" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on the package you pick" },
-  { label: "Delivery time", tailorpic: "Results in ~2 hours", other: "Varies by package" },
+  { label: "Delivery time", tailorpic: "Results within hours", other: "Varies by package" },
   { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Headshot-focused styles" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
   { label: "Pricing model", tailorpic: "One-time payment, no subscription", other: "Check whether packages or subscriptions apply" },
@@ -81,7 +81,7 @@ const useCases = {
 const faqs = [
   { question: "Is TailorPic cheaper than MagicShot?", answer: "TailorPic packages start from $1.99 and go up to 160 photos. MagicShot pricing varies by package and can change, so compare against their current price page." },
   { question: "What makes TailorPic different from MagicShot?", answer: "TailorPic trains a personal LoRA model on your photos and outputs 12 categories, including dating, creative, pet and e-commerce photos, not just professional headshots." },
-  { question: "How long does TailorPic take?", answer: "Results in ~2 hours, since a dedicated model is fine-tuned on your uploads." },
+  { question: "How long does TailorPic take?", answer: "Results within hours, since a dedicated model is fine-tuned on your uploads." },
   { question: "Do I need a subscription with TailorPic?", answer: "No. Every package is a single one-time payment (from $1.99) with no recurring fees." },
   { question: "Can I use the photos on LinkedIn?", answer: "Yes. The business category is built for LinkedIn, resumes and company pages." },
 ];

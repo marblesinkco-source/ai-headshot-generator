@@ -67,9 +67,9 @@ const valueProps = [
   {
     icon: Clock,
     title: 'Ready in Hours',
-    stat: '~2 hours',
+    stat: 'Within hours',
     description:
-      'Most orders are completed within about 2 hours. No waiting days for retouching or weeks for a studio appointment.',
+      'Most orders are completed within a few hours. No waiting days for retouching or weeks for a studio appointment.',
   },
   {
     icon: Images,
@@ -125,7 +125,7 @@ const comparisonRows: ComparisonRow[] = [
     feature: 'Turnaround time',
     traditional: '1–2 weeks',
     otherAI: '1–24 hours',
-    tailorpic: 'Most orders ~2 hours',
+    tailorpic: 'Most orders within hours',
   },
   {
     feature: 'Multiple styles & backgrounds',

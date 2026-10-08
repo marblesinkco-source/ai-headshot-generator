@@ -57,7 +57,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   },
   {
     "label": "Delivery time",
-    "tailorpic": "Results in ~2 hours",
+    "tailorpic": "Results within hours",
     "other": "Processing time depends on your image and hardware"
   },
   {
@@ -142,7 +142,7 @@ const faqs = [
   },
   {
     "question": "How long does TailorPic take?",
-    "answer": "Results in ~2 hours, since a dedicated model is fine-tuned on your uploads."
+    "answer": "Results within hours, since a dedicated model is fine-tuned on your uploads."
   },
   {
     "question": "Can I upscale TailorPic photos with Topaz?",

@@ -45,7 +45,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Billing model", tailorpic: "One-time payment, no subscription", other: "Freemium with weekly or annual subscription" },
   { label: "Focus", tailorpic: "Headshots and profile photos", other: "Mobile photo editing with AI avatar generation" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Varies by purchase; avatar packs sold separately" },
-  { label: "Delivery time", tailorpic: "Results in ~2 hours", other: "Minutes for AI avatars" },
+  { label: "Delivery time", tailorpic: "Results within hours", other: "Minutes for AI avatars" },
   { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Artistic avatar styles (fantasy, anime, pop art and more)" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Stable Diffusion-based avatar generation" },
   { label: "Ongoing cost", tailorpic: "None after your one-time payment (from $1.99)", other: "Recurring subscription for full editing features" },

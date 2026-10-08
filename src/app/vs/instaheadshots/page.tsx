@@ -43,7 +43,7 @@ const productJsonLd = {
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "~$9 starting" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Basic headshot set; varies by plan" },
-  { label: "Delivery time", tailorpic: "Results in ~2 hours", other: "Varies by plan; check their site" },
+  { label: "Delivery time", tailorpic: "Results within hours", other: "Varies by plan; check their site" },
   { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Limited styles" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
   { label: "One-time vs subscription", tailorpic: "One-time payment, no subscription", other: "Check their site for current pricing model" },

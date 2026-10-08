@@ -106,7 +106,7 @@ const steps = [
     icon: Inbox,
     title: 'Get 30-50 unique avatars',
     desc: 'Your finished avatar collection lands in your inbox, ready to download.',
-    time: '~2 hours (most orders)',
+    time: 'Within hours (most orders)',
   },
 ];
 
@@ -232,7 +232,7 @@ export default function AvatarsPage() {
               </Link>
             </div>
             <p className="mt-8 text-sm text-white/80">
-              🔒 Your photos deleted in 30 days · satisfaction guarantee · Results in ~2 hours
+              🔒 Your photos deleted in 30 days · satisfaction guarantee · Results within hours
             </p>
           </div>
         </section>
@@ -517,7 +517,7 @@ export default function AvatarsPage() {
               </Link>
             </div>
             <p className="mt-6 text-sm text-white/80">
-              satisfaction guarantee · Results in ~2 hours
+              satisfaction guarantee · Results within hours
             </p>
           </div>
         </section>

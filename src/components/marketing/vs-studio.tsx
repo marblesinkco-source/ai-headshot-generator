@@ -11,7 +11,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const rows = [
   { feature: 'Cost', tailorpic: `From ${BASE_PRICE_DISPLAY}`, studio: '$150–$500+', highlight: true },
-  { feature: 'Turnaround', tailorpic: '~2 hours', studio: '1–2 weeks' },
+  { feature: 'Turnaround', tailorpic: 'Within hours', studio: '1–2 weeks' },
   { feature: 'Photos delivered', tailorpic: 'Up to 160', studio: '5–20 edited' },
   { feature: 'Scheduling', tailorpic: 'No appointment needed', studio: 'Book weeks ahead' },
   { feature: 'Location', tailorpic: 'From your phone', studio: 'Travel to studio' },

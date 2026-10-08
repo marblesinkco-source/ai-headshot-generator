@@ -46,7 +46,7 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Included with ChatGPT plans; check their site" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "A few images per request; limits vary by plan" },
-  { label: "Delivery time", tailorpic: "Results in ~2 hours", other: "Usually quick per image" },
+  { label: "Delivery time", tailorpic: "Results within hours", other: "Usually quick per image" },
   { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "General-purpose images from text and reference photos" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "No personal model training; results depend on the prompt and reference" },
   { label: "Pricing model", tailorpic: "One-time payment, no subscription", other: "Tied to a ChatGPT plan; check their site" },
@@ -81,7 +81,7 @@ const useCases = {
 const faqs = [
   { question: "Is TailorPic cheaper than ChatGPT image generation?", answer: "TailorPic packages start from $1.99 and go up to 160 photos. ChatGPT image generation is tied to ChatGPT plans that can change, so check their current pricing." },
   { question: "Can ChatGPT make headshots of me?", answer: "ChatGPT can generate portrait-style images, but it does not train a personal model on your face. TailorPic fine-tunes a LoRA model on your own photos for a consistent likeness." },
-  { question: "How long does TailorPic take?", answer: "Results in ~2 hours, since a dedicated model is fine-tuned on your uploads." },
+  { question: "How long does TailorPic take?", answer: "Results within hours, since a dedicated model is fine-tuned on your uploads." },
   { question: "Do I need to write prompts with TailorPic?", answer: "No. You upload your photos and receive finished headshots across 12 categories." },
   { question: "Do I need a subscription with TailorPic?", answer: "No. Every package is a single one-time payment (from $1.99) with no recurring fees." },
 ];

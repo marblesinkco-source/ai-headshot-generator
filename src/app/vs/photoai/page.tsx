@@ -45,7 +45,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Billing model", tailorpic: "One-time payment, no subscription", other: "Monthly subscription" },
   { label: "Focus", tailorpic: "Headshots and profile photos", other: "Many kinds of AI photos, not only headshots" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Varies by plan; check their site" },
-  { label: "Delivery time", tailorpic: "Results in ~2 hours", other: "Varies; check their site" },
+  { label: "Delivery time", tailorpic: "Results within hours", other: "Varies; check their site" },
   { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Wide range of photo styles and scenarios" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
   { label: "Ongoing cost", tailorpic: "None after your one-time payment (from $1.99)", other: "Recurring while you stay subscribed" },

@@ -244,7 +244,7 @@ export default function PricingPage() {
               <tbody className="divide-y divide-tp-line">
                 {HEADSHOT_PACKAGES.map((p) => {
                   const has24h = p.features.some((f) => f.toLowerCase().includes('24-hour'));
-                  const delivery = has24h ? 'Up to 24 hours' : '~2 hours';
+                  const delivery = has24h ? 'Up to 24 hours' : 'Within hours';
                   return (
                   <tr
                     key={p.id}

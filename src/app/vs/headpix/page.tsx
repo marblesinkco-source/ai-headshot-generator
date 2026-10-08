@@ -46,7 +46,7 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: "from $1.99", other: "Confirm current pricing on their site" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on the package" },
-  { label: "Delivery time", tailorpic: "Results in ~2 hours", other: "Varies by package" },
+  { label: "Delivery time", tailorpic: "Results within hours", other: "Varies by package" },
   { label: "Categories / styles", tailorpic: "12 categories", other: "Primarily professional headshot styles" },
   { label: "Training method", tailorpic: "Personal LoRA fine-tuning", other: "Not publicly detailed" },
   { label: "Pricing model", tailorpic: "One-time, no subscription", other: "Check packages on their site" },
@@ -81,7 +81,7 @@ const useCases = {
 const faqs = [
   { question: "Is TailorPic a good HeadPix alternative?", answer: "If you want lower upfront cost and more categories, yes. TailorPic packages start from $1.99 and span 12 categories." },
   { question: "Does TailorPic offer a refund?", answer: "Yes, there is a quality commitment." },
-  { question: "How long does delivery take?", answer: "Results in ~2 hours for most orders; guaranteed within 24 hours after your photos are processed." },
+  { question: "How long does delivery take?", answer: "Results within hours for most orders; guaranteed within 24 hours after your photos are processed." },
   { question: "Are the photos suitable for LinkedIn?", answer: "Yes. The business category is designed for LinkedIn, resumes and company pages." },
   { question: "Do I need to subscribe?", answer: "No. Every package is a single one-time payment (from $1.99)." },
 ];

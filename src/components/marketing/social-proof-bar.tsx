@@ -7,8 +7,8 @@ import { BASE_PRICE_DISPLAY, PAYMENT_PROVIDER } from '@/config/pricing';
 const metrics = [
   {
     icon: Clock,
-    value: "~2 Hour Delivery",
-    description: "Results in ~2 hours",
+    value: "Fast Delivery",
+    description: "Results within hours",
   },
   {
     icon: Image,
