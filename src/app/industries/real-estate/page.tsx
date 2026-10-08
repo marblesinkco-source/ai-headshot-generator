@@ -385,7 +385,7 @@ export default function RealEstateIndustryPage() {
               </p>
               <ul className="mt-6 space-y-3">
                 {[
-                  'Bulk pricing starting at ~$12/agent',
+                  'Bulk pricing from $29/person for teams of 16+',
                   'Consistent backgrounds and styling across all agents',
                   'Easy onboarding — agents upload selfies on their own time',
                   'Brand color matching for your brokerage identity',

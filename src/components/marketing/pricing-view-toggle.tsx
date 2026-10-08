@@ -5,29 +5,29 @@ import Link from 'next/link';
 import { Check } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { PAYMENT_PROVIDER } from '@/config/pricing';
+import { PAYMENT_PROVIDER, TEAM_PRICES, formatPrice } from '@/config/pricing';
 
 type View = 'individual' | 'team';
 
 const TEAM_TIERS = [
   {
     name: 'Small Team',
-    size: '5-15 people',
-    price: '$39',
+    size: `${TEAM_PRICES.small.min}-${TEAM_PRICES.small.max} people`,
+    price: formatPrice(TEAM_PRICES.small.perPersonCents),
     unit: 'per person, one-time',
     highlight: false,
   },
   {
     name: 'Business',
-    size: '16-50 people',
-    price: '$29',
+    size: `${TEAM_PRICES.large.min}-${TEAM_PRICES.large.max} people`,
+    price: formatPrice(TEAM_PRICES.large.perPersonCents),
     unit: 'per person, one-time',
     highlight: true,
   },
   {
     name: 'Premium',
-    size: 'Up to 10 people',
-    price: '$199.90',
+    size: `Up to ${TEAM_PRICES.premium.maxMembers} people`,
+    price: formatPrice(TEAM_PRICES.premium.priceCents),
     unit: 'flat rate, all-inclusive',
     highlight: false,
     isPremium: true,

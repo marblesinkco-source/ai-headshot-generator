@@ -386,7 +386,7 @@ export default function LawyersIndustryPage() {
               </p>
               <ul className="mt-6 space-y-3">
                 {[
-                  'Bulk pricing starting at ~$12/attorney',
+                  'Bulk pricing from $29/person for teams of 16+',
                   'Uniform backgrounds and styling across all attorneys',
                   'Easy onboarding — attorneys upload selfies on their own time',
                   'Instant updates when attorneys join or leave the firm',

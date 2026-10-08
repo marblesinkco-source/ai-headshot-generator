@@ -66,35 +66,37 @@ const steps = [
   },
 ];
 
+const pkgs = CATEGORIES.headshots.packages;
+
 const giftCards = [
   {
     name: 'Starter',
-    price: formatPrice(CATEGORIES.headshots.packages[2].price),
-    photos: 10,
+    price: formatPrice(pkgs[2]?.price ?? 1990),
+    photos: pkgs[2]?.outputCount ?? 10,
     package: 'Basic',
     recommended: false,
     label: null,
   },
   {
     name: 'Popular',
-    price: formatPrice(CATEGORIES.headshots.packages[3].price),
-    photos: 40,
+    price: formatPrice(pkgs[3]?.price ?? 2990),
+    photos: pkgs[3]?.outputCount ?? 40,
     package: 'Starter',
     recommended: false,
     label: null,
   },
   {
     name: 'Best Value',
-    price: formatPrice(CATEGORIES.headshots.packages[4].price),
-    photos: 80,
+    price: formatPrice(pkgs[4]?.price ?? 4990),
+    photos: pkgs[4]?.outputCount ?? 80,
     package: 'Professional',
     recommended: true,
     label: 'Recommended',
   },
   {
     name: 'Premium',
-    price: formatPrice(CATEGORIES.headshots.packages[5].price),
-    photos: 160,
+    price: formatPrice(pkgs[5]?.price ?? 8990),
+    photos: pkgs[5]?.outputCount ?? 160,
     package: 'Executive',
     recommended: false,
     label: null,
