@@ -1,5 +1,28 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-08 (Site Audit Fixes — commits 2c21250, 5b38960, 1995682)
+
+### Tamamlanan Düzeltmeler (8 Eki 2026 — 2. Oturum)
+
+1. **Exit-intent popup kaldırıldı** ✅ — `src/app/layout.tsx`'den devre dışı bırakıldı (satış hunisini engelliyordu)
+2. **PAYMENT_PROVIDER merkezi config** ✅ — `src/config/pricing.ts`'e `PAYMENT_PROVIDER` + `UPLOAD_REQUIREMENTS` eklendi. 13 dosya güncellendi (Stripe→Paddle geçişine hazırlık)
+3. **Team fiyat tutarsızlığı düzeltildi** ✅ — Homepage category kartlarında team için "$29/person" gösteriliyor ($99.90 bulk fiyat yerine)
+4. **Trust badge'leri eklendi** ✅ — Pricing kartlarına "No Subscription" + "Full Commercial Rights" eklendi
+5. **JSON-LD structured data iyileştirmeleri** ✅ — @id bağlantıları, tutarlı XSS koruması (safeJsonLd), AboutPage şeması
+6. **Legal sayfalar korundu** ✅ — Privacy, terms, DPA, subprocessors, KVKK'da Stripe yasal tüzel kişilik adı olarak bırakıldı
+
+### Kalan Görevler
+- Pricing'i 4 ana pakete sadeleştir (Try/Starter/Professional/Executive)
+- Upload gereksinimlerini tüm sayfalarda UPLOAD_REQUIREMENTS'a bağla
+- Dashboard navigasyon iyileştirmeleri
+
+### Deploy Sonuçları
+- Commit 2c21250: CI PASS, Vercel PASS ✅
+- Commit 5b38960: CI PASS, Vercel PASS ✅
+- Commit 1995682: CI PASS, Vercel PASS ✅
+
+---
+
 ## Oturum: 2026-10-08 (Pre-Launch Critical Issues — commits 4aacc1a, 715375a)
 
 ### Son Doğrulanmış Durum (8 Eki 2026)
