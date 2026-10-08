@@ -7,11 +7,32 @@ import { getActiveCategories, FEATURED_CATEGORIES } from '@/config/categories';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { HeroPattern } from '@/components/marketing/illustrations';
 import { homeHero, categoryVisuals } from '@/config/category-visuals';
+import { portrait } from '@/config/stock-portraits';
 
 const categories = getActiveCategories();
 const quickCategories = categories.filter((c) =>
   FEATURED_CATEGORIES.includes(c.id)
 ).slice(0, 6);
+
+/* Floating thumbnail data — diverse AI-concept portraits around the hero image */
+const floatingThumbs = [
+  { id: 'photo-1580489944761-15a19d654956', alt: 'AI headshot concept — professional woman', style: 'LinkedIn', x: '-12%', y: '8%', size: 72, r: '-3deg', d: '4.2s', delay: '0s', floatY: '-7px' },
+  { id: 'photo-1507003211169-0a1dd7228f2d', alt: 'AI headshot concept — corporate man', style: 'Corporate', x: '-8%', y: '62%', size: 64, r: '2deg', d: '5.1s', delay: '0.8s', floatY: '-5px' },
+  { id: 'photo-1531746020798-e6953c6e8e04', alt: 'AI headshot concept — creative portrait', style: 'Creative', x: '88%', y: '18%', size: 68, r: '3deg', d: '4.6s', delay: '0.4s', floatY: '-8px' },
+  { id: 'photo-1573496359142-b8d87734a5a2', alt: 'AI headshot concept — business woman', style: 'Business', x: '92%', y: '70%', size: 60, r: '-2deg', d: '5.4s', delay: '1.2s', floatY: '-6px' },
+];
+
+/* Style gallery marquee items — showcasing variety of AI headshot styles */
+const marqueeItems = [
+  { id: 'photo-1580489944761-15a19d654956', label: 'LinkedIn Profile' },
+  { id: 'photo-1507003211169-0a1dd7228f2d', label: 'Corporate' },
+  { id: 'photo-1531746020798-e6953c6e8e04', label: 'Creative' },
+  { id: 'photo-1573496359142-b8d87734a5a2', label: 'Business' },
+  { id: 'photo-1519085360753-af0119f7cbe7', label: 'Executive' },
+  { id: 'photo-1534528741775-53994a69daeb', label: 'Fashion' },
+  { id: 'photo-1506794778202-cad84cf45f1d', label: 'Modern' },
+  { id: 'photo-1472099645785-5658abf4ff4e', label: 'Casual Pro' },
+];
 
 export function Hero() {
   const categoryDialog = useRef<HTMLDialogElement>(null);
@@ -23,27 +44,37 @@ export function Hero() {
         <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
           {/* Desktop: two-column editorial layout */}
           <div className="grid gap-9 pt-7 lg:grid-cols-[1.1fr_1fr] lg:min-h-[553px]">
-            {/* Copy */}
+            {/* Copy — staggered entrance */}
             <div className="pt-6 pb-6 lg:pt-[52px] lg:pb-[42px] relative z-10">
-              <p className="uppercase text-[11px] font-semibold tracking-[0.25em] text-tp-bronze-ink mb-5">
+              <p
+                className="tp-hero-enter uppercase text-[11px] font-semibold tracking-[0.25em] text-tp-bronze-ink mb-5"
+                style={{ '--enter-i': 0 } as React.CSSProperties}
+              >
                 No studio needed.
               </p>
 
               <h1
                 id="tp-title"
-                className="font-display text-[clamp(44px,5.6vw,82px)] leading-[1.04] tracking-[-0.04em] font-normal mb-5 max-w-[680px]"
+                className="tp-hero-enter font-display text-[clamp(44px,5.6vw,82px)] leading-[1.04] tracking-[-0.04em] font-normal mb-5 max-w-[680px]"
+                style={{ '--enter-i': 1 } as React.CSSProperties}
               >
                 Professional Photos&nbsp;&mdash;{' '}<br className="hidden lg:inline" /><em className="text-tp-bronze-ink font-normal font-display italic">Without&nbsp;a&nbsp;Studio</em>
               </h1>
 
-              <p className="text-[16px] text-tp-ink/75 leading-[1.7] max-w-[460px] mb-8">
+              <p
+                className="tp-hero-enter text-[16px] text-tp-ink/75 leading-[1.7] max-w-[460px] mb-8"
+                style={{ '--enter-i': 2 } as React.CSSProperties}
+              >
                 Upload a few selfies and get studio-quality headshots for work, business and life. Ready in ~2&nbsp;hours. Pay once&nbsp;&mdash; no subscription.
               </p>
 
-              <div className="flex flex-wrap items-center gap-3 mb-5">
+              <div
+                className="tp-hero-enter flex flex-wrap items-center gap-3 mb-5"
+                style={{ '--enter-i': 3 } as React.CSSProperties}
+              >
                 <Link
                   href="/auth/register?redirect=/dashboard/upload"
-                  className="inline-flex w-full justify-center items-center gap-4 rounded-tp-button bg-tp-black px-6 py-4 text-[15px] font-semibold text-tp-paper shadow-md transition-[transform,box-shadow,border-color,background-color] hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl hover:animate-cta-pulse motion-reduce:hover:animate-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze sm:w-auto sm:px-8 whitespace-nowrap"
+                  className="inline-flex w-full justify-center items-center gap-4 rounded-tp-button bg-tp-black px-6 py-4 text-[15px] font-semibold text-tp-paper shadow-md transition-[transform,box-shadow,border-color,background-color] hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl hover:animate-cta-pulse motion-reduce:hover:animate-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze sm:w-auto sm:px-8 whitespace-nowrap cta-ring"
                 >
                   Get My Headshots &mdash; From {BASE_PRICE_DISPLAY} <span aria-hidden="true" className="text-[20px] leading-none">&#8599;</span>
                 </Link>
@@ -56,7 +87,10 @@ export function Hero() {
               </div>
 
               {/* Compact trust strip */}
-              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[12px] text-tp-muted">
+              <div
+                className="tp-hero-enter flex flex-wrap items-center gap-x-5 gap-y-2 text-[12px] text-tp-muted"
+                style={{ '--enter-i': 4 } as React.CSSProperties}
+              >
                 {[
                   { label: `From ${BASE_PRICE_DISPLAY}, one-time`, d: 'M12 8c-1.7 0-3 .9-3 2s1.3 2 3 2 3 .9 3 2-1.3 2-3 2m0-8V6m0 12v-2m9-4a9 9 0 11-18 0 9 9 0 0118 0z' },
                   { label: 'Ready in ~2 hours', d: 'M12 6v6l4 2m5-2a9 9 0 11-18 0 9 9 0 0118 0z' },
@@ -81,21 +115,90 @@ export function Hero() {
               />
             </div>
 
-            {/* Hero Art */}
-            <div className="relative overflow-hidden rounded-[120px_16px_16px_16px] bg-tp-beige min-h-[420px] lg:min-h-[508px] self-stretch mt-2.5 order-4 lg:order-2">
-              <Image
-                src={homeHero.src}
-                alt={homeHero.alt}
-                width={503}
-                height={743}
-                className="absolute inset-0 w-full h-full object-cover"
-                style={{ objectPosition: homeHero.desktopObjectPosition }}
-                sizes="(max-width: 1024px) 100vw, 45vw"
-                priority
-              />
-              <span className="absolute right-4 bottom-3 bg-tp-black/75 text-tp-paper text-[11px] tracking-[0.01em] px-2.5 py-1.5 rounded-tp-button">
-                AI-generated concept image
-              </span>
+            {/* Hero Art — with floating style thumbnails */}
+            <div className="tp-hero-image-enter relative overflow-visible min-h-[420px] lg:min-h-[508px] self-stretch mt-2.5 order-4 lg:order-2">
+              {/* Main portrait */}
+              <div className="relative overflow-hidden rounded-[120px_16px_16px_16px] bg-tp-beige h-full">
+                <Image
+                  src={homeHero.src}
+                  alt={homeHero.alt}
+                  width={503}
+                  height={743}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{ objectPosition: homeHero.desktopObjectPosition }}
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  priority
+                />
+                <span className="absolute right-4 bottom-3 bg-tp-black/75 text-tp-paper text-[11px] tracking-[0.01em] px-2.5 py-1.5 rounded-tp-button">
+                  AI-generated concept image
+                </span>
+              </div>
+
+              {/* Floating style thumbnails — desktop only */}
+              {floatingThumbs.map((thumb) => (
+                <div
+                  key={thumb.id}
+                  className="tp-float-thumb hidden lg:block absolute z-20 group"
+                  style={{
+                    left: thumb.x,
+                    top: thumb.y,
+                    '--float-r': thumb.r,
+                    '--float-d': thumb.d,
+                    '--float-delay': thumb.delay,
+                    '--float-y': thumb.floatY,
+                  } as React.CSSProperties}
+                  aria-hidden="true"
+                >
+                  <div
+                    className="overflow-hidden rounded-xl border-2 border-white shadow-lg shadow-tp-black/15 transition-transform duration-200 group-hover:scale-110"
+                    style={{ width: thumb.size, height: thumb.size }}
+                  >
+                    <Image
+                      src={portrait(thumb.id)}
+                      alt={thumb.alt}
+                      width={thumb.size * 2}
+                      height={thumb.size * 2}
+                      className="w-full h-full object-cover"
+                      sizes={`${thumb.size}px`}
+                      loading="lazy"
+                    />
+                  </div>
+                  <span className="mt-1 block text-center text-[9px] font-semibold text-tp-muted/70 uppercase tracking-wider">
+                    {thumb.style}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Style Gallery Marquee — continuous scrolling strip */}
+          <div
+            className="tp-hero-enter relative mt-6 lg:mt-8 py-5 border-y border-tp-line overflow-hidden"
+            style={{ '--enter-i': 5 } as React.CSSProperties}
+            aria-label="AI headshot style examples"
+          >
+            {/* Fade edges */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent" aria-hidden="true" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent" aria-hidden="true" />
+
+            <div className="tp-marquee-track" aria-hidden="true">
+              {/* Duplicate items for seamless loop */}
+              {[...marqueeItems, ...marqueeItems].map((item, idx) => (
+                <div key={`${item.id}-${idx}`} className="flex-shrink-0 mx-3 flex flex-col items-center gap-2">
+                  <div className="w-[72px] h-[90px] sm:w-[80px] sm:h-[100px] overflow-hidden rounded-lg border border-tp-line bg-tp-beige shadow-sm">
+                    <Image
+                      src={portrait(item.id)}
+                      alt={item.label}
+                      width={160}
+                      height={200}
+                      className="w-full h-full object-cover"
+                      sizes="80px"
+                      loading="lazy"
+                    />
+                  </div>
+                  <span className="text-[10px] font-medium text-tp-muted whitespace-nowrap">{item.label}</span>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -195,7 +298,7 @@ function QuickCategories({
           <Link
             key={cat.id}
             href={`/${cat.slug}`}
-            className="group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink border border-tp-line bg-tp-paper rounded-tp-card overflow-hidden flex flex-row lg:flex-col min-h-[85px] lg:min-h-0 items-stretch transition-[transform,box-shadow,border-color] duration-150 hover:-translate-y-[3px] hover:border-tp-bronze-ink"
+            className="group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink border border-tp-line bg-tp-paper rounded-tp-card overflow-hidden flex flex-row lg:flex-col min-h-[85px] lg:min-h-0 items-stretch tp-lift hover:border-tp-bronze-ink"
           >
             {/* Category thumbnail */}
             <div className="w-[72px] lg:w-full h-[85px] lg:h-[130px] bg-gradient-to-br from-tp-beige to-tp-line flex-shrink-0 overflow-hidden">
@@ -204,7 +307,7 @@ function QuickCategories({
                 alt={categoryVisuals[cat.id]?.quickCard?.alt ?? cat.name}
                 width={160}
                 height={120}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 motion-reduce:group-hover:scale-100"
                 sizes="(max-width: 1024px) 59px, 16vw"
                 loading="lazy"
               />

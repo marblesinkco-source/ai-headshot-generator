@@ -159,7 +159,7 @@ export function BeforeAfterShowcase() {
   return (
     <section className="bg-tp-paper py-20 lg:py-24" aria-labelledby="before-after-heading">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="scroll-fade-in mx-auto max-w-2xl text-center">
           <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-tp-bronze-ink">
             Before &amp; After
           </p>
@@ -179,7 +179,7 @@ export function BeforeAfterShowcase() {
           {homeBeforeAfterPairs.map(({ label, detail, before, after }, idx) => (
             <figure
               key={label}
-              className="overflow-hidden rounded-tp-card border border-tp-line bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-tp-bronze/10 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+              className="scroll-fade-in overflow-hidden rounded-tp-card border border-tp-line bg-white tp-lift hover:shadow-lg hover:shadow-tp-bronze/10 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
             >
               <ComparisonSlider label={label} before={before} after={after} priority={idx === 0} />
               <figcaption className="border-t border-tp-line px-4 py-4 text-center">

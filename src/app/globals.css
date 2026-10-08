@@ -271,6 +271,60 @@ dialog.tp-nav-dialog[open][data-closing]::backdrop {
   }
 }
 
+/* ── Hero entrance animations (above-the-fold, play once) ───── */
+@keyframes tp-hero-rise {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes tp-hero-image-in {
+  from { opacity: 0; transform: scale(0.97) translateY(12px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.tp-hero-enter {
+  opacity: 0;
+  animation: tp-hero-rise 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(var(--enter-i, 0) * 100ms + 150ms);
+}
+.tp-hero-image-enter {
+  opacity: 0;
+  animation: tp-hero-image-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 250ms;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tp-hero-enter,
+  .tp-hero-image-enter { opacity: 1; animation: none; }
+}
+
+/* ── Style gallery marquee ──────────────────────────────────── */
+@keyframes tp-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.tp-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: tp-marquee 40s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tp-marquee-track { animation-play-state: paused; }
+}
+.tp-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ── Floating thumbnail animation ───────────────────────────── */
+@keyframes tp-float-thumb {
+  0%, 100% { transform: translateY(0) rotate(var(--float-r, 0deg)); }
+  50%      { transform: translateY(calc(var(--float-y, -6px))) rotate(calc(var(--float-r, 0deg) + 1deg)); }
+}
+.tp-float-thumb {
+  animation: tp-float-thumb var(--float-d, 4s) ease-in-out infinite;
+  animation-delay: var(--float-delay, 0s);
+}
+@media (prefers-reduced-motion: reduce) {
+  .tp-float-thumb { animation: none; }
+}
+
 /* ── CTA ring pulse (replaces box-shadow animation) ──────────── */
 .cta-ring {
   position: relative;

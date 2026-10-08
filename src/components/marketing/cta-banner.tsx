@@ -20,7 +20,7 @@ export function CTABanner() {
     <>
       <section className="py-20 lg:py-24">
         <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
-          <div className="relative overflow-hidden rounded-tp-card bg-tp-black p-8 sm:p-12 lg:p-20 text-center">
+          <div className="scroll-fade-in relative overflow-hidden rounded-tp-card bg-tp-black p-8 sm:p-12 lg:p-20 text-center">
             {/* Decorative gradient */}
             <div className="absolute inset-0 bg-gradient-to-br from-tp-bronze/35 via-tp-black to-tp-bronze/20" />
             <div
