@@ -1,5 +1,39 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-08 (Sitemap Duplicates Fix + E2E Doğrulama — commit 34a311d)
+
+### Tamamlanan Görevler
+
+1. **Sitemap'te 4 tekrar kaldırıldı** ✅ — `src/app/sitemap.ts`
+   - `/team-headshots` (önceki oturumda kaldırılmıştı)
+   - `/avatars` — categoryPages tarafından otomatik üretiliyor
+   - `/guarantee` duplicate (priority 0.3) — priority 0.6 olan tutuldu
+   - `/headshots` — categoryPages tarafından otomatik üretiliyor
+   - Canlı sitemap.xml doğrulandı: 539 URL, 0 tekrar
+
+2. **/refund-policy → /guarantee yönlendirmesi** ✅ — Zaten doğru çalışıyor
+   - `permanentRedirect('/guarantee')` + canonical URL doğru ayarlanmış
+   - Canlı sitede browser ile doğrulandı: /refund-policy → /guarantee (301)
+
+3. **Uçtan uca (E2E) canlı site doğrulaması** 🟡
+   - **Desktop — tamamlandı ✅:**
+     - Homepage, Pricing, How It Works, Examples/Samples, Contact: Çalışıyor
+     - Pricing kartları: Doğru fiyatlar ($1.99, $49.90, $89.90), doğru fotoğraf sayıları
+     - CTA linkleri doğru hedeflere yönlendiriyor
+     - Dashboard: Authenticated görünüm, stats, recent orders
+     - Upload akışı: 4-adım stepper, 12 kategori listeleniyor
+     - İletişim: Email (support@tailorpic.com), form, enterprise seçenekleri
+     - Sitemap: Canlıda sıfır tekrar
+   - **Test edilemeyen akışlar (ortam kısıtlaması):**
+     - Mobil viewport: Chrome extension minimum ~1536px viewport
+     - Gerçek Stripe ödeme: Canlı ödeme gerektirir
+     - İletişim formu gönderimi: Güvenlik kuralları gereği izin gerektirir
+     - Analitik veri ulaşımı: Google Analytics erişimi gerektirir
+
+### Deploy: commit 34a311d — CI PASS, Vercel PASS ✅
+
+---
+
 ## Oturum: 2026-10-08 (Kapsamlı Denetim & Düzeltmeler — commit 598934c)
 
 ### Kapsamlı Site Denetimi Sonuçları (Genel Puan: 82→87/100)
