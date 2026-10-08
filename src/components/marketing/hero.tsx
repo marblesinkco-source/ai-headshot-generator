@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getActiveCategories, FEATURED_CATEGORIES } from '@/config/categories';
@@ -34,6 +34,35 @@ const marqueeItems = [
   { id: 'photo-1472099645785-5658abf4ff4e', label: 'Casual Pro' },
 ];
 
+const rotatingWords = ['LinkedIn', 'Business', 'Dating', 'Creative', 'Corporate'] as const;
+
+function RotatingWord() {
+  const [index, setIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setIndex((prev) => (prev + 1) % rotatingWords.length);
+        setIsAnimating(false);
+      }, 300);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <span className="tp-rotating-word-wrapper">
+      <span
+        className={`tp-rotating-word ${isAnimating ? 'tp-rotating-out' : 'tp-rotating-in'}`}
+        aria-live="polite"
+      >
+        {rotatingWords[index]}
+      </span>
+    </span>
+  );
+}
+
 export function Hero() {
   const categoryDialog = useRef<HTMLDialogElement>(null);
 
@@ -58,8 +87,16 @@ export function Hero() {
                 className="tp-hero-enter font-display text-[clamp(44px,5.6vw,82px)] leading-[1.04] tracking-[-0.04em] font-normal mb-5 max-w-[680px]"
                 style={{ '--enter-i': 1 } as React.CSSProperties}
               >
-                Professional Photos&nbsp;&mdash;{' '}<br className="hidden lg:inline" /><em className="text-tp-bronze-ink font-normal font-display italic">Without&nbsp;a&nbsp;Studio</em>
+                Professional Photos&nbsp;&mdash;{' '}<br className="hidden lg:inline" /><em className="tp-hero-shimmer font-normal font-display italic">Without&nbsp;a&nbsp;Studio</em>
               </h1>
+
+              {/* Rotating use case */}
+              <p
+                className="tp-hero-enter text-[15px] text-tp-ink/60 mb-1 flex items-center gap-2"
+                style={{ '--enter-i': 1.5 } as React.CSSProperties}
+              >
+                Perfect for <RotatingWord /> profiles
+              </p>
 
               <p
                 className="tp-hero-enter text-[16px] text-tp-ink/75 leading-[1.7] max-w-[460px] mb-8"

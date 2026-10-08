@@ -366,6 +366,62 @@ dialog.tp-nav-dialog[open][data-closing]::backdrop {
   background: radial-gradient(circle, var(--tp-beige) 0%, transparent 70%);
 }
 
+/* ── Hero shimmer effect on italic text ────────────────────────── */
+@keyframes tp-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.tp-hero-shimmer {
+  background: linear-gradient(
+    105deg,
+    var(--tp-bronze-ink) 0%,
+    var(--tp-bronze-ink) 35%,
+    var(--tp-bronze) 50%,
+    var(--tp-bronze-ink) 65%,
+    var(--tp-bronze-ink) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: tp-shimmer 4s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tp-hero-shimmer {
+    background: none;
+    -webkit-text-fill-color: var(--tp-bronze-ink);
+    animation: none;
+  }
+}
+
+/* ── Rotating word animation ──────────────────────────────────── */
+.tp-rotating-word-wrapper {
+  display: inline-block;
+  position: relative;
+  min-width: 6em;
+  text-align: left;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.tp-rotating-word {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--tp-bronze-ink);
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+.tp-rotating-out {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.tp-rotating-in {
+  transform: translateY(0);
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tp-rotating-word { transition: none; }
+}
+
 [id] {
   scroll-margin-top: 5rem;
 }

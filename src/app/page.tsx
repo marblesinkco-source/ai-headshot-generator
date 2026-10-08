@@ -43,6 +43,10 @@ const ReviewPlatforms = dynamic(
   () => import('@/components/marketing/review-platforms').then((m) => m.ReviewPlatforms),
   { loading: () => <SectionSkeleton height="h-[140px]" /> }
 );
+const VsStudio = dynamic(
+  () => import('@/components/marketing/vs-studio').then((m) => m.VsStudio),
+  { loading: () => <SectionSkeleton height="h-[600px] md:h-[500px]" /> }
+);
 const GuaranteeSection = dynamic(
   () => import('@/components/marketing/guarantee-section').then((m) => m.GuaranteeSection),
   { loading: () => <SectionSkeleton height="h-[400px] md:h-[320px]" /> }
@@ -95,6 +99,10 @@ export default function LandingPage() {
 
       {/* 5. Categories */}
       <Categories />
+
+      {/* 5.5. TailorPic vs Studio Comparison */}
+      <div className="mx-auto max-w-4xl px-8" aria-hidden="true"><div className="gold-line" /></div>
+      <VsStudio />
 
       {/* Section divider */}
       <div className="mx-auto max-w-4xl px-8" aria-hidden="true"><div className="gold-line" /></div>
