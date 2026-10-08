@@ -32,8 +32,11 @@ export function FAQ() {
   };
 
   return (
-    <section id="faq" className="bg-tp-paper py-20 lg:py-24">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="relative bg-tp-paper py-20 lg:py-24 overflow-hidden">
+      {/* Decorative background blobs */}
+      <div aria-hidden="true" className="tp-blob tp-blob-bronze w-[450px] h-[450px] -top-32 -right-32" />
+      <div aria-hidden="true" className="tp-blob tp-blob-beige w-[350px] h-[350px] -bottom-24 -left-28" />
+      <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="scroll-fade-in text-center">
           <p className="uppercase text-[11px] font-semibold tracking-[0.25em] text-tp-bronze-ink">

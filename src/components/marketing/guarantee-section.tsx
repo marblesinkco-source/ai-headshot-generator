@@ -62,8 +62,11 @@ const items = [
 
 export function GuaranteeSection() {
   return (
-    <section aria-labelledby="guarantee-heading" className="bg-tp-paper py-20 lg:py-24">
-      <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
+    <section aria-labelledby="guarantee-heading" className="relative bg-tp-paper py-20 lg:py-24 overflow-hidden">
+      {/* Decorative background blobs */}
+      <div aria-hidden="true" className="tp-blob tp-blob-beige w-[500px] h-[500px] -top-48 -left-48" />
+      <div aria-hidden="true" className="tp-blob tp-blob-bronze w-[400px] h-[400px] -bottom-32 -right-40" />
+      <div className="relative mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
         <div className="scroll-fade-in mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-tp-bronze-ink">
             Our Guarantee
