@@ -85,6 +85,9 @@ export default function LandingPage() {
       {/* 5. Categories */}
       <Categories />
 
+      {/* Section divider */}
+      <div className="mx-auto max-w-4xl px-8" aria-hidden="true"><div className="gold-line" /></div>
+
       {/* 6. Pricing */}
       <Pricing />
 
@@ -94,6 +97,9 @@ export default function LandingPage() {
       {/* 8. Guarantee + Trust */}
       <GuaranteeSection />
       <TrustBadges />
+
+      {/* Section divider */}
+      <div className="mx-auto max-w-4xl px-8" aria-hidden="true"><div className="gold-line" /></div>
 
       {/* 9. Review Platforms */}
       <ReviewPlatforms />

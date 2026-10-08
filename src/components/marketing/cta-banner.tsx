@@ -33,7 +33,11 @@ export function CTABanner() {
             />
 
             <div className="relative z-10">
-              <span className="inline-flex items-center gap-2 rounded-full border border-tp-bronze/40 bg-tp-bronze/15 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-tp-bronze">
+              <span className="inline-flex items-center gap-2 rounded-full border border-tp-bronze/40 bg-tp-bronze/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-tp-bronze">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="animate-pulse" aria-hidden="true">
+                  <circle cx="7" cy="7" r="3" fill="currentColor" opacity="0.6" />
+                  <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1" opacity="0.3" />
+                </svg>
                 Ready when you are
               </span>
               <h2 className="mt-5 font-display text-[30px] sm:text-[40px] font-normal text-tp-paper leading-tight tracking-[-0.03em]">

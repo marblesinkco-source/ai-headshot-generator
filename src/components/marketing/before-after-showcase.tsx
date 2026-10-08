@@ -158,6 +158,11 @@ function ComparisonSlider({
 export function BeforeAfterShowcase() {
   return (
     <section className="bg-tp-paper py-20 lg:py-24" aria-labelledby="before-after-heading">
+      {/* Gold separator line */}
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="gold-line mb-16 lg:mb-20" aria-hidden="true" />
+      </div>
+
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="scroll-fade-in mx-auto max-w-2xl text-center">
           <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-tp-bronze-ink">
@@ -169,9 +174,9 @@ export function BeforeAfterShowcase() {
           >
             See the Transformation
           </h2>
-          <p className="mt-4 text-[15px] text-tp-muted leading-relaxed">
+          <p className="mt-4 text-[15px] text-tp-muted leading-relaxed max-w-lg mx-auto">
             Drag the slider to compare. From an everyday selfie to a polished,
-            professional headshot.
+            studio-quality headshot — powered by AI.
           </p>
         </div>
 
@@ -179,10 +184,10 @@ export function BeforeAfterShowcase() {
           {homeBeforeAfterPairs.map(({ label, detail, before, after }, idx) => (
             <figure
               key={label}
-              className="scroll-fade-in overflow-hidden rounded-tp-card border border-tp-line bg-white tp-lift hover:shadow-lg hover:shadow-tp-bronze/10 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+              className="scroll-fade-in group overflow-hidden rounded-tp-card border border-tp-line bg-white tp-lift hover:border-tp-bronze/40 hover:shadow-lg hover:shadow-tp-bronze/10 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
             >
               <ComparisonSlider label={label} before={before} after={after} priority={idx === 0} />
-              <figcaption className="border-t border-tp-line px-4 py-4 text-center">
+              <figcaption className="border-t border-tp-line px-4 py-4 text-center transition-colors group-hover:border-tp-bronze/30">
                 <span className="block text-sm font-medium text-tp-ink">{label}</span>
                 <span className="mt-1 block text-xs text-tp-muted">{detail}</span>
               </figcaption>
@@ -195,8 +200,11 @@ export function BeforeAfterShowcase() {
         </p>
 
         <p className="mt-3 text-center">
-          <Link href="/samples" className="rounded-tp-button text-sm text-tp-bronze-ink hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2">
-            Browse AI headshot samples →
+          <Link href="/samples" className="inline-flex items-center gap-1 rounded-tp-button text-sm font-medium text-tp-bronze-ink hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2">
+            Browse AI headshot samples
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+              <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </Link>
         </p>
       </div>

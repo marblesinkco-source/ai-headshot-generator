@@ -64,7 +64,7 @@ export function GuaranteeSection() {
   return (
     <section aria-labelledby="guarantee-heading" className="bg-tp-paper py-20 lg:py-24">
       <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="scroll-fade-in mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-tp-bronze-ink">
             Our Guarantee
           </p>
@@ -80,7 +80,7 @@ export function GuaranteeSection() {
           {items.map(({ Icon, title, description }) => (
             <li
               key={title}
-              className="scroll-fade-in rounded-tp-card border border-tp-line bg-white p-6 lg:p-8"
+              className="scroll-fade-in rounded-tp-card border border-tp-line bg-white p-6 lg:p-8 tp-lift hover:border-tp-bronze/30 hover:shadow-lg hover:shadow-tp-bronze/8 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
             >
               <span className="flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-beige text-tp-bronze-ink">
                 <Icon />

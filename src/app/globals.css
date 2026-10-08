@@ -83,6 +83,9 @@
   .gold-line {
     @apply h-px bg-gradient-to-r from-transparent via-tp-bronze/60 to-transparent;
   }
+  .gold-line-thick {
+    @apply h-[2px] bg-gradient-to-r from-transparent via-tp-bronze/40 to-transparent;
+  }
 
   /* Gold swoosh decorative element */
   .gold-swoosh {

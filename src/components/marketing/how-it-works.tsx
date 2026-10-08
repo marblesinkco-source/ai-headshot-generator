@@ -37,7 +37,7 @@ export function HowItWorks() {
       id="how-it-works"
       className="scroll-mt-24 mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 py-20 lg:py-24"
     >
-      <div className="flex justify-between items-end gap-4 mb-8 lg:mb-12">
+      <div className="scroll-fade-in flex justify-between items-end gap-4 mb-8 lg:mb-12">
         <div>
           <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-tp-bronze-ink">
             3 simple steps
