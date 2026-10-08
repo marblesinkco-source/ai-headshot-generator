@@ -104,22 +104,29 @@ export function ReviewPlatforms() {
     <section
       ref={ref}
       aria-labelledby="review-platforms-heading"
-      className={`bg-tp-paper py-12 sm:py-16 ${visible ? 'tp-rp-visible' : ''}`}
+      className={`relative bg-tp-paper py-20 lg:py-24 overflow-hidden ${visible ? 'tp-rp-visible' : ''}`}
     >
       <style>{css}</style>
-      <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
+      {/* Decorative blobs */}
+      <div aria-hidden="true" className="tp-blob tp-blob-beige w-[500px] h-[500px] -top-40 -left-40" />
+      <div aria-hidden="true" className="tp-blob tp-blob-bronze w-[400px] h-[400px] -bottom-32 -right-32" />
+
+      <div className="relative mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
+        <div className="scroll-fade-in mx-auto max-w-2xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-tp-bronze-ink">
+            Community
+          </p>
           <h2
             id="review-platforms-heading"
-            className="font-display font-normal text-2xl text-tp-ink sm:text-3xl"
+            className="font-display mt-4 text-[30px] font-normal leading-tight tracking-[-0.03em] text-tp-ink sm:text-[40px]"
           >
             What Our Users Say
           </h2>
-          <p className="mt-3 font-sans text-sm text-tp-muted sm:text-base">
+          <p className="mt-4 text-[15px] text-tp-muted leading-relaxed max-w-lg mx-auto">
             Check our profiles on trusted review platforms and share your experience
           </p>
         </div>
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5 lg:gap-6">
+        <div className="mt-10 sm:mt-14 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5 lg:gap-6">
           {PLATFORMS.map((platform, i) => (
             <a
               key={platform.name}

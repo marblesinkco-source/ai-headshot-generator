@@ -230,18 +230,22 @@ export function AIProcessDemo() {
   const paneClass = ['a-dot1', 'a-dot2', 'a-dot3'];
 
   return (
-    <section id="how-it-works" className="tp-demo bg-tp-beige py-16 sm:py-20 scroll-mt-20" aria-labelledby="ai-process-demo-heading">
+    <section id="how-it-works" className="tp-demo relative bg-tp-beige py-20 lg:py-24 scroll-mt-20 overflow-hidden" aria-labelledby="ai-process-demo-heading">
       <style>{CSS}</style>
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-widest text-tp-bronze-ink">See AI in Action</p>
+      {/* Decorative blobs */}
+      <div aria-hidden="true" className="tp-blob tp-blob-bronze w-[450px] h-[450px] -top-40 -right-40 opacity-40" />
+      <div aria-hidden="true" className="tp-blob tp-blob-beige w-[400px] h-[400px] -bottom-32 -left-32 opacity-30" />
+
+      <div className="relative mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
+        <div className="scroll-fade-in mx-auto max-w-2xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-tp-bronze-ink">See AI in Action</p>
           <h2
             id="ai-process-demo-heading"
-            className="mt-3 font-display text-3xl font-normal text-tp-black sm:text-4xl lg:text-5xl"
+            className="font-display mt-4 text-[30px] font-normal leading-tight tracking-[-0.03em] text-tp-ink sm:text-[40px]"
           >
             See How It Works
           </h2>
-          <p className="mt-4 text-base text-tp-muted sm:text-lg">
+          <p className="mt-4 text-[15px] text-tp-muted leading-relaxed max-w-lg mx-auto">
             From selfies to studio-quality headshots in three simple steps
           </p>
         </div>
@@ -297,11 +301,11 @@ export function AIProcessDemo() {
           })}
         </ol>
 
-        <div className="mt-12 text-center sm:mt-14">
-          <p className="font-display text-2xl font-normal text-tp-black sm:text-3xl">Ready to try?</p>
+        <div className="mt-14 text-center sm:mt-16">
+          <p className="font-display text-[26px] font-normal leading-tight tracking-[-0.03em] text-tp-ink sm:text-[34px]">Ready to try?</p>
           <Link
             href="/headshots"
-            className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'mt-5')}
+            className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'mt-6')}
           >
             Create your headshots
           </Link>
