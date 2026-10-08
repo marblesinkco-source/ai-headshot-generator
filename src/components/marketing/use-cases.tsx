@@ -99,7 +99,7 @@ export function UseCases() {
               style={{ '--reveal-i': i } as CSSProperties}
             >
               <div className="tp-lift h-full rounded-tp-card border border-tp-line bg-white p-6">
-                <span className="flex h-11 w-11 items-center justify-center rounded-tp-button bg-tp-paper text-tp-bronze-ink">
+                <span className="tp-icon-hover flex h-11 w-11 items-center justify-center rounded-tp-button bg-tp-paper text-tp-bronze-ink">
                   <Icon className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
                 </span>
                 <h3 className="mt-4 text-lg font-semibold text-tp-ink">{title}</h3>

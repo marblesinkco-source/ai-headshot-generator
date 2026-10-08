@@ -422,6 +422,88 @@ dialog.tp-nav-dialog[open][data-closing]::backdrop {
   .tp-rotating-word { transition: none; }
 }
 
+/* ── Premium micro-interactions ─────────────────────────────── */
+
+/* Gold line grow animation on scroll */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .gold-line {
+      animation: goldLineGrow ease-out both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 100%;
+    }
+    @keyframes goldLineGrow {
+      from { transform: scaleX(0); }
+      to   { transform: scaleX(1); }
+    }
+  }
+}
+
+/* Card hover glow — subtle bronze accent ring on hover */
+@media (hover: hover) {
+  .tp-lift:hover {
+    border-color: rgba(201, 169, 138, 0.35);
+  }
+}
+
+/* Link underline slide-in effect */
+.tp-link-fancy {
+  position: relative;
+  text-decoration: none;
+}
+.tp-link-fancy::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1.5px;
+  background: var(--tp-bronze);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (hover: hover) {
+  .tp-link-fancy:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/* Section heading reveal with slight scale */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .tp-heading-reveal {
+      animation: headingReveal ease-out both;
+      animation-timeline: view();
+      animation-range: entry 5% entry 70%;
+    }
+    @keyframes headingReveal {
+      from { opacity: 0; transform: translateY(12px) scale(0.98); }
+      to   { opacity: 1; transform: none; }
+    }
+  }
+}
+
+/* Smooth button press feedback */
+.tp-btn-press {
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+.tp-btn-press:active {
+  transform: scale(0.97);
+}
+
+/* Icon container subtle rotate on hover */
+@media (hover: hover) {
+  .tp-icon-hover:hover {
+    transform: rotate(-6deg) scale(1.08);
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+.tp-icon-hover {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 [id] {
   scroll-margin-top: 5rem;
 }
