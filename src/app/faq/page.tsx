@@ -39,6 +39,8 @@ export default function FAQPage() {
     .filter((g) => g.items.length > 0);
 
   return (
+    <>
+    <Header />
     <main id="main-content" className="min-h-screen">
       <FAQSchema items={faqs.map((f) => ({ question: f.question, answer: f.answer }))} />
       <BreadcrumbSchema
@@ -47,8 +49,6 @@ export default function FAQPage() {
           { name: 'FAQ', url: `${siteConfig.url}/faq` },
         ]}
       />
-      <Header />
-
       {/* Hero */}
       <section className="relative overflow-hidden pt-16">
         <div className="pointer-events-none absolute inset-0 bg-grid" />
@@ -118,7 +118,8 @@ export default function FAQPage() {
         </div>
       </section>
 
-      <Footer />
     </main>
+    <Footer />
+    </>
   );
 }

@@ -78,6 +78,8 @@ const faqs = [
 
 export default function ContactPage() {
   return (
+    <>
+    <Header />
     <main id="main-content" className="min-h-screen">
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
@@ -105,8 +107,6 @@ export default function ContactPage() {
           }),
         }}
       />
-      <Header />
-
       {/* Hero */}
       <section className="relative overflow-hidden pt-16">
         <div className="pointer-events-none absolute inset-0 bg-grid" />
@@ -241,7 +241,8 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <Footer />
     </main>
+    <Footer />
+    </>
   );
 }

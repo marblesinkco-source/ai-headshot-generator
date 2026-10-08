@@ -147,6 +147,8 @@ const commitments = [
 
 export default function AboutPage() {
   return (
+    <>
+    <Header />
     <main id="main-content" className="min-h-screen bg-tp-paper">
       <BreadcrumbSchema
         items={[
@@ -155,8 +157,6 @@ export default function AboutPage() {
         ]}
       />
       <AboutPageSchema />
-      <Header />
-
       {/* Hero */}
       <section className="relative overflow-hidden pt-16">
         <div className="pointer-events-none absolute inset-0 bg-grid" />
@@ -443,7 +443,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <Footer />
     </main>
+    <Footer />
+    </>
   );
 }

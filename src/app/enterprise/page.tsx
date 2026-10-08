@@ -186,6 +186,8 @@ const useCases = [
 
 export default function EnterprisePage() {
   return (
+    <>
+    <Header />
     <main id="main-content" className="min-h-screen">
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
@@ -196,8 +198,6 @@ export default function EnterprisePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
-      <Header />
-
       {/* Hero — premium dark */}
       <section className="relative overflow-hidden bg-tp-black pt-16">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-tp-bronze/8 via-transparent to-transparent" />
@@ -675,7 +675,8 @@ export default function EnterprisePage() {
         </div>
       </section>
 
-      <Footer />
     </main>
+    <Footer />
+    </>
   );
 }

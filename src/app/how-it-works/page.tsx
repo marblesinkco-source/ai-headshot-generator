@@ -243,6 +243,8 @@ const howToJsonLd = {
 
 export default function HowItWorksPage() {
   return (
+    <>
+    <Header />
     <main id="main-content" className="min-h-screen">
       <script
         type="application/ld+json"
@@ -252,7 +254,6 @@ export default function HowItWorksPage() {
         { name: 'Home', url: siteConfig.url },
         { name: 'How TailorPic Works: Upload Selfies, Get AI Headshots', url: `${siteConfig.url}/how-it-works` },
       ]} />
-      <Header />
       <FAQSchema items={faqs} />
 
       {/* Hero */}
@@ -687,7 +688,8 @@ export default function HowItWorksPage() {
       </section>
 
       <StickyCTA href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" />
-      <Footer />
     </main>
+    <Footer />
+    </>
   );
 }

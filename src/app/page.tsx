@@ -7,7 +7,7 @@ import { BeforeAfterShowcase } from '@/components/marketing/before-after-showcas
 import { Categories } from '@/components/marketing/categories';
 import { faqs } from '@/config/faqs';
 import { Footer } from '@/components/marketing/footer';
-import { WebsiteSchema, FAQSchema, SoftwareApplicationSchema, HowToSchema } from '@/components/structured-data';
+import { WebsiteSchema, FAQSchema, SoftwareApplicationSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
   title: 'TailorPic — AI Headshots & Professional Photos | From $1.99',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       'Upload a few selfies, get studio-quality AI headshots. Professional, creative & business styles.', path: '/' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic — AI Headshots & Professional Photos | From $1.99', description:
       'Upload a few selfies, get studio-quality AI headshots. Starting at $1.99.' }),
-  alternates: { canonical: 'https://www.tailorpic.com' },
+  alternates: { canonical: '/' },
 };
 
 function SectionSkeleton({ height }: { height: string }) {
@@ -66,14 +66,12 @@ const StickyCTA = dynamic(
 
 export default function LandingPage() {
   return (
+    <>
+    <Header />
     <main id="main-content" className="min-h-screen">
       <WebsiteSchema />
       <FAQSchema items={faqs} />
       <SoftwareApplicationSchema />
-      <HowToSchema />
-
-      {/* 1. Header */}
-      <Header />
 
       {/* 2. Hero */}
       <Hero />
@@ -109,8 +107,9 @@ export default function LandingPage() {
       {/* 12. Sticky CTA (fixed bottom bar) */}
       <StickyCTA />
 
-      {/* 13. Footer */}
-      <Footer />
     </main>
+    {/* 13. Footer */}
+    <Footer />
+    </>
   );
 }

@@ -154,6 +154,8 @@ export default async function CategoryPage({ params }: Props) {
   };
 
   return (
+    <>
+    <Header />
     <main id="main-content" className="min-h-screen">
       <script
         type="application/ld+json"
@@ -164,8 +166,6 @@ export default async function CategoryPage({ params }: Props) {
         { name: 'Home', url: siteConfig.url },
         { name: cat.name, url: `${siteConfig.url}/${cat.slug}` },
       ]} />
-      <Header />
-
       {/* ── HERO ── */}
       <section className="relative overflow-hidden bg-tp-paper">
         <div className="pointer-events-none absolute inset-0 bg-grid opacity-40" />
@@ -707,7 +707,8 @@ export default async function CategoryPage({ params }: Props) {
         </div>
       </section>
 
-      <Footer />
     </main>
+    <Footer />
+    </>
   );
 }

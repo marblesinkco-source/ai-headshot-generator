@@ -28,7 +28,12 @@ const photoTypeLinks: FooterLink[] = [
   { label: 'Graduation', href: '/graduation-photos' },
   { label: 'AI Avatars', href: '/avatars' },
   { label: 'Pet Portraits', href: '/pet-portraits' },
-  { label: 'All Photo Types', href: '/pricing' },
+  { label: 'Baby Shower', href: '/baby-shower-invitations' },
+  { label: 'Holiday Cards', href: '/holiday-cards' },
+  { label: 'Couple & Engagement', href: '/couple-engagement-photos' },
+  { label: 'Virtual Staging', href: '/virtual-staging' },
+  { label: 'Product Photography', href: '/product-photography' },
+  { label: 'All Categories', href: '/samples' },
   { label: 'Photo Styles', href: '/styles' },
 ];
 
@@ -43,7 +48,6 @@ const resourceLinks: FooterLink[] = [
   { label: 'Industries', href: '/industries' },
   { label: 'Use Cases', href: '/use-cases' },
   { label: 'For Students', href: '/students' },
-  { label: 'For Teams', href: '/team-headshots' },
   { label: 'Team Use Cases', href: '/teams' },
   { label: 'Headshot Sizes', href: '/headshot-sizes' },
   { label: 'Developer API', href: '/developer-api' },
@@ -210,7 +214,7 @@ export function Footer() {
           <span className="text-[12px] text-tp-beige/60">
             &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </span>
-          <span className="text-[12px] text-tp-beige/60">TailorPic Inc.</span>
+          <span className="text-[12px] text-tp-beige/60">{siteConfig.name}</span>
         </div>
       </div>
     </footer>

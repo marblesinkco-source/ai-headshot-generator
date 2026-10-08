@@ -71,12 +71,12 @@ const pricingFaqs = [
   {
     question: 'How does this compare with a studio photoshoot?',
     answer:
-      `A traditional headshot session typically runs $200-$500 once you add photographer, studio, styling and travel. A TailorPic package starts at ${BASE_PRICE_DISPLAY} with no studio visit or scheduling.`,
+      `A traditional studio headshot session varies widely by photographer and location. A TailorPic package starts at ${BASE_PRICE_DISPLAY} with no studio visit or scheduling needed.`,
   },
   {
     question: 'What do credit packages save me?',
     answer:
-      'Credit packages save 20%, 40% or 52% compared with buying single packages, depending on the pack you choose. Credits are a one-time purchase, not a subscription.',
+      'Credit packages offer a lower per-photo cost compared with buying single packages. The more credits you buy, the more you save. Credits are a one-time purchase, not a subscription, and are valid for 12 months.',
   },
   {
     question: 'Are there any hidden fees?',
@@ -91,7 +91,7 @@ const pricingFaqs = [
 ];
 
 const comparisonRows: { label: string; individual: boolean | string; team: boolean | string; studio: boolean | string }[] = [
-  { label: 'Starting price', individual: BASE_PRICE_DISPLAY, team: `${TEAM_LARGE}-${TEAM_SMALL} per person`, studio: '$200-$500' },
+  { label: 'Starting price', individual: BASE_PRICE_DISPLAY, team: `${TEAM_LARGE}-${TEAM_SMALL} per person`, studio: 'Varies by photographer' },
   { label: 'Payment model', individual: 'One-time', team: 'One-time', studio: 'Per session' },
   { label: 'No studio visit or scheduling', individual: true, team: true, studio: false },
   { label: 'Delivered in hours', individual: true, team: true, studio: false },
@@ -152,6 +152,8 @@ export const metadata: Metadata = {
 
 export default function PricingPage() {
   return (
+    <>
+    <Header />
     <main id="main-content" className="min-h-screen">
       <PricingProductSchema />
       <BreadcrumbSchema
@@ -160,8 +162,6 @@ export default function PricingPage() {
           { name: `TailorPic Pricing: AI Headshots from ${BASE_PRICE_DISPLAY}`, url: `${siteConfig.url}/pricing` },
         ]}
       />
-      <Header />
-
       {/* Hero */}
       <section className="relative overflow-hidden pt-16">
         <div className="pointer-events-none absolute inset-0 bg-grid" />
@@ -392,7 +392,7 @@ export default function PricingPage() {
                 <h3 className="text-sm font-semibold text-tp-ink">Credit Pack</h3>
               </div>
               <p className="mt-3 text-sm leading-relaxed text-tp-muted">
-                Buy credits in bulk at a discount (up to 52% off). Use them across multiple orders and categories — credits never expire.
+                Buy credits in bulk at a lower per-photo cost. Use them across multiple orders and categories — credits are valid for 12 months.
               </p>
             </div>
           </div>
@@ -447,9 +447,9 @@ export default function PricingPage() {
       </section>
       <FAQSchema items={pricingFaqs} />
 
-      <Footer />
-
       <PricingComparisonBar />
     </main>
+    <Footer />
+    </>
   );
 }

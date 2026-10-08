@@ -5,7 +5,7 @@ const badges = [
   { kind: 'auto-delete' as const, label: 'Photos Auto-Deleted in 30 Days' },
   { kind: 'commercial' as const, label: 'Full Commercial Rights' },
   { kind: 'one-time' as const, label: 'One-Time Payment' },
-  { kind: 'guarantee' as const, label: 'Satisfaction Guarantee' },
+  { kind: 'guarantee' as const, label: 'Quality Promise' },
 ];
 
 export function TrustBadges() {

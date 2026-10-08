@@ -31,7 +31,7 @@ export const CREDIT_PACKAGES: CreditPackage[] = [
     currency: 'usd',
     validityDays: 365,
     perCreditPrice: 98,
-    savings: 'Save 20% vs. single packs',
+    savings: 'Best per-credit value at this tier',
     features: [
       '50 credits — any category',
       'Use across all 12 photo types',
@@ -47,7 +47,7 @@ export const CREDIT_PACKAGES: CreditPackage[] = [
     currency: 'usd',
     validityDays: 365,
     perCreditPrice: 75,
-    savings: 'Save 40% vs. single packs',
+    savings: 'Best value for regular use',
     recommended: true,
     badge: 'Best Value',
     features: [
@@ -67,7 +67,7 @@ export const CREDIT_PACKAGES: CreditPackage[] = [
     currency: 'usd',
     validityDays: 365,
     perCreditPrice: 60,
-    savings: 'Save 52% vs. single packs',
+    savings: 'Lowest per-credit cost',
     badge: 'For Teams',
     features: [
       '500 credits — any category',
@@ -82,5 +82,9 @@ export const CREDIT_PACKAGES: CreditPackage[] = [
   },
 ];
 
-/** Average price per photo across all single packages (~$1.25/photo) */
+/**
+ * Reference price for comparison UI. This is an approximate average
+ * across the headshots package ladder, NOT a verified per-photo price.
+ * Do not use in customer-facing savings claims without recalculating.
+ */
 export const AVERAGE_SINGLE_PRICE_PER_PHOTO = 125; // cents
