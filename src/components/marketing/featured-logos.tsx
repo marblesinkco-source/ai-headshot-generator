@@ -120,9 +120,9 @@ function Row({ duplicate = false }: { duplicate?: boolean }) {
         <li
           key={item.key}
           style={item.color ? ({ color: item.color } as CSSProperties) : undefined}
-          className="inline-flex shrink-0 items-center gap-2.5 whitespace-nowrap rounded-tp-button border border-tp-line bg-white px-5 py-3 font-sans text-sm font-medium text-tp-ink"
+          className="group inline-flex shrink-0 items-center gap-2.5 whitespace-nowrap rounded-tp-button border border-tp-line/60 bg-white/80 backdrop-blur-sm px-5 py-3 shadow-sm transition-all duration-200 hover:border-tp-bronze/30 hover:shadow-md hover:shadow-tp-bronze/5 motion-reduce:transition-none font-sans text-sm font-medium text-tp-ink"
         >
-          <span className={item.color ? '' : 'text-tp-bronze-ink'}>{item.icon}</span>
+          <span className={`transition-transform duration-200 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100 ${item.color ? '' : 'text-tp-bronze-ink'}`}>{item.icon}</span>
           <span className="text-tp-ink">{item.label}</span>
         </li>
       ))}
@@ -158,10 +158,11 @@ export function FeaturedLogos() {
     <section
       ref={ref}
       aria-label="Find us on"
-      className={`bg-tp-paper py-10 sm:py-12 ${visible ? 'tp-fl-visible' : ''}`}
+      className={`relative overflow-hidden bg-tp-paper py-10 sm:py-12 ${visible ? 'tp-fl-visible' : ''}`}
     >
       <style>{css}</style>
-      <div className="tp-fl-wrap mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
+      <div aria-hidden="true" className="tp-blob tp-blob-beige w-[400px] h-[400px] -top-32 -left-32" />
+      <div className="tp-fl-wrap relative mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-tp-bronze-ink">
             Find Us On

@@ -87,16 +87,19 @@ function StatItem({
   return (
     <div
       style={{ '--i': index } as React.CSSProperties}
-      className={`tp-stat-item flex flex-col items-center text-center`}
+      className="tp-stat-item"
     >
-      <span className="tp-stat-icon mb-3 flex h-14 w-14 items-center justify-center rounded-full border border-tp-line bg-gradient-to-br from-tp-paper to-tp-beige/50 shadow-sm transition-all duration-300 group-hover:border-tp-bronze/40">
+      <div className="group h-full rounded-tp-card border border-tp-line/40 bg-white/60 p-6 text-center flex flex-col items-center">
+      <span className="tp-stat-icon flex h-14 w-14 items-center justify-center rounded-full border border-tp-line bg-gradient-to-br from-tp-paper to-tp-beige/50 shadow-sm transition-all duration-300 group-hover:border-tp-bronze/40">
         <Icon className="h-6 w-6 text-tp-bronze-ink" strokeWidth={1.5} aria-hidden="true" />
       </span>
+      <div className="mx-auto my-3 h-px w-8 bg-tp-line" aria-hidden="true" />
       <p className="font-display text-[36px] sm:text-[44px] font-normal tracking-[-0.03em] text-tp-ink leading-none">
         {value === 0 ? 'Fast' : <>{prefix}{animate ? count : 0}{suffix}</>}
       </p>
       <p className="mt-1.5 text-sm font-semibold text-tp-ink tracking-wide">{label}</p>
       <p className="mt-1 text-xs text-tp-muted">{description}</p>
+      </div>
     </div>
   );
 }
@@ -144,11 +147,17 @@ export function AnimatedStats() {
   return (
     <section
       ref={ref}
-      aria-label="TailorPic key features"
-      className={`py-16 sm:py-20 ${visible ? 'tp-stats-visible' : ''}`}
+      aria-labelledby="stats-heading"
+      className={`relative overflow-hidden bg-tp-paper py-16 sm:py-20 ${visible ? 'tp-stats-visible' : ''}`}
     >
       <style>{css}</style>
-      <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
+      <div aria-hidden="true" className="tp-blob tp-blob-beige w-[450px] h-[450px] -top-32 -right-32" />
+      <div aria-hidden="true" className="tp-blob tp-blob-bronze w-[400px] h-[400px] -bottom-28 -left-28" />
+      <div className="relative mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
+        <div className="scroll-fade-in mx-auto mb-10 max-w-2xl text-center sm:mb-14">
+          <p className="uppercase text-[11px] font-semibold tracking-[0.25em] text-tp-bronze-ink">Key Features</p>
+          <h2 id="stats-heading" className="mt-3 font-display text-[30px] sm:text-[40px] font-normal tracking-[-0.03em] text-tp-ink leading-tight">The Numbers That Matter</h2>
+        </div>
         <div className="grid grid-cols-2 gap-8 sm:gap-10 lg:grid-cols-4 lg:gap-12">
           {stats.map((stat, i) => (
             <StatItem key={stat.label} {...stat} index={i} animate={visible} />

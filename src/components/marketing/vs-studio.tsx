@@ -77,7 +77,7 @@ export function VsStudio() {
           <div className="grid grid-cols-[1fr_1fr_1fr] gap-0 mb-1">
             <div />
             <div className="text-center">
-              <span className="inline-flex items-center gap-2 rounded-t-tp-button bg-tp-ink px-4 py-2.5 text-sm font-semibold text-tp-paper">
+              <span className="inline-flex items-center gap-2 rounded-t-tp-button bg-tp-ink px-4 py-2.5 text-sm font-semibold text-tp-paper shadow-lg shadow-tp-black/20">
                 <svg className="h-4 w-4 text-tp-bronze" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z" />
                   <path d="m8.75 12 2.25 2.25L15.5 9.75" />
@@ -103,7 +103,7 @@ export function VsStudio() {
                 <div className="px-4 py-4 sm:px-6">
                   <span className="text-sm font-semibold text-tp-ink">{row.feature}</span>
                 </div>
-                <div className={`px-4 py-4 sm:px-6 text-center border-x border-tp-line/50 ${row.highlight ? 'bg-tp-beige/20' : ''}`}>
+                <div className="px-4 py-4 sm:px-6 text-center border-x border-tp-line/50 bg-tp-beige/15">
                   <span className="inline-flex items-center gap-1.5 text-sm text-tp-ink font-medium">
                     <CheckIcon />
                     <span>{row.tailorpic}</span>
@@ -114,6 +114,11 @@ export function VsStudio() {
                 </div>
               </div>
             ))}
+            <div className="border-t border-tp-line bg-gradient-to-r from-tp-beige/30 via-tp-bronze/5 to-transparent px-4 py-3 sm:px-6">
+              <p className="text-center text-[13px] font-semibold text-tp-bronze-ink">
+                Starting from a fraction of the cost — with more photos and zero scheduling
+              </p>
+            </div>
           </div>
         </div>
 
