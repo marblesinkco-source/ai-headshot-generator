@@ -142,7 +142,7 @@ const socialLinks = [
 function FooterColumn({ title, links, children }: { title: string; links: FooterLink[]; children?: ReactNode }) {
   return (
     <nav aria-label={title}>
-      <h3 className="mb-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-tp-bronze">{title}</h3>
+      <h3 className="mb-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-tp-bronze">{title}</h3>
       <ul className="space-y-0 lg:space-y-0.5">
         {links.map((link) => (
           <li key={link.href}>
@@ -157,31 +157,54 @@ function FooterColumn({ title, links, children }: { title: string; links: Footer
   );
 }
 
+const bottomLegalLinks: FooterLink[] = legalLinks.filter((l) =>
+  ['/privacy', '/terms', '/cookie-policy', '/refund-policy'].includes(l.href),
+);
+
 export function Footer() {
   return (
-    <footer className="border-t border-tp-line bg-tp-ink" aria-label="Site footer">
+    <footer className="relative overflow-hidden bg-tp-ink text-tp-paper" aria-label="Site footer">
+      {/* Top gradient divider */}
+      <div
+        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-tp-bronze/40 to-transparent"
+        aria-hidden="true"
+      />
+
+      {/* Decorative blobs */}
+      <div
+        className="pointer-events-none absolute -left-32 -top-32 h-[420px] w-[420px] rounded-full bg-tp-bronze/10 blur-3xl"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute -bottom-40 -right-24 h-[460px] w-[460px] rounded-full bg-tp-bronze-ink/20 blur-3xl"
+        aria-hidden="true"
+      />
+
       {/* Brand + newsletter */}
-      <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 pt-12 lg:pt-16">
-        <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 lg:items-center">
+      <div className="relative mx-auto max-w-[1320px] px-4 pt-14 sm:px-7 lg:px-14 lg:pt-20">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div>
             <Image
               src="/brand/tailorpic/logo/tailorpic-horizontal-bronze.svg"
               alt="TailorPic"
               width={1000}
               height={230}
-              className="mb-4 h-7 w-auto"
+              className="mb-5 h-10 w-auto lg:h-12"
               loading="lazy"
-              sizes="122px"
+              sizes="210px"
             />
-            <p className="max-w-md text-[13px] leading-relaxed text-tp-beige/70">{siteConfig.description}</p>
-            <div className="mt-5 flex items-center gap-3">
+            <p className="font-display text-2xl font-normal leading-snug text-tp-paper sm:text-3xl">
+              Portraits, tailored to you.
+            </p>
+            <p className="mt-3 max-w-md text-[13px] leading-relaxed text-tp-beige/70">{siteConfig.description}</p>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center justify-center rounded-tp-button border border-tp-muted/40 text-tp-beige/70 transition-colors hover:border-tp-bronze/60 hover:text-tp-bronze focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze"
+                  className="group flex h-11 w-11 items-center justify-center rounded-tp-button border border-tp-bronze/30 bg-tp-paper/[0.03] text-tp-paper/80 transition-all duration-200 hover:-translate-y-0.5 hover:border-tp-bronze hover:bg-tp-bronze/10 hover:text-tp-bronze focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze"
                   aria-label={`TailorPic on ${social.label}`}
                 >
                   {social.icon}
@@ -189,13 +212,20 @@ export function Footer() {
               ))}
             </div>
           </div>
-          <EmailCapture />
+
+          <div className="rounded-tp-card border border-tp-bronze/20 bg-tp-paper/[0.04] p-5 shadow-[0_0_0_1px_rgba(201,169,138,0.06)] backdrop-blur-sm sm:p-7">
+            <EmailCapture />
+          </div>
         </div>
       </div>
 
       {/* Link columns */}
-      <div className="mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 py-12 lg:py-14">
-        <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-5">
+      <div className="relative mx-auto max-w-[1320px] px-4 py-12 sm:px-7 lg:px-14 lg:py-16">
+        <div
+          className="mb-12 h-px bg-gradient-to-r from-transparent via-tp-bronze/40 to-transparent"
+          aria-hidden="true"
+        />
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 lg:grid-cols-5">
           <FooterColumn title="Product" links={productLinks} />
           <FooterColumn title="Photo Types" links={photoTypeLinks} />
           <FooterColumn title="Resources" links={resourceLinks} />
@@ -209,12 +239,22 @@ export function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-tp-muted/30">
-        <div className="mx-auto flex max-w-[1320px] flex-col items-center justify-between gap-2 px-4 py-5 text-center sm:flex-row sm:px-7 sm:text-left lg:px-14">
-          <span className="text-[12px] text-tp-beige/60">
+      <div className="relative border-t border-tp-bronze/15">
+        <div className="mx-auto flex max-w-[1320px] flex-col items-center justify-between gap-3 px-4 py-6 text-center sm:px-7 md:flex-row md:text-left lg:px-14">
+          <span className="text-[12px] text-tp-beige/70">
             &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </span>
-          <span className="text-[12px] text-tp-beige/60">{siteConfig.name}</span>
+          <nav aria-label="Legal" className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1">
+            {bottomLegalLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-[12px] text-tp-beige/70 transition-colors hover:text-tp-bronze focus-visible:outline-none focus-visible:text-tp-bronze focus-visible:underline"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
         </div>
       </div>
     </footer>

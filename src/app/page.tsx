@@ -74,6 +74,14 @@ const AnimatedStats = dynamic(
   () => import('@/components/marketing/animated-stats').then((m) => m.AnimatedStats),
   { loading: () => <SectionSkeleton height="h-[200px] sm:h-[240px]" /> }
 );
+const FeaturedLogos = dynamic(
+  () => import('@/components/marketing/featured-logos').then((m) => m.FeaturedLogos),
+  { loading: () => <SectionSkeleton height="h-[160px]" /> }
+);
+const UseCases = dynamic(
+  () => import('@/components/marketing/use-cases').then((m) => m.UseCases),
+  { loading: () => <SectionSkeleton height="h-[500px] md:h-[400px]" /> }
+);
 
 export default function LandingPage() {
   return (
@@ -87,6 +95,9 @@ export default function LandingPage() {
 
       {/* 2. Hero */}
       <Hero />
+
+      {/* 2.5. Featured Logos / Trust Strip */}
+      <FeaturedLogos />
 
       {/* 3. Before / After Showcase */}
       <BeforeAfterShowcase />
@@ -103,6 +114,9 @@ export default function LandingPage() {
       {/* 5.5. TailorPic vs Studio Comparison */}
       <div className="mx-auto max-w-4xl px-8" aria-hidden="true"><div className="gold-line" /></div>
       <VsStudio />
+
+      {/* 5.6. Use Cases */}
+      <UseCases />
 
       {/* Section divider */}
       <div className="mx-auto max-w-4xl px-8" aria-hidden="true"><div className="gold-line" /></div>
