@@ -16,13 +16,13 @@ export interface BlogListingPost {
   readingTime: string;
 }
 
-function BlogCover({ slug, className }: { slug: string; className?: string }) {
+function BlogCover({ slug, title, className }: { slug: string; title?: string; className?: string }) {
   const coverUrl = getBlogCover(slug);
   return (
     <div className={`relative overflow-hidden bg-tp-paper ${className ?? ''}`}>
       <Image
         src={coverUrl}
-        alt=""
+        alt={title ? `Cover image for ${title}` : ''}
         fill
         sizes="(min-width: 1024px) 50vw, (min-width: 640px) 50vw, 100vw"
         className="object-cover"
@@ -144,7 +144,7 @@ export function BlogListing({ posts }: { posts: BlogListingPost[] }) {
       {/* Featured post */}
       <article className="group relative overflow-hidden rounded-tp-card border border-tp-line bg-white shadow-sm transition-all hover:border-tp-bronze/40 hover:shadow-lg">
         <div className="grid md:grid-cols-2">
-          <BlogCover slug={featured.slug} className="aspect-[16/9] md:aspect-auto md:min-h-[320px]" />
+          <BlogCover slug={featured.slug} title={featured.title} className="aspect-[16/9] md:aspect-auto md:min-h-[320px]" />
           <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
             <span className="mb-3 inline-block w-fit rounded-tp-button bg-tp-bronze px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
               Featured Post
@@ -218,7 +218,7 @@ export function BlogListing({ posts }: { posts: BlogListingPost[] }) {
             href={`/blog/${post.slug}`}
             className="group rounded-tp-card border border-tp-line bg-white shadow-sm transition-all hover:border-tp-bronze/40 hover:shadow-lg"
           >
-            <BlogCover slug={post.slug} className="aspect-[16/9] rounded-t-tp-card" />
+            <BlogCover slug={post.slug} title={post.title} className="aspect-[16/9] rounded-t-tp-card" />
             <div className="p-5">
               <div className="mb-3 flex flex-wrap gap-2">
                 {post.tags.slice(0, 2).map((tag) => (

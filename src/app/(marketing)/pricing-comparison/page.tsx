@@ -103,7 +103,7 @@ const comparisonRows: ComparisonRow[] = [
     feature: 'Turnaround time',
     traditional: '1 - 2 weeks',
     otherAI: '1 - 24 hours',
-    tailorpic: 'Most orders within 2 hours',
+    tailorpic: 'Most orders within a few hours',
   },
   {
     feature: 'Travel required',
@@ -163,7 +163,7 @@ const roiReasons = [
     icon: Clock,
     title: 'Time Savings',
     description:
-      'No scheduling, commuting, or waiting for retouching. Upload your selfies and receive your headshots, with most orders completed within 2 hours.',
+      'No scheduling, commuting, or waiting for retouching. Upload your selfies and receive your headshots, with most orders completed within a few hours.',
   },
   {
     icon: Sparkles,
@@ -197,7 +197,7 @@ const faqs = [
   },
   {
     question: 'How fast will I get my headshots?',
-    answer: 'Most orders are completed within about 2 hours. A traditional studio typically takes one to two weeks including scheduling and retouching.',
+    answer: 'Most orders are completed within a few hours. Some packages list a 24-hour delivery window. A traditional studio typically takes one to two weeks including scheduling and retouching.',
   },
   {
     question: 'Is there a satisfaction guarantee?',
@@ -300,7 +300,7 @@ export default function PricingComparisonPage() {
               </li>
               <li className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-tp-bronze" aria-hidden="true" />
-                Most orders in ~2 hours
+                Most orders in a few hours
               </li>
               <li className="flex items-center gap-2">
                 <Sparkles className="h-4 w-4 text-tp-bronze" aria-hidden="true" />
@@ -654,7 +654,7 @@ export default function PricingComparisonPage() {
               Professional Headshots from {BASE_PRICE_DISPLAY}
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige/80">
-              One-time payment, most orders ready in about 2 hours, and a
+              One-time payment, most orders ready within a few hours, and a
               satisfaction guarantee. Pick the package that fits your needs.
             </p>
             <Link

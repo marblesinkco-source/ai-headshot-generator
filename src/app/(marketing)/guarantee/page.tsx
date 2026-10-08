@@ -45,7 +45,7 @@ const guaranteeSteps = [
     step: '1',
     icon: Sparkles,
     title: 'Upload & Generate',
-    desc: 'Upload your selfies and choose your style. Our AI generates your professional headshots in under two hours.',
+    desc: 'Upload your selfies and choose your style. Our AI generates your professional headshots — most orders are ready within a few hours.',
   },
   {
     step: '2',
@@ -256,7 +256,7 @@ export default function GuaranteePage() {
                 'bg-tp-bronze text-tp-black hover:bg-tp-bronze/90'
               )}
             >
-              Get Started for {BASE_PRICE_DISPLAY} <ArrowRight className="h-4 w-4" />
+              Get Started from {BASE_PRICE_DISPLAY} <ArrowRight className="h-4 w-4" />
             </Link>
             <p className="mt-4 text-sm text-tp-beige/50">
               One-time payment. Satisfaction guaranteed.{' '}

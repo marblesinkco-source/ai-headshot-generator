@@ -19,7 +19,7 @@ const faqItems = [
   {
     question: 'How much do team headshots cost?',
     answer:
-      'An individual order is $1.99. Small teams of 5-15 people are $39 per person and companies of 16-50 people are $29 per person. For 50+ people we offer custom enterprise pricing. Final pricing is confirmed at checkout.',
+      'Individual packages start from $1.99 for 1 photo, with larger packages available up to 160 photos. Small teams of 5-15 people are $39 per person and companies of 16-50 people are $29 per person, with 40+ headshots per person included. For 50+ people we offer custom enterprise pricing. Final pricing is confirmed at checkout.',
   },
   {
     question: 'How does the team ordering process work?',
@@ -44,7 +44,7 @@ const faqItems = [
   {
     question: 'How many people do I need for a team plan?',
     answer:
-      'Team pricing starts at 5 people ($39 per person for 5-15 people, $29 per person for 16-50). Orders of 1-4 people use the individual price of $1.99 per person. For 50+ people, request a demo for custom pricing.',
+      'Team pricing starts at 5 people ($39 per person for 5-15 people, $29 per person for 16-50). Orders of 1-4 people use individual packages starting from $1.99. For 50+ people, request a demo for custom pricing.',
   },
   {
     question: 'How long does it take to get team headshots?',
@@ -258,9 +258,9 @@ export default function TeamHeadshotsPage() {
               {
                 name: 'Individual',
                 size: '1-4 people',
-                price: '$1.99',
+                price: 'From $1.99',
                 unit: '/person',
-                features: ['Per-person ordering', 'Choose your style', 'High-resolution downloads'],
+                features: ['Packages from 1 to 160 photos', 'Choose your style', 'High-resolution downloads'],
                 cta: 'Get Started',
                 href: '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dlinkedin-team',
                 featured: false,
@@ -332,7 +332,7 @@ export default function TeamHeadshotsPage() {
             ))}
           </div>
           <p className="mt-8 text-center text-sm text-tp-ink">
-            All plans include 40+ headshots per person, commercial license, and satisfaction guarantee.
+            Team plans include 40+ headshots per person, commercial license, and satisfaction guarantee. Individual orders start from 1 photo.
           </p>
           <p className="mt-2 text-center text-xs text-tp-muted">
             Final pricing is confirmed at checkout.
@@ -405,13 +405,13 @@ export default function TeamHeadshotsPage() {
             {[
               {
                 name: 'Individual Plan',
-                price: '$1.99',
-                note: 'one-time, per person',
+                price: 'From $1.99',
+                note: 'one-time, per person — packages from 1 to 160 photos',
                 featured: false,
                 cta: 'Get Started',
                 href: '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dlinkedin-team',
                 rows: [
-                  { text: '40+ headshots per person', on: true },
+                  { text: '1 to 160 headshots depending on package', on: true },
                   { text: 'Choose your own style', on: true },
                   { text: 'High-resolution downloads', on: true },
                   { text: 'Commercial license', on: true },
@@ -716,7 +716,7 @@ export default function TeamHeadshotsPage() {
           </h2>
           <p className="mt-4 text-lg text-tp-muted max-w-xl mx-auto">
             Skip the photo studio. Get consistent, professional headshots for
-            everyone on your team in minutes.
+            everyone on your team — most orders ready within a few hours.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link

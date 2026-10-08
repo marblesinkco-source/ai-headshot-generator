@@ -99,9 +99,9 @@ export const faqs = [
   },
   {
     category: 'Refund',
-    question: 'How long do I have to request a refund?',
+    question: 'How do I request help if I am not satisfied?',
     answer:
-      'Contact our support team and we will work with you to resolve the issue under our satisfaction guarantee.',
+      'Contact our support team with your order details. Under our satisfaction guarantee, we will work with you to regenerate your photos within your package at no extra cost. See our terms of service for the full policy.',
   },
   {
     category: 'Teams',
@@ -184,7 +184,7 @@ export const faqs = [
     category: 'Refund',
     question: 'What does the satisfaction guarantee cover?',
     answer:
-      'If you are not happy with your photos, reach out to our support team. We will work with you to regenerate your photos or find another resolution. See our refund policy for full details.',
+      'Our satisfaction guarantee covers the quality of your AI-generated photos. If the results do not meet your expectations, we will regenerate them within your package at no extra cost. Contact support and we will work with you to resolve the issue. See our terms of service for the full policy.',
   },
 ];
 

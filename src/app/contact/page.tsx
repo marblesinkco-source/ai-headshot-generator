@@ -52,11 +52,11 @@ const trustSignals = [
 const faqs = [
   {
     q: 'How long does it take to get my photos?',
-    a: 'Most orders are ready in under 2 hours. Complex styles may take a bit longer.',
+    a: 'Most orders are ready within a few hours. Some packages list a 24-hour delivery window — check your package details at checkout.',
   },
   {
     q: 'Can I get a refund if I am not satisfied?',
-    a: 'Yes. We offer a satisfaction guarantee. Contact our support team for details.',
+    a: 'We offer a satisfaction guarantee — if you are not happy with your results, we will regenerate your photos within your package at no extra cost. Contact our support team and we will work with you to resolve the issue. See our terms for full details.',
   },
   {
     q: 'How many photos do I need to upload?',

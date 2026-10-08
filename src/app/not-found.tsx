@@ -1,4 +1,9 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
 const suggestions = [
   { href: '/how-it-works', title: 'How it works', desc: 'See how TailorPic creates your headshot.' },

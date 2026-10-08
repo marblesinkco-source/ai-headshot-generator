@@ -72,7 +72,7 @@ const cookieTable: CookieRow[] = [
 
 export default function CookiePolicyPage() {
   return (
-    <article className="prose prose-gray max-w-none prose-headings:text-tp-ink prose-a:text-tp-bronze-ink">
+    <article className="prose max-w-none text-tp-muted prose-headings:text-tp-ink prose-a:text-tp-bronze-ink prose-strong:text-tp-ink">
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },

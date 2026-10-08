@@ -94,7 +94,7 @@ const comparisonRows: { label: string; individual: boolean | string; team: boole
   { label: 'Starting price', individual: BASE_PRICE_DISPLAY, team: `${TEAM_LARGE}-${TEAM_SMALL} per person`, studio: 'Varies by photographer' },
   { label: 'Payment model', individual: 'One-time', team: 'One-time', studio: 'Per session' },
   { label: 'No studio visit or scheduling', individual: true, team: true, studio: false },
-  { label: 'Delivered in hours', individual: true, team: true, studio: false },
+  { label: 'Typically delivered within hours', individual: true, team: true, studio: false },
   { label: 'Consistent look across a team', individual: false, team: true, studio: 'Extra coordination' },
   { label: 'Full commercial rights', individual: true, team: true, studio: 'Varies' },
 ];
@@ -113,7 +113,7 @@ const includedFeatures = [
     items: [
       'Upload 4-10 selfies from your phone',
       'No studio visit, no scheduling',
-      'Delivered in hours',
+      'Typically delivered within hours',
     ],
   },
   {
@@ -176,7 +176,7 @@ export default function PricingPage() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-muted">
             One-time payment, no subscriptions. Choose your category, pick a package,
-            and get studio-quality AI photos delivered in hours. Individual packages start at {BASE_PRICE_DISPLAY};
+            and get studio-quality AI photos typically delivered within hours. Individual packages start at {BASE_PRICE_DISPLAY};
             teams pay {TEAM_SMALL} or {TEAM_LARGE} per person.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -243,7 +243,8 @@ export default function PricingPage() {
               </thead>
               <tbody className="divide-y divide-tp-line">
                 {HEADSHOT_PACKAGES.map((p) => {
-                  const delivery = '~2 hours';
+                  const has24h = p.features.some((f) => f.toLowerCase().includes('24-hour'));
+                  const delivery = has24h ? 'Up to 24 hours' : '~2 hours';
                   return (
                   <tr
                     key={p.id}
