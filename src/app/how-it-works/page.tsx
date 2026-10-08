@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BeforeAfterIllustration } from '@/components/marketing/illustrations';
-import { BreadcrumbSchema, FAQSchema, HowToSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { siteConfig } from '@/config/site';
@@ -255,7 +255,6 @@ export default function HowItWorksPage() {
         { name: 'How TailorPic Works: Upload Selfies, Get AI Headshots', url: `${siteConfig.url}/how-it-works` },
       ]} />
       <FAQSchema items={faqs} />
-      <HowToSchema />
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-tp-black pt-16">

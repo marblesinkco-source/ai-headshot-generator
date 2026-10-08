@@ -7,7 +7,7 @@ import { BeforeAfterShowcase } from '@/components/marketing/before-after-showcas
 import { Categories } from '@/components/marketing/categories';
 import { faqs } from '@/config/faqs';
 import { Footer } from '@/components/marketing/footer';
-import { WebsiteSchema, FAQSchema, SoftwareApplicationSchema, OrganizationSchema } from '@/components/structured-data';
+import { WebsiteSchema, FAQSchema, SoftwareApplicationSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
   title: 'TailorPic — AI Headshots & Professional Photos | From $1.99',
@@ -95,7 +95,6 @@ export default function LandingPage() {
     <Header />
     <main id="main-content" className="min-h-screen">
       <WebsiteSchema />
-      <OrganizationSchema />
       <FAQSchema items={faqs} />
       <SoftwareApplicationSchema />
 
