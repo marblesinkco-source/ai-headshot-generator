@@ -13,9 +13,9 @@ const stats = [
   {
     icon: Camera,
     value: 160,
-    suffix: '+',
+    suffix: '',
     prefix: '',
-    label: 'Photos Per Set',
+    label: 'Photos Per Package',
     description: 'Up to 160 studio-quality portraits',
   },
   {
@@ -23,16 +23,16 @@ const stats = [
     value: 12,
     suffix: '',
     prefix: '',
-    label: 'Photo Styles',
+    label: 'Photo Categories',
     description: 'Professional, creative & lifestyle',
   },
   {
     icon: Clock,
-    value: 0,
+    value: 30,
     suffix: '',
     prefix: '',
-    label: 'Delivery',
-    description: 'Most orders ready within hours',
+    label: 'Day Auto-Delete',
+    description: 'Your photos are deleted after 30 days',
   },
   {
     icon: Sparkles,
