@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   description:
     'Compare TailorPic vs ProfilePhoto.ai for AI photos. TailorPic starts at $1.99 with photos, 12 categories.',
   alternates: { canonical: '/vs/profilephoto' },
-  openGraph: generateOGMetadata({ title: 'TailorPic vs ProfilePhoto.ai: AI Headshot Comparison', description: 'Compare TailorPic and ProfilePhoto.ai for AI photos. Pricing, styles, delivery, and guarantees side by side.', path: '/vs/profilephoto', type: 'vs' }),
-  twitter: generateTwitterMetadata({ title: 'TailorPic vs ProfilePhoto.ai: AI Headshot Comparison', description: 'Compare TailorPic and ProfilePhoto.ai for AI photos. Pricing, styles, delivery, and guarantees side by side.', type: 'vs' }),
+  openGraph: generateOGMetadata({ title: 'TailorPic vs ProfilePhoto.ai: AI Headshot Comparison', description: 'Compare TailorPic and ProfilePhoto.ai for AI photos. Pricing, styles, delivery, and quality commitment side by side.', path: '/vs/profilephoto', type: 'vs' }),
+  twitter: generateTwitterMetadata({ title: 'TailorPic vs ProfilePhoto.ai: AI Headshot Comparison', description: 'Compare TailorPic and ProfilePhoto.ai for AI photos. Pricing, styles, delivery, and quality commitment side by side.', type: 'vs' }),
 };
 
 /* ------------------------------------------------------------------ */

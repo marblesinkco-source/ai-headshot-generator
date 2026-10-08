@@ -60,7 +60,7 @@ const differences = [
   { title: "Vivid looks, practical price", body: "TailorPic gives you a wide set of looks across 12 categories, with one-time packages starting at $1.99." },
   { title: "More than one use case", body: "A single upload can produce business, dating, creative, pet and product images." },
   { title: "Trained on you", body: "The LoRA model learns from your own photos, which helps keep the result recognisable across styles." },
-  { title: "Guarantee", body: "A quality commitment lets you try TailorPic with limited risk." },
+  { title: "Quality commitment", body: "A quality commitment lets you try TailorPic with limited risk." },
 ];
 
 const useCases = {

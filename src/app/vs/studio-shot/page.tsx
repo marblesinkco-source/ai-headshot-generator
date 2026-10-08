@@ -54,7 +54,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 const differences = [
   { title: "Price", body: "TailorPic packages start from $1.99, compared with StudioShot's approximate $29 starting price." },
   { title: "Volume vs variety", body: "StudioShot advertises 100+ headshots. TailorPic delivers photos but spreads them across 12 categories, from business to dating and creative looks." },
-  { title: "Delivery", body: "TailorPic results are ready within hours for most orders; guaranteed within 24 hours. Check StudioShot's site for its current turnaround times for each plan." },
+  { title: "Delivery", body: "TailorPic results are ready within hours for most orders. Check StudioShot's site for its current turnaround times for each plan." },
   { title: "Personalization", body: "TailorPic trains a personal LoRA model on your photos for a close likeness." },
 ];
 
@@ -76,7 +76,7 @@ const useCases = {
 const faqs = [
   { question: "Is TailorPic cheaper than StudioShot?", answer: "Our entry price is lower, but the packages are not like-for-like: TailorPic starts from $1.99 for a single photo and goes up to 160 photos, while StudioShot starts at approximately $29. Pricing may change, so check their site." },
   { question: "How many photos does StudioShot include?", answer: "StudioShot advertises 100+ headshots. TailorPic includes photos across 12 categories." },
-  { question: "Which delivers faster?", answer: "TailorPic results are ready within hours for most orders; guaranteed within 24 hours. Check StudioShot's site for its current delivery times." },
+  { question: "Which delivers faster?", answer: "TailorPic results are ready within hours for most orders. Check StudioShot's site for its current delivery times." },
   { question: "Is TailorPic a subscription?", answer: "No. TailorPic packages are one-time payments starting at $1.99 with no recurring fees." },
 ];
 

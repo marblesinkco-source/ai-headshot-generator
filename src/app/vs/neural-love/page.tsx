@@ -112,7 +112,7 @@ const differences = [
   },
   {
     "title": "Trade-off on breadth",
-    "body": "Neural.love covers many image tasks. TailorPic delivers within hours (most orders; guaranteed within 24 hours) but does one thing: headshots."
+    "body": "Neural.love covers many image tasks. TailorPic delivers within hours for most orders but does one thing: headshots."
   }
 ];
 

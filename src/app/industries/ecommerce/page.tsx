@@ -129,7 +129,7 @@ export default function EcommerceLandingPage() {
               'White Background Ready',
               'Within hours',
               'Commercial License',
-              'Satisfaction Guaranteed',
+              'Quality Commitment',
             ].map((text) => (
               <div key={text} className="flex items-center justify-center gap-2 text-xs font-medium text-tp-muted">
                 <Check className="h-4 w-4 text-tp-bronze" />

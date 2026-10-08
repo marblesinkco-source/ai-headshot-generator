@@ -107,7 +107,7 @@ const faqs = [
       "Yes. New residents, fellows, or attending physicians can each upload their own selfies and choose the same style. Your team page stays consistent without a group photo session.",
   },
   {
-    question: "How much does it cost, and is there a guarantee?",
+    question: "How much does it cost, and what is your quality commitment?",
     answer:
       "Headshots start at $1.99 per person with no subscription required. Every order includes full commercial usage rights.",
   },
@@ -196,7 +196,7 @@ export default function DoctorsIndustryPage() {
           </span>
           <span className="flex items-center gap-1.5">
             <CheckCircle className="h-4 w-4 text-tp-bronze" />
-            Satisfaction Guaranteed
+            Quality Commitment
           </span>
         </div>
       </section>

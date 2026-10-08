@@ -112,7 +112,7 @@ const differences = [
   },
   {
     "title": "Trade-off on control",
-    "body": "PhotoDirector gives detailed editing control over any photo. TailorPic delivers within hours (most orders; guaranteed within 24 hours) and is focused on people photos."
+    "body": "PhotoDirector gives detailed editing control over any photo. TailorPic delivers within hours for most orders and is focused on people photos."
   }
 ];
 

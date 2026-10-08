@@ -85,7 +85,7 @@ const trialComparison = [
   { label: 'Price', free: 'Free tools: $0', paid: 'from $1.99 per person' },
   { label: 'Teams', free: 'Usually one photo at a time', paid: '$39 (5-15 people) or $29 (16-50 people)' },
   { label: 'Output', free: 'Often a few photos, sometimes watermarked', paid: 'photos across 12 categories' },
-  { label: 'Risk', free: 'No payment, but no guarantee of quality', paid: 'One-time payment, no subscription' },
+  { label: 'Risk', free: 'No payment, but no quality commitment', paid: 'One-time payment, no subscription' },
   { label: 'Subscription', free: 'Varies by tool', paid: 'None. One-time payment, no subscription to cancel' },
 ];
 

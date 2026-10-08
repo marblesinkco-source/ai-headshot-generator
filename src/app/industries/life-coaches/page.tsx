@@ -197,7 +197,7 @@ export default function LifeCoachesIndustryPage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Satisfaction Guaranteed
+            Quality Commitment
           </span>
         </div>
       </section>

@@ -111,7 +111,7 @@ const faqItems = [
   },
   {
     q: 'What is your refund policy?',
-    a: 'We offer a satisfaction guarantee on every package. If you are not happy with your headshots, reach out and we will work with you to make it right. See our guarantee page for details.',
+    a: 'We offer a quality commitment on every package. If you are not happy with your headshots, reach out and we will work with you to make it right. See our guarantee page for details.',
   },
   {
     q: 'Is my data safe?',
@@ -463,7 +463,7 @@ export default function HeadshotsLandingPage() {
               <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-tp-black mb-4">
                 <CheckCircle className="h-6 w-6 text-tp-bronze" />
               </div>
-              <h3 className="text-sm font-semibold text-tp-ink">Satisfaction Guarantee</h3>
+              <h3 className="text-sm font-semibold text-tp-ink">Quality Commitment</h3>
               <p className="mt-2 text-sm text-tp-muted leading-relaxed">
                 Not happy with your headshots? We&apos;ll work with you until you are.
               </p>

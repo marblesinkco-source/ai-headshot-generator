@@ -14,7 +14,7 @@ const FaqSearch = dynamic(() => import('@/components/marketing/faq-search'));
 const DESCRIPTION = 'Answers about TailorPic AI headshots: how it works, pricing, privacy and delivery time. Find what you need quickly.';
 
 export const metadata: Metadata = {
-  title: { absolute: 'TailorPic FAQ: Pricing, Privacy, Delivery & Guarantee' },
+  title: { absolute: 'TailorPic FAQ: Pricing, Privacy & Delivery' },
   description: DESCRIPTION,
   alternates: { canonical: '/faq' },
   openGraph: generateOGMetadata({

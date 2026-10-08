@@ -8,17 +8,17 @@ import { Footer } from '@/components/marketing/footer';
 export const metadata: Metadata = {
   title: 'Refund & Satisfaction Policy — TailorPic',
   description:
-    'Learn about TailorPic\'s satisfaction guarantee, regeneration policy, and refund terms.',
+    'Learn about TailorPic\'s quality commitment, regeneration policy, and refund terms.',
   openGraph: generateOGMetadata({
     title: 'Refund & Satisfaction Policy — TailorPic',
     description:
-      'Learn about TailorPic\'s satisfaction guarantee, regeneration policy, and refund terms.',
+      'Learn about TailorPic\'s quality commitment, regeneration policy, and refund terms.',
     path: '/refund-policy',
   }),
   twitter: generateTwitterMetadata({
     title: 'Refund & Satisfaction Policy — TailorPic',
     description:
-      'Learn about TailorPic\'s satisfaction guarantee, regeneration policy, and refund terms.',
+      'Learn about TailorPic\'s quality commitment, regeneration policy, and refund terms.',
   }),
   alternates: { canonical: '/refund-policy' },
 };
@@ -40,7 +40,7 @@ export default function RefundPolicyPage() {
 
         <div className="prose-tp mt-10 space-y-8 text-sm leading-relaxed text-tp-muted [&_h2]:mt-10 [&_h2]:text-lg [&_h2]:font-semibold [&_h2]:text-tp-ink [&_h3]:mt-6 [&_h3]:text-base [&_h3]:font-semibold [&_h3]:text-tp-ink [&_strong]:text-tp-ink [&_a]:text-tp-bronze-ink [&_a]:underline">
 
-          <h2>Satisfaction Guarantee</h2>
+          <h2>Quality Commitment</h2>
           <p>
             We are committed to delivering studio-quality results. If you are not satisfied
             with your AI-generated headshots, we offer the following remedies:

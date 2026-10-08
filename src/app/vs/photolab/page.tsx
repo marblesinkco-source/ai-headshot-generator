@@ -112,7 +112,7 @@ const differences = [
   },
   {
     "title": "Trade-off on speed",
-    "body": "Effects apply quickly. TailorPic results are ready within hours for most orders; guaranteed within 24 hours, since a dedicated model is trained on your uploads."
+    "body": "Effects apply quickly. TailorPic results are ready within hours for most orders, since a dedicated model is trained on your uploads."
   }
 ];
 

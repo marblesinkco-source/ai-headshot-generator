@@ -112,7 +112,7 @@ const differences = [
   },
   {
     "title": "Trade-off on speed",
-    "body": "ClipDrop tools are quick. TailorPic results are ready within hours for most orders; guaranteed within 24 hours, since a dedicated model is trained on your uploads."
+    "body": "ClipDrop tools are quick. TailorPic results are ready within hours for most orders, since a dedicated model is trained on your uploads."
   }
 ];
 

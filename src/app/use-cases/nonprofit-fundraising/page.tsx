@@ -147,8 +147,8 @@ const faqs = [
     answer: "Most orders arrive within hours after you upload your selfies.",
   },
   {
-    question: "Is there a satisfaction guarantee?",
-    answer: "Yes. We offer a satisfaction guarantee. If you are not happy with your results, contact our support team.",
+    question: "What is your quality commitment?",
+    answer: "We stand behind our quality commitment. If you are not happy with your results, contact our support team.",
   },
 ];
 
@@ -219,7 +219,7 @@ export default function NonprofitFundraisingUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            {"Satisfaction Guaranteed"}
+            {"Quality Commitment"}
           </span>
         </div>
       </section>

@@ -112,7 +112,7 @@ const differences = [
   },
   {
     "title": "Trade-off on instant play",
-    "body": "Prequel effects are immediate and fun to experiment with. TailorPic results are ready within hours for most orders; guaranteed within 24 hours."
+    "body": "Prequel effects are immediate and fun to experiment with. TailorPic results are ready within hours for most orders."
   }
 ];
 

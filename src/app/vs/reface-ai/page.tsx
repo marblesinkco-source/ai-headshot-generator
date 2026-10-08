@@ -112,7 +112,7 @@ const differences = [
   },
   {
     "title": "Trade-off on speed",
-    "body": "Face swap apps are fast and playful. TailorPic results are ready within hours for most orders; guaranteed within 24 hours, since a dedicated model is trained on your uploads."
+    "body": "Face swap apps are fast and playful. TailorPic results are ready within hours for most orders, since a dedicated model is trained on your uploads."
   }
 ];
 

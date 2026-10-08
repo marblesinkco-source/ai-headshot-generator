@@ -112,7 +112,7 @@ const differences = [
   },
   {
     "title": "Trade-off on turnaround",
-    "body": "TailorPic trains a dedicated model and results are ready within hours for most orders; guaranteed within 24 hours. Compare HeadMagic's current turnaround on their site."
+    "body": "TailorPic trains a dedicated model and results are ready within hours for most orders. Compare HeadMagic's current turnaround on their site."
   }
 ];
 

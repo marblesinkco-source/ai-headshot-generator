@@ -19,20 +19,20 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Quality & Satisfaction Guarantee | TailorPic' },
+  title: { absolute: 'Quality Commitment | TailorPic' },
   description:
     'TailorPic is committed to delivering studio-quality AI headshots. Not happy with your results? We will regenerate your photos until they look great.',
   alternates: { canonical: '/guarantee' },
   openGraph: generateOGMetadata({
-    title: 'Quality & Satisfaction Guarantee | TailorPic',
+    title: 'Quality Commitment | TailorPic',
     description:
-      'Studio-quality AI headshots, guaranteed. We work with you until every photo is right.',
+      'Studio-quality AI headshots. We work with you until every photo is right.',
     path: '/guarantee',
   }),
   twitter: generateTwitterMetadata({
-    title: 'Quality & Satisfaction Guarantee | TailorPic',
+    title: 'Quality Commitment | TailorPic',
     description:
-      'Studio-quality AI headshots, guaranteed. We work with you until every photo is right.',
+      'Studio-quality AI headshots. We work with you until every photo is right.',
   }),
 };
 
@@ -78,12 +78,12 @@ const faqItems = [
     a: 'You can regenerate photos within your purchased package as many times as needed until you are satisfied with the results.',
   },
   {
-    q: 'What does the satisfaction guarantee cover?',
-    a: 'Our guarantee covers the quality of the AI-generated headshots. If the results do not meet professional standards, we will work with you on regenerations or adjustments until the photos are right.',
+    q: 'What does the quality commitment cover?',
+    a: 'Our commitment covers the quality of the AI-generated headshots. If the results do not meet professional standards, we will work with you on regenerations or adjustments until the photos are right.',
   },
   {
     q: 'What if I purchased a team plan?',
-    a: `Team and enterprise plans are also covered by our satisfaction guarantee. Contact us at ${siteConfig.supportEmail} and we will work with you to resolve any concerns.`,
+    a: `Team and enterprise plans are also covered by our quality commitment. Contact us at ${siteConfig.supportEmail} and we will work with you to resolve any concerns.`,
   },
   {
     q: 'How do I contact support?',
@@ -101,7 +101,7 @@ export default function GuaranteePage() {
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
-          { name: 'Satisfaction Guarantee', url: `${siteConfig.url}/guarantee` },
+          { name: 'Quality Commitment', url: `${siteConfig.url}/guarantee` },
         ]}
       />
       <FAQSchema
@@ -122,7 +122,7 @@ export default function GuaranteePage() {
             Our Promise
           </p>
           <h1 className="font-display font-normal text-4xl sm:text-5xl lg:text-6xl text-white leading-tight tracking-tight">
-            Satisfaction Guaranteed
+            Quality You Can Count On
           </h1>
           <p className="mt-5 text-lg text-tp-beige/70 max-w-2xl mx-auto leading-relaxed">
             We are committed to delivering studio-quality results. If your
@@ -167,7 +167,7 @@ export default function GuaranteePage() {
             <div className="rounded-tp-card border border-tp-line bg-white p-7">
               <ShieldCheck className="h-8 w-8 text-tp-bronze mb-4" />
               <h3 className="text-lg font-semibold text-tp-ink mb-3">
-                Satisfaction Guarantee
+                Quality Commitment
               </h3>
               <ul className="space-y-2.5">
                 {coveredItems.map((item) => (
@@ -246,7 +246,7 @@ export default function GuaranteePage() {
             Start with Confidence
           </h2>
           <p className="mt-4 text-tp-beige/60">
-            Studio-quality headshots, backed by our satisfaction guarantee.
+            Studio-quality headshots, backed by our quality commitment.
           </p>
           <div className="mt-8">
             <Link
@@ -259,7 +259,7 @@ export default function GuaranteePage() {
               Get Started from {BASE_PRICE_DISPLAY} <ArrowRight className="h-4 w-4" />
             </Link>
             <p className="mt-4 text-sm text-tp-beige/50">
-              One-time payment. Satisfaction guaranteed.{' '}
+              One-time payment. Quality you can count on.{' '}
               <Link href="/pricing" className="underline underline-offset-2 hover:text-tp-beige">
                 See pricing
               </Link>{' '}

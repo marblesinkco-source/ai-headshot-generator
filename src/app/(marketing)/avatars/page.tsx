@@ -43,7 +43,7 @@ const AVATAR_REGISTER_HREF = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fca
 export const metadata: Metadata = {
   title: 'AI Avatars — Your Face in Every Universe | TailorPic',
   description:
-    `Transform your selfies into 50 jaw-dropping AI avatars. Fantasy, anime, cyberpunk, renaissance — all with your exact likeness. From ${AVATAR_PRICE}. satisfaction guarantee.`,
+    `Transform your selfies into 50 jaw-dropping AI avatars. Fantasy, anime, cyberpunk, renaissance — all with your exact likeness. From ${AVATAR_PRICE}. Quality commitment.`,
   alternates: { canonical: '/avatars' },
   openGraph: generateOGMetadata({
     title: 'AI Avatars — Your Face in Every Universe',
@@ -161,12 +161,12 @@ const faqs = [
   {
     question: 'How long does delivery take?',
     answer:
-      'Most avatars are ready within hours. We guarantee delivery within 24 hours and email you as soon as they are ready to download.',
+      'Most avatars are ready within hours. We email you as soon as they are ready to download.',
   },
   {
-    question: "What is your satisfaction guarantee?",
+    question: "What is your quality commitment?",
     answer:
-      'We offer a satisfaction guarantee. If you are not happy with your avatars, contact support and we will make it right. Your uploaded photos are also automatically deleted after 30 days.',
+      'We offer a quality commitment. If you are not happy with your avatars, contact support and we will make it right. Your uploaded photos are also automatically deleted after 30 days.',
   },
 ];
 
@@ -232,7 +232,7 @@ export default function AvatarsPage() {
               </Link>
             </div>
             <p className="mt-8 text-sm text-white/80">
-              🔒 Your photos deleted in 30 days · satisfaction guarantee · Results within hours
+              🔒 Your photos deleted in 30 days · quality commitment · Results within hours
             </p>
           </div>
         </section>
@@ -517,7 +517,7 @@ export default function AvatarsPage() {
               </Link>
             </div>
             <p className="mt-6 text-sm text-white/80">
-              satisfaction guarantee · Results within hours
+              quality commitment · Results within hours
             </p>
           </div>
         </section>

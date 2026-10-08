@@ -144,7 +144,7 @@ const included = [
   { icon: Palette, text: 'Multiple styles and outfit options' },
   { icon: Camera, text: 'Clean, professional backgrounds' },
   { icon: Clock, text: 'Ready in minutes — no scheduling' },
-  { icon: Shield, text: 'satisfaction guarantee' },
+  { icon: Shield, text: 'quality commitment' },
   { icon: Star, text: 'HD quality for print and digital' },
   { icon: Download, text: 'Unlimited downloads of your photos' },
 ];

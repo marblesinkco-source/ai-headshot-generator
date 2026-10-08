@@ -4,7 +4,7 @@ import { Shield, Lock, Clock } from 'lucide-react';
 const badges = [
   {
     Icon: Shield,
-    label: 'Satisfaction Guarantee',
+    label: 'Quality Commitment',
     href: '/guarantee',
   },
   {

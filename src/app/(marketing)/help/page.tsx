@@ -149,9 +149,9 @@ const helpCategories: HelpCategory[] = [
           'Yes. You can request a full data export from your account settings. This includes your uploaded photos, generated headshots, and account information in a downloadable archive.',
       },
       {
-        question: 'What is your satisfaction guarantee?',
+        question: 'What is your quality commitment?',
         answer:
-          'We offer a satisfaction guarantee. If you are not happy with the results, contact our support team and we will work with you to resolve the issue or process a refund.',
+          'We offer a quality commitment. If you are not happy with the results, contact our support team and we will work with you to resolve the issue.',
       },
       {
         question: 'How do I delete my account?',

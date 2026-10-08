@@ -44,7 +44,7 @@ function ReceiptIcon() {
 const items = [
   {
     Icon: ShieldIcon,
-    title: 'Satisfaction Guarantee',
+    title: 'Quality Commitment',
     description: 'Not happy with your results? We’ll work with you to regenerate until you are.',
   },
   {
@@ -69,13 +69,13 @@ export function GuaranteeSection() {
       <div className="relative mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
         <div className="scroll-fade-in mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-tp-bronze-ink">
-            Our Guarantee
+            Our Commitment
           </p>
           <h2
             id="guarantee-heading"
             className="font-display mt-4 text-[30px] font-normal leading-tight tracking-[-0.03em] text-tp-ink sm:text-[40px]"
           >
-            Your Satisfaction, Guaranteed
+            Your Satisfaction, Our Priority
           </h2>
         </div>
 
@@ -99,7 +99,7 @@ export function GuaranteeSection() {
             href="/guarantee"
             className="text-sm font-semibold text-tp-bronze-ink underline-offset-4 hover:underline"
           >
-            Read our full guarantee &rarr;
+            Read our quality commitment &rarr;
           </Link>
         </div>
       </div>

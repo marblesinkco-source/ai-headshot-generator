@@ -56,7 +56,7 @@ const faqs = [
   },
   {
     q: 'Can I get a refund if I am not satisfied?',
-    a: 'We offer a satisfaction guarantee — if you are not happy with your results, we will regenerate your photos within your package at no extra cost. Contact our support team and we will work with you to resolve the issue. See our terms for full details.',
+    a: 'We offer a quality commitment — if you are not happy with your results, we will regenerate your photos within your package at no extra cost. Contact our support team and we will work with you to resolve the issue. See our terms for full details.',
   },
   {
     q: 'How many photos do I need to upload?',
@@ -228,7 +228,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="font-display font-normal text-4xl text-tp-ink">Ready to create your photos?</h2>
           <p className="mt-4 text-lg text-tp-muted">
-            Upload your selfies and get studio-quality AI photos, backed by our satisfaction guarantee.
+            Upload your selfies and get studio-quality AI photos, backed by our quality commitment.
           </p>
           <div className="mt-8">
             <Link

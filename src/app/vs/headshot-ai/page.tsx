@@ -75,7 +75,7 @@ const useCases = {
 
 const faqs = [
   { question: "Is TailorPic cheaper than Headshot AI?", answer: "Our entry price is lower, but the packages are not like-for-like: TailorPic starts from $1.99 for a single photo and goes up to 160 photos, while Headshot AI starts at approximately $29. Pricing may change, so check their site." },
-  { question: "Which is faster, TailorPic or Headshot AI?", answer: "Headshot AI advertises quick delivery. TailorPic results are ready within hours for most orders; guaranteed within 24 hours, since it fine-tunes a LoRA model on your photos." },
+  { question: "Which is faster, TailorPic or Headshot AI?", answer: "Headshot AI advertises quick delivery. TailorPic results are ready within hours for most orders, since it fine-tunes a LoRA model on your photos." },
   { question: "Which has more styles?", answer: "TailorPic offers 12 categories. Headshot AI has a more limited set of style options." },
   { question: "Is TailorPic a subscription?", answer: "No. TailorPic packages are one-time payments starting at $1.99 with no recurring fees." },
 ];

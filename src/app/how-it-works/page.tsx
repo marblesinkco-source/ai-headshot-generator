@@ -143,7 +143,7 @@ const whyChooseUs = [
   },
   {
     icon: ShieldCheck,
-    title: 'Satisfaction Guarantee',
+    title: 'Quality Commitment',
     description:
       'Not happy with your headshots? We will work with you until you are.',
   },

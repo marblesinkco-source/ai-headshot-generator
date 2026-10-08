@@ -136,7 +136,7 @@ const comparisonRows: ComparisonRow[] = [
     tailorpic: 'yes',
   },
   {
-    feature: 'Satisfaction guarantee',
+    feature: 'Quality commitment',
     traditional: 'no',
     otherAI: 'partial',
     tailorpic: 'yes',
@@ -200,7 +200,7 @@ const faqs = [
     answer: 'Most orders are completed within a few hours. Some packages list a 24-hour delivery window. A traditional studio typically takes one to two weeks including scheduling and retouching.',
   },
   {
-    question: 'Is there a satisfaction guarantee?',
+    question: 'Is there a quality commitment?',
     answer: `Yes. If you are not satisfied, contact our support team and we will review your order for a resolution.`,
   },
   {
@@ -308,7 +308,7 @@ export default function PricingComparisonPage() {
               </li>
               <li className="flex items-center gap-2">
                 <Shield className="h-4 w-4 text-tp-bronze" aria-hidden="true" />
-                Satisfaction guarantee
+                Quality commitment
               </li>
             </ul>
           </div>
@@ -655,7 +655,7 @@ export default function PricingComparisonPage() {
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige/80">
               One-time payment, most orders ready within a few hours, and a
-              satisfaction guarantee. Pick the package that fits your needs.
+              quality commitment. Pick the package that fits your needs.
             </p>
             <Link
               href="/pricing"

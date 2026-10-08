@@ -112,7 +112,7 @@ const differences = [
   },
   {
     "title": "Trade-off on flexibility",
-    "body": "Pixlr gives you hands-on control over any image. TailorPic delivers within hours (most orders; guaranteed within 24 hours) and is focused on people photos."
+    "body": "Pixlr gives you hands-on control over any image. TailorPic delivers within hours for most orders and is focused on people photos."
   }
 ];
 

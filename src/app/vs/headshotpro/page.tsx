@@ -92,7 +92,7 @@ const advantages = [
   },
   {
     icon: Shield,
-    title: 'Satisfaction Guaranteed',
+    title: 'Quality Commitment',
     description:
       'Not satisfied? We stand behind the quality of every photo. Contact our support team and we will make it right.',
   },

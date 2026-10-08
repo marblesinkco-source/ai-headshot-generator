@@ -66,7 +66,7 @@ export default function TermsPage() {
         <li>Prices may change at any time; existing orders are honored at their purchase price.</li>
       </ul>
 
-      <h2>5. Satisfaction Guarantee</h2>
+      <h2>5. Quality Commitment</h2>
       <p>
         We are committed to delivering studio-quality results. If you are not satisfied with your AI-generated headshots:
       </p>

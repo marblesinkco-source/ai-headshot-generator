@@ -112,7 +112,7 @@ const differences = [
   },
   {
     "title": "Trade-off on editing control",
-    "body": "Luminar offers detailed creative control over a photo. TailorPic delivers within hours (most orders; guaranteed within 24 hours) and is focused on people photos."
+    "body": "Luminar offers detailed creative control over a photo. TailorPic delivers within hours for most orders and is focused on people photos."
   }
 ];
 

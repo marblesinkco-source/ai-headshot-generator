@@ -196,7 +196,7 @@ export default function ConsultantsIndustryPage() {
           </span>
           <span className="flex items-center gap-1.5">
             <CheckCircle className="h-4 w-4 text-tp-bronze" />
-            Satisfaction Guaranteed
+            Quality Commitment
           </span>
         </div>
       </section>

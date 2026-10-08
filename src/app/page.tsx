@@ -135,7 +135,7 @@ export default function LandingPage() {
       {/* 7. Social Proof Bar */}
       <SocialProofBar />
 
-      {/* 8. Guarantee + Trust */}
+      {/* 8. Quality + Trust */}
       <GuaranteeSection />
       <TrustBadges />
 

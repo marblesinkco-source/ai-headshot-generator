@@ -53,7 +53,6 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "LinkedIn-ready business photos", tailorpic: "Dedicated business category", other: "Core focus" },
   { label: "Dating photos", tailorpic: "Dedicated dating category", other: "Not a known focus" },
   { label: "E-commerce product photos", tailorpic: "Included", other: "Not a known focus" },
-  { label: "Satisfaction guarantee", tailorpic: "Yes", other: "Check their terms" },
 ];
 
 const differences = [
@@ -81,7 +80,7 @@ const useCases = {
 const faqs = [
   { question: "Is TailorPic a good HeadPix alternative?", answer: "If you want lower upfront cost and more categories, yes. TailorPic packages start from $1.99 and span 12 categories." },
   { question: "Does TailorPic offer a refund?", answer: "Yes, there is a quality commitment." },
-  { question: "How long does delivery take?", answer: "Results within hours for most orders; guaranteed within 24 hours after your photos are processed." },
+  { question: "How long does delivery take?", answer: "Results within hours for most orders, after your photos are processed." },
   { question: "Are the photos suitable for LinkedIn?", answer: "Yes. The business category is designed for LinkedIn, resumes and company pages." },
   { question: "Do I need to subscribe?", answer: "No. Every package is a single one-time payment (from $1.99)." },
 ];

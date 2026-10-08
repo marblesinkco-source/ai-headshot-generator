@@ -77,7 +77,7 @@ const faqs = [
   { question: "Is TailorPic cheaper than SnapHeadshots?", answer: "TailorPic starts from $1.99 and SnapHeadshots is approximately $9.99. Pricing may change, so check their site." },
   { question: "What do I get with TailorPic that is extra?", answer: "TailorPic includes photos across 12 categories plus editor tools." },
   { question: "Is TailorPic a subscription?", answer: "No. TailorPic packages are one-time payments starting at $1.99 with no recurring fees." },
-  { question: "How fast does TailorPic deliver?", answer: "TailorPic results are ready within hours for most orders; guaranteed within 24 hours, since it fine-tunes a LoRA model on your photos." },
+  { question: "How fast does TailorPic deliver?", answer: "TailorPic results are ready within hours for most orders, since it fine-tunes a LoRA model on your photos." },
 ];
 
 export default function Page() {

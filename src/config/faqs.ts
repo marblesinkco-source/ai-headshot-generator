@@ -59,7 +59,7 @@ export const faqs = [
     category: 'Refund',
     question: 'What if the photos do not look like me?',
     answer:
-      'Clear, varied selfies make the biggest difference, so follow the upload tips above. If you are still not happy with the results, contact support: we will work with you on regenerating photos, and our satisfaction guarantee applies.',
+      'Clear, varied selfies make the biggest difference, so follow the upload tips above. If you are still not happy with the results, contact support: we will work with you on regenerating photos, and our quality commitment applies.',
   },
   {
     category: 'Product',
@@ -101,7 +101,7 @@ export const faqs = [
     category: 'Refund',
     question: 'How do I request help if I am not satisfied?',
     answer:
-      'Contact our support team with your order details. Under our satisfaction guarantee, we will work with you to regenerate your photos within your package at no extra cost. See our terms of service for the full policy.',
+      'Contact our support team with your order details. Under our quality commitment, we will work with you to regenerate your photos within your package at no extra cost. See our terms of service for the full policy.',
   },
   {
     category: 'Teams',
@@ -182,9 +182,9 @@ export const faqs = [
   },
   {
     category: 'Refund',
-    question: 'What does the satisfaction guarantee cover?',
+    question: 'What does the quality commitment cover?',
     answer:
-      'Our satisfaction guarantee covers the quality of your AI-generated photos. If the results do not meet your expectations, we will regenerate them within your package at no extra cost. Contact support and we will work with you to resolve the issue. See our terms of service for the full policy.',
+      'Our quality commitment covers the quality of your AI-generated photos. If the results do not meet your expectations, we will regenerate them within your package at no extra cost. Contact support and we will work with you to resolve the issue. See our terms of service for the full policy.',
   },
 ];
 
