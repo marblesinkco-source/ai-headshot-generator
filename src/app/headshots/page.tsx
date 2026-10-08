@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { formatPrice } from '@/lib/utils';
 import { CATEGORIES } from '@/config/categories';
 import { PROFESSIONS } from '@/config/professions';
+import { PAYMENT_PROVIDER } from '@/config/pricing';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import StudioComparisonV2 from '@/components/marketing/studio-comparison-v2';
@@ -114,7 +115,7 @@ const faqItems = [
   },
   {
     q: 'Is my data safe?',
-    a: 'Yes. Your photos are processed securely, never sold, shared only with our AI processing partner to generate your headshots, and automatically deleted after 30 days. Payment is handled through Stripe. See our security page for full details.',
+    a: `Yes. Your photos are processed securely, never sold, shared only with our AI processing partner to generate your headshots, and automatically deleted after 30 days. Payment is handled through ${PAYMENT_PROVIDER.name}. See our security page for full details.`,
   },
 ];
 
@@ -476,7 +477,7 @@ export default function HeadshotsLandingPage() {
               </div>
               <h3 className="text-sm font-semibold text-tp-ink">Secure &amp; Private</h3>
               <p className="mt-2 text-sm text-tp-muted leading-relaxed">
-                Photos deleted after 30 days. Never sold. Stripe-secured payments.
+                Photos deleted after 30 days. Never sold. {PAYMENT_PROVIDER.name}-secured payments.
               </p>
               <Link href="/security" className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-tp-bronze-ink hover:text-tp-ink transition-colors min-h-[44px]">
                 Security details <ArrowRight className="h-3.5 w-3.5" />

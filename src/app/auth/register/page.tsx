@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { createClient } from '@/lib/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
+import { PAYMENT_PROVIDER } from '@/config/pricing';
 
 export default function RegisterPage() {
   return (
@@ -326,7 +327,7 @@ function RegisterContent() {
 
             {/* Trust signals */}
             <ul className="mt-5 grid grid-cols-1 gap-2 rounded-tp-button border border-tp-line bg-tp-paper px-4 py-3 text-xs text-tp-ink sm:grid-cols-3 sm:gap-1 sm:text-center">
-              {['Secure checkout via Stripe', 'No subscription'].map((t) => (
+              {[PAYMENT_PROVIDER.checkoutBadge, 'No subscription'].map((t) => (
                 <li key={t} className="flex items-center gap-1.5 sm:flex-col sm:gap-1">
                   <Check className="h-3.5 w-3.5 shrink-0 text-tp-bronze-ink" aria-hidden="true" />
                   <span className="font-medium">{t}</span>

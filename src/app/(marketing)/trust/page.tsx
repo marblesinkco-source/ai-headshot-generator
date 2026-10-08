@@ -18,6 +18,7 @@ import {
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
+import { PAYMENT_PROVIDER } from '@/config/pricing';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
@@ -99,8 +100,8 @@ const infra = [
   },
   {
     icon: Shield,
-    title: 'Payments handled by Stripe',
-    desc: 'Card payments are processed by Stripe. We do not store your card details.',
+    title: `Payments handled by ${PAYMENT_PROVIDER.name}`,
+    desc: `Card payments are processed by ${PAYMENT_PROVIDER.name}. We do not store your card details.`,
   },
 ];
 
@@ -141,7 +142,7 @@ const faqs = [
   },
   {
     q: 'Do you store my payment details?',
-    a: 'No. Payments are processed by Stripe, and card details are not stored on TailorPic servers.',
+    a: `No. Payments are processed by ${PAYMENT_PROVIDER.name}, and card details are not stored on TailorPic servers.`,
   },
 ];
 

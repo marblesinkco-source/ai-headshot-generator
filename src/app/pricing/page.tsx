@@ -11,7 +11,7 @@ import { PricingPsychology } from '@/components/marketing/pricing-psychology';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
-import { BASE_PRICE_DISPLAY, TEAM_PRICES } from '@/config/pricing';
+import { BASE_PRICE_DISPLAY, TEAM_PRICES, PAYMENT_PROVIDER } from '@/config/pricing';
 import { formatPrice } from '@/lib/utils';
 import { CATEGORIES } from '@/config/categories';
 import { TrustBadges } from '@/components/marketing/trust-badges';
@@ -46,7 +46,7 @@ const pricingFaqs = [
   {
     question: 'What payment methods do you accept?',
     answer:
-      'We accept all major credit cards. Payments are processed securely through Stripe.',
+      `We accept all major credit cards. Payments are processed securely through ${PAYMENT_PROVIDER.name}.`,
   },
   {
     question: 'How many photos do I get?',
@@ -120,7 +120,7 @@ const includedFeatures = [
     title: 'Payment & protection',
     items: [
       'One-time payment, no subscription',
-      'Secure Stripe checkout',
+      PAYMENT_PROVIDER.checkoutBadge,
     ],
   },
 ];
@@ -128,7 +128,7 @@ const includedFeatures = [
 const trustSignals = [
   { icon: CreditCard, label: 'One-time payment, no subscription' },
   { icon: BadgeCheck, label: 'Full commercial rights' },
-  { icon: Lock, label: 'Secure Stripe checkout' },
+  { icon: Lock, label: PAYMENT_PROVIDER.checkoutBadge },
 ];
 
 const OG_DESCRIPTION =

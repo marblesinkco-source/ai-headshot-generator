@@ -4,6 +4,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
+import { PAYMENT_PROVIDER } from '@/config/pricing';
 import { FAQSchema, BreadcrumbSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
@@ -111,7 +112,7 @@ const securityFaqs = [
   {
     question: 'How are payments handled?',
     answer:
-      'Payments are processed by Stripe, a PCI-DSS Level 1 certified payment processor. Your card details are never stored on our servers.',
+      PAYMENT_PROVIDER.trustStatement,
   },
   {
     question: 'How do I request deletion of my data?',
@@ -240,8 +241,7 @@ export default function SecurityPage() {
               <CreditCard className="h-8 w-8 text-tp-bronze" />
               <h3 className="mt-4 font-display text-xl font-normal text-tp-paper">Secure Payments</h3>
               <p className="mt-3 text-sm leading-relaxed text-tp-beige/70">
-                Payments are processed by Stripe, a PCI-DSS Level 1 certified payment processor.
-                Your card details are never stored on our servers. We never see your full card number.
+                {PAYMENT_PROVIDER.trustStatement} We never see your full card number.
               </p>
             </div>
             <div className="rounded-tp-card border border-tp-beige/10 bg-tp-ink p-8">

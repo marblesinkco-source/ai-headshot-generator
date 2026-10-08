@@ -1,3 +1,5 @@
+import { PAYMENT_PROVIDER } from '@/config/pricing';
+
 export const faqs = [
   {
     category: 'Product',
@@ -51,7 +53,7 @@ export const faqs = [
     category: 'Pricing',
     question: 'Is checkout secure?',
     answer:
-      'Yes. Payments are processed by Stripe, so your card details are handled by Stripe and never stored on our servers.',
+      `Yes. Payments are processed by ${PAYMENT_PROVIDER.name}, so your card details are handled by ${PAYMENT_PROVIDER.name} and never stored on our servers.`,
   },
   {
     category: 'Refund',

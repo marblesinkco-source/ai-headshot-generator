@@ -5,6 +5,7 @@ import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { TeamGridIllustration } from '@/components/marketing/illustrations';
 import { siteConfig } from '@/config/site';
+import { PAYMENT_PROVIDER } from '@/config/pricing';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
   Users, Sparkles, ArrowRight, CheckCircle, Palette,
@@ -38,7 +39,7 @@ const faqItems = [
   {
     question: 'How is our data handled?',
     answer:
-      'Uploaded photos, trained models, and generated photos are automatically deleted from our servers within 30 days of delivery, and you can request earlier deletion by contacting support. Payments are processed by Stripe and card details are never stored on our servers.',
+      `Uploaded photos, trained models, and generated photos are automatically deleted from our servers within 30 days of delivery, and you can request earlier deletion by contacting support. Payments are processed by ${PAYMENT_PROVIDER.name} and card details are never stored on our servers.`,
   },
   {
     question: 'How many people do I need for a team plan?',
@@ -171,7 +172,7 @@ export default function TeamHeadshotsPage() {
           </div>
           <ul className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-tp-beige/70">
             {[
-              { icon: CreditCard, text: 'Secure checkout by Stripe' },
+              { icon: CreditCard, text: PAYMENT_PROVIDER.checkoutBadge },
               { icon: Lock, text: 'Photos deleted within 30 days' },
               { icon: ShieldCheck, text: 'satisfaction guarantee' },
             ].map((t) => (
@@ -657,7 +658,7 @@ export default function TeamHeadshotsPage() {
               {
                 icon: CreditCard,
                 title: 'Secure checkout',
-                desc: 'Payments are processed by Stripe. Card details are never stored on our servers.',
+                desc: PAYMENT_PROVIDER.privacyStatement,
               },
               {
                 icon: Lock,

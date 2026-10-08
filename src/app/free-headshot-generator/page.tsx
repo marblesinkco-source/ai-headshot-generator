@@ -4,6 +4,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
+import { PAYMENT_PROVIDER } from '@/config/pricing';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { FreeTrialIllustration } from '@/components/marketing/illustrations';
@@ -91,7 +92,7 @@ const trialComparison = [
 const trustSignals = [
   { icon: ShieldCheck, title: 'Privacy first', description: 'Uploads are used only to create your photos and are deleted within 30 days.' },
   { icon: CreditCard, title: 'One-time payment', description: 'No subscription and nothing to cancel.' },
-  { icon: Lock, title: 'Secure Stripe checkout', description: 'Payments are processed by Stripe. Card details never touch our servers.' },
+  { icon: Lock, title: PAYMENT_PROVIDER.checkoutBadge, description: PAYMENT_PROVIDER.privacyStatement },
   { icon: Clock, title: 'Most orders within 2 hours', description: 'No booking, travel or waiting for a photographer.' },
 ];
 
@@ -154,7 +155,7 @@ const faqs = [
   {
     question: 'Is payment secure?',
     answer:
-      'Yes. Payments are processed by Stripe, and card details are never stored on our servers.',
+      `Yes. ${PAYMENT_PROVIDER.privacyStatement}`,
   },
   {
     question: 'Is my data kept private?',
@@ -448,7 +449,7 @@ export default function FreeHeadshotGeneratorPage() {
         <div className="mx-auto max-w-2xl rounded-tp-card bg-tp-ink px-6 py-12 text-center">
           <h2 className="font-display text-3xl font-normal text-white">Try it risk-free</h2>
           <p className="mt-3 text-tp-beige">
-            From $1.99, secure Stripe checkout, no subscription.
+            From $1.99, {PAYMENT_PROVIDER.checkoutBadge.replace(/^S/, 's')}, no subscription.
           </p>
           <Link
             href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
