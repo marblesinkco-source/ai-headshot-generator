@@ -34,7 +34,7 @@ const jsonLd = {
 };
 
 const steps = [
-  { icon: Upload, title: 'Upload your photos', body: 'Share 8–15 photos, including older, scanned or faded ones alongside recent selfies.' },
+  { icon: Upload, title: 'Upload your photos', body: 'Share 4–10 photos, including older, scanned or faded ones alongside recent selfies.' },
   { icon: Sparkles, title: 'AI renews your look', body: 'Our AI learns your features and generates clean new headshots with modern color, detail and lighting.' },
   { icon: Check, title: 'Download fresh headshots', body: 'Get high-quality portraits ready for LinkedIn, résumés and company pages.' },
 ];

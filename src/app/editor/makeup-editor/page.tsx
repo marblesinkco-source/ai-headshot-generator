@@ -34,7 +34,7 @@ const jsonLd = {
 };
 
 const steps = [
-  { icon: Upload, title: 'Upload a few selfies', body: 'Share 8–15 photos of your face. Bare-faced or made-up, both work as a starting point.' },
+  { icon: Upload, title: 'Upload a few selfies', body: 'Share 4–10 photos of your face. Bare-faced or made-up, both work as a starting point.' },
   { icon: Palette, title: 'Choose a makeup look', body: 'Pick from natural, polished or camera-ready styles that suit a professional setting.' },
   { icon: Check, title: 'Download your headshots', body: 'Get finished headshots with subtle, well-blended makeup that still looks like you.' },
 ];

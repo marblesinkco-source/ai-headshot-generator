@@ -34,7 +34,7 @@ const jsonLd = {
 };
 
 const steps = [
-  { icon: Upload, title: 'Upload a few selfies', body: 'Share 8–15 photos of your face. Glasses or no glasses, both work as a starting point.' },
+  { icon: Upload, title: 'Upload a few selfies', body: 'Share 4–10 photos of your face. Glasses or no glasses, both work as a starting point.' },
   { icon: Glasses, title: 'Choose your eyewear', body: 'Keep your own glasses, remove them, or pick a frame style that suits your face.' },
   { icon: Check, title: 'Download your headshots', body: 'Get finished headshots with clear eyes and frames that sit naturally on your face.' },
 ];

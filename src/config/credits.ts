@@ -34,7 +34,7 @@ export const CREDIT_PACKAGES: CreditPackage[] = [
     savings: 'Save 20% vs. single packs',
     features: [
       '50 credits — any category',
-      'Use across all 11 photo types',
+      'Use across all 12 photo types',
       'Valid for 12 months',
       'HD resolution',
     ],
@@ -52,7 +52,7 @@ export const CREDIT_PACKAGES: CreditPackage[] = [
     badge: 'Best Value',
     features: [
       '200 credits — any category',
-      'Use across all 11 photo types',
+      'Use across all 12 photo types',
       'Valid for 12 months',
       'HD resolution',
       'Priority generation queue',
@@ -71,7 +71,7 @@ export const CREDIT_PACKAGES: CreditPackage[] = [
     badge: 'For Teams',
     features: [
       '500 credits — any category',
-      'Use across all 11 photo types',
+      'Use across all 12 photo types',
       'Valid for 12 months',
       'HD resolution',
       'Priority generation queue',

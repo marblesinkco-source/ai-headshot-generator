@@ -34,7 +34,7 @@ const jsonLd = {
 };
 
 const steps = [
-  { icon: Upload, title: 'Upload a few selfies', body: 'Share 8–15 clear photos of your face. Everyday lighting and natural skin are all you need.' },
+  { icon: Upload, title: 'Upload a few selfies', body: 'Share 4–10 clear photos of your face. Everyday lighting and natural skin are all you need.' },
   { icon: Sparkles, title: 'AI retouches naturally', body: 'Blemishes and uneven tone are softened while pores, freckles and fine texture stay intact.' },
   { icon: Check, title: 'Download your headshots', body: 'Get polished headshots with healthy, realistic skin, ready for LinkedIn and company pages.' },
 ];

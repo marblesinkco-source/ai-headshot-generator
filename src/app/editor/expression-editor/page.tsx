@@ -34,7 +34,7 @@ const jsonLd = {
 };
 
 const steps = [
-  { icon: Upload, title: 'Upload a few selfies', body: 'Share 8–15 photos showing your natural expressions, from neutral to a relaxed smile.' },
+  { icon: Upload, title: 'Upload a few selfies', body: 'Share 4–10 photos showing your natural expressions, from neutral to a relaxed smile.' },
   { icon: Smile, title: 'Choose your expression', body: 'Pick a soft smile, a warm grin or a calm, serious look for your finished headshots.' },
   { icon: Check, title: 'Download your headshots', body: 'Get headshots with an approachable, natural expression, ready for LinkedIn and company pages.' },
 ];

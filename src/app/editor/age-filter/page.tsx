@@ -34,7 +34,7 @@ const jsonLd = {
 };
 
 const steps = [
-  { icon: Upload, title: 'Upload a few selfies', body: 'Share 8–15 recent, clear photos of your face so the AI learns how you look today.' },
+  { icon: Upload, title: 'Upload a few selfies', body: 'Share 4–10 recent, clear photos of your face so the AI learns how you look today.' },
   { icon: Clock, title: 'Choose a subtle refresh', body: 'Pick a light touch that reduces tiredness and harsh lines, rather than a dramatic change.' },
   { icon: Check, title: 'Download your headshots', body: 'Get headshots with a fresh, well-rested look that still reads as you.' },
 ];

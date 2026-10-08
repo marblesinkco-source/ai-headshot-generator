@@ -34,7 +34,7 @@ const jsonLd = {
 };
 
 const steps = [
-  { icon: Upload, title: 'Upload your photos', body: 'Share 8–15 photos of your face, even ones taken with a direct flash or in a dim room.' },
+  { icon: Upload, title: 'Upload your photos', body: 'Share 4–10 photos of your face, even ones taken with a direct flash or in a dim room.' },
   { icon: Eye, title: 'AI restores your eyes', body: 'Red pupils and flash glare are replaced with natural eye color, catchlights and depth.' },
   { icon: Check, title: 'Download your headshots', body: 'Get clean, studio-quality headshots with clear eyes, ready for LinkedIn and résumés.' },
 ];

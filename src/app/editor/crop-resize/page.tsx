@@ -34,7 +34,7 @@ const jsonLd = {
 };
 
 const steps = [
-  { icon: Upload, title: 'Upload a few selfies', body: 'Share 8–15 photos of your face and shoulders. Framing in the originals does not need to be perfect.' },
+  { icon: Upload, title: 'Upload a few selfies', body: 'Share 4–10 photos of your face and shoulders. Framing in the originals does not need to be perfect.' },
   { icon: Maximize2, title: 'Pick a format', body: 'Choose a platform size such as a LinkedIn profile, square avatar, or a passport or ID style frame.' },
   { icon: Check, title: 'Download your headshots', body: 'Get headshots framed and sized for your chosen use, ready to upload.' },
 ];

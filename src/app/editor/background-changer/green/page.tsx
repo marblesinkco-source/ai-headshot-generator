@@ -34,7 +34,7 @@ const jsonLd = {
 };
 
 const steps = [
-  { icon: Upload, title: 'Upload a few selfies', body: 'Share 8–15 photos in different lighting and angles. The backgrounds in your originals do not matter.' },
+  { icon: Upload, title: 'Upload a few selfies', body: 'Share 4–10 photos in different lighting and angles. The backgrounds in your originals do not matter.' },
   { icon: Sparkles, title: 'AI builds your headshots', body: 'Our AI learns your features and generates new headshots against the green background you choose.' },
   { icon: Check, title: 'Pick your favorites', body: 'Download the headshots that suit your practice, organization or profile.' },
 ];

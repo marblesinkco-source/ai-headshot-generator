@@ -34,7 +34,7 @@ const jsonLd = {
 };
 
 const steps = [
-  { icon: Upload, title: 'Upload a few selfies', body: 'Share 8–15 photos. Clutter, passersby and objects in the frame do not need to be removed first.' },
+  { icon: Upload, title: 'Upload a few selfies', body: 'Share 4–10 photos. Clutter, passersby and objects in the frame do not need to be removed first.' },
   { icon: Sparkles, title: 'AI generates clean headshots', body: 'Our AI learns your features and creates new headshots, leaving distractions out of the picture entirely.' },
   { icon: Check, title: 'Download your favorites', body: 'Get distraction-free headshots for your profile, résumé or company page.' },
 ];

@@ -34,7 +34,7 @@ const jsonLd = {
 };
 
 const steps = [
-  { icon: Upload, title: 'Upload a few selfies', body: 'Share 8–15 photos of your face and shoulders. Your pose in them does not need to be perfect.' },
+  { icon: Upload, title: 'Upload a few selfies', body: 'Share 4–10 photos of your face and shoulders. Your pose in them does not need to be perfect.' },
   { icon: Move, title: 'Pick a pose style', body: 'Choose a relaxed, confident or classic corporate posture for your finished headshots.' },
   { icon: Check, title: 'Download your headshots', body: 'Get polished headshots with balanced posture, ready for LinkedIn, résumés and company pages.' },
 ];

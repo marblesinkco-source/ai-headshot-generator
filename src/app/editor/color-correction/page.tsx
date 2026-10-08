@@ -34,7 +34,7 @@ const jsonLd = {
 };
 
 const steps = [
-  { icon: Upload, title: 'Upload a few selfies', body: 'Share 8–15 photos. Yellow indoor light or a blue window cast will not carry over.' },
+  { icon: Upload, title: 'Upload a few selfies', body: 'Share 4–10 photos. Yellow indoor light or a blue window cast will not carry over.' },
   { icon: Pipette, title: 'AI balances your color', body: 'White balance, skin tone and saturation are set to look accurate and natural.' },
   { icon: Check, title: 'Download your headshots', body: 'Get headshots with consistent, true-to-life color across every image.' },
 ];

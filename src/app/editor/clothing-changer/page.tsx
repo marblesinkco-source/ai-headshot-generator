@@ -46,7 +46,7 @@ const jsonLd = {
 };
 
 const steps = [
-  { icon: Upload, title: 'Upload a few selfies', body: 'Share 8–15 photos of your face and shoulders. What you are wearing in them does not matter.' },
+  { icon: Upload, title: 'Upload a few selfies', body: 'Share 4–10 photos of your face and shoulders. What you are wearing in them does not matter.' },
   { icon: Shirt, title: 'Choose your outfit style', body: 'Pick the wardrobe that fits your field, from a classic suit to a relaxed business-casual look.' },
   { icon: Check, title: 'Download your headshots', body: 'Get finished headshots dressed for your profile, résumé or company page.' },
 ];

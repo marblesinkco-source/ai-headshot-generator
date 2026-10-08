@@ -34,7 +34,7 @@ const jsonLd = {
 };
 
 const steps = [
-  { icon: Upload, title: 'Upload a few selfies', body: 'Share 8–15 photos of your face. Wide-angle distortion from close selfies is handled for you.' },
+  { icon: Upload, title: 'Upload a few selfies', body: 'Share 4–10 photos of your face. Wide-angle distortion from close selfies is handled for you.' },
   { icon: ScanFace, title: 'AI refines your features', body: 'Jawline and face contours are balanced subtly, never changed beyond recognition.' },
   { icon: Check, title: 'Download your headshots', body: 'Get flattering headshots that still look like you in person.' },
 ];
