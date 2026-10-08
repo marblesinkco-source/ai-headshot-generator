@@ -98,8 +98,8 @@ export function UseCases() {
               className="reveal"
               style={{ '--reveal-i': i } as CSSProperties}
             >
-              <div className="tp-lift h-full rounded-tp-card border border-tp-line bg-white p-6">
-                <span className="tp-icon-hover flex h-11 w-11 items-center justify-center rounded-tp-button bg-tp-paper text-tp-bronze-ink">
+              <div className="tp-lift h-full rounded-tp-card border border-tp-line bg-white p-6 transition-[border-color,box-shadow] duration-300 hover:border-tp-bronze/30 hover:shadow-md hover:shadow-tp-bronze/5 motion-reduce:transition-none">
+                <span className="tp-icon-hover flex h-11 w-11 items-center justify-center rounded-tp-button bg-tp-paper text-tp-bronze-ink transition-colors duration-200">
                   <Icon className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
                 </span>
                 <h3 className="mt-4 text-lg font-semibold text-tp-ink">{title}</h3>

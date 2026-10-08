@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef, type CSSProperties } from 'react';
 import { Monitor, FileText, Mail, MessageSquare } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -149,32 +149,80 @@ const MOCKUPS: Record<string, React.FC> = {
 export function HeadshotInContext() {
   const [activeTab, setActiveTab] = useState('linkedin');
   const ActiveMockup = MOCKUPS[activeTab];
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+    const items = Array.from(section.querySelectorAll<HTMLElement>('[data-context-reveal]'));
+
+    if (
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      typeof IntersectionObserver === 'undefined'
+    ) {
+      items.forEach((el) => el.classList.add('is-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -40px 0px' },
+    );
+
+    items.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className="border-t border-tp-line/40 bg-tp-paper py-16 sm:py-20">
-      <div className="mx-auto max-w-tp-site px-4 sm:px-6 lg:px-8">
-        <h2 className="font-display text-2xl font-normal text-tp-black sm:text-3xl">
-          See It in Action
-        </h2>
-        <p className="mt-3 max-w-2xl text-tp-muted">
-          Your AI headshot works everywhere — from LinkedIn profiles to email signatures.
-          Here&apos;s how it looks across platforms.
-        </p>
+    <section
+      ref={sectionRef}
+      aria-labelledby="context-heading"
+      className="relative overflow-hidden border-t border-tp-line/40 bg-tp-paper py-20 lg:py-24"
+    >
+      {/* Decorative blobs */}
+      <div aria-hidden="true" className="tp-blob tp-blob-beige w-[500px] h-[500px] -top-40 -right-40" />
+      <div aria-hidden="true" className="tp-blob tp-blob-bronze w-[400px] h-[400px] -bottom-32 -left-32" />
+
+      <div className="relative mx-auto max-w-tp-site px-4 sm:px-6 lg:px-8">
+        <div className="scroll-fade-in mx-auto max-w-2xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-tp-bronze-ink">
+            See It in Action
+          </p>
+          <h2
+            id="context-heading"
+            className="font-display mt-4 text-[30px] font-normal leading-tight tracking-[-0.03em] text-tp-ink sm:text-[40px]"
+          >
+            Your Headshot, Everywhere
+          </h2>
+          <p className="mx-auto mt-4 max-w-lg text-[15px] leading-relaxed text-tp-muted">
+            Your AI headshot works everywhere — from LinkedIn profiles to email signatures.
+            Here&apos;s how it looks across platforms.
+          </p>
+        </div>
 
         {/* Tabs */}
-        <div className="mt-8 flex flex-wrap gap-2">
-          {TABS.map((tab) => {
+        <div className="mt-10 flex flex-wrap justify-center gap-2">
+          {TABS.map((tab, i) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
             return (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-1.5 rounded-tp-button px-4 py-2 text-sm transition-all ${
+                data-context-reveal
+                className={`reveal flex items-center gap-1.5 rounded-tp-button px-4 py-2 text-sm transition-all ${
                   isActive
                     ? 'bg-tp-bronze text-white shadow-sm'
                     : 'bg-tp-beige text-tp-muted hover:bg-tp-beige/80 hover:text-tp-ink'
                 }`}
+                style={{ '--reveal-i': i } as CSSProperties}
+                onClick={() => setActiveTab(tab.id)}
               >
                 <Icon className="h-4 w-4" />
                 {tab.label}
@@ -184,11 +232,21 @@ export function HeadshotInContext() {
         </div>
 
         {/* Mockup */}
-        <div className="mt-8">
-          <ActiveMockup />
+        <div
+          data-context-reveal
+          className="reveal mx-auto mt-10"
+          style={{ '--reveal-i': TABS.length } as CSSProperties}
+        >
+          <div className="tp-lift mx-auto max-w-md rounded-tp-card transition-[border-color,box-shadow] duration-300 hover:shadow-lg hover:shadow-tp-bronze/5 motion-reduce:transition-none">
+            <ActiveMockup />
+          </div>
         </div>
 
-        <p className="mt-4 text-center text-xs text-tp-muted">
+        <p
+          data-context-reveal
+          className="reveal mt-6 text-center text-xs text-tp-muted"
+          style={{ '--reveal-i': TABS.length + 1 } as CSSProperties}
+        >
           Illustrative concept — actual results may vary based on your uploaded photos.
         </p>
       </div>

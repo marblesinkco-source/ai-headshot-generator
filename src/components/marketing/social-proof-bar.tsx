@@ -93,7 +93,7 @@ export function SocialProofBar() {
     >
       <style>{css}</style>
       <div className="mx-auto max-w-6xl px-4 py-5 sm:py-6">
-        <ul className="grid grid-cols-2 gap-y-5 gap-x-4 sm:grid-cols-3 lg:grid-cols-5 sm:gap-x-6">
+        <ul className="grid grid-cols-2 gap-y-5 gap-x-4 sm:grid-cols-3 lg:grid-cols-5 sm:gap-x-6 lg:[&>li:not(:first-child)]:border-l lg:[&>li:not(:first-child)]:border-tp-line lg:[&>li:not(:first-child)]:pl-6">
           {metrics.map((metric, i) => {
             const Icon = metric.icon;
             return (

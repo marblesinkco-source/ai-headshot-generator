@@ -47,17 +47,40 @@ const PLATFORMS = [
 
 const css = `
 @keyframes tp-rp-fade {
-  from { opacity: 0; transform: translateY(6px); }
+  from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 .tp-rp-item { opacity: 0; }
 .tp-rp-visible .tp-rp-item {
   animation: tp-rp-fade 0.5s ease-out forwards;
-  animation-delay: calc(var(--i) * 100ms);
+  animation-delay: calc(var(--i) * 120ms);
 }
 @media (prefers-reduced-motion: reduce) {
   .tp-rp-item { opacity: 1; }
   .tp-rp-visible .tp-rp-item { animation: none; }
+}
+.tp-rp-card {
+  position: relative;
+  overflow: hidden;
+}
+.tp-rp-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    circle at 50% 0%,
+    var(--platform-color-10) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+.tp-rp-card:hover::before {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tp-rp-card::before { transition: none; }
 }
 `;
 
@@ -80,34 +103,57 @@ export function ReviewPlatforms() {
   return (
     <section
       ref={ref}
-      aria-label="Find us on review platforms"
-      className={`bg-tp-paper py-10 sm:py-12 ${visible ? 'tp-rp-visible' : ''}`}
+      aria-labelledby="review-platforms-heading"
+      className={`bg-tp-paper py-12 sm:py-16 ${visible ? 'tp-rp-visible' : ''}`}
     >
       <style>{css}</style>
       <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-tp-bronze-ink">
-            Find us on
-          </p>
-          <p className="mt-2 font-sans text-sm text-tp-muted sm:text-base">
-            Check our profiles and share your experience
+          <h2
+            id="review-platforms-heading"
+            className="font-display font-normal text-2xl text-tp-ink sm:text-3xl"
+          >
+            What Our Users Say
+          </h2>
+          <p className="mt-3 font-sans text-sm text-tp-muted sm:text-base">
+            Check our profiles on trusted review platforms and share your experience
           </p>
         </div>
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5 lg:gap-6">
           {PLATFORMS.map((platform, i) => (
             <a
               key={platform.name}
               href={platform.href}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ '--i': i, '--platform-color': platform.color } as React.CSSProperties}
-              className="tp-rp-item group inline-flex items-center gap-2.5 rounded-tp-button border border-tp-line bg-white px-5 py-3 text-sm font-medium text-tp-ink shadow-sm transition-all hover:-translate-y-0.5 hover:border-[var(--platform-color)] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze"
+              aria-label={`Leave a review on ${platform.name}`}
+              style={{
+                '--i': i,
+                '--platform-color': platform.color,
+                '--platform-color-10': `${platform.color}18`,
+              } as React.CSSProperties}
+              className="tp-rp-item tp-rp-card group flex flex-col items-center gap-3 rounded-tp-card border border-tp-line bg-white px-6 py-8 text-center shadow-sm transition-all hover:-translate-y-1 hover:border-[var(--platform-color)] hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze sm:py-10"
             >
-              <span className="text-tp-muted transition-colors group-hover:text-[var(--platform-color)]">
-                {platform.icon}
+              {/* Platform icon */}
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-tp-beige text-tp-muted transition-colors group-hover:bg-[var(--platform-color-10)] group-hover:text-[var(--platform-color)]">
+                <span className="[&>svg]:h-6 [&>svg]:w-6">{platform.icon}</span>
               </span>
-              {platform.name}
-              <ExternalLink className="h-3.5 w-3.5 text-tp-muted transition-colors group-hover:text-[var(--platform-color)]" strokeWidth={2} aria-hidden="true" />
+
+              {/* Platform name */}
+              <span className="text-lg font-semibold text-tp-ink">
+                {platform.name}
+              </span>
+
+              {/* CTA text */}
+              <span className="text-sm text-tp-muted">
+                Leave a review
+              </span>
+
+              {/* Action row */}
+              <span className="mt-1 inline-flex items-center gap-1.5 rounded-tp-button border border-tp-line bg-tp-beige px-4 py-2 text-xs font-medium uppercase tracking-wider text-tp-bronze-ink transition-all group-hover:border-[var(--platform-color)] group-hover:text-[var(--platform-color)]">
+                Share your experience
+                <ExternalLink className="h-3.5 w-3.5" strokeWidth={2} aria-hidden="true" />
+              </span>
             </a>
           ))}
         </div>
