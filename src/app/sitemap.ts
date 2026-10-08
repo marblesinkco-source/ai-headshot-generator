@@ -1714,12 +1714,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/team-headshots`,
-      lastModified: new Date('2026-10-06'),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
       url: `${baseUrl}/photo-tips`,
       lastModified: new Date('2026-10-06'),
       changeFrequency: 'monthly',
@@ -1767,12 +1761,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
-    {
-      url: `${baseUrl}/avatars`,
-      lastModified: new Date('2026-10-06'),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
+    // /avatars removed — auto-generated in categoryPages from getActiveCategories()
     {
       url: `${baseUrl}/tools/passport-photo-maker`,
       lastModified: new Date('2026-10-06'),
@@ -2001,18 +1990,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
-    {
-      url: `${baseUrl}/guarantee`,
-      lastModified: new Date('2026-10-06'),
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/headshots`,
-      lastModified: new Date('2026-10-06'),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
+    // /guarantee duplicate removed — kept at line 175 with priority 0.6
+    // /headshots removed — auto-generated in categoryPages from getActiveCategories()
     {
       url: `${baseUrl}/locations`,
       lastModified: new Date('2026-10-06'),
