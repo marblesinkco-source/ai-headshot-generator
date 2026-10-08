@@ -617,6 +617,16 @@
       ],
       "status": "done",
       "evidence": "96 dosyada düzeltme: privacy retention (30 gün tutarlı), 3rd party sharing (Replicate açıklaması), AI training dili (geçici model açıklaması), delivery time (~2hr standard). CI+Vercel PASS. Commit: 46fdecd. Canlı site doğrulandı."
+    },
+    {
+      "id": "feat-CODE-QUALITY",
+      "name": "Code Quality & Data Accuracy Audit",
+      "description": "14 ölü bileşen silme, uydurma fiyat düzeltmeleri ($12→$29 config'den), pricing-view-toggle hardcoded→config, gift-cards module-scope güçlendirme, sitemap duplicate düzeltme",
+      "dependencies": [
+        "feat-AUDIT-FIX"
+      ],
+      "status": "done",
+      "evidence": "14 dead component silindi, 2 industry page uydurma fiyat düzeltildi, pricing-view-toggle TEAM_PRICES config'den çekiyor, gift-cards optional chaining eklendi, sitemap duplicate kaldırıldı. Commit: 1fa2285. CI PASS + Vercel PASS. Canlı doğrulama: pricing/team/industry/gift-cards tümü doğru."
     }
   ]
 }
