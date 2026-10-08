@@ -26,7 +26,7 @@ const painPoints = [
   {
     title: 'Expensive Studio Sessions',
     description:
-      'Traditional real estate headshots cost $200-500+ per agent. Multiply that across an entire brokerage and the costs become staggering.',
+      'Traditional real estate headshots add up fast across a brokerage. Multiply the per-agent cost by your whole team and the total becomes staggering.',
   },
   {
     title: 'Impossible Scheduling',

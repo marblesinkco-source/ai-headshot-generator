@@ -89,7 +89,7 @@ interface ComparisonRow {
 const comparisonRows: ComparisonRow[] = [
   {
     feature: 'Price range',
-    traditional: '$200 - $500+',
+    traditional: 'Varies by photographer',
     otherAI: '$20 - $60',
     tailorpic: `${formatPrice(tailorpic1Package.price)} - ${formatPrice(execPackage.price)}`,
   },
@@ -189,7 +189,7 @@ const faqs = [
   },
   {
     question: 'How does the price compare to a photography studio?',
-    answer: `Traditional studio sessions typically cost $150 to $500 or more and deliver a small number of retouched images. ${siteConfig.name} is a one-time payment starting at ${BASE_PRICE_DISPLAY}. Studio figures are rough, typical ranges and vary by provider and market.`,
+    answer: `Studio session prices vary widely by photographer and location and typically deliver a small number of retouched images. ${siteConfig.name} is a one-time payment starting at ${BASE_PRICE_DISPLAY}.`,
   },
   {
     question: 'Are there subscriptions or hidden fees?',
@@ -358,7 +358,7 @@ export default function PricingComparisonPage() {
                         Traditional Studio
                       </div>
                       <span className="mt-1 block text-xs font-normal text-tp-muted">
-                        $200 - $500+
+                        Varies
                       </span>
                     </th>
                     <th className="px-6 py-4 text-sm font-semibold text-tp-ink">
@@ -431,7 +431,7 @@ export default function PricingComparisonPage() {
                     Traditional Studio
                   </h3>
                 </div>
-                <p className="mt-1 text-sm text-tp-muted">$200 - $500+</p>
+                <p className="mt-1 text-sm text-tp-muted">Varies by photographer</p>
                 <dl className="mt-4 space-y-3">
                   {comparisonRows.map((row) => (
                     <div
@@ -571,9 +571,8 @@ export default function PricingComparisonPage() {
                 Traditional Studio Comparison
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-tp-muted">
-                A typical photography studio session costs $150 to $500 or more
-                and delivers 3 to 10 retouched images&mdash;that works out to
-                roughly $30 to $100+ per final photo. With {siteConfig.name},
+                A typical photography studio session delivers 3 to 10 retouched
+                images, and prices vary widely by photographer and location. With {siteConfig.name},
                 our most popular Professional package gives you{' '}
                 {proPackage.outputCount} headshots for just{' '}
                 {formatPrice(proPackage.price)}, bringing the per-photo cost

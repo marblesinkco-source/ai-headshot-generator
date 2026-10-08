@@ -10,7 +10,7 @@ const COMPARISONS = [
     label: 'Traditional Studio',
     icon: Camera,
     time: '1–2 weeks',
-    cost: '$200–$500',
+    cost: 'Varies',
     steps: ['Book appointment', 'Travel to studio', 'Makeup + styling', '1-hour shoot', 'Wait 5–14 days for edits'],
     barWidth: 100,
     barColor: 'bg-tp-line',

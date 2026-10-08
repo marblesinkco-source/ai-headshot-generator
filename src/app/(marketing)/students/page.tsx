@@ -195,7 +195,7 @@ export default function StudentsPage() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/80">
             A polished headshot for LinkedIn, graduate school applications and internship
-            searches — without the $200 studio session. Starting at just{' '}
+            searches — without an expensive studio session. Starting at just{' '}
             <span className="font-semibold text-tp-bronze">{BASE_PRICE_DISPLAY}</span>.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">

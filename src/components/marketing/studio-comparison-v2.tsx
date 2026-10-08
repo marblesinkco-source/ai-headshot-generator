@@ -18,9 +18,8 @@ const ROWS: ComparisonRow[] = [
   {
     label: 'Cost',
     icon: DollarSign,
-    studio: '$200–$500+ per session',
+    studio: 'Varies by photographer',
     tailorpic: `From ${BASE_PRICE_DISPLAY}`,
-    studioEstimate: true,
   },
   { label: 'Time', icon: Clock, studio: '2–4 hours + travel', tailorpic: 'Under 2 hours delivery' },
   { label: 'Photos', icon: Camera, studio: '10–20 edited photos', tailorpic: 'Up to 160 AI headshots' },

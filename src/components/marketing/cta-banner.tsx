@@ -47,7 +47,7 @@ export function CTABanner() {
               <div className="mx-auto mt-8 inline-flex flex-col items-center gap-1 rounded-tp-button border border-tp-bronze/30 bg-tp-paper/5 px-6 py-4 sm:flex-row sm:gap-5">
                 <p className="text-sm text-tp-beige/60">
                   <span className="sr-only">Traditional photoshoot: </span>
-                  <span className="line-through decoration-tp-bronze/70">Traditional photoshoot: $200&ndash;$500</span>
+                  <span className="line-through decoration-tp-bronze/70">Skip the studio</span>
                 </p>
                 <span aria-hidden="true" className="hidden text-tp-bronze sm:inline">&rarr;</span>
                 <p className="text-tp-paper">

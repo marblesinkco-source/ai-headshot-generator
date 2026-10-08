@@ -62,7 +62,7 @@ const valueProps = [
     title: 'Unbeatable Price',
     stat: BASE_PRICE_DISPLAY,
     description:
-      'One-time payment, no subscriptions. Traditional studios typically charge $200–$500 for a single session with far fewer photos.',
+      'One-time payment, no subscriptions. Get studio-quality headshots at a fraction of what a traditional session costs.',
   },
   {
     icon: Clock,
@@ -117,7 +117,7 @@ interface ComparisonRow {
 const comparisonRows: ComparisonRow[] = [
   {
     feature: 'Starting price',
-    traditional: '$200–$500+',
+    traditional: 'Varies by photographer',
     otherAI: '$20–$60',
     tailorpic: BASE_PRICE_DISPLAY,
   },

@@ -214,7 +214,7 @@ export default async function CityPage({ params }: Props) {
                 {
                   icon: Sparkles,
                   title: `Fraction of ${data.name} Studio Cost`,
-                  desc: `Professional studios in ${data.name} charge $200–$500+. TailorPic starts from just ${BASE_PRICE_DISPLAY}.`,
+                  desc: `Skip the studio — TailorPic starts from just ${BASE_PRICE_DISPLAY}, a fraction of a typical session.`,
                 },
               ].map((b) => (
                 <div key={b.title} className="flex gap-4 rounded-tp-card border border-tp-line bg-white p-6 shadow-sm">

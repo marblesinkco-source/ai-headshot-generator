@@ -182,7 +182,7 @@ export default function EcommerceLandingPage() {
             {[
               { value: '12', label: 'photo styles for products & people' },
               { value: '40+', label: 'photos per session' },
-              { value: BASE_PRICE_DISPLAY, label: 'starting price vs $200+ studios' },
+              { value: BASE_PRICE_DISPLAY, label: 'starting price, no studio needed' },
               { value: '<2hrs', label: 'average delivery time' },
             ].map((stat) => (
               <div key={stat.label}>
