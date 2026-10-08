@@ -80,7 +80,7 @@ const benefits = [
   {
     icon: Clock,
     title: "Ready for Your Next Listing",
-    description: "Upload selfies today and have your portrait in about 2 hours, in time for your next launch.",
+    description: "Upload selfies today and have your portrait within hours, in time for your next launch.",
   },
 ];
 
@@ -98,7 +98,7 @@ const steps = [
   {
     icon: Check,
     title: "Download and Add to Your Listings",
-    description: "Get high-resolution photos in about 2 hours, then add your favorite to listings, flyers and profiles.",
+    description: "Get high-resolution photos within hours, then add your favorite to listings, flyers and profiles.",
   },
 ];
 
@@ -148,7 +148,7 @@ const faqs = [
   },
   {
     question: "How long does delivery take?",
-    answer: "Most orders arrive in about 2 hours after you upload your selfies.",
+    answer: "Most orders arrive within hours after you upload your selfies.",
   },
 ];
 
@@ -181,7 +181,7 @@ export default function RealEstateListingUseCasePage() {
               <span className="not-italic text-tp-bronze">{"Real Estate Listings"}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              {"Buyers and sellers choose an agent they trust on sight. Get a crisp, professional agent portrait from a handful of selfies, delivered in about 2 hours, starting at just $1.99."}
+              {"Buyers and sellers choose an agent they trust on sight. Get a crisp, professional agent portrait from a handful of selfies, delivered within hours, starting at just $1.99."}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -211,7 +211,7 @@ export default function RealEstateListingUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            {"Delivered in About 2 Hours"}
+            {"Delivered Within Hours"}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

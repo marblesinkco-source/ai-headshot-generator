@@ -11,7 +11,7 @@ export const faqs = [
     category: 'Delivery',
     question: 'How long does it take to get my photos?',
     answer:
-      'Most orders are completed within 2 hours. After you upload your selfies, our AI trains a custom model on your features (about 30 minutes), then generates all your photos. You will receive an email notification as soon as they are ready to download.',
+      'Most orders are completed within hours. After you upload your selfies, our AI trains a custom model on your features (about 30 minutes), then generates all your photos. You will receive an email notification as soon as they are ready to download.',
   },
   {
     category: 'Product',
@@ -95,7 +95,7 @@ export const faqs = [
     category: 'Delivery',
     question: 'Can I get my photos faster?',
     answer:
-      'Most orders are completed within about 2 hours, and you will receive an email as soon as your photos are ready to download. Lite ($9.90) and Basic ($19.90) list 24-hour delivery as their delivery window, so allow up to a day for those. Priority support is included with the Executive package.',
+      'Most orders are completed within hours, and you will receive an email as soon as your photos are ready to download. Lite ($9.90) and Basic ($19.90) list 24-hour delivery as their delivery window, so allow up to a day for those. Priority support is included with the Executive package.',
   },
   {
     category: 'Refund',

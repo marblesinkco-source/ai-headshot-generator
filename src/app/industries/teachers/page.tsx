@@ -45,7 +45,7 @@ const benefits = [
   },
   {
     title: "Affordable Without a Studio",
-    description: "Skip the school picture day scramble. Upload selfies and get results in about 2 hours.",
+    description: "Skip the school picture day scramble. Upload selfies and get results within hours.",
   },
   {
     title: "Matching Headshots for Staff",
@@ -64,7 +64,7 @@ const steps = [
   },
   {
     title: "Download Your Headshots",
-    description: "Receive high-resolution headshots in about 2 hours, ready for your school site, profiles, and conference bios.",
+    description: "Receive high-resolution headshots within hours, ready for your school site, profiles, and conference bios.",
   },
 ];
 
@@ -106,7 +106,7 @@ const faqs = [
   },
   {
     question: "How long does delivery take?",
-    answer: "Most headshots are ready in about 2 hours, so you can upload during a free period and have them by the end of the day.",
+    answer: "Most headshots are ready within hours, so you can upload during a free period and have them by the end of the day.",
   },
 ];
 
@@ -185,7 +185,7 @@ export default function TeachersIndustryPage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Delivered in About 2 Hours
+            Delivered Within Hours
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

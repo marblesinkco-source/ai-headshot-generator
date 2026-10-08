@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered in under 2 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -60,7 +60,7 @@ const differences = [
   { title: "A low entry price", body: "TailorPic starts from $1.99. Every package shows its total up front, so you know what you pay before you upload a single photo." },
   { title: "Beyond the office headshot", body: "Eleven categories cover LinkedIn, dating, creative portraits, pets and product shots, so one upload can serve several needs." },
   { title: "Personal model, not a generic filter", body: "TailorPic fine-tunes a LoRA model on your own selfies, which aims for a closer likeness than a one-size-fits-all preset." },
-  { title: "Trade-off on speed", body: "TailorPic results in under 2 hours for most orders, guaranteed within 24 hours. If you need results in minutes, a faster tool may suit an urgent deadline better." },
+  { title: "Trade-off on speed", body: "TailorPic results within hours for most orders, guaranteed within 24 hours. If you need results in minutes, a faster tool may suit an urgent deadline better." },
 ];
 
 const useCases = {
@@ -221,7 +221,7 @@ export default function VsMyHeadshotsAiPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 12 categories from $1.99. No subscription, results typically delivered in under 2 hours.
+              Professional photos across 12 categories from $1.99. No subscription, results typically delivered within hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

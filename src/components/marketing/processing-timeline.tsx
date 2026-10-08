@@ -123,7 +123,7 @@ export default function ProcessingTimeline() {
         <div className="mx-auto mt-12 flex max-w-xl items-center justify-center gap-3 rounded-tp-card border border-tp-line bg-tp-beige/40 px-5 py-4 text-center lg:mt-16">
           <Clock className="h-5 w-5 shrink-0 text-tp-bronze-ink" aria-hidden="true" />
           <p className="m-0 text-sm font-medium text-tp-ink sm:text-base">
-            Total time: Under 2 hours from upload to download
+            Total time: Most orders ready within hours
           </p>
         </div>
 

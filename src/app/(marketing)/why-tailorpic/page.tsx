@@ -543,7 +543,7 @@ export default function WhyTailorPicPage() {
                   3
                 </div>
                 <h3 className="mt-4 text-base font-semibold text-tp-ink">Download & Use</h3>
-                <p className="mt-2 text-sm text-tp-muted">Get your headshots in under 2 hours, ready for LinkedIn, team pages, and more.</p>
+                <p className="mt-2 text-sm text-tp-muted">Get your headshots within hours, ready for LinkedIn, team pages, and more.</p>
               </div>
             </div>
           </div>
@@ -566,7 +566,7 @@ export default function WhyTailorPicPage() {
             <p className="mx-auto mt-4 max-w-xl text-tp-beige/80">
               Join thousands of professionals who have switched from expensive
               studios to {siteConfig.name}. One-time payment, most orders ready
-              in about 2 hours, and a satisfaction guarantee if you are not
+              within hours, and a satisfaction guarantee if you are not
               satisfied.
             </p>
             <Link

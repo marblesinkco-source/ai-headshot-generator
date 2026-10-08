@@ -61,7 +61,7 @@ interface ComparisonRow {
 const comparisonRows: ComparisonRow[] = [
   { feature: 'Starting Price', tailorpic: 'From $1.99', headshotpro: '$29' },
   { feature: 'Photos per Session', tailorpic: '1 to 160', headshotpro: '40+' },
-  { feature: 'Delivery', tailorpic: 'About 2 hours', headshotpro: 'Check their site' },
+  { feature: 'Delivery', tailorpic: 'Within hours', headshotpro: 'Check their site' },
   { feature: 'Photo Categories', tailorpic: '12', headshotpro: 'Professional only' },
   { feature: 'Pet Portraits', tailorpic: true, headshotpro: false },
   { feature: 'Dating Photos', tailorpic: true, headshotpro: false },
@@ -88,7 +88,7 @@ const advantages = [
     icon: Zap,
     title: 'Fast Delivery',
     description:
-      'Your AI-generated photos are delivered in under 2 hours. Upload your selfies, pick a style, and get studio-quality results fast.',
+      'Your AI-generated photos are delivered within hours. Upload your selfies, pick a style, and get studio-quality results fast.',
   },
   {
     icon: Shield,
@@ -120,7 +120,7 @@ const faqs = [
   {
     question: 'How long does delivery take?',
     answer:
-      'TailorPic delivers in about 2 hours. HeadshotPro also advertises fast delivery, so check their site for current turnaround times.',
+      'TailorPic delivers within hours. HeadshotPro also advertises fast delivery, so check their site for current turnaround times.',
   },
   {
     question: 'Is TailorPic a subscription?',

@@ -47,7 +47,7 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
       },
       {
         title: 'Ready in Hours, Not Days',
-        description: 'Skip the booking, commute, and retouching queue. Most orders are ready in about 2 hours.',
+        description: 'Skip the booking, commute, and retouching queue. Most orders are ready within hours.',
         icon: '⚡',
       },
       {
@@ -76,7 +76,7 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
       },
       {
         question: 'How long until my headshots are ready?',
-        answer: 'Most orders are ready within 2 hours. You will receive an email as soon as your headshots are available for download.',
+        answer: 'Most orders are ready within hours. You will receive an email as soon as your headshots are available for download.',
       },
       {
         question: 'Can I use these for LinkedIn?',

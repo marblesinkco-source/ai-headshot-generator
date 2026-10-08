@@ -27,7 +27,7 @@ const steps = [
     title: 'Download your portraits',
     Illustration: StepDownloadIllustration,
     description:
-      'Get your studio-quality portraits in under 2 hours. Browse the full set, save your favorites, and use them on LinkedIn, resumes, social profiles or print.',
+      'Get your studio-quality portraits within hours. Browse the full set, save your favorites, and use them on LinkedIn, resumes, social profiles or print.',
   },
 ];
 
@@ -51,7 +51,7 @@ export function HowItWorks() {
         </div>
         <span className="hidden sm:inline-flex shrink-0 items-center gap-1.5 rounded-full border border-tp-line bg-tp-paper px-3 py-1 text-[11px] lg:text-xs font-medium text-tp-bronze-ink">
           <Clock className="h-3 w-3" aria-hidden="true" />
-          Ready in under 2 hours
+          Most orders ready within hours
         </span>
       </div>
 

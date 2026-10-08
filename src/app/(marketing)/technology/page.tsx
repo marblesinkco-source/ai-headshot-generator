@@ -182,7 +182,7 @@ const faqItems = [
   },
   {
     q: 'How long does the generation process take?',
-    a: 'Typically under 2 hours. We prioritize quality over speed, running multiple validation passes before delivering your results. Timing may vary slightly with demand.',
+    a: 'Typically within hours. We prioritize quality over speed, running multiple validation passes before delivering your results. Timing may vary slightly with demand.',
   },
   {
     q: 'Is the result a real photograph?',

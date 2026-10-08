@@ -49,7 +49,7 @@ const benefits = [
   },
   {
     title: "Fast Turnaround",
-    description: "Campaign deadlines do not wait. Get professional results in about 2 hours instead of weeks of scheduling.",
+    description: "Campaign deadlines do not wait. Get professional results within hours instead of weeks of scheduling.",
   },
 ];
 
@@ -64,7 +64,7 @@ const steps = [
   },
   {
     title: "Download Your Headshots",
-    description: "Receive high-resolution headshots in about 2 hours, ready for LinkedIn, your website, and speaker pages.",
+    description: "Receive high-resolution headshots within hours, ready for LinkedIn, your website, and speaker pages.",
   },
 ];
 
@@ -110,7 +110,7 @@ const faqs = [
   },
   {
     question: "How long does delivery take?",
-    answer: "Most headshots are ready in about 2 hours, so you can refresh your profiles before your next campaign or event.",
+    answer: "Most headshots are ready within hours, so you can refresh your profiles before your next campaign or event.",
   },
 ];
 
@@ -189,7 +189,7 @@ export default function MarketingProfessionalsIndustryPage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Delivered in About 2 Hours
+            Delivered Within Hours
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

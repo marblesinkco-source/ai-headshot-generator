@@ -50,7 +50,7 @@ const benefits = [
   },
   {
     title: "Fits Around Your Shifts",
-    description: "Skip the studio booking. Take selfies at home and get results in about 2 hours.",
+    description: "Skip the studio booking. Take selfies at home and get results within hours.",
   },
 ];
 
@@ -65,7 +65,7 @@ const steps = [
   },
   {
     title: "Download Your Headshots",
-    description: "Receive high-resolution headshots in about 2 hours, ready for agency pages and profiles.",
+    description: "Receive high-resolution headshots within hours, ready for agency pages and profiles.",
   },
 ];
 
@@ -107,7 +107,7 @@ const faqs = [
   },
   {
     question: "How long does delivery take?",
-    answer: "Most headshots are ready in about 2 hours, so you can apply or update profiles the same day.",
+    answer: "Most headshots are ready within hours, so you can apply or update profiles the same day.",
   },
   {
     question: "How many headshots do I get?",
@@ -190,7 +190,7 @@ export default function ParamedicsIndustryPage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Delivered in About 2 Hours
+            Delivered Within Hours
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

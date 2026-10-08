@@ -46,7 +46,7 @@ const quickBadges = [
   {
     icon: Clock,
     label: 'Delivery Time',
-    tailorpic: 'Under 2 hours',
+    tailorpic: 'Within hours',
     competitor: 'Under 2 hours',
   },
 ];
@@ -60,7 +60,7 @@ type FeatureRow = {
 const comparisonRows: FeatureRow[] = [
   { feature: 'Starting Price', tailorpic: 'From $1.99', competitor: '$29' },
   { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: '40+' },
-  { feature: 'Delivery Time', tailorpic: 'Under 2 hours', competitor: 'Under 2 hours' },
+  { feature: 'Delivery Time', tailorpic: 'Within hours', competitor: 'Under 2 hours' },
   { feature: 'Photo Categories', tailorpic: '12 categories', competitor: 'Limited styles' },
   { feature: 'Quality Commitment', tailorpic: 'Free regeneration', competitor: 'Yes' },
   { feature: 'Team / Enterprise Plans', tailorpic: true, competitor: true },
@@ -119,7 +119,7 @@ const faqs = [
   {
     question: 'How long does delivery take?',
     answer:
-      'TailorPic delivers your photos in about 2 hours. Aragon AI also advertises fast turnaround, so check their site for current delivery times.',
+      'TailorPic delivers your photos within hours. Aragon AI also advertises fast turnaround, so check their site for current delivery times.',
   },
   {
     question: 'Is TailorPic a subscription like Aragon AI?',
@@ -280,7 +280,7 @@ export default function VsAragonPage() {
             <h2 className="text-3xl font-display font-normal text-tp-ink">Ready to Switch?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-muted">
               Get professional AI headshots starting at just $1.99. No subscriptions, no hidden fees
-              — just great photos delivered in under 2 hours.
+              — just great photos delivered within hours.
             </p>
             <div className="mt-8">
               <Button asChild size="lg" className="bg-tp-bronze-ink hover:bg-tp-bronze-ink/90 text-white">

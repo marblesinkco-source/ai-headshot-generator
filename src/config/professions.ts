@@ -25,7 +25,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     subheadline:
       'A polished headshot builds trust before the first consultation. Get studio-quality portraits for your firm website, bar directory, and LinkedIn — from your own photos.',
     whyMatters:
-      'Clients research attorneys online before making contact. A professional headshot on your firm profile, Avvo listing, or LinkedIn signals competence and approachability. Traditional studio sessions require scheduling around billable hours — AI headshots take minutes to upload and deliver in about 2 hours.',
+      'Clients research attorneys online before making contact. A professional headshot on your firm profile, Avvo listing, or LinkedIn signals competence and approachability. Traditional studio sessions require scheduling around billable hours — AI headshots take minutes to upload and deliver within hours.',
     useCases: [
       'Law firm website bios',
       'State bar directory listings',
@@ -67,7 +67,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     subheadline:
       'Stand out on GitHub, LinkedIn, and your company page with a professional photo — no studio trip required.',
     whyMatters:
-      'A professional headshot helps developers stand out in job searches, conference talks, and open-source contributions. Many engineers skip the studio because of the hassle and cost. AI headshots let you get a polished look in minutes — upload selfies, pick a style, and get results in about 2 hours.',
+      'A professional headshot helps developers stand out in job searches, conference talks, and open-source contributions. Many engineers skip the studio because of the hassle and cost. AI headshots let you get a polished look in minutes — upload selfies, pick a style, and get results within hours.',
     useCases: [
       'LinkedIn and GitHub profiles',
       'Company team pages',
@@ -149,9 +149,9 @@ export const PROFESSIONS: ProfessionPage[] = [
     profession: 'Accountants & CPAs',
     headline: 'AI Headshots for Accountants & CPAs',
     subheadline:
-      'Build client confidence with a polished professional portrait for your firm website, CPA directory, and LinkedIn — ready in about 2 hours.',
+      'Build client confidence with a polished professional portrait for your firm website, CPA directory, and LinkedIn — ready within hours.',
     whyMatters:
-      'Clients entrust accountants with their most sensitive financial information. A professional headshot on your firm bio, CPA directory, and LinkedIn profile communicates the reliability and attention to detail your clients expect. Skip the studio scheduling — upload selfies and get results in about 2 hours.',
+      'Clients entrust accountants with their most sensitive financial information. A professional headshot on your firm bio, CPA directory, and LinkedIn profile communicates the reliability and attention to detail your clients expect. Skip the studio scheduling — upload selfies and get results within hours.',
     useCases: [
       'Accounting firm website bios',
       'CPA directory listings',

@@ -99,7 +99,7 @@ export function PriceReceipt() {
                 <Check className="h-3.5 w-3.5 text-tp-bronze-ink" />
                 Delivery
               </span>
-              <span className="text-xs font-medium text-tp-bronze-ink">Under 2 hours</span>
+              <span className="text-xs font-medium text-tp-bronze-ink">Within hours</span>
             </div>
             <div className="flex items-center justify-between py-3.5">
               <span className="flex items-center gap-2 text-sm text-tp-muted">
@@ -128,7 +128,7 @@ export function PriceReceipt() {
             <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-tp-muted">
               <span className="flex items-center gap-1.5">
                 <Clock className="h-3.5 w-3.5 text-tp-bronze-ink" />
-                Ready in under 2 hours
+                Most orders ready within hours
               </span>
               <span className="flex items-center gap-1.5">
                 <RefreshCcw className="h-3.5 w-3.5 text-tp-bronze-ink" />

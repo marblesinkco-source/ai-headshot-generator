@@ -110,7 +110,7 @@ const values = [
     icon: Clock,
     title: 'Speed',
     description:
-      'From upload to download in about 2 hours. No scheduling, no waiting weeks for a photographer.',
+      'From upload to download within hours. No scheduling, no waiting weeks for a photographer.',
   },
 ];
 

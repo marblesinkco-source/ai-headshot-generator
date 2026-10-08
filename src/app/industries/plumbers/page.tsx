@@ -50,7 +50,7 @@ const benefits = [
   },
   {
     title: "Fast and Affordable",
-    description: "Skip the studio. Take selfies at home and get a professional result in about 2 hours.",
+    description: "Skip the studio. Take selfies at home and get a professional result within hours.",
   },
 ];
 
@@ -65,7 +65,7 @@ const steps = [
   },
   {
     title: "Download Your Headshots",
-    description: "Receive high-resolution headshots in about 2 hours, ready for your website, listings, and print.",
+    description: "Receive high-resolution headshots within hours, ready for your website, listings, and print.",
   },
 ];
 
@@ -107,7 +107,7 @@ const faqs = [
   },
   {
     question: "How long does delivery take?",
-    answer: "Most headshots are ready in about 2 hours, so you can update your listings the same day.",
+    answer: "Most headshots are ready within hours, so you can update your listings the same day.",
   },
   {
     question: "How many headshots do I get?",
@@ -190,7 +190,7 @@ export default function PlumbersIndustryPage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Delivered in About 2 Hours
+            Delivered Within Hours
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

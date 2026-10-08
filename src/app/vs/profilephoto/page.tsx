@@ -46,7 +46,7 @@ const quickBadges = [
   {
     icon: Clock,
     label: 'Delivery Time',
-    tailorpic: 'Under 2 hours',
+    tailorpic: 'Within hours',
     competitor: 'Varies by plan',
   },
 ];
@@ -60,7 +60,7 @@ type FeatureRow = {
 const comparisonRows: FeatureRow[] = [
   { feature: 'Starting Price', tailorpic: 'From $1.99', competitor: '~$15+' },
   { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: 'Varies by plan' },
-  { feature: 'Delivery Time', tailorpic: 'Under 2 hours', competitor: 'Varies by plan' },
+  { feature: 'Delivery Time', tailorpic: 'Within hours', competitor: 'Varies by plan' },
   { feature: 'Photo Categories', tailorpic: '12 categories', competitor: 'Limited styles' },
   { feature: 'Quality Commitment', tailorpic: 'Free regeneration', competitor: 'Check current terms' },
   { feature: 'Industry-Specific Solutions', tailorpic: true, competitor: 'Limited' },
@@ -85,9 +85,9 @@ const whyCards = [
   },
   {
     icon: Sparkles,
-    title: 'Up to 160 Photos in Under 2 Hours',
+    title: 'Up to 160 Photos Within Hours',
     description:
-      'Get a full set of photos in under 2 hours.',
+      'Get a full set of photos within hours.',
   },
   {
     icon: Target,
@@ -119,7 +119,7 @@ const faqs = [
   {
     question: 'How long does delivery take?',
     answer:
-      'TailorPic delivers in about 2 hours. ProfilePhoto.ai delivery time varies by plan, so check their site for current details.',
+      'TailorPic delivers within hours. ProfilePhoto.ai delivery time varies by plan, so check their site for current details.',
   },
   {
     question: 'Is TailorPic a subscription or a one-time purchase?',
@@ -280,7 +280,7 @@ export default function VsProfilePhotoPage() {
             <h2 className="text-3xl font-display font-normal text-tp-ink">Ready to Try TailorPic?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-muted">
               Get professional AI headshots starting at just $1.99. No subscriptions, no hidden fees
-              — just great photos delivered in under 2 hours.
+              — just great photos delivered within hours.
             </p>
             <div className="mt-8">
               <Button asChild size="lg" className="bg-tp-bronze-ink hover:bg-tp-bronze-ink/90 text-white">

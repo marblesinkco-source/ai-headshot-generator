@@ -60,7 +60,7 @@ const steps = [
     icon: Sparkles,
     title: 'AI generates your headshots',
     description:
-      'Our AI learns your features and creates 40+ professional photos across 12 categories. Most orders are ready within 2 hours.',
+      'Our AI learns your features and creates 40+ professional photos across 12 categories. Most orders are ready within hours.',
   },
   {
     icon: Download,
@@ -93,7 +93,7 @@ const trustSignals = [
   { icon: ShieldCheck, title: 'Privacy first', description: 'Uploads are used only to create your photos and are deleted within 30 days.' },
   { icon: CreditCard, title: 'One-time payment', description: 'No subscription and nothing to cancel.' },
   { icon: Lock, title: PAYMENT_PROVIDER.checkoutBadge, description: PAYMENT_PROVIDER.privacyStatement },
-  { icon: Clock, title: 'Most orders within 2 hours', description: 'No booking, travel or waiting for a photographer.' },
+  { icon: Clock, title: 'Most orders within hours', description: 'No booking, travel or waiting for a photographer.' },
 ];
 
 const features = [
@@ -150,7 +150,7 @@ const faqs = [
   {
     question: 'How long does it take?',
     answer:
-      'Most orders are delivered within 2 hours. There is no booking or travel, and you can upload from anywhere.',
+      'Most orders are delivered within hours. There is no booking or travel, and you can upload from anywhere.',
   },
   {
     question: 'Is payment secure?',
@@ -207,7 +207,7 @@ export default function FreeHeadshotGeneratorPage() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-muted">
             Upload a few selfies, pick your styles, and get studio-quality headshots for LinkedIn,
-            resumes and more. From $1.99, no subscription, most orders ready within 2 hours.
+            resumes and more. From $1.99, no subscription, most orders ready within hours.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
@@ -221,7 +221,7 @@ export default function FreeHeadshotGeneratorPage() {
           <ul className="mt-8 flex flex-col items-center justify-center gap-2 text-sm text-tp-muted sm:flex-row sm:gap-6">
             <li className="flex items-center gap-2"><Check className="h-4 w-4 text-tp-bronze-ink" />No studio or booking</li>
             <li className="flex items-center gap-2"><Check className="h-4 w-4 text-tp-bronze-ink" />From $1.99, no subscription</li>
-            <li className="flex items-center gap-2"><Check className="h-4 w-4 text-tp-bronze-ink" />Most orders within 2 hours</li>
+            <li className="flex items-center gap-2"><Check className="h-4 w-4 text-tp-bronze-ink" />Most orders within hours</li>
           </ul>
           <div className="mx-auto mt-10 max-w-xs">
             <FreeTrialIllustration className="w-full h-auto" />

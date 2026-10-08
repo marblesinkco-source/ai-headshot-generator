@@ -350,7 +350,7 @@ export default function ReviewsPage() {
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-tp-beige/70">
               Upload a few selfies and get studio-quality headshots delivered in
-              under 2 hours. No subscription, no studio appointment needed.
+              within hours. No subscription, no studio appointment needed.
             </p>
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link

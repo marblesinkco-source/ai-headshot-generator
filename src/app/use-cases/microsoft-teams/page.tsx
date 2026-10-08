@@ -12,7 +12,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Microsoft Teams Profiles | TailorPic";
 const pageDescription =
-  "A professional Microsoft Teams profile photo from a few selfies. Look polished in chats, meetings and Outlook. Delivered in about 2 hours. Starting at $1.99.";
+  "A professional Microsoft Teams profile photo from a few selfies. Look polished in chats, meetings and Outlook. Delivered within hours. Starting at $1.99.";
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -68,7 +68,7 @@ const benefits = [
   {
     icon: Clock,
     title: "Ready Before Your Next Meeting",
-    description: "Upload selfies now and have a new profile photo in about 2 hours.",
+    description: "Upload selfies now and have a new profile photo within hours.",
   },
 ];
 
@@ -86,7 +86,7 @@ const steps = [
   {
     icon: Check,
     title: "Download and Upload to Teams",
-    description: "Get your photos in about 2 hours, then set your favorite in Teams and Outlook in seconds.",
+    description: "Get your photos within hours, then set your favorite in Teams and Outlook in seconds.",
   },
 ];
 
@@ -136,7 +136,7 @@ const faqs = [
   },
   {
     question: "How long does delivery take?",
-    answer: "Most orders arrive in about 2 hours after you upload your selfies.",
+    answer: "Most orders arrive within hours after you upload your selfies.",
   },
 ];
 
@@ -169,7 +169,7 @@ export default function MicrosoftTeamsPage() {
               <span className="not-italic text-tp-bronze">Microsoft Teams</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              Your Teams photo shows up in every chat, meeting, and Outlook email. Get a crisp, professional headshot for Microsoft 365 from a handful of selfies. Delivered in about 2 hours, starting at just $1.99.
+              Your Teams photo shows up in every chat, meeting, and Outlook email. Get a crisp, professional headshot for Microsoft 365 from a handful of selfies. Delivered within hours, starting at just $1.99.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -199,7 +199,7 @@ export default function MicrosoftTeamsPage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Delivered in About 2 Hours
+            Delivered Within Hours
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

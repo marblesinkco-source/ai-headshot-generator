@@ -69,7 +69,7 @@ const steps = [
   {
     icon: Play,
     title: "Download and Publish",
-    description: "Receive high-resolution photos in about 2 hours. Update your avatar, banner, and thumbnails and hit publish.",
+    description: "Receive high-resolution photos within hours. Update your avatar, banner, and thumbnails and hit publish.",
   },
 ];
 
@@ -119,7 +119,7 @@ const faqs = [
   },
   {
     question: "How much does it cost and how long does it take?",
-    answer: "Packs start at $1.99 and most orders are delivered in about 2 hours, so you can refresh your channel the same day.",
+    answer: "Packs start at $1.99 and most orders are delivered within hours, so you can refresh your channel the same day.",
   },
 ];
 
@@ -155,7 +155,7 @@ export default function YouTubeUseCasePage() {
               <span className="not-italic text-tp-bronze">YouTube Channels</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              Your face is your channel&apos;s brand. Create standout avatars, banner portraits, and thumbnail-ready photos from a few selfies, without booking a studio. Delivered in about 2 hours, starting at just $1.99.
+              Your face is your channel&apos;s brand. Create standout avatars, banner portraits, and thumbnail-ready photos from a few selfies, without booking a studio. Delivered within hours, starting at just $1.99.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -185,7 +185,7 @@ export default function YouTubeUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Delivered in About 2 Hours
+            Delivered Within Hours
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

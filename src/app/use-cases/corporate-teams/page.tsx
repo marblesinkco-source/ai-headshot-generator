@@ -70,7 +70,7 @@ const steps = [
   {
     icon: Check,
     title: "Download All Headshots",
-    description: "Receive polished, high-resolution headshots for the entire team in about 2 hours, ready for your website and directories.",
+    description: "Receive polished, high-resolution headshots for the entire team within hours, ready for your website and directories.",
   },
 ];
 

@@ -68,7 +68,7 @@ const benefits = [
   },
   {
     icon: Clock,
-    title: "Ready in About 2 Hours",
+    title: "Ready Within Hours",
     description: "Upload selfies and receive your portrait the same day.",
   },
   {
@@ -97,7 +97,7 @@ const steps = [
   {
     icon: Check,
     title: "Download and Use Where Allowed",
-    description: "Get high-resolution photos in about 2 hours, then use them for badges, profiles, and other unofficial needs.",
+    description: "Get high-resolution photos within hours, then use them for badges, profiles, and other unofficial needs.",
   },
 ];
 
@@ -147,7 +147,7 @@ const faqs = [
   },
   {
     question: "How long does delivery take?",
-    answer: "Most orders arrive in about 2 hours after you upload your selfies.",
+    answer: "Most orders arrive within hours after you upload your selfies.",
   },
 ];
 
@@ -180,7 +180,7 @@ export default function GovernmentIdPhotoUseCasePage() {
               <span className="not-italic text-tp-bronze">{"ID-Style Photos"}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              {"Need a clean, front-facing portrait for a profile, badge, or application? Get a polished photo from a handful of selfies, delivered in about 2 hours, starting at just $1.99. Official government IDs have their own rules, explained below."}
+              {"Need a clean, front-facing portrait for a profile, badge, or application? Get a polished photo from a handful of selfies, delivered within hours, starting at just $1.99. Official government IDs have their own rules, explained below."}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

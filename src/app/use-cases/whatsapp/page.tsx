@@ -86,7 +86,7 @@ const steps = [
   {
     icon: Check,
     title: "Download and Update WhatsApp",
-    description: "Get your high-resolution photos in about 2 hours, then set your favorite in WhatsApp settings.",
+    description: "Get your high-resolution photos within hours, then set your favorite in WhatsApp settings.",
   },
 ];
 
@@ -136,7 +136,7 @@ const faqs = [
   },
   {
     question: "How long does delivery take?",
-    answer: "Most orders arrive in about 2 hours after you upload your selfies, so you can update your profile the same day.",
+    answer: "Most orders arrive within hours after you upload your selfies, so you can update your profile the same day.",
   },
 ];
 
@@ -169,7 +169,7 @@ export default function WhatsappUseCasePage() {
               <span className="not-italic text-tp-bronze">WhatsApp</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              Customers and contacts judge you by your chat photo before they read your first message. Get a warm, professional WhatsApp profile picture from a few selfies. Delivered in about 2 hours, starting at just $1.99.
+              Customers and contacts judge you by your chat photo before they read your first message. Get a warm, professional WhatsApp profile picture from a few selfies. Delivered within hours, starting at just $1.99.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -199,7 +199,7 @@ export default function WhatsappUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Delivered in About 2 Hours
+            Delivered Within Hours
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

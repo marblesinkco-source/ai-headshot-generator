@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   description:
     `Professional product photos for your online store. AI-powered, studio-quality images from ${BASE_PRICE_DISPLAY}. Perfect for Shopify, Amazon, Etsy, and more.`,
   alternates: { canonical: '/industries/ecommerce' },
-  openGraph: generateOGMetadata({ title: 'AI Product Photography for E-Commerce | TailorPic', description: 'Studio-quality product photos in 2 hours. No photographer needed.', path: '/industries/ecommerce', type: 'industry' }),
+  openGraph: generateOGMetadata({ title: 'AI Product Photography for E-Commerce | TailorPic', description: 'Studio-quality product photos within hours. No photographer needed.', path: '/industries/ecommerce', type: 'industry' }),
   
-  twitter: generateTwitterMetadata({ title: 'AI Product Photography for E-Commerce | TailorPic', description: 'Studio-quality product photos in 2 hours. No photographer needed.', type: 'industry' }),
+  twitter: generateTwitterMetadata({ title: 'AI Product Photography for E-Commerce | TailorPic', description: 'Studio-quality product photos within hours. No photographer needed.', type: 'industry' }),
 };
 
 const faqs = [
@@ -36,7 +36,7 @@ const faqs = [
   {
     question: "How long does it take to receive my photos?",
     answer:
-      "Most orders are ready in about 2 hours. That lets you list new products the same day instead of waiting on a studio or photographer.",
+      "Most orders are ready within hours. That lets you list new products the same day instead of waiting on a studio or photographer.",
   },
   {
     question: "Can I keep my branding consistent across a large catalog?",
@@ -60,7 +60,7 @@ export default function EcommerceLandingPage() {
     <main id="main-content" className="min-h-screen">
       <ProductSchema
         name="Professional Headshots for E-Commerce Sellers"
-        description="AI-generated professional photos for e-commerce sellers and online store owners, including team and founder headshots delivered in about 2 hours."
+        description="AI-generated professional photos for e-commerce sellers and online store owners, including team and founder headshots delivered within hours."
         price={990}
         category="Professional Services"
         slug="industries/ecommerce"
@@ -127,7 +127,7 @@ export default function EcommerceLandingPage() {
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 text-center">
             {[
               'White Background Ready',
-              'Under 2 Hours',
+              'Within hours',
               'Commercial License',
               'Satisfaction Guaranteed',
             ].map((text) => (
@@ -183,7 +183,7 @@ export default function EcommerceLandingPage() {
               { value: '12', label: 'photo styles for products & people' },
               { value: '40+', label: 'photos per session' },
               { value: BASE_PRICE_DISPLAY, label: 'starting price, no studio needed' },
-              { value: '<2hrs', label: 'average delivery time' },
+              { value: 'Within hours', label: 'average delivery time' },
             ].map((stat) => (
               <div key={stat.label}>
                 <p className="text-2xl sm:text-3xl font-bold text-white">{stat.value}</p>
@@ -208,7 +208,7 @@ export default function EcommerceLandingPage() {
               { title: 'Marketplace-Ready', desc: 'White background photos optimized for Amazon, Shopify, Etsy, and eBay requirements.' },
               { title: 'Multiple Angles & Styles', desc: 'Lifestyle shots, flat lays, and clean product-on-white — all from one upload.' },
               { title: 'Higher Conversion Rates', desc: 'Professional product images help build buyer trust and drive more sales.' },
-              { title: '2-Hour Turnaround', desc: 'Launch new products the same day. No waiting weeks for a photographer.' },
+              { title: 'Fast Turnaround', desc: 'Launch new products the same day. No waiting weeks for a photographer.' },
               { title: 'Scale Your Catalog', desc: 'Whether you have 10 or 1,000 products, AI handles them all consistently.' },
               { title: 'Consistent Branding', desc: 'Every product photo matches your brand style. No more visual inconsistency.' },
             ].map((benefit) => (

@@ -76,7 +76,7 @@ const benefits = [
 const stats = [
   { value: '40+', label: 'Photos per order' },
   { value: '12', label: 'Professional styles' },
-  { value: '< 2hrs', label: 'From selfies to finished headshots' },
+  { value: 'Within hours', label: 'From selfies to finished headshots' },
   { value: '$1.99', label: 'Starting price per person' },
 ];
 
@@ -99,7 +99,7 @@ const faqs = [
   {
     question: "Can I fit this around my clinic schedule?",
     answer:
-      "Yes. You can upload selfies during a break and receive finished headshots in about 2 hours. There is no studio visit and no clinic time to block out.",
+      "Yes. You can upload selfies during a break and receive finished headshots within hours. There is no studio visit and no clinic time to block out.",
   },
   {
     question: "Can my practice get matching headshots for new staff?",
@@ -279,7 +279,7 @@ export default function DoctorsIndustryPage() {
               Ready to Upgrade Your Professional Image?
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-tp-beige/70">
-              Get studio-quality headshots delivered in under 2 hours — no appointment, no studio, no hassle. Starting from just $1.99.
+              Get studio-quality headshots delivered within hours — no appointment, no studio, no hassle. Starting from just $1.99.
             </p>
             <div className="mt-10">
               <a

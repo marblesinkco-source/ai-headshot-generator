@@ -105,7 +105,7 @@ const faqs = [
   {
     question: "How quickly can a new associate or partner get a headshot?",
     answer:
-      "Most headshots are ready about 2 hours after the selfies are uploaded. A lateral hire or new associate can have a matching photo on the firm website the same day.",
+      "Most headshots are ready within hours after the selfies are uploaded. A lateral hire or new associate can have a matching photo on the firm website the same day.",
   },
   {
     question: "Can I use one set of photos for the firm site, LinkedIn, and conference bios?",
@@ -354,7 +354,7 @@ export default function LawyersIndustryPage() {
               Ready to Upgrade Your Professional Image?
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-tp-beige/70">
-              Get studio-quality headshots delivered in under 2 hours — no appointment, no studio, no hassle. Starting from just $1.99.
+              Get studio-quality headshots delivered within hours — no appointment, no studio, no hassle. Starting from just $1.99.
             </p>
             <div className="mt-10">
               <a

@@ -461,7 +461,7 @@ export default function GlossaryPage() {
             See the Technology in Action
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-tp-beige/80">
-            Upload a few selfies and get professional AI headshots, with most orders completed within 2 hours.
+            Upload a few selfies and get professional AI headshots, with most orders completed within hours.
           </p>
           <div className="mt-8">
             <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots">

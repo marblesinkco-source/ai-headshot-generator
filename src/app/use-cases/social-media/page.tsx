@@ -69,7 +69,7 @@ const steps = [
   {
     icon: Check,
     title: "Refresh All Your Profiles",
-    description: "Receive high-resolution photos in about 2 hours. Update your profile pictures across every social platform in one sitting.",
+    description: "Receive high-resolution photos within hours. Update your profile pictures across every social platform in one sitting.",
   },
 ];
 
@@ -181,7 +181,7 @@ export default function SocialMediaUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Delivered in About 2 Hours
+            Delivered Within Hours
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

@@ -59,7 +59,7 @@ const keyFacts = [
   },
   {
     icon: Clock,
-    value: 'Under 2 hours',
+    value: 'Within hours',
     label: 'Average delivery time',
   },
   {
@@ -134,7 +134,7 @@ export default function PressPage() {
               polished, business-ready headshots across a range of styles and
               categories — from corporate portraits and LinkedIn photos to
               creative and industry-specific looks. Results are delivered in
-              under two hours, with packages ranging from a single photo to sets
+              within hours, with packages ranging from a single photo to sets
               of up to 160 images.
             </p>
             <p>

@@ -77,7 +77,7 @@ const benefits = [
 const stats = [
   { value: '40+', label: 'Photos per order' },
   { value: '12', label: 'Professional styles' },
-  { value: '< 2hrs', label: 'From selfies to finished headshots' },
+  { value: 'Within hours', label: 'From selfies to finished headshots' },
   { value: '$1.99', label: 'Starting price per person' },
 ];
 
@@ -85,7 +85,7 @@ const faqs = [
   {
     question: "Can I get my headshots during tax season?",
     answer:
-      "Yes. Upload selfies from your phone between client calls and your headshots are typically ready in about 2 hours. There is no studio visit or calendar block required, even during Q1 and Q4 crunch time.",
+      "Yes. Upload selfies from your phone between client calls and your headshots are typically ready within hours. There is no studio visit or calendar block required, even during Q1 and Q4 crunch time.",
   },
   {
     question: "Will the headshots work for CPA society and association directories?",
@@ -100,7 +100,7 @@ const faqs = [
   {
     question: "What if a new hire starts and needs a headshot quickly?",
     answer:
-      "They can upload selfies on day one and receive finished headshots within about 2 hours. That means your website team page can be updated the same day.",
+      "They can upload selfies on day one and receive finished headshots within hours. That means your website team page can be updated the same day.",
   },
   {
     question: "How much does it cost?",
@@ -281,7 +281,7 @@ export default function AccountantsIndustryPage() {
               Ready to Upgrade Your Professional Image?
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-tp-beige/70">
-              Get studio-quality headshots delivered in under 2 hours — no appointment, no studio, no hassle. Starting from just $1.99.
+              Get studio-quality headshots delivered within hours — no appointment, no studio, no hassle. Starting from just $1.99.
             </p>
             <div className="mt-10">
               <a

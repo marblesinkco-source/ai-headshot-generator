@@ -81,7 +81,7 @@ const STEPS = [
   {
     step: '03',
     title: 'Download & Use Everywhere',
-    description: 'Receive high-resolution headshots within about 2 hours. Use them on any platform — full commercial rights included.',
+    description: 'Receive high-resolution headshots within hours. Use them on any platform — full commercial rights included.',
   },
 ];
 
@@ -111,7 +111,7 @@ export default async function ProfessionLandingPage({ params }: Props) {
     },
     {
       question: 'How quickly will I get my headshots?',
-      answer: 'Most headshots are ready about 2 hours after you upload your selfies. You can upload from any device, at any time — no appointment needed.',
+      answer: 'Most headshots are ready within hours after you upload your selfies. You can upload from any device, at any time — no appointment needed.',
     },
     {
       question: 'What photos do I need to upload?',
@@ -440,7 +440,7 @@ export default async function ProfessionLandingPage({ params }: Props) {
               Ready to Upgrade Your Professional Image?
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-tp-beige/70">
-              Get studio-quality headshots delivered in about 2 hours — no appointment, no studio, no hassle. Starting from just {formatPrice(entryPkg?.price ?? 199)}.
+              Get studio-quality headshots delivered within hours — no appointment, no studio, no hassle. Starting from just {formatPrice(entryPkg?.price ?? 199)}.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots">

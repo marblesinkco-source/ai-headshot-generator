@@ -355,7 +355,7 @@ export default function SamplesPage() {
                 Create yours
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
-              <p className="mt-3 text-sm text-tp-muted">photos, one-time payment. Most orders ready within 2 hours.</p>
+              <p className="mt-3 text-sm text-tp-muted">photos, one-time payment. Most orders ready within hours.</p>
             </div>
           </div>
         </section>

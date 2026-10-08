@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered in under 2 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -53,7 +53,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 const differences = [
   { title: "Price to get started", body: "TailorPic packages start from $1.99, compared with Dreamwave's ~$35 entry price and its $99 premium tier." },
   { title: "Volume vs variety", body: "Dreamwave can produce up to 300 headshots. TailorPic delivers photos but spreads them across 12 categories, from business and dating to creative looks." },
-  { title: "Speed", body: "Dreamwave returns results in about 5 minutes. TailorPic typically completes in under 2 hours, since each model is fine-tuned with LoRA on your own photos." },
+  { title: "Speed", body: "Dreamwave returns results in about 5 minutes. TailorPic typically completes within hours, since each model is fine-tuned with LoRA on your own photos." },
   { title: "Training approach", body: "TailorPic trains a personal LoRA model for a close likeness. Dreamwave offers free redos, which helps if a first batch misses the mark." },
 ];
 
@@ -74,7 +74,7 @@ const useCases = {
 
 const faqs = [
   { question: "Is TailorPic cheaper than Dreamwave?", answer: "Our entry price is lower, but the packages are not like-for-like: TailorPic starts from $1.99 for a single photo and goes up to 160 photos, while Dreamwave starts at around $35, with a $99 premium tier. Dreamwave pricing may change, so check their site." },
-  { question: "Which is faster, TailorPic or Dreamwave?", answer: "Dreamwave is faster, with turnaround of about 5 minutes. TailorPic results are ready in under 2 hours for most orders; guaranteed within 24 hours, since it fine-tunes a LoRA model on your photos." },
+  { question: "Which is faster, TailorPic or Dreamwave?", answer: "Dreamwave is faster, with turnaround of about 5 minutes. TailorPic results are ready within hours for most orders; guaranteed within 24 hours, since it fine-tunes a LoRA model on your photos." },
   { question: "How many photos do I get with each?", answer: "TailorPic includes photos across 12 categories. Dreamwave offers up to 300 headshots depending on the plan you choose." },
   { question: "Is TailorPic a subscription?", answer: "No. TailorPic packages are one-time payments starting at $1.99 with no recurring fees." },
 ];
@@ -215,7 +215,7 @@ export default function Page() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 12 categories from $1.99. No subscription, results typically delivered in under 2 hours.
+              Professional photos across 12 categories from $1.99. No subscription, results typically delivered within hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

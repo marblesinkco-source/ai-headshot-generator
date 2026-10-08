@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered in under 2 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -221,7 +221,7 @@ export default function VsLeonardoAiPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 12 categories from $1.99. No subscription, results typically delivered in under 2 hours.
+              Professional photos across 12 categories from $1.99. No subscription, results typically delivered within hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

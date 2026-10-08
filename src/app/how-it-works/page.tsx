@@ -45,9 +45,9 @@ export const metadata: Metadata = {
   description: 'Learn how TailorPic creates professional AI photos in 3 steps: upload selfies, let our AI train on your features, and download high-resolution photos from a single upload.',
   alternates: { canonical: '/how-it-works' },
   openGraph: generateOGMetadata({ title: `How It Works | ${siteConfig.name}`, description: 
-      'Upload your selfies, our AI trains a custom model on your features, and you get professional photos in about 2 hours.', path: '/how-it-works' }),
-  twitter: generateTwitterMetadata({ title: `How It Works | ${siteConfig.name}`, description: 
-      'Upload selfies, let our AI train on your features, and download professional photos in about 2 hours.' }),
+      'Upload your selfies, our AI trains a custom model on your features, and you get professional photos within hours.', path: '/how-it-works' }),
+  twitter: generateTwitterMetadata({ title: `How It Works | ${siteConfig.name}`, description:
+      'Upload selfies, let our AI train on your features, and download professional photos within hours.' }),
 };
 
 const steps = [
@@ -72,7 +72,7 @@ const steps = [
     description:
       'Once you upload your selfies, our AI trains a custom model specifically on your features. This is not a generic filter or a face swap — it is a personalized AI model that understands what makes you look like you. It then generates professional photos (from 1 to 160, depending on your package) across your chosen styles, from corporate headshots to creative portraits.',
     tips: [
-      'Training and generation take about 2 hours for most orders',
+      'Training and generation typically complete within hours',
       'Every package includes HD resolution',
       'You can choose from up to 10 style categories',
       'The AI preserves your natural features while enhancing lighting and composition',
@@ -112,7 +112,7 @@ const differentiators = [
     icon: Zap,
     title: 'Lightning Fast',
     description:
-      'Your photos are ready in about 2 hours, not days. No scheduling, no commute, no waiting for a photographer.',
+      'Your photos are typically ready within hours, not days. No scheduling, no commute, no waiting for a photographer.',
   },
   {
     icon: ShieldCheck,
@@ -133,7 +133,7 @@ const whyChooseUs = [
     icon: Timer,
     title: 'Fast Turnaround',
     description:
-      'Most orders are ready in about 2 hours, with an email when they are done.',
+      'Most orders are ready within hours, with an email when they are done.',
   },
   {
     icon: LayoutGrid,
@@ -151,7 +151,7 @@ const whyChooseUs = [
 
 const timeline = [
   { icon: Upload, label: 'Upload', time: 'A few minutes', note: 'Add your selfies and pick your styles' },
-  { icon: Sparkles, label: 'AI Processing', time: 'About 2 hours', note: 'We train your model and generate your photos' },
+  { icon: Sparkles, label: 'AI Processing', time: 'Typically hours', note: 'We train your model and generate your photos' },
   { icon: Download, label: 'Download', time: 'Instant', note: 'Browse your gallery and save your favorites' },
 ];
 
@@ -201,7 +201,7 @@ const faqs = [
   {
     question: 'How long does it take to get my photos?',
     answer:
-      'The AI training and generation process takes approximately 2 hours. You will receive an email notification as soon as your photos are ready to view and download.',
+      'Most orders complete within hours. You will receive an email notification as soon as your photos are ready to view and download.',
   },
   {
     question: 'Can I use these photos commercially?',
@@ -229,7 +229,7 @@ const howToJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: 'How to Get AI-Generated Professional Headshots',
-  description: 'Upload selfies, let AI create studio-quality headshots, download in about 2 hours.',
+  description: 'Upload selfies, let AI create studio-quality headshots, download within hours.',
   totalTime: 'PT2H',
   estimatedCost: { '@type': 'MonetaryAmount', currency: 'USD', value: '1.99' },
   tool: [{ '@type': 'HowToTool', name: 'Smartphone with camera' }],
@@ -269,7 +269,7 @@ export default function HowItWorksPage() {
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
             Get studio-quality professional photos without leaving your home.
             Upload a few selfies, let our AI do the rest, and download your
-            results in about 2 hours.
+            results within hours.
           </p>
           <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
@@ -289,7 +289,7 @@ export default function HowItWorksPage() {
       <section className="border-b border-tp-line bg-tp-paper py-12 sm:py-16" aria-labelledby="timeline-heading">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 id="timeline-heading" className="text-center font-display text-2xl font-normal italic text-tp-ink sm:text-3xl">
-            From selfies to photos in about 2 hours
+            From selfies to photos within hours
           </h2>
           <ol className="mt-8 flex flex-col items-stretch gap-4 md:flex-row md:items-center md:gap-3">
             {timeline.map((t, i) => {

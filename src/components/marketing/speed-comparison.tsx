@@ -27,7 +27,7 @@ const COMPARISONS = [
   {
     label: 'TailorPic',
     icon: Zap,
-    time: 'Under 2 hours',
+    time: 'Within hours',
     cost: 'From $1.99',
     steps: ['Upload selfies', 'AI processes in ~90 min', 'Download HD results', 'Regenerate if needed'],
     barWidth: 8,
@@ -76,7 +76,7 @@ export function SpeedComparison() {
           </h2>
           <p className="mt-4 text-base text-tp-muted">
             While traditional studios take weeks and other AI services take days,
-            TailorPic delivers in under 2 hours.
+            TailorPic typically delivers within hours.
           </p>
         </div>
 

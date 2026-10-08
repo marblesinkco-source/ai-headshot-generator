@@ -450,7 +450,7 @@ export const blogPosts: BlogPost[] = [
       <h2>The Process</h2>
       <p>When you upload your selfies to TailorPic, our AI trains a custom model specifically on your unique facial features. This personalized model learns what makes you <em>you</em> — your bone structure, skin tone, expressions, and distinctive features.</p>
 
-      <p>Once trained, this model can place you in virtually any professional setting, with perfect lighting, flattering angles, and studio-quality results. The entire process takes about 1-2 hours from upload to delivery.</p>
+      <p>Once trained, this model can place you in virtually any professional setting, with perfect lighting, flattering angles, and studio-quality results. The entire process typically completes within hours, from upload to delivery.</p>
 
       <h2>The Technology</h2>
       <p>We use state-of-the-art diffusion models, fine-tuned with LoRA (Low-Rank Adaptation) techniques. This approach allows us to create highly personalized models without requiring thousands of training images — just 4-10 clear photos of your face.</p>
@@ -4982,7 +4982,7 @@ export const blogPosts: BlogPost[] = [
       <p>Surveys of hiring managers and recruiters suggest that most cannot reliably distinguish AI-generated headshots from traditional photographs. A 2024 study found that AI headshots were rated as equally or more professional than photographer-taken images in blind comparisons. The key factor is not the tool but the output: a well-generated AI headshot looks like you in a well-lit studio.</p>
 
       <h2>Time Savings</h2>
-      <p>A traditional headshot session requires scheduling, travel, wardrobe preparation, the shoot itself, and waiting for edited deliverables — typically 1–3 weeks from booking to final image. AI headshots compress this to minutes of uploading selfies and a delivery window of 1–24 hours. TailorPic delivers within 24 hours, and many orders are ready in about 2 hours.</p>
+      <p>A traditional headshot session requires scheduling, travel, wardrobe preparation, the shoot itself, and waiting for edited deliverables — typically 1–3 weeks from booking to final image. AI headshots compress this to minutes of uploading selfies and a delivery window of 1–24 hours. TailorPic delivers within 24 hours, and many orders are ready within hours.</p>
 
       <h2>Environmental Impact</h2>
       <p>AI headshots eliminate the need for travel to studios, physical lighting equipment, and printed proofs. While AI model training has its own energy footprint, the per-image cost of inference is a fraction of the carbon footprint of a photographer session when travel is factored in.</p>
@@ -5129,7 +5129,7 @@ export const blogPosts: BlogPost[] = [
       <p>If you speak at multiple events per year, attendees may see your face on several different websites. Using a consistent, high-quality headshot builds recognition and strengthens your personal brand. AI-generated photos make this easy because you can produce a cohesive set all at once.</p>
 
       <h2>Quick Turnaround for Last-Minute Invitations</h2>
-      <p>Sometimes you get invited to speak with days or even hours of notice. The organiser needs a headshot immediately. Having AI-generated photos ready — or being able to generate new ones within hours — means you never hold up the event marketing. TailorPic delivers in about 2 hours.</p>
+      <p>Sometimes you get invited to speak with days or even hours of notice. The organiser needs a headshot immediately. Having AI-generated photos ready — or being able to generate new ones within hours — means you never hold up the event marketing. TailorPic delivers within hours.</p>
 
       <h2>What Makes a Good Speaker Headshot</h2>
       <p>The best speaker photos are well-lit, clearly framed around the face and shoulders, and convey approachability. Avoid overly formal poses unless the event calls for it. A natural smile and clean background work across most contexts. The <a href="/blog/professional-headshot-tips-2025">headshot tips guide</a> has more specific advice.</p>
@@ -5194,7 +5194,7 @@ export const blogPosts: BlogPost[] = [
       <p>Remote workers typically need photos for Slack, Microsoft Teams, Zoom, Google Meet, LinkedIn, the company website, and sometimes client-facing portals. TailorPic generates up to 160 photos across multiple styles from a single upload, so you can use a different crop or look for each platform while maintaining a consistent identity. See our guides for <a href="/use-cases/zoom">Zoom</a> and <a href="/use-cases/microsoft-teams">Microsoft Teams</a>.</p>
 
       <h2>Cost and Convenience</h2>
-      <p>A traditional headshot session costs $150–$500 plus travel time. TailorPic packages start at <a href="/pricing">$1.99</a> and deliver in about 2 hours. For remote workers who are already saving their company money on office space, the AI headshot is a practical, low-cost way to maintain a professional image.</p>
+      <p>A traditional headshot session costs $150–$500 plus travel time. TailorPic packages start at <a href="/pricing">$1.99</a> and deliver within hours. For remote workers who are already saving their company money on office space, the AI headshot is a practical, low-cost way to maintain a professional image.</p>
 
       <h2>Getting Started</h2>
       <p>Take a few selfies near a window for good natural light, <a href="/auth/register">upload them to TailorPic</a>, and update every profile in one afternoon. No commute, no appointment, no waiting.</p>

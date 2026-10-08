@@ -49,7 +49,7 @@ const benefits = [
   },
   {
     title: "Skip the Photo Shoot",
-    description: "No studio rental or scheduling. Get a professional result at home in about 2 hours.",
+    description: "No studio rental or scheduling. Get a professional result at home within hours.",
   },
 ];
 
@@ -64,7 +64,7 @@ const steps = [
   },
   {
     title: "Download Your Headshots",
-    description: "Receive high-resolution headshots in about 2 hours, ready for your website, profiles, and social media.",
+    description: "Receive high-resolution headshots within hours, ready for your website, profiles, and social media.",
   },
 ];
 
@@ -106,7 +106,7 @@ const faqs = [
   },
   {
     question: "How long does delivery take?",
-    answer: "Most headshots are ready in about 2 hours, so you can update your profiles before your next gig.",
+    answer: "Most headshots are ready within hours, so you can update your profiles before your next gig.",
   },
   {
     question: "How many headshots do I get?",
@@ -189,7 +189,7 @@ export default function DJsIndustryPage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Delivered in About 2 Hours
+            Delivered Within Hours
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

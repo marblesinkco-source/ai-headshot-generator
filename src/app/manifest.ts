@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'TailorPic — AI Headshot Generator',
     short_name: 'TailorPic',
-    description: 'Professional AI headshots in under 2 hours',
+    description: 'Professional AI headshots within hours',
     start_url: '/',
     display: 'standalone',
     theme_color: '#1A1A1A',

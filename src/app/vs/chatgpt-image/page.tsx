@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered in under 2 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -60,7 +60,7 @@ const differences = [
   { title: "Specialized vs convenient", body: "ChatGPT is handy for quick images. TailorPic is tuned for headshots, with categories and a workflow designed for that single goal." },
   { title: "A trained model, not a one-off", body: "TailorPic fine-tunes a LoRA model on your selfies, so every photo in the set draws on the same learned likeness." },
   { title: "A full set in one go", body: "You receive photos across 12 categories instead of generating and refining images one at a time." },
-  { title: "Trade-off on speed", body: "ChatGPT can return an image in moments. TailorPic typically completes in under 2 hours, since it trains a dedicated model first." },
+  { title: "Trade-off on speed", body: "ChatGPT can return an image in moments. TailorPic typically completes within hours, since it trains a dedicated model first." },
 ];
 
 const useCases = {
@@ -221,7 +221,7 @@ export default function VsChatgptImagePage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 12 categories from $1.99. No subscription, results typically delivered in under 2 hours.
+              Professional photos across 12 categories from $1.99. No subscription, results typically delivered within hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

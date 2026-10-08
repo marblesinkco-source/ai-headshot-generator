@@ -12,7 +12,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Podcast Guest Bios | TailorPic";
 const pageDescription =
-  "Professional headshots for podcast guest bios and show notes. Get polished portraits from a few selfies, delivered in about 2 hours. Starting at $1.99.";
+  "Professional headshots for podcast guest bios and show notes. Get polished portraits from a few selfies, delivered within hours. Starting at $1.99.";
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -58,7 +58,7 @@ const benefits = [
   {
     icon: Clock,
     title: "Fast Turnaround for Booking",
-    description: "Hosts often need photos quickly. Have yours in about 2 hours."
+    description: "Hosts often need photos quickly. Have yours within hours."
   },
   {
     icon: Shield,
@@ -86,7 +86,7 @@ const steps = [
   {
     icon: Check,
     title: "Download and Send to the Host",
-    description: "Get high-resolution photos in about 2 hours, ready to attach to your bio."
+    description: "Get high-resolution photos within hours, ready to attach to your bio."
   }
 ];
 
@@ -136,7 +136,7 @@ const faqs = [
   },
   {
     question: "How long does delivery take?",
-    answer: "Most orders arrive in about 2 hours after you upload your selfies."
+    answer: "Most orders arrive within hours after you upload your selfies."
   }
 ];
 
@@ -169,7 +169,7 @@ export default function PodcastGuestBioUseCasePage() {
               <span className="not-italic text-tp-bronze">{"Podcast Guest Bios"}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              {"Hosts ask guests for a photo and bio, and your headshot is often the first thing listeners see. Get a crisp portrait from a few selfies, delivered in about 2 hours, from $1.99."}
+              {"Hosts ask guests for a photo and bio, and your headshot is often the first thing listeners see. Get a crisp portrait from a few selfies, delivered within hours, from $1.99."}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -199,7 +199,7 @@ export default function PodcastGuestBioUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            {"Delivered in About 2 Hours"}
+            {"Delivered Within Hours"}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

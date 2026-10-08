@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered in under 2 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -78,7 +78,7 @@ const faqs = [
   { question: "Is TailorPic cheaper than The Multiverse AI?", answer: "For a one-off set of headshots, yes. TailorPic starts from $1.99, while The Multiverse AI is a subscription starting at approximately $14.99 per month. Pricing may change, so check their site." },
   { question: "Is The Multiverse AI a subscription?", answer: "It is offered as a subscription. TailorPic has no subscription, and its packages are one-time payments starting at $1.99." },
   { question: "Which is better for professional headshots?", answer: "TailorPic focuses on professional headshots across 12 categories. The Multiverse AI has more of a social media focus." },
-  { question: "How many photos does TailorPic include?", answer: "TailorPic includes photos across 12 categories, results typically delivered in under 2 hours." },
+  { question: "How many photos does TailorPic include?", answer: "TailorPic includes photos across 12 categories, results typically delivered within hours." },
 ];
 
 export default function Page() {
@@ -217,7 +217,7 @@ export default function Page() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 12 categories from $1.99. No subscription, results typically delivered in under 2 hours.
+              Professional photos across 12 categories from $1.99. No subscription, results typically delivered within hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

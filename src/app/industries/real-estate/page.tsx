@@ -77,7 +77,7 @@ const stats = [
   { value: '40+', label: 'Professional photos per order' },
   { value: '12', label: 'Styles including business & headshot' },
   { value: '$1.99', label: 'Starting price per person' },
-  { value: '< 2hrs', label: 'From selfies to finished headshots' },
+  { value: 'Within hours', label: 'From selfies to finished headshots' },
 ];
 
 const useCases = [
@@ -105,7 +105,7 @@ const faqs = [
   {
     question: "How fast can I get my headshots between showings?",
     answer:
-      "You can upload selfies from your phone at any time and typically receive finished headshots in about 2 hours. There is no photographer to schedule around your showings.",
+      "You can upload selfies from your phone at any time and typically receive finished headshots within hours. There is no photographer to schedule around your showings.",
   },
   {
     question: "Can my whole brokerage get matching headshots?",
@@ -354,7 +354,7 @@ export default function RealEstateIndustryPage() {
               Ready to Upgrade Your Professional Image?
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-tp-beige/70">
-              Get studio-quality headshots delivered in under 2 hours — no appointment, no studio, no hassle. Starting from just $1.99.
+              Get studio-quality headshots delivered within hours — no appointment, no studio, no hassle. Starting from just $1.99.
             </p>
             <div className="mt-10">
               <a

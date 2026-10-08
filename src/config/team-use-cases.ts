@@ -63,7 +63,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
       {
         title: 'No studio day',
         description:
-          'There is no appointment to book. Photos are typically ready about 2 hours after upload.',
+          'There is no appointment to book. Photos are typically ready within hours of upload.',
       },
       {
         title: 'Commercial rights included',
@@ -85,7 +85,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
       {
         step: 'Download and publish',
         description:
-          'Everyone receives their headshots in about 2 hours, ready for your team page, directory and profiles.',
+          'Everyone receives their headshots within hours, ready for your team page, directory and profiles.',
       },
     ],
     faqItems: [
@@ -102,7 +102,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
       {
         question: 'How long does it take to get the photos?',
         answer:
-          'Headshots are typically ready about 2 hours after the selfies are uploaded.',
+          'Headshots are typically ready within hours of the selfies being uploaded.',
       },
       {
         question: 'Can we use the photos on our website?',
@@ -121,7 +121,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
     title: 'New Hire Onboarding Headshots',
     metaTitle: 'New Hire Onboarding Headshots: AI Photos for HR Teams | TailorPic',
     metaDescription:
-      'Give every new hire a professional headshot in their first week. No photographer to book. New hires upload selfies and get headshots in about 2 hours. Team pricing from $29/person.',
+      'Give every new hire a professional headshot in their first week. No photographer to book. New hires upload selfies and get headshots within hours. Team pricing from $29/person.',
     heroTitle: 'Headshots for new hires, from day one',
     heroSubtitle:
       'Add a headshot step to your onboarding checklist. New employees upload a few selfies and have a professional photo ready for the directory, email and intranet.',
@@ -161,7 +161,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
       {
         title: 'Quick turnaround',
         description:
-          'Photos are typically ready about 2 hours after upload, in time for directory and email setup.',
+          'Photos are typically ready within hours of upload, in time for directory and email setup.',
       },
       {
         title: 'Works for remote hires',
@@ -183,7 +183,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
       {
         step: 'Use the photo right away',
         description:
-          'Headshots are typically ready in about 2 hours, so they can be added to the directory, email and chat profiles.',
+          'Headshots are typically ready within hours, so they can be added to the directory, email and chat profiles.',
       },
     ],
     faqItems: [
@@ -205,7 +205,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
       {
         question: 'How fast do new hires get their photos?',
         answer:
-          'Typically about 2 hours after uploading their selfies.',
+          'Typically within hours of uploading their selfies.',
       },
       {
         question: 'What is the cost for onboarding several people at once?',
@@ -219,7 +219,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
     title: 'Corporate Event Headshots',
     metaTitle: 'Corporate Event Headshots: Speaker & Attendee Photos | TailorPic',
     metaDescription:
-      'Headshots for conferences, summits and company events without an on-site photographer. Speakers and staff upload selfies and get headshots in about 2 hours. Team pricing from $29/person.',
+      'Headshots for conferences, summits and company events without an on-site photographer. Speakers and staff upload selfies and get headshots within hours. Team pricing from $29/person.',
     heroTitle: 'Event headshots without the photo booth',
     heroSubtitle:
       'Speaker bios, badges, programs and event pages all need a good photo. Skip the on-site setup. Everyone uploads selfies in advance and receives polished headshots.',
@@ -281,7 +281,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
       {
         step: 'Collect headshots for your materials',
         description:
-          'Photos are typically ready about 2 hours later, ready for speaker pages, badges, programs and social posts.',
+          'Photos are typically ready within hours, ready for speaker pages, badges, programs and social posts.',
       },
     ],
     faqItems: [
@@ -293,7 +293,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
       {
         question: 'Can speakers generate headshots before the event?',
         answer:
-          'Yes. Each speaker uploads selfies whenever it suits them and gets results in about 2 hours, so you can collect photos well before your deadline.',
+          'Yes. Each speaker uploads selfies whenever it suits them and gets results within hours, so you can collect photos well before your deadline.',
       },
       {
         question: 'Can we use the photos in print and on screen?',
@@ -352,7 +352,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
       {
         title: 'Faster path to launch',
         description:
-          'Headshots are typically ready about 2 hours after upload, so photos need not hold up the project timeline.',
+          'Headshots are typically ready within hours of upload, so photos need not hold up the project timeline.',
       },
       {
         title: 'High-resolution files',
@@ -379,7 +379,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
       {
         step: 'Drop the photos into your design',
         description:
-          'Download the results in about 2 hours and add them to your team page, bios and case studies.',
+          'Download the results within hours and add them to your team page, bios and case studies.',
       },
     ],
     faqItems: [
@@ -391,7 +391,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
       {
         question: 'How soon can we have photos for launch?',
         answer:
-          'Headshots are typically ready about 2 hours after selfies are uploaded, so photos can be collected quickly once your design is final.',
+          'Headshots are typically ready within hours of selfies being uploaded, so photos can be collected quickly once your design is final.',
       },
       {
         question: 'Can we use the photos beyond the website?',
@@ -477,7 +477,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
       {
         step: 'Roll out the new photos',
         description:
-          'Headshots are typically ready in about 2 hours. Update your website, directory and profiles with matching portraits.',
+          'Headshots are typically ready within hours. Update your website, directory and profiles with matching portraits.',
       },
     ],
     faqItems: [

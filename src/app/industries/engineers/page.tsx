@@ -45,7 +45,7 @@ const benefits = [
   },
   {
     title: "Fast, No Studio Needed",
-    description: "Upload selfies and get headshots in about 2 hours, so you can get back to shipping.",
+    description: "Upload selfies and get headshots within hours, so you can get back to shipping.",
   },
   {
     title: "Consistent Company Branding",
@@ -64,7 +64,7 @@ const steps = [
   },
   {
     title: "Download Your Headshots",
-    description: "Receive high-resolution headshots in about 2 hours, ready for LinkedIn, GitHub, and your team page.",
+    description: "Receive high-resolution headshots within hours, ready for LinkedIn, GitHub, and your team page.",
   },
 ];
 
@@ -185,7 +185,7 @@ export default function EngineersIndustryPage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Delivered in About 2 Hours
+            Delivered Within Hours
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

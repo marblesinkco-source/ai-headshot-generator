@@ -120,7 +120,7 @@ const faqs = [
   {
     question: 'How long does it take to get my headshots?',
     answer:
-      'TailorPic delivers your full set in about 2 hours. Remini enhances individual photos, so the workflow and timing are different.',
+      'TailorPic delivers your full set within hours. Remini enhances individual photos, so the workflow and timing are different.',
   },
   {
     question: 'Is TailorPic a subscription like Remini?',
@@ -281,7 +281,7 @@ export default function VsReminiPage() {
             <h2 className="text-3xl font-display font-normal text-tp-ink">Ready to Switch?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-muted">
               Get professional AI headshots starting at just $1.99. No subscriptions, no hidden fees
-              — just great photos delivered in under 2 hours.
+              — just great photos delivered within hours.
             </p>
             <div className="mt-8">
               <Button asChild size="lg" className="bg-tp-bronze-ink hover:bg-tp-bronze-ink/90 text-white">

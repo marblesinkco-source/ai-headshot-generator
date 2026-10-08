@@ -69,7 +69,7 @@ const steps = [
   {
     icon: Check,
     title: "Download and Update Your Profile",
-    description: "Receive polished, high-resolution headshots in about 2 hours. Upload your favorite to LinkedIn and watch profile views climb.",
+    description: "Receive polished, high-resolution headshots within hours. Upload your favorite to LinkedIn and watch profile views climb.",
   },
 ];
 
@@ -115,7 +115,7 @@ const faqs = [
   },
   {
     question: "How long until I receive my headshots?",
-    answer: "Most LinkedIn headshots are delivered in about 2 hours. Upload your selfies during a coffee break and update your profile the same afternoon.",
+    answer: "Most LinkedIn headshots are delivered within hours. Upload your selfies during a coffee break and update your profile the same afternoon.",
   },
 ];
 
@@ -151,7 +151,7 @@ export default function LinkedInUseCasePage() {
               <span className="not-italic text-tp-bronze">LinkedIn</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              Your LinkedIn photo is your digital handshake. Get a polished, professional headshot from a few phone selfies, no studio appointment needed. Delivered in about 2 hours, starting at just $1.99.
+              Your LinkedIn photo is your digital handshake. Get a polished, professional headshot from a few phone selfies, no studio appointment needed. Delivered within hours, starting at just $1.99.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -181,7 +181,7 @@ export default function LinkedInUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Delivered in About 2 Hours
+            Delivered Within Hours
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

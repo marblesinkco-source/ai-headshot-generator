@@ -161,7 +161,7 @@ const faqs = [
   {
     question: 'How long does delivery take?',
     answer:
-      'Most avatars are ready in about 2 hours. We guarantee delivery within 24 hours and email you as soon as they are ready to download.',
+      'Most avatars are ready within hours. We guarantee delivery within 24 hours and email you as soon as they are ready to download.',
   },
   {
     question: "What is your satisfaction guarantee?",

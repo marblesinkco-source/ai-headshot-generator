@@ -64,7 +64,7 @@ const steps = [
   },
   {
     title: "Download Your Headshots",
-    description: "Receive high-resolution headshots in about 2 hours, ready for your website, proposals, and professional profiles.",
+    description: "Receive high-resolution headshots within hours, ready for your website, proposals, and professional profiles.",
   },
 ];
 
@@ -106,7 +106,7 @@ const faqs = [
   },
   {
     question: "How long does delivery take?",
-    answer: "Most headshots are ready in about 2 hours. Upload during your morning commute and have finished portraits before your afternoon client meeting.",
+    answer: "Most headshots are ready within hours. Upload during your morning commute and have finished portraits before your afternoon client meeting.",
   },
   {
     question: "Can I use these headshots in competition submissions?",
@@ -189,7 +189,7 @@ export default function ArchitectsIndustryPage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Delivered in About 2 Hours
+            Delivered Within Hours
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

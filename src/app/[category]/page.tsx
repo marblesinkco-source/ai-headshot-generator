@@ -108,7 +108,7 @@ export default async function CategoryPage({ params }: Props) {
     },
     {
       question: 'How long does it take?',
-      answer: 'Most orders are ready in about 2 hours. You will receive an email as soon as your photos are ready.',
+      answer: 'Most orders are ready within hours. You will receive an email as soon as your photos are ready.',
     },
     {
       question: 'What if I am not happy with the results?',
@@ -301,7 +301,7 @@ export default async function CategoryPage({ params }: Props) {
             {[
               { icon: Camera, text: 'Studio-style results from your own photos' },
               { icon: Sparkles, text: 'Multiple styles and backgrounds' },
-              { icon: Clock, text: 'Typically ready in about 2 hours' },
+              { icon: Clock, text: 'Typically ready within hours' },
               { icon: ShieldCheck, text: 'Secure and private' },
             ].map((item) => (
               <div key={item.text} className="flex items-start gap-3">
@@ -682,7 +682,7 @@ export default async function CategoryPage({ params }: Props) {
             Ready to Create Your<br className="hidden sm:block" /> {cat.shortName}?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-tp-beige/80">
-            Upload your photos and get AI-generated {cat.outputLabel}, typically in about 2 hours.
+            Upload your photos and get AI-generated {cat.outputLabel}, typically within hours.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href={startHref} className={`${buttonVariants({ size: 'lg', variant: 'primary' })} w-full sm:w-auto`}>

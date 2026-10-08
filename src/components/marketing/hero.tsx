@@ -102,7 +102,7 @@ export function Hero() {
                 className="tp-hero-enter text-[16px] text-tp-ink/75 leading-[1.7] max-w-[460px] mb-8"
                 style={{ '--enter-i': 2 } as React.CSSProperties}
               >
-                Upload a few selfies and get studio-quality headshots for work, business and life. Ready in ~2&nbsp;hours. Pay once&nbsp;&mdash; no subscription.
+                Upload a few selfies and get studio-quality headshots for work, business and life. Most orders ready within&nbsp;hours. Pay once&nbsp;&mdash; no subscription.
               </p>
 
               <div

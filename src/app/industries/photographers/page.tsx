@@ -64,7 +64,7 @@ const steps = [
   },
   {
     title: "Download Your Headshots",
-    description: "Receive high-resolution headshots in about 2 hours, ready for your website, social media, and directory profiles.",
+    description: "Receive high-resolution headshots within hours, ready for your website, social media, and directory profiles.",
   },
 ];
 
@@ -106,7 +106,7 @@ const faqs = [
   },
   {
     question: "How long does delivery take?",
-    answer: "Most headshots are ready in about 2 hours. Upload between client sessions and have finished portraits before the end of the day.",
+    answer: "Most headshots are ready within hours. Upload between client sessions and have finished portraits before the end of the day.",
   },
   {
     question: "Can I use these headshots commercially?",
@@ -189,7 +189,7 @@ export default function PhotographersIndustryPage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Delivered in About 2 Hours
+            Delivered Within Hours
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

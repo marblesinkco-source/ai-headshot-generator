@@ -59,7 +59,7 @@ const benefits = [
   {
     title: 'Quick Turnaround',
     description:
-      'Upload selfies from your phone and receive finished headshots within 2 hours. Perfect for last-minute proposals or conference deadlines.',
+      'Upload selfies from your phone and receive finished headshots within hours. Perfect for last-minute proposals or conference deadlines.',
   },
   {
     title: 'Multiple Styles in One Order',
@@ -89,7 +89,7 @@ const faqs = [
   {
     question: "How fast can I get headshots before a conference deadline?",
     answer:
-      "Most headshots are ready in about 2 hours after you upload your selfies. That makes it practical for last-minute proposals, speaker bios, and event programs.",
+      "Most headshots are ready within hours after you upload your selfies. That makes it practical for last-minute proposals, speaker bios, and event programs.",
   },
   {
     question: "Do I need to be in one place to take the photos?",
@@ -279,7 +279,7 @@ export default function ConsultantsIndustryPage() {
               Ready to Upgrade Your Professional Image?
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-tp-beige/70">
-              Get studio-quality headshots delivered in under 2 hours — no appointment, no studio, no hassle. Starting from just $1.99.
+              Get studio-quality headshots delivered within hours — no appointment, no studio, no hassle. Starting from just $1.99.
             </p>
             <div className="mt-10">
               <a

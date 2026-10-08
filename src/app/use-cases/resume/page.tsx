@@ -81,7 +81,7 @@ const steps = [
   {
     icon: Check,
     title: "Download and Attach",
-    description: "Receive your high-resolution headshots in about 2 hours and drop your favorite into your resume template.",
+    description: "Receive your high-resolution headshots within hours and drop your favorite into your resume template.",
   },
 ];
 
@@ -104,7 +104,7 @@ const features = [
   {
     icon: Clock,
     title: "Urgent Job Seekers",
-    description: "Need a photo before a deadline? Get professional results in about 2 hours instead of waiting days for an appointment.",
+    description: "Need a photo before a deadline? Get professional results within hours instead of waiting days for an appointment.",
   },
 ];
 
@@ -131,7 +131,7 @@ const faqs = [
   },
   {
     question: "How much does it cost and how fast is it?",
-    answer: "Packs start at $1.99 and most orders are delivered in about 2 hours, well under the cost and wait of a traditional photographer.",
+    answer: "Packs start at $1.99 and most orders are delivered within hours, well under the cost and wait of a traditional photographer.",
   },
 ];
 
@@ -167,7 +167,7 @@ export default function ResumeUseCasePage() {
               <span className="not-italic text-tp-bronze">Resumes &amp; CVs</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              Land the interview with a photo that says hire me. Turn a few selfies into a professional CV headshot, no studio or appointment needed. Delivered in about 2 hours, starting at just $1.99.
+              Land the interview with a photo that says hire me. Turn a few selfies into a professional CV headshot, no studio or appointment needed. Delivered within hours, starting at just $1.99.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -197,7 +197,7 @@ export default function ResumeUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Delivered in About 2 Hours
+            Delivered Within Hours
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

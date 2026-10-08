@@ -27,7 +27,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered in under 2 hours, from $1.99.',
+    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from $1.99.',
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -54,7 +54,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 const differences = [
   { title: "Price", body: "TailorPic packages start from $1.99, compared with Headshot AI's approximate $29 starting price." },
   { title: "Category variety", body: "TailorPic covers 12 categories, including business, dating and creative looks. Headshot AI has a more limited range of styles." },
-  { title: "Speed", body: "Headshot AI is known for quick delivery. TailorPic typically completes in under 2 hours, since it fine-tunes a LoRA model on your photos." },
+  { title: "Speed", body: "Headshot AI is known for quick delivery. TailorPic typically completes within hours, since it fine-tunes a LoRA model on your photos." },
   { title: "Personalization", body: "TailorPic trains a personal model for a close likeness, trading some speed for a tailored result." },
 ];
 
@@ -75,7 +75,7 @@ const useCases = {
 
 const faqs = [
   { question: "Is TailorPic cheaper than Headshot AI?", answer: "Our entry price is lower, but the packages are not like-for-like: TailorPic starts from $1.99 for a single photo and goes up to 160 photos, while Headshot AI starts at approximately $29. Pricing may change, so check their site." },
-  { question: "Which is faster, TailorPic or Headshot AI?", answer: "Headshot AI advertises quick delivery. TailorPic results are ready in under 2 hours for most orders; guaranteed within 24 hours, since it fine-tunes a LoRA model on your photos." },
+  { question: "Which is faster, TailorPic or Headshot AI?", answer: "Headshot AI advertises quick delivery. TailorPic results are ready within hours for most orders; guaranteed within 24 hours, since it fine-tunes a LoRA model on your photos." },
   { question: "Which has more styles?", answer: "TailorPic offers 12 categories. Headshot AI has a more limited set of style options." },
   { question: "Is TailorPic a subscription?", answer: "No. TailorPic packages are one-time payments starting at $1.99 with no recurring fees." },
 ];
@@ -216,7 +216,7 @@ export default function Page() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 12 categories from $1.99. No subscription, results typically delivered in under 2 hours.
+              Professional photos across 12 categories from $1.99. No subscription, results typically delivered within hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

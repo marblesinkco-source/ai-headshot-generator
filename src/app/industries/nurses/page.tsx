@@ -64,7 +64,7 @@ const steps = [
   },
   {
     title: "Download Your Headshots",
-    description: "Receive high-resolution headshots in about 2 hours, ready for your badge, resume, and LinkedIn.",
+    description: "Receive high-resolution headshots within hours, ready for your badge, resume, and LinkedIn.",
   },
 ];
 
@@ -106,7 +106,7 @@ const faqs = [
   },
   {
     question: "How long does delivery take?",
-    answer: "Most headshots are ready in about 2 hours, so you can upload on a break and have them by the end of your shift.",
+    answer: "Most headshots are ready within hours, so you can upload on a break and have them by the end of your shift.",
   },
 ];
 
@@ -185,7 +185,7 @@ export default function NursesIndustryPage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Delivered in About 2 Hours
+            Delivered Within Hours
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

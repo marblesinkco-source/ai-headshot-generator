@@ -68,7 +68,7 @@ const benefits = [
   {
     icon: Clock,
     title: "Ready Before Your Next Meeting",
-    description: "Upload selfies now and have your new profile photo in about 2 hours, in time for tomorrow morning stand-up.",
+    description: "Upload selfies now and have your new profile photo within hours, in time for tomorrow morning stand-up.",
   },
 ];
 
@@ -86,7 +86,7 @@ const steps = [
   {
     icon: Check,
     title: "Download and Set Your Photo",
-    description: "Get your high-resolution photos in about 2 hours, then add your favorite to Zoom, Teams, and Meet in seconds.",
+    description: "Get your high-resolution photos within hours, then add your favorite to Zoom, Teams, and Meet in seconds.",
   },
 ];
 
@@ -136,7 +136,7 @@ const faqs = [
   },
   {
     question: "How long does delivery take?",
-    answer: "Most orders arrive in about 2 hours after you upload your selfies, so you can update your profile the same day.",
+    answer: "Most orders arrive within hours after you upload your selfies, so you can update your profile the same day.",
   },
 ];
 
@@ -169,7 +169,7 @@ export default function ZoomUseCasePage() {
               <span className="not-italic text-tp-bronze">Zoom &amp; Video Calls</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              When your camera is off, your profile photo is your whole presence. Get a crisp, professional headshot for Zoom, Teams, and Google Meet from a handful of selfies. Delivered in about 2 hours, starting at just $1.99.
+              When your camera is off, your profile photo is your whole presence. Get a crisp, professional headshot for Zoom, Teams, and Google Meet from a handful of selfies. Delivered within hours, starting at just $1.99.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -198,7 +198,7 @@ export default function ZoomUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Delivered in About 2 Hours
+            Delivered Within Hours
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

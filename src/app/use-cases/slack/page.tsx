@@ -69,7 +69,7 @@ const steps = [
   {
     icon: Check,
     title: "Download and Set Your Photo",
-    description: "Receive polished headshots in about 2 hours. Upload to Slack, Teams, Google Workspace, and Zoom all at once.",
+    description: "Receive polished headshots within hours. Upload to Slack, Teams, Google Workspace, and Zoom all at once.",
   },
 ];
 
@@ -115,7 +115,7 @@ const faqs = [
   },
   {
     question: "How long until I receive my headshots?",
-    answer: "Most headshot packs are delivered in about 2 hours. Upload your selfies during your morning standup and have a polished profile photo set before lunch.",
+    answer: "Most headshot packs are delivered within hours. Upload your selfies during your morning standup and have a polished profile photo set before lunch.",
   },
 ];
 
@@ -151,7 +151,7 @@ export default function SlackUseCasePage() {
               <span className="not-italic text-tp-bronze">Slack & Teams</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              Your workspace photo follows you through every channel, thread, and video call. Get a polished, professional headshot from a few phone selfies, no studio visit required. Delivered in about 2 hours, starting at just $1.99.
+              Your workspace photo follows you through every channel, thread, and video call. Get a polished, professional headshot from a few phone selfies, no studio visit required. Delivered within hours, starting at just $1.99.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -181,7 +181,7 @@ export default function SlackUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Delivered in About 2 Hours
+            Delivered Within Hours
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

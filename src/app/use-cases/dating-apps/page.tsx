@@ -69,7 +69,7 @@ const steps = [
   {
     icon: Check,
     title: "Update Your Dating Profile",
-    description: "Receive natural-looking, high-resolution photos in about 2 hours. Pick your favorites and refresh your Tinder, Hinge, or Bumble profile.",
+    description: "Receive natural-looking, high-resolution photos within hours. Pick your favorites and refresh your Tinder, Hinge, or Bumble profile.",
   },
 ];
 
@@ -181,7 +181,7 @@ export default function DatingAppsUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Delivered in About 2 Hours
+            Delivered Within Hours
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -298,7 +298,7 @@ export default function DatingAppsUseCasePage() {
             Get More Matches Starting Today
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            Stop losing matches to bad photos. Get a set of natural, flattering dating profile pictures in about 2 hours, from $1.99.
+            Stop losing matches to bad photos. Get a set of natural, flattering dating profile pictures within hours, from $1.99.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

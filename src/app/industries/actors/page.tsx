@@ -64,7 +64,7 @@ const steps = [
   },
   {
     title: "Download Your Headshots",
-    description: "Receive high-resolution headshots in about 2 hours, ready for casting profiles, your agent, and social media.",
+    description: "Receive high-resolution headshots within hours, ready for casting profiles, your agent, and social media.",
   },
 ];
 
@@ -106,7 +106,7 @@ const faqs = [
   },
   {
     question: "How long does delivery take?",
-    answer: "Most headshots are ready in about 2 hours. Upload before a rehearsal and have your new headshots by the time you finish.",
+    answer: "Most headshots are ready within hours. Upload before a rehearsal and have your new headshots by the time you finish.",
   },
   {
     question: "Can I use these on my agency profile?",
@@ -189,7 +189,7 @@ export default function ActorsIndustryPage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Delivered in About 2 Hours
+            Delivered Within Hours
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

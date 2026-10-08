@@ -64,7 +64,7 @@ const steps = [
   },
   {
     title: "Download Your Headshots",
-    description: "Receive high-resolution headshots in about 2 hours, ready for your website, profiles, and printed materials.",
+    description: "Receive high-resolution headshots within hours, ready for your website, profiles, and printed materials.",
   },
 ];
 
@@ -106,7 +106,7 @@ const faqs = [
   },
   {
     question: "How long does delivery take?",
-    answer: "Most headshots are ready in about 2 hours, which helps when an organizer needs your image on short notice.",
+    answer: "Most headshots are ready within hours, which helps when an organizer needs your image on short notice.",
   },
   {
     question: "How many headshots do I get?",
@@ -189,7 +189,7 @@ export default function PublicSpeakersIndustryPage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Delivered in About 2 Hours
+            Delivered Within Hours
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

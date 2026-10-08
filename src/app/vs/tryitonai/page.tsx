@@ -45,7 +45,7 @@ const quickBadges = [
   {
     icon: Clock,
     label: 'Delivery Time',
-    tailorpic: 'Under 2 hours',
+    tailorpic: 'Within hours',
     competitor: 'Minutes',
   },
 ];
@@ -59,7 +59,7 @@ type FeatureRow = {
 const comparisonRows: FeatureRow[] = [
   { feature: 'Starting Price', tailorpic: 'From $1.99', competitor: '$17+' },
   { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: 'Varies by plan' },
-  { feature: 'Delivery Time', tailorpic: 'Under 2 hours', competitor: 'Minutes (per their site)' },
+  { feature: 'Delivery Time', tailorpic: 'Within hours', competitor: 'Minutes (per their site)' },
   { feature: 'Photo Categories', tailorpic: '12 categories', competitor: 'Headshots and more' },
   { feature: 'Quality Commitment', tailorpic: 'Free regeneration', competitor: 'Check their terms' },
   { feature: 'Team / Enterprise Plans', tailorpic: true, competitor: true },
@@ -86,7 +86,7 @@ const whyCards = [
     icon: ImageIcon,
     title: 'Up to 160 Photos Per Order',
     description:
-      'Every TailorPic order includes photos delivered in under 2 hours, so you can pick the best shots with confidence.',
+      'Every TailorPic order includes photos delivered within hours, so you can pick the best shots with confidence.',
   },
   {
     icon: Target,
@@ -118,7 +118,7 @@ const faqs = [
   {
     question: 'How long does delivery take?',
     answer:
-      'TailorPic delivers in about 2 hours. Try It On AI advertises delivery in minutes, so if speed is your top priority, check their site for current turnaround times.',
+      'TailorPic delivers within hours. Try It On AI advertises delivery in minutes, so if speed is your top priority, check their site for current turnaround times.',
   },
   {
     question: 'Is TailorPic a subscription or a one-time purchase?',
@@ -279,7 +279,7 @@ export default function VsTryItOnAiPage() {
             <h2 className="text-3xl font-display font-normal text-tp-ink">Ready to Switch?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-muted">
               Get professional AI photos starting at just $1.99. No subscriptions, no hidden fees
-              — just great photos delivered in under 2 hours.
+              — just great photos delivered within hours.
             </p>
             <div className="mt-8">
               <Button asChild size="lg" className="bg-tp-bronze-ink hover:bg-tp-bronze-ink/90 text-white">

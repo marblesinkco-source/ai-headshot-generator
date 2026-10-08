@@ -341,7 +341,7 @@ export default function SuccessStoriesPage() {
             </h2>
             <p className="mt-4 text-tp-beige/60">
               Upload a few selfies and get studio-quality headshots delivered in
-              under 2 hours. Starting from just {BASE_PRICE_DISPLAY}.
+              within hours. Starting from just {BASE_PRICE_DISPLAY}.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link

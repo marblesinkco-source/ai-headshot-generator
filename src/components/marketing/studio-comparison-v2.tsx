@@ -21,7 +21,7 @@ const ROWS: ComparisonRow[] = [
     studio: 'Varies by photographer',
     tailorpic: `From ${BASE_PRICE_DISPLAY}`,
   },
-  { label: 'Time', icon: Clock, studio: '2–4 hours + travel', tailorpic: 'Under 2 hours delivery' },
+  { label: 'Time', icon: Clock, studio: '2–4 hours + travel', tailorpic: 'Delivered within hours' },
   { label: 'Photos', icon: Camera, studio: '10–20 edited photos', tailorpic: 'Up to 160 AI headshots' },
   { label: 'Variety', icon: Camera, studio: '1 backdrop, 1 outfit', tailorpic: 'Up to 10 styles, multiple backgrounds' },
   { label: 'Retakes', icon: Repeat, studio: 'Reschedule + repay', tailorpic: 'Regenerate anytime' },

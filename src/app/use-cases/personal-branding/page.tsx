@@ -45,8 +45,8 @@ const benefits = [
   },
   {
     icon: Zap,
-    title: "Ready in 2 Hours, Not 2 Weeks",
-    description: "Traditional branding shoots take weeks to schedule and edit. TailorPic delivers polished photos in about 2 hours, from $1.99.",
+    title: "Ready in Hours, Not Weeks",
+    description: "Traditional branding shoots take weeks to schedule and edit. TailorPic delivers polished photos within hours, from $1.99.",
   },
   {
     icon: Briefcase,
@@ -115,7 +115,7 @@ const faqs = [
   },
   {
     question: "How quickly can I get my photos?",
-    answer: "Most orders are delivered in about 2 hours. You can refresh your entire brand presence across platforms in a single afternoon.",
+    answer: "Most orders are delivered within hours. You can refresh your entire brand presence across platforms in a single afternoon.",
   },
 ];
 

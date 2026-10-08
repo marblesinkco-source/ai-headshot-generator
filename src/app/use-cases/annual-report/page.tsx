@@ -12,7 +12,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = 'AI Headshots for Annual Reports & Documents | TailorPic';
 const pageDescription =
-  "Consistent executive and board headshots for annual reports, investor decks and corporate documents. Delivered in about 2 hours. Starting at $1.99.";
+  "Consistent executive and board headshots for annual reports, investor decks and corporate documents. Delivered within hours. Starting at $1.99.";
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -68,7 +68,7 @@ const benefits = [
   {
     icon: Clock,
     title: "Ready Before Your Publication Deadline",
-    description: "Selfies in, portraits out in about 2 hours, in time for your final layout.",
+    description: "Selfies in, portraits out within hours, in time for your final layout.",
   },
 ];
 
@@ -86,7 +86,7 @@ const steps = [
   {
     icon: Check,
     title: "Download and Drop into Layout",
-    description: "Get high-resolution photos in about 2 hours, ready for your report design.",
+    description: "Get high-resolution photos within hours, ready for your report design.",
   },
 ];
 
@@ -136,7 +136,7 @@ const faqs = [
   },
   {
     question: "How long does delivery take?",
-    answer: "Most orders arrive in about 2 hours after you upload your selfies.",
+    answer: "Most orders arrive within hours after you upload your selfies.",
   },
 ];
 
@@ -169,7 +169,7 @@ export default function AnnualReportUseCasePage() {
               <span className="not-italic text-tp-bronze">{"Annual Reports & Corporate Docs"}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              {"Leadership pages set the tone of a corporate report. Get consistent, professional headshots for executives and board members from a handful of selfies, delivered in about 2 hours, starting at just $1.99."}
+              {"Leadership pages set the tone of a corporate report. Get consistent, professional headshots for executives and board members from a handful of selfies, delivered within hours, starting at just $1.99."}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -199,7 +199,7 @@ export default function AnnualReportUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            {"Delivered in About 2 Hours"}
+            {"Delivered Within Hours"}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

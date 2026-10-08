@@ -80,7 +80,7 @@ const benefits = [
   {
     icon: Clock,
     title: "Ready Before Your Next Campaign",
-    description: "Upload selfies today and have portraits in about 2 hours, in time for your next appeal or gala.",
+    description: "Upload selfies today and have portraits within hours, in time for your next appeal or gala.",
   },
 ];
 
@@ -98,7 +98,7 @@ const steps = [
   {
     icon: Check,
     title: "Download and Use Everywhere",
-    description: "Get high-resolution photos in about 2 hours, then add them to your website, appeals and reports.",
+    description: "Get high-resolution photos within hours, then add them to your website, appeals and reports.",
   },
 ];
 
@@ -144,7 +144,7 @@ const faqs = [
   },
   {
     question: "How long does delivery take?",
-    answer: "Most orders arrive in about 2 hours after you upload your selfies.",
+    answer: "Most orders arrive within hours after you upload your selfies.",
   },
   {
     question: "Is there a satisfaction guarantee?",
@@ -181,7 +181,7 @@ export default function NonprofitFundraisingUseCasePage() {
               <span className="not-italic text-tp-bronze">{"Nonprofit Fundraising"}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              {"Donors give to people they trust. Get professional portraits for your staff, board and volunteers from a handful of selfies, delivered in about 2 hours, starting at just $1.99 per person."}
+              {"Donors give to people they trust. Get professional portraits for your staff, board and volunteers from a handful of selfies, delivered within hours, starting at just $1.99 per person."}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -211,7 +211,7 @@ export default function NonprofitFundraisingUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            {"Delivered in About 2 Hours"}
+            {"Delivered Within Hours"}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

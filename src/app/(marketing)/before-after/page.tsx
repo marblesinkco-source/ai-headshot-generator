@@ -158,7 +158,7 @@ const styles: { icon: IconType; title: string; description: string }[] = [
 const stats: { icon: IconType; value: string; label: string }[] = [
   {
     icon: Clock,
-    value: 'Under 2 hours',
+    value: 'Within hours',
     label: 'Average delivery time',
   },
   {
@@ -192,7 +192,7 @@ const faqs = [
   {
     question: 'How long does it take to get my AI headshots?',
     answer:
-      'Most orders are delivered in under 2 hours. You receive a set of professionally enhanced headshots ready for LinkedIn, resumes, company directories, and other professional platforms.',
+      'Most orders are delivered within hours. You receive a set of professionally enhanced headshots ready for LinkedIn, resumes, company directories, and other professional platforms.',
   },
   {
     question: 'Are the before/after examples on this page real?',

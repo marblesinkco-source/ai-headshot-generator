@@ -68,7 +68,7 @@ const benefits = [
   {
     icon: Clock,
     title: "New Hires Live Fast",
-    description: "Onboard a new teammate and have their website photo ready in about 2 hours.",
+    description: "Onboard a new teammate and have their website photo ready within hours.",
   },
 ];
 
@@ -86,7 +86,7 @@ const steps = [
   {
     icon: Check,
     title: "Download and Publish",
-    description: "Get high-resolution headshots in about 2 hours, ready to drop into your website builder.",
+    description: "Get high-resolution headshots within hours, ready to drop into your website builder.",
   },
 ];
 
@@ -136,7 +136,7 @@ const faqs = [
   },
   {
     question: "How long does delivery take?",
-    answer: "Most orders arrive in about 2 hours after the selfies are uploaded.",
+    answer: "Most orders arrive within hours after the selfies are uploaded.",
   },
 ];
 
@@ -169,7 +169,7 @@ export default function WebsiteTeamPage() {
               <span className="not-italic text-tp-bronze">Website Team Pages</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              Mismatched photos make a team page look unfinished. Give every person a polished, consistent headshot from a few selfies, no photographer or office shoot required. Delivered in about 2 hours, starting at just $1.99.
+              Mismatched photos make a team page look unfinished. Give every person a polished, consistent headshot from a few selfies, no photographer or office shoot required. Delivered within hours, starting at just $1.99.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -199,7 +199,7 @@ export default function WebsiteTeamPage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Delivered in About 2 Hours
+            Delivered Within Hours
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />

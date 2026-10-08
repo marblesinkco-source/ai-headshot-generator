@@ -95,7 +95,7 @@ const faqItems = [
   },
   {
     q: 'How long does it take to get my headshots?',
-    a: 'Most headshots are delivered within 2 hours. Timing may vary slightly with demand, but we prioritize quality in every batch.',
+    a: 'Most headshots are delivered within hours. Timing may vary slightly with demand, but we prioritize quality in every batch.',
   },
   {
     q: 'Can I use these headshots for my business?',
@@ -157,7 +157,7 @@ export default function HeadshotsLandingPage() {
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-tp-beige/70 max-w-2xl mx-auto leading-relaxed">
             Studio-quality headshots from your own selfies. 40+ styles, 30+
-            profession-specific options. Ready in about 2 hours.
+            profession-specific options. Most orders ready within hours.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -291,7 +291,7 @@ export default function HeadshotsLandingPage() {
               {
                 step: '03',
                 title: 'Get Your Headshots',
-                desc: 'Receive studio-quality headshots in about 2 hours. HD on every package, 4K on Executive. Ready for any platform.',
+                desc: 'Receive studio-quality headshots within hours. HD on every package, 4K on Executive. Ready for any platform.',
               },
             ].map((item) => (
               <div key={item.step} className="text-center">

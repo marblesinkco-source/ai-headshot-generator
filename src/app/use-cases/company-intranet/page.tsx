@@ -12,7 +12,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Company Intranets | TailorPic";
 const pageDescription =
-  "Consistent professional headshots for company intranets and employee directories. Get polished portraits from selfies in about 2 hours. Starting at $1.99.";
+  "Consistent professional headshots for company intranets and employee directories. Get polished portraits from selfies within hours. Starting at $1.99.";
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -68,7 +68,7 @@ const benefits = [
   {
     icon: Clock,
     title: "Fast for Onboarding",
-    description: "Upload selfies today and have a portrait in about 2 hours, ready for a new hire's first week.",
+    description: "Upload selfies today and have a portrait within hours, ready for a new hire's first week.",
   },
 ];
 
@@ -86,7 +86,7 @@ const steps = [
   {
     icon: Check,
     title: "Download and Upload to Your Intranet",
-    description: "Get high-resolution photos in about 2 hours, then add them to the directory.",
+    description: "Get high-resolution photos within hours, then add them to the directory.",
   },
 ];
 
@@ -136,7 +136,7 @@ const faqs = [
   },
   {
     question: "How long does delivery take?",
-    answer: "Most orders arrive in about 2 hours after you upload your selfies.",
+    answer: "Most orders arrive within hours after you upload your selfies.",
   },
 ];
 
@@ -169,7 +169,7 @@ export default function CompanyIntranetUseCasePage() {
               <span className="not-italic text-tp-bronze">{"Company Intranets"}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              {"Faces make a workplace feel connected. Get consistent, professional employee portraits from a handful of selfies each, delivered in about 2 hours, starting at just $1.99."}
+              {"Faces make a workplace feel connected. Get consistent, professional employee portraits from a handful of selfies each, delivered within hours, starting at just $1.99."}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -199,7 +199,7 @@ export default function CompanyIntranetUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            {"Delivered in About 2 Hours"}
+            {"Delivered Within Hours"}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
