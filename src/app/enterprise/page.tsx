@@ -325,7 +325,7 @@ export default function EnterprisePage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 text-center">
             {[
-              { value: '40+', label: 'Photos per person' },
+              { value: '40', label: 'Photos per person' },
               { value: '~2 hrs', label: 'Typical upload to download' },
               { value: '$29', label: 'Per person for 16-50 teams' },
               { value: '1 style', label: 'Shared across your whole team' },
