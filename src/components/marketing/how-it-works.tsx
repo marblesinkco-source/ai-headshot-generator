@@ -35,8 +35,11 @@ export function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="scroll-mt-24 mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 py-20 lg:py-24"
+      className="relative scroll-mt-24 mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14 py-20 lg:py-24 overflow-hidden"
     >
+      {/* Decorative background blobs */}
+      <div aria-hidden="true" className="tp-blob tp-blob-bronze w-[500px] h-[500px] -top-40 -left-40" />
+      <div aria-hidden="true" className="tp-blob tp-blob-beige w-[400px] h-[400px] -bottom-32 -right-32" />
       <div className="scroll-fade-in flex justify-between items-end gap-4 mb-8 lg:mb-12">
         <div>
           <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-tp-bronze-ink">

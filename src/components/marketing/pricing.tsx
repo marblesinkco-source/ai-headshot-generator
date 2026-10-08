@@ -62,8 +62,11 @@ export function Pricing() {
   )}`;
 
   return (
-    <section id="pricing" className="relative bg-tp-paper/40 py-20 lg:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="pricing" className="relative bg-tp-paper/40 py-20 lg:py-24 overflow-hidden">
+      {/* Decorative background blobs */}
+      <div aria-hidden="true" className="tp-blob tp-blob-beige w-[600px] h-[600px] -top-60 -right-60" />
+      <div aria-hidden="true" className="tp-blob tp-blob-bronze w-[500px] h-[500px] -bottom-40 -left-48" />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="mx-auto max-w-2xl text-center">
           <p className="uppercase text-[11px] font-semibold tracking-[0.25em] text-tp-bronze-ink">

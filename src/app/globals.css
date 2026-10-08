@@ -351,6 +351,21 @@ dialog.tp-nav-dialog[open][data-closing]::backdrop {
   to { opacity: 0; transform: scale(1.1); }
 }
 
+/* ── Decorative gradient blobs for section backgrounds ──────── */
+.tp-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.12;
+}
+.tp-blob-bronze {
+  background: radial-gradient(circle, var(--tp-bronze) 0%, transparent 70%);
+}
+.tp-blob-beige {
+  background: radial-gradient(circle, var(--tp-beige) 0%, transparent 70%);
+}
+
 [id] {
   scroll-margin-top: 5rem;
 }

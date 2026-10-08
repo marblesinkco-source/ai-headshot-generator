@@ -63,10 +63,14 @@ const CTABanner = dynamic(
 const StickyCTA = dynamic(
   () => import('@/components/marketing/sticky-cta').then((m) => m.StickyCTA)
 );
+const ScrollProgress = dynamic(
+  () => import('@/components/marketing/scroll-progress').then((m) => m.ScrollProgress)
+);
 
 export default function LandingPage() {
   return (
     <>
+    <ScrollProgress />
     <Header />
     <main id="main-content" className="min-h-screen">
       <WebsiteSchema />
