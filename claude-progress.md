@@ -1,5 +1,37 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-08 (Site Kalite İyileştirmeleri %95 — commits ec210df, 7cecb7f)
+
+### Tamamlanan Görevler
+
+1. **Landmark yapısı düzeltmesi** ✅ — 8 kritik sayfada Header/Footer `<main>` dışına taşındı
+   - page.tsx, pricing, how-it-works, contact, about, faq, enterprise, [category]
+   - Sonuç: `banner` → `main` → `contentinfo` doğru sırada
+
+2. **Fabricated içerik temizliği** ✅ — Tüm uydurulmuş fiyat/iddia kaldırıldı
+   - "$200-$500" stüdyo fiyat iddiaları: 15+ dosyada kaldırıldı → "Varies by photographer"
+   - "credits never expire" → "valid for 12 months" (validityDays:365 ile uyumlu)
+   - "TailorPic Inc." → siteConfig.name (doğrulanmamış tüzel kişilik)
+   - Kredi paketi tasarruf yüzdeleri ("Save 20%/40%/52%") → doğru ifadeler
+   - "Satisfaction Guarantee" → "Quality Promise" (footer ile tutarlı)
+
+3. **Footer/Header link düzeltmeleri** ✅
+   - Tüm 12 aktif kategori footer'a eklendi (5 eksik kategori tamamlandı)
+   - "All Photo Types" → "All Categories" (/samples'a yönlendirildi)
+   - Duplicate "For Teams" linki kaldırıldı (resourceLinks'ten)
+   - "Holiday & Bayram Cards" → "Holiday & Celebration Cards" (İngilizce site)
+
+4. **SEO iyileştirmeleri** ✅
+   - HowToSchema kaldırıldı (Google deprecated)
+   - Site meta description hedef anahtar kelimelerle güncellendi
+   - Relative canonical URL'ler (metadataBase kullanarak)
+   - Instrument Serif italic kaldırıldı (~20KB tasarruf)
+
+### Deploy: commit 7cecb7f — CI PASS, Vercel PASS ✅
+### Canlı site doğrulaması: Chrome browser ile yapıldı ✅
+
+---
+
 ## Oturum: 2026-10-08 (Sitemap Duplicates Fix + E2E Doğrulama — commit 34a311d)
 
 ### Tamamlanan Görevler
