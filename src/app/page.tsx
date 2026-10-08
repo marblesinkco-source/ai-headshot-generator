@@ -87,6 +87,10 @@ const UseCases = dynamic(
   () => import('@/components/marketing/use-cases').then((m) => m.UseCases),
   { loading: () => <SectionSkeleton height="h-[500px] md:h-[400px]" /> }
 );
+const FreeToolsHighlight = dynamic(
+  () => import('@/components/marketing/free-tools-highlight').then((m) => m.FreeToolsHighlight),
+  { loading: () => <SectionSkeleton height="h-[500px] md:h-[400px]" /> }
+);
 
 export default function LandingPage() {
   return (
@@ -125,6 +129,9 @@ export default function LandingPage() {
 
       {/* 5.7. Headshot in Context — platform mockups */}
       <HeadshotInContext />
+
+      {/* 5.8. Free Tools Highlight */}
+      <FreeToolsHighlight />
 
       {/* Section divider */}
       <div className="mx-auto max-w-4xl px-8" aria-hidden="true"><div className="gold-line" /></div>
