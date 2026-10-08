@@ -111,7 +111,7 @@ const faqItems = [
   },
   {
     q: 'What is your refund policy?',
-    a: 'We offer a quality commitment on every package. If you are not happy with your headshots, reach out and we will work with you to make it right. See our guarantee page for details.',
+    a: 'We offer a quality commitment on every package. If you are not happy with your headshots, reach out and we will work with you to make it right. See our quality commitment page for details.',
   },
   {
     q: 'Is my data safe?',
