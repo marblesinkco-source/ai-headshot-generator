@@ -345,7 +345,7 @@ function QuickCategories({
                 width={160}
                 height={120}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 motion-reduce:group-hover:scale-100"
-                sizes="(max-width: 1024px) 59px, 16vw"
+                sizes="(max-width: 1024px) 72px, 16vw"
                 loading="lazy"
               />
             </div>

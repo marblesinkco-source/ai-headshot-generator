@@ -186,7 +186,7 @@ export function BeforeAfterShowcase() {
               key={label}
               className="scroll-fade-in group overflow-hidden rounded-tp-card border border-tp-line bg-white tp-lift hover:border-tp-bronze/40 hover:shadow-lg hover:shadow-tp-bronze/10 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
             >
-              <ComparisonSlider label={label} before={before} after={after} priority={idx === 0} />
+              <ComparisonSlider label={label} before={before} after={after} priority={false} />
               <figcaption className="border-t border-tp-line px-4 py-4 text-center transition-colors group-hover:border-tp-bronze/30">
                 <span className="block text-sm font-medium text-tp-ink">{label}</span>
                 <span className="mt-1 block text-xs text-tp-muted">{detail}</span>
