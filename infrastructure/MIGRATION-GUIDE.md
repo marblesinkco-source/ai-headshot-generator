@@ -26,7 +26,7 @@
    ./infrastructure/deploy.sh plan2
    ```
 6. **Update DNS** to point to VPS IP
-7. **Update Stripe webhook URL** to `https://tailorpic.com/api/webhooks/stripe`
+7. **Update Paddle webhook URL** to `https://tailorpic.com/api/webhooks/paddle`
 8. **Update Replicate webhook URL** if applicable
 
 ### Estimated savings: ~$80-100/mo

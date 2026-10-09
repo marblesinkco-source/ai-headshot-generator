@@ -1,6 +1,6 @@
 # CLAUDE.md — TailorPic (tailorpic.com)
 
-Next.js 14 App Router · TypeScript · Tailwind · Supabase · Stripe · Replicate · Vercel (Hobby, auto-deploy from `main`).
+Next.js 14 App Router · TypeScript · Tailwind · Supabase · Paddle · Replicate · Vercel (Hobby, auto-deploy from `main`).
 Repo: `marblesinkco-source/ai-headshot-generator`. Progress log: `claude-progress.md`.
 
 ## 0. Every session starts with
@@ -48,7 +48,7 @@ Vercel builds every push to `main`. `next.config.mjs` sets `typescript.ignoreBui
 | Build/typecheck | automatic on push; `gh run list -w ci.yml` / `gh run view <id>` | none |
 | Supabase migrations | `gh workflow run db-migrate.yml -f mode=list` → `-f mode=apply` (first time: `-f mode=baseline` to record the already-applied files) | `SUPABASE_DB_URL` (Supabase → Project Settings → Database → Connection string, Session pooler) |
 | Vercel build log | `gh workflow run vercel-logs.yml -f deployment=<dpl id or URL> -f sha=<commit>` | `VERCEL_TOKEN` (vercel.com/account/tokens) |
-| CI parity with Vercel env | optional repo **Variables**: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `NEXT_PUBLIC_APP_URL`, `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | public values, safe as Variables |
+| CI parity with Vercel env | optional repo **Variables**: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `NEXT_PUBLIC_APP_URL`, `NEXT_PUBLIC_PADDLE_CLIENT_TOKEN`, `NEXT_PUBLIC_PADDLE_ENV` | public values, safe as Variables |
 
 Follow a dispatched run with `gh run watch <run-id>` and read its summary with `gh run view <run-id>`.
 Migration SQL lives in `src/database/migrations/` (001–006) and `supabase/migrations/`; `package.json`'s `db:migrate` points to a runner that does not exist — use the workflow.
@@ -57,7 +57,7 @@ Optional, owner-side, makes everything direct: in the Claude Code environment's 
 
 ## 4. Non-negotiable project constraints (from the owner)
 
-- Do NOT delete auth, Stripe, Supabase, middleware, env files or existing pages for design changes.
+- Do NOT delete auth, Paddle, Supabase, middleware, env files or existing pages for design changes. Legacy Stripe files are retained for historical data — do not delete them either.
 - Keep secrets in the hosting environment; never paste them into React, public JSON, or the brand package.
 - Do not deploy null routes from `category-catalog.json`.
 - Do not fabricate signed-in state, user counts, ratings, reviews, or privacy claims. Portraits are AI-generated concepts, not testimonial evidence.

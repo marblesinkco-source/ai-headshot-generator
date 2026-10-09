@@ -21,7 +21,8 @@ Kod yazmadan önce:
 - Kapsam dışına taşma
 - Doğrulama kurallarını değiştirme
 - Çalışan backend yeniden yazılmayacak
-- Auth, Stripe, Supabase, middleware silinmeyecek
+- Auth, Paddle, Supabase, middleware silinmeyecek
+- Legacy Stripe dosyaları (tarihsel veri için) korunacak
 
 ## Bitti Tanımı
 

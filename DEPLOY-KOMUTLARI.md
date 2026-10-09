@@ -1,4 +1,4 @@
-# 🚀 TailorPic — Hızlı Deploy Komutları
+# TailorPic — Hızlı Deploy Komutları
 
 ## 1. Projeyi aç ve GitHub'a push et
 
@@ -37,9 +37,10 @@ Vercel deploy sırasında veya Settings → Environment Variables'dan ekle:
 NEXT_PUBLIC_SUPABASE_URL = (Supabase Dashboard'dan al)
 NEXT_PUBLIC_SUPABASE_ANON_KEY = (Supabase Dashboard → Settings → API → anon key)
 SUPABASE_SERVICE_ROLE_KEY = (Supabase Dashboard → Settings → API → service_role key)
-STRIPE_SECRET_KEY = (Stripe Dashboard → API keys → Secret key)
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY = (Stripe Dashboard → API keys → Publishable key)
-STRIPE_WEBHOOK_SECRET = (Stripe webhook kurduktan sonra eklenecek)
+PADDLE_API_KEY = (Paddle Dashboard → Developer Tools → API Keys)
+PADDLE_WEBHOOK_SECRET = (Paddle webhook kurduktan sonra eklenecek)
+NEXT_PUBLIC_PADDLE_CLIENT_TOKEN = (Paddle Dashboard → Developer Tools → Client-side tokens)
+NEXT_PUBLIC_PADDLE_ENV = production
 REPLICATE_API_TOKEN = (Replicate Dashboard → API tokens)
 RESEND_API_KEY = (Resend Dashboard → API Keys)
 EMAIL_FROM = noreply@tailorpic.com
@@ -47,7 +48,7 @@ NEXT_PUBLIC_APP_URL = https://SITEN.vercel.app
 ```
 
 ⚠️ `NEXT_PUBLIC_APP_URL` değerini deploy sonrası Vercel'in verdiği URL ile değiştir!
-⚠️ `STRIPE_WEBHOOK_SECRET` değerini aşağıdaki adımda alacaksın.
+⚠️ `PADDLE_WEBHOOK_SECRET` değerini aşağıdaki adımda alacaksın.
 
 ## 4. Deploy sonrası yapılacaklar
 
@@ -57,14 +58,19 @@ Tarayıcıda şu URL'ye bir kez git:
 https://SITEN.vercel.app/api/setup/storage
 ```
 
-### B) Stripe Webhook kur
-1. https://dashboard.stripe.com/webhooks adresine git
-2. "Add endpoint" tıkla
-3. URL: `https://SITEN.vercel.app/api/webhooks/stripe`
-4. Events: `checkout.session.completed`, `payment_intent.payment_failed`
-5. Signing secret'ı kopyala → Vercel'de `STRIPE_WEBHOOK_SECRET` olarak ekle
+### B) Paddle Webhook kur
+1. https://vendors.paddle.com/notifications adresine git
+2. "New notification destination" tıkla
+3. URL: `https://SITEN.vercel.app/api/webhooks/paddle`
+4. Events: `transaction.completed`, `transaction.payment_failed`, `transaction.refunded`
+5. Webhook secret'ı kopyala → Vercel'de `PADDLE_WEBHOOK_SECRET` olarak ekle
 
-### C) Supabase Auth URL'lerini güncelle
+### C) Paddle Ürünlerini Oluştur
+1. Paddle Dashboard → Catalog → Products
+2. Her paket için bir ürün ve fiyat oluştur (TailorPic 1, Lite, Basic, vb.)
+3. Fiyat ID'lerini (pri_...) `src/config/categories.ts` ve `src/config/credits.ts` dosyalarındaki `paddlePriceId` alanlarına ekle
+
+### D) Supabase Auth URL'lerini güncelle
 1. Supabase Dashboard → Authentication → URL Configuration
 2. Site URL: `https://SITEN.vercel.app`
 3. Redirect URLs: `https://SITEN.vercel.app/auth/callback`

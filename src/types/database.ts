@@ -104,9 +104,11 @@ export interface Database {
           package_id: string;
           category_id: CategoryId;
           status: OrderStatus;
+          /** @deprecated Legacy Stripe — retained for historical orders */
           stripe_session_id: string | null;
+          /** @deprecated Legacy Stripe — retained for historical orders */
           stripe_payment_intent: string | null;
-          // Migration: Paddle
+          // Paddle (active payment provider)
           paddle_transaction_id: string | null;
           paddle_subscription_id: string | null;
           amount: number;
@@ -134,7 +136,9 @@ export interface Database {
           package_id: string;
           category_id: CategoryId | 'credits';
           status?: OrderStatus;
+          /** @deprecated Legacy Stripe */
           stripe_session_id?: string | null;
+          /** @deprecated Legacy Stripe */
           stripe_payment_intent?: string | null;
           paddle_transaction_id?: string | null;
           paddle_subscription_id?: string | null;
@@ -160,7 +164,9 @@ export interface Database {
           package_id?: string;
           category_id?: CategoryId | 'credits';
           status?: OrderStatus;
+          /** @deprecated Legacy Stripe */
           stripe_session_id?: string | null;
+          /** @deprecated Legacy Stripe */
           stripe_payment_intent?: string | null;
           paddle_transaction_id?: string | null;
           paddle_subscription_id?: string | null;
@@ -396,7 +402,8 @@ export interface Database {
         };
       };
 
-      // ── Migration 006: Stripe event deduplication ─────────────────────────
+      // ── Legacy: Stripe event deduplication (retained for historical data) ──
+      /** @deprecated Legacy Stripe table — new events use processed_paddle_events */
       processed_stripe_events: {
         Row: {
           event_id: string;

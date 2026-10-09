@@ -56,7 +56,7 @@ const checkoutSchema = z.union([
 /**
  * Paddle checkout flow:
  *
- * Unlike Stripe (server-side session → redirect), Paddle uses a client-side
+ * Paddle uses a client-side
  * overlay checkout via Paddle.js. This route creates the order record in our
  * DB and returns the data needed for Paddle.js to open the checkout overlay.
  *

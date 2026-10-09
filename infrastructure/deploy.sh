@@ -59,7 +59,7 @@ case "$PLAN" in
         echo "Next steps:"
         echo "  1. Set up SSL certificates (see WARNING above if needed)"
         echo "  2. Point DNS A record to this server's IP"
-        echo "  3. Configure Stripe webhook URL to https://tailorpic.com/api/webhooks/stripe"
+        echo "  3. Configure Paddle webhook URL to https://tailorpic.com/api/webhooks/paddle"
         ;;
 
     plan3)
@@ -86,7 +86,7 @@ case "$PLAN" in
         echo "  1. Set up SSL certificates"
         echo "  2. Point DNS to this server"
         echo "  3. Run migrations: docker compose exec postgres psql -U tailorpic -d tailorpic -f /docker-entrypoint-initdb.d/01-init.sql"
-        echo "  4. Configure Stripe webhook URL"
+        echo "  4. Configure Paddle webhook URL"
         echo "  5. Set up automated backups (cron + pg_dump)"
         ;;
 

@@ -1,11 +1,28 @@
 /**
- * Stripe Payment Provider Adapter
- * Implements PaymentProviderAdapter for Stripe.
- * This is the only "real" adapter — others are interface scaffolds.
+ * Legacy Stripe Payment Provider Adapter
+ *
+ * Retained ONLY for historical transaction lookups (orders placed before
+ * the Paddle migration). All new payments go through PaddleAdapter.
+ *
+ * The adapter guards every API call behind getStripe() — if STRIPE_SECRET_KEY
+ * is not configured the methods throw a clear error instead of crashing.
+ *
+ * @deprecated Use PaddleAdapter for all new payment operations.
  */
 
-import Stripe from 'stripe';
-import { stripe } from '@/lib/stripe';
+import type Stripe from 'stripe';
+import { getStripe } from '@/lib/stripe';
+
+function requireStripe(): import('stripe').default {
+  const client = getStripe();
+  if (!client) {
+    throw new Error(
+      'StripeAdapter called but STRIPE_SECRET_KEY is not configured. ' +
+      'This adapter is for historical lookups only.'
+    );
+  }
+  return client;
+}
 import type {
   PaymentProviderAdapter,
   SyncParams,
@@ -77,13 +94,13 @@ export class StripeAdapter implements PaymentProviderAdapter {
   async getPayment(id: string): Promise<NormalizedPayment> {
     // Try charge first, then payment intent
     if (id.startsWith('ch_')) {
-      const charge = await stripe.charges.retrieve(id, {
+      const charge = await requireStripe().charges.retrieve(id, {
         expand: ['balance_transaction'],
       });
       return mapChargeToPayment(charge);
     }
 
-    const pi = await stripe.paymentIntents.retrieve(id, {
+    const pi = await requireStripe().paymentIntents.retrieve(id, {
       expand: ['latest_charge.balance_transaction'],
     });
     const charge = pi.latest_charge as Stripe.Charge | null;
@@ -122,7 +139,7 @@ export class StripeAdapter implements PaymentProviderAdapter {
       listParams.starting_after = params.cursor;
     }
 
-    const charges = await stripe.charges.list(listParams);
+    const charges = await requireStripe().charges.list(listParams);
     return charges.data.map(mapChargeToPayment);
   }
 
@@ -134,7 +151,7 @@ export class StripeAdapter implements PaymentProviderAdapter {
       listParams.starting_after = params.cursor;
     }
 
-    const refunds = await stripe.refunds.list(listParams);
+    const refunds = await requireStripe().refunds.list(listParams);
     return refunds.data.map((r) => ({
       externalId: r.id,
       paymentId: typeof r.charge === 'string' ? r.charge : r.charge?.id || '',
@@ -154,7 +171,7 @@ export class StripeAdapter implements PaymentProviderAdapter {
       listParams.starting_after = params.cursor;
     }
 
-    const disputes = await stripe.disputes.list(listParams);
+    const disputes = await requireStripe().disputes.list(listParams);
     return disputes.data.map((d) => ({
       externalId: d.id,
       paymentId: typeof d.charge === 'string' ? d.charge : d.charge?.id || '',
@@ -177,7 +194,7 @@ export class StripeAdapter implements PaymentProviderAdapter {
       listParams.starting_after = params.cursor;
     }
 
-    const payouts = await stripe.payouts.list(listParams);
+    const payouts = await requireStripe().payouts.list(listParams);
     return payouts.data.map((p) => ({
       externalId: p.id,
       amount: p.amount,
@@ -201,7 +218,7 @@ export class StripeAdapter implements PaymentProviderAdapter {
       listParams.starting_after = params.cursor;
     }
 
-    const txns = await stripe.balanceTransactions.list(listParams);
+    const txns = await requireStripe().balanceTransactions.list(listParams);
     const fees: NormalizedFee[] = [];
     for (const bt of txns.data) {
       for (const fd of bt.fee_details || []) {
@@ -218,7 +235,7 @@ export class StripeAdapter implements PaymentProviderAdapter {
 
   async getSettlement(id: string): Promise<NormalizedSettlement | null> {
     try {
-      const payout = await stripe.payouts.retrieve(id);
+      const payout = await requireStripe().payouts.retrieve(id);
       // Stripe doesn't directly expose which transactions are in a payout
       // via the basic API — would need balance_transactions with payout filter
       return {
@@ -240,7 +257,7 @@ export class StripeAdapter implements PaymentProviderAdapter {
     }
 
     const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
-    const event = stripe.webhooks.constructEvent(body, signature, webhookSecret);
+    const event = requireStripe().webhooks.constructEvent(body, signature, webhookSecret);
 
     return {
       eventId: event.id,

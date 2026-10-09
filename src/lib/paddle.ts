@@ -3,7 +3,7 @@
  * Uses the server-only PADDLE_API_KEY env var.
  *
  * Paddle acts as Merchant of Record: handles tax, VAT, compliance globally.
- * This replaces src/lib/stripe.ts for all payment operations.
+ * This is the primary payment module for all new transactions.
  */
 
 import { Paddle, Environment } from '@paddle/paddle-node-sdk';

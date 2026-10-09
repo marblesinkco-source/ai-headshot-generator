@@ -61,7 +61,7 @@ export const UPLOAD_REQUIREMENTS = {
 } as const;
 
 /* ------------------------------------------------------------------ */
-/*  Payment provider — change once here when migrating Stripe→Paddle  */
+/*  Payment provider — Paddle (Merchant of Record)                    */
 /* ------------------------------------------------------------------ */
 
 export const PAYMENT_PROVIDER = {

@@ -10,7 +10,7 @@ Professional AI-powered headshot generator -- a complete SaaS platform that lets
 - **Multiple styles & backgrounds** -- 10 pose/attire styles, 15 background options
 - **Tiered pricing** -- Starter ($29), Professional ($49), Executive ($79) packages
 - **User dashboard** -- order history, gallery, favorites, bulk download as ZIP
-- **Stripe payments** -- checkout sessions, webhook-driven order fulfillment
+- **Paddle payments** -- Merchant of Record, checkout overlay, webhook-driven order fulfillment
 - **Supabase auth** -- email/password and OAuth signup with RLS-protected data
 - **Responsive design** -- landing page, dashboard, gallery all mobile-ready
 - **Provider pattern** -- swap AI, payment, email, or storage providers without touching business logic
@@ -23,7 +23,7 @@ Professional AI-powered headshot generator -- a complete SaaS platform that lets
 | Language      | TypeScript                  |
 | Styling       | Tailwind CSS                |
 | Auth & DB     | Supabase (PostgreSQL + RLS) |
-| Payments      | Stripe                      |
+| Payments      | Paddle (Merchant of Record) |
 | AI Generation | Replicate                   |
 | Email         | Resend                      |
 | Storage       | Supabase Storage            |
@@ -60,9 +60,10 @@ Copy `.env.example` to `.env.local` and fill in each value:
 | `NEXT_PUBLIC_SUPABASE_URL`          | Yes      | Supabase project URL                     |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY`     | Yes      | Supabase anonymous/public key            |
 | `SUPABASE_SERVICE_ROLE_KEY`         | Yes      | Supabase service role key (server only)  |
-| `STRIPE_SECRET_KEY`                 | Yes      | Stripe secret key                        |
-| `STRIPE_WEBHOOK_SECRET`             | Yes      | Stripe webhook signing secret            |
-| `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`| Yes      | Stripe publishable key                   |
+| `PADDLE_API_KEY`                    | Yes      | Paddle API key                           |
+| `PADDLE_WEBHOOK_SECRET`             | Yes      | Paddle webhook signing secret            |
+| `NEXT_PUBLIC_PADDLE_CLIENT_TOKEN`   | Yes      | Paddle client-side token                 |
+| `NEXT_PUBLIC_PADDLE_ENV`            | No       | `sandbox` or `production` (default: sandbox) |
 | `REPLICATE_API_TOKEN`               | Yes      | Replicate API token                      |
 | `RESEND_API_KEY`                    | Yes      | Resend API key for transactional email   |
 | `EMAIL_FROM`                        | No       | Sender address (default: noreply@...)    |
@@ -136,8 +137,9 @@ src/
   app/                    # Next.js App Router pages and API routes
     api/
       ai/                 # AI generation + webhook endpoints
-      payments/            # Stripe checkout session creation
-      webhooks/stripe/     # Stripe webhook handler
+      payments/            # Paddle checkout session creation
+      webhooks/paddle/     # Paddle webhook handler (active)
+      webhooks/stripe/     # Legacy Stripe webhook handler (deprecated)
       gallery/             # Gallery data + download + favorites
       upload/              # Photo upload endpoint
     auth/                  # Login, register, OAuth callback
@@ -150,7 +152,7 @@ src/
   core/                    # Provider-pattern service layer
     ai/                    # AI provider interface + Replicate implementation
     email/                 # Email provider interface + Resend implementation
-    payments/              # Payment provider interface + Stripe implementation
+    payments/              # Payment provider interface + Paddle implementation
     storage/               # Storage provider interface + Supabase implementation
   database/
     migrations/            # SQL migration files for Supabase
@@ -221,7 +223,7 @@ Follow the same pattern under `src/core/payments/`:
 | `npm run build`        | Production build                             |
 | `npm run start`        | Start production server                      |
 | `npm run lint`         | Run ESLint                                   |
-| `npm run stripe:listen`| Forward Stripe webhooks to localhost          |
+| `npm run paddle:listen`| Info on local Paddle webhook testing          |
 | `./scripts/setup.sh`  | Interactive first-time setup                 |
 | `./scripts/deploy.sh` | Type-check, build, and deploy                |
 

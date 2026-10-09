@@ -1,8 +1,22 @@
+/**
+ * Legacy Stripe Webhook Handler
+ *
+ * This route is DEPRECATED — all new payments are processed through Paddle
+ * (see /api/webhooks/paddle/route.ts). This handler is retained only to
+ * process any remaining Stripe webhook deliveries for historical orders
+ * placed before the Paddle migration.
+ *
+ * Once all Stripe webhooks are disabled in the Stripe Dashboard, this
+ * route can be safely removed.
+ *
+ * @deprecated Use /api/webhooks/paddle for all new payment webhooks.
+ */
+
 import { NextRequest, NextResponse } from 'next/server';
-import Stripe from 'stripe';
+import type Stripe from 'stripe';
 import { createAdminClient } from '@/lib/supabase/server';
 import { Resend } from 'resend';
-import { stripe } from '@/lib/stripe';
+import { getStripe } from '@/lib/stripe';
 import { PACKAGES, type PackageId } from '@/config/packages';
 import { getCategoryById, getPackageById, type CategoryId } from '@/config/categories';
 import { CREDIT_PACKAGES } from '@/config/credits';
@@ -35,9 +49,26 @@ async function sendEmailSafe(to: string, subject: string, html: string): Promise
     logger.error('[stripe-webhook] Failed to send email:', emailError);
   }
 }
-const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
-
 export async function POST(request: NextRequest) {
+  // Guard: if Stripe is not configured, reject early
+  const stripeClient = getStripe();
+  if (!stripeClient) {
+    logger.warn('[stripe-webhook] STRIPE_SECRET_KEY not configured — rejecting webhook');
+    return NextResponse.json(
+      { error: 'Stripe is not configured. All payments now use Paddle.' },
+      { status: 410 } // Gone
+    );
+  }
+
+  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+  if (!webhookSecret) {
+    logger.warn('[stripe-webhook] STRIPE_WEBHOOK_SECRET not configured — rejecting webhook');
+    return NextResponse.json(
+      { error: 'Stripe webhook secret not configured' },
+      { status: 410 }
+    );
+  }
+
   try {
     const body = await request.text();
     const signature = request.headers.get('stripe-signature');
@@ -51,7 +82,7 @@ export async function POST(request: NextRequest) {
 
     let event: Stripe.Event;
     try {
-      event = stripe.webhooks.constructEvent(body, signature, webhookSecret);
+      event = stripeClient.webhooks.constructEvent(body, signature, webhookSecret);
     } catch (err) {
       logger.error('Webhook signature verification failed:', err);
       return NextResponse.json(
