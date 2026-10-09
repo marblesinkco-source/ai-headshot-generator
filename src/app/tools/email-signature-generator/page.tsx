@@ -54,7 +54,7 @@ const faqs: { q: string; a: string }[] = [
 
 export default function EmailSignatureGeneratorPage() {
   return (
-    <main id="main-content" className="min-h-screen bg-white">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -80,6 +80,7 @@ export default function EmailSignatureGeneratorPage() {
         }}
       />
       <Header />
+      <main id="main-content" className="bg-white">
 
       <section className="relative overflow-hidden pt-16">
         <div className="pointer-events-none absolute -top-24 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-tp-bronze/10 blur-3xl" />
@@ -133,7 +134,8 @@ export default function EmailSignatureGeneratorPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

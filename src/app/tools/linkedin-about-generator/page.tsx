@@ -73,7 +73,7 @@ const faqs = [
 
 export default function LinkedInAboutGeneratorPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
@@ -96,6 +96,7 @@ export default function LinkedInAboutGeneratorPage() {
         }}
       />
       <Header />
+      <main id="main-content">
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-tp-black py-20 sm:py-24">
@@ -181,7 +182,8 @@ export default function LinkedInAboutGeneratorPage() {
         </div>
       </div>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

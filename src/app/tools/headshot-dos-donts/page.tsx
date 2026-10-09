@@ -116,7 +116,7 @@ const faqItems = [
 
 export default function HeadshotDosAndDontsPage() {
   return (
-    <main id="main-content" className="min-h-screen bg-tp-paper">
+    <>
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
@@ -131,6 +131,7 @@ export default function HeadshotDosAndDontsPage() {
         }))}
       />
       <Header />
+      <main id="main-content" className="bg-tp-paper">
 
       {/* Hero */}
       <section className="px-4 pb-10 pt-16 sm:px-6 md:pt-24">
@@ -299,7 +300,8 @@ export default function HeadshotDosAndDontsPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

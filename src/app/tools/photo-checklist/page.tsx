@@ -73,7 +73,7 @@ const faqs = [
 
 export default function PhotoChecklistPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
@@ -96,6 +96,7 @@ export default function PhotoChecklistPage() {
         }}
       />
       <Header />
+      <main id="main-content">
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-tp-black py-20 sm:py-24">
@@ -182,7 +183,8 @@ export default function PhotoChecklistPage() {
         </div>
       </div>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

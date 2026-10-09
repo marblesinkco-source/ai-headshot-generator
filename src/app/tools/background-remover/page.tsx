@@ -68,7 +68,7 @@ function UploadZone() {
 
 export default function Page() {
   return (
-    <main id="main-content" className="min-h-screen bg-tp-paper">
+    <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <BreadcrumbSchema
         items={[
@@ -78,6 +78,7 @@ export default function Page() {
         ]}
       />
       <Header />
+      <main id="main-content" className="bg-tp-paper">
 
       <section className="px-4 pb-10 pt-16 sm:px-6 md:pt-24">
         <div className="mx-auto max-w-3xl text-center">
@@ -139,7 +140,8 @@ export default function Page() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }
