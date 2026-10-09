@@ -495,6 +495,28 @@ export default function EnterprisePage() {
         </div>
       </section>
 
+      {/* Small team CTA */}
+      <section className="py-12 sm:py-14">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-tp-card border border-tp-line bg-white p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
+            <div className="flex-1 text-center sm:text-left">
+              <p className="text-sm font-semibold uppercase tracking-widest text-tp-bronze-ink mb-1">
+                Smaller Team?
+              </p>
+              <p className="text-sm text-tp-muted">
+                Our team headshot packages start at {TEAM_PRICE_SMALL_DISPLAY} per person for groups of 5–15. No admin setup needed.
+              </p>
+            </div>
+            <Link
+              href="/team-headshots"
+              className="inline-flex items-center gap-2 rounded-tp-button border border-tp-line px-6 py-3 text-sm font-semibold text-tp-ink transition-all hover:bg-tp-paper whitespace-nowrap"
+            >
+              View Team Plans <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

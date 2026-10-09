@@ -560,43 +560,50 @@ export default function TeamHeadshotsPage() {
                 icon: Laptop,
                 title: 'Tech Companies',
                 desc: 'Keep fast-growing and remote teams looking cohesive on your about page and product sites.',
+                href: '/industries/engineers',
               },
               {
                 icon: Scale,
                 title: 'Law Firms',
                 desc: 'Polished, credible attorney profiles that match across every partner and associate.',
+                href: '/industries/lawyers',
               },
               {
                 icon: Building2,
                 title: 'Real Estate Teams',
                 desc: 'Uniform agent photos for listings, signage, and marketing materials.',
+                href: '/industries/real-estate',
               },
               {
                 icon: Stethoscope,
                 title: 'Healthcare',
                 desc: 'Approachable, professional portraits for practitioners and clinic staff directories.',
+                href: '/industries/doctors',
               },
               {
                 icon: GraduationCap,
                 title: 'Education',
                 desc: 'Faculty and staff headshots for department pages and campus directories.',
+                href: '/industries/professors',
               },
               {
                 icon: Landmark,
                 title: 'Finance',
                 desc: 'Trustworthy, consistent advisor and analyst photos for client-facing materials.',
+                href: '/industries/financial-advisors',
               },
             ].map((item) => (
-              <div
+              <Link
                 key={item.title}
-                className="rounded-tp-card border border-tp-line bg-white p-6 transition-colors hover:border-tp-bronze/30"
+                href={item.href}
+                className="group rounded-tp-card border border-tp-line bg-white p-6 transition-colors hover:border-tp-bronze/30"
               >
                 <div className="flex h-10 w-10 items-center justify-center rounded-tp-button bg-tp-black mb-4">
                   <item.icon className="h-5 w-5 text-tp-bronze" />
                 </div>
-                <h3 className="font-display font-normal text-lg text-tp-ink">{item.title}</h3>
+                <h3 className="font-display font-normal text-lg text-tp-ink group-hover:text-tp-bronze-ink transition-colors">{item.title}</h3>
                 <p className="mt-2 text-sm text-tp-muted leading-relaxed">{item.desc}</p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -686,6 +693,26 @@ export default function TeamHeadshotsPage() {
             </Link>
             .
           </p>
+        </div>
+      </section>
+
+      {/* Enterprise CTA */}
+      <section className="bg-tp-black py-14 sm:py-16">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
+          <div className="flex-1 text-center sm:text-left">
+            <h2 className="font-display font-normal text-2xl sm:text-3xl text-white">
+              Need 50+ Headshots?
+            </h2>
+            <p className="mt-2 text-sm text-white/70 max-w-lg">
+              Our enterprise plan includes dedicated support, custom branding, and volume pricing for large organizations.
+            </p>
+          </div>
+          <Link
+            href="/enterprise"
+            className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:-translate-y-0.5 hover:bg-tp-bronze/90 hover:shadow-lg whitespace-nowrap"
+          >
+            Enterprise Plans <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </section>
 
