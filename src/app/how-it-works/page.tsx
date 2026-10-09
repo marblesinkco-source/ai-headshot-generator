@@ -683,6 +683,12 @@ export default function HowItWorksPage() {
             >
               View Pricing
             </Link>
+            <Link
+              href="/samples"
+              className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'border-tp-beige/30 text-tp-beige hover:bg-white/10')}
+            >
+              See Examples
+            </Link>
           </div>
         </div>
       </section>

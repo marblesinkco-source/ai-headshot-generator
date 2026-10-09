@@ -12,6 +12,8 @@ const productLinks: FooterLink[] = [
   { label: 'Pricing', href: '/pricing' },
   { label: 'Samples', href: '/samples' },
   { label: 'Before & After', href: '/before-after' },
+  { label: 'Free Headshot Generator', href: '/free-headshot-generator' },
+  { label: 'LinkedIn Headshots', href: '/linkedin-headshots' },
   { label: 'Technology', href: '/technology' },
   { label: 'Quality Promise', href: '/guarantee' },
   { label: 'FAQ', href: '/faq' },
@@ -28,7 +30,8 @@ const photoTypeLinks: FooterLink[] = [
   { label: 'Pet Portraits', href: '/pet-portraits' },
   { label: 'Couple & Engagement', href: '/couple-engagement-photos' },
   { label: 'Product Photography', href: '/product-photography' },
-  { label: 'All Categories', href: '/pricing' },
+  { label: 'Virtual Staging', href: '/virtual-staging' },
+  { label: 'Holiday Cards', href: '/holiday-cards' },
 ];
 
 const resourceLinks: FooterLink[] = [
@@ -40,6 +43,8 @@ const resourceLinks: FooterLink[] = [
   { label: 'Free Tools', href: '/tools' },
   { label: 'Compare Tools', href: '/vs' },
   { label: 'Use Cases', href: '/use-cases' },
+  { label: 'Industries', href: '/industries' },
+  { label: 'Styles', href: '/styles' },
 ];
 
 const companyLinks: FooterLink[] = [

@@ -419,6 +419,26 @@ export default function PricingPage() {
       <FAQSchema items={pricingFaqs} />
 
       <PricingComparisonBar />
+
+      {/* Enterprise CTA */}
+      <section className="bg-tp-paper py-16">
+        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="font-display text-2xl font-normal text-tp-ink sm:text-3xl">
+            Need more than 50 headshots?
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-base text-tp-muted">
+            Enterprise plans include custom volume pricing, dedicated onboarding, and priority support for large teams.
+          </p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Link href="/enterprise" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
+              Learn about Enterprise
+            </Link>
+            <Link href="/contact" className={buttonVariants({ variant: 'outline', size: 'lg' })}>
+              Request a Demo
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
     <Footer />
     </>
