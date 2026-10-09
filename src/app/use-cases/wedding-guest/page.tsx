@@ -17,7 +17,7 @@ const pageDescription =
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
   description: pageDescription,
-  alternates: { canonical: 'https://www.tailorpic.com/use-cases/wedding-guest' },
+  alternates: { canonical: '/use-cases/wedding-guest' },
   openGraph: generateOGMetadata({ title: pageTitle, description: pageDescription, path: '/use-cases/wedding-guest', type: 'usecase' }),
   twitter: generateTwitterMetadata({ title: pageTitle, description: pageDescription, type: 'usecase' }),
 };

@@ -10,7 +10,7 @@ export const metadata = {
   title: "TailorPic — Çok Yakında",
   description: "TailorPic çok yakında hizmetinizde olacak.",
   robots: { index: false, follow: false },
-  alternates: { canonical: 'https://www.tailorpic.com/gate' },
+  alternates: { canonical: '/gate' },
 };
 
 export default function GatePage() {

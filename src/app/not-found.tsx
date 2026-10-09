@@ -4,6 +4,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 
 export const metadata: Metadata = {
+  title: 'Page Not Found | TailorPic',
   robots: { index: false, follow: false },
 };
 

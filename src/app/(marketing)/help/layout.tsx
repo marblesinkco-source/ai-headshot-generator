@@ -7,7 +7,7 @@ const DESCRIPTION = `Find answers about ${siteConfig.name}: getting started, pho
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic Help Center: Photos, Pricing & Account Help' },
   description: DESCRIPTION,
-  alternates: { canonical: 'https://www.tailorpic.com/help' },
+  alternates: { canonical: '/help' },
   robots: { index: true, follow: true },
   openGraph: generateOGMetadata({
     title: 'TailorPic Help Center: Photos, Pricing & Account Help',
