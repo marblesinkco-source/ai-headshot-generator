@@ -7,6 +7,7 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { EnterpriseIllustration } from '@/components/marketing/illustrations';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { TEAM_PRICE_SMALL_DISPLAY, TEAM_PRICE_LARGE_DISPLAY } from '@/config/pricing';
 import {
   Building2,
   Users,
@@ -45,13 +46,13 @@ const ENTERPRISE_OG_DESCRIPTION = 'Scale professional headshots across your orga
 export const metadata: Metadata = {
   title: { absolute: ENTERPRISE_TITLE },
   description:
-    'Professional AI headshots for your entire organization. Consistent branding, team admin dashboard, volume pricing from $29/person, and dedicated support.',
+    `Professional AI headshots for your entire organization. Consistent branding, team admin dashboard, volume pricing from ${TEAM_PRICE_LARGE_DISPLAY}/person, and dedicated support.`,
   alternates: { canonical: '/enterprise' },
   openGraph: generateOGMetadata({
     title: ENTERPRISE_TITLE,
     description: ENTERPRISE_OG_DESCRIPTION,
     type: 'default',
-    subtitle: 'Team pricing from $29 per person',
+    subtitle: `Team pricing from ${TEAM_PRICE_LARGE_DISPLAY} per person`,
     path: '/enterprise',
   }),
   twitter: generateTwitterMetadata({
@@ -64,7 +65,7 @@ const enterpriseFaqs = [
   {
     question: 'How does team pricing work?',
     answer:
-      'Small teams of 5-15 people are $39 per person and companies of 16-50 people are $29 per person. For teams of 50+, we offer custom enterprise pricing. Contact our sales team for a tailored quote.',
+      `Small teams of 5-15 people are ${TEAM_PRICE_SMALL_DISPLAY} per person and companies of 16-50 people are ${TEAM_PRICE_LARGE_DISPLAY} per person. For teams of 50+, we offer custom enterprise pricing. Contact our sales team for a tailored quote.`,
   },
   {
     question: 'Can we set brand guidelines for all team headshots?',
@@ -217,7 +218,7 @@ export default function EnterprisePage() {
               on-brand photos delivered in hours.
             </p>
             <p className="mt-3 text-sm text-tp-beige/50">
-              Team pricing from $29 per person. Priority support and a dedicated account manager for enterprise.
+              Team pricing from {TEAM_PRICE_LARGE_DISPLAY} per person. Priority support and a dedicated account manager for enterprise.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link
@@ -273,7 +274,7 @@ export default function EnterprisePage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { icon: Palette, title: 'Consistent Branding', desc: 'Set brand colors, backgrounds, and style once. Every team member gets the same polished, on-brand look.' },
-              { icon: CreditCard, title: 'Volume Savings', desc: 'Per-person costs drop as your team grows. From $39 for small teams down to custom pricing at scale.' },
+              { icon: CreditCard, title: 'Volume Savings', desc: `Per-person costs drop as your team grows. From ${TEAM_PRICE_SMALL_DISPLAY} for small teams down to custom pricing at scale.` },
               { icon: Clock, title: 'Fast Onboarding', desc: 'New hires upload selfies on day one and have matching headshots within hours. No studio visit required.' },
               { icon: Settings, title: 'Admin Controls', desc: 'One dashboard to invite members, set brand guidelines, track orders, and download all headshots.' },
             ].map((prop) => (
@@ -327,7 +328,7 @@ export default function EnterprisePage() {
             {[
               { value: '40', label: 'Photos per person' },
               { value: '~2 hrs', label: 'Typical upload to download' },
-              { value: '$29', label: 'Per person for 16-50 teams' },
+              { value: TEAM_PRICE_LARGE_DISPLAY, label: 'Per person for 16-50 teams' },
               { value: '1 style', label: 'Shared across your whole team' },
             ].map((stat) => (
               <div key={stat.label}>
@@ -447,8 +448,8 @@ export default function EnterprisePage() {
           </p>
           <div className="grid gap-6 sm:grid-cols-3">
             {[
-              { name: 'Small Team', range: '5-15 people', price: '$39', per: 'per person', features: ['40 photos each', 'Consistent style', 'HD resolution', 'Email support'], href: '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots' },
-              { name: 'Business', range: '16-50 people', price: '$29', per: 'per person', features: ['40 photos each', 'Brand guidelines', '4K resolution', 'Priority support'], popular: true, href: '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots' },
+              { name: 'Small Team', range: '5-15 people', price: TEAM_PRICE_SMALL_DISPLAY, per: 'per person', features: ['40 photos each', 'Consistent style', 'HD resolution', 'Email support'], href: '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots' },
+              { name: 'Business', range: '16-50 people', price: TEAM_PRICE_LARGE_DISPLAY, per: 'per person', features: ['40 photos each', 'Brand guidelines', '4K resolution', 'Priority support'], popular: true, href: '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots' },
               { name: 'Enterprise', range: '50+ people', price: 'Custom', per: 'contact us', features: ['Custom photo packages', 'Admin dashboard', 'Custom onboarding', 'Dedicated manager', 'Invoiced billing'], href: '/contact' },
             ].map((plan) => (
               <div

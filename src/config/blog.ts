@@ -4,7 +4,7 @@
  * replace this with API calls to your preferred CMS.
  */
 
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+import { BASE_PRICE_DISPLAY, TEAM_PRICE_SMALL_DISPLAY, TEAM_PRICE_LARGE_DISPLAY } from '@/config/pricing';
 
 export interface BlogPost {
   slug: string;
@@ -1293,7 +1293,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>The Cost Comparison</h2>
       <p>Let us use a mid-point estimate of about $250 per person for a traditional photographer. For 50 people, that comes to roughly $12,500. This figure does not include the time employees spend away from their work or the cost of rebooking the photographer when new people join.</p>
-      <p>Now compare that with AI headshots. TailorPic team pricing is $29 per person for 16-50 people. For 50 people, that is about $1,450. The difference between the two is more than $11,000, which is where the title of this article comes from.</p>
+      <p>Now compare that with AI headshots. TailorPic team pricing is ${TEAM_PRICE_LARGE_DISPLAY} per person for 16-50 people. For 50 people, that is about $1,450. The difference between the two is more than $11,000, which is where the title of this article comes from.</p>
       <table>
         <thead>
           <tr><th>Item</th><th>Traditional photographer</th><th>AI headshots</th></tr>
@@ -5048,7 +5048,7 @@ export const blogPosts: BlogPost[] = [
       <h2>What to Look For</h2>
       <p>The most important features for team headshot projects are:</p>
       <p><strong>Visual consistency:</strong> Every portrait should have the same background, lighting style, and framing so the team page looks cohesive. The best tools let you lock in a style and apply it across all team members.</p>
-      <p><strong>Per-person pricing:</strong> Some tools charge per person, others per batch. Calculate the total cost for your team size before committing. TailorPic team pricing is <a href="/pricing">$39 per person for 5-15 people and $29 per person for 16-50</a>, one-time with no subscription, making costs predictable.</p>
+      <p><strong>Per-person pricing:</strong> Some tools charge per person, others per batch. Calculate the total cost for your team size before committing. TailorPic team pricing is <a href="/pricing">${TEAM_PRICE_SMALL_DISPLAY} per person for 5-15 people and ${TEAM_PRICE_LARGE_DISPLAY} per person for 16-50</a>, one-time with no subscription, making costs predictable.</p>
       <p><strong>Turnaround time:</strong> If you are onboarding new hires or preparing for an event, you need photos fast. Most AI tools deliver within 24 hours; some within 2 hours.</p>
       <p><strong>Quality control:</strong> Look for tools that let you preview and refine results. TailorPic includes an <a href="/editor">editor</a> for adjusting backgrounds, cropping, and fine-tuning each portrait.</p>
 

@@ -4,7 +4,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
-import { PAYMENT_PROVIDER } from '@/config/pricing';
+import { PAYMENT_PROVIDER, BASE_PRICE_DISPLAY, TEAM_PRICE_SMALL_DISPLAY, TEAM_PRICE_LARGE_DISPLAY } from '@/config/pricing';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { FreeTrialIllustration } from '@/components/marketing/illustrations';
@@ -30,7 +30,6 @@ import {
   CreditCard,
   Lock,
 } from 'lucide-react';
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 export const metadata: Metadata = {
   title: { absolute: 'Free AI Headshot Generator Alternative: Try Risk-Free' },
@@ -84,7 +83,7 @@ const headshotTypes = [
 
 const trialComparison = [
   { label: 'Price', free: 'Free tools: $0', paid: `from ${BASE_PRICE_DISPLAY} per person` },
-  { label: 'Teams', free: 'Usually one photo at a time', paid: '$39 (5-15 people) or $29 (16-50 people)' },
+  { label: 'Teams', free: 'Usually one photo at a time', paid: `${TEAM_PRICE_SMALL_DISPLAY} (5-15 people) or ${TEAM_PRICE_LARGE_DISPLAY} (16-50 people)` },
   { label: 'Output', free: 'Often a few photos, sometimes watermarked', paid: 'photos across 12 categories' },
   { label: 'Risk', free: 'No payment, but no quality commitment', paid: 'One-time payment, no subscription' },
   { label: 'Subscription', free: 'Varies by tool', paid: 'None. One-time payment, no subscription to cancel' },
@@ -132,7 +131,7 @@ const faqs = [
   {
     question: 'How much does TailorPic cost?',
     answer:
-      `Packages start from ${BASE_PRICE_DISPLAY}. Team pricing is $39 per person for 5-15 people and $29 per person for 16-50 people. There is no subscription.`,
+      `Packages start from ${BASE_PRICE_DISPLAY}. Team pricing is ${TEAM_PRICE_SMALL_DISPLAY} per person for 5-15 people and ${TEAM_PRICE_LARGE_DISPLAY} per person for 16-50 people. There is no subscription.`,
   },
   {
     question: 'What do I need to get started?',

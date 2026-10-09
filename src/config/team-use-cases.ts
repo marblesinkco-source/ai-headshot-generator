@@ -4,7 +4,7 @@
  * Copy is intentionally free of statistics, ratings and testimonials.
  */
 
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+import { BASE_PRICE_DISPLAY, TEAM_PRICE_SMALL_DISPLAY, TEAM_PRICE_LARGE_DISPLAY } from '@/config/pricing';
 
 export interface TeamUseCase {
   slug: string;
@@ -25,7 +25,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
     title: 'Team Directory Photos',
     metaTitle: 'Team Directory Photos: AI Headshots for Your Team Page | TailorPic',
     metaDescription:
-      'Update your team or about page with consistent AI headshots. Each person uploads selfies, no photographer or studio day needed. Team pricing from $29/person.',
+      `Update your team or about page with consistent AI headshots. Each person uploads selfies, no photographer or studio day needed. Team pricing from ${TEAM_PRICE_LARGE_DISPLAY}/person.`,
     heroTitle: 'Team directory photos that actually match',
     heroSubtitle:
       'Refresh your team and about pages without scheduling a photographer. Everyone uploads a few selfies from their own phone and receives polished, consistent headshots.',
@@ -114,7 +114,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
       {
         question: 'What does team pricing look like?',
         answer:
-          'Team pricing is $39 per person for teams of 5 to 15 and $29 per person for teams of 16 to 50. See the For Teams page for full details.',
+          `Team pricing is ${TEAM_PRICE_SMALL_DISPLAY} per person for teams of 5 to 15 and ${TEAM_PRICE_LARGE_DISPLAY} per person for teams of 16 to 50. See the For Teams page for full details.`,
       },
     ],
   },
@@ -123,7 +123,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
     title: 'New Hire Onboarding Headshots',
     metaTitle: 'New Hire Onboarding Headshots: AI Photos for HR Teams | TailorPic',
     metaDescription:
-      'Give every new hire a professional headshot in their first week. No photographer to book. New hires upload selfies and get headshots within hours. Team pricing from $29/person.',
+      `Give every new hire a professional headshot in their first week. No photographer to book. New hires upload selfies and get headshots within hours. Team pricing from ${TEAM_PRICE_LARGE_DISPLAY}/person.`,
     heroTitle: 'Headshots for new hires, from day one',
     heroSubtitle:
       'Add a headshot step to your onboarding checklist. New employees upload a few selfies and have a professional photo ready for the directory, email and intranet.',
@@ -212,7 +212,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
       {
         question: 'What is the cost for onboarding several people at once?',
         answer:
-          `Team pricing is $39 per person for 5 to 15 people and $29 per person for 16 to 50 people. For a single new hire, individual packages start from ${BASE_PRICE_DISPLAY}.`,
+          `Team pricing is ${TEAM_PRICE_SMALL_DISPLAY} per person for 5 to 15 people and ${TEAM_PRICE_LARGE_DISPLAY} per person for 16 to 50 people. For a single new hire, individual packages start from ${BASE_PRICE_DISPLAY}.`,
       },
     ],
   },
@@ -221,7 +221,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
     title: 'Corporate Event Headshots',
     metaTitle: 'Corporate Event Headshots: Speaker & Attendee Photos | TailorPic',
     metaDescription:
-      'Headshots for conferences, summits and company events without an on-site photographer. Speakers and staff upload selfies and get headshots within hours. Team pricing from $29/person.',
+      `Headshots for conferences, summits and company events without an on-site photographer. Speakers and staff upload selfies and get headshots within hours. Team pricing from ${TEAM_PRICE_LARGE_DISPLAY}/person.`,
     heroTitle: 'Event headshots without the photo booth',
     heroSubtitle:
       'Speaker bios, badges, programs and event pages all need a good photo. Skip the on-site setup. Everyone uploads selfies in advance and receives polished headshots.',
@@ -310,7 +310,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
       {
         question: 'How does pricing work for a group of staff or speakers?',
         answer:
-          'Team pricing is $39 per person for 5 to 15 people and $29 per person for 16 to 50 people.',
+          `Team pricing is ${TEAM_PRICE_SMALL_DISPLAY} per person for 5 to 15 people and ${TEAM_PRICE_LARGE_DISPLAY} per person for 16 to 50 people.`,
       },
     ],
   },
@@ -319,7 +319,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
     title: 'Website Redesign Headshots',
     metaTitle: 'Website Redesign Headshots: Consistent Team Photos | TailorPic',
     metaDescription:
-      'Launching a redesigned website? Get consistent team headshots without a photo shoot delaying your launch. Each person uploads selfies. Team pricing from $29/person.',
+      `Launching a redesigned website? Get consistent team headshots without a photo shoot delaying your launch. Each person uploads selfies. Team pricing from ${TEAM_PRICE_LARGE_DISPLAY}/person.`,
     heroTitle: 'Do not let team photos delay your relaunch',
     heroSubtitle:
       'A new design deserves new photos. Get a matching set of team headshots in hours instead of waiting on a photographer, so your redesign launches on time.',
@@ -408,7 +408,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
       {
         question: 'What is the team price?',
         answer:
-          'Team pricing is $39 per person for 5 to 15 people and $29 per person for 16 to 50 people.',
+          `Team pricing is ${TEAM_PRICE_SMALL_DISPLAY} per person for 5 to 15 people and ${TEAM_PRICE_LARGE_DISPLAY} per person for 16 to 50 people.`,
       },
     ],
   },
@@ -417,7 +417,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
     title: 'Brand-Consistent Team Photos',
     metaTitle: 'Brand-Consistent Team Photos: One Look for Every Employee | TailorPic',
     metaDescription:
-      'Keep every employee photo visually consistent across your website, LinkedIn and materials. AI headshots in a shared style, from selfies. Team pricing from $29/person.',
+      `Keep every employee photo visually consistent across your website, LinkedIn and materials. AI headshots in a shared style, from selfies. Team pricing from ${TEAM_PRICE_LARGE_DISPLAY}/person.`,
     heroTitle: 'One consistent look for every employee photo',
     heroSubtitle:
       'Your brand guidelines cover logos and colors. Extend them to people. Give your whole team headshots in a shared style, wherever they work.',
@@ -506,7 +506,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
       {
         question: 'What are the team prices?',
         answer:
-          'Team pricing is $39 per person for 5 to 15 people and $29 per person for 16 to 50 people.',
+          `Team pricing is ${TEAM_PRICE_SMALL_DISPLAY} per person for 5 to 15 people and ${TEAM_PRICE_LARGE_DISPLAY} per person for 16 to 50 people.`,
       },
     ],
   },

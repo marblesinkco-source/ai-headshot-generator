@@ -33,6 +33,15 @@ export const BASE_PRICE_DISPLAY = formatPrice(BASE_PRICE_CENTS, CURRENCY);
 /** "1 photo from $1.99" — use where the entry price needs per-photo context */
 export const BASE_PRICE_LABEL = `1 photo from ${formatPrice(BASE_PRICE_CENTS, CURRENCY)}`;
 
+/** "$39" — per-person price for small teams (5–15 people) */
+export const TEAM_PRICE_SMALL_DISPLAY = formatPrice(TEAM_PRICES.small.perPersonCents, CURRENCY, true);
+
+/** "$29" — per-person price for large teams (16–50 people) */
+export const TEAM_PRICE_LARGE_DISPLAY = formatPrice(TEAM_PRICES.large.perPersonCents, CURRENCY, true);
+
+/** "$29–$39" — team price range display */
+export const TEAM_PRICE_RANGE_DISPLAY = `${TEAM_PRICE_LARGE_DISPLAY}–${TEAM_PRICE_SMALL_DISPLAY}`;
+
 /* ------------------------------------------------------------------ */
 /*  Upload requirements — single source of truth for marketing copy   */
 /* ------------------------------------------------------------------ */

@@ -5,7 +5,7 @@ import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { TeamGridIllustration } from '@/components/marketing/illustrations';
 import { siteConfig } from '@/config/site';
-import { PAYMENT_PROVIDER } from '@/config/pricing';
+import { PAYMENT_PROVIDER, TEAM_PRICES, TEAM_PRICE_SMALL_DISPLAY, TEAM_PRICE_LARGE_DISPLAY, TEAM_PRICE_RANGE_DISPLAY, formatPrice } from '@/config/pricing';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
   Users, Sparkles, ArrowRight, CheckCircle, Palette,
@@ -20,7 +20,7 @@ const faqItems = [
   {
     question: 'How much do team headshots cost?',
     answer:
-      `Individual packages start from ${BASE_PRICE_DISPLAY} for 1 photo, with larger packages available up to 160 photos. Small teams of 5-15 people are $39 per person and companies of 16-50 people are $29 per person, with 40+ headshots per person included. For 50+ people we offer custom enterprise pricing. Final pricing is confirmed at checkout.`,
+      `Individual packages start from ${BASE_PRICE_DISPLAY} for 1 photo, with larger packages available up to 160 photos. Small teams of 5-15 people are ${TEAM_PRICE_SMALL_DISPLAY} per person and companies of 16-50 people are ${TEAM_PRICE_LARGE_DISPLAY} per person, with 40+ headshots per person included. For 50+ people we offer custom enterprise pricing. Final pricing is confirmed at checkout.`,
   },
   {
     question: 'How does the team ordering process work?',
@@ -45,7 +45,7 @@ const faqItems = [
   {
     question: 'How many people do I need for a team plan?',
     answer:
-      `Team pricing starts at 5 people ($39 per person for 5-15 people, $29 per person for 16-50). Orders of 1-4 people use individual packages starting from ${BASE_PRICE_DISPLAY}. For 50+ people, request a demo for custom pricing.`,
+      `Team pricing starts at 5 people (${TEAM_PRICE_SMALL_DISPLAY} per person for 5-15 people, ${TEAM_PRICE_LARGE_DISPLAY} per person for 16-50). Orders of 1-4 people use individual packages starting from ${BASE_PRICE_DISPLAY}. For 50+ people, request a demo for custom pricing.`,
   },
   {
     question: 'How long does it take to get team headshots?',
@@ -66,7 +66,7 @@ const faqItems = [
 
 const pageTitle = 'Team Headshots: Consistent AI Photos for Your Team';
 const pageDescription =
-  'Consistent, professional AI team headshots from $29-$39 per person. Each member uploads selfies and gets polished, on-brand headshots with no studio day.';
+  `Consistent, professional AI team headshots from ${TEAM_PRICE_RANGE_DISPLAY} per person. Each member uploads selfies and gets polished, on-brand headshots with no studio day.`;
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -269,7 +269,7 @@ export default function TeamHeadshotsPage() {
               {
                 name: 'Small Team',
                 size: '5-15 people',
-                price: '$39',
+                price: TEAM_PRICE_SMALL_DISPLAY,
                 unit: '/person',
                 features: ['Everything in Individual', 'Consistent team background', 'Admin dashboard'],
                 cta: 'Get Started',
@@ -279,7 +279,7 @@ export default function TeamHeadshotsPage() {
               {
                 name: 'Business',
                 size: '16-50 people',
-                price: '$29',
+                price: TEAM_PRICE_LARGE_DISPLAY,
                 unit: '/person',
                 features: ['Everything in Small Team', 'Brand guidelines applied', 'Bulk download'],
                 cta: 'Get Started',
@@ -365,8 +365,8 @@ export default function TeamHeadshotsPage() {
             <div className="rounded-tp-card border border-tp-bronze bg-tp-black p-6 sm:p-8">
               <Sparkles className="h-6 w-6 text-tp-bronze mb-3" />
               <h3 className="font-display font-normal text-xl text-white">TailorPic Team Plan</h3>
-              <p className="mt-1 text-sm text-tp-beige/70">For 10 people at $39 each</p>
-              <p className="mt-4 font-display font-normal text-3xl text-tp-bronze">$390</p>
+              <p className="mt-1 text-sm text-tp-beige/70">For 10 people at {TEAM_PRICE_SMALL_DISPLAY} each</p>
+              <p className="mt-4 font-display font-normal text-3xl text-tp-bronze">{formatPrice(TEAM_PRICES.small.perPersonCents * 10, 'usd', true)}</p>
               <p className="mt-3 text-sm text-tp-beige/70 leading-relaxed">
                 Everyone uploads selfies from wherever they are. No scheduling, no travel.
               </p>
@@ -423,8 +423,8 @@ export default function TeamHeadshotsPage() {
               },
               {
                 name: 'Team Plan',
-                price: '$39 / $29',
-                note: 'per person: $39 for 5-15 people, $29 for 16-50',
+                price: `${TEAM_PRICE_SMALL_DISPLAY} / ${TEAM_PRICE_LARGE_DISPLAY}`,
+                note: `per person: ${TEAM_PRICE_SMALL_DISPLAY} for 5-15 people, ${TEAM_PRICE_LARGE_DISPLAY} for 16-50`,
                 featured: true,
                 cta: 'Start a Team Order',
                 href: '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dlinkedin-team',

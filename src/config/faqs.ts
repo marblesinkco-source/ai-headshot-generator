@@ -1,5 +1,4 @@
-import { PAYMENT_PROVIDER } from '@/config/pricing';
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+import { PAYMENT_PROVIDER, BASE_PRICE_DISPLAY, TEAM_PRICE_SMALL_DISPLAY, TEAM_PRICE_LARGE_DISPLAY } from '@/config/pricing';
 
 export const faqs = [
   {
@@ -108,7 +107,7 @@ export const faqs = [
     category: 'Teams',
     question: 'Can I order headshots for my team?',
     answer:
-      'Yes. Our team packages start at $39 per person for groups of 5–15, and $29 per person for groups of 16–50. Every team member uploads their own selfies and receives individually styled headshots with a consistent look. Visit our Teams page for details.',
+      `Yes. Our team packages start at ${TEAM_PRICE_SMALL_DISPLAY} per person for groups of 5–15, and ${TEAM_PRICE_LARGE_DISPLAY} per person for groups of 16–50. Every team member uploads their own selfies and receives individually styled headshots with a consistent look. Visit our Teams page for details.`,
   },
   {
     category: 'Teams',
@@ -173,7 +172,7 @@ export const faqs = [
     category: 'Pricing',
     question: 'Do you offer discounts for large teams?',
     answer:
-      'Yes. Teams of 16–50 members receive a reduced rate of $29 per person. For groups larger than 50, contact us for a custom enterprise quote.',
+      `Yes. Teams of 16–50 members receive a reduced rate of ${TEAM_PRICE_LARGE_DISPLAY} per person. For groups larger than 50, contact us for a custom enterprise quote.`,
   },
   {
     category: 'Pricing',
