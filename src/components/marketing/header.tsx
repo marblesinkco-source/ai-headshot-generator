@@ -24,6 +24,7 @@ const navLinks = [
 // Secondary pages: reachable from the mobile menu (desktop keeps the nav compact; all are in the footer)
 // Support links first, then discovery, then company.
 const secondaryLinks = [
+  { label: 'Help Center', href: '/help' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Contact', href: '/contact' },
   { label: 'Teams', href: '/team-headshots' },

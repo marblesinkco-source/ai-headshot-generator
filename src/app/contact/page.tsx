@@ -6,7 +6,8 @@ import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import { ContactForm } from '@/components/marketing/contact-form';
-import { Mail, Clock, Building2, Lock, MailX, ShieldCheck } from 'lucide-react';
+import { Mail, Clock, Building2, Lock, MailX, ShieldCheck, ArrowRight } from 'lucide-react';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 export const metadata: Metadata = {
   title: { absolute: 'Contact TailorPic: Sales, Support, Press & Partnerships' },
@@ -228,14 +229,21 @@ export default function ContactPage() {
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="font-display font-normal text-4xl text-tp-ink">Ready to create your photos?</h2>
           <p className="mt-4 text-lg text-tp-muted">
-            Upload your selfies and get studio-quality AI photos, backed by our quality commitment.
+            Upload your selfies and get studio-quality AI headshots from {BASE_PRICE_DISPLAY}, backed by our quality commitment.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
-              className="inline-flex items-center justify-center rounded-tp-button bg-tp-black px-8 py-3 text-sm font-semibold text-tp-bronze shadow-sm transition-all hover:bg-tp-black/90"
+              className="inline-flex items-center gap-2 justify-center rounded-tp-button bg-tp-black px-8 py-3 text-sm font-semibold text-tp-bronze shadow-sm transition-all hover:bg-tp-black/90"
             >
               Get Started
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+            <Link
+              href="/pricing"
+              className="inline-flex items-center justify-center rounded-tp-button border border-tp-line bg-white px-8 py-3 text-sm font-semibold text-tp-ink shadow-sm transition-all hover:bg-tp-paper"
+            >
+              View Pricing
             </Link>
           </div>
         </div>
