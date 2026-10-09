@@ -46,7 +46,7 @@ export function PricingComparisonBar() {
           </span>
         </p>
         <Link
-          href="/auth/register?redirect=/dashboard/upload"
+          href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
           tabIndex={visible ? 0 : -1}
           className="shrink-0 rounded-tp-button bg-tp-bronze px-3 py-2 text-xs font-semibold text-tp-black transition-colors hover:bg-tp-beige sm:px-4 sm:text-sm"
         >

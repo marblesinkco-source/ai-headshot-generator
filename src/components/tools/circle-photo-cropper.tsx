@@ -11,7 +11,7 @@ const MAX_BYTES = 15 * 1024 * 1024;
 const PREVIEW_SIZE = 400;
 const PREVIEW_PAD = 20;
 const SIZES = [200, 400, 500, 800, 1000];
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 type BgMode = 'transparent' | 'white' | 'black' | 'custom';
 

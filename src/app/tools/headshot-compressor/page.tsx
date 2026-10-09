@@ -15,7 +15,7 @@ const title = 'Free Headshot Photo Compressor | TailorPic';
 const description =
   'Reduce the file size of your headshot right in your browser. Pick a target like 100KB or 500KB, keep your dimensions, and download a compressed JPG. Nothing is uploaded.';
 const path = '/tools/headshot-compressor';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

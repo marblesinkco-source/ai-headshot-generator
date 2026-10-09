@@ -473,7 +473,7 @@ export function Header() {
                 Sign In
               </Link>
               <Link
-                href="/auth/register?redirect=/dashboard/upload"
+                href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
                 className="group inline-flex min-h-[44px] flex-shrink-0 items-center gap-3 whitespace-nowrap rounded-tp-button border border-tp-bronze bg-tp-bronze py-2.5 pl-5 pr-5 lg:pl-6 lg:pr-3 text-sm font-semibold text-tp-black shadow-md shadow-tp-black/15 transition-all hover:-translate-y-0.5 hover:bg-tp-beige hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
               >
                 Get Started
@@ -506,7 +506,7 @@ export function Header() {
             </Link>
           ) : (
             <Link
-              href="/auth/register?redirect=/dashboard/upload"
+              href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
               className="inline-flex min-h-[44px] items-center whitespace-nowrap rounded-tp-button bg-tp-bronze px-4 text-[13px] font-semibold text-tp-black transition-colors hover:bg-tp-beige focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze-ink"
             >
               Get Started
@@ -684,7 +684,7 @@ export function Header() {
           ) : (
             <div className="grid gap-1">
               <Link
-                href="/auth/register?redirect=/dashboard/upload"
+                href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
                 className="flex min-h-[48px] items-center justify-center gap-3 rounded-tp-button bg-tp-bronze px-6 py-3 text-sm font-semibold text-tp-black shadow-md shadow-tp-black/15 transition-colors hover:bg-tp-beige"
                 onClick={() => closeMobile()}
               >

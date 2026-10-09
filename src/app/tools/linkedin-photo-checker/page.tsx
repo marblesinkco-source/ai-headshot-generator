@@ -15,7 +15,7 @@ const title = 'Free LinkedIn Profile Photo Checker | TailorPic';
 const description =
   'Check if your LinkedIn profile photo meets recommended standards. Get instant feedback on dimensions, aspect ratio, brightness, and composition. Free and runs in your browser.';
 const path = '/tools/linkedin-photo-checker';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

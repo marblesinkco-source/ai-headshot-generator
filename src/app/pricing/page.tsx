@@ -83,7 +83,7 @@ const pricingFaqs = [
   {
     question: 'What if I\'m not satisfied with the results?',
     answer:
-      'We want you to be happy with your headshots. If the results don\'t meet your expectations, contact us and we\'ll work with you to regenerate them. Visit tailorpic.com/guarantee for full details.',
+      'We want you to be happy with your headshots, and free regeneration is included in your package. Monetary refunds are not available once processing begins. If you are still not satisfied, contact us and we\'ll work with you. See tailorpic.com/refund-policy for full details.',
   },
 ];
 

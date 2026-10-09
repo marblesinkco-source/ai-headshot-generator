@@ -150,7 +150,7 @@ export function StyleConfigurator() {
 
         <div className="mt-10 flex justify-center">
           <Link
-            href="/auth/register?redirect=/dashboard/upload"
+            href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
             className={cn(buttonVariants({ size: 'lg' }))}
           >
             Create This Look →

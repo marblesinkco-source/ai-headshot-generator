@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 const MAX_DIM = 1600;
 const MAX_FILE_BYTES = 15 * 1024 * 1024;
 const SHARPEN_AMOUNT = 0.6;
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 interface Settings {
   brightness: number;

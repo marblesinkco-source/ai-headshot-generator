@@ -15,7 +15,7 @@ const title = 'Free Batch Photo Resizer — Resize Multiple Photos at Once | Tai
 const description =
   'Resize multiple photos at once with platform presets for LinkedIn, Instagram, Facebook, and more. Download individually or as a ZIP. Free and runs in your browser.';
 const path = '/tools/batch-photo-resizer';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

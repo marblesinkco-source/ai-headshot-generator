@@ -6,7 +6,7 @@ import { Upload, Download, FileDown, RefreshCw, AlertCircle, ShieldCheck } from 
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 const MAX_BYTES = 20 * 1024 * 1024;
 const ACCEPTED = ['image/jpeg', 'image/png', 'image/webp'];

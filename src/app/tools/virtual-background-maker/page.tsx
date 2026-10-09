@@ -15,7 +15,7 @@ const title = 'Free Virtual Background Maker for Zoom & Teams | TailorPic';
 const description =
   'Create professional virtual backgrounds for Zoom, Teams, and Google Meet. Choose a template, customize colors, and download. Everything runs in your browser.';
 const path = '/tools/virtual-background-maker';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

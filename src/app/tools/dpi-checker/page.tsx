@@ -15,7 +15,7 @@ const title = 'Free Image DPI Checker & Print Size Calculator | TailorPic';
 const description =
   "Check your photo's DPI, see its print dimensions at any resolution, and find out if it's sharp enough for print. Everything runs in your browser.";
 const path = '/tools/dpi-checker';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

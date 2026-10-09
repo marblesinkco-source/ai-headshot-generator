@@ -15,7 +15,7 @@ const title = 'Free LinkedIn Banner Maker | TailorPic';
 const description =
   'Create a professional LinkedIn background banner with your name, title, and brand colors. Everything runs in your browser.';
 const path = '/tools/linkedin-banner-maker';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

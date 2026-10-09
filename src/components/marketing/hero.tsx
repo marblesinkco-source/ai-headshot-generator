@@ -87,7 +87,7 @@ export function Hero() {
                 className="tp-hero-enter font-display text-[clamp(44px,5.6vw,82px)] leading-[1.04] tracking-[-0.04em] font-normal mb-5 max-w-[680px]"
                 style={{ '--enter-i': 1 } as React.CSSProperties}
               >
-                Professional Photos&nbsp;&mdash;{' '}<br className="hidden lg:inline" /><em className="tp-hero-shimmer font-normal font-display italic">Without&nbsp;a&nbsp;Studio</em>
+                AI Headshots&nbsp;&mdash;{' '}<br className="hidden lg:inline" /><em className="tp-hero-shimmer font-normal font-display italic">Without&nbsp;a&nbsp;Studio</em>
               </h1>
 
               {/* Rotating use case */}
@@ -110,7 +110,7 @@ export function Hero() {
                 style={{ '--enter-i': 3 } as React.CSSProperties}
               >
                 <Link
-                  href="/auth/register?redirect=/dashboard/upload"
+                  href={`/auth/register?redirect=${encodeURIComponent('/dashboard/upload?category=headshots')}`}
                   className="inline-flex w-full justify-center items-center gap-4 rounded-tp-button bg-tp-black px-6 py-4 text-[15px] font-semibold text-tp-paper shadow-md transition-[transform,box-shadow,border-color,background-color] hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl hover:animate-cta-pulse motion-reduce:hover:animate-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze sm:w-auto sm:px-8 whitespace-nowrap cta-ring"
                 >
                   Get My Headshots &mdash; From {BASE_PRICE_DISPLAY} <span aria-hidden="true" className="text-[20px] leading-none">&#8599;</span>

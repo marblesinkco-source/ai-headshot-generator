@@ -41,7 +41,7 @@ export const faqs = [
     category: 'Refund',
     question: 'Can I get a refund if I am not satisfied?',
     answer:
-      'If you are not happy with your photos, contact our support team and we will work with you to resolve the issue.',
+      'Because AI processing begins immediately after payment, we do not offer monetary refunds once your order is placed. Instead, we offer free regeneration within your package so you can fine-tune poses, expressions and backgrounds until every shot is right. If you are still not satisfied after regenerating, contact our support team and we will work with you to resolve the issue. See our Refund Policy at tailorpic.com/refund-policy for full details.',
   },
   {
     category: 'Pricing',
@@ -178,7 +178,7 @@ export const faqs = [
     category: 'Pricing',
     question: 'Can I upgrade my package after purchase?',
     answer:
-      'Contact our support team to discuss upgrading. We will work with you to find the best solution based on your needs.',
+      'Yes. You can purchase a higher-tier package at any time to get more photos, backgrounds, and styles. Your existing photos stay in your account. After your first order, you may also receive an exclusive upgrade discount by email. Contact support if you have any questions about choosing the right package.',
   },
   {
     category: 'Refund',

@@ -15,7 +15,7 @@ const title = 'Free Digital Business Card & vCard Generator | TailorPic';
 const description =
   'Create a professional digital business card with your headshot and contact details. Download as PNG or vCard (.vcf). No signup, runs in your browser.';
 const path = '/tools/business-card-generator';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

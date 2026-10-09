@@ -15,7 +15,7 @@ const title = 'Free Photo to Pencil Sketch Converter | TailorPic';
 const description =
   'Convert any photo into a realistic pencil sketch drawing. Choose sketch styles, adjust line thickness and intensity. Free and runs in your browser.';
 const path = '/tools/pencil-sketch';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

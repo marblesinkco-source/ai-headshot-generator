@@ -118,7 +118,7 @@ const helpCategories: HelpCategory[] = [
       {
         question: 'Can I re-generate my headshots?',
         answer:
-          'Yes. If you are not satisfied with the results, you can use your remaining credits to generate additional headshots with different styles or settings.',
+          'Yes. If you are not satisfied with the results, regeneration is included within your package at no extra cost. You can also purchase additional credits if you need more.',
       },
       {
         question: 'How do I download my photos?',
@@ -151,7 +151,7 @@ const helpCategories: HelpCategory[] = [
       {
         question: 'What is your quality commitment?',
         answer:
-          'We offer a quality commitment. If you are not happy with the results, contact our support team and we will work with you to resolve the issue.',
+          'We are committed to delivering studio-quality results. If you are not happy with your photos, you can regenerate them within your package at no extra cost. If you are still not satisfied, contact support and we will work with you to resolve the issue. See our Refund Policy for the full details.',
       },
       {
         question: 'How do I delete my account?',

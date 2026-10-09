@@ -15,7 +15,7 @@ const title = 'Free Image Watermark & Text Overlay Maker | TailorPic';
 const description =
   'Add custom text watermarks to your photos. Choose font, size, color, opacity and position. Single or tiled pattern. Everything runs in your browser.';
 const path = '/tools/watermark-maker';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

@@ -13,7 +13,7 @@ const title = 'Headshot Dos & Don\'ts — The Complete Guide | TailorPic';
 const description =
   'Learn what makes a great professional headshot and what to avoid. Visual examples of lighting, framing, background, expression and attire for the perfect photo.';
 const path = '/tools/headshot-dos-donts';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

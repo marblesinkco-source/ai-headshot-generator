@@ -15,7 +15,7 @@ const title = 'Free #OpenToWork Profile Photo Frame Maker | TailorPic';
 const description =
   'Add a #OpenToWork or #Hiring frame to your profile photo. Pick a color, adjust the ring, and download as PNG. Everything runs in your browser.';
 const path = '/tools/open-to-work-frame';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

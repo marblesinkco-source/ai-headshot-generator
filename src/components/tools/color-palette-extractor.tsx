@@ -10,7 +10,7 @@ const MAX_BYTES = 15 * 1024 * 1024;
 const SAMPLE_MAX = 200;
 const MAX_COLORS = 8;
 const MERGE_DISTANCE = 50;
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 interface Swatch {
   r: number;

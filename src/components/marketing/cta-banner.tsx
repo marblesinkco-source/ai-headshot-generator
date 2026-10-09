@@ -49,20 +49,16 @@ export function CTABanner() {
 
               {/* Price anchoring */}
               <div className="mx-auto mt-8 inline-flex flex-col items-center gap-1 rounded-tp-button border border-tp-bronze/30 bg-tp-paper/5 px-6 py-4 sm:flex-row sm:gap-5">
-                <p className="text-sm text-tp-beige/60">
-                  <span className="sr-only">Traditional photoshoot: </span>
-                  <span className="line-through decoration-tp-bronze/70">Skip the studio</span>
-                </p>
-                <span aria-hidden="true" className="hidden text-tp-bronze sm:inline">&rarr;</span>
                 <p className="text-tp-paper">
+                  <span className="text-sm text-tp-beige/60">From </span>
                   <span className="font-display text-4xl font-normal tracking-[-0.03em]">{BASE_PRICE_DISPLAY}</span>
-                  <span className="ml-2 text-sm text-tp-beige/80">one-time</span>
+                  <span className="ml-2 text-sm text-tp-beige/80">one-time payment</span>
                 </p>
               </div>
 
               <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
                 <Link
-                  href="/auth/register?redirect=%2Fdashboard%2Fupload"
+                  href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
                   className={cn(
                     buttonVariants({ variant: 'primary', size: 'lg' }),
                     'group h-14 gap-3 bg-tp-bronze px-10 text-base font-semibold text-tp-black shadow-lg shadow-tp-bronze/20 transition-all duration-200 hover:-translate-y-0.5 cta-ring hover:bg-tp-bronze hover:shadow-xl hover:shadow-tp-bronze/30'

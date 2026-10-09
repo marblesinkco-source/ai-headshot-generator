@@ -15,7 +15,7 @@ const title = 'Free Photo Background Blur Tool | TailorPic';
 const description =
   'Blur the background of any photo while keeping your subject sharp. Adjust blur intensity and focus area. Free and runs in your browser.';
 const path = '/tools/background-blur';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

@@ -34,7 +34,7 @@ const MIN_SIDE = 400;
 const ANALYSIS_SIZE = 256;
 const GRID = 16;
 const POINTS: Record<Status, number> = { pass: 20, warning: 10, fail: 0 };
-const CTA_HREF = '/auth/register?redirect=/dashboard/upload';
+const CTA_HREF = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 function formatBytes(bytes: number): string {
   if (bytes >= 1024 * 1024) return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;

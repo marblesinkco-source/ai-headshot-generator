@@ -15,7 +15,7 @@ const title = 'Free Profile Picture Maker for All Platforms | TailorPic';
 const description =
   'Crop and resize your photo for LinkedIn, Instagram, Facebook, Twitter/X, YouTube, Zoom, Slack, and more. Download one or all sizes as a ZIP. Free and runs in your browser.';
 const path = '/tools/profile-picture-maker';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

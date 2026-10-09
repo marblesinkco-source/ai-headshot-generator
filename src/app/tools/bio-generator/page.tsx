@@ -15,7 +15,7 @@ const title = 'Free Professional Bio Generator | TailorPic';
 const description =
   'Generate a professional bio in seconds. Enter your role, skills and experience, pick a tone and length, and copy a polished first or third person bio. Everything runs in your browser.';
 const path = '/tools/bio-generator';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

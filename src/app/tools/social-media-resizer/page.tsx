@@ -15,7 +15,7 @@ const title = 'Free Social Media Image Resizer for All Platforms | TailorPic';
 const description =
   'Resize your photo for LinkedIn, Instagram, Facebook, X, YouTube, Slack and Zoom in one click. Pick platforms, crop, and download. No signup needed.';
 const path = '/tools/social-media-resizer';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

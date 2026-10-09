@@ -99,7 +99,7 @@ export default function StudioComparisonV2() {
 
         <div className="mt-8 text-center">
           <Link
-            href="/auth/register?redirect=/dashboard/upload"
+            href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
             className={cn(buttonVariants({ variant: 'primary', size: 'lg' }))}
           >
             Try TailorPic &mdash; From {BASE_PRICE_DISPLAY} &rarr;

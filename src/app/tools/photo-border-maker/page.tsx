@@ -15,7 +15,7 @@ const title = 'Free Photo Border & Frame Maker | TailorPic';
 const description =
   'Add professional borders and frames to your photos. Choose from 8 preset styles or customize your own. Free and runs in your browser.';
 const path = '/tools/photo-border-maker';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

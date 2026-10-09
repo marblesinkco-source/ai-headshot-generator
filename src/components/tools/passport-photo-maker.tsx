@@ -15,7 +15,7 @@ const SHEET_H = 1800;
 const PREVIEW_MAX_W = 360;
 const PREVIEW_MAX_H = 460;
 const CUSTOM_DPI = 300;
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 interface Preset {
   id: string;

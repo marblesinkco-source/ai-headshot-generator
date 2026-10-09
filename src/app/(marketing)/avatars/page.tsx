@@ -29,11 +29,12 @@ import {
 } from 'lucide-react';
 
 /* Prices come from config/categories.ts (display only). */
-const AVATAR_PACK = CATEGORIES.avatars.packages[0];
-const AVATAR_MEGA = CATEGORIES.avatars.packages[1];
-const AVATAR_PRICE = formatPrice(AVATAR_PACK.price, AVATAR_PACK.currency);
-const AVATAR_MEGA_PRICE = formatPrice(AVATAR_MEGA.price, AVATAR_MEGA.currency);
-const AVATAR_MEGA_EXTRA = formatPrice(AVATAR_MEGA.price - AVATAR_PACK.price, AVATAR_PACK.currency);
+const avatarPackages = CATEGORIES.avatars?.packages ?? [];
+const AVATAR_PACK = avatarPackages.find((p) => p.id === 'avatar-starter') ?? avatarPackages[0];
+const AVATAR_MEGA = avatarPackages.find((p) => p.id === 'avatar-mega') ?? avatarPackages[1];
+const AVATAR_PRICE = AVATAR_PACK ? formatPrice(AVATAR_PACK.price, AVATAR_PACK.currency) : '$4.99';
+const AVATAR_MEGA_PRICE = AVATAR_MEGA ? formatPrice(AVATAR_MEGA.price, AVATAR_MEGA.currency) : '$9.99';
+const AVATAR_MEGA_EXTRA = AVATAR_PACK && AVATAR_MEGA ? formatPrice(AVATAR_MEGA.price - AVATAR_PACK.price, AVATAR_PACK.currency) : '$5.00';
 const AVATAR_REGISTER_HREF = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Davatars';
 
 /* ------------------------------------------------------------------ */

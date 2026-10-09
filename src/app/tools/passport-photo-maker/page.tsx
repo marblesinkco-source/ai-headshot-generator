@@ -26,7 +26,7 @@ const title = 'Free Passport & ID Photo Maker | TailorPic';
 const description =
   'Crop your photo to passport and ID photo sizes for the US, UK, EU, India, Canada, Australia and China, or enter a custom size. Free, and everything runs in your browser.';
 const path = '/tools/passport-photo-maker';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

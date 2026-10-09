@@ -15,7 +15,7 @@ const title = 'Free Photo Filters & Effects Tool | TailorPic';
 const description =
   'Apply professional photo filters to your headshots. Choose from 12 effects including grayscale, sepia, vintage, and more. Free and runs in your browser.';
 const path = '/tools/photo-filters';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

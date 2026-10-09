@@ -130,7 +130,7 @@ export default function ProcessingTimeline() {
         {/* CTA */}
         <div className="mt-8 text-center">
           <Link
-            href="/auth/register?redirect=/dashboard/upload"
+            href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
             className={cn(
               buttonVariants({ variant: 'primary', size: 'lg' }),
               'rounded-tp-button bg-tp-ink text-tp-paper transition-all duration-200 hover:-translate-y-0.5 hover:bg-tp-black hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze'

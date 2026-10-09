@@ -760,7 +760,7 @@ export default function BioGenerator() {
           Pair your new bio with a studio-style AI headshot. Plans start from {BASE_PRICE_DISPLAY}.
         </p>
         <Link
-          href="/auth/register?redirect=/dashboard/upload"
+          href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
           className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'mt-5')}
         >
           Create my headshot

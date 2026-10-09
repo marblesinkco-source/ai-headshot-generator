@@ -125,7 +125,7 @@ export function VsStudio() {
         {/* CTA */}
         <div className="mt-10 text-center scroll-fade-in">
           <Link
-            href="/auth/register?redirect=/dashboard/upload"
+            href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
             className="inline-flex items-center gap-2 rounded-tp-button bg-tp-ink px-8 py-4 text-[15px] font-semibold text-tp-paper shadow-md transition-all hover:-translate-y-0.5 hover:bg-tp-black hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze cta-ring"
           >
             Try TailorPic — From {BASE_PRICE_DISPLAY}

@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import { ArrowRight, CheckCircle, AlertCircle, ChevronDown } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { siteConfig } from '@/config/site';
@@ -21,7 +21,7 @@ interface Props {
 }
 
 const TEAMS_CTA = '/for-teams';
-const REGISTER_CTA = '/auth/register?redirect=%2Fdashboard%2Fupload';
+const REGISTER_CTA = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 const perPerson = (cents: number) => `$${Math.round(cents / 100)}`;
 
@@ -72,6 +72,11 @@ export default async function TeamUseCasePage({ params }: Props) {
           { name: uc.title, url: `${siteConfig.url}/teams/${uc.slug}` },
         ]}
       />
+      {uc.faqItems && uc.faqItems.length > 0 && (
+        <FAQSchema
+          items={uc.faqItems.map((faq) => ({ question: faq.q, answer: faq.a }))}
+        />
+      )}
       <Header />
 
       {/* Hero */}

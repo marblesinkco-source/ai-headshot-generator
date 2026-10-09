@@ -9,7 +9,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 const SIZE = 500;
 const MAX_BYTES = 15 * 1024 * 1024;
 const MAX_TEXT = 20;
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 type FrameId = 'opentowork' | 'hiring' | 'custom';
 

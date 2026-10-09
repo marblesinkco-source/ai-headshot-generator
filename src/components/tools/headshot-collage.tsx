@@ -6,7 +6,7 @@ import { ArrowLeftRight, Download, LayoutGrid, Trash2, Upload, X } from 'lucide-
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 const MAX_PHOTOS = 6;
 const MIN_PHOTOS = 2;

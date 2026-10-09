@@ -10,13 +10,13 @@ import { Footer } from '@/components/marketing/footer';
 import { WebsiteSchema, FAQSchema, SoftwareApplicationSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
-  title: 'TailorPic — AI Headshots & Professional Photos | From $1.99',
+  title: 'AI Headshots From Your Selfies | TailorPic — From $1.99',
   description:
-    'Get studio-quality AI headshots within hours. Multiple styles for business, LinkedIn & creative use. From $1.99.',
-  openGraph: generateOGMetadata({ title: 'TailorPic — AI Headshots & Professional Photos | From $1.99', description:
-      'Upload a few selfies, get studio-quality AI headshots. Professional, creative & business styles.', path: '/' }),
-  twitter: generateTwitterMetadata({ title: 'TailorPic — AI Headshots & Professional Photos | From $1.99', description:
-      'Upload a few selfies, get studio-quality AI headshots. Starting at $1.99.' }),
+    'Upload a few selfies and get studio-quality AI headshots for LinkedIn, resumes and more. One-time payment, no subscription. From $1.99.',
+  openGraph: generateOGMetadata({ title: 'AI Headshots From Your Selfies | TailorPic — From $1.99', description:
+      'Upload a few selfies and get studio-quality AI headshots for LinkedIn, resumes and more. One-time payment from $1.99.', path: '/' }),
+  twitter: generateTwitterMetadata({ title: 'AI Headshots From Your Selfies | TailorPic — From $1.99', description:
+      'Upload a few selfies and get studio-quality AI headshots for LinkedIn, resumes and more. One-time payment from $1.99.' }),
   alternates: { canonical: '/' },
 };
 

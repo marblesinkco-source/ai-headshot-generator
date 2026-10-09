@@ -15,7 +15,7 @@ const title = 'Free Photo Color Palette Extractor | TailorPic';
 const description =
   'Extract the dominant color palette from any photo. Get HEX and RGB codes, copy individual colors or the full palette. Everything runs in your browser.';
 const path = '/tools/color-palette-extractor';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

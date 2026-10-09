@@ -24,7 +24,7 @@ const title = 'Free Headshot Collage & Side-by-Side Maker | TailorPic';
 const description =
   'Combine 2 to 6 photos into one image. Compare headshots side by side, build a team grid or make a before and after. Free, private and done in your browser.';
 const path = '/tools/headshot-collage';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

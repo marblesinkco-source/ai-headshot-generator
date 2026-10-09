@@ -20,7 +20,7 @@ const title = 'Free LinkedIn Photo Cropper | TailorPic';
 const description =
   'Crop your photo to the perfect LinkedIn dimensions for free. Zoom, reposition with a circular preview and download a 400x400 PNG, all in your browser.';
 const path = '/tools/linkedin-photo-cropper';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

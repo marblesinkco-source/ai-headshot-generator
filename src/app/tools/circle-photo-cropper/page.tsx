@@ -15,7 +15,7 @@ const title = 'Free Circle Photo Cropper | Round Profile Picture Maker | TailorP
 const description =
   'Crop your photo into a perfect circle with transparent or solid background. Choose your size, zoom and position, then download as PNG. No upload needed.';
 const path = '/tools/circle-photo-cropper';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

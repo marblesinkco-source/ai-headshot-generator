@@ -11,7 +11,7 @@ const OUTPUT_SIZE = 400;
 const MIN_ZOOM = 1;
 const MAX_ZOOM = 3;
 const MAX_FILE_BYTES = 20 * 1024 * 1024;
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export default function LinkedInPhotoCropper() {
   const canvasRef = useRef<HTMLCanvasElement>(null);

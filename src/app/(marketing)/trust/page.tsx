@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { PAYMENT_PROVIDER, BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
@@ -176,6 +176,9 @@ export default function TrustPage() {
           { name: 'Home', url: siteConfig.url },
           { name: 'Trust Center', url: `${siteConfig.url}/trust` },
         ]}
+      />
+      <FAQSchema
+        items={faqs.map((item) => ({ question: item.q, answer: item.a }))}
       />
       <script
         type="application/ld+json"

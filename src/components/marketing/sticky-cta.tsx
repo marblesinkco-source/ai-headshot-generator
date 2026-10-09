@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
-export function StickyCTA({ href = '/auth/register?redirect=%2Fdashboard%2Fupload' }: { href?: string }) {
+export function StickyCTA({ href = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots' }: { href?: string }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {

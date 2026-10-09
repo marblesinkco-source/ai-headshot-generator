@@ -285,7 +285,7 @@ export default function AccountantsIndustryPage() {
             </p>
             <div className="mt-10">
               <a
-                href="/auth/register?redirect=/dashboard/upload"
+                href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
                 className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-8 py-4 text-base font-semibold text-tp-black transition-colors hover:bg-tp-bronze/90"
               >
                 Get Your Headshots

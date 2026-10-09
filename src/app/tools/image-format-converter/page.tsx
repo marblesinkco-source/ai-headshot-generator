@@ -15,7 +15,7 @@ const title = 'Free Image Format Converter: HEIC, WebP, PNG to JPG | TailorPic';
 const description =
   'Convert photos between HEIC, WebP, PNG, BMP and JPG formats instantly in your browser. Adjust quality, preserve resolution. No upload, no signup.';
 const path = '/tools/image-format-converter';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

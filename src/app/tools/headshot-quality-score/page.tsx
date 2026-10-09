@@ -15,7 +15,7 @@ const title = 'Free Headshot Quality Score — Rate Your Photo | TailorPic';
 const description =
   'Get an instant quality score for your headshot. Analyzes framing, lighting, background, sharpness, and contrast with actionable tips. Free and runs in your browser.';
 const path = '/tools/headshot-quality-score';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

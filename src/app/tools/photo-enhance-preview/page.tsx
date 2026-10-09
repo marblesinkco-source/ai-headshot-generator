@@ -20,7 +20,7 @@ const title = 'Free Photo Enhancement Preview | TailorPic';
 const description =
   'Preview brightness, contrast, saturation and sharpening fixes on your photo for free. Compare before and after, then download the result, all in your browser.';
 const path = '/tools/photo-enhance-preview';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

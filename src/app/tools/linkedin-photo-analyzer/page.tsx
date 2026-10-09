@@ -20,7 +20,7 @@ const title = 'Free LinkedIn Photo Analyzer | TailorPic';
 const description =
   'Analyze your LinkedIn profile photo quality for free. Check resolution, aspect ratio, brightness, centering and file size right in your browser.';
 const path = '/tools/linkedin-photo-analyzer';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },

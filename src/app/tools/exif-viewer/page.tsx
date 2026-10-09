@@ -15,7 +15,7 @@ const title = 'Free Photo EXIF Data Viewer & Remover | TailorPic';
 const description =
   "View your photo's hidden metadata — camera, date, GPS location — and download a clean copy with all data stripped. Runs in your browser, nothing is uploaded.";
 const path = '/tools/exif-viewer';
-const ctaHref = '/auth/register?redirect=/dashboard/upload';
+const ctaHref = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 export const metadata: Metadata = {
   title: { absolute: title },
