@@ -627,6 +627,16 @@
       ],
       "status": "done",
       "evidence": "14 dead component silindi, 2 industry page uydurma fiyat düzeltildi, pricing-view-toggle TEAM_PRICES config'den çekiyor, gift-cards optional chaining eklendi, sitemap duplicate kaldırıldı. Commit: 1fa2285. CI PASS + Vercel PASS. Canlı doğrulama: pricing/team/industry/gift-cards tümü doğru."
+    },
+    {
+      "id": "feat-AUDIT-OCT9",
+      "name": "October 9 Audit Fixes",
+      "description": "Harici Lighthouse denetim raporu sonuçlarına göre: delivery time tutarlılığı (15 dosya), WCAG AA erişilebilirlik (5 dosya), performans optimizasyonu (3 dosya), homepage kısaltma (4 bölüm kaldırıldı, Pricing #6'ya taşındı)",
+      "dependencies": [
+        "feat-CODE-QUALITY"
+      ],
+      "status": "done",
+      "evidence": "4 commit: c41e23b (delivery time 15 dosya), 9d877a5 (a11y 5 dosya), 1d02dd3 (performance 3 dosya), 162b5a2 (homepage kısaltma). CI PASS + Vercel PASS. Canlı doğrulama tamam."
     }
   ]
 }
