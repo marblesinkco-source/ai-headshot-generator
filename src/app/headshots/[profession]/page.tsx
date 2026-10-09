@@ -8,7 +8,8 @@ import { Button } from '@/components/ui/button';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
-import { FAQSchema, ProductSchema } from '@/components/structured-data';
+import { FAQSchema, ProductSchema, BreadcrumbSchema } from '@/components/structured-data';
+import { siteConfig } from '@/config/site';
 import { formatPrice } from '@/lib/utils';
 import { getAllProfessionSlugs, getProfessionBySlug, type ProfessionPage } from '@/config/professions';
 import { getCategoryBySlug } from '@/config/categories';
@@ -136,6 +137,13 @@ export default async function ProfessionLandingPage({ params }: Props) {
         slug={`headshots/for-${prof.slug}`}
       />
       <FAQSchema items={faqs} />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: siteConfig.url },
+          { name: 'Headshots', url: `${siteConfig.url}/headshots` },
+          { name: prof.title, url: `${siteConfig.url}/headshots/for-${prof.slug}` },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

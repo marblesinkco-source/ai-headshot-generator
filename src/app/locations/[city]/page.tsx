@@ -91,7 +91,7 @@ export default async function CityPage({ params }: Props) {
         ]}
       />
 
-      <main className="bg-white">
+      <main id="main-content" className="bg-white">
         {/* Hero */}
         <section className="relative overflow-hidden border-b border-tp-line bg-tp-paper">
           <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-24 text-center">

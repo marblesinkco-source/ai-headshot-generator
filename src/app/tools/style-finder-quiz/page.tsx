@@ -72,7 +72,7 @@ export default function StyleFinderQuizPage() {
         }}
       />
 
-      <main className="bg-tp-paper">
+      <main id="main-content" className="bg-tp-paper">
         {/* Hero */}
         <section className="border-b border-tp-line bg-white px-4 pb-12 pt-24 text-center sm:pb-16 sm:pt-32">
           <p className="text-xs font-semibold uppercase tracking-brand text-tp-bronze">

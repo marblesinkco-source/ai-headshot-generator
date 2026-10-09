@@ -49,7 +49,7 @@ export default function LocationsPage() {
         ]}
       />
 
-      <main className="bg-white">
+      <main id="main-content" className="bg-white">
         {/* Hero */}
         <section className="border-b border-tp-line bg-tp-paper">
           <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20 text-center">
