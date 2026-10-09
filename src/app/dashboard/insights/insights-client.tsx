@@ -56,7 +56,7 @@ export function InsightsClient() {
       const json = await res.json();
       setData(json);
     } catch {
-      setError('Veriler yüklenemedi. Tablolar henüz oluşturulmamış olabilir.');
+      setError('Could not load data. Analytics tables may not be set up yet.');
       setData(null);
     } finally {
       setLoading(false);
@@ -72,7 +72,7 @@ export function InsightsClient() {
       <div className="space-y-6">
         <div>
           <h1 className="font-display font-normal text-2xl text-tp-ink">AI Insights</h1>
-          <p className="text-tp-muted mt-1">Veriler yükleniyor...</p>
+          <p className="text-tp-muted mt-1">Loading data...</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {[...Array(4)].map((_, i) => (
@@ -95,7 +95,7 @@ export function InsightsClient() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="font-display font-normal text-2xl text-tp-ink">AI Insights</h1>
-          <p className="text-tp-muted mt-1">Self-optimization engine — otomatik analiz ve optimizasyon</p>
+          <p className="text-tp-muted mt-1">Self-optimization engine — automated analysis and optimization</p>
         </div>
         <div className="flex items-center gap-3">
           <select
@@ -104,14 +104,14 @@ export function InsightsClient() {
             aria-label="Select time range"
             className="text-sm border border-tp-line rounded-tp-button px-3 py-2 bg-white text-tp-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/20"
           >
-            <option value={7}>Son 7 gün</option>
-            <option value={14}>Son 14 gün</option>
-            <option value={30}>Son 30 gün</option>
+            <option value={7}>Last 7 days</option>
+            <option value={14}>Last 14 days</option>
+            <option value={30}>Last 30 days</option>
           </select>
           <button
             onClick={fetchData}
             className="p-2 text-tp-muted hover:text-tp-ink transition-colors rounded-tp-button hover:bg-tp-beige"
-            title="Yenile"
+            title="Refresh"
             aria-label="Refresh data"
           >
             <RefreshCw className="w-4 h-4" />
@@ -129,25 +129,25 @@ export function InsightsClient() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <SummaryCard
           icon={<BarChart3 className="w-5 h-5" />}
-          label="Sayfa Görüntüleme"
+          label="Page Views"
           value={formatNumber(summary.totalPageViews)}
           color="text-tp-ink bg-tp-beige"
         />
         <SummaryCard
           icon={<MousePointerClick className="w-5 h-5" />}
-          label="Tıklama"
+          label="Clicks"
           value={formatNumber(summary.totalClicks)}
           color="text-tp-success bg-tp-success/10"
         />
         <SummaryCard
           icon={<TrendingUp className="w-5 h-5" />}
-          label="Dönüşüm"
+          label="Conversions"
           value={formatNumber(summary.totalConversions)}
           color="text-tp-bronze-ink bg-tp-warning/15"
         />
         <SummaryCard
           icon={<Zap className="w-5 h-5" />}
-          label="Toplam Gelir"
+          label="Total Revenue"
           value={formatPrice(summary.totalRevenue)}
           color="text-tp-bronze bg-tp-beige"
         />
@@ -156,9 +156,9 @@ export function InsightsClient() {
       {!hasData && !error && (
         <div className="bg-white rounded-tp-card border border-tp-line p-8 text-center">
           <Zap className="w-10 h-10 text-tp-bronze mx-auto mb-3" />
-          <h3 className="font-display font-normal text-lg text-tp-ink mb-2">Henüz veri yok</h3>
+          <h3 className="font-display font-normal text-lg text-tp-ink mb-2">No data yet</h3>
           <p className="text-tp-muted text-sm max-w-md mx-auto">
-            Self-optimization engine aktif. Ziyaretçi verileri toplandıkça burada analiz ve optimizasyon önerileri göreceksiniz.
+            Self-optimization engine is active. Analysis and optimization recommendations will appear here as visitor data is collected.
           </p>
         </div>
       )}
@@ -167,7 +167,7 @@ export function InsightsClient() {
         <>
           {/* Top Pages */}
           <div className="bg-white rounded-tp-card border border-tp-line p-6">
-            <h2 className="font-display font-normal text-lg text-tp-ink mb-4">En Çok Ziyaret Edilen Sayfalar</h2>
+            <h2 className="font-display font-normal text-lg text-tp-ink mb-4">Top Pages</h2>
             <div className="space-y-3">
               {Object.entries(data?.pageViews.byPage || {})
                 .sort((a, b) => b[1] - a[1])
@@ -194,14 +194,14 @@ export function InsightsClient() {
           {/* Device Breakdown + Top Clicks */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-white rounded-tp-card border border-tp-line p-6">
-              <h2 className="font-display font-normal text-lg text-tp-ink mb-4">Cihaz Dağılımı</h2>
+              <h2 className="font-display font-normal text-lg text-tp-ink mb-4">Device Breakdown</h2>
               <div className="space-y-3">
                 {Object.entries(data?.pageViews.byDevice || {})
                   .filter(([, count]) => count > 0)
                   .sort((a, b) => b[1] - a[1])
                   .map(([device, count]) => (
                     <div key={device} className="flex items-center justify-between">
-                      <span className="text-sm text-tp-ink capitalize">{device === 'desktop' ? 'Masaüstü' : device === 'mobile' ? 'Mobil' : 'Tablet'}</span>
+                      <span className="text-sm text-tp-ink capitalize">{device}</span>
                       <div className="flex items-center gap-3">
                         <div className="w-24 bg-tp-beige rounded-full h-2">
                           <div
@@ -217,16 +217,16 @@ export function InsightsClient() {
             </div>
 
             <div className="bg-white rounded-tp-card border border-tp-line p-6">
-              <h2 className="font-display font-normal text-lg text-tp-ink mb-4">En Çok Tıklanan Elementler</h2>
+              <h2 className="font-display font-normal text-lg text-tp-ink mb-4">Top Clicked Elements</h2>
               <div className="space-y-3">
                 {(data?.topClicks || []).slice(0, 8).map((click) => (
                   <div key={click.element} className="flex items-center justify-between">
                     <span className="text-sm text-tp-ink truncate max-w-[60%]">{click.element}</span>
-                    <span className="text-sm text-tp-muted">{click.count} tıklama</span>
+                    <span className="text-sm text-tp-muted">{click.count} clicks</span>
                   </div>
                 ))}
                 {(data?.topClicks || []).length === 0 && (
-                  <p className="text-sm text-tp-muted">Henüz tıklama verisi yok</p>
+                  <p className="text-sm text-tp-muted">No click data yet</p>
                 )}
               </div>
             </div>
@@ -234,18 +234,18 @@ export function InsightsClient() {
 
           {/* Conversion Funnel */}
           <div className="bg-white rounded-tp-card border border-tp-line p-6">
-            <h2 className="font-display font-normal text-lg text-tp-ink mb-4">Dönüşüm Hunisi</h2>
+            <h2 className="font-display font-normal text-lg text-tp-ink mb-4">Conversion Funnel</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
               {['signup', 'package_select', 'checkout_start', 'payment_complete', 'upload_start', 'generation_start', 'generation_complete'].map((step) => {
                 const count = data?.conversions[step] || 0;
                 const labels: Record<string, string> = {
-                  signup: 'Kayıt',
-                  package_select: 'Paket Seçimi',
-                  checkout_start: 'Ödeme Başlatma',
-                  payment_complete: 'Ödeme Tamamlama',
-                  upload_start: 'Yükleme',
-                  generation_start: 'Üretim Başlatma',
-                  generation_complete: 'Üretim Tamamlama',
+                  signup: 'Sign Up',
+                  package_select: 'Package Select',
+                  checkout_start: 'Checkout Start',
+                  payment_complete: 'Payment Complete',
+                  upload_start: 'Upload',
+                  generation_start: 'Generation Start',
+                  generation_complete: 'Generation Complete',
                 };
                 return (
                   <div key={step} className="text-center p-3 bg-tp-paper rounded-tp-button">
@@ -261,11 +261,11 @@ export function InsightsClient() {
 
       {/* Optimization Log */}
       <div className="bg-white rounded-tp-card border border-tp-line p-6">
-        <h2 className="font-display font-normal text-lg text-tp-ink mb-4">Optimizasyon Geçmişi</h2>
+        <h2 className="font-display font-normal text-lg text-tp-ink mb-4">Optimization History</h2>
         {(data?.optimizations || []).length === 0 ? (
           <div className="text-center py-6">
             <Calendar className="w-8 h-8 text-tp-muted mx-auto mb-2" />
-            <p className="text-sm text-tp-muted">Henüz optimizasyon kararı alınmadı. Günlük cron job veri toplandıkça çalışacak.</p>
+            <p className="text-sm text-tp-muted">No optimization decisions yet. The daily cron job will run as data is collected.</p>
           </div>
         ) : (
           <div className="space-y-4">
@@ -280,7 +280,7 @@ export function InsightsClient() {
                       {opt.type.replace(/_/g, ' ')}
                     </span>
                     <span className="text-xs text-tp-muted">
-                      {new Date(opt.date).toLocaleDateString('tr-TR', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
+                      {new Date(opt.date).toLocaleDateString('en-US', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
                     </span>
                   </div>
                   <p className="text-sm text-tp-ink">{opt.reasoning}</p>
@@ -294,7 +294,7 @@ export function InsightsClient() {
       {/* A/B Tests */}
       {(data?.abTests || []).length > 0 && (
         <div className="bg-white rounded-tp-card border border-tp-line p-6">
-          <h2 className="font-display font-normal text-lg text-tp-ink mb-4">A/B Testleri</h2>
+          <h2 className="font-display font-normal text-lg text-tp-ink mb-4">A/B Tests</h2>
           <div className="space-y-3">
             {(data?.abTests || []).map((test, i) => (
               <div key={i} className="flex items-center justify-between p-3 rounded-tp-button bg-tp-paper">
@@ -307,7 +307,7 @@ export function InsightsClient() {
                   test.status === 'completed' ? 'bg-tp-beige text-tp-ink' :
                   'bg-tp-paper text-tp-muted'
                 }`}>
-                  {test.status === 'active' ? 'Aktif' : test.status === 'completed' ? 'Tamamlandı' : 'Duraklatıldı'}
+                  {test.status === 'active' ? 'Active' : test.status === 'completed' ? 'Completed' : 'Paused'}
                 </span>
               </div>
             ))}

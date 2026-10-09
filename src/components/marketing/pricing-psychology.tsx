@@ -1,10 +1,10 @@
 import { Coffee } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { BASE_PRICE } from '@/config/pricing';
+import { cn, formatPrice } from '@/lib/utils';
+import { BASE_PRICE_CENTS } from '@/config/pricing';
 
 export interface PricingPsychologyProps {
-  /** Total package price in USD. Defaults to the entry tier (TailorPic 1). */
-  price?: number;
+  /** Total package price in cents. Defaults to the entry tier (TailorPic 1). */
+  priceCents?: number;
   /** Number of headshots in the package. */
   outputs?: number;
   planName?: string;
@@ -14,13 +14,13 @@ export interface PricingPsychologyProps {
 }
 
 export function PricingPsychology({
-  price = BASE_PRICE,
+  priceCents = BASE_PRICE_CENTS,
   outputs = 1,
   planName = 'TailorPic 1',
   mostPopular = false,
   className,
 }: PricingPsychologyProps) {
-  const perHeadshot = (price / outputs).toFixed(2);
+  const perHeadshotCents = Math.round(priceCents / outputs);
 
   return (
     <div
@@ -36,10 +36,10 @@ export function PricingPsychology({
         </span>
       )}
       <p className="text-sm font-semibold text-tp-bronze-ink">{planName}</p>
-      <p className="mt-2 font-display text-4xl font-normal tracking-tight text-tp-black">${price.toFixed(2)}</p>
+      <p className="mt-2 font-display text-4xl font-normal tracking-tight text-tp-black">{formatPrice(priceCents)}</p>
       <p className="mt-3 text-sm text-tp-muted">
-        ${price.toFixed(2)} ÷ {outputs} ={' '}
-        <span className="font-semibold text-tp-ink">${perHeadshot} per headshot</span>
+        {formatPrice(priceCents)} ÷ {outputs} ={' '}
+        <span className="font-semibold text-tp-ink">{formatPrice(perHeadshotCents)} per headshot</span>
       </p>
       <p className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-tp-ink">
         That&apos;s less than a coffee

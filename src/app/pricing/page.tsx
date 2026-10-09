@@ -379,7 +379,7 @@ export default function PricingPage() {
       <section className="pb-8">
         <div className="mx-auto max-w-sm px-4 sm:px-6 lg:px-8">
           <PricingPsychology
-            price={POPULAR_PACKAGE.price / 100}
+            priceCents={POPULAR_PACKAGE.price}
             outputs={POPULAR_PACKAGE.outputCount}
             planName={POPULAR_PACKAGE.name}
             mostPopular={true}

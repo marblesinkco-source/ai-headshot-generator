@@ -1,6 +1,6 @@
 import { Check } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { BASE_PRICE } from '@/config/pricing';
+import { cn, formatPrice } from '@/lib/utils';
+import { BASE_PRICE_CENTS } from '@/config/pricing';
 
 interface CostLine {
   label: string;
@@ -16,15 +16,17 @@ const TRADITIONAL: CostLine[] = [
 ];
 
 // Real entry-tier price (TailorPic 1).
-const EXPRESS_PRICE = BASE_PRICE;
+const EXPRESS_PRICE_CENTS = BASE_PRICE_CENTS;
 const EXPRESS_OUTPUTS = 1;
 
-const fmt = (n: number) => `$${Number.isInteger(n) ? n : n.toFixed(2)}`;
+/** Format a dollar amount (not cents) for the traditional cost comparison lines. */
+const fmtDollars = (n: number) => `$${Number.isInteger(n) ? n : n.toFixed(0)}`;
 
 export function CostCalculator({ className }: { className?: string }) {
   const totalMin = TRADITIONAL.reduce((s, l) => s + l.min, 0);
   const totalMax = TRADITIONAL.reduce((s, l) => s + l.max, 0);
-  const savings = Math.floor(totalMax - EXPRESS_PRICE);
+  const expressPriceDollars = EXPRESS_PRICE_CENTS / 100;
+  const savings = Math.floor(totalMax - expressPriceDollars);
 
   return (
     <section className={cn('py-16', className)}>
@@ -44,7 +46,7 @@ export function CostCalculator({ className }: { className?: string }) {
                 <li key={l.label} className="flex items-center justify-between py-3">
                   <span className="text-tp-muted">{l.label}</span>
                   <span className="font-medium text-tp-ink">
-                    {fmt(l.min)}–{fmt(l.max)}
+                    {fmtDollars(l.min)}–{fmtDollars(l.max)}
                   </span>
                 </li>
               ))}
@@ -52,7 +54,7 @@ export function CostCalculator({ className }: { className?: string }) {
             <div className="mt-2 flex items-center justify-between border-t border-tp-ink pt-4">
               <span className="font-semibold text-tp-ink">Total</span>
               <span className="text-xl font-bold text-tp-ink">
-                {fmt(totalMin)}–{fmt(totalMax)}
+                {fmtDollars(totalMin)}–{fmtDollars(totalMax)}
               </span>
             </div>
             <p className="mt-4 text-xs text-tp-muted">
@@ -63,7 +65,7 @@ export function CostCalculator({ className }: { className?: string }) {
           {/* TailorPic */}
           <div className="rounded-tp-card border border-tp-bronze bg-tp-ink p-6 text-tp-paper sm:p-8">
             <h3 className="text-lg font-semibold text-tp-bronze">TailorPic AI</h3>
-            <p className="mt-5 font-display text-5xl font-normal tracking-tight">{fmt(EXPRESS_PRICE)}</p>
+            <p className="mt-5 font-display text-5xl font-normal tracking-tight">{formatPrice(EXPRESS_PRICE_CENTS)}</p>
             <p className="mt-1 text-sm text-tp-beige">TailorPic 1, one-time payment</p>
             <ul className="mt-6 space-y-3 text-sm">
               <li className="flex items-center gap-2">
@@ -84,10 +86,10 @@ export function CostCalculator({ className }: { className?: string }) {
 
         <div className="mt-6 rounded-tp-card border border-tp-line bg-tp-paper p-6 text-center">
           <p className="font-display font-normal text-3xl text-tp-bronze-ink sm:text-4xl">
-            Save up to {fmt(savings)}
+            Save up to {fmtDollars(savings)}
           </p>
           <p className="mt-1 text-sm text-tp-muted">
-            Based on the high end of average market rates ({fmt(totalMax)}) vs. {fmt(EXPRESS_PRICE)}.
+            Based on the high end of average market rates ({fmtDollars(totalMax)}) vs. {formatPrice(EXPRESS_PRICE_CENTS)}.
           </p>
         </div>
       </div>

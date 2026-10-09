@@ -1,5 +1,5 @@
 import { siteConfig } from '@/config/site';
-import { BASE_PRICE } from '@/config/pricing';
+import { BASE_PRICE_CENTS } from '@/config/pricing';
 import { CATEGORIES } from '@/config/categories';
 
 // JSON-LD Structured Data for SEO
@@ -257,7 +257,7 @@ export function SoftwareApplicationSchema({
     }),
     offers: {
       '@type': 'Offer',
-      price: free ? '0' : BASE_PRICE.toFixed(2),
+      price: free ? '0' : (BASE_PRICE_CENTS / 100).toFixed(2),
       priceCurrency: 'USD',
     },
     // aggregateRating removed — do not add without real verified review data
