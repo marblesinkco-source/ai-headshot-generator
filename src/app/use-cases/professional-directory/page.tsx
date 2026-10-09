@@ -4,7 +4,7 @@ import { Briefcase, Check, Clock, Crop, ListChecks, Lock, Scale, Search, Shield,
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
-import { FAQSchema, BreadcrumbSchema } from '@/components/structured-data';
+import { FAQSchema, ProductSchema, BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -23,22 +23,6 @@ export const metadata: Metadata = {
   twitter: generateTwitterMetadata({ title: pageTitle, description: pageDescription, type: 'usecase' }),
 };
 
-const productJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Product',
-  name: "AI Headshots for Professional Directories",
-  description: "Credible portraits for professional directory and association listings",
-  url: 'https://www.tailorpic.com/use-cases/professional-directory',
-  brand: { '@type': 'Brand', name: 'TailorPic' },
-  category: 'Professional Services',
-  offers: {
-    '@type': 'Offer',
-    price: '1.99',
-    priceCurrency: 'USD',
-    availability: 'https://schema.org/InStock',
-    url: 'https://www.tailorpic.com/use-cases/professional-directory',
-  },
-};
 
 const benefits = [
   {
@@ -144,9 +128,12 @@ const faqs = [
 export default function ProfessionalDirectoryUseCasePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      <ProductSchema
+        name="TailorPic"
+        description="Credible portraits for professional directory and association listings"
+        price={199}
+        category="Professional Services"
+        slug="use-cases/professional-directory"
       />
       <FAQSchema items={faqs} />
       <BreadcrumbSchema

@@ -4,7 +4,7 @@ import { BookOpen, Briefcase, Camera, Check, Lock, Newspaper, Palette, PenTool, 
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
-import { FAQSchema, BreadcrumbSchema } from '@/components/structured-data';
+import { FAQSchema, ProductSchema, BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -23,22 +23,6 @@ export const metadata: Metadata = {
   twitter: generateTwitterMetadata({ title: pageTitle, description: pageDescription, type: 'usecase' }),
 };
 
-const productJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Product',
-  name: "AI Headshots for Magazine Features",
-  description: "Editorial-ready portraits for magazine features and contributor profiles",
-  url: 'https://www.tailorpic.com/use-cases/magazine-feature',
-  brand: { '@type': 'Brand', name: 'TailorPic' },
-  category: 'Professional Services',
-  offers: {
-    '@type': 'Offer',
-    price: '1.99',
-    priceCurrency: 'USD',
-    availability: 'https://schema.org/InStock',
-    url: 'https://www.tailorpic.com/use-cases/magazine-feature',
-  },
-};
 
 const benefits = [
   {
@@ -144,9 +128,12 @@ const faqs = [
 export default function MagazineFeatureUseCasePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      <ProductSchema
+        name="TailorPic"
+        description="Editorial-ready portraits for magazine features and contributor profiles"
+        price={199}
+        category="Professional Services"
+        slug="use-cases/magazine-feature"
       />
       <FAQSchema items={faqs} />
       <BreadcrumbSchema

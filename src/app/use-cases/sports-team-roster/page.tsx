@@ -4,7 +4,7 @@ import { Briefcase, Check, Clock, Crop, GraduationCap, Shield, Sparkles, Trophy,
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
-import { FAQSchema, BreadcrumbSchema } from '@/components/structured-data';
+import { FAQSchema, ProductSchema, BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -23,22 +23,6 @@ export const metadata: Metadata = {
   twitter: generateTwitterMetadata({ title: pageTitle, description: pageDescription, type: 'usecase' }),
 };
 
-const productJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Product',
-  name: "AI Headshots for Sports Team Rosters",
-  description: "Professional portraits for sports team rosters and player profiles",
-  url: 'https://www.tailorpic.com/use-cases/sports-team-roster',
-  brand: { '@type': 'Brand', name: 'TailorPic' },
-  category: 'Professional Services',
-  offers: {
-    '@type': 'Offer',
-    price: '1.99',
-    priceCurrency: 'USD',
-    availability: 'https://schema.org/InStock',
-    url: 'https://www.tailorpic.com/use-cases/sports-team-roster',
-  },
-};
 
 const benefits = [
   {
@@ -144,9 +128,12 @@ const faqs = [
 export default function SportsTeamRosterUseCasePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      <ProductSchema
+        name="TailorPic"
+        description="Professional portraits for sports team rosters and player profiles"
+        price={199}
+        category="Professional Services"
+        slug="use-cases/sports-team-roster"
       />
       <FAQSchema items={faqs} />
       <BreadcrumbSchema

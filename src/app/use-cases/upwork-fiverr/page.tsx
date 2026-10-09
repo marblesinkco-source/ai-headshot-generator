@@ -4,7 +4,7 @@ import { BadgeCheck, Briefcase, Camera, Check, Clock, Code2, Globe, Palette, Shi
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
-import { FAQSchema, BreadcrumbSchema } from '@/components/structured-data';
+import { FAQSchema, ProductSchema, BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -23,22 +23,6 @@ export const metadata: Metadata = {
   twitter: generateTwitterMetadata({ title: pageTitle, description: pageDescription, type: 'usecase' }),
 };
 
-const productJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Product',
-  name: "AI Headshots for Freelance Platforms",
-  description: "Trust-building headshots for Upwork, Fiverr and freelance marketplace profiles",
-  url: 'https://www.tailorpic.com/use-cases/upwork-fiverr',
-  brand: { '@type': 'Brand', name: 'TailorPic' },
-  category: 'Professional Services',
-  offers: {
-    '@type': 'Offer',
-    price: '1.99',
-    priceCurrency: 'USD',
-    availability: 'https://schema.org/InStock',
-    url: 'https://www.tailorpic.com/use-cases/upwork-fiverr',
-  },
-};
 
 const benefits = [
   {
@@ -144,9 +128,12 @@ const faqs = [
 export default function UpworkFiverrUseCasePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      <ProductSchema
+        name="TailorPic"
+        description="Trust-building headshots for Upwork, Fiverr and freelance marketplace profiles"
+        price={199}
+        category="Professional Services"
+        slug="use-cases/upwork-fiverr"
       />
       <FAQSchema items={faqs} />
       <BreadcrumbSchema

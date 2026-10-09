@@ -5,7 +5,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
-import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
@@ -23,23 +23,6 @@ export const metadata: Metadata = {
   twitter: generateTwitterMetadata({ title, description, type: 'vs' }),
 };
 
-const productJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Product',
-  name: 'TailorPic AI Headshots',
-  description:
-    `AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from ${BASE_PRICE_DISPLAY}.`,
-  brand: { '@type': 'Brand', name: siteConfig.name },
-  url: `${siteConfig.url}${path}`,
-  image: `${siteConfig.url}${siteConfig.ogImage}`,
-  offers: {
-    '@type': 'Offer',
-    price: '1.99',
-    priceCurrency: 'USD',
-    availability: 'https://schema.org/InStock',
-    url: `${siteConfig.url}/auth/register`,
-  },
-};
 
 const intro =
   "Passport Photo AI is oriented toward ID and passport-style photos, which follow strict official requirements. TailorPic is built for a different job: professional, dating and creative portraits across 12 categories. The two tools solve different problems.";
@@ -93,10 +76,13 @@ export default function VsPassportPhotoAiPage() {
     <>
       <Header />
       <main id="main-content" className="bg-tp-paper">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
-        />
+      <ProductSchema
+        name="TailorPic AI Headshots"
+        description="AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours."
+        price={199}
+        category="Professional Services"
+        slug="vs/passport-photo-ai"
+      />
         <BreadcrumbSchema
           items={[
             { name: 'Home', url: siteConfig.url },

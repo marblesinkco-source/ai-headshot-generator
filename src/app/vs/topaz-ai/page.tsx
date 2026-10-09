@@ -5,7 +5,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
-import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
@@ -24,23 +24,6 @@ export const metadata: Metadata = {
   twitter: generateTwitterMetadata({ title, description, type: 'vs' }),
 };
 
-const productJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Product',
-  name: 'TailorPic AI Headshots',
-  description:
-    `AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from ${BASE_PRICE_DISPLAY}.`,
-  brand: { '@type': 'Brand', name: siteConfig.name },
-  url: canonicalUrl,
-  image: `${siteConfig.url}${siteConfig.ogImage}`,
-  offers: {
-    '@type': 'Offer',
-    price: '1.99',
-    priceCurrency: 'USD',
-    availability: 'https://schema.org/InStock',
-    url: `${siteConfig.url}/auth/register`,
-  },
-};
 
 const intro =
   "Topaz Labs makes AI software for sharpening, denoising and upscaling photos and video. TailorPic is built for people: it trains a personal model on your selfies and generates professional headshots in 12 categories.";
@@ -160,10 +143,13 @@ export default function VsTopazAiPage() {
     <>
       <Header />
       <main id="main-content" className="bg-tp-paper">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
-        />
+      <ProductSchema
+        name="TailorPic AI Headshots"
+        description="AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours."
+        price={199}
+        category="Professional Services"
+        slug="vs/topaz-ai"
+      />
         <BreadcrumbSchema
           items={[
             { name: 'Home', url: siteConfig.url },
