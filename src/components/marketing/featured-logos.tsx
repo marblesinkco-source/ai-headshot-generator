@@ -4,12 +4,10 @@ import { useEffect, useRef, useState } from 'react';
 import type { CSSProperties, ReactNode } from 'react';
 
 /**
- * "As Featured On" marquee strip.
+ * "Trust & Security" marquee strip.
  *
- * Honesty rules (CLAUDE.md section 4): only platforms the product is listed on
- * (Product Hunt, Trustpilot, G2) plus generic trust badges. No press logos, no
- * user counts, no ratings.
- * Platform SVG paths mirror review-platforms.tsx.
+ * Honesty rules (CLAUDE.md section 4): generic trust/security badges only. No
+ * platform listings, press logos, user counts, or ratings.
  */
 
 type Item = { key: string; label: string; color?: string; icon: ReactNode };
@@ -22,32 +20,12 @@ const svgProps = {
 
 const ITEMS: readonly Item[] = [
   {
-    key: 'product-hunt',
-    label: 'Product Hunt',
-    color: '#DA552F',
+    key: 'gdpr',
+    label: 'GDPR compliant',
     icon: (
-      <svg viewBox="0 0 40 40" fill="currentColor" {...svgProps}>
-        <path d="M22.667 20H17.333v-6.667h5.334c1.84 0 3.333 1.493 3.333 3.334 0 1.84-1.493 3.333-3.333 3.333zM20 0C8.954 0 0 8.954 0 20s8.954 20 20 20 20-8.954 20-20S31.046 0 20 0zm2.667 24H17.333v6.667h-4V9.333h9.334c4.05 0 7.333 3.283 7.333 7.334 0 4.05-3.283 7.333-7.333 7.333z" />
-      </svg>
-    ),
-  },
-  {
-    key: 'trustpilot',
-    label: 'Trustpilot',
-    color: '#00B67A',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" {...svgProps}>
-        <path d="M12 0l3.09 9.52H24l-7.18 5.22 2.74 8.43L12 17.77l-7.56 5.4 2.74-8.43L0 9.52h8.91z" />
-      </svg>
-    ),
-  },
-  {
-    key: 'g2',
-    label: 'G2',
-    color: '#FF492C',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" {...svgProps}>
-        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.441 17.5h-3.036l-1.43-2.485L10.55 17.5H7.5l3.467-5.998L7.559 6.5h3.049l1.367 2.379L13.374 6.5h3.067l-3.49 5.002L16.441 17.5z" />
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" {...svgProps}>
+        <path d="M12 3l7.5 3v5.5c0 4.5-3.1 8.2-7.5 9.5-4.4-1.3-7.5-5-7.5-9.5V6L12 3z" />
+        <path d="M9 12l2.2 2.2L15.5 10" />
       </svg>
     ),
   },
@@ -79,6 +57,16 @@ const ITEMS: readonly Item[] = [
         <rect x="4.5" y="10.5" width="15" height="10" rx="2.5" />
         <path d="M8 10.5V8a4 4 0 018 0v2.5" />
         <circle cx="12" cy="15.5" r="1" fill="currentColor" stroke="none" />
+      </svg>
+    ),
+  },
+  {
+    key: 'auto-delete',
+    label: 'Photos auto-deleted',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" {...svgProps}>
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 7v5l3 3" />
       </svg>
     ),
   },
@@ -157,7 +145,7 @@ export function FeaturedLogos() {
   return (
     <section
       ref={ref}
-      aria-label="Find us on"
+      aria-label="Trust and security"
       className={`relative overflow-hidden bg-tp-paper py-10 sm:py-12 ${visible ? 'tp-fl-visible' : ''}`}
     >
       <style>{css}</style>
@@ -165,10 +153,10 @@ export function FeaturedLogos() {
       <div className="tp-fl-wrap relative mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-tp-bronze-ink">
-            Find Us On
+            Trust &amp; Security
           </p>
           <h2 className="mt-2 font-display text-2xl font-normal text-tp-ink sm:text-3xl">
-            Trusted by professionals worldwide
+            Your photos are in safe hands
           </h2>
         </div>
         <div className="tp-fl-viewport mt-6">

@@ -125,7 +125,7 @@ const socialLinks = [
 function FooterColumn({ title, links, children }: { title: string; links: FooterLink[]; children?: ReactNode }) {
   return (
     <nav aria-label={title}>
-      <h3 className="mb-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-tp-bronze">{title}</h3>
+      <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-tp-bronze">{title}</h3>
       <ul className="space-y-0 lg:space-y-0.5">
         {links.map((link) => (
           <li key={link.href}>
@@ -179,7 +179,7 @@ export function Footer() {
             <p className="font-display text-2xl font-normal leading-snug text-tp-paper sm:text-3xl">
               Portraits, tailored to you.
             </p>
-            <p className="mt-3 max-w-md text-[13px] leading-relaxed text-tp-beige/70">{siteConfig.description}</p>
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-tp-beige/70">{siteConfig.description}</p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               {socialLinks.map((social) => (
                 <a
@@ -224,7 +224,7 @@ export function Footer() {
       {/* Bottom bar */}
       <div className="relative border-t border-tp-bronze/15">
         <div className="mx-auto flex max-w-[1320px] flex-col items-center justify-between gap-3 px-4 py-6 text-center sm:px-7 md:flex-row md:text-left lg:px-14">
-          <span className="text-[12px] text-tp-beige/70">
+          <span className="text-xs text-tp-beige/70">
             &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </span>
           <nav aria-label="Legal" className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1">
@@ -232,7 +232,7 @@ export function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[12px] text-tp-beige/70 transition-colors hover:text-tp-bronze focus-visible:outline-none focus-visible:text-tp-bronze focus-visible:underline"
+                className="text-xs text-tp-beige/70 transition-colors hover:text-tp-bronze focus-visible:outline-none focus-visible:text-tp-bronze focus-visible:underline"
               >
                 {link.label}
               </Link>

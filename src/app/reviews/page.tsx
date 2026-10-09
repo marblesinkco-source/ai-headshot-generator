@@ -239,6 +239,7 @@ export default function ReviewsPage() {
 
         {/* Filter tabs + Use case grid (CSS-only tabs) */}
         <section className="py-12">
+          <p className="text-center text-sm text-tp-muted italic mb-6">The scenarios below are illustrative examples — not customer testimonials.</p>
           <div className="reviews-filter-group">
             {/* Hidden radio inputs for CSS-only tab filtering */}
             {filterTabs.map((tab, i) => (

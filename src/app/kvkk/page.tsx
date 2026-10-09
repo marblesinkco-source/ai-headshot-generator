@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       '6698 sayılı KVKK kapsamında TailorPic tarafından işlenen kişisel veriler, amaçlar, aktarımlar, saklama süreleri ve haklarınız.' }),
 };
 
-const CONTACT = 'support@tailorpic.com';
+const CONTACT = siteConfig.supportEmail;
 
 const dataCategories = [
   { title: 'Kimlik ve iletişim verileri', text: 'Ad-soyad, e-posta adresi.' },

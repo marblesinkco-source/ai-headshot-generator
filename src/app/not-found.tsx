@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Header } from '@/components/marketing/header';
+import { Footer } from '@/components/marketing/footer';
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false },
@@ -14,9 +16,11 @@ const suggestions = [
 
 export default function NotFound() {
   return (
+    <>
+    <Header />
     <main
       id="main-content"
-      className="flex min-h-screen flex-col items-center justify-center bg-tp-paper px-4 py-16"
+      className="flex min-h-[60vh] flex-col items-center justify-center bg-tp-paper px-4 py-16"
     >
       <div className="w-full max-w-xl text-center">
         <p className="text-sm font-bold uppercase tracking-[0.18em] text-tp-bronze-ink">Error 404</p>
@@ -57,5 +61,7 @@ export default function NotFound() {
         </div>
       </div>
     </main>
+    <Footer />
+    </>
   );
 }

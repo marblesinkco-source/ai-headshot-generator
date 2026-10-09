@@ -7,6 +7,7 @@ import { createClient } from '@/lib/supabase/client';
 import { OrderStatusBadge } from '@/components/dashboard/order-status';
 import { Button } from '@/components/ui/button';
 import { getCategoryById, type CategoryId } from '@/config/categories';
+import { siteConfig } from '@/config/site';
 import type { OrderStatus } from '@/types';
 
 interface OrderDetail {
@@ -319,7 +320,7 @@ export default function OrderDetailPage() {
           </Link>
         )}
         {order.status === 'failed' && (
-          <a href="mailto:support@tailorpic.com" className="flex-1">
+          <a href={`mailto:${siteConfig.supportEmail}`} className="flex-1">
             <Button variant="outline" size="lg" className="w-full">
               Contact Support
             </Button>

@@ -4,6 +4,7 @@
  */
 
 import Link from "next/link";
+import { siteConfig } from "@/config/site";
 
 export const metadata = {
   title: "TailorPic — Çok Yakında",
@@ -67,10 +68,10 @@ export default function GatePage() {
         <p className="text-tp-muted text-xs">
           Sorularınız için{" "}
           <a
-            href="mailto:support@tailorpic.com"
+            href={`mailto:${siteConfig.supportEmail}`}
             className="text-tp-bronze-ink underline underline-offset-2"
           >
-            support@tailorpic.com
+            {siteConfig.supportEmail}
           </a>
         </p>
       </div>

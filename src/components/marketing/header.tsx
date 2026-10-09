@@ -270,7 +270,7 @@ export function Header() {
             >
               <div
                 id="photo-types-menu"
-                className={`w-[780px] rounded-tp-card border border-tp-line/60 bg-white p-5 shadow-xl shadow-tp-black/8 transition-all duration-200 ease-out ${
+                className={`w-[780px] max-w-[calc(100vw-2rem)] rounded-tp-card border border-tp-line/60 bg-white p-5 shadow-xl shadow-tp-black/8 transition-all duration-200 ease-out ${
                   megaOpen
                     ? 'visible translate-y-0 opacity-100'
                     : 'pointer-events-none invisible -translate-y-1.5 opacity-0'
