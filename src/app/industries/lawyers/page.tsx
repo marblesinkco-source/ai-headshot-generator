@@ -7,7 +7,6 @@ import { Footer } from '@/components/marketing/footer';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
 import { ProductSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
-import { siteConfig } from '@/config/site';
 import { CheckCircle, Scale, ArrowRight } from 'lucide-react';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 

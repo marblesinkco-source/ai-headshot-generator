@@ -18,7 +18,6 @@ import { Footer } from '@/components/marketing/footer';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
 import { FAQSchema, ProductSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
-import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';

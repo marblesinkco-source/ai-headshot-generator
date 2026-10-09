@@ -7,7 +7,6 @@ import { Footer } from '@/components/marketing/footer';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
 import { ProductSchema, FAQSchema } from '@/components/structured-data';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
-import { siteConfig } from '@/config/site';
 import { ArrowRight, Check } from 'lucide-react';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';

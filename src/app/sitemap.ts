@@ -2,6 +2,9 @@ import type { MetadataRoute } from 'next';
 import { getActiveCategories } from '@/config/categories';
 import { getAllBlogPosts } from '@/config/blog';
 import { getAllPhotoStyles } from '@/config/styles';
+import { getAllProfessionSlugs } from '@/config/professions';
+import { getAllCitySlugs } from '@/config/city-content';
+import { getAllTeamUseCaseSlugs } from '@/config/team-use-cases';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://www.tailorpic.com';
@@ -1998,6 +2001,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/refund-policy`,
+      lastModified: new Date('2026-10-06'),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/for-teams`,
+      lastModified: new Date('2026-10-06'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/team-headshots`,
+      lastModified: new Date('2026-10-09'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
   ];
 
   const styles = getAllPhotoStyles();
@@ -2022,5 +2043,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...categoryPages, ...stylePages, ...blogPages];
+  const professionSlugs = getAllProfessionSlugs();
+  const professionPages: MetadataRoute.Sitemap = professionSlugs.map((slug) => ({
+    url: `${baseUrl}/headshots/for-${slug}`,
+    lastModified: new Date('2026-10-09'),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const citySlugs = getAllCitySlugs();
+  const cityPages: MetadataRoute.Sitemap = citySlugs.map((slug) => ({
+    url: `${baseUrl}/locations/${slug}`,
+    lastModified: new Date('2026-10-09'),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
+  const teamUseCaseSlugs = getAllTeamUseCaseSlugs();
+  const teamUseCasePages: MetadataRoute.Sitemap = teamUseCaseSlugs.map((slug) => ({
+    url: `${baseUrl}/teams/${slug}`,
+    lastModified: new Date('2026-10-09'),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...categoryPages, ...stylePages, ...blogPages, ...professionPages, ...cityPages, ...teamUseCasePages];
 }

@@ -259,7 +259,7 @@ export default function TeamHeadshotsPage() {
               {
                 name: 'Individual',
                 size: '1-4 people',
-                price: 'From $1.99',
+                price: `From ${BASE_PRICE_DISPLAY}`,
                 unit: '/person',
                 features: ['Packages from 1 to 160 photos', 'Choose your style', 'High-resolution downloads'],
                 cta: 'Get Started',
@@ -406,7 +406,7 @@ export default function TeamHeadshotsPage() {
             {[
               {
                 name: 'Individual Plan',
-                price: 'From $1.99',
+                price: `From ${BASE_PRICE_DISPLAY}`,
                 note: 'one-time, per person — packages from 1 to 160 photos',
                 featured: false,
                 cta: 'Get Started',
