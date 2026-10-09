@@ -176,6 +176,12 @@ export const faqs = [
   },
   {
     category: 'Pricing',
+    question: 'Can I try before committing to a larger package?',
+    answer:
+      `Yes. TailorPic 1 (${BASE_PRICE_DISPLAY}) lets you generate a single AI headshot so you can see exactly how the technology works with your face before choosing a bigger package. Upload your selfies, pick a style, and get one professional result. If you like what you see, upgrade to any larger package at any time.`,
+  },
+  {
+    category: 'Pricing',
     question: 'Can I upgrade my package after purchase?',
     answer:
       'Yes. You can purchase a higher-tier package at any time to get more photos, backgrounds, and styles. Your existing photos stay in your account. After your first order, you may also receive an exclusive upgrade discount by email. Contact support if you have any questions about choosing the right package.',

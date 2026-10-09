@@ -43,6 +43,10 @@ export const helpCategories: HelpCategoryData[] = [
         answer:
           'We offer several packages with different numbers of generated headshots and style options. Visit our pricing page for the latest details on what each package includes.',
       },
+      {
+        question: 'Can I try before committing to a larger package?',
+        answer: `Yes. TailorPic 1 (${BASE_PRICE_DISPLAY}) lets you generate a single AI headshot so you can see how the technology works with your face before choosing a bigger package. If you like what you see, you can upgrade at any time.`,
+      },
     ],
   },
   {
