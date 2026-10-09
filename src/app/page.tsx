@@ -27,11 +27,6 @@ function SectionSkeleton({ height }: { height: string }) {
 }
 
 // Below-the-fold sections: lazy load for performance
-const SocialProofBar = dynamic(
-  () => import('@/components/marketing/social-proof-bar').then((m) => m.SocialProofBar),
-  { loading: () => <SectionSkeleton height="h-[100px] sm:h-[120px]" /> }
-);
-// HowItWorks replaced by AIProcessDemo (animated version)
 const AIProcessDemo = dynamic(
   () => import('@/components/marketing/ai-process-demo').then((m) => m.AIProcessDemo),
   { loading: () => <SectionSkeleton height="h-[700px] md:h-[550px]" /> }
@@ -60,7 +55,6 @@ const CTABanner = dynamic(
   () => import('@/components/marketing/cta-banner').then((m) => m.CTABanner),
   { loading: () => <SectionSkeleton height="h-64" /> }
 );
-// Fixed-position mobile bar: no skeleton needed
 const StickyCTA = dynamic(
   () => import('@/components/marketing/sticky-cta').then((m) => m.StickyCTA)
 );
@@ -70,10 +64,6 @@ const ScrollProgress = dynamic(
 const FeaturedLogos = dynamic(
   () => import('@/components/marketing/featured-logos').then((m) => m.FeaturedLogos),
   { loading: () => <SectionSkeleton height="h-[160px]" /> }
-);
-const UseCases = dynamic(
-  () => import('@/components/marketing/use-cases').then((m) => m.UseCases),
-  { loading: () => <SectionSkeleton height="h-[500px] md:h-[400px]" /> }
 );
 
 export default function LandingPage() {
@@ -105,14 +95,8 @@ export default function LandingPage() {
       <div className="mx-auto max-w-4xl px-8" aria-hidden="true"><div className="gold-line" /></div>
       <Pricing />
 
-      {/* Social proof */}
-      <SocialProofBar />
-
       {/* TailorPic vs Studio Comparison */}
       <VsStudio />
-
-      {/* Use Cases */}
-      <UseCases />
 
       {/* Headshot in Context — platform mockups */}
       <HeadshotInContext />

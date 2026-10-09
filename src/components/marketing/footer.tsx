@@ -14,8 +14,6 @@ const productLinks: FooterLink[] = [
   { label: 'Before & After', href: '/before-after' },
   { label: 'Technology', href: '/technology' },
   { label: 'Quality Promise', href: '/guarantee' },
-  { label: 'Gift Cards', href: '/gift-cards' },
-  { label: 'Changelog', href: '/changelog' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Blog', href: '/blog' },
 ];
@@ -28,13 +26,9 @@ const photoTypeLinks: FooterLink[] = [
   { label: 'Graduation', href: '/graduation-photos' },
   { label: 'AI Avatars', href: '/avatars' },
   { label: 'Pet Portraits', href: '/pet-portraits' },
-  { label: 'Baby Shower', href: '/baby-shower-invitations' },
-  { label: 'Holiday Cards', href: '/holiday-cards' },
   { label: 'Couple & Engagement', href: '/couple-engagement-photos' },
-  { label: 'Virtual Staging', href: '/virtual-staging' },
   { label: 'Product Photography', href: '/product-photography' },
   { label: 'All Categories', href: '/samples' },
-  { label: 'Photo Styles', href: '/styles' },
 ];
 
 const resourceLinks: FooterLink[] = [
@@ -45,13 +39,7 @@ const resourceLinks: FooterLink[] = [
   { label: 'Backgrounds', href: '/backgrounds' },
   { label: 'Free Tools', href: '/tools' },
   { label: 'Compare Tools', href: '/vs' },
-  { label: 'Industries', href: '/industries' },
   { label: 'Use Cases', href: '/use-cases' },
-  { label: 'For Students', href: '/students' },
-  { label: 'Team Use Cases', href: '/teams' },
-  { label: 'Headshot Sizes', href: '/headshot-sizes' },
-  { label: 'Developer API', href: '/developer-api' },
-  { label: 'Integrations', href: '/integrations' },
 ];
 
 const companyLinks: FooterLink[] = [
@@ -61,11 +49,6 @@ const companyLinks: FooterLink[] = [
   { label: 'Reviews', href: '/reviews' },
   { label: 'Enterprise', href: '/enterprise' },
   { label: 'Referral Program', href: '/referral' },
-  { label: 'Press', href: '/press' },
-  { label: 'Careers', href: '/careers' },
-  { label: 'Partners', href: '/partners' },
-  { label: 'Success Stories', href: '/success-stories' },
-  { label: 'System Status', href: '/status' },
 ];
 
 const legalLinks: FooterLink[] = [
@@ -74,10 +57,8 @@ const legalLinks: FooterLink[] = [
   { label: 'Cookie Policy', href: '/cookie-policy' },
   { label: 'Refund Policy', href: '/refund-policy' },
   { label: 'Data Processing', href: '/dpa' },
-  { label: 'Subprocessors', href: '/subprocessors' },
   { label: 'Security', href: '/security' },
   { label: 'Accessibility', href: '/accessibility' },
-  { label: 'Trust Center', href: '/trust' },
   { label: 'KVKK Notice', href: '/kvkk' },
 ];
 

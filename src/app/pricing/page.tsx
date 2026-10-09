@@ -5,7 +5,6 @@ import { Footer } from '@/components/marketing/footer';
 import { Pricing } from '@/components/marketing/pricing';
 import { PricingVisualIllustration } from '@/components/marketing/illustrations';
 import { CreditPackages } from '@/components/marketing/credit-packages';
-import { TrustBar } from '@/components/marketing/trust-bar';
 import { CostCalculator } from '@/components/marketing/cost-calculator';
 import { PricingPsychology } from '@/components/marketing/pricing-psychology';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
@@ -14,14 +13,12 @@ import { siteConfig } from '@/config/site';
 import { BASE_PRICE_DISPLAY, TEAM_PRICES, PAYMENT_PROVIDER } from '@/config/pricing';
 import { formatPrice } from '@/lib/utils';
 import { CATEGORIES } from '@/config/categories';
-import { TrustBadges } from '@/components/marketing/trust-badges';
 import { BreadcrumbSchema, FAQSchema, PricingProductSchema } from '@/components/structured-data';
-import { ChevronDown, Check, Lock, CreditCard, BadgeCheck, Minus } from 'lucide-react';
+import { ChevronDown, Check, CreditCard, BadgeCheck, Minus } from 'lucide-react';
 import { PricingViewToggle } from '@/components/marketing/pricing-view-toggle';
 import { PricingComparisonBar } from '@/components/marketing/pricing-comparison-bar';
 import { GuaranteeSection } from '@/components/marketing/guarantee-section';
 import { TrustBadgesInline } from '@/components/marketing/trust-badges-inline';
-import { DataPrivacyStrip } from '@/components/marketing/data-privacy-strip';
 import dynamic from 'next/dynamic';
 
 const PackageQuiz = dynamic(() => import('@/components/marketing/package-quiz'), { ssr: false });
@@ -125,12 +122,6 @@ const includedFeatures = [
   },
 ];
 
-const trustSignals = [
-  { icon: CreditCard, label: 'One-time payment, no subscription' },
-  { icon: BadgeCheck, label: 'Full commercial rights' },
-  { icon: Lock, label: PAYMENT_PROVIDER.checkoutBadge },
-];
-
 const OG_DESCRIPTION =
   'Affordable AI photo packages for every need. Professional headshots, dating photos, pet portraits and more.';
 
@@ -194,28 +185,9 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <TrustBar />
-
-      <section aria-label="Why buy with confidence" className="pt-8">
-        <ul className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-8 gap-y-3 px-4">
-          {trustSignals.map(({ icon: Icon, label }) => (
-            <li key={label} className="flex items-center gap-2 text-sm font-medium text-tp-ink">
-              <Icon className="h-4 w-4 text-tp-bronze-ink" aria-hidden="true" />
-              {label}
-            </li>
-          ))}
-        </ul>
-      </section>
-
       <PricingViewToggle individual={<Pricing />} />
 
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <DataPrivacyStrip className="mt-8" />
-      </div>
-
       <PackageQuiz />
-
-      <TrustBadges />
 
       <GuaranteeSection />
 
@@ -354,7 +326,6 @@ export default function PricingPage() {
               Get your headshots from {BASE_PRICE_DISPLAY}
             </Link>
             <TrustBadgesInline className="mt-4" />
-            <DataPrivacyStrip className="mx-auto mt-6 max-w-3xl" />
           </div>
         </div>
       </section>
