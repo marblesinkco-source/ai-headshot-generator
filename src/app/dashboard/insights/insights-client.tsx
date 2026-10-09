@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { BarChart3, TrendingUp, MousePointerClick, Zap, RefreshCw, Calendar } from 'lucide-react';
+import { formatPrice } from '@/lib/utils';
 
 interface AnalyticsData {
   period: { days: number; since: string };
@@ -33,9 +34,7 @@ interface AnalyticsData {
   }>;
 }
 
-function formatPrice(cents: number): string {
-  return `$${(cents / 100).toFixed(2)}`;
-}
+// formatPrice imported from @/lib/utils
 
 function formatNumber(n: number): string {
   if (n >= 1000) return `${(n / 1000).toFixed(1)}k`;

@@ -70,7 +70,8 @@ const proPackage = headshots.packages.find((p) => p.id === 'headshots-profession
 const execPackage = headshots.packages.find((p) => p.id === 'headshots-executive') ?? _last; // Executive: $89.90, 160 headshots
 
 function perPhotoPrice(cents: number, count: number): string {
-  return `$${(cents / 100 / count).toFixed(2)}`;
+  const perPhotoCents = Math.round(cents / count);
+  return formatPrice(perPhotoCents);
 }
 
 /* ------------------------------------------------------------------ */

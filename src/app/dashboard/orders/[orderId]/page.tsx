@@ -8,6 +8,7 @@ import { OrderStatusBadge } from '@/components/dashboard/order-status';
 import { Button } from '@/components/ui/button';
 import { getCategoryById, type CategoryId } from '@/config/categories';
 import { siteConfig } from '@/config/site';
+import { formatPrice } from '@/lib/utils';
 import type { OrderStatus } from '@/types';
 
 interface OrderDetail {
@@ -126,7 +127,7 @@ export default function OrderDetailPage() {
   const category = getCategoryById(order.category_id as CategoryId);
   const categoryName = category?.name || 'AI Photos';
   const totalOutputs = order.output_count || order.headshot_count || 0;
-  const amount = (order.amount / 100).toFixed(2);
+  const amount = formatPrice(order.amount);
 
   const statusMessages: Record<OrderStatus, { title: string; description: string; icon: string }> = {
     pending: {
@@ -286,7 +287,7 @@ export default function OrderDetailPage() {
           </div>
           <div className="flex items-center justify-between px-6 py-3.5">
             <span className="text-sm text-tp-muted">Amount Paid</span>
-            <span className="text-sm font-medium text-tp-ink">${amount} {order.currency.toUpperCase()}</span>
+            <span className="text-sm font-medium text-tp-ink">{amount}</span>
           </div>
           <div className="flex items-center justify-between px-6 py-3.5">
             <span className="text-sm text-tp-muted">Order Date</span>

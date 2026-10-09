@@ -63,7 +63,7 @@ export function VideoTestimonials() {
                 >
                   <div
                     className={`flex h-14 w-14 items-center justify-center rounded-full border-2 border-white/30 bg-white/10 backdrop-blur-sm transition-transform ${
-                      hoveredIndex === i ? 'scale-110' : 'scale-100'
+                      hoveredIndex === i ? 'scale-105' : 'scale-100'
                     }`}
                   >
                     <Icon aria-hidden="true" className="h-6 w-6 text-white" />

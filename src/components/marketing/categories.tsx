@@ -4,6 +4,7 @@ import { getActiveCategories, CATEGORY_GROUPS } from '@/config/categories';
 import { categoryVisuals } from '@/config/category-visuals';
 import { CategoryFallbackIllustration } from '@/components/marketing/illustrations';
 import { TEAM_PRICES } from '@/config/pricing';
+import { formatPrice } from '@/lib/utils';
 
 // Tiny neutral beige 8x6 SVG placeholder shown while category images load
 const BLUR_DATA_URL =
@@ -56,10 +57,8 @@ export function Categories() {
                   const maxOutput = Math.max(0, ...cat.packages.map((p) => p.outputCount));
                   const isTeam = cat.id === 'linkedin-team';
                   const fromPrice = isTeam
-                    ? (TEAM_PRICES.large.perPersonCents / 100).toFixed(0)
-                    : ((cat.packages[0]?.price || 0) / 100)
-                        .toFixed(2)
-                        .replace(/\.00$/, '');
+                    ? formatPrice(TEAM_PRICES.large.perPersonCents, 'usd', true)
+                    : formatPrice(cat.packages[0]?.price || 0, 'usd', true);
 
                   return (
                     <Link
@@ -75,7 +74,7 @@ export function Categories() {
                             alt={image.alt}
                             width={800}
                             height={600}
-                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                             sizes="(max-width: 767px) 50vw, (max-width: 1023px) 33vw, 25vw"
                             loading="lazy"
                             placeholder="blur"
@@ -111,7 +110,7 @@ export function Categories() {
                         </p>
                         <div className="mt-auto flex items-center justify-between pt-2 sm:pt-3">
                           <span className="text-[12px] sm:text-[13px] font-semibold text-tp-bronze-ink">
-                            {isTeam ? `From $${fromPrice}/person` : `From $${fromPrice}`}
+                            {isTeam ? `From ${fromPrice}/person` : `From ${fromPrice}`}
                           </span>
                           <span className="text-xs font-medium text-tp-bronze-ink opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100 group-focus-visible:opacity-100">
                             Explore &rarr;

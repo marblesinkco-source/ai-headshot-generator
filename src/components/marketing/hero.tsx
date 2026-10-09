@@ -187,7 +187,7 @@ export function Hero() {
                   aria-hidden="true"
                 >
                   <div
-                    className="overflow-hidden rounded-xl border-2 border-white shadow-lg shadow-tp-black/15 transition-transform duration-200 group-hover:scale-110"
+                    className="overflow-hidden rounded-xl border-2 border-white shadow-lg shadow-tp-black/15 transition-transform duration-200 group-hover:scale-105"
                     style={{ width: thumb.size, height: thumb.size }}
                   >
                     <Image
@@ -344,7 +344,7 @@ function QuickCategories({
                 alt={categoryVisuals[cat.id]?.quickCard?.alt ?? cat.name}
                 width={160}
                 height={120}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 motion-reduce:group-hover:scale-100"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:group-hover:scale-100"
                 sizes="(max-width: 1024px) 72px, 16vw"
                 loading="lazy"
               />
