@@ -637,6 +637,16 @@
       ],
       "status": "done",
       "evidence": "4 commit: c41e23b (delivery time 15 dosya), 9d877a5 (a11y 5 dosya), 1d02dd3 (performance 3 dosya), 162b5a2 (homepage kısaltma). CI PASS + Vercel PASS. Canlı doğrulama tamam."
+    },
+    {
+      "id": "feat-BEFORE-AFTER-FIX",
+      "name": "Before/After Showcase — Same Person Fix",
+      "description": "Before/after görselleri aynı kişiden: casualPortrait() (entropy crop) before, portrait() (face crop) after. 3 homepage + 6 dedicated + 5 kategori çifti güncellendi.",
+      "dependencies": [
+        "feat-AUDIT-OCT9"
+      ],
+      "status": "done",
+      "evidence": "Commit: 48fcaaf. stock-portraits.ts casualPortrait() eklendi, category-visuals.ts samePersonBeforeAfter() ile tüm çiftler güncellendi. CI PASS + Vercel PASS. Canlı doğrulama: 3 kart aynı kişi before/after gösteriyor."
     }
   ]
 }

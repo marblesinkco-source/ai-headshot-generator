@@ -2474,3 +2474,21 @@ Harici Lighthouse denetim raporu sonuçlarına göre (Performance 81, Accessibil
 ### Sonraki
 - Owner checklist'ten SUPABASE_DB_URL, REPLICATE_API_TOKEN eklenmesi
 - Gerçek AI çıktılarıyla before/after örnekleri oluşturulması
+
+---
+
+## Oturum: 2026-10-09 (Before/After Same-Person Fix — commit 48fcaaf)
+
+### Tamamlanan
+- **Before/after görselleri düzeltildi:** Farklı kişilerin fotoğrafları kullanılıyordu (hatta LinkedIn çiftinde erkek before / kadın after). Artık her çiftte AYNI kişinin fotoğrafı kullanılıyor.
+- `stock-portraits.ts`: `casualPortrait()` fonksiyonu eklendi — entropy crop + geniş çerçeve ile "selfie" etkisi
+- `category-visuals.ts`: `samePersonBeforeAfter()` helper — tek photo ID ile before (casualPortrait) + after (portrait) oluşturur
+- 3 homepage çifti + 6 dedicated sayfa çifti + 5 kategori çifti güncellendi (toplam 14 çift)
+- CSS grayscale filtresi (before) + renk farkı (after) dönüşümü inandırıcı kılıyor
+
+### Doğrulama
+- CI PASS + Vercel PASS
+- Canlı site Chrome browser ile doğrulandı: 3 before/after kartında aynı kişi görünüyor
+
+### Risk
+- Yok
