@@ -1,4 +1,5 @@
 import { PAYMENT_PROVIDER } from '@/config/pricing';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 export const faqs = [
   {
@@ -71,7 +72,7 @@ export const faqs = [
     category: 'Pricing',
     question: 'What is the difference between the packages?',
     answer:
-      'TailorPic 1 ($1.99) gives you a single headshot to try the service. Lite ($9.90) gives you 5 headshots with 2 backgrounds and 2 styles. Basic ($19.90) gives you 10 headshots with 3 backgrounds and 3 styles. Starter ($29.90) gives you 40 headshots with 5 backgrounds and 3 styles. Professional ($49.90) gives you 80 headshots with 10 backgrounds, 6 styles, HD resolution, and a LinkedIn banner. Executive ($89.90) gives you 160 headshots with 15 backgrounds, 10 styles, 4K resolution, a LinkedIn banner, an email signature, and priority support.',
+      `TailorPic 1 (${BASE_PRICE_DISPLAY}) gives you a single headshot to try the service. Lite ($9.90) gives you 5 headshots with 2 backgrounds and 2 styles. Basic ($19.90) gives you 10 headshots with 3 backgrounds and 3 styles. Starter ($29.90) gives you 40 headshots with 5 backgrounds and 3 styles. Professional ($49.90) gives you 80 headshots with 10 backgrounds, 6 styles, HD resolution, and a LinkedIn banner. Executive ($89.90) gives you 160 headshots with 15 backgrounds, 10 styles, 4K resolution, a LinkedIn banner, an email signature, and priority support.`,
   },
   {
     category: 'Privacy',

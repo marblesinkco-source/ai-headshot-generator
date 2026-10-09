@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   Briefcase,
   Check,
   Clock,
@@ -24,7 +25,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Nonprofit Fundraising | TailorPic";
 const pageDescription =
-  'Professional staff, board and volunteer photos for nonprofit websites, donor appeals and galas. Get polished portraits from a few selfies. Starting at $1.99.';
+  `Professional staff, board and volunteer photos for nonprofit websites, donor appeals and galas. Get polished portraits from a few selfies. Starting at ${BASE_PRICE_DISPLAY}.`;
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -128,7 +129,7 @@ const features = [
 const faqs = [
   {
     question: "Is this affordable for a small nonprofit?",
-    answer: "TailorPic starts at $1.99 per pack, far less than hiring a photographer for a team shoot.",
+    answer: `TailorPic starts at ${BASE_PRICE_DISPLAY} per pack, far less than hiring a photographer for a team shoot.`,
   },
   {
     question: "Will the photo look like me?",
@@ -181,7 +182,7 @@ export default function NonprofitFundraisingUseCasePage() {
               <span className="not-italic text-tp-bronze">{"Nonprofit Fundraising"}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              {"Donors give to people they trust. Get professional portraits for your staff, board and volunteers from a handful of selfies, delivered within hours, starting at just $1.99 per person."}
+              {`Donors give to people they trust. Get professional portraits for your staff, board and volunteers from a handful of selfies, delivered within hours, starting at just ${BASE_PRICE_DISPLAY} per person.`}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -215,7 +216,7 @@ export default function NonprofitFundraisingUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            {"Starting at $1.99"}
+            {`Starting at ${BASE_PRICE_DISPLAY}`}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -328,7 +329,7 @@ export default function NonprofitFundraisingUseCasePage() {
             {"Show Donors the People Behind Your Mission"}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            {"Give your team portraits that build trust. Starting at just $1.99."}
+            {`Give your team portraits that build trust. Starting at just ${BASE_PRICE_DISPLAY}.`}
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

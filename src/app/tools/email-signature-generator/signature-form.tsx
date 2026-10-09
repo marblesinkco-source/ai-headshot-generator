@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Copy, Check, Eye, Palette } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 type LayoutId = 'horizontal' | 'vertical' | 'minimal';
 
@@ -289,7 +290,7 @@ export function SignatureForm() {
             Want a professional headshot for your signature?
           </p>
           <p className="mt-1 text-sm text-tp-muted">
-            TailorPic generates studio-quality photos from selfies — From $1.99
+            TailorPic generates studio-quality photos from selfies — From {BASE_PRICE_DISPLAY}
           </p>
           <Link
             href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"

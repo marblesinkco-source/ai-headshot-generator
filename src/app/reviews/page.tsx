@@ -18,6 +18,7 @@ import {
   ExternalLink,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const pageTitle = 'How Professionals Use AI Headshots | TailorPic';
 const pageDescription = `See how professionals use ${siteConfig.name} for headshots, team photos, LinkedIn profiles and more. Use cases across industries.`;
@@ -162,7 +163,7 @@ const useCases: UseCase[] = [
 const filterTabs = ['All', 'Business', 'Creative', 'Teams', 'LinkedIn'] as const;
 
 const trustItems = [
-  { icon: CreditCard, label: 'From $1.99' },
+  { icon: CreditCard, label: `From ${BASE_PRICE_DISPLAY}` },
   { icon: ImageIcon, label: 'Up to 160 Photos' },
 ];
 

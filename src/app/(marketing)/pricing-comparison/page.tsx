@@ -62,7 +62,7 @@ const _fallback: CategoryPackage = {
 };
 const _first = headshots.packages[0] ?? _fallback;
 const _last = headshots.packages[headshots.packages.length - 1] ?? _first;
-const tailorpic1Package = headshots.packages.find((p) => p.id === 'headshots-tailorpic1') ?? _first; // TailorPic 1: $1.99, 1 headshot
+const tailorpic1Package = headshots.packages.find((p) => p.id === 'headshots-tailorpic1') ?? _first; // TailorPic 1: {BASE_PRICE_DISPLAY}, 1 headshot
 const litePackage = headshots.packages.find((p) => p.id === 'headshots-lite') ?? _first; // Lite: $9.90, 5 headshots
 const basicPackage = headshots.packages.find((p) => p.id === 'headshots-express') ?? _first; // Basic: $19.90, 10 headshots
 const starterPackage = headshots.packages.find((p) => p.id === 'headshots-starter') ?? _first; // Starter: $29.90, 40 headshots

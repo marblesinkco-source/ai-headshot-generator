@@ -3,6 +3,8 @@
  * Each entry generates a page at /headshots/for-[slug].
  */
 
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+
 export interface ProfessionPage {
   slug: string;
   title: string;
@@ -36,7 +38,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['corporate', 'executive', 'studio-classic'],
     seoTitle: 'AI Headshots for Lawyers & Attorneys | TailorPic',
     seoDescription:
-      'Professional headshots for lawyers, attorneys and legal professionals. Studio-quality portraits for firm websites, bar directories and LinkedIn. From $1.99.',
+      `Professional headshots for lawyers, attorneys and legal professionals. Studio-quality portraits for firm websites, bar directories and LinkedIn. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'realtors',
@@ -57,7 +59,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['natural-light', 'corporate', 'outdoor'],
     seoTitle: 'AI Headshots for Real Estate Agents | TailorPic',
     seoDescription:
-      'Professional headshots for realtors and real estate agents. Perfect for MLS listings, yard signs, business cards and social media. From $1.99.',
+      `Professional headshots for realtors and real estate agents. Perfect for MLS listings, yard signs, business cards and social media. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'developers',
@@ -78,7 +80,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['minimalist', 'startup-founder', 'casual'],
     seoTitle: 'AI Headshots for Software Developers | TailorPic',
     seoDescription:
-      'Professional headshots for developers and software engineers. For LinkedIn, GitHub, conference bios and team pages. From $1.99.',
+      `Professional headshots for developers and software engineers. For LinkedIn, GitHub, conference bios and team pages. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'doctors',
@@ -99,7 +101,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['corporate', 'natural-light', 'studio-classic'],
     seoTitle: 'AI Headshots for Doctors & Healthcare | TailorPic',
     seoDescription:
-      'Professional headshots for doctors, physicians and healthcare professionals. For practice websites, Healthgrades, Zocdoc and directories. From $1.99.',
+      `Professional headshots for doctors, physicians and healthcare professionals. For practice websites, Healthgrades, Zocdoc and directories. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'consultants',
@@ -120,7 +122,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['professional-linkedin', 'executive', 'natural-light'],
     seoTitle: 'AI Headshots for Consultants & Freelancers | TailorPic',
     seoDescription:
-      'Professional headshots for consultants and freelancers. Build your personal brand with studio-quality portraits for websites, proposals and LinkedIn. From $1.99.',
+      `Professional headshots for consultants and freelancers. Build your personal brand with studio-quality portraits for websites, proposals and LinkedIn. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'executives',
@@ -141,7 +143,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['executive', 'corporate', 'studio-classic'],
     seoTitle: 'AI Headshots for Executives & C-Suite | TailorPic',
     seoDescription:
-      'Premium AI headshots for executives and C-suite leaders. 4K resolution portraits for leadership pages, press, and board materials. From $1.99.',
+      `Premium AI headshots for executives and C-suite leaders. 4K resolution portraits for leadership pages, press, and board materials. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'accountants',
@@ -162,7 +164,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['corporate', 'studio-classic', 'professional-linkedin'],
     seoTitle: 'AI Headshots for Accountants & CPAs | TailorPic',
     seoDescription:
-      'Professional headshots for accountants and CPAs. Studio-quality portraits for firm websites, CPA directories and LinkedIn. From $1.99.',
+      `Professional headshots for accountants and CPAs. Studio-quality portraits for firm websites, CPA directories and LinkedIn. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'architects',
@@ -183,7 +185,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['minimalist', 'natural-light', 'studio-classic'],
     seoTitle: 'AI Headshots for Architects & Designers | TailorPic',
     seoDescription:
-      'Professional headshots for architects and designers. Modern portraits for portfolio sites, AIA directories and publications. From $1.99.',
+      `Professional headshots for architects and designers. Modern portraits for portfolio sites, AIA directories and publications. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'dentists',
@@ -204,7 +206,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['natural-light', 'corporate', 'studio-classic'],
     seoTitle: 'AI Headshots for Dentists & Orthodontists | TailorPic',
     seoDescription:
-      'Professional headshots for dentists and orthodontists. Approachable portraits for practice websites, Google Business and directories. From $1.99.',
+      `Professional headshots for dentists and orthodontists. Approachable portraits for practice websites, Google Business and directories. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'teachers',
@@ -214,7 +216,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     subheadline:
       'Make a great first impression on students and parents with professional portraits for school directories, conference bios, and your LinkedIn.',
     whyMatters:
-      'Parents and students look up their teachers online. A professional headshot on the school website, conference programs, and educational publications shows you take your role seriously. Teacher budgets are tight — AI headshots deliver studio quality starting from $1.99.',
+      `Parents and students look up their teachers online. A professional headshot on the school website, conference programs, and educational publications shows you take your role seriously. Teacher budgets are tight — AI headshots deliver studio quality starting from ${BASE_PRICE_DISPLAY}.`,
     useCases: [
       'School and district websites',
       'Conference speaker bios',
@@ -225,7 +227,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['natural-light', 'casual', 'corporate'],
     seoTitle: 'AI Headshots for Teachers & Educators | TailorPic',
     seoDescription:
-      'Professional headshots for teachers and educators. Affordable studio-quality portraits for school websites, conferences and LinkedIn. From $1.99.',
+      `Professional headshots for teachers and educators. Affordable studio-quality portraits for school websites, conferences and LinkedIn. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'nurses',
@@ -246,7 +248,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['natural-light', 'corporate', 'casual'],
     seoTitle: 'AI Headshots for Nurses | TailorPic',
     seoDescription:
-      'Professional headshots for nurses and nursing professionals. For hospital directories, NPI profiles and LinkedIn. From $1.99.',
+      `Professional headshots for nurses and nursing professionals. For hospital directories, NPI profiles and LinkedIn. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'financial-advisors',
@@ -267,7 +269,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['executive', 'corporate', 'professional-linkedin'],
     seoTitle: 'AI Headshots for Financial Advisors | TailorPic',
     seoDescription:
-      'Professional headshots for financial advisors and planners. Trusted portraits for firm websites, BrokerCheck and client materials. From $1.99.',
+      `Professional headshots for financial advisors and planners. Trusted portraits for firm websites, BrokerCheck and client materials. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'coaches',
@@ -288,7 +290,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['natural-light', 'casual', 'startup-founder'],
     seoTitle: 'AI Headshots for Coaches | TailorPic',
     seoDescription:
-      'Professional headshots for life coaches and business coaches. Approachable portraits for coaching websites, courses and social media. From $1.99.',
+      `Professional headshots for life coaches and business coaches. Approachable portraits for coaching websites, courses and social media. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'photographers',
@@ -309,7 +311,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['creative', 'natural-light', 'minimalist'],
     seoTitle: 'AI Headshots for Photographers | TailorPic',
     seoDescription:
-      'Professional headshots for photographers and creatives. Portfolio-ready portraits for websites, vendor listings and social media. From $1.99.',
+      `Professional headshots for photographers and creatives. Portfolio-ready portraits for websites, vendor listings and social media. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'therapists',
@@ -330,7 +332,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['natural-light', 'casual', 'studio-classic'],
     seoTitle: 'AI Headshots for Therapists & Counselors | TailorPic',
     seoDescription:
-      'Professional headshots for therapists and counselors. Warm, approachable portraits for Psychology Today, practice websites and directories. From $1.99.',
+      `Professional headshots for therapists and counselors. Warm, approachable portraits for Psychology Today, practice websites and directories. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'sales-professionals',
@@ -351,7 +353,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['professional-linkedin', 'corporate', 'natural-light'],
     seoTitle: 'AI Headshots for Sales Professionals | TailorPic',
     seoDescription:
-      'Professional headshots for sales professionals. LinkedIn-optimized portraits for outreach, email signatures and team pages. From $1.99.',
+      `Professional headshots for sales professionals. LinkedIn-optimized portraits for outreach, email signatures and team pages. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'engineers',
@@ -372,7 +374,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['corporate', 'minimalist', 'professional-linkedin'],
     seoTitle: 'AI Headshots for Engineers | TailorPic',
     seoDescription:
-      'Professional headshots for engineers. Polished portraits for LinkedIn, firm websites, conferences and publications. From $1.99.',
+      `Professional headshots for engineers. Polished portraits for LinkedIn, firm websites, conferences and publications. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'recruiters',
@@ -393,7 +395,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['professional-linkedin', 'natural-light', 'corporate'],
     seoTitle: 'AI Headshots for Recruiters | TailorPic',
     seoDescription:
-      'Professional headshots for recruiters and talent acquisition. Approachable portraits for LinkedIn, career pages and outreach. From $1.99.',
+      `Professional headshots for recruiters and talent acquisition. Approachable portraits for LinkedIn, career pages and outreach. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'actors',
@@ -414,7 +416,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['studio-classic', 'natural-light', 'creative'],
     seoTitle: 'AI Headshots for Actors & Performers | TailorPic',
     seoDescription:
-      'Professional headshots for actors and performers. Versatile portraits for casting, IMDb, agency sites and auditions. From $1.99.',
+      `Professional headshots for actors and performers. Versatile portraits for casting, IMDb, agency sites and auditions. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'journalists',
@@ -435,7 +437,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['studio-classic', 'minimalist', 'natural-light'],
     seoTitle: 'AI Headshots for Journalists & Writers | TailorPic',
     seoDescription:
-      'Professional headshots for journalists and writers. Credible portraits for bylines, author pages and media profiles. From $1.99.',
+      `Professional headshots for journalists and writers. Credible portraits for bylines, author pages and media profiles. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'professors',
@@ -456,7 +458,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['studio-classic', 'corporate', 'natural-light'],
     seoTitle: 'AI Headshots for Professors & Academics | TailorPic',
     seoDescription:
-      'Professional headshots for professors and academics. Distinguished portraits for faculty pages, Google Scholar and conferences. From $1.99.',
+      `Professional headshots for professors and academics. Distinguished portraits for faculty pages, Google Scholar and conferences. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'insurance-agents',
@@ -477,7 +479,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['corporate', 'natural-light', 'professional-linkedin'],
     seoTitle: 'AI Headshots for Insurance Agents | TailorPic',
     seoDescription:
-      'Professional headshots for insurance agents and brokers. Trustworthy portraits for agency websites, directories and marketing. From $1.99.',
+      `Professional headshots for insurance agents and brokers. Trustworthy portraits for agency websites, directories and marketing. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'hr-professionals',
@@ -498,7 +500,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['professional-linkedin', 'natural-light', 'corporate'],
     seoTitle: 'AI Headshots for HR Professionals | TailorPic',
     seoDescription:
-      'Professional headshots for HR professionals. Welcoming portraits for LinkedIn, careers pages and company communications. From $1.99.',
+      `Professional headshots for HR professionals. Welcoming portraits for LinkedIn, careers pages and company communications. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'marketing-professionals',
@@ -519,7 +521,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['startup-founder', 'professional-linkedin', 'creative'],
     seoTitle: 'AI Headshots for Marketing Professionals | TailorPic',
     seoDescription:
-      'Professional headshots for marketing professionals. On-brand portraits for LinkedIn, conferences, podcasts and team pages. From $1.99.',
+      `Professional headshots for marketing professionals. On-brand portraits for LinkedIn, conferences, podcasts and team pages. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'models',
@@ -540,7 +542,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['glamour', 'studio-classic', 'creative'],
     seoTitle: 'AI Headshots for Models | TailorPic',
     seoDescription:
-      'Professional headshots for models. Versatile portraits for comp cards, agency submissions, casting platforms and portfolios. From $1.99.',
+      `Professional headshots for models. Versatile portraits for comp cards, agency submissions, casting platforms and portfolios. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'pharmacists',
@@ -561,7 +563,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['corporate', 'natural-light', 'studio-classic'],
     seoTitle: 'AI Headshots for Pharmacists | TailorPic',
     seoDescription:
-      'Professional headshots for pharmacists. Trusted portraits for pharmacy websites, credentialing profiles and LinkedIn. From $1.99.',
+      `Professional headshots for pharmacists. Trusted portraits for pharmacy websites, credentialing profiles and LinkedIn. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'psychologists',
@@ -582,7 +584,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['natural-light', 'casual', 'studio-classic'],
     seoTitle: 'AI Headshots for Psychologists | TailorPic',
     seoDescription:
-      'Professional headshots for psychologists. Warm, trustworthy portraits for Psychology Today, practice websites and associations. From $1.99.',
+      `Professional headshots for psychologists. Warm, trustworthy portraits for Psychology Today, practice websites and associations. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'veterinarians',
@@ -603,7 +605,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['natural-light', 'casual', 'studio-classic'],
     seoTitle: 'AI Headshots for Veterinarians | TailorPic',
     seoDescription:
-      'Professional headshots for veterinarians. Caring, approachable portraits for clinic websites, Google Business and directories. From $1.99.',
+      `Professional headshots for veterinarians. Caring, approachable portraits for clinic websites, Google Business and directories. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'podcasters',
@@ -624,7 +626,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['creative', 'startup-founder', 'casual'],
     seoTitle: 'AI Headshots for Podcasters & Content Creators | TailorPic',
     seoDescription:
-      'Professional headshots for podcasters and content creators. Eye-catching portraits for podcast art, YouTube, social media and bios. From $1.99.',
+      `Professional headshots for podcasters and content creators. Eye-catching portraits for podcast art, YouTube, social media and bios. From ${BASE_PRICE_DISPLAY}.`,
   },
   {
     slug: 'personal-trainers',
@@ -645,7 +647,7 @@ export const PROFESSIONS: ProfessionPage[] = [
     recommendedStyles: ['natural-light', 'casual', 'startup-founder'],
     seoTitle: 'AI Headshots for Personal Trainers | TailorPic',
     seoDescription:
-      'Professional headshots for personal trainers and fitness coaches. Confident portraits for websites, Instagram and training platforms. From $1.99.',
+      `Professional headshots for personal trainers and fitness coaches. Confident portraits for websites, Instagram and training platforms. From ${BASE_PRICE_DISPLAY}.`,
   },
 ];
 

@@ -6,6 +6,7 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import {
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   DollarSign,
   Image as ImageIcon,
   Clock,
@@ -20,7 +21,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs Secta Labs: AI Headshot Generator Comparison' },
   description:
-    'Compare TailorPic vs Secta Labs for AI headshots. TailorPic starts at $1.99 with photos, 12 categories.',
+    `Compare TailorPic vs Secta Labs for AI headshots. TailorPic starts at ${BASE_PRICE_DISPLAY} with photos, 12 categories.`,
   alternates: { canonical: '/vs/secta' },
   openGraph: generateOGMetadata({ title: 'TailorPic vs Secta Labs: AI Headshot Generator Comparison', description: 'Compare TailorPic and Secta Labs for AI headshots. Pricing, categories, delivery, and quality commitment side by side.', path: '/vs/secta', type: 'vs' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic vs Secta Labs: AI Headshot Generator Comparison', description: 'Compare TailorPic and Secta Labs for AI headshots. Pricing, categories, delivery, and quality commitment side by side.', type: 'vs' }),
@@ -34,7 +35,7 @@ const quickBadges = [
   {
     icon: DollarSign,
     label: 'Starting Price',
-    tailorpic: 'From $1.99',
+    tailorpic: `From ${BASE_PRICE_DISPLAY}`,
     competitor: '~$49+',
   },
   {
@@ -58,7 +59,7 @@ type FeatureRow = {
 };
 
 const comparisonRows: FeatureRow[] = [
-  { feature: 'Starting Price', tailorpic: 'From $1.99', competitor: '~$49+' },
+  { feature: 'Starting Price', tailorpic: `From ${BASE_PRICE_DISPLAY}`, competitor: '~$49+' },
   { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: 'Varies by plan' },
   { feature: 'Delivery Time', tailorpic: 'Within hours', competitor: 'Varies by plan' },
   { feature: 'Photo Categories', tailorpic: '12 categories', competitor: 'Fewer categories' },
@@ -75,7 +76,7 @@ const whyCards = [
     icon: BadgeDollarSign,
     title: 'Far More Affordable',
     description:
-      'TailorPic starts at just $1.99 — a fraction of the roughly $49+ entry price you can expect from Secta Labs. Professional results without the premium price tag.',
+      `TailorPic starts at just ${BASE_PRICE_DISPLAY} — a fraction of the roughly $49+ entry price you can expect from Secta Labs. Professional results without the premium price tag.`,
   },
   {
     icon: LayoutGrid,
@@ -109,7 +110,7 @@ const faqs = [
   {
     question: 'How does TailorPic\'s price compare to Secta Labs?',
     answer:
-      'TailorPic packages are one-time payments starting at $1.99. Secta Labs\' entry price is roughly $49+. They may change their pricing, so check their site for current pricing.',
+      `TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY}. Secta Labs\' entry price is roughly $49+. They may change their pricing, so check their site for current pricing.`,
   },
   {
     question: 'How many photos do I get with TailorPic?',
@@ -124,7 +125,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription or a one-time purchase?',
     answer:
-      'TailorPic packages are one-time payments starting at $1.99 with no subscription.',
+      `TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY} with no subscription.`,
   },
   {
     question: 'How does TailorPic train my photos, and is it easy to use?',
@@ -279,7 +280,7 @@ export default function VsSectaPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-ink">Ready to Try TailorPic?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-muted">
-              Get professional AI headshots starting at just $1.99. No subscriptions, no hidden fees
+              Get professional AI headshots starting at just {BASE_PRICE_DISPLAY}. No subscriptions, no hidden fees
               — just great photos delivered within hours.
             </p>
             <div className="mt-8">

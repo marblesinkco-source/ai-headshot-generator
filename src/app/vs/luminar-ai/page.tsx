@@ -7,11 +7,12 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const competitor = "Luminar AI";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  'Compare TailorPic vs Luminar AI. Luminar AI is Skylum\'s AI photo editor; TailorPic makes professional headshots from selfies, from $1.99.';
+  `Compare TailorPic vs Luminar AI. Luminar AI is Skylum\'s AI photo editor; TailorPic makes professional headshots from selfies, from ${BASE_PRICE_DISPLAY}.`;
 const path = '/vs/luminar-ai';
 const canonicalUrl = 'https://www.tailorpic.com/vs/luminar-ai';
 
@@ -28,7 +29,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from $1.99.',
+    `AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from ${BASE_PRICE_DISPLAY}.`,
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -47,7 +48,7 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "from $1.99",
+    "tailorpic": `from ${BASE_PRICE_DISPLAY}`,
     "other": "Check Skylum's site for current pricing"
   },
   {
@@ -108,7 +109,7 @@ const differences = [
   },
   {
     "title": "A low entry price",
-    "body": "TailorPic packages start from $1.99, with no subscription to manage."
+    "body": `TailorPic packages start from ${BASE_PRICE_DISPLAY}, with no subscription to manage.`
   },
   {
     "title": "Trade-off on editing control",
@@ -134,7 +135,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than Luminar AI?",
-    "answer": "TailorPic packages start from $1.99 and go up to 160 photos. Luminar AI pricing varies, so compare against Skylum's current price page."
+    "answer": `TailorPic packages start from ${BASE_PRICE_DISPLAY} and go up to 160 photos. Luminar AI pricing varies, so compare against Skylum's current price page.`
   },
   {
     "question": "Can Luminar AI create a headshot from selfies?",
@@ -182,7 +183,7 @@ export default function VsLuminarAiPage() {
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">{intro}</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
-                Get headshots from $1.99
+                Get headshots from {BASE_PRICE_DISPLAY}
               </Link>
             </div>
           </div>
@@ -289,7 +290,7 @@ export default function VsLuminarAiPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 12 categories from $1.99. No subscription, results typically delivered within hours.
+              Professional photos across 12 categories from {BASE_PRICE_DISPLAY}. No subscription, results typically delivered within hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

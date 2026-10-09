@@ -8,6 +8,7 @@ import { siteConfig } from '@/config/site';
 import { PAYMENT_PROVIDER } from '@/config/pricing';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   Users, Sparkles, ArrowRight, CheckCircle, Palette,
   Download, LayoutDashboard, Image, Camera, Send,
   Laptop, Scale, Building2, Stethoscope, GraduationCap, Landmark,
@@ -19,7 +20,7 @@ const faqItems = [
   {
     question: 'How much do team headshots cost?',
     answer:
-      'Individual packages start from $1.99 for 1 photo, with larger packages available up to 160 photos. Small teams of 5-15 people are $39 per person and companies of 16-50 people are $29 per person, with 40+ headshots per person included. For 50+ people we offer custom enterprise pricing. Final pricing is confirmed at checkout.',
+      `Individual packages start from ${BASE_PRICE_DISPLAY} for 1 photo, with larger packages available up to 160 photos. Small teams of 5-15 people are $39 per person and companies of 16-50 people are $29 per person, with 40+ headshots per person included. For 50+ people we offer custom enterprise pricing. Final pricing is confirmed at checkout.`,
   },
   {
     question: 'How does the team ordering process work?',
@@ -44,7 +45,7 @@ const faqItems = [
   {
     question: 'How many people do I need for a team plan?',
     answer:
-      'Team pricing starts at 5 people ($39 per person for 5-15 people, $29 per person for 16-50). Orders of 1-4 people use individual packages starting from $1.99. For 50+ people, request a demo for custom pricing.',
+      `Team pricing starts at 5 people ($39 per person for 5-15 people, $29 per person for 16-50). Orders of 1-4 people use individual packages starting from ${BASE_PRICE_DISPLAY}. For 50+ people, request a demo for custom pricing.`,
   },
   {
     question: 'How long does it take to get team headshots?',

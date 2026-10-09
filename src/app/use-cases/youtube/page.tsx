@@ -9,10 +9,11 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const pageTitle = 'AI Photos for YouTube Channels & Avatars | TailorPic';
 const pageDescription =
-  'Build a recognizable YouTube brand with AI-generated creator photos: channel avatars, banner portraits and thumbnail-ready faces from a few selfies. From $1.99.';
+  `Build a recognizable YouTube brand with AI-generated creator photos: channel avatars, banner portraits and thumbnail-ready faces from a few selfies. From ${BASE_PRICE_DISPLAY}.`;
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -119,7 +120,7 @@ const faqs = [
   },
   {
     question: "How much does it cost and how long does it take?",
-    answer: "Packs start at $1.99 and most orders are delivered within hours, so you can refresh your channel the same day.",
+    answer: `Packs start at ${BASE_PRICE_DISPLAY} and most orders are delivered within hours, so you can refresh your channel the same day.`,
   },
 ];
 
@@ -155,7 +156,7 @@ export default function YouTubeUseCasePage() {
               <span className="not-italic text-tp-bronze">YouTube Channels</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              Your face is your channel&apos;s brand. Create standout avatars, banner portraits, and thumbnail-ready photos from a few selfies, without booking a studio. Delivered within hours, starting at just $1.99.
+              Your face is your channel&apos;s brand. Create standout avatars, banner portraits, and thumbnail-ready photos from a few selfies, without booking a studio. Delivered within hours, starting at just {BASE_PRICE_DISPLAY}.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -189,7 +190,7 @@ export default function YouTubeUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Starting at $1.99
+            Starting at {BASE_PRICE_DISPLAY}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -302,7 +303,7 @@ export default function YouTubeUseCasePage() {
             Give Your Channel a Face Worth Clicking
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            Build a channel identity viewers recognize and remember. Starting at just $1.99.
+            Build a channel identity viewers recognize and remember. Starting at just {BASE_PRICE_DISPLAY}.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

@@ -6,6 +6,7 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import {
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   DollarSign,
   Image as ImageIcon,
   Sparkles,
@@ -20,7 +21,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs Canva AI: AI Headshot Generator Comparison' },
   description:
-    'Compare TailorPic vs Canva AI. Canva is a design platform with AI image tools; TailorPic makes professional headshots from selfies, from $1.99.',
+    `Compare TailorPic vs Canva AI. Canva is a design platform with AI image tools; TailorPic makes professional headshots from selfies, from ${BASE_PRICE_DISPLAY}.`,
   alternates: { canonical: '/vs/canva-ai' },
   openGraph: generateOGMetadata({ title: 'TailorPic vs Canva AI: AI Headshot Generator Comparison', description: 'Compare TailorPic and Canva AI. Photorealistic AI headshots versus a general design platform — see which fits your needs.', path: '/vs/canva-ai', type: 'vs' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic vs Canva AI: AI Headshot Generator Comparison', description: 'Compare TailorPic and Canva AI. Photorealistic AI headshots versus a general design platform — see which fits your needs.', type: 'vs' }),
@@ -34,7 +35,7 @@ const quickBadges = [
   {
     icon: DollarSign,
     label: 'Starting Price',
-    tailorpic: 'from $1.99',
+    tailorpic: `from ${BASE_PRICE_DISPLAY}`,
     competitor: '~$12.99/month (Pro)',
   },
   {
@@ -58,7 +59,7 @@ type FeatureRow = {
 };
 
 const comparisonRows: FeatureRow[] = [
-  { feature: 'Starting Price', tailorpic: 'from $1.99', competitor: '~$12.99/month (Canva Pro)' },
+  { feature: 'Starting Price', tailorpic: `from ${BASE_PRICE_DISPLAY}`, competitor: '~$12.99/month (Canva Pro)' },
   { feature: 'Pricing Model', tailorpic: 'One-time payment', competitor: 'Subscription (free tier available)' },
   { feature: 'Primary Purpose', tailorpic: 'Photorealistic AI headshots', competitor: 'Design platform with AI features' },
   { feature: 'Photorealistic Headshots from Selfies', tailorpic: true, competitor: 'Limited' },
@@ -69,7 +70,7 @@ const comparisonRows: FeatureRow[] = [
   { feature: 'Dating Photos', tailorpic: true, competitor: false },
   { feature: 'Pet Portraits', tailorpic: true, competitor: 'Illustrated styles' },
   { feature: 'E-Commerce Product Photos', tailorpic: true, competitor: 'Via design templates' },
-  { feature: 'Lowest Plan', tailorpic: 'From $1.99 (1 photo)', competitor: 'Free tier available' },
+  { feature: 'Lowest Plan', tailorpic: `From ${BASE_PRICE_DISPLAY} (1 photo)`, competitor: 'Free tier available' },
 ];
 
 const whyCards = [
@@ -77,7 +78,7 @@ const whyCards = [
     icon: BadgeDollarSign,
     title: 'Lower Cost, No Subscription',
     description:
-      'TailorPic packages are one-time payments starting at $1.99. Canva Pro is a subscription starting around $12.99/month. Canva also has a free tier, and pricing may change, so check Canva for current rates.',
+      `TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY}. Canva Pro is a subscription starting around $12.99/month. Canva also has a free tier, and pricing may change, so check Canva for current rates.`,
   },
   {
     icon: Camera,
@@ -111,7 +112,7 @@ const faqs = [
   {
     question: 'How does TailorPic\'s price compare to Canva AI?',
     answer:
-      'TailorPic packages are one-time payments starting at $1.99. Canva Pro is a subscription starting around $12.99/month, and Canva also has a free tier. Canva may change its pricing, so check their site for current rates.',
+      `TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY}. Canva Pro is a subscription starting around $12.99/month, and Canva also has a free tier. Canva may change its pricing, so check their site for current rates.`,
   },
   {
     question: 'How many photos do I get with TailorPic?',
@@ -126,7 +127,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription like Canva Pro?',
     answer:
-      'No. TailorPic packages are one-time payments starting at $1.99 with no recurring charges. Canva Pro is billed as a subscription.',
+      `No. TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY} with no recurring charges. Canva Pro is billed as a subscription.`,
   },
   {
     question: 'How is TailorPic different from Canva\'s AI tools in how it works?',
@@ -281,7 +282,7 @@ export default function VsCanvaAIPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-ink">Ready to Switch?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-muted">
-              Get professional AI headshots starting at just $1.99. No subscriptions, no hidden fees
+              Get professional AI headshots starting at just {BASE_PRICE_DISPLAY}. No subscriptions, no hidden fees
               — just great photos delivered within hours.
             </p>
             <div className="mt-8">

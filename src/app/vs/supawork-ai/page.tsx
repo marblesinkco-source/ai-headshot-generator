@@ -7,11 +7,12 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const competitor = "Supawork AI";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  "Compare TailorPic vs Supawork AI for AI headshots. TailorPic starts from $1.99 across 12 categories with LoRA-trained likeness and no subscription.";
+  `Compare TailorPic vs Supawork AI for AI headshots. TailorPic starts from ${BASE_PRICE_DISPLAY} across 12 categories with LoRA-trained likeness and no subscription.`;
 const path = '/vs/supawork-ai';
 
 export const metadata: Metadata = {
@@ -27,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from $1.99.',
+    `AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from ${BASE_PRICE_DISPLAY}.`,
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -44,7 +45,7 @@ const intro =
   "Supawork AI is an AI suite where headshots are one feature among many tools. TailorPic is built around one job: a simple one-time price, LoRA-trained likeness and 12 photo categories.";
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "from $1.99", other: "Varies by plan; check their site" },
+  { label: "Starting price", tailorpic: `from ${BASE_PRICE_DISPLAY}`, other: "Varies by plan; check their site" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on the plan or credits you choose" },
   { label: "Delivery time", tailorpic: "Results within hours", other: "Varies by plan" },
   { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Headshot styles alongside other AI tools" },
@@ -57,7 +58,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 ];
 
 const differences = [
-  { title: "A low entry price", body: "TailorPic starts from $1.99. Every package shows its total up front, so you know what you pay before you upload a single photo." },
+  { title: "A low entry price", body: `TailorPic starts from ${BASE_PRICE_DISPLAY}. Every package shows its total up front, so you know what you pay before you upload a single photo.` },
   { title: "Focused tool vs broad suite", body: "Supawork AI bundles several AI tools together. TailorPic does one thing, headshots and portraits, across eleven categories." },
   { title: "Personal model, not a generic filter", body: "TailorPic fine-tunes a LoRA model on your own selfies, which aims for a closer likeness than a one-size-fits-all preset." },
   { title: "Trade-off on speed", body: "TailorPic results within hours for most orders. If you need results in minutes, a faster tool may suit an urgent deadline better." },
@@ -79,10 +80,10 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is TailorPic cheaper than Supawork AI?", answer: "TailorPic packages start from $1.99 and go up to 160 photos. Supawork AI pricing varies by plan and can change, so compare against their current price page." },
+  { question: "Is TailorPic cheaper than Supawork AI?", answer: `TailorPic packages start from ${BASE_PRICE_DISPLAY} and go up to 160 photos. Supawork AI pricing varies by plan and can change, so compare against their current price page.` },
   { question: "What makes TailorPic different from Supawork AI?", answer: "TailorPic is a dedicated headshot generator. It trains a personal LoRA model on your photos and outputs 12 categories, including dating, creative, pet and e-commerce photos." },
   { question: "How long does TailorPic take?", answer: "Results within hours, since a dedicated model is fine-tuned on your uploads." },
-  { question: "Do I need a subscription with TailorPic?", answer: "No. Every package is a single one-time payment (from $1.99) with no recurring fees." },
+  { question: "Do I need a subscription with TailorPic?", answer: `No. Every package is a single one-time payment (from ${BASE_PRICE_DISPLAY}) with no recurring fees.` },
   { question: "Can I use the photos on LinkedIn?", answer: "Yes. The business category is built for LinkedIn, resumes and company pages." },
 ];
 
@@ -114,7 +115,7 @@ export default function VsSupaworkAiPage() {
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">{intro}</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
-                Get headshots from $1.99
+                Get headshots from {BASE_PRICE_DISPLAY}
               </Link>
             </div>
           </div>
@@ -221,7 +222,7 @@ export default function VsSupaworkAiPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 12 categories from $1.99. No subscription, results typically delivered within hours.
+              Professional photos across 12 categories from {BASE_PRICE_DISPLAY}. No subscription, results typically delivered within hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

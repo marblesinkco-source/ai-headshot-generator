@@ -9,10 +9,11 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const pageTitle = "AI Headshots for Visa Application Photos | TailorPic";
 const pageDescription =
-  'Clean, well-lit portraits to help you prepare visa application photos. Generated from selfies. Starting at $1.99. Check official requirements.';
+  `Clean, well-lit portraits to help you prepare visa application photos. Generated from selfies. Starting at ${BASE_PRICE_DISPLAY}. Check official requirements.`;
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -132,7 +133,7 @@ const faqs = [
   },
   {
     question: "How much does it cost?",
-    answer: "TailorPic starts at $1.99 per pack."
+    answer: `TailorPic starts at ${BASE_PRICE_DISPLAY} per pack.`
   },
   {
     question: "How long does delivery take?",
@@ -169,7 +170,7 @@ export default function VisaApplicationUseCasePage() {
               <span className="not-italic text-tp-bronze">{"Visa Application Photos"}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              {"Start your visa photo with a clean, well-lit, plain-background portrait generated from your selfies, delivered within hours, from $1.99. Always confirm your country's official photo rules."}
+              {`Start your visa photo with a clean, well-lit, plain-background portrait generated from your selfies, delivered within hours, from ${BASE_PRICE_DISPLAY}. Always confirm your country's official photo rules.`}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -203,7 +204,7 @@ export default function VisaApplicationUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            {"Starting at $1.99"}
+            {`Starting at ${BASE_PRICE_DISPLAY}`}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -316,7 +317,7 @@ export default function VisaApplicationUseCasePage() {
             {"Prepare a Cleaner Visa Photo"}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            {"Start from a clear, neutral portrait. Starting at just $1.99."}
+            {`Start from a clear, neutral portrait. Starting at just ${BASE_PRICE_DISPLAY}.`}
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

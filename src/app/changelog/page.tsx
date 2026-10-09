@@ -7,6 +7,7 @@ import { EmailCapture } from '@/components/marketing/email-capture';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   Sparkles,
   Users,
   Camera,
@@ -124,7 +125,7 @@ const changelog: ChangelogGroup[] = [
         tag: 'New',
         title: 'AI headshot generation',
         description:
-          'The core product: upload a set of selfies, choose your categories, and receive dozens of professional-quality headshots from $1.99.',
+          `The core product: upload a set of selfies, choose your categories, and receive dozens of professional-quality headshots from ${BASE_PRICE_DISPLAY}.`,
         icon: <ImagePlus className={iconClass} />,
         href: '/pricing',
       },
@@ -241,7 +242,7 @@ export default function ChangelogPage() {
             Try the latest version
           </h2>
           <p className="mx-auto mt-2 max-w-md text-sm text-tp-paper/70">
-            Professional AI headshots from $1.99. No subscription required.
+            Professional AI headshots from {BASE_PRICE_DISPLAY}. No subscription required.
           </p>
           <Link
             href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"

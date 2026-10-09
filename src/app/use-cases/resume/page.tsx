@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   Briefcase,
   Check,
   Clock,
@@ -24,7 +25,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = 'AI Headshots for Resumes & CVs | TailorPic';
 const pageDescription =
-  'Create a professional resume and CV photo from a few selfies. AI headshots tailored for job applications, portfolios, and LinkedIn. Starting at $1.99.';
+  `Create a professional resume and CV photo from a few selfies. AI headshots tailored for job applications, portfolios, and LinkedIn. Starting at ${BASE_PRICE_DISPLAY}.`;
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -131,7 +132,7 @@ const faqs = [
   },
   {
     question: "How much does it cost and how fast is it?",
-    answer: "Packs start at $1.99 and most orders are delivered within hours, well under the cost and wait of a traditional photographer.",
+    answer: `Packs start at ${BASE_PRICE_DISPLAY} and most orders are delivered within hours, well under the cost and wait of a traditional photographer.`,
   },
 ];
 
@@ -167,7 +168,7 @@ export default function ResumeUseCasePage() {
               <span className="not-italic text-tp-bronze">Resumes &amp; CVs</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              Land the interview with a photo that says hire me. Turn a few selfies into a professional CV headshot, no studio or appointment needed. Delivered within hours, starting at just $1.99.
+              Land the interview with a photo that says hire me. Turn a few selfies into a professional CV headshot, no studio or appointment needed. Delivered within hours, starting at just {BASE_PRICE_DISPLAY}.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -201,7 +202,7 @@ export default function ResumeUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Starting at $1.99
+            Starting at {BASE_PRICE_DISPLAY}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -314,7 +315,7 @@ export default function ResumeUseCasePage() {
             Get Hired Looking Your Best
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            Put a professional face on your next application. Starting at just $1.99.
+            Put a professional face on your next application. Starting at just {BASE_PRICE_DISPLAY}.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

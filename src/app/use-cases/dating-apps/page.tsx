@@ -9,10 +9,11 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const pageTitle = 'AI Photos for Dating Apps: Tinder, Hinge, Bumble | TailorPic';
 const pageDescription =
-  'Get natural, flattering photos for dating apps like Tinder, Hinge and Bumble. AI-enhanced profile pictures that look like you on your best day. From $1.99.';
+  `Get natural, flattering photos for dating apps like Tinder, Hinge and Bumble. AI-enhanced profile pictures that look like you on your best day. From ${BASE_PRICE_DISPLAY}.`;
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -111,7 +112,7 @@ const faqs = [
   },
   {
     question: "How much does it cost?",
-    answer: "TailorPic starts at $1.99 per pack. That is less than a single drink at a bar and dramatically more effective at getting matches than a blurry bathroom mirror selfie.",
+    answer: `TailorPic starts at ${BASE_PRICE_DISPLAY} per pack. That is less than a single drink at a bar and dramatically more effective at getting matches than a blurry bathroom mirror selfie.`,
   },
   {
     question: "Can I choose what I am wearing in the photos?",
@@ -151,7 +152,7 @@ export default function DatingAppsUseCasePage() {
               <span className="not-italic text-tp-bronze">Dating Apps</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              Your dating profile photo is your first impression. Get natural, flattering photos that look like you on your best day, from a few quick selfies. No photographer, no awkward poses. Starting at just $1.99.
+              Your dating profile photo is your first impression. Get natural, flattering photos that look like you on your best day, from a few quick selfies. No photographer, no awkward poses. Starting at just {BASE_PRICE_DISPLAY}.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -185,7 +186,7 @@ export default function DatingAppsUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Starting at $1.99
+            Starting at {BASE_PRICE_DISPLAY}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -298,7 +299,7 @@ export default function DatingAppsUseCasePage() {
             Get More Matches Starting Today
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            Stop losing matches to bad photos. Get a set of natural, flattering dating profile pictures within hours, from $1.99.
+            Stop losing matches to bad photos. Get a set of natural, flattering dating profile pictures within hours, from {BASE_PRICE_DISPLAY}.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

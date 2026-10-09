@@ -7,6 +7,7 @@ import { ToolsIllustration } from '@/components/marketing/illustrations';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 export const metadata: Metadata = {
   title: { absolute: 'Free AI Photo Tools: Background Remover, Resizer & More' },
@@ -418,7 +419,7 @@ export default function ToolsPage() {
             </h2>
             <p className="mt-3 text-tp-muted">
               Skip the photoshoot. Upload selfies and get 40+ professional
-              headshots in hours, starting at just $1.99.
+              headshots in hours, starting at just {BASE_PRICE_DISPLAY}.
             </p>
             <Link
               href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"

@@ -9,10 +9,11 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const pageTitle = "AI Headshots for Zoom & Video Calls | TailorPic";
 const pageDescription =
-  'Professional profile photos for Zoom, Microsoft Teams and Google Meet. Look sharp when your camera is off, from a few selfies. Starting at $1.99.';
+  `Professional profile photos for Zoom, Microsoft Teams and Google Meet. Look sharp when your camera is off, from a few selfies. Starting at ${BASE_PRICE_DISPLAY}.`;
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -132,7 +133,7 @@ const faqs = [
   },
   {
     question: "How much does it cost?",
-    answer: "TailorPic starts at $1.99 per pack, far less than a photographer session, and you never need to leave your desk.",
+    answer: `TailorPic starts at ${BASE_PRICE_DISPLAY} per pack, far less than a photographer session, and you never need to leave your desk.`,
   },
   {
     question: "How long does delivery take?",
@@ -169,7 +170,7 @@ export default function ZoomUseCasePage() {
               <span className="not-italic text-tp-bronze">Zoom &amp; Video Calls</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              When your camera is off, your profile photo is your whole presence. Get a crisp, professional headshot for Zoom, Teams, and Google Meet from a handful of selfies. Delivered within hours, starting at just $1.99.
+              When your camera is off, your profile photo is your whole presence. Get a crisp, professional headshot for Zoom, Teams, and Google Meet from a handful of selfies. Delivered within hours, starting at just {BASE_PRICE_DISPLAY}.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -202,7 +203,7 @@ export default function ZoomUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Starting at $1.99
+            Starting at {BASE_PRICE_DISPLAY}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -315,7 +316,7 @@ export default function ZoomUseCasePage() {
             Look Your Best, Even with the Camera Off
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            Make every meeting start with a confident first impression. Starting at just $1.99.
+            Make every meeting start with a confident first impression. Starting at just {BASE_PRICE_DISPLAY}.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

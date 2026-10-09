@@ -9,10 +9,11 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const pageTitle = 'AI Photos for Personal Branding | TailorPic';
 const pageDescription =
-  'Create a consistent visual identity with AI-generated professional photos for your personal brand. Ideal for coaches, speakers and authors. From $1.99.';
+  `Create a consistent visual identity with AI-generated professional photos for your personal brand. Ideal for coaches, speakers and authors. From ${BASE_PRICE_DISPLAY}.`;
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -46,7 +47,7 @@ const benefits = [
   {
     icon: Zap,
     title: "Ready in Hours, Not Weeks",
-    description: "Traditional branding shoots take weeks to schedule and edit. TailorPic delivers polished photos within hours, from $1.99.",
+    description: `Traditional branding shoots take weeks to schedule and edit. TailorPic delivers polished photos within hours, from ${BASE_PRICE_DISPLAY}.`,
   },
   {
     icon: Briefcase,
@@ -107,7 +108,7 @@ const faqs = [
   },
   {
     question: "What if my brand style changes?",
-    answer: "Simply upload new selfies and choose updated styles whenever you rebrand. There is no need to rebook a photographer. With pricing from $1.99, refreshing your visual identity is affordable and fast.",
+    answer: `Simply upload new selfies and choose updated styles whenever you rebrand. There is no need to rebook a photographer. With pricing from ${BASE_PRICE_DISPLAY}, refreshing your visual identity is affordable and fast.`,
   },
   {
     question: "Do I need professional makeup or styling?",
@@ -151,7 +152,7 @@ export default function PersonalBrandingUseCasePage() {
               <span className="not-italic text-tp-bronze">Personal Branding</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              Your personal brand deserves a visual identity as strong as your expertise. Get a library of polished, on-brand photos from a few quick selfies. No studio, no photographer, no scheduling hassle. Starting at $1.99.
+              Your personal brand deserves a visual identity as strong as your expertise. Get a library of polished, on-brand photos from a few quick selfies. No studio, no photographer, no scheduling hassle. Starting at {BASE_PRICE_DISPLAY}.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -185,7 +186,7 @@ export default function PersonalBrandingUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Starting at $1.99
+            Starting at {BASE_PRICE_DISPLAY}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -298,7 +299,7 @@ export default function PersonalBrandingUseCasePage() {
             Elevate Your Personal Brand Today
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            Get a complete set of on-brand photos for your website, social profiles, and marketing materials. Starting at just $1.99.
+            Get a complete set of on-brand photos for your website, social profiles, and marketing materials. Starting at just {BASE_PRICE_DISPLAY}.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

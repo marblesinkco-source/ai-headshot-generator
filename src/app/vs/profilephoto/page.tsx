@@ -6,6 +6,7 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import {
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   DollarSign,
   Image as ImageIcon,
   Clock,
@@ -20,7 +21,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs ProfilePhoto.ai: AI Headshot Comparison' },
   description:
-    'Compare TailorPic vs ProfilePhoto.ai for AI photos. TailorPic starts at $1.99 with photos, 12 categories.',
+    `Compare TailorPic vs ProfilePhoto.ai for AI photos. TailorPic starts at ${BASE_PRICE_DISPLAY} with photos, 12 categories.`,
   alternates: { canonical: '/vs/profilephoto' },
   openGraph: generateOGMetadata({ title: 'TailorPic vs ProfilePhoto.ai: AI Headshot Comparison', description: 'Compare TailorPic and ProfilePhoto.ai for AI photos. Pricing, styles, delivery, and quality commitment side by side.', path: '/vs/profilephoto', type: 'vs' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic vs ProfilePhoto.ai: AI Headshot Comparison', description: 'Compare TailorPic and ProfilePhoto.ai for AI photos. Pricing, styles, delivery, and quality commitment side by side.', type: 'vs' }),
@@ -34,7 +35,7 @@ const quickBadges = [
   {
     icon: DollarSign,
     label: 'Starting Price',
-    tailorpic: 'From $1.99',
+    tailorpic: `From ${BASE_PRICE_DISPLAY}`,
     competitor: '~$15+',
   },
   {
@@ -58,7 +59,7 @@ type FeatureRow = {
 };
 
 const comparisonRows: FeatureRow[] = [
-  { feature: 'Starting Price', tailorpic: 'From $1.99', competitor: '~$15+' },
+  { feature: 'Starting Price', tailorpic: `From ${BASE_PRICE_DISPLAY}`, competitor: '~$15+' },
   { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: 'Varies by plan' },
   { feature: 'Delivery Time', tailorpic: 'Within hours', competitor: 'Varies by plan' },
   { feature: 'Photo Categories', tailorpic: '12 categories', competitor: 'Limited styles' },
@@ -75,7 +76,7 @@ const whyCards = [
     icon: BadgeDollarSign,
     title: 'Lower Starting Price',
     description:
-      'TailorPic starts at just $1.99, undercutting the roughly $15+ entry price of ProfilePhoto.ai while delivering photos.',
+      `TailorPic starts at just ${BASE_PRICE_DISPLAY}, undercutting the roughly $15+ entry price of ProfilePhoto.ai while delivering photos.`,
   },
   {
     icon: LayoutGrid,
@@ -109,7 +110,7 @@ const faqs = [
   {
     question: 'How does TailorPic\'s price compare to ProfilePhoto.ai?',
     answer:
-      'TailorPic packages are one-time payments starting at $1.99. ProfilePhoto.ai\'s entry price is roughly $15+. They may change their pricing, so check their site for current pricing.',
+      `TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY}. ProfilePhoto.ai\'s entry price is roughly $15+. They may change their pricing, so check their site for current pricing.`,
   },
   {
     question: 'How many photos do I get with TailorPic?',
@@ -124,7 +125,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription or a one-time purchase?',
     answer:
-      'TailorPic packages are one-time payments starting at $1.99 with no recurring charges.',
+      `TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY} with no recurring charges.`,
   },
   {
     question: 'How does TailorPic create my photos, and is it easy to use?',
@@ -279,7 +280,7 @@ export default function VsProfilePhotoPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-ink">Ready to Try TailorPic?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-muted">
-              Get professional AI headshots starting at just $1.99. No subscriptions, no hidden fees
+              Get professional AI headshots starting at just {BASE_PRICE_DISPLAY}. No subscriptions, no hidden fees
               — just great photos delivered within hours.
             </p>
             <div className="mt-8">

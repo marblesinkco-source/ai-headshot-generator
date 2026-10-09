@@ -7,11 +7,12 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const competitor = "Headshot AI";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  'Compare TailorPic vs Headshot AI. TailorPic starts from $1.99 across 12 categories; Headshot AI starts around $29 with fewer styles.';
+  `Compare TailorPic vs Headshot AI. TailorPic starts from ${BASE_PRICE_DISPLAY} across 12 categories; Headshot AI starts around $29 with fewer styles.`;
 const path = '/vs/headshot-ai';
 
 export const metadata: Metadata = {
@@ -27,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from $1.99.',
+    `AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from ${BASE_PRICE_DISPLAY}.`,
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -41,7 +42,7 @@ const productJsonLd = {
 };
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "from $1.99", other: "Approximately $29" },
+  { label: "Starting price", tailorpic: `from ${BASE_PRICE_DISPLAY}`, other: "Approximately $29" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Varies by package; check their site" },
   { label: "Delivery time", tailorpic: "Results within hours", other: "Advertised as quick" },
   { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "More limited set of styles" },
@@ -52,7 +53,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 ];
 
 const differences = [
-  { title: "Price", body: "TailorPic packages start from $1.99, compared with Headshot AI's approximate $29 starting price." },
+  { title: "Price", body: `TailorPic packages start from ${BASE_PRICE_DISPLAY}, compared with Headshot AI's approximate $29 starting price.` },
   { title: "Category variety", body: "TailorPic covers 12 categories, including business, dating and creative looks. Headshot AI has a more limited range of styles." },
   { title: "Speed", body: "Headshot AI is known for quick delivery. TailorPic typically completes within hours, since it fine-tunes a LoRA model on your photos." },
   { title: "Personalization", body: "TailorPic trains a personal model for a close likeness, trading some speed for a tailored result." },
@@ -60,7 +61,7 @@ const differences = [
 
 const useCases = {
   tailorpic: [
-    "A low upfront cost, from $1.99",
+    `A low upfront cost, from ${BASE_PRICE_DISPLAY}`,
     "More categories, from business to dating and creative",
     "A personalized LoRA-trained model of your face",
     "Predictable pricing with no subscription",
@@ -74,10 +75,10 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is TailorPic cheaper than Headshot AI?", answer: "Our entry price is lower, but the packages are not like-for-like: TailorPic starts from $1.99 for a single photo and goes up to 160 photos, while Headshot AI starts at approximately $29. Pricing may change, so check their site." },
+  { question: "Is TailorPic cheaper than Headshot AI?", answer: `Our entry price is lower, but the packages are not like-for-like: TailorPic starts from ${BASE_PRICE_DISPLAY} for a single photo and goes up to 160 photos, while Headshot AI starts at approximately $29. Pricing may change, so check their site.` },
   { question: "Which is faster, TailorPic or Headshot AI?", answer: "Headshot AI advertises quick delivery. TailorPic results are ready within hours for most orders, since it fine-tunes a LoRA model on your photos." },
   { question: "Which has more styles?", answer: "TailorPic offers 12 categories. Headshot AI has a more limited set of style options." },
-  { question: "Is TailorPic a subscription?", answer: "No. TailorPic packages are one-time payments starting at $1.99 with no recurring fees." },
+  { question: "Is TailorPic a subscription?", answer: `No. TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY} with no recurring fees.` },
 ];
 
 export default function Page() {
@@ -105,11 +106,11 @@ export default function Page() {
               TailorPic <span className="text-tp-bronze">vs</span> {competitor}
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">
-              Headshot AI offers quick delivery at a higher price with fewer style options. TailorPic gives you photos across 12 categories from $1.99.
+              Headshot AI offers quick delivery at a higher price with fewer style options. TailorPic gives you photos across 12 categories from {BASE_PRICE_DISPLAY}.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
-                Get headshots from $1.99
+                Get headshots from {BASE_PRICE_DISPLAY}
               </Link>
             </div>
           </div>
@@ -216,7 +217,7 @@ export default function Page() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 12 categories from $1.99. No subscription, results typically delivered within hours.
+              Professional photos across 12 categories from {BASE_PRICE_DISPLAY}. No subscription, results typically delivered within hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

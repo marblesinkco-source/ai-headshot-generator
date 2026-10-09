@@ -4,6 +4,8 @@
  * Copy is intentionally free of statistics, ratings and testimonials.
  */
 
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+
 export interface TeamUseCase {
   slug: string;
   title: string;
@@ -210,7 +212,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
       {
         question: 'What is the cost for onboarding several people at once?',
         answer:
-          'Team pricing is $39 per person for 5 to 15 people and $29 per person for 16 to 50 people. For a single new hire, individual packages start from $1.99.',
+          `Team pricing is $39 per person for 5 to 15 people and $29 per person for 16 to 50 people. For a single new hire, individual packages start from ${BASE_PRICE_DISPLAY}.`,
       },
     ],
   },
@@ -303,7 +305,7 @@ export const TEAM_USE_CASES: TeamUseCase[] = [
       {
         question: 'What about guests who are not on our team?',
         answer:
-          'Anyone can create their own headshots. Individual packages start from $1.99 for a single photo.',
+          `Anyone can create their own headshots. Individual packages start from ${BASE_PRICE_DISPLAY} for a single photo.`,
       },
       {
         question: 'How does pricing work for a group of staff or speakers?',

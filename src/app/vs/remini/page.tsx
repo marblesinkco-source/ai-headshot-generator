@@ -6,6 +6,7 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import {
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   DollarSign,
   Image as ImageIcon,
   Sparkles,
@@ -19,7 +20,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs Remini: AI Headshot Generator Comparison' },
   description:
-    'Compare TailorPic vs Remini. Remini enhances and restores existing photos; TailorPic makes professional headshots from selfies, from $1.99.',
+    `Compare TailorPic vs Remini. Remini enhances and restores existing photos; TailorPic makes professional headshots from selfies, from ${BASE_PRICE_DISPLAY}.`,
   alternates: { canonical: '/vs/remini' },
   openGraph: generateOGMetadata({ title: 'TailorPic vs Remini: AI Headshot Generator Comparison', description: 'Compare TailorPic and Remini. A purpose-built AI headshot generator versus a photo enhancer — see which fits your needs.', path: '/vs/remini', type: 'vs' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic vs Remini: AI Headshot Generator Comparison', description: 'Compare TailorPic and Remini. A purpose-built AI headshot generator versus a photo enhancer — see which fits your needs.', type: 'vs' }),
@@ -33,7 +34,7 @@ const quickBadges = [
   {
     icon: DollarSign,
     label: 'Starting Price',
-    tailorpic: 'from $1.99',
+    tailorpic: `from ${BASE_PRICE_DISPLAY}`,
     competitor: '~$9.99/month',
   },
   {
@@ -57,7 +58,7 @@ type FeatureRow = {
 };
 
 const comparisonRows: FeatureRow[] = [
-  { feature: 'Starting Price', tailorpic: 'from $1.99', competitor: '~$9.99/month subscription' },
+  { feature: 'Starting Price', tailorpic: `from ${BASE_PRICE_DISPLAY}`, competitor: '~$9.99/month subscription' },
   { feature: 'Pricing Model', tailorpic: 'One-time payment', competitor: 'Subscription' },
   { feature: 'Primary Purpose', tailorpic: 'Generate AI headshots', competitor: 'Enhance and restore photos' },
   { feature: 'Creates New Headshots from Selfies', tailorpic: true, competitor: 'Limited' },
@@ -76,7 +77,7 @@ const whyCards = [
     icon: BadgeDollarSign,
     title: 'One-Time Payment',
     description:
-      'TailorPic packages are one-time payments starting at $1.99 with no recurring charges, while Remini is typically offered as a subscription starting around $9.99/month. Pricing may change, so check Remini for current rates.',
+      `TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY} with no recurring charges, while Remini is typically offered as a subscription starting around $9.99/month. Pricing may change, so check Remini for current rates.`,
   },
   {
     icon: Target,
@@ -110,7 +111,7 @@ const faqs = [
   {
     question: 'How does TailorPic\'s price compare to Remini?',
     answer:
-      'TailorPic packages are one-time payments starting at $1.99. Remini is typically offered as a subscription starting around $9.99/month. Remini may change its pricing, so check their site for current pricing.',
+      `TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY}. Remini is typically offered as a subscription starting around $9.99/month. Remini may change its pricing, so check their site for current pricing.`,
   },
   {
     question: 'How many photos do I get with TailorPic compared to Remini?',
@@ -125,7 +126,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription like Remini?',
     answer:
-      'No. TailorPic packages are one-time payments starting at $1.99 with no recurring charges. Remini is typically sold as a subscription.',
+      `No. TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY} with no recurring charges. Remini is typically sold as a subscription.`,
   },
   {
     question: 'How does TailorPic work compared to Remini\'s enhancement?',
@@ -280,7 +281,7 @@ export default function VsReminiPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-ink">Ready to Switch?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-muted">
-              Get professional AI headshots starting at just $1.99. No subscriptions, no hidden fees
+              Get professional AI headshots starting at just {BASE_PRICE_DISPLAY}. No subscriptions, no hidden fees
               — just great photos delivered within hours.
             </p>
             <div className="mt-8">

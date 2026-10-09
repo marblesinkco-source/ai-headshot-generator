@@ -4,6 +4,8 @@
  * replace this with API calls to your preferred CMS.
  */
 
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -35,7 +37,7 @@ export const blogPosts: BlogPost[] = [
       <p>Start with price per usable photo, not the headline price. A large package is only good value if you would actually use most of the images. Next, consider realism: does the result look like you on a good day, or like a polished stranger? Then check delivery time, the range of styles and outfits, how retouching or regeneration works, and what the service says about how long it keeps your uploaded selfies.</p>
 
       <h2>1. TailorPic: Affordable and Focused</h2>
-      <p>TailorPic is designed for people who want a professional result at a low price. Our headshot packages start at $1.99. You upload a few clear selfies, let the AI build a personal model, and receive a set of studio-style portraits. You can browse the available <a href="/styles">headshot styles</a> before you start, and refine results afterwards in the <a href="/editor">photo editor</a>. For a direct feature-by-feature view, see our <a href="/vs/aragon">TailorPic vs Aragon comparison</a>.</p>
+      <p>TailorPic is designed for people who want a professional result at a low price. Our headshot packages start at {BASE_PRICE_DISPLAY}. You upload a few clear selfies, let the AI build a personal model, and receive a set of studio-style portraits. You can browse the available <a href="/styles">headshot styles</a> before you start, and refine results afterwards in the <a href="/editor">photo editor</a>. For a direct feature-by-feature view, see our <a href="/vs/aragon">TailorPic vs Aragon comparison</a>.</p>
 
       <h2>2. Aragon AI</h2>
       <p>Aragon offers several packages with different numbers of photos and a wide range of settings and outfits. It can be a good choice if you want lots of variety and are comfortable paying more for it. If you are comparing it with TailorPic specifically, the <a href="/vs/aragon">Aragon comparison page</a> lays out the differences in pricing and output.</p>
@@ -161,7 +163,7 @@ export const blogPosts: BlogPost[] = [
       <p>Early in your career you have a short track record, so small details carry more weight. A clear, friendly photo shows care and readiness. It helps recruiters remember you and makes your profiles look complete. You do not need an elaborate portrait, just one that looks like you and looks professional.</p>
 
       <h2>The Budget Problem</h2>
-      <p>Traditional studio sessions can be expensive and need scheduling around classes. Campus photo events are convenient when they exist but are not always available. AI headshots fill that gap. TailorPic's packages start at $1.99, which is within reach for most student budgets. See the <a href="/pricing">pricing page</a> for current details.</p>
+      <p>Traditional studio sessions can be expensive and need scheduling around classes. Campus photo events are convenient when they exist but are not always available. AI headshots fill that gap. TailorPic's packages start at {BASE_PRICE_DISPLAY}, which is within reach for most student budgets. See the <a href="/pricing">pricing page</a> for current details.</p>
 
       <h2>Where You Will Use Your Headshot</h2>
       <p>The obvious place is LinkedIn, but it is useful in many others: internship applications, university portals, student organisation pages, personal portfolio websites, email signatures and conference badges. One good image saves you from scrambling each time a form asks for a photo.</p>
@@ -245,8 +247,8 @@ export const blogPosts: BlogPost[] = [
       <h2>What to Look for in an AI Headshot Generator</h2>
       <p>Before comparing brands, decide what matters most to you. The main factors are price, how realistic the results look, how many backgrounds and outfits you get, how long delivery takes, and what happens to your uploaded photos. For a professional profile, realism matters more than variety: a headshot that looks like you on a good day beats one that looks like a stylised version of someone else.</p>
 
-      <h2>1. TailorPic: Best Value from $1.99</h2>
-      <p>TailorPic is built for people who want a professional result without a premium price. Our headshot packages start at $1.99, which makes TailorPic one of the most affordable options for generated portraits. You upload a few clear selfies, our AI trains a personal model, and you receive a set of studio-style headshots, typically within a couple of hours. You can explore looks in our <a href="/styles/corporate">corporate style</a> or browse <a href="/industries/doctors">industry-specific options</a>, and you can polish results afterwards with tools like the <a href="/editor/background-changer">background changer</a>.</p>
+      <h2>1. TailorPic: Best Value from {BASE_PRICE_DISPLAY}</h2>
+      <p>TailorPic is built for people who want a professional result without a premium price. Our headshot packages start at {BASE_PRICE_DISPLAY}, which makes TailorPic one of the most affordable options for generated portraits. You upload a few clear selfies, our AI trains a personal model, and you receive a set of studio-style headshots, typically within a couple of hours. You can explore looks in our <a href="/styles/corporate">corporate style</a> or browse <a href="/industries/doctors">industry-specific options</a>, and you can polish results afterwards with tools like the <a href="/editor/background-changer">background changer</a>.</p>
 
       <h2>2. Aragon AI</h2>
       <p>Aragon is one of the better-known names in the category and offers a range of packages with different numbers of photos and styles. It is a reasonable choice if you want a large variety of outfits and settings and are comfortable paying more for that breadth. See our detailed <a href="/vs/aragon">TailorPic vs Aragon comparison</a> for a side-by-side look at pricing, features and output style.</p>
@@ -270,7 +272,7 @@ export const blogPosts: BlogPost[] = [
       <p>You are uploading pictures of your face, so read the privacy policy. Look for clear statements about how long photos are stored, whether they are used to train other models, and how to request deletion. A trustworthy provider makes these answers easy to find.</p>
 
       <h2>Which One Should You Choose?</h2>
-      <p>If budget is your main concern, TailorPic, with packages starting at $1.99, is hard to beat for professional headshots. If you need extensive team management or a specific look, one of the pricier services may suit you better. Whatever you pick, compare sample output, check the guarantee terms, and review our <a href="/pricing">pricing page</a> and <a href="/vs/headshotpro">comparison guides</a> to make a confident decision.</p>
+      <p>If budget is your main concern, TailorPic, with packages starting at {BASE_PRICE_DISPLAY}, is hard to beat for professional headshots. If you need extensive team management or a specific look, one of the pricier services may suit you better. Whatever you pick, compare sample output, check the guarantee terms, and review our <a href="/pricing">pricing page</a> and <a href="/vs/headshotpro">comparison guides</a> to make a confident decision.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-12-28',
@@ -302,7 +304,7 @@ export const blogPosts: BlogPost[] = [
       <p>Soft, even light is flattering and forgiving. Stand facing a window during the day rather than under harsh overhead lights, which can cast shadows under the eyes. If you work night shifts and your photo looks tired, the <a href="/editor/photo-enhancer">photo enhancer</a> can help balance lighting and sharpness while keeping your appearance natural.</p>
 
       <h2>Using AI to Create Your Nursing Headshot</h2>
-      <p>Booking a photographer around rotating shifts is not always realistic. AI headshot tools let you upload a few selfies at home and receive polished portraits without scheduling anything. TailorPic generates studio-style results with packages starting at $1.99, including looks suited to healthcare. Try the <a href="/styles/corporate">corporate style</a> for a leadership or administrative profile, or explore our <a href="/industries/doctors">healthcare professional page</a> for ideas that apply across medical roles.</p>
+      <p>Booking a photographer around rotating shifts is not always realistic. AI headshot tools let you upload a few selfies at home and receive polished portraits without scheduling anything. TailorPic generates studio-style results with packages starting at {BASE_PRICE_DISPLAY}, including looks suited to healthcare. Try the <a href="/styles/corporate">corporate style</a> for a leadership or administrative profile, or explore our <a href="/industries/doctors">healthcare professional page</a> for ideas that apply across medical roles.</p>
 
       <h2>Tips for Taking Good Selfies for AI</h2>
       <p>To get strong results, take your selfies in good light with a plain background. Use the rear camera if you can, or have a colleague take the photos. Vary your expression and angle slightly, avoid heavy filters, and keep your hair and clothing similar to how you normally appear at work. The more accurately your input reflects you, the more authentic your headshots will look.</p>
@@ -346,7 +348,7 @@ export const blogPosts: BlogPost[] = [
       <p>You may already have a decent photo from a school event or conference that just needs a little help. Our <a href="/editor/photo-enhancer">AI photo enhancer</a> can improve sharpness and lighting, and the <a href="/editor/background-changer">background changer</a> can replace a distracting setting. This is a quick, low-cost way to refresh your profile image.</p>
 
       <h2>Creating New Headshots With AI</h2>
-      <p>If you want a completely fresh look, AI headshot generation lets you skip the photo appointment, which is useful when your schedule revolves around bell times and grading. With TailorPic you upload a few selfies and receive professional portraits, with packages starting at $1.99. Take your selfies in good light, vary your expressions and keep the background plain for the best results.</p>
+      <p>If you want a completely fresh look, AI headshot generation lets you skip the photo appointment, which is useful when your schedule revolves around bell times and grading. With TailorPic you upload a few selfies and receive professional portraits, with packages starting at {BASE_PRICE_DISPLAY}. Take your selfies in good light, vary your expressions and keep the background plain for the best results.</p>
 
       <h2>Check School Policies First</h2>
       <p>Some districts and universities have rules about staff photos, and some require images to be taken or approved by the institution. Ask your administrator or communications office whether AI-generated or self-submitted photos are acceptable before updating an official profile.</p>
@@ -364,7 +366,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'ai-headshot-cost-comparison',
     title: 'AI Headshot Costs in 2025: Complete Pricing Comparison',
     description:
-      'What do AI headshots really cost in 2025? Compare pricing models, hidden extras and value across the major services, and see how TailorPic, with packages from $1.99, fits in.',
+      `What do AI headshots really cost in 2025? Compare pricing models, hidden extras and value across the major services, and see how TailorPic, with packages from ${BASE_PRICE_DISPLAY}, fits in.`,
     content: `
       <p>One of the biggest reasons people turn to AI headshots is cost. A traditional studio session can run into the hundreds of dollars once you add the photographer, retouching and prints. AI services promise a fraction of that, but pricing structures vary widely and headline prices do not always tell the full story. This guide explains how AI headshot pricing works and what to compare.</p>
 
@@ -374,8 +376,8 @@ export const blogPosts: BlogPost[] = [
       <h2>The Main AI Pricing Models</h2>
       <p>Most AI headshot services use a one-time package price that determines how many photos you receive, how many styles are included and how fast they are delivered. A few offer subscriptions or credit systems. Team-oriented services often price per person with volume discounts. Understanding which model a provider uses is the first step in comparing real costs.</p>
 
-      <h2>TailorPic: From $1.99</h2>
-      <p>TailorPic's headshot packages start at $1.99, each as a single payment. There is no subscription to cancel. You can see exactly what is included on our <a href="/pricing">pricing page</a>. If you want to estimate what you would otherwise spend, try our <a href="/tools/headshot-cost-calculator">headshot cost calculator</a> to compare a traditional session against AI options.</p>
+      <h2>TailorPic: From {BASE_PRICE_DISPLAY}</h2>
+      <p>TailorPic's headshot packages start at {BASE_PRICE_DISPLAY}, each as a single payment. There is no subscription to cancel. You can see exactly what is included on our <a href="/pricing">pricing page</a>. If you want to estimate what you would otherwise spend, try our <a href="/tools/headshot-cost-calculator">headshot cost calculator</a> to compare a traditional session against AI options.</p>
 
       <h2>How Competitors Price Their Plans</h2>
       <p>Services such as Aragon, HeadshotPro and BetterPic each offer tiered packages, and their prices are generally higher than TailorPic's at comparable photo counts. Because those prices change frequently, we do not reproduce them here. Instead, check each provider's current pricing and use our comparison pages to see how they differ in features: <a href="/vs/aragon">TailorPic vs Aragon</a>, <a href="/vs/headshotpro">TailorPic vs HeadshotPro</a> and <a href="/vs/betterpic">TailorPic vs BetterPic</a>.</p>
@@ -393,7 +395,7 @@ export const blogPosts: BlogPost[] = [
       <p>If you are outfitting a small team, multiply the per-person cost and check whether bulk options exist. Consistent lighting and style across staff photos often matters as much as price. Compare team plans carefully and confirm how photos are stored and deleted.</p>
 
       <h2>The Bottom Line</h2>
-      <p>AI headshots cost far less than most studio sessions, and prices among services can differ significantly. Start with your real needs, compare what is included rather than the headline figure, and use our <a href="/tools/headshot-cost-calculator">cost calculator</a> and <a href="/pricing">pricing page</a> to see how TailorPic's packages, starting at $1.99, fit your budget.</p>
+      <p>AI headshots cost far less than most studio sessions, and prices among services can differ significantly. Start with your real needs, compare what is included rather than the headline figure, and use our <a href="/tools/headshot-cost-calculator">cost calculator</a> and <a href="/pricing">pricing page</a> to see how TailorPic's packages, starting at {BASE_PRICE_DISPLAY}, fit your budget.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2024-12-16',
@@ -599,7 +601,7 @@ export const blogPosts: BlogPost[] = [
       <p>People often ask how many photos they really need. For most professionals, three to five strong options are plenty: one for LinkedIn, one for your website or company bio, and one or two alternatives for different contexts. Another frequent question is whether to wear glasses. If you always wear them, wear them in your photo, but check for glare. If you only wear them occasionally, going without is usually simpler. Finally, people ask whether they should match their photo to a corporate brand. If you work for a company with a style guide, follow it. If you are independent, choose colors and settings that reflect your own brand.</p>
 
       <h2>Get Your Professional Headshot With TailorPic</h2>
-      <p>If you want a polished headshot without booking a studio, TailorPic can help. You upload a handful of selfies, our AI generates professional portraits in a range of styles and settings, and you pick the ones you like best. Plans start at $1.99, and there are 12 categories available, including <a href="/styles">professional headshots</a>, <a href="/team-headshots">team headshots</a> and <a href="/dating-photos">dating photos</a>. Your uploaded photos are automatically deleted after 30 days, and every order is covered by a quality commitment. You can see all plans on the <a href="/pricing">pricing page</a>, find answers on the <a href="/faq">FAQ</a>, or learn more <a href="/about">about us</a>. When you are ready, <a href="/auth/register">upload your selfies and get started</a>.</p>
+      <p>If you want a polished headshot without booking a studio, TailorPic can help. You upload a handful of selfies, our AI generates professional portraits in a range of styles and settings, and you pick the ones you like best. Plans start at {BASE_PRICE_DISPLAY}, and there are 12 categories available, including <a href="/styles">professional headshots</a>, <a href="/team-headshots">team headshots</a> and <a href="/dating-photos">dating photos</a>. Your uploaded photos are automatically deleted after 30 days, and every order is covered by a quality commitment. You can see all plans on the <a href="/pricing">pricing page</a>, find answers on the <a href="/faq">FAQ</a>, or learn more <a href="/about">about us</a>. When you are ready, <a href="/auth/register">upload your selfies and get started</a>.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-03-01',
@@ -622,7 +624,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>Cost Comparison</h2>
       <p>Cost is where the two approaches differ most. Traditional headshot sessions vary widely depending on the city, the photographer's experience and what is included. Budget sessions can be relatively affordable, while established studios in major cities often charge significantly more, and additional charges frequently apply for extra retouched images, wardrobe changes or usage rights. When you add travel time, parking and the time you take off work, the true cost is higher than the sticker price.</p>
-      <p>AI headshot services generally cost a fraction of a studio session. TailorPic plans start at $1.99. You can see the current options on our <a href="/pricing">pricing page</a>. Because there is no travel, studio rental or photographer time involved, the pricing structure is simply different.</p>
+      <p>AI headshot services generally cost a fraction of a studio session. TailorPic plans start at {BASE_PRICE_DISPLAY}. You can see the current options on our <a href="/pricing">pricing page</a>. Because there is no travel, studio rental or photographer time involved, the pricing structure is simply different.</p>
       <p>For teams, the gap is usually larger. Organizing a photographer to visit an office involves scheduling every employee, coordinating remote workers and paying per-person or per-day rates. AI generation removes most of that coordination. If you want to put numbers to your own situation, try the <a href="/tools/headshot-cost-calculator">headshot cost calculator</a>.</p>
       <ul>
         <li><strong>Traditional:</strong> higher per-person cost, plus travel and time; costs rise with retouching and extra looks.</li>
@@ -666,7 +668,7 @@ export const blogPosts: BlogPost[] = [
       <p>Finally, think about the consequences of a miss. If a studio session produces only one or two usable frames, you may have to book again. If an AI run produces results that do not look quite like you, the usual fix is to upload better source photos and regenerate. Either way, take the review step seriously. Ask a trusted colleague or friend to pick their favorites, because other people often choose a better photo of you than you would choose yourself.</p>
 
       <h2>Try an AI Headshot With TailorPic</h2>
-      <p>If the AI route sounds right for you, TailorPic makes it straightforward. Upload a handful of selfies, choose from 12 photo categories including <a href="/styles">professional headshots</a>, and receive your portraits typically within a couple of hours. Plans begin at $1.99, your uploads are automatically deleted after 30 days, and there is a quality commitment if you are not happy. Have questions first? The <a href="/faq">FAQ</a> covers the most common ones, and you can read more <a href="/about">about TailorPic</a>. When you are ready, <a href="/auth/register">upload your selfies</a> and see the results for yourself.</p>
+      <p>If the AI route sounds right for you, TailorPic makes it straightforward. Upload a handful of selfies, choose from 12 photo categories including <a href="/styles">professional headshots</a>, and receive your portraits typically within a couple of hours. Plans begin at {BASE_PRICE_DISPLAY}, your uploads are automatically deleted after 30 days, and there is a quality commitment if you are not happy. Have questions first? The <a href="/faq">FAQ</a> covers the most common ones, and you can read more <a href="/about">about TailorPic</a>. When you are ready, <a href="/auth/register">upload your selfies</a> and see the results for yourself.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-03-15',
@@ -738,7 +740,7 @@ export const blogPosts: BlogPost[] = [
       <p>Your banner image and Featured section give you a second and third chance to communicate who you are. A simple banner with your industry, a short tagline or a subtle brand color complements the headshot without competing with it. The Featured section can highlight a portfolio, article, talk or case study. Together with the photo, these elements make the top of your profile feel deliberate, and they encourage visitors to keep reading instead of bouncing away after a quick glance.</p>
 
       <h2>Create Your LinkedIn Headshot With TailorPic</h2>
-      <p>TailorPic generates professional headshots suited to LinkedIn from a handful of selfies. Choose a look that fits your industry, receive multiple options and pick your favorites. Plans start at $1.99, and there are 12 categories available, including <a href="/styles">professional headshots</a>. Your uploads are automatically deleted after 30 days, and if you are not satisfied, you can use our quality commitment. Compare plans on the <a href="/pricing">pricing page</a>, read the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies now</a> to get started.</p>
+      <p>TailorPic generates professional headshots suited to LinkedIn from a handful of selfies. Choose a look that fits your industry, receive multiple options and pick your favorites. Plans start at {BASE_PRICE_DISPLAY}, and there are 12 categories available, including <a href="/styles">professional headshots</a>. Your uploads are automatically deleted after 30 days, and if you are not satisfied, you can use our quality commitment. Compare plans on the <a href="/pricing">pricing page</a>, read the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies now</a> to get started.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-04-01',
@@ -805,7 +807,7 @@ export const blogPosts: BlogPost[] = [
       <p>Finally, consider a short set of supporting photos beyond the main headshot. A slightly wider half-body portrait works well for brochures and banner images, and a casual candid-style image can suit social posts about community events. With AI generation, producing these variations is usually quick, which makes it easier to keep your marketing materials fresh without scheduling multiple photo sessions.</p>
 
       <h2>Get a Real Estate Headshot With TailorPic</h2>
-      <p>TailorPic helps agents get a polished, professional photo without scheduling a studio. Upload a handful of selfies, choose from our professional styles and receive portraits that look like you at your best. Plans start at $1.99, and there are 12 categories, including <a href="/styles">professional headshots</a>. Your uploaded photos are automatically deleted after 30 days, and every order is backed by a quality commitment. You can compare options on our <a href="/pricing">pricing page</a>, browse answers on the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies</a> to get started today.</p>
+      <p>TailorPic helps agents get a polished, professional photo without scheduling a studio. Upload a handful of selfies, choose from our professional styles and receive portraits that look like you at your best. Plans start at {BASE_PRICE_DISPLAY}, and there are 12 categories, including <a href="/styles">professional headshots</a>. Your uploaded photos are automatically deleted after 30 days, and every order is backed by a quality commitment. You can compare options on our <a href="/pricing">pricing page</a>, browse answers on the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies</a> to get started today.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-04-15',
@@ -884,7 +886,7 @@ export const blogPosts: BlogPost[] = [
       <p>Finally, remember that a team page is a living part of your brand. Revisit it each quarter, remove former employees promptly and check that every image loads correctly on mobile devices.</p>
 
       <h2>Get Consistent Team Headshots With TailorPic</h2>
-      <p>TailorPic makes it simple to create a cohesive set of professional headshots, whether your team sits in one office or across several time zones. Each person uploads a few selfies, chooses a style and receives polished portraits, typically within a couple of hours. Plans start at $1.99, and there are 12 categories, including <a href="/team-headshots">team headshots</a> and <a href="/styles">professional headshots</a>. Uploaded photos are automatically deleted after 30 days, and every order is protected by a quality commitment. Review the options on the <a href="/pricing">pricing page</a>, check the <a href="/faq">FAQ</a> or <a href="/auth/register">start uploading selfies</a> today.</p>
+      <p>TailorPic makes it simple to create a cohesive set of professional headshots, whether your team sits in one office or across several time zones. Each person uploads a few selfies, chooses a style and receives polished portraits, typically within a couple of hours. Plans start at {BASE_PRICE_DISPLAY}, and there are 12 categories, including <a href="/team-headshots">team headshots</a> and <a href="/styles">professional headshots</a>. Uploaded photos are automatically deleted after 30 days, and every order is protected by a quality commitment. Review the options on the <a href="/pricing">pricing page</a>, check the <a href="/faq">FAQ</a> or <a href="/auth/register">start uploading selfies</a> today.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-05-01',
@@ -960,7 +962,7 @@ export const blogPosts: BlogPost[] = [
       <p>Finally, remember that you can change your mind. If you choose a background and later find that it does not fit a new platform or purpose, you can produce another version. Backgrounds are one of the easiest elements to adapt, particularly with digital tools, so treat your first choice as a starting point rather than a permanent decision.</p>
 
       <h2>Choose Your Background With TailorPic</h2>
-      <p>One of the practical advantages of AI headshots is that you can explore backgrounds without rebooking a session or changing your location. With TailorPic you upload a handful of selfies, and your portraits can be generated in a range of professional styles, including different backgrounds and settings, so you can compare and pick what works best for your industry. Plans start at $1.99, and there are 12 categories, including <a href="/styles">professional headshots</a>. Your uploaded photos are automatically deleted after 30 days, and there is a quality commitment. Explore the <a href="/pricing">pricing page</a>, read the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies</a> to try different looks.</p>
+      <p>One of the practical advantages of AI headshots is that you can explore backgrounds without rebooking a session or changing your location. With TailorPic you upload a handful of selfies, and your portraits can be generated in a range of professional styles, including different backgrounds and settings, so you can compare and pick what works best for your industry. Plans start at {BASE_PRICE_DISPLAY}, and there are 12 categories, including <a href="/styles">professional headshots</a>. Your uploaded photos are automatically deleted after 30 days, and there is a quality commitment. Explore the <a href="/pricing">pricing page</a>, read the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies</a> to try different looks.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-05-15',
@@ -1028,7 +1030,7 @@ export const blogPosts: BlogPost[] = [
       <p>Think, too, about the full set of materials that will carry your image. Your firm's website, your bar directory listing, your conference bio and your email signature all benefit from the same photo, or at least from photos with the same look. When prospective clients see a consistent face and style in every place they encounter you, they perceive stability, which is a quality people look for in legal counsel. Keep a high-resolution master file and a few pre-cropped versions so you are never tempted to substitute a low-quality image at the last minute.</p>
 
       <h2>Get a Professional Attorney Headshot With TailorPic</h2>
-      <p>TailorPic generates polished, professional headshots from a handful of selfies, with styles suited to legal and corporate settings. Choose from 12 photo categories, including <a href="/styles">professional headshots</a>, and receive your portraits typically within a couple of hours. Plans start at $1.99, your uploaded photos are automatically deleted after 30 days, and you are covered by a quality commitment. Review plans on the <a href="/pricing">pricing page</a>, see the <a href="/faq">FAQ</a> or <a href="/about">learn more about us</a>, then <a href="/auth/register">upload your selfies</a> to get started.</p>
+      <p>TailorPic generates polished, professional headshots from a handful of selfies, with styles suited to legal and corporate settings. Choose from 12 photo categories, including <a href="/styles">professional headshots</a>, and receive your portraits typically within a couple of hours. Plans start at {BASE_PRICE_DISPLAY}, your uploaded photos are automatically deleted after 30 days, and you are covered by a quality commitment. Review plans on the <a href="/pricing">pricing page</a>, see the <a href="/faq">FAQ</a> or <a href="/about">learn more about us</a>, then <a href="/auth/register">upload your selfies</a> to get started.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-06-01',
@@ -1109,7 +1111,7 @@ export const blogPosts: BlogPost[] = [
       <p>Finally, be thoughtful about what your photos reveal. Avoid images that show your home address, workplace, license plate or children's school. Consider whether a photo can be traced easily through a reverse image search, and think about which platforms you are comfortable having linked to your face. If you are using an AI service, choose one that explains how long photos are stored and how they are deleted. Good habits around privacy let you share your best self without unnecessary risk.</p>
 
       <h2>Create Your Dating Photos With TailorPic</h2>
-      <p>TailorPic's <a href="/dating-photos">dating photos category</a> generates natural, flattering portraits from a handful of selfies, so you can build a balanced gallery without a photo shoot. Choose from a range of settings and styles, compare the results and keep the ones that look most like you. Plans start at $1.99, and there are 12 categories in total. Your uploaded photos are automatically deleted after 30 days, and there is a quality commitment if you are not happy. See the <a href="/pricing">pricing page</a> for plan details, read the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies</a> to get started.</p>
+      <p>TailorPic's <a href="/dating-photos">dating photos category</a> generates natural, flattering portraits from a handful of selfies, so you can build a balanced gallery without a photo shoot. Choose from a range of settings and styles, compare the results and keep the ones that look most like you. Plans start at {BASE_PRICE_DISPLAY}, and there are 12 categories in total. Your uploaded photos are automatically deleted after 30 days, and there is a quality commitment if you are not happy. See the <a href="/pricing">pricing page</a> for plan details, read the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies</a> to get started.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-06-15',
@@ -1186,7 +1188,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>How TailorPic Approaches Privacy</h2>
       <p>We believe privacy should be simple. At TailorPic, the photos you upload are automatically deleted after 30 days, so your data is not kept indefinitely. Our goal is to generate your portraits and then step out of the way. You can check the details on our <a href="/faq">FAQ</a>, and if you have questions before uploading, you can contact us through the site.</p>
-      <p>Plans start at $1.99, and there are 12 categories, including <a href="/styles">professional headshots</a> and <a href="/dating-photos">dating photos</a>. Every order is covered by a quality commitment, so you can try the service and judge the results for yourself. You can compare plans on the <a href="/pricing">pricing page</a>, and when you are ready, <a href="/auth/register">upload your selfies</a> to get started.</p>
+      <p>Plans start at {BASE_PRICE_DISPLAY}, and there are 12 categories, including <a href="/styles">professional headshots</a> and <a href="/dating-photos">dating photos</a>. Every order is covered by a quality commitment, so you can try the service and judge the results for yourself. You can compare plans on the <a href="/pricing">pricing page</a>, and when you are ready, <a href="/auth/register">upload your selfies</a> to get started.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-07-01',
@@ -1263,7 +1265,7 @@ export const blogPosts: BlogPost[] = [
       <p>If you already have a photo and cannot retake it right away, a few small fixes help. Crop it more tightly so that your face fills the frame. Adjust brightness and contrast slightly if the image is dark or flat. Remove distracting elements at the edges if you can. Replace the photo on the platforms where it matters most first, usually LinkedIn and your company profile, and update the others as time allows. Then plan a proper refresh so the temporary fix does not become permanent.</p>
 
       <h2>Fix Your Headshot With TailorPic</h2>
-      <p>If your current photo breaks several of these rules, TailorPic offers a quick way to replace it. Upload a handful of selfies, and our AI generates professional portraits with flattering lighting, clean backgrounds and polished styling, typically within a couple of hours. Plans start at $1.99, and there are 12 categories, including <a href="/styles">professional headshots</a> and <a href="/team-headshots">team headshots</a>. Your uploads are automatically deleted after 30 days, and every order is backed by a quality commitment. See the <a href="/pricing">pricing page</a>, read the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies</a> and get a photo you will be proud to use.</p>
+      <p>If your current photo breaks several of these rules, TailorPic offers a quick way to replace it. Upload a handful of selfies, and our AI generates professional portraits with flattering lighting, clean backgrounds and polished styling, typically within a couple of hours. Plans start at {BASE_PRICE_DISPLAY}, and there are 12 categories, including <a href="/styles">professional headshots</a> and <a href="/team-headshots">team headshots</a>. Your uploads are automatically deleted after 30 days, and every order is backed by a quality commitment. See the <a href="/pricing">pricing page</a>, read the <a href="/faq">FAQ</a> or <a href="/auth/register">upload your selfies</a> and get a photo you will be proud to use.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-07-15',
@@ -1401,7 +1403,7 @@ export const blogPosts: BlogPost[] = [
       <p>This process works well alongside a good online presence. For related advice, see our articles on <a href="/blog/best-photos-for-linkedin">the best photos for LinkedIn</a> and <a href="/blog/professional-headshot-tips-2025">professional headshot tips</a>.</p>
 
       <h2>Try TailorPic for Your Real Estate Team</h2>
-      <p>TailorPic generates professional headshots from a few selfies, typically within a couple of hours, starting at $1.99. Your uploads are deleted automatically after 30 days and every order comes with a quality commitment. To see how we approach this industry, visit our <a href="/industries/real-estate">real estate headshots page</a>. When you are ready to try it yourself, <a href="/auth/register">upload your selfies</a> and see what your next agent photo could look like.</p>
+      <p>TailorPic generates professional headshots from a few selfies, typically within a couple of hours, starting at {BASE_PRICE_DISPLAY}. Your uploads are deleted automatically after 30 days and every order comes with a quality commitment. To see how we approach this industry, visit our <a href="/industries/real-estate">real estate headshots page</a>. When you are ready to try it yourself, <a href="/auth/register">upload your selfies</a> and see what your next agent photo could look like.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-08-15',
@@ -1448,7 +1450,7 @@ export const blogPosts: BlogPost[] = [
       <h2>The Advantages of AI: Speed, Cost and Variety</h2>
       <p>For founders, three advantages stand out.</p>
       <p><strong>Speed.</strong> There is no scheduling, no commute and no waiting for editing rounds. You can go from selfies to finished portraits in roughly an afternoon, which matters when a press opportunity or investor meeting comes up at short notice.</p>
-      <p><strong>Cost.</strong> A traditional studio session commonly costs $200 to $300 or more per person, and each repeat session costs the same again. TailorPic starts at $1.99, so you can refresh your look whenever your situation changes without worrying about the budget. The money you save can go towards product, hiring or marketing. If you want to compare the numbers for your own case, try the <a href="/tools/headshot-cost-calculator">headshot cost calculator</a>.</p>
+      <p><strong>Cost.</strong> A traditional studio session commonly costs $200 to $300 or more per person, and each repeat session costs the same again. TailorPic starts at {BASE_PRICE_DISPLAY}, so you can refresh your look whenever your situation changes without worrying about the budget. The money you save can go towards product, hiring or marketing. If you want to compare the numbers for your own case, try the <a href="/tools/headshot-cost-calculator">headshot cost calculator</a>.</p>
       <p><strong>Variety.</strong> You can produce several styles in one go, such as formal, casual and brand-aligned, rather than paying for each setup separately. That variety lets you match the image to the platform instead of using one photo everywhere.</p>
       <p>There are limits to be honest about. If you are being photographed for a magazine cover or a documentary-style feature, a real photographer and a real location are the right choice. AI photos are best treated as a fast, affordable way to cover the everyday needs of a founder's online presence. For tips on getting good results from your selfies, read our <a href="/blog/professional-headshot-tips-2025">professional headshot tips</a>, and if you are concerned about how your images are handled, see our article on <a href="/blog/ai-headshot-privacy-security">privacy and security</a>.</p>
 
@@ -2362,7 +2364,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>Cost Comparison</h2>
       <p>This is where the gap is most dramatic. Traditional headshot photography typically costs between $150 and $500 for an individual session in a major city. That usually includes the photographer's time, studio rental, basic retouching of a few selected images and digital delivery. Premium photographers or those in expensive markets can charge $500 to $1,000 or more.</p>
-      <p>AI headshot services range from free basic options to around $50 for premium packages. <a href="/pricing">TailorPic's headshot packages</a> start at $1.99, and larger packages include multiple finished images across different styles. For teams, the savings multiply quickly: a 20-person company might spend $4,000 to $10,000 on traditional photography compared to under $600 with an AI service.</p>
+      <p>AI headshot services range from free basic options to around $50 for premium packages. <a href="/pricing">TailorPic's headshot packages</a> start at {BASE_PRICE_DISPLAY}, and larger packages include multiple finished images across different styles. For teams, the savings multiply quickly: a 20-person company might spend $4,000 to $10,000 on traditional photography compared to under $600 with an AI service.</p>
 
       <h3>Hidden Costs to Consider</h3>
       <ul>
@@ -4083,7 +4085,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h2>How to Get Your Perfect Industry Headshot</h2>
-      <p>TailorPic offers 12 photo categories including business, creative, dating and more. Upload a few selfies and receive up to 160 professional photos tailored to your needs. <a href="/auth/register">Get started from $1.99</a>.</p>
+      <p>TailorPic offers 12 photo categories including business, creative, dating and more. Upload a few selfies and receive up to 160 professional photos tailored to your needs. <a href="/auth/register">Get started from {BASE_PRICE_DISPLAY}</a>.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-02-22',
@@ -4134,7 +4136,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h2>Upload and Let AI Do the Rest</h2>
-      <p>Once you have 5 to 10 good selfies, upload them to <a href="/auth/register">TailorPic</a>. The LoRA model trains on your unique features and generates up to 160 professional headshots across 12 categories, with packages from $1.99.</p>
+      <p>Once you have 5 to 10 good selfies, upload them to <a href="/auth/register">TailorPic</a>. The LoRA model trains on your unique features and generates up to 160 professional headshots across 12 categories, with packages from {BASE_PRICE_DISPLAY}.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-02-24',
@@ -4211,7 +4213,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h2>Get Platform-Ready Photos Instantly</h2>
-      <p>TailorPic delivers high-resolution photos that work across all platforms. Each image is generated at a resolution suitable for print and digital use. <a href="/auth/register">Get up to 160 photos, with packages starting at $1.99</a>.</p>
+      <p>TailorPic delivers high-resolution photos that work across all platforms. Each image is generated at a resolution suitable for print and digital use. <a href="/auth/register">Get up to 160 photos, with packages starting at {BASE_PRICE_DISPLAY}</a>.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-02-26',
@@ -4261,7 +4263,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h2>Get Started Without Prompting</h2>
-      <p>Skip the prompt engineering. <a href="/auth/register">TailorPic</a> handles everything — upload your selfies, pick your categories, and receive up to 160 professional photos within hours, with packages starting at just $1.99.</p>
+      <p>Skip the prompt engineering. <a href="/auth/register">TailorPic</a> handles everything — upload your selfies, pick your categories, and receive up to 160 professional photos within hours, with packages starting at just {BASE_PRICE_DISPLAY}.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-02-28',
@@ -4945,7 +4947,7 @@ export const blogPosts: BlogPost[] = [
       <p>Phone cameras distort facial proportions at close range. The wide-angle lens on most front cameras makes noses look larger and faces look rounder than they are. Selfies also tend to have inconsistent lighting, busy backgrounds, and the telltale arm-extended pose. None of these are deal-breakers on Instagram, but they look out of place next to polished headshots on LinkedIn or a company team page.</p>
 
       <h2>What AI Headshots Add</h2>
-      <p>An AI headshot tool takes your selfies and generates studio-style portraits with controlled lighting, professional backgrounds, and proper framing. The result looks like you sat for a photographer without spending the time or money. TailorPic, for example, trains a personal model on your photos and produces up to 160 results across multiple styles, with packages starting at <a href="/pricing">$1.99</a>.</p>
+      <p>An AI headshot tool takes your selfies and generates studio-style portraits with controlled lighting, professional backgrounds, and proper framing. The result looks like you sat for a photographer without spending the time or money. TailorPic, for example, trains a personal model on your photos and produces up to 160 results across multiple styles, with packages starting at <a href="/pricing">{BASE_PRICE_DISPLAY}</a>.</p>
 
       <h2>When to Use Each</h2>
       <p>Use a selfie when the context is casual: a messaging app, a quick social post, or an internal team chat where everyone knows you. Use an AI headshot when the photo represents you to strangers: LinkedIn, a resume, a company website, a conference speaker bio, or a client-facing proposal. The small investment in an AI headshot pays off every time someone forms a first impression from your photo.</p>
@@ -4973,7 +4975,7 @@ export const blogPosts: BlogPost[] = [
       <p>The global AI portrait and headshot market was estimated at roughly $600 million in 2024 and is projected to exceed $2 billion by 2028, driven by remote work, personal branding, and the falling cost of generative AI. The number of consumer AI headshot tools has grown from a handful in 2022 to over 50 by mid-2025, with new entrants appearing monthly.</p>
 
       <h2>Cost Comparison</h2>
-      <p>A traditional headshot session with a professional photographer typically costs between $150 and $500 for a single look, plus travel and scheduling time. AI headshot services range from $5 to $50, with TailorPic offering up to 160 photos and packages starting at <a href="/pricing">$1.99</a>. That represents significant cost savings compared to a traditional studio session. For teams, the savings multiply: outfitting a 50-person company with consistent headshots could cost $10,000–$25,000 with a photographer, or under $1,500 with an AI tool.</p>
+      <p>A traditional headshot session with a professional photographer typically costs between $150 and $500 for a single look, plus travel and scheduling time. AI headshot services range from $5 to $50, with TailorPic offering up to 160 photos and packages starting at <a href="/pricing">{BASE_PRICE_DISPLAY}</a>. That represents significant cost savings compared to a traditional studio session. For teams, the savings multiply: outfitting a 50-person company with consistent headshots could cost $10,000–$25,000 with a photographer, or under $1,500 with an AI tool.</p>
 
       <h2>Adoption by Sector</h2>
       <p>LinkedIn remains the single largest driver of AI headshot demand, with professionals across every industry updating their profiles. Other high-adoption sectors include real estate (where MLS listings require agent photos), technology (remote-first teams needing consistent visuals), consulting (where personal brand is revenue), and healthcare (where trust signals matter). See our <a href="/industries">industry pages</a> for tailored solutions.</p>
@@ -5101,7 +5103,7 @@ export const blogPosts: BlogPost[] = [
       <p>Use a dedicated headshot tool when the photo needs to represent you: LinkedIn, a company team page, a resume, a conference bio, or any context where someone might meet you in person and expect to recognise you from your photo. The <a href="/vs/chatgpt-image">TailorPic vs ChatGPT comparison page</a> has a detailed feature breakdown.</p>
 
       <h2>Cost and Time</h2>
-      <p>ChatGPT is included in a ChatGPT Plus subscription ($20/month) or pay-per-use via the API. TailorPic is a <a href="/pricing">one-time payment from $1.99</a>, with packages of up to 160 photos. If you only need headshots, the dedicated tool is both cheaper and purpose-built for the task.</p>
+      <p>ChatGPT is included in a ChatGPT Plus subscription ($20/month) or pay-per-use via the API. TailorPic is a <a href="/pricing">one-time payment from {BASE_PRICE_DISPLAY}</a>, with packages of up to 160 photos. If you only need headshots, the dedicated tool is both cheaper and purpose-built for the task.</p>
 
       <h2>The Verdict</h2>
       <p>ChatGPT is a remarkable general-purpose tool, but it is not designed for professional headshots that need to look like you. For that specific task, a dedicated AI headshot generator produces better, more consistent, and more recognisable results. <a href="/auth/register">Try TailorPic</a> to see the difference.</p>
@@ -5135,7 +5137,7 @@ export const blogPosts: BlogPost[] = [
       <p>The best speaker photos are well-lit, clearly framed around the face and shoulders, and convey approachability. Avoid overly formal poses unless the event calls for it. A natural smile and clean background work across most contexts. The <a href="/blog/professional-headshot-tips-2025">headshot tips guide</a> has more specific advice.</p>
 
       <h2>Getting Started</h2>
-      <p>Upload a few selfies to <a href="/auth/register">TailorPic</a>, choose styles that match the events you typically attend, and keep the results in a folder you can send to any organiser at a moment's notice. With packages starting at $1.99, it can cost less than a single stock image.</p>
+      <p>Upload a few selfies to <a href="/auth/register">TailorPic</a>, choose styles that match the events you typically attend, and keep the results in a folder you can send to any organiser at a moment's notice. With packages starting at {BASE_PRICE_DISPLAY}, it can cost less than a single stock image.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-04-20',
@@ -5157,7 +5159,7 @@ export const blogPosts: BlogPost[] = [
       <p>A professional author photo shoot typically costs $200–$500, requires scheduling, and produces a handful of images in one style. If you want different looks for different contexts — formal for the book jacket, casual for your blog — you pay more and wait longer. Many authors use the same photo for a decade because updating it feels like a hassle.</p>
 
       <h2>How AI Headshots Help</h2>
-      <p>With TailorPic, you upload a few selfies and receive up to 160 professional portraits in multiple styles within hours. You can choose a classic, bookish look for your dust jacket, a friendly shot for your newsletter, and a confident portrait for media kits — all from the same upload, with packages starting at <a href="/pricing">$1.99</a>.</p>
+      <p>With TailorPic, you upload a few selfies and receive up to 160 professional portraits in multiple styles within hours. You can choose a classic, bookish look for your dust jacket, a friendly shot for your newsletter, and a confident portrait for media kits — all from the same upload, with packages starting at <a href="/pricing">{BASE_PRICE_DISPLAY}</a>.</p>
 
       <h2>Matching Your Genre</h2>
       <p>Your headshot should match the tone of your work. A thriller writer might want a dark, moody portrait. A romance author might prefer warm, approachable lighting. A business book author needs a corporate look. Browse the <a href="/styles">available styles</a> to find one that fits your brand.</p>
@@ -5194,7 +5196,7 @@ export const blogPosts: BlogPost[] = [
       <p>Remote workers typically need photos for Slack, Microsoft Teams, Zoom, Google Meet, LinkedIn, the company website, and sometimes client-facing portals. TailorPic generates up to 160 photos across multiple styles from a single upload, so you can use a different crop or look for each platform while maintaining a consistent identity. See our guides for <a href="/use-cases/zoom">Zoom</a> and <a href="/use-cases/microsoft-teams">Microsoft Teams</a>.</p>
 
       <h2>Cost and Convenience</h2>
-      <p>A traditional headshot session costs $150–$500 plus travel time. TailorPic packages start at <a href="/pricing">$1.99</a> and deliver within hours. For remote workers who are already saving their company money on office space, the AI headshot is a practical, low-cost way to maintain a professional image.</p>
+      <p>A traditional headshot session costs $150–$500 plus travel time. TailorPic packages start at <a href="/pricing">{BASE_PRICE_DISPLAY}</a> and deliver within hours. For remote workers who are already saving their company money on office space, the AI headshot is a practical, low-cost way to maintain a professional image.</p>
 
       <h2>Getting Started</h2>
       <p>Take a few selfies near a window for good natural light, <a href="/auth/register">upload them to TailorPic</a>, and update every profile in one afternoon. No commute, no appointment, no waiting.</p>
@@ -5213,7 +5215,7 @@ export const blogPosts: BlogPost[] = [
       <p>The professional headshot industry is in the middle of a significant shift. AI-powered generators are now producing photos that rival traditional studio work for many common use cases, while photographers are adapting by focusing on what AI cannot replicate. Here is where things stand in 2026.</p>
 
       <h2>The Rise of AI Headshots</h2>
-      <p>AI headshot tools have moved from novelty to mainstream in under three years. The technology has improved dramatically: modern tools use LoRA fine-tuning to train personal models on individual faces, producing results that are nearly indistinguishable from studio photography. Prices have dropped to as low as <a href="/pricing">$1.99</a>, making professional headshots accessible to anyone with a smartphone.</p>
+      <p>AI headshot tools have moved from novelty to mainstream in under three years. The technology has improved dramatically: modern tools use LoRA fine-tuning to train personal models on individual faces, producing results that are nearly indistinguishable from studio photography. Prices have dropped to as low as <a href="/pricing">{BASE_PRICE_DISPLAY}</a>, making professional headshots accessible to anyone with a smartphone.</p>
 
       <h2>What AI Does Well</h2>
       <p>AI excels at producing clean, consistent, professional-looking portraits for standard use cases. LinkedIn profiles, company team pages, conference bios, and social media avatars are all well-served by AI. The technology handles lighting, background, and framing automatically, producing results that would require a skilled photographer and a proper studio to match. The speed is also a major advantage: most orders are delivered within hours, not weeks.</p>
@@ -7362,7 +7364,7 @@ export const blogPosts: BlogPost[] = [
       <p>With TailorPic, you upload a few selfies and receive studio-quality headshots in multiple styles within hours. This is especially useful for podcasters because:</p>
       <p><strong>Multiple styles for multiple platforms</strong> — You can get a casual shot for Instagram, a polished one for LinkedIn, and a creative option for your podcast cover, all from the same session.</p>
       <p><strong>Easy updates</strong> — When you rebrand, launch a new season, or simply want a fresh look, generating new headshots takes minutes instead of scheduling another photo session.</p>
-      <p><strong>Budget-friendly</strong> — Starting at <a href="/pricing">$1.99</a>, AI headshots are a fraction of the cost of a studio shoot. For podcasters investing their budget in equipment and production, this matters.</p>
+      <p><strong>Budget-friendly</strong> — Starting at <a href="/pricing">{BASE_PRICE_DISPLAY}</a>, AI headshots are a fraction of the cost of a studio shoot. For podcasters investing their budget in equipment and production, this matters.</p>
       <p><strong>Consistency across co-hosts</strong> — If your show has multiple hosts, you can create matching headshot styles so your team page and show notes look cohesive without coordinating everyone's schedule.</p>
 
       <h2>Matching Your Headshot to Your Podcast Genre</h2>

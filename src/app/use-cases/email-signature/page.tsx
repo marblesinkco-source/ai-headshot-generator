@@ -9,10 +9,11 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const pageTitle = 'AI Headshots for Email Signatures | TailorPic';
 const pageDescription =
-  'Add a face to every email you send. AI-generated professional headshots sized for Gmail, Outlook, and Apple Mail signatures. Starting at $1.99.';
+  `Add a face to every email you send. AI-generated professional headshots sized for Gmail, Outlook, and Apple Mail signatures. Starting at ${BASE_PRICE_DISPLAY}.`;
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -119,7 +120,7 @@ const faqs = [
   },
   {
     question: "How much does it cost and how fast is delivery?",
-    answer: "TailorPic starts at $1.99 and most orders are delivered within hours, so your signature can be updated today.",
+    answer: `TailorPic starts at ${BASE_PRICE_DISPLAY} and most orders are delivered within hours, so your signature can be updated today.`,
   },
 ];
 
@@ -155,7 +156,7 @@ export default function EmailSignatureUseCasePage() {
               <span className="not-italic text-tp-bronze">Email Signatures</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              Every email you send is a first impression. Add a polished, approachable headshot to your signature, created from a few selfies and ready within hours. Starting at just $1.99.
+              Every email you send is a first impression. Add a polished, approachable headshot to your signature, created from a few selfies and ready within hours. Starting at just {BASE_PRICE_DISPLAY}.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -189,7 +190,7 @@ export default function EmailSignatureUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Starting at $1.99
+            Starting at {BASE_PRICE_DISPLAY}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -302,7 +303,7 @@ export default function EmailSignatureUseCasePage() {
             Make Every Email More Personal
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            Upgrade your signature with a headshot that builds trust in every inbox. Starting at just $1.99.
+            Upgrade your signature with a headshot that builds trust in every inbox. Starting at just {BASE_PRICE_DISPLAY}.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

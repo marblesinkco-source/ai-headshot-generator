@@ -3,6 +3,8 @@
  * Category configuration for all 12 product categories
  */
 
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+
 export type CategoryId =
   | 'headshots'
   | 'dating'
@@ -119,7 +121,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
     promptTemplate: 'A professional headshot portrait photograph of a person. {style_prompt}. Set against a {background_prompt}. Sharp focus on the face, professional studio-quality lighting, natural skin tone. Shot with an 85mm lens at f/2.8.',
     negativePrompt: 'deformed, distorted, disfigured, poorly drawn face, bad anatomy, wrong anatomy, extra limb, missing limb, floating limbs, mutated hands, extra fingers, blurry, low quality, watermark, text, logo, cartoon, 3d render, anime, illustration',
     seoTitle: 'AI Professional Headshots | TailorPic',
-    seoDescription: 'Get studio-quality professional headshots from your selfies. For LinkedIn, resumes, and company pages. Try one photo from $1.99.',
+    seoDescription: `Get studio-quality professional headshots from your selfies. For LinkedIn, resumes, and company pages. Try one photo from ${BASE_PRICE_DISPLAY}.`,
     slug: 'headshots',
     active: true,
   },

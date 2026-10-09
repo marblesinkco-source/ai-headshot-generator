@@ -9,6 +9,7 @@ import { ProductSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { CheckCircle, ArrowRight } from 'lucide-react';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
@@ -78,7 +79,7 @@ const stats = [
   { value: '40+', label: 'Photos per order' },
   { value: '12', label: 'Professional styles' },
   { value: 'Within hours', label: 'From selfies to finished headshots' },
-  { value: '$1.99', label: 'Starting price per person' },
+  { value: `${BASE_PRICE_DISPLAY}`, label: 'Starting price per person' },
 ];
 
 const faqs = [
@@ -105,7 +106,7 @@ const faqs = [
   {
     question: "How much does it cost?",
     answer:
-      "Headshots start at $1.99 per person with no subscription required. That is far less than a traditional studio session.",
+      `Headshots start at ${BASE_PRICE_DISPLAY} per person with no subscription required. That is far less than a traditional studio session.`,
   },
   {
     question: "What if I am not happy with the results?",
@@ -281,7 +282,7 @@ export default function AccountantsIndustryPage() {
               Ready to Upgrade Your Professional Image?
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-tp-beige/70">
-              Get studio-quality headshots delivered within hours — no appointment, no studio, no hassle. Starting from just $1.99.
+              Get studio-quality headshots delivered within hours — no appointment, no studio, no hassle. Starting from just {BASE_PRICE_DISPLAY}.
             </p>
             <div className="mt-10">
               <a
@@ -323,7 +324,7 @@ export default function AccountantsIndustryPage() {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
             Upgrade your professional image with TailorPic.
-            Studio-quality headshots starting at just $1.99.
+            Studio-quality headshots starting at just {BASE_PRICE_DISPLAY}.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots">

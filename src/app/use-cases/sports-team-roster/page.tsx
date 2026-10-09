@@ -9,10 +9,11 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const pageTitle = "AI Headshots for Sports Team Rosters | TailorPic";
 const pageDescription =
-  "Professional headshots for team rosters, player cards, and coaching staff pages. Get polished portraits from a few selfies within hours. Starting at $1.99.";
+  `Professional headshots for team rosters, player cards, and coaching staff pages. Get polished portraits from a few selfies within hours. Starting at ${BASE_PRICE_DISPLAY}.`;
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -132,7 +133,7 @@ const faqs = [
   },
   {
     question: "How much does it cost?",
-    answer: "TailorPic starts at $1.99 per pack, far less than a photographer session.",
+    answer: `TailorPic starts at ${BASE_PRICE_DISPLAY} per pack, far less than a photographer session.`,
   },
   {
     question: "How long does delivery take?",
@@ -169,7 +170,7 @@ export default function SportsTeamRosterUseCasePage() {
               <span className="not-italic text-tp-bronze">{"Sports Team Rosters"}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              {"Give every player and coach a sharp roster portrait without a team photo day. Get polished headshots from a handful of selfies, delivered within hours, starting at just $1.99."}
+              {`Give every player and coach a sharp roster portrait without a team photo day. Get polished headshots from a handful of selfies, delivered within hours, starting at just ${BASE_PRICE_DISPLAY}.`}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -203,7 +204,7 @@ export default function SportsTeamRosterUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            {"Starting at $1.99"}
+            {`Starting at ${BASE_PRICE_DISPLAY}`}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -316,7 +317,7 @@ export default function SportsTeamRosterUseCasePage() {
             {"Give Your Roster a Winning Look"}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            {"Make every player card sharp and consistent. Starting at just $1.99."}
+            {`Make every player card sharp and consistent. Starting at just ${BASE_PRICE_DISPLAY}.`}
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

@@ -7,11 +7,12 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const competitor = "ClipDrop";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  'Compare TailorPic vs ClipDrop. ClipDrop offers quick AI image tools like background removal, relighting and upscaling; TailorPic: headshots from $1.99.';
+  `Compare TailorPic vs ClipDrop. ClipDrop offers quick AI image tools like background removal, relighting and upscaling; TailorPic: headshots from ${BASE_PRICE_DISPLAY}.`;
 const path = '/vs/clipdrop';
 const canonicalUrl = 'https://www.tailorpic.com/vs/clipdrop';
 
@@ -28,7 +29,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from $1.99.',
+    `AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from ${BASE_PRICE_DISPLAY}.`,
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: canonicalUrl,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -47,7 +48,7 @@ const intro =
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
-    "tailorpic": "from $1.99",
+    "tailorpic": `from ${BASE_PRICE_DISPLAY}`,
     "other": "Free tier and paid plans; check their site"
   },
   {
@@ -108,7 +109,7 @@ const differences = [
   },
   {
     "title": "A low entry price",
-    "body": "TailorPic packages start from $1.99, with no subscription."
+    "body": `TailorPic packages start from ${BASE_PRICE_DISPLAY}, with no subscription.`
   },
   {
     "title": "Trade-off on speed",
@@ -134,7 +135,7 @@ const useCases = {
 const faqs = [
   {
     "question": "Is TailorPic cheaper than ClipDrop?",
-    "answer": "TailorPic packages start from $1.99 and go up to 160 photos. ClipDrop offers free and paid plans that vary, so compare against their current price page."
+    "answer": `TailorPic packages start from ${BASE_PRICE_DISPLAY} and go up to 160 photos. ClipDrop offers free and paid plans that vary, so compare against their current price page.`
   },
   {
     "question": "Can ClipDrop make a headshot?",
@@ -150,7 +151,7 @@ const faqs = [
   },
   {
     "question": "Do I need a subscription with TailorPic?",
-    "answer": "No. Every package is a single one-time payment (from $1.99) with no recurring fees."
+    "answer": `No. Every package is a single one-time payment (from ${BASE_PRICE_DISPLAY}) with no recurring fees.`
   }
 ];
 
@@ -182,7 +183,7 @@ export default function VsClipdropPage() {
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">{intro}</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
-                Get headshots from $1.99
+                Get headshots from {BASE_PRICE_DISPLAY}
               </Link>
             </div>
           </div>
@@ -289,7 +290,7 @@ export default function VsClipdropPage() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 12 categories from $1.99. No subscription, results typically delivered within hours.
+              Professional photos across 12 categories from {BASE_PRICE_DISPLAY}. No subscription, results typically delivered within hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

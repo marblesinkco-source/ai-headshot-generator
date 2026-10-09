@@ -5,6 +5,7 @@ import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   DollarSign,
   Image,
   Layers,
@@ -21,8 +22,8 @@ export const metadata: Metadata = {
   description:
     'Compare TailorPic and HeadshotPro side by side. See pricing, photo quality, category variety, and features to find the best AI headshot generator for you.',
   alternates: { canonical: '/vs/headshotpro' },
-  openGraph: generateOGMetadata({ title: 'TailorPic vs HeadshotPro — AI Headshot Generator Comparison', description: 'Detailed comparison of TailorPic and HeadshotPro. Compare pricing from $1.99 vs $29, photo categories, delivery speed, and more.', path: '/vs/headshotpro', type: 'vs' }),
-  twitter: generateTwitterMetadata({ title: 'TailorPic vs HeadshotPro — AI Headshot Generator Comparison', description: 'Detailed comparison of TailorPic and HeadshotPro. Compare pricing from $1.99 vs $29, photo categories, delivery speed, and more.', type: 'vs' }),
+  openGraph: generateOGMetadata({ title: 'TailorPic vs HeadshotPro — AI Headshot Generator Comparison', description: `Detailed comparison of TailorPic and HeadshotPro. Compare pricing from ${BASE_PRICE_DISPLAY} vs $29, photo categories, delivery speed, and more.`, path: '/vs/headshotpro', type: 'vs' }),
+  twitter: generateTwitterMetadata({ title: 'TailorPic vs HeadshotPro — AI Headshot Generator Comparison', description: `Detailed comparison of TailorPic and HeadshotPro. Compare pricing from ${BASE_PRICE_DISPLAY} vs $29, photo categories, delivery speed, and more.`, type: 'vs' }),
 };
 
 /* ------------------------------------------------------------------ */
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
 const quickBadges = [
   {
     label: 'Starting Price',
-    ours: 'From $1.99',
+    ours: `From ${BASE_PRICE_DISPLAY}`,
     theirs: '$29',
     icon: DollarSign,
   },
@@ -59,7 +60,7 @@ interface ComparisonRow {
 }
 
 const comparisonRows: ComparisonRow[] = [
-  { feature: 'Starting Price', tailorpic: 'From $1.99', headshotpro: '$29' },
+  { feature: 'Starting Price', tailorpic: `From ${BASE_PRICE_DISPLAY}`, headshotpro: '$29' },
   { feature: 'Photos per Session', tailorpic: '1 to 160', headshotpro: '40+' },
   { feature: 'Delivery', tailorpic: 'Within hours', headshotpro: 'Check their site' },
   { feature: 'Photo Categories', tailorpic: '12', headshotpro: 'Professional only' },
@@ -76,7 +77,7 @@ const advantages = [
     icon: DollarSign,
     title: 'Low Entry Price',
     description:
-      'TailorPic starts from $1.99 for a single photo, with larger one-time packages up to 160 photos. HeadshotPro starts higher and includes more photos in its entry plan, so compare package sizes as well as price. No subscription needed with TailorPic.',
+      `TailorPic starts from ${BASE_PRICE_DISPLAY} for a single photo, with larger one-time packages up to 160 photos. HeadshotPro starts higher and includes more photos in its entry plan, so compare package sizes as well as price. No subscription needed with TailorPic.`,
   },
   {
     icon: Layers,
@@ -110,7 +111,7 @@ const faqs = [
   {
     question: 'How does TailorPic\'s price compare to HeadshotPro?',
     answer:
-      'TailorPic packages are one-time payments starting at $1.99. HeadshotPro\'s pricing starts at $29. HeadshotPro may change its plans, so check their site for current pricing.',
+      `TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY}. HeadshotPro\'s pricing starts at $29. HeadshotPro may change its plans, so check their site for current pricing.`,
   },
   {
     question: 'How many photos do I get compared to HeadshotPro?',
@@ -125,7 +126,7 @@ const faqs = [
   {
     question: 'Is TailorPic a subscription?',
     answer:
-      'No. TailorPic packages are one-time payments starting at $1.99 with no subscription.',
+      `No. TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY} with no subscription.`,
   },
   {
     question: 'How does TailorPic train my photos, and is it easy to use?',
@@ -311,7 +312,7 @@ export default function VsHeadshotProPage() {
             <ArrowRight className="h-5 w-5" />
           </Link>
           <p className="mt-4 text-sm text-tp-muted">
-            Starting at $1.99 &middot; No subscription &middot; quality commitment
+            Starting at {BASE_PRICE_DISPLAY} &middot; No subscription &middot; quality commitment
           </p>
         </div>
       </section>

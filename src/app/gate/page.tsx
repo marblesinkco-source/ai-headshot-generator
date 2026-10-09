@@ -7,15 +7,15 @@ import Link from "next/link";
 import { siteConfig } from "@/config/site";
 
 export const metadata = {
-  title: "TailorPic — Çok Yakında",
-  description: "TailorPic çok yakında hizmetinizde olacak.",
+  title: "TailorPic — Coming Soon",
+  description: "TailorPic is coming soon. AI-powered professional headshots.",
   robots: { index: false, follow: false },
   alternates: { canonical: '/gate' },
 };
 
 export default function GatePage() {
   return (
-    <main id="main-content" lang="tr" className="min-h-screen flex items-center justify-center bg-tp-paper px-6">
+    <main id="main-content" className="min-h-screen flex items-center justify-center bg-tp-paper px-6">
       <div className="max-w-md w-full text-center space-y-6">
         {/* Logo / Brand */}
         <div className="space-y-2">
@@ -46,12 +46,11 @@ export default function GatePage() {
           </div>
 
           <h2 className="text-xl font-display font-normal text-tp-ink">
-            Bakım ve Geliştirme Aşamasında
+            Under Maintenance
           </h2>
 
           <p className="text-tp-muted text-sm leading-relaxed">
-            Sitemiz şu anda son kontroller ve geliştirmeler için sadece test
-            kullanıcılarına açıktır. Çok yakında herkese açılacağız!
+            We&apos;re putting the finishing touches on TailorPic. The site is currently available to test users only. We&apos;ll be open to everyone very soon!
           </p>
 
           <div className="pt-2">
@@ -59,14 +58,14 @@ export default function GatePage() {
               href="/auth/login"
               className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-tp-ink text-tp-paper text-sm font-medium rounded-tp-button hover:bg-tp-ink/90 transition-colors"
             >
-              Test Kullanıcı Girişi
+              Test User Login
             </Link>
           </div>
         </div>
 
         {/* Contact */}
         <p className="text-tp-muted text-xs">
-          Sorularınız için{" "}
+          Questions?{" "}
           <a
             href={`mailto:${siteConfig.supportEmail}`}
             className="text-tp-bronze-ink underline underline-offset-2"

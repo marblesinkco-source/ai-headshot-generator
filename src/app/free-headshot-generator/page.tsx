@@ -9,6 +9,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { FreeTrialIllustration } from '@/components/marketing/illustrations';
 import {
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   Camera,
   Sparkles,
   Clock,
@@ -34,18 +35,18 @@ import {
 export const metadata: Metadata = {
   title: { absolute: 'Free AI Headshot Generator Alternative: Try Risk-Free' },
   description:
-    'Looking for a free AI headshot generator? Try TailorPic risk-free: from $1.99 for studio-quality headshots with no subscription.',
+    `Looking for a free AI headshot generator? Try TailorPic risk-free: from ${BASE_PRICE_DISPLAY} for studio-quality headshots with no subscription.`,
   alternates: { canonical: '/free-headshot-generator' },
   openGraph: generateOGMetadata({
     title: 'Free AI Headshot Generator | TailorPic',
     description:
-      'Upload your selfies and get professional AI headshots from $1.99. No subscription required.',
+      `Upload your selfies and get professional AI headshots from ${BASE_PRICE_DISPLAY}. No subscription required.`,
     path: '/free-headshot-generator',
   }),
   twitter: generateTwitterMetadata({
     title: 'Free AI Headshot Generator | TailorPic',
     description:
-      'Professional AI headshots from your selfies. From $1.99, no subscription.',
+      `Professional AI headshots from your selfies. From ${BASE_PRICE_DISPLAY}, no subscription.`,
   }),
 };
 
@@ -82,7 +83,7 @@ const headshotTypes = [
 ];
 
 const trialComparison = [
-  { label: 'Price', free: 'Free tools: $0', paid: 'from $1.99 per person' },
+  { label: 'Price', free: 'Free tools: $0', paid: `from ${BASE_PRICE_DISPLAY} per person` },
   { label: 'Teams', free: 'Usually one photo at a time', paid: '$39 (5-15 people) or $29 (16-50 people)' },
   { label: 'Output', free: 'Often a few photos, sometimes watermarked', paid: 'photos across 12 categories' },
   { label: 'Risk', free: 'No payment, but no quality commitment', paid: 'One-time payment, no subscription' },
@@ -106,7 +107,7 @@ const features = [
 ];
 
 const comparison = [
-  { label: 'Cost', traditional: 'Often hundreds of dollars per session', ai: 'Starting from $1.99' },
+  { label: 'Cost', traditional: 'Often hundreds of dollars per session', ai: `Starting from ${BASE_PRICE_DISPLAY}` },
   { label: 'Time', traditional: 'Booking, travel and waiting for edits', ai: 'Upload from home, get results quickly' },
   { label: 'Outfit Changes', traditional: 'Limited by what you bring and studio time', ai: 'Multiple outfit styles in one order' },
   { label: 'Retakes', traditional: 'Usually means another session and another fee', ai: 'Generate again with different styles' },
@@ -126,12 +127,12 @@ const faqs = [
   {
     question: 'Is there really a free AI headshot generator?',
     answer:
-      'TailorPic is not free, but packages start from $1.99 with no subscription or long-term commitment.',
+      `TailorPic is not free, but packages start from ${BASE_PRICE_DISPLAY} with no subscription or long-term commitment.`,
   },
   {
     question: 'How much does TailorPic cost?',
     answer:
-      'Packages start from $1.99. Team pricing is $39 per person for 5-15 people and $29 per person for 16-50 people. There is no subscription.',
+      `Packages start from ${BASE_PRICE_DISPLAY}. Team pricing is $39 per person for 5-15 people and $29 per person for 16-50 people. There is no subscription.`,
   },
   {
     question: 'What do I need to get started?',
@@ -173,7 +174,7 @@ export default function FreeHeadshotGeneratorPage() {
     operatingSystem: 'Web',
     url: `${siteConfig.url}/free-headshot-generator`,
     description:
-      'AI headshot generator that turns your selfies into professional headshots. From $1.99, no subscription.',
+      `AI headshot generator that turns your selfies into professional headshots. From ${BASE_PRICE_DISPLAY}, no subscription.`,
     offers: {
       '@type': 'Offer',
       price: '1.99',
@@ -207,7 +208,7 @@ export default function FreeHeadshotGeneratorPage() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-muted">
             Upload a few selfies, pick your styles, and get studio-quality headshots for LinkedIn,
-            resumes and more. From $1.99, no subscription, most orders ready within hours.
+            resumes and more. From {BASE_PRICE_DISPLAY}, no subscription, most orders ready within hours.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
@@ -220,7 +221,7 @@ export default function FreeHeadshotGeneratorPage() {
           </div>
           <ul className="mt-8 flex flex-col items-center justify-center gap-2 text-sm text-tp-muted sm:flex-row sm:gap-6">
             <li className="flex items-center gap-2"><Check className="h-4 w-4 text-tp-bronze-ink" />No studio or booking</li>
-            <li className="flex items-center gap-2"><Check className="h-4 w-4 text-tp-bronze-ink" />From $1.99, no subscription</li>
+            <li className="flex items-center gap-2"><Check className="h-4 w-4 text-tp-bronze-ink" />From {BASE_PRICE_DISPLAY}, no subscription</li>
             <li className="flex items-center gap-2"><Check className="h-4 w-4 text-tp-bronze-ink" />Most orders within hours</li>
           </ul>
           <div className="mx-auto mt-10 max-w-xs">
@@ -309,7 +310,7 @@ export default function FreeHeadshotGeneratorPage() {
             Free Tools vs TailorPic
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-tp-muted">
-            Free generators are tempting, but results vary. TailorPic starts at $1.99 with no subscription.
+            Free generators are tempting, but results vary. TailorPic starts at {BASE_PRICE_DISPLAY} with no subscription.
           </p>
           <div className="mt-10 overflow-x-auto rounded-tp-card border border-tp-line bg-white">
             <table className="w-full min-w-[560px] text-left text-sm">
@@ -333,7 +334,7 @@ export default function FreeHeadshotGeneratorPage() {
           </div>
           <div className="mt-6 text-center">
             <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
-              Get my headshots from $1.99
+              Get my headshots from {BASE_PRICE_DISPLAY}
               <ArrowRight className="h-4 w-4" />
             </Link>
             <p className="mt-3 text-sm text-tp-muted">
@@ -449,7 +450,7 @@ export default function FreeHeadshotGeneratorPage() {
         <div className="mx-auto max-w-2xl rounded-tp-card bg-tp-ink px-6 py-12 text-center">
           <h2 className="font-display text-3xl font-normal text-white">Try it risk-free</h2>
           <p className="mt-3 text-tp-beige">
-            From $1.99, {PAYMENT_PROVIDER.checkoutBadge.replace(/^S/, 's')}, no subscription.
+            From {BASE_PRICE_DISPLAY}, {PAYMENT_PROVIDER.checkoutBadge.replace(/^S/, 's')}, no subscription.
           </p>
           <Link
             href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"

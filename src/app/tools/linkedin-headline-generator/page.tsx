@@ -7,6 +7,7 @@ import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { HeadlineForm } from './headline-form';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const title = 'Free LinkedIn Headline Generator: 5 Headline Ideas';
 const description =
@@ -111,7 +112,7 @@ export default function LinkedInHeadlineGeneratorPage() {
           </h2>
           <p className="mt-3 text-tp-beige">
             A strong headline gets the click. A professional photo helps your profile make a good
-            first impression. Create yours with AI from selfies, from $1.99.
+            first impression. Create yours with AI from selfies, from {BASE_PRICE_DISPLAY}.
           </p>
           <Link href="/headshots" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
             See AI Headshots

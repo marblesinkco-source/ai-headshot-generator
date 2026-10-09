@@ -1,6 +1,8 @@
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+
 export const siteConfig = {
   name: 'TailorPic',
-  description: 'AI headshots & professional photos from your selfies. Business, LinkedIn & creative styles. From $1.99.',
+  description: `AI headshots & professional photos from your selfies. Business, LinkedIn & creative styles. From ${BASE_PRICE_DISPLAY}.`,
   tagline: 'A Better Fit for Every Picture',
   url: process.env.NEXT_PUBLIC_APP_URL || 'https://www.tailorpic.com',
   ogImage: '/brand/tailorpic/web/og-tailorpic-1200x630.jpg',

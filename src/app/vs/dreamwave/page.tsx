@@ -7,11 +7,12 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const competitor = "Dreamwave";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  'Compare TailorPic vs Dreamwave for AI headshots. TailorPic starts from $1.99 across 12 categories; Dreamwave starts around $35 for up to 300.';
+  `Compare TailorPic vs Dreamwave for AI headshots. TailorPic starts from ${BASE_PRICE_DISPLAY} across 12 categories; Dreamwave starts around $35 for up to 300.`;
 const path = '/vs/dreamwave';
 
 export const metadata: Metadata = {
@@ -27,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from $1.99.',
+    `AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from ${BASE_PRICE_DISPLAY}.`,
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -41,7 +42,7 @@ const productJsonLd = {
 };
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "from $1.99", other: "~$35 starting, with a $99 premium tier" },
+  { label: "Starting price", tailorpic: `from ${BASE_PRICE_DISPLAY}`, other: "~$35 starting, with a $99 premium tier" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Up to 300 headshots depending on plan" },
   { label: "Delivery time", tailorpic: "Results within hours", other: "About 5 minutes" },
   { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Multiple professional backgrounds and outfits" },
@@ -51,7 +52,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 ];
 
 const differences = [
-  { title: "Price to get started", body: "TailorPic packages start from $1.99, compared with Dreamwave's ~$35 entry price and its $99 premium tier." },
+  { title: "Price to get started", body: `TailorPic packages start from ${BASE_PRICE_DISPLAY}, compared with Dreamwave's ~$35 entry price and its $99 premium tier.` },
   { title: "Volume vs variety", body: "Dreamwave can produce up to 300 headshots. TailorPic delivers photos but spreads them across 12 categories, from business and dating to creative looks." },
   { title: "Speed", body: "Dreamwave returns results in about 5 minutes. TailorPic typically completes within hours, since each model is fine-tuned with LoRA on your own photos." },
   { title: "Training approach", body: "TailorPic trains a personal LoRA model for a close likeness. Dreamwave offers free redos, which helps if a first batch misses the mark." },
@@ -59,7 +60,7 @@ const differences = [
 
 const useCases = {
   tailorpic: [
-    "A low upfront cost, from $1.99",
+    `A low upfront cost, from ${BASE_PRICE_DISPLAY}`,
     "Photos for more than work, such as dating and creative categories",
     "A personalized LoRA-trained model of your face",
     "Predictable pricing with no subscription",
@@ -73,10 +74,10 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is TailorPic cheaper than Dreamwave?", answer: "Our entry price is lower, but the packages are not like-for-like: TailorPic starts from $1.99 for a single photo and goes up to 160 photos, while Dreamwave starts at around $35, with a $99 premium tier. Dreamwave pricing may change, so check their site." },
+  { question: "Is TailorPic cheaper than Dreamwave?", answer: `Our entry price is lower, but the packages are not like-for-like: TailorPic starts from ${BASE_PRICE_DISPLAY} for a single photo and goes up to 160 photos, while Dreamwave starts at around $35, with a $99 premium tier. Dreamwave pricing may change, so check their site.` },
   { question: "Which is faster, TailorPic or Dreamwave?", answer: "Dreamwave is faster, with turnaround of about 5 minutes. TailorPic results are ready within hours for most orders, since it fine-tunes a LoRA model on your photos." },
   { question: "How many photos do I get with each?", answer: "TailorPic includes photos across 12 categories. Dreamwave offers up to 300 headshots depending on the plan you choose." },
-  { question: "Is TailorPic a subscription?", answer: "No. TailorPic packages are one-time payments starting at $1.99 with no recurring fees." },
+  { question: "Is TailorPic a subscription?", answer: `No. TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY} with no recurring fees.` },
 ];
 
 export default function Page() {
@@ -104,11 +105,11 @@ export default function Page() {
               TailorPic <span className="text-tp-bronze">vs</span> {competitor}
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">
-              Dreamwave offers high volume and fast turnaround at a higher price. TailorPic gives you polished, LoRA-trained photos across 12 categories (up to 160 per order), from $1.99.
+              Dreamwave offers high volume and fast turnaround at a higher price. TailorPic gives you polished, LoRA-trained photos across 12 categories (up to 160 per order), from {BASE_PRICE_DISPLAY}.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
-                Get headshots from $1.99
+                Get headshots from {BASE_PRICE_DISPLAY}
               </Link>
             </div>
           </div>
@@ -215,7 +216,7 @@ export default function Page() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 12 categories from $1.99. No subscription, results typically delivered within hours.
+              Professional photos across 12 categories from {BASE_PRICE_DISPLAY}. No subscription, results typically delivered within hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

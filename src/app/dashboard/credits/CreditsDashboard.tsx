@@ -43,7 +43,7 @@ export default function CreditsDashboard() {
         const json = await res.json();
         setData(json);
       } catch (err) {
-        setError('Kredi bilgileri yüklenemedi.');
+        setError('Could not load credit information.');
       } finally {
         setLoading(false);
       }

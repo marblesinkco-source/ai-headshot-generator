@@ -7,6 +7,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { CalculatorForm } from './calculator-form';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const title = 'AI Headshot Cost Calculator: Photographer vs AI Prices';
 const description =
@@ -67,7 +68,7 @@ export default function HeadshotCostCalculatorPage() {
         <div className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
           <h2 className="text-2xl font-display font-normal text-tp-ink sm:text-3xl">Ready to skip the studio?</h2>
           <p className="mt-3 text-tp-muted">
-            Upload a few selfies and get studio-quality photos in hours, from $1.99.
+            Upload a few selfies and get studio-quality photos in hours, from {BASE_PRICE_DISPLAY}.
           </p>
           <Link
             href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"

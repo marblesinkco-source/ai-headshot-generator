@@ -7,11 +7,12 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const competitor = "The Multiverse AI";
 const title = 'TailorPic vs The Multiverse AI: AI Headshot Comparison';
 const description =
-  'Compare TailorPic vs The Multiverse AI. TailorPic: one-time packages from $1.99, up to 160 headshots. The Multiverse AI: subscription from about $14.99/month.';
+  `Compare TailorPic vs The Multiverse AI. TailorPic: one-time packages from ${BASE_PRICE_DISPLAY}, up to 160 headshots. The Multiverse AI: subscription from about $14.99/month.`;
 const path = '/vs/the-multiverse-ai';
 
 export const metadata: Metadata = {
@@ -27,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from $1.99.',
+    `AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from ${BASE_PRICE_DISPLAY}.`,
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -41,21 +42,21 @@ const productJsonLd = {
 };
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "from $1.99", other: "Approximately $14.99 per month" },
+  { label: "Starting price", tailorpic: `from ${BASE_PRICE_DISPLAY}`, other: "Approximately $14.99 per month" },
   { label: "Billing model", tailorpic: "One-time payment, no subscription", other: "Monthly subscription" },
   { label: "Focus", tailorpic: "Professional headshots and profile photos", other: "Social media content" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Varies by plan; check their site" },
   { label: "Delivery time", tailorpic: "Results within hours", other: "Check their site" },
   { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Styles geared toward social media" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
-  { label: "Ongoing cost", tailorpic: "None after your one-time payment (from $1.99)", other: "Recurring while you stay subscribed" },
+  { label: "Ongoing cost", tailorpic: `None after your one-time payment (from ${BASE_PRICE_DISPLAY})`, other: "Recurring while you stay subscribed" },
   { label: "Team features", tailorpic: "Team and enterprise options available", other: "Check their site for team options" },
 ];
 
 const differences = [
-  { title: "One-time vs monthly", body: "The Multiverse AI is billed monthly at approximately $14.99. TailorPic packages are one-time payments starting at $1.99 with nothing recurring." },
+  { title: "One-time vs monthly", body: `The Multiverse AI is billed monthly at approximately $14.99. TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY} with nothing recurring.` },
   { title: "Professional focus", body: "TailorPic is built around professional headshots, while The Multiverse AI leans toward social media content." },
-  { title: "Cost over time", body: "After a couple of months, a monthly plan can pass the cost of a TailorPic package. TailorPic is paid once, with packages starting at $1.99." },
+  { title: "Cost over time", body: `After a couple of months, a monthly plan can pass the cost of a TailorPic package. TailorPic is paid once, with packages starting at ${BASE_PRICE_DISPLAY}.` },
   { title: "Personalization", body: "TailorPic trains a personal LoRA model on your photos for a close likeness." },
 ];
 
@@ -75,8 +76,8 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is TailorPic cheaper than The Multiverse AI?", answer: "For a one-off set of headshots, yes. TailorPic starts from $1.99, while The Multiverse AI is a subscription starting at approximately $14.99 per month. Pricing may change, so check their site." },
-  { question: "Is The Multiverse AI a subscription?", answer: "It is offered as a subscription. TailorPic has no subscription, and its packages are one-time payments starting at $1.99." },
+  { question: "Is TailorPic cheaper than The Multiverse AI?", answer: `For a one-off set of headshots, yes. TailorPic starts from ${BASE_PRICE_DISPLAY}, while The Multiverse AI is a subscription starting at approximately $14.99 per month. Pricing may change, so check their site.` },
+  { question: "Is The Multiverse AI a subscription?", answer: `It is offered as a subscription. TailorPic has no subscription, and its packages are one-time payments starting at ${BASE_PRICE_DISPLAY}.` },
   { question: "Which is better for professional headshots?", answer: "TailorPic focuses on professional headshots across 12 categories. The Multiverse AI has more of a social media focus." },
   { question: "How many photos does TailorPic include?", answer: "TailorPic includes photos across 12 categories, results typically delivered within hours." },
 ];
@@ -106,11 +107,11 @@ export default function Page() {
               TailorPic <span className="text-tp-bronze">vs</span> {competitor}
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">
-              The Multiverse AI is a subscription service with a social media focus. TailorPic is built for professional headshots: photos across 12 categories from $1.99.
+              The Multiverse AI is a subscription service with a social media focus. TailorPic is built for professional headshots: photos across 12 categories from {BASE_PRICE_DISPLAY}.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
-                Get headshots from $1.99
+                Get headshots from {BASE_PRICE_DISPLAY}
               </Link>
             </div>
           </div>
@@ -217,7 +218,7 @@ export default function Page() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 12 categories from $1.99. No subscription, results typically delivered within hours.
+              Professional photos across 12 categories from {BASE_PRICE_DISPLAY}. No subscription, results typically delivered within hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

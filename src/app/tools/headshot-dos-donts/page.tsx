@@ -8,6 +8,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { CheckCircle2, XCircle, Camera, Sun, Shirt, Image as ImageIcon, Smile, ArrowRight } from 'lucide-react';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const title = 'Headshot Dos & Don\'ts — The Complete Guide | TailorPic';
 const description =
@@ -286,7 +287,7 @@ export default function HeadshotDosAndDontsPage() {
             Ready for a professional headshot?
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm text-tp-beige sm:text-base">
-            Follow these tips, upload your selfies, and let TailorPic do the rest — from $1.99.
+            Follow these tips, upload your selfies, and let TailorPic do the rest — from {BASE_PRICE_DISPLAY}.
           </p>
           <Link
             href={ctaHref}

@@ -9,6 +9,7 @@ import { ProductSchema, FAQSchema } from '@/components/structured-data';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { CheckCircle, ArrowRight } from 'lucide-react';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
@@ -104,7 +105,7 @@ const faqs = [
   {
     question: "How much does it cost compared to a photographer?",
     answer:
-      "Headshots start at $1.99 with no subscription. Traditional studio sessions often cost several hundred dollars and usually cover only a single look.",
+      `Headshots start at ${BASE_PRICE_DISPLAY} with no subscription. Traditional studio sessions often cost several hundred dollars and usually cover only a single look.`,
   },
   {
     question: "What if the results are not what I expected?",
@@ -279,7 +280,7 @@ export default function ConsultantsIndustryPage() {
               Ready to Upgrade Your Professional Image?
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-tp-beige/70">
-              Get studio-quality headshots delivered within hours — no appointment, no studio, no hassle. Starting from just $1.99.
+              Get studio-quality headshots delivered within hours — no appointment, no studio, no hassle. Starting from just {BASE_PRICE_DISPLAY}.
             </p>
             <div className="mt-10">
               <a
@@ -321,7 +322,7 @@ export default function ConsultantsIndustryPage() {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
             Upgrade your professional image with TailorPic.
-            Studio-quality headshots starting at just $1.99.
+            Studio-quality headshots starting at just {BASE_PRICE_DISPLAY}.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots">

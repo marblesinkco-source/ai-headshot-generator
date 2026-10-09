@@ -8,15 +8,16 @@ import { Categories } from '@/components/marketing/categories';
 import { faqs } from '@/config/faqs';
 import { Footer } from '@/components/marketing/footer';
 import { WebsiteSchema, FAQSchema, SoftwareApplicationSchema } from '@/components/structured-data';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 export const metadata: Metadata = {
-  title: 'AI Headshots From Your Selfies | TailorPic — From $1.99',
+  title: `AI Headshots From Your Selfies | TailorPic — From ${BASE_PRICE_DISPLAY}`,
   description:
-    'Upload a few selfies and get studio-quality AI headshots for LinkedIn, resumes and more. One-time payment, no subscription. From $1.99.',
-  openGraph: generateOGMetadata({ title: 'AI Headshots From Your Selfies | TailorPic — From $1.99', description:
-      'Upload a few selfies and get studio-quality AI headshots for LinkedIn, resumes and more. One-time payment from $1.99.', path: '/' }),
-  twitter: generateTwitterMetadata({ title: 'AI Headshots From Your Selfies | TailorPic — From $1.99', description:
-      'Upload a few selfies and get studio-quality AI headshots for LinkedIn, resumes and more. One-time payment from $1.99.' }),
+    `Upload a few selfies and get studio-quality AI headshots for LinkedIn, resumes and more. One-time payment, no subscription. From ${BASE_PRICE_DISPLAY}.`,
+  openGraph: generateOGMetadata({ title: `AI Headshots From Your Selfies | TailorPic — From ${BASE_PRICE_DISPLAY}`, description:
+      `Upload a few selfies and get studio-quality AI headshots for LinkedIn, resumes and more. One-time payment from ${BASE_PRICE_DISPLAY}.`, path: '/' }),
+  twitter: generateTwitterMetadata({ title: `AI Headshots From Your Selfies | TailorPic — From ${BASE_PRICE_DISPLAY}`, description:
+      `Upload a few selfies and get studio-quality AI headshots for LinkedIn, resumes and more. One-time payment from ${BASE_PRICE_DISPLAY}.` }),
   alternates: { canonical: '/' },
 };
 

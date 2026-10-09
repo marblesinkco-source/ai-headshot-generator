@@ -8,6 +8,7 @@ import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema, AboutPageSchema } from '@/components/structured-data';
 import { AboutMissionIllustration } from '@/components/marketing/illustrations';
 import {
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   Shield,
   Zap,
   Wallet,
@@ -118,7 +119,7 @@ const stats = [
   { value: 'Up to 160', label: 'Photos per order' },
   { value: '12', label: 'Photo categories' },
   { value: 'Within hours', label: 'Typical delivery' },
-  { value: 'From $1.99', label: 'Starting price' },
+  { value: `From ${BASE_PRICE_DISPLAY}`, label: 'Starting price' },
 ];
 
 const explore = [

@@ -9,10 +9,11 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const pageTitle = 'AI Headshots for Upwork & Fiverr Freelancers | TailorPic';
 const pageDescription =
-  'Trust-building headshots for Upwork, Fiverr and other freelance marketplace profiles. Win more clients with a professional photo from a few selfies. From $1.99.';
+  `Trust-building headshots for Upwork, Fiverr and other freelance marketplace profiles. Win more clients with a professional photo from a few selfies. From ${BASE_PRICE_DISPLAY}.`;
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -132,7 +133,7 @@ const faqs = [
   },
   {
     question: "How much does it cost?",
-    answer: "TailorPic starts at $1.99 per pack, a small investment compared with a photographer session.",
+    answer: `TailorPic starts at ${BASE_PRICE_DISPLAY} per pack, a small investment compared with a photographer session.`,
   },
   {
     question: "How long does delivery take?",
@@ -169,7 +170,7 @@ export default function UpworkFiverrUseCasePage() {
               <span className="not-italic text-tp-bronze">Freelance Platforms</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              Clients hire people they trust, and trust starts with your profile photo. Get a professional headshot for Upwork, Fiverr, and other marketplaces from a handful of selfies. Delivered within hours, starting at just $1.99.
+              Clients hire people they trust, and trust starts with your profile photo. Get a professional headshot for Upwork, Fiverr, and other marketplaces from a handful of selfies. Delivered within hours, starting at just {BASE_PRICE_DISPLAY}.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -203,7 +204,7 @@ export default function UpworkFiverrUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Starting at $1.99
+            Starting at {BASE_PRICE_DISPLAY}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -316,7 +317,7 @@ export default function UpworkFiverrUseCasePage() {
             Turn Profile Views into Clients
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            Show clients a professional, trustworthy face. Starting at just $1.99.
+            Show clients a professional, trustworthy face. Starting at just {BASE_PRICE_DISPLAY}.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

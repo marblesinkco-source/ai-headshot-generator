@@ -7,6 +7,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const title = 'Green Background Headshots — Natural & Calming | TailorPic';
 const description =
@@ -169,7 +170,7 @@ export default function GreenBackgroundPage() {
             Get your green background headshot
           </h2>
           <p className="mt-3 text-tp-muted">
-            Upload a few selfies and get studio-quality professional headshots in hours, from $1.99.
+            Upload a few selfies and get studio-quality professional headshots in hours, from {BASE_PRICE_DISPLAY}.
           </p>
           <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
             Get AI Headshots

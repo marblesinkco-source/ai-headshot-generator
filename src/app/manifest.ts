@@ -1,10 +1,11 @@
 import type { MetadataRoute } from 'next';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'TailorPic — AI Headshot Generator',
     short_name: 'TailorPic',
-    description: 'Upload a few selfies, get studio-quality AI headshots for LinkedIn, business and life. From $1.99.',
+    description: `Upload a few selfies, get studio-quality AI headshots for LinkedIn, business and life. From ${BASE_PRICE_DISPLAY}.`,
     start_url: '/',
     id: '/',
     display: 'standalone',

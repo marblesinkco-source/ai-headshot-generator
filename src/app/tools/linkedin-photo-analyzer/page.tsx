@@ -8,6 +8,7 @@ import { siteConfig } from '@/config/site';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const LinkedInPhotoAnalyzer = dynamic(() => import('@/components/tools/linkedin-photo-analyzer'), {
   ssr: false,
@@ -87,7 +88,7 @@ export default function LinkedInPhotoAnalyzerPage() {
             Want a professional headshot that scores 100%?
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm text-tp-beige sm:text-base">
-            TailorPic turns your selfies into AI-generated professional headshots, from $1.99.
+            TailorPic turns your selfies into AI-generated professional headshots, from {BASE_PRICE_DISPLAY}.
           </p>
           <Link
             href={ctaHref}

@@ -9,10 +9,11 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const pageTitle = "AI Headshots for Investor Pitch Decks | TailorPic";
 const pageDescription =
-  "Credible founder headshots for investor pitch decks and team slides. Get polished, consistent portraits from a few selfies within hours. Starting at $1.99.";
+  `Credible founder headshots for investor pitch decks and team slides. Get polished, consistent portraits from a few selfies within hours. Starting at ${BASE_PRICE_DISPLAY}.`;
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -132,7 +133,7 @@ const faqs = [
   },
   {
     "question": "How much does it cost?",
-    "answer": "TailorPic starts at $1.99 per pack, far less than a photographer session."
+    "answer": `TailorPic starts at ${BASE_PRICE_DISPLAY} per pack, far less than a photographer session.`
   },
   {
     "question": "How long does delivery take?",
@@ -169,7 +170,7 @@ export default function InvestorPitchUseCasePage() {
               <span className="not-italic text-tp-bronze">{"Investor Pitch Decks"}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              {"Investors back people as much as products. Get sharp, credible founder portraits from a handful of selfies, delivered within hours, starting at just $1.99."}
+              {`Investors back people as much as products. Get sharp, credible founder portraits from a handful of selfies, delivered within hours, starting at just ${BASE_PRICE_DISPLAY}.`}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -203,7 +204,7 @@ export default function InvestorPitchUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            {"Starting at $1.99"}
+            {`Starting at ${BASE_PRICE_DISPLAY}`}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -316,7 +317,7 @@ export default function InvestorPitchUseCasePage() {
             {"Look Like a Team Worth Backing"}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            {"Make your team slide credible. Starting at just $1.99."}
+            {`Make your team slide credible. Starting at just ${BASE_PRICE_DISPLAY}.`}
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

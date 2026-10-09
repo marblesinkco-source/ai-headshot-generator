@@ -7,11 +7,12 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const competitor = "Lensa";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  'Compare TailorPic vs Lensa. TailorPic: one-time packages from $1.99, up to 160 headshots. Lensa: a mobile photo editor with AI avatars on subscription.';
+  `Compare TailorPic vs Lensa. TailorPic: one-time packages from ${BASE_PRICE_DISPLAY}, up to 160 headshots. Lensa: a mobile photo editor with AI avatars on subscription.`;
 const path = '/vs/lensa';
 
 export const metadata: Metadata = {
@@ -27,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from $1.99.',
+    `AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from ${BASE_PRICE_DISPLAY}.`,
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -41,27 +42,27 @@ const productJsonLd = {
 };
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "from $1.99", other: "Free with in-app purchases; subscription for full access" },
+  { label: "Starting price", tailorpic: `from ${BASE_PRICE_DISPLAY}`, other: "Free with in-app purchases; subscription for full access" },
   { label: "Billing model", tailorpic: "One-time payment, no subscription", other: "Freemium with weekly or annual subscription" },
   { label: "Focus", tailorpic: "Headshots and profile photos", other: "Mobile photo editing with AI avatar generation" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Varies by purchase; avatar packs sold separately" },
   { label: "Delivery time", tailorpic: "Results within hours", other: "Minutes for AI avatars" },
   { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Artistic avatar styles (fantasy, anime, pop art and more)" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Stable Diffusion-based avatar generation" },
-  { label: "Ongoing cost", tailorpic: "None after your one-time payment (from $1.99)", other: "Recurring subscription for full editing features" },
+  { label: "Ongoing cost", tailorpic: `None after your one-time payment (from ${BASE_PRICE_DISPLAY})`, other: "Recurring subscription for full editing features" },
   { label: "Platform", tailorpic: "Web-based, works on any device", other: "Mobile app (iOS and Android)" },
 ];
 
 const differences = [
   { title: "Professional headshots vs artistic avatars", body: "TailorPic produces realistic, professional-grade headshots suitable for LinkedIn, resumes and corporate use. Lensa's AI feature focuses on artistic and stylised avatars that lean creative rather than corporate." },
   { title: "Web vs mobile", body: "TailorPic is entirely web-based and works on any device with a browser. Lensa is a mobile app, so you need to download it and work from your phone." },
-  { title: "One-time vs subscription", body: "TailorPic charges once, with packages starting at $1.99. Lensa uses a subscription model for its editing features, with additional in-app purchases for AI avatar packs." },
+  { title: "One-time vs subscription", body: `TailorPic charges once, with packages starting at ${BASE_PRICE_DISPLAY}. Lensa uses a subscription model for its editing features, with additional in-app purchases for AI avatar packs.` },
   { title: "Realism and likeness", body: "TailorPic trains a personal LoRA model to closely match your features. Lensa's AI avatars are often more stylised and artistic, which can mean less facial accuracy for professional use." },
 ];
 
 const useCases = {
   tailorpic: [
-    "A one-time payment from $1.99 with no subscription",
+    `A one-time payment from ${BASE_PRICE_DISPLAY} with no subscription`,
     "Realistic professional headshots for work and profiles",
     "A personalized LoRA-trained model of your face",
     "A web-based tool that works on desktop and mobile",
@@ -77,7 +78,7 @@ const useCases = {
 const faqs = [
   { question: "Is TailorPic better than Lensa for professional headshots?", answer: "TailorPic is purpose-built for professional headshots with realistic results. Lensa's AI avatars lean more artistic and stylised, making TailorPic the stronger choice for LinkedIn, resumes and corporate profiles." },
   { question: "Does Lensa create realistic headshots?", answer: "Lensa's Magic Avatars are generally artistic and stylised rather than photorealistic. For a result that closely resembles a real photograph, a dedicated headshot generator like TailorPic is a better fit." },
-  { question: "Is TailorPic a subscription?", answer: "No. TailorPic packages are one-time payments starting at $1.99 with no recurring fees." },
+  { question: "Is TailorPic a subscription?", answer: `No. TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY} with no recurring fees.` },
   { question: "Can I use TailorPic on my phone?", answer: "Yes. TailorPic is web-based and works in any modern browser on desktop, tablet or mobile. No app download is required." },
 ];
 
@@ -106,11 +107,11 @@ export default function Page() {
               TailorPic <span className="text-tp-bronze">vs</span> {competitor}
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">
-              Lensa is a mobile photo editor known for artistic AI avatars. TailorPic is a headshot specialist: realistic, LoRA-trained photos across 12 categories (up to 160 per order), from $1.99.
+              Lensa is a mobile photo editor known for artistic AI avatars. TailorPic is a headshot specialist: realistic, LoRA-trained photos across 12 categories (up to 160 per order), from {BASE_PRICE_DISPLAY}.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
-                Get headshots from $1.99
+                Get headshots from {BASE_PRICE_DISPLAY}
               </Link>
             </div>
           </div>
@@ -217,7 +218,7 @@ export default function Page() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 12 categories from $1.99. No subscription, results typically delivered within hours.
+              Professional photos across 12 categories from {BASE_PRICE_DISPLAY}. No subscription, results typically delivered within hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

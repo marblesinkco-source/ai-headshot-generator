@@ -7,11 +7,12 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const competitor = "InstaHeadshots";
 const title = 'TailorPic vs InstaHeadshots: AI Headshot Comparison';
 const description =
-  'Compare TailorPic vs InstaHeadshots. TailorPic starts from $1.99 across 12 categories; InstaHeadshots starts near $9 with basic headshots.';
+  `Compare TailorPic vs InstaHeadshots. TailorPic starts from ${BASE_PRICE_DISPLAY} across 12 categories; InstaHeadshots starts near $9 with basic headshots.`;
 const path = '/vs/instaheadshots';
 
 export const metadata: Metadata = {
@@ -27,7 +28,7 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'TailorPic AI Headshots',
   description:
-    'AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from $1.99.',
+    `AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours, from ${BASE_PRICE_DISPLAY}.`,
   brand: { '@type': 'Brand', name: siteConfig.name },
   url: `${siteConfig.url}${path}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
@@ -41,7 +42,7 @@ const productJsonLd = {
 };
 
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: "from $1.99", other: "~$9 starting" },
+  { label: "Starting price", tailorpic: `from ${BASE_PRICE_DISPLAY}`, other: "~$9 starting" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Basic headshot set; varies by plan" },
   { label: "Delivery time", tailorpic: "Results within hours", other: "Varies by plan; check their site" },
   { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Limited styles" },
@@ -51,7 +52,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 ];
 
 const differences = [
-  { title: "Lower entry price, more range", body: "InstaHeadshots starts at around $9, while TailorPic packages start from $1.99. TailorPic also covers 12 categories while InstaHeadshots offers limited styles." },
+  { title: "Lower entry price, more range", body: `InstaHeadshots starts at around $9, while TailorPic packages start from ${BASE_PRICE_DISPLAY}. TailorPic also covers 12 categories while InstaHeadshots offers limited styles.` },
   { title: "Depth of output", body: "InstaHeadshots focuses on basic headshots. TailorPic includes photos for business, dating, creative and other uses." },
   { title: "Personalization", body: "TailorPic trains a LoRA model on your own photos for a closer likeness." },
   { title: "Delivery", body: "TailorPic delivers within hours, with the extra time going to model training." },
@@ -60,7 +61,7 @@ const differences = [
 const useCases = {
   tailorpic: [
     "More than a basic headshot, with 12 categories",
-    "Photos from $1.99",
+    `Photos from ${BASE_PRICE_DISPLAY}`,
     "A personalized LoRA-trained model",
     "Team and enterprise options as you grow",
   ],
@@ -72,10 +73,10 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is InstaHeadshots cheaper than TailorPic?", answer: "InstaHeadshots starts at around $9, while TailorPic packages start from $1.99. TailorPic includes photos across 12 categories." },
+  { question: "Is InstaHeadshots cheaper than TailorPic?", answer: `InstaHeadshots starts at around $9, while TailorPic packages start from ${BASE_PRICE_DISPLAY}. TailorPic includes photos across 12 categories.` },
   { question: "What styles does TailorPic offer?", answer: "TailorPic offers 12 categories, including business, dating and creative looks. InstaHeadshots offers a more limited set of styles." },
   { question: "How does TailorPic train its model?", answer: "TailorPic uses LoRA fine-tuning on your uploaded photos to capture your likeness, and results are ready within hours for most orders." },
-  { question: "Is TailorPic a subscription?", answer: "No. TailorPic packages are one-time payments starting at $1.99." },
+  { question: "Is TailorPic a subscription?", answer: `No. TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY}.` },
 ];
 
 export default function Page() {
@@ -103,11 +104,11 @@ export default function Page() {
               TailorPic <span className="text-tp-bronze">vs</span> {competitor}
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">
-              InstaHeadshots offers basic headshots and limited styles. TailorPic adds 12 categories and LoRA fine-tuning from $1.99.
+              InstaHeadshots offers basic headshots and limited styles. TailorPic adds 12 categories and LoRA fine-tuning from {BASE_PRICE_DISPLAY}.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>
-                Get headshots from $1.99
+                Get headshots from {BASE_PRICE_DISPLAY}
               </Link>
             </div>
           </div>
@@ -214,7 +215,7 @@ export default function Page() {
           <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-3xl font-display font-normal text-tp-paper">Ready for your best headshots?</h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige">
-              Professional photos across 12 categories from $1.99. No subscription, results typically delivered within hours.
+              Professional photos across 12 categories from {BASE_PRICE_DISPLAY}. No subscription, results typically delivered within hours.
             </p>
             <div className="mt-8">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

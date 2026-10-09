@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   Briefcase,
   Check,
   Clock,
@@ -23,7 +24,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 const pageTitle = "AI Headshots for Profile and ID-Style Photos | TailorPic";
 const pageDescription =
-  "Clean, front-facing portraits for profiles and ID-style uses. Note: official ID and license photos usually must be taken under agency rules. Starting at $1.99.";
+  `Clean, front-facing portraits for profiles and ID-style uses. Note: official ID and license photos usually must be taken under agency rules. Starting at ${BASE_PRICE_DISPLAY}.`;
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -143,7 +144,7 @@ const faqs = [
   },
   {
     question: "How much does it cost?",
-    answer: "TailorPic starts at $1.99 per pack, far less than a photographer session.",
+    answer: `TailorPic starts at ${BASE_PRICE_DISPLAY} per pack, far less than a photographer session.`,
   },
   {
     question: "How long does delivery take?",
@@ -180,7 +181,7 @@ export default function GovernmentIdPhotoUseCasePage() {
               <span className="not-italic text-tp-bronze">{"ID-Style Photos"}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              {"Need a clean, front-facing portrait for a profile, badge, or application? Get a polished photo from a handful of selfies, delivered within hours, starting at just $1.99. Official government IDs have their own rules, explained below."}
+              {`Need a clean, front-facing portrait for a profile, badge, or application? Get a polished photo from a handful of selfies, delivered within hours, starting at just ${BASE_PRICE_DISPLAY}. Official government IDs have their own rules, explained below.`}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -214,7 +215,7 @@ export default function GovernmentIdPhotoUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            {"Starting at $1.99"}
+            {`Starting at ${BASE_PRICE_DISPLAY}`}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -327,7 +328,7 @@ export default function GovernmentIdPhotoUseCasePage() {
             {"A Clean Portrait for Everyday Needs"}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            {"Get a tidy front-facing photo for badges and profiles. Starting at just $1.99."}
+            {`Get a tidy front-facing photo for badges and profiles. Starting at just ${BASE_PRICE_DISPLAY}.`}
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

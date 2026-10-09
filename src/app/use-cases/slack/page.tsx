@@ -9,10 +9,11 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const pageTitle = 'AI Profile Photos for Slack & Teams | TailorPic';
 const pageDescription =
-  'Get a polished profile photo for Slack and Microsoft Teams from a few selfies. Workspace headshots that look professional in every channel and call. From $1.99.';
+  `Get a polished profile photo for Slack and Microsoft Teams from a few selfies. Workspace headshots that look professional in every channel and call. From ${BASE_PRICE_DISPLAY}.`;
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -107,7 +108,7 @@ const faqs = [
   },
   {
     question: "How much does a workspace headshot cost?",
-    answer: "TailorPic starts at $1.99 per pack. Each pack includes multiple headshot variations, enough to update your photo on Slack, Teams, Zoom, Google Workspace, and your company directory.",
+    answer: `TailorPic starts at ${BASE_PRICE_DISPLAY} per pack. Each pack includes multiple headshot variations, enough to update your photo on Slack, Teams, Zoom, Google Workspace, and your company directory.`,
   },
   {
     question: "Can I order headshots for my entire team?",
@@ -151,7 +152,7 @@ export default function SlackUseCasePage() {
               <span className="not-italic text-tp-bronze">Slack & Teams</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              Your workspace photo follows you through every channel, thread, and video call. Get a polished, professional headshot from a few phone selfies, no studio visit required. Delivered within hours, starting at just $1.99.
+              Your workspace photo follows you through every channel, thread, and video call. Get a polished, professional headshot from a few phone selfies, no studio visit required. Delivered within hours, starting at just {BASE_PRICE_DISPLAY}.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -185,7 +186,7 @@ export default function SlackUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            Starting at $1.99
+            Starting at {BASE_PRICE_DISPLAY}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -298,7 +299,7 @@ export default function SlackUseCasePage() {
             Upgrade Your Workspace Profile Today
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            Polish your workspace presence with a studio-quality AI headshot. Starting at just $1.99.
+            Polish your workspace presence with a studio-quality AI headshot. Starting at just {BASE_PRICE_DISPLAY}.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

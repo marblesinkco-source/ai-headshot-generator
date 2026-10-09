@@ -16,6 +16,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import StudioComparisonV2 from '@/components/marketing/studio-comparison-v2';
 import ProcessingTimeline from '@/components/marketing/processing-timeline';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const StickyCTA = dynamic(() => import('@/components/marketing/sticky-cta').then(m => ({ default: m.StickyCTA })), { ssr: false });
 const StyleConfigurator = dynamic(() => import('@/components/marketing/style-configurator').then(m => ({ default: m.StyleConfigurator })), { ssr: false });
@@ -34,7 +35,7 @@ const HeadshotStyleGallery = dynamic(
 
 const PAGE_TITLE = 'AI Professional Headshots | Studio-Quality Portraits from Selfies | TailorPic';
 const PAGE_DESC =
-  'Get studio-quality professional headshots from your own selfies. 40+ styles, 30+ profession-specific options. From $1.99. No studio visit needed.';
+  `Get studio-quality professional headshots from your own selfies. 40+ styles, 30+ profession-specific options. From ${BASE_PRICE_DISPLAY}. No studio visit needed.`;
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_TITLE },

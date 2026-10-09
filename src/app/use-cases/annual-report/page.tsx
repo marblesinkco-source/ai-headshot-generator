@@ -9,10 +9,11 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const pageTitle = 'AI Headshots for Annual Reports & Documents | TailorPic';
 const pageDescription =
-  "Consistent executive and board headshots for annual reports, investor decks and corporate documents. Delivered within hours. Starting at $1.99.";
+  `Consistent executive and board headshots for annual reports, investor decks and corporate documents. Delivered within hours. Starting at ${BASE_PRICE_DISPLAY}.`;
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -132,7 +133,7 @@ const faqs = [
   },
   {
     question: "How much does it cost?",
-    answer: "TailorPic starts at $1.99 per pack per person. For larger teams, see our enterprise options.",
+    answer: `TailorPic starts at ${BASE_PRICE_DISPLAY} per pack per person. For larger teams, see our enterprise options.`,
   },
   {
     question: "How long does delivery take?",
@@ -169,7 +170,7 @@ export default function AnnualReportUseCasePage() {
               <span className="not-italic text-tp-bronze">{"Annual Reports & Corporate Docs"}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-beige/70">
-              {"Leadership pages set the tone of a corporate report. Get consistent, professional headshots for executives and board members from a handful of selfies, delivered within hours, starting at just $1.99."}
+              {`Leadership pages set the tone of a corporate report. Get consistent, professional headshots for executives and board members from a handful of selfies, delivered within hours, starting at just ${BASE_PRICE_DISPLAY}.`}
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>
@@ -203,7 +204,7 @@ export default function AnnualReportUseCasePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
-            {"Starting at $1.99"}
+            {`Starting at ${BASE_PRICE_DISPLAY}`}
           </span>
           <span className="flex items-center gap-1.5">
             <Check className="h-4 w-4 text-tp-bronze" />
@@ -316,7 +317,7 @@ export default function AnnualReportUseCasePage() {
             {"Make Your Leadership Pages Look Their Best"}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-tp-muted">
-            {"Consistent, professional portraits for every report. Starting at just $1.99."}
+            {`Consistent, professional portraits for every report. Starting at just ${BASE_PRICE_DISPLAY}.`}
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ size: 'lg' }), 'gap-2')}>

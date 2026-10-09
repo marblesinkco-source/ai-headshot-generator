@@ -7,6 +7,7 @@ import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { Palette, Sun, Maximize2, ArrowRight, Shirt, Eye, History, Eraser, Sparkles, ScanFace, Scissors, Smile, Move, Pipette, Glasses, Heart, Clock } from 'lucide-react';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const title = 'AI Photo Editor: Professional Headshot Editing Tools';
 const description =
@@ -230,7 +231,7 @@ export default function EditorIndexPage() {
           </h2>
           <p className="mt-3 text-tp-muted">
             Instead of editing photos yourself, upload a few selfies and let TailorPic generate
-            studio-quality headshots for you. From $1.99.
+            studio-quality headshots for you. From {BASE_PRICE_DISPLAY}.
           </p>
           <Link
             href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"

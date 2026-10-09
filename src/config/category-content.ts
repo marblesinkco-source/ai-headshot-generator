@@ -4,6 +4,7 @@
  */
 
 import type { CategoryId } from './categories';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 export interface CategoryBenefit {
   title: string;
@@ -57,7 +58,7 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
       },
       {
         title: 'Fraction of the Cost',
-        description: 'Skip the studio booking. Try one photo from $1.99, or go up to 160 photos on the largest package.',
+        description: `Skip the studio booking. Try one photo from ${BASE_PRICE_DISPLAY}, or go up to 160 photos on the largest package.`,
         icon: '💰',
       },
     ],
