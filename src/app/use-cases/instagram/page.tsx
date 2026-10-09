@@ -4,7 +4,8 @@ import { Camera, Check, Heart, Image, Palette, Shield, Sparkles, Sun, Target, Up
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
-import { FAQSchema, ProductSchema } from '@/components/structured-data';
+import { FAQSchema, ProductSchema, BreadcrumbSchema } from '@/components/structured-data';
+import { siteConfig } from '@/config/site';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
@@ -130,6 +131,13 @@ export default function InstagramUseCasePage() {
         slug="use-cases/instagram"
       />
       <FAQSchema items={faqs} />
+      <BreadcrumbSchema
+          items={[
+            { name: 'Home', url: siteConfig.url },
+            { name: 'Use Cases', url: `${siteConfig.url}/use-cases` },
+            { name: 'Instagram', url: `${siteConfig.url}/use-cases/instagram` },
+          ]}
+        />
       <Header />
       <main id="main-content">
       <div className="bg-tp-paper pt-20">

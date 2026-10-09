@@ -16,7 +16,8 @@ import {
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
-import { FAQSchema } from '@/components/structured-data';
+import { FAQSchema, BreadcrumbSchema } from '@/components/structured-data';
+import { siteConfig } from '@/config/site';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
@@ -160,6 +161,13 @@ export default function NonprofitFundraisingUseCasePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
       />
       <FAQSchema items={faqs} />
+      <BreadcrumbSchema
+          items={[
+            { name: 'Home', url: siteConfig.url },
+            { name: 'Use Cases', url: `${siteConfig.url}/use-cases` },
+            { name: 'Nonprofit Fundraising', url: `${siteConfig.url}/use-cases/nonprofit-fundraising` },
+          ]}
+        />
       <Header />
       <main id="main-content">
       <div className="bg-tp-paper pt-20">

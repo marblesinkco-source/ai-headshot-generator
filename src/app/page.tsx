@@ -71,8 +71,8 @@ export default function LandingPage() {
   return (
     <>
     <ScrollProgress />
-    <Header />
-    <main id="main-content" className="min-h-screen">
+      <Header />
+    <main id="main-content">
       <WebsiteSchema />
       <FAQSchema items={faqs} />
       <SoftwareApplicationSchema />

@@ -4,7 +4,8 @@ import { Building, Check, HeadphonesIcon, Monitor, Shield, Smile, Sparkles, Targ
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
-import { FAQSchema, ProductSchema } from '@/components/structured-data';
+import { FAQSchema, ProductSchema, BreadcrumbSchema } from '@/components/structured-data';
+import { siteConfig } from '@/config/site';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
@@ -130,6 +131,13 @@ export default function SlackUseCasePage() {
         slug="use-cases/slack"
       />
       <FAQSchema items={faqs} />
+      <BreadcrumbSchema
+          items={[
+            { name: 'Home', url: siteConfig.url },
+            { name: 'Use Cases', url: `${siteConfig.url}/use-cases` },
+            { name: 'Slack', url: `${siteConfig.url}/use-cases/slack` },
+          ]}
+        />
       <Header />
       <main id="main-content">
       <div className="bg-tp-paper pt-20">

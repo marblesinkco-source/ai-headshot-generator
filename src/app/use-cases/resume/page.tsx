@@ -16,7 +16,8 @@ import {
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
-import { FAQSchema, ProductSchema } from '@/components/structured-data';
+import { FAQSchema, ProductSchema, BreadcrumbSchema } from '@/components/structured-data';
+import { siteConfig } from '@/config/site';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
@@ -146,6 +147,13 @@ export default function ResumeUseCasePage() {
         slug="use-cases/resume"
       />
       <FAQSchema items={faqs} />
+      <BreadcrumbSchema
+          items={[
+            { name: 'Home', url: siteConfig.url },
+            { name: 'Use Cases', url: `${siteConfig.url}/use-cases` },
+            { name: 'Resume', url: `${siteConfig.url}/use-cases/resume` },
+          ]}
+        />
       <Header />
       <main id="main-content">
       <div className="bg-tp-paper pt-20">

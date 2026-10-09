@@ -4,7 +4,8 @@ import { Award, Briefcase, Camera, Check, Clock, GraduationCap, Lock, Shield, Sp
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
-import { FAQSchema } from '@/components/structured-data';
+import { FAQSchema, BreadcrumbSchema } from '@/components/structured-data';
+import { siteConfig } from '@/config/site';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
@@ -148,6 +149,13 @@ export default function AwardNominationUseCasePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
       />
       <FAQSchema items={faqs} />
+      <BreadcrumbSchema
+          items={[
+            { name: 'Home', url: siteConfig.url },
+            { name: 'Use Cases', url: `${siteConfig.url}/use-cases` },
+            { name: 'Award Nomination', url: `${siteConfig.url}/use-cases/award-nomination` },
+          ]}
+        />
       <Header />
       <main id="main-content">
       <div className="bg-tp-paper pt-20">

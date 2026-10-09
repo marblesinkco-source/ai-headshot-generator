@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
-import { ProductSchema, FAQSchema } from '@/components/structured-data';
+import { ProductSchema, FAQSchema, BreadcrumbSchema } from '@/components/structured-data';
+import { siteConfig } from '@/config/site';
 import { Button } from '@/components/ui/button';
 import { Users, CheckCircle, ArrowRight } from 'lucide-react';
 import { BASE_PRICE_DISPLAY, TEAM_PRICE_LARGE_DISPLAY } from '@/config/pricing';
@@ -135,6 +136,13 @@ export default function RealEstateIndustryPage() {
         slug="industries/real-estate"
       />
       <FAQSchema items={faqs} />
+      <BreadcrumbSchema
+          items={[
+            { name: 'Home', url: siteConfig.url },
+            { name: 'Industries', url: `${siteConfig.url}/industries` },
+            { name: 'Real Estate', url: `${siteConfig.url}/industries/real-estate` },
+          ]}
+        />
       <Header />
       <main id="main-content">
       <div className="bg-tp-paper pt-20">

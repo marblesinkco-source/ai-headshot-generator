@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
-import { ProductSchema, FAQSchema } from '@/components/structured-data';
+import { ProductSchema, FAQSchema, BreadcrumbSchema } from '@/components/structured-data';
+import { siteConfig } from '@/config/site';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { ArrowRight, Check } from 'lucide-react';
 
@@ -65,6 +66,13 @@ export default function EcommerceLandingPage() {
         slug="industries/ecommerce"
       />
       <FAQSchema items={faqs} />
+      <BreadcrumbSchema
+          items={[
+            { name: 'Home', url: siteConfig.url },
+            { name: 'Industries', url: `${siteConfig.url}/industries` },
+            { name: 'E-Commerce', url: `${siteConfig.url}/industries/ecommerce` },
+          ]}
+        />
       <Header />
       <main id="main-content">
       <div className="bg-tp-paper pt-20">

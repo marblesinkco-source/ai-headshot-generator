@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
-import { ProductSchema, FAQSchema } from '@/components/structured-data';
+import { ProductSchema, FAQSchema, BreadcrumbSchema } from '@/components/structured-data';
+import { siteConfig } from '@/config/site';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
@@ -124,6 +125,13 @@ export default function DoctorsIndustryPage() {
         slug="industries/doctors"
       />
       <FAQSchema items={faqs} />
+      <BreadcrumbSchema
+          items={[
+            { name: 'Home', url: siteConfig.url },
+            { name: 'Industries', url: `${siteConfig.url}/industries` },
+            { name: 'Doctors', url: `${siteConfig.url}/industries/doctors` },
+          ]}
+        />
       <Header />
       <main id="main-content">
       <div className="bg-tp-paper pt-20">
