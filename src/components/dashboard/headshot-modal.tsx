@@ -60,9 +60,9 @@ export function HeadshotModal({
   if (!current) return null;
 
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center">
+    <div className="fixed inset-0 z-[60] flex items-center justify-center" role="dialog" aria-modal="true" aria-label="Photo viewer">
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/80" onClick={onClose} />
+      <div className="absolute inset-0 bg-black/80" onClick={onClose} aria-hidden="true" />
 
       {/* Content */}
       <div className="relative z-10 flex max-h-[90vh] max-w-[90vw] flex-col items-center">
@@ -76,6 +76,7 @@ export function HeadshotModal({
               onClick={() => onToggleFavorite(current.id)}
               className="rounded-tp-button bg-white/10 p-2.5 text-white backdrop-blur-sm hover:bg-white/20 transition-colors"
               title={current.isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+              aria-label={current.isFavorite ? 'Remove from favorites' : 'Add to favorites'}
             >
               <svg
                 className={`h-5 w-5 ${current.isFavorite ? 'fill-tp-error text-tp-error' : ''}`}
@@ -91,8 +92,9 @@ export function HeadshotModal({
               onClick={() => onDownload(current.imageUrl, currentIndex)}
               className="rounded-tp-button bg-white/10 p-2.5 text-white backdrop-blur-sm hover:bg-white/20 transition-colors"
               title="Download"
+              aria-label="Download photo"
             >
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
               </svg>
             </button>
@@ -100,8 +102,9 @@ export function HeadshotModal({
               onClick={onClose}
               className="rounded-tp-button bg-white/10 p-2.5 text-white backdrop-blur-sm hover:bg-white/20 transition-colors"
               title="Close"
+              aria-label="Close viewer"
             >
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>

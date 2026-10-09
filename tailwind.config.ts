@@ -56,9 +56,9 @@ const config: Config = {
         'tp-warm': '#E8E1D8',
         'tp-white': '#FFFFFF',
         // Semantic state colors
-        'tp-success': '#16A34A',
-        'tp-warning': '#F59E0B',
-        'tp-error': '#DC2626',
+        'tp-success': '#15803D',
+        'tp-warning': '#B45309',
+        'tp-error': '#B91C1C',
       },
       borderRadius: {
         lg: 'var(--radius)',

@@ -102,6 +102,7 @@ export function InsightsClient() {
           <select
             value={days}
             onChange={(e) => setDays(Number(e.target.value))}
+            aria-label="Select time range"
             className="text-sm border border-tp-line rounded-tp-button px-3 py-2 bg-white text-tp-ink focus:outline-none focus:ring-2 focus:ring-tp-bronze-ink/20"
           >
             <option value={7}>Son 7 gün</option>
@@ -112,6 +113,7 @@ export function InsightsClient() {
             onClick={fetchData}
             className="p-2 text-tp-muted hover:text-tp-ink transition-colors rounded-tp-button hover:bg-tp-beige"
             title="Yenile"
+            aria-label="Refresh data"
           >
             <RefreshCw className="w-4 h-4" />
           </button>

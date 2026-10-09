@@ -306,6 +306,7 @@ export default function SettingsClient() {
                 value={deleteConfirmText}
                 onChange={(e) => setDeleteConfirmText(e.target.value)}
                 placeholder="Type DELETE to confirm"
+                aria-label="Type DELETE to confirm account deletion"
                 className="block w-full rounded-tp-button border border-tp-error/40 px-3.5 py-2.5 text-sm text-tp-ink placeholder-tp-muted focus:border-tp-error focus:outline-none focus:ring-2 focus:ring-tp-error/20 transition-colors"
               />
               <div className="flex gap-3">
