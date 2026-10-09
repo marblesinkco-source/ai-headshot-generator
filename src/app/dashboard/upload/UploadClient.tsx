@@ -125,8 +125,39 @@ function UploadContent() {
         throw new Error(data.error || 'Failed to create checkout session');
       }
 
-      // Redirect to Stripe checkout
-      window.location.href = data.url;
+      // Open Paddle checkout overlay
+      if (data.checkout && typeof window !== 'undefined') {
+        const w = window as unknown as {
+          Paddle?: {
+            Checkout: { open: (opts: Record<string, unknown>) => void };
+            Update: (opts: Record<string, unknown>) => void;
+          };
+        };
+        if (w.Paddle) {
+          w.Paddle.Checkout.open({
+            items: data.checkout.items,
+            customData: data.checkout.customData,
+            customer: data.checkout.customer,
+            settings: {
+              successUrl: data.checkout.settings?.successUrl,
+              ...(data.checkout.settings?.discountId ? { discountId: data.checkout.settings.discountId } : {}),
+            },
+          });
+          // Reset loading when user closes overlay without completing payment
+          const handleMessage = (event: MessageEvent) => {
+            if (event.data?.event === 'checkout.closed' || event.data?.type === 'checkout.closed') {
+              setCheckoutLoading(null);
+              window.removeEventListener('message', handleMessage);
+            }
+          };
+          window.addEventListener('message', handleMessage);
+        } else {
+          throw new Error('Payment system is loading. Please try again in a moment.');
+        }
+      } else if (data.url) {
+        // Fallback: redirect URL (legacy support)
+        window.location.href = data.url;
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong');
       setCheckoutLoading(null);

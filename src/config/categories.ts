@@ -248,7 +248,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
     maxPhotos: 8,
     outputLabel: 'headshots',
     /**
-     * Bulk team packages — flat-rate bundles charged at checkout via Stripe.
+     * Bulk team packages — flat-rate bundles charged at checkout via Paddle.
      * Per-person equivalent (~$20, ~$17, ~$13) differs from the per-person
      * team pricing in pricing.ts TEAM_PRICES ($39/$29 per person) which is
      * used on marketing pages for individual team-member billing.

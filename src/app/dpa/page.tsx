@@ -78,7 +78,7 @@ const securityMeasures = [
   },
   {
     title: 'Payment data',
-    text: 'TailorPic does not store credit card numbers or sensitive payment details. Payments are handled by Stripe.',
+    text: 'TailorPic does not store credit card numbers or sensitive payment details. Payments are handled by Paddle, our Merchant of Record.',
   },
 ];
 
@@ -89,9 +89,9 @@ const subProcessors = [
     text: 'Provides database, authentication, and file storage. Stores account information, uploaded photos, and generated results on behalf of TailorPic.',
   },
   {
-    name: 'Stripe',
+    name: 'Paddle',
     role: 'Payment processing',
-    text: 'Processes payments and handles billing details. Receives payment and billing information needed to complete a transaction; card details are not stored by TailorPic.',
+    text: 'Acts as Merchant of Record: processes payments and handles tax compliance, invoicing, and billing details. Receives payment and billing information needed to complete a transaction; card details are not stored by TailorPic.',
   },
   {
     name: 'Replicate',
@@ -387,7 +387,7 @@ export default function DpaPage() {
               by contacting us. Upon termination of the service or on written request,
               TailorPic will delete or return Personal Data, and delete existing copies,
               unless retention is required by applicable law. Limited billing and order
-              records may be retained by TailorPic and Stripe as needed to meet legal,
+              records may be retained by TailorPic and Paddle as needed to meet legal,
               tax, and accounting obligations.
             </p>
             <p>

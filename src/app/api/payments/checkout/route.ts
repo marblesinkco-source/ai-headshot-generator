@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { nanoid } from 'nanoid';
 import { createClient } from '@/lib/supabase/server';
-import { stripe } from '@/lib/stripe';
 import { PACKAGES, type PackageId } from '@/config/packages';
 import { getCategoryById, getPackageById, type CategoryId } from '@/config/categories';
 import { CREDIT_PACKAGES } from '@/config/credits';
@@ -13,12 +12,16 @@ import { logger } from '@/lib/logger';
 
 export const maxDuration = 30;
 
-// Known coupon codes mapped to Stripe coupon IDs
-// Create these in Stripe Dashboard: Dashboard → Products → Coupons
-const COUPON_MAP: Record<string, string> = {
-  UPGRADE25: 'UPGRADE25', // 25% off — Stripe coupon ID must match
-  AVATARBUNDLE: 'AVATARBUNDLE', // Avatar bundle discount — Stripe coupon ID must match
-  AVATAR20: 'AVATAR20', // 20% off avatars when added to cart — Stripe coupon ID must match
+/**
+ * Known discount codes mapped to Paddle discount IDs.
+ * Create these in Paddle Dashboard: Catalog → Discounts
+ * The values here are Paddle discount IDs (e.g., "dsc_...").
+ * Set them once the Paddle account is configured.
+ */
+const DISCOUNT_MAP: Record<string, string | undefined> = {
+  UPGRADE25: process.env.PADDLE_DISCOUNT_UPGRADE25,
+  AVATARBUNDLE: process.env.PADDLE_DISCOUNT_AVATARBUNDLE,
+  AVATAR20: process.env.PADDLE_DISCOUNT_AVATAR20,
 };
 
 // Support category checkout, legacy checkout, and credit package checkout
@@ -50,6 +53,23 @@ const checkoutSchema = z.union([
   }),
 ]);
 
+/**
+ * Paddle checkout flow:
+ *
+ * Unlike Stripe (server-side session → redirect), Paddle uses a client-side
+ * overlay checkout via Paddle.js. This route creates the order record in our
+ * DB and returns the data needed for Paddle.js to open the checkout overlay.
+ *
+ * The client will call Paddle.Checkout.open({ ... }) with the returned data.
+ *
+ * Flow:
+ * 1. Client POST /api/payments/checkout with package info
+ * 2. This route creates a pending order in Supabase
+ * 3. Returns { orderId, items, customData, discountId, settings }
+ * 4. Client opens Paddle.Checkout.open() with this data
+ * 5. Paddle handles the payment (overlay on our site)
+ * 6. Paddle webhook fires → /api/webhooks/paddle handles fulfillment
+ */
 export async function POST(request: NextRequest) {
   const csrf = csrfGuard(request);
   if (csrf) return csrf;
@@ -131,44 +151,39 @@ export async function POST(request: NextRequest) {
         );
       }
 
-      const creditStripeCoupon = creditCoupon ? COUPON_MAP[creditCoupon.toUpperCase()] : undefined;
+      const discountId = creditCoupon ? DISCOUNT_MAP[creditCoupon.toUpperCase()] : undefined;
 
-      const checkoutSession = await stripe.checkout.sessions.create({
-        mode: 'payment',
-        customer_email: user.email,
-        // Automatic payment methods: card, Apple Pay, Google Pay, Link (one-click checkout)
-        // Stripe automatically shows the best methods based on customer's device and location
-        payment_method_types: ['card', 'link'],
-        billing_address_collection: 'auto',
-        phone_number_collection: { enabled: true },
-        line_items: [
-          {
-            price_data: {
-              currency: creditPkg.currency,
-              product_data: {
-                name: `${siteConfig.name} — ${creditPkg.name}`,
-                description: `${creditPkg.credits} credits — use across all categories. Valid for 12 months.`,
-              },
-              unit_amount: creditPkg.price,
+      // Return data for Paddle.js checkout overlay
+      return NextResponse.json({
+        orderId,
+        checkout: {
+          items: [
+            {
+              // Paddle price ID — must be created in Paddle Dashboard for each credit package
+              // Format: pri_... (Paddle price IDs)
+              // Until Paddle prices are created, use the package ID as a reference
+              priceId: creditPkg.paddlePriceId || creditPkg.id,
+              quantity: 1,
             },
-            quantity: 1,
+          ],
+          customData: {
+            orderId,
+            packageId: creditPkg.id,
+            categoryId: 'credits',
+            userId: user.id,
+            orderType: 'credits',
+            creditCount: String(creditPkg.credits),
+            validityDays: String(creditPkg.validityDays),
           },
-        ],
-        ...(creditStripeCoupon ? { discounts: [{ coupon: creditStripeCoupon }] } : {}),
-        metadata: {
-          orderId,
-          packageId: creditPkg.id,
-          categoryId: 'credits',
-          userId: user.id,
-          orderType: 'credits',
-          creditCount: String(creditPkg.credits),
-          validityDays: String(creditPkg.validityDays),
+          settings: {
+            successUrl: successUrl || `${baseUrl}/dashboard/credits?status=success&orderId=${orderId}`,
+            ...(discountId ? { discountId } : {}),
+          },
+          customer: {
+            email: user.email,
+          },
         },
-        success_url: successUrl || `${baseUrl}/dashboard/credits?status=success&orderId=${orderId}`,
-        cancel_url: cancelUrl || `${baseUrl}/pricing?status=cancelled`,
       });
-
-      return NextResponse.json({ url: checkoutSession.url });
     }
 
     // ─── Category / Legacy checkout ────────────────────────────────────
@@ -190,7 +205,7 @@ export async function POST(request: NextRequest) {
     let pkgPrice: number;
     let pkgCurrency: string;
     let outputCount: number;
-    let productDescription: string;
+    let paddlePriceId: string | undefined;
 
     const category = getCategoryById(categoryId as CategoryId);
 
@@ -206,7 +221,7 @@ export async function POST(request: NextRequest) {
       pkgPrice = catPkg.price;
       pkgCurrency = catPkg.currency;
       outputCount = catPkg.outputCount;
-      productDescription = `${catPkg.outputCount} ${category.outputLabel} — ${catPkg.features.slice(0, 3).join(', ')}`;
+      paddlePriceId = (catPkg as { paddlePriceId?: string }).paddlePriceId;
     } else {
       const legacyPkg = PACKAGES[packageId as PackageId];
       if (!legacyPkg) {
@@ -219,7 +234,7 @@ export async function POST(request: NextRequest) {
       pkgPrice = legacyPkg.price;
       pkgCurrency = legacyPkg.currency;
       outputCount = legacyPkg.headshots;
-      productDescription = `${legacyPkg.headshots} AI headshots, ${legacyPkg.backgrounds} backgrounds, ${legacyPkg.styles} styles`;
+      paddlePriceId = (legacyPkg as { paddlePriceId?: string }).paddlePriceId;
     }
 
     const orderId = nanoid();
@@ -247,46 +262,38 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const categoryLabel = category ? category.name : 'AI Headshots';
-    const stripeCoupon = couponCode ? COUPON_MAP[couponCode.toUpperCase()] : undefined;
+    const discountId = couponCode ? DISCOUNT_MAP[couponCode.toUpperCase()] : undefined;
 
-    const checkoutSession = await stripe.checkout.sessions.create({
-      mode: 'payment',
-      customer_email: user.email,
-      // Automatic payment methods: card, Apple Pay, Google Pay, Link (one-click checkout)
-      payment_method_types: ['card', 'link'],
-      billing_address_collection: 'auto',
-      phone_number_collection: { enabled: true },
-      line_items: [
-        {
-          price_data: {
-            currency: pkgCurrency,
-            product_data: {
-              name: `${siteConfig.name} — ${categoryLabel} — ${pkgName}`,
-              description: productDescription,
-            },
-            unit_amount: pkgPrice,
+    // Return data for Paddle.js checkout overlay
+    return NextResponse.json({
+      orderId: order.id,
+      checkout: {
+        items: [
+          {
+            priceId: paddlePriceId || packageId,
+            quantity: 1,
           },
-          quantity: 1,
+        ],
+        customData: {
+          orderId: order.id,
+          packageId,
+          categoryId,
+          userId: user.id,
+          ...(withdrawalConsent ? {
+            withdrawalConsentGiven: 'true',
+            consentTimestamp: consentTs || new Date().toISOString(),
+            consentText: 'Customer expressly requested immediate AI processing and waived right of withdrawal per EU Directive 2011/83/EU Art.16(a)',
+          } : {}),
         },
-      ],
-      ...(stripeCoupon ? { discounts: [{ coupon: stripeCoupon }] } : {}),
-      metadata: {
-        orderId: order.id,
-        packageId,
-        categoryId,
-        userId: user.id,
-        ...(withdrawalConsent ? {
-          withdrawalConsentGiven: 'true',
-          consentTimestamp: consentTs || new Date().toISOString(),
-          consentText: 'Customer expressly requested immediate AI processing and waived right of withdrawal per EU Directive 2011/83/EU Art.16(a)',
-        } : {}),
+        settings: {
+          successUrl: successUrl || `${baseUrl}/dashboard/orders/${order.id}?status=success`,
+          ...(discountId ? { discountId } : {}),
+        },
+        customer: {
+          email: user.email,
+        },
       },
-      success_url: successUrl || `${baseUrl}/dashboard/orders/${order.id}?status=success`,
-      cancel_url: cancelUrl || `${baseUrl}/dashboard/upload?category=${categoryId}&status=cancelled`,
     });
-
-    return NextResponse.json({ url: checkoutSession.url });
   } catch (error) {
     logger.error('Checkout error:', error);
     return NextResponse.json(

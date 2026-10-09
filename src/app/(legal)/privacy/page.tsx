@@ -36,7 +36,7 @@ export default function PrivacyPage() {
       <h3>Personal Information</h3>
       <ul>
         <li><strong>Account Information:</strong> Name, email address, and password when you create an account.</li>
-        <li><strong>Payment Information:</strong> Processed securely through Stripe. We do not store your credit card details.</li>
+        <li><strong>Payment Information:</strong> Processed securely through Paddle, our Merchant of Record, which handles payment processing, tax compliance, and invoicing on our behalf. We do not store your credit card details.</li>
         <li><strong>Photos:</strong> Images you upload for AI processing.</li>
       </ul>
 
@@ -75,7 +75,7 @@ export default function PrivacyPage() {
       <p>We use the following third-party services:</p>
       <ul>
         <li><strong>Supabase:</strong> Authentication and data storage</li>
-        <li><strong>Stripe:</strong> Payment processing</li>
+        <li><strong>Paddle:</strong> Payment processing, tax compliance, and invoicing (Merchant of Record)</li>
         <li><strong>Replicate:</strong> AI model training and inference</li>
         <li><strong>Resend:</strong> Transactional emails</li>
         <li><strong>Vercel:</strong> Hosting and content delivery</li>

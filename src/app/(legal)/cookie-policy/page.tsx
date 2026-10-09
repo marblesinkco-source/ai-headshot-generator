@@ -182,11 +182,13 @@ export default function CookiePolicyPage() {
           cookies are set on our domain and are essential.
         </li>
         <li>
-          <strong>Stripe</strong> &mdash; Payments are completed on
-          Stripe&apos;s hosted checkout page. We do not set Stripe cookies on
-          our site; any cookies Stripe sets on its own pages are governed by{' '}
-          <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer">
-            Stripe&apos;s Privacy Policy
+          <strong>Paddle</strong> &mdash; Payments are completed in a Paddle
+          checkout overlay displayed on our site. Paddle may set cookies or
+          similar technologies on our site while the checkout overlay is
+          loaded, for example to process your payment, prevent fraud, and
+          remember your checkout session. These are governed by{' '}
+          <a href="https://www.paddle.com/legal/privacy" target="_blank" rel="noopener noreferrer">
+            Paddle&apos;s Privacy Policy
           </a>
           .
         </li>

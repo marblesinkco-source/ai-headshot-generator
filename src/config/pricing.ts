@@ -3,7 +3,7 @@ import { formatPrice } from '@/lib/utils';
 /**
  * Central pricing constants — DISPLAY ONLY.
  *
- * The amount actually charged is defined server-side (Stripe / API routes).
+ * The amount actually charged is defined server-side (Paddle / API routes).
  * Never use these values to compute what a customer is billed.
  */
 
@@ -66,15 +66,19 @@ export const UPLOAD_REQUIREMENTS = {
 
 export const PAYMENT_PROVIDER = {
   /** Display name shown in marketing copy */
-  name: 'Stripe',
+  name: 'Paddle',
   /** Short checkout badge text */
-  checkoutBadge: 'Secure checkout via Stripe',
+  checkoutBadge: 'Secure checkout via Paddle',
   /** Longer trust copy */
-  trustStatement: 'Payments are processed by Stripe, a PCI-DSS Level 1 certified payment processor. Your card details are never stored on our servers.',
+  trustStatement: 'Payments are processed by Paddle.com Market Ltd, our Merchant of Record. Paddle handles all payment processing, tax compliance, and invoicing. Your card details are never stored on our servers.',
   /** Privacy copy */
-  privacyStatement: 'Card details are handled by Stripe and never stored on our servers.',
+  privacyStatement: 'Card details are handled by Paddle, our Merchant of Record, and never stored on our servers.',
   /** URL to provider's security page (for legal references) */
-  securityUrl: 'https://stripe.com/docs/security',
+  securityUrl: 'https://www.paddle.com/legal/security',
   /** URL to provider's privacy policy */
-  privacyUrl: 'https://stripe.com/privacy',
+  privacyUrl: 'https://www.paddle.com/legal/privacy',
+  /** Merchant of Record badge (Paddle-specific) */
+  morBadge: 'Paddle is our Merchant of Record',
+  /** Tax handling copy */
+  taxStatement: 'All applicable taxes (VAT, GST, sales tax) are calculated and collected by Paddle automatically based on your location.',
 } as const;

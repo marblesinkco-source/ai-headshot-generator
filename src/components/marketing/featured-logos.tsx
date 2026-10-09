@@ -52,8 +52,8 @@ const ITEMS: readonly Item[] = [
     ),
   },
   {
-    key: 'stripe',
-    label: 'Secure payments via Stripe',
+    key: 'paddle',
+    label: 'Secure payments via Paddle',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" {...svgProps}>
         <rect x="2.5" y="5" width="19" height="14" rx="2.5" />

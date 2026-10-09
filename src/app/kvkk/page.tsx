@@ -20,7 +20,7 @@ const CONTACT = 'support@tailorpic.com';
 
 const dataCategories = [
   { title: 'Kimlik ve iletişim verileri', text: 'Ad-soyad, e-posta adresi.' },
-  { title: 'Müşteri işlem ve ödeme verileri', text: 'Sipariş, kredi paketi ve ödeme bilgileri. Ödeme bilgileri Stripe aracılığıyla işlenir; kart bilgileriniz TailorPic tarafından saklanmaz.' },
+  { title: 'Müşteri işlem ve ödeme verileri', text: 'Sipariş, kredi paketi ve ödeme bilgileri. Ödeme bilgileri, ödeme işleme, vergi uyumu ve faturalandırmayı bizim adımıza yürüten satıcı kuruluş (Merchant of Record) Paddle aracılığıyla işlenir; kart bilgileriniz TailorPic tarafından saklanmaz.' },
   { title: 'Görsel veriler (özel nitelikli kişisel veri)', text: 'Hizmetten yararlanmak amacıyla yüklediğiniz yüz fotoğrafları ve bu fotoğraflardan oluşturulan yapay zekâ görselleri. Yüz fotoğraflarınız, biyometrik veri üretmeye elverişli olması nedeniyle KVKK m. 6 kapsamında özel nitelikli kişisel veri olarak değerlendirilmektedir.' },
   { title: 'İşlem güvenliği verileri', text: 'IP adresi, cihaz ve tarayıcı bilgileri, işletim sistemi, log kayıtları.' },
   { title: 'Çerez verileri', text: 'Çerezler ve benzeri teknolojiler aracılığıyla toplanan kullanım ve tercih verileri. Ayrıntılar için Çerez Politikası\'na bakınız.' },
@@ -45,7 +45,7 @@ const legalBases = [
 const transfers = [
   { name: 'Vercel Inc.', country: 'ABD', role: 'Barındırma ve içerik dağıtımı' },
   { name: 'Supabase Inc.', country: 'ABD', role: 'Kimlik doğrulama, veritabanı ve dosya depolama' },
-  { name: 'Stripe, Inc.', country: 'ABD', role: 'Ödeme işleme' },
+  { name: 'Paddle.com Market Limited', country: 'Birleşik Krallık', role: 'Ödeme işleme, vergi uyumu ve faturalandırma (Merchant of Record)' },
   { name: 'Replicate, Inc.', country: 'ABD', role: 'Yapay zekâ model eğitimi ve görsel üretimi' },
 ];
 

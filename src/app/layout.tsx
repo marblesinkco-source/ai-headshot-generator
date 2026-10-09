@@ -99,9 +99,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {SUPABASE_ORIGIN && (
           <link rel="dns-prefetch" href={SUPABASE_ORIGIN} />
         )}
-        {/* Stripe + analytics are only needed later (checkout / after consent): dns-prefetch only */}
-        <link rel="dns-prefetch" href="https://js.stripe.com" />
-        <link rel="dns-prefetch" href="https://api.stripe.com" />
+        {/* Paddle + analytics are only needed later (checkout / after consent): dns-prefetch only */}
+        <link rel="dns-prefetch" href="https://cdn.paddle.com" />
+        <link rel="dns-prefetch" href="https://checkout.paddle.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       </head>
       <body className="min-h-screen bg-tp-paper font-sans antialiased text-tp-ink">

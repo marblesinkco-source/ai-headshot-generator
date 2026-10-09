@@ -52,7 +52,7 @@ async function handleUpgradeEmails(request: NextRequest) {
   // Find entry-tier orders (TailorPic 1, Lite, or Basic/Express) eligible for upgrade
   const { data: expressOrders, error: queryError } = await supabase
     .from('orders')
-    .select('id, user_id, package_id, category_id, created_at, stripe_session_id')
+    .select('id, user_id, package_id, category_id, created_at, paddle_transaction_id')
     .or('package_id.like.%-tailorpic1,package_id.like.%-lite,package_id.like.%-express')
     .in('status', ['paid', 'uploading', 'processing', 'completed'])
     .lt('created_at', cutoffDate)

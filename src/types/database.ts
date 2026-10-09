@@ -105,6 +105,9 @@ export interface Database {
           status: OrderStatus;
           stripe_session_id: string | null;
           stripe_payment_intent: string | null;
+          // Migration: Paddle
+          paddle_transaction_id: string | null;
+          paddle_subscription_id: string | null;
           amount: number;
           currency: string;
           headshot_count: number;
@@ -132,6 +135,8 @@ export interface Database {
           status?: OrderStatus;
           stripe_session_id?: string | null;
           stripe_payment_intent?: string | null;
+          paddle_transaction_id?: string | null;
+          paddle_subscription_id?: string | null;
           amount: number;
           currency?: string;
           headshot_count?: number;
@@ -156,6 +161,8 @@ export interface Database {
           status?: OrderStatus;
           stripe_session_id?: string | null;
           stripe_payment_intent?: string | null;
+          paddle_transaction_id?: string | null;
+          paddle_subscription_id?: string | null;
           amount?: number;
           currency?: string;
           headshot_count?: number;
@@ -404,6 +411,25 @@ export interface Database {
           event_id?: string;
           event_type?: string;
           processed_at?: string;
+        };
+      };
+
+      // ── Migration: Paddle event deduplication ────────────────────────────
+      processed_paddle_events: {
+        Row: {
+          event_id: string;
+          event_type: string;
+          created_at: string;
+        };
+        Insert: {
+          event_id: string;
+          event_type: string;
+          created_at?: string;
+        };
+        Update: {
+          event_id?: string;
+          event_type?: string;
+          created_at?: string;
         };
       };
 

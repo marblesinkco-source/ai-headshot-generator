@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import DashboardShell from './components/DashboardShell';
+import PaddleScript from '@/components/PaddleScript';
 
 export const metadata: Metadata = {
   title: { default: 'Dashboard', template: '%s | Dashboard | TailorPic' },
@@ -29,6 +30,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
       {SUPABASE_ORIGIN && (
         <link rel="preconnect" href={SUPABASE_ORIGIN} crossOrigin="anonymous" />
       )}
+      <PaddleScript />
       <DashboardShell
         user={{
           email: user.email,

@@ -62,7 +62,7 @@ export default function TermsPage() {
       <ul>
         <li>All prices are listed in USD unless otherwise stated.</li>
         <li>Payment is required before AI processing begins.</li>
-        <li>Payments are processed securely through Stripe.</li>
+        <li>Payments are processed securely through Paddle, our Merchant of Record, which handles payment processing, tax compliance, and invoicing on our behalf.</li>
         <li>Prices may change at any time; existing orders are honored at their purchase price.</li>
       </ul>
 

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 const subprocessors = [
   { name: 'Supabase', purpose: 'Authentication, database, storage', location: 'United States' },
-  { name: 'Stripe', purpose: 'Payment processing', location: 'United States' },
+  { name: 'Paddle', purpose: 'Payment processing, tax compliance, and invoicing (Merchant of Record)', location: 'United Kingdom' },
   { name: 'Replicate', purpose: 'AI image generation', location: 'United States' },
   { name: 'Resend', purpose: 'Transactional email', location: 'United States' },
   { name: 'Vercel', purpose: 'Hosting & CDN', location: 'United States (Global Edge)' },
