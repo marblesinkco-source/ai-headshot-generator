@@ -23,6 +23,12 @@
    - İnteraktif help içeriği ayrı client component'e taşındı: `src/components/marketing/help-content.tsx`
    - CI PASS, Vercel PASS, canlı site doğrulaması yapıldı ✅
 
+4. **Footer'a 12 yetim sayfa linki eklendi** ✅ (commit d333997)
+   - PRODUCT: Pricing Comparison, Gift Cards, Integrations, Developer API
+   - RESOURCES: Headshot Sizes, Success Stories, For Students
+   - COMPANY: Affiliate Program, Partners, Press, Careers, Status
+   - CI PASS, Vercel PASS, canlı site footer doğrulaması yapıldı ✅
+
 ---
 
 ## Oturum: 2026-10-09 (Stripe→Paddle Ödeme Sistemi Geçişi — commit a412171)

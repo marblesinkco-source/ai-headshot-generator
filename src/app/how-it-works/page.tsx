@@ -29,15 +29,12 @@ import {
   X,
   ChevronDown,
   BadgeCheck,
-  Timer,
   LayoutGrid,
   ArrowRight,
   Smartphone,
   ImageIcon,
   Layers,
   MonitorUp,
-  Lightbulb,
-  Glasses,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -95,7 +92,7 @@ const steps = [
   },
 ];
 
-const differentiators = [
+const whyTailorPic = [
   {
     icon: Fingerprint,
     title: 'Custom AI Model',
@@ -104,15 +101,21 @@ const differentiators = [
   },
   {
     icon: Palette,
-    title: 'Multiple Styles',
+    title: 'Up to 160 Photos in Multiple Styles',
     description:
-      'Get up to 160 professional photos across a range of styles in a single session — headshots, creative, casual, and more.',
+      'Get a full variety of looks from a single upload — corporate headshots, creative portraits, casual shots, and more.',
   },
   {
     icon: Zap,
-    title: 'Lightning Fast',
+    title: 'Ready Within Hours',
     description:
-      'Your photos are typically ready within hours, not days. No scheduling, no commute, no waiting for a photographer.',
+      'Your photos are typically ready within hours, not days. No scheduling, no commute, no waiting for a photographer. We email you when they are done.',
+  },
+  {
+    icon: BadgeCheck,
+    title: 'One-Time Payment',
+    description:
+      'Pay once for your package. There are no recurring charges and nothing to cancel.',
   },
   {
     icon: ShieldCheck,
@@ -120,29 +123,8 @@ const differentiators = [
     description:
       'Your uploads are used only to create your photos and are automatically deleted within 30 days.',
   },
-];
-
-const whyChooseUs = [
   {
-    icon: BadgeCheck,
-    title: 'No Subscription Required',
-    description:
-      'Pay once for your package. There are no recurring charges and nothing to cancel.',
-  },
-  {
-    icon: Timer,
-    title: 'Fast Turnaround',
-    description:
-      'Most orders are ready within hours, with an email when they are done.',
-  },
-  {
-    icon: LayoutGrid,
-    title: 'Variety From One Upload',
-    description:
-      'Get a variety of looks from a single upload, from corporate to casual.',
-  },
-  {
-    icon: ShieldCheck,
+    icon: RotateCcw,
     title: 'Quality Commitment',
     description:
       'Not happy with your headshots? We will work with you until you are.',
@@ -169,27 +151,22 @@ const youGet = [
   { icon: BadgeCheck, title: 'Commercial rights', description: 'Use your photos on LinkedIn, your website, business cards and more.' },
 ];
 
-const bestResultsTips = [
-  { icon: Sun, title: 'Shoot in soft daylight', description: 'Stand facing a window. Avoid harsh overhead light and strong shadows across your face.' },
-  { icon: RotateCcw, title: 'Mix up angles and expressions', description: 'Include front-on and slightly turned shots, with a smile and a neutral look.' },
-  { icon: Glasses, title: 'Keep your face unobstructed', description: 'Skip sunglasses, hats and anything covering your features. Regular glasses are fine if you usually wear them.' },
-  { icon: Camera, title: 'Use recent photos', description: 'Pick selfies that look like you today so your results match how you look now.' },
-  { icon: Smartphone, title: 'Hold the camera at eye level', description: 'It keeps proportions natural and avoids distortion from extreme up or down angles.' },
-  { icon: Lightbulb, title: 'Skip filters and beauty modes', description: 'Unedited photos give the AI the most accurate information about your real features.' },
-];
-
 const doList = [
-  { icon: Sun, text: 'Natural, even lighting on your face' },
-  { icon: Eye, text: 'Face clearly visible, no obstructions' },
-  { icon: RotateCcw, text: 'Variety of angles and expressions' },
-  { icon: Camera, text: 'Recent photos that look like you now' },
+  { icon: Sun, text: 'Soft, natural lighting — face a window or shoot outdoors in daylight' },
+  { icon: Eye, text: 'Face clearly visible from multiple angles — front-on and slightly turned' },
+  { icon: RotateCcw, text: 'A mix of expressions — a smile, a neutral look, a relaxed gaze' },
+  { icon: Camera, text: 'Recent photos that look like you today' },
+  { icon: Smartphone, text: 'Camera held at eye level for natural proportions' },
+  { icon: ImageIcon, text: 'Simple, uncluttered backgrounds — vary them between shots' },
 ];
 
 const dontList = [
-  { text: 'Sunglasses or anything covering your face' },
-  { text: 'Heavy filters, edits, or beauty modes' },
+  { text: 'Sunglasses, hats, or anything covering your face' },
+  { text: 'Heavy filters, beauty modes, or edits' },
   { text: 'Group photos with other people' },
   { text: 'Blurry, dark, or low-resolution images' },
+  { text: 'Extreme up or down camera angles' },
+  { text: 'Old photos that no longer look like you' },
 ];
 
 const faqs = [
@@ -465,58 +442,22 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="bg-tp-paper py-20 sm:py-28" aria-labelledby="why-choose-us-heading">
+      {/* Why TailorPic */}
+      <section className="border-y border-tp-line bg-tp-black py-20 sm:py-28" aria-labelledby="why-tailorpic-heading">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2
-              id="why-choose-us-heading"
-              className="font-display text-3xl font-normal italic text-tp-ink sm:text-4xl"
+              id="why-tailorpic-heading"
+              className="font-display text-3xl font-normal italic text-tp-bronze sm:text-4xl"
             >
-              Why Choose Us
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-base text-tp-muted">
-              Simple terms and no surprises.
-            </p>
-          </div>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {whyChooseUs.map((item) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={item.title}
-                  className="rounded-tp-card border border-tp-line bg-white p-6"
-                >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-beige">
-                    <Icon className="h-6 w-6 text-tp-bronze-ink" />
-                  </div>
-                  <h3 className="mt-4 text-lg font-semibold text-tp-ink">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-tp-muted">
-                    {item.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* What Makes Us Different */}
-      <section className="border-y border-tp-line bg-tp-black py-20 sm:py-28">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="font-display text-3xl font-normal italic text-tp-bronze sm:text-4xl">
-              What Makes Us Different
+              Why TailorPic
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base text-tp-beige/60">
-              TailorPic is not just another photo filter. Here is what sets
-              our approach apart.
+              Not just another photo filter. Simple terms, no surprises, and a process built around you.
             </p>
           </div>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {differentiators.map((item) => {
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {whyTailorPic.map((item) => {
               const Icon = item.icon;
               return (
                 <div
@@ -524,7 +465,7 @@ export default function HowItWorksPage() {
                   className="rounded-tp-card border border-white/10 bg-white/5 p-6 backdrop-blur-sm"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-tp-button bg-tp-bronze/10">
-                    <Icon className="h-6 w-6 text-tp-bronze" />
+                    <Icon className="h-6 w-6 text-tp-bronze" aria-hidden="true" />
                   </div>
                   <h3 className="mt-4 text-lg font-semibold text-white">
                     {item.title}
@@ -539,49 +480,15 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      {/* Tips for best results */}
-      <section className="py-20 sm:py-28" aria-labelledby="tips-heading">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 id="tips-heading" className="font-display text-3xl font-normal italic text-tp-ink sm:text-4xl">
-              Tips for Best Results
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-base text-tp-muted">
-              Better input photos lead to a better likeness. Keep these in mind when you shoot.
-            </p>
-          </div>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {bestResultsTips.map((item, i) => {
-              const Icon = item.icon;
-              return (
-                <div key={item.title} className="flex gap-4 rounded-tp-card border border-tp-line bg-white p-6">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-tp-button bg-tp-beige">
-                    <Icon className="h-5 w-5 text-tp-bronze-ink" aria-hidden="true" />
-                  </div>
-                  <div>
-                    <h3 className="text-base font-semibold text-tp-ink">
-                      <span className="mr-1.5 text-tp-bronze-ink">{i + 1}.</span>
-                      {item.title}
-                    </h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-tp-muted">{item.description}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Photo Requirements */}
+      {/* Photo Guide */}
       <section className="bg-tp-paper py-20 sm:py-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="font-display text-3xl font-normal italic text-tp-ink sm:text-4xl">
-              Photo Requirements
+              Photo Guide
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base text-tp-muted">
-              Follow these tips to get the best possible results from your AI
-              photos.
+              Better input photos mean a better likeness. Follow these tips for the best results.
             </p>
           </div>
 
