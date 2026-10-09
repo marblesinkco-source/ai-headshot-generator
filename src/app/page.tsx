@@ -12,7 +12,7 @@ import { WebsiteSchema, FAQSchema, SoftwareApplicationSchema } from '@/component
 export const metadata: Metadata = {
   title: 'TailorPic — AI Headshots & Professional Photos | From $1.99',
   description:
-    'Get studio-quality AI headshots in minutes. Multiple styles for business, LinkedIn & creative use. From $1.99.',
+    'Get studio-quality AI headshots within hours. Multiple styles for business, LinkedIn & creative use. From $1.99.',
   openGraph: generateOGMetadata({ title: 'TailorPic — AI Headshots & Professional Photos | From $1.99', description:
       'Upload a few selfies, get studio-quality AI headshots. Professional, creative & business styles.', path: '/' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic — AI Headshots & Professional Photos | From $1.99', description:
@@ -44,10 +44,6 @@ const Pricing = dynamic(
   () => import('@/components/marketing/pricing').then((m) => m.Pricing),
   { loading: () => <SectionSkeleton height="h-[800px] md:h-[600px]" /> }
 );
-const ReviewPlatforms = dynamic(
-  () => import('@/components/marketing/review-platforms').then((m) => m.ReviewPlatforms),
-  { loading: () => <SectionSkeleton height="h-[140px]" /> }
-);
 const VsStudio = dynamic(
   () => import('@/components/marketing/vs-studio').then((m) => m.VsStudio),
   { loading: () => <SectionSkeleton height="h-[600px] md:h-[500px]" /> }
@@ -55,10 +51,6 @@ const VsStudio = dynamic(
 const GuaranteeSection = dynamic(
   () => import('@/components/marketing/guarantee-section').then((m) => m.GuaranteeSection),
   { loading: () => <SectionSkeleton height="h-[400px] md:h-[320px]" /> }
-);
-const TrustBadges = dynamic(
-  () => import('@/components/marketing/trust-badges').then((m) => m.TrustBadges),
-  { loading: () => <SectionSkeleton height="h-[200px]" /> }
 );
 const FAQ = dynamic(
   () => import('@/components/marketing/faq').then((m) => m.FAQ),
@@ -75,20 +67,12 @@ const StickyCTA = dynamic(
 const ScrollProgress = dynamic(
   () => import('@/components/marketing/scroll-progress').then((m) => m.ScrollProgress)
 );
-const AnimatedStats = dynamic(
-  () => import('@/components/marketing/animated-stats').then((m) => m.AnimatedStats),
-  { loading: () => <SectionSkeleton height="h-[200px] sm:h-[240px]" /> }
-);
 const FeaturedLogos = dynamic(
   () => import('@/components/marketing/featured-logos').then((m) => m.FeaturedLogos),
   { loading: () => <SectionSkeleton height="h-[160px]" /> }
 );
 const UseCases = dynamic(
   () => import('@/components/marketing/use-cases').then((m) => m.UseCases),
-  { loading: () => <SectionSkeleton height="h-[500px] md:h-[400px]" /> }
-);
-const FreeToolsHighlight = dynamic(
-  () => import('@/components/marketing/free-tools-highlight').then((m) => m.FreeToolsHighlight),
   { loading: () => <SectionSkeleton height="h-[500px] md:h-[400px]" /> }
 );
 
@@ -102,63 +86,48 @@ export default function LandingPage() {
       <FAQSchema items={faqs} />
       <SoftwareApplicationSchema />
 
-      {/* 2. Hero */}
+      {/* Hero */}
       <Hero />
 
-      {/* 2.5. Featured Logos / Trust Strip */}
+      {/* Trust strip — logos */}
       <FeaturedLogos />
 
-      {/* 3. Before / After Showcase */}
+      {/* Before / After Showcase */}
       <BeforeAfterShowcase />
 
-      {/* 3.5. Animated Stats */}
-      <AnimatedStats />
-
-      {/* 4. How It Works — animated demo */}
+      {/* How It Works — animated demo */}
       <AIProcessDemo />
 
-      {/* 5. Categories */}
+      {/* Categories */}
       <Categories />
 
-      {/* 5.5. TailorPic vs Studio Comparison */}
+      {/* Pricing — moved up for shorter decision path */}
       <div className="mx-auto max-w-4xl px-8" aria-hidden="true"><div className="gold-line" /></div>
-      <VsStudio />
-
-      {/* 5.6. Use Cases */}
-      <UseCases />
-
-      {/* 5.7. Headshot in Context — platform mockups */}
-      <HeadshotInContext />
-
-      {/* 5.8. Free Tools Highlight */}
-      <FreeToolsHighlight />
-
-      {/* Section divider */}
-      <div className="mx-auto max-w-4xl px-8" aria-hidden="true"><div className="gold-line" /></div>
-
-      {/* 6. Pricing */}
       <Pricing />
 
-      {/* 7. Social Proof Bar */}
+      {/* Social proof */}
       <SocialProofBar />
 
-      {/* 8. Quality + Trust */}
-      <GuaranteeSection />
-      <TrustBadges />
+      {/* TailorPic vs Studio Comparison */}
+      <VsStudio />
 
-      {/* Section divider */}
+      {/* Use Cases */}
+      <UseCases />
+
+      {/* Headshot in Context — platform mockups */}
+      <HeadshotInContext />
+
+      {/* Quality commitment */}
       <div className="mx-auto max-w-4xl px-8" aria-hidden="true"><div className="gold-line" /></div>
+      <GuaranteeSection />
 
-      {/* 9. Review Platforms */}
-      <ReviewPlatforms />
-
-      {/* 10. FAQ */}
+      {/* FAQ */}
       <FAQ />
 
-      {/* 11. Final CTA */}
+      {/* Final CTA */}
       <CTABanner />
 
-      {/* 12. Sticky CTA (fixed bottom bar) */}
+      {/* Sticky CTA (fixed bottom bar) */}
       <StickyCTA />
 
     </main>
