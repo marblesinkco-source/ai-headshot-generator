@@ -81,7 +81,7 @@ const useCases = {
 const faqs = [
   { question: "How does TailorPic pricing compare to Vivid Headshots?", answer: "TailorPic packages start from $1.99 and go up to 160 photos. Check Vivid Headshots' current pricing, as it may change." },
   { question: "What categories does TailorPic support?", answer: "Eleven, including business, dating, creative, pet portraits and e-commerce photos." },
-  { question: "How quickly will I get my photos?", answer: "Within 24 hours." },
+  { question: "How quickly will I get my photos?", answer: "Most orders ready within hours." },
   { question: "Is there a quality commitment?", answer: "Yes, TailorPic offers a quality commitment." },
   { question: "Is it a subscription?", answer: "No, every package is a one-time payment starting at $1.99." },
 ];

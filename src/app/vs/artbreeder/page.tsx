@@ -112,7 +112,7 @@ const differences = [
   },
   {
     "title": "Trade-off on control",
-    "body": "Artbreeder offers fine creative control. TailorPic trades that for speed to a usable result, within 24 hours."
+    "body": "Artbreeder offers fine creative control. TailorPic trades that for speed to a usable result, within hours."
   }
 ];
 

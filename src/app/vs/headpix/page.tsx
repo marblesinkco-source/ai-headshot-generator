@@ -59,7 +59,7 @@ const differences = [
   { title: "Professional focus vs full range", body: "HeadPix is centred on professional headshots. TailorPic adds dating, creative, pet and e-commerce categories to the same order." },
   { title: "Entry cost", body: "Packages starting at from $1.99 keep the barrier low if you just want to try AI headshots." },
   { title: "Risk reduction", body: "TailorPic offers a quality commitment, so you can judge the results before committing." },
-  { title: "Speed", body: "TailorPic can take up to 24 hours. If a same-day deadline matters, confirm HeadPix turnaround on their site." },
+  { title: "Speed", body: "Most TailorPic orders are ready within hours. If a same-day deadline matters, confirm HeadPix turnaround on their site." },
 ];
 
 const useCases = {

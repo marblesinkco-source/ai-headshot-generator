@@ -468,7 +468,7 @@ export function Pricing() {
               <circle cx="12" cy="12" r="9" />
               <path d="M12 7v5l3 3" />
             </svg>
-            <span>Results in minutes</span>
+            <span>Results within hours</span>
           </div>
           <div className="flex items-center gap-2 text-sm text-tp-ink">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="text-tp-bronze-ink flex-shrink-0">

@@ -29,7 +29,7 @@ const differentiators = [
   },
   {
     icon: Timer,
-    title: 'Upload selfies, get results in minutes',
+    title: 'Upload selfies, get results within hours',
     body: 'No studio visit or scheduling. Upload photos from your phone and review your generated headshots online.',
   },
   {

@@ -112,7 +112,7 @@ const differences = [
   },
   {
     "title": "Trade-off on control",
-    "body": "Lightroom gives detailed manual control over every adjustment. TailorPic delivers within 24 hours with far less hands-on work."
+    "body": "Lightroom gives detailed manual control over every adjustment. TailorPic delivers within hours with far less hands-on work."
   }
 ];
 

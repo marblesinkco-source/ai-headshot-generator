@@ -54,7 +54,7 @@ const differences = [
   { title: "Lower entry price, more range", body: "InstaHeadshots starts at around $9, while TailorPic packages start from $1.99. TailorPic also covers 12 categories while InstaHeadshots offers limited styles." },
   { title: "Depth of output", body: "InstaHeadshots focuses on basic headshots. TailorPic includes photos for business, dating, creative and other uses." },
   { title: "Personalization", body: "TailorPic trains a LoRA model on your own photos for a closer likeness." },
-  { title: "Delivery", body: "TailorPic delivers within 24 hours, with the extra time going to model training." },
+  { title: "Delivery", body: "TailorPic delivers within hours, with the extra time going to model training." },
 ];
 
 const useCases = {

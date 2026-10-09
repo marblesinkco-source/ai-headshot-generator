@@ -62,7 +62,7 @@ const useCases = {
   tailorpic: [
     "A low upfront cost, from $1.99",
     "More categories beyond standard headshots",
-    "Delivery within 24 hours",
+    "Delivery within hours",
     "Predictable pricing with no subscription",
   ],
   other: [

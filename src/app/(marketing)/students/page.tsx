@@ -57,7 +57,7 @@ const faqs = [
   {
     question: 'How long does it take to get my headshots?',
     answer:
-      'After you upload your selfies, your headshots are typically generated within minutes. No need to schedule a photographer, commute to a studio or wait days for edited photos.',
+      'After you upload your selfies, your headshots are typically ready within hours. No need to schedule a photographer, commute to a studio or wait days for edited photos.',
   },
   {
     question: 'How many selfies do I need to upload?',
@@ -143,7 +143,7 @@ const steps = [
 const included = [
   { icon: Palette, text: 'Multiple styles and outfit options' },
   { icon: Camera, text: 'Clean, professional backgrounds' },
-  { icon: Clock, text: 'Ready in minutes — no scheduling' },
+  { icon: Clock, text: 'Ready within hours — no scheduling' },
   { icon: Shield, text: 'quality commitment' },
   { icon: Star, text: 'HD quality for print and digital' },
   { icon: Download, text: 'Unlimited downloads of your photos' },
@@ -214,7 +214,7 @@ export default function StudentsPage() {
             </Link>
           </div>
           <p className="mt-5 text-xs text-tp-muted">
-            No subscription. No .edu required. Upload selfies, get headshots in minutes.
+            No subscription. No .edu required. Upload selfies, get headshots within hours.
           </p>
         </div>
       </section>

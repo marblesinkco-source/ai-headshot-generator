@@ -25,7 +25,7 @@ export interface ABTest {
 // Default tests that run without DB
 const DEFAULT_TESTS: Record<string, ABTestVariant[]> = {
   'hero-cta-text': [
-    { id: 'control', weight: 50, config: { text: 'Create Your Perfect Headshot', subtext: 'AI-powered professional photos in minutes' } },
+    { id: 'control', weight: 50, config: { text: 'Create Your Perfect Headshot', subtext: 'AI-powered professional photos within hours' } },
     { id: 'variant_a', weight: 50, config: { text: 'Professional Photos, Zero Hassle', subtext: 'Upload selfies, get studio-quality headshots' } },
   ],
   'pricing-highlight': [

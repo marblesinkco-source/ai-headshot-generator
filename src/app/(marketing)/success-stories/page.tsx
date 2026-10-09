@@ -62,7 +62,7 @@ const scenarios: Scenario[] = [
     challenge:
       'Engineers and developers need polished headshots for LinkedIn and conference speaker bios but rarely have time to schedule studio sessions between sprint deadlines.',
     solution:
-      'Upload casual selfies and generate clean, professional headshots in minutes from the home office — no travel or scheduling required.',
+      'Upload casual selfies and generate clean, professional headshots within hours from the home office — no travel or scheduling required.',
     outcome:
       'Consistent, professional profiles across LinkedIn, GitHub, and conference bios updated the same day.',
     feature: 'AI Style Selection',
@@ -140,10 +140,10 @@ interface ValueProp {
 const valueProps: ValueProp[] = [
   {
     icon: Clock,
-    stat: 'Minutes',
-    label: 'Not hours',
+    stat: 'Hours',
+    label: 'Not days',
     description:
-      'Skip the scheduling, commuting, and waiting. Upload selfies and receive polished headshots in minutes.',
+      'Skip the scheduling, commuting, and waiting. Upload selfies and receive polished headshots within hours.',
   },
   {
     icon: Sparkles,
