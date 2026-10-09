@@ -194,7 +194,6 @@ export default function WhatsappUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

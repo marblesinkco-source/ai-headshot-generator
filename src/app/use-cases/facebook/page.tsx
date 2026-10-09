@@ -180,7 +180,6 @@ export default function FacebookUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

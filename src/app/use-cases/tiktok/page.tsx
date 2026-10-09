@@ -176,7 +176,6 @@ export default function TikTokUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

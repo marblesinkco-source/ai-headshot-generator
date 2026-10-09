@@ -194,7 +194,6 @@ export default function ChurchDirectoryUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

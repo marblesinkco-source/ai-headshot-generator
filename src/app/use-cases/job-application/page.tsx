@@ -194,7 +194,6 @@ export default function JobApplicationUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

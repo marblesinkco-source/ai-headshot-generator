@@ -170,7 +170,6 @@ export default function ModelsIndustryPage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           
             {/* Hero portrait */}
             <div className="mx-auto mt-12 h-32 w-32 overflow-hidden rounded-full ring-4 ring-tp-bronze/20 sm:h-40 sm:w-40">

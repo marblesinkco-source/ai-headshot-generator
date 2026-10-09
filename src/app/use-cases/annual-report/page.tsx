@@ -194,7 +194,6 @@ export default function AnnualReportUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

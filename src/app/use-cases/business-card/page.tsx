@@ -194,7 +194,6 @@ export default function BusinessCardUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

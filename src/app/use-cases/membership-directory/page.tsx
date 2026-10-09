@@ -194,7 +194,6 @@ export default function MembershipDirectoryUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

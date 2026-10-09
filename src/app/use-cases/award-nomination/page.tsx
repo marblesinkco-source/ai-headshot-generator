@@ -194,7 +194,6 @@ export default function AwardNominationUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

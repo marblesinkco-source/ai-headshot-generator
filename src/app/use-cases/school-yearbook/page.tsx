@@ -194,7 +194,6 @@ export default function SchoolYearbookUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

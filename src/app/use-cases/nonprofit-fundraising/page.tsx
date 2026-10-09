@@ -206,7 +206,6 @@ export default function NonprofitFundraisingUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

@@ -194,7 +194,6 @@ export default function PodcastCoverUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

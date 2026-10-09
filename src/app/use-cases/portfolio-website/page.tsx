@@ -194,7 +194,6 @@ export default function PortfolioWebsiteUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

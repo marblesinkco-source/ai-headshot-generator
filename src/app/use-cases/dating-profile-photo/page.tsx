@@ -206,7 +206,6 @@ export default function DatingProfilePhotoUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

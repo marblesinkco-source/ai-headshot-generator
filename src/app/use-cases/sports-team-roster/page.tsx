@@ -194,7 +194,6 @@ export default function SportsTeamRosterUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

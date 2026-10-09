@@ -176,7 +176,6 @@ export default function CorporateTeamsUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

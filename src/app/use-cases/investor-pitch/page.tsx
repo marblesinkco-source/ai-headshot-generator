@@ -194,7 +194,6 @@ export default function InvestorPitchUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

@@ -194,7 +194,6 @@ export default function OnlineCourseUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

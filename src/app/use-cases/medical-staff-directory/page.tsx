@@ -194,7 +194,6 @@ export default function MedicalStaffDirectoryUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

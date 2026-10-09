@@ -194,7 +194,6 @@ export default function VisaApplicationUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

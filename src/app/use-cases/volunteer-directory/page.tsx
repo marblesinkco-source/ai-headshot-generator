@@ -194,7 +194,6 @@ export default function VolunteerDirectoryUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

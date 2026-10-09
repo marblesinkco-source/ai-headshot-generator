@@ -194,7 +194,6 @@ export default function CompanyIntranetUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

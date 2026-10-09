@@ -194,7 +194,6 @@ export default function GraduationPhotoUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

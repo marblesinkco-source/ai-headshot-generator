@@ -194,7 +194,6 @@ export default function NewsletterUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

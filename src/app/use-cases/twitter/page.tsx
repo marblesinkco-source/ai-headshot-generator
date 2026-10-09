@@ -176,7 +176,6 @@ export default function TwitterUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

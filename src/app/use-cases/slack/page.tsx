@@ -176,7 +176,6 @@ export default function SlackUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

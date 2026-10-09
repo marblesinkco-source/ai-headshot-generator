@@ -194,7 +194,6 @@ export default function CrowdfundingCampaignUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

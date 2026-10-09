@@ -194,7 +194,6 @@ export default function MentorshipProfileUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

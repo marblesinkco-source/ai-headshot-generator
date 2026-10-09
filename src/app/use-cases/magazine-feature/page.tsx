@@ -194,7 +194,6 @@ export default function MagazineFeatureUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

@@ -194,7 +194,6 @@ export default function SalesDeckPage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

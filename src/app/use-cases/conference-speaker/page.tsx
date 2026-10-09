@@ -194,7 +194,6 @@ export default function ConferenceSpeakerPage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

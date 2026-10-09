@@ -176,7 +176,6 @@ export default function SocialMediaUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

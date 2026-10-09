@@ -206,7 +206,6 @@ export default function RealEstateListingUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

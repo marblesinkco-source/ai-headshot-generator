@@ -194,7 +194,6 @@ export default function AuthorBioUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

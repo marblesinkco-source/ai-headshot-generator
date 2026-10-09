@@ -176,7 +176,6 @@ export default function InstagramUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

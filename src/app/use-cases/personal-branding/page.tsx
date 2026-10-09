@@ -176,7 +176,6 @@ export default function PersonalBrandingUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

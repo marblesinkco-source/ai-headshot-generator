@@ -194,7 +194,6 @@ export default function ProfessionalDirectoryUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

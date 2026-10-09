@@ -180,7 +180,6 @@ export default function EmailSignatureUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

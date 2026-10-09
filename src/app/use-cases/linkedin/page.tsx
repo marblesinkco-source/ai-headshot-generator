@@ -176,7 +176,6 @@ export default function LinkedInUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

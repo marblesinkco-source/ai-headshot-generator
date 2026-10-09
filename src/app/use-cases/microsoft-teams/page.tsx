@@ -194,7 +194,6 @@ export default function MicrosoftTeamsPage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

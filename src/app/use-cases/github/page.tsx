@@ -194,7 +194,6 @@ export default function GithubUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

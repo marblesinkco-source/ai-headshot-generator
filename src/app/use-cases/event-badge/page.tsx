@@ -194,7 +194,6 @@ export default function EventBadgeUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

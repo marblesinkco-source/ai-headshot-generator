@@ -194,7 +194,6 @@ export default function SpeakingEngagementUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

@@ -194,7 +194,6 @@ export default function UpworkFiverrUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

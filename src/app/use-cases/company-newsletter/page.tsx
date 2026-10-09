@@ -194,7 +194,6 @@ export default function CompanyNewsletterUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

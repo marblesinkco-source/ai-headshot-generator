@@ -206,7 +206,6 @@ export default function BookCoverUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

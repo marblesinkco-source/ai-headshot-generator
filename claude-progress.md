@@ -1,5 +1,33 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-10 (SEO Structured Data & Title Fixes)
+
+### Tamamlanan Görevler
+
+1. **Homepage title double suffix düzeltmesi** ✅ (commit 6710b55)
+   - `title: { absolute: ... }` ile layout template'in `%s | TailorPic` eklemesi engellendi
+   - Yanlışlıkla eklenen BreadcrumbSchema kaldırıldı (homepage = root, breadcrumb gerekmez)
+
+2. **Semantic HTML — Header/Footer outside main** ✅ (commits 47d8056, e362d34, 62e2d2c)
+   - 322 sayfada Header/Footer `<main>` dışına taşındı
+   - Accessibility ve SEO best practices
+
+3. **min-h-screen kaldırıldı** ✅ (commit 229eda4)
+   - 93 sayfada gereksiz `min-h-screen` kaldırıldı
+
+4. **BreadcrumbSchema structured data — 123 sayfa** ✅ (commit 471c1ac)
+   - Tüm industry (65) ve use-case (58) sayfalarına BreadcrumbSchema eklendi
+   - Google arama sonuçlarında breadcrumb zengin sonuç desteği
+   - Brand ismi kapitalizasyon düzeltmeleri (GitHub, LinkedIn, TikTok, WhatsApp, DJs, E-Commerce, HR Professionals)
+
+5. **Vercel transient failure düzeltmesi** ✅ (commit 0648959)
+   - Boş commit ile rebuild tetiklendi, CI+Vercel PASS
+
+### Deploy: commits 6710b55→0648959 — CI PASS, Vercel PASS ✅
+### Canlı site doğrulaması: Chrome browser ile yapıldı ✅
+
+---
+
 ## Oturum: 2026-10-09 (SEO & Cross-linking Improvements)
 
 ### Tamamlanan Görevler

@@ -194,7 +194,6 @@ export default function WeddingGuestUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

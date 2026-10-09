@@ -205,7 +205,6 @@ export default function GovernmentIdPhotoUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

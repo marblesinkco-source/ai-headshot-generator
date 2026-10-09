@@ -180,7 +180,6 @@ export default function YouTubeUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>

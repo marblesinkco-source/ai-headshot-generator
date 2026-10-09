@@ -194,7 +194,6 @@ export default function CoachingProfileUseCasePage() {
                 View Pricing
               </Link>
             </div>
-              ))}
           </div>
         </div>
       </section>
