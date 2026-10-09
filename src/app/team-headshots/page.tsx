@@ -8,13 +8,13 @@ import { siteConfig } from '@/config/site';
 import { PAYMENT_PROVIDER } from '@/config/pricing';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   Users, Sparkles, ArrowRight, CheckCircle, Palette,
   Download, LayoutDashboard, Image, Camera, Send,
   Laptop, Scale, Building2, Stethoscope, GraduationCap, Landmark,
   Lock, ShieldCheck, CreditCard, UserPlus, RefreshCw, Minus,
   Clock, Wallet, Layers,
 } from 'lucide-react';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const faqItems = [
   {

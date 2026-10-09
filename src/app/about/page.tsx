@@ -8,7 +8,6 @@ import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema, AboutPageSchema } from '@/components/structured-data';
 import { AboutMissionIllustration } from '@/components/marketing/illustrations';
 import {
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   Shield,
   Zap,
   Wallet,
@@ -23,6 +22,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   Check,
   ArrowRight,
 } from 'lucide-react';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const aboutDescription = 'Learn about TailorPic, the AI photo platform that creates professional, personalized photos. Our mission, what sets us apart, and our privacy commitment.';
 

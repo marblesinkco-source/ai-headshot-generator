@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   Briefcase,
   Check,
   Clock,
@@ -22,6 +21,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const pageTitle = "AI Headshots for Real Estate Listings | TailorPic";
 const pageDescription =

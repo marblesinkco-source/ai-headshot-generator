@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   Briefcase,
   Building2,
   Check,
@@ -20,6 +19,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const title = 'AI Clothing Changer for Professional Headshots | TailorPic';
 const description =

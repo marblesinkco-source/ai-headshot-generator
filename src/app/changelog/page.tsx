@@ -7,7 +7,6 @@ import { EmailCapture } from '@/components/marketing/email-capture';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   Sparkles,
   Users,
   Camera,
@@ -18,6 +17,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   ArrowRight,
   Layers,
 } from 'lucide-react';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic Changelog: Product Updates and New Features' },

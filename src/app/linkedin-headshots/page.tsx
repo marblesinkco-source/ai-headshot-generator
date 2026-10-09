@@ -8,7 +8,6 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { LinkedInProfileIllustration } from '@/components/marketing/illustrations';
 import {
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   Camera,
   Sparkles,
   Clock,
@@ -23,6 +22,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   Briefcase,
   X,
 } from 'lucide-react';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 export const metadata: Metadata = {
   title: { absolute: 'AI LinkedIn Headshots: Professional Profile Photos' },

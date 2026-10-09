@@ -9,7 +9,6 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { FreeTrialIllustration } from '@/components/marketing/illustrations';
 import {
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   Camera,
   Sparkles,
   Clock,
@@ -31,6 +30,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   CreditCard,
   Lock,
 } from 'lucide-react';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 export const metadata: Metadata = {
   title: { absolute: 'Free AI Headshot Generator Alternative: Try Risk-Free' },

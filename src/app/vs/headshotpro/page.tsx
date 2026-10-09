@@ -5,7 +5,6 @@ import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
   DollarSign,
   Image,
   Layers,
@@ -16,6 +15,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 } from 'lucide-react';
 import { CellValue } from '@/components/shared/cell-value';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs HeadshotPro: AI Headshot Generator Comparison' },
