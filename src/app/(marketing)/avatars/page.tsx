@@ -42,7 +42,7 @@ const AVATAR_REGISTER_HREF = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fca
 /* ------------------------------------------------------------------ */
 
 export const metadata: Metadata = {
-  title: 'AI Avatars — Your Face in Every Universe | TailorPic',
+  title: { absolute: 'AI Avatars — Your Face in Every Universe | TailorPic' },
   description:
     `Transform your selfies into 50 jaw-dropping AI avatars. Fantasy, anime, cyberpunk, renaissance — all with your exact likeness. From ${AVATAR_PRICE}. Quality commitment.`,
   alternates: { canonical: '/avatars' },

@@ -11,10 +11,10 @@ import { siteConfig } from '@/config/site';
 /* ------------------------------------------------------------------ */
 
 export const metadata: Metadata = {
-  title: 'TailorPic Help Center: Support & Getting Started',
+  title: { absolute: 'TailorPic Help Center: Support & Getting Started' },
   description:
     'Get help with TailorPic AI headshots: account setup, photo uploads, order support, team features, privacy and billing.',
-  alternates: { canonical: `${siteConfig.url}/help` },
+  alternates: { canonical: '/help' },
   openGraph: generateOGMetadata({
     title: 'TailorPic Help Center: Support & Getting Started',
     description:
