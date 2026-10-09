@@ -41,6 +41,15 @@ export function wide(photoId: string): string {
   return unsplash(photoId, 1200, 675, 'face');
 }
 
+/** "Casual selfie" variant of a portrait — same person, wider framing.
+ *  Uses entropy-based crop + slightly wider dimensions so more background
+ *  shows, giving the impression of a quick phone snap rather than a
+ *  studio headshot. Combined with CSS `grayscale` this sells the
+ *  before/after transformation convincingly. */
+export function casualPortrait(photoId: string): string {
+  return unsplash(photoId, 700, 800, 'entropy');
+}
+
 /** Content photo — uses entropy-based crop instead of face-crop.
  *  Ideal for pets, products, scenes where face detection fails. */
 export function contentPhoto(photoId: string, w = 800, h = 1067): string {

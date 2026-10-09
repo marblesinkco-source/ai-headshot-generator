@@ -13,7 +13,7 @@
 //   "before" src for additional visual contrast.
 
 import { CATEGORIES, type CategoryId } from '@/config/categories';
-import { portrait, landscape, square } from '@/config/stock-portraits';
+import { portrait, casualPortrait, landscape, square } from '@/config/stock-portraits';
 
 export interface ImageAsset {
   src: string;
@@ -79,20 +79,21 @@ function landscapeAsset(photoId: string, alt: string): ImageAsset {
 }
 
 /**
- * Build a before/after pair from TWO distinct Unsplash portraits.
- * The "before" photo is a more casual/candid shot; the "after" is the
- * polished professional result. Consumers apply CSS `filter: grayscale(1)`
- * on the "before" src for additional visual contrast.
+ * Build a before/after pair from the SAME Unsplash portrait.
+ * "Before" uses casualPortrait() (entropy crop, wider framing) to look
+ * like an unprocessed phone snap; "after" uses portrait() (tight face crop)
+ * for the polished result. Consumers also apply CSS `grayscale` on the
+ * "before" image. Using the same person for both makes the transformation
+ * believable.
  */
-function stockBeforeAfter(
-  beforePhotoId: string,
-  afterPhotoId: string,
+function samePersonBeforeAfter(
+  photoId: string,
   altBefore: string,
   altAfter: string,
 ): BeforeAfterPair {
   return {
-    before: portraitAsset(beforePhotoId, altBefore),
-    after: portraitAsset(afterPhotoId, altAfter),
+    before: asset(casualPortrait(photoId), altBefore, POS.portrait),
+    after: portraitAsset(photoId, altAfter),
   };
 }
 
@@ -125,16 +126,15 @@ export interface HomeBeforeAfter extends BeforeAfterPair {
   detail: string;
 }
 
-/** Homepage before/after pairs — each pair uses two distinct Unsplash portraits:
- *  a casual/candid "before" and a polished professional "after".
- *  Consumers also apply CSS `filter: grayscale(1)` on the "before" image. */
+/** Homepage before/after pairs — each pair uses the SAME person's photo:
+ *  "before" is a wider entropy-crop (casual look) + CSS grayscale;
+ *  "after" is a tight face-crop (polished professional result). */
 export const homeBeforeAfterPairs: HomeBeforeAfter[] = [
   {
     label: 'LinkedIn Profile',
     detail: 'Clean, approachable, ready for recruiters',
-    ...stockBeforeAfter(
-      'photo-1529626455594-4ff0802cfb7e',       // casual outdoor snap
-      'photo-1580489944761-15a19d654956',        // polished studio result
+    ...samePersonBeforeAfter(
+      'photo-1494790108377-be9c29b29330',        // young professional woman (Michael Dam)
       'Casual selfie before AI processing',
       'Polished AI headshot for a LinkedIn profile',
     ),
@@ -142,9 +142,8 @@ export const homeBeforeAfterPairs: HomeBeforeAfter[] = [
   {
     label: 'Corporate Team',
     detail: 'Consistent look across your whole company',
-    ...stockBeforeAfter(
-      'photo-1496345875659-11f7dd282d1d',        // casual warm-light snap
-      'photo-1507003211169-0a1dd7228f2d',        // polished corporate result
+    ...samePersonBeforeAfter(
+      'photo-1507003211169-0a1dd7228f2d',        // man with warm smile (Jurica Koletić)
       'Casual selfie before AI processing',
       'Polished AI headshot for a corporate team page',
     ),
@@ -152,9 +151,8 @@ export const homeBeforeAfterPairs: HomeBeforeAfter[] = [
   {
     label: 'Creative Portfolio',
     detail: 'Distinctive style that still feels polished',
-    ...stockBeforeAfter(
-      'photo-1506863530036-1efeddceb993',        // casual golden-hour snap
-      'photo-1531746020798-e6953c6e8e04',        // editorial-style result
+    ...samePersonBeforeAfter(
+      'photo-1534528741775-53994a69daeb',        // woman with natural hairstyle
       'Casual photo before AI processing',
       'Editorial-style AI portrait for a creative portfolio',
     ),
@@ -162,14 +160,13 @@ export const homeBeforeAfterPairs: HomeBeforeAfter[] = [
 ];
 
 /** Dedicated before/after page — 6 pairs for more diversity.
- *  Each pair uses two distinct photos: casual before, polished after. */
+ *  Each pair uses the SAME person's photo with different crops. */
 export const dedicatedBeforeAfterPairs: HomeBeforeAfter[] = [
   {
     label: 'LinkedIn Profile',
     detail: 'Clean, approachable, ready for recruiters',
-    ...stockBeforeAfter(
-      'photo-1529626455594-4ff0802cfb7e',        // casual outdoor snap
-      'photo-1580489944761-15a19d654956',         // polished studio result
+    ...samePersonBeforeAfter(
+      'photo-1494790108377-be9c29b29330',        // young professional woman
       'Casual selfie before AI processing',
       'Polished AI headshot for a LinkedIn profile',
     ),
@@ -177,9 +174,8 @@ export const dedicatedBeforeAfterPairs: HomeBeforeAfter[] = [
   {
     label: 'Corporate Team',
     detail: 'Consistent look across your whole company',
-    ...stockBeforeAfter(
-      'photo-1496345875659-11f7dd282d1d',         // casual warm-light snap
-      'photo-1507003211169-0a1dd7228f2d',         // polished corporate result
+    ...samePersonBeforeAfter(
+      'photo-1507003211169-0a1dd7228f2d',        // man with warm smile
       'Casual selfie before AI processing',
       'Polished AI headshot for a corporate team page',
     ),
@@ -187,9 +183,8 @@ export const dedicatedBeforeAfterPairs: HomeBeforeAfter[] = [
   {
     label: 'Creative Portfolio',
     detail: 'Distinctive style that still feels polished',
-    ...stockBeforeAfter(
-      'photo-1506863530036-1efeddceb993',         // casual golden-hour snap
-      'photo-1531746020798-e6953c6e8e04',         // editorial-style result
+    ...samePersonBeforeAfter(
+      'photo-1534528741775-53994a69daeb',        // woman with natural hairstyle
       'Casual photo before AI processing',
       'Editorial-style AI portrait for a creative portfolio',
     ),
@@ -197,9 +192,8 @@ export const dedicatedBeforeAfterPairs: HomeBeforeAfter[] = [
   {
     label: 'Medical Professional',
     detail: 'Trustworthy, approachable healthcare look',
-    ...stockBeforeAfter(
-      'photo-1612349317150-e413f6a5b16d',         // casual healthcare snap
-      'photo-1559839734-2b71ea197ec2',            // polished medical portrait
+    ...samePersonBeforeAfter(
+      'photo-1559839734-2b71ea197ec2',           // doctor in white coat
       'Casual photo before AI processing',
       'Professional AI headshot for a medical profile',
     ),
@@ -207,9 +201,8 @@ export const dedicatedBeforeAfterPairs: HomeBeforeAfter[] = [
   {
     label: 'Tech & Startup',
     detail: 'Modern, confident, Silicon Valley ready',
-    ...stockBeforeAfter(
-      'photo-1552374196-c4e7ffc6e126',            // relaxed casual pose
-      'photo-1506794778202-cad84cf45f1d',         // polished tech headshot
+    ...samePersonBeforeAfter(
+      'photo-1506794778202-cad84cf45f1d',        // young man creative style
       'Casual photo before AI processing',
       'Professional AI headshot for a tech profile',
     ),
@@ -217,9 +210,8 @@ export const dedicatedBeforeAfterPairs: HomeBeforeAfter[] = [
   {
     label: 'Real Estate Agent',
     detail: 'Warm, trustworthy, client-facing look',
-    ...stockBeforeAfter(
-      'photo-1544005313-94ddf0286df2',            // warm casual expression
-      'photo-1573496799652-408c2ac9fe98',         // polished real estate portrait
+    ...samePersonBeforeAfter(
+      'photo-1573496359142-b8d87734a5a2',        // professional woman in navy blazer
       'Casual photo before AI processing',
       'Professional AI headshot for real estate marketing',
     ),
@@ -262,8 +254,7 @@ export const categoryVisuals: Record<string, CategoryVisuals> = {
       portraitAsset('photo-1519085360753-af0119f7cbe7', 'Young man in crisp white shirt'),
       portraitAsset('photo-1438761681033-6461ffad8d80', 'Mature professional woman'),
     ],
-    beforeAfter: stockBeforeAfter(
-      'photo-1529626455594-4ff0802cfb7e',
+    beforeAfter: samePersonBeforeAfter(
       'photo-1580489944761-15a19d654956',
       'Casual selfie before AI processing',
       'Polished AI headshot',
@@ -284,8 +275,7 @@ export const categoryVisuals: Record<string, CategoryVisuals> = {
       portraitAsset('photo-1524504388940-b1c1722653e1', 'Man with creative casual look'),
       portraitAsset('photo-1531746020798-e6953c6e8e04', 'Woman with artistic style'),
     ],
-    beforeAfter: stockBeforeAfter(
-      'photo-1552374196-c4e7ffc6e126',
+    beforeAfter: samePersonBeforeAfter(
       'photo-1500648767791-00dcc994a43e',
       'Casual photo before AI enhancement',
       'Polished dating profile photo',
@@ -309,8 +299,7 @@ export const categoryVisuals: Record<string, CategoryVisuals> = {
       portraitAsset('photo-1566492031773-4f4e44671857', 'Distinguished man in suit'),
       portraitAsset('photo-1545167622-3a6ac756afa4', 'Young professional with modern style'),
     ],
-    beforeAfter: stockBeforeAfter(
-      'photo-1496345875659-11f7dd282d1d',
+    beforeAfter: samePersonBeforeAfter(
       'photo-1507003211169-0a1dd7228f2d',
       'Casual selfie before AI processing',
       'Polished AI headshot for a team page',
@@ -334,9 +323,8 @@ export const categoryVisuals: Record<string, CategoryVisuals> = {
       portraitAsset('photo-1573497019940-1c28c88b4f3e', 'Woman in professional setting'),
       portraitAsset('photo-1556157382-97ede2916cd2', 'Professional in formal business attire'),
     ],
-    beforeAfter: stockBeforeAfter(
+    beforeAfter: samePersonBeforeAfter(
       'photo-1568602471122-7832951cc4c5',
-      'photo-1504257432389-52343af06ae3',
       'Casual photo before AI graduation portrait',
       'Polished AI graduation portrait',
     ),
@@ -370,9 +358,8 @@ export const categoryVisuals: Record<string, CategoryVisuals> = {
       portraitAsset('photo-1544005313-94ddf0286df2', 'Woman with warm expression for avatar'),
       portraitAsset('photo-1559839734-2b71ea197ec2', 'Portrait with versatile styling'),
     ],
-    beforeAfter: stockBeforeAfter(
+    beforeAfter: samePersonBeforeAfter(
       'photo-1544005313-94ddf0286df2',
-      'photo-1573496799652-408c2ac9fe98',
       'Original selfie before avatar transformation',
       'AI-generated avatar portrait',
     ),
