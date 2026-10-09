@@ -8,6 +8,7 @@ import { SamplesGallery } from '@/components/marketing/samples-gallery';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { portrait } from '@/config/stock-portraits';
@@ -36,26 +37,23 @@ import {
 /* ------------------------------------------------------------------ */
 
 export const metadata: Metadata = {
-  title: 'AI Headshot Samples & Styles | TailorPic',
+  title: { absolute: 'AI Headshot Samples & Styles | TailorPic' },
   description:
     'Browse AI-generated professional headshot samples across Corporate, Creative, Lifestyle, Academic and more styles. See what TailorPic can create for you.',
   alternates: {
-    canonical: `${siteConfig.url}/samples`,
+    canonical: '/samples',
   },
-  openGraph: {
+  openGraph: generateOGMetadata({
     title: 'AI Headshot Samples & Styles | TailorPic',
     description:
       'Browse AI-generated professional headshot samples across Corporate, Creative, Lifestyle, Academic and more styles.',
-    url: `${siteConfig.url}/samples`,
-    siteName: siteConfig.name,
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
+    path: '/samples',
+  }),
+  twitter: generateTwitterMetadata({
     title: 'AI Headshot Samples & Styles | TailorPic',
     description:
       'Browse AI-generated professional headshot samples across Corporate, Creative, Lifestyle, Academic and more styles.',
-  },
+  }),
 };
 
 /* ------------------------------------------------------------------ */

@@ -3,6 +3,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { HelpContent } from '@/components/marketing/help-content';
+import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 
 /* ------------------------------------------------------------------ */
@@ -14,20 +15,17 @@ export const metadata: Metadata = {
   description:
     'Get help with TailorPic AI headshots: account setup, photo uploads, order support, team features, privacy and billing.',
   alternates: { canonical: `${siteConfig.url}/help` },
-  openGraph: {
+  openGraph: generateOGMetadata({
     title: 'TailorPic Help Center: Support & Getting Started',
     description:
       'Get help with TailorPic AI headshots: account setup, photo uploads, order support, team features, privacy and billing.',
-    url: `${siteConfig.url}/help`,
-    siteName: siteConfig.name,
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
+    path: '/help',
+  }),
+  twitter: generateTwitterMetadata({
     title: 'TailorPic Help Center: Support & Getting Started',
     description:
       'Get help with TailorPic AI headshots: account setup, photo uploads, order support, team features, privacy and billing.',
-  },
+  }),
 };
 
 /* ------------------------------------------------------------------ */

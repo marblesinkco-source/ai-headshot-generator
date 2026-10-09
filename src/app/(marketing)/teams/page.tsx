@@ -87,7 +87,7 @@ export default function TeamsIndexPage() {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/dashboard/upload?category=headshots"
+              href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
               className="rounded-tp-button bg-tp-bronze px-8 py-3.5 text-sm font-semibold text-tp-black transition-colors hover:bg-tp-bronze/90"
             >
               Get Your Headshots <ArrowRight className="ml-1 inline h-4 w-4" aria-hidden="true" />

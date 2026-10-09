@@ -7,17 +7,17 @@ import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
-  title: 'Refund & Satisfaction Policy — TailorPic',
+  title: { absolute: 'Refund & Satisfaction Policy | TailorPic' },
   description:
     'Learn about TailorPic\'s quality commitment, regeneration policy, and refund terms.',
   openGraph: generateOGMetadata({
-    title: 'Refund & Satisfaction Policy — TailorPic',
+    title: 'Refund & Satisfaction Policy | TailorPic',
     description:
       'Learn about TailorPic\'s quality commitment, regeneration policy, and refund terms.',
     path: '/refund-policy',
   }),
   twitter: generateTwitterMetadata({
-    title: 'Refund & Satisfaction Policy — TailorPic',
+    title: 'Refund & Satisfaction Policy | TailorPic',
     description:
       'Learn about TailorPic\'s quality commitment, regeneration policy, and refund terms.',
   }),

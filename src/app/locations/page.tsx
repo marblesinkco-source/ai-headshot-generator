@@ -11,7 +11,7 @@ import { CITIES } from '@/config/city-content';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 export const metadata: Metadata = {
-  title: `AI Headshots by City | ${siteConfig.name}`,
+  title: { absolute: `AI Headshots by City | ${siteConfig.name}` },
   description: `Get professional AI headshots in your city. TailorPic serves professionals across the US — no studio visit needed. Starting from ${BASE_PRICE_DISPLAY}.`,
   alternates: { canonical: '/locations' },
   openGraph: generateOGMetadata({
