@@ -7,7 +7,7 @@ import { BeforeAfterShowcase } from '@/components/marketing/before-after-showcas
 import { Categories } from '@/components/marketing/categories';
 import { faqs } from '@/config/faqs';
 import { Footer } from '@/components/marketing/footer';
-import { WebsiteSchema, FAQSchema, SoftwareApplicationSchema } from '@/components/structured-data';
+import { WebsiteSchema, FAQSchema, SoftwareApplicationSchema, HowToSchema } from '@/components/structured-data';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 export const metadata: Metadata = {
@@ -76,6 +76,7 @@ export default function LandingPage() {
       <WebsiteSchema />
       <FAQSchema items={faqs} />
       <SoftwareApplicationSchema />
+      <HowToSchema />
 
       {/* Hero */}
       <Hero />

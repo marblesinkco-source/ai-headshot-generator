@@ -450,6 +450,16 @@ export function Pricing() {
         )}
         </>)}
 
+        {/* Full pricing page link */}
+        <p className="mt-8 text-center">
+          <Link href="/pricing" className="inline-flex items-center gap-1 text-sm font-medium text-tp-bronze-ink hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2">
+            Compare all plans &amp; features
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+              <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </Link>
+        </p>
+
         {/* Guarantee & refund summary */}
         <div className="mx-auto mt-10 flex max-w-xl flex-wrap items-center justify-center gap-x-6 gap-y-3 rounded-tp-card border border-tp-line/50 bg-tp-beige/40 px-6 py-4">
           <div className="flex items-center gap-2 text-sm text-tp-ink">
