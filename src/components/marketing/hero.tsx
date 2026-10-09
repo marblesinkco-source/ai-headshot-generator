@@ -79,7 +79,7 @@ export function Hero() {
                 className="tp-hero-enter uppercase text-[11px] font-semibold tracking-[0.25em] text-tp-bronze-ink mb-5"
                 style={{ '--enter-i': 0 } as React.CSSProperties}
               >
-                No studio needed.
+                AI-Powered Headshots
               </p>
 
               <h1

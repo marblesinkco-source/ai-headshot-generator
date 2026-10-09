@@ -73,7 +73,7 @@ export function Pricing() {
             Simple Pricing
           </p>
           <h2 className="mt-3 font-display text-[30px] sm:text-[40px] font-normal tracking-[-0.03em] text-tp-ink leading-tight">
-            Choose Your Plan
+            Pay Once, No Subscription
           </h2>
           <p className="mt-4 text-[15px] text-tp-muted leading-relaxed max-w-lg mx-auto">
             One-time payment, no subscription. Start with a single photo to see the quality, or choose a pack for your full set.

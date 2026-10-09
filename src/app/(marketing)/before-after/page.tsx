@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { BeforeAfterGallery } from '@/components/marketing/before-after-gallery';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { siteConfig } from '@/config/site';
@@ -202,19 +202,6 @@ const faqs = [
 ];
 
 export default function BeforeAfterPage() {
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  };
-
   return (
     <main id="main-content" className="min-h-screen">
       <BreadcrumbSchema
@@ -223,9 +210,8 @@ export default function BeforeAfterPage() {
           { name: 'Before & After', url: `${siteConfig.url}/before-after` },
         ]}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      <FAQSchema
+        items={faqs.map((faq) => ({ question: faq.question, answer: faq.answer }))}
       />
       <Header />
 
@@ -442,7 +428,7 @@ export default function BeforeAfterPage() {
           </p>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
-              href="/auth/register"
+              href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
               className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:bg-tp-bronze/90"
             >
               Get Started <ArrowRight className="h-4 w-4" aria-hidden="true" />

@@ -172,7 +172,7 @@ export function BeforeAfterShowcase() {
             id="before-after-heading"
             className="mt-3 font-display text-[30px] sm:text-[40px] font-normal tracking-[-0.03em] text-tp-ink leading-tight"
           >
-            See the Transformation
+            From Selfie to Professional Headshot
           </h2>
           <p className="mt-4 text-[15px] text-tp-muted leading-relaxed max-w-lg mx-auto">
             Drag the slider to compare. From an everyday selfie to a polished,
