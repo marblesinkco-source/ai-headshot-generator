@@ -4,6 +4,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { BeforeAfterGallery } from '@/components/marketing/before-after-gallery';
+import { buttonVariants } from '@/components/ui/button';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
@@ -229,6 +230,15 @@ export default function BeforeAfterPage() {
             From casual selfies to studio-quality professional headshots
             &mdash; drag the slider to compare.
           </p>
+          <div className="mt-8">
+            <Link
+              href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
+              className={buttonVariants({ variant: 'primary', size: 'lg', className: 'gap-2' })}
+            >
+              Try It Yourself
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
 

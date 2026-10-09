@@ -14,7 +14,7 @@ import { BASE_PRICE_DISPLAY, TEAM_PRICES, PAYMENT_PROVIDER } from '@/config/pric
 import { formatPrice } from '@/lib/utils';
 import { CATEGORIES } from '@/config/categories';
 import { BreadcrumbSchema, FAQSchema, PricingProductSchema } from '@/components/structured-data';
-import { ChevronDown, Check, CreditCard, BadgeCheck, Minus } from 'lucide-react';
+import { ChevronDown, Check, CreditCard, BadgeCheck, Minus, ArrowRight } from 'lucide-react';
 import { PricingViewToggle } from '@/components/marketing/pricing-view-toggle';
 import { PricingComparisonBar } from '@/components/marketing/pricing-comparison-bar';
 import { GuaranteeSection } from '@/components/marketing/guarantee-section';
@@ -419,6 +419,27 @@ export default function PricingPage() {
       <FAQSchema items={pricingFaqs} />
 
       <PricingComparisonBar />
+
+      {/* Individual CTA */}
+      <section className="py-16">
+        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="font-display text-3xl font-normal text-tp-ink sm:text-4xl">
+            Ready to get started?
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-base text-tp-muted">
+            Upload your selfies and get studio-quality AI headshots from {BASE_PRICE_DISPLAY}. No subscription, no studio appointment needed.
+          </p>
+          <div className="mt-8">
+            <Link
+              href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
+              className={buttonVariants({ variant: 'primary', size: 'lg', className: 'gap-2' })}
+            >
+              Get Your Headshots
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Enterprise CTA */}
       <section className="bg-tp-paper py-16">
