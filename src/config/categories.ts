@@ -25,6 +25,8 @@ export interface CategoryPackage {
   outputCount: number;
   features: string[];
   recommended?: boolean;
+  /** Paddle price ID (pri_...). Set once Paddle products are configured. */
+  paddlePriceId?: string;
 }
 
 export interface Category {

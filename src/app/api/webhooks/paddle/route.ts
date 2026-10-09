@@ -109,6 +109,12 @@ interface PaddleTransactionData {
     email?: string;
     name?: string;
   };
+  /** Paddle v2 customer object (present on transaction.completed). */
+  customer?: {
+    id?: string;
+    email?: string;
+    name?: string;
+  };
   created_at: string;
   updated_at: string;
 }
@@ -245,7 +251,10 @@ export async function POST(request: NextRequest) {
           );
         }
 
-        const customerEmail = txnData.billing_details?.email;
+        // Paddle v2: customer.email is the reliable field; billing_details.email
+        // may be absent depending on checkout settings.
+        const customerEmail =
+          txnData.customer?.email || txnData.billing_details?.email;
 
         // ── Credit package purchase ──────────────────────────────────
         if (orderType === 'credits') {
@@ -330,7 +339,7 @@ export async function POST(request: NextRequest) {
               cardBrand,
               cardLast4,
               processorPaymentId: txnData.id,
-              processorFee: paddleFee,
+              processorChargeId: paddleFee > 0 ? `fee:${paddleFee}` : undefined,
               description: `Payment for ${creditPkg?.name || packageId}`,
             });
 
@@ -414,7 +423,7 @@ export async function POST(request: NextRequest) {
             cardBrand,
             cardLast4,
             processorPaymentId: txnData.id,
-            processorFee: paddleFee,
+            processorChargeId: paddleFee > 0 ? `fee:${paddleFee}` : undefined,
             description: `Payment for ${pkgName}`,
           });
 
@@ -476,7 +485,8 @@ export async function POST(request: NextRequest) {
             logger.error('[paddle-webhook] Failed to update order status:', updateError);
           } else if (failedOrder) {
             try {
-              const customerEmail = txnData.billing_details?.email;
+              const customerEmail =
+                txnData.customer?.email || txnData.billing_details?.email;
               let recipient = customerEmail;
               if (!recipient) {
                 const { data: orderUser } = await supabase.auth.admin.getUserById(failedOrder.user_id);
@@ -517,7 +527,7 @@ export async function POST(request: NextRequest) {
         // Find order by the transaction_id from the adjustment
         const { data: refundOrder } = await supabase
           .from('orders')
-          .select('id, user_id, status, order_type, category_id')
+          .select('id, user_id, status, order_type, category_id, amount')
           .eq('paddle_transaction_id', adjData.transaction_id)
           .maybeSingle();
 
@@ -526,12 +536,19 @@ export async function POST(request: NextRequest) {
           break;
         }
 
+        // Determine full vs partial refund
+        const refundTotal = adjData.totals?.total
+          ? Math.abs(parseInt(adjData.totals.total, 10))
+          : 0;
+        const isFullRefund = refundTotal >= (refundOrder.amount || 0);
+        const refundStatus = isFullRefund ? 'refunded' : 'partial_refund';
+
         // Idempotent claim: only the first delivery flips the status
         const { data: claimed, error: refundUpdateError } = await supabase
           .from('orders')
-          .update({ status: 'refunded' })
+          .update({ status: refundStatus })
           .eq('id', refundOrder.id)
-          .neq('status', 'refunded')
+          .not('status', 'in', '(refunded)')
           .select('id');
 
         if (refundUpdateError) {
@@ -542,8 +559,8 @@ export async function POST(request: NextRequest) {
 
         const firstDelivery = (claimed?.length ?? 0) > 0;
 
-        // Deactivate credits for refunded credit orders
-        if (refundOrder.order_type === 'credits') {
+        // Deactivate credits for fully refunded credit orders
+        if (refundOrder.order_type === 'credits' && isFullRefund) {
           const { data: creditRows, error: creditFetchError } = await supabase
             .from('user_credits')
             .select('id, total_credits, used_credits')

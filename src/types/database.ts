@@ -24,7 +24,8 @@ export type OrderStatus =
   | "processing"
   | "completed"
   | "failed"
-  | "refunded";
+  | "refunded"
+  | "partial_refund";
 
 // ── Migration 007 enum types ────────────────────────────────────────────────
 

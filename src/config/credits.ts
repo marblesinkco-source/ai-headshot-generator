@@ -20,6 +20,8 @@ export interface CreditPackage {
   features: string[];
   recommended?: boolean;
   badge?: string;         // e.g. "Best Value"
+  /** Paddle price ID (pri_...). Set once Paddle products are configured. */
+  paddlePriceId?: string;
 }
 
 export const CREDIT_PACKAGES: CreditPackage[] = [

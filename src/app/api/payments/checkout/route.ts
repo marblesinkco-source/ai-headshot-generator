@@ -221,7 +221,7 @@ export async function POST(request: NextRequest) {
       pkgPrice = catPkg.price;
       pkgCurrency = catPkg.currency;
       outputCount = catPkg.outputCount;
-      paddlePriceId = (catPkg as { paddlePriceId?: string }).paddlePriceId;
+      paddlePriceId = catPkg.paddlePriceId;
     } else {
       const legacyPkg = PACKAGES[packageId as PackageId];
       if (!legacyPkg) {
