@@ -11,7 +11,7 @@ import { WebsiteSchema, FAQSchema, SoftwareApplicationSchema, HowToSchema } from
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 export const metadata: Metadata = {
-  title: `AI Headshots From Your Selfies | TailorPic — From ${BASE_PRICE_DISPLAY}`,
+  title: { absolute: `AI Headshots From Your Selfies | TailorPic — From ${BASE_PRICE_DISPLAY}` },
   description:
     `Upload a few selfies and get studio-quality AI headshots for LinkedIn, resumes and more. One-time payment, no subscription. From ${BASE_PRICE_DISPLAY}.`,
   openGraph: generateOGMetadata({ title: `AI Headshots From Your Selfies | TailorPic — From ${BASE_PRICE_DISPLAY}`, description:
