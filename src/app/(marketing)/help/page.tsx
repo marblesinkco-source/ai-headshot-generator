@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { FAQSchema, BreadcrumbSchema } from '@/components/structured-data';
+import { BreadcrumbSchema } from '@/components/structured-data';
 import { HelpContent } from '@/components/marketing/help-content';
-import { allFaqItems } from '@/config/help-data';
 import { siteConfig } from '@/config/site';
 
 /* ------------------------------------------------------------------ */
@@ -11,23 +10,23 @@ import { siteConfig } from '@/config/site';
 /* ------------------------------------------------------------------ */
 
 export const metadata: Metadata = {
-  title: 'Help Center — AI Headshot FAQ | TailorPic',
+  title: 'TailorPic Help Center: Support & Getting Started',
   description:
-    'Find answers to common questions about TailorPic AI headshots: getting started, photo uploads, pricing, team features, privacy and more.',
+    'Get help with TailorPic AI headshots: account setup, photo uploads, order support, team features, privacy and billing.',
   alternates: { canonical: `${siteConfig.url}/help` },
   openGraph: {
-    title: 'Help Center — AI Headshot FAQ | TailorPic',
+    title: 'TailorPic Help Center: Support & Getting Started',
     description:
-      'Find answers to common questions about TailorPic AI headshots: getting started, photo uploads, pricing, team features, privacy and more.',
+      'Get help with TailorPic AI headshots: account setup, photo uploads, order support, team features, privacy and billing.',
     url: `${siteConfig.url}/help`,
     siteName: siteConfig.name,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Help Center — AI Headshot FAQ | TailorPic',
+    title: 'TailorPic Help Center: Support & Getting Started',
     description:
-      'Find answers to common questions about TailorPic AI headshots: getting started, photo uploads, pricing, team features, privacy and more.',
+      'Get help with TailorPic AI headshots: account setup, photo uploads, order support, team features, privacy and billing.',
   },
 };
 
@@ -38,7 +37,6 @@ export const metadata: Metadata = {
 export default function HelpCenterPage() {
   return (
     <main id="main-content" className="min-h-screen">
-      <FAQSchema items={allFaqItems} />
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },

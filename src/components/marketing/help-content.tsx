@@ -119,7 +119,9 @@ export function HelpContent() {
               />
               {searchQuery && (
                 <button
+                  type="button"
                   onClick={() => setSearchQuery('')}
+                  aria-label="Clear search"
                   className="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-tp-muted hover:text-tp-ink"
                 >
                   Clear
@@ -139,8 +141,10 @@ export function HelpContent() {
                 const Icon = cat.icon;
                 return (
                   <button
+                    type="button"
                     key={cat.id}
                     onClick={() => scrollToCategory(cat.id)}
+                    aria-label={`View ${cat.title} help articles`}
                     className="group flex flex-col items-start rounded-tp-card border border-tp-line bg-white p-6 text-left transition-all hover:border-tp-bronze/40 hover:shadow-md"
                   >
                     <div className="flex h-10 w-10 items-center justify-center rounded-tp-button bg-tp-paper">
