@@ -31,7 +31,7 @@ const linkClass = 'font-medium text-tp-bronze-ink underline underline-offset-2';
 
 export default function SubprocessorsPage() {
   return (
-    <main id="main-content" className="min-h-screen bg-white">
+    <>
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
@@ -39,6 +39,7 @@ export default function SubprocessorsPage() {
         ]}
       />
       <Header />
+      <main id="main-content" className="bg-white">
 
       <section className="border-b border-tp-line bg-white pt-16">
         <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
@@ -140,7 +141,8 @@ export default function SubprocessorsPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

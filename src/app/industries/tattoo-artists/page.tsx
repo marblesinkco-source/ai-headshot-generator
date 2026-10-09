@@ -115,7 +115,7 @@ const faqs = [
 
 export default function TattooArtistsIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Tattoo Artists"}
         description={"AI-generated professional headshots for tattoo artists and studio owners for portfolios, booking pages, and social media."}
@@ -125,6 +125,7 @@ export default function TattooArtistsIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Tattoo Artists' }]} currentPath="/industries/tattoo-artists" />
@@ -314,7 +315,8 @@ export default function TattooArtistsIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

@@ -121,7 +121,7 @@ const faqs = [
 
 export default function PersonalBrandingUseCasePage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name="AI Photos for Personal Branding"
         description="AI-generated professional photos for personal branding, suitable for coaches, speakers, authors, entrepreneurs, and consultants."
@@ -131,6 +131,7 @@ export default function PersonalBrandingUseCasePage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Use Cases', href: '/use-cases' }, { label: 'Personal Branding' }]} currentPath="/use-cases/personal-branding" />
@@ -314,7 +315,9 @@ export default function PersonalBrandingUseCasePage() {
         </div>
       </section>
 
+      </main>
+
       <Footer />
-    </main>
+    </>
   );
 }

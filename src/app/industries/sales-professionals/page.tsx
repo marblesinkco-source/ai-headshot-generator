@@ -115,7 +115,7 @@ const faqs = [
 
 export default function SalesProfessionalsIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Sales Professionals"}
         description={"Professional AI headshots for sales reps, account executives, and sales leaders."}
@@ -125,6 +125,7 @@ export default function SalesProfessionalsIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Sales Professionals' }]} currentPath="/industries/sales-professionals" />
@@ -313,7 +314,8 @@ export default function SalesProfessionalsIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

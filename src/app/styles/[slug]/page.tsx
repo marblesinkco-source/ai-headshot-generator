@@ -85,7 +85,7 @@ export default async function StylePage({ params }: Props) {
   };
 
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
@@ -98,6 +98,7 @@ export default async function StylePage({ params }: Props) {
         ]}
       />
       <Header />
+      <main id="main-content">
 
       {/* Hero */}
       <section className="bg-tp-paper py-20 sm:py-28">
@@ -276,7 +277,8 @@ export default async function StylePage({ params }: Props) {
         <RelatedLinks links={relatedStyles} title="Explore More Styles" />
       )}
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

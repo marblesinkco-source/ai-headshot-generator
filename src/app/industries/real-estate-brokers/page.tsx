@@ -115,7 +115,7 @@ const faqs = [
 
 export default function RealEstateBrokersIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Real Estate Brokers"}
         description={"AI-generated professional headshots for real estate brokers for brokerage websites, listings, signage, and marketing materials."}
@@ -125,6 +125,7 @@ export default function RealEstateBrokersIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Real Estate Brokers' }]} currentPath="/industries/real-estate-brokers" />
@@ -314,7 +315,8 @@ export default function RealEstateBrokersIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

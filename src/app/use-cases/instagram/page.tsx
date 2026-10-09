@@ -121,7 +121,7 @@ const faqs = [
 
 export default function InstagramUseCasePage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name="AI Photos for Instagram"
         description="AI-generated photos optimized for Instagram profiles, feed posts, stories, and personal branding."
@@ -131,6 +131,7 @@ export default function InstagramUseCasePage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Use Cases', href: '/use-cases' }, { label: 'Instagram' }]} currentPath="/use-cases/instagram" />
@@ -314,7 +315,8 @@ export default function InstagramUseCasePage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

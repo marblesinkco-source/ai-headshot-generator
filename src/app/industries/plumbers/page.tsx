@@ -116,7 +116,7 @@ const faqs = [
 
 export default function PlumbersIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Plumbers"}
         description={"AI-generated professional headshots for plumbers and plumbing contractors for websites, Google Business Profiles, quotes, and marketing."}
@@ -126,6 +126,7 @@ export default function PlumbersIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Plumbers' }]} currentPath="/industries/plumbers" />
@@ -315,7 +316,8 @@ export default function PlumbersIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

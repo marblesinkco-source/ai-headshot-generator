@@ -142,13 +142,14 @@ const faqs = [
 
 export default function PressKitPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Use Cases', href: '/use-cases' }, { label: 'Press Kits' }]} currentPath="/use-cases/press-kit" />
@@ -332,7 +333,9 @@ export default function PressKitPage() {
         </div>
       </section>
 
+      </main>
+
       <Footer />
-    </main>
+    </>
   );
 }

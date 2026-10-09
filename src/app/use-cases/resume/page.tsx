@@ -137,7 +137,7 @@ const faqs = [
 
 export default function ResumeUseCasePage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name="AI Headshots for Resumes & CVs"
         description="AI-generated professional headshots for resumes, CVs, job applications, and portfolios."
@@ -147,6 +147,7 @@ export default function ResumeUseCasePage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Use Cases', href: '/use-cases' }, { label: 'Resume & CV' }]} currentPath="/use-cases/resume" />
@@ -330,7 +331,9 @@ export default function ResumeUseCasePage() {
         </div>
       </section>
 
+      </main>
+
       <Footer />
-    </main>
+    </>
   );
 }

@@ -115,7 +115,7 @@ const faqs = [
 
 export default function SocialWorkersIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Social Workers"}
         description={"AI-generated professional headshots for social workers for LinkedIn, agency websites, private practice pages, and conference profiles."}
@@ -125,6 +125,7 @@ export default function SocialWorkersIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Social Workers' }]} currentPath="/industries/social-workers" />
@@ -314,7 +315,8 @@ export default function SocialWorkersIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

@@ -115,7 +115,7 @@ const faqs = [
 
 export default function ActorsIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Actors"}
         description={"AI-generated professional headshots for actors, models, and performers for casting profiles, auditions, and talent agencies."}
@@ -125,6 +125,7 @@ export default function ActorsIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Actors' }]} currentPath="/industries/actors" />
@@ -314,7 +315,8 @@ export default function ActorsIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

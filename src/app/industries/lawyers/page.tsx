@@ -126,7 +126,7 @@ const faqs = [
 
 export default function LawyersIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name="Professional Headshots for Lawyers & Law Firms"
         description="AI-generated professional headshots for attorneys and law firms, with firm-consistent styling suited to bar directories, firm websites, and legal publications."
@@ -136,6 +136,7 @@ export default function LawyersIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Lawyers' }]} currentPath="/industries/lawyers" />
@@ -469,7 +470,8 @@ export default function LawyersIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

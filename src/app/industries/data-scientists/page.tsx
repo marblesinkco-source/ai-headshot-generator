@@ -115,7 +115,7 @@ const faqs = [
 
 export default function DataScientistsIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Data Scientists"}
         description={"AI-generated professional headshots for data scientists for LinkedIn, GitHub, conference bios, publications, and personal websites."}
@@ -125,6 +125,7 @@ export default function DataScientistsIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Data Scientists' }]} currentPath="/industries/data-scientists" />
@@ -314,7 +315,8 @@ export default function DataScientistsIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

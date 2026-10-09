@@ -121,7 +121,7 @@ const faqs = [
 
 export default function TwitterUseCasePage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name="AI Profile Photos for X (Twitter)"
         description="AI-generated profile photos optimized for X (Twitter) profiles, personal branding, and online credibility."
@@ -131,6 +131,7 @@ export default function TwitterUseCasePage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Use Cases', href: '/use-cases' }, { label: 'X (Twitter)' }]} currentPath="/use-cases/twitter" />
@@ -314,7 +315,9 @@ export default function TwitterUseCasePage() {
         </div>
       </section>
 
+      </main>
+
       <Footer />
-    </main>
+    </>
   );
 }

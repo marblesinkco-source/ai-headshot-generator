@@ -108,13 +108,14 @@ export default function BlogPage() {
   };
 
   return (
-    <main id="main-content" className="min-h-screen bg-white">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd).replace(/</g, '\\u003c') }}
       />
       <BreadcrumbSchema items={[{ name: 'Home', url: siteConfig.url }, { name: 'Blog', url: siteConfig.url + '/blog' }]} />
       <Header />
+      <main id="main-content" className="bg-white">
 
       {/* ── Hero ── */}
       <section className="relative overflow-hidden border-b border-tp-line/40 bg-tp-paper pt-16">
@@ -271,7 +272,8 @@ export default function BlogPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

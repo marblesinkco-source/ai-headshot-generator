@@ -369,7 +369,7 @@ for (const t of sortedTerms) {
 
 export default function GlossaryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
@@ -377,6 +377,7 @@ export default function GlossaryPage() {
         ]}
       />
       <Header />
+      <main id="main-content">
 
       {/* Hero */}
       <section className="relative overflow-hidden pt-16">
@@ -471,7 +472,8 @@ export default function GlossaryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

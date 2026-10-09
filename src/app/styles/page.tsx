@@ -198,7 +198,7 @@ export default function StylesPage() {
   }
 
   return (
-    <main id="main-content" className="min-h-screen bg-tp-paper">
+    <>
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
@@ -206,6 +206,7 @@ export default function StylesPage() {
         ]}
       />
       <Header />
+      <main id="main-content" className="bg-tp-paper">
 
       <section className="pb-8 pt-20 sm:pt-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -317,7 +318,8 @@ export default function StylesPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

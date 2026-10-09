@@ -121,7 +121,7 @@ const faqs = [
 
 export default function LinkedInUseCasePage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name="AI Headshots for LinkedIn"
         description="AI-generated professional headshots optimized for LinkedIn profiles, job applications, and professional networking."
@@ -131,6 +131,7 @@ export default function LinkedInUseCasePage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Use Cases', href: '/use-cases' }, { label: 'LinkedIn' }]} currentPath="/use-cases/linkedin" />
@@ -314,7 +315,8 @@ export default function LinkedInUseCasePage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

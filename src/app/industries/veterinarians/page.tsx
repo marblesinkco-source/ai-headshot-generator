@@ -115,7 +115,7 @@ const faqs = [
 
 export default function VeterinariansIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Veterinarians"}
         description={"AI-generated professional headshots for veterinarians, vet techs, and animal care teams for clinic websites, Google profiles, and directories."}
@@ -125,6 +125,7 @@ export default function VeterinariansIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Veterinarians' }]} currentPath="/industries/veterinarians" />
@@ -314,7 +315,8 @@ export default function VeterinariansIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

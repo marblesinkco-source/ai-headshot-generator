@@ -115,7 +115,7 @@ const faqs = [
 
 export default function ExecutivesIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for C-Suite Executives"}
         description={"AI-generated professional headshots for C-suite executives for leadership pages, investor materials, press, and LinkedIn."}
@@ -125,6 +125,7 @@ export default function ExecutivesIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'C-Suite Executives' }]} currentPath="/industries/executives" />
@@ -314,7 +315,8 @@ export default function ExecutivesIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

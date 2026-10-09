@@ -121,7 +121,7 @@ const faqs = [
 
 export default function DatingAppsUseCasePage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name="AI Photos for Dating Apps"
         description="AI-generated natural-looking profile photos optimized for dating apps like Tinder, Hinge, and Bumble."
@@ -131,6 +131,7 @@ export default function DatingAppsUseCasePage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Use Cases', href: '/use-cases' }, { label: 'Dating Apps' }]} currentPath="/use-cases/dating-apps" />
@@ -314,7 +315,8 @@ export default function DatingAppsUseCasePage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

@@ -173,7 +173,7 @@ const tools = [
 
 export default function EditorIndexPage() {
   return (
-    <main id="main-content" className="min-h-screen bg-white">
+    <>
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
@@ -181,6 +181,7 @@ export default function EditorIndexPage() {
         ]}
       />
       <Header />
+      <main id="main-content" className="bg-white">
 
       <section className="relative overflow-hidden pt-16">
         <div className="pointer-events-none absolute -top-24 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-tp-bronze/10 blur-3xl" />
@@ -242,7 +243,8 @@ export default function EditorIndexPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

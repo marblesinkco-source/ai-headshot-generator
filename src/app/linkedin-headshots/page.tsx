@@ -183,7 +183,7 @@ export default function LinkedInHeadshotsPage() {
   };
 
   return (
-    <main id="main-content" className="min-h-screen bg-white">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -196,6 +196,7 @@ export default function LinkedInHeadshotsPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content" className="bg-white">
 
       {/* Hero */}
       <section className="bg-tp-paper px-4 py-20 sm:py-28">
@@ -503,7 +504,8 @@ export default function LinkedInHeadshotsPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

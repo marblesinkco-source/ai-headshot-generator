@@ -115,7 +115,7 @@ const faqs = [
 
 export default function PilotsIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Pilots & Aviation Professionals"}
         description={"AI-generated professional headshots for pilots and aviation professionals for airline applications, crew profiles, LinkedIn, and flight school websites."}
@@ -125,6 +125,7 @@ export default function PilotsIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Pilots & Aviation' }]} currentPath="/industries/pilots" />
@@ -314,7 +315,8 @@ export default function PilotsIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

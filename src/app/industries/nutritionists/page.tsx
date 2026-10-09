@@ -115,7 +115,7 @@ const faqs = [
 
 export default function NutritionistsIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Nutritionists & Dietitians"}
         description={"AI-generated professional headshots for nutritionists and dietitians for websites, social media, telehealth platforms, and media features."}
@@ -125,6 +125,7 @@ export default function NutritionistsIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Nutritionists & Dietitians' }]} currentPath="/industries/nutritionists" />
@@ -314,7 +315,8 @@ export default function NutritionistsIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

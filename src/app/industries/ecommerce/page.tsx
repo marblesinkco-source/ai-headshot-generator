@@ -56,7 +56,7 @@ const faqs = [
 
 export default function EcommerceLandingPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name="Professional Headshots for E-Commerce Sellers"
         description="AI-generated professional photos for e-commerce sellers and online store owners, including team and founder headshots delivered within hours."
@@ -66,6 +66,7 @@ export default function EcommerceLandingPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'E-Commerce' }]} currentPath="/industries/ecommerce" />
@@ -277,7 +278,8 @@ export default function EcommerceLandingPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

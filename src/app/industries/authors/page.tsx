@@ -115,7 +115,7 @@ const faqs = [
 
 export default function AuthorsIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Authors & Writers"}
         description={"AI-generated professional author headshots for book jackets, Amazon author pages, press kits, websites, and social media."}
@@ -125,6 +125,7 @@ export default function AuthorsIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Authors & Writers' }]} currentPath="/industries/authors" />
@@ -314,7 +315,8 @@ export default function AuthorsIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

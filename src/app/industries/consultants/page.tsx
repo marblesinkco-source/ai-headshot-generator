@@ -115,7 +115,7 @@ const faqs = [
 
 export default function ConsultantsIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name="Professional Headshots for Consultants & Advisors"
         description="AI-generated professional headshots for consultants, advisors, and independent professionals, with multiple styles for proposals, LinkedIn, and speaking bios."
@@ -125,6 +125,7 @@ export default function ConsultantsIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Consultants' }]} currentPath="/industries/consultants" />
@@ -342,7 +343,8 @@ export default function ConsultantsIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

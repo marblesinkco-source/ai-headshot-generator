@@ -127,7 +127,7 @@ export default async function ProfessionLandingPage({ params }: Props) {
   ];
 
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={prof.title}
         description={prof.seoDescription}
@@ -152,6 +152,7 @@ export default async function ProfessionLandingPage({ params }: Props) {
         }}
       />
       <Header />
+      <main id="main-content">
 
       {/* Breadcrumbs */}
       <div className="bg-tp-paper pt-20">
@@ -461,7 +462,8 @@ export default async function ProfessionLandingPage({ params }: Props) {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

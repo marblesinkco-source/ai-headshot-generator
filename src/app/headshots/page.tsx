@@ -122,7 +122,7 @@ const faqItems = [
 
 export default function HeadshotsLandingPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <PricingProductSchema path="/headshots" />
       <HowToSchema />
       <BreadcrumbSchema
@@ -135,6 +135,7 @@ export default function HeadshotsLandingPage() {
         items={faqItems.map((item) => ({ question: item.q, answer: item.a }))}
       />
       <Header />
+      <main id="main-content">
 
       {/* ── Hero ── */}
       <section className="relative bg-tp-black py-24 sm:py-32 overflow-hidden">
@@ -567,7 +568,8 @@ export default function HeadshotsLandingPage() {
       </section>
 
       <StickyCTA href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

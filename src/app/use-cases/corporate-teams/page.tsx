@@ -121,7 +121,7 @@ const faqs = [
 
 export default function CorporateTeamsUseCasePage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name="AI Headshots for Corporate Teams"
         description="AI-generated consistent professional headshots for corporate teams, matching backgrounds and styles for company websites and directories."
@@ -131,6 +131,7 @@ export default function CorporateTeamsUseCasePage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Use Cases', href: '/use-cases' }, { label: 'Corporate Teams' }]} currentPath="/use-cases/corporate-teams" />
@@ -314,7 +315,8 @@ export default function CorporateTeamsUseCasePage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

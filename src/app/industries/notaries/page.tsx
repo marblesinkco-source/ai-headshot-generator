@@ -115,7 +115,7 @@ const faqs = [
 
 export default function NotariesIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Notaries & Legal Professionals"}
         description={"AI-generated professional headshots for notaries and legal professionals for websites, directories, and LinkedIn."}
@@ -125,6 +125,7 @@ export default function NotariesIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Notaries & Legal Professionals' }]} currentPath="/industries/notaries" />
@@ -314,7 +315,8 @@ export default function NotariesIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

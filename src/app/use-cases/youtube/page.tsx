@@ -125,7 +125,7 @@ const faqs = [
 
 export default function YouTubeUseCasePage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name="AI Photos for YouTube Channels"
         description="AI-generated creator portraits for YouTube channel avatars, banners, thumbnails, and media kits."
@@ -135,6 +135,7 @@ export default function YouTubeUseCasePage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Use Cases', href: '/use-cases' }, { label: 'YouTube' }]} currentPath="/use-cases/youtube" />
@@ -318,7 +319,9 @@ export default function YouTubeUseCasePage() {
         </div>
       </section>
 
+      </main>
+
       <Footer />
-    </main>
+    </>
   );
 }

@@ -116,7 +116,7 @@ const faqs = [
 
 export default function ParamedicsIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Paramedics & EMTs"}
         description={"AI-generated professional headshots for paramedics and EMTs for agency pages, credentialing, job applications, and LinkedIn."}
@@ -126,6 +126,7 @@ export default function ParamedicsIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Paramedics & EMTs' }]} currentPath="/industries/paramedics" />
@@ -315,7 +316,8 @@ export default function ParamedicsIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

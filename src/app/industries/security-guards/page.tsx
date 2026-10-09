@@ -115,7 +115,7 @@ const faqs = [
 
 export default function SecurityGuardsIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Security Guards"}
         description={"AI-generated professional headshots for security guards and officers for resumes, LinkedIn, and company profiles."}
@@ -125,6 +125,7 @@ export default function SecurityGuardsIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Security Professionals' }]} currentPath="/industries/security-guards" />
@@ -314,7 +315,8 @@ export default function SecurityGuardsIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

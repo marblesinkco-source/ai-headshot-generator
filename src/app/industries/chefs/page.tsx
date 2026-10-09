@@ -115,7 +115,7 @@ const faqs = [
 
 export default function ChefsIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Chefs & Culinary Professionals"}
         description={"AI-generated professional headshots for chefs and culinary professionals for restaurant websites, press features, cookbooks, and social media."}
@@ -125,6 +125,7 @@ export default function ChefsIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Chefs' }]} currentPath="/industries/chefs" />
@@ -314,7 +315,8 @@ export default function ChefsIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

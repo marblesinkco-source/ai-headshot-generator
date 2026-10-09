@@ -115,7 +115,7 @@ const faqs = [
 
 export default function CoachesIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Coaches & Consultants"}
         description={"AI-generated professional headshots for coaches and consultants for websites, sales pages, LinkedIn, and speaker profiles."}
@@ -125,6 +125,7 @@ export default function CoachesIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Coaches & Consultants' }]} currentPath="/industries/coaches" />
@@ -314,7 +315,8 @@ export default function CoachesIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

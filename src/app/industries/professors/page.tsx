@@ -115,7 +115,7 @@ const faqs = [
 
 export default function ProfessorsIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Professors & Academics"}
         description={"AI-generated professional headshots for professors and academics for faculty pages, conference bios, publications, and LinkedIn."}
@@ -125,6 +125,7 @@ export default function ProfessorsIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Professors & Academics' }]} currentPath="/industries/professors" />
@@ -314,7 +315,8 @@ export default function ProfessorsIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

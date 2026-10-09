@@ -111,7 +111,7 @@ const faqs = [
 
 export default function FinancialAdvisorsIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Financial Advisors"}
         description={"AI-generated professional headshots for financial advisors, wealth managers, CFPs, and financial planners for firm websites, LinkedIn, and client materials."}
@@ -121,6 +121,7 @@ export default function FinancialAdvisorsIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Financial Advisors' }]} currentPath="/industries/financial-advisors" />
@@ -310,7 +311,8 @@ export default function FinancialAdvisorsIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

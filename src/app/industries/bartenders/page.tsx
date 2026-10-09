@@ -115,7 +115,7 @@ const faqs = [
 
 export default function BartendersIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Bartenders"}
         description={"AI-generated professional headshots for bartenders and mixologists for resumes, LinkedIn, and social media."}
@@ -125,6 +125,7 @@ export default function BartendersIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Bartenders' }]} currentPath="/industries/bartenders" />
@@ -314,7 +315,8 @@ export default function BartendersIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

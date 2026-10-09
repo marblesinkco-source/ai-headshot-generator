@@ -129,7 +129,7 @@ const resources = [
 
 export default function SecurityPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <FAQSchema items={securityFaqs} />
       <BreadcrumbSchema
         items={[
@@ -138,6 +138,7 @@ export default function SecurityPage() {
         ]}
       />
       <Header />
+      <main id="main-content">
 
       {/* Hero - Dark */}
       <section className="relative overflow-hidden bg-tp-black pt-16">
@@ -354,7 +355,8 @@ export default function SecurityPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

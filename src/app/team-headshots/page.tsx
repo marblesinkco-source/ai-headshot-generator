@@ -127,7 +127,7 @@ const serviceJsonLd = {
 
 export default function TeamHeadshotsPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
         { name: 'Team Headshots', url: `${siteConfig.url}/team-headshots` },
@@ -138,6 +138,7 @@ export default function TeamHeadshotsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
       <Header />
+      <main id="main-content">
 
       {/* Hero */}
       <section className="relative bg-tp-black py-20 sm:py-28 overflow-hidden">
@@ -763,7 +764,8 @@ export default function TeamHeadshotsPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

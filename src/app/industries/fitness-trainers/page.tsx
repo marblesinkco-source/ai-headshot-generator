@@ -115,7 +115,7 @@ const faqs = [
 
 export default function FitnessTrainersIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Fitness Trainers & Personal Coaches"}
         description={"AI-generated professional headshots for fitness trainers, personal coaches, and yoga instructors for social media, booking pages, and gym websites."}
@@ -125,6 +125,7 @@ export default function FitnessTrainersIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Fitness Trainers & Personal Coaches' }]} currentPath="/industries/fitness-trainers" />
@@ -314,7 +315,8 @@ export default function FitnessTrainersIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

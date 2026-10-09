@@ -121,7 +121,7 @@ const faqs = [
 
 export default function TikTokUseCasePage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name="AI Photos for TikTok"
         description="AI-generated photos optimized for TikTok profiles, video thumbnails, and creator branding."
@@ -131,6 +131,7 @@ export default function TikTokUseCasePage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Use Cases', href: '/use-cases' }, { label: 'TikTok' }]} currentPath="/use-cases/tiktok" />
@@ -314,7 +315,9 @@ export default function TikTokUseCasePage() {
         </div>
       </section>
 
+      </main>
+
       <Footer />
-    </main>
+    </>
   );
 }

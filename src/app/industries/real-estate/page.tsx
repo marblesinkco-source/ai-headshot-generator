@@ -126,7 +126,7 @@ const faqs = [
 
 export default function RealEstateIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name="Professional Headshots for Real Estate Agents"
         description="AI-generated professional headshots for real estate agents and brokerages, sized for MLS profiles, listing portals, signage, and marketing materials."
@@ -136,6 +136,7 @@ export default function RealEstateIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Real Estate Agents' }]} currentPath="/industries/real-estate" />
@@ -468,7 +469,8 @@ export default function RealEstateIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

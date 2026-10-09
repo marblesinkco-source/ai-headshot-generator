@@ -115,7 +115,7 @@ const faqs = [
 
 export default function HrProfessionalsIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for HR Professionals"}
         description={"Professional AI headshots for HR managers, recruiters, and talent leaders."}
@@ -125,6 +125,7 @@ export default function HrProfessionalsIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'HR Professionals' }]} currentPath="/industries/hr-professionals" />
@@ -313,7 +314,8 @@ export default function HrProfessionalsIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

@@ -115,7 +115,7 @@ const faqs = [
 
 export default function DentistsIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Dentists"}
         description={"AI-generated professional headshots for dentists, orthodontists, hygienists, and dental staff in white coat or business attire."}
@@ -125,6 +125,7 @@ export default function DentistsIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Dentists' }]} currentPath="/industries/dentists" />
@@ -314,7 +315,8 @@ export default function DentistsIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

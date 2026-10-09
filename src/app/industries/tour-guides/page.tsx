@@ -115,7 +115,7 @@ const faqs = [
 
 export default function TourGuidesIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Tour Guides"}
         description={"AI-generated professional headshots for tour guides for booking platforms, tour company profiles, licensing pages, and travel websites."}
@@ -125,6 +125,7 @@ export default function TourGuidesIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Tour Guides' }]} currentPath="/industries/tour-guides" />
@@ -314,7 +315,8 @@ export default function TourGuidesIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

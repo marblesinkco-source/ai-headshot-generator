@@ -146,12 +146,13 @@ function SectionHeading({ number, children }: { number: number; children: React.
 
 export default function DpaPage() {
   return (
-    <main id="main-content" className="min-h-screen bg-white">
+    <>
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
         { name: 'Data Processing Agreement', url: `${siteConfig.url}/dpa` },
       ]} />
       <Header />
+      <main id="main-content" className="bg-white">
 
       {/* Hero */}
       <section className="border-b border-tp-line bg-white pt-16">
@@ -512,7 +513,8 @@ export default function DpaPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

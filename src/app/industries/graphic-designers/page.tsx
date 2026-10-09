@@ -115,7 +115,7 @@ const faqs = [
 
 export default function GraphicDesignersIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Graphic Designers"}
         description={"AI-generated professional headshots for graphic designers for portfolios, Behance, Dribbble, LinkedIn, and client proposals."}
@@ -125,6 +125,7 @@ export default function GraphicDesignersIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Graphic Designers' }]} currentPath="/industries/graphic-designers" />
@@ -314,7 +315,8 @@ export default function GraphicDesignersIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

@@ -115,7 +115,7 @@ const faqs = [
 
 export default function JournalistsIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Journalists"}
         description={"Professional AI headshots for journalists, reporters, and writers."}
@@ -125,6 +125,7 @@ export default function JournalistsIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Journalists' }]} currentPath="/industries/journalists" />
@@ -313,7 +314,8 @@ export default function JournalistsIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

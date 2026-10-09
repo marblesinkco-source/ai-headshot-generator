@@ -507,7 +507,7 @@ const collectionSchema = {
 
 export default function IndustriesPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
@@ -517,6 +517,7 @@ export default function IndustriesPage() {
         { name: 'Industries', url: `${siteConfig.url}/industries` },
       ]} />
       <Header />
+      <main id="main-content">
 
       <section className="py-20 sm:py-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -600,7 +601,8 @@ export default function IndustriesPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

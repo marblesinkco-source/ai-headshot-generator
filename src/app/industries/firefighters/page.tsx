@@ -116,7 +116,7 @@ const faqs = [
 
 export default function FirefightersIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Firefighters"}
         description={"AI-generated professional headshots for firefighters and fire service leaders for department websites, promotion packets, and LinkedIn."}
@@ -126,6 +126,7 @@ export default function FirefightersIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Firefighters' }]} currentPath="/industries/firefighters" />
@@ -315,7 +316,8 @@ export default function FirefightersIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

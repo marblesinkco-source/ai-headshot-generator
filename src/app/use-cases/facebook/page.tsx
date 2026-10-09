@@ -125,7 +125,7 @@ const faqs = [
 
 export default function FacebookUseCasePage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name="AI Profile Photos for Facebook"
         description="AI-generated profile photos optimized for Facebook profiles, Pages, groups, and Marketplace."
@@ -135,6 +135,7 @@ export default function FacebookUseCasePage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Use Cases', href: '/use-cases' }, { label: 'Facebook' }]} currentPath="/use-cases/facebook" />
@@ -318,7 +319,8 @@ export default function FacebookUseCasePage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

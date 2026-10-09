@@ -72,7 +72,7 @@ export default async function BlogPostPage({ params }: Props) {
   }
 
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ArticleSchema
         title={post.title}
         description={post.description}
@@ -91,6 +91,7 @@ export default async function BlogPostPage({ params }: Props) {
         ]}
       />
       <Header />
+      <main id="main-content">
 
       <article className="pt-16">
         {/* Header */}
@@ -221,7 +222,8 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </article>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

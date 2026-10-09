@@ -137,13 +137,14 @@ const faqs = [
 
 export default function VsHeadshotProPage() {
   return (
-    <main id="main-content" className="min-h-screen bg-white">
+    <>
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
         { name: 'TailorPic vs HeadshotPro', url: `${siteConfig.url}/vs/headshotpro` },
       ]} />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content" className="bg-white">
 
       {/* ── Hero ──────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-16">
@@ -317,7 +318,8 @@ export default function VsHeadshotProPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

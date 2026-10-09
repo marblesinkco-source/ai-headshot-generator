@@ -115,7 +115,7 @@ const faqs = [
 
 export default function PharmacistsIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Pharmacists"}
         description={"AI-generated professional headshots for pharmacists for pharmacy websites, LinkedIn, clinical profiles, and professional directories."}
@@ -125,6 +125,7 @@ export default function PharmacistsIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Pharmacists' }]} currentPath="/industries/pharmacists" />
@@ -314,7 +315,8 @@ export default function PharmacistsIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

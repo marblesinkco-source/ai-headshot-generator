@@ -143,7 +143,7 @@ const changelog: ChangelogGroup[] = [
 
 export default function ChangelogPage() {
   return (
-    <main id="main-content" className="min-h-screen bg-tp-paper">
+    <>
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
@@ -151,6 +151,7 @@ export default function ChangelogPage() {
         ]}
       />
       <Header />
+      <main id="main-content" className="bg-tp-paper">
 
       {/* Hero */}
       <section className="relative overflow-hidden pt-16">
@@ -254,7 +255,8 @@ export default function ChangelogPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

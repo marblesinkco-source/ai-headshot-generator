@@ -115,7 +115,7 @@ const faqs = [
 
 export default function TherapistsIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Therapists & Counselors"}
         description={"AI-generated professional headshots for therapists, counselors, and mental health practitioners for directories, websites, and practice profiles."}
@@ -125,6 +125,7 @@ export default function TherapistsIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Therapists & Counselors' }]} currentPath="/industries/therapists" />
@@ -314,7 +315,8 @@ export default function TherapistsIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

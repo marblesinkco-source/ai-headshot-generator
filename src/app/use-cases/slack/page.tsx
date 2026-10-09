@@ -121,7 +121,7 @@ const faqs = [
 
 export default function SlackUseCasePage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name="AI Profile Photos for Slack & Teams"
         description="AI-generated professional headshots optimized for Slack, Microsoft Teams, Zoom, and workplace communication tools."
@@ -131,6 +131,7 @@ export default function SlackUseCasePage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Use Cases', href: '/use-cases' }, { label: 'Slack & Teams' }]} currentPath="/use-cases/slack" />
@@ -314,7 +315,9 @@ export default function SlackUseCasePage() {
         </div>
       </section>
 
+      </main>
+
       <Footer />
-    </main>
+    </>
   );
 }

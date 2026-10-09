@@ -125,7 +125,7 @@ const faqs = [
 
 export default function EmailSignatureUseCasePage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name="AI Headshots for Email Signatures"
         description="AI-generated professional headshots sized and styled for email signatures in Gmail, Outlook, and more."
@@ -135,6 +135,7 @@ export default function EmailSignatureUseCasePage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Use Cases', href: '/use-cases' }, { label: 'Email Signature' }]} currentPath="/use-cases/email-signature" />
@@ -318,7 +319,8 @@ export default function EmailSignatureUseCasePage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

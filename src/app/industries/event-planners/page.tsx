@@ -115,7 +115,7 @@ const faqs = [
 
 export default function EventPlannersIndustryPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <ProductSchema
         name={"Professional Headshots for Event Planners"}
         description={"AI-generated professional headshots for event planners for websites, proposals, vendor directories, LinkedIn, and social media."}
@@ -125,6 +125,7 @@ export default function EventPlannersIndustryPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content">
       <div className="bg-tp-paper pt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Industries', href: '/industries' }, { label: 'Event Planners' }]} currentPath="/industries/event-planners" />
@@ -314,7 +315,8 @@ export default function EventPlannersIndustryPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }
