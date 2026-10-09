@@ -253,7 +253,10 @@ export default function BeforeAfterPage() {
               The Process
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-tp-muted">
-              Three simple stages from selfie to professional headshot.
+              Three simple stages from selfie to professional headshot. Read our{' '}
+              <Link href="/selfie-guide" className="text-tp-bronze-ink underline underline-offset-2">selfie guide</Link>{' '}
+              for the best results, or learn more about{' '}
+              <Link href="/how-it-works" className="text-tp-bronze-ink underline underline-offset-2">how it works</Link>.
             </p>
           </div>
           <div className="grid items-start gap-6 md:grid-cols-5">
@@ -295,7 +298,8 @@ export default function BeforeAfterPage() {
               What Changes
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-tp-muted">
-              Here&apos;s what our AI transforms in each headshot.
+              Here&apos;s what our AI transforms in each headshot. Learn about the{' '}
+              <Link href="/technology" className="text-tp-bronze-ink underline underline-offset-2">technology behind TailorPic</Link>.
             </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -348,6 +352,9 @@ export default function BeforeAfterPage() {
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-tp-muted">
               Choose a look that matches your industry and personal brand.
+              Browse our{' '}
+              <Link href="/samples" className="text-tp-bronze-ink underline underline-offset-2">sample gallery</Link>{' '}
+              to see examples of each style.
             </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -448,6 +455,12 @@ export default function BeforeAfterPage() {
               className="inline-flex items-center gap-2 text-sm font-medium text-tp-beige/80 underline underline-offset-2 hover:text-white"
             >
               See headshot packages
+            </Link>
+            <Link
+              href="/why-tailorpic"
+              className="inline-flex items-center gap-2 text-sm font-medium text-tp-beige/80 underline underline-offset-2 hover:text-white"
+            >
+              Why TailorPic?
             </Link>
           </div>
         </div>

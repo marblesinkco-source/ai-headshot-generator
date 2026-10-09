@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  title: {
+    template: '%s | TailorPic',
+    default: 'Account | TailorPic',
+  },
   robots: { index: false, follow: false },
 };
 

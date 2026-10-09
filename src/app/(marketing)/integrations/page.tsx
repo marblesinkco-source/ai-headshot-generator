@@ -111,7 +111,7 @@ const partnerTypes = [
     icon: Code2,
     title: 'Technology Partners',
     description:
-      'Integrate the TailorPic API into your product so your users can generate professional headshots without leaving your platform.',
+      'Integrate the TailorPic API into your product so your users can generate professional headshots without leaving your platform. See our developer API page for details.',
   },
   {
     icon: Briefcase,
@@ -158,7 +158,9 @@ export default function IntegrationsPage() {
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige/80">
               We are planning ways to connect {siteConfig.name} with the tools
               your team already uses, so professional headshots fit naturally
-              into your existing workflows.
+              into your existing workflows. Already need{' '}
+              <Link href="/team-headshots" className="text-tp-bronze underline underline-offset-2">team headshots</Link>?
+              You can get started today.
             </p>
           </div>
         </section>
@@ -256,7 +258,8 @@ export default function IntegrationsPage() {
               <p className="mt-4 text-tp-muted">
                 We are open to conversations with technology companies,
                 agencies and resellers who want to bring AI headshots to their
-                customers.
+                customers. For large organizations, see our{' '}
+                <Link href="/enterprise" className="text-tp-bronze-ink underline underline-offset-2">enterprise</Link> offering.
               </p>
             </div>
             <div className="mt-14 grid gap-6 md:grid-cols-3">
@@ -291,7 +294,10 @@ export default function IntegrationsPage() {
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige/80">
               Tell us which tools matter to your team, or talk to us about a
-              partnership.
+              partnership. You can also check our{' '}
+              <Link href="/pricing" className="text-tp-bronze underline underline-offset-2">pricing</Link>{' '}
+              or visit the{' '}
+              <Link href="/help" className="text-tp-bronze underline underline-offset-2">help center</Link>.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link

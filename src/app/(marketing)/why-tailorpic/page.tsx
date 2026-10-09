@@ -292,7 +292,9 @@ export default function WhyTailorPicPage() {
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-tp-muted">
               We built {siteConfig.name} to solve every pain point of the
-              traditional headshot experience.
+              traditional headshot experience.{' '}
+              <Link href="/before-after" className="text-tp-bronze-ink underline underline-offset-2">See the transformation</Link>{' '}
+              for yourself.
             </p>
 
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -330,7 +332,8 @@ export default function WhyTailorPicPage() {
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-tp-muted">
               See how {siteConfig.name} stacks up against traditional studios
-              and other AI headshot services.
+              and other AI headshot services. For a deeper breakdown, visit our{' '}
+              <Link href="/pricing-comparison" className="text-tp-bronze-ink underline underline-offset-2">full pricing comparison</Link>.
             </p>
 
             <p className="mx-auto mt-3 max-w-2xl text-center text-xs text-tp-muted">
@@ -490,7 +493,8 @@ export default function WhyTailorPicPage() {
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-tp-muted">
               We take data protection seriously so you can focus on looking your
-              best.
+              best. Read more in our{' '}
+              <Link href="/trust" className="text-tp-bronze-ink underline underline-offset-2">Trust Center</Link>.
             </p>
 
             <div className="mt-12 grid gap-6 sm:grid-cols-3">
@@ -529,14 +533,14 @@ export default function WhyTailorPicPage() {
                   1
                 </div>
                 <h3 className="mt-4 text-base font-semibold text-tp-ink">Upload Selfies</h3>
-                <p className="mt-2 text-sm text-tp-muted">Take a few casual selfies with your phone — no studio visit needed.</p>
+                <p className="mt-2 text-sm text-tp-muted">Take a few casual selfies with your phone — no studio visit needed. Check our <Link href="/selfie-guide" className="text-tp-bronze-ink underline underline-offset-2">selfie guide</Link> for tips.</p>
               </div>
               <div>
                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-tp-bronze/10 text-lg font-semibold text-tp-bronze-ink">
                   2
                 </div>
                 <h3 className="mt-4 text-base font-semibold text-tp-ink">AI Generates</h3>
-                <p className="mt-2 text-sm text-tp-muted">Our AI creates professional headshots in multiple styles and backgrounds.</p>
+                <p className="mt-2 text-sm text-tp-muted">Our AI creates professional headshots in multiple styles and backgrounds. See <Link href="/samples" className="text-tp-bronze-ink underline underline-offset-2">sample results</Link>.</p>
               </div>
               <div>
                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-tp-bronze/10 text-lg font-semibold text-tp-bronze-ink">
@@ -581,6 +585,10 @@ export default function WhyTailorPicPage() {
             </Link>
             <p className="mt-4 text-sm text-tp-beige/60">
               Starting at {BASE_PRICE_DISPLAY} &middot; No subscription required
+            </p>
+            <p className="mt-3 text-sm text-tp-beige/60">
+              Need headshots for your whole team?{' '}
+              <Link href="/team-headshots" className="text-tp-bronze underline underline-offset-2">Explore team pricing</Link>
             </p>
           </div>
         </section>
