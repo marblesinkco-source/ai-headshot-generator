@@ -139,7 +139,7 @@ export default function VsSectaPage() {
     <>
       <Header />
 
-      <main id="main-content" className="min-h-screen">
+      <main id="main-content" >
         <BreadcrumbSchema items={[
           { name: 'Home', url: siteConfig.url },
           { name: 'TailorPic vs Secta Labs', url: `${siteConfig.url}/vs/secta` },

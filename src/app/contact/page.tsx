@@ -81,7 +81,7 @@ export default function ContactPage() {
   return (
     <>
     <Header />
-    <main id="main-content" className="min-h-screen">
+    <main id="main-content" >
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
         { name: 'Contact', url: `${siteConfig.url}/contact` },

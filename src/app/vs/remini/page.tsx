@@ -140,7 +140,7 @@ export default function VsReminiPage() {
     <>
       <Header />
 
-      <main id="main-content" className="min-h-screen">
+      <main id="main-content" >
         <BreadcrumbSchema items={[
           { name: 'Home', url: siteConfig.url },
           { name: 'TailorPic vs Remini', url: `${siteConfig.url}/vs/remini` },

@@ -138,7 +138,7 @@ export default function VsTryItOnAiPage() {
     <>
       <Header />
 
-      <main id="main-content" className="min-h-screen">
+      <main id="main-content" >
         <BreadcrumbSchema items={[
           { name: 'Home', url: siteConfig.url },
           { name: 'TailorPic vs Try It On AI', url: `${siteConfig.url}/vs/tryitonai` },

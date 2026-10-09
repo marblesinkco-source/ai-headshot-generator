@@ -140,7 +140,7 @@ export default function VsFotorPage() {
     <>
       <Header />
 
-      <main id="main-content" className="min-h-screen">
+      <main id="main-content" >
         <BreadcrumbSchema items={[
           { name: 'Home', url: siteConfig.url },
           { name: 'TailorPic vs Fotor AI', url: `${siteConfig.url}/vs/fotor` },

@@ -222,7 +222,7 @@ export default function HowItWorksPage() {
   return (
     <>
     <Header />
-    <main id="main-content" className="min-h-screen">
+    <main id="main-content" >
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}

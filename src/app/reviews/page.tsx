@@ -195,7 +195,7 @@ export default function ReviewsPage() {
         ]}
       />
       <Header />
-      <main id="main-content" className="min-h-screen bg-tp-paper">
+      <main id="main-content" className="bg-tp-paper">
         {/* Hero */}
         <section className="px-4 pb-10 pt-28 text-center sm:pt-32">
           <div className="mx-auto max-w-3xl">

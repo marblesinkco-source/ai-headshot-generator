@@ -145,7 +145,7 @@ export default function PricingPage() {
   return (
     <>
     <Header />
-    <main id="main-content" className="min-h-screen">
+    <main id="main-content" >
       <PricingProductSchema />
       <BreadcrumbSchema
         items={[

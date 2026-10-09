@@ -186,7 +186,7 @@ export default function SamplesPage() {
         }}
       />
       <Header />
-      <main id="main-content" className="min-h-screen bg-white">
+      <main id="main-content" className="bg-white">
         {/* ── Hero ─────────────────────────────────────── */}
         <section className="px-4 pb-16 pt-28 text-center sm:pt-32 md:pt-36">
           <div className="mx-auto max-w-3xl">

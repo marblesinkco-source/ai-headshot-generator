@@ -150,7 +150,7 @@ export default function AboutPage() {
   return (
     <>
     <Header />
-    <main id="main-content" className="min-h-screen bg-tp-paper">
+    <main id="main-content" className="bg-tp-paper">
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },

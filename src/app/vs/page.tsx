@@ -56,7 +56,7 @@ export default function VsIndexPage() {
     <>
       <Header />
 
-      <main id="main-content" className="min-h-screen">
+      <main id="main-content" >
         <BreadcrumbSchema
           items={[
             { name: 'Home', url: siteConfig.url },

@@ -189,7 +189,7 @@ export default function EnterprisePage() {
   return (
     <>
     <Header />
-    <main id="main-content" className="min-h-screen">
+    <main id="main-content" >
       <BreadcrumbSchema items={[
         { name: 'Home', url: siteConfig.url },
         { name: 'Enterprise', url: `${siteConfig.url}/enterprise` },

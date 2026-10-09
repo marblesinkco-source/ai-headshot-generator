@@ -138,7 +138,7 @@ export default function VsBetterPicPage() {
     <>
       <Header />
 
-      <main id="main-content" className="min-h-screen">
+      <main id="main-content" >
         <BreadcrumbSchema items={[
           { name: 'Home', url: siteConfig.url },
           { name: 'TailorPic vs BetterPic', url: `${siteConfig.url}/vs/betterpic` },

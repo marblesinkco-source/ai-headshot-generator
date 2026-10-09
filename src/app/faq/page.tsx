@@ -41,7 +41,7 @@ export default function FAQPage() {
   return (
     <>
     <Header />
-    <main id="main-content" className="min-h-screen">
+    <main id="main-content" >
       <FAQSchema items={faqs.map((f) => ({ question: f.question, answer: f.answer }))} />
       <BreadcrumbSchema
         items={[
