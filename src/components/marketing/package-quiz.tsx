@@ -7,6 +7,7 @@ import { HelpCircle, ArrowRight, ArrowLeft, Sparkles, User, Users, Camera, Brief
 import { CATEGORIES } from '@/config/categories';
 import { formatPrice } from '@/lib/utils';
 import { cn } from '@/lib/utils';
+import { TEAM_PRICES } from '@/config/pricing';
 
 type UseCase = 'linkedin' | 'business' | 'dating' | 'creative' | 'team';
 type PhotoCount = 'few' | 'moderate' | 'many';
@@ -41,7 +42,7 @@ function getRecommendation(state: QuizState) {
       package: null,
       isTeam: true,
       title: 'Team Plan',
-      price: '$39/person (5–15 people) or $29/person (16–50)',
+      price: `$${TEAM_PRICES.small.perPersonCents / 100}/person (${TEAM_PRICES.small.min}–${TEAM_PRICES.small.max} people) or $${TEAM_PRICES.large.perPersonCents / 100}/person (${TEAM_PRICES.large.min}–${TEAM_PRICES.large.max})`,
       reason: 'Consistent headshots for your whole team with volume pricing and a single invoice.',
       href: '/team-headshots',
       ctaText: 'Get Team Pricing',

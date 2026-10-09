@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Upload, Download, ZoomIn, ZoomOut, Move, ArrowRight } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const CANVAS_SIZE = 400;
 const OUTPUT_SIZE = 400;
@@ -296,7 +297,7 @@ export default function LinkedInPhotoCropper() {
       <div className="mt-6 rounded-tp-card bg-tp-ink px-6 py-8 text-center">
         <h2 className="font-display font-normal text-2xl text-tp-paper">Cropping is only half the job</h2>
         <p className="mx-auto mt-2 max-w-md text-sm text-tp-beige">
-          Start with a better photo. TailorPic creates AI-generated professional headshots, from $1.99.
+          Start with a better photo. TailorPic creates AI-generated professional headshots, from {BASE_PRICE_DISPLAY}.
         </p>
         <Link
           href={ctaHref}

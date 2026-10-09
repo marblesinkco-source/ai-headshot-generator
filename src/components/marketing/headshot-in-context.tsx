@@ -208,13 +208,18 @@ export function HeadshotInContext() {
         </div>
 
         {/* Tabs */}
-        <div className="mt-10 flex flex-wrap justify-center gap-2">
+        <div className="mt-10 flex flex-wrap justify-center gap-2" role="tablist" aria-label="Platform preview">
           {TABS.map((tab, i) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
             return (
               <button
                 key={tab.id}
+                type="button"
+                role="tab"
+                aria-selected={isActive}
+                aria-controls={`tabpanel-${tab.id}`}
+                id={`tab-${tab.id}`}
                 data-context-reveal
                 className={`reveal flex items-center gap-1.5 rounded-tp-button px-4 py-2 text-sm transition-all ${
                   isActive
@@ -224,7 +229,7 @@ export function HeadshotInContext() {
                 style={{ '--reveal-i': i } as CSSProperties}
                 onClick={() => setActiveTab(tab.id)}
               >
-                <Icon className="h-4 w-4" />
+                <Icon className="h-4 w-4" aria-hidden="true" />
                 {tab.label}
               </button>
             );
@@ -236,6 +241,9 @@ export function HeadshotInContext() {
           data-context-reveal
           className="reveal mx-auto mt-10"
           style={{ '--reveal-i': TABS.length } as CSSProperties}
+          role="tabpanel"
+          id={`tabpanel-${activeTab}`}
+          aria-labelledby={`tab-${activeTab}`}
         >
           <div className="tp-lift mx-auto max-w-md rounded-tp-card transition-[border-color,box-shadow] duration-300 hover:shadow-lg hover:shadow-tp-bronze/5 motion-reduce:transition-none">
             <ActiveMockup />
