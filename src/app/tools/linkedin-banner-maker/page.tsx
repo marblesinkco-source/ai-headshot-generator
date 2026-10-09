@@ -35,6 +35,25 @@ const LinkedInBannerMaker = dynamic(() => import('@/components/tools/linkedin-ba
   ),
 });
 
+const faqs: { q: string; a: string }[] = [
+  {
+    q: "What size is a LinkedIn banner?",
+    a: "A LinkedIn banner is 1584 by 396 pixels. The PNG this tool exports matches that size, so it uploads without being resized.",
+  },
+  {
+    q: "What should I put on my LinkedIn banner?",
+    a: "Keep it simple: your name and one short line about what you do, in a single calm brand color. Long taglines shrink and become hard to read on mobile.",
+  },
+  {
+    q: "Why does my profile photo cover part of the banner?",
+    a: "On desktop, your profile photo sits over the lower-left of the banner. Keep text centered or to the right, or leave the safe-area option on.",
+  },
+  {
+    q: "Is the LinkedIn banner maker free, and is my data uploaded?",
+    a: "Yes, it is free. The banner is built in your browser, so nothing is uploaded.",
+  },
+];
+
 const tips = [
   {
     icon: Linkedin,
@@ -68,6 +87,20 @@ export default function Page() {
           { name: 'LinkedIn Banner Maker', url: `${siteConfig.url}${path}` },
         ]}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
+      />
       <Header />
 
       <section className="px-4 pb-10 pt-16 sm:px-6 md:pt-24">
@@ -97,6 +130,23 @@ export default function Page() {
                 <h3 className="mt-4 font-display text-xl font-normal text-tp-ink">{tip.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-tp-muted">{tip.body}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Frequently asked questions</h2>
+          <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
+            {faqs.map((f) => (
+              <details key={f.q} className="group p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-tp-ink">
+                  {f.q}
+                  <span className="text-tp-bronze-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">{f.a}</p>
+              </details>
             ))}
           </div>
         </div>

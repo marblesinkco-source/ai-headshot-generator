@@ -31,6 +31,25 @@ export const metadata: Metadata = {
   twitter: generateTwitterMetadata({ title, description }),
 };
 
+const faqs: { q: string; a: string }[] = [
+  {
+    q: "What makes a good LinkedIn profile photo?",
+    a: "A good LinkedIn photo is sharp, evenly lit and framed around your head and shoulders, with your face near the center and a simple background. LinkedIn displays it as a small circle, so a clear, friendly face matters more than anything else in the frame.",
+  },
+  {
+    q: "What does the LinkedIn photo analyzer check?",
+    a: "It checks resolution, aspect ratio, brightness, centering and file size, then tells you which of those could be improved. It is a quick technical check, not a judgment of how you look.",
+  },
+  {
+    q: "Is my photo uploaded when I use the analyzer?",
+    a: "No. The analysis runs in your browser, so your photo stays on your device.",
+  },
+  {
+    q: "What size should a LinkedIn profile photo be?",
+    a: "Use a square image of at least 400 x 400 px and under 8 MB. Cropping to roughly 1:1 before you upload keeps LinkedIn from cutting off part of your face.",
+  },
+];
+
 const tips = [
   { title: 'Use soft, even light', body: 'Face a window or shoot in open shade so your face is evenly lit without harsh shadows.' },
   { title: 'Frame your head and shoulders', body: 'Your face should fill a good part of the frame and sit near the center, since LinkedIn shows a small circular crop.' },
@@ -47,6 +66,20 @@ export default function LinkedInPhotoAnalyzerPage() {
           { name: 'Free Tools', url: `${siteConfig.url}/tools` },
           { name: 'LinkedIn Photo Analyzer', url: `${siteConfig.url}${path}` },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
       />
       <Header />
 
@@ -77,6 +110,23 @@ export default function LinkedInPhotoAnalyzerPage() {
                 <h3 className="font-semibold text-tp-ink">{t.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-tp-muted">{t.body}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Frequently asked questions</h2>
+          <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
+            {faqs.map((f) => (
+              <details key={f.q} className="group p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-tp-ink">
+                  {f.q}
+                  <span className="text-tp-bronze-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">{f.a}</p>
+              </details>
             ))}
           </div>
         </div>

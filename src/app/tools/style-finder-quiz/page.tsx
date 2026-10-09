@@ -27,6 +27,25 @@ export const metadata: Metadata = {
   }),
 };
 
+const faqs = [
+  {
+    q: 'How does the style finder quiz work?',
+    a: 'You answer a few quick questions about your industry, goals and preferences, and the quiz recommends a headshot style and package that fits.',
+  },
+  {
+    q: 'How accurate are the recommendations?',
+    a: 'The quiz is a guide based on your answers, not a guarantee. Treat the result as a starting point and choose the style that feels right for how you want to be seen.',
+  },
+  {
+    q: 'Do I need an account to take the quiz?',
+    a: 'No. The quiz is a free tool you can try without signing up.',
+  },
+  {
+    q: 'Can I change my style after taking the quiz?',
+    a: 'Yes. The recommendation is only a suggestion, and you can pick a different style or package when you create your headshots.',
+  },
+];
+
 export default function StyleFinderQuizPage() {
   return (
     <>
@@ -37,6 +56,20 @@ export default function StyleFinderQuizPage() {
           { name: 'Tools', url: `${siteConfig.url}/tools` },
           { name: 'Style Finder Quiz', url: `${siteConfig.url}/tools/style-finder-quiz` },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
       />
 
       <main className="bg-tp-paper">
@@ -70,6 +103,23 @@ export default function StyleFinderQuizPage() {
               creative and editorial. Each style is trained on professional photography to deliver
               studio-quality results from your selfies.
             </p>
+          </div>
+        </section>
+
+        <section className="px-4 py-12 sm:px-6">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Frequently asked questions</h2>
+            <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
+              {faqs.map((f) => (
+                <details key={f.q} className="group p-5">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-tp-ink">
+                    {f.q}
+                    <span className="text-tp-bronze-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                  </summary>
+                  <p className="mt-3 text-sm leading-relaxed text-tp-muted">{f.a}</p>
+                </details>
+              ))}
+            </div>
           </div>
         </section>
       </main>

@@ -43,6 +43,25 @@ const PLATFORM_SIZES = [
   { name: 'Teams', size: '300 × 300 px' },
 ];
 
+const faqs = [
+  {
+    q: "What size should a profile picture be?",
+    a: "It depends on the platform. This tool exports LinkedIn at 400 \u00d7 400 px, Instagram at 320 \u00d7 320 px, Twitter/X at 400 \u00d7 400 px, Facebook at 170 \u00d7 170 px, Slack at 512 \u00d7 512 px, Zoom at 150 \u00d7 150 px and Teams at 300 \u00d7 300 px.",
+  },
+  {
+    q: "What file format does the PFP maker export?",
+    a: "It downloads a correctly sized PNG, which keeps edges sharp and works on all major platforms.",
+  },
+  {
+    q: "Why is my profile picture cropped by the platform?",
+    a: "Many platforms display profile pictures in a circle or crop them further. Keep your face centered with some room around it so nothing important is cut off.",
+  },
+  {
+    q: "Are my photos uploaded to a server?",
+    a: "No. Everything runs in your browser, so your photo stays on your device.",
+  },
+];
+
 export default function PfpMakerPage() {
   return (
     <main id="main-content" className="min-h-screen">
@@ -52,6 +71,20 @@ export default function PfpMakerPage() {
           { name: 'Tools', url: `${siteConfig.url}/tools` },
           { name: 'PFP Maker', url: `${siteConfig.url}${PATH}` },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
       />
       <Header />
 
@@ -91,6 +124,23 @@ export default function PfpMakerPage() {
                 <h3 className="text-base font-semibold text-tp-ink">{p.name}</h3>
                 <p className="mt-1 text-sm text-tp-muted">{p.size}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Frequently asked questions</h2>
+          <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
+            {faqs.map((f) => (
+              <details key={f.q} className="group p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-tp-ink">
+                  {f.q}
+                  <span className="text-tp-bronze-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">{f.a}</p>
+              </details>
             ))}
           </div>
         </div>

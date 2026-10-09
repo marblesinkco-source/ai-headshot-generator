@@ -43,6 +43,13 @@ const tips = [
   { icon: Glasses, title: 'Check the rules', text: 'Rules on glasses, headwear and print size differ by country. Always confirm with the official source before you submit.' },
 ];
 
+const faqs: { q: string; a: string }[] = [
+  { q: "What size is a passport photo?", a: "It depends on the country. The US uses 2 x 2 inches, while the UK and many EU countries use 35 x 45 mm. This tool offers presets for several countries and a custom size option, but always confirm with your issuing authority." },
+  { q: "What background color do passport photos need?", a: "Rules differ by country, but most ask for a plain, light background without shadows or patterns. Check your issuing authority for the exact color it requires before you submit." },
+  { q: "Can I wear glasses or a hat in a passport photo?", a: "Rules on glasses, headwear, and expression differ by country. Most authorities ask for a neutral expression with your eyes open and your face clearly visible, so check the official guidance." },
+  { q: "Is my photo uploaded to a server?", a: "No. Your photo is processed in your browser and is never uploaded, so it stays on your device." },
+];
+
 export default function Page() {
   return (
     <main id="main-content" className="min-h-screen bg-tp-paper">
@@ -52,6 +59,20 @@ export default function Page() {
           { name: 'Free Tools', url: `${siteConfig.url}/tools` },
           { name: 'Passport Photo Maker', url: `${siteConfig.url}${path}` },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
       />
       <Header />
 
@@ -81,6 +102,23 @@ export default function Page() {
                 <h3 className="mt-4 font-display text-xl font-normal text-tp-ink">{t.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-tp-muted">{t.text}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Frequently asked questions</h2>
+          <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
+            {faqs.map((f) => (
+              <details key={f.q} className="group p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-tp-ink">
+                  {f.q}
+                  <span className="text-tp-bronze-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">{f.a}</p>
+              </details>
             ))}
           </div>
         </div>

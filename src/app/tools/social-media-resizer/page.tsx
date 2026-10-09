@@ -35,6 +35,25 @@ const SocialMediaResizer = dynamic(() => import('@/components/tools/social-media
   ),
 });
 
+const faqs: { q: string; a: string }[] = [
+  {
+    q: "What image sizes do social media platforms need?",
+    a: "Each platform uses different dimensions for profile photos, banners and posts, and they change from time to time. This tool lets you pick the platforms you need, crop for each one and download every size as a PNG.",
+  },
+  {
+    q: "Which platforms does the social media resizer support?",
+    a: "It supports LinkedIn, Instagram, Facebook, X, YouTube, Slack and Zoom. Select the ones you want and adjust the crop for each.",
+  },
+  {
+    q: "Will resizing make my photo blurry?",
+    a: "Starting with a large, high-resolution original gives the sharpest results, especially for wide or tall formats like banners and Stories. Enlarging a small photo can look soft, so avoid it when you can.",
+  },
+  {
+    q: "Do I need to sign up or upload my photo anywhere?",
+    a: "No signup is needed. Cropping and exporting happen in your browser, so your photo never leaves your device.",
+  },
+];
+
 const tips = [
   {
     icon: Smartphone,
@@ -68,6 +87,20 @@ export default function Page() {
           { name: 'Social Media Image Resizer', url: `${siteConfig.url}${path}` },
         ]}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
+      />
       <Header />
 
       <section className="px-4 pb-10 pt-16 sm:px-6 md:pt-24">
@@ -97,6 +130,23 @@ export default function Page() {
                 <h3 className="mt-4 font-display text-xl font-normal text-tp-ink">{tip.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-tp-muted">{tip.body}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Frequently asked questions</h2>
+          <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
+            {faqs.map((f) => (
+              <details key={f.q} className="group p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-tp-ink">
+                  {f.q}
+                  <span className="text-tp-bronze-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">{f.a}</p>
+              </details>
             ))}
           </div>
         </div>

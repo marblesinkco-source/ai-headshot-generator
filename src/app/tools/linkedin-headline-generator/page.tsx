@@ -56,6 +56,25 @@ const tips = [
   },
 ];
 
+const faqs = [
+  {
+    q: "How long can a LinkedIn headline be?",
+    a: "LinkedIn headlines can be up to 220 characters. Many views show only the first part, so keep your most important words at the start.",
+  },
+  {
+    q: "What keywords should I put in my headline?",
+    a: "Use your real job title and your strongest skill or specialty. Recruiters search by title and skill, so these terms help the right people find your profile.",
+  },
+  {
+    q: "Should my headline be just my job title?",
+    a: "It does not have to be. By default LinkedIn shows your current job title, but you can replace it with a headline that also names who you help and the outcome you deliver.",
+  },
+  {
+    q: "Can I edit the generated headlines?",
+    a: "Yes. The ideas are built on common formulas, and you can copy any of them and edit it. Use the character counter to stay within the limit.",
+  },
+];
+
 export default function LinkedInHeadlineGeneratorPage() {
   return (
     <main id="main-content" className="min-h-screen bg-white">
@@ -68,6 +87,20 @@ export default function LinkedInHeadlineGeneratorPage() {
           { name: 'Home', url: siteConfig.url },
           { name: 'LinkedIn Headline Generator', url: `${siteConfig.url}/tools/linkedin-headline-generator` },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
       />
       <Header />
 
@@ -102,6 +135,23 @@ export default function LinkedInHeadlineGeneratorPage() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      <section className="px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Frequently asked questions</h2>
+          <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
+            {faqs.map((f) => (
+              <details key={f.q} className="group p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-tp-ink">
+                  {f.q}
+                  <span className="text-tp-bronze-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">{f.a}</p>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
 

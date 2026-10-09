@@ -58,6 +58,25 @@ const tips = [
   },
 ];
 
+const faqs = [
+  {
+    q: "What is EXIF data?",
+    a: "EXIF is metadata that cameras and phones store inside a photo file. It describes how and when the picture was taken, separate from the image itself.",
+  },
+  {
+    q: "What information can a photo contain?",
+    a: "Depending on the device, it can include camera make and model, date and time, orientation, software used, exposure settings and sometimes GPS location.",
+  },
+  {
+    q: "Is it a privacy risk to share photos with EXIF data?",
+    a: "It can be. If location data is embedded, anyone who gets the original file may be able to see where the photo was taken. Many social platforms strip metadata when you post, but sending the file directly or uploading to some sites may keep it, so removing it first is safer.",
+  },
+  {
+    q: "Is my photo uploaded when I use this tool?",
+    a: "No. The metadata is read and removed in your browser, so the photo stays on your device. The clean copy you download is a re-saved image with the metadata removed.",
+  },
+];
+
 export default function Page() {
   return (
     <main id="main-content" className="min-h-screen bg-tp-paper">
@@ -67,6 +86,20 @@ export default function Page() {
           { name: 'Free Tools', url: `${siteConfig.url}/tools` },
           { name: 'EXIF Viewer & Remover', url: `${siteConfig.url}${path}` },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
       />
       <Header />
 
@@ -97,6 +130,23 @@ export default function Page() {
                 <h3 className="mt-4 font-display text-xl font-normal text-tp-ink">{tip.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-tp-muted">{tip.body}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Frequently asked questions</h2>
+          <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
+            {faqs.map((f) => (
+              <details key={f.q} className="group p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-tp-ink">
+                  {f.q}
+                  <span className="text-tp-bronze-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">{f.a}</p>
+              </details>
             ))}
           </div>
         </div>

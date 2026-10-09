@@ -57,6 +57,25 @@ const useCases = [
   },
 ];
 
+const faqs = [
+  {
+    q: "How many photos can I combine in a collage?",
+    a: "You can combine 2 to 6 photos into a single image. Choose a layout, set the spacing and background, add optional labels and download the result as a PNG.",
+  },
+  {
+    q: "Can I use the collage maker for a team page?",
+    a: "Yes. Arrange up to six photos in an even grid with optional name labels, then use the PNG on an about page or in a presentation. For larger teams you can make several collages.",
+  },
+  {
+    q: "Can I compare headshots side by side?",
+    a: "Yes. Place two or three headshots next to each other to see which one fits your profile best before you choose. A before and after layout with labels is also available.",
+  },
+  {
+    q: "Are my photos uploaded to a server?",
+    a: "No. The collage is built in your browser, so your photos stay on your device.",
+  },
+];
+
 export default function Page() {
   return (
     <main id="main-content" className="min-h-screen bg-tp-paper">
@@ -66,6 +85,20 @@ export default function Page() {
           { name: 'Free Tools', url: `${siteConfig.url}/tools` },
           { name: 'Headshot Collage Maker', url: `${siteConfig.url}${path}` },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
       />
       <Header />
 
@@ -96,6 +129,23 @@ export default function Page() {
                 <h3 className="mt-4 font-display text-xl font-normal text-tp-ink">{t}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-tp-muted">{text}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Frequently asked questions</h2>
+          <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
+            {faqs.map((f) => (
+              <details key={f.q} className="group p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-tp-ink">
+                  {f.q}
+                  <span className="text-tp-bronze-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">{f.a}</p>
+              </details>
             ))}
           </div>
         </div>

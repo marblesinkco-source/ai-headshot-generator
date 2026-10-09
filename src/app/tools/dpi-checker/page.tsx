@@ -58,6 +58,25 @@ const tips = [
   },
 ];
 
+const faqs = [
+  {
+    q: "What does DPI mean?",
+    a: "DPI stands for dots per inch. It describes how many dots of ink a printer places in each inch of a printed image. For a digital photo, it is metadata that tells software how large to print the image, while the pixel dimensions decide how much detail the photo actually holds.",
+  },
+  {
+    q: "What DPI do I need for print and for the web?",
+    a: "Print usually looks sharpest at around 300 DPI at the final print size. For web and screen use, DPI does not matter. Only the pixel dimensions count, so a photo is shown at the same size whatever DPI value is stored in the file.",
+  },
+  {
+    q: "How do I check the DPI of a photo?",
+    a: "Upload a JPEG or PNG to the tool and it reads the DPI stored in the file header. If the file has no DPI value, the tool shows the pixel dimensions and lets you enter a target DPI to see the print size.",
+  },
+  {
+    q: "Does changing the DPI make a photo sharper?",
+    a: "No. Changing the DPI value only changes the print size the software suggests. It does not add pixels or detail. To print larger at the same quality you need a photo with more pixels.",
+  },
+];
+
 export default function Page() {
   return (
     <main id="main-content" className="min-h-screen bg-tp-paper">
@@ -67,6 +86,20 @@ export default function Page() {
           { name: 'Free Tools', url: `${siteConfig.url}/tools` },
           { name: 'DPI Checker', url: `${siteConfig.url}${path}` },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
       />
       <Header />
 
@@ -97,6 +130,23 @@ export default function Page() {
                 <h3 className="mt-4 font-display text-xl font-normal text-tp-ink">{tip.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-tp-muted">{tip.body}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Frequently asked questions</h2>
+          <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
+            {faqs.map((f) => (
+              <details key={f.q} className="group p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-tp-ink">
+                  {f.q}
+                  <span className="text-tp-bronze-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">{f.a}</p>
+              </details>
             ))}
           </div>
         </div>

@@ -58,6 +58,25 @@ const tips = [
   },
 ];
 
+const faqs = [
+  {
+    q: "What is the difference between PNG, JPG and WebP?",
+    a: "JPG uses lossy compression and gives small files for photos. PNG is lossless and supports transparency, so files are larger but edges stay crisp. WebP can do both lossy and lossless compression and is often smaller than JPG or PNG at similar quality.",
+  },
+  {
+    q: "Can I convert HEIC photos to JPG?",
+    a: "Yes. Choose HEIC as your input file and pick JPG, PNG or WebP as the output. HEIC is the format many iPhones use, and JPG is accepted almost everywhere.",
+  },
+  {
+    q: "Does converting change my image resolution?",
+    a: "No. The converter keeps your original pixel dimensions. For JPG and WebP you can adjust the quality setting, which changes file size and compression but not resolution.",
+  },
+  {
+    q: "Are my photos uploaded to a server?",
+    a: "No. The conversion runs in your browser, so your image stays on your device and you download the result directly.",
+  },
+];
+
 export default function Page() {
   return (
     <main id="main-content" className="min-h-screen bg-tp-paper">
@@ -67,6 +86,20 @@ export default function Page() {
           { name: 'Free Tools', url: `${siteConfig.url}/tools` },
           { name: 'Image Format Converter', url: `${siteConfig.url}${path}` },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
       />
       <Header />
 
@@ -97,6 +130,23 @@ export default function Page() {
                 <h3 className="mt-4 font-display text-xl font-normal text-tp-ink">{tip.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-tp-muted">{tip.body}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Frequently asked questions</h2>
+          <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
+            {faqs.map((f) => (
+              <details key={f.q} className="group p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-tp-ink">
+                  {f.q}
+                  <span className="text-tp-bronze-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">{f.a}</p>
+              </details>
             ))}
           </div>
         </div>

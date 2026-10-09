@@ -58,6 +58,25 @@ const tips = [
   },
 ];
 
+const faqs = [
+  {
+    q: "What does the Open to Work frame do?",
+    a: "It adds a colored ring and a short label such as #OpenToWork or #Hiring around your profile photo, signalling at a glance that you are looking for roles or hiring.",
+  },
+  {
+    q: "Is this the same as LinkedIn's green Open to Work circle?",
+    a: "This tool draws its own frame on your photo and gives you a PNG to upload. LinkedIn's built-in Open to Work feature is set separately in your LinkedIn profile settings, where you also choose who can see it.",
+  },
+  {
+    q: "Can I change the color and the text?",
+    a: "Yes. Pick a ring color, adjust the ring thickness, and use the custom option to match a brand color or write your own short label.",
+  },
+  {
+    q: "Is my photo uploaded anywhere?",
+    a: "No. The frame is drawn in your browser, and you download the finished PNG directly.",
+  },
+];
+
 export default function Page() {
   return (
     <main id="main-content" className="min-h-screen bg-tp-paper">
@@ -67,6 +86,20 @@ export default function Page() {
           { name: 'Free Tools', url: `${siteConfig.url}/tools` },
           { name: 'OpenToWork Frame', url: `${siteConfig.url}${path}` },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
       />
       <Header />
 
@@ -97,6 +130,23 @@ export default function Page() {
                 <h3 className="mt-4 font-display text-xl font-normal text-tp-ink">{tip.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-tp-muted">{tip.body}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Frequently asked questions</h2>
+          <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
+            {faqs.map((f) => (
+              <details key={f.q} className="group p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-tp-ink">
+                  {f.q}
+                  <span className="text-tp-bronze-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">{f.a}</p>
+              </details>
             ))}
           </div>
         </div>

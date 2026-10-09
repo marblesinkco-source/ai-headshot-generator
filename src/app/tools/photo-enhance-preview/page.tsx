@@ -38,6 +38,25 @@ const tips = [
   { title: 'Sharpen last, and lightly', body: 'Sharpening cannot rescue a blurry photo. Start from a well-lit, in-focus original for the best result.' },
 ];
 
+const faqs = [
+  {
+    q: 'What does the photo enhancement preview do?',
+    a: 'It lets you try auto enhance or adjust brightness, contrast and saturation on a photo, then compare the before and after views.',
+  },
+  {
+    q: 'Is my photo uploaded to a server?',
+    a: 'No. The adjustments run in your browser, so your photo stays on your device.',
+  },
+  {
+    q: 'Will enhancing a photo fix a blurry or low-resolution image?',
+    a: 'Not fully. Brightness, contrast and saturation changes can improve how a photo looks, but they cannot add detail that was never captured. Start with the sharpest photo you have.',
+  },
+  {
+    q: 'Is this the same as TailorPic AI headshots?',
+    a: 'No. This is a free preview tool for simple adjustments. TailorPic generates new AI professional headshots from your selfies.',
+  },
+];
+
 export default function PhotoEnhancePreviewPage() {
   return (
     <main id="main-content" className="min-h-screen bg-tp-paper">
@@ -47,6 +66,20 @@ export default function PhotoEnhancePreviewPage() {
           { name: 'Free Tools', url: `${siteConfig.url}/tools` },
           { name: 'Photo Enhancement Preview', url: `${siteConfig.url}${path}` },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
       />
       <Header />
 
@@ -77,6 +110,23 @@ export default function PhotoEnhancePreviewPage() {
                 <h3 className="font-semibold text-tp-ink">{t.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-tp-muted">{t.body}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Frequently asked questions</h2>
+          <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
+            {faqs.map((f) => (
+              <details key={f.q} className="group p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-tp-ink">
+                  {f.q}
+                  <span className="text-tp-bronze-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">{f.a}</p>
+              </details>
             ))}
           </div>
         </div>

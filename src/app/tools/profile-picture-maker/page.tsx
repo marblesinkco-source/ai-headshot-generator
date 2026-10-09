@@ -58,6 +58,13 @@ const tips = [
   },
 ];
 
+const faqs: { q: string; a: string }[] = [
+  { q: "What is the best size for a profile picture?", a: "Each platform uses its own dimensions and display shape, so there is no single universal size. This tool crops and resizes your photo for nine platforms at once, so you can download the version you need." },
+  { q: "Which platforms does the profile picture maker support?", a: "LinkedIn, Instagram, Facebook, Twitter/X, YouTube, Zoom, Slack, WhatsApp, and Discord. You can download one size as a PNG or all of them in a single ZIP file." },
+  { q: "What makes a good profile picture?", a: "Use a clear, well-lit photo with your face centered and large in the frame. Many platforms display profile pictures as circles, so keep your face inside the circular preview." },
+  { q: "Does my photo leave my device?", a: "No. Photos are cropped and resized in your browser using the Canvas API, and nothing is uploaded to a server." },
+];
+
 export default function Page() {
   return (
     <main id="main-content" className="min-h-screen bg-tp-paper">
@@ -67,6 +74,20 @@ export default function Page() {
           { name: 'Free Tools', url: `${siteConfig.url}/tools` },
           { name: 'Profile Picture Maker', url: `${siteConfig.url}${path}` },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
       />
       <Header />
 
@@ -97,6 +118,23 @@ export default function Page() {
                 <h3 className="mt-4 font-display text-xl font-normal text-tp-ink">{tip.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-tp-muted">{tip.body}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Frequently asked questions</h2>
+          <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
+            {faqs.map((f) => (
+              <details key={f.q} className="group p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-tp-ink">
+                  {f.q}
+                  <span className="text-tp-bronze-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">{f.a}</p>
+              </details>
             ))}
           </div>
         </div>

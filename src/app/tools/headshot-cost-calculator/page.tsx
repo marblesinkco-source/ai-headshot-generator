@@ -33,6 +33,25 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: siteConfig.name, url: siteConfig.url },
 };
 
+const faqs = [
+  {
+    q: "How much does a professional headshot photographer cost?",
+    a: "Prices vary widely by location, photographer experience and what is included. Studio time, retouching, makeup and travel can all add to the total. The calculator lets you enter your own figures so you can see the full cost for your situation.",
+  },
+  {
+    q: "How does AI compare with a photographer on cost?",
+    a: `AI headshots generally cost less because there is no studio, travel or scheduling. TailorPic plans start from ${BASE_PRICE_DISPLAY}, and the calculator shows the difference using the figures you enter.`,
+  },
+  {
+    q: "What does the calculator include?",
+    a: "It estimates photographer costs such as the session fee, makeup and travel, and compares them with AI photos. It covers headshots as well as dating photos, pet portraits and product shots.",
+  },
+  {
+    q: "Is the cost calculator free?",
+    a: "Yes, the calculator is free to use and you do not need an account. The results are estimates based on the values you enter, not quotes from any photographer.",
+  },
+];
+
 export default function HeadshotCostCalculatorPage() {
   return (
     <main id="main-content" className="min-h-screen bg-white">
@@ -44,6 +63,20 @@ export default function HeadshotCostCalculatorPage() {
         { name: 'Home', url: siteConfig.url },
         { name: 'Headshot Cost Calculator', url: `${siteConfig.url}/tools/headshot-cost-calculator` },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
+      />
       <Header />
 
       <section className="relative overflow-hidden pt-16">
@@ -62,6 +95,23 @@ export default function HeadshotCostCalculatorPage() {
 
       <section className="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
         <CalculatorForm />
+      </section>
+
+      <section className="px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Frequently asked questions</h2>
+          <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
+            {faqs.map((f) => (
+              <details key={f.q} className="group p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-tp-ink">
+                  {f.q}
+                  <span className="text-tp-bronze-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section className="border-t border-tp-line bg-tp-paper">

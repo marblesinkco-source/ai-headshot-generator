@@ -58,6 +58,25 @@ const tips = [
   },
 ];
 
+const faqs = [
+  {
+    q: "What does the headshot quality score measure?",
+    a: "The tool analyzes five things: framing, lighting balance, background simplicity, sharpness and contrast. Each comes with a tip based on your photo.",
+  },
+  {
+    q: "What makes a headshot look high quality?",
+    a: "A sharp, well-lit face that is centered with comfortable space around it, a simple uncluttered background and good contrast between the subject and the backdrop. Soft, even light usually flatters more than harsh shadows.",
+  },
+  {
+    q: "Is my photo uploaded for analysis?",
+    a: "No. The analysis runs in your browser using the Canvas API, so your photo stays on your device.",
+  },
+  {
+    q: "Is the score an official rating?",
+    a: "No. It is an automated estimate based on image measurements and is meant as guidance for improving your photo. Different employers and platforms may prefer different styles.",
+  },
+];
+
 export default function Page() {
   return (
     <main id="main-content" className="min-h-screen bg-tp-paper">
@@ -67,6 +86,20 @@ export default function Page() {
           { name: 'Free Tools', url: `${siteConfig.url}/tools` },
           { name: 'Headshot Quality Score', url: `${siteConfig.url}${path}` },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
       />
       <Header />
 
@@ -97,6 +130,23 @@ export default function Page() {
                 <h3 className="mt-4 font-display text-xl font-normal text-tp-ink">{tip.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-tp-muted">{tip.body}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Frequently asked questions</h2>
+          <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
+            {faqs.map((f) => (
+              <details key={f.q} className="group p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-tp-ink">
+                  {f.q}
+                  <span className="text-tp-bronze-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">{f.a}</p>
+              </details>
             ))}
           </div>
         </div>

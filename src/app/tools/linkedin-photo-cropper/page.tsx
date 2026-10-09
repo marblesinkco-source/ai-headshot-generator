@@ -38,6 +38,13 @@ const tips = [
   { title: 'Check the circle, not the square', body: 'The corners of the square are hidden on LinkedIn. Keep anything important inside the circular guide.' },
 ];
 
+const faqs: { q: string; a: string }[] = [
+  { q: "What aspect ratio does LinkedIn use for profile photos?", a: "LinkedIn profile photos are square (1:1) and are shown inside a circle. This tool crops to a square so your photo fits that format." },
+  { q: "What size is the cropped file?", a: "The cropper downloads a square 400 x 400 PNG, which matches LinkedIn's recommended minimum dimensions." },
+  { q: "How do I make sure my face fits the circular crop?", a: "Use the circular preview while you drag and zoom. Keep your face near the middle, leave a little space above your head, and keep anything important inside the circle because the corners of the square are hidden." },
+  { q: "Will cropping reduce my photo quality?", a: "Zooming in enlarges pixels, so start from a sharp, high-resolution original and avoid zooming further than you need. Cropping happens in your browser and your photo is not uploaded." },
+];
+
 export default function LinkedInPhotoCropperPage() {
   return (
     <main id="main-content" className="min-h-screen bg-tp-paper">
@@ -47,6 +54,20 @@ export default function LinkedInPhotoCropperPage() {
           { name: 'Free Tools', url: `${siteConfig.url}/tools` },
           { name: 'LinkedIn Photo Cropper', url: `${siteConfig.url}${path}` },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
       />
       <Header />
 
@@ -77,6 +98,23 @@ export default function LinkedInPhotoCropperPage() {
                 <h3 className="font-semibold text-tp-ink">{t.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-tp-muted">{t.body}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Frequently asked questions</h2>
+          <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
+            {faqs.map((f) => (
+              <details key={f.q} className="group p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-tp-ink">
+                  {f.q}
+                  <span className="text-tp-bronze-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">{f.a}</p>
+              </details>
             ))}
           </div>
         </div>

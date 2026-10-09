@@ -52,6 +52,25 @@ const TIPS = [
   },
 ];
 
+const faqs = [
+  {
+    q: "How long can a LinkedIn About section be?",
+    a: "LinkedIn allows up to 2,600 characters in the About section. Only the first few lines show before the See more link, so put your most important points at the start.",
+  },
+  {
+    q: "What should I include in my LinkedIn About section?",
+    a: "Say who you are and what you do, back it with a real project or result, and end with how people can reach you or what conversations you welcome. Writing in the first person keeps it natural.",
+  },
+  {
+    q: "Is the generated draft ready to publish as is?",
+    a: "Treat it as a starting frame. Add your own details, results and voice before you publish, so the final text is accurate and sounds like you.",
+  },
+  {
+    q: "Is the text I enter sent to a server?",
+    a: "No. The generator runs entirely in your browser, so what you type stays on your device.",
+  },
+];
+
 export default function LinkedInAboutGeneratorPage() {
   return (
     <main id="main-content" className="min-h-screen">
@@ -61,6 +80,20 @@ export default function LinkedInAboutGeneratorPage() {
           { name: 'Tools', url: `${siteConfig.url}/tools` },
           { name: 'LinkedIn About Generator', url: `${siteConfig.url}${PATH}` },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
       />
       <Header />
 
@@ -97,6 +130,23 @@ export default function LinkedInAboutGeneratorPage() {
                 <h3 className="text-base font-semibold text-tp-ink">{tip.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-tp-muted">{tip.body}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Frequently asked questions</h2>
+          <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
+            {faqs.map((f) => (
+              <details key={f.q} className="group p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-tp-ink">
+                  {f.q}
+                  <span className="text-tp-bronze-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">{f.a}</p>
+              </details>
             ))}
           </div>
         </div>

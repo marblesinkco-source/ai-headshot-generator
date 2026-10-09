@@ -58,6 +58,13 @@ const tips = [
   },
 ];
 
+const faqs: { q: string; a: string }[] = [
+  { q: "How do I reduce the file size of a headshot?", a: "Upload your photo, choose a target size preset or set the quality yourself, and download the compressed JPG. Resizing to a smaller maximum dimension also reduces file size, often more than lowering quality alone." },
+  { q: "Does compressing a photo reduce its quality?", a: "JPG compression is lossy, so some detail is lost. Moderate quality settings usually look very similar on screen, and lower settings produce smaller files with more visible loss. Compress from your original file rather than a file you already compressed." },
+  { q: "What file size limit should I aim for?", a: "Check the limit stated on the form, job portal, or email service you are using, then choose a target size preset that sits under it." },
+  { q: "Is my photo uploaded when I compress it?", a: "No. Compression runs in your browser, so your photo stays on your device." },
+];
+
 export default function Page() {
   return (
     <main id="main-content" className="min-h-screen bg-tp-paper">
@@ -67,6 +74,20 @@ export default function Page() {
           { name: 'Free Tools', url: `${siteConfig.url}/tools` },
           { name: 'Headshot Compressor', url: `${siteConfig.url}${path}` },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
       />
       <Header />
 
@@ -97,6 +118,23 @@ export default function Page() {
                 <h3 className="mt-4 font-display text-xl font-normal text-tp-ink">{tip.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-tp-muted">{tip.body}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Frequently asked questions</h2>
+          <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
+            {faqs.map((f) => (
+              <details key={f.q} className="group p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-tp-ink">
+                  {f.q}
+                  <span className="text-tp-bronze-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">{f.a}</p>
+              </details>
             ))}
           </div>
         </div>

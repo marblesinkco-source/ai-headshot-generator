@@ -3,6 +3,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { siteConfig } from '@/config/site';
+import { TEAM_PRICE_SMALL_DISPLAY, TEAM_PRICE_LARGE_DISPLAY } from '@/config/pricing';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { CalculatorForm } from './calculator-form';
 
@@ -30,6 +31,25 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: siteConfig.name, url: siteConfig.url },
 };
 
+const faqs = [
+  {
+    q: 'How does the team headshot calculator work?',
+    a: 'You enter your team size and your own photographer quote, and the calculator compares the cost and time with TailorPic team pricing.',
+  },
+  {
+    q: 'How much does TailorPic charge per person for teams?',
+    a: `Team pricing is ${TEAM_PRICE_SMALL_DISPLAY} per person for 5 to 15 people and ${TEAM_PRICE_LARGE_DISPLAY} per person for 16 to 50 people.`,
+  },
+  {
+    q: 'Does the calculator include the cost of my own photographer?',
+    a: 'It uses the quote you enter, so the comparison reflects your own figures rather than a generic estimate.',
+  },
+  {
+    q: 'Is the calculator result a binding quote?',
+    a: 'No. It is an estimate to help you compare options. Check the pricing page for current team plans.',
+  },
+];
+
 export default function TeamHeadshotCalculatorPage() {
   return (
     <main id="main-content" className="min-h-screen bg-white">
@@ -41,6 +61,20 @@ export default function TeamHeadshotCalculatorPage() {
         { name: 'Home', url: siteConfig.url },
         { name: 'Team Headshot Calculator', url: `${siteConfig.url}/tools/team-headshot-calculator` },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
+      />
       <Header />
 
       <section className="relative overflow-hidden pt-16">
@@ -59,6 +93,23 @@ export default function TeamHeadshotCalculatorPage() {
 
       <section className="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
         <CalculatorForm />
+      </section>
+
+      <section className="px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Frequently asked questions</h2>
+          <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
+            {faqs.map((f) => (
+              <details key={f.q} className="group p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-tp-ink">
+                  {f.q}
+                  <span className="text-tp-bronze-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
       </section>
 
       <Footer />

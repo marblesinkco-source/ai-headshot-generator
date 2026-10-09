@@ -35,6 +35,25 @@ const CirclePhotoCropper = dynamic(() => import('@/components/tools/circle-photo
   ),
 });
 
+const faqs: { q: string; a: string }[] = [
+  {
+    q: "How do I crop a photo into a circle?",
+    a: "Upload your photo, drag and zoom until your face sits in the middle of the circle, choose a size and download the result as a PNG. Everything happens in your browser.",
+  },
+  {
+    q: "Which platforms show profile pictures as circles?",
+    a: "Many social, messaging and meeting apps display profile pictures in a circle, including LinkedIn, Instagram, X, Slack and Zoom. Each platform applies its own crop, so keep your face near the center of the image.",
+  },
+  {
+    q: "Can I get a circle photo with a transparent background?",
+    a: "Yes. Choose the transparent option and download a PNG, which keeps the area outside the circle see-through. If a platform fills transparent areas with white or black, pick a solid background color instead.",
+  },
+  {
+    q: "Is my photo uploaded to a server?",
+    a: "No. Cropping and exporting run in your browser, so your photo stays on your device.",
+  },
+];
+
 const tips = [
   {
     icon: CircleUser,
@@ -68,6 +87,20 @@ export default function Page() {
           { name: 'Circle Photo Cropper', url: `${siteConfig.url}${path}` },
         ]}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
+      />
       <Header />
 
       <section className="px-4 pb-10 pt-16 sm:px-6 md:pt-24">
@@ -97,6 +130,23 @@ export default function Page() {
                 <h3 className="mt-4 font-display text-xl font-normal text-tp-ink">{tip.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-tp-muted">{tip.body}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Frequently asked questions</h2>
+          <div className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
+            {faqs.map((f) => (
+              <details key={f.q} className="group p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-tp-ink">
+                  {f.q}
+                  <span className="text-tp-bronze-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">{f.a}</p>
+              </details>
             ))}
           </div>
         </div>
