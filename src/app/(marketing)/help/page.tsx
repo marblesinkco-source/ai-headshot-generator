@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { FAQSchema, BreadcrumbSchema } from '@/components/structured-data';
-import { HelpContent, allFaqItems } from '@/components/marketing/help-content';
+import { HelpContent } from '@/components/marketing/help-content';
+import { allFaqItems } from '@/config/help-data';
 import { siteConfig } from '@/config/site';
 
 /* ------------------------------------------------------------------ */
