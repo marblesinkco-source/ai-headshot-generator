@@ -17,6 +17,7 @@ import {
 import { CellValue } from '@/components/shared/cell-value';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+import { FAQAccordion } from '@/components/marketing/faq-accordion';
 
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs Secta Labs: AI Headshot Generator Comparison' },
@@ -264,14 +265,7 @@ export default function VsSectaPage() {
         <section className="py-16 md:py-20">
           <div className="mx-auto max-w-3xl px-4">
             <h2 className="mb-10 text-center text-3xl font-display font-normal text-tp-ink">Frequently asked questions</h2>
-            <div className="space-y-4">
-              {faqs.map((faq) => (
-                <div key={faq.question} className="rounded-tp-card border border-tp-line bg-tp-paper p-6">
-                  <h3 className="mb-2 font-semibold text-tp-ink">{faq.question}</h3>
-                  <p className="text-sm leading-relaxed text-tp-muted">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
+            <FAQAccordion items={faqs} />
           </div>
         </section>
 

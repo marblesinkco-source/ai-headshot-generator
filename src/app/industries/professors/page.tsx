@@ -13,6 +13,7 @@ import { cn } from '@/lib/utils';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
+import { FAQAccordion } from '@/components/marketing/faq-accordion';
 const pageTitle = "AI Headshots for Professors & Academics | TailorPic";
 const pageDescription =
   'Professional AI headshots for professors, lecturers, researchers and academics. Update faculty pages, conference bios and Google Scholar profiles.';
@@ -288,14 +289,7 @@ export default function ProfessorsIndustryPage() {
           <h2 className="text-center text-3xl font-display font-normal tracking-tight text-tp-ink sm:text-4xl">
             Frequently Asked Questions
           </h2>
-          <div className="mt-12 space-y-6">
-            {faqs.map((faq) => (
-              <div key={faq.question} className="rounded-tp-card border border-tp-line bg-white p-6">
-                <h3 className="text-lg font-semibold text-tp-ink">{faq.question}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-tp-muted">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
+          <FAQAccordion items={faqs} />
         </div>
       </section>
 
