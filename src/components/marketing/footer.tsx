@@ -10,12 +10,16 @@ type FooterLink = { label: string; href: string };
 const productLinks: FooterLink[] = [
   { label: 'How It Works', href: '/how-it-works' },
   { label: 'Pricing', href: '/pricing' },
+  { label: 'Pricing Comparison', href: '/pricing-comparison' },
   { label: 'Samples', href: '/samples' },
   { label: 'Before & After', href: '/before-after' },
   { label: 'Free Headshot Generator', href: '/free-headshot-generator' },
   { label: 'LinkedIn Headshots', href: '/linkedin-headshots' },
   { label: 'Technology', href: '/technology' },
   { label: 'Quality Promise', href: '/guarantee' },
+  { label: 'Gift Cards', href: '/gift-cards' },
+  { label: 'Integrations', href: '/integrations' },
+  { label: 'Developer API', href: '/developer-api' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Blog', href: '/blog' },
 ];
@@ -39,12 +43,15 @@ const resourceLinks: FooterLink[] = [
   { label: 'Photo Tips', href: '/photo-tips' },
   { label: 'What to Wear', href: '/what-to-wear' },
   { label: 'Selfie Guide', href: '/selfie-guide' },
+  { label: 'Headshot Sizes', href: '/headshot-sizes' },
   { label: 'Backgrounds', href: '/backgrounds' },
   { label: 'Free Tools', href: '/tools' },
   { label: 'Compare Tools', href: '/vs' },
   { label: 'Use Cases', href: '/use-cases' },
   { label: 'Industries', href: '/industries' },
   { label: 'Styles', href: '/styles' },
+  { label: 'Success Stories', href: '/success-stories' },
+  { label: 'For Students', href: '/students' },
 ];
 
 const companyLinks: FooterLink[] = [
@@ -54,6 +61,11 @@ const companyLinks: FooterLink[] = [
   { label: 'Reviews', href: '/reviews' },
   { label: 'Enterprise', href: '/enterprise' },
   { label: 'Referral Program', href: '/referral' },
+  { label: 'Affiliate Program', href: '/affiliate' },
+  { label: 'Partners', href: '/partners' },
+  { label: 'Press', href: '/press' },
+  { label: 'Careers', href: '/careers' },
+  { label: 'Status', href: '/status' },
 ];
 
 const legalLinks: FooterLink[] = [

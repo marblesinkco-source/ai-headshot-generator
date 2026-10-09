@@ -1,5 +1,30 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-09 (SEO & Cross-linking Improvements)
+
+### Tamamlanan Görevler
+
+1. **Team ↔ Enterprise ↔ Industry cross-linking** ✅ (commit c32ff4a)
+   - team-headshots: 6 industry kartı tıklanabilir Link'e dönüştürüldü
+   - team-headshots: Enterprise CTA banner eklendi
+   - enterprise: "Smaller Team?" CTA bölümü eklendi (team-headshots'a yönlendirme)
+   - Canlı site doğrulaması yapıldı ✅
+
+2. **Samples sayfası SSR dönüşümü** ✅ (commit 0eeff6e)
+   - `'use client'` kaldırıldı, server component'e dönüştürüldü
+   - Proper `Metadata` export eklendi (title, description, canonical, OG, Twitter)
+   - İnteraktif galeri filtresi ayrı client component'e taşındı: `src/components/marketing/samples-gallery.tsx`
+   - CI PASS, Vercel PASS, canlı site doğrulaması yapıldı ✅
+
+3. **Help sayfası SSR dönüşümü** ✅ (commit 0e892de)
+   - `'use client'` kaldırıldı, server component'e dönüştürüldü
+   - Proper `Metadata` export eklendi (title, description, canonical, OG, Twitter)
+   - FAQ verisi paylaşımlı modüle taşındı: `src/config/help-data.ts` (server/client boundary fix)
+   - İnteraktif help içeriği ayrı client component'e taşındı: `src/components/marketing/help-content.tsx`
+   - CI PASS, Vercel PASS, canlı site doğrulaması yapıldı ✅
+
+---
+
 ## Oturum: 2026-10-09 (Stripe→Paddle Ödeme Sistemi Geçişi — commit a412171)
 
 ### Tamamlanan Görevler
