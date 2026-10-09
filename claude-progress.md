@@ -2544,3 +2544,37 @@ Harici Lighthouse denetim raporu sonuçlarına göre (Performance 81, Accessibil
 
 ### Risk
 - Yok
+
+---
+
+## Oturum: 2026-10-09 (Stripe→Paddle Kalıntı Temizliği — commit 6d494a6)
+
+### Tamamlanan
+- **Stripe kalıntıları temizlendi (19 dosya):** Tüm repo taranarak Stripe referansları kaldırıldı veya Paddle ile değiştirildi.
+- `src/lib/stripe.ts`: Lazy init (`getStripe()` null döner STRIPE_SECRET_KEY yoksa), backward-compat Proxy export
+- `src/lib/accounting/providers/stripe-adapter.ts`: LEGACY olarak işaretlendi, tüm API çağrıları key varlığına göre gate'lendi
+- `src/lib/accounting/providers/index.ts`: Stripe adapter yalnızca STRIPE_SECRET_KEY varsa register ediliyor
+- `src/app/api/webhooks/stripe/route.ts`: Stripe yapılandırılmadıysa 410 Gone döner
+- `src/config/pricing.ts`, `src/types/database.ts`: Stripe alanları @deprecated olarak işaretlendi
+- `.env.example`: Stripe bölümü LEGACY olarak işaretlendi
+- `package.json`: `stripe:listen` → `paddle:listen`
+- `.github/workflows/ci.yml`: Paddle env vars eklendi, STRIPE_SECRET_KEY opsiyonel
+- `README.md`, `AGENTS.md`, `CLAUDE.md`: Stripe→Paddle referans güncellemeleri
+- `DEPLOY-KOMUTLARI.md`: Tamamen Paddle için yeniden yazıldı
+- `scripts/setup.sh`: Stripe env vars → Paddle env vars
+- `infrastructure/nginx.conf`, `deploy.sh`, `MIGRATION-GUIDE.md`: Webhook URL güncellemeleri
+
+### Doğrulama
+- CI PASS + Vercel PASS (scripts/deploy-status.sh --wait ile doğrulandı)
+- Canlı site Chrome browser ile doğrulandı:
+  - Homepage: "Secure payments via Paddle" trust badge görünüyor
+  - Pricing: "Secure checkout via Paddle" tüm kartlarda görünüyor
+  - Hiçbir sayfada Stripe referansı yok
+
+### Risk
+- DB'deki stripe_session_id, stripe_payment_intent, processed_stripe_events kolonları korunuyor (tarihsel veri)
+- Stripe adapter gated olarak tutuldu (STRIPE_SECRET_KEY varsa çalışır, yoksa sessizce devre dışı)
+
+### Sonraki
+- Owner: SUPABASE_DB_URL secret ekleyerek migration'ları uygulasın
+- Owner: Paddle hesabını bağlasın, price ID'leri yapılandırsın

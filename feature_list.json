@@ -654,7 +654,7 @@
       "description": "Tam Paddle Billing altyapısı: paddle.ts (lazy init, timing-safe webhook verify, replay protection), checkout route (Paddle.js overlay), webhook handler (transaction.completed/failed, adjustment refund, idempotency, dedupe release), PaddleScript component, UploadClient checkout flow, 6 yasal sayfa güncellemesi (privacy/terms/cookie/subprocessors/dpa/kvkk), CSP/dns-prefetch, paddle-adapter.ts, .env.example, types/database.ts, migration SQL",
       "dependencies": ["feat-BEFORE-AFTER-FIX"],
       "status": "done",
-      "evidence": "Commits: a412171 (tam geçiş), 8872e1b (robustness fixes). 15+ dosya değiştirildi/oluşturuldu. Denetçi ajan ile kritik review geçildi. Robustness fixes: customer.email fallback, processorFee type fix, partial refund desteği, paddlePriceId type tanımları. CI PASS + Vercel PASS (her iki commit). Canlı doğrulama: Privacy, Terms, Cookie Policy, Subprocessors, DPA sayfaları tümü 'Paddle' referansı gösteriyor, Stripe referansı yok. BLOCKER: DB migration henüz uygulanmadı — SUPABASE_DB_URL secret gerekli. Paddle hesabı bağlantısı ve price ID yapılandırması kapsam dışı."
+      "evidence": "Commits: a412171 (tam geçiş), 8872e1b (robustness fixes), 6d494a6 (Stripe kalıntı temizliği — 19 dosya). Stripe lazy init + 410 Gone webhook + LEGACY annotation. Paddle tam entegrasyon: paddle.ts, checkout route, webhook handler, PaddleScript, UploadClient, 6 yasal sayfa, CSP, paddle-adapter, setup.sh, deploy scripts, CI workflow. CI PASS + Vercel PASS (3 commit). Canlı doğrulama: homepage+pricing Paddle trust badge, Stripe referansı yok. BLOCKER: DB migration (SUPABASE_DB_URL secret gerekli), Paddle hesap bağlantısı + price ID yapılandırması kapsam dışı."
     }
   ]
 }
