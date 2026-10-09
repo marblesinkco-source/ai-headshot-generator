@@ -28,7 +28,7 @@ const photoTypeLinks: FooterLink[] = [
   { label: 'Pet Portraits', href: '/pet-portraits' },
   { label: 'Couple & Engagement', href: '/couple-engagement-photos' },
   { label: 'Product Photography', href: '/product-photography' },
-  { label: 'All Categories', href: '/samples' },
+  { label: 'All Categories', href: '/pricing' },
 ];
 
 const resourceLinks: FooterLink[] = [
@@ -125,7 +125,7 @@ const socialLinks = [
 function FooterColumn({ title, links, children }: { title: string; links: FooterLink[]; children?: ReactNode }) {
   return (
     <nav aria-label={title}>
-      <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-tp-bronze">{title}</h3>
+      <h2 className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-tp-bronze">{title}</h2>
       <ul className="space-y-0 lg:space-y-0.5">
         {links.map((link) => (
           <li key={link.href}>
@@ -146,7 +146,7 @@ const bottomLegalLinks: FooterLink[] = legalLinks.filter((l) =>
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-tp-ink text-tp-paper" aria-label="Site footer">
+    <footer className="relative overflow-hidden bg-tp-ink text-tp-paper">
       {/* Top gradient divider */}
       <div
         className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-tp-bronze/40 to-transparent"
@@ -227,7 +227,7 @@ export function Footer() {
           <span className="text-xs text-tp-beige/70">
             &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </span>
-          <nav aria-label="Legal" className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1">
+          <nav aria-label="Legal links" className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1">
             {bottomLegalLinks.map((link) => (
               <Link
                 key={link.href}

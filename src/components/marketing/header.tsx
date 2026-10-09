@@ -254,12 +254,12 @@ export function Header() {
               ref={megaTrigger}
               className="flex items-center gap-1 rounded-sm text-[13px] font-semibold text-tp-ink transition-colors hover:text-tp-bronze-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2 whitespace-nowrap"
               onClick={() => setMegaOpen((v) => !v)}
-              aria-haspopup="true"
+              aria-haspopup="menu"
               aria-expanded={megaOpen}
               aria-controls="photo-types-menu"
             >
               Photo Types
-              <svg className={`h-3.5 w-3.5 transition-transform ${megaOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <svg className={`h-3.5 w-3.5 transition-transform ${megaOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
               </svg>
             </button>
@@ -364,6 +364,7 @@ export function Header() {
               <button
                 className="flex items-center gap-2.5 rounded-full border border-tp-line/60 bg-white py-1.5 pl-1.5 pr-4 transition-all hover:border-tp-bronze/40 hover:shadow-sm"
                 onClick={() => setUserMenuOpen((v) => !v)}
+                aria-haspopup="menu"
                 aria-expanded={userMenuOpen}
               >
                 {userAvatar ? (
@@ -381,7 +382,7 @@ export function Header() {
                   </span>
                 )}
                 <span className="text-[13px] font-medium text-tp-ink max-w-[120px] truncate">{userName}</span>
-                <svg className={`h-3.5 w-3.5 text-tp-muted transition-transform ${userMenuOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <svg className={`h-3.5 w-3.5 text-tp-muted transition-transform ${userMenuOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                 </svg>
               </button>
@@ -392,13 +393,14 @@ export function Header() {
                   onMouseEnter={() => { clearTimeout(userMenuTimer.current); setUserMenuOpen(true); }}
                   onMouseLeave={() => { userMenuTimer.current = setTimeout(() => setUserMenuOpen(false), 200); }}
                 >
-                  <div className="w-56 rounded-tp-button border border-tp-line/60 bg-white py-2 shadow-xl shadow-tp-black/8">
-                    <div className="px-4 py-2 border-b border-tp-line/40">
+                  <div className="w-56 rounded-tp-button border border-tp-line/60 bg-white py-2 shadow-xl shadow-tp-black/8" role="menu" aria-label="Account menu">
+                    <div className="px-4 py-2 border-b border-tp-line/40" role="none">
                       <p className="text-[13px] font-semibold text-tp-ink truncate">{userName}</p>
                       <p className="text-[11px] text-tp-muted truncate">{user.email}</p>
                     </div>
                     <Link
                       href="/dashboard"
+                      role="menuitem"
                       className="flex items-center gap-2.5 px-4 py-2.5 text-[13px] text-tp-ink hover:bg-tp-paper transition-colors"
                       onClick={() => setUserMenuOpen(false)}
                     >
@@ -409,6 +411,7 @@ export function Header() {
                     </Link>
                     <Link
                       href="/dashboard/gallery"
+                      role="menuitem"
                       className="flex items-center gap-2.5 px-4 py-2.5 text-[13px] text-tp-ink hover:bg-tp-paper transition-colors"
                       onClick={() => setUserMenuOpen(false)}
                     >
@@ -419,6 +422,7 @@ export function Header() {
                     </Link>
                     <Link
                       href="/dashboard/orders"
+                      role="menuitem"
                       className="flex items-center gap-2.5 px-4 py-2.5 text-[13px] text-tp-ink hover:bg-tp-paper transition-colors"
                       onClick={() => setUserMenuOpen(false)}
                     >
@@ -429,6 +433,7 @@ export function Header() {
                     </Link>
                     <Link
                       href="/dashboard/billing"
+                      role="menuitem"
                       className="flex items-center gap-2.5 px-4 py-2.5 text-[13px] text-tp-ink hover:bg-tp-paper transition-colors"
                       onClick={() => setUserMenuOpen(false)}
                     >
@@ -439,6 +444,7 @@ export function Header() {
                     </Link>
                     <Link
                       href="/dashboard/settings"
+                      role="menuitem"
                       className="flex items-center gap-2.5 px-4 py-2.5 text-[13px] text-tp-ink hover:bg-tp-paper transition-colors"
                       onClick={() => setUserMenuOpen(false)}
                     >
@@ -448,10 +454,11 @@ export function Header() {
                       </svg>
                       Settings
                     </Link>
-                    <div className="border-t border-tp-line/40 mt-1 pt-1">
+                    <div className="border-t border-tp-line/40 mt-1 pt-1" role="none">
                       <button
                         onClick={handleSignOut}
                         disabled={loggingOut}
+                        role="menuitem"
                         className="flex w-full items-center gap-2.5 px-4 py-2.5 text-[13px] text-tp-error hover:bg-tp-error/5 transition-colors disabled:opacity-50"
                       >
                         <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
