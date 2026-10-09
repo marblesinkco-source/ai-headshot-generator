@@ -52,13 +52,13 @@ export default function ForgotPasswordPage() {
 
         <div className="rounded-tp-card border border-tp-line/60 bg-white p-8 shadow-sm">
           {sent ? (
-            <div className="text-center">
+            <div className="text-center" aria-live="polite">
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-tp-beige/30">
-                <svg className="h-7 w-7 text-tp-bronze" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                <svg className="h-7 w-7 text-tp-bronze" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                 </svg>
               </div>
-              <h2 className="font-display mt-4 text-lg font-normal text-tp-black">Check your email</h2>
+              <h1 className="font-display mt-4 text-lg font-normal text-tp-black">Check your email</h1>
               <p className="mt-2 text-sm text-tp-muted">
                 We sent a password reset link to <strong>{email}</strong>.
                 Click the link in the email to reset your password.
@@ -72,7 +72,7 @@ export default function ForgotPasswordPage() {
             </div>
           ) : (
             <>
-              <h2 className="font-display text-lg font-normal text-tp-black">Reset your password</h2>
+              <h1 className="font-display text-lg font-normal text-tp-black">Reset your password</h1>
               <p className="mt-1 text-sm text-tp-muted">
                 Enter your email address and we&apos;ll send you a link to reset your password.
               </p>
