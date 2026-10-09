@@ -11,6 +11,8 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { RelatedLinks } from '@/components/related-links';
+import { getRelatedUseCases } from '@/lib/internal-links';
 
 const pageTitle = 'AI Headshots for LinkedIn Profile Photos | TailorPic';
 const pageDescription =
@@ -122,6 +124,8 @@ const faqs = [
 ];
 
 export default function LinkedInUseCasePage() {
+  const relatedPages = getRelatedUseCases('linkedin');
+
   return (
     <>
       <ProductSchema
@@ -292,6 +296,9 @@ export default function LinkedInUseCasePage() {
           <FAQAccordion items={faqs} />
         </div>
       </section>
+
+      <RelatedLinks links={relatedPages} title="Related Use Cases" />
+
 
       {/* CTA */}
       <section className="py-20">

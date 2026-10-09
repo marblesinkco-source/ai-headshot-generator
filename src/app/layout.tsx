@@ -79,6 +79,11 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    types: {
+      'application/rss+xml': '/blog/feed.xml',
+    },
+  },
 };
 
 // Next 14: themeColor must live in the viewport export (metadata.themeColor is deprecated).

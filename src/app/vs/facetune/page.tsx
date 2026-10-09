@@ -9,6 +9,8 @@ import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structu
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { RelatedLinks } from '@/components/related-links';
+import { getRelatedVsPages } from '@/lib/internal-links';
 
 const competitor = "Facetune";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
@@ -67,6 +69,8 @@ const faqs = [
 ];
 
 export default function Page() {
+  const relatedPages = getRelatedVsPages('facetune');
+
   return (
     <>
       <Header />
@@ -192,6 +196,9 @@ export default function Page() {
             <FAQAccordion items={faqs} />
           </div>
         </section>
+
+        <RelatedLinks links={relatedPages} title="Compare More Alternatives" />
+
 
         {/* CTA */}
         <section className="bg-tp-black py-16 md:py-20">

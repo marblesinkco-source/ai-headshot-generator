@@ -11,6 +11,8 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { RelatedLinks } from '@/components/related-links';
+import { getRelatedUseCases } from '@/lib/internal-links';
 
 const pageTitle = "AI Headshots for Visa Application Photos | TailorPic";
 const pageDescription =
@@ -127,6 +129,8 @@ const faqs = [
 ];
 
 export default function VisaApplicationUseCasePage() {
+  const relatedPages = getRelatedUseCases('visa-application');
+
   return (
     <>
       <ProductSchema
@@ -297,6 +301,9 @@ export default function VisaApplicationUseCasePage() {
           <FAQAccordion items={faqs} />
         </div>
       </section>
+
+      <RelatedLinks links={relatedPages} title="Related Use Cases" />
+
 
       {/* CTA */}
       <section className="py-20">

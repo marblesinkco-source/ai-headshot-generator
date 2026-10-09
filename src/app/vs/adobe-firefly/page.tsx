@@ -9,6 +9,8 @@ import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structu
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { RelatedLinks } from '@/components/related-links';
+import { getRelatedVsPages } from '@/lib/internal-links';
 
 const competitor = "Adobe Firefly";
 const title = 'TailorPic vs Adobe Firefly: AI Headshot Generator Comparison';
@@ -72,6 +74,8 @@ const faqs = [
 ];
 
 export default function VsAdobeFireflyPage() {
+  const relatedPages = getRelatedVsPages('adobe-firefly');
+
   return (
     <>
       <Header />
@@ -196,6 +200,9 @@ export default function VsAdobeFireflyPage() {
             <FAQAccordion items={faqs} />
           </div>
         </section>
+
+        <RelatedLinks links={relatedPages} title="Compare More Alternatives" />
+
 
         {/* CTA */}
         <section className="bg-tp-black py-16 md:py-20">
