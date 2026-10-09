@@ -183,7 +183,7 @@ export default function SuccessStoriesPage() {
       />
       <Header />
 
-      <main id="main-content" className="min-h-screen">
+      <main id="main-content">
         {/* Hero */}
         <section className="relative overflow-hidden bg-tp-black py-20 sm:py-28">
           <div className="absolute inset-0 opacity-[0.04]">

@@ -141,7 +141,7 @@ const howToSchema = {
 
 export default function SelfieGuidePage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
@@ -153,6 +153,7 @@ export default function SelfieGuidePage() {
         ]}
       />
       <Header />
+      <main id="main-content">
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-tp-black py-20 sm:py-28">
@@ -325,7 +326,8 @@ export default function SelfieGuidePage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

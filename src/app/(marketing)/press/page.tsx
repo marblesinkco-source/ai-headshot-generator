@@ -90,7 +90,7 @@ const keyFacts = [
 
 export default function PressPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
@@ -98,6 +98,7 @@ export default function PressPage() {
         ]}
       />
       <Header />
+      <main id="main-content">
 
       {/* Hero */}
       <section className="bg-tp-black py-20 sm:py-28">
@@ -326,7 +327,8 @@ export default function PressPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

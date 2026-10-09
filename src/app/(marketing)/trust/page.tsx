@@ -170,7 +170,7 @@ const articleJsonLd = {
 
 export default function TrustPage() {
   return (
-    <main id="main-content" className="min-h-screen bg-white">
+    <>
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
@@ -187,6 +187,7 @@ export default function TrustPage() {
         }}
       />
       <Header />
+      <main id="main-content" className="bg-white">
 
       {/* Hero */}
       <section className="bg-tp-black py-20 sm:py-28">
@@ -393,7 +394,8 @@ export default function TrustPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

@@ -169,7 +169,7 @@ export default function StudentsPage() {
   };
 
   return (
-    <main id="main-content" className="min-h-screen bg-white">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -182,6 +182,7 @@ export default function StudentsPage() {
       />
       <FAQSchema items={faqs} />
       <Header />
+      <main id="main-content" className="bg-white">
 
       {/* Dark Hero */}
       <section className="bg-tp-ink px-4 py-20 sm:py-28">
@@ -480,7 +481,8 @@ export default function StudentsPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

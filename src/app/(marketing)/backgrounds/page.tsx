@@ -183,7 +183,7 @@ const tips: { icon: IconType; title: string; description: string }[] = [
 
 export default function BackgroundsPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
@@ -191,6 +191,7 @@ export default function BackgroundsPage() {
         ]}
       />
       <Header />
+      <main id="main-content">
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-tp-black py-20 sm:py-28">
@@ -417,7 +418,8 @@ export default function BackgroundsPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

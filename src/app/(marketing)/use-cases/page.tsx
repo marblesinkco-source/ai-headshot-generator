@@ -196,7 +196,7 @@ const collectionSchema = {
 
 export default function UseCasesPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
@@ -208,6 +208,7 @@ export default function UseCasesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
       />
       <Header />
+      <main id="main-content">
 
       {/* ── Hero ── */}
       <section className="relative bg-tp-black py-20 sm:py-28 overflow-hidden">
@@ -339,7 +340,8 @@ export default function UseCasesPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

@@ -64,7 +64,7 @@ export default async function TeamUseCasePage({ params }: Props) {
   const others = TEAM_USE_CASES.filter((u) => u.slug !== uc.slug);
 
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
@@ -78,6 +78,7 @@ export default async function TeamUseCasePage({ params }: Props) {
         />
       )}
       <Header />
+      <main id="main-content">
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-tp-black pt-16">
@@ -305,7 +306,8 @@ export default async function TeamUseCasePage({ params }: Props) {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

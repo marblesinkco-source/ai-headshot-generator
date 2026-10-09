@@ -288,7 +288,7 @@ function Swatch({ hex, name }: { hex: string; name: string }) {
 
 export default function WhatToWearPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -302,6 +302,7 @@ export default function WhatToWearPage() {
         ]}
       />
       <Header />
+      <main id="main-content">
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-tp-black py-20 sm:py-28">
@@ -532,7 +533,8 @@ export default function WhatToWearPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

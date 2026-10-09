@@ -196,7 +196,7 @@ const tips: { icon: IconType; title: string; text: string }[] = [
 
 export default function HeadshotSizesPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
@@ -204,6 +204,7 @@ export default function HeadshotSizesPage() {
         ]}
       />
       <Header />
+      <main id="main-content">
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-tp-black py-20 sm:py-28">
@@ -381,7 +382,8 @@ export default function HeadshotSizesPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

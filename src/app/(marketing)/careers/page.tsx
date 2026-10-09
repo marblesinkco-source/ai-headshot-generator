@@ -110,7 +110,7 @@ const departments = [
 
 export default function CareersPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
@@ -118,6 +118,7 @@ export default function CareersPage() {
         ]}
       />
       <Header />
+      <main id="main-content">
 
       {/* Hero */}
       <section className="bg-tp-black py-20 sm:py-28">
@@ -231,7 +232,8 @@ export default function CareersPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

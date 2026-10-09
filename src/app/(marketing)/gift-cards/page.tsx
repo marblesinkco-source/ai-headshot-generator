@@ -161,7 +161,7 @@ const faqItems = [
 
 export default function GiftCardsPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
@@ -172,6 +172,7 @@ export default function GiftCardsPage() {
         items={faqItems.map((item) => ({ question: item.q, answer: item.a }))}
       />
       <Header />
+      <main id="main-content">
 
       {/* ── Hero ── */}
       <section className="relative bg-tp-black py-24 sm:py-32 overflow-hidden">
@@ -407,7 +408,8 @@ export default function GiftCardsPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

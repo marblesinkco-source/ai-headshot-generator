@@ -204,7 +204,7 @@ const faqs = [
 
 export default function BeforeAfterPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
@@ -215,6 +215,7 @@ export default function BeforeAfterPage() {
         items={faqs.map((faq) => ({ question: faq.question, answer: faq.answer }))}
       />
       <Header />
+      <main id="main-content">
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-tp-black py-20 sm:py-28">
@@ -466,7 +467,8 @@ export default function BeforeAfterPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

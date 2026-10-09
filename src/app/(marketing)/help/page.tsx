@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 
 export default function HelpCenterPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
@@ -42,8 +42,10 @@ export default function HelpCenterPage() {
         ]}
       />
       <Header />
-      <HelpContent />
+      <main id="main-content">
+        <HelpContent />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

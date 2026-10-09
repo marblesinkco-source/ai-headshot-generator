@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
 export default function TeamsIndexPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
@@ -40,6 +40,7 @@ export default function TeamsIndexPage() {
         ]}
       />
       <Header />
+      <main id="main-content">
 
       <section className="relative overflow-hidden bg-tp-black pt-16">
         <div className="relative mx-auto max-w-5xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
@@ -105,7 +106,8 @@ export default function TeamsIndexPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

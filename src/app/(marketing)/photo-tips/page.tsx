@@ -219,7 +219,7 @@ function SectionHeading({
 
 export default function PhotoTipsPage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
@@ -228,6 +228,7 @@ export default function PhotoTipsPage() {
       />
       <FAQSchema items={photoTipsFaqs} />
       <Header />
+      <main id="main-content">
 
       {/* ── Hero ── */}
       <section className="relative overflow-hidden bg-tp-black py-20 sm:py-28">
@@ -402,7 +403,8 @@ export default function PhotoTipsPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

@@ -97,7 +97,7 @@ const faqItems = [
 
 export default function GuaranteePage() {
   return (
-    <main id="main-content" className="min-h-screen">
+    <>
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: siteConfig.url },
@@ -108,6 +108,7 @@ export default function GuaranteePage() {
         items={faqItems.map((item) => ({ question: item.q, answer: item.a }))}
       />
       <Header />
+      <main id="main-content">
 
       {/* ── Hero ── */}
       <section className="relative bg-tp-black py-20 sm:py-28 overflow-hidden">
@@ -272,7 +273,8 @@ export default function GuaranteePage() {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }
