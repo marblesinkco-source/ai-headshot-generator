@@ -2,6 +2,9 @@ import type { Metadata } from 'next';
 
 export const OG_BASE_URL = 'https://www.tailorpic.com';
 
+/** Bump to bust cached OG images after visual changes to the OG endpoint. */
+export const OG_VERSION = '1';
+
 export type OGPageType = 'blog' | 'vs' | 'industry' | 'style' | 'usecase' | 'glossary' | 'default';
 
 /** Build the absolute dynamic OG image URL. */
@@ -10,6 +13,7 @@ export function buildOGImageUrl(params: { title: string; type?: string; subtitle
   q.set('title', params.title);
   q.set('type', params.type || 'default');
   if (params.subtitle) q.set('subtitle', params.subtitle);
+  q.set('v', OG_VERSION);
   return `${OG_BASE_URL}/api/og?${q.toString()}`;
 }
 

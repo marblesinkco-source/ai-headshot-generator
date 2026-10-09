@@ -50,9 +50,9 @@ export function CTABanner() {
               {/* Price anchoring */}
               <div className="mx-auto mt-8 inline-flex flex-col items-center gap-1 rounded-tp-button border border-tp-bronze/30 bg-tp-paper/5 px-6 py-4 sm:flex-row sm:gap-5">
                 <p className="text-tp-paper">
-                  <span className="text-sm text-tp-beige/60">From </span>
+                  <span className="text-sm text-tp-beige/60">1 photo from </span>
                   <span className="font-display text-4xl font-normal tracking-[-0.03em]">{BASE_PRICE_DISPLAY}</span>
-                  <span className="ml-2 text-sm text-tp-beige/80">one-time payment</span>
+                  <span className="ml-2 text-sm text-tp-beige/80">· up to 160 photos</span>
                 </p>
               </div>
 
@@ -64,7 +64,7 @@ export function CTABanner() {
                     'group h-14 gap-3 bg-tp-bronze px-10 text-base font-semibold text-tp-black shadow-lg shadow-tp-bronze/20 transition-all duration-200 hover:-translate-y-0.5 cta-ring hover:bg-tp-bronze hover:shadow-xl hover:shadow-tp-bronze/30'
                   )}
                 >
-                  Start now &mdash; {BASE_PRICE_DISPLAY}{' '}
+                  Start now &mdash; from {BASE_PRICE_DISPLAY}{' '}
                   <span aria-hidden="true" className="text-lg transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">&#8599;</span>
                 </Link>
                 <button

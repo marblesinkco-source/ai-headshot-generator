@@ -30,6 +30,9 @@ export const TEAM_PRICES = {
 /** "$1.99" */
 export const BASE_PRICE_DISPLAY = formatPrice(BASE_PRICE_CENTS, CURRENCY);
 
+/** "1 photo from $1.99" — use where the entry price needs per-photo context */
+export const BASE_PRICE_LABEL = `1 photo from ${formatPrice(BASE_PRICE_CENTS, CURRENCY)}`;
+
 /* ------------------------------------------------------------------ */
 /*  Upload requirements — single source of truth for marketing copy   */
 /* ------------------------------------------------------------------ */

@@ -199,7 +199,13 @@ export function BeforeAfterShowcase() {
           Results based on AI-generated concept images. Individual results vary.
         </p>
 
-        <p className="mt-3 text-center">
+        <p className="mt-3 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-center">
+          <Link href="/before-after" className="inline-flex items-center gap-1 rounded-tp-button text-sm font-medium text-tp-bronze-ink hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2">
+            See more before &amp; after examples
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+              <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </Link>
           <Link href="/samples" className="inline-flex items-center gap-1 rounded-tp-button text-sm font-medium text-tp-bronze-ink hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tp-bronze focus-visible:ring-offset-2">
             Browse AI headshot samples
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">

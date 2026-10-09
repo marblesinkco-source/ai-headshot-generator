@@ -4,7 +4,7 @@ import { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getActiveCategories, FEATURED_CATEGORIES } from '@/config/categories';
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+import { BASE_PRICE_DISPLAY, BASE_PRICE_LABEL } from '@/config/pricing';
 import { HeroPattern } from '@/components/marketing/illustrations';
 import { homeHero, categoryVisuals } from '@/config/category-visuals';
 import { portrait } from '@/config/stock-portraits';
@@ -113,7 +113,7 @@ export function Hero() {
                   href={`/auth/register?redirect=${encodeURIComponent('/dashboard/upload?category=headshots')}`}
                   className="inline-flex w-full justify-center items-center gap-4 rounded-tp-button bg-tp-black px-6 py-4 text-[15px] font-semibold text-tp-paper shadow-md transition-[transform,box-shadow,border-color,background-color] hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl hover:animate-cta-pulse motion-reduce:hover:animate-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze sm:w-auto sm:px-8 whitespace-nowrap cta-ring"
                 >
-                  Get My Headshots &mdash; From {BASE_PRICE_DISPLAY} <span aria-hidden="true" className="text-[20px] leading-none">&#8599;</span>
+                  Get My Headshots &mdash; {BASE_PRICE_LABEL} <span aria-hidden="true" className="text-[20px] leading-none">&#8599;</span>
                 </Link>
                 <a
                   href="#how-it-works"
@@ -129,7 +129,7 @@ export function Hero() {
                 style={{ '--enter-i': 4 } as React.CSSProperties}
               >
                 {[
-                  { label: `From ${BASE_PRICE_DISPLAY}, one-time`, d: 'M12 8c-1.7 0-3 .9-3 2s1.3 2 3 2 3 .9 3 2-1.3 2-3 2m0-8V6m0 12v-2m9-4a9 9 0 11-18 0 9 9 0 0118 0z' },
+                  { label: `${BASE_PRICE_LABEL}, one-time`, d: 'M12 8c-1.7 0-3 .9-3 2s1.3 2 3 2 3 .9 3 2-1.3 2-3 2m0-8V6m0 12v-2m9-4a9 9 0 11-18 0 9 9 0 0118 0z' },
                   { label: 'Typically within hours', d: 'M12 6v6l4 2m5-2a9 9 0 11-18 0 9 9 0 0118 0z' },
                   { label: 'Quality commitment', d: 'M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z' },
                 ].map((t) => (

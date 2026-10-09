@@ -42,7 +42,7 @@ import {
 
 export const metadata: Metadata = {
   title: { absolute: 'How TailorPic Works: Upload Selfies, Get AI Headshots' },
-  description: 'Learn how TailorPic creates professional AI photos in 3 steps: upload selfies, let our AI train on your features, and download high-resolution photos from a single upload.',
+  description: 'Learn how TailorPic creates professional AI headshots in 3 steps: upload selfies, AI trains on your features, download high-res photos within hours.',
   alternates: { canonical: '/how-it-works' },
   openGraph: generateOGMetadata({ title: `How It Works | ${siteConfig.name}`, description: 
       'Upload your selfies, our AI trains a custom model on your features, and you get professional photos within hours.', path: '/how-it-works' }),
