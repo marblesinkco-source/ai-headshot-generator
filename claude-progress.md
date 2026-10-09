@@ -1,5 +1,57 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-09 (Stripe→Paddle Ödeme Sistemi Geçişi — commit a412171)
+
+### Tamamlanan Görevler
+
+1. **Paddle client altyapısı** ✅
+   - `src/lib/paddle.ts`: Lazy init (`getPaddle()`), backward-compat Proxy, `verifyPaddleWebhook()` (HMAC-SHA256, timingSafeEqual, 30s replay protection)
+   - `@paddle/paddle-node-sdk` ^1.6.0 package.json'a eklendi
+
+2. **Checkout route yeniden yazıldı** ✅
+   - `src/app/api/payments/checkout/route.ts`: Paddle.js overlay checkout (items, customData, settings, customer)
+   - Credit package, category, legacy checkout desteği
+   - DISCOUNT_MAP env-var tabanlı (undefined fallback)
+
+3. **Webhook handler oluşturuldu** ✅
+   - `src/app/api/webhooks/paddle/route.ts`: transaction.completed, transaction.payment_failed, adjustment.created/updated
+   - Idempotency guard (processed_paddle_events tablosu)
+   - releaseDedupe() — 500 hata durumunda dedupe kaydı silinir (Paddle retry imkanı)
+
+4. **Client-side Paddle.js entegrasyonu** ✅
+   - PaddleScript component (dashboard layout)
+   - UploadClient checkout flow (Paddle.Checkout.open + close event handling)
+
+5. **Paddle accounting adapter** ✅
+   - `src/lib/accounting/providers/paddle-adapter.ts`: getPaddle() lazy init
+   - Provider registry güncellendi
+
+6. **6 yasal sayfa güncellendi** ✅
+   - Privacy, Terms, Cookie Policy, Subprocessors, DPA, KVKK — tümü Paddle referanslı
+
+7. **CSP, dns-prefetch, types, .env.example güncellendi** ✅
+
+### Deploy: commit a412171 — CI PASS, Vercel PASS ✅
+### Canlı site doğrulaması: Chrome browser ile yapıldı ✅
+- Privacy: "Processed securely through Paddle, our Merchant of Record" ✓
+- Terms: "Payments are processed securely through Paddle" ✓
+- Cookie Policy: Stripe referansı yok ✓
+- Subprocessors: "Paddle" / "United Kingdom" / MoR ✓
+- DPA: Sub-processors bölümünde Paddle ✓
+
+### Paddle Webhook Robustness Fixes (commit 8872e1b) ✅
+- customerEmail: `customer.email` (Paddle v2 primary) + `billing_details.email` fallback
+- processorFee: kaldırıldı (type'da yok), `processorChargeId`'e fee bilgisi yazılıyor
+- Partial refund desteği: refund tutarı vs sipariş tutarı karşılaştırması
+- `paddlePriceId` type'lara eklendi (CategoryPackage, CreditPackage)
+- `partial_refund` OrderStatus'a eklendi
+
+### BLOCKER
+- DB migration henüz uygulanmadı (SUPABASE_DB_URL secret gerekli)
+- Paddle hesabı bağlantısı ve pri_... price ID yapılandırması kapsam dışı
+
+---
+
 ## Oturum: 2026-10-08 (Code Quality & Data Accuracy Audit — commit 1fa2285)
 
 ### Tamamlanan Görevler
