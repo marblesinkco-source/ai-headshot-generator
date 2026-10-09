@@ -62,8 +62,8 @@ const guaranteeSteps = [
 ];
 
 const coveredItems = [
-  'Unlimited regenerations within your package',
-  'Dedicated support if results need adjusting',
+  'Regenerations within your package at no extra cost',
+  'Email support if results need adjusting',
   'Full commercial usage rights on every photo',
   'Privacy-first: photos encrypted and auto-deleted within 30 days',
 ];
@@ -75,7 +75,7 @@ const faqItems = [
   },
   {
     q: 'How many times can I regenerate?',
-    a: 'You can regenerate photos within your purchased package as many times as needed until you are satisfied with the results.',
+    a: 'You can regenerate photos within your purchased package. The number of regenerations depends on your package tier. If you are not satisfied after using your regenerations, contact our support team for assistance.',
   },
   {
     q: 'What does the quality commitment cover?',
@@ -87,7 +87,7 @@ const faqItems = [
   },
   {
     q: 'How do I contact support?',
-    a: `Email us at ${siteConfig.supportEmail} with your order details and a description of the issue. Our team aims to respond within one business day.`,
+    a: `Email us at ${siteConfig.supportEmail} with your order details and a description of the issue. We will get back to you as soon as possible.`,
   },
 ];
 

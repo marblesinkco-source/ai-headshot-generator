@@ -14,11 +14,12 @@ import {
   FileText,
   Mail,
   ChevronDown,
+  ArrowRight,
 } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
-import { PAYMENT_PROVIDER } from '@/config/pricing';
+import { PAYMENT_PROVIDER, BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
@@ -357,6 +358,35 @@ export default function TrustPage() {
           >
             <Mail className="h-4 w-4" /> {siteConfig.supportEmail}
           </a>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section className="bg-tp-black py-20 sm:py-24">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-display font-normal text-3xl sm:text-4xl text-white">
+            Ready for Secure and Private Headshots?
+          </h2>
+          <p className="mt-4 text-tp-beige/60 max-w-lg mx-auto">
+            Now that you know how we handle your photos, upload a few selfies and get professional headshots delivered within hours.
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/dashboard/upload?category=headshots"
+              className="rounded-tp-button bg-tp-bronze px-8 py-3.5 text-sm font-semibold text-tp-black transition-colors hover:bg-tp-bronze/90"
+            >
+              Get Your Headshots <ArrowRight className="ml-1 inline h-4 w-4" aria-hidden="true" />
+            </Link>
+            <Link
+              href="/pricing"
+              className="text-sm font-semibold text-tp-beige/70 hover:text-tp-bronze transition-colors"
+            >
+              View Pricing →
+            </Link>
+          </div>
+          <p className="mt-5 text-xs text-tp-beige/40">
+            Starting at {BASE_PRICE_DISPLAY} · No subscription required
+          </p>
         </div>
       </section>
 

@@ -4,9 +4,8 @@ import { ArrowRight } from 'lucide-react';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
-import { buttonVariants } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
 import { siteConfig } from '@/config/site';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { TEAM_USE_CASES } from '@/config/team-use-cases';
 
@@ -77,22 +76,32 @@ export default function TeamsIndexPage() {
         </div>
       </section>
 
-      <section className="bg-tp-black py-20">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="font-display text-3xl font-normal tracking-tight text-tp-paper sm:text-4xl">
-            Ready to get your team started?
+      {/* ── CTA ── */}
+      <section className="bg-tp-black py-20 sm:py-24">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-display font-normal text-3xl sm:text-4xl text-white">
+            Start With Your Own Headshot
           </h2>
-          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+          <p className="mt-4 text-tp-beige/60 max-w-lg mx-auto">
+            Try it yourself first: upload a few selfies and get professional headshots delivered within hours, then bring the same look to your whole team.
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/for-teams"
-              className={cn(
-                buttonVariants({ size: 'lg' }),
-                'bg-tp-bronze text-tp-black shadow-none hover:bg-tp-bronze/90',
-              )}
+              href="/dashboard/upload?category=headshots"
+              className="rounded-tp-button bg-tp-bronze px-8 py-3.5 text-sm font-semibold text-tp-black transition-colors hover:bg-tp-bronze/90"
             >
-              Explore team plans <ArrowRight className="h-4 w-4" />
+              Get Your Headshots <ArrowRight className="ml-1 inline h-4 w-4" aria-hidden="true" />
+            </Link>
+            <Link
+              href="/team-headshots"
+              className="text-sm font-semibold text-tp-beige/70 hover:text-tp-bronze transition-colors"
+            >
+              Explore Team Headshots →
             </Link>
           </div>
+          <p className="mt-5 text-xs text-tp-beige/40">
+            Starting at {BASE_PRICE_DISPLAY} · No subscription required
+          </p>
         </div>
       </section>
 

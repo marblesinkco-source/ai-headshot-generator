@@ -643,30 +643,32 @@ export default function PricingComparisonPage() {
           </div>
         </section>
 
-        {/* ---- CTA ---- */}
-        <section className="relative overflow-hidden bg-tp-black py-20 sm:py-28">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -bottom-40 left-1/2 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-tp-bronze/15 blur-[120px]"
-          />
-          <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6">
-            <h2 className="font-display text-3xl font-normal text-white sm:text-4xl">
-              Professional Headshots from {BASE_PRICE_DISPLAY}
+        {/* ── CTA ── */}
+        <section className="bg-tp-black py-20 sm:py-24">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="font-display font-normal text-3xl sm:text-4xl text-white">
+              Ready to Skip the Studio?
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-tp-beige/80">
-              One-time payment, most orders ready within a few hours, and a
-              quality commitment. Pick the package that fits your needs.
+            <p className="mt-4 text-tp-beige/60 max-w-lg mx-auto">
+              Upload a few selfies and get professional headshots delivered within hours, without the scheduling or travel.
             </p>
-            <Link
-              href="/pricing"
-              className={cn(
-                buttonVariants({ size: 'lg' }),
-                'mt-8 bg-tp-bronze text-tp-black shadow-lg shadow-tp-bronze/20 hover:bg-tp-bronze/90',
-              )}
-            >
-              View Pricing Plans
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/dashboard/upload?category=headshots"
+                className="rounded-tp-button bg-tp-bronze px-8 py-3.5 text-sm font-semibold text-tp-black transition-colors hover:bg-tp-bronze/90"
+              >
+                Get Your Headshots <ArrowRight className="ml-1 inline h-4 w-4" aria-hidden="true" />
+              </Link>
+              <Link
+                href="/pricing"
+                className="text-sm font-semibold text-tp-beige/70 hover:text-tp-bronze transition-colors"
+              >
+                View Pricing →
+              </Link>
+            </div>
+            <p className="mt-5 text-xs text-tp-beige/40">
+              Starting at {BASE_PRICE_DISPLAY} · No subscription required
+            </p>
           </div>
         </section>
       </main>

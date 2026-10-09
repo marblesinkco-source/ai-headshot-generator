@@ -93,7 +93,7 @@ const technologyPillars = [
   {
     icon: Palette,
     title: 'Style Transfer',
-    desc: 'Choose from 40+ professional styles and the AI applies clothing, backgrounds, and poses while preserving your unique features and natural appearance.',
+    desc: 'Select from a range of professional styles and the AI applies clothing, backgrounds, and poses while preserving your unique features and natural appearance.',
   },
   {
     icon: ScanFace,
@@ -113,7 +113,7 @@ const technologyPillars = [
   {
     icon: MonitorCheck,
     title: 'Resolution Enhancement',
-    desc: 'Output images are generated at 4K resolution, suitable for everything from web profiles to large-format print materials.',
+    desc: 'Output images are delivered in HD resolution as standard, with 4K available on top-tier packages for large-format print and professional use.',
   },
 ];
 
@@ -140,7 +140,7 @@ const qualityPoints = [
   },
   {
     label: 'Commercial-ready output',
-    detail: '4K resolution with a full commercial license included in every package.',
+    detail: 'HD resolution on all packages, 4K on top-tier plans. Commercial license included with every package.',
   },
 ];
 
@@ -153,7 +153,7 @@ const trustSignals = [
   {
     icon: Trash2,
     title: 'Automatic deletion',
-    desc: 'Uploaded photos are deleted automatically after generation. You can request deletion of all your data at any time.',
+    desc: 'Uploaded photos and AI models are automatically deleted within 30 days of delivery. You can request earlier deletion of all your data at any time.',
   },
   {
     icon: Globe,
@@ -178,7 +178,7 @@ const faqItems = [
   },
   {
     q: 'What resolution and quality can I expect?',
-    a: 'Headshots are delivered at 4K resolution, suitable for web profiles, print materials, and large-format displays. Every image goes through automated quality checks for likeness, sharpness, and color accuracy before delivery.',
+    a: 'All packages deliver headshots in HD resolution. Top-tier packages (Executive and above) include 4K resolution, suitable for large-format print. Every image goes through automated quality checks for likeness, sharpness, and color accuracy before delivery.',
   },
   {
     q: 'How long does the generation process take?',
@@ -186,7 +186,7 @@ const faqItems = [
   },
   {
     q: 'Is the result a real photograph?',
-    a: 'No. Your headshots are AI-generated images created from your selfies, not photographs taken in a studio. We believe in being transparent about this. The quality is comparable to professional photography, but the images are generated, not captured.',
+    a: 'No. Your headshots are AI-generated images created from your selfies, not photographs taken in a studio. We believe in being transparent about this. The results aim for a professional, studio-style look, but the images are generated, not captured.',
   },
 ];
 

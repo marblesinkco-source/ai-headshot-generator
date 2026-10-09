@@ -4,6 +4,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
+import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
   Ruler,
@@ -351,32 +352,32 @@ export default function HeadshotSizesPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-tp-black py-16 sm:py-20">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="font-display font-normal text-3xl text-white sm:text-4xl">
-            Resize Your Headshot in Seconds
+      {/* ── CTA ── */}
+      <section className="bg-tp-black py-20 sm:py-24">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-display font-normal text-3xl sm:text-4xl text-white">
+            Need a Headshot That Fits Every Platform?
           </h2>
-          <p className="mt-4 text-tp-beige/60">
-            Use our headshot resizer to get the right dimensions for any
-            platform, or create new professional headshots with{' '}
-            {siteConfig.name}.
+          <p className="mt-4 text-tp-beige/60 max-w-lg mx-auto">
+            Upload a few selfies and get professional headshots delivered within hours, ready to size for LinkedIn, email, and more.
           </p>
-          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/dashboard/upload?category=headshots"
+              className="rounded-tp-button bg-tp-bronze px-8 py-3.5 text-sm font-semibold text-tp-black transition-colors hover:bg-tp-bronze/90"
+            >
+              Get Your Headshots <ArrowRight className="ml-1 inline h-4 w-4" aria-hidden="true" />
+            </Link>
             <Link
               href="/tools/headshot-resizer"
-              className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:bg-tp-bronze/90"
+              className="text-sm font-semibold text-tp-beige/70 hover:text-tp-bronze transition-colors"
             >
-              Try the Headshot Resizer{' '}
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-            <Link
-              href="/headshots"
-              className="inline-flex items-center gap-2 text-sm font-medium text-tp-beige/80 underline underline-offset-2 hover:text-white"
-            >
-              See headshot packages
+              Try the Resizer Tool →
             </Link>
           </div>
+          <p className="mt-5 text-xs text-tp-beige/40">
+            Starting at {BASE_PRICE_DISPLAY} · No subscription required
+          </p>
         </div>
       </section>
 

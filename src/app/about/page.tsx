@@ -98,7 +98,7 @@ const values = [
     icon: Eye,
     title: 'Privacy',
     description:
-      'Your data is yours. We delete uploads after processing and never sell your photos or use your likeness beyond your order.',
+      'Your data is yours. We automatically delete uploads within 30 days and never sell your photos or use your likeness beyond your order.',
   },
   {
     icon: Gem,
