@@ -13,6 +13,10 @@ const EnterpriseLeadForm = dynamic(
   () => import('@/components/marketing/enterprise-lead-form').then((m) => m.EnterpriseLeadForm),
 );
 
+const TeamCalculator = dynamic(
+  () => import('@/components/marketing/team-calculator').then((m) => m.TeamCalculator),
+);
+
 import {
   Users, Sparkles, ArrowRight, CheckCircle, Palette,
   Download, LayoutDashboard, Image, Camera, Send,
@@ -344,6 +348,13 @@ export default function TeamHeadshotsPage() {
           <p className="mt-2 text-center text-xs text-tp-muted">
             Final pricing is confirmed at checkout.
           </p>
+        </div>
+      </section>
+
+      {/* Interactive Calculator */}
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+          <TeamCalculator />
         </div>
       </section>
 

@@ -105,6 +105,18 @@ export function Hero() {
                 Upload a few selfies, get studio-quality headshots within hours. Up to 160 photos across 12 categories. Pay once&nbsp;&mdash; no subscription.
               </p>
 
+              {/* Delivery speed promise */}
+              <div
+                className="tp-hero-enter mb-4 inline-flex items-center gap-2 text-[13px]"
+                style={{ '--enter-i': 2.2 } as React.CSSProperties}
+              >
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500" />
+                </span>
+                <span className="font-medium text-tp-ink/70">Upload now, get results within hours</span>
+              </div>
+
               {/* Studio cost anchoring — verifiable industry fact */}
               <div
                 className="tp-hero-enter mb-8 inline-flex items-center gap-3 rounded-tp-button border border-tp-bronze/25 bg-tp-beige/40 px-4 py-2.5"

@@ -405,6 +405,13 @@ export function Pricing() {
                     <Lock className="h-3 w-3" aria-hidden="true" />
                     {PAYMENT_PROVIDER.checkoutBadge}
                   </p>
+                  <p className="mt-1.5 flex w-full items-center justify-center gap-1 text-[11px] text-tp-bronze-ink/70">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="flex-shrink-0">
+                      <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z" />
+                      <path d="M9 12l2 2 4-4" />
+                    </svg>
+                    Not happy? Free regeneration
+                  </p>
                 </CardFooter>
               </Card>
             );
