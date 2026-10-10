@@ -1,5 +1,39 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-10 (Paddle Ödeme Güvenlik Denetimi & Düzeltmeleri)
+
+### Tamamlanan Görevler
+
+1. **Kapsamlı Paddle ödeme sistemi denetimi** ✅
+   - Paddle client-side, checkout API, webhook handler, fatura modülü, kredi sistemi, cron job'lar, Stripe legacy incelendi
+   - 10 bulgu: 1 kritik, 3 yüksek, 3 orta, 3 düşük önem seviyesi
+
+2. **Webhook replay penceresi genişletildi** ✅ (commit 0a74850)
+   - `MAX_WEBHOOK_AGE_MS`: 30.000 → 300.000 (30sn → 5dk, Paddle önerisi)
+   - Gelecek tarihli timestamp'ler de reddediliyor
+
+3. **Client-side checkout hata yönetimi eklendi** ✅ (commit 0a74850)
+   - `Paddle.Checkout.open()` try/catch ile sarıldı
+   - 60sn failsafe timeout: overlay kapanış event'i gelmezse loading state sıfırlanıyor
+
+4. **successUrl open redirect açığı kapatıldı** ✅ (commit 0a74850)
+   - `sanitizeRedirectUrl()` fonksiyonu eklendi — sadece tailorpic.com domain'i kabul edilir
+   - Her iki checkout akışında (kredi + paket) uygulandı
+
+5. **Kredi harcama race condition düzeltildi** ✅ (commit 0a74850)
+   - Optimistic locking: UPDATE sorgusu `.eq('used_credits', beklenen_değer)` ile korunuyor
+   - Çakışmada 3 retry, ardından 409 Conflict yanıtı
+   - Eşzamanlı isteklerde çifte harcama artık mümkün değil
+
+### Sahiplik Gerektiren Bulgular (kod değişikliği yeterli değil)
+- 🔴 **paddlePriceId ayarlanmalı**: `src/config/categories.ts` ve `src/config/credits.ts`'deki tüm paketlere Paddle Dashboard'dan gerçek price ID'ler (`pri_...`) eklenmeli
+- 🟡 **Fatura/billing history UI**: Kullanıcılar faturalarını göremez — dashboard'a eklenmeli
+- 🟡 **Pending sipariş temizliği**: Terk edilen pending siparişleri expire eden bir cron/mekanizma eklenmeli
+
+### Deploy: commit 0a74850 — CI PASS, Vercel PASS ✅
+
+---
+
 ## Oturum: 2026-10-10 (Sitemap Freshness & Continuous Improvement)
 
 ### Tamamlanan Görevler
