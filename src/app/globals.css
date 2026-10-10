@@ -421,6 +421,72 @@ dialog.tp-nav-dialog[open][data-closing]::backdrop {
   .tp-rotating-word { transition: none; }
 }
 
+/* ── Premium section glow backgrounds ──────────────────────── */
+.tp-section-glow {
+  position: relative;
+  overflow: hidden;
+}
+.tp-section-glow::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  width: 140%;
+  height: 80%;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(201, 169, 138, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Glassmorphism card variant */
+.tp-glass {
+  background: rgba(248, 245, 239, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 169, 138, 0.2);
+}
+@supports not (backdrop-filter: blur(12px)) {
+  .tp-glass {
+    background: rgba(248, 245, 239, 0.92);
+  }
+}
+
+/* Animated gradient border for premium cards */
+@keyframes tp-gradient-border {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.tp-gradient-border {
+  position: relative;
+}
+.tp-gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(201,169,138,0.4), rgba(201,169,138,0.1), rgba(118,86,61,0.3), rgba(201,169,138,0.1), rgba(201,169,138,0.4));
+  background-size: 300% 300%;
+  animation: tp-gradient-border 6s ease-in-out infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tp-gradient-border::before { animation: none; }
+}
+
+/* Soft glow pulse for CTAs */
+@keyframes tp-glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 169, 138, 0); }
+  50% { box-shadow: 0 0 20px 4px rgba(201, 169, 138, 0.15); }
+}
+.tp-glow-cta {
+  animation: tp-glow-pulse 3s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tp-glow-cta { animation: none; }
+}
+
 /* ── Premium micro-interactions ─────────────────────────────── */
 
 /* Gold line grow animation on scroll */

@@ -86,7 +86,7 @@ export function GuaranteeSection() {
           {items.map(({ Icon, title, description }, i) => (
             <li
               key={title}
-              className="scroll-fade-in relative rounded-tp-card border border-tp-line bg-white p-6 lg:p-8 tp-lift hover:border-tp-bronze/30 hover:shadow-lg hover:shadow-tp-bronze/8 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+              className="scroll-fade-in relative rounded-tp-card tp-glass p-6 lg:p-8 tp-lift hover:border-tp-bronze/30 hover:shadow-lg hover:shadow-tp-bronze/8 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
             >
               <span className="absolute top-4 right-4 text-[11px] font-semibold text-tp-muted/40 select-none" aria-hidden="true">
                 {String(i + 1).padStart(2, '0')}

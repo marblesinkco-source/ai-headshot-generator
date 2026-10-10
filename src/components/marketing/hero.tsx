@@ -133,7 +133,7 @@ export function Hero() {
               >
                 <Link
                   href={`/auth/register?redirect=${encodeURIComponent('/dashboard/upload?category=headshots')}`}
-                  className="inline-flex w-full justify-center items-center gap-4 rounded-tp-button bg-tp-black px-6 py-4 text-[15px] font-semibold text-tp-paper shadow-md transition-[transform,box-shadow,border-color,background-color] hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl hover:animate-cta-pulse motion-reduce:hover:animate-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze sm:w-auto sm:px-8 whitespace-nowrap cta-ring"
+                  className="inline-flex w-full justify-center items-center gap-4 rounded-tp-button bg-tp-black px-6 py-4 text-[15px] font-semibold text-tp-paper shadow-md transition-[transform,box-shadow,border-color,background-color] hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl hover:animate-cta-pulse motion-reduce:hover:animate-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze sm:w-auto sm:px-8 whitespace-nowrap cta-ring tp-glow-cta"
                 >
                   Get My Headshots &mdash; {BASE_PRICE_LABEL} <span aria-hidden="true" className="text-[20px] leading-none">&#8599;</span>
                 </Link>
@@ -177,8 +177,8 @@ export function Hero() {
 
             {/* Hero Art — with floating style thumbnails */}
             <div className="tp-hero-image-enter relative overflow-visible min-h-[420px] lg:min-h-[508px] self-stretch mt-2.5 order-4 lg:order-2">
-              {/* Main portrait */}
-              <div className="relative overflow-hidden rounded-[120px_16px_16px_16px] bg-tp-beige h-full">
+              {/* Main portrait — premium gradient border */}
+              <div className="relative overflow-hidden rounded-[120px_16px_16px_16px] bg-tp-beige h-full tp-gradient-border">
                 <Image
                   src={homeHero.src}
                   alt={homeHero.alt}

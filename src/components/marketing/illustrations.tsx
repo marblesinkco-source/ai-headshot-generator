@@ -15,34 +15,48 @@ const INK = '#171613';
 /*  SVG-only components (no busts — kept as inline SVG)                */
 /* ------------------------------------------------------------------ */
 
-/** Subtle dot + grid pattern for the hero background (tp-bronze at low opacity). */
+/** Premium hero background with subtle dot/grid pattern and warm gradient orbs. */
 export function HeroPattern({ className = '' }: { className?: string }) {
   return (
-    <svg
-      className={`pointer-events-none absolute inset-0 h-full w-full ${className}`}
-      aria-hidden="true"
-      focusable="false"
-    >
-      <defs>
-        <pattern id="tp-hero-dots" width="24" height="24" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1.2" fill={BRONZE} fillOpacity="0.28" />
-        </pattern>
-        <pattern id="tp-hero-grid" width="96" height="96" patternUnits="userSpaceOnUse">
-          <path d="M96 0H0V96" fill="none" stroke={BRONZE} strokeOpacity="0.14" strokeWidth="1" />
-        </pattern>
-        <radialGradient id="tp-hero-fade" cx="30%" cy="35%" r="75%">
-          <stop offset="0%" stopColor="#fff" stopOpacity="1" />
-          <stop offset="100%" stopColor="#fff" stopOpacity="0" />
-        </radialGradient>
-        <mask id="tp-hero-mask">
-          <rect width="100%" height="100%" fill="url(#tp-hero-fade)" />
-        </mask>
-      </defs>
-      <g mask="url(#tp-hero-mask)">
-        <rect width="100%" height="100%" fill="url(#tp-hero-grid)" />
-        <rect width="100%" height="100%" fill="url(#tp-hero-dots)" />
-      </g>
-    </svg>
+    <>
+      {/* Warm gradient orbs — depth & luxury feel */}
+      <div className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`} aria-hidden="true">
+        {/* Top-left warm glow */}
+        <div className="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] rounded-full"
+          style={{ background: 'radial-gradient(circle, rgba(201,169,138,0.12) 0%, transparent 70%)' }} />
+        {/* Bottom-right subtle glow */}
+        <div className="absolute -bottom-[15%] -right-[10%] w-[50%] h-[50%] rounded-full"
+          style={{ background: 'radial-gradient(circle, rgba(220,205,187,0.15) 0%, transparent 65%)' }} />
+        {/* Center accent for depth */}
+        <div className="absolute top-[30%] left-[40%] w-[35%] h-[35%] rounded-full"
+          style={{ background: 'radial-gradient(circle, rgba(201,169,138,0.06) 0%, transparent 60%)' }} />
+      </div>
+      <svg
+        className={`pointer-events-none absolute inset-0 h-full w-full ${className}`}
+        aria-hidden="true"
+        focusable="false"
+      >
+        <defs>
+          <pattern id="tp-hero-dots" width="24" height="24" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1" fill={BRONZE} fillOpacity="0.18" />
+          </pattern>
+          <pattern id="tp-hero-grid" width="96" height="96" patternUnits="userSpaceOnUse">
+            <path d="M96 0H0V96" fill="none" stroke={BRONZE} strokeOpacity="0.08" strokeWidth="0.5" />
+          </pattern>
+          <radialGradient id="tp-hero-fade" cx="30%" cy="35%" r="75%">
+            <stop offset="0%" stopColor="#fff" stopOpacity="1" />
+            <stop offset="100%" stopColor="#fff" stopOpacity="0" />
+          </radialGradient>
+          <mask id="tp-hero-mask">
+            <rect width="100%" height="100%" fill="url(#tp-hero-fade)" />
+          </mask>
+        </defs>
+        <g mask="url(#tp-hero-mask)">
+          <rect width="100%" height="100%" fill="url(#tp-hero-grid)" />
+          <rect width="100%" height="100%" fill="url(#tp-hero-dots)" />
+        </g>
+      </svg>
+    </>
   );
 }
 

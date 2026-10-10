@@ -61,7 +61,7 @@ export function CTABanner() {
                   href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
                   className={cn(
                     buttonVariants({ variant: 'primary', size: 'lg' }),
-                    'group h-14 gap-3 bg-tp-bronze px-10 text-base font-semibold text-tp-black shadow-lg shadow-tp-bronze/20 transition-all duration-200 hover:-translate-y-0.5 cta-ring hover:bg-tp-bronze hover:shadow-xl hover:shadow-tp-bronze/30'
+                    'group h-14 gap-3 bg-tp-bronze px-10 text-base font-semibold text-tp-black shadow-lg shadow-tp-bronze/20 transition-all duration-200 hover:-translate-y-0.5 cta-ring hover:bg-tp-bronze hover:shadow-xl hover:shadow-tp-bronze/30 tp-glow-cta'
                   )}
                 >
                   Get My Headshots &mdash; from {BASE_PRICE_DISPLAY}{' '}

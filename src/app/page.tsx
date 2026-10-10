@@ -69,6 +69,13 @@ const BeforeAfterShowcase = dynamic(
   () => import('@/components/marketing/before-after-showcase').then((m) => m.BeforeAfterShowcase),
   { loading: () => <SectionSkeleton height="h-[600px] md:h-[500px]" /> }
 );
+const AnimatedStats = dynamic(
+  () => import('@/components/marketing/animated-stats').then((m) => m.AnimatedStats),
+  { loading: () => <SectionSkeleton height="h-[200px]" /> }
+);
+const SocialProofTicker = dynamic(
+  () => import('@/components/marketing/social-proof-ticker').then((m) => m.SocialProofTicker)
+);
 
 export default function LandingPage() {
   return (
@@ -87,6 +94,9 @@ export default function LandingPage() {
       {/* Trust strip — logos */}
       <FeaturedLogos />
 
+      {/* Key metrics — animated count-up */}
+      <AnimatedStats />
+
       {/* Before / After Showcase */}
       <BeforeAfterShowcase />
 
@@ -95,6 +105,9 @@ export default function LandingPage() {
 
       {/* Categories */}
       <Categories />
+
+      {/* Social proof ticker */}
+      <SocialProofTicker />
 
       {/* Pricing — moved up for shorter decision path */}
       <div className="mx-auto max-w-4xl px-8" aria-hidden="true"><div className="gold-line" /></div>

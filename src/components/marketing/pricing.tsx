@@ -62,7 +62,7 @@ export function Pricing() {
   )}`;
 
   return (
-    <section id="pricing" className="relative bg-tp-paper/40 py-20 lg:py-24 overflow-hidden">
+    <section id="pricing" className="relative bg-tp-paper/40 py-20 lg:py-24 overflow-hidden tp-section-glow">
       {/* Decorative background blobs */}
       <div aria-hidden="true" className="tp-blob tp-blob-beige w-[600px] h-[600px] -top-60 -right-60" />
       <div aria-hidden="true" className="tp-blob tp-blob-bronze w-[500px] h-[500px] -bottom-40 -left-48" />
@@ -297,7 +297,8 @@ export function Pricing() {
                 className={cn(
                   'scroll-fade-in relative flex flex-col transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0',
                   isRecommended &&
-                    'z-10 border-tp-bronze bg-tp-paper shadow-xl shadow-tp-bronze/20 ring-2 ring-tp-bronze/60 scale-[1.02] lg:scale-105',
+                    'z-10 border-tp-bronze bg-tp-paper shadow-xl shadow-tp-bronze/20 ring-2 ring-tp-bronze/60 scale-[1.02] lg:scale-105 tp-gradient-border',
+                  !isRecommended && !isExpress && 'tp-glass',
                   !isRecommended && !featuredBadge && isExpress &&
                     'border-dashed border-tp-bronze/30'
                 )}
@@ -391,7 +392,7 @@ export function Pricing() {
                       buttonVariants({ variant: isRecommended ? 'primary' : 'outline' }),
                       'w-full transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze',
                       isRecommended &&
-                        'h-12 bg-tp-black text-tp-paper font-semibold hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl cta-ring',
+                        'h-12 bg-tp-black text-tp-paper font-semibold hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl cta-ring tp-glow-cta',
                       isExpress && 'border-tp-bronze/50 text-tp-bronze-ink hover:bg-tp-bronze/5'
                     )}
                   >
@@ -468,7 +469,7 @@ export function Pricing() {
         </p>
 
         {/* Guarantee & refund summary */}
-        <div className="mx-auto mt-10 flex max-w-xl flex-wrap items-center justify-center gap-x-6 gap-y-3 rounded-tp-card border border-tp-line/50 bg-tp-beige/40 px-6 py-4">
+        <div className="mx-auto mt-10 flex max-w-xl flex-wrap items-center justify-center gap-x-6 gap-y-3 rounded-tp-card tp-glass px-6 py-4">
           <div className="flex items-center gap-2 text-sm text-tp-ink">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="text-tp-bronze-ink flex-shrink-0">
               <path d="M12 3 4.5 6v5.5c0 4.4 3.1 8.2 7.5 9.5 4.4-1.3 7.5-5.1 7.5-9.5V6L12 3Z" />
