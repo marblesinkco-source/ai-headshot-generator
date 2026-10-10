@@ -39,7 +39,14 @@
     - Feature comparison tablosuna sr-only `<caption>` eklendi
     - Before-after slider: `onPointerCancel` handler eklendi (sürükleme durumunun takılmasını önler)
 
-### Deploy: commits c439072→6f827a6 — CI PASS, Vercel PASS ✅
+11. **Enterprise/Team sayfalarına inline lead capture formu eklendi** ✅ (commit 9ba195f)
+    - Yeni `EnterpriseLeadForm` bileşeni: Name, Work Email, Company, Team Size, Message alanları
+    - `/enterprise` ve `/team-headshots` sayfalarının son CTA section'ı inline form ile değiştirildi
+    - "Contact Sales" / "Request a Demo" linkleri `#contact-sales` anchor'ına yönlendirildi
+    - API `/api/contact` endpoint'i isteğe bağlı `company` ve `teamSize` alanlarını kabul ediyor
+    - Dönüşüm optimizasyonu: ziyaretçiler sayfadan ayrılmadan iletişime geçebilir
+
+### Deploy: commits c439072→9ba195f — CI PASS, Vercel PASS ✅
 ### Canlı site doğrulaması: Chrome browser ile yapıldı ✅
 
 ### SEO Denetim Sonuçları (yapılacak bir şey kalmadı)
