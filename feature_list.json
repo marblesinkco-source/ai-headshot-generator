@@ -663,6 +663,14 @@
       "dependencies": ["feat-PADDLE"],
       "status": "done",
       "evidence": "Commits: c85ab001 (conversion-optimized marketing copy & trust signals), 372686fa + f747dae3 (smart quote fix). 7 dosya guncellendi: hero.tsx, featured-logos.tsx, pricing.tsx, sticky-cta.tsx, guarantee-section.tsx, cta-banner.tsx, pricing.ts. CI PASS + Vercel PASS. Canli dogrulama: Chrome browser ile tum degisiklikler onaylandi."
+    },
+    {
+      "id": "feat-CONVERSION-OPT-2",
+      "name": "Phase S3 — Advanced Conversion Features",
+      "description": "3 yeni donusum ozelligi: (1) hero delivery promise (yesil pulsing dot + 'Upload now, get results within hours'), (2) pricing kartlarinda guarantee micro-badge ('Not happy? Free regeneration'), (3) team-headshots sayfasinda interaktif seat calculator (1-100 kisi slider, tier-aware fiyatlandirma, studio tasarruf karsilastirmasi).",
+      "dependencies": ["feat-CONVERSION-OPT"],
+      "status": "done",
+      "evidence": "Commit: 98fcf492. 4 dosya: hero.tsx, pricing.tsx, team-calculator.tsx (yeni), team-headshots/page.tsx. CI PASS + Vercel PASS. Canli dogrulama: Chrome browser ile hero delivery promise, pricing guarantee badge, ve team calculator (slider, $390/10 kisi, $2,110 tasarruf) tumu onaylandi."
     }
   ]
 }

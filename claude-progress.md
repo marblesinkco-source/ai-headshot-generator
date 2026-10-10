@@ -2822,3 +2822,32 @@ tailorpic.com'u satışa hazır, rakiplerden üstün bir yapıya kavuşturmak. 7
 - src/components/marketing/guarantee-section.tsx
 - src/components/marketing/cta-banner.tsx
 - src/config/pricing.ts
+
+## Oturum: 2026-10-10 (Advanced Conversion Features — Phase S3)
+
+### Hedef
+Rakip analizi sonrasi eksik donusum ozelliklerini eklemek: delivery promise, guarantee badge, interaktif team calculator.
+
+### Tamamlanan (commit 98fcf492)
+
+1. **Hero Delivery Promise** — Pulsing yesil nokta + "Upload now, get results within hours" mesaji hero'ya eklendi. Aciliyet ve hiz vurgulayan gorsel sinyal.
+
+2. **Pricing Card Guarantee Badge** — Her pricing kartinin altina "Not happy? Free regeneration" kalkan ikonlu mikro-badge eklendi. Satin alma noktasinda risk azaltma.
+
+3. **Team Seat Calculator** — team-headshots sayfasina interaktif maliyet hesaplayici eklendi:
+   - 1-100 kisi arasi slider
+   - Tier-aware fiyatlandirma (Individual/Small Team/Business/Enterprise)
+   - TailorPic vs Studio maliyet karsilastirmasi
+   - Tasarruf yüzdesi ve toplam ($2,110 / 84% tasarruf for 10 kisi)
+   - Dinamik CTA (50+ kisi icin "Request a Demo")
+
+### Deploy
+- CI: PASS
+- Vercel: PASS
+- Canli dogrulama: Chrome browser ile hero, pricing kartlari ve team calculator dogrulandi
+
+### Dosyalar
+- src/components/marketing/hero.tsx (delivery promise)
+- src/components/marketing/pricing.tsx (guarantee badge)
+- src/components/marketing/team-calculator.tsx (yeni — interaktif calculator)
+- src/app/team-headshots/page.tsx (calculator entegrasyonu)
