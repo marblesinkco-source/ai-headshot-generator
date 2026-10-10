@@ -44,19 +44,19 @@ function ReceiptIcon() {
 const items = [
   {
     Icon: ShieldIcon,
-    title: ‘Satisfaction Guarantee’,
-    description: "Not happy with your headshots? We’ll regenerate them at no extra cost until you love the results.",
+    title: 'Satisfaction Guarantee',
+    description: "Not happy with your headshots? We'll regenerate them at no extra cost until you love the results.",
   },
   {
     Icon: LockIcon,
-    title: ‘Bank-Level Security’,
+    title: 'Bank-Level Security',
     description:
-      ‘SSL-encrypted transfers, secure checkout via Paddle, and your photos plus AI model are automatically deleted after 30 days.’,
+      'SSL-encrypted transfers, secure checkout via Paddle, and your photos plus AI model are automatically deleted after 30 days.',
   },
   {
     Icon: ReceiptIcon,
-    title: ‘One-Time Payment, No Tricks’,
-    description: ‘Pay once — no subscription, no hidden fees, no recurring charges. Ever.’,
+    title: 'One-Time Payment, No Tricks',
+    description: 'Pay once -- no subscription, no hidden fees, no recurring charges. Ever.',
   },
 ] as const;
 
