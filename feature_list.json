@@ -655,6 +655,14 @@
       "dependencies": ["feat-BEFORE-AFTER-FIX"],
       "status": "done",
       "evidence": "Commits: a412171 (tam geçiş), 8872e1b (robustness fixes), 6d494a6 (Stripe kalıntı temizliği — 19 dosya). Stripe lazy init + 410 Gone webhook + LEGACY annotation. Paddle tam entegrasyon: paddle.ts, checkout route, webhook handler, PaddleScript, UploadClient, 6 yasal sayfa, CSP, paddle-adapter, setup.sh, deploy scripts, CI workflow. CI PASS + Vercel PASS (3 commit). Canlı doğrulama: homepage+pricing Paddle trust badge, Stripe referansı yok. BLOCKER: DB migration (SUPABASE_DB_URL secret gerekli), Paddle hesap bağlantısı + price ID yapılandırması kapsam dışı."
+    },
+    {
+      "id": "feat-CONVERSION-OPT",
+      "name": "Phase S2 — Conversion Optimization & Sales-Readiness",
+      "description": "7 alanli donusum optimizasyonu: hero social proof & studio-cost anchoring, trust strip (FeaturedLogos marquee), pricing card iyilestirmeleri (per-photo pricing, popular badge, savings), sticky CTA bar, guarantee section (3 kart: satisfaction/security/no-tricks), CTA banner (price anchoring, trust points), deploy & canli dogrulama.",
+      "dependencies": ["feat-PADDLE"],
+      "status": "done",
+      "evidence": "Commits: c85ab001 (conversion-optimized marketing copy & trust signals), 372686fa + f747dae3 (smart quote fix). 7 dosya guncellendi: hero.tsx, featured-logos.tsx, pricing.tsx, sticky-cta.tsx, guarantee-section.tsx, cta-banner.tsx, pricing.ts. CI PASS + Vercel PASS. Canli dogrulama: Chrome browser ile tum degisiklikler onaylandi."
     }
   ]
 }

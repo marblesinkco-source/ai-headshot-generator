@@ -2785,3 +2785,40 @@ Harici Lighthouse denetim raporu sonuçlarına göre (Performance 81, Accessibil
 ### Sonraki
 - Owner: SUPABASE_DB_URL secret ekleyerek migration'ları uygulasın
 - Owner: Paddle hesabını bağlasın, price ID'leri yapılandırsın
+
+---
+
+## Oturum: 2026-10-10 (Conversion Optimization — Phase S2)
+
+### Hedef
+tailorpic.com'u satışa hazır, rakiplerden üstün bir yapıya kavuşturmak. 7 alanlı dönüşüm optimizasyonu.
+
+### Tamamlanan
+1. **Hero Social Proof & Studio-Cost Anchoring**: hero.tsx — "Studio headshots cost $250+" karşılaştırma, "from $1.99" vurgusu
+2. **Trust Strip (FeaturedLogos)**: featured-logos.tsx — 7 güven badge'i marquee: Satisfaction guarantee, Secure checkout via Paddle, No subscription, SSL encrypted, Auto-deleted 30 days, We never sell your data, GDPR compliant
+3. **Pricing Card İyileştirmeleri**: pricing.tsx — per-photo fiyat gösterimi, "Most Popular" badge, savings yüzdeleri, BASE_PRICE_DISPLAY import düzeltmesi
+4. **Sticky CTA Bar**: sticky-cta.tsx — scroll-based sabit CTA bar, BASE_PRICE_DISPLAY import düzeltmesi
+5. **Guarantee Section**: guarantee-section.tsx — 3 kart: Satisfaction Guarantee, Bank-Level Security, One-Time Payment No Tricks
+6. **CTA Banner**: cta-banner.tsx — "Your next headshot is a selfie away", price anchoring, trust points listesi
+7. **Deploy & Canlı Doğrulama**: CI PASS + Vercel PASS + Chrome browser canlı doğrulama
+
+### Sorun & Çözüm
+- **Smart quote hatası**: guarantee-section.tsx'te Unicode curly quotes (U+2018/U+2019/U+201C/U+201D) JS string delimiter olarak kullanılmış → CI FAIL (Unexpected character). Python script ile tüm non-ASCII quotes ASCII'ye dönüştürüldü → CI PASS.
+
+### Commit'ler
+- c85ab001: feat: conversion-optimized marketing copy & trust signals (7 dosya)
+- 372686fa: fix: escape apostrophe in guarantee section description
+- f747dae3: fix: replace all smart quotes with ASCII in guarantee-section
+
+### Doğrulama
+- CI PASS + Vercel PASS (scripts/deploy-status.sh --wait)
+- Canlı site Chrome browser ile doğrulandı: tüm değişiklikler render ediliyor
+
+### Dosyalar
+- src/components/marketing/hero.tsx
+- src/components/marketing/featured-logos.tsx
+- src/components/marketing/pricing.tsx
+- src/components/marketing/sticky-cta.tsx
+- src/components/marketing/guarantee-section.tsx
+- src/components/marketing/cta-banner.tsx
+- src/config/pricing.ts
