@@ -45,7 +45,7 @@ const items = [
   {
     Icon: ShieldIcon,
     title: ‘Satisfaction Guarantee’,
-    description: ‘Not happy with your headshots? We’ll regenerate them at no extra cost until you love the results.’,
+    description: "Not happy with your headshots? We’ll regenerate them at no extra cost until you love the results.",
   },
   {
     Icon: LockIcon,
