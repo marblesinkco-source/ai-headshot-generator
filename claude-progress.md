@@ -26,7 +26,15 @@
    - `SectionSkeleton height="h-[600px] md:h-[500px]"` fallback eklendi
    - İlk JS bundle boyutunu azaltır (client component below-the-fold)
 
-### Deploy: commits c439072, 865f269, dc21e3b, 653fb3d — CI PASS, Vercel PASS ✅
+8. **Kategori + pricing + samples sayfaları lazy-load** ✅ (commit 4989a34, 6866064)
+   - [category]/page.tsx: HeadshotInContext, PackageVisualizer, SocialShare → dynamic()
+   - pricing/page.tsx: PricingViewToggle, PricingComparisonBar → dynamic()
+   - samples/page.tsx: VideoTestimonials, SamplesGallery, BeforeAfterGallery → dynamic()
+
+9. **Sticky CTA footer yakınında gizleniyor** ✅ (commit 6866064)
+   - Footer'a yaklaşıldığında CTA otomatik gizleniyor — footer içeriğiyle çakışma önlendi
+
+### Deploy: commits c439072→6866064 — CI PASS, Vercel PASS ✅
 ### Canlı site doğrulaması: Chrome browser ile yapıldı ✅
 
 ### SEO Denetim Sonuçları (yapılacak bir şey kalmadı)
