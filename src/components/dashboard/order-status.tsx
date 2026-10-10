@@ -27,8 +27,16 @@ const STATUS_CONFIG: Record<OrderStatus, { label: string; className: string; pul
     label: 'Failed',
     className: 'bg-tp-error/10 text-tp-error',
   },
+  expired: {
+    label: 'Expired',
+    className: 'bg-tp-paper text-tp-muted',
+  },
   refunded: {
     label: 'Refunded',
+    className: 'bg-tp-paper text-tp-muted',
+  },
+  partial_refund: {
+    label: 'Partial Refund',
     className: 'bg-tp-paper text-tp-muted',
   },
 };

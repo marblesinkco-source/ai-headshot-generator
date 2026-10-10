@@ -24,6 +24,7 @@ export type OrderStatus =
   | "processing"
   | "completed"
   | "failed"
+  | "expired"
   | "refunded"
   | "partial_refund";
 

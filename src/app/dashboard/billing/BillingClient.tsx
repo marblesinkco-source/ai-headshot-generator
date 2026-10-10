@@ -58,7 +58,7 @@ export default function BillingClient() {
 
   // Compute totals
   const totalSpent = orders
-    .filter((o) => o.status !== 'pending' && o.status !== 'failed')
+    .filter((o) => o.status !== 'pending' && o.status !== 'failed' && o.status !== 'expired')
     .reduce((sum, o) => sum + o.amount, 0);
   const completedCount = orders.filter((o) => o.status === 'completed').length;
 
