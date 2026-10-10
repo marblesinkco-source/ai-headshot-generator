@@ -9,7 +9,14 @@ export function StickyCTA({ href = '/auth/register?redirect=%2Fdashboard%2Fuploa
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 500);
+    const onScroll = () => {
+      const scrollY = window.scrollY;
+      // Show after scrolling past hero, hide when near footer
+      const footer = document.querySelector('footer');
+      const footerTop = footer ? footer.getBoundingClientRect().top + scrollY : Infinity;
+      const nearFooter = scrollY + window.innerHeight > footerTop - 80;
+      setVisible(scrollY > 500 && !nearFooter);
+    };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);

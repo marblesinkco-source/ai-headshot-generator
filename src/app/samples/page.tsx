@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { VideoTestimonials } from '@/components/marketing/video-testimonials';
-import { SamplesGallery } from '@/components/marketing/samples-gallery';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -12,7 +11,17 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { portrait } from '@/config/stock-portraits';
-import { BeforeAfterGallery } from '@/components/marketing/before-after-gallery';
+
+// Below-the-fold client components: lazy load for performance
+const VideoTestimonials = dynamic(
+  () => import('@/components/marketing/video-testimonials').then((m) => m.VideoTestimonials)
+);
+const SamplesGallery = dynamic(
+  () => import('@/components/marketing/samples-gallery').then((m) => m.SamplesGallery)
+);
+const BeforeAfterGallery = dynamic(
+  () => import('@/components/marketing/before-after-gallery').then((m) => m.BeforeAfterGallery)
+);
 import {
   ArrowRight,
   Sparkles,
