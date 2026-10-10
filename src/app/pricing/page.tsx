@@ -15,12 +15,17 @@ import { formatPrice } from '@/lib/utils';
 import { CATEGORIES } from '@/config/categories';
 import { BreadcrumbSchema, FAQSchema, PricingProductSchema } from '@/components/structured-data';
 import { ChevronDown, Check, CreditCard, BadgeCheck, Minus, ArrowRight } from 'lucide-react';
-import { PricingViewToggle } from '@/components/marketing/pricing-view-toggle';
-import { PricingComparisonBar } from '@/components/marketing/pricing-comparison-bar';
 import { GuaranteeSection } from '@/components/marketing/guarantee-section';
 import { TrustBadgesInline } from '@/components/marketing/trust-badges-inline';
 import dynamic from 'next/dynamic';
 
+// Below-the-fold client components: lazy load for performance
+const PricingViewToggle = dynamic(
+  () => import('@/components/marketing/pricing-view-toggle').then((m) => m.PricingViewToggle)
+);
+const PricingComparisonBar = dynamic(
+  () => import('@/components/marketing/pricing-comparison-bar').then((m) => m.PricingComparisonBar)
+);
 const PackageQuiz = dynamic(() => import('@/components/marketing/package-quiz'), { ssr: false });
 const PriceReceipt = dynamic(() => import('@/components/marketing/price-receipt'), { ssr: false });
 

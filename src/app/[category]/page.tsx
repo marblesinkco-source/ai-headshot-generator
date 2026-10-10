@@ -1,16 +1,14 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import type { Metadata } from 'next';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { Camera, Sparkles, Clock, ShieldCheck, ChevronRight } from 'lucide-react';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
-import { SocialShare } from '@/components/marketing/social-share';
 import { StylePreviewGrid } from '@/components/marketing/style-preview-grid';
-import { HeadshotInContext } from '@/components/marketing/headshot-in-context';
-import { PackageVisualizer } from '@/components/marketing/package-visualizer';
 import { DataPrivacyStrip } from '@/components/marketing/data-privacy-strip';
 import { getActiveCategories, getCategoryBySlug } from '@/config/categories';
 import { getCategoryContent } from '@/config/category-content';
@@ -18,6 +16,17 @@ import { getCategoryVisuals, getCategoryImage, categoryVisuals } from '@/config/
 import { siteConfig } from '@/config/site';
 import { formatPrice } from '@/lib/utils';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
+
+// Below-the-fold client components: lazy load for performance
+const SocialShare = dynamic(
+  () => import('@/components/marketing/social-share').then((m) => m.SocialShare)
+);
+const HeadshotInContext = dynamic(
+  () => import('@/components/marketing/headshot-in-context').then((m) => m.HeadshotInContext)
+);
+const PackageVisualizer = dynamic(
+  () => import('@/components/marketing/package-visualizer').then((m) => m.PackageVisualizer)
+);
 
 interface Props {
   params: Promise<{ category: string }>;

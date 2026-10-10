@@ -21,7 +21,12 @@
    - headshots/page.tsx, use-cases, success-stories, pricing-comparison, reviews, team-headshots, headshots/[profession], dashboard/accounting/transactions/[id]
    - lucide-react, @/lib/utils, @/config/pricing, react modüllerindeki tekrarlı import'lar birleştirildi
 
-### Deploy: commits c439072, 865f269, dc21e3b — CI PASS, Vercel PASS ✅
+7. **Homepage BeforeAfterShowcase lazy-load** ✅ (commit 653fb3d)
+   - `BeforeAfterShowcase` statik import → `next/dynamic` ile lazy-load'a çevrildi
+   - `SectionSkeleton height="h-[600px] md:h-[500px]"` fallback eklendi
+   - İlk JS bundle boyutunu azaltır (client component below-the-fold)
+
+### Deploy: commits c439072, 865f269, dc21e3b, 653fb3d — CI PASS, Vercel PASS ✅
 ### Canlı site doğrulaması: Chrome browser ile yapıldı ✅
 
 ### SEO Denetim Sonuçları (yapılacak bir şey kalmadı)
