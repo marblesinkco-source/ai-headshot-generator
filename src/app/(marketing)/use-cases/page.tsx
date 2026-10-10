@@ -26,8 +26,8 @@ import {
   User,
   Building,
   Sparkles,
+  type LucideIcon,
 } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
 
 const OG_TITLE = 'How Professionals Use TailorPic AI Headshots and Photos';
 const OG_DESC =

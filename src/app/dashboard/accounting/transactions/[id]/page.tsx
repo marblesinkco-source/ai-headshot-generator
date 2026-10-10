@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, type ReactNode } from 'react';
 import { formatDate, formatPrice } from '@/lib/utils';
 import {
   PAYMENT_STATUS_LABELS,
@@ -13,7 +13,6 @@ import {
   type FinancialTransaction,
 } from '@/types/accounting';
 import { Badge, Card, ErrorState, LoadingState, fetchJson, humanize, unwrap } from '../../_components/ui';
-import type { ReactNode } from 'react';
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (

@@ -1,8 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { ArrowRight, CheckCircle, Briefcase, Camera, Sun, Palette, Monitor, Leaf, Crown, Building2, Aperture, Sparkles, User, Gem } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import { ArrowRight, CheckCircle, Briefcase, Camera, Sun, Palette, Monitor, Leaf, Crown, Building2, Aperture, Sparkles, User, Gem, type LucideIcon } from 'lucide-react';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { Button } from '@/components/ui/button';
 import { Header } from '@/components/marketing/header';

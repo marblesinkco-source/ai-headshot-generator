@@ -15,8 +15,8 @@ import {
   CreditCard,
   Image as ImageIcon,
   ArrowRight,
+  type LucideIcon,
 } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const pageTitle = 'How Professionals Use AI Headshots | TailorPic';

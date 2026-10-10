@@ -4,12 +4,11 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { cn, formatPrice } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import { CATEGORIES, type CategoryPackage } from '@/config/categories';
 import { BASE_PRICE_DISPLAY, TEAM_PRICES } from '@/config/pricing';
-import { formatPrice } from '@/lib/utils';
 import {
   Clock,
   Camera,

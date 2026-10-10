@@ -8,15 +8,13 @@ import { Footer } from '@/components/marketing/footer';
 import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
 import { BreadcrumbSchema, FAQSchema, PricingProductSchema, HowToSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
-import { formatPrice } from '@/lib/utils';
+import { formatPrice, cn } from '@/lib/utils';
 import { CATEGORIES } from '@/config/categories';
 import { PROFESSIONS } from '@/config/professions';
-import { PAYMENT_PROVIDER } from '@/config/pricing';
+import { PAYMENT_PROVIDER, BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { buttonVariants } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
 import StudioComparisonV2 from '@/components/marketing/studio-comparison-v2';
 import ProcessingTimeline from '@/components/marketing/processing-timeline';
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const StickyCTA = dynamic(() => import('@/components/marketing/sticky-cta').then(m => ({ default: m.StickyCTA })), { ssr: false });
 const StyleConfigurator = dynamic(() => import('@/components/marketing/style-configurator').then(m => ({ default: m.StyleConfigurator })), { ssr: false });

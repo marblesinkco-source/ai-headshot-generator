@@ -5,7 +5,7 @@ import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { TeamGridIllustration } from '@/components/marketing/illustrations';
 import { siteConfig } from '@/config/site';
-import { PAYMENT_PROVIDER, TEAM_PRICES, TEAM_PRICE_SMALL_DISPLAY, TEAM_PRICE_LARGE_DISPLAY, TEAM_PRICE_RANGE_DISPLAY, formatPrice } from '@/config/pricing';
+import { PAYMENT_PROVIDER, TEAM_PRICES, TEAM_PRICE_SMALL_DISPLAY, TEAM_PRICE_LARGE_DISPLAY, TEAM_PRICE_RANGE_DISPLAY, formatPrice, BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
   Users, Sparkles, ArrowRight, CheckCircle, Palette,
@@ -14,7 +14,6 @@ import {
   Lock, ShieldCheck, CreditCard, UserPlus, RefreshCw, Minus,
   Clock, Wallet, Layers,
 } from 'lucide-react';
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const faqItems = [
   {

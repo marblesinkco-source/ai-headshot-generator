@@ -19,8 +19,8 @@ import {
   Palette,
   LineChart,
   Scale,
+  type LucideIcon,
 } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
 
 const title = 'How Professionals Use AI Headshots | TailorPic';
 const description =
