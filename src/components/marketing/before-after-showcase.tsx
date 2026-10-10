@@ -63,6 +63,7 @@ function ComparisonSlider({
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
+      onPointerCancel={handlePointerUp}
       role="slider"
       aria-label={`Before and after comparison: ${label}. Use left and right arrow keys to compare.`}
       aria-orientation="horizontal"

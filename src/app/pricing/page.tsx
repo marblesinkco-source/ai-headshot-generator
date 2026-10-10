@@ -205,7 +205,7 @@ export default function PricingPage() {
           <p className="mx-auto mt-4 max-w-xl text-center text-base text-tp-muted">
             One-time prices. The cost per photo falls as the package grows.
           </p>
-          <div className="mt-10 overflow-x-auto rounded-tp-card border border-tp-line bg-white">
+          <div className="mt-10 overflow-x-auto rounded-tp-card border border-tp-line bg-white" role="region" aria-label="Headshot packages table" tabIndex={0}>
             <table className="w-full min-w-[640px] text-left text-sm">
               <caption className="sr-only">Headshot packages compared by price, photo count and features</caption>
               <thead>
@@ -263,8 +263,9 @@ export default function PricingPage() {
           <p className="mx-auto mt-4 max-w-xl text-center text-base text-tp-muted">
             Studio price range reflects typical market estimates and varies by location.
           </p>
-          <div className="mt-10 overflow-x-auto rounded-tp-card border border-tp-line bg-white">
+          <div className="mt-10 overflow-x-auto rounded-tp-card border border-tp-line bg-white" role="region" aria-label="Feature comparison table" tabIndex={0}>
             <table className="w-full min-w-[640px] text-left text-sm">
+              <caption className="sr-only">Feature comparison between individual, team and photo studio options</caption>
               <thead>
                 <tr className="border-b border-tp-line bg-tp-paper text-tp-ink">
                   <th scope="col" className="px-5 py-4 font-semibold">Feature</th>
