@@ -652,7 +652,9 @@
       "id": "feat-PADDLE",
       "name": "Phase PADDLE — Stripe→Paddle Ödeme Sistemi Geçişi",
       "description": "Tam Paddle Billing altyapısı: paddle.ts (lazy init, timing-safe webhook verify, replay protection), checkout route (Paddle.js overlay), webhook handler (transaction.completed/failed, adjustment refund, idempotency, dedupe release), PaddleScript component, UploadClient checkout flow, 6 yasal sayfa güncellemesi (privacy/terms/cookie/subprocessors/dpa/kvkk), CSP/dns-prefetch, paddle-adapter.ts, .env.example, types/database.ts, migration SQL",
-      "dependencies": ["feat-BEFORE-AFTER-FIX"],
+      "dependencies": [
+        "feat-BEFORE-AFTER-FIX"
+      ],
       "status": "done",
       "evidence": "Commits: a412171 (tam geçiş), 8872e1b (robustness fixes), 6d494a6 (Stripe kalıntı temizliği — 19 dosya). Stripe lazy init + 410 Gone webhook + LEGACY annotation. Paddle tam entegrasyon: paddle.ts, checkout route, webhook handler, PaddleScript, UploadClient, 6 yasal sayfa, CSP, paddle-adapter, setup.sh, deploy scripts, CI workflow. CI PASS + Vercel PASS (3 commit). Canlı doğrulama: homepage+pricing Paddle trust badge, Stripe referansı yok. BLOCKER: DB migration (SUPABASE_DB_URL secret gerekli), Paddle hesap bağlantısı + price ID yapılandırması kapsam dışı."
     },
@@ -660,7 +662,9 @@
       "id": "feat-CONVERSION-OPT",
       "name": "Phase S2 — Conversion Optimization & Sales-Readiness",
       "description": "7 alanli donusum optimizasyonu: hero social proof & studio-cost anchoring, trust strip (FeaturedLogos marquee), pricing card iyilestirmeleri (per-photo pricing, popular badge, savings), sticky CTA bar, guarantee section (3 kart: satisfaction/security/no-tricks), CTA banner (price anchoring, trust points), deploy & canli dogrulama.",
-      "dependencies": ["feat-PADDLE"],
+      "dependencies": [
+        "feat-PADDLE"
+      ],
       "status": "done",
       "evidence": "Commits: c85ab001 (conversion-optimized marketing copy & trust signals), 372686fa + f747dae3 (smart quote fix). 7 dosya guncellendi: hero.tsx, featured-logos.tsx, pricing.tsx, sticky-cta.tsx, guarantee-section.tsx, cta-banner.tsx, pricing.ts. CI PASS + Vercel PASS. Canli dogrulama: Chrome browser ile tum degisiklikler onaylandi."
     },
@@ -668,9 +672,21 @@
       "id": "feat-CONVERSION-OPT-2",
       "name": "Phase S3 — Advanced Conversion Features",
       "description": "3 yeni donusum ozelligi: (1) hero delivery promise (yesil pulsing dot + 'Upload now, get results within hours'), (2) pricing kartlarinda guarantee micro-badge ('Not happy? Free regeneration'), (3) team-headshots sayfasinda interaktif seat calculator (1-100 kisi slider, tier-aware fiyatlandirma, studio tasarruf karsilastirmasi).",
-      "dependencies": ["feat-CONVERSION-OPT"],
+      "dependencies": [
+        "feat-CONVERSION-OPT"
+      ],
       "status": "done",
       "evidence": "Commit: 98fcf492. 4 dosya: hero.tsx, pricing.tsx, team-calculator.tsx (yeni), team-headshots/page.tsx. CI PASS + Vercel PASS. Canli dogrulama: Chrome browser ile hero delivery promise, pricing guarantee badge, ve team calculator (slider, $390/10 kisi, $2,110 tasarruf) tumu onaylandi."
+    },
+    {
+      "id": "feat-PREMIUM-VFX",
+      "name": "Premium Visual Effects & Sales Monster Overhaul",
+      "description": "Glassmorphism, animated stats, social proof ticker, gradient borders, glow CTAs",
+      "dependencies": [
+        "feat-B"
+      ],
+      "status": "done",
+      "evidence": "Commit 3e90f70c — CI PASS, Vercel PASS. Chrome ile canlı site doğrulaması yapıldı."
     }
   ]
 }
