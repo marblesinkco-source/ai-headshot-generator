@@ -687,6 +687,16 @@
       ],
       "status": "done",
       "evidence": "Commit 3e90f70c — CI PASS, Vercel PASS. Chrome ile canlı site doğrulaması yapıldı."
+    },
+    {
+      "id": "feat-BACKEND-CRITICAL",
+      "name": "Critical Backend Flow Fixes (RLS, Webhook, Security)",
+      "description": "5 kritik backend hatası: RLS order update blocker, Replicate webhook doğrulama, Resend lazy init, Paddle price_id güvenlik, boş ZIP koruması",
+      "dependencies": [
+        "feat-A"
+      ],
+      "status": "done",
+      "evidence": "Commit 61e37116 — CI PASS, Vercel PASS. 5 dosya düzeltildi: upload/route.ts, generate/route.ts, webhook/route.ts, paddle/route.ts, emails/upgrade/route.ts."
     }
   ]
 }

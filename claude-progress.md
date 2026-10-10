@@ -1,5 +1,39 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-10 (Critical Backend Flow Fixes)
+
+### Tamamlanan Görevler
+
+1. **RLS order update blocker düzeltildi** ✅ (commit 61e37116)
+   - `upload/route.ts`: order status update'i `supabase` → `adminClient` (RLS bypass)
+   - `generate/route.ts`: training_id/trigger_word update `supabase` → `adminForClaim`
+   - `generate/route.ts`: hata durumunda status revert `supabase` → `adminForClaim`
+   - Sorun: user-scoped client ile orders tablosu UPDATE RLS tarafından engelleniyordu
+
+2. **Replicate webhook doğrulama düzeltildi** ✅ (commit 61e37116)
+   - Var olmayan `replicate.webhooks.default.verify()` SDK metodu kaldırıldı (TypeError veriyordu)
+   - Yerine HMAC-SHA256 tabanlı manuel doğrulama yazıldı (`webhook-id`, `webhook-timestamp`, `webhook-signature` header'ları)
+   - Replay attack koruması: 5 dakika timestamp toleransı
+   - `whsec_` prefix'li Replicate secret formatı destekleniyor
+
+3. **Resend module-scope build crash düzeltildi** ✅ (commit 61e37116)
+   - `webhook/route.ts`: `new Resend()` ve `new Replicate()` → lazy `getResend()` / `getReplicate()` fonksiyonları
+   - `emails/upgrade/route.ts`: aynı lazy pattern uygulandı
+   - Sorun: env var yokken module scope'ta `new Resend()` throw ederek build kırıyordu
+
+4. **Paddle price_id güvenlik doğrulaması eklendi** ✅ (commit 61e37116)
+   - `transaction.completed` handler'ına price_id kontrolü eklendi
+   - `custom_data.packageId`'den beklenen `pri_...` ID hesaplanıp `line_items[0].price_id` ile karşılaştırılıyor
+   - Uyuşmazlıkta 400 döner + fraud log kaydı
+
+5. **Boş ZIP upload koruması eklendi** ✅ (commit 61e37116)
+   - `generate/route.ts`: ZIP oluşturulduktan sonra `Object.keys(zip.files).length === 0` kontrolü
+   - Hiçbir eğitim görseli indirilemezse 400 hatası döner
+
+### Deploy: commit 61e37116 — CI PASS, Vercel PASS ✅
+
+---
+
 ## Oturum: 2026-10-10 (Premium Visual Overhaul — Sales Monster)
 
 ### Tamamlanan Gorevler
