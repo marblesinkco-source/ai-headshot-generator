@@ -99,11 +99,21 @@ export function Hero() {
               </p>
 
               <p
-                className="tp-hero-enter text-[16px] text-tp-ink/75 leading-[1.7] max-w-[460px] mb-8"
+                className="tp-hero-enter text-[16px] text-tp-ink/75 leading-[1.7] max-w-[460px] mb-4"
                 style={{ '--enter-i': 2 } as React.CSSProperties}
               >
-                Upload a few selfies and get studio-quality headshots for work, business and life. Most orders ready within&nbsp;hours. Pay once&nbsp;&mdash; no subscription.
+                Upload a few selfies, get studio-quality headshots within hours. Up to 160 photos across 12 categories. Pay once&nbsp;&mdash; no subscription.
               </p>
+
+              {/* Studio cost anchoring — verifiable industry fact */}
+              <div
+                className="tp-hero-enter mb-8 inline-flex items-center gap-3 rounded-tp-button border border-tp-bronze/25 bg-tp-beige/40 px-4 py-2.5"
+                style={{ '--enter-i': 2.5 } as React.CSSProperties}
+              >
+                <span className="text-[13px] text-tp-muted line-through decoration-tp-muted/50">Studio: $250–$500</span>
+                <span aria-hidden="true" className="text-tp-line">|</span>
+                <span className="text-[13px] font-semibold text-tp-bronze-ink">TailorPic: from {BASE_PRICE_DISPLAY}</span>
+              </div>
 
               <div
                 className="tp-hero-enter flex flex-wrap items-center gap-3 mb-5"
@@ -129,9 +139,10 @@ export function Hero() {
                 style={{ '--enter-i': 4 } as React.CSSProperties}
               >
                 {[
-                  { label: `${BASE_PRICE_LABEL}, one-time`, d: 'M12 8c-1.7 0-3 .9-3 2s1.3 2 3 2 3 .9 3 2-1.3 2-3 2m0-8V6m0 12v-2m9-4a9 9 0 11-18 0 9 9 0 0118 0z' },
-                  { label: 'Typically within hours', d: 'M12 6v6l4 2m5-2a9 9 0 11-18 0 9 9 0 0118 0z' },
-                  { label: 'Quality commitment', d: 'M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z' },
+                  { label: 'No subscription, pay once', d: 'M12 8c-1.7 0-3 .9-3 2s1.3 2 3 2 3 .9 3 2-1.3 2-3 2m0-8V6m0 12v-2m9-4a9 9 0 11-18 0 9 9 0 0118 0z' },
+                  { label: 'Ready within hours', d: 'M12 6v6l4 2m5-2a9 9 0 11-18 0 9 9 0 0118 0z' },
+                  { label: 'Satisfaction guarantee', d: 'M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z' },
+                  { label: 'Full commercial rights', d: 'M9 12l2 2 4-4m5 2a9 9 0 11-18 0 9 9 0 0118 0z' },
                 ].map((t) => (
                   <span key={t.label} className="inline-flex items-center gap-1.5">
                     <svg className="h-3.5 w-3.5 text-tp-bronze-ink" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d={t.d} /></svg>

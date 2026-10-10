@@ -20,8 +20,8 @@ const svgProps = {
 
 const ITEMS: readonly Item[] = [
   {
-    key: 'gdpr',
-    label: 'GDPR compliant',
+    key: 'guarantee',
+    label: 'Satisfaction guarantee',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" {...svgProps}>
         <path d="M12 3l7.5 3v5.5c0 4.5-3.1 8.2-7.5 9.5-4.4-1.3-7.5-5-7.5-9.5V6L12 3z" />
@@ -31,7 +31,7 @@ const ITEMS: readonly Item[] = [
   },
   {
     key: 'paddle',
-    label: 'Secure payments via Paddle',
+    label: 'Secure checkout via Paddle',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" {...svgProps}>
         <rect x="2.5" y="5" width="19" height="14" rx="2.5" />
@@ -40,18 +40,18 @@ const ITEMS: readonly Item[] = [
     ),
   },
   {
-    key: 'privacy',
-    label: 'Privacy-first',
+    key: 'no-subscription',
+    label: 'No subscription',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" {...svgProps}>
-        <path d="M12 3l7.5 3v5.5c0 4.5-3.1 8.2-7.5 9.5-4.4-1.3-7.5-5-7.5-9.5V6L12 3z" />
-        <path d="M9 12l2.2 2.2L15.5 10" />
+        <circle cx="12" cy="12" r="9" />
+        <path d="M15 9l-6 6M9 9l6 6" />
       </svg>
     ),
   },
   {
     key: 'ssl',
-    label: 'SSL encrypted',
+    label: 'SSL encrypted transfers',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" {...svgProps}>
         <rect x="4.5" y="10.5" width="15" height="10" rx="2.5" />
@@ -62,11 +62,30 @@ const ITEMS: readonly Item[] = [
   },
   {
     key: 'auto-delete',
-    label: 'Photos auto-deleted',
+    label: 'Auto-deleted in 30 days',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" {...svgProps}>
         <circle cx="12" cy="12" r="9" />
         <path d="M12 7v5l3 3" />
+      </svg>
+    ),
+  },
+  {
+    key: 'no-data-selling',
+    label: 'We never sell your data',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" {...svgProps}>
+        <path d="M17 7l-10 10M7 7v10h10" />
+      </svg>
+    ),
+  },
+  {
+    key: 'gdpr',
+    label: 'GDPR compliant',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" {...svgProps}>
+        <path d="M12 3l7.5 3v5.5c0 4.5-3.1 8.2-7.5 9.5-4.4-1.3-7.5-5-7.5-9.5V6L12 3z" />
+        <path d="M9 12l2.2 2.2L15.5 10" />
       </svg>
     ),
   },

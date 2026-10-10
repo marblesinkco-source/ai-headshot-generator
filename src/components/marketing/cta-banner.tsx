@@ -11,7 +11,7 @@ import { categoryVisuals } from '@/config/category-visuals';
 
 const categories = getActiveCategories();
 
-const trustPoints = ['No subscription', 'Fast delivery', 'Quality commitment'];
+const trustPoints = ['No subscription', 'Ready in hours', 'Satisfaction guarantee', 'Full commercial rights'];
 
 export function CTABanner() {
   const categoryDialog = useRef<HTMLDialogElement>(null);
@@ -41,10 +41,10 @@ export function CTABanner() {
                 Ready when you are
               </span>
               <h2 className="mt-5 font-display text-[30px] sm:text-[40px] font-normal text-tp-paper leading-tight tracking-[-0.03em]">
-                Skip the studio. Start today, get headshots within hours.
+                Your next headshot is a selfie away.
               </h2>
               <p className="mt-4 text-tp-beige/70 text-base sm:text-lg max-w-xl mx-auto">
-                Upload a few selfies and get polished, studio-quality portraits for LinkedIn, your resume and more.
+                Skip the studio, skip the $250+ price tag. Upload a few selfies and get polished, professional portraits within hours.
               </p>
 
               {/* Price anchoring */}
@@ -64,7 +64,7 @@ export function CTABanner() {
                     'group h-14 gap-3 bg-tp-bronze px-10 text-base font-semibold text-tp-black shadow-lg shadow-tp-bronze/20 transition-all duration-200 hover:-translate-y-0.5 cta-ring hover:bg-tp-bronze hover:shadow-xl hover:shadow-tp-bronze/30'
                   )}
                 >
-                  Start now &mdash; from {BASE_PRICE_DISPLAY}{' '}
+                  Get My Headshots &mdash; from {BASE_PRICE_DISPLAY}{' '}
                   <span aria-hidden="true" className="text-lg transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">&#8599;</span>
                 </Link>
                 <button

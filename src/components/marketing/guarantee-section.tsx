@@ -44,19 +44,19 @@ function ReceiptIcon() {
 const items = [
   {
     Icon: ShieldIcon,
-    title: 'Quality Commitment',
-    description: 'Not happy with your results? We’ll work with you to regenerate until you are.',
+    title: ‘Satisfaction Guarantee’,
+    description: ‘Not happy with your headshots? We’ll regenerate them at no extra cost until you love the results.’,
   },
   {
     Icon: LockIcon,
-    title: 'Secure & Private',
+    title: ‘Bank-Level Security’,
     description:
-      'Your photos are encrypted in transit. Uploaded photos and your temporary AI model are automatically deleted after 30 days.',
+      ‘SSL-encrypted transfers, secure checkout via Paddle, and your photos plus AI model are automatically deleted after 30 days.’,
   },
   {
     Icon: ReceiptIcon,
-    title: 'One-Time Payment',
-    description: 'Pay once per package. No subscription to cancel.',
+    title: ‘One-Time Payment, No Tricks’,
+    description: ‘Pay once — no subscription, no hidden fees, no recurring charges. Ever.’,
   },
 ] as const;
 
@@ -69,14 +69,17 @@ export function GuaranteeSection() {
       <div className="relative mx-auto max-w-[1320px] px-4 sm:px-7 lg:px-14">
         <div className="scroll-fade-in mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-tp-bronze-ink">
-            Our Commitment
+            Risk-Free
           </p>
           <h2
             id="guarantee-heading"
             className="font-display mt-4 text-[30px] font-normal leading-tight tracking-[-0.03em] text-tp-ink sm:text-[40px]"
           >
-            Your Satisfaction, Our Priority
+            Try It Risk-Free
           </h2>
+          <p className="mt-3 text-[15px] text-tp-muted max-w-lg mx-auto">
+            We stand behind every headshot. If you're not satisfied, we'll make it right.
+          </p>
         </div>
 
         <ul className="mt-10 grid gap-5 sm:mt-14 md:grid-cols-3 lg:gap-6">

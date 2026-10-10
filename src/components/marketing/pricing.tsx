@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Check, Zap, Lock, Star } from 'lucide-react';
 import { getActiveCategories, type Category } from '@/config/categories';
 import { categoryVisuals } from '@/config/category-visuals';
-import { TEAM_PRICES, PAYMENT_PROVIDER } from '@/config/pricing';
+import { TEAM_PRICES, PAYMENT_PROVIDER, BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { formatPrice } from '@/lib/utils';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
@@ -76,7 +76,7 @@ export function Pricing() {
             Pay Once, No Subscription
           </h2>
           <p className="mt-4 text-[15px] text-tp-muted leading-relaxed max-w-lg mx-auto">
-            One-time payment, no subscription. Start with a single photo to see the quality, or choose a pack for your full set.
+            Studio headshots cost $250–$500 for a handful of photos. TailorPic starts at {BASE_PRICE_DISPLAY} — one-time, no subscription.
           </p>
 
           {/* Individual / Teams toggle */}
@@ -347,7 +347,7 @@ export function Pricing() {
                   </div>
                   {pkg.outputCount > 0 && (
                     <p className="mt-1 text-xs text-tp-muted">
-                      {formatPrice(Math.round(pkg.price / pkg.outputCount), 'usd')} per photo
+                      {formatPrice(Math.round(pkg.price / pkg.outputCount), 'usd')} per photo · <span className="text-tp-bronze-ink font-medium">save vs $250+ studio</span>
                     </p>
                   )}
                   {isRecommended && bestValuePackage?.id === pkg.id && (
@@ -396,10 +396,10 @@ export function Pricing() {
                     )}
                   >
                     {isRecommended
-                      ? `Get ${pkg.outputCount} ${pkg.outputCount === 1 ? 'Photo' : 'Photos'} — ${formatPrice(pkg.price)}`
+                      ? `Get ${pkg.outputCount} Photos — ${formatPrice(pkg.price)}`
                       : isExpress
-                        ? `Try TailorPic — ${formatPrice(pkg.price)}`
-                        : `Get ${pkg.outputCount} ${pkg.outputCount === 1 ? 'Photo' : 'Photos'}`}
+                        ? `Try It — Just ${formatPrice(pkg.price)}`
+                        : `Get ${pkg.outputCount} ${pkg.outputCount === 1 ? 'Photo' : 'Photos'} — ${formatPrice(pkg.price)}`}
                   </Link>
                   <p className="mt-3 flex w-full items-center justify-center gap-1 text-xs text-tp-muted">
                     <Lock className="h-3 w-3" aria-hidden="true" />
