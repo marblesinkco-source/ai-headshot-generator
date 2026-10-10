@@ -85,7 +85,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Deduct credits FIFO
+    // Deduct credits FIFO with optimistic locking to prevent double-spend.
+    // Each UPDATE includes .eq('used_credits', expected) so a concurrent
+    // request that changes the value first causes 0 affected rows → retry.
+    const MAX_RETRIES = 3;
     let remaining = creditsToUse;
     const deductions: { creditId: string; amount: number; balanceAfter: number }[] = [];
 
@@ -96,25 +99,61 @@ export async function POST(request: NextRequest) {
       if (available <= 0) continue;
 
       const deduct = Math.min(remaining, available);
-      const newUsed = pkg.used_credits + deduct;
+      let retries = 0;
+      let currentUsed = pkg.used_credits;
 
-      const { error: updateError } = await admin
-        .from('user_credits')
-        .update({ used_credits: newUsed })
-        .eq('id', pkg.id);
+      while (retries < MAX_RETRIES) {
+        const newUsed = currentUsed + deduct;
 
-      if (updateError) {
-        logger.error(`Failed to deduct from credit ${pkg.id}:`, updateError);
-        return NextResponse.json({ error: 'Failed to deduct credits' }, { status: 500 });
+        // Optimistic lock: only update if used_credits hasn't changed
+        const { data: updated, error: updateError } = await admin
+          .from('user_credits')
+          .update({ used_credits: newUsed })
+          .eq('id', pkg.id)
+          .eq('used_credits', currentUsed) // optimistic lock guard
+          .select('id, total_credits, used_credits')
+          .maybeSingle();
+
+        if (updateError) {
+          logger.error(`Failed to deduct from credit ${pkg.id}:`, updateError);
+          return NextResponse.json({ error: 'Failed to deduct credits' }, { status: 500 });
+        }
+
+        if (updated) {
+          // Success — row was updated
+          deductions.push({
+            creditId: pkg.id,
+            amount: deduct,
+            balanceAfter: updated.total_credits - updated.used_credits,
+          });
+          remaining -= deduct;
+          break;
+        }
+
+        // Row wasn't updated — another request changed used_credits.
+        // Re-read the latest value and retry.
+        retries++;
+        const { data: fresh } = await admin
+          .from('user_credits')
+          .select('used_credits, remaining_credits')
+          .eq('id', pkg.id)
+          .single();
+
+        if (!fresh || (fresh.remaining_credits || 0) <= 0) break; // exhausted by other request
+
+        currentUsed = fresh.used_credits;
+        const newAvailable = fresh.remaining_credits || 0;
+        if (newAvailable < deduct) {
+          // Remaining credits reduced; adjust deduction amount
+          remaining = remaining - deduct + Math.min(remaining, newAvailable);
+          break; // will be picked up by next package in loop
+        }
       }
 
-      deductions.push({
-        creditId: pkg.id,
-        amount: deduct,
-        balanceAfter: pkg.total_credits - newUsed,
-      });
-
-      remaining -= deduct;
+      if (retries >= MAX_RETRIES) {
+        logger.error(`Credit deduction optimistic lock failed after ${MAX_RETRIES} retries for pkg ${pkg.id}`);
+        return NextResponse.json({ error: 'Credit deduction conflict. Please try again.' }, { status: 409 });
+      }
     }
 
     // Record transactions

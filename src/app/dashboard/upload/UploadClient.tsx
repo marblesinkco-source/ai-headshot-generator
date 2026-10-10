@@ -134,15 +134,20 @@ function UploadContent() {
           };
         };
         if (w.Paddle) {
-          w.Paddle.Checkout.open({
-            items: data.checkout.items,
-            customData: data.checkout.customData,
-            customer: data.checkout.customer,
-            settings: {
-              successUrl: data.checkout.settings?.successUrl,
-              ...(data.checkout.settings?.discountId ? { discountId: data.checkout.settings.discountId } : {}),
-            },
-          });
+          try {
+            w.Paddle.Checkout.open({
+              items: data.checkout.items,
+              customData: data.checkout.customData,
+              customer: data.checkout.customer,
+              settings: {
+                successUrl: data.checkout.settings?.successUrl,
+                ...(data.checkout.settings?.discountId ? { discountId: data.checkout.settings.discountId } : {}),
+              },
+            });
+          } catch (paddleErr) {
+            console.error('[Checkout] Paddle overlay error:', paddleErr);
+            throw new Error('Could not open the payment form. Please try again.');
+          }
           // Reset loading when user closes overlay without completing payment
           const handleMessage = (event: MessageEvent) => {
             if (event.data?.event === 'checkout.closed' || event.data?.type === 'checkout.closed') {
@@ -151,6 +156,16 @@ function UploadContent() {
             }
           };
           window.addEventListener('message', handleMessage);
+          // Failsafe: reset loading after 60 s in case overlay never fires close event
+          setTimeout(() => {
+            setCheckoutLoading((prev) => {
+              if (prev === packageId) {
+                window.removeEventListener('message', handleMessage);
+                return null;
+              }
+              return prev;
+            });
+          }, 60_000);
         } else {
           throw new Error('Payment system is loading. Please try again in a moment.');
         }

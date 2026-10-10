@@ -44,7 +44,7 @@ export const paddle = new Proxy({} as Paddle, {
  *
  * Uses timing-safe comparison and rejects stale timestamps (>30 s).
  */
-const MAX_WEBHOOK_AGE_MS = 30_000;
+const MAX_WEBHOOK_AGE_MS = 300_000; // 5 minutes — Paddle recommends tolerating delays up to this
 
 export function verifyPaddleWebhook(
   rawBody: string,
@@ -64,9 +64,10 @@ export function verifyPaddleWebhook(
   const h1 = parts['h1'];
   if (!ts || !h1) return false;
 
-  // Reject stale timestamps (replay protection)
-  const webhookAge = Date.now() - parseInt(ts, 10) * 1000;
-  if (isNaN(webhookAge) || webhookAge > MAX_WEBHOOK_AGE_MS) return false;
+  // Reject stale timestamps (replay protection) and future-dated webhooks
+  const tsMs = parseInt(ts, 10) * 1000;
+  const webhookAge = Date.now() - tsMs;
+  if (isNaN(webhookAge) || webhookAge < 0 || webhookAge > MAX_WEBHOOK_AGE_MS) return false;
 
   // Build signed payload: ts:rawBody
   const signedPayload = `${ts}:${rawBody}`;

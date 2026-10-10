@@ -13,6 +13,25 @@ import { logger } from '@/lib/logger';
 export const maxDuration = 30;
 
 /**
+ * Validate that a user-supplied URL belongs to our own domain.
+ * Returns the URL if valid, otherwise undefined (falls back to default).
+ */
+function sanitizeRedirectUrl(url: string | undefined): string | undefined {
+  if (!url) return undefined;
+  try {
+    const parsed = new URL(url);
+    const siteHost = new URL(siteConfig.url).hostname;
+    // Allow exact match or www. prefix
+    if (parsed.hostname === siteHost || parsed.hostname === `www.${siteHost}` || `www.${parsed.hostname}` === siteHost) {
+      return url;
+    }
+    return undefined; // reject off-domain URLs
+  } catch {
+    return undefined;
+  }
+}
+
+/**
  * Known discount codes mapped to Paddle discount IDs.
  * Create these in Paddle Dashboard: Catalog → Discounts
  * The values here are Paddle discount IDs (e.g., "dsc_...").
@@ -176,7 +195,7 @@ export async function POST(request: NextRequest) {
             validityDays: String(creditPkg.validityDays),
           },
           settings: {
-            successUrl: successUrl || `${baseUrl}/dashboard/credits?status=success&orderId=${orderId}`,
+            successUrl: sanitizeRedirectUrl(successUrl) || `${baseUrl}/dashboard/credits?status=success&orderId=${orderId}`,
             ...(discountId ? { discountId } : {}),
           },
           customer: {
@@ -286,7 +305,7 @@ export async function POST(request: NextRequest) {
           } : {}),
         },
         settings: {
-          successUrl: successUrl || `${baseUrl}/dashboard/orders/${order.id}?status=success`,
+          successUrl: sanitizeRedirectUrl(successUrl) || `${baseUrl}/dashboard/orders/${order.id}?status=success`,
           ...(discountId ? { discountId } : {}),
         },
         customer: {
