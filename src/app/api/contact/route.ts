@@ -37,7 +37,14 @@ export async function POST(request: Request) {
   const department =
     typeof body.department === 'string' && DEPARTMENTS.includes(body.department) ? body.department : 'General';
   const subject = typeof body.subject === 'string' ? body.subject.trim() : '';
-  const message = typeof body.message === 'string' ? body.message.trim() : '';
+  const rawMessage = typeof body.message === 'string' ? body.message.trim() : '';
+  // Optional enterprise fields — appended to message body when present
+  const company = typeof body.company === 'string' ? body.company.trim().slice(0, 100) : '';
+  const teamSize = typeof body.teamSize === 'string' ? body.teamSize.trim().slice(0, 20) : '';
+  const messageParts = [rawMessage];
+  if (company) messageParts.push(`Company: ${company}`);
+  if (teamSize) messageParts.push(`Team size: ${teamSize}`);
+  const message = messageParts.filter(Boolean).join('\n\n');
 
   if (!name || !email || !subject || !message) {
     return NextResponse.json({ error: 'All fields are required' }, { status: 400 });

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
@@ -7,6 +8,11 @@ import { TeamGridIllustration } from '@/components/marketing/illustrations';
 import { siteConfig } from '@/config/site';
 import { PAYMENT_PROVIDER, TEAM_PRICES, TEAM_PRICE_SMALL_DISPLAY, TEAM_PRICE_LARGE_DISPLAY, TEAM_PRICE_RANGE_DISPLAY, formatPrice, BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+
+const EnterpriseLeadForm = dynamic(
+  () => import('@/components/marketing/enterprise-lead-form').then((m) => m.EnterpriseLeadForm),
+);
+
 import {
   Users, Sparkles, ArrowRight, CheckCircle, Palette,
   Download, LayoutDashboard, Image, Camera, Send,
@@ -165,7 +171,7 @@ export default function TeamHeadshotsPage() {
               Get Started <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              href="/contact"
+              href="#contact-sales"
               className="inline-flex items-center gap-2 rounded-tp-button border border-tp-beige/20 px-6 py-3.5 text-sm font-semibold text-tp-beige transition-all hover:bg-white/5"
             >
               Request a Demo
@@ -481,7 +487,7 @@ export default function TeamHeadshotsPage() {
           </div>
           <p className="mt-6 text-center text-sm text-tp-muted">
             Teams of 50+?{' '}
-            <Link href="/contact" className="font-semibold text-tp-bronze-ink underline underline-offset-4">
+            <Link href="#contact-sales" className="font-semibold text-tp-bronze-ink underline underline-offset-4">
               Request a demo
             </Link>{' '}
             for custom pricing.
@@ -735,31 +741,13 @@ export default function TeamHeadshotsPage() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-20 sm:py-24">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <Users className="h-10 w-10 text-tp-bronze mx-auto mb-4" />
-          <h2 className="font-display font-normal text-3xl sm:text-4xl text-tp-ink">
-            Ready to Outfit Your Team?
-          </h2>
-          <p className="mt-4 text-lg text-tp-muted max-w-xl mx-auto">
-            Skip the photo studio. Get consistent, professional headshots for
-            everyone on your team — most orders ready within a few hours.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link
-              href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dlinkedin-team"
-              className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:-translate-y-0.5 hover:bg-tp-bronze/90 hover:shadow-lg"
-            >
-              Get Started <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-tp-button border border-tp-line px-6 py-3.5 text-sm font-semibold text-tp-ink transition-all hover:bg-tp-paper"
-            >
-              Request a Demo
-            </Link>
-          </div>
+      {/* Team Lead Capture */}
+      <section id="contact-sales" className="bg-tp-paper py-20 sm:py-24">
+        <div className="mx-auto max-w-xl px-4 sm:px-6 lg:px-8">
+          <EnterpriseLeadForm
+            heading="Ready to Outfit Your Team?"
+            subtext="Skip the photo studio. Tell us about your team and we'll send a custom quote."
+          />
         </div>
       </section>
 

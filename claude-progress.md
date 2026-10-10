@@ -34,7 +34,12 @@
 9. **Sticky CTA footer yakınında gizleniyor** ✅ (commit 6866064)
    - Footer'a yaklaşıldığında CTA otomatik gizleniyor — footer içeriğiyle çakışma önlendi
 
-### Deploy: commits c439072→6866064 — CI PASS, Vercel PASS ✅
+10. **Accessibility iyileştirmeleri** ✅ (commit 6f827a6)
+    - Pricing sayfası: overflow-x-auto tablolara `role="region"`, `aria-label`, `tabIndex={0}` eklendi
+    - Feature comparison tablosuna sr-only `<caption>` eklendi
+    - Before-after slider: `onPointerCancel` handler eklendi (sürükleme durumunun takılmasını önler)
+
+### Deploy: commits c439072→6f827a6 — CI PASS, Vercel PASS ✅
 ### Canlı site doğrulaması: Chrome browser ile yapıldı ✅
 
 ### SEO Denetim Sonuçları (yapılacak bir şey kalmadı)

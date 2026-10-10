@@ -39,6 +39,9 @@ import {
 const ROICalculator = dynamic(
   () => import('@/components/marketing/roi-calculator').then((m) => m.ROICalculator),
 );
+const EnterpriseLeadForm = dynamic(
+  () => import('@/components/marketing/enterprise-lead-form').then((m) => m.EnterpriseLeadForm),
+);
 
 const ENTERPRISE_TITLE = 'Enterprise AI Headshots for Teams and Organizations';
 const ENTERPRISE_OG_DESCRIPTION = 'Scale professional headshots across your organization with AI.';
@@ -228,7 +231,7 @@ export default function EnterprisePage() {
                 Get Started <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href="/contact"
+                href="#contact-sales"
                 className="inline-flex items-center gap-2 rounded-tp-button border border-tp-beige/20 px-6 py-3.5 text-sm font-semibold text-tp-beige transition-all hover:bg-white/5"
               >
                 Contact Sales
@@ -530,7 +533,7 @@ export default function EnterprisePage() {
             </p>
             <div className="mt-10">
               <a
-                href="/contact"
+                href="#contact-sales"
                 className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-8 py-4 text-base font-semibold text-tp-black transition-colors hover:bg-tp-bronze/90"
               >
                 Get Enterprise Quote
@@ -662,39 +665,14 @@ export default function EnterprisePage() {
         </div>
       </section>
 
-      {/* Dual CTA */}
-      <section className="bg-tp-black py-20 sm:py-24">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <Globe className="h-10 w-10 text-tp-bronze mx-auto mb-4" aria-hidden="true" />
-          <h2 className="font-display font-normal text-3xl sm:text-4xl text-white">
-            Ready to Upgrade Your Team&apos;s Image?
-          </h2>
-          <p className="mt-4 text-lg text-tp-beige/70 max-w-2xl mx-auto">
-            Whether you&apos;re a growing startup or a large enterprise, get consistent,
-            professional headshots for every team member — delivered in hours, not weeks.
-          </p>
-          <ul className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-tp-beige/70">
-            {['Walkthrough of the team dashboard', 'Custom quote for your team size', 'Answers for your security review'].map((t) => (
-              <li key={t} className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-tp-bronze" aria-hidden="true" />
-                {t}
-              </li>
-            ))}
-          </ul>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link
-              href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
-              className="inline-flex items-center gap-2 rounded-tp-button bg-tp-bronze px-7 py-3.5 text-sm font-semibold text-tp-black transition-all hover:-translate-y-0.5 hover:bg-tp-bronze/90 hover:shadow-lg"
-            >
-              Get Started <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-tp-button border border-tp-beige/20 px-6 py-3.5 text-sm font-semibold text-tp-beige transition-all hover:bg-white/5"
-            >
-              Contact Sales
-            </Link>
-          </div>
+      {/* Enterprise Lead Capture */}
+      <section id="contact-sales" className="bg-tp-black py-20 sm:py-24">
+        <div className="mx-auto max-w-xl px-4 sm:px-6 lg:px-8">
+          <EnterpriseLeadForm
+            heading="Ready to Upgrade Your Team's Image?"
+            subtext="Tell us about your team and we'll send a custom quote within 1 business day."
+            dark
+          />
         </div>
       </section>
 
