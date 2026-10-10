@@ -3,7 +3,6 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import dynamic from 'next/dynamic';
 import { Header } from '@/components/marketing/header';
 import { Hero } from '@/components/marketing/hero';
-import { BeforeAfterShowcase } from '@/components/marketing/before-after-showcase';
 import { Categories } from '@/components/marketing/categories';
 import { faqs } from '@/config/faqs';
 import { Footer } from '@/components/marketing/footer';
@@ -65,6 +64,10 @@ const ScrollProgress = dynamic(
 const FeaturedLogos = dynamic(
   () => import('@/components/marketing/featured-logos').then((m) => m.FeaturedLogos),
   { loading: () => <SectionSkeleton height="h-[160px]" /> }
+);
+const BeforeAfterShowcase = dynamic(
+  () => import('@/components/marketing/before-after-showcase').then((m) => m.BeforeAfterShowcase),
+  { loading: () => <SectionSkeleton height="h-[600px] md:h-[500px]" /> }
 );
 
 export default function LandingPage() {
