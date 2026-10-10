@@ -5,6 +5,7 @@ import { verifyPaddleWebhook, type PaddleTransactionCustomData } from '@/lib/pad
 import { PACKAGES, type PackageId } from '@/config/packages';
 import { getCategoryById, getPackageById, type CategoryId } from '@/config/categories';
 import { CREDIT_PACKAGES } from '@/config/credits';
+import { getPaddlePriceId } from '@/config/paddle-prices';
 import { siteConfig } from '@/config/site';
 import {
   buildOrderConfirmationEmail,
@@ -209,6 +210,28 @@ export async function POST(request: NextRequest) {
 
         const { orderId, packageId, userId, orderType, categoryId: catId } = customData;
         const categoryId = (catId || 'headshots') as CategoryId;
+
+        // ── Security: verify that the paid price_id matches the expected one ──
+        // custom_data is user-controlled; an attacker could send a lower-priced
+        // transaction with a higher-tier packageId in custom_data. We verify
+        // the actual Paddle price ID from line_items matches what we expect.
+        const paidPriceId = txnData.details?.line_items?.[0]?.price_id;
+        const expectedPriceId = getPaddlePriceId(packageId);
+
+        if (expectedPriceId && paidPriceId && paidPriceId !== expectedPriceId) {
+          logger.error('[paddle-webhook] Price ID mismatch — possible fraud attempt', {
+            orderId,
+            packageId,
+            paidPriceId,
+            expectedPriceId,
+            transactionId: txnData.id,
+          });
+          await releaseDedupe();
+          return NextResponse.json(
+            { error: 'Price verification failed' },
+            { status: 400 }
+          );
+        }
 
         // Idempotency: skip if already paid
         const { data: existingOrder } = await supabase

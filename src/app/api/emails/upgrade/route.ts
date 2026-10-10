@@ -20,7 +20,12 @@ import { safeEqual } from '@/lib/security';
 
 export const dynamic = 'force-dynamic';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy initialization — avoids build-time crash when env var is missing
+function getResend() {
+  const key = process.env.RESEND_API_KEY;
+  if (!key) return null;
+  return new Resend(key);
+}
 
 const UPGRADE_DELAY_HOURS = 48;
 const DISCOUNT_PERCENT = 25;
@@ -130,7 +135,12 @@ async function handleUpgradeEmails(request: NextRequest) {
         couponCode: COUPON_CODE,
       });
 
-      await resend.emails.send({
+      const resendClient = getResend();
+      if (!resendClient) {
+        logger.warn('Resend not configured — skipping upgrade email');
+        continue;
+      }
+      await resendClient.emails.send({
         from: `${siteConfig.name} <noreply@${new URL(siteConfig.url).hostname}>`,
         to: profile.email,
         subject,

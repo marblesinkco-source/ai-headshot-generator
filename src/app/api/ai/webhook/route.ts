@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import Replicate from 'replicate';
+import crypto from 'crypto';
 import { createAdminClient } from '@/lib/supabase/server';
 import { getCategoryById, type CategoryId } from '@/config/categories';
 import { BACKGROUNDS, STYLES, QUALITY_SETTINGS } from '@/config/ai';
@@ -11,11 +12,70 @@ import { logger } from '@/lib/logger';
 
 export const maxDuration = 300;
 
-const replicate = new Replicate({
-  auth: process.env.REPLICATE_API_TOKEN!,
-});
+// Lazy initialization — avoids build-time crash when env vars are missing
+function getReplicate() {
+  const token = process.env.REPLICATE_API_TOKEN;
+  if (!token) throw new Error('REPLICATE_API_TOKEN not configured');
+  return new Replicate({ auth: token });
+}
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function getResend() {
+  const key = process.env.RESEND_API_KEY;
+  if (!key) return null;
+  return new Resend(key);
+}
+
+/**
+ * Verify Replicate webhook signature using HMAC-SHA256.
+ * Replicate signs webhooks with the secret key — the signature is in the
+ * `webhook-id`, `webhook-timestamp`, and `webhook-signature` headers.
+ */
+function verifyReplicateWebhook(body: string, headers: Headers, secret: string): boolean {
+  try {
+    const webhookId = headers.get('webhook-id');
+    const webhookTimestamp = headers.get('webhook-timestamp');
+    const webhookSignature = headers.get('webhook-signature');
+
+    if (!webhookId || !webhookTimestamp || !webhookSignature) {
+      return false;
+    }
+
+    // Check timestamp to prevent replay attacks (5-minute tolerance)
+    const timestamp = parseInt(webhookTimestamp, 10);
+    const now = Math.floor(Date.now() / 1000);
+    if (Math.abs(now - timestamp) > 300) {
+      return false;
+    }
+
+    // Replicate webhook secrets are base64-encoded, prefixed with "whsec_"
+    const secretBytes = Buffer.from(
+      secret.startsWith('whsec_') ? secret.slice(6) : secret,
+      'base64'
+    );
+
+    const signedContent = `${webhookId}.${webhookTimestamp}.${body}`;
+    const expectedSignature = crypto
+      .createHmac('sha256', secretBytes)
+      .update(signedContent)
+      .digest('base64');
+
+    // webhook-signature can contain multiple signatures separated by space
+    const signatures = webhookSignature.split(' ');
+    return signatures.some((sig) => {
+      const sigValue = sig.startsWith('v1,') ? sig.slice(3) : sig;
+      try {
+        return crypto.timingSafeEqual(
+          Buffer.from(expectedSignature),
+          Buffer.from(sigValue)
+        );
+      } catch {
+        return false;
+      }
+    });
+  } catch {
+    return false;
+  }
+}
 
 /** Flux generation model (runs with trained LoRA weights) */
 const FLUX_GENERATE_MODEL = 'black-forest-labs/flux-dev';
@@ -38,10 +98,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Webhook secret not configured' }, { status: 500 });
     }
 
-    const isValid = await replicate.webhooks.default.verify(
-      body,
-      Object.fromEntries(request.headers) as Record<string, string>
-    ).catch(() => false);
+    const isValid = verifyReplicateWebhook(body, request.headers, webhookSecret);
 
     if (!isValid) {
       logger.error('Invalid Replicate webhook signature');
@@ -150,7 +207,7 @@ async function handleTrainingComplete(
   // If we didn't get it from the webhook payload, fetch the training details
   if (!trainedModelVersion && !loraWeightsUrl) {
     try {
-      const training = await replicate.trainings.get(trainingId);
+      const training = await getReplicate().trainings.get(trainingId);
       if (training.output) {
         if (typeof training.output === 'string') {
           if (training.output.startsWith('http')) {
@@ -311,7 +368,8 @@ async function handleTrainingComplete(
           predictionInput.extra_lora_scale = 0.8;
         }
 
-        const predictionOptions: Parameters<typeof replicate.predictions.create>[0] = {
+        const replicateClient = getReplicate();
+        const predictionOptions: Parameters<typeof replicateClient.predictions.create>[0] = {
           input: predictionInput,
           webhook: webhookBaseUrl,
           webhook_events_filter: ['completed', 'failed'],
@@ -325,7 +383,7 @@ async function handleTrainingComplete(
           predictionOptions.model = FLUX_GENERATE_MODEL;
         }
 
-        const prediction = await replicate.predictions.create(predictionOptions);
+        const prediction = await replicateClient.predictions.create(predictionOptions);
 
         // Record in DB
         await supabase.from('generated_headshots').insert({
@@ -584,8 +642,13 @@ async function sendCompletionEmail(
     const { data: orderUser } = await supabase.auth.admin.getUserById(userId);
 
     if (orderUser?.user?.email) {
+      const resendClient = getResend();
+      if (!resendClient) {
+        logger.warn('Resend not configured — skipping completion email');
+        return;
+      }
       const { subject, html } = buildPhotosReadyEmail({ orderId, count });
-      await resend.emails.send({
+      await resendClient.emails.send({
         from: `${siteConfig.name} <${process.env.EMAIL_FROM || `noreply@${new URL(siteConfig.url).hostname}`}>`,
         to: orderUser.user.email,
         subject,
@@ -614,8 +677,13 @@ async function sendFailureEmail(
     const { data: orderUser } = await supabase.auth.admin.getUserById(order.user_id);
 
     if (orderUser?.user?.email) {
+      const resendClient = getResend();
+      if (!resendClient) {
+        logger.warn('Resend not configured — skipping failure email');
+        return;
+      }
       const { subject, html } = buildGenerationFailedEmail({ errorMessage });
-      await resend.emails.send({
+      await resendClient.emails.send({
         from: `${siteConfig.name} <${process.env.EMAIL_FROM || `noreply@${new URL(siteConfig.url).hostname}`}>`,
         to: orderUser.user.email,
         subject,

@@ -209,6 +209,16 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    // Guard: ensure at least one image was added to the ZIP
+    const fileCount = Object.keys(zip.files).length;
+    if (fileCount === 0) {
+      logger.error('No training images could be fetched — ZIP is empty', { orderId });
+      return NextResponse.json(
+        { error: 'No training images could be prepared. Please re-upload your photos.' },
+        { status: 400 }
+      );
+    }
+
     const zipBuffer = await zip.generateAsync({ type: 'nodebuffer' });
     const zipPath = `${user.id}/${orderId}/training_images.zip`;
 
@@ -264,7 +274,8 @@ export async function POST(request: NextRequest) {
       );
 
       // Store training ID in order metadata
-      const { error: metaError } = await supabase
+      // Must use adminForClaim to bypass RLS (orders table requires service_role for UPDATE)
+      const { error: metaError } = await adminForClaim
         .from('orders')
         .update({
           training_id: training.id,
@@ -285,7 +296,8 @@ export async function POST(request: NextRequest) {
       logger.error('Failed to start training:', trainError);
 
       // Revert order status
-      const { error: revertError } = await supabase
+      // Must use adminForClaim to bypass RLS (orders table requires service_role for UPDATE)
+      const { error: revertError } = await adminForClaim
         .from('orders')
         .update({ status: 'uploading' })
         .eq('id', orderId);

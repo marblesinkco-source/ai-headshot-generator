@@ -179,8 +179,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Update order status to 'uploading'
+    // Must use adminClient to bypass RLS (orders table requires service_role for UPDATE)
     if (order.status === 'paid') {
-      await supabase
+      await adminClient
         .from('orders')
         .update({ status: 'uploading' })
         .eq('id', order.id);
