@@ -1,5 +1,33 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-10 (Paddle Altyapı Hazırlığı)
+
+### Tamamlanan Görevler
+
+1. **paddlePriceId env-based yapı** ✅ (commit cb27fe48)
+   - `src/config/paddle-prices.ts` oluşturuldu — `getPaddlePriceId(packageId)` fonksiyonu env'den `PADDLE_PRICE_<ID>` okur
+   - `.env.example`'a 47 adet `PADDLE_PRICE_*` env var şablonu eklendi (tüm 12 kategori + 3 kredi paketi)
+   - Operator Paddle Dashboard'da ürün oluşturup env'e `pri_...` ID'leri ekleyerek ödeme sistemi aktifleştirir
+
+2. **Checkout paddlePriceId validasyonu** ✅ (commit cb27fe48)
+   - Hem kredi hem kategori/legacy checkout'ta `paddlePriceId` eksikse 503 döner
+   - Log mesajında hangi env var'ın eksik olduğu belirtilir
+   - Kullanıcıya anlaşılır hata mesajı gösterilir
+
+3. **Pending sipariş temizleme cron'u** ✅ (commit cb27fe48)
+   - `/api/cron/expire-orders` endpoint'i oluşturuldu (CRON_SECRET auth, GET+POST)
+   - 24 saatten eski pending siparişler "expired" olarak işaretlenir
+   - `vercel.json`'a günlük 04:00 UTC cron eklendi
+   - `OrderStatus` tipine "expired" eklendi
+
+4. **Billing sayfası iyileştirmesi** ✅ (commit cb27fe48)
+   - `OrderStatusBadge`'a "expired" ve "partial_refund" badge'leri eklendi
+   - Total Spent hesaplamasından expired siparişler çıkarıldı
+
+### Deploy: commit cb27fe48 — CI PASS, Vercel PASS ✅
+
+---
+
 ## Oturum: 2026-10-10 (Paddle Ödeme Güvenlik Denetimi & Düzeltmeleri)
 
 ### Tamamlanan Görevler
