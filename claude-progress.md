@@ -1,5 +1,57 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-15 (AI Teknoloji İnovasyonları — Faz 1-3)
+
+### Tamamlanan Görevler
+
+1. **PuLID-Flux Instant Preview** ✅ (commit a29c140f)
+   - `src/app/api/ai/instant-preview/route.ts` — Tek selfie'den 15 saniyede headshot preview
+   - `bytedance/flux-pulid` modeli, 5 profesyonel prompt stili
+   - Rate limit: 5/saat/kullanıcı, FormData ile selfie yükleme
+   - Data URI ile Replicate'e gönderim, paralel prediction
+
+2. **Instant Preview Demo (Homepage)** ✅ (commit a29c140f)
+   - `src/components/marketing/instant-preview-demo.tsx` — Drag-drop upload, gerçek zamanlı timer
+   - `src/app/page.tsx` — BeforeAfterShowcase ile AIProcessDemo arasına eklendi
+   - Brand tokenları: tp-black, tp-bronze, tp-paper, tp-muted, tp-ink, tp-line
+
+3. **CodeFormer Face Restoration** ✅ (commit a29c140f)
+   - `src/lib/face-restoration.ts` — `sczhou/codeformer` modeli, fidelity 0.7
+   - Webhook pipeline'a entegre: kalite skoru <70 → otomatik restorasyon
+   - Non-blocking: başarısız olursa orijinal imaj kullanılır
+   - Migration: `supabase/migrations/20261014_add_face_restored.sql`
+
+4. **Upload QC → API Entegrasyonu** ✅ (commit a29c140f)
+   - `src/app/api/upload/route.ts` — assessUploadQuality() artık upload akışında
+   - Advisory-only: kalite skoru döner ama upload'u engellemez
+
+5. **Flux Kontext Outfit Change** ✅ (commit a29c140f)
+   - `src/app/api/ai/outfit-change/route.ts` — Mevcut headshot'ta kıyafet değiştirme
+   - `black-forest-labs/flux-kontext-pro` modeli
+   - Rate limit: 10/saat/kullanıcı
+
+6. **Flux Kontext Background Change** ✅ (commit a29c140f)
+   - `src/app/api/ai/background-change/route.ts` — 10 preset + custom arka plan
+   - Presetler: studio_white, studio_gray, office, outdoor, gradient_blue, cityscape, brick_wall, minimalist, window_light, library
+
+### CI/Vercel Durumu
+- CI: PASS ✅
+- Vercel: PASS ✅
+- Commit: a29c140f
+- Canlı site doğrulama: ✅ (WebFetch ile — InstantPreviewDemo bölümü görünür)
+
+### Bekleyen DB Migration'ları
+- `20261014_add_quality_score.sql` — Henüz uygulanmadı (SUPABASE_DB_URL secret gerekli)
+- `20261014_add_face_restored.sql` — Henüz uygulanmadı (SUPABASE_DB_URL secret gerekli)
+- Her iki migration da `gh workflow run db-migrate.yml -f mode=apply` ile çalıştırılmalı
+
+### Faz 4 (Gelecek Kapsam)
+- Flux 2.0 geçişi (LoRA uyumluluğu doğrulandığında)
+- Video avatar MVP
+- Seedream 4.5 / Ideogram 4 değerlendirmesi
+
+---
+
 ## Oturum: 2026-10-14 (İş Modeli & Büyüme Stratejisi Uygulaması)
 
 ### Tamamlanan Görevler
