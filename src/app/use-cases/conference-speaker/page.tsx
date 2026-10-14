@@ -136,7 +136,7 @@ export default function ConferenceSpeakerPage() {
       <ProductSchema
         name="TailorPic"
         description="Professional speaker bio headshots for conferences and events"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/conference-speaker"
       />

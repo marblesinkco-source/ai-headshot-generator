@@ -136,7 +136,7 @@ export default function PortfolioWebsiteUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Professional headshots for portfolio websites and About pages"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/portfolio-website"
       />

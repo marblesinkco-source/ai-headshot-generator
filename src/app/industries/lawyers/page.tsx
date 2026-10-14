@@ -76,7 +76,7 @@ const benefits = [
 ];
 
 const stats = [
-  { value: '40+', label: 'Professional photos per order' },
+  { value: 'Up to 160', label: 'Photos available' },
   { value: '12', label: 'Styles including business & legal' },
   { value: `${BASE_PRICE_DISPLAY}`, label: 'Starting price per person' },
   { value: '< 2hrs', label: 'From selfies to finished headshots' },

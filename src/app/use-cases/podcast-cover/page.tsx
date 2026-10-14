@@ -136,7 +136,7 @@ export default function PodcastCoverUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Professional host portraits for podcast cover art and episode artwork"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/podcast-cover"
       />

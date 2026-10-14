@@ -136,7 +136,7 @@ export default function GithubUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Professional avatars for GitHub profiles, dev portfolios and open-source contributors"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/github"
       />

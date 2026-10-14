@@ -151,7 +151,7 @@ export default function VsCopilotDesignerPage() {
       <ProductSchema
         name="TailorPic AI Headshots"
         description="AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours."
-        price={199}
+        price={699}
         category="Professional Services"
         slug="vs/copilot-designer"
       />

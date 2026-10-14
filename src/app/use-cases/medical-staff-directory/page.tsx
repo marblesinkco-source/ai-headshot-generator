@@ -136,7 +136,7 @@ export default function MedicalStaffDirectoryUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Professional portraits for hospital and clinic staff directories"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/medical-staff-directory"
       />

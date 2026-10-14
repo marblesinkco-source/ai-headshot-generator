@@ -136,7 +136,7 @@ export default function EventBadgeUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Professional portraits for event badges, conference lanyards and attendee profiles"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/event-badge"
       />

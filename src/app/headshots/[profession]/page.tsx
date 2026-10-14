@@ -131,7 +131,7 @@ export default async function ProfessionLandingPage({ params }: Props) {
       <ProductSchema
         name={prof.title}
         description={prof.seoDescription}
-        price={entryPkg?.price ?? 199}
+        price={entryPkg?.price ?? 699}
         category="Professional Services"
         slug={`headshots/for-${prof.slug}`}
       />
@@ -447,7 +447,7 @@ export default async function ProfessionLandingPage({ params }: Props) {
               Ready to Upgrade Your Professional Image?
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-tp-beige/70">
-              Get studio-quality headshots delivered within hours — no appointment, no studio, no hassle. Starting from just {formatPrice(entryPkg?.price ?? 199)}.
+              Get studio-quality headshots delivered within hours — no appointment, no studio, no hassle. Starting from just {formatPrice(entryPkg?.price ?? 699)}.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots">

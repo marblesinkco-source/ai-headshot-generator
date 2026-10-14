@@ -180,7 +180,7 @@ export default function HeadshotsLandingPage() {
           </div>
 
           <p className="mt-6 text-sm text-tp-beige/50">
-            From {formatPrice(entryPackage?.price ?? 199)} &middot; No subscription &middot; Commercial license included
+            From {formatPrice(entryPackage?.price ?? 699)} &middot; No subscription &middot; Commercial license included
           </p>
         </div>
       </section>
@@ -330,7 +330,7 @@ export default function HeadshotsLandingPage() {
               Packages
             </p>
             <h2 className="mt-3 font-display font-normal text-3xl sm:text-4xl text-tp-ink">
-              Professional Headshots from {formatPrice(entryPackage?.price ?? 199)}
+              Professional Headshots from {formatPrice(entryPackage?.price ?? 699)}
             </h2>
             <p className="mt-4 text-tp-muted max-w-xl mx-auto leading-relaxed">
               Start with a single photo or go all-in with up to 160 headshots.
@@ -560,7 +560,7 @@ export default function HeadshotsLandingPage() {
             </Link>
           </div>
           <p className="mt-6 text-xs text-tp-beige/40">
-            From {formatPrice(entryPackage?.price ?? 199)} &middot; No subscription required
+            From {formatPrice(entryPackage?.price ?? 699)} &middot; No subscription required
           </p>
         </div>
       </section>

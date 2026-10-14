@@ -136,7 +136,7 @@ export default function CompanyNewsletterUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Professional staff and leadership portraits for company newsletters and internal updates"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/company-newsletter"
       />

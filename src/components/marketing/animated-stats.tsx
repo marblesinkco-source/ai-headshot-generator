@@ -34,7 +34,7 @@ const stats: StatItem[] = [
     icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
   },
   {
-    value: 199, // will be rendered as $1.99
+    value: 699, // will be rendered as $6.99
     label: 'Starting Price',
     description: 'Professional headshots accessible to everyone',
     icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
@@ -88,7 +88,7 @@ function StatCard({ stat, index }: { stat: StatItem; index: number }) {
 
   // Special handling for price stat
   const isPrice = stat.label === 'Starting Price';
-  const displayEnd = isPrice ? 199 : stat.value;
+  const displayEnd = isPrice ? 699 : stat.value;
   const count = useCountUp(displayEnd, 1200 + index * 200, isVisible);
 
   const formatValue = useCallback(() => {

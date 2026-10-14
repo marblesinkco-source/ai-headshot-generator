@@ -136,7 +136,7 @@ export default function SpeakingEngagementUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Professional speaker headshots for event pages, programs, and promotional graphics"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/speaking-engagement"
       />

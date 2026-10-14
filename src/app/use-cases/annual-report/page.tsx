@@ -136,7 +136,7 @@ export default function AnnualReportUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Consistent executive headshots for annual reports and corporate documents"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/annual-report"
       />

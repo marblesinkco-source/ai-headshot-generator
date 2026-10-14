@@ -190,7 +190,7 @@ export default function EcommerceLandingPage() {
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 text-center">
             {[
               { value: '12', label: 'photo styles for products & people' },
-              { value: '40+', label: 'photos per session' },
+              { value: 'Up to 160', label: 'Photos available' },
               { value: BASE_PRICE_DISPLAY, label: 'starting price, no studio needed' },
               { value: 'Within hours', label: 'average delivery time' },
             ].map((stat) => (

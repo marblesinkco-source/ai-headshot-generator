@@ -136,7 +136,7 @@ export default function SchoolYearbookUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Professional portraits for school yearbooks and faculty pages"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/school-yearbook"
       />

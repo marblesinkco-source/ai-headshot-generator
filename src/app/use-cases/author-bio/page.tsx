@@ -136,7 +136,7 @@ export default function AuthorBioUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Professional author portraits for book jackets, author pages and bios"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/author-bio"
       />

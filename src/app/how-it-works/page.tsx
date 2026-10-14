@@ -208,7 +208,7 @@ const howToJsonLd = {
   name: 'How to Get AI-Generated Professional Headshots',
   description: 'Upload selfies, let AI create studio-quality headshots, download within hours.',
   totalTime: 'PT2H',
-  estimatedCost: { '@type': 'MonetaryAmount', currency: 'USD', value: '1.99' },
+  estimatedCost: { '@type': 'MonetaryAmount', currency: 'USD', value: '6.99' },
   tool: [{ '@type': 'HowToTool', name: 'Smartphone with camera' }],
   step: steps.map((s) => ({
     '@type': 'HowToStep',

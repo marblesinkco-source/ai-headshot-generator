@@ -136,7 +136,7 @@ export default function WeddingGuestUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Polished, dressed-up AI portraits for weddings, parties and events"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/wedding-guest"
       />

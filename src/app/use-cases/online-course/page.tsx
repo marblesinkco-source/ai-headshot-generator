@@ -136,7 +136,7 @@ export default function OnlineCourseUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Professional instructor headshots for online course platforms and landing pages"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/online-course"
       />

@@ -136,7 +136,7 @@ export default function CrowdfundingCampaignUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Founder and creator portraits for crowdfunding campaign pages"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/crowdfunding-campaign"
       />

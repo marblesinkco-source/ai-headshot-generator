@@ -136,7 +136,7 @@ export default function WhatsappUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Professional profile photos for WhatsApp Business and personal messaging"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/whatsapp"
       />

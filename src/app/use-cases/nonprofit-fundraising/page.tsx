@@ -148,7 +148,7 @@ export default function NonprofitFundraisingUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Professional portraits for nonprofit staff, board members and fundraising materials"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/nonprofit-fundraising"
       />

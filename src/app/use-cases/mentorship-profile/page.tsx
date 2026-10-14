@@ -136,7 +136,7 @@ export default function MentorshipProfileUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Approachable portraits for mentor and mentee profiles"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/mentorship-profile"
       />

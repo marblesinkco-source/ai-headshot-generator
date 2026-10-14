@@ -161,7 +161,7 @@ export default function StudentsPage() {
     url: `${siteConfig.url}/students`,
     offers: {
       '@type': 'Offer',
-      price: '1.99',
+      price: '6.99',
       priceCurrency: 'USD',
       availability: 'https://schema.org/InStock',
       url: `${siteConfig.url}/pricing`,

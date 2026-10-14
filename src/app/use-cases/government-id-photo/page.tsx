@@ -147,7 +147,7 @@ export default function GovernmentIdPhotoUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Clean front-facing portraits for profile and ID-style uses"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/government-id-photo"
       />

@@ -11,9 +11,9 @@ import { formatPrice } from '@/lib/utils';
  * Entry price in the smallest currency unit (cents).
  * Must match the cheapest headshots package in config/categories.ts (TailorPic 1).
  */
-export const BASE_PRICE_CENTS = 199;
+export const BASE_PRICE_CENTS = 699;
 
-/** Entry price in major units (1.99). */
+/** Entry price in major units (6.99). */
 export const BASE_PRICE = BASE_PRICE_CENTS / 100;
 
 export const CURRENCY = 'usd';
@@ -27,10 +27,10 @@ export const TEAM_PRICES = {
   premium: { flat: true, priceCents: 19990, maxMembers: 10 },
 } as const;
 
-/** "$1.99" */
+/** "$6.99" */
 export const BASE_PRICE_DISPLAY = formatPrice(BASE_PRICE_CENTS, CURRENCY);
 
-/** "1 photo from $1.99" — use where the entry price needs per-photo context */
+/** "1 photo from $6.99" — use where the entry price needs per-photo context */
 export const BASE_PRICE_LABEL = `1 photo from ${formatPrice(BASE_PRICE_CENTS, CURRENCY)}`;
 
 /** "$39" — per-person price for small teams (5–15 people) */

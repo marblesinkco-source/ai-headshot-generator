@@ -136,7 +136,7 @@ export default function PressKitPage() {
       <ProductSchema
         name="TailorPic"
         description="High-resolution founder and executive headshots for press kits and media pages"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/press-kit"
       />

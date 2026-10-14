@@ -175,7 +175,7 @@ export default function LinkedInHeadshotsPage() {
     url: `${siteConfig.url}/linkedin-headshots`,
     offers: {
       '@type': 'Offer',
-      price: '1.99',
+      price: '6.99',
       priceCurrency: 'USD',
       availability: 'https://schema.org/InStock',
       url: `${siteConfig.url}/pricing`,

@@ -136,7 +136,7 @@ export default function SalesDeckPage() {
       <ProductSchema
         name="TailorPic"
         description="Professional headshots for sales decks, pitch slides and client proposals"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/sales-deck"
       />

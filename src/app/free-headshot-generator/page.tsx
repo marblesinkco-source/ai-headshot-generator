@@ -176,7 +176,7 @@ export default function FreeHeadshotGeneratorPage() {
       `AI headshot generator that turns your selfies into professional headshots. From ${BASE_PRICE_DISPLAY}, no subscription.`,
     offers: {
       '@type': 'Offer',
-      price: '1.99',
+      price: '6.99',
       priceCurrency: 'USD',
     },
   };

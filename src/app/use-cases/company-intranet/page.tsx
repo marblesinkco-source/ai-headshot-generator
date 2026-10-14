@@ -136,7 +136,7 @@ export default function CompanyIntranetUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Consistent professional headshots for company intranets and employee directories"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/company-intranet"
       />

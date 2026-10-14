@@ -1,5 +1,6 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { createAdminClient } from '@/lib/supabase/server';
+import { safeEqual } from '@/lib/security';
 
 export const dynamic = 'force-dynamic';
 
@@ -22,7 +23,15 @@ interface PackageMetrics {
   conversionRate: number;
 }
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  // Verify cron secret (same pattern as retry-stuck / emails/upgrade)
+  const authHeader = request.headers.get('authorization');
+  const cronSecret = process.env.CRON_SECRET;
+
+  if (!cronSecret || !safeEqual(authHeader, `Bearer ${cronSecret}`)) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
   const startTime = Date.now();
 
   try {

@@ -136,7 +136,7 @@ export default function ProfessionalDirectoryUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Credible portraits for professional directory and association listings"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/professional-directory"
       />

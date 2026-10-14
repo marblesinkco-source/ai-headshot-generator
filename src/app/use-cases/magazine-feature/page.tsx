@@ -136,7 +136,7 @@ export default function MagazineFeatureUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Editorial-ready portraits for magazine features and contributor profiles"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/magazine-feature"
       />

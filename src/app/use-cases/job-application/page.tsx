@@ -136,7 +136,7 @@ export default function JobApplicationUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Professional portraits for job applications, career portals and recruiter profiles"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/job-application"
       />

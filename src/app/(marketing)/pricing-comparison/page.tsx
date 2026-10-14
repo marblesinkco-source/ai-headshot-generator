@@ -54,7 +54,7 @@ const headshots = CATEGORIES.headshots;
 const _fallback: CategoryPackage = {
   id: 'fallback',
   name: 'Headshots',
-  price: 199,
+  price: 699,
   currency: 'usd',
   outputCount: 1,
   features: ['HD resolution'],

@@ -136,7 +136,7 @@ export default function VolunteerDirectoryUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Consistent portraits for volunteer directories, rosters and nonprofit team pages"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/volunteer-directory"
       />

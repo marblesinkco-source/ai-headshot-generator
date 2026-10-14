@@ -148,7 +148,7 @@ export default function BookCoverUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Professional author portraits for book jackets, author pages and press"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/book-cover"
       />

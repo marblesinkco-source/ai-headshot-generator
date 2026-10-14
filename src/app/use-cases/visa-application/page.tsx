@@ -136,7 +136,7 @@ export default function VisaApplicationUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Clean, neutral portraits to help applicants prepare visa application photos"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/visa-application"
       />

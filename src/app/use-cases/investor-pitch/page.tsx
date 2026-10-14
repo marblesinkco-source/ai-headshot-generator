@@ -136,7 +136,7 @@ export default function InvestorPitchUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Credible, consistent founder and team headshots for pitch decks"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/investor-pitch"
       />

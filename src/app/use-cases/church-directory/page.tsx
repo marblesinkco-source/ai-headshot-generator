@@ -136,7 +136,7 @@ export default function ChurchDirectoryUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Professional portraits for church and congregation member directories"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/church-directory"
       />

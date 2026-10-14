@@ -71,7 +71,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
       {
         id: 'headshots-tailorpic1',
         name: 'TailorPic 1',
-        price: 199,
+        price: 699,
         currency: 'usd',
         outputCount: 1,
         features: ['1 background', '1 style', 'HD resolution', 'Try before you commit'],

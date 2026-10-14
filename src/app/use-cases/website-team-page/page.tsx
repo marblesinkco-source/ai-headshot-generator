@@ -136,7 +136,7 @@ export default function WebsiteTeamPage() {
       <ProductSchema
         name="TailorPic"
         description="Consistent team page headshots for company websites"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/website-team-page"
       />

@@ -1,7 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createClient } from '@/lib/supabase/server';
+import { createClient, createAdminClient } from '@/lib/supabase/server';
+import { rateLimit } from '@/lib/rate-limit';
 
 export const dynamic = 'force-dynamic';
+
+/** Emails permitted to read site-wide analytics. */
+const ADMIN_EMAILS = (process.env.ADMIN_EMAILS || '').split(',').map(e => e.trim().toLowerCase()).filter(Boolean);
 
 export async function GET(request: NextRequest) {
   try {
@@ -13,8 +17,20 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
+    // Admin-only: revenue and conversion data is sensitive
+    if (!ADMIN_EMAILS.includes(user.email?.toLowerCase() || '')) {
+      return NextResponse.json({ error: 'Forbidden — admin access required' }, { status: 403 });
+    }
+
+    // Rate limit: 30 requests per hour
+    const rl = await rateLimit({ key: `analytics-metrics:${user.id}`, limit: 30, windowMs: 60 * 60 * 1000 });
+    if (!rl.success) {
+      return NextResponse.json({ error: 'Too many requests' }, { status: 429, headers: { 'Retry-After': '3600' } });
+    }
+
     const searchParams = request.nextUrl.searchParams;
-    const days = parseInt(searchParams.get('days') || '7', 10);
+    const rawDays = parseInt(searchParams.get('days') || '7', 10);
+    const days = Math.min(Math.max(rawDays, 1), 90); // clamp 1–90
     const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString();
 
     // Fetch all metrics in parallel — graceful fallback

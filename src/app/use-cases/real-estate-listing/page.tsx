@@ -148,7 +148,7 @@ export default function RealEstateListingUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Professional agent portraits for real estate listings, flyers and brokerage profiles"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/real-estate-listing"
       />

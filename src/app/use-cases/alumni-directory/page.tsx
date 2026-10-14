@@ -136,7 +136,7 @@ export default function AlumniDirectoryUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Professional headshots for alumni directories and networking platforms"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/alumni-directory"
       />

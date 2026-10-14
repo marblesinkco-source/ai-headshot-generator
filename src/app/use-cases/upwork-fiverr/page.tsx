@@ -136,7 +136,7 @@ export default function UpworkFiverrUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Trust-building headshots for Upwork, Fiverr and freelance marketplace profiles"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/upwork-fiverr"
       />

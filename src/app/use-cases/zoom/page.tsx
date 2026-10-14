@@ -136,7 +136,7 @@ export default function ZoomUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Professional profile photos for Zoom, Teams and Google Meet"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/zoom"
       />

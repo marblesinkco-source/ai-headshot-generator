@@ -136,7 +136,7 @@ export default function PodcastGuestBioUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Professional portraits for podcast guest bios, show notes and episode pages"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/podcast-guest-bio"
       />

@@ -136,7 +136,7 @@ export default function MicrosoftTeamsPage() {
       <ProductSchema
         name="TailorPic"
         description="Professional profile photos for Microsoft Teams, Outlook and Microsoft 365"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/microsoft-teams"
       />

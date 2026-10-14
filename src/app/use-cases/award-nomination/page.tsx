@@ -136,7 +136,7 @@ export default function AwardNominationUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Nominee and finalist portraits for award submissions and ceremony programs"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/award-nomination"
       />

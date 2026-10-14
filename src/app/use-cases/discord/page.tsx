@@ -136,7 +136,7 @@ export default function DiscordUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Creative avatars for Discord servers and gaming communities"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/discord"
       />

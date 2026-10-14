@@ -148,7 +148,7 @@ export default function DatingProfilePhotoUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Natural, realistic AI photos for dating app profiles"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/dating-profile-photo"
       />

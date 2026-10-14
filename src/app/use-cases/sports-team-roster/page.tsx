@@ -136,7 +136,7 @@ export default function SportsTeamRosterUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Professional portraits for sports team rosters and player profiles"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/sports-team-roster"
       />

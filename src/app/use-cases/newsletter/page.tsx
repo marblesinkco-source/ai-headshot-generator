@@ -136,7 +136,7 @@ export default function NewsletterUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Professional author headshots for Substack, Beehiiv and email newsletters"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/newsletter"
       />

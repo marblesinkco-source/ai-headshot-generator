@@ -136,7 +136,7 @@ export default function GraduationPhotoUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Professional AI portraits for graduation announcements and new-graduate profiles"
-        price={199}
+        price={699}
         category="Professional Services"
         slug="use-cases/graduation-photo"
       />
