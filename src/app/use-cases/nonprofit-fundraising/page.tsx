@@ -29,6 +29,7 @@ import { getRelatedUseCases } from '@/lib/internal-links';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const pageTitle = "AI Headshots for Nonprofit Fundraising | TailorPic";
 const pageDescription =
   `Professional staff, board and volunteer photos for nonprofit websites, donor appeals and galas. Get polished portraits from a few selfies. Starting at ${BASE_PRICE_DISPLAY}.`;

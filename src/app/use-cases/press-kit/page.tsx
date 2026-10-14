@@ -17,6 +17,7 @@ import { getRelatedUseCases } from '@/lib/internal-links';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const pageTitle = "AI Headshots for Press Kits & Media | TailorPic";
 const pageDescription =
   `Journalist-ready headshots for press kits, media pages and founder bios. High-resolution professional portraits from a few selfies. Starting at ${BASE_PRICE_DISPLAY}.`;

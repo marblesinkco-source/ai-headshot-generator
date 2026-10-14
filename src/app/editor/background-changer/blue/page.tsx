@@ -12,6 +12,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'Blue Background Headshots — Trustworthy & Calm | TailorPic';
 const description =
   'Get AI headshots on a professional blue background. A calm, trustworthy backdrop for corporate, healthcare and finance professionals, no photoshoot needed.';

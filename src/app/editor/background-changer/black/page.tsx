@@ -12,6 +12,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'Black Background Headshots: Studio-Quality | TailorPic';
 const description =
   'Get AI headshots on a dramatic black studio background. Ideal for actors, musicians, creatives and portfolios, without booking a photographer.';

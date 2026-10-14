@@ -12,6 +12,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'Free Email Signature Generator with Photo | TailorPic';
 const description =
   'Create a professional email signature with your photo in seconds. Pick a layout and color, preview it live, and copy the HTML into Gmail, Outlook or Apple Mail.';

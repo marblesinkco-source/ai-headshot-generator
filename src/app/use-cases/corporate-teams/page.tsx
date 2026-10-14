@@ -17,6 +17,7 @@ import { getRelatedUseCases } from '@/lib/internal-links';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const pageTitle = 'AI Headshots for Corporate Teams | TailorPic';
 const pageDescription =
   `Get consistent, professional headshots for your whole team without coordinating a photographer. Team photos for websites, directories and decks. From ${BASE_PRICE_DISPLAY}.`;

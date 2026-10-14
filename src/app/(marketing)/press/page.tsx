@@ -8,8 +8,6 @@ import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
 
-// Revalidate every hour so pricing changes propagate without a manual redeploy
-export const revalidate = 3600;
   ArrowRight,
   Mail,
   Palette,
@@ -22,6 +20,9 @@ export const revalidate = 3600;
   Package,
   Users,
 } from 'lucide-react';
+
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
 
 const PAGE_TITLE = 'Press & Media | TailorPic';
 const PAGE_DESC =

@@ -17,6 +17,7 @@ import { FAQAccordion } from '@/components/marketing/faq-accordion';
 
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: { absolute: 'AI Headshots for Real Estate Agents | TailorPic' },
   description:

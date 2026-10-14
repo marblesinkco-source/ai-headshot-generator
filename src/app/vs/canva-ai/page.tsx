@@ -24,6 +24,7 @@ import { getRelatedVsPages } from '@/lib/internal-links';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs Canva AI: AI Headshot Generator Comparison' },
   description:

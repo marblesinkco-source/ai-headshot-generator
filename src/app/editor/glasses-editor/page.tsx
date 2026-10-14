@@ -12,6 +12,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'AI Glasses Editor — Add, Remove or Change Frames | TailorPic';
 const description =
   'See how TailorPic\'s AI adds, removes or changes glasses and frames in your headshot, with no glare, clear eyes and a natural fit.';

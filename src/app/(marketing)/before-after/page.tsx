@@ -10,8 +10,6 @@ import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
 
-// Revalidate every hour so pricing changes propagate without a manual redeploy
-export const revalidate = 3600;
   ArrowRight,
   ChevronRight,
   Camera,
@@ -33,6 +31,9 @@ export const revalidate = 3600;
   Images,
   DollarSign,
 } from 'lucide-react';
+
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
 
 const PAGE_TITLE = 'Before & After: AI Headshot Transformation';
 const PAGE_DESCRIPTION =

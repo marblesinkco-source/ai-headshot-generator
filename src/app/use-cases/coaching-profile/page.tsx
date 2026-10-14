@@ -17,6 +17,7 @@ import { getRelatedUseCases } from '@/lib/internal-links';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const pageTitle = "AI Headshots for Coaching Profiles | TailorPic";
 const pageDescription =
   `Professional headshots for coaching profiles, websites and directories. Get warm, credible portraits from a few selfies. Starting at ${BASE_PRICE_DISPLAY}.`;

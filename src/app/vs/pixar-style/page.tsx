@@ -15,6 +15,7 @@ import { getRelatedVsPages } from '@/lib/internal-links';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const competitor = "Pixar-Style AI Portrait Tools";
 const title = 'TailorPic vs Pixar-Style AI Portraits: Headshot Comparison';
 const description =

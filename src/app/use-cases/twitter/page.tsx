@@ -17,6 +17,7 @@ import { getRelatedUseCases } from '@/lib/internal-links';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const pageTitle = 'AI Profile Photos for X (Twitter) | TailorPic';
 const pageDescription =
   `Create a sharp, memorable X (Twitter) profile photo from a few selfies. AI-generated portraits that build credibility in replies, threads, and DMs. From ${BASE_PRICE_DISPLAY}.`;

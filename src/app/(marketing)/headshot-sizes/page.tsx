@@ -8,8 +8,6 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
 
-// Revalidate every hour so pricing changes propagate without a manual redeploy
-export const revalidate = 3600;
   Ruler,
   Users,
   Share2,
@@ -22,6 +20,9 @@ export const revalidate = 3600;
   Eye,
   ArrowRight,
 } from 'lucide-react';
+
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
 
 const PAGE_TITLE = 'Headshot Size Guide: Dimensions for Every Platform';
 const PAGE_DESCRIPTION =

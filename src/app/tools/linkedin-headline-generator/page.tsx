@@ -12,6 +12,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'Free LinkedIn Headline Generator: 5 Headline Ideas';
 const description =
   'Free LinkedIn headline generator. Enter your job title, industry and skills to get 5 headline ideas with a character counter and one-click copy.';

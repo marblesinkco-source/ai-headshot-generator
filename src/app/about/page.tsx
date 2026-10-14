@@ -27,6 +27,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const aboutDescription = 'Learn about TailorPic, the AI photo platform that creates professional, personalized photos. Our mission, what sets us apart, and our privacy commitment.';
 
 export const metadata: Metadata = {

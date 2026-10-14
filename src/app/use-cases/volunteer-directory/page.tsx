@@ -17,6 +17,7 @@ import { getRelatedUseCases } from '@/lib/internal-links';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const pageTitle = "AI Headshots for Volunteer Directories | TailorPic";
 const pageDescription =
   `Consistent, friendly headshots for volunteer directories and nonprofit team pages. Generated from selfies, delivered within hours. Starting at ${BASE_PRICE_DISPLAY}.`;

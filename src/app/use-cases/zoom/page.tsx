@@ -17,6 +17,7 @@ import { getRelatedUseCases } from '@/lib/internal-links';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const pageTitle = "AI Headshots for Zoom & Video Calls | TailorPic";
 const pageDescription =
   `Professional profile photos for Zoom, Microsoft Teams and Google Meet. Look sharp when your camera is off, from a few selfies. Starting at ${BASE_PRICE_DISPLAY}.`;

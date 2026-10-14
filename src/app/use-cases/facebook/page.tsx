@@ -17,6 +17,7 @@ import { getRelatedUseCases } from '@/lib/internal-links';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const pageTitle = 'AI Profile Photos for Facebook | TailorPic';
 const pageDescription =
   `Get a friendly, polished Facebook profile picture from a few selfies. AI photos that look natural in the circular crop, for profiles and pages. From ${BASE_PRICE_DISPLAY}.`;

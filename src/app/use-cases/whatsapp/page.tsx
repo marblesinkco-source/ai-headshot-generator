@@ -17,6 +17,7 @@ import { getRelatedUseCases } from '@/lib/internal-links';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const pageTitle = 'AI Profile Photos for WhatsApp | TailorPic';
 const pageDescription =
   `Professional profile photos for WhatsApp Business and personal messaging. Look trustworthy in every chat from a few selfies. Starting at ${BASE_PRICE_DISPLAY}.`;

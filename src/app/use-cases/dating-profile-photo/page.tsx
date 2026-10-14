@@ -29,6 +29,7 @@ import { getRelatedUseCases } from '@/lib/internal-links';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const pageTitle = "AI Photos for Dating Profile Pictures | TailorPic";
 const pageDescription =
   `Natural, flattering AI photos for your dating profile on Tinder, Hinge and Bumble. Get varied, realistic portraits from a few selfies. Starting at ${BASE_PRICE_DISPLAY}.`;

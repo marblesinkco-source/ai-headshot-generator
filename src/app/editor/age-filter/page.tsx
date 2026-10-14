@@ -12,6 +12,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'AI Age Filter — Refreshed, Youthful Headshots | TailorPic';
 const description =
   'See how TailorPic\'s AI applies a subtle age adjustment for a refreshed, youthful look in professional headshots, without losing what makes you recognizable.';

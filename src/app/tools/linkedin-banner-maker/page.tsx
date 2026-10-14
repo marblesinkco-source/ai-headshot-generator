@@ -14,6 +14,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'Free LinkedIn Banner Maker | TailorPic';
 const description =
   'Create a professional LinkedIn background banner with your name, title, and brand colors. Everything runs in your browser.';

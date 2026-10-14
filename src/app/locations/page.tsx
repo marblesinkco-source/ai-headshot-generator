@@ -13,6 +13,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 export const metadata: Metadata = {
   title: { absolute: `AI Headshots by City | ${siteConfig.name}` },
   description: `Get professional AI headshots in your city. TailorPic serves professionals across the US — no studio visit needed. Starting from ${BASE_PRICE_DISPLAY}.`,

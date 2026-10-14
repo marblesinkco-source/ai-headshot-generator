@@ -14,6 +14,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'Free Virtual Background Maker for Zoom & Teams | TailorPic';
 const description =
   'Create professional virtual backgrounds for Zoom, Teams, and Google Meet. Choose a template, customize colors, and download. Everything runs in your browser.';

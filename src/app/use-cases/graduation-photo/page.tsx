@@ -17,6 +17,7 @@ import { getRelatedUseCases } from '@/lib/internal-links';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const pageTitle = "AI Headshots for Graduation Photos | TailorPic";
 const pageDescription =
   `Polished AI headshots for graduation announcements, yearbooks and your first job search. Get professional portraits from a few selfies. Starting at ${BASE_PRICE_DISPLAY}.`;

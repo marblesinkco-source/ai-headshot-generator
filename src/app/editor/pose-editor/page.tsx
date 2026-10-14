@@ -12,6 +12,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'AI Pose Editor: Head Tilt & Posture Tweaks | TailorPic';
 const description =
   'See how TailorPic\'s AI adjusts head tilt, shoulder angle and body positioning so your professional headshot looks confident, open and natural.';

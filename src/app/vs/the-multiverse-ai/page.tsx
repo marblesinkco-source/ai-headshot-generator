@@ -15,6 +15,7 @@ import { getRelatedVsPages } from '@/lib/internal-links';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const competitor = "The Multiverse AI";
 const title = 'TailorPic vs The Multiverse AI: AI Headshot Comparison';
 const description =

@@ -9,8 +9,6 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { siteConfig } from '@/config/site';
 import {
 
-// Revalidate every hour so pricing changes propagate without a manual redeploy
-export const revalidate = 3600;
   ArrowRight,
   Clock,
   Shield,
@@ -24,6 +22,9 @@ export const revalidate = 3600;
   Scale,
   type LucideIcon,
 } from 'lucide-react';
+
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
 
 const title = 'How Professionals Use AI Headshots | TailorPic';
 const description =

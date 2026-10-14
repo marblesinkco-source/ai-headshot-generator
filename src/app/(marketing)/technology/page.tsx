@@ -14,8 +14,6 @@ import {
 } from '@/lib/og-metadata';
 import {
 
-// Revalidate every hour so pricing changes propagate without a manual redeploy
-export const revalidate = 3600;
   Upload,
   ScanFace,
   Palette,
@@ -35,6 +33,9 @@ export const revalidate = 3600;
   ImageUp,
   Zap,
 } from 'lucide-react';
+
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
 
 const PAGE_TITLE = 'The Technology Behind Your AI Headshots | TailorPic';
 const PAGE_DESC =

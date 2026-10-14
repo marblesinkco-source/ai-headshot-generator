@@ -17,6 +17,7 @@ import { getRelatedUseCases } from '@/lib/internal-links';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const pageTitle = "AI Profile Photos for GitHub | Developer Avatars | TailorPic";
 const pageDescription =
   `Professional avatars for GitHub profiles, developer portfolios and open-source contributors. Stand out to recruiters and maintainers. From ${BASE_PRICE_DISPLAY}.`;

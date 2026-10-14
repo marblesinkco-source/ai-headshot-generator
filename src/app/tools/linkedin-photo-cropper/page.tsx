@@ -13,6 +13,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const LinkedInPhotoCropper = dynamic(() => import('@/components/tools/linkedin-photo-cropper'), {
   ssr: false,
   loading: () => (

@@ -19,6 +19,7 @@ import ProcessingTimeline from '@/components/marketing/processing-timeline';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const StickyCTA = dynamic(() => import('@/components/marketing/sticky-cta').then(m => ({ default: m.StickyCTA })), { ssr: false });
 const StyleConfigurator = dynamic(() => import('@/components/marketing/style-configurator').then(m => ({ default: m.StyleConfigurator })), { ssr: false });
 const BeforeAfterShowcase = dynamic(

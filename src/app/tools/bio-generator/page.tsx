@@ -14,6 +14,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'Free Professional Bio Generator | TailorPic';
 const description =
   'Generate a professional bio in seconds. Enter your role, skills and experience, pick a tone and length, and copy a polished first or third person bio. Everything runs in your browser.';

@@ -22,6 +22,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic Changelog: Product Updates and New Features' },
   description:

@@ -14,6 +14,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'Free Headshot Photo Compressor | TailorPic';
 const description =
   'Reduce the file size of your headshot right in your browser. Pick a target like 100KB or 500KB, keep your dimensions, and download a compressed JPG. Nothing is uploaded.';

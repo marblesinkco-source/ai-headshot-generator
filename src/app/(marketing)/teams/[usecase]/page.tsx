@@ -12,12 +12,13 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BASE_PRICE_DISPLAY, TEAM_PRICES } from '@/config/pricing';
 import {
 
-// Revalidate every hour so pricing changes propagate without a manual redeploy
-export const revalidate = 3600;
   TEAM_USE_CASES,
   getAllTeamUseCaseSlugs,
   getTeamUseCaseBySlug,
 } from '@/config/team-use-cases';
+
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
 
 interface Props {
   params: Promise<{ usecase: string }>;

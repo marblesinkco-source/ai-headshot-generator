@@ -17,6 +17,7 @@ import { getRelatedUseCases } from '@/lib/internal-links';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const pageTitle = "AI Headshots for Author Bios and Books | TailorPic";
 const pageDescription =
   `Professional author photos for book jackets, Amazon author pages and bios. Get polished portraits from a few selfies. Starting at ${BASE_PRICE_DISPLAY}.`;

@@ -16,6 +16,7 @@ import { ContentPhoto } from '@/components/marketing/content-photo';
 
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: { absolute: 'AI Product Photography for E-Commerce | TailorPic' },
   description:

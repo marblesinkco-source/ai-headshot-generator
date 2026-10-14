@@ -14,6 +14,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'Free Headshot Quality Score — Rate Your Photo | TailorPic';
 const description =
   'Get an instant quality score for your headshot. Analyzes framing, lighting, background, sharpness, and contrast with actionable tips. Free and runs in your browser.';

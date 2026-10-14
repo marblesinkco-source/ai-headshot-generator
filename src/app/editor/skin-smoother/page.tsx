@@ -12,6 +12,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'AI Skin Smoother: Natural Retouching | TailorPic';
 const description =
   'See how TailorPic\'s AI retouches skin naturally, softening blemishes and uneven tone while keeping real texture so your headshot still looks like you.';

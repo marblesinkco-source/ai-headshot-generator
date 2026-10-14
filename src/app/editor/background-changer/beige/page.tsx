@@ -12,6 +12,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'Beige Background Headshots — Warm & Approachable | TailorPic';
 const description =
   'Get AI headshots on a warm beige background. Ideal for therapists, coaches, consultants and lifestyle brands who want a soft, approachable look.';

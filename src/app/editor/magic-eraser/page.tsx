@@ -12,6 +12,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'AI Magic Eraser: Remove Unwanted Objects | TailorPic';
 const description =
   'Distracting objects, clutter and blemishes in your selfies? See how TailorPic\'s AI generates clean, professional headshots without them.';

@@ -11,8 +11,6 @@ import { CATEGORIES, type CategoryPackage } from '@/config/categories';
 import { BASE_PRICE_DISPLAY, TEAM_PRICES } from '@/config/pricing';
 import {
 
-// Revalidate every hour so pricing changes propagate without a manual redeploy
-export const revalidate = 3600;
   Clock,
   Camera,
   CheckCircle2,
@@ -24,6 +22,9 @@ export const revalidate = 3600;
   DollarSign,
   Users,
 } from 'lucide-react';
+
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
 
 const TEAM_SMALL = formatPrice(TEAM_PRICES.small.perPersonCents, 'usd', true);
 const TEAM_LARGE = formatPrice(TEAM_PRICES.large.perPersonCents, 'usd', true);

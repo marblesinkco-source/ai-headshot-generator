@@ -12,8 +12,6 @@ import { siteConfig } from '@/config/site';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { portrait } from '@/config/stock-portraits';
 
-// Revalidate every hour so pricing changes propagate without a manual redeploy
-export const revalidate = 3600;
 
 // Below-the-fold client components: lazy load for performance
 const VideoTestimonials = dynamic(
@@ -37,6 +35,9 @@ import {
   Brush,
   Check,
 } from 'lucide-react';
+
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
 
 /* ------------------------------------------------------------------ */
 /*  NOTE: Sample photos on this page are stock portraits from         */

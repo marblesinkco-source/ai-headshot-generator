@@ -14,6 +14,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'Free Social Media Image Resizer for All Platforms | TailorPic';
 const description =
   'Resize your photo for LinkedIn, Instagram, Facebook, X, YouTube, Slack and Zoom in one click. Pick platforms, crop, and download. No signup needed.';

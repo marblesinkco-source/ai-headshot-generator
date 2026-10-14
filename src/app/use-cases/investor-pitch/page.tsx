@@ -17,6 +17,7 @@ import { getRelatedUseCases } from '@/lib/internal-links';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const pageTitle = "AI Headshots for Investor Pitch Decks | TailorPic";
 const pageDescription =
   `Credible founder headshots for investor pitch decks and team slides. Get polished, consistent portraits from a few selfies within hours. Starting at ${BASE_PRICE_DISPLAY}.`;

@@ -14,6 +14,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'Free Photo Color Palette Extractor | TailorPic';
 const description =
   'Extract the dominant color palette from any photo. Get HEX and RGB codes, copy individual colors or the full palette. Everything runs in your browser.';

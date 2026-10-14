@@ -15,6 +15,7 @@ import { getRelatedVsPages } from '@/lib/internal-links';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const competitor = "ChatGPT Image Generation";
 const title = 'TailorPic vs ChatGPT Image Generation: Headshot Comparison';
 const description =

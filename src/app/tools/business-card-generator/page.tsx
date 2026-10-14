@@ -14,6 +14,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'Free Digital Business Card & vCard Generator | TailorPic';
 const description =
   'Create a professional digital business card with your headshot and contact details. Download as PNG or vCard (.vcf). No signup, runs in your browser.';

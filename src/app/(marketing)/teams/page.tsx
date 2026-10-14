@@ -12,6 +12,7 @@ import { TEAM_USE_CASES } from '@/config/team-use-cases';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const PAGE_TITLE = 'Team Headshot Use Cases | TailorPic';
 const PAGE_DESCRIPTION =
   'See how teams use AI headshots for team directories, new hire onboarding, corporate events, website redesigns and brand consistency.';

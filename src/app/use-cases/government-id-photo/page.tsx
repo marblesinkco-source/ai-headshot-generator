@@ -28,6 +28,7 @@ import { getRelatedUseCases } from '@/lib/internal-links';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const pageTitle = "AI Headshots for Profile and ID-Style Photos | TailorPic";
 const pageDescription =
   `Clean, front-facing portraits for profiles and ID-style uses. Note: official ID and license photos usually must be taken under agency rules. Starting at ${BASE_PRICE_DISPLAY}.`;

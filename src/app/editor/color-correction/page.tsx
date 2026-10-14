@@ -12,6 +12,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'AI Color Correction: White Balance & Skin Tones | TailorPic';
 const description =
   'See how TailorPic\'s AI fixes white balance, color cast and saturation so your headshot has natural skin tones and clean, accurate color.';

@@ -15,8 +15,6 @@ const StickyCTA = dynamic(() => import('@/components/marketing/sticky-cta').then
 
 import {
 
-// Revalidate every hour so pricing changes propagate without a manual redeploy
-export const revalidate = 3600;
   Upload,
   Sparkles,
   Download,
@@ -39,6 +37,9 @@ export const revalidate = 3600;
   Layers,
   MonitorUp,
 } from 'lucide-react';
+
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: { absolute: 'How TailorPic Works: Upload Selfies, Get AI Headshots' },

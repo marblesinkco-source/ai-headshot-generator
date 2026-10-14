@@ -17,6 +17,7 @@ import { getRelatedUseCases } from '@/lib/internal-links';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const pageTitle = "AI Headshots for Microsoft Teams Profiles | TailorPic";
 const pageDescription =
   `A professional Microsoft Teams profile photo from a few selfies. Look polished in chats, meetings and Outlook. Delivered within hours. Starting at ${BASE_PRICE_DISPLAY}.`;

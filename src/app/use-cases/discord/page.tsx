@@ -17,6 +17,7 @@ import { getRelatedUseCases } from '@/lib/internal-links';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const pageTitle = "AI Profile Photos for Discord | Creative Avatars | TailorPic";
 const pageDescription =
   `Creative AI avatars for Discord servers and gaming communities. Get a standout profile picture from a few selfies, from realistic to stylized. From ${BASE_PRICE_DISPLAY}.`;

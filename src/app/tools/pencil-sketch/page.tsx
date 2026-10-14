@@ -14,6 +14,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'Free Photo to Pencil Sketch Converter | TailorPic';
 const description =
   'Convert any photo into a realistic pencil sketch drawing. Choose sketch styles, adjust line thickness and intensity. Free and runs in your browser.';

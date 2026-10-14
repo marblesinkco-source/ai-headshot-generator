@@ -14,6 +14,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'Free #OpenToWork Profile Photo Frame Maker | TailorPic';
 const description =
   'Add a #OpenToWork or #Hiring frame to your profile photo. Pick a color, adjust the ring, and download as PNG. Everything runs in your browser.';

@@ -12,6 +12,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'AI Photo Enhancer: Pro-Quality Upgrades | TailorPic';
 const description =
   'Learn how TailorPic\'s AI turns everyday selfies into professional-quality headshots with better lighting, sharpness, color and natural retouching.';

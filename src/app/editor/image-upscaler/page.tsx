@@ -12,6 +12,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'AI Image Upscaler: High-Resolution Photos | TailorPic';
 const description =
   'See how TailorPic\'s AI creates sharp, high-resolution headshots suitable for web, print, resumes and company materials, without a studio session.';

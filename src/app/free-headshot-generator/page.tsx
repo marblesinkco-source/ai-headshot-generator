@@ -10,8 +10,6 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { FreeTrialIllustration } from '@/components/marketing/illustrations';
 import {
 
-// Revalidate every hour so pricing changes propagate without a manual redeploy
-export const revalidate = 3600;
   Camera,
   Sparkles,
   Clock,
@@ -33,6 +31,9 @@ export const revalidate = 3600;
   CreditCard,
   Lock,
 } from 'lucide-react';
+
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: { absolute: 'Free AI Headshot Generator Alternative: Try Risk-Free' },

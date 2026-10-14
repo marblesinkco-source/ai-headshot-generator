@@ -9,8 +9,6 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import {
 
-// Revalidate every hour so pricing changes propagate without a manual redeploy
-export const revalidate = 3600;
   ArrowRight,
   Check,
   GraduationCap,
@@ -29,6 +27,9 @@ export const revalidate = 3600;
   Linkedin,
   Star,
 } from 'lucide-react';
+
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: { absolute: 'AI Headshots for Students: LinkedIn and Grad School Photos' },

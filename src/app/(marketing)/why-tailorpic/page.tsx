@@ -10,8 +10,6 @@ import { siteConfig } from '@/config/site';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import {
 
-// Revalidate every hour so pricing changes propagate without a manual redeploy
-export const revalidate = 3600;
   ArrowRight,
   CheckCircle2,
   Clock,
@@ -29,6 +27,9 @@ export const revalidate = 3600;
   Trash2,
   FileCheck,
 } from 'lucide-react';
+
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
 
 /* ------------------------------------------------------------------ */
 /*  Metadata                                                           */

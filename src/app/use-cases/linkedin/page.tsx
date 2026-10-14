@@ -17,6 +17,7 @@ import { getRelatedUseCases } from '@/lib/internal-links';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const pageTitle = 'AI Headshots for LinkedIn Profile Photos | TailorPic';
 const pageDescription =
   `Get a polished LinkedIn headshot from a few selfies. AI-generated professional profile photos that help you stand out to recruiters and clients. From ${BASE_PRICE_DISPLAY}.`;

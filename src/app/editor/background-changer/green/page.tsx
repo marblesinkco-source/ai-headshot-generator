@@ -12,6 +12,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'Green Background Headshots — Natural & Calming | TailorPic';
 const description =
   'Get AI headshots on a natural green background. Ideal for wellness professionals, environmental organizations and healthcare teams.';

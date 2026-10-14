@@ -14,6 +14,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'Free Photo Filters & Effects Tool | TailorPic';
 const description =
   'Apply professional photo filters to your headshots. Choose from 12 effects including grayscale, sepia, vintage, and more. Free and runs in your browser.';

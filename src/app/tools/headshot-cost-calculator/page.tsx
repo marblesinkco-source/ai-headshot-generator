@@ -12,6 +12,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
 
+
 const title = 'AI Headshot Cost Calculator: Photographer vs AI Prices';
 const description =
   'Free calculator: see what a professional photographer costs for headshots, dating photos, pet portraits or product shots, and how much you save with AI.';
