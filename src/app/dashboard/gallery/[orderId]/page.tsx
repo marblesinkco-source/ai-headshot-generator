@@ -283,18 +283,30 @@ export default function OrderGalleryPage() {
 
               {/* Overlay actions */}
               <div className="absolute inset-0 flex items-end justify-between bg-gradient-to-t from-black/50 via-transparent to-transparent p-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleDownloadSingle(headshot.imageUrl, idx);
-                  }}
-                  className="rounded-tp-button bg-white/90 p-2 text-tp-ink hover:bg-white transition-colors"
-                  title="Download"
-                >
-                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                  </svg>
-                </button>
+                <div className="flex items-center gap-1.5">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleDownloadSingle(headshot.imageUrl, idx);
+                    }}
+                    className="rounded-tp-button bg-white/90 p-2 text-tp-ink hover:bg-white transition-colors"
+                    title="Download"
+                  >
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                    </svg>
+                  </button>
+                  <Link
+                    href={`/dashboard/editor/${headshot.id}`}
+                    onClick={(e) => e.stopPropagation()}
+                    className="rounded-tp-button bg-white/90 p-2 text-tp-ink hover:bg-white transition-colors"
+                    title="Edit headshot"
+                  >
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125" />
+                    </svg>
+                  </Link>
+                </div>
                 <button
                   onClick={(e) => {
                     e.stopPropagation();

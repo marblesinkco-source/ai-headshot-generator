@@ -33,7 +33,24 @@ const MAX_FILE_BYTES = 8 * 1024 * 1024;
 const MIN_SIDE = 400;
 const ANALYSIS_SIZE = 256;
 const GRID = 16;
-const POINTS: Record<Status, number> = { pass: 20, warning: 10, fail: 0 };
+// Max points per criterion (total 100). pass = max, warning = max / 2, fail = 0.
+const CRITERION_POINTS: Record<string, number> = {
+  resolution: 15,
+  aspect: 10,
+  brightness: 15,
+  centering: 10,
+  size: 10,
+  contrast: 15,
+  saturation: 10,
+  sharpness: 15,
+};
+
+function criterionScore(c: Criterion): number {
+  const max = CRITERION_POINTS[c.id] ?? 0;
+  if (c.status === 'pass') return max;
+  if (c.status === 'warning') return max / 2;
+  return 0;
+}
 const CTA_HREF = '/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots';
 
 function formatBytes(bytes: number): string {
@@ -147,8 +164,87 @@ function analyzePixels(img: HTMLImageElement, file: File): Analysis {
         : 'LinkedIn accepts profile photos up to 8 MB. Export at a lower quality or size.',
   };
 
-  const criteria = [resolution, aspect, brightness, centering, size];
-  const score = criteria.reduce((s, c) => s + POINTS[c.status], 0);
+  // Contrast: standard deviation of luminance
+  const pixelCount = w * h;
+  let sumSqDiff = 0;
+  const gray = new Float32Array(pixelCount);
+  let satSum = 0;
+  for (let p = 0; p < pixelCount; p++) {
+    const i = p * 4;
+    const lum = 0.2126 * data[i] + 0.7152 * data[i + 1] + 0.0722 * data[i + 2];
+    sumSqDiff += (lum - avg) * (lum - avg);
+    gray[p] = data[i] * 0.299 + data[i + 1] * 0.587 + data[i + 2] * 0.114;
+
+    const r = data[i] / 255;
+    const g = data[i + 1] / 255;
+    const bl = data[i + 2] / 255;
+    const mx = Math.max(r, g, bl);
+    const mn = Math.min(r, g, bl);
+    const l = (mx + mn) / 2;
+    const s = mx === mn ? 0 : l > 0.5 ? (mx - mn) / (2 - mx - mn) : (mx - mn) / (mx + mn);
+    satSum += s;
+  }
+  const contrastValue = Math.sqrt(sumSqDiff / pixelCount);
+  const contrastStatus: Status = contrastValue > 40 ? 'pass' : contrastValue >= 25 ? 'warning' : 'fail';
+  const contrast: Criterion = {
+    id: 'contrast',
+    label: 'Contrast',
+    value: `${contrastValue.toFixed(0)} (std. deviation)`,
+    status: contrastStatus,
+    tip:
+      contrastStatus === 'pass'
+        ? 'Good tonal range. Your features stand out clearly.'
+        : contrastStatus === 'warning'
+          ? 'Contrast is a little low. Better lighting or a slight contrast boost would add depth.'
+          : 'The photo looks flat. Use stronger, directional light or increase contrast so your face stands out.',
+  };
+
+  // Saturation: average HSL saturation
+  const avgSat = satSum / pixelCount;
+  const saturationStatus: Status =
+    avgSat < 0.05 ? 'fail' : avgSat < 0.15 || avgSat > 0.6 ? 'warning' : 'pass';
+  const saturation: Criterion = {
+    id: 'saturation',
+    label: 'Color saturation',
+    value: `${Math.round(avgSat * 100)}% average`,
+    status: saturationStatus,
+    tip:
+      saturationStatus === 'pass'
+        ? 'Natural, healthy-looking color for a professional headshot.'
+        : avgSat < 0.05
+          ? 'The photo is nearly grayscale or very washed out. Color usually looks warmer and more approachable.'
+          : avgSat < 0.15
+            ? 'Colors look a bit muted. A touch more color can make the photo feel more alive.'
+            : 'Colors look over-saturated. Tone them down so skin looks natural.',
+  };
+
+  // Sharpness: Laplacian-like difference against the 4 neighbors
+  let sharpSum = 0;
+  let sharpCount = 0;
+  for (let y = 1; y < h - 1; y++) {
+    for (let x = 1; x < w - 1; x++) {
+      const idx = y * w + x;
+      sharpSum += Math.abs(4 * gray[idx] - gray[idx - w] - gray[idx + w] - gray[idx - 1] - gray[idx + 1]);
+      sharpCount++;
+    }
+  }
+  const sharpValue = sharpCount ? sharpSum / sharpCount : 0;
+  const sharpnessStatus: Status = sharpValue > 8 ? 'pass' : sharpValue >= 3 ? 'warning' : 'fail';
+  const sharpness: Criterion = {
+    id: 'sharpness',
+    label: 'Sharpness',
+    value: sharpnessStatus === 'pass' ? 'Sharp' : sharpnessStatus === 'warning' ? 'Slightly soft' : 'Blurry',
+    status: sharpnessStatus,
+    tip:
+      sharpnessStatus === 'pass'
+        ? 'Crisp detail. Your face and edges are well defined.'
+        : sharpnessStatus === 'warning'
+          ? 'The photo is a little soft. Hold the camera steady or use a tripod and make sure it is in focus.'
+          : 'The photo looks blurry. Retake it with steady hands, good light and focus on your eyes.',
+  };
+
+  const criteria = [resolution, aspect, brightness, centering, size, contrast, saturation, sharpness];
+  const score = Math.round(criteria.reduce((s, c) => s + criterionScore(c), 0));
   return { criteria, score };
 }
 
@@ -333,7 +429,7 @@ export default function LinkedInPhotoAnalyzer() {
           </ul>
 
           <p className="text-xs leading-relaxed text-tp-muted">
-            This tool checks technical basics only (size, shape, exposure and a rough centering hint). It cannot
+            This tool checks technical basics only (size, shape, exposure, contrast, color, sharpness and a rough centering hint). It cannot
             judge expression, attire or background.
           </p>
 
