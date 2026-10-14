@@ -122,7 +122,7 @@ export function Hero() {
                 className="tp-hero-enter mb-8 inline-flex items-center gap-3 rounded-tp-button border border-tp-bronze/25 bg-tp-beige/40 px-4 py-2.5"
                 style={{ '--enter-i': 2.5 } as React.CSSProperties}
               >
-                <span className="text-[13px] text-tp-muted line-through decoration-tp-muted/50">Studio: $250–$500</span>
+                <span className="text-[13px] text-tp-muted line-through decoration-tp-muted/50">Studio: $150–$500+</span>
                 <span aria-hidden="true" className="text-tp-line">|</span>
                 <span className="text-[13px] font-semibold text-tp-bronze-ink">TailorPic: from {BASE_PRICE_DISPLAY}</span>
               </div>

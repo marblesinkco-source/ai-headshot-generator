@@ -76,7 +76,7 @@ export function Pricing() {
             Pay Once, No Subscription
           </h2>
           <p className="mt-4 text-[15px] text-tp-muted leading-relaxed max-w-lg mx-auto">
-            Studio headshots cost $250–$500 for a handful of photos. TailorPic starts at {BASE_PRICE_DISPLAY} — one-time, no subscription.
+            Studio headshots cost $150–$500+ for a handful of photos. TailorPic starts at {BASE_PRICE_DISPLAY} — one-time, no subscription.
           </p>
 
           {/* Individual / Teams toggle */}
