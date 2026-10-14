@@ -47,8 +47,13 @@
 - How It Works: çalışıyor ✅
 - Samples: $6.99 doğru ✅ (cache sorunu düzeltildi)
 
+4. **DB Migration Altyapısı** ✅
+   - SUPABASE_DB_URL secret GitHub'a eklendi (Session pooler)
+   - `supabase/migrations/` — 8 dosya baseline olarak kaydedildi
+   - `src/database/migrations/` — tüm dosyalar baseline olarak kaydedildi
+   - `gh workflow run db-migrate.yml` artık çalışıyor
+
 ### Bekleyen
-- DB Migration'ları hâlâ bekliyor (SUPABASE_DB_URL secret gerekli)
 - Faz 4 gelecek öğeleri: Flux 2.0, Video Avatar, Seedream/Ideogram
 
 ---
