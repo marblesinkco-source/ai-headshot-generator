@@ -8,6 +8,7 @@ import { rateLimit } from '@/lib/rate-limit';
 import { csrfGuard } from '@/lib/security';
 import { logger } from '@/lib/logger';
 import { MissingEnvError, requireEnvs } from '@/lib/env';
+import { optimizeForTraining } from '@/lib/image-processing';
 
 export const maxDuration = 300;
 
@@ -194,6 +195,9 @@ export async function POST(request: NextRequest) {
     const JSZip = (await import('jszip')).default;
     const zip = new JSZip();
 
+    let totalOriginal = 0;
+    let totalOptimized = 0;
+
     for (let i = 0; i < trainingImageUrls.length; i++) {
       try {
         const imgRes = await fetch(trainingImageUrls[i]);
@@ -201,12 +205,24 @@ export async function POST(request: NextRequest) {
           logger.warn(`Training image ${i} fetch returned HTTP ${imgRes.status}`);
           continue;
         }
-        const imgBuffer = await imgRes.arrayBuffer();
-        const ext = photos[i].storage_path.split('.').pop() || 'jpg';
-        zip.file(`photo_${i}.${ext}`, imgBuffer);
+        const rawBuffer = Buffer.from(await imgRes.arrayBuffer());
+
+        // Optimize for LoRA training: 512×512 centre-crop + sharpen + JPEG
+        const optimized = await optimizeForTraining(rawBuffer);
+        totalOriginal += optimized.originalSizeBytes;
+        totalOptimized += optimized.optimizedSizeBytes;
+
+        zip.file(`photo_${i}.jpg`, optimized.buffer);
       } catch (imgErr) {
         logger.error(`Failed to fetch training image ${i}`, imgErr);
       }
+    }
+
+    if (totalOriginal > 0) {
+      const savedPct = ((1 - totalOptimized / totalOriginal) * 100).toFixed(0);
+      logger.info(
+        `[ai-generate] Training images optimized: ${(totalOriginal / 1024).toFixed(0)} KB → ${(totalOptimized / 1024).toFixed(0)} KB (${savedPct}% smaller)`
+      );
     }
 
     // Guard: ensure at least one image was added to the ZIP

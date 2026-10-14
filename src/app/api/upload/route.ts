@@ -6,6 +6,11 @@ import { getCategoryById, type CategoryId } from '@/config/categories';
 import { rateLimit } from '@/lib/rate-limit';
 import { csrfGuard } from '@/lib/security';
 import { logger } from '@/lib/logger';
+import {
+  validateImage,
+  optimizeForUpload,
+  createThumbnail,
+} from '@/lib/image-processing';
 
 export const maxDuration = 30;
 
@@ -131,18 +136,30 @@ export async function POST(request: NextRequest) {
     // Auth is already verified above via the user client
     const adminClient = createAdminClient();
     const uploadedPhotos: Array<{ id: string; fileName: string; storagePath: string }> = [];
+    let totalSavedBytes = 0;
 
     for (const file of files) {
-      const fileExt = file.name.split('.').pop() || 'jpg';
       const fileId = nanoid();
-      const storagePath = `${user.id}/${order.id}/${fileId}.${fileExt}`;
+      const rawBuffer = Buffer.from(await file.arrayBuffer());
 
-      const buffer = Buffer.from(await file.arrayBuffer());
+      // ── Step 1: Validate image quality ──────────────────────────
+      const validation = await validateImage(rawBuffer);
+      if (!validation.valid) {
+        return NextResponse.json(
+          { error: `"${file.name}": ${validation.reason}` },
+          { status: 400 }
+        );
+      }
+
+      // ── Step 2: Optimize — resize + convert to WebP ─────────────
+      const optimized = await optimizeForUpload(rawBuffer);
+      const storagePath = `${user.id}/${order.id}/${fileId}.webp`;
+      totalSavedBytes += optimized.originalSizeBytes - optimized.optimizedSizeBytes;
 
       const { error: uploadError } = await adminClient.storage
         .from('uploads')
-        .upload(storagePath, buffer, {
-          contentType: file.type,
+        .upload(storagePath, optimized.buffer, {
+          contentType: optimized.contentType,
           upsert: false,
         });
 
@@ -154,13 +171,29 @@ export async function POST(request: NextRequest) {
         );
       }
 
+      // ── Step 3: Generate thumbnail for gallery ──────────────────
+      const thumb = await createThumbnail(rawBuffer);
+      const thumbPath = `${user.id}/${order.id}/${fileId}_thumb.webp`;
+
+      const { error: thumbError } = await adminClient.storage
+        .from('uploads')
+        .upload(thumbPath, thumb.buffer, {
+          contentType: thumb.contentType,
+          upsert: false,
+        });
+
+      if (thumbError) {
+        // Non-critical — log and continue
+        logger.warn(`Thumbnail upload failed for ${file.name}:`, thumbError);
+      }
+
       const { data: photoRecord, error: insertError } = await supabase
         .from('uploaded_photos')
         .insert({
           order_id: order.id,
           original_filename: file.name,
-          file_size: file.size,
-          mime_type: file.type,
+          file_size: optimized.optimizedSizeBytes,
+          mime_type: optimized.contentType,
           storage_path: storagePath,
         })
         .select('id')
@@ -176,6 +209,12 @@ export async function POST(request: NextRequest) {
         fileName: file.name,
         storagePath,
       });
+    }
+
+    if (totalSavedBytes > 0) {
+      logger.info(
+        `[upload] Optimized ${files.length} images, saved ${(totalSavedBytes / 1024).toFixed(0)} KB`
+      );
     }
 
     // Update order status to 'uploading'
