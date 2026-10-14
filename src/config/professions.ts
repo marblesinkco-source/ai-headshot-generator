@@ -649,6 +649,426 @@ export const PROFESSIONS: ProfessionPage[] = [
     seoDescription:
       `Professional headshots for personal trainers and fitness coaches. Confident portraits for websites, Instagram and training platforms. From ${BASE_PRICE_DISPLAY}.`,
   },
+  {
+    slug: 'writers',
+    title: 'Headshots for Writers',
+    profession: 'Writers & Authors',
+    headline: 'AI Headshots for Writers & Authors',
+    subheadline:
+      'Your author photo appears on book jackets, publisher bios, and literary event programs. Get polished portraits that capture your voice before readers hear it.',
+    whyMatters:
+      'Readers connect with authors through their photos — a compelling author portrait on your book jacket, Amazon author page, and literary agent submissions adds credibility and memorability. Traditional author photo shoots are expensive and hard to schedule around writing deadlines. AI headshots deliver multiple polished options within hours.',
+    useCases: [
+      'Book jacket author photos',
+      'Amazon and Goodreads author pages',
+      'Literary agent query letters',
+      'Publisher and blog bios',
+      'Writing conference programs',
+    ],
+    recommendedStyles: ['studio-classic', 'natural-light', 'minimalist'],
+    seoTitle: 'AI Headshots for Writers & Authors | TailorPic',
+    seoDescription:
+      `Professional headshots for writers and authors. Compelling portraits for book jackets, Amazon author pages and literary bios. From ${BASE_PRICE_DISPLAY}.`,
+  },
+  {
+    slug: 'chiropractors',
+    title: 'Headshots for Chiropractors',
+    profession: 'Chiropractors',
+    headline: 'AI Headshots for Chiropractors',
+    subheadline:
+      'Patients choose chiropractors who look professional and trustworthy. Get approachable portraits for your practice website, Google Business Profile, and health directories.',
+    whyMatters:
+      'Chiropractic care requires hands-on trust. Patients research providers online before booking — a professional, friendly headshot on your clinic website, Google Business Profile, and insurance directories helps new patients feel confident choosing your practice. No need to step away from patient care for a studio session.',
+    useCases: [
+      'Chiropractic practice websites',
+      'Google Business Profile',
+      'Insurance and health directories',
+      'LinkedIn and professional networks',
+      'Patient education materials',
+    ],
+    recommendedStyles: ['natural-light', 'corporate', 'studio-classic'],
+    seoTitle: 'AI Headshots for Chiropractors | TailorPic',
+    seoDescription:
+      `Professional headshots for chiropractors. Trustworthy portraits for practice websites, Google Business and health directories. From ${BASE_PRICE_DISPLAY}.`,
+  },
+  {
+    slug: 'paralegals',
+    title: 'Headshots for Paralegals',
+    profession: 'Paralegals & Legal Assistants',
+    headline: 'AI Headshots for Paralegals & Legal Assistants',
+    subheadline:
+      'Present yourself professionally on your firm website, LinkedIn, and paralegal association profiles with polished, studio-quality portraits.',
+    whyMatters:
+      'Paralegals are essential members of legal teams and increasingly client-facing. A professional headshot on your firm bio, LinkedIn profile, and paralegal association listing demonstrates the same attention to detail you bring to case preparation. AI headshots make it easy to maintain a polished image without scheduling around case deadlines.',
+    useCases: [
+      'Law firm team pages',
+      'LinkedIn and professional networks',
+      'Paralegal association directories',
+      'Conference and CLE materials',
+      'Email signatures',
+    ],
+    recommendedStyles: ['corporate', 'professional-linkedin', 'studio-classic'],
+    seoTitle: 'AI Headshots for Paralegals & Legal Assistants | TailorPic',
+    seoDescription:
+      `Professional headshots for paralegals and legal assistants. Polished portraits for firm websites, LinkedIn and association directories. From ${BASE_PRICE_DISPLAY}.`,
+  },
+  {
+    slug: 'social-workers',
+    title: 'Headshots for Social Workers',
+    profession: 'Social Workers',
+    headline: 'AI Headshots for Social Workers',
+    subheadline:
+      'Clients and communities trust social workers who look approachable and compassionate. Get warm, professional portraits for your agency profile and LinkedIn.',
+    whyMatters:
+      'Social workers serve vulnerable populations who need to feel safe and supported. An approachable, professional headshot on your agency website, NASW profile, and LinkedIn builds trust before the first meeting. Affordable AI headshots respect the budget realities social workers face.',
+    useCases: [
+      'Agency and organization websites',
+      'NASW and licensing directories',
+      'LinkedIn and professional profiles',
+      'Grant and program materials',
+      'Community outreach resources',
+    ],
+    recommendedStyles: ['natural-light', 'casual', 'studio-classic'],
+    seoTitle: 'AI Headshots for Social Workers | TailorPic',
+    seoDescription:
+      `Professional headshots for social workers. Compassionate portraits for agency websites, NASW directories and LinkedIn. From ${BASE_PRICE_DISPLAY}.`,
+  },
+  {
+    slug: 'scientists',
+    title: 'Headshots for Scientists',
+    profession: 'Scientists & Researchers',
+    headline: 'AI Headshots for Scientists & Researchers',
+    subheadline:
+      'From journal publications to grant applications, get professional portraits that reflect your expertise and credibility in the scientific community.',
+    whyMatters:
+      'Your headshot appears on research papers, conference posters, grant applications, and institutional profiles. A polished photo elevates your professional presence beyond the standard lab snapshot. AI headshots let you focus on your research instead of scheduling photo sessions.',
+    useCases: [
+      'Research publication author photos',
+      'University and institute profiles',
+      'Grant and fellowship applications',
+      'Conference poster presentations',
+      'Google Scholar and ORCID profiles',
+    ],
+    recommendedStyles: ['studio-classic', 'corporate', 'minimalist'],
+    seoTitle: 'AI Headshots for Scientists & Researchers | TailorPic',
+    seoDescription:
+      `Professional headshots for scientists and researchers. Credible portraits for publications, institutional profiles and conferences. From ${BASE_PRICE_DISPLAY}.`,
+  },
+  {
+    slug: 'pilots',
+    title: 'Headshots for Pilots',
+    profession: 'Pilots & Aviation Professionals',
+    headline: 'AI Headshots for Pilots & Aviation Professionals',
+    subheadline:
+      'Project confidence and authority with professional portraits for airline profiles, aviation directories, and LinkedIn.',
+    whyMatters:
+      'Pilots represent trust, competence, and professionalism. Whether you are building your career with airlines, working in corporate aviation, or flight instructing, a sharp headshot on your LinkedIn, airline bio, and aviation association profile reinforces the confidence passengers and employers expect.',
+    useCases: [
+      'Airline and company profiles',
+      'LinkedIn and aviation networks',
+      'AOPA and pilot association directories',
+      'Flight school instructor bios',
+      'Conference and event materials',
+    ],
+    recommendedStyles: ['corporate', 'executive', 'studio-classic'],
+    seoTitle: 'AI Headshots for Pilots & Aviation Professionals | TailorPic',
+    seoDescription:
+      `Professional headshots for pilots and aviation professionals. Confident portraits for airline profiles, LinkedIn and aviation directories. From ${BASE_PRICE_DISPLAY}.`,
+  },
+  {
+    slug: 'chefs',
+    title: 'Headshots for Chefs',
+    profession: 'Chefs & Culinary Professionals',
+    headline: 'AI Headshots for Chefs & Culinary Professionals',
+    subheadline:
+      'Your headshot sets the tone for your restaurant, cookbook, or culinary brand. Get portraits that capture your creative energy and professionalism.',
+    whyMatters:
+      'Diners and food media want to see the face behind the food. A professional headshot on your restaurant website, cookbook author page, and social media builds your personal brand beyond the kitchen. AI headshots deliver polished results without pulling you away from service.',
+    useCases: [
+      'Restaurant and menu websites',
+      'Cookbook and recipe site author pages',
+      'Food media and press features',
+      'Social media and personal branding',
+      'Culinary event and competition bios',
+    ],
+    recommendedStyles: ['creative', 'natural-light', 'studio-classic'],
+    seoTitle: 'AI Headshots for Chefs & Culinary Professionals | TailorPic',
+    seoDescription:
+      `Professional headshots for chefs and culinary professionals. Creative portraits for restaurant websites, cookbooks and food media. From ${BASE_PRICE_DISPLAY}.`,
+  },
+  {
+    slug: 'interior-designers',
+    title: 'Headshots for Interior Designers',
+    profession: 'Interior Designers',
+    headline: 'AI Headshots for Interior Designers',
+    subheadline:
+      'Your design eye extends to your professional image. Get polished portraits for your portfolio site, Houzz profile, and design publication bios.',
+    whyMatters:
+      'Interior design clients hire someone whose aesthetic they trust — and your headshot is part of that first impression. A refined, visually appealing portrait on your website, Houzz, and social media signals the design sensibility clients are looking for. Multiple styles let you match your brand.',
+    useCases: [
+      'Design portfolio websites',
+      'Houzz and design platform profiles',
+      'ASID and trade association directories',
+      'Design publication and blog bios',
+      'Client proposals and presentations',
+    ],
+    recommendedStyles: ['minimalist', 'natural-light', 'creative'],
+    seoTitle: 'AI Headshots for Interior Designers | TailorPic',
+    seoDescription:
+      `Professional headshots for interior designers. Stylish portraits for portfolio sites, Houzz profiles and design publications. From ${BASE_PRICE_DISPLAY}.`,
+  },
+  {
+    slug: 'event-planners',
+    title: 'Headshots for Event Planners',
+    profession: 'Event Planners & Coordinators',
+    headline: 'AI Headshots for Event Planners',
+    subheadline:
+      'Clients trust planners who look organized and polished. Get professional portraits for your website, vendor listings, and social media profiles.',
+    whyMatters:
+      'Event planning is a people business — clients choose planners who project confidence, creativity, and professionalism. A polished headshot on your planning website, The Knot, WeddingWire, and social media helps potential clients envision working with you. AI headshots keep your image fresh without the time commitment of a studio session.',
+    useCases: [
+      'Event planning website',
+      'The Knot and WeddingWire profiles',
+      'Social media and marketing',
+      'Vendor partnership materials',
+      'Industry conference bios',
+    ],
+    recommendedStyles: ['natural-light', 'creative', 'professional-linkedin'],
+    seoTitle: 'AI Headshots for Event Planners | TailorPic',
+    seoDescription:
+      `Professional headshots for event planners and coordinators. Polished portraits for planning websites, vendor listings and social media. From ${BASE_PRICE_DISPLAY}.`,
+  },
+  {
+    slug: 'musicians',
+    title: 'Headshots for Musicians',
+    profession: 'Musicians & Performers',
+    headline: 'AI Headshots for Musicians & Performers',
+    subheadline:
+      'Your image sets the stage before the first note. Get versatile portraits for album art, booking profiles, and social media that capture your artistic identity.',
+    whyMatters:
+      'In the music industry, your visual identity is as important as your sound. A professional headshot that reflects your artistic style helps you stand out on streaming platforms, booking sites, and press kits. AI headshots let you explore different looks and moods without the cost of multiple photo shoots.',
+    useCases: [
+      'Streaming platform artist profiles',
+      'Booking and talent agency sites',
+      'Press kits and media materials',
+      'Social media and band websites',
+      'Festival and venue program bios',
+    ],
+    recommendedStyles: ['creative', 'studio-classic', 'glamour'],
+    seoTitle: 'AI Headshots for Musicians & Performers | TailorPic',
+    seoDescription:
+      `Professional headshots for musicians and performers. Artistic portraits for streaming profiles, press kits and booking sites. From ${BASE_PRICE_DISPLAY}.`,
+  },
+  {
+    slug: 'djs',
+    title: 'Headshots for DJs',
+    profession: 'DJs & Electronic Artists',
+    headline: 'AI Headshots for DJs & Electronic Artists',
+    subheadline:
+      'Your brand is your booking power. Get bold, professional portraits for event flyers, streaming profiles, and DJ platform listings.',
+    whyMatters:
+      'DJs compete for bookings based on brand recognition and visual presence. A professional headshot that captures your energy and style helps promoters, venues, and fans recognize you across platforms. AI headshots give you multiple looks for different contexts — from club flyers to professional LinkedIn profiles.',
+    useCases: [
+      'DJ booking platform profiles',
+      'Event flyers and promotional materials',
+      'SoundCloud and Mixcloud profiles',
+      'Social media and personal websites',
+      'Festival and venue lineups',
+    ],
+    recommendedStyles: ['creative', 'glamour', 'studio-classic'],
+    seoTitle: 'AI Headshots for DJs & Electronic Artists | TailorPic',
+    seoDescription:
+      `Professional headshots for DJs and electronic artists. Bold portraits for booking platforms, event flyers and streaming profiles. From ${BASE_PRICE_DISPLAY}.`,
+  },
+  {
+    slug: 'graphic-designers',
+    title: 'Headshots for Graphic Designers',
+    profession: 'Graphic Designers',
+    headline: 'AI Headshots for Graphic Designers',
+    subheadline:
+      'You design for others every day — now get a professional portrait that reflects your own creative brand for Dribbble, Behance, and client proposals.',
+    whyMatters:
+      'Graphic designers are judged by visual quality in everything — including their own headshot. A polished, design-forward portrait on your Dribbble, Behance, and portfolio site signals that you care about the details. AI headshots let you maintain a refined personal image without designing your own photo shoot.',
+    useCases: [
+      'Dribbble and Behance profiles',
+      'Design portfolio websites',
+      'Client proposals and pitch decks',
+      'AIGA and design association listings',
+      'LinkedIn and social media',
+    ],
+    recommendedStyles: ['minimalist', 'creative', 'startup-founder'],
+    seoTitle: 'AI Headshots for Graphic Designers | TailorPic',
+    seoDescription:
+      `Professional headshots for graphic designers. Design-forward portraits for Dribbble, Behance, portfolios and LinkedIn. From ${BASE_PRICE_DISPLAY}.`,
+  },
+  {
+    slug: 'data-scientists',
+    title: 'Headshots for Data Scientists',
+    profession: 'Data Scientists & Analysts',
+    headline: 'AI Headshots for Data Scientists',
+    subheadline:
+      'Stand out in tech with professional portraits for LinkedIn, conference talks, and your company profile — without the hassle of a studio session.',
+    whyMatters:
+      'Data science is a competitive field where personal branding matters for career growth, speaking opportunities, and thought leadership. A professional headshot on LinkedIn, Kaggle, conference programs, and your company bio helps you stand out among peers and attract the opportunities you want.',
+    useCases: [
+      'LinkedIn and professional networks',
+      'Kaggle and GitHub profiles',
+      'Conference and meetup speaker bios',
+      'Company team pages',
+      'Blog and publication author photos',
+    ],
+    recommendedStyles: ['minimalist', 'professional-linkedin', 'startup-founder'],
+    seoTitle: 'AI Headshots for Data Scientists | TailorPic',
+    seoDescription:
+      `Professional headshots for data scientists and analysts. Sharp portraits for LinkedIn, Kaggle, conferences and team pages. From ${BASE_PRICE_DISPLAY}.`,
+  },
+  {
+    slug: 'project-managers',
+    title: 'Headshots for Project Managers',
+    profession: 'Project Managers',
+    headline: 'AI Headshots for Project Managers',
+    subheadline:
+      'You keep teams aligned and stakeholders confident. Get professional portraits that reflect your leadership for LinkedIn, company pages, and PMI profiles.',
+    whyMatters:
+      'Project managers are the face of cross-functional initiatives and client relationships. A polished headshot on your LinkedIn, company bio, and PMI directory reinforces the professionalism and leadership you bring to every project. AI headshots fit easily into your already-packed schedule.',
+    useCases: [
+      'LinkedIn and professional networks',
+      'Company and team pages',
+      'PMI and PMP directory listings',
+      'Client-facing project materials',
+      'Conference and certification bios',
+    ],
+    recommendedStyles: ['professional-linkedin', 'corporate', 'natural-light'],
+    seoTitle: 'AI Headshots for Project Managers | TailorPic',
+    seoDescription:
+      `Professional headshots for project managers. Leadership-ready portraits for LinkedIn, company pages and PMI directories. From ${BASE_PRICE_DISPLAY}.`,
+  },
+  {
+    slug: 'physical-therapists',
+    title: 'Headshots for Physical Therapists',
+    profession: 'Physical Therapists',
+    headline: 'AI Headshots for Physical Therapists',
+    subheadline:
+      'Patients want a therapist who looks skilled and encouraging. Get professional portraits for your clinic website, insurance directories, and APTA profile.',
+    whyMatters:
+      'Physical therapy is hands-on and personal — patients choose providers who look competent and approachable. A professional headshot on your clinic website, insurance directories, and APTA profile helps patients feel confident about their recovery journey with you.',
+    useCases: [
+      'Physical therapy clinic websites',
+      'Insurance provider directories',
+      'APTA and state association profiles',
+      'LinkedIn and professional networks',
+      'Patient education materials',
+    ],
+    recommendedStyles: ['natural-light', 'corporate', 'casual'],
+    seoTitle: 'AI Headshots for Physical Therapists | TailorPic',
+    seoDescription:
+      `Professional headshots for physical therapists. Approachable portraits for clinic websites, insurance directories and APTA profiles. From ${BASE_PRICE_DISPLAY}.`,
+  },
+  {
+    slug: 'occupational-therapists',
+    title: 'Headshots for Occupational Therapists',
+    profession: 'Occupational Therapists',
+    headline: 'AI Headshots for Occupational Therapists',
+    subheadline:
+      'Help clients feel at ease before the first session with warm, professional portraits for your practice profile, AOTA directory, and LinkedIn.',
+    whyMatters:
+      'Occupational therapists work closely with clients on deeply personal goals. A warm, professional headshot on your practice website, AOTA profile, and referral network listings helps clients and families feel comfortable choosing you. AI headshots fit into your busy clinical schedule effortlessly.',
+    useCases: [
+      'OT practice and clinic websites',
+      'AOTA and state association directories',
+      'Insurance and referral network listings',
+      'LinkedIn and professional profiles',
+      'Continuing education materials',
+    ],
+    recommendedStyles: ['natural-light', 'casual', 'studio-classic'],
+    seoTitle: 'AI Headshots for Occupational Therapists | TailorPic',
+    seoDescription:
+      `Professional headshots for occupational therapists. Warm portraits for practice websites, AOTA directories and LinkedIn. From ${BASE_PRICE_DISPLAY}.`,
+  },
+  {
+    slug: 'speech-pathologists',
+    title: 'Headshots for Speech Pathologists',
+    profession: 'Speech-Language Pathologists',
+    headline: 'AI Headshots for Speech-Language Pathologists',
+    subheadline:
+      'Parents and patients seek SLPs who look caring and capable. Get professional portraits for your practice website, ASHA profile, and insurance directories.',
+    whyMatters:
+      'Speech-language pathology often involves working with children and families in vulnerable moments. An approachable, professional headshot on your practice site, ASHA directory, and school or hospital profile builds the trust families need to get started. AI headshots make updating your image quick and affordable.',
+    useCases: [
+      'SLP practice websites',
+      'ASHA directory and Find a Professional',
+      'School and hospital staff profiles',
+      'Insurance and referral directories',
+      'LinkedIn and professional networks',
+    ],
+    recommendedStyles: ['natural-light', 'casual', 'studio-classic'],
+    seoTitle: 'AI Headshots for Speech-Language Pathologists | TailorPic',
+    seoDescription:
+      `Professional headshots for speech-language pathologists. Caring portraits for practice websites, ASHA directories and school profiles. From ${BASE_PRICE_DISPLAY}.`,
+  },
+  {
+    slug: 'nutritionists',
+    title: 'Headshots for Nutritionists',
+    profession: 'Nutritionists & Dietitians',
+    headline: 'AI Headshots for Nutritionists & Dietitians',
+    subheadline:
+      'Clients want a nutrition expert who looks healthy, professional, and approachable. Get polished portraits for your practice website, directory listings, and social media.',
+    whyMatters:
+      'In nutrition and dietetics, your personal image is part of your credibility. Clients expect their nutritionist to embody the healthy lifestyle they promote. A professional headshot on your practice website, Academy of Nutrition and Dietetics profile, and social media channels builds trust and attracts new clients.',
+    useCases: [
+      'Nutrition practice websites',
+      'Academy of Nutrition and Dietetics listings',
+      'Social media and wellness blogs',
+      'LinkedIn and professional networks',
+      'Health coaching platforms',
+    ],
+    recommendedStyles: ['natural-light', 'casual', 'studio-classic'],
+    seoTitle: 'AI Headshots for Nutritionists & Dietitians | TailorPic',
+    seoDescription:
+      `Professional headshots for nutritionists and dietitians. Healthy, professional portraits for practice websites, directories and social media. From ${BASE_PRICE_DISPLAY}.`,
+  },
+  {
+    slug: 'loan-officers',
+    title: 'Headshots for Loan Officers',
+    profession: 'Loan Officers & Mortgage Professionals',
+    headline: 'AI Headshots for Loan Officers',
+    subheadline:
+      'Borrowers choose loan officers they trust with their biggest financial decision. Get professional portraits for your NMLS profile, company page, and marketing materials.',
+    whyMatters:
+      'Buying a home is the biggest financial decision most people make — they want a loan officer who looks trustworthy and knowledgeable. A professional headshot on your NMLS page, company website, and business cards builds credibility and helps you stand out in a competitive market.',
+    useCases: [
+      'NMLS and lender profiles',
+      'Company and branch websites',
+      'Business cards and mailers',
+      'LinkedIn and professional networks',
+      'Real estate partner materials',
+    ],
+    recommendedStyles: ['corporate', 'professional-linkedin', 'natural-light'],
+    seoTitle: 'AI Headshots for Loan Officers | TailorPic',
+    seoDescription:
+      `Professional headshots for loan officers and mortgage professionals. Trustworthy portraits for NMLS profiles, lender websites and marketing. From ${BASE_PRICE_DISPLAY}.`,
+  },
+  {
+    slug: 'court-reporters',
+    title: 'Headshots for Court Reporters',
+    profession: 'Court Reporters & Stenographers',
+    headline: 'AI Headshots for Court Reporters',
+    subheadline:
+      'Project professionalism and precision with polished portraits for your court reporting firm website, NCRA profile, and freelance directory listings.',
+    whyMatters:
+      'Court reporters are essential to the legal process, and your professional image matters when attorneys and firms choose their reporting services. A polished headshot on your firm website, NCRA directory, and freelance profile signals the same attention to detail you bring to every transcript.',
+    useCases: [
+      'Court reporting firm websites',
+      'NCRA and state association directories',
+      'Freelance reporter platforms',
+      'LinkedIn and professional networks',
+      'Legal conference materials',
+    ],
+    recommendedStyles: ['corporate', 'studio-classic', 'professional-linkedin'],
+    seoTitle: 'AI Headshots for Court Reporters | TailorPic',
+    seoDescription:
+      `Professional headshots for court reporters and stenographers. Precise portraits for firm websites, NCRA directories and freelance profiles. From ${BASE_PRICE_DISPLAY}.`,
+  },
 ];
 
 export function getProfessionBySlug(slug: string): ProfessionPage | undefined {

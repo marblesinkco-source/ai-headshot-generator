@@ -8,6 +8,7 @@ import { BACKGROUNDS, STYLES, QUALITY_SETTINGS } from '@/config/ai';
 import { Resend } from 'resend';
 import { siteConfig } from '@/config/site';
 import { buildPhotosReadyEmail, buildGenerationFailedEmail } from '@/lib/emails';
+import { scoreGeneratedImage } from '@/lib/image-processing';
 import { logger } from '@/lib/logger';
 
 export const maxDuration = 300;
@@ -474,6 +475,13 @@ async function handleGenerationComplete(
       try {
         const response = await fetch(outputUrl);
         const imageBuffer = Buffer.from(await response.arrayBuffer());
+
+        // Score generated image quality before uploading
+        const qualityScore = await scoreGeneratedImage(imageBuffer);
+        logger.info(
+          `[ai-webhook] Quality score for ${predictionId}: overall=${qualityScore.overall} (sharp=${qualityScore.sharpness} contrast=${qualityScore.contrast} color=${qualityScore.colorBalance} res=${qualityScore.resolution})`
+        );
+
         const storagePath = `${headshot.user_id}/${headshot.order_id}/generated/${headshot.id}.png`;
 
         const { error: uploadError } = await supabase.storage
@@ -496,6 +504,7 @@ async function handleGenerationComplete(
               status: 'completed',
               storage_path: storagePath,
               completed_at: new Date().toISOString(),
+              quality_score: qualityScore.overall,
             })
             .eq('id', headshot.id);
         }
