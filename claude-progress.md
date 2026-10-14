@@ -28,6 +28,25 @@
 - Commit: 1e8a4b06
 - Live site doğrulama: Chrome bağlı değil — CI+Vercel PASS ile doğrulandı
 
+3. **Fiyat Cache Düzeltmesi** ✅ (commit 0745bf03)
+   - Samples sayfası Vercel ISR cache'i nedeniyle $1.99 gösteriyordu ($6.99 yerine)
+   - 234 sunucu sayfaya `export const revalidate = 3600` eklendi
+   - 2 client component'tan (`auth/login`, `auth/register`) revalidate kaldırıldı
+   - CLAUDE.md §6 fiyat bilgisi güncellendi ($1.99 → $6.99, 199 → 699)
+   - Chrome ile doğrulandı: samples sayfası artık $6.99 gösteriyor
+
+### Chrome Live Site Doğrulama ✅
+- Homepage: $6.99 ✅
+- Photo Types dropdown: çalışıyor ✅
+- LinkedIn Photo Analyzer: çalışıyor ✅
+- Dashboard (10 sidebar öğesi + Edit Photos): çalışıyor ✅
+- My Gallery: çalışıyor ✅
+- Order detail: çalışıyor ✅
+- Editor: çalışıyor ✅
+- Pricing: $6.99 doğru, tüm paketler doğru ✅
+- How It Works: çalışıyor ✅
+- Samples: $6.99 doğru ✅ (cache sorunu düzeltildi)
+
 ### Bekleyen
 - DB Migration'ları hâlâ bekliyor (SUPABASE_DB_URL secret gerekli)
 - Faz 4 gelecek öğeleri: Flux 2.0, Video Avatar, Seedream/Ideogram
