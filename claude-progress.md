@@ -53,7 +53,18 @@
    - `src/database/migrations/` — tüm dosyalar baseline olarak kaydedildi
    - `gh workflow run db-migrate.yml` artık çalışıyor
 
+5. **Rakip Analizi & Tutarsızlık Düzeltmesi** ✅ (commit fdfb39ce)
+   - HeadshotPro, Aragon AI, BetterPic detaylı karşılaştırma
+   - Eksik özellikler: Trustpilot, kullanıcı sayısı, testimonial, kurumsal logolar, para iade garantisi
+   - Güçlü yönler: $6.99 giriş fiyatı, 12 kategori, instant preview, before/after slider
+   - Stüdyo fiyatı tutarsızlığı düzeltildi: hero.tsx ve pricing.tsx'de $250–$500 → $150–$500+
+   - Detaylı analiz dokümanı: Claude Docs'ta "TailorPic Rakip Analizi"
+
 ### Bekleyen
+- Trustpilot hesabı açma ve badge entegrasyonu (owner aksiyonu)
+- Gerçek kullanıcı sayısı gösterimi (Supabase'den çekilecek)
+- Para iade politikası netleştirme (owner kararı)
+- B2B social proof (müşteri izniyle logo ve testimonial)
 - Faz 4 gelecek öğeleri: Flux 2.0, Video Avatar, Seedream/Ideogram
 
 ---
