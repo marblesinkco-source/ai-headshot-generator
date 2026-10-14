@@ -9,6 +9,9 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import {
+
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
   ShieldCheck,
   RefreshCcw,
   Sparkles,

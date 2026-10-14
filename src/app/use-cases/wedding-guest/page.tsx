@@ -14,6 +14,9 @@ import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedUseCases } from '@/lib/internal-links';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const pageTitle = "AI Photos for Wedding & Event Guests | TailorPic";
 const pageDescription =
   `Polished AI portraits for wedding guests, events and celebrations. Get flattering, dressed-up photos from a few selfies within hours. Starting at ${BASE_PRICE_DISPLAY}.`;

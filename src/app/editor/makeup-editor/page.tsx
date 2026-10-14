@@ -9,6 +9,9 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const title = 'AI Makeup Editor: Natural Makeup for Headshots | TailorPic';
 const description =
   'See how TailorPic\'s AI adds natural-looking professional makeup to your headshots, with even skin, defined eyes and soft color that still looks like you.';

@@ -11,6 +11,9 @@ import { cn } from '@/lib/utils';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const title = 'Free Image Format Converter: HEIC, WebP, PNG to JPG | TailorPic';
 const description =
   'Convert photos between HEIC, WebP, PNG, BMP and JPG formats instantly in your browser. Adjust quality, preserve resolution. No upload, no signup.';

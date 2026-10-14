@@ -19,6 +19,9 @@ import {
 } from 'lucide-react';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const pageTitle = 'How Professionals Use AI Headshots | TailorPic';
 const pageDescription = `See how professionals use ${siteConfig.name} for headshots, team photos, LinkedIn profiles and more. Use cases across industries.`;
 

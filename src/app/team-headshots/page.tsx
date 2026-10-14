@@ -18,6 +18,9 @@ const TeamCalculator = dynamic(
 );
 
 import {
+
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
   Users, Sparkles, ArrowRight, CheckCircle, Palette,
   Download, LayoutDashboard, Image, Camera, Send,
   Laptop, Scale, Building2, Stethoscope, GraduationCap, Landmark,

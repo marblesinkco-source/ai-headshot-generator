@@ -11,6 +11,9 @@ import { cn } from '@/lib/utils';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const title = 'Free LinkedIn Profile Photo Checker | TailorPic';
 const description =
   'Check if your LinkedIn profile photo meets recommended standards. Get instant feedback on dimensions, aspect ratio, brightness, and composition. Free and runs in your browser.';

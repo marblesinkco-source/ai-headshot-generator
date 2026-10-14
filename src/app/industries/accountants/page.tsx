@@ -15,6 +15,9 @@ import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 import { ContentPhoto } from '@/components/marketing/content-photo';
+
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
 export const metadata: Metadata = {
   title: { absolute: 'AI Headshots for Accountants & CPAs | TailorPic' },
   description:

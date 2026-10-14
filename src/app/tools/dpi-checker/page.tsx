@@ -11,6 +11,9 @@ import { cn } from '@/lib/utils';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const title = 'Free Image DPI Checker & Print Size Calculator | TailorPic';
 const description =
   "Check your photo's DPI, see its print dimensions at any resolution, and find out if it's sharp enough for print. Everything runs in your browser.";

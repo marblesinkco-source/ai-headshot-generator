@@ -14,6 +14,9 @@ import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedUseCases } from '@/lib/internal-links';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const pageTitle = "AI Headshots for Speaking Engagements | TailorPic";
 const pageDescription =
   `Professional speaker headshots for event pages, programs, and promo graphics. Get polished portraits from a few selfies within hours. Starting at ${BASE_PRICE_DISPLAY}.`;

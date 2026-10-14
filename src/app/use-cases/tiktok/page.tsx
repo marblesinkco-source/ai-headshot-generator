@@ -14,6 +14,9 @@ import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedUseCases } from '@/lib/internal-links';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const pageTitle = 'AI Photos for TikTok Profiles & Thumbnails | TailorPic';
 const pageDescription =
   `Create eye-catching TikTok profile photos and video thumbnails from a few selfies. AI-generated portraits that help you grow your audience. Starting at ${BASE_PRICE_DISPLAY}.`;

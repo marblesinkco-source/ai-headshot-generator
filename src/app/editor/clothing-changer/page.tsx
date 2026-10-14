@@ -21,6 +21,9 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const title = 'AI Clothing Changer for Professional Headshots | TailorPic';
 const description =
   'See how TailorPic\'s AI dresses you in suits, blazers and business-casual outfits that fit your industry, so your headshot looks professional.';

@@ -11,6 +11,9 @@ import { cn } from '@/lib/utils';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const title = 'Free Photo Background Blur Tool | TailorPic';
 const description =
   'Blur the background of any photo while keeping your subject sharp. Adjust blur intensity and focus area. Free and runs in your browser.';

@@ -9,6 +9,9 @@ import { ContactForm } from '@/components/marketing/contact-form';
 import { Mail, Clock, Building2, Lock, MailX, ShieldCheck, ArrowRight } from 'lucide-react';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: { absolute: 'Contact TailorPic: Sales, Support, Press & Partnerships' },
   description: `Contact ${siteConfig.name} for pre-sales questions, order support, team and enterprise pricing, press, or partnerships. We aim to respond within 1 business day.`,

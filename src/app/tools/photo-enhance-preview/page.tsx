@@ -10,6 +10,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const PhotoEnhancePreview = dynamic(() => import('@/components/tools/photo-enhance-preview'), {
   ssr: false,
   loading: () => (

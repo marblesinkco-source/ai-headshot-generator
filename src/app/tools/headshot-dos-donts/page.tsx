@@ -10,6 +10,9 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { CheckCircle2, XCircle, Camera, Sun, Shirt, Image as ImageIcon, Smile, ArrowRight } from 'lucide-react';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const title = 'Headshot Dos & Don\'ts — The Complete Guide | TailorPic';
 const description =
   'Learn what makes a great professional headshot and what to avoid. Visual examples of lighting, framing, background, expression and attire for the perfect photo.';

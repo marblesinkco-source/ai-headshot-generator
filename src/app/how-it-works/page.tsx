@@ -14,6 +14,9 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 const StickyCTA = dynamic(() => import('@/components/marketing/sticky-cta').then(m => ({ default: m.StickyCTA })), { ssr: false });
 
 import {
+
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
   Upload,
   Sparkles,
   Download,

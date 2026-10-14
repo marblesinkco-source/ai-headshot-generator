@@ -9,6 +9,9 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const title = 'AI Image Unblur — Sharpen Blurry Photos | TailorPic';
 const description =
   'Blurry or out-of-focus selfies? See how TailorPic\'s AI turns soft, low-quality photos into sharp, professional headshots with clear detail.';

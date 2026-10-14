@@ -14,6 +14,9 @@ import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedUseCases } from '@/lib/internal-links';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const pageTitle = "AI Headshots for Podcast Guest Bios | TailorPic";
 const pageDescription =
   `Professional headshots for podcast guest bios and show notes. Get polished portraits from a few selfies, delivered within hours. Starting at ${BASE_PRICE_DISPLAY}.`;

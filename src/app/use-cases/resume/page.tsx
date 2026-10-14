@@ -26,6 +26,9 @@ import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedUseCases } from '@/lib/internal-links';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const pageTitle = 'AI Headshots for Resumes & CVs | TailorPic';
 const pageDescription =
   `Create a professional resume and CV photo from a few selfies. AI headshots tailored for job applications, portfolios, and LinkedIn. Starting at ${BASE_PRICE_DISPLAY}.`;

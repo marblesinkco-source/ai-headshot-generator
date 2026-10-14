@@ -14,6 +14,9 @@ import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedUseCases } from '@/lib/internal-links';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const pageTitle = 'AI Profile Photos for Social Media | TailorPic';
 const pageDescription =
   `Create stunning profile photos for Instagram, Twitter, Facebook, TikTok, and other social media platforms. AI-generated photos that stop the scroll. From ${BASE_PRICE_DISPLAY}.`;

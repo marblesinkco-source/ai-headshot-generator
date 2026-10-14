@@ -14,6 +14,9 @@ import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedUseCases } from '@/lib/internal-links';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const pageTitle = 'AI Photos for Instagram Profile & Feed | TailorPic';
 const pageDescription =
   `Create scroll-stopping Instagram photos from a few selfies. AI profile pictures and feed-worthy portraits that elevate your personal brand. From ${BASE_PRICE_DISPLAY}.`;

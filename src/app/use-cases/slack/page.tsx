@@ -14,6 +14,9 @@ import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedUseCases } from '@/lib/internal-links';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const pageTitle = 'AI Profile Photos for Slack & Teams | TailorPic';
 const pageDescription =
   `Get a polished profile photo for Slack and Microsoft Teams from a few selfies. Workspace headshots that look professional in every channel and call. From ${BASE_PRICE_DISPLAY}.`;

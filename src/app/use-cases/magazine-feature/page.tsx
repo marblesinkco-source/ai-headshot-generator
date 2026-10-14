@@ -14,6 +14,9 @@ import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedUseCases } from '@/lib/internal-links';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const pageTitle = "AI Headshots for Magazine Features | TailorPic";
 const pageDescription =
   `Polished portraits for magazine features, author bylines and contributor profiles. Get editorial-ready photos from a few selfies. Starting at ${BASE_PRICE_DISPLAY}.`;

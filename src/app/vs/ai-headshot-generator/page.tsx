@@ -12,6 +12,9 @@ import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedVsPages } from '@/lib/internal-links';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const competitor = "AI Headshot Generator";
 const title = 'TailorPic vs Generic AI Headshot Generators: Guide';
 const description =

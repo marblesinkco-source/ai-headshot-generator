@@ -14,6 +14,9 @@ import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedUseCases } from '@/lib/internal-links';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const pageTitle = "AI Headshots for Mentorship Profiles | TailorPic";
 const pageDescription =
   `Friendly, professional photos for mentor and mentee profiles on mentorship platforms. Get approachable portraits from a few selfies. Starting at ${BASE_PRICE_DISPLAY}.`;

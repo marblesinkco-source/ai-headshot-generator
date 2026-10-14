@@ -14,6 +14,9 @@ import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedUseCases } from '@/lib/internal-links';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const pageTitle = 'AI Photos for Dating Apps: Tinder, Hinge, Bumble | TailorPic';
 const pageDescription =
   `Get natural, flattering photos for dating apps like Tinder, Hinge and Bumble. AI-enhanced profile pictures that look like you on your best day. From ${BASE_PRICE_DISPLAY}.`;

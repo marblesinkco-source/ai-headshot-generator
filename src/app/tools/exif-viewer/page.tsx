@@ -11,6 +11,9 @@ import { cn } from '@/lib/utils';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const title = 'Free Photo EXIF Data Viewer & Remover | TailorPic';
 const description =
   "View your photo's hidden metadata — camera, date, GPS location — and download a clean copy with all data stripped. Runs in your browser, nothing is uploaded.";

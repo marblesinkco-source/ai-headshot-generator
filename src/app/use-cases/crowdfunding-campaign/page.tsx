@@ -14,6 +14,9 @@ import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedUseCases } from '@/lib/internal-links';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const pageTitle = "AI Headshots for Crowdfunding Campaigns | TailorPic";
 const pageDescription =
   `Professional founder photos for Kickstarter, Indiegogo and GoFundMe campaign pages. Build backer trust with polished portraits from a few selfies. From ${BASE_PRICE_DISPLAY}.`;

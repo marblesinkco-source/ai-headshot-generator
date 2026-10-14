@@ -9,6 +9,9 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const title = 'AI Photo Restoration: Fix Old & Damaged Photos | TailorPic';
 const description =
   'Old, scratched or faded photos? See how TailorPic\'s AI uses them as reference to create fresh, high-quality professional headshots of you.';

@@ -74,9 +74,9 @@ Optional, owner-side, makes everything direct: in the Claude Code environment's 
 ## 6. Pricing facts (keep every surface consistent)
 
 Headshots ladder in `src/config/categories.ts` (order matters — some pages index it):
-`TailorPic 1` $1.99/1 photo (`headshots-tailorpic1`) → `Lite` $9.90/5 (`headshots-lite`) → `Basic` $19.90/10 (`headshots-express` — ID kept for DB compatibility) → `Starter` $29.90/40 → `Professional` $49.90/80 (recommended) → `Executive` $89.90/160.
-- `BASE_PRICE_CENTS` in `src/config/pricing.ts` must equal the cheapest headshots package (199). `BASE_PRICE_DISPLAY` is the site-wide "from $1.99".
-- `$1.99` buys ONE photo: never pair it with "40+ photos" or call it a flat/single price; say "from $1.99" and "up to 160 photos".
+`TailorPic 1` $6.99/1 photo (`headshots-tailorpic1`) → `Lite` $9.90/5 (`headshots-lite`) → `Basic` $19.90/10 (`headshots-express` — ID kept for DB compatibility) → `Starter` $29.90/40 → `Professional` $49.90/80 (recommended) → `Executive` $89.90/160.
+- `BASE_PRICE_CENTS` in `src/config/pricing.ts` must equal the cheapest headshots package (699). `BASE_PRICE_DISPLAY` is the site-wide "from $6.99".
+- `$6.99` buys ONE photo: never pair it with "40+ photos" or call it a flat/single price; say "from $6.99" and "up to 160 photos".
 - Team pricing: `TEAM_PRICES` ($39/person 5–15, $29/person 16–50).
 - Entry-tier detection in UI is "cheapest package in the category", not `name === 'Express'`.
 

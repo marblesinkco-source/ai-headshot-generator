@@ -11,6 +11,9 @@ import { cn } from '@/lib/utils';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const title = 'Free Batch Photo Resizer — Resize Multiple Photos at Once | TailorPic';
 const description =
   'Resize multiple photos at once with platform presets for LinkedIn, Instagram, Facebook, and more. Download individually or as a ZIP. Free and runs in your browser.';

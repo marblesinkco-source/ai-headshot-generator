@@ -7,6 +7,9 @@ import { BASE_PRICE_DISPLAY, TEAM_PRICES } from '@/config/pricing';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
+
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
   ArrowRight,
   Mail,
   Palette,

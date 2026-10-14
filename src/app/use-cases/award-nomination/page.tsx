@@ -14,6 +14,9 @@ import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedUseCases } from '@/lib/internal-links';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const pageTitle = "AI Headshots for Award Nominations | TailorPic";
 const pageDescription =
   `Professional nominee photos for award submissions, finalist pages and ceremony programs. Get polished portraits from a few selfies. Starting at ${BASE_PRICE_DISPLAY}.`;

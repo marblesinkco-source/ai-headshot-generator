@@ -14,6 +14,9 @@ import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedUseCases } from '@/lib/internal-links';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const pageTitle = 'AI Headshots for Email Signatures | TailorPic';
 const pageDescription =
   `Add a face to every email you send. AI-generated professional headshots sized for Gmail, Outlook, and Apple Mail signatures. Starting at ${BASE_PRICE_DISPLAY}.`;

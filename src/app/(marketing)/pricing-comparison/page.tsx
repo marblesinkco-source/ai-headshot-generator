@@ -10,6 +10,9 @@ import { siteConfig } from '@/config/site';
 import { CATEGORIES, type CategoryPackage } from '@/config/categories';
 import { BASE_PRICE_DISPLAY, TEAM_PRICES } from '@/config/pricing';
 import {
+
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
   Clock,
   Camera,
   CheckCircle2,

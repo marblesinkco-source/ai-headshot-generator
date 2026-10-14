@@ -9,6 +9,9 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { Palette, Sun, Maximize2, ArrowRight, Shirt, Eye, History, Eraser, Sparkles, ScanFace, Scissors, Smile, Move, Pipette, Glasses, Heart, Clock } from 'lucide-react';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const title = 'AI Photo Editor: Professional Headshot Editing Tools';
 const description =
   'Explore TailorPic\'s 21 AI photo editing tools, from background changer and clothing changer to skin smoother, pose editor and crop & resize.';

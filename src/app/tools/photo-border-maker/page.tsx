@@ -11,6 +11,9 @@ import { cn } from '@/lib/utils';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const title = 'Free Photo Border & Frame Maker | TailorPic';
 const description =
   'Add professional borders and frames to your photos. Choose from 8 preset styles or customize your own. Free and runs in your browser.';

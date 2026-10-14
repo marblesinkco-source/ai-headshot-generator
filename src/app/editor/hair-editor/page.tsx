@@ -22,6 +22,9 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const title = 'AI Hair Editor — Change Hair Style & Color | TailorPic';
 const description =
   'See how TailorPic\'s AI handles hairstyle, hair color, volume and flyaways so your professional headshots look neat and natural.';

@@ -14,6 +14,9 @@ import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedUseCases } from '@/lib/internal-links';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const pageTitle = "AI Headshots for Company Intranets | TailorPic";
 const pageDescription =
   `Consistent professional headshots for company intranets and employee directories. Get polished portraits from selfies within hours. Starting at ${BASE_PRICE_DISPLAY}.`;

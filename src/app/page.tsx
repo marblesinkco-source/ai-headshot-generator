@@ -9,6 +9,9 @@ import { Footer } from '@/components/marketing/footer';
 import { WebsiteSchema, FAQSchema, SoftwareApplicationSchema, HowToSchema } from '@/components/structured-data';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: { absolute: `AI Headshots From Your Selfies | TailorPic — From ${BASE_PRICE_DISPLAY}` },
   description:

@@ -14,6 +14,9 @@ import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedUseCases } from '@/lib/internal-links';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const pageTitle = "AI Headshots for Podcast Cover Art | TailorPic";
 const pageDescription =
   `Professional host photos for podcast cover art on Spotify and Apple Podcasts. Get polished portraits from a few selfies. Starting at ${BASE_PRICE_DISPLAY}.`;

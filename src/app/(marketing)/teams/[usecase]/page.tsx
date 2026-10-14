@@ -11,6 +11,9 @@ import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BASE_PRICE_DISPLAY, TEAM_PRICES } from '@/config/pricing';
 import {
+
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
   TEAM_USE_CASES,
   getAllTeamUseCaseSlugs,
   getTeamUseCaseBySlug,

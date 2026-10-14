@@ -23,6 +23,9 @@ import { PAYMENT_PROVIDER, BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const PAGE_TITLE = 'Trust Center: Security & Privacy | TailorPic';
 const PAGE_DESC =
   'How TailorPic handles your photos: purpose-limited use, encrypted transfers, automatic deletion of training data, and no selling of your data.';

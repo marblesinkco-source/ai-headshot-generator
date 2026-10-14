@@ -11,6 +11,9 @@ import { cn } from '@/lib/utils';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const title = 'Free Circle Photo Cropper | Round Profile Picture Maker | TailorPic';
 const description =
   'Crop your photo into a perfect circle with transparent or solid background. Choose your size, zoom and position, then download as PNG. No upload needed.';

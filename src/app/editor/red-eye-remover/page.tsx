@@ -9,6 +9,9 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const title = 'AI Red Eye Remover — Fix Flash Glare in Photos | TailorPic';
 const description =
   'See how TailorPic\'s AI removes red-eye and flash glare from your photos, restoring natural eye color so your professional headshot looks sharp and alive.';

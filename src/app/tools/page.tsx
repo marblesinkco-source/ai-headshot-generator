@@ -9,6 +9,9 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: { absolute: 'Free AI Photo Tools: Background Remover, Resizer & More' },
   description:

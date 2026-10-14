@@ -14,6 +14,9 @@ import { BASE_PRICE_DISPLAY, TEAM_PRICE_LARGE_DISPLAY } from '@/config/pricing';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
 export const metadata: Metadata = {
   title: { absolute: 'AI Headshots for Lawyers & Law Firms | TailorPic' },
   description:

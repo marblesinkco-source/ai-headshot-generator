@@ -9,6 +9,9 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { FreeTrialIllustration } from '@/components/marketing/illustrations';
 import {
+
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
   Camera,
   Sparkles,
   Clock,

@@ -11,6 +11,9 @@ import { cn } from '@/lib/utils';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const title = 'Free Image Watermark & Text Overlay Maker | TailorPic';
 const description =
   'Add custom text watermarks to your photos. Choose font, size, color, opacity and position. Single or tiled pattern. Everything runs in your browser.';

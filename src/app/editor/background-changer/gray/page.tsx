@@ -9,6 +9,9 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const title = 'Gray Background Headshots — Classic & Versatile | TailorPic';
 const description =
   'Get AI headshots on a neutral gray background, the classic studio backdrop that works for nearly every profession, platform and skin tone.';

@@ -14,6 +14,9 @@ import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedUseCases } from '@/lib/internal-links';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const pageTitle = 'AI Headshots for Annual Reports & Documents | TailorPic';
 const pageDescription =
   `Consistent executive and board headshots for annual reports, investor decks and corporate documents. Delivered within hours. Starting at ${BASE_PRICE_DISPLAY}.`;

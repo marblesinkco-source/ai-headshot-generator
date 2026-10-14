@@ -19,6 +19,9 @@ import { GuaranteeSection } from '@/components/marketing/guarantee-section';
 import { TrustBadgesInline } from '@/components/marketing/trust-badges-inline';
 import dynamic from 'next/dynamic';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 // Below-the-fold client components: lazy load for performance
 const PricingViewToggle = dynamic(
   () => import('@/components/marketing/pricing-view-toggle').then((m) => m.PricingViewToggle)

@@ -9,6 +9,9 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const title = 'Pink Background Headshots — Fresh & Modern | TailorPic';
 const description =
   'Get AI headshots on a vibrant pink background. Ideal for beauty brands, influencers and creatives who want a fresh, modern look without a photographer.';

@@ -14,6 +14,9 @@ import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedUseCases } from '@/lib/internal-links';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const pageTitle = 'AI Photos for YouTube Channels & Avatars | TailorPic';
 const pageDescription =
   `Build a recognizable YouTube brand with AI-generated creator photos: channel avatars, banner portraits and thumbnail-ready faces from a few selfies. From ${BASE_PRICE_DISPLAY}.`;

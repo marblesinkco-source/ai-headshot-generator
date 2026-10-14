@@ -14,6 +14,9 @@ import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedUseCases } from '@/lib/internal-links';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const pageTitle = "AI Headshots for Website Team Pages | TailorPic";
 const pageDescription =
   `Consistent, professional headshots for your About Us and Team page. Every team member from a few selfies, matching style and background. Starting at ${BASE_PRICE_DISPLAY}.`;

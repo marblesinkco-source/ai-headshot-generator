@@ -14,6 +14,9 @@ import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedUseCases } from '@/lib/internal-links';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const pageTitle = "AI Headshots for Event Badges | TailorPic";
 const pageDescription =
   `Professional photos for event badges, lanyards and attendee apps. Get polished portraits from a few selfies, delivered within hours. Starting at ${BASE_PRICE_DISPLAY}.`;

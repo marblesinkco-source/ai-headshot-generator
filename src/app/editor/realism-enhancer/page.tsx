@@ -22,6 +22,9 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
+// Revalidate every hour so pricing changes propagate without a manual redeploy
+export const revalidate = 3600;
+
 const title = 'AI Realism Enhancer — Natural-Looking AI Photos | TailorPic';
 const description =
   'See how TailorPic\'s AI produces natural, photorealistic headshots with real skin texture, believable detail and no plastic AI look.';
