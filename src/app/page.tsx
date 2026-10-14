@@ -69,6 +69,10 @@ const BeforeAfterShowcase = dynamic(
   () => import('@/components/marketing/before-after-showcase').then((m) => m.BeforeAfterShowcase),
   { loading: () => <SectionSkeleton height="h-[600px] md:h-[500px]" /> }
 );
+const InstantPreviewDemo = dynamic(
+  () => import('@/components/marketing/instant-preview-demo').then((m) => m.InstantPreviewDemo),
+  { loading: () => <SectionSkeleton height="h-[700px] md:h-[600px]" /> }
+);
 const AnimatedStats = dynamic(
   () => import('@/components/marketing/animated-stats').then((m) => m.AnimatedStats),
   { loading: () => <SectionSkeleton height="h-[200px]" /> }
@@ -99,6 +103,9 @@ export default function LandingPage() {
 
       {/* Before / After Showcase */}
       <BeforeAfterShowcase />
+
+      {/* Instant Preview — AI headshot demo */}
+      <InstantPreviewDemo />
 
       {/* How It Works — animated demo */}
       <AIProcessDemo />

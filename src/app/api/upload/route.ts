@@ -10,6 +10,7 @@ import {
   validateImage,
   optimizeForUpload,
   createThumbnail,
+  assessUploadQuality,
 } from '@/lib/image-processing';
 
 export const maxDuration = 30;
@@ -135,7 +136,14 @@ export async function POST(request: NextRequest) {
     // Upload files to storage using admin client (bypasses storage RLS)
     // Auth is already verified above via the user client
     const adminClient = createAdminClient();
-    const uploadedPhotos: Array<{ id: string; fileName: string; storagePath: string }> = [];
+    const uploadedPhotos: Array<{
+      id: string;
+      fileName: string;
+      storagePath: string;
+      qualityScore?: number;
+      qualityPassed?: boolean;
+      qualitySuggestions?: string[];
+    }> = [];
     let totalSavedBytes = 0;
 
     for (const file of files) {
@@ -148,6 +156,14 @@ export async function POST(request: NextRequest) {
         return NextResponse.json(
           { error: `"${file.name}": ${validation.reason}` },
           { status: 400 }
+        );
+      }
+
+      // ── Step 1b: Assess upload quality for AI training ──────────
+      const qualityResult = await assessUploadQuality(rawBuffer);
+      if (!qualityResult.passed) {
+        logger.info(
+          `[upload] Quality warning for "${file.name}": score=${qualityResult.score} — ${qualityResult.suggestions.join('; ')}`
         );
       }
 
@@ -208,6 +224,9 @@ export async function POST(request: NextRequest) {
         id: photoRecord.id,
         fileName: file.name,
         storagePath,
+        qualityScore: qualityResult.score,
+        qualityPassed: qualityResult.passed,
+        qualitySuggestions: qualityResult.passed ? undefined : qualityResult.suggestions,
       });
     }
 
@@ -236,11 +255,23 @@ export async function POST(request: NextRequest) {
     const minRequired = category?.minPhotos || DEFAULT_MIN_PHOTOS;
     const ready = (newTotalCount || 0) >= minRequired;
 
+    // Compute aggregate quality info for the response
+    const qualityWarnings = uploadedPhotos.filter((p) => p.qualityPassed === false);
+
     return NextResponse.json({
       uploaded: uploadedPhotos.length,
       totalPhotos: newTotalCount || 0,
       minRequired,
       ready,
+      quality: {
+        scores: uploadedPhotos.map((p) => ({
+          fileName: p.fileName,
+          score: p.qualityScore,
+          passed: p.qualityPassed,
+          suggestions: p.qualitySuggestions,
+        })),
+        lowQualityCount: qualityWarnings.length,
+      },
     });
   } catch (error) {
     logger.error('Upload error:', error);

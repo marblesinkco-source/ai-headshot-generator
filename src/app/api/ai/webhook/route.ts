@@ -9,6 +9,7 @@ import { Resend } from 'resend';
 import { siteConfig } from '@/config/site';
 import { buildPhotosReadyEmail, buildGenerationFailedEmail } from '@/lib/emails';
 import { scoreGeneratedImage } from '@/lib/image-processing';
+import { restoreFaceWithCodeFormer, FACE_RESTORATION_THRESHOLD } from '@/lib/face-restoration';
 import { logger } from '@/lib/logger';
 
 export const maxDuration = 300;
@@ -482,11 +483,31 @@ async function handleGenerationComplete(
           `[ai-webhook] Quality score for ${predictionId}: overall=${qualityScore.overall} (sharp=${qualityScore.sharpness} contrast=${qualityScore.contrast} color=${qualityScore.colorBalance} res=${qualityScore.resolution})`
         );
 
+        // Apply CodeFormer face restoration if quality is below threshold
+        let finalImageBuffer = imageBuffer;
+        let wasRestored = false;
+
+        if (qualityScore.overall < FACE_RESTORATION_THRESHOLD) {
+          logger.info(
+            `[ai-webhook] Quality ${qualityScore.overall} < ${FACE_RESTORATION_THRESHOLD} — applying CodeFormer face restoration`
+          );
+          const restoration = await restoreFaceWithCodeFormer(outputUrl);
+          if (restoration.restored && restoration.restoredBuffer) {
+            finalImageBuffer = restoration.restoredBuffer;
+            wasRestored = true;
+            logger.info(`[ai-webhook] Face restoration applied for ${predictionId}`);
+          } else {
+            logger.warn(
+              `[ai-webhook] Face restoration failed for ${predictionId}: ${restoration.error} — using original`
+            );
+          }
+        }
+
         const storagePath = `${headshot.user_id}/${headshot.order_id}/generated/${headshot.id}.png`;
 
         const { error: uploadError } = await supabase.storage
           .from('headshots')
-          .upload(storagePath, imageBuffer, {
+          .upload(storagePath, finalImageBuffer, {
             contentType: 'image/png',
             upsert: true,
           });
@@ -505,6 +526,7 @@ async function handleGenerationComplete(
               storage_path: storagePath,
               completed_at: new Date().toISOString(),
               quality_score: qualityScore.overall,
+              face_restored: wasRestored,
             })
             .eq('id', headshot.id);
         }
