@@ -70,7 +70,7 @@ const useCases = {
 
 const faqs = [
   { question: "Is TailorPic a good HeadPix alternative?", answer: `If you want lower upfront cost and more categories, yes. TailorPic packages start from ${BASE_PRICE_DISPLAY} and span 12 categories.` },
-  { question: "Does TailorPic offer a refund?", answer: "Yes, there is a quality commitment." },
+  { question: "What is TailorPic's quality commitment?", answer: "TailorPic offers free regeneration within your package if you are not satisfied. Monetary refunds are not available once processing begins. See our refund policy for details." },
   { question: "How long does delivery take?", answer: "Results within hours for most orders, after your photos are processed." },
   { question: "Are the photos suitable for LinkedIn?", answer: "Yes. The business category is designed for LinkedIn, resumes and company pages." },
   { question: "Do I need to subscribe?", answer: `No. Every package is a single one-time payment (from ${BASE_PRICE_DISPLAY}).` },

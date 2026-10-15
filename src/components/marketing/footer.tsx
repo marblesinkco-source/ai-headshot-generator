@@ -16,7 +16,7 @@ const productLinks: FooterLink[] = [
   { label: 'Free Headshot Generator', href: '/free-headshot-generator' },
   { label: 'LinkedIn Headshots', href: '/linkedin-headshots' },
   { label: 'Technology', href: '/technology' },
-  { label: 'Quality Promise', href: '/guarantee' },
+  { label: 'Quality Commitment', href: '/guarantee' },
   { label: 'Gift Cards', href: '/gift-cards' },
   { label: 'Integrations', href: '/integrations' },
   { label: 'Developer API', href: '/developer-api' },

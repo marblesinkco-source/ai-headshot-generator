@@ -121,7 +121,7 @@ export default async function CategoryPage({ params }: Props) {
     },
     {
       question: 'What if I am not happy with the results?',
-      answer: 'Every package includes regenerations, and our support team will work with you until the results are right. See our Quality Promise for details.',
+      answer: 'Every package includes regenerations, and our support team will work with you until the results are right. See our Quality Commitment for details.',
     },
     {
       question: 'What resolution are the photos?',

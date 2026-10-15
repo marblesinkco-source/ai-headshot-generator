@@ -85,7 +85,7 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
       },
       {
         question: 'What if I am not satisfied?',
-        answer: 'Every package includes regenerations, and our support team will work with you until the photos are right. See our Quality Promise for details.',
+        answer: 'Every package includes regenerations, and our support team will work with you until the photos are right. See our Quality Commitment for details.',
       },
       {
         question: 'Do you keep my photos?',

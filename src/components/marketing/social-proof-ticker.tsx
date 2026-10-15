@@ -9,7 +9,7 @@ import { useEffect, useState, useRef } from 'react';
 const messages = [
   { icon: 'camera', text: 'Up to 160 unique headshots per order' },
   { icon: 'clock', text: 'Results delivered within hours' },
-  { icon: 'shield', text: 'Satisfaction guarantee included' },
+  { icon: 'shield', text: 'Quality guarantee included' },
   { icon: 'zap', text: 'No studio appointment needed' },
   { icon: 'globe', text: 'Available worldwide, 24/7' },
   { icon: 'lock', text: 'Secure checkout via Paddle' },

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { getActiveCategories, CATEGORY_GROUPS } from '@/config/categories';
 import { categoryVisuals } from '@/config/category-visuals';
 import { CategoryFallbackIllustration } from '@/components/marketing/illustrations';
-import { TEAM_PRICES } from '@/config/pricing';
+import { TEAM_PRICE_RANGE_DISPLAY } from '@/config/pricing';
 import { formatPrice } from '@/lib/utils';
 
 // Tiny neutral beige 8x6 SVG placeholder shown while category images load
@@ -57,7 +57,7 @@ export function Categories() {
                   const maxOutput = Math.max(0, ...cat.packages.map((p) => p.outputCount));
                   const isTeam = cat.id === 'linkedin-team';
                   const fromPrice = isTeam
-                    ? formatPrice(TEAM_PRICES.large.perPersonCents, 'usd', true)
+                    ? TEAM_PRICE_RANGE_DISPLAY
                     : formatPrice(cat.packages[0]?.price || 0, 'usd', true);
 
                   return (

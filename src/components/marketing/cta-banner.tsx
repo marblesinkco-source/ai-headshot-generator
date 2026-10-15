@@ -11,7 +11,7 @@ import { categoryVisuals } from '@/config/category-visuals';
 
 const categories = getActiveCategories();
 
-const trustPoints = ['No subscription', 'Ready in hours', 'Satisfaction guarantee', 'Full commercial rights'];
+const trustPoints = ['No subscription', 'Ready in hours', 'Quality guarantee', 'Full commercial rights'];
 
 export function CTABanner() {
   const categoryDialog = useRef<HTMLDialogElement>(null);

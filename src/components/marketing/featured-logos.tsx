@@ -21,7 +21,7 @@ const svgProps = {
 const ITEMS: readonly Item[] = [
   {
     key: 'guarantee',
-    label: 'Satisfaction guarantee',
+    label: 'Quality guarantee',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" {...svgProps}>
         <path d="M12 3l7.5 3v5.5c0 4.5-3.1 8.2-7.5 9.5-4.4-1.3-7.5-5-7.5-9.5V6L12 3z" />
@@ -81,7 +81,7 @@ const ITEMS: readonly Item[] = [
   },
   {
     key: 'gdpr',
-    label: 'GDPR compliant',
+    label: 'GDPR & KVKK ready',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" {...svgProps}>
         <path d="M12 3l7.5 3v5.5c0 4.5-3.1 8.2-7.5 9.5-4.4-1.3-7.5-5-7.5-9.5V6L12 3z" />
