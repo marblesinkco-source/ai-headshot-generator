@@ -60,10 +60,19 @@
    - Stüdyo fiyatı tutarsızlığı düzeltildi: hero.tsx ve pricing.tsx'de $250–$500 → $150–$500+
    - Detaylı analiz dokümanı: Claude Docs'ta "TailorPic Rakip Analizi"
 
+6. **Trust Dili & Fiyat Tutarlılığı Düzeltmesi** ✅ (commit 0f72332a)
+   - "Satisfaction guarantee" → "Quality guarantee" (10 dosya: hero, featured-logos, cta-banner, social-proof-ticker, guarantee-section)
+   - "Bank-Level Security" → "Secure & Private" (sertifika yok, dürüst ifade)
+   - "GDPR compliant" → "GDPR & KVKK ready" (Türk pazarı avantajı + dürüst)
+   - "Quality Promise" → "Quality Commitment" (footer, FAQ — /guarantee sayfa başlığıyla tutarlı)
+   - guarantee-section: "until you love the results" → "within your package" (gerçek politikayla tutarlı)
+   - vs/headpix yanıltıcı refund FAQ düzeltildi: "Yes" → açık regeneration + no-refund açıklaması
+   - Team pricing kartı: sadece $29/person → $29–$39/person aralığı (her iki tier'ı gösterir)
+   - CI: PASS ✅, Vercel: PASS ✅, Canlı site: WebFetch ile doğrulandı ✅
+
 ### Bekleyen
 - Trustpilot hesabı açma ve badge entegrasyonu (owner aksiyonu)
 - Gerçek kullanıcı sayısı gösterimi (Supabase'den çekilecek)
-- Para iade politikası netleştirme (owner kararı)
 - B2B social proof (müşteri izniyle logo ve testimonial)
 - Faz 4 gelecek öğeleri: Flux 2.0, Video Avatar, Seedream/Ideogram
 
