@@ -152,11 +152,11 @@ Files changed (last 5 commits): $(git diff --stat HEAD~5..HEAD 2>/dev/null | tai
 EOF
 )"
 
-# Push tag to remote
+# Push tag to remote (may fail in restricted environments)
 if git push origin "$TAG" 2>/dev/null; then
   PUSHED="${GREEN}✓ pushed to GitHub${NC}"
 else
-  PUSHED="${YELLOW}⚠ local only (push failed)${NC}"
+  PUSHED="${YELLOW}⚠ local only — commit ${SHA} is on GitHub, tag is local${NC}"
 fi
 
 echo -e "${GREEN}═══ Snapshot Created ═══${NC}"
