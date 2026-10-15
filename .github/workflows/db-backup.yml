@@ -1,0 +1,88 @@
+name: DB backup (Supabase)
+
+# Creates a logical backup (pg_dump) of the Supabase database and stores it as
+# a GitHub Actions artifact. The backup can be downloaded from the workflow run
+# page (retained for 90 days by default).
+#
+# Trigger from the sandbox:
+#   gh workflow run db-backup.yml
+#   gh workflow run db-backup.yml -f tables="orders,payments,profiles"
+#
+# Download a backup:
+#   gh run download <run-id> -n db-backup
+#
+# Restore (on a machine with psql access):
+#   gunzip < backup-*.sql.gz | psql "$SUPABASE_DB_URL"
+#
+# Requires the same SUPABASE_DB_URL secret as db-migrate.yml.
+
+on:
+  workflow_dispatch:
+    inputs:
+      tables:
+        description: 'Comma-separated table names to back up (empty = full public schema)'
+        required: false
+        default: ''
+      data_only:
+        description: 'Dump data only (no schema DDL)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+    steps:
+      - name: Check secret
+        run: |
+          if [ -z "$DB_URL" ]; then
+            echo "::error::Secret SUPABASE_DB_URL is not set."
+            exit 1
+          fi
+
+      - name: Create backup
+        run: |
+          set -euo pipefail
+          STAMP=$(date -u +"%Y%m%d-%H%M%S")
+          OUTFILE="backup-${STAMP}.sql.gz"
+
+          ARGS=(--no-owner --no-privileges --schema=public)
+
+          if [ "${{ inputs.data_only }}" = "true" ]; then
+            ARGS+=(--data-only)
+          fi
+
+          TABLES="${{ inputs.tables }}"
+          if [ -n "$TABLES" ]; then
+            IFS=',' read -ra T <<< "$TABLES"
+            for t in "${T[@]}"; do
+              t=$(echo "$t" | xargs)  # trim whitespace
+              ARGS+=(--table="public.${t}")
+            done
+          fi
+
+          pg_dump "$DB_URL" "${ARGS[@]}" | gzip > "$OUTFILE"
+
+          SIZE=$(du -h "$OUTFILE" | cut -f1)
+          echo "## DB Backup" >> "$GITHUB_STEP_SUMMARY"
+          echo "- File: \`$OUTFILE\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Size: $SIZE" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Tables: ${TABLES:-all (public schema)}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Data only: ${{ inputs.data_only }}" >> "$GITHUB_STEP_SUMMARY"
+          echo ""
+          echo "Backup created: $OUTFILE ($SIZE)"
+
+          # Store filename for artifact step
+          echo "BACKUP_FILE=$OUTFILE" >> "$GITHUB_ENV"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: db-backup
+          path: ${{ env.BACKUP_FILE }}
+          retention-days: 90
