@@ -91,7 +91,7 @@ export function SocialProofBar() {
         visible ? "tp-spb-visible" : ""
       }`}
     >
-      <style>{css}</style>
+      <style dangerouslySetInnerHTML={{ __html: css }} />
       <div className="mx-auto max-w-6xl px-4 py-6 sm:py-8">
         <ul className="grid grid-cols-2 gap-y-5 gap-x-4 sm:grid-cols-3 lg:grid-cols-5 sm:gap-x-6 lg:[&>li:not(:first-child)]:border-l lg:[&>li:not(:first-child)]:border-tp-line lg:[&>li:not(:first-child)]:pl-6">
           {metrics.map((metric, i) => {

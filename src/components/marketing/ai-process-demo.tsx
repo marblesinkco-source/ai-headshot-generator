@@ -231,7 +231,7 @@ export function AIProcessDemo() {
 
   return (
     <section id="how-it-works" className="tp-demo relative bg-tp-beige py-20 lg:py-24 scroll-mt-20 overflow-hidden" aria-labelledby="ai-process-demo-heading">
-      <style>{CSS}</style>
+      <style dangerouslySetInnerHTML={{ __html: CSS }} />
       {/* Decorative blobs */}
       <div aria-hidden="true" className="tp-blob tp-blob-bronze w-[450px] h-[450px] -top-40 -right-40 opacity-40" />
       <div aria-hidden="true" className="tp-blob tp-blob-beige w-[400px] h-[400px] -bottom-32 -left-32 opacity-30" />

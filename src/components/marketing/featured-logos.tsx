@@ -167,7 +167,7 @@ export function FeaturedLogos() {
       aria-label="Trust and security"
       className={`relative overflow-hidden bg-tp-paper py-10 sm:py-12 ${visible ? 'tp-fl-visible' : ''}`}
     >
-      <style>{css}</style>
+      <style dangerouslySetInnerHTML={{ __html: css }} />
       <div aria-hidden="true" className="tp-blob tp-blob-beige w-[400px] h-[400px] -top-32 -left-32" />
       <div className="tp-fl-wrap relative mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
         <div className="text-center">

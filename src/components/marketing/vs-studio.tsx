@@ -134,7 +134,7 @@ export function VsStudio() {
         </div>
       </div>
 
-      <style>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         .tp-vs-row {
           opacity: 0;
           transform: translateX(-12px);
@@ -151,7 +151,7 @@ export function VsStudio() {
           .tp-vs-row { opacity: 1; transform: none; }
           .tp-vs-row.tp-vs-visible { animation: none; }
         }
-      `}</style>
+      ` }} />
     </section>
   );
 }
