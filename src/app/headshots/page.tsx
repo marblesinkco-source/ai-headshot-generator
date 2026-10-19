@@ -85,7 +85,7 @@ const PROFESSION_GROUPS = [
 
 const headshots = CATEGORIES.headshots;
 const entryPackage = headshots.packages[0];
-const recommendedPackage = headshots.packages.find((p) => p.recommended) ?? headshots.packages[4];
+const recommendedPackage = headshots.packages.find((p) => p.recommended) ?? headshots.packages[headshots.packages.length - 2] ?? headshots.packages[0];
 
 const faqItems = [
   {

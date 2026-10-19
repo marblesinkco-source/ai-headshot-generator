@@ -22,7 +22,7 @@ import {
   Briefcase,
   X,
 } from 'lucide-react';
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+import { BASE_PRICE, BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
@@ -179,7 +179,7 @@ export default function LinkedInHeadshotsPage() {
     url: `${siteConfig.url}/linkedin-headshots`,
     offers: {
       '@type': 'Offer',
-      price: '6.99',
+      price: String(BASE_PRICE),
       priceCurrency: 'USD',
       availability: 'https://schema.org/InStock',
       url: `${siteConfig.url}/pricing`,

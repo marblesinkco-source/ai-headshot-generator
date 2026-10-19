@@ -55,7 +55,7 @@ export default function RefundPolicyPage() {
           <ul className="list-disc space-y-2 pl-5">
             <li>
               <strong>Regeneration at no extra cost:</strong> You may regenerate photos within
-              your purchased package as many times as needed until you are satisfied.
+              your purchased package at no extra cost. The number of regenerations depends on your package tier.
             </li>
             <li>
               <strong>Dedicated support:</strong> If the results do not meet your expectations
@@ -109,7 +109,7 @@ export default function RefundPolicyPage() {
               <tbody className="divide-y divide-tp-line">
                 <tr>
                   <td className="py-3 pr-4">Not happy with results</td>
-                  <td className="py-3">Unlimited regeneration within your package</td>
+                  <td className="py-3">Free regeneration within your package</td>
                 </tr>
                 <tr>
                   <td className="py-3 pr-4">Still unsatisfied after regeneration</td>

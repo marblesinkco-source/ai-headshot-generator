@@ -178,7 +178,7 @@ const trustItems = [
     icon: Lock,
     title: 'Privacy-First',
     description:
-      'Your uploaded photos are processed securely, shared only with our AI processing partner to generate your headshots, and never sold. We follow GDPR-compliant practices.',
+      'Your uploaded photos are processed securely, shared only with our AI processing partner to generate your headshots, and never sold. We follow GDPR & KVKK data-protection practices.',
   },
   {
     icon: FileCheck,

@@ -4,7 +4,7 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
-import { PAYMENT_PROVIDER, BASE_PRICE_DISPLAY, TEAM_PRICE_SMALL_DISPLAY, TEAM_PRICE_LARGE_DISPLAY } from '@/config/pricing';
+import { PAYMENT_PROVIDER, BASE_PRICE, BASE_PRICE_DISPLAY, TEAM_PRICE_SMALL_DISPLAY, TEAM_PRICE_LARGE_DISPLAY } from '@/config/pricing';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { FreeTrialIllustration } from '@/components/marketing/illustrations';
@@ -180,7 +180,7 @@ export default function FreeHeadshotGeneratorPage() {
       `AI headshot generator that turns your selfies into professional headshots. From ${BASE_PRICE_DISPLAY}, no subscription.`,
     offers: {
       '@type': 'Offer',
-      price: '6.99',
+      price: String(BASE_PRICE),
       priceCurrency: 'USD',
     },
   };

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { buttonVariants } from '@/components/ui/button';
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+import { BASE_PRICE, BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
@@ -165,7 +165,7 @@ export default function StudentsPage() {
     url: `${siteConfig.url}/students`,
     offers: {
       '@type': 'Offer',
-      price: '6.99',
+      price: String(BASE_PRICE),
       priceCurrency: 'USD',
       availability: 'https://schema.org/InStock',
       url: `${siteConfig.url}/pricing`,

@@ -183,9 +183,9 @@ export const helpCategories: HelpCategoryData[] = [
           'Your photos and personal data are encrypted in transit and at rest. We use industry-standard security practices and share your photos only with our AI processing partner to generate your headshots. We never sell them.',
       },
       {
-        question: 'Are you GDPR compliant?',
+        question: 'Are you GDPR & KVKK ready?',
         answer:
-          'Yes. TailorPic is fully GDPR compliant. You have the right to access, export, and delete your data at any time. We also support data portability requests.',
+          'Yes. TailorPic follows GDPR (EU), KVKK (Turkey), and CCPA (California) data-protection practices. You have the right to access, export, and delete your data at any time. We also support data portability requests.',
       },
       {
         question: 'When are my photos deleted?',

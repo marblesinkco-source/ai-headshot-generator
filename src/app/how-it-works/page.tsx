@@ -9,7 +9,7 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { siteConfig } from '@/config/site';
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+import { BASE_PRICE, BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 const StickyCTA = dynamic(() => import('@/components/marketing/sticky-cta').then(m => ({ default: m.StickyCTA })), { ssr: false });
 
@@ -212,7 +212,7 @@ const howToJsonLd = {
   name: 'How to Get AI-Generated Professional Headshots',
   description: 'Upload selfies, let AI create studio-quality headshots, download within hours.',
   totalTime: 'PT2H',
-  estimatedCost: { '@type': 'MonetaryAmount', currency: 'USD', value: '6.99' },
+  estimatedCost: { '@type': 'MonetaryAmount', currency: 'USD', value: String(BASE_PRICE) },
   tool: [{ '@type': 'HowToTool', name: 'Smartphone with camera' }],
   step: steps.map((s) => ({
     '@type': 'HowToStep',

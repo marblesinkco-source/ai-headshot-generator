@@ -87,9 +87,9 @@ export const faqs = [
   },
   {
     category: 'Privacy',
-    question: 'Are you GDPR and CCPA compliant?',
+    question: 'Are you GDPR, KVKK, and CCPA ready?',
     answer:
-      'Yes. We honor GDPR (EU) and CCPA (California) data subject requests, including access, correction, and deletion of your personal data. Contact support to make a request.',
+      'Yes. We honor GDPR (EU), KVKK (Turkey), and CCPA (California) data subject requests, including access, correction, and deletion of your personal data. Contact support to make a request.',
   },
   {
     category: 'Delivery',

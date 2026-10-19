@@ -105,9 +105,9 @@ const securityFaqs = [
       'You receive full commercial rights to every headshot we generate for you. Use them on your website, LinkedIn profile, business cards, email signatures, and any other professional context.',
   },
   {
-    question: 'Is TailorPic GDPR compliant?',
+    question: 'Is TailorPic GDPR & KVKK ready?',
     answer:
-      'Yes. We honor GDPR (EU) and CCPA (California) data subject requests, including access, correction, and deletion of your personal data. We also offer a Data Processing Agreement for businesses that require one.',
+      'Yes. We honor GDPR (EU), KVKK (Turkey), and CCPA (California) data subject requests, including access, correction, and deletion of your personal data. We also offer a Data Processing Agreement for businesses that require one.',
   },
   {
     question: 'How are payments handled?',
