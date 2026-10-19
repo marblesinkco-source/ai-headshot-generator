@@ -100,7 +100,7 @@ export function PackageVisualizer({ packages }: PackageVisualizerProps) {
               onClick={() => handleSelect(i)}
               className={`relative rounded-tp-button px-3 py-1.5 text-sm transition-all sm:px-4 sm:py-2 ${
                 i === selectedIndex
-                  ? 'bg-tp-bronze text-white shadow-sm'
+                  ? 'bg-tp-bronze text-tp-black shadow-sm'
                   : 'bg-tp-beige text-tp-muted hover:bg-tp-beige/80 hover:text-tp-ink'
               }`}
             >

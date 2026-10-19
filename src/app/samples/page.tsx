@@ -221,7 +221,7 @@ export default function SamplesPage() {
                 href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
                 className={cn(
                   buttonVariants({ size: 'lg' }),
-                  'rounded-tp-button bg-tp-bronze text-white hover:bg-tp-bronze-ink'
+                  'rounded-tp-button bg-tp-bronze text-tp-black hover:bg-tp-black hover:text-tp-bronze'
                 )}
               >
                 Get Your Headshots
@@ -283,7 +283,7 @@ export default function SamplesPage() {
                 href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
                 className={cn(
                   buttonVariants({ size: 'lg' }),
-                  'rounded-tp-button bg-tp-bronze text-white hover:bg-tp-bronze-ink'
+                  'rounded-tp-button bg-tp-bronze text-tp-black hover:bg-tp-black hover:text-tp-bronze'
                 )}
               >
                 Try These Styles
@@ -366,7 +366,7 @@ export default function SamplesPage() {
                 href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
                 className={cn(
                   buttonVariants({ size: 'lg' }),
-                  'rounded-tp-button bg-tp-bronze text-white hover:bg-tp-bronze-ink'
+                  'rounded-tp-button bg-tp-bronze text-tp-black hover:bg-tp-black hover:text-tp-bronze'
                 )}
               >
                 Get Your Headshots
@@ -393,7 +393,7 @@ export default function SamplesPage() {
                 href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
                 className={cn(
                   buttonVariants({ size: 'lg' }),
-                  'rounded-tp-button bg-tp-bronze text-white hover:bg-tp-bronze-ink'
+                  'rounded-tp-button bg-tp-bronze text-tp-black hover:bg-tp-black hover:text-tp-bronze'
                 )}
               >
                 Get Started

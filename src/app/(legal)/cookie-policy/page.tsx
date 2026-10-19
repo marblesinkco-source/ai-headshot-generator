@@ -133,7 +133,7 @@ export default function CookiePolicyPage() {
       </p>
 
       <h2 className="font-display font-normal">Cookies and Storage We Use</h2>
-      <div className="not-prose overflow-x-auto">
+      <div className="relative not-prose overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-tp-line">

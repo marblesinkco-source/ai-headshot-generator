@@ -205,7 +205,7 @@ export default function VsTryItOnAiPage() {
               Feature-by-Feature Comparison
             </h2>
 
-            <div className="overflow-x-auto rounded-tp-card border border-tp-line">
+            <div className="relative overflow-x-auto rounded-tp-card border border-tp-line">
               <table className="w-full min-w-[480px] text-left text-sm">
                 <thead>
                   <tr className="border-b border-tp-line bg-tp-paper">

@@ -108,6 +108,12 @@ const nextConfig = {
         destination: '/samples',
         permanent: true,
       },
+      {
+        // Edge-level 308; the page-level permanentRedirect streamed a 200 first
+        source: '/for-teams',
+        destination: '/team-headshots',
+        permanent: true,
+      },
     ];
   },
   experimental: {

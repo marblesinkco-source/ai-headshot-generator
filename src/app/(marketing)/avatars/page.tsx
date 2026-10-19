@@ -250,7 +250,7 @@ export default function AvatarsPage() {
               </p>
             </div>
 
-            <div className="mt-12 overflow-x-auto rounded-tp-card border border-tp-line">
+            <div className="relative mt-12 overflow-x-auto rounded-tp-card border border-tp-line">
               <table className="w-full min-w-[640px] border-collapse text-left text-sm">
                 <thead>
                   <tr className="bg-tp-paper">

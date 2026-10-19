@@ -475,7 +475,7 @@ export default function DpiChecker() {
               <p className="mt-1 text-sm text-tp-muted">
                 The DPI you would get printing this photo at each size, without upscaling.
               </p>
-              <div className="mt-4 overflow-x-auto">
+              <div className="relative mt-4 overflow-x-auto">
                 <table className="w-full min-w-[420px] text-left text-sm">
                   <thead>
                     <tr className="border-b border-tp-line text-tp-muted">

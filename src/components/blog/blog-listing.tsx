@@ -99,7 +99,7 @@ function NewsletterCta() {
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="rounded-tp-button bg-tp-bronze px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-tp-bronze-ink disabled:opacity-60"
+          className="rounded-tp-button bg-tp-bronze px-5 py-2.5 text-sm font-semibold text-tp-black transition-colors hover:bg-tp-black hover:text-tp-bronze disabled:opacity-60"
         >
           {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
         </button>
@@ -146,7 +146,7 @@ export function BlogListing({ posts }: { posts: BlogListingPost[] }) {
         <div className="grid md:grid-cols-2">
           <BlogCover slug={featured.slug} title={featured.title} className="aspect-[16/9] md:aspect-auto md:min-h-[320px]" />
           <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
-            <span className="mb-3 inline-block w-fit rounded-tp-button bg-tp-bronze px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+            <span className="mb-3 inline-block w-fit rounded-tp-button bg-tp-bronze px-3 py-1 text-xs font-semibold uppercase tracking-wide text-tp-black">
               Featured Post
             </span>
             <div className="mb-3 flex flex-wrap gap-2">
@@ -172,9 +172,9 @@ export function BlogListing({ posts }: { posts: BlogListingPost[] }) {
             </div>
             <Link
               href={`/blog/${featured.slug}`}
-              className="mt-6 inline-flex w-fit items-center gap-2 rounded-tp-button bg-tp-bronze px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-tp-bronze-ink after:absolute after:inset-0 after:content-['']"
+              className="mt-6 inline-flex w-fit items-center gap-2 rounded-tp-button bg-tp-bronze px-5 py-2.5 text-sm font-semibold text-tp-black transition-colors hover:bg-tp-black hover:text-tp-bronze after:absolute after:inset-0 after:content-['']"
             >
-              Read More
+              Read More<span className="sr-only">: {featured.title}</span>
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
@@ -200,7 +200,7 @@ export function BlogListing({ posts }: { posts: BlogListingPost[] }) {
               onClick={() => setActive(tag)}
               className={`rounded-tp-button border px-3.5 py-1.5 text-sm font-medium transition-colors ${
                 isActive
-                  ? 'border-tp-bronze bg-tp-bronze text-white'
+                  ? 'border-tp-bronze bg-tp-bronze text-tp-black'
                   : 'border-tp-line bg-white text-tp-ink hover:border-tp-bronze/40 hover:text-tp-bronze-ink'
               }`}
             >

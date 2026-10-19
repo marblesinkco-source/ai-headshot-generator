@@ -158,7 +158,7 @@ export default function Page() {
           <p className="mx-auto mt-3 max-w-xl text-sm text-tp-beige sm:text-base">
             TailorPic turns your selfies into professional AI headshots, ready to drop into your collage.
           </p>
-          <Link href={ctaHref} className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'mt-7 bg-tp-bronze text-tp-black hover:bg-tp-beige')}>
+          <Link href={ctaHref} className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'mt-7 h-auto min-h-11 max-w-full whitespace-normal py-3 text-center bg-tp-bronze text-tp-black hover:bg-tp-beige')}>
             Create your headshots with TailorPic →
           </Link>
         </div>

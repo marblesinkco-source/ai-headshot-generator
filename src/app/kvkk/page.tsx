@@ -178,7 +178,7 @@ export default function KvkkPage() {
               parçası olarak kişisel verileriniz, aşağıdaki hizmet sağlayıcılara Amerika Birleşik Devletleri&apos;ne
               aktarılmaktadır:
             </p>
-            <div className="overflow-x-auto rounded-tp-card border border-tp-line bg-white">
+            <div className="relative overflow-x-auto rounded-tp-card border border-tp-line bg-white">
               <table className="w-full min-w-[480px] text-left text-sm">
                 <thead className="bg-tp-ink text-white">
                   <tr>

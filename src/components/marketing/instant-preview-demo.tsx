@@ -119,7 +119,7 @@ export function InstantPreviewDemo() {
           <h2 className="font-display font-normal text-3xl md:text-5xl text-tp-paper mb-4">
             See Your Headshot in Seconds
           </h2>
-          <p className="text-tp-muted text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-tp-beige/70 text-lg md:text-xl max-w-2xl mx-auto">
             Upload a single selfie and get professional headshot previews in under 15 seconds.
             No training wait. No commitment.
           </p>
@@ -142,10 +142,10 @@ export function InstantPreviewDemo() {
                 <p className="text-tp-paper text-lg font-medium mb-2">
                   Drop your selfie here
                 </p>
-                <p className="text-tp-muted text-sm mb-6">
+                <p className="text-tp-beige/70 text-sm mb-6">
                   or click to browse — JPG, PNG, WebP up to 10MB
                 </p>
-                <button className="inline-flex items-center gap-2 bg-tp-bronze text-tp-black px-6 py-3 rounded-tp-button font-medium text-sm hover:bg-tp-bronze-ink transition-colors">
+                <button className="inline-flex items-center gap-2 bg-tp-bronze text-tp-black px-6 py-3 rounded-tp-button font-medium text-sm hover:bg-tp-bronze/90 transition-colors">
                   <Upload className="h-4 w-4" />
                   Select Photo
                 </button>
@@ -179,7 +179,7 @@ export function InstantPreviewDemo() {
                 {state !== 'idle' && (
                   <button
                     onClick={reset}
-                    className="w-full py-3 text-sm text-tp-muted hover:text-tp-paper transition-colors"
+                    className="w-full py-3 text-sm text-tp-beige/70 hover:text-tp-paper transition-colors"
                   >
                     Try another photo
                   </button>
@@ -193,9 +193,9 @@ export function InstantPreviewDemo() {
             {state === 'idle' && (
               <div className="border border-tp-line rounded-tp-card p-8 md:p-12 text-center min-h-[400px] flex flex-col items-center justify-center">
                 <div className="mx-auto mb-4 w-12 h-12 rounded-full bg-tp-ink flex items-center justify-center">
-                  <ArrowRight className="h-5 w-5 text-tp-muted" />
+                  <ArrowRight className="h-5 w-5 text-tp-beige/70" />
                 </div>
-                <p className="text-tp-muted">
+                <p className="text-tp-beige/70">
                   Your AI headshot previews will appear here
                 </p>
               </div>
@@ -214,7 +214,7 @@ export function InstantPreviewDemo() {
                 </p>
                 {state === 'generating' && (
                   <>
-                    <p className="text-tp-muted text-sm mb-4">
+                    <p className="text-tp-beige/70 text-sm mb-4">
                       AI is creating your professional previews
                     </p>
                     <div className="inline-flex items-center gap-2 text-tp-bronze text-sm">
@@ -245,7 +245,7 @@ export function InstantPreviewDemo() {
                       </div>
                     </div>
                   ) : (
-                    <div className="aspect-[3/4] flex items-center justify-center text-tp-muted text-sm">
+                    <div className="aspect-[3/4] flex items-center justify-center text-tp-beige/70 text-sm">
                       Generation failed
                     </div>
                   )}
@@ -274,7 +274,7 @@ export function InstantPreviewDemo() {
                           />
                         ) : (
                           <div className="absolute inset-0 bg-tp-ink flex items-center justify-center">
-                            <AlertCircle className="h-4 w-4 text-tp-muted" />
+                            <AlertCircle className="h-4 w-4 text-tp-beige/70" />
                           </div>
                         )}
                       </button>
@@ -285,12 +285,12 @@ export function InstantPreviewDemo() {
                 {/* CTA */}
                 <Link
                   href="/auth/register"
-                  className="flex items-center justify-center gap-2 w-full bg-tp-bronze text-tp-black py-4 rounded-tp-button font-medium hover:bg-tp-bronze-ink transition-colors"
+                  className="flex items-center justify-center gap-2 w-full bg-tp-bronze text-tp-black py-4 rounded-tp-button font-medium hover:bg-tp-bronze/90 transition-colors"
                 >
                   Get Full Headshot Package
                   <ArrowRight className="h-4 w-4" />
                 </Link>
-                <p className="text-center text-tp-muted text-xs mt-3">
+                <p className="text-center text-tp-beige/70 text-xs mt-3">
                   Full packages include up to 160 photos with multiple styles &amp; backgrounds
                 </p>
               </div>
@@ -302,10 +302,10 @@ export function InstantPreviewDemo() {
                 <p className="text-tp-paper text-lg font-medium mb-2">
                   Something went wrong
                 </p>
-                <p className="text-tp-muted text-sm mb-6">{errorMsg}</p>
+                <p className="text-tp-beige/70 text-sm mb-6">{errorMsg}</p>
                 <button
                   onClick={reset}
-                  className="inline-flex items-center gap-2 bg-tp-bronze text-tp-black px-6 py-3 rounded-tp-button font-medium text-sm hover:bg-tp-bronze-ink transition-colors"
+                  className="inline-flex items-center gap-2 bg-tp-bronze text-tp-black px-6 py-3 rounded-tp-button font-medium text-sm hover:bg-tp-bronze/90 transition-colors"
                 >
                   Try Again
                 </button>
@@ -338,7 +338,7 @@ export function InstantPreviewDemo() {
                 <Icon className="h-5 w-5 text-tp-bronze" />
               </div>
               <h3 className="text-tp-paper font-medium mb-2">{title}</h3>
-              <p className="text-tp-muted text-sm">{desc}</p>
+              <p className="text-tp-beige/70 text-sm">{desc}</p>
             </div>
           ))}
         </div>

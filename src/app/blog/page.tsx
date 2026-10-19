@@ -175,7 +175,7 @@ export default function BlogPage() {
                   <Camera className="h-16 w-16 text-tp-bronze/20" aria-hidden="true" />
                 </div>
                 <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
-                  <span className="mb-3 inline-block w-fit rounded-tp-button bg-tp-bronze px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+                  <span className="mb-3 inline-block w-fit rounded-tp-button bg-tp-bronze px-3 py-1 text-xs font-semibold uppercase tracking-wide text-tp-black">
                     Featured Post
                   </span>
                   <h2 className="font-display text-2xl font-normal tracking-tight text-tp-ink sm:text-3xl">

@@ -33,14 +33,14 @@ export function TrustBadgesInline({ className = '' }: { className?: string }) {
         );
 
         return 'href' in rest && rest.href ? (
+          <span key={label} role="listitem" className="flex">
           <Link
-            key={label}
             href={rest.href}
-            role="listitem"
             className="flex items-center gap-1.5 text-xs text-tp-muted transition-colors hover:text-tp-bronze-ink"
           >
             {content}
           </Link>
+          </span>
         ) : (
           <span
             key={label}

@@ -98,7 +98,7 @@ export default function RefundPolicyPage() {
           </ul>
 
           <h2>Your Remedies at a Glance</h2>
-          <div className="overflow-x-auto">
+          <div className="relative overflow-x-auto">
             <table className="w-full text-left text-sm">
               <thead>
                 <tr className="border-b border-tp-line">

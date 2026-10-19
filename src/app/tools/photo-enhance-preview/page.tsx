@@ -147,7 +147,7 @@ export default function PhotoEnhancePreviewPage() {
           </p>
           <Link
             href={ctaHref}
-            className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'mt-7 bg-tp-bronze text-tp-black hover:bg-tp-beige')}
+            className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'mt-7 h-auto min-h-11 max-w-full whitespace-normal py-3 text-center bg-tp-bronze text-tp-black hover:bg-tp-beige')}
           >
             Get yours with TailorPic
           </Link>

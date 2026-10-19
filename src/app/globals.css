@@ -279,6 +279,13 @@ dialog.tp-nav-dialog[open][data-closing]::backdrop {
   from { opacity: 0; transform: translateY(22px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+/* Transform-only variant for the LCP text (h1 + lead paragraph): starting at
+   opacity 0 hides the element from Largest Contentful Paint until the
+   animation ends, which pushed mobile LCP to the cookie banner (~5s). */
+@keyframes tp-hero-rise-lcp {
+  from { transform: translateY(14px); }
+  to   { transform: translateY(0); }
+}
 @keyframes tp-hero-image-in {
   from { opacity: 0; transform: scale(0.97) translateY(12px); }
   to   { opacity: 1; transform: scale(1) translateY(0); }
@@ -293,8 +300,13 @@ dialog.tp-nav-dialog[open][data-closing]::backdrop {
   animation: tp-hero-image-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   animation-delay: 250ms;
 }
+.tp-hero-enter.tp-hero-enter-lcp {
+  opacity: 1;
+  animation-name: tp-hero-rise-lcp;
+}
 @media (prefers-reduced-motion: reduce) {
   .tp-hero-enter,
+  .tp-hero-enter.tp-hero-enter-lcp,
   .tp-hero-image-enter { opacity: 1; animation: none; }
 }
 
