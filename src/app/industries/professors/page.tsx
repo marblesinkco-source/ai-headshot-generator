@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Professors & Academics | TailorPic";
 const pageDescription =
   'Professional AI headshots for professors, lecturers, researchers and academics. Update faculty pages, conference bios and Google Scholar profiles.';
@@ -121,7 +124,7 @@ export default function ProfessorsIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Professors & Academics"}
         description={"AI-generated professional headshots for professors and academics for faculty pages, conference bios, publications, and LinkedIn."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/professors"
       />

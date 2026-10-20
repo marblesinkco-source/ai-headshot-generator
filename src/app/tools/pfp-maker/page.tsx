@@ -11,6 +11,8 @@ import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { cn } from '@/lib/utils';
 
+export const revalidate = 3600;
+
 const PAGE_TITLE = 'Free Profile Picture Maker';
 const PAGE_DESCRIPTION =
   'Resize and crop your profile picture for LinkedIn, Instagram, X, Facebook, Slack, Zoom and Teams. Free, runs in your browser, and your photo never leaves your device.';

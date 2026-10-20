@@ -15,6 +15,9 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Plumbers | TailorPic";
 const pageDescription =
   'Professional AI headshots for plumbers, plumbing contractors and apprentices. Earn customer trust on your website, Google profile and marketing.';
@@ -122,7 +125,7 @@ export default function PlumbersIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Plumbers"}
         description={"AI-generated professional headshots for plumbers and plumbing contractors for websites, Google Business Profiles, quotes, and marketing."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Skilled Trades"
         slug="industries/plumbers"
       />

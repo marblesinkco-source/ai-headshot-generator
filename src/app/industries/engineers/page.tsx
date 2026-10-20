@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Engineers & Tech Professionals | TailorPic";
 const pageDescription =
   'Professional AI headshots for software, civil and mechanical engineers and tech professionals. Ready for LinkedIn, GitHub, conference bios and team pages.';
@@ -117,7 +120,7 @@ export default function EngineersIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Engineers"}
         description={"AI-generated professional headshots for software engineers, civil and mechanical engineers, and tech professionals."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/engineers"
       />

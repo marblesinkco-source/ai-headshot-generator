@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Architects & Designers | TailorPic";
 const pageDescription =
   'Professional AI headshots for architects, interior designers and design professionals. Portraits for firm websites, AIA profiles, proposals and LinkedIn.';
@@ -121,7 +124,7 @@ export default function ArchitectsIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Architects"}
         description={"AI-generated professional headshots for architects, interior designers, and design professionals for firm websites, proposals, and professional profiles."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/architects"
       />

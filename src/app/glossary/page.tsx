@@ -7,6 +7,8 @@ import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: { absolute: 'AI Photography Glossary: Key Terms Explained | TailorPic' },
   description:

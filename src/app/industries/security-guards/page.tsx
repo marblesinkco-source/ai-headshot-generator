@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Security Guards & Officers | TailorPic";
 const pageDescription =
   'Professional AI headshots for security guards, officers, and security company owners. Get a credible portrait for ID profiles, resumes, and LinkedIn.';
@@ -121,7 +124,7 @@ export default function SecurityGuardsIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Security Guards"}
         description={"AI-generated professional headshots for security guards and officers for resumes, LinkedIn, and company profiles."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/security-guards"
       />

@@ -15,6 +15,9 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Electricians | TailorPic";
 const pageDescription =
   'Professional AI headshots for electricians, electrical contractors and apprentices. Build trust on your website, Google profile and truck wraps.';
@@ -122,7 +125,7 @@ export default function ElectriciansIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Electricians"}
         description={"AI-generated professional headshots for electricians and electrical contractors for websites, Google Business Profiles, estimates, and marketing."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Skilled Trades"
         slug="industries/electricians"
       />

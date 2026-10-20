@@ -9,7 +9,7 @@ import { siteConfig } from '@/config/site';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+import { BASE_PRICE_DISPLAY, BASE_PRICE_CENTS } from '@/config/pricing';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedUseCases } from '@/lib/internal-links';
@@ -140,7 +140,7 @@ export default function MembershipDirectoryUseCasePage() {
       <ProductSchema
         name="TailorPic"
         description="Professional headshots for membership directories, associations, and clubs"
-        price={699}
+        price={BASE_PRICE_CENTS}
         category="Professional Services"
         slug="use-cases/membership-directory"
       />

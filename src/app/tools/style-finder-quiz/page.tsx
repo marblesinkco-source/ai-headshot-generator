@@ -6,6 +6,8 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import { StyleFinderQuiz } from '@/components/tools/style-finder-quiz';
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: { absolute: 'Style Finder Quiz — Find Your Perfect Headshot Style | TailorPic' },
   description:

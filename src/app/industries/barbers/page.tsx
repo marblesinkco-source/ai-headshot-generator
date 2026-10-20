@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Barbers & Barbershops | TailorPic";
 const pageDescription =
   'Professional AI headshots for barbers, shop owners and master stylists. Fill your chair with a sharp portrait for your booking page, Instagram and shop website.';
@@ -121,7 +124,7 @@ export default function BarbersIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Barbers"}
         description={"AI-generated professional headshots for barbers and barbershop owners for booking pages, Instagram, and shop websites."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Personal Care"
         slug="industries/barbers"
       />

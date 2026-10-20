@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Notaries & Legal Professionals | TailorPic";
 const pageDescription =
   'Professional AI headshots for notaries, paralegals, and legal professionals. Build client trust on websites, directories, and LinkedIn with a polished portrait.';
@@ -121,7 +124,7 @@ export default function NotariesIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Notaries & Legal Professionals"}
         description={"AI-generated professional headshots for notaries and legal professionals for websites, directories, and LinkedIn."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/notaries"
       />

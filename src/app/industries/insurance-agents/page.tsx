@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Insurance Agents | TailorPic";
 const pageDescription =
   'Professional AI headshots for insurance agents and brokers. Earn client trust on your agency website, business cards, and LinkedIn with a polished portrait.';
@@ -121,7 +124,7 @@ export default function InsuranceAgentsIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Insurance Agents"}
         description={"AI-generated professional headshots for insurance agents and brokers for agency websites, business cards, LinkedIn, and marketing."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Financial Services"
         slug="industries/insurance-agents"
       />

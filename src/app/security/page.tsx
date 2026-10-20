@@ -8,6 +8,8 @@ import { PAYMENT_PROVIDER } from '@/config/pricing';
 import { FAQSchema, BreadcrumbSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
+
+export const revalidate = 3600;
   ShieldCheck,
   Lock,
   Trash2,

@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Coaches & Consultants | TailorPic";
 const pageDescription =
   'Professional AI headshots for life coaches, business coaches and independent consultants. Build instant trust on your website, sales pages and LinkedIn.';
@@ -121,7 +124,7 @@ export default function CoachesIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Coaches & Consultants"}
         description={"AI-generated professional headshots for coaches and consultants for websites, sales pages, LinkedIn, and speaker profiles."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/coaches"
       />

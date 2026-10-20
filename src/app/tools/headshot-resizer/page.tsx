@@ -10,6 +10,8 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { HeadshotResizerDemo } from '@/components/tools/tool-demos';
 
+export const revalidate = 3600;
+
 const title = 'Free Headshot Resizer: LinkedIn, Passport & ID Sizes';
 const description = 'Resize your headshot for LinkedIn, Facebook, Twitter, passport and corporate ID photos. Free size guide and resizing tool by TailorPic.';
 const path = '/tools/headshot-resizer';

@@ -11,6 +11,8 @@ import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { cn } from '@/lib/utils';
 
+export const revalidate = 3600;
+
 const PAGE_TITLE = 'Free LinkedIn About Section Generator';
 const PAGE_DESCRIPTION =
   'Write a LinkedIn About section in minutes. Enter your job title, industry, skills and tone, then choose from four template-based drafts. Free, no sign-up.';

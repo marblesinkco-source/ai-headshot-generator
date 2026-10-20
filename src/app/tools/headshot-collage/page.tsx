@@ -10,6 +10,8 @@ import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
+export const revalidate = 3600;
+
 const HeadshotCollage = dynamic(() => import('@/components/tools/headshot-collage'), {
   ssr: false,
   loading: () => (

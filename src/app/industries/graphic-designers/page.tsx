@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Graphic Designers | TailorPic";
 const pageDescription =
   'Professional AI headshots for graphic designers and creative freelancers. Polished portraits for your portfolio, Behance, and LinkedIn.';
@@ -121,7 +124,7 @@ export default function GraphicDesignersIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Graphic Designers"}
         description={"AI-generated professional headshots for graphic designers for portfolios, Behance, Dribbble, LinkedIn, and client proposals."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Creative Services"
         slug="industries/graphic-designers"
       />

@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = 'AI Headshots for Teachers & Educators | TailorPic';
 const pageDescription =
   'Professional AI headshots for teachers, professors, tutors, and school staff. Ready for school websites, academic profiles, and conference materials.';
@@ -117,7 +120,7 @@ export default function TeachersIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Teachers"}
         description={"AI-generated professional headshots for teachers, professors, tutors, and school staff."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/teachers"
       />

@@ -9,6 +9,8 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import { CATEGORIES } from '@/config/categories';
 import {
+
+export const revalidate = 3600;
   ArrowRight,
   Upload,
   Brain,

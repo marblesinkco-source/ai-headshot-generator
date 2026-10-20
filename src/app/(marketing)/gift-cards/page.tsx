@@ -8,6 +8,8 @@ import { CATEGORIES } from '@/config/categories';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
+
+export const revalidate = 3600;
   Gift,
   ArrowRight,
   Mail,

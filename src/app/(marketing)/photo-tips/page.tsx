@@ -7,6 +7,8 @@ import { PhotoTipsIllustration } from '@/components/marketing/illustrations';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
+
+export const revalidate = 3600;
   Camera,
   Sun,
   Smile,

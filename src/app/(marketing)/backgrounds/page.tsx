@@ -6,6 +6,8 @@ import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
+
+export const revalidate = 3600;
   ArrowRight,
   Palette,
   Building2,

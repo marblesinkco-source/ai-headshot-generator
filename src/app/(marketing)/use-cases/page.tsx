@@ -12,6 +12,8 @@ import {
 } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import {
+
+export const revalidate = 3600;
   Linkedin,
   Users,
   Building2,

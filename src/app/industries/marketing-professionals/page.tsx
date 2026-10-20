@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Marketing Professionals | TailorPic";
 const pageDescription =
   'Professional AI headshots for marketers, brand managers, growth leads and agency teams. Strengthen your personal brand on LinkedIn and speaker pages.';
@@ -121,7 +124,7 @@ export default function MarketingProfessionalsIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Marketing Professionals"}
         description={"AI-generated professional headshots for marketing professionals for LinkedIn, speaker bios, agency websites, and bylines."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/marketing-professionals"
       />

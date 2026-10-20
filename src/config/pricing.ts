@@ -16,6 +16,12 @@ export const BASE_PRICE_CENTS = 699;
 /** Entry price in major units (6.99). */
 export const BASE_PRICE = BASE_PRICE_CENTS / 100;
 
+/**
+ * Lite package price in cents.
+ * Must match the Lite headshots package in config/categories.ts.
+ */
+export const LITE_PRICE_CENTS = 990;
+
 export const CURRENCY = 'usd';
 
 export { formatPrice };

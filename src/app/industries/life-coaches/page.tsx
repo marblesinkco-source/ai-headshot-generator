@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Life Coaches | TailorPic";
 const pageDescription =
   'Professional AI headshots for life coaches, wellness guides and personal development experts. Build instant trust on your website and social media.';
@@ -121,7 +124,7 @@ export default function LifeCoachesIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Life Coaches"}
         description={"AI-generated professional headshots for life coaches for websites, programs, discovery call pages, and social media."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/life-coaches"
       />

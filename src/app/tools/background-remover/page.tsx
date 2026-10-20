@@ -10,6 +10,8 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { BackgroundRemoverDemo } from '@/components/tools/tool-demos';
 
+export const revalidate = 3600;
+
 const title = 'Free AI Background Remover for Photos and Headshots';
 const description = 'Remove backgrounds from your photos instantly with AI. Perfect for professional headshots, product photos and social media with clean, natural-looking edges.';
 const path = '/tools/background-remover';

@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Nutritionists & Dietitians | TailorPic";
 const pageDescription =
   'Professional AI headshots for nutritionists and registered dietitians. Build client trust on your website, social media and telehealth profiles.';
@@ -121,7 +124,7 @@ export default function NutritionistsIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Nutritionists & Dietitians"}
         description={"AI-generated professional headshots for nutritionists and dietitians for websites, social media, telehealth platforms, and media features."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Healthcare"
         slug="industries/nutritionists"
       />

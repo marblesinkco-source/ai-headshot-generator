@@ -6,6 +6,8 @@ import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: { absolute: 'Accessibility Statement: Our WCAG 2.1 AA Commitment' },
   description:

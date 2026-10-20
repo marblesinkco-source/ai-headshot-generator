@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Actors & Performers | TailorPic";
 const pageDescription =
   'Professional AI headshots for actors, models, and performers. Get casting-ready portraits for auditions, talent profiles, and agencies.';
@@ -121,7 +124,7 @@ export default function ActorsIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Actors"}
         description={"AI-generated professional headshots for actors, models, and performers for casting profiles, auditions, and talent agencies."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/actors"
       />

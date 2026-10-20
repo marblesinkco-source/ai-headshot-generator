@@ -8,6 +8,8 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import {
+
+export const revalidate = 3600;
   Handshake,
   DollarSign,
   BarChart3,

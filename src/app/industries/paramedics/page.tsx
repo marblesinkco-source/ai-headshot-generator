@@ -15,6 +15,9 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Paramedics & EMTs | TailorPic";
 const pageDescription =
   'Professional AI headshots for paramedics, EMTs, and EMS leaders. Get a credible, caring portrait for agency pages, credentials, and LinkedIn.';
@@ -122,7 +125,7 @@ export default function ParamedicsIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Paramedics & EMTs"}
         description={"AI-generated professional headshots for paramedics and EMTs for agency pages, credentialing, job applications, and LinkedIn."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Healthcare"
         slug="industries/paramedics"
       />

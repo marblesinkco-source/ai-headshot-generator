@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Dentists & Dental Staff | TailorPic";
 const pageDescription =
   'Professional AI headshots for dentists, orthodontists, hygienists and dental staff. Trustworthy portraits for practice websites, directories and marketing.';
@@ -121,7 +124,7 @@ export default function DentistsIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Dentists"}
         description={"AI-generated professional headshots for dentists, orthodontists, hygienists, and dental staff in white coat or business attire."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/dentists"
       />

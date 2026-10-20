@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for HR Professionals | TailorPic";
 const pageDescription =
   'Professional AI headshots for HR managers, recruiters and talent leaders. Build trust on LinkedIn, careers pages and internal profiles.';
@@ -121,7 +124,7 @@ export default function HrProfessionalsIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for HR Professionals"}
         description={"Professional AI headshots for HR managers, recruiters, and talent leaders."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Human Resources"
         slug="industries/hr-professionals"
       />

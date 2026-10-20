@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Flight Attendants | TailorPic";
 const pageDescription =
   'Professional AI headshots for flight attendants and cabin crew. Polished portraits for airline applications, LinkedIn, and crew profiles.';
@@ -121,7 +124,7 @@ export default function FlightAttendantsIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Flight Attendants"}
         description={"AI-generated professional headshots for flight attendants and cabin crew for airline applications, LinkedIn, and personal branding."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Aviation"
         slug="industries/flight-attendants"
       />

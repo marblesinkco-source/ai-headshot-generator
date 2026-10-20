@@ -9,6 +9,8 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 
+export const revalidate = 3600;
+
 const STATUS_TITLE = `System Status | ${siteConfig.name}`;
 const STATUS_DESCRIPTION = `Check the current system status of ${siteConfig.name} and read about our approach to uptime and availability. Contact support for real-time updates.`;
 

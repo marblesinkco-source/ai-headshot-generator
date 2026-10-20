@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Pharmacists | TailorPic";
 const pageDescription =
   'Professional AI headshots for retail, hospital, clinical and independent pharmacists. Build patient trust on your pharmacy website, LinkedIn and profiles.';
@@ -121,7 +124,7 @@ export default function PharmacistsIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Pharmacists"}
         description={"AI-generated professional headshots for pharmacists for pharmacy websites, LinkedIn, clinical profiles, and professional directories."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/pharmacists"
       />

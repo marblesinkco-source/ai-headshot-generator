@@ -6,6 +6,8 @@ import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: { absolute: 'Refund & Satisfaction Policy | TailorPic' },
   description:

@@ -11,6 +11,8 @@ import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { cn } from '@/lib/utils';
 
+export const revalidate = 3600;
+
 const PAGE_TITLE = 'Photo Upload Checklist';
 const PAGE_DESCRIPTION =
   'Check your photos against 16 quality points for lighting, composition, sharpness, and subject before uploading. Get the best results from your AI headshots. Free, no sign-up.';

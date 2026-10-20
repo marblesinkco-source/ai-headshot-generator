@@ -9,7 +9,7 @@ import { ProductSchema, FAQSchema, BreadcrumbSchema } from '@/components/structu
 import { siteConfig } from '@/config/site';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Scale, ArrowRight } from 'lucide-react';
-import { BASE_PRICE_DISPLAY, TEAM_PRICE_LARGE_DISPLAY } from '@/config/pricing';
+import { BASE_PRICE_DISPLAY, TEAM_PRICE_LARGE_DISPLAY, LITE_PRICE_CENTS } from '@/config/pricing';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
@@ -136,7 +136,7 @@ export default function LawyersIndustryPage() {
       <ProductSchema
         name="Professional Headshots for Lawyers & Law Firms"
         description="AI-generated professional headshots for attorneys and law firms, with firm-consistent styling suited to bar directories, firm websites, and legal publications."
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/lawyers"
       />

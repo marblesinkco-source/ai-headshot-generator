@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Chefs & Culinary Professionals | TailorPic";
 const pageDescription =
   'Professional AI headshots for chefs, head cooks and culinary professionals. Polished portraits for restaurant websites, menus, press features and social media.';
@@ -121,7 +124,7 @@ export default function ChefsIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Chefs & Culinary Professionals"}
         description={"AI-generated professional headshots for chefs and culinary professionals for restaurant websites, press features, cookbooks, and social media."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Culinary Arts"
         slug="industries/chefs"
       />

@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = 'AI Headshots for Fitness Trainers & Coaches | TailorPic';
 const pageDescription =
   'Professional AI headshots for personal trainers, fitness coaches, yoga instructors and gym owners. Stand out on Instagram, booking apps and your website.';
@@ -121,7 +124,7 @@ export default function FitnessTrainersIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Fitness Trainers & Personal Coaches"}
         description={"AI-generated professional headshots for fitness trainers, personal coaches, and yoga instructors for social media, booking pages, and gym websites."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/fitness-trainers"
       />
