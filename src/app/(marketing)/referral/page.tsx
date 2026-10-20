@@ -6,8 +6,6 @@ import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
-
-export const revalidate = 3600;
   Gift,
   Users,
   CreditCard,
@@ -21,6 +19,8 @@ export const revalidate = 3600;
   Clock,
   Zap,
 } from 'lucide-react';
+
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic Referral Program: Share and Get Rewarded' },

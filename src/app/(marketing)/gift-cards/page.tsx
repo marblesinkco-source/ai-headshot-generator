@@ -8,8 +8,6 @@ import { CATEGORIES } from '@/config/categories';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
-
-export const revalidate = 3600;
   Gift,
   ArrowRight,
   Mail,
@@ -24,6 +22,8 @@ export const revalidate = 3600;
   Star,
   Check,
 } from 'lucide-react';
+
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: { absolute: 'Gift Cards: Give Professional AI Headshots | TailorPic' },

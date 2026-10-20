@@ -6,8 +6,6 @@ import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
-
-export const revalidate = 3600;
   Shirt,
   Palette,
   AlertTriangle,
@@ -23,6 +21,8 @@ export const revalidate = 3600;
   Scale,
   ArrowRight,
 } from 'lucide-react';
+
+export const revalidate = 3600;
 
 const PAGE_TITLE = 'What to Wear for a Professional Headshot';
 const PAGE_DESCRIPTION =

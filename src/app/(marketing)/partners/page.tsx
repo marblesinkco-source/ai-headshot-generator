@@ -6,8 +6,6 @@ import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
-
-export const revalidate = 3600;
   ArrowRight,
   ChevronDown,
   Users,
@@ -21,6 +19,8 @@ export const revalidate = 3600;
   CheckCircle2,
   Rocket,
 } from 'lucide-react';
+
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic Partner Program: Referral, Integration, Reseller' },

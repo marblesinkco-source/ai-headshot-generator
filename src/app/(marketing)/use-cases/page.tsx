@@ -12,8 +12,6 @@ import {
 } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import {
-
-export const revalidate = 3600;
   Linkedin,
   Users,
   Building2,
@@ -30,6 +28,8 @@ export const revalidate = 3600;
   Sparkles,
   type LucideIcon,
 } from 'lucide-react';
+
+export const revalidate = 3600;
 
 const OG_TITLE = 'How Professionals Use TailorPic AI Headshots and Photos';
 const OG_DESC =

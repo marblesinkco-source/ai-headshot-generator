@@ -6,8 +6,6 @@ import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
-
-export const revalidate = 3600;
   Camera,
   Sun,
   User,
@@ -19,6 +17,8 @@ export const revalidate = 3600;
   CheckCircle,
   ArrowRight,
 } from 'lucide-react';
+
+export const revalidate = 3600;
 
 const PAGE_TITLE = 'How to Take the Perfect Selfie for AI Headshots';
 const PAGE_DESCRIPTION =

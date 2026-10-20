@@ -6,8 +6,6 @@ import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
-
-export const revalidate = 3600;
   Lightbulb,
   Shield,
   Heart,
@@ -23,6 +21,8 @@ export const revalidate = 3600;
   Headphones,
   ArrowRight,
 } from 'lucide-react';
+
+export const revalidate = 3600;
 
 const title = 'Careers at TailorPic: Join Our AI Photography Team';
 const description =

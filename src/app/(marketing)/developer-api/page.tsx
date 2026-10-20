@@ -6,8 +6,6 @@ import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
-
-export const revalidate = 3600;
   ArrowRight,
   Users,
   Layers,
@@ -27,6 +25,8 @@ export const revalidate = 3600;
   Terminal,
   UsersRound,
 } from 'lucide-react';
+
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic API: AI Headshot Generation for Developers' },

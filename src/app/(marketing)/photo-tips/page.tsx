@@ -7,8 +7,6 @@ import { PhotoTipsIllustration } from '@/components/marketing/illustrations';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
-
-export const revalidate = 3600;
   Camera,
   Sun,
   Smile,
@@ -19,6 +17,8 @@ export const revalidate = 3600;
   ArrowRight,
   Lightbulb,
 } from 'lucide-react';
+
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: { absolute: 'Photo Tips for AI Headshots: Selfies That Get Great Results' },

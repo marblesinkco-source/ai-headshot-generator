@@ -6,8 +6,6 @@ import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import {
-
-export const revalidate = 3600;
   Users,
   MessageSquare,
   BarChart3,
@@ -22,6 +20,8 @@ export const revalidate = 3600;
   Store,
   ArrowRight,
 } from 'lucide-react';
+
+export const revalidate = 3600;
 
 const pageTitle = 'Integrations & Partnerships';
 const seoTitle = 'TailorPic Integrations and Partnership Options (Planned)';

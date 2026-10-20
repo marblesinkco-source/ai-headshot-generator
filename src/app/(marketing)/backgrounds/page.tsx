@@ -6,8 +6,6 @@ import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import {
-
-export const revalidate = 3600;
   ArrowRight,
   Palette,
   Building2,
@@ -19,6 +17,8 @@ export const revalidate = 3600;
   Monitor,
   Layers,
 } from 'lucide-react';
+
+export const revalidate = 3600;
 
 const PAGE_TITLE =
   'Professional Headshot Backgrounds: Choose Your Perfect Setting';

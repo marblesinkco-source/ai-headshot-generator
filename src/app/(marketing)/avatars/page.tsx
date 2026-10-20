@@ -9,8 +9,6 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import { CATEGORIES } from '@/config/categories';
 import {
-
-export const revalidate = 3600;
   ArrowRight,
   Upload,
   Brain,
@@ -29,6 +27,8 @@ export const revalidate = 3600;
   Zap,
   Crown,
 } from 'lucide-react';
+
+export const revalidate = 3600;
 
 /* Prices come from config/categories.ts (display only). */
 const avatarPackages = CATEGORIES.avatars?.packages ?? [];
