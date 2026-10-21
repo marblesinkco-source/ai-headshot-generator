@@ -10,6 +10,7 @@ import { createClient } from '@/lib/supabase/client';
 import type { User } from '@supabase/supabase-js';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { categoryVisuals } from '@/config/category-visuals';
+import { LanguageSwitcher } from '@/components/language-switcher';
 
 const categories = getActiveCategories();
 
@@ -356,6 +357,7 @@ export function Header() {
 
         {/* Desktop Account */}
         <div className="hidden flex-shrink-0 items-center gap-4 md:flex lg:gap-6">
+          <LanguageSwitcher />
           {user ? (
             <div
               className="relative"
@@ -495,6 +497,7 @@ export function Header() {
 
         {/* Mobile: Sign In/Avatar + Menu */}
         <div className="flex items-center gap-3 md:hidden">
+          <LanguageSwitcher />
           {user ? (
             <Link href="/dashboard" className="flex items-center min-h-[44px]">
               {userAvatar ? (

@@ -11,6 +11,7 @@
 
 import { type NextRequest, NextResponse } from "next/server";
 import { updateSession } from "@/lib/supabase/middleware";
+import { defaultLocale, isLocalePrefix, stripLocalePrefix } from "@/config/i18n";
 
 /* ------------------------------------------------------------------ */
 /*  TEST MODE CONFIGURATION                                           */
@@ -78,6 +79,25 @@ const PUBLIC_SKIP_AUTH_PREFIXES = [
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  // ── Locale prefix detection ─────────────────────────────────────
+  // URLs like /tr/pricing, /de/pricing are locale-prefixed routes.
+  // We strip the prefix for route matching but let Next.js serve the
+  // actual /tr/* pages (which exist as real route files).
+  const segments = pathname.split('/');
+  const maybeLocale = segments[1];
+  const hasLocalePrefix = maybeLocale ? isLocalePrefix(maybeLocale) && maybeLocale !== defaultLocale : false;
+  const effectivePath = hasLocalePrefix ? stripLocalePrefix(pathname) : pathname;
+
+  // Locale-prefixed marketing routes are always public — fast-path them.
+  if (hasLocalePrefix) {
+    const isLocalePublic =
+      effectivePath === '/' ||
+      PUBLIC_SKIP_AUTH_PREFIXES.some((prefix) => effectivePath.startsWith(prefix));
+    if (isLocalePublic && !TEST_MODE) {
+      return NextResponse.next();
+    }
+  }
 
   // ── Fast-path for public marketing routes ──────────────────────
   // Skip Supabase session refresh entirely — these pages never need

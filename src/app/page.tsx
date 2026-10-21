@@ -21,7 +21,13 @@ export const metadata: Metadata = {
       `Upload a few selfies and get studio-quality AI headshots for LinkedIn, resumes and more. One-time payment from ${BASE_PRICE_DISPLAY}.`, path: '/' }),
   twitter: generateTwitterMetadata({ title: `AI Headshots From Your Selfies | TailorPic — From ${BASE_PRICE_DISPLAY}`, description:
       `Upload a few selfies and get studio-quality AI headshots for LinkedIn, resumes and more. One-time payment from ${BASE_PRICE_DISPLAY}.` }),
-  alternates: { canonical: '/' },
+  alternates: {
+    canonical: '/',
+    languages: {
+      en: '/',
+      tr: '/tr',
+    },
+  },
 };
 
 function SectionSkeleton({ height }: { height: string }) {
