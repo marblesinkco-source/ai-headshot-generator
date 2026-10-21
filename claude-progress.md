@@ -1,5 +1,48 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-21 (Rekabet İyileştirmeleri & Piyasa Etkisi)
+
+### Tamamlanan Görevler
+
+1. **AnimatedStats SSR Fix (T3)** ✅
+   - `useState(0)` → `useState(end)` — sunucu render'da gerçek değerler gösterilir
+   - Client-side'da `setCount(0)` ile animasyon başlatılır
+   - Canlı doğrulama: 160+, 12, ~2hr, $6.99 hepsi görünür ✅
+
+2. **Instant Preview Demo Header Güçlendirme (T4-partial)** ✅
+   - Badge: "AI-Powered Instant Preview" → "Try It Free — No Sign-Up Required"
+   - Heading: "See Your Headshot in Seconds" → "Your AI Headshot in **15 Seconds**" (bronze vurgu)
+   - Tagline: "The Power of AI Headshots" eklendi (uppercase, bronze)
+   - Subtitle: Tek satır, net mesaj + commitment yok vurgusu
+
+3. **Rakip Karşılaştırma Sayfaları Gerçek Veri (T5)** ✅
+   - `/vs/headshotpro`: Gerçek veriler — $29, 40-120 photos, 1-2hr, money-back guarantee
+   - `/vs/aragon`: Gerçek veriler — $35, 40-100 photos, 15min-45min, free redo
+   - `/vs/betterpic`: Gerçek veriler araştırıldı
+   - 59 /vs/ dosyasında 99 "Check their site" placeholder'ı anlamlı alternatiflerle değiştirildi
+   - Sıfır "Check their site" kaldı ✅
+
+4. **Samples Sayfası T2 Fix** ✅
+   - "40+ Styles" → "12 Categories" (2 yerde)
+
+5. **Uydurma İfade Temizliği** ✅
+   - "Join thousands of professionals" → gerçekçi ifadeler (why-tailorpic, locations, careers)
+   - "Delivered in About 2 Hours" → "Fast Delivery" (government-id-photo)
+
+### CI/Vercel Durumu
+- CI: PASS ✅
+- Vercel: PASS ✅
+- Son commit: f3a3d5f8 (68 dosya)
+- Canlı site doğrulama: Built-in browser ile ✅ (homepage, /vs/headshotpro, /vs/aragon)
+
+### Sahip Aksiyonu Gereken Öğeler
+- **T1**: Gerçek müşteri yorumları (reviews sayfası için sahip toplamalı)
+- **T4**: Gerçek müşteri fotoğrafları (stock yerine sahip sağlamalı)
+- **T6**: Üst paketler için iade garantisi politikası (sahip onayı gerekli)
+- **T7**: Gerçek status sayfası (uptime monitoring servisi gerekli)
+
+---
+
 ## Oturum: 2026-10-20 (Turbo-Fabrika Tam Sistem Audit)
 
 ### Tamamlanan Görevler
