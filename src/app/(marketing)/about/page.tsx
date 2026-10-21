@@ -1,3 +1,4 @@
+// TailorPic About Page
 import type { Metadata } from 'next';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import Link from 'next/link';
