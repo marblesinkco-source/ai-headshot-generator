@@ -7,11 +7,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
-<<<<<<< HEAD
-import { ArrowRight } from 'lucide-react';
-=======
-import { CheckCircle2, ArrowRight, Clock, Shield, Zap } from 'lucide-react';
->>>>>>> 41c29f27 (feat: add About page, persona section, FAQ expansion & status improvements)
+import { ArrowRight, Clock, Shield, Zap } from 'lucide-react';
 
 export const revalidate = 3600;
 
