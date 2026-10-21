@@ -49,7 +49,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Delivery time",
     "tailorpic": "Results within hours",
-    "other": "Varies by plan"
+    "other": "Check their site for current turnaround"
   },
   {
     "label": "Core purpose",
@@ -59,7 +59,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Training method",
     "tailorpic": "LoRA fine-tuning on your own photos",
-    "other": "Feature details vary"
+    "other": "Check their site for how the headshot feature works"
   },
   {
     "label": "Pricing model",
@@ -74,7 +74,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Dating and social photos",
     "tailorpic": "Dedicated dating category",
-    "other": "Not specified"
+    "other": "Check their site"
   },
   {
     "label": "General photo editing",
@@ -84,7 +84,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Team features",
     "tailorpic": "Team and enterprise options available",
-    "other": "Not publicly listed"
+    "other": "Check their site for team plans"
   }
 ];
 
@@ -129,7 +129,7 @@ const faqs = [
   },
   {
     "question": "Does Fotor have an AI headshot feature?",
-    "answer": "Yes, Fotor includes an AI headshot feature within its editor. Feature details may vary."
+    "answer": "Yes, Fotor includes an AI headshot feature within its editor. Check their site for the latest details."
   },
   {
     "question": "How long does TailorPic take?",

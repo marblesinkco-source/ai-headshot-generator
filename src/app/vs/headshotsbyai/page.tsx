@@ -38,7 +38,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Professional headshot styles" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
   { label: "One-time vs subscription", tailorpic: "One-time payment, no subscription", other: "One-time payment" },
-  { label: "Team features", tailorpic: "Team and enterprise options available", other: "Not publicly listed" },
+  { label: "Team features", tailorpic: "Team and enterprise options available", other: "Check their site for team options" },
 ];
 
 const differences = [
