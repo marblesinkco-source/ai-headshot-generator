@@ -23,10 +23,12 @@
 ### Faz 4: Deploy, Doğrulama & İlerleme Güncellemesi ✅
 - CI: PASS ✅ | Vercel: PASS ✅
 - Son commit: c0c0f742
-- Canlı doğrulama (built-in browser):
-  - Homepage: WhoItsFor persona tabs bölümü görünür ✅
-  - /about: Sayfa yükleniyor, tüm bölümler render ediliyor ✅
-  - FAQ: Use Cases ve Comparison kategorileri görünür ✅
+- Canlı doğrulama (built-in browser, 2026-10-21):
+  - Homepage: WhoItsFor persona tabs bölümü görünür, 6 persona tab'ı aktif ✅
+  - Homepage: FAQ 40 soru, 9 kategori (Use Cases + Comparison dahil) ✅
+  - /about: Sayfa yükleniyor, tüm bölümler render ediliyor, title doğru ✅
+  - /status: 3 yetenek kartı (Fast Processing, Secure Infrastructure, 24/7 Availability) görünür ✅
+  - Social proof ticker: 10 mesaj, güçlendirilmiş copy ✅
 
 ### Teknik Notlar
 - Route conflict çözüldü: Eski `src/app/about/page.tsx` ile yeni `(marketing)/about/page.tsx` çakışması — eski dosya kaldırıldı
