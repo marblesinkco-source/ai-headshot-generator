@@ -44,7 +44,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Built for headshots", tailorpic: "Yes, purpose-built workflow", other: "General-purpose image generation" },
   { label: "Consistency across photos", tailorpic: "Same trained model across all photos", other: "Each image is generated separately, so likeness can vary" },
   { label: "Convenience", tailorpic: "Upload once, receive a full set", other: "Very convenient if you already use ChatGPT" },
-  { label: "Team features", tailorpic: "Team and enterprise options available", other: "Check their site for business plans" },
+  { label: "Team features", tailorpic: "Team and enterprise options available", other: "Not publicly listed" },
 ];
 
 const differences = [

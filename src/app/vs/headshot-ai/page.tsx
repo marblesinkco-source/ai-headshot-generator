@@ -37,9 +37,9 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Delivery time", tailorpic: "Results within hours", other: "Advertised as quick" },
   { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "More limited set of styles" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
-  { label: "One-time vs subscription", tailorpic: "One-time payment, no subscription", other: "Check their site for current billing terms" },
-  { label: "Editor tools", tailorpic: "Built-in editing tools", other: "Check their site" },
-  { label: "Team features", tailorpic: "Team and enterprise options available", other: "Check their site for team options" },
+  { label: "One-time vs subscription", tailorpic: "One-time payment, no subscription", other: "Varies" },
+  { label: "Editor tools", tailorpic: "Built-in editing tools", other: "Not specified" },
+  { label: "Team features", tailorpic: "Team and enterprise options available", other: "Not publicly listed" },
 ];
 
 const differences = [

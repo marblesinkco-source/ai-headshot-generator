@@ -43,12 +43,16 @@ const stats: StatItem[] = [
 ];
 
 function useCountUp(end: number, duration: number, shouldStart: boolean): number {
-  const [count, setCount] = useState(0);
+  // Start at the real value so SSR / no-JS always shows the correct number.
+  // The animation resets to 0 only once the element is visible in the browser.
+  const [count, setCount] = useState(end);
   const frameRef = useRef<number>(0);
 
   useEffect(() => {
     if (!shouldStart) return;
 
+    // Reset to 0 before animating up — only happens client-side
+    setCount(0);
     const startTime = performance.now();
     const animate = (now: number) => {
       const elapsed = now - startTime;

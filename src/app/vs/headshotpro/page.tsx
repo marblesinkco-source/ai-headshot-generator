@@ -67,16 +67,17 @@ interface ComparisonRow {
 }
 
 const comparisonRows: ComparisonRow[] = [
-  { feature: 'Starting Price', tailorpic: `From ${BASE_PRICE_DISPLAY}`, headshotpro: '$29' },
-  { feature: 'Photos per Session', tailorpic: '1 to 160', headshotpro: '40+' },
-  { feature: 'Delivery', tailorpic: 'Within hours', headshotpro: 'Check their site' },
+  { feature: 'Starting Price', tailorpic: `From ${BASE_PRICE_DISPLAY}`, headshotpro: 'From $29' },
+  { feature: 'Photos per Session', tailorpic: '1 to 160', headshotpro: '40 to 120' },
+  { feature: 'Delivery', tailorpic: 'Within hours', headshotpro: '1–2 hours' },
   { feature: 'Photo Categories', tailorpic: '12', headshotpro: 'Professional only' },
+  { feature: 'Instant Preview', tailorpic: true, headshotpro: false },
   { feature: 'Pet Portraits', tailorpic: true, headshotpro: false },
   { feature: 'Dating Photos', tailorpic: true, headshotpro: false },
   { feature: 'E-Commerce Photos', tailorpic: true, headshotpro: false },
   { feature: 'Family Portraits', tailorpic: true, headshotpro: false },
   { feature: 'Team Plans', tailorpic: true, headshotpro: true },
-  { feature: 'Quality Commitment', tailorpic: 'Free regeneration', headshotpro: 'Yes' },
+  { feature: 'Quality Commitment', tailorpic: 'Free regeneration', headshotpro: 'Money-back guarantee' },
 ];
 
 const advantages = [
@@ -118,7 +119,7 @@ const faqs = [
   {
     question: 'How does TailorPic\'s price compare to HeadshotPro?',
     answer:
-      `TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY}. HeadshotPro\'s pricing starts at $29. HeadshotPro may change its plans, so check their site for current pricing.`,
+      `TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY} for a single photo. HeadshotPro starts at $29 for 40 headshots. TailorPic\'s entry price is lower, while HeadshotPro bundles more photos in its base plan. Both are one-time payments with no subscription.`,
   },
   {
     question: 'How many photos do I get compared to HeadshotPro?',
@@ -128,7 +129,7 @@ const faqs = [
   {
     question: 'How long does delivery take?',
     answer:
-      'TailorPic delivers within hours. HeadshotPro also advertises fast delivery, so check their site for current turnaround times.',
+      'TailorPic delivers within hours. HeadshotPro typically delivers in 1–2 hours. Both services offer fast turnaround compared to traditional studio sessions.',
   },
   {
     question: 'Is TailorPic a subscription?',

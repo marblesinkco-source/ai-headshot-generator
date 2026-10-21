@@ -92,7 +92,7 @@ type SampleImage = { src: string; alt: string };
 
 const qualityBadges = [
   { icon: Monitor, label: '4K Resolution' },
-  { icon: Palette, label: '40+ Styles' },
+  { icon: Palette, label: '12 Categories' },
   { icon: Clock, label: 'Fast Delivery' },
   { icon: ShieldCheck, label: 'Commercial License' },
 ];
@@ -163,7 +163,7 @@ const qualityFeatures = [
 ];
 
 const comparisonRows = [
-  { feature: '40+ styles', ours: 'Every order includes photos across multiple style categories.', check: 'How many distinct styles are included?' },
+  { feature: '12 categories', ours: 'Every order includes photos across 12 professional style categories.', check: 'How many distinct categories are included?' },
   { feature: 'Hours, not days', ours: 'Results are delivered in hours rather than days.', check: 'What is the stated turnaround time?' },
   { feature: 'One-time payment', ours: `Pay once, from ${BASE_PRICE_DISPLAY}. No subscription.`, check: 'Is it a one-time fee or a recurring plan?' },
 ];

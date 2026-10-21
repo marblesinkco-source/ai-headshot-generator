@@ -66,16 +66,17 @@ type FeatureRow = {
 };
 
 const comparisonRows: FeatureRow[] = [
-  { feature: 'Starting Price', tailorpic: `From ${BASE_PRICE_DISPLAY}`, competitor: '$29' },
-  { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: '40+' },
-  { feature: 'Delivery Time', tailorpic: 'Within hours', competitor: 'Under 2 hours' },
-  { feature: 'Photo Categories', tailorpic: '12 categories', competitor: 'Limited styles' },
-  { feature: 'Quality Commitment', tailorpic: 'Free regeneration', competitor: 'Yes' },
+  { feature: 'Starting Price', tailorpic: `From ${BASE_PRICE_DISPLAY}`, competitor: 'From $35' },
+  { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: '40 to 100' },
+  { feature: 'Delivery Time', tailorpic: 'Within hours', competitor: '15 min – 45 min' },
+  { feature: 'Photo Categories', tailorpic: '12 categories', competitor: 'Professional only' },
+  { feature: 'Instant Preview', tailorpic: true, competitor: false },
+  { feature: 'Quality Commitment', tailorpic: 'Free regeneration', competitor: 'Free redo if unsatisfied' },
   { feature: 'Team / Enterprise Plans', tailorpic: true, competitor: true },
   { feature: 'Pet Portraits', tailorpic: true, competitor: false },
-  { feature: 'Dating Photos', tailorpic: true, competitor: 'Limited' },
+  { feature: 'Dating Photos', tailorpic: true, competitor: false },
   { feature: 'E-Commerce Product Photos', tailorpic: true, competitor: false },
-  { feature: 'Lowest Plan', tailorpic: `From ${BASE_PRICE_DISPLAY} (1 photo)`, competitor: 'Limited free' },
+  { feature: 'Lowest Plan', tailorpic: `From ${BASE_PRICE_DISPLAY} (1 photo)`, competitor: 'Limited free credits' },
 ];
 
 const whyCards = [

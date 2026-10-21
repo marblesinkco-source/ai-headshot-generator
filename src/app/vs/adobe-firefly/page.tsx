@@ -44,7 +44,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Built for headshots", tailorpic: "Yes, purpose-built workflow", other: "General-purpose tool, not specialized for headshots" },
   { label: "Setup effort", tailorpic: "Upload photos and receive results", other: "Write prompts and refine outputs yourself" },
   { label: "Editing ecosystem", tailorpic: "Focused on delivering finished photos", other: "Integrates with other Adobe creative tools" },
-  { label: "Team features", tailorpic: "Team and enterprise options available", other: "Check their site for business plans" },
+  { label: "Team features", tailorpic: "Team and enterprise options available", other: "Not publicly listed" },
 ];
 
 const differences = [

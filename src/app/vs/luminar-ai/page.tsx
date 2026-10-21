@@ -64,7 +64,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Pricing model",
     "tailorpic": "One-time payment, no subscription",
-    "other": "Check their site for license options"
+    "other": "Varies"
   },
   {
     "label": "Professional headshots",
@@ -84,7 +84,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Team features",
     "tailorpic": "Team and enterprise options available",
-    "other": "Check their site for team plans"
+    "other": "Not publicly listed"
   }
 ];
 

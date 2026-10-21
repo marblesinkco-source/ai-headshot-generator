@@ -113,15 +113,18 @@ export function InstantPreviewDemo() {
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
           <div className="inline-flex items-center gap-2 rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-4 py-1.5 text-sm text-tp-bronze mb-6">
-            <Sparkles className="h-4 w-4" />
-            <span>AI-Powered Instant Preview</span>
+            <Clock className="h-4 w-4" />
+            <span>Try It Free — No Sign-Up Required</span>
           </div>
           <h2 className="font-display font-normal text-3xl md:text-5xl text-tp-paper mb-4">
-            See Your Headshot in Seconds
+            Your AI Headshot in <span className="text-tp-bronze">15 Seconds</span>
           </h2>
-          <p className="text-tp-muted text-lg md:text-xl max-w-2xl mx-auto">
-            Upload a single selfie and get professional headshot previews in under 15 seconds.
+          <p className="text-tp-muted text-lg md:text-xl max-w-2xl mx-auto mb-3">
+            Upload one selfie. Get a professional headshot preview instantly.
             No training wait. No commitment.
+          </p>
+          <p className="text-tp-bronze/80 text-sm font-medium tracking-wide uppercase">
+            The Power of AI Headshots
           </p>
         </div>
 
