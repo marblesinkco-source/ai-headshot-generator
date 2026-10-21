@@ -1,9 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+
+const BRAND_WEB = '/brand/tailorpic/web';
 
 interface Backdrop {
   name: string;
@@ -23,14 +26,15 @@ const BACKDROPS: Backdrop[] = [
 
 const STYLES = ['Professional', 'Creative', 'Corporate', 'Casual', 'Executive', 'Academic'];
 
-/** Perceived luminance (0-1) so the silhouette contrasts with any backdrop. */
-function isLight(hex: string): boolean {
-  const n = parseInt(hex.slice(1), 16);
-  const r = (n >> 16) & 255;
-  const g = (n >> 8) & 255;
-  const b = n & 255;
-  return (0.299 * r + 0.587 * g + 0.114 * b) / 255 > 0.6;
-}
+/** Map each style to a brand photo. */
+const STYLE_PHOTOS: Record<string, string> = {
+  Professional: `${BRAND_WEB}/after-ozlem.jpg`,
+  Creative: `${BRAND_WEB}/after-mert.jpg`,
+  Corporate: `${BRAND_WEB}/after-murat.jpg`,
+  Casual: `${BRAND_WEB}/after-ozan.jpg`,
+  Executive: `${BRAND_WEB}/after-tarkan.jpg`,
+  Academic: `${BRAND_WEB}/after-ahmet.jpg`,
+};
 
 export function StyleConfigurator() {
   const [backdropIndex, setBackdropIndex] = useState(2);
@@ -38,7 +42,7 @@ export function StyleConfigurator() {
 
   const backdrop = BACKDROPS[backdropIndex] ?? BACKDROPS[0];
   const style = STYLES[styleIndex] ?? STYLES[0];
-  const silhouette = isLight(backdrop.color) ? '#2D2D2D' : '#FFFFFF';
+  const photoSrc = STYLE_PHOTOS[style] ?? STYLE_PHOTOS.Professional;
 
   return (
     <section className="border-t border-tp-line/40 bg-white py-16 sm:py-20">
@@ -52,7 +56,7 @@ export function StyleConfigurator() {
           </p>
         </div>
 
-        {/* Preview (first on mobile, centered between/above on desktop) */}
+        {/* Preview with real brand photo */}
         <div className="mt-10 flex flex-col items-center">
           <div
             role="img"
@@ -60,23 +64,25 @@ export function StyleConfigurator() {
             className="relative h-[350px] w-[280px] overflow-hidden rounded-tp-card border border-tp-line shadow-md transition-colors duration-300"
             style={{ backgroundColor: backdrop.color }}
           >
-            <svg
-              viewBox="0 0 280 350"
-              className="absolute inset-0 h-full w-full"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <g fill={silhouette} fillOpacity="0.85">
-                <ellipse cx="140" cy="125" rx="52" ry="62" />
-                <path d="M30 350 C30 262 78 226 140 226 C202 226 250 262 250 350 Z" />
-              </g>
-            </svg>
+            <Image
+              src={photoSrc}
+              alt={`AI-generated ${style.toLowerCase()} headshot concept`}
+              fill
+              sizes="280px"
+              className="object-cover object-[50%_25%] mix-blend-luminosity transition-all duration-500"
+              style={{ opacity: 0.92 }}
+            />
+            {/* Subtle color overlay from backdrop */}
+            <div
+              className="absolute inset-0 transition-colors duration-300"
+              style={{ backgroundColor: backdrop.color, opacity: 0.15, mixBlendMode: 'color' }}
+            />
           </div>
           <p className="mt-4 text-center text-base font-medium text-tp-ink" aria-live="polite">
             {style} style on {backdrop.name}
           </p>
           <p className="mt-1 text-center text-xs italic text-tp-muted">
-            Illustrative concept — actual results use AI generation
+            AI-generated concept — actual results use your uploaded photos
           </p>
         </div>
 

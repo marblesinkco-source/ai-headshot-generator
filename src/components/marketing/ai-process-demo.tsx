@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Check } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
@@ -7,42 +8,24 @@ import { cn } from '@/lib/utils';
  * "See How It Works" - CSS-only, auto-advancing 3-step demo.
  * One 9s infinite cycle: Upload (0-3s) -> AI Processing (3-6s) -> Results (6-9s).
  * No JS timers; everything is driven by @keyframes + animation-delay.
- * All illustrations are abstract SVG silhouettes (concept art, not real people).
+ *
+ * Step 1 & 3 now use real brand photos instead of SVG silhouettes.
  */
 
-type Pose = 'center' | 'left' | 'right' | 'tilt';
+const BRAND_WEB = '/brand/tailorpic/web';
 
-function Silhouette({ pose = 'center', className }: { pose?: Pose; className?: string }) {
-  // Different head/shoulder placements so each thumbnail reads as a different pose.
-  const cfg: Record<Pose, { cx: number; cy: number; r: number; body: string; rotate: number }> = {
-    center: { cx: 24, cy: 17, r: 7.5, body: 'M8 46c0-10 7-16 16-16s16 6 16 16z', rotate: 0 },
-    left: { cx: 20, cy: 18, r: 7, body: 'M4 46c0-10 6-15 15-15s15 5 15 15z', rotate: 0 },
-    right: { cx: 29, cy: 18, r: 7, body: 'M14 46c0-10 6-15 15-15s15 5 15 15z', rotate: 0 },
-    tilt: { cx: 24, cy: 17, r: 7, body: 'M8 46c0-10 7-16 16-16s16 6 16 16z', rotate: -8 },
-  };
-  const c = cfg[pose];
-  return (
-    <svg viewBox="0 0 48 48" className={className} fill="currentColor" aria-hidden="true" focusable="false">
-      <g transform={`rotate(${c.rotate} 24 30)`}>
-        <circle cx={c.cx} cy={c.cy} r={c.r} />
-        <path d={c.body} />
-      </g>
-    </svg>
-  );
-}
-
-const UPLOADS: { pose: Pose; delay: string }[] = [
-  { pose: 'center', delay: '0s' },
-  { pose: 'left', delay: '0.35s' },
-  { pose: 'right', delay: '0.7s' },
-  { pose: 'tilt', delay: '1.05s' },
+const UPLOADS = [
+  { src: `${BRAND_WEB}/before-ozlem-1.jpg`, alt: 'Selfie upload 1', delay: '0s' },
+  { src: `${BRAND_WEB}/before-murat-1.jpg`, alt: 'Selfie upload 2', delay: '0.35s' },
+  { src: `${BRAND_WEB}/before-ahmet-1.jpg`, alt: 'Selfie upload 3', delay: '0.7s' },
+  { src: `${BRAND_WEB}/before-ozan-1.jpg`, alt: 'Selfie upload 4', delay: '1.05s' },
 ];
 
-const RESULTS: { pose: Pose; tile: string; figure: string; delay: string }[] = [
-  { pose: 'center', tile: 'bg-tp-beige', figure: 'text-tp-ink', delay: '0s' },
-  { pose: 'left', tile: 'bg-tp-black', figure: 'text-tp-paper', delay: '0.35s' },
-  { pose: 'right', tile: 'bg-tp-bronze', figure: 'text-tp-black', delay: '0.7s' },
-  { pose: 'tilt', tile: 'bg-tp-paper border border-tp-line', figure: 'text-tp-bronze-ink', delay: '1.05s' },
+const RESULTS = [
+  { src: `${BRAND_WEB}/after-ozlem.jpg`, alt: 'AI headshot result 1', tile: 'bg-tp-beige', delay: '0s' },
+  { src: `${BRAND_WEB}/after-murat.jpg`, alt: 'AI headshot result 2', tile: 'bg-tp-black', delay: '0.35s' },
+  { src: `${BRAND_WEB}/after-ahmet.jpg`, alt: 'AI headshot result 3', tile: 'bg-tp-bronze', delay: '0.7s' },
+  { src: `${BRAND_WEB}/after-ozan.jpg`, alt: 'AI headshot result 4', tile: 'bg-tp-paper border border-tp-line', delay: '1.05s' },
 ];
 
 // Particle positions (percent of the 160px stage) for the processing step.
@@ -138,10 +121,16 @@ function StepVisual({ step }: { step: 1 | 2 | 3 }) {
           {UPLOADS.map((u, i) => (
             <div
               key={i}
-              className="d-anim a-pop flex h-14 w-12 items-end justify-center overflow-hidden rounded-tp-button border border-tp-line bg-tp-beige text-tp-muted sm:w-14"
+              className="d-anim a-pop relative flex h-14 w-12 items-end justify-center overflow-hidden rounded-tp-button border border-tp-line bg-tp-beige sm:w-14"
               style={{ animationDelay: u.delay }}
             >
-              <Silhouette pose={u.pose} className="h-12 w-12" />
+              <Image
+                src={u.src}
+                alt={u.alt}
+                fill
+                sizes="56px"
+                className="object-cover object-[50%_25%] grayscale-[0.3]"
+              />
             </div>
           ))}
         </div>
@@ -180,10 +169,16 @@ function StepVisual({ step }: { step: 1 | 2 | 3 }) {
             <span className="absolute right-0 top-1/2 h-2 w-2 -translate-y-1/2 translate-x-1/2 rounded-full bg-tp-bronze" />
             <span className="absolute left-0 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-tp-ink" />
           </div>
-          {/* Central circle */}
+          {/* Central circle with real photo */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="d-anim a-pulse flex h-14 w-14 items-center justify-center rounded-full bg-tp-black text-tp-bronze">
-              <Silhouette pose="center" className="h-9 w-9" />
+            <div className="d-anim a-pulse relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-full bg-tp-black">
+              <Image
+                src={`${BRAND_WEB}/before-mert-1.jpg`}
+                alt="AI processing a selfie"
+                fill
+                sizes="56px"
+                className="object-cover object-[50%_25%] opacity-80"
+              />
             </div>
           </div>
         </div>
@@ -208,11 +203,16 @@ function StepVisual({ step }: { step: 1 | 2 | 3 }) {
             className={cn(
               'd-anim a-result relative flex h-[4.25rem] w-[4.5rem] items-end justify-center overflow-hidden rounded-tp-button sm:w-20',
               r.tile,
-              r.figure
             )}
             style={{ animationDelay: r.delay }}
           >
-            <Silhouette pose={r.pose} className="h-14 w-14" />
+            <Image
+              src={r.src}
+              alt={r.alt}
+              fill
+              sizes="80px"
+              className="object-cover object-[50%_25%]"
+            />
             <span
               className="d-anim a-check absolute right-1 top-1 flex h-4 w-4 items-center justify-center rounded-full bg-tp-black text-tp-paper"
               style={{ animationDelay: r.delay }}

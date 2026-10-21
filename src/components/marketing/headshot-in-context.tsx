@@ -1,8 +1,11 @@
 'use client';
 
 import { useState, useEffect, useRef, type CSSProperties } from 'react';
+import Image from 'next/image';
 import { Monitor, FileText, Mail, MessageSquare } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+
+const BRAND_WEB = '/brand/tailorpic/web';
 
 interface ContextTab {
   id: string;
@@ -25,10 +28,14 @@ function LinkedInMockup() {
       {/* Profile section */}
       <div className="-mt-10 px-5 pb-5">
         <div className="flex items-end gap-3">
-          <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-full border-4 border-white bg-tp-beige">
-            <div className="flex h-full w-full items-center justify-center text-2xl text-tp-bronze-ink">
-              👤
-            </div>
+          <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-full border-4 border-white bg-tp-beige">
+            <Image
+              src={`${BRAND_WEB}/after-ozlem.jpg`}
+              alt="AI-generated professional headshot on LinkedIn profile"
+              fill
+              sizes="80px"
+              className="object-cover object-[50%_30%]"
+            />
           </div>
         </div>
         <div className="mt-2">
@@ -53,10 +60,14 @@ function ResumeMockup() {
   return (
     <div className="mx-auto max-w-md overflow-hidden rounded-tp-card border border-tp-line bg-white p-6 shadow-sm">
       <div className="flex gap-4">
-        <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-tp-button bg-tp-beige">
-          <div className="flex h-full w-full items-center justify-center text-xl text-tp-bronze-ink">
-            👤
-          </div>
+        <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-tp-button bg-tp-beige">
+          <Image
+            src={`${BRAND_WEB}/after-murat.jpg`}
+            alt="AI-generated professional headshot on resume"
+            fill
+            sizes="64px"
+            className="object-cover object-[50%_30%]"
+          />
         </div>
         <div>
           <p className="text-base font-semibold text-tp-ink">Sarah Chen</p>
@@ -88,10 +99,14 @@ function EmailMockup() {
       </div>
       <div className="mt-5 border-t border-tp-line pt-4">
         <div className="flex items-center gap-3">
-          <div className="h-12 w-12 flex-shrink-0 overflow-hidden rounded-full bg-tp-beige">
-            <div className="flex h-full w-full items-center justify-center text-lg text-tp-bronze-ink">
-              👤
-            </div>
+          <div className="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-full bg-tp-beige">
+            <Image
+              src={`${BRAND_WEB}/after-ahmet.jpg`}
+              alt="AI-generated professional headshot in email signature"
+              fill
+              sizes="48px"
+              className="object-cover object-[50%_30%]"
+            />
           </div>
           <div>
             <p className="text-xs font-semibold text-tp-ink">Sarah Chen</p>
@@ -109,10 +124,14 @@ function SlackMockup() {
     <div className="mx-auto max-w-md overflow-hidden rounded-tp-card border border-tp-line bg-white p-4 shadow-sm">
       <div className="space-y-3">
         <div className="flex items-start gap-2.5">
-          <div className="h-9 w-9 flex-shrink-0 overflow-hidden rounded-tp-button bg-tp-beige">
-            <div className="flex h-full w-full items-center justify-center text-sm text-tp-bronze-ink">
-              👤
-            </div>
+          <div className="relative h-9 w-9 flex-shrink-0 overflow-hidden rounded-tp-button bg-tp-beige">
+            <Image
+              src={`${BRAND_WEB}/after-tarkan.jpg`}
+              alt="AI-generated professional headshot in Slack profile"
+              fill
+              sizes="36px"
+              className="object-cover object-[50%_30%]"
+            />
           </div>
           <div>
             <div className="flex items-baseline gap-2">
@@ -125,13 +144,23 @@ function SlackMockup() {
           </div>
         </div>
         <div className="flex items-start gap-2.5">
-          <div className="h-9 w-9 flex-shrink-0 rounded-tp-button bg-tp-beige/50" />
+          <div className="relative h-9 w-9 flex-shrink-0 overflow-hidden rounded-tp-button bg-tp-beige/50">
+            <Image
+              src={`${BRAND_WEB}/after-mert.jpg`}
+              alt="AI-generated headshot in Slack"
+              fill
+              sizes="36px"
+              className="object-cover object-[50%_30%]"
+            />
+          </div>
           <div>
             <div className="flex items-baseline gap-2">
-              <div className="h-2 w-16 rounded bg-tp-beige" />
+              <p className="text-xs font-semibold text-tp-ink">Alex Rivera</p>
               <p className="text-[10px] text-tp-muted/70">10:45 AM</p>
             </div>
-            <div className="mt-1.5 h-2 w-32 rounded bg-tp-beige/40" />
+            <div className="mt-0.5">
+              <p className="text-xs text-tp-muted">Looks great, reviewing now!</p>
+            </div>
           </div>
         </div>
       </div>
@@ -255,7 +284,7 @@ export function HeadshotInContext() {
           className="reveal mt-6 text-center text-xs text-tp-muted"
           style={{ '--reveal-i': TABS.length + 1 } as CSSProperties}
         >
-          Illustrative concept — actual results may vary based on your uploaded photos.
+          AI-generated concept images — actual results may vary based on your uploaded photos.
         </p>
       </div>
     </section>
