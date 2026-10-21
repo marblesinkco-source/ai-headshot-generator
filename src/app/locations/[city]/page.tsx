@@ -242,7 +242,7 @@ export default async function CityPage({ params }: Props) {
               Get Your Professional Headshots Today
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-muted">
-              Join thousands of {data.name} professionals who upgraded their online presence with AI-powered headshots.
+              Upgrade your online presence in {data.name} with AI-powered headshots made from your own selfies.
             </p>
             <div className="mt-8">
               <Link

@@ -1,5 +1,13 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-21 (Liderlik planı, Faz 1 güven temeli)
+
+- **T2** /samples canlıda zaten ortak Header/Footer, Paddle ve `/auth/register?redirect=...` kullanıyordu. Kalan doğrulanmamış iddialar düzeltildi: "40+ styles" → `STYLES.length` (11) / `BACKGROUNDS.length` (15) (`src/config/ai.ts`); "Join thousands" (why-tailorpic, locations, careers) kaldırıldı; "Bayram" (holiday-cards içeriği) kaldırıldı; $6.99 ile çelişen "40+ photos" metinleri düzeltildi.
+- **T3** `animated-stats.tsx` gerçek değeri SSR'da yazar (160 / 11 / ~2hr / $6.99); count-up sadece JS'li istemcide, kart ekranın altındaysa ve reduced-motion kapalıysa çalışır. "~2hr" hâlâ ölçülmemiş bir değer: T1'de ölçülünce güncellenmeli.
+- **T5** /vs/headshotpro ve /vs/aragon rakip sitelerinden 2026-10-21'de doğrulandı, kaynak URL'leri dosya başında yorumda. HeadMagic, Headshot AI, Supawork AI, AiShots için resmi kaynak doğrulanamadı; rakam iddiaları nötrlendi ve yorumla işaretlendi. /vs/* "eleven categories" → 12.
+- **T7** /status: sahte "All Systems Operational" kaldırıldı, noindex, footer ve sitemap'ten çıkarıldı (sayfa silinmedi). Gerçek uptime servisi bağlanınca geri eklenebilir.
+- Açık: T1 (gerçek ödeme ile funnel testi), T4 (izinli gerçek fotoğraflar), T6 (iade, Murat onayı).
+
 ## Oturum: 2026-10-20 (Turbo-Fabrika Tam Sistem Audit)
 
 ### Tamamlanan Görevler

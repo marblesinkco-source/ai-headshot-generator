@@ -7,17 +7,19 @@ import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export const revalidate = 3600;
 
 const STATUS_TITLE = `System Status | ${siteConfig.name}`;
-const STATUS_DESCRIPTION = `Check the current system status of ${siteConfig.name} and read about our approach to uptime and availability. Contact support for real-time updates.`;
+const STATUS_DESCRIPTION = `How to report a problem with ${siteConfig.name}. This page is not a live monitoring dashboard.`;
 
 export const metadata: Metadata = {
   title: { absolute: STATUS_TITLE },
   description: STATUS_DESCRIPTION,
   alternates: { canonical: '/status' },
+  // Not a live dashboard: keep it out of search until a real uptime monitor is connected.
+  robots: { index: false, follow: true },
   openGraph: generateOGMetadata({
     title: STATUS_TITLE,
     description: STATUS_DESCRIPTION,
@@ -55,13 +57,11 @@ export default function StatusPage() {
             <h1 className="font-display font-normal text-4xl leading-tight text-white sm:text-5xl">
               System Status
             </h1>
-            <div className="mx-auto mt-8 inline-flex items-center gap-3 rounded-tp-button border border-tp-bronze/30 bg-tp-bronze/10 px-5 py-3">
-              <span className="relative flex h-3 w-3" aria-hidden="true">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-60" />
-                <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500" />
-              </span>
-              <span className="font-medium text-white">All Systems Operational</span>
-            </div>
+            <p className="mx-auto mt-6 max-w-xl text-lg text-tp-beige/70">
+              We do not run a public live monitoring dashboard yet, so this page
+              does not show a live status. If something is not working, tell us
+              and we will look into it.
+            </p>
           </div>
         </section>
 
@@ -72,22 +72,14 @@ export default function StatusPage() {
             </h2>
             <ul className="mt-8 divide-y divide-tp-line rounded-tp-card border border-tp-line bg-white">
               {components.map((c) => (
-                <li key={c.name} className="flex items-center justify-between gap-4 p-5">
-                  <div>
-                    <p className="font-semibold text-tp-ink">{c.name}</p>
-                    <p className="mt-0.5 text-sm text-tp-muted">{c.description}</p>
-                  </div>
-                  <span className="flex shrink-0 items-center gap-2 text-sm font-medium text-tp-ink">
-                    <span className="h-2.5 w-2.5 rounded-full bg-green-500" aria-hidden="true" />
-                    <CheckCircle2 className="h-4 w-4 text-green-600" aria-hidden="true" />
-                    Operational
-                  </span>
+                <li key={c.name} className="p-5">
+                  <p className="font-semibold text-tp-ink">{c.name}</p>
+                  <p className="mt-0.5 text-sm text-tp-muted">{c.description}</p>
                 </li>
               ))}
             </ul>
             <p className="mt-6 rounded-tp-card border border-tp-line bg-tp-beige/40 p-5 text-sm text-tp-muted">
-              This page is informational and is not a live monitoring dashboard.
-              For real-time updates and incident reports, contact{' '}
+              For help with an order or to report an outage, contact{' '}
               <a
                 href={`mailto:${siteConfig.supportEmail}`}
                 className="font-medium text-tp-bronze-ink underline underline-offset-2"

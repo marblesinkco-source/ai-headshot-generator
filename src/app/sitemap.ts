@@ -193,12 +193,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/status`,
-      lastModified: new Date('2026-10-10'),
-      changeFrequency: 'daily',
-      priority: 0.5,
-    },
-    {
       url: `${baseUrl}/tools/linkedin-about-generator`,
       lastModified: new Date('2026-10-10'),
       changeFrequency: 'monthly',

@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { formatPrice, cn } from '@/lib/utils';
 import { CATEGORIES } from '@/config/categories';
 import { PROFESSIONS } from '@/config/professions';
+import { STYLES, BACKGROUNDS } from '@/config/ai';
 import { PAYMENT_PROVIDER, BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { buttonVariants } from '@/components/ui/button';
 import StudioComparisonV2 from '@/components/marketing/studio-comparison-v2';
@@ -37,7 +38,7 @@ const HeadshotStyleGallery = dynamic(
 
 const PAGE_TITLE = 'AI Professional Headshots | Studio-Quality Portraits from Selfies | TailorPic';
 const PAGE_DESC =
-  `Get studio-quality professional headshots from your own selfies. 40+ styles, 30+ profession-specific options. From ${BASE_PRICE_DISPLAY}. No studio visit needed.`;
+  `Get studio-quality professional headshots from your own selfies. ${STYLES.length} styles, ${BACKGROUNDS.length} backgrounds, 30+ profession-specific options. From ${BASE_PRICE_DISPLAY}. No studio visit needed.`;
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_TITLE },
@@ -94,7 +95,7 @@ const faqItems = [
   },
   {
     q: 'What headshot styles are available?',
-    a: 'TailorPic offers 40+ styles including Corporate, Studio Classic, Natural Light, Executive, Creative, LinkedIn-optimized, and many more. Each style produces a different look suitable for various professional contexts.',
+    a: `TailorPic offers ${STYLES.length} styles, including ${STYLES.slice(0, 5).map((s) => s.name).join(', ')} and more, combined with ${BACKGROUNDS.length} backgrounds. Larger packages include more styles and backgrounds.`,
   },
   {
     q: 'How long does it take to get my headshots?',
@@ -161,7 +162,7 @@ export default function HeadshotsLandingPage() {
             <span className="text-tp-bronze">Headshots</span>
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-tp-beige/70 max-w-2xl mx-auto leading-relaxed">
-            Studio-quality headshots from your own selfies. 40+ styles, 30+
+            Studio-quality headshots from your own selfies. {STYLES.length} styles, 30+
             profession-specific options. Most orders ready within hours.
           </p>
 
@@ -200,7 +201,7 @@ export default function HeadshotsLandingPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { icon: Camera, title: '40+ Styles', desc: 'Corporate, creative, outdoor, executive and more' },
+              { icon: Camera, title: `${STYLES.length} Styles`, desc: `Corporate, creative, executive and more, with ${BACKGROUNDS.length} backgrounds` },
               { icon: Users, title: '30+ Professions', desc: 'Tailored recommendations for your field' },
               { icon: Clock, title: 'Fast Delivery', desc: 'No scheduling, no studio visits needed' },
               { icon: Sparkles, title: 'HD & 4K Quality', desc: 'Print-ready with full commercial license' },
@@ -291,7 +292,7 @@ export default function HeadshotsLandingPage() {
               {
                 step: '02',
                 title: 'Choose Your Style',
-                desc: 'Pick from 40+ professional styles — corporate, creative, outdoor, LinkedIn-optimized, and more.',
+                desc: `Pick from ${STYLES.length} professional styles and ${BACKGROUNDS.length} backgrounds, from corporate to creative.`,
               },
               {
                 step: '03',

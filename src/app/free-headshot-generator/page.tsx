@@ -64,7 +64,7 @@ const steps = [
     icon: Sparkles,
     title: 'AI generates your headshots',
     description:
-      'Our AI learns your features and creates 40+ professional photos across 12 categories. Most orders are ready within hours.',
+      'Our AI learns your features and creates up to 160 professional photos across 12 categories. Most orders are ready within hours.',
   },
   {
     icon: Download,

@@ -388,7 +388,7 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
     benefits: [
       {
         title: 'Many Celebrations',
-        description: 'Christmas, Eid, Bayram, New Year, Thanksgiving and more.',
+        description: 'Christmas, Eid, New Year, Thanksgiving and more.',
         icon: '🎄',
       },
       {
@@ -409,7 +409,7 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
     ],
     useCases: [
       { title: 'Christmas Cards', description: 'Festive family cards for the holiday season.' },
-      { title: 'Eid & Bayram', description: 'Elegant cards for religious celebrations.' },
+      { title: 'Eid', description: 'Elegant cards for religious celebrations.' },
       { title: 'New Year', description: 'Celebrate the new year with a personalized greeting.' },
       { title: 'Thanksgiving', description: 'Share gratitude with a custom family card.' },
       { title: 'Social Media', description: 'Holiday-themed posts for Instagram and Facebook.' },
@@ -417,7 +417,7 @@ export const CATEGORY_CONTENT: Record<CategoryId, CategoryContent> = {
     faqItems: [
       {
         question: 'What holidays do you support?',
-        answer: 'We offer designs for Christmas, Eid/Bayram, New Year, Thanksgiving and more. Express and Basic include a limited number of themes; Popular and Premium include all of them.',
+        answer: 'We offer designs for Christmas, Eid, New Year, Thanksgiving and more. Express and Basic include a limited number of themes; Popular and Premium include all of them.',
       },
       {
         question: 'Can I include my pets in the card?',

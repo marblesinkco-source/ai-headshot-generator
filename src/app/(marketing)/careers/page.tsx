@@ -78,7 +78,7 @@ const benefits = [
   {
     icon: Zap,
     title: 'Impact',
-    desc: 'Ship features that reach thousands of professionals, teams, and businesses every day.',
+    desc: 'Ship features that professionals, teams, and businesses use to put their best face forward.',
   },
   {
     icon: Users,
