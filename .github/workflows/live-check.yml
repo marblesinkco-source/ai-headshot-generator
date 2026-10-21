@@ -1,0 +1,41 @@
+name: Live site check
+
+# Opens the live site in headless Chromium and reports console errors, page
+# errors and failed requests per page, plus /api/health. Uses no secrets.
+# The sandbox cannot reach tailorpic.com, so this runs on GitHub Actions.
+#
+#   gh api -X POST repos/{owner}/{repo}/actions/workflows/live-check.yml/dispatches -f ref=main
+
+on:
+  workflow_dispatch:
+    inputs:
+      base:
+        description: Site to check
+        default: https://www.tailorpic.com
+  push:
+    branches: ['claude/**']
+    paths: ['.github/workflows/live-check.yml', 'scripts/live-check.mjs']
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Playwright
+        run: |
+          mkdir -p /tmp/pw && cd /tmp/pw
+          npm init -y >/dev/null
+          npm install --silent playwright@1.48.2
+          npx playwright install --with-deps chromium
+      - name: Check pages
+        env:
+          BASE: ${{ inputs.base || 'https://www.tailorpic.com' }}
+          NODE_PATH: /tmp/pw/node_modules
+        run: node scripts/live-check.mjs | tee -a "$GITHUB_STEP_SUMMARY"
