@@ -17,7 +17,7 @@ on:
     paths: ['.github/workflows/live-check.yml', 'scripts/live-check.mjs']
 
 permissions:
-  contents: read
+  contents: write  # commit comment with the report (the sandbox cannot download Actions logs)
 
 jobs:
   check:
@@ -38,4 +38,9 @@ jobs:
         env:
           BASE: ${{ inputs.base || 'https://www.tailorpic.com' }}
           NODE_PATH: /tmp/pw/node_modules
-        run: node scripts/live-check.mjs | tee -a "$GITHUB_STEP_SUMMARY"
+        run: node scripts/live-check.mjs | tee report.md | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Post report as a commit comment
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api "repos/${{ github.repository }}/commits/${GITHUB_SHA}/comments" -F body=@report.md > /dev/null
