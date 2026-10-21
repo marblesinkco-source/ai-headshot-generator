@@ -7,12 +7,15 @@ import { homeBeforeAfterPairs } from '@/config/category-visuals';
 
 const IMAGE_SIZES = '(min-width: 768px) 30vw, 90vw';
 
-/* Transformation tags shown under each before/after card */
-const TRANSFORM_TAGS: Record<string, string[]> = {
-  'LinkedIn Profile': ['Background', 'Lighting', 'Attire'],
-  'Corporate Team': ['Background', 'Expression', 'Style'],
-  'Creative Portfolio': ['Background', 'Mood', 'Framing'],
-};
+/** Transformation tags shown under each before/after card */
+function getTransformTags(label: string): string[] | null {
+  switch (label) {
+    case 'LinkedIn Profile': return ['Background', 'Lighting', 'Attire'];
+    case 'Corporate Team': return ['Background', 'Expression', 'Style'];
+    case 'Creative Portfolio': return ['Background', 'Mood', 'Framing'];
+    default: return null;
+  }
+}
 
 /* ------------------------------------------------------------------ */
 /*  Interactive drag slider — pure React, no dependencies              */
@@ -209,9 +212,9 @@ export function BeforeAfterShowcase() {
               <figcaption className="border-t border-tp-line px-4 py-4 text-center transition-colors group-hover:border-tp-bronze/30">
                 <span className="block text-sm font-medium text-tp-ink">{label}</span>
                 <span className="mt-1 block text-xs text-tp-muted">{detail}</span>
-                {TRANSFORM_TAGS[label] && (
+                {getTransformTags(label) && (
                   <span className="mt-2 flex flex-wrap items-center justify-center gap-1.5">
-                    {TRANSFORM_TAGS[label].map((tag) => (
+                    {getTransformTags(label)!.map((tag) => (
                       <span
                         key={tag}
                         className="inline-block rounded-full border border-tp-bronze/20 bg-tp-bronze/5 px-2 py-0.5 text-[10px] font-medium text-tp-bronze-ink"
