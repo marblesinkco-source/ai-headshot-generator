@@ -49,7 +49,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 
 const differences = [
   { title: "A low entry price", body: `TailorPic starts from ${BASE_PRICE_DISPLAY}. Every package shows its total up front, so you know what you pay before you upload a single photo.` },
-  { title: "Web-based, focused workflow", body: "TailorPic is a dedicated headshot service with eleven categories, not one pack inside a broader mobile photo app." },
+  { title: "Web-based, focused workflow", body: "TailorPic is a dedicated headshot service with 12 categories, not one pack inside a broader mobile photo app." },
   { title: "Personal model, not a generic filter", body: "TailorPic fine-tunes a LoRA model on your own selfies, which aims for a closer likeness than a one-size-fits-all preset." },
   { title: "Trade-off on speed", body: "TailorPic results within hours for most orders. If you need results in minutes, a faster tool may suit an urgent deadline better." },
 ];

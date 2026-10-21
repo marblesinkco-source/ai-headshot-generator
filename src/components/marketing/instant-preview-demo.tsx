@@ -114,7 +114,7 @@ export function InstantPreviewDemo() {
         <div className="text-center mb-12 md:mb-16">
           <div className="inline-flex items-center gap-2 rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-4 py-1.5 text-sm text-tp-bronze mb-6">
             <Clock className="h-4 w-4" />
-            <span>Try It Free — No Sign-Up Required</span>
+            <span>Free with a TailorPic account</span>
           </div>
           <h2 className="font-display font-normal text-3xl md:text-5xl text-tp-paper mb-4">
             Your AI Headshot in <span className="text-tp-bronze">15 Seconds</span>

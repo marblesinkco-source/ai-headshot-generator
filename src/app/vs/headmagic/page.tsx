@@ -35,6 +35,10 @@ export const metadata: Metadata = {
 const intro =
   "HeadMagic is an AI headshot service in the same space as TailorPic. Both turn your selfies into professional portraits; the differences come down to price model, category range and delivery.";
 
+// Competitor values on this page are deliberately non-specific: no official
+// HeadMagic pricing/turnaround page could be confirmed on 2026-10-21. Before adding
+// any number, price or speed for HeadMagic, check it on their own site and cite
+// the URL here.
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",

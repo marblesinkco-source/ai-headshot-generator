@@ -422,8 +422,8 @@ export default function ToolsPage() {
               Want Studio-Quality AI Headshots?
             </h2>
             <p className="mt-3 text-tp-muted">
-              Skip the photoshoot. Upload selfies and get 40+ professional
-              headshots in hours, starting at just {BASE_PRICE_DISPLAY}.
+              Skip the photoshoot. Upload selfies and get professional headshots
+              in hours, from {BASE_PRICE_DISPLAY} for one photo up to 160 photos.
             </p>
             <Link
               href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"

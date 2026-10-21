@@ -38,24 +38,35 @@ export const metadata: Metadata = {
 /*  Data                                                               */
 /* ------------------------------------------------------------------ */
 
+// Competitor facts, checked on Aragon's own site on 2026-10-21:
+//   https://www.aragon.ai  Individual plans: Basic 40 headshots / 45 min,
+//     Standard 60 / 30 min, Executive 100 / 15 min. Shown at $35 / $45 / $75
+//     during a "20% off all packages" promotion ($44 / $56 / $94 otherwise).
+//     Also lists Dating Photos, Pet Portrait and Product Photo generators and
+//     Teams pricing. "As quick as 30 min".
+//   https://www.aragon.ai/refund-policy  refund requests within 14 days of
+//     purchase; downloading photos counts as using the product. The homepage
+//     also offers a free redo to unhappy customers.
+// Re-check these pages before changing any Aragon value below.
+
 const quickBadges = [
   {
     icon: DollarSign,
     label: 'Starting Price',
     tailorpic: `From ${BASE_PRICE_DISPLAY}`,
-    competitor: '$29+',
+    competitor: '$35 (promo)',
   },
   {
     icon: ImageIcon,
-    label: 'Photos Included',
-    tailorpic: '1 to 160',
-    competitor: '40+',
+    label: 'Smallest Package',
+    tailorpic: '1 photo',
+    competitor: '40 photos',
   },
   {
     icon: Clock,
     label: 'Delivery Time',
     tailorpic: 'Within hours',
-    competitor: 'Under 2 hours',
+    competitor: '15 to 45 min',
   },
 ];
 
@@ -66,17 +77,15 @@ type FeatureRow = {
 };
 
 const comparisonRows: FeatureRow[] = [
-  { feature: 'Starting Price', tailorpic: `From ${BASE_PRICE_DISPLAY}`, competitor: 'From $35' },
-  { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: '40 to 100' },
-  { feature: 'Delivery Time', tailorpic: 'Within hours', competitor: '15 min – 45 min' },
-  { feature: 'Photo Categories', tailorpic: '12 categories', competitor: 'Professional only' },
-  { feature: 'Instant Preview', tailorpic: true, competitor: false },
-  { feature: 'Quality Commitment', tailorpic: 'Free regeneration', competitor: 'Free redo if unsatisfied' },
+  { feature: 'Starting Price', tailorpic: `From ${BASE_PRICE_DISPLAY}`, competitor: '$35 on promotion ($44 list)' },
+  { feature: 'Try a Single Photo First', tailorpic: `Yes, 1 photo for ${BASE_PRICE_DISPLAY}`, competitor: false },
+  { feature: 'Photos per Package', tailorpic: '1 to 160', competitor: '40 to 100' },
+  { feature: 'Delivery Time', tailorpic: 'Within hours', competitor: '15 to 45 min, by plan' },
+  { feature: 'If You Are Not Happy', tailorpic: 'Free regeneration', competitor: 'Refund within 14 days if not downloaded, or free redo' },
   { feature: 'Team / Enterprise Plans', tailorpic: true, competitor: true },
-  { feature: 'Pet Portraits', tailorpic: true, competitor: false },
-  { feature: 'Dating Photos', tailorpic: true, competitor: false },
-  { feature: 'E-Commerce Product Photos', tailorpic: true, competitor: false },
-  { feature: 'Lowest Plan', tailorpic: `From ${BASE_PRICE_DISPLAY} (1 photo)`, competitor: 'Limited free credits' },
+  { feature: 'Pet Portraits', tailorpic: true, competitor: true },
+  { feature: 'Dating Photos', tailorpic: true, competitor: true },
+  { feature: 'E-Commerce Product Photos', tailorpic: true, competitor: true },
 ];
 
 const whyCards = [
@@ -84,13 +93,13 @@ const whyCards = [
     icon: BadgeDollarSign,
     title: 'More Affordable',
     description:
-      `TailorPic starts at just ${BASE_PRICE_DISPLAY}, compared to Aragon AI\'s higher pricing. Get professional headshots without the premium price tag.`,
+      `TailorPic starts at ${BASE_PRICE_DISPLAY} for one photo. Aragon AI's smallest plan is 40 headshots, listed at $44 ($35 during its current promotion).`,
   },
   {
     icon: LayoutGrid,
-    title: 'More Categories',
+    title: '12 Categories, One Upload',
     description:
-      'Choose from 12 photo categories including business, dating, pet portraits, and e-commerce — far more variety than Aragon AI offers.',
+      'Choose from 12 photo categories including business, dating, family portraits, pet portraits, and e-commerce, all bought from the same simple one-time packages.',
   },
   {
     icon: Sparkles,
@@ -118,22 +127,22 @@ const faqs = [
   {
     question: 'How does TailorPic\'s price compare to Aragon AI?',
     answer:
-      `TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY}. Aragon AI lists plans starting around $29. Aragon may change its plans, so check their site for current pricing.`,
+      `TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY}. Aragon AI's plans are listed at $44 to $94 for 40 to 100 headshots, shown at $35 to $75 during a 20% promotion (October 2026; plans may change).`,
   },
   {
     question: 'How many photos do I get with TailorPic compared to Aragon AI?',
     answer:
-      'Every TailorPic order includes photos across 12 categories, including business, dating, pet portraits, and e-commerce. Aragon AI also offers photos but with a more limited set of styles.',
+      'TailorPic packages range from 1 to 160 photos, so you can start small. Aragon AI headshot plans range from 40 to 100 headshots.',
   },
   {
     question: 'How long does delivery take?',
     answer:
-      'TailorPic delivers your photos within hours. Aragon AI also advertises fast turnaround, so check their site for current delivery times.',
+      'TailorPic delivers your photos within hours. Aragon AI is faster: its plans list 45, 30 or 15 minutes of generation time.',
   },
   {
-    question: 'Is TailorPic a subscription like Aragon AI?',
+    question: 'Is TailorPic a subscription?',
     answer:
-      `No. TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY} with no recurring charges and no renewals. It also comes.`,
+      `No. TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY} with no recurring charges and no renewals.`,
   },
   {
     question: 'How does TailorPic train my headshots, and is it easy to use?',

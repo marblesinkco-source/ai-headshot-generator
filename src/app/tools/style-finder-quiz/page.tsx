@@ -4,6 +4,7 @@ import { Footer } from '@/components/marketing/footer';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
+import { STYLES, BACKGROUNDS } from '@/config/ai';
 import { StyleFinderQuiz } from '@/components/tools/style-finder-quiz';
 
 export const revalidate = 3600;
@@ -98,11 +99,11 @@ export default function StyleFinderQuizPage() {
         <section className="border-t border-tp-line bg-white px-4 py-12 sm:py-16">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-display font-normal text-2xl text-tp-ink sm:text-3xl">
-              40+ Professional Styles
+              {STYLES.length} Professional Styles
             </h2>
             <p className="mt-4 text-base leading-relaxed text-tp-muted">
-              TailorPic offers over 40 curated headshot styles — from corporate and executive to
-              creative and editorial. Each style is trained on professional photography to deliver
+              TailorPic offers {STYLES.length} curated headshot styles and {BACKGROUNDS.length} backgrounds, from corporate and
+              executive to creative. Each style is trained on professional photography to deliver
               studio-quality results from your selfies.
             </p>
           </div>

@@ -80,7 +80,7 @@ const changelog: ChangelogGroup[] = [
         tag: 'Improved',
         title: 'Expanded style library',
         description:
-          'More backgrounds, outfits, and expressions across professional, creative, and casual categories. Each order now delivers 40+ unique photos.',
+          'More backgrounds, outfits, and expressions across professional, creative, and casual categories. Packages from Starter up now deliver 40+ unique photos.',
         icon: <Palette className={iconClass} />,
         href: '/samples',
       },
