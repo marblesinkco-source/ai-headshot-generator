@@ -37,12 +37,20 @@ export const metadata: Metadata = {
 /*  Data                                                               */
 /* ------------------------------------------------------------------ */
 
+// Competitor facts, checked on BetterPic's own site on 2026-10-21:
+//   https://www.betterpic.io/pricing  Basic $35 / 20 headshots / 2 h,
+//     Pro $39 / 60 / 1.5 h, Expert $79 / 120 / 1 h (1 free redo); free tier
+//     "up to 10 free 4K headshots", queue-based; teams from $49 per seat;
+//     "7-day refund policy (terms apply)", refunds "provided training has
+//     not started"; redo otherwise $10
+// Re-check this page before changing any BetterPic value below.
+
 const quickBadges = [
   {
     icon: DollarSign,
     label: 'Starting Price',
     tailorpic: `From ${BASE_PRICE_DISPLAY}`,
-    competitor: '$35+',
+    competitor: '$35 (free tier too)',
   },
   {
     icon: ImageIcon,
@@ -54,7 +62,7 @@ const quickBadges = [
     icon: Clock,
     label: 'Delivery Time',
     tailorpic: 'Within hours',
-    competitor: '1 to 2 hours',
+    competitor: '1 to 2 hours by plan',
   },
 ];
 
@@ -66,29 +74,27 @@ type FeatureRow = {
 
 const comparisonRows: FeatureRow[] = [
   { feature: 'Starting Price', tailorpic: `From ${BASE_PRICE_DISPLAY}`, competitor: '$35 (Basic plan)' },
-  { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: '20 on Basic plan' },
+  { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: '20 to 120 by plan' },
+  { feature: 'Free Option', tailorpic: 'Free instant preview with an account', competitor: 'Up to 10 free headshots, queue-based' },
   { feature: 'Delivery Time', tailorpic: 'Within hours', competitor: '1 to 2 hours by plan' },
   { feature: 'Photo Categories', tailorpic: '12 categories', competitor: 'Headshot-focused' },
-  { feature: 'Quality Commitment', tailorpic: 'Free regeneration', competitor: 'Yes (7 days, terms apply)' },
+  { feature: 'Quality Commitment', tailorpic: 'Free regeneration', competitor: '7-day refund if training has not started (terms apply)' },
   { feature: 'Team / Enterprise Plans', tailorpic: true, competitor: true },
-  { feature: 'Pet Portraits', tailorpic: true, competitor: false },
-  { feature: 'Dating Photos', tailorpic: true, competitor: 'Limited' },
-  { feature: 'E-Commerce Product Photos', tailorpic: true, competitor: false },
-  { feature: 'Industry-Specific Solutions', tailorpic: true, competitor: 'Limited' },
+  { feature: 'Try a Single Paid Photo', tailorpic: `Yes, ${BASE_PRICE_DISPLAY}`, competitor: false },
 ];
 
 const whyCards = [
   {
     icon: BadgeDollarSign,
-    title: 'Much More Affordable',
+    title: 'Pay for Just One Photo',
     description:
-      `TailorPic starts at just ${BASE_PRICE_DISPLAY}, while BetterPic\'s entry-level Basic plan starts at $35. Get professional headshots at a fraction of the price.`,
+      `TailorPic starts at just ${BASE_PRICE_DISPLAY}, for a single photo. BetterPic\'s paid plans start at $35 for 20 headshots, and it also has a free tier of up to 10 headshots.`,
   },
   {
     icon: ImageIcon,
     title: 'More Photos for Less',
     description:
-      'Every TailorPic order includes photos, compared with 20 photos on BetterPic\'s Basic plan, so you have more to choose from.',
+      'TailorPic packages range from 1 to 160 photos across 12 categories. BetterPic plans range from 20 to 120 headshots.',
   },
   {
     icon: LayoutGrid,
@@ -116,22 +122,22 @@ const faqs = [
   {
     question: 'How does TailorPic\'s price compare to BetterPic?',
     answer:
-      `TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY}. BetterPic\'s entry-level Basic plan starts at $35. BetterPic may update its plans, so check their site for current pricing.`,
+      `TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY}. BetterPic\'s paid plans are $35, $39 and $79 for 20, 60 and 120 headshots, plus a free tier (October 2026).`,
   },
   {
     question: 'How many photos do I get compared to BetterPic?',
     answer:
-      'TailorPic includes photos in every order across 12 categories. BetterPic\'s Basic plan includes 20 photos, with larger plans offering more.',
+      'TailorPic packages range from 1 to 160 photos across 12 categories. BetterPic plans include 20, 60 or 120 headshots.',
   },
   {
     question: 'How fast will I get my photos?',
     answer:
-      'TailorPic delivers within hours. BetterPic delivery runs roughly 1 to 2 hours depending on the plan you choose.',
+      'TailorPic delivers within hours. BetterPic lists 2 hours on Basic, 1.5 hours on Pro and 1 hour on Expert.',
   },
   {
     question: 'Is TailorPic a subscription or a one-time purchase?',
     answer:
-      `TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY} with no subscription. Every order is backed by a quality commitment, compared with BetterPic\'s 7-day guarantee with terms.`,
+      `TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY} with no subscription. Every order includes free regeneration. BetterPic offers a 7-day refund if training has not started (terms apply).`,
   },
   {
     question: 'How does TailorPic create my photos, and is it easy to use?',

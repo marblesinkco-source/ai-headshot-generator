@@ -32,26 +32,28 @@ export const metadata: Metadata = {
 
 
 const intro =
-  "ProfilePicture.AI is a dedicated AI profile photo generator. TailorPic focuses on a simple one-time price, LoRA-trained likeness and 12 photo categories beyond the standard profile photo.";
+  "ProfilePicture.AI is a free profile picture maker: crop, remove the background and add borders to a photo you already have. TailorPic creates new AI photos of you from selfies, across 12 categories.";
 
+// Competitor facts, checked on ProfilePicture.AI's own site on 2026-10-21:
+//   https://www.profilepicture.ai  "The pfp maker is 100% free. No sign-up,
+//     no watermark, no credit card."; editor with background removal, crops,
+//     borders, filters, text and presets for Instagram, WhatsApp, LinkedIn, X,
+//     YouTube and more; points to HeadshotPro as its paid product
+// Re-check this page before changing any ProfilePicture.AI value below.
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: `from ${BASE_PRICE_DISPLAY}`, other: "Varies by plan; confirm on their site" },
-  { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on the package you pick" },
-  { label: "Delivery time", tailorpic: "Results within hours", other: "Varies by plan" },
-  { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Profile photo and headshot style presets" },
-  { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
-  { label: "Pricing model", tailorpic: "One-time payment, no subscription", other: "Check whether packages or subscriptions apply" },
-  { label: "Dating and social photos", tailorpic: "Dedicated dating category", other: "Style availability varies" },
-  { label: "Pet portraits", tailorpic: "Included as a category", other: "Not a known focus" },
-  { label: "E-commerce product photos", tailorpic: "Included as a category", other: "Not a known focus" },
-  { label: "Team features", tailorpic: "Team and enterprise options available", other: "Check their site for team plans" },
+  { label: "Price", tailorpic: `from ${BASE_PRICE_DISPLAY}`, other: "Free" },
+  { label: "What it does", tailorpic: "Creates new AI photos of you from selfies", other: "Edits a photo you already have" },
+  { label: "Sign-up", tailorpic: "Free account needed", other: "No sign-up" },
+  { label: "Tools", tailorpic: "12 categories, AI generation and built-in editing", other: "Background removal, crops, borders, filters and text" },
+  { label: "Platform sizes", tailorpic: "Free social media resizer tool", other: "Presets for LinkedIn, Instagram, X, YouTube and more" },
+  { label: "AI model of your face", tailorpic: "LoRA fine-tuning on your own photos", other: "None" },
 ];
 
 const differences = [
-  { title: "A low entry price", body: `TailorPic starts from ${BASE_PRICE_DISPLAY}. Every package shows its total up front, so you know what you pay before you upload a single photo.` },
+  { title: "New photo vs edited photo", body: "ProfilePicture.AI polishes a photo you already have. TailorPic creates new studio-style photos of you, which helps when you do not have a good photo to start from." },
   { title: "Beyond the profile photo", body: "Twelve categories cover LinkedIn, dating, creative portraits, pets and product shots, so one upload can serve several needs." },
-  { title: "Personal model, not a generic filter", body: "TailorPic fine-tunes a LoRA model on your own selfies, which aims for a closer likeness than a one-size-fits-all preset." },
-  { title: "Trade-off on speed", body: "TailorPic results within hours for most orders. If you need results in minutes, a faster tool may suit an urgent deadline better." },
+  { title: "Free vs paid", body: `ProfilePicture.AI is free with no sign-up. TailorPic starts from ${BASE_PRICE_DISPLAY} for one AI photo.` },
+  { title: "Use both", body: "You can create a headshot with TailorPic, then crop or frame it for each platform with a free editor." },
 ];
 
 const useCases = {
@@ -62,16 +64,15 @@ const useCases = {
     "Clear, predictable pricing",
   ],
   other: [
-    "To review ProfilePicture.AI's current packages and styles",
-    "A tool you have already used and trust",
-    "Specific features only they list on their site",
-    "Faster turnaround if they offer it on your plan",
+    "A free tool with no sign-up",
+    "To crop or frame a photo you already like",
+    "Platform-sized exports for social profiles",
   ],
 };
 
 const faqs = [
-  { question: "Is TailorPic cheaper than ProfilePicture.AI?", answer: `TailorPic packages start from ${BASE_PRICE_DISPLAY} and go up to 160 photos. ProfilePicture.AI pricing varies by plan and can change, so compare against their current price page.` },
-  { question: "What makes TailorPic different from ProfilePicture.AI?", answer: "TailorPic trains a personal LoRA model on your photos and outputs 12 categories, including dating, creative, pet and e-commerce photos, not just profile photos." },
+  { question: "Is TailorPic cheaper than ProfilePicture.AI?", answer: `TailorPic packages start from ${BASE_PRICE_DISPLAY} and go up to 160 photos. ProfilePicture.AI is a free editor for photos you already have, so it does not create new photos of you.` },
+  { question: "What makes TailorPic different from ProfilePicture.AI?", answer: "TailorPic trains a personal LoRA model on your photos and creates new photos in 12 categories. ProfilePicture.AI edits an existing photo." },
   { question: "How long does TailorPic take?", answer: "Results within hours, since a dedicated model is fine-tuned on your uploads." },
   { question: "Do I need a subscription with TailorPic?", answer: `No. Every package is a single one-time payment (from ${BASE_PRICE_DISPLAY}) with no recurring fees.` },
   { question: "Can I use the photos on LinkedIn?", answer: "Yes. The business category is built for LinkedIn, resumes and company pages." },
