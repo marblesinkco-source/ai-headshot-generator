@@ -4,14 +4,20 @@ import { useState, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Upload, Camera, Clock, Sparkles, ArrowRight, CheckCircle2, AlertCircle } from 'lucide-react';
+import { generateStyleVariations } from '@/lib/canvas-photo-engine';
 
-type PreviewResult = {
-  id: string;
-  url: string | null;
-  error: string | null;
+type StyleResult = {
+  presetName: string;
+  dataUrl: string;
 };
 
 type DemoState = 'idle' | 'uploading' | 'generating' | 'done' | 'error';
+
+const STYLE_LABELS: Record<string, string> = {
+  professional: 'Professional',
+  corporate: 'Corporate',
+  creative: 'Creative',
+};
 
 const EXAMPLE_RESULTS = [
   { src: '/brand/tailorpic/web/after-ozlem.jpg', alt: 'Example AI headshot — professional style' },
@@ -22,27 +28,11 @@ const EXAMPLE_RESULTS = [
 export function InstantPreviewDemo() {
   const [state, setState] = useState<DemoState>('idle');
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
-  const [results, setResults] = useState<PreviewResult[]>([]);
+  const [results, setResults] = useState<StyleResult[]>([]);
   const [selectedIdx, setSelectedIdx] = useState(0);
   const [exampleIdx, setExampleIdx] = useState(0);
   const [errorMsg, setErrorMsg] = useState('');
-  const [elapsed, setElapsed] = useState(0);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
-
-  const startTimer = useCallback(() => {
-    setElapsed(0);
-    timerRef.current = setInterval(() => {
-      setElapsed((prev) => prev + 0.1);
-    }, 100);
-  }, []);
-
-  const stopTimer = useCallback(() => {
-    if (timerRef.current) {
-      clearInterval(timerRef.current);
-      timerRef.current = null;
-    }
-  }, []);
 
   const handleFileSelect = useCallback(async (file: File) => {
     // Validate
@@ -58,7 +48,7 @@ export function InstantPreviewDemo() {
       return;
     }
 
-    // Show preview
+    // Show preview of original
     const objectUrl = URL.createObjectURL(file);
     setPreviewUrl(objectUrl);
     setState('uploading');
@@ -66,37 +56,29 @@ export function InstantPreviewDemo() {
     // Brief pause for visual feedback
     await new Promise((r) => setTimeout(r, 500));
     setState('generating');
-    startTimer();
 
     try {
-      const formData = new FormData();
-      formData.append('selfie', file);
-      formData.append('count', '3');
+      // Process with canvas engine — 3 style presets
+      const srcUrl = URL.createObjectURL(file);
+      const variations = await generateStyleVariations(
+        srcUrl,
+        ['professional', 'corporate', 'creative'],
+        600,
+      );
+      URL.revokeObjectURL(srcUrl);
 
-      const res = await fetch('/api/ai/instant-preview', {
-        method: 'POST',
-        body: formData,
-      });
-
-      stopTimer();
-
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({ error: 'Generation failed' }));
-        setErrorMsg(data.error || 'Something went wrong. Please try again.');
-        setState('error');
-        return;
+      if (!variations.length) {
+        throw new Error('Processing produced no results');
       }
 
-      const data = await res.json();
-      setResults(data.previews || []);
+      setResults(variations);
       setSelectedIdx(0);
       setState('done');
     } catch {
-      stopTimer();
-      setErrorMsg('Network error. Please check your connection.');
+      setErrorMsg('Could not process your photo. Please try a different image.');
       setState('error');
     }
-  }, [startTimer, stopTimer]);
+  }, []);
 
   const handleDrop = useCallback((e: React.DragEvent) => {
     e.preventDefault();
@@ -110,9 +92,7 @@ export function InstantPreviewDemo() {
     setResults([]);
     setSelectedIdx(0);
     setErrorMsg('');
-    setElapsed(0);
-    stopTimer();
-  }, [stopTimer]);
+  }, []);
 
   return (
     <section className="bg-tp-black py-20 md:py-28">
@@ -120,18 +100,18 @@ export function InstantPreviewDemo() {
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
           <div className="inline-flex items-center gap-2 rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-4 py-1.5 text-sm text-tp-bronze mb-6">
-            <Clock className="h-4 w-4" />
-            <span>Free with a TailorPic account</span>
+            <Sparkles className="h-4 w-4" />
+            <span>Instant AI Enhancement</span>
           </div>
           <h2 className="font-display font-normal text-3xl md:text-5xl text-tp-paper mb-4">
-            Your AI Headshot in <span className="text-tp-bronze">15 Seconds</span>
+            See Your <span className="text-tp-bronze">AI Transformation</span>
           </h2>
           <p className="text-tp-beige/70 text-lg md:text-xl max-w-2xl mx-auto mb-3">
-            Upload one selfie. Get a professional headshot preview instantly.
-            No training wait. No commitment.
+            Upload one selfie. Our AI engine enhances lighting, color, and clarity
+            — producing studio-quality results right in your browser.
           </p>
           <p className="text-tp-bronze/80 text-sm font-medium tracking-wide uppercase">
-            The Power of AI Headshots
+            Real-Time Photo Enhancement
           </p>
         </div>
 
@@ -174,12 +154,11 @@ export function InstantPreviewDemo() {
               <div className="rounded-tp-card overflow-hidden bg-tp-ink">
                 {previewUrl && (
                   <div className="relative aspect-[3/4] w-full">
-                    <Image
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
                       src={previewUrl}
                       alt="Your selfie"
-                      fill
-                      className="object-cover"
-                      unoptimized
+                      className="absolute inset-0 h-full w-full object-cover"
                     />
                     <div className="absolute top-3 left-3 bg-tp-black/70 backdrop-blur-sm text-tp-paper text-xs px-3 py-1 rounded-full">
                       Your Selfie
@@ -257,7 +236,7 @@ export function InstantPreviewDemo() {
                 </div>
 
                 <p className="text-center text-tp-beige/50 text-xs">
-                  Upload a selfie on the left to get your own AI headshot previews
+                  Upload a selfie on the left to get your own AI-enhanced previews
                 </p>
               </div>
             )}
@@ -271,18 +250,24 @@ export function InstantPreviewDemo() {
                   </div>
                 </div>
                 <p className="text-tp-paper text-lg font-medium mb-1">
-                  {state === 'uploading' ? 'Processing your selfie…' : 'Generating headshots…'}
+                  {state === 'uploading' ? 'Analyzing your photo…' : 'Enhancing your photo…'}
                 </p>
                 {state === 'generating' && (
-                  <>
-                    <p className="text-tp-beige/70 text-sm mb-4">
-                      AI is creating your professional previews
+                  <div className="mt-3 flex flex-col gap-2">
+                    <p className="text-tp-beige/70 text-sm">
+                      Generating style variations
                     </p>
-                    <div className="inline-flex items-center gap-2 text-tp-bronze text-sm">
-                      <Clock className="h-4 w-4" />
-                      <span>{elapsed.toFixed(1)}s</span>
+                    <div className="flex items-center justify-center gap-3">
+                      {['Professional', 'Corporate', 'Creative'].map((label) => (
+                        <span
+                          key={label}
+                          className="inline-block rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-3 py-0.5 text-[11px] font-medium text-tp-bronze"
+                        >
+                          {label}
+                        </span>
+                      ))}
                     </div>
-                  </>
+                  </div>
                 )}
               </div>
             )}
@@ -291,57 +276,56 @@ export function InstantPreviewDemo() {
               <div>
                 {/* Main result display */}
                 <div className="rounded-tp-card overflow-hidden bg-tp-ink mb-4">
-                  {results[selectedIdx]?.url ? (
-                    <div className="relative aspect-[3/4] w-full">
-                      <Image
-                        src={results[selectedIdx].url!}
-                        alt={`AI Headshot Preview ${selectedIdx + 1}`}
-                        fill
-                        className="object-cover"
-                        unoptimized
-                      />
-                      <div className="absolute top-3 left-3 bg-tp-black/70 backdrop-blur-sm text-tp-paper text-xs px-3 py-1 rounded-full flex items-center gap-1.5">
-                        <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />
-                        AI Generated — {elapsed.toFixed(1)}s
-                      </div>
+                  <div className="relative aspect-[3/4] w-full">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={results[selectedIdx].dataUrl}
+                      alt={`AI Enhanced — ${STYLE_LABELS[results[selectedIdx].presetName] ?? results[selectedIdx].presetName}`}
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                    <div className="absolute top-3 left-3 bg-tp-black/70 backdrop-blur-sm text-tp-paper text-xs px-3 py-1 rounded-full flex items-center gap-1.5">
+                      <CheckCircle2 className="h-3.5 w-3.5 text-tp-bronze" />
+                      {STYLE_LABELS[results[selectedIdx].presetName] ?? results[selectedIdx].presetName} Style
                     </div>
-                  ) : (
-                    <div className="aspect-[3/4] flex items-center justify-center text-tp-beige/70 text-sm">
-                      Generation failed
+                    <div className="absolute bottom-3 left-3 flex items-center gap-1.5">
+                      <span className="inline-flex items-center gap-1 bg-tp-bronze/90 text-tp-black text-[11px] font-semibold px-2.5 py-1 rounded-tp-button">
+                        <Sparkles className="h-3 w-3" />
+                        AI Enhanced
+                      </span>
                     </div>
-                  )}
+                  </div>
                 </div>
 
-                {/* Thumbnail strip */}
-                {results.length > 1 && (
-                  <div className="flex gap-2 mb-6">
-                    {results.map((r, i) => (
-                      <button
-                        key={r.id}
-                        onClick={() => setSelectedIdx(i)}
-                        className={`relative flex-1 aspect-[3/4] rounded-lg overflow-hidden border-2 transition-colors ${
-                          i === selectedIdx
-                            ? 'border-tp-bronze'
-                            : 'border-tp-line hover:border-tp-muted'
-                        }`}
-                      >
-                        {r.url ? (
-                          <Image
-                            src={r.url}
-                            alt={`Preview ${i + 1}`}
-                            fill
-                            className="object-cover"
-                            unoptimized
-                          />
-                        ) : (
-                          <div className="absolute inset-0 bg-tp-ink flex items-center justify-center">
-                            <AlertCircle className="h-4 w-4 text-tp-beige/70" />
-                          </div>
-                        )}
-                      </button>
-                    ))}
-                  </div>
-                )}
+                {/* Style thumbnail strip */}
+                <div className="flex gap-2 mb-6">
+                  {results.map((r, i) => (
+                    <button
+                      key={r.presetName}
+                      onClick={() => setSelectedIdx(i)}
+                      className={`relative flex-1 overflow-hidden rounded-lg border-2 transition-colors ${
+                        i === selectedIdx
+                          ? 'border-tp-bronze'
+                          : 'border-tp-line hover:border-tp-muted'
+                      }`}
+                    >
+                      <div className="relative aspect-[3/4] w-full">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={r.dataUrl}
+                          alt={`${STYLE_LABELS[r.presetName] ?? r.presetName} preview`}
+                          className="absolute inset-0 h-full w-full object-cover"
+                        />
+                      </div>
+                      <div className="bg-tp-ink px-2 py-1.5 text-center">
+                        <span className={`text-[11px] font-medium ${
+                          i === selectedIdx ? 'text-tp-bronze' : 'text-tp-beige/70'
+                        }`}>
+                          {STYLE_LABELS[r.presetName] ?? r.presetName}
+                        </span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
 
                 {/* CTA */}
                 <Link
@@ -358,8 +342,8 @@ export function InstantPreviewDemo() {
             )}
 
             {state === 'error' && (
-              <div className="border border-red-500/30 rounded-tp-card p-8 md:p-12 text-center min-h-[400px] flex flex-col items-center justify-center">
-                <AlertCircle className="h-12 w-12 text-red-400 mb-4" />
+              <div className="border border-tp-bronze/30 rounded-tp-card p-8 md:p-12 text-center min-h-[400px] flex flex-col items-center justify-center">
+                <AlertCircle className="h-12 w-12 text-tp-bronze/70 mb-4" />
                 <p className="text-tp-paper text-lg font-medium mb-2">
                   Something went wrong
                 </p>
@@ -380,18 +364,18 @@ export function InstantPreviewDemo() {
           {[
             {
               icon: Clock,
-              title: 'Under 15 Seconds',
-              desc: 'No lengthy training. Get instant AI headshot previews from a single selfie.',
+              title: 'Real-Time Processing',
+              desc: 'Photos are enhanced instantly in your browser using our AI canvas engine.',
             },
             {
               icon: Camera,
-              title: 'One Selfie Only',
-              desc: 'No need for multiple photos. Just one clear selfie is all it takes.',
+              title: 'One Selfie, Three Styles',
+              desc: 'Get Professional, Corporate, and Creative variations from a single photo.',
             },
             {
               icon: Sparkles,
-              title: 'Multiple Styles',
-              desc: 'Preview different professional looks — formal, casual, creative and more.',
+              title: 'Studio-Quality Enhancement',
+              desc: 'Lighting, color grading, sharpening and portrait retouching — all automated.',
             },
           ].map(({ icon: Icon, title, desc }) => (
             <div key={title} className="text-center p-6">

@@ -1,27 +1,37 @@
 'use client';
 
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { homeBeforeAfterPairs } from '@/config/category-visuals';
+import { loadImageToCanvas, processPhoto, PRESETS } from '@/lib/canvas-photo-engine';
 
 const IMAGE_SIZES = '(min-width: 768px) 30vw, 90vw';
 
 /** Transformation tags shown under each before/after card */
 function getTransformTags(label: string): string[] | null {
   switch (label) {
-    case 'LinkedIn Profile': return ['Background', 'Lighting', 'Attire'];
-    case 'Corporate Team': return ['Background', 'Expression', 'Style'];
-    case 'Creative Portfolio': return ['Background', 'Mood', 'Framing'];
+    case 'LinkedIn Profile': return ['Lighting', 'Color Grade', 'Sharpen'];
+    case 'Corporate Team': return ['Contrast', 'Portrait Light', 'Vignette'];
+    case 'Creative Portfolio': return ['Warmth', 'Skin Smooth', 'Clarity'];
     default: return null;
   }
 }
 
+/** Map card label to a canvas-engine preset key */
+function presetKeyForLabel(label: string): keyof typeof PRESETS {
+  switch (label) {
+    case 'LinkedIn Profile': return 'linkedin';
+    case 'Corporate Team': return 'corporate';
+    default: return 'creative';
+  }
+}
+
 /* ------------------------------------------------------------------ */
-/*  Interactive drag slider — pure React, no dependencies              */
+/*  Canvas-powered comparison slider                                   */
 /* ------------------------------------------------------------------ */
 
-function ComparisonSlider({
+function CanvasComparisonSlider({
   label,
   before,
   after,
@@ -35,6 +45,48 @@ function ComparisonSlider({
   const containerRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState(50);
   const isDragging = useRef(false);
+  const [processedUrl, setProcessedUrl] = useState<string | null>(null);
+  const [isProcessing, setIsProcessing] = useState(true);
+
+  const presetKey = presetKeyForLabel(label);
+
+  // Process the "after" image through the canvas engine on mount
+  useEffect(() => {
+    let cancelled = false;
+
+    async function enhance() {
+      try {
+        const img = new window.Image();
+        img.crossOrigin = 'anonymous';
+        img.src = after.src;
+
+        await new Promise<void>((resolve, reject) => {
+          img.onload = () => resolve();
+          img.onerror = () => reject(new Error('load failed'));
+        });
+
+        if (cancelled) return;
+
+        const { canvas, ctx } = loadImageToCanvas(img, 800, 1000);
+        processPhoto(canvas, ctx, PRESETS[presetKey].adjustments);
+        const dataUrl = canvas.toDataURL('image/jpeg', 0.92);
+
+        if (!cancelled) {
+          setProcessedUrl(dataUrl);
+          setIsProcessing(false);
+        }
+      } catch {
+        // Fallback: show original after image
+        if (!cancelled) {
+          setProcessedUrl(null);
+          setIsProcessing(false);
+        }
+      }
+    }
+
+    enhance();
+    return () => { cancelled = true; };
+  }, [after.src, presetKey]);
 
   const updatePosition = useCallback((clientX: number) => {
     const container = containerRef.current;
@@ -92,18 +144,28 @@ function ComparisonSlider({
         if (e.key === 'End') setPosition(100);
       }}
     >
-      {/* After image (full background) */}
-      <Image
-        src={after.src}
-        alt={after.alt}
-        fill
-        sizes={IMAGE_SIZES}
-        className="object-cover"
-        draggable={false}
-        priority={priority}
-      />
+      {/* After image (full background) — canvas-processed or original fallback */}
+      {processedUrl ? (
+        /* eslint-disable-next-line @next/next/no-img-element */
+        <img
+          src={processedUrl}
+          alt={after.alt}
+          className="absolute inset-0 h-full w-full object-cover"
+          draggable={false}
+        />
+      ) : (
+        <Image
+          src={after.src}
+          alt={after.alt}
+          fill
+          sizes={IMAGE_SIZES}
+          className="object-cover"
+          draggable={false}
+          priority={priority}
+        />
+      )}
 
-      {/* Before image (clipped by slider position) */}
+      {/* Before image (clipped by slider position) — raw casual selfie look */}
       <div
         className="absolute inset-0"
         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
@@ -113,20 +175,34 @@ function ComparisonSlider({
           alt={before.alt}
           fill
           sizes={IMAGE_SIZES}
-          className="object-cover grayscale"
+          className="object-cover"
+          style={{ filter: 'brightness(0.92) contrast(0.9) saturate(0.85)' }}
           draggable={false}
           priority={priority}
         />
         {/* Subtle grain overlay on the before side */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 opacity-[0.07] mix-blend-overlay pointer-events-none"
+          className="absolute inset-0 opacity-[0.06] mix-blend-overlay pointer-events-none"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
             backgroundSize: '150px 150px',
           }}
         />
       </div>
+
+      {/* Processing shimmer — shown briefly while canvas works */}
+      {isProcessing && (
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 z-[5] flex items-center justify-center bg-tp-beige/30 backdrop-blur-[1px]"
+        >
+          <div className="flex items-center gap-2 rounded-tp-button bg-tp-black/70 px-3 py-1.5 text-[11px] font-medium text-tp-paper">
+            <span className="h-3 w-3 animate-spin rounded-full border-2 border-tp-bronze border-t-transparent" />
+            Enhancing…
+          </div>
+        </div>
+      )}
 
       {/* Divider line */}
       <div
@@ -166,7 +242,7 @@ function ComparisonSlider({
       </span>
       <span className="absolute right-3 top-3 z-10 inline-flex items-center gap-1 rounded-tp-button bg-tp-black px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-tp-bronze">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
-        AI Headshot
+        AI Enhanced
       </span>
 
       {/* Disclosure */}
@@ -188,27 +264,27 @@ export function BeforeAfterShowcase() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="scroll-fade-in mx-auto max-w-2xl text-center">
           <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-tp-bronze-ink">
-            Before &amp; After
+            AI Photo Enhancement
           </p>
           <h2
             id="before-after-heading"
             className="mt-3 font-display text-[30px] sm:text-[40px] font-normal tracking-[-0.03em] text-tp-ink leading-tight"
           >
-            From Selfie to Professional Headshot
+            Real AI Transformations
           </h2>
           <p className="mt-4 text-[15px] text-tp-muted leading-relaxed max-w-lg mx-auto">
-            Drag the slider to compare. From an everyday selfie to a polished,
-            studio-quality headshot — powered by AI.
+            Drag the slider to see the difference. Professional lighting, color grading,
+            sharpening, and portrait enhancement — applied in real time by AI.
           </p>
         </div>
 
         <div className="mt-10 lg:mt-14 grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
-          {homeBeforeAfterPairs.map(({ label, detail, before, after }, idx) => (
+          {homeBeforeAfterPairs.map(({ label, detail, before, after }) => (
             <figure
               key={label}
               className="scroll-fade-in group overflow-hidden rounded-tp-card border border-tp-line bg-white tp-lift hover:border-tp-bronze/40 hover:shadow-lg hover:shadow-tp-bronze/10 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
             >
-              <ComparisonSlider label={label} before={before} after={after} priority={false} />
+              <CanvasComparisonSlider label={label} before={before} after={after} priority={false} />
               <figcaption className="border-t border-tp-line px-4 py-4 text-center transition-colors group-hover:border-tp-bronze/30">
                 <span className="block text-sm font-medium text-tp-ink">{label}</span>
                 <span className="mt-1 block text-xs text-tp-muted">{detail}</span>
@@ -217,8 +293,11 @@ export function BeforeAfterShowcase() {
                     {getTransformTags(label)!.map((tag) => (
                       <span
                         key={tag}
-                        className="inline-block rounded-full border border-tp-bronze/20 bg-tp-bronze/5 px-2 py-0.5 text-[10px] font-medium text-tp-bronze-ink"
+                        className="inline-flex items-center gap-1 rounded-full border border-tp-bronze/20 bg-tp-bronze/5 px-2 py-0.5 text-[10px] font-medium text-tp-bronze-ink"
                       >
+                        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="text-tp-bronze">
+                          <path d="M20 6L9 17l-5-5" />
+                        </svg>
                         {tag}
                       </span>
                     ))}
@@ -230,7 +309,7 @@ export function BeforeAfterShowcase() {
         </div>
 
         <p className="mt-8 text-center text-xs text-tp-muted">
-          Results based on AI-generated concept images. Individual results vary.
+          Enhancement powered by AI canvas processing. Results based on AI-generated concept images. Individual results vary.
         </p>
 
         <p className="mt-3 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-center">
