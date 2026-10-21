@@ -129,6 +129,12 @@ const stats = [
 
 const teamMembers = [
   {
+    name: 'Murat Ünver',
+    role: 'Founder & Chairman',
+    photo: '/brand/tailorpic/web/founder-murat.jpg',
+    bio: 'Founded TailorPic with the vision of making professional photography accessible through AI, bringing decades of business leadership to the company.',
+  },
+  {
     name: 'Mert Aslanoglu',
     role: 'Consultant',
     photo: '/brand/tailorpic/web/founder-mert.jpg',
@@ -139,6 +145,18 @@ const teamMembers = [
     role: 'Sales Manager',
     photo: '/brand/tailorpic/web/team-ozlem.jpg',
     bio: 'Leads sales and partnerships, helping businesses and individuals discover how AI headshots can elevate their professional image.',
+  },
+  {
+    name: 'Ozan Yaşar Ünver',
+    role: 'Logistics',
+    photo: '/brand/tailorpic/web/team-ozan.jpg',
+    bio: 'Manages logistics and operations, ensuring smooth delivery and coordination across all company activities.',
+  },
+  {
+    name: 'Ahmet Şimşek',
+    role: 'Driver',
+    photo: '/brand/tailorpic/web/team-ahmet.jpg',
+    bio: 'Keeps the wheels turning with reliable transportation and delivery support across the company.',
   },
 ];
 
@@ -405,7 +423,7 @@ export default function AboutPage() {
               A small team that cares about every photo we deliver.
             </p>
           </div>
-          <div className="mt-14 grid gap-8 sm:grid-cols-2">
+          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {teamMembers.map((member) => (
               <div
                 key={member.name}
