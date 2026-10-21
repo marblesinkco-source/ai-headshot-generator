@@ -7,7 +7,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Clock, Shield, Zap } from 'lucide-react';
 
 export const revalidate = 3600;
 
@@ -102,6 +102,30 @@ export default function StatusPage() {
               is not working as expected, we want to hear about it and will work
               to resolve it as quickly as we can.
             </p>
+
+            <div className="mt-10 grid gap-6 sm:grid-cols-3">
+              <div className="rounded-tp-card border border-tp-line bg-tp-paper/50 p-5">
+                <Zap className="h-5 w-5 text-tp-bronze-ink" aria-hidden="true" />
+                <h3 className="mt-3 font-semibold text-tp-ink">Fast Processing</h3>
+                <p className="mt-1.5 text-sm text-tp-muted">
+                  Most headshot orders are completed within hours of upload.
+                </p>
+              </div>
+              <div className="rounded-tp-card border border-tp-line bg-tp-paper/50 p-5">
+                <Shield className="h-5 w-5 text-tp-bronze-ink" aria-hidden="true" />
+                <h3 className="mt-3 font-semibold text-tp-ink">Secure Infrastructure</h3>
+                <p className="mt-1.5 text-sm text-tp-muted">
+                  Encrypted transfers, secure payment processing, and automatic data deletion.
+                </p>
+              </div>
+              <div className="rounded-tp-card border border-tp-line bg-tp-paper/50 p-5">
+                <Clock className="h-5 w-5 text-tp-bronze-ink" aria-hidden="true" />
+                <h3 className="mt-3 font-semibold text-tp-ink">24/7 Availability</h3>
+                <p className="mt-1.5 text-sm text-tp-muted">
+                  Upload selfies and generate headshots anytime — our AI runs around the clock.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
