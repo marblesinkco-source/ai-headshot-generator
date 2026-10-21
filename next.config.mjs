@@ -125,3 +125,4 @@ const nextConfig = {
 };
 
 export default nextConfig;
+// deploy trigger 1792599543
