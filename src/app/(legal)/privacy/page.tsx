@@ -3,6 +3,8 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: { absolute: 'Privacy Policy: How TailorPic Collects and Protects Data' },
   description: 'Read the TailorPic privacy policy: how we collect, use, and protect your data and photos, and the choices you have. Contact us with any privacy questions.',

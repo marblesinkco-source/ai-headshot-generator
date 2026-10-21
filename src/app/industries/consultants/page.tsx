@@ -9,7 +9,7 @@ import { ProductSchema, FAQSchema, BreadcrumbSchema } from '@/components/structu
 import { siteConfig } from '@/config/site';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, ArrowRight } from 'lucide-react';
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+import { BASE_PRICE_DISPLAY, LITE_PRICE_CENTS } from '@/config/pricing';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
@@ -125,7 +125,7 @@ export default function ConsultantsIndustryPage() {
       <ProductSchema
         name="Professional Headshots for Consultants & Advisors"
         description="AI-generated professional headshots for consultants, advisors, and independent professionals, with multiple styles for proposals, LinkedIn, and speaking bios."
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/consultants"
       />

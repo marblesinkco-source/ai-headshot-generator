@@ -21,6 +21,8 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 
+export const revalidate = 3600;
+
 const TITLE = `Security & Data Protection | ${siteConfig.name}`;
 const DESCRIPTION =
   'Your photos are personal data. TailorPic protects them with encryption, automatic 30-day deletion, no data selling, full commercial rights and GDPR tools.';

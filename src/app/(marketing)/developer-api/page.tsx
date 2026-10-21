@@ -26,6 +26,8 @@ import {
   UsersRound,
 } from 'lucide-react';
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic API: AI Headshot Generation for Developers' },
   description: `Integrate AI headshot generation into your own app with the ${siteConfig.name} API. Request early access to add professional headshots to your platform.`,

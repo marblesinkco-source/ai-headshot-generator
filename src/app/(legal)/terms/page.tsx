@@ -3,6 +3,8 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: { absolute: 'Terms of Service: Rules for Using the TailorPic Platform' },
   description: 'Read the TailorPic terms of service: the rules and guidelines for using our AI photo platform. Please review them before you create an account or order.',

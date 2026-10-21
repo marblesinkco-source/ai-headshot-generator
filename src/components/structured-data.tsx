@@ -1,6 +1,7 @@
 import { siteConfig } from '@/config/site';
 import { BASE_PRICE_CENTS } from '@/config/pricing';
 import { CATEGORIES } from '@/config/categories';
+import { STYLES } from '@/config/ai';
 
 // JSON-LD Structured Data for SEO
 /** Sanitize JSON-LD output to prevent XSS via script injection. */
@@ -253,7 +254,7 @@ export function SoftwareApplicationSchema({
     description: description ?? siteConfig.description,
     ...(!free && {
       screenshot: `${siteConfig.url}/brand/tailorpic/web/og-tailorpic-1200x630.jpg`,
-      featureList: 'AI Headshots, Professional Photos, LinkedIn Photos, Team Photos, 40+ Styles',
+      featureList: `AI Headshots, Professional Photos, LinkedIn Photos, Team Photos, ${STYLES.length} Styles`,
     }),
     offers: {
       '@type': 'Offer',

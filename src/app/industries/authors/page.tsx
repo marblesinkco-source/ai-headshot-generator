@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Authors & Writers | TailorPic";
 const pageDescription =
   'Professional AI headshots for novelists, nonfiction authors, freelance writers and bloggers. A polished author photo for book jackets, Amazon and press kits.';
@@ -121,7 +124,7 @@ export default function AuthorsIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Authors & Writers"}
         description={"AI-generated professional author headshots for book jackets, Amazon author pages, press kits, websites, and social media."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/authors"
       />

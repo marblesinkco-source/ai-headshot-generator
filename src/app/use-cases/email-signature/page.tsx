@@ -9,7 +9,7 @@ import { siteConfig } from '@/config/site';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+import { BASE_PRICE_DISPLAY, LITE_PRICE_CENTS } from '@/config/pricing';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedUseCases } from '@/lib/internal-links';
@@ -139,7 +139,7 @@ export default function EmailSignatureUseCasePage() {
       <ProductSchema
         name="AI Headshots for Email Signatures"
         description="AI-generated professional headshots sized and styled for email signatures in Gmail, Outlook, and more."
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="use-cases/email-signature"
       />

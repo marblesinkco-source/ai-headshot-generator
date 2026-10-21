@@ -11,6 +11,8 @@ import { ArticleSchema, BreadcrumbSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata, buildOGImageUrl, clampTitle, clampDescription } from '@/lib/og-metadata';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
+export const revalidate = 3600;
+
 function getRelatedPosts(currentSlug: string, currentTags: string[], count = 3) {
   const allPosts = getAllBlogPosts();
   return allPosts

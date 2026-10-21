@@ -37,6 +37,15 @@ export const metadata: Metadata = {
 /*  Data                                                              */
 /* ------------------------------------------------------------------ */
 
+// Competitor facts, checked on HeadshotPro's own site on 2026-10-21:
+//   https://www.headshotpro.com/pricing  Basic $29 / 30 headshots / ~2 h,
+//     Professional $39 / 50 / 30 min, Executive $59 / 70 / 15 min;
+//     professional headshots only (no dating, pet, family or product photos)
+//   https://www.headshotpro.com/refund   full refund within 14 days of payment
+//     if no photos from the order have been downloaded
+//   https://www.headshotpro.com          "in as little as 15 minutes"
+// Re-check these pages before changing any HeadshotPro value below.
+
 const quickBadges = [
   {
     label: 'Starting Price',
@@ -45,15 +54,15 @@ const quickBadges = [
     icon: DollarSign,
   },
   {
-    label: 'Photos per Session',
-    ours: '1 to 160',
-    theirs: '40+',
+    label: 'Smallest Package',
+    ours: '1 photo',
+    theirs: '30 photos',
     icon: Image,
   },
   {
     label: 'Photo Categories',
     ours: '12',
-    theirs: 'Limited',
+    theirs: 'Headshots only',
     icon: Layers,
   },
 ];
@@ -68,15 +77,16 @@ interface ComparisonRow {
 
 const comparisonRows: ComparisonRow[] = [
   { feature: 'Starting Price', tailorpic: `From ${BASE_PRICE_DISPLAY}`, headshotpro: '$29' },
-  { feature: 'Photos per Session', tailorpic: '1 to 160', headshotpro: '40+' },
-  { feature: 'Delivery', tailorpic: 'Within hours', headshotpro: 'Check their site' },
-  { feature: 'Photo Categories', tailorpic: '12', headshotpro: 'Professional only' },
+  { feature: 'Try a Single Photo First', tailorpic: `Yes, 1 photo for ${BASE_PRICE_DISPLAY}`, headshotpro: false },
+  { feature: 'Photos per Package', tailorpic: '1 to 160', headshotpro: '30 to 70' },
+  { feature: 'Delivery', tailorpic: 'Within hours', headshotpro: '15 min to about 2 hours, by plan' },
+  { feature: 'Photo Categories', tailorpic: '12', headshotpro: 'Professional headshots' },
   { feature: 'Pet Portraits', tailorpic: true, headshotpro: false },
   { feature: 'Dating Photos', tailorpic: true, headshotpro: false },
   { feature: 'E-Commerce Photos', tailorpic: true, headshotpro: false },
   { feature: 'Family Portraits', tailorpic: true, headshotpro: false },
   { feature: 'Team Plans', tailorpic: true, headshotpro: true },
-  { feature: 'Quality Commitment', tailorpic: 'Free regeneration', headshotpro: 'Yes' },
+  { feature: 'If You Are Not Happy', tailorpic: 'Free regeneration', headshotpro: 'Full refund within 14 days if nothing was downloaded' },
 ];
 
 const advantages = [
@@ -94,9 +104,9 @@ const advantages = [
   },
   {
     icon: Zap,
-    title: 'Fast Delivery',
+    title: 'Try Before You Commit',
     description:
-      'Your AI-generated photos are delivered within hours. Upload your selfies, pick a style, and get studio-quality results fast.',
+      `Start with a single photo for ${BASE_PRICE_DISPLAY} to see how the AI renders you, then move up to a larger package. HeadshotPro's smallest package is 30 headshots for $29.`,
   },
   {
     icon: Shield,
@@ -118,17 +128,17 @@ const faqs = [
   {
     question: 'How does TailorPic\'s price compare to HeadshotPro?',
     answer:
-      `TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY}. HeadshotPro\'s pricing starts at $29. HeadshotPro may change its plans, so check their site for current pricing.`,
+      `TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY}. HeadshotPro's Basic plan is $29 for 30 headshots, up to $59 for 70 (per their pricing page in October 2026; plans may change).`,
   },
   {
     question: 'How many photos do I get compared to HeadshotPro?',
     answer:
-      'Both services include photos. TailorPic spreads them across 12 categories, including dating, pet portraits, e-commerce, and family portraits, while HeadshotPro focuses on professional headshots.',
+      'TailorPic packages range from 1 to 160 photos across 12 categories, including dating, pet portraits, e-commerce, and family portraits. HeadshotPro packages range from 30 to 70 professional headshots.',
   },
   {
     question: 'How long does delivery take?',
     answer:
-      'TailorPic delivers within hours. HeadshotPro also advertises fast delivery, so check their site for current turnaround times.',
+      'TailorPic delivers within hours. HeadshotPro is faster: its pricing page lists about 2 hours on Basic, 30 minutes on Professional and 15 minutes on Executive.',
   },
   {
     question: 'Is TailorPic a subscription?',
@@ -175,8 +185,7 @@ export default function VsHeadshotProPage() {
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-tp-muted">
             Both platforms deliver AI-generated headshots, but TailorPic gives you more
-            categories, lower prices, and creative flexibility that HeadshotPro
-            doesn&apos;t offer.
+            categories and a lower entry price, starting with a single photo.
           </p>
         </div>
       </section>
@@ -307,7 +316,7 @@ export default function VsHeadshotProPage() {
             Ready to Make the Switch?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-tp-muted">
-            Get better variety, lower prices, and studio-quality AI photos
+            Start with one photo, choose from 12 categories, and get studio-quality AI photos
             delivered in hours with TailorPic.
           </p>
           <Link

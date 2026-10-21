@@ -11,6 +11,8 @@ import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { getIndustryVisual, square } from '@/config/stock-portraits';
 
+export const revalidate = 3600;
+
 const PAGE_TITLE = 'AI Headshots by Industry: Guides for Every Profession';
 const PAGE_DESCRIPTION =
   'Professional AI-generated photos tailored to your industry. Browse headshot guides for real estate, legal, healthcare, engineering, education and more.';

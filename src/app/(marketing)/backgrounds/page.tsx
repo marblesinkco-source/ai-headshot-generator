@@ -18,6 +18,8 @@ import {
   Layers,
 } from 'lucide-react';
 
+export const revalidate = 3600;
+
 const PAGE_TITLE =
   'Professional Headshot Backgrounds: Choose Your Perfect Setting';
 const PAGE_DESCRIPTION =

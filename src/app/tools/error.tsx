@@ -7,7 +7,7 @@ export default function ToolsError({ error, reset }: { error: Error & { digest?:
   useEffect(() => { console.error(error); }, [error]);
 
   return (
-    <main className="flex min-h-[60vh] flex-col items-center justify-center px-4 py-16">
+    <main id="main-content" className="flex min-h-[60vh] flex-col items-center justify-center px-4 py-16">
       <p className="text-sm font-bold uppercase tracking-[0.18em] text-tp-bronze-ink">Something went wrong</p>
       <h1 className="mt-4 font-display text-3xl font-normal text-tp-black">Tool unavailable</h1>
       <p className="mt-3 text-base text-tp-muted">An unexpected error occurred. Please try again.</p>

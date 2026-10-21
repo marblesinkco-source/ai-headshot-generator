@@ -5,6 +5,8 @@ import { Footer } from '@/components/marketing/footer';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: { absolute: 'KVKK Aydınlatma Metni: Kişisel Veriler | TailorPic' },
   description:

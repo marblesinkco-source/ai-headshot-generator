@@ -18,6 +18,8 @@ import {
   ArrowRight,
 } from 'lucide-react';
 
+export const revalidate = 3600;
+
 const PAGE_TITLE = 'How to Take the Perfect Selfie for AI Headshots';
 const PAGE_DESCRIPTION =
   'A practical checklist for the selfies you upload: lighting, background, angle, expression, distance, focus, and variety, so your AI headshots look like you.';

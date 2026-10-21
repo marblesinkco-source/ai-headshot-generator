@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { BASE_PRICE_CENTS } from '@/config/pricing';
+import { STYLES } from '@/config/ai';
 
 interface StatItem {
   value: number;
@@ -15,13 +16,12 @@ interface StatItem {
 const stats: StatItem[] = [
   {
     value: 160,
-    suffix: '+',
-    label: 'Photos Per Order',
+    label: 'Max Photos Per Order',
     description: 'Up to 160 unique AI headshots from your selfies',
     icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
   },
   {
-    value: 12,
+    value: STYLES.length,
     label: 'Unique Styles',
     description: 'Professional, creative, corporate and more',
     icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01',
@@ -42,12 +42,19 @@ const stats: StatItem[] = [
   },
 ];
 
-function useCountUp(end: number, duration: number, shouldStart: boolean): number {
-  const [count, setCount] = useState(0);
+// The real value is rendered on the server and stays put until the count-up
+// actually runs, so crawlers, link previews, screen readers and no-JS visitors
+// never see "0".
+function useCountUp(end: number, duration: number, armed: boolean, shouldStart: boolean): number {
+  const [count, setCount] = useState(end);
   const frameRef = useRef<number>(0);
 
   useEffect(() => {
-    if (!shouldStart) return;
+    if (armed && !shouldStart) setCount(0);
+  }, [armed, shouldStart]);
+
+  useEffect(() => {
+    if (!armed || !shouldStart) return;
 
     const startTime = performance.now();
     const animate = (now: number) => {
@@ -62,18 +69,24 @@ function useCountUp(end: number, duration: number, shouldStart: boolean): number
     };
     frameRef.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(frameRef.current);
-  }, [end, duration, shouldStart]);
+  }, [end, duration, armed, shouldStart]);
 
   return count;
 }
 
 function StatCard({ stat, index }: { stat: StatItem; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
+  // armed: the card is below the fold on a JS-enabled client, so it may hide
+  // and count up when scrolled into view. Otherwise it simply shows the value.
+  const [armed, setArmed] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || typeof IntersectionObserver === 'undefined') return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (el.getBoundingClientRect().top < window.innerHeight) return;
+    setArmed(true);
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -90,7 +103,8 @@ function StatCard({ stat, index }: { stat: StatItem; index: number }) {
   // Special handling for price stat
   const isPrice = stat.label === 'Starting Price';
   const displayEnd = isPrice ? BASE_PRICE_CENTS : stat.value;
-  const count = useCountUp(displayEnd, 1200 + index * 200, isVisible);
+  const count = useCountUp(displayEnd, 1200 + index * 200, armed, isVisible);
+  const hidden = armed && !isVisible;
 
   const formatValue = useCallback(() => {
     if (isPrice) {
@@ -106,8 +120,8 @@ function StatCard({ stat, index }: { stat: StatItem; index: number }) {
       ref={ref}
       className="group relative text-center p-6 rounded-tp-card tp-glass transition-all duration-500"
       style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
+        opacity: hidden ? 0 : 1,
+        transform: hidden ? 'translateY(24px)' : 'translateY(0)',
         transitionDelay: `${index * 120}ms`,
       }}
     >

@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Real Estate Brokers | TailorPic";
 const pageDescription =
   'Professional AI headshots for real estate brokers and brokerage owners. Build authority on listings, team pages, and signage with a polished portrait.';
@@ -121,7 +124,7 @@ export default function RealEstateBrokersIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Real Estate Brokers"}
         description={"AI-generated professional headshots for real estate brokers for brokerage websites, listings, signage, and marketing materials."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Real Estate"
         slug="industries/real-estate-brokers"
       />

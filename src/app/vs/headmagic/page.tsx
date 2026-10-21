@@ -7,7 +7,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+import { BASE_PRICE_DISPLAY, BASE_PRICE_CENTS } from '@/config/pricing';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedVsPages } from '@/lib/internal-links';
@@ -35,6 +35,10 @@ export const metadata: Metadata = {
 const intro =
   "HeadMagic is an AI headshot service in the same space as TailorPic. Both turn your selfies into professional portraits; the differences come down to price model, category range and delivery.";
 
+// Competitor values on this page are deliberately non-specific: no official
+// HeadMagic pricing/turnaround page could be confirmed on 2026-10-21. Before adding
+// any number, price or speed for HeadMagic, check it on their own site and cite
+// the URL here.
 const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
@@ -155,7 +159,7 @@ export default function VsHeadmagicPage() {
       <ProductSchema
         name="TailorPic AI Headshots"
         description="AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours."
-        price={699}
+        price={BASE_PRICE_CENTS}
         category="Professional Services"
         slug="vs/headmagic"
       />

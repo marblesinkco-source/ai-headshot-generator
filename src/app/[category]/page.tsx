@@ -17,6 +17,8 @@ import { siteConfig } from '@/config/site';
 import { formatPrice } from '@/lib/utils';
 import { BreadcrumbSchema, FAQSchema } from '@/components/structured-data';
 
+export const revalidate = 3600;
+
 // Below-the-fold client components: lazy load for performance
 const SocialShare = dynamic(
   () => import('@/components/marketing/social-share').then((m) => m.SocialShare)

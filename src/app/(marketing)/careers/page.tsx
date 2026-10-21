@@ -22,6 +22,8 @@ import {
   ArrowRight,
 } from 'lucide-react';
 
+export const revalidate = 3600;
+
 const title = 'Careers at TailorPic: Join Our AI Photography Team';
 const description =
   'Join the TailorPic team and help build the future of AI photography. See how we work and get in touch if you share our passion for quality and craft.';
@@ -76,7 +78,7 @@ const benefits = [
   {
     icon: Zap,
     title: 'Impact',
-    desc: 'Ship features that reach thousands of professionals, teams, and businesses every day.',
+    desc: 'Ship features that professionals, teams, and businesses use to put their best face forward.',
   },
   {
     icon: Users,

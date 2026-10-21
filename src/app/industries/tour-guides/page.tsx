@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Tour Guides | TailorPic";
 const pageDescription =
   'Professional AI headshots for tour guides, travel hosts and excursion leaders. Build traveler trust on booking platforms and your own website.';
@@ -121,7 +124,7 @@ export default function TourGuidesIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Tour Guides"}
         description={"AI-generated professional headshots for tour guides for booking platforms, tour company profiles, licensing pages, and travel websites."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/tour-guides"
       />

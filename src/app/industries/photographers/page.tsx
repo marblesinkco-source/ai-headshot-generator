@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Photographers | TailorPic";
 const pageDescription =
   'Professional AI headshots for photographers, videographers and creative professionals. Polished portraits for your portfolio, website and social media.';
@@ -121,7 +124,7 @@ export default function PhotographersIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Photographers"}
         description={"AI-generated professional headshots for photographers, videographers, and creative professionals for portfolios, websites, and social media."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/photographers"
       />

@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Recruiters | TailorPic";
 const pageDescription =
   'Professional AI headshots for recruiters and talent acquisition professionals. Build candidate trust on LinkedIn, job boards and outreach emails.';
@@ -121,7 +124,7 @@ export default function RecruitersIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Recruiters"}
         description={"AI-generated professional headshots for recruiters and talent acquisition professionals for LinkedIn, outreach, and agency websites."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/recruiters"
       />

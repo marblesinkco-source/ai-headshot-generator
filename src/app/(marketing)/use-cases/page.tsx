@@ -29,6 +29,8 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 
+export const revalidate = 3600;
+
 const OG_TITLE = 'How Professionals Use TailorPic AI Headshots and Photos';
 const OG_DESC =
   'See how individuals, teams, and enterprises use TailorPic AI headshots for LinkedIn, company pages, real estate, resumes, conferences, and more.';

@@ -13,6 +13,8 @@ import { formatPrice } from '@/lib/utils';
 import { getAllProfessionSlugs, getProfessionBySlug, type ProfessionPage } from '@/config/professions';
 import { getCategoryBySlug } from '@/config/categories';
 
+export const revalidate = 3600;
+
 interface Props {
   params: Promise<{ profession: string }>;
 }

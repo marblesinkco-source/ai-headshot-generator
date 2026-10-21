@@ -7,7 +7,7 @@ import { Breadcrumbs } from '@/components/marketing/breadcrumbs';
 import { FAQSchema, ProductSchema, BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import { buttonVariants } from '@/components/ui/button';
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+import { BASE_PRICE_DISPLAY, LITE_PRICE_CENTS } from '@/config/pricing';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
@@ -135,7 +135,7 @@ export default function CorporateTeamsUseCasePage() {
       <ProductSchema
         name="AI Headshots for Corporate Teams"
         description="AI-generated consistent professional headshots for corporate teams, matching backgrounds and styles for company websites and directories."
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="use-cases/corporate-teams"
       />

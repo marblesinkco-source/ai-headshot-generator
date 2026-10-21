@@ -6,6 +6,8 @@ import { Footer } from '@/components/marketing/footer';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: { absolute: 'Data Processing Agreement (DPA): GDPR Terms | TailorPic' },
   description:

@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Event Planners | TailorPic";
 const pageDescription =
   'Professional AI headshots for wedding planners, corporate event planners and agencies. Win more clients with a polished portrait for your website and proposals.';
@@ -121,7 +124,7 @@ export default function EventPlannersIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Event Planners"}
         description={"AI-generated professional headshots for event planners for websites, proposals, vendor directories, LinkedIn, and social media."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/event-planners"
       />

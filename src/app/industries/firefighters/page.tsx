@@ -15,6 +15,9 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Firefighters | TailorPic";
 const pageDescription =
   'Professional AI headshots for firefighters, fire officers and fire service leaders. A confident portrait for department websites, promotions and LinkedIn.';
@@ -122,7 +125,7 @@ export default function FirefightersIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Firefighters"}
         description={"AI-generated professional headshots for firefighters and fire service leaders for department websites, promotion packets, and LinkedIn."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Public Service"
         slug="industries/firefighters"
       />

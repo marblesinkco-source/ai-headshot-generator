@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Tattoo Artists | TailorPic";
 const pageDescription =
   'Professional AI headshots for tattoo artists and studio owners. Build trust with new clients on your portfolio, booking page and social media.';
@@ -121,7 +124,7 @@ export default function TattooArtistsIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Tattoo Artists"}
         description={"AI-generated professional headshots for tattoo artists and studio owners for portfolios, booking pages, and social media."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Creative Services"
         slug="industries/tattoo-artists"
       />

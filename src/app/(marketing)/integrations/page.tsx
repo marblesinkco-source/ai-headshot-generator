@@ -21,6 +21,8 @@ import {
   ArrowRight,
 } from 'lucide-react';
 
+export const revalidate = 3600;
+
 const pageTitle = 'Integrations & Partnerships';
 const seoTitle = 'TailorPic Integrations and Partnership Options (Planned)';
 const pageDescription = 'Planned TailorPic integrations with HR, communication, CRM, design and website tools, plus partnership options for technology, agency and reseller partners.';

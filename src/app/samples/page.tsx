@@ -11,6 +11,7 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 import { portrait } from '@/config/stock-portraits';
+import { STYLES, BACKGROUNDS } from '@/config/ai';
 
 
 // Below-the-fold client components: lazy load for performance
@@ -92,7 +93,7 @@ type SampleImage = { src: string; alt: string };
 
 const qualityBadges = [
   { icon: Monitor, label: '4K Resolution' },
-  { icon: Palette, label: '40+ Styles' },
+  { icon: Palette, label: `${STYLES.length} Styles` },
   { icon: Clock, label: 'Fast Delivery' },
   { icon: ShieldCheck, label: 'Commercial License' },
 ];
@@ -163,7 +164,7 @@ const qualityFeatures = [
 ];
 
 const comparisonRows = [
-  { feature: '40+ styles', ours: 'Every order includes photos across multiple style categories.', check: 'How many distinct styles are included?' },
+  { feature: `${STYLES.length} styles`, ours: `${STYLES.length} styles and ${BACKGROUNDS.length} backgrounds; larger packages include more of them.`, check: 'How many distinct styles are included?' },
   { feature: 'Hours, not days', ours: 'Results are delivered in hours rather than days.', check: 'What is the stated turnaround time?' },
   { feature: 'One-time payment', ours: `Pay once, from ${BASE_PRICE_DISPLAY}. No subscription.`, check: 'Is it a one-time fee or a recurring plan?' },
 ];

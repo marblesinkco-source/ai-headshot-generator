@@ -9,6 +9,8 @@ import { BreadcrumbSchema } from '@/components/structured-data';
 import { siteConfig } from '@/config/site';
 import { getAllPhotoStyles, type PhotoStyle } from '@/config/styles';
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: { absolute: 'AI Headshot Styles: Find the Look That Fits You | TailorPic' },
   description:

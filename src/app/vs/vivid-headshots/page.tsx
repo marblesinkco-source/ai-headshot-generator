@@ -7,7 +7,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+import { BASE_PRICE_DISPLAY, BASE_PRICE_CENTS } from '@/config/pricing';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedVsPages } from '@/lib/internal-links';
@@ -71,7 +71,7 @@ const useCases = {
 
 const faqs = [
   { question: "How does TailorPic pricing compare to Vivid Headshots?", answer: `TailorPic packages start from ${BASE_PRICE_DISPLAY} and go up to 160 photos. Check Vivid Headshots' current pricing, as it may change.` },
-  { question: "What categories does TailorPic support?", answer: "Eleven, including business, dating, creative, pet portraits and e-commerce photos." },
+  { question: "What categories does TailorPic support?", answer: "Twelve, including business, dating, creative, pet portraits and e-commerce photos." },
   { question: "How quickly will I get my photos?", answer: "Most orders ready within hours." },
   { question: "Is there a quality commitment?", answer: "Yes, TailorPic offers a quality commitment." },
   { question: "Is it a subscription?", answer: `No, every package is a one-time payment starting at ${BASE_PRICE_DISPLAY}.` },
@@ -87,7 +87,7 @@ export default function VsVividHeadshotsPage() {
       <ProductSchema
         name="TailorPic AI Headshots"
         description="AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours."
-        price={699}
+        price={BASE_PRICE_CENTS}
         category="Professional Services"
         slug="vs/vivid-headshots"
       />

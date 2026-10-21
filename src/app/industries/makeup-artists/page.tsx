@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Makeup Artists | TailorPic";
 const pageDescription =
   'Professional AI headshots for makeup artists, beauty freelancers and salon pros. Build a polished portfolio, booking page and Instagram presence.';
@@ -121,7 +124,7 @@ export default function MakeupArtistsIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Makeup Artists"}
         description={"AI-generated professional headshots for makeup artists for portfolios, booking pages, Instagram, and beauty industry profiles."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/makeup-artists"
       />

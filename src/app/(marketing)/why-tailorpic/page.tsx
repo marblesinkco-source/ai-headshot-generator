@@ -572,8 +572,7 @@ export default function WhyTailorPicPage() {
               Ready to Upgrade Your Image?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-tp-beige/80">
-              Join thousands of professionals who have switched from expensive
-              studios to {siteConfig.name}. One-time payment, most orders ready
+              Skip the expensive studio session. One-time payment, most orders ready
               within hours, and a quality commitment if you are not
               satisfied.
             </p>

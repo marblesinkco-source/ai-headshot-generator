@@ -21,6 +21,8 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedStyles } from '@/lib/internal-links';
 
+export const revalidate = 3600;
+
 interface Props {
   params: Promise<{ slug: string }>;
 }

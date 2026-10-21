@@ -18,6 +18,8 @@ import {
   Lightbulb,
 } from 'lucide-react';
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: { absolute: 'Photo Tips for AI Headshots: Selfies That Get Great Results' },
   description: 'Learn how to take the right selfies for AI headshots. Tips on lighting, clothing, backgrounds, and camera settings so TailorPic can create natural results.',

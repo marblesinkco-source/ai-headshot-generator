@@ -20,6 +20,8 @@ import {
   LayoutDashboard,
 } from 'lucide-react';
 
+export const revalidate = 3600;
+
 const AFFILIATE_OG_TITLE = `Affiliate Program | ${siteConfig.name}`;
 const AFFILIATE_OG_DESCRIPTION = `Partner with ${siteConfig.name} and earn competitive commissions promoting AI headshots. Referral tracking dashboard and monthly payouts.`;
 

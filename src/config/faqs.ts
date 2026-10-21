@@ -192,6 +192,57 @@ export const faqs = [
     answer:
       'Our quality commitment covers the quality of your AI-generated photos. If the results do not meet your expectations, we will regenerate them within your package at no extra cost. Contact support and we will work with you to resolve the issue. See our terms of service for the full policy.',
   },
+  // ── Use Cases ──
+  {
+    category: 'Use Cases',
+    question: 'What are AI headshots used for?',
+    answer:
+      'The most common uses are LinkedIn profiles, company websites, resumes, email signatures, business cards, conference badges, press kits, and dating profiles. You own full commercial rights, so you can use them anywhere a professional photo is needed.',
+  },
+  {
+    category: 'Use Cases',
+    question: 'Can I use AI headshots for my real estate business?',
+    answer:
+      'Yes. Many real estate agents use AI headshots for their listings, business cards, and online profiles. You can generate multiple styles — corporate, approachable, outdoor — and update your look anytime without booking another photographer.',
+  },
+  {
+    category: 'Use Cases',
+    question: 'Are AI headshots suitable for a corporate website?',
+    answer:
+      'Yes. Our Professional and Executive packages deliver HD and 4K resolution headshots that are suitable for corporate websites, annual reports, and marketing materials. Teams can order consistent headshots for all members through our team pricing.',
+  },
+  // ── Comparison ──
+  {
+    category: 'Comparison',
+    question: 'How is TailorPic different from other AI headshot generators?',
+    answer:
+      `TailorPic trains a custom AI model on your unique features rather than applying a generic filter. This means the results look like you, not a generic avatar. We also offer packages starting from ${BASE_PRICE_DISPLAY} with a one-time payment — no subscription required — and include free regeneration within your package if you are not satisfied.`,
+  },
+  {
+    category: 'Comparison',
+    question: 'Is an AI headshot as good as a studio photo?',
+    answer:
+      'AI headshots aim for studio-quality results, and quality depends heavily on the selfies you upload. The main advantages over a studio are convenience (no appointment, no travel), speed (hours instead of days), and cost (a fraction of a typical studio session). However, results are AI-generated portraits — review them before using them professionally.',
+  },
+  {
+    category: 'Comparison',
+    question: 'Why should I choose TailorPic over a free AI headshot tool?',
+    answer:
+      `Free tools typically offer lower resolution, fewer styles, and limited customization. TailorPic trains a dedicated AI model on your features for each order, delivers HD or 4K resolution, and offers up to 160 headshots with 15 backgrounds and 10 styles. Our quality commitment means you can regenerate photos within your package at no extra cost.`,
+  },
+  // ── Technical (additional) ──
+  {
+    category: 'Technical',
+    question: 'Can I get headshots with different outfits and backgrounds?',
+    answer:
+      'Yes. Depending on your package, you can choose from multiple backgrounds (solid studio colors, gradients, environmental settings) and outfit styles (business formal, smart casual, creative). Higher-tier packages offer more options — the Executive package includes 15 backgrounds and 10 styles.',
+  },
+  {
+    category: 'Technical',
+    question: 'What happens if I upload blurry or low-quality selfies?',
+    answer:
+      'The quality of your AI headshots depends directly on the quality of your uploads. Blurry, heavily filtered, or poorly lit photos can reduce the accuracy and quality of the results. Follow our upload tips: use natural lighting, avoid heavy filters, and include a variety of angles. If your results are not satisfactory, contact support for guidance.',
+  },
 ];
 
-export const faqCategories = ['Product', 'Pricing', 'Teams', 'Privacy', 'Technical', 'Delivery', 'Refund'] as const;
+export const faqCategories = ['Product', 'Pricing', 'Teams', 'Privacy', 'Technical', 'Delivery', 'Refund', 'Use Cases', 'Comparison'] as const;

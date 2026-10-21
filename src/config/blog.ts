@@ -4008,7 +4008,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h2>The Bottom Line</h2>
-      <p>Quality AI headshots are virtually undetectable. Focus on choosing a tool that trains on your real photos and produces natural results. <a href="/auth/register">Try TailorPic</a> for 40+ professional photos that look like you.</p>
+      <p>Quality AI headshots are virtually undetectable. Focus on choosing a tool that trains on your real photos and produces natural results. <a href="/auth/register">Try TailorPic</a> for professional photos that look like you, from one photo up to 160.</p>
     `,
     author: 'TailorPic Team',
     publishedAt: '2025-02-20',

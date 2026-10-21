@@ -9,6 +9,8 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { VsDirectory } from './vs-directory';
 import { vsGroups as groups } from './vs-groups';
 
+export const revalidate = 3600;
+
 const title = 'TailorPic vs Alternatives: Compare AI Headshot Tools';
 const description =
   'Compare TailorPic with 70+ AI headshot generators, image tools and photo editors. See features, pricing, photo quality and delivery side by side.';

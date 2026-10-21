@@ -7,7 +7,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+import { BASE_PRICE_DISPLAY, BASE_PRICE_CENTS } from '@/config/pricing';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedVsPages } from '@/lib/internal-links';
@@ -19,7 +19,7 @@ export const revalidate = 3600;
 const competitor = "Dreamwave";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  `Compare TailorPic vs Dreamwave for AI headshots. TailorPic starts from ${BASE_PRICE_DISPLAY} across 12 categories; Dreamwave starts around $35 for up to 300.`;
+  `Compare TailorPic vs Dreamwave for AI headshots. TailorPic starts from ${BASE_PRICE_DISPLAY} across 12 categories; Dreamwave focuses on headshots with about two hours from start to gallery.`;
 const path = '/vs/dreamwave';
 
 export const metadata: Metadata = {
@@ -31,21 +31,30 @@ export const metadata: Metadata = {
 };
 
 
+// Competitor facts, checked on Dreamwave's own site on 2026-10-21:
+//   https://dreamwave.ai  company headshots "$49-59 per person", "150 photos
+//     per person", "1-2 hr turnaround", "Free redo for every teammate";
+//     also lists pet portraits and photobooth products
+//   https://www.dreamwave.ai/ai-headshots  individual: "Start to gallery in
+//     about two hours"; no individual prices listed; no refunds if input
+//     photos do not follow the guidelines; "our pro retouching team" for
+//     small tweaks
+// Re-check these pages before changing any Dreamwave value below.
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: `from ${BASE_PRICE_DISPLAY}`, other: "~$35 starting, with a $99 premium tier" },
-  { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Up to 300 headshots depending on plan" },
-  { label: "Delivery time", tailorpic: "Results within hours", other: "About 5 minutes" },
-  { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Multiple professional backgrounds and outfits" },
+  { label: "Starting price", tailorpic: `from ${BASE_PRICE_DISPLAY}`, other: "Individual prices not listed on their headshots page; company headshots $49 to $59 per person" },
+  { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "150 photos per person on company headshots" },
+  { label: "Delivery time", tailorpic: "Results within hours", other: "About 2 hours from start to gallery" },
+  { label: "Categories / styles", tailorpic: "12 categories (headshots, dating, pets, avatars and more)", other: "Headshots, pet portraits and AI photobooths" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
-  { label: "One-time vs subscription", tailorpic: "One-time payment, no subscription", other: "One-time packages; free redos included" },
-  { label: "Team features", tailorpic: "Team and enterprise options available", other: "Team options may be available; check their site" },
+  { label: "Redo / refund", tailorpic: "Free regeneration", other: "Free redo on company headshots; no refund if input photos miss their guidelines" },
+  { label: "Team features", tailorpic: "Team and enterprise options available", other: "Company headshots, priced per person" },
 ];
 
 const differences = [
-  { title: "Price to get started", body: `TailorPic packages start from ${BASE_PRICE_DISPLAY}, compared with Dreamwave's ~$35 entry price and its $99 premium tier.` },
-  { title: "Volume vs variety", body: "Dreamwave can produce up to 300 headshots. TailorPic delivers photos but spreads them across 12 categories, from business and dating to creative looks." },
-  { title: "Speed", body: "Dreamwave returns results in about 5 minutes. TailorPic typically completes within hours, since each model is fine-tuned with LoRA on your own photos." },
-  { title: "Training approach", body: "TailorPic trains a personal LoRA model for a close likeness. Dreamwave offers free redos, which helps if a first batch misses the mark." },
+  { title: "Try it with one photo", body: `TailorPic starts from ${BASE_PRICE_DISPLAY} for a single photo, so you can see the result before buying a larger package. Dreamwave does not list individual prices on its headshots page.` },
+  { title: "Volume vs variety", body: "Dreamwave's company headshots include 150 photos per person. TailorPic packages range from 1 to 160 photos across 12 categories, from business and dating to creative looks." },
+  { title: "Speed", body: "Dreamwave says about two hours from start to gallery. TailorPic typically completes within hours, since each model is fine-tuned with LoRA on your own photos." },
+  { title: "Training approach", body: "TailorPic trains a personal LoRA model for a close likeness. Dreamwave offers a free redo for every teammate on company headshots." },
 ];
 
 const useCases = {
@@ -56,17 +65,17 @@ const useCases = {
     "Predictable pricing with no subscription",
   ],
   other: [
-    "Results in minutes rather than hours",
-    "A very large batch of up to 300 headshots to choose from",
-    "Free redos if you are not happy with the first set",
-    "A premium tier for extra options",
+    "Company headshots with 150 photos per person",
+    "A free redo for every teammate",
+    "AI photobooth products",
+    "A pro retouching team for small tweaks",
   ],
 };
 
 const faqs = [
-  { question: "Is TailorPic cheaper than Dreamwave?", answer: `Our entry price is lower, but the packages are not like-for-like: TailorPic starts from ${BASE_PRICE_DISPLAY} for a single photo and goes up to 160 photos, while Dreamwave starts at around $35, with a $99 premium tier. Dreamwave pricing may change, so check their site.` },
-  { question: "Which is faster, TailorPic or Dreamwave?", answer: "Dreamwave is faster, with turnaround of about 5 minutes. TailorPic results are ready within hours for most orders, since it fine-tunes a LoRA model on your photos." },
-  { question: "How many photos do I get with each?", answer: "TailorPic includes photos across 12 categories. Dreamwave offers up to 300 headshots depending on the plan you choose." },
+  { question: "Is TailorPic cheaper than Dreamwave?", answer: `TailorPic starts from ${BASE_PRICE_DISPLAY} for a single photo and goes up to 160 photos. Dreamwave lists company headshots at $49 to $59 per person and does not show individual prices on its headshots page (October 2026).` },
+  { question: "Which is faster, TailorPic or Dreamwave?", answer: "Dreamwave says about two hours from start to gallery. TailorPic results are ready within hours for most orders, since it fine-tunes a LoRA model on your photos." },
+  { question: "How many photos do I get with each?", answer: "TailorPic packages range from 1 to 160 photos across 12 categories. Dreamwave company headshots include 150 photos per person." },
   { question: "Is TailorPic a subscription?", answer: `No. TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY} with no recurring fees.` },
 ];
 
@@ -80,7 +89,7 @@ export default function Page() {
       <ProductSchema
         name="TailorPic AI Headshots"
         description="AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours."
-        price={699}
+        price={BASE_PRICE_CENTS}
         category="Professional Services"
         slug="vs/dreamwave"
       />
@@ -100,7 +109,7 @@ export default function Page() {
               TailorPic <span className="text-tp-bronze">vs</span> {competitor}
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">
-              Dreamwave offers high volume and fast turnaround at a higher price. TailorPic gives you polished, LoRA-trained photos across 12 categories (up to 160 per order), from {BASE_PRICE_DISPLAY}.
+              Dreamwave focuses on company headshots with 150 photos per person. TailorPic gives you polished, LoRA-trained photos across 12 categories (up to 160 per order), from {BASE_PRICE_DISPLAY}.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

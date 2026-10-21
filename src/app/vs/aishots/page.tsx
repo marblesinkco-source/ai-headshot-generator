@@ -7,7 +7,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+import { BASE_PRICE_DISPLAY, BASE_PRICE_CENTS } from '@/config/pricing';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedVsPages } from '@/lib/internal-links';
@@ -34,6 +34,10 @@ export const metadata: Metadata = {
 const intro =
   "AiShots is one of several AI photo generators. TailorPic focuses on a simple one-time price, LoRA-trained likeness and 12 photo categories, so a single upload can cover LinkedIn, dating and creative profiles.";
 
+// Competitor values on this page are deliberately non-specific: no official
+// AiShots pricing/turnaround page could be confirmed on 2026-10-21. Before adding
+// any number, price or speed for AiShots, check it on their own site and cite
+// the URL here.
 const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Starting price", tailorpic: `from ${BASE_PRICE_DISPLAY}`, other: "Varies by plan; confirm on their site" },
   { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Depends on the package you pick" },
@@ -49,7 +53,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 
 const differences = [
   { title: "A low entry price", body: `TailorPic starts from ${BASE_PRICE_DISPLAY}. Every package shows its total up front, so you know what you pay before you upload a single photo.` },
-  { title: "Beyond the office headshot", body: "Eleven categories cover LinkedIn, dating, creative portraits, pets and product shots, so one upload can serve several needs." },
+  { title: "Beyond the office headshot", body: "Twelve categories cover LinkedIn, dating, creative portraits, pets and product shots, so one upload can serve several needs." },
   { title: "Personal model, not a generic filter", body: "TailorPic fine-tunes a LoRA model on your own selfies, which aims for a closer likeness than a one-size-fits-all preset." },
   { title: "Trade-off on speed", body: "TailorPic results within hours for most orders. If you need results in minutes, a faster tool may suit an urgent deadline better." },
 ];
@@ -87,7 +91,7 @@ export default function VsAiShotsPage() {
       <ProductSchema
         name="TailorPic AI Headshots"
         description="AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours."
-        price={699}
+        price={BASE_PRICE_CENTS}
         category="Professional Services"
         slug="vs/aishots"
       />

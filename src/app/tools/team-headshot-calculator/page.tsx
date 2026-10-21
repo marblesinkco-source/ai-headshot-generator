@@ -7,6 +7,8 @@ import { TEAM_PRICE_SMALL_DISPLAY, TEAM_PRICE_LARGE_DISPLAY } from '@/config/pri
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { CalculatorForm } from './calculator-form';
 
+export const revalidate = 3600;
+
 const title = 'Team Headshot ROI Calculator: Photographer vs AI';
 const description =
   'Free calculator: enter your team size and your own photographer estimate to compare traditional team headshots with TailorPic team pricing, including estimated time saved.';

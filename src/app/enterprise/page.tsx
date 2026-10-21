@@ -36,6 +36,8 @@ import {
   Clock,
 } from 'lucide-react';
 
+export const revalidate = 3600;
+
 const ROICalculator = dynamic(
   () => import('@/components/marketing/roi-calculator').then((m) => m.ROICalculator),
 );

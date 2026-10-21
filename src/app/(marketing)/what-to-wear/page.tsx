@@ -22,6 +22,8 @@ import {
   ArrowRight,
 } from 'lucide-react';
 
+export const revalidate = 3600;
+
 const PAGE_TITLE = 'What to Wear for a Professional Headshot';
 const PAGE_DESCRIPTION =
   'A practical guide to choosing what to wear for a professional headshot: universal rules, industry-specific outfit ideas, flattering colors, and common mistakes to avoid.';

@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Data Scientists | TailorPic";
 const pageDescription =
   'Professional AI headshots for data scientists, analysts, and ML engineers. Polished portraits for LinkedIn, GitHub, conference bios, and personal sites.';
@@ -121,7 +124,7 @@ export default function DataScientistsIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Data Scientists"}
         description={"AI-generated professional headshots for data scientists for LinkedIn, GitHub, conference bios, publications, and personal websites."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Technology"
         slug="industries/data-scientists"
       />

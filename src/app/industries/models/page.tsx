@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Models & Talent | TailorPic";
 const pageDescription =
   'Professional AI headshots for models and talent. Polished portraits for agency submissions, portfolios, comp cards, and social media.';
@@ -121,7 +124,7 @@ export default function ModelsIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Models & Talent"}
         description={"AI-generated professional headshots for models and talent for agency submissions, portfolios, digital comp cards, and social media."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Modeling & Talent"
         slug="industries/models"
       />

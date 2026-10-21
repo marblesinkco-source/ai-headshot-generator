@@ -84,6 +84,10 @@ const AnimatedStats = dynamic(
 const SocialProofTicker = dynamic(
   () => import('@/components/marketing/social-proof-ticker').then((m) => m.SocialProofTicker)
 );
+const WhoItsFor = dynamic(
+  () => import('@/components/marketing/who-its-for').then((m) => m.WhoItsFor),
+  { loading: () => <SectionSkeleton height="h-[500px] md:h-[420px]" /> }
+);
 
 export default function LandingPage() {
   return (
@@ -116,6 +120,9 @@ export default function LandingPage() {
 
       {/* Categories */}
       <Categories />
+
+      {/* Who It's For — persona tabs */}
+      <WhoItsFor />
 
       {/* Social proof ticker */}
       <SocialProofTicker />

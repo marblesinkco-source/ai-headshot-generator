@@ -6,6 +6,8 @@ import { HelpContent } from '@/components/marketing/help-content';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 
+export const revalidate = 3600;
+
 /* ------------------------------------------------------------------ */
 /*  Metadata (SSR)                                                    */
 /* ------------------------------------------------------------------ */

@@ -7,7 +7,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+import { BASE_PRICE_DISPLAY, BASE_PRICE_CENTS } from '@/config/pricing';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
 import { RelatedLinks } from '@/components/related-links';
 import { getRelatedVsPages } from '@/lib/internal-links';
@@ -50,7 +50,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 const differences = [
   { title: "Art platform vs headshot service", body: "Leonardo is built for creative art of all kinds. TailorPic narrows the focus to realistic, professional photos of you." },
   { title: "Trained on you", body: "TailorPic fine-tunes a LoRA model on your selfies as part of the service. With an art platform, matching your face takes extra setup and skill." },
-  { title: "Ready-made categories", body: "Eleven categories are included, so you do not need to design scenes, lighting or outfits through prompts." },
+  { title: "Ready-made categories", body: "Twelve categories are included, so you do not need to design scenes, lighting or outfits through prompts." },
   { title: "Trade-off on creative control", body: "Leonardo gives you more control over style and experimentation. If you enjoy tuning prompts and models, that freedom may be worth it." },
 ];
 
@@ -87,7 +87,7 @@ export default function VsLeonardoAiPage() {
       <ProductSchema
         name="TailorPic AI Headshots"
         description="AI headshot generator delivering up to 160 photos across 12 categories, trained with LoRA fine-tuning and results typically delivered within hours."
-        price={699}
+        price={BASE_PRICE_CENTS}
         category="Professional Services"
         slug="vs/leonardo-ai"
       />

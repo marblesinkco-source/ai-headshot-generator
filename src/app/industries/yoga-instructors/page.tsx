@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Yoga Instructors | TailorPic";
 const pageDescription =
   'Professional AI headshots for yoga instructors, studio owners and teacher trainers. Build a calm, credible presence on class schedules and social media.';
@@ -121,7 +124,7 @@ export default function YogaInstructorsIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Yoga Instructors"}
         description={"AI-generated professional headshots for yoga instructors for studio websites, class schedules, teacher training pages, and social media."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/yoga-instructors"
       />

@@ -12,6 +12,8 @@ import { BreadcrumbSchema } from '@/components/structured-data';
 import { ArrowRight, Camera, Sparkles, BookOpen } from 'lucide-react';
 import { formatDate } from '@/lib/utils';
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic Blog: AI Headshot Tips, Guides & Comparisons' },
   keywords: ['AI headshots', 'LinkedIn headshot tips', 'AI photography guides', 'professional headshots', 'AI headshot alternatives'],

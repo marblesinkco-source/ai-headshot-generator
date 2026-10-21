@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Nurses & Healthcare Staff | TailorPic";
 const pageDescription =
   'Professional AI headshots for nurses, nurse practitioners, nursing students and healthcare staff. Scrubs or formal portraits for hospital IDs and LinkedIn.';
@@ -117,7 +120,7 @@ export default function NursesIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Nurses"}
         description={"AI-generated professional headshots for nurses, nurse practitioners, nursing students, and healthcare staff, in scrubs or formal attire."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/nurses"
       />

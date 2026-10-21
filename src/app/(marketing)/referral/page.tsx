@@ -20,6 +20,8 @@ import {
   Zap,
 } from 'lucide-react';
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic Referral Program: Share and Get Rewarded' },
   description:

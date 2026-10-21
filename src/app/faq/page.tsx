@@ -9,6 +9,8 @@ import { siteConfig } from '@/config/site';
 import { FAQSchema, BreadcrumbSchema } from '@/components/structured-data';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
+export const revalidate = 3600;
+
 const FaqSearch = dynamic(() => import('@/components/marketing/faq-search'));
 
 const DESCRIPTION = 'Answers about TailorPic AI headshots: how it works, pricing, privacy and delivery time. Find what you need quickly.';

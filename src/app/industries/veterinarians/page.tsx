@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Veterinarians | TailorPic";
 const pageDescription =
   'Professional AI headshots for veterinarians, vet techs and animal care teams. Build pet owner trust on your clinic website, Google profile and directories.';
@@ -121,7 +124,7 @@ export default function VeterinariansIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Veterinarians"}
         description={"AI-generated professional headshots for veterinarians, vet techs, and animal care teams for clinic websites, Google profiles, and directories."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/veterinarians"
       />

@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Politicians & Candidates | TailorPic";
 const pageDescription =
   'Professional AI headshots for politicians, candidates and public officials. Portraits for campaign sites, official profiles, press kits and social media.';
@@ -121,7 +124,7 @@ export default function PoliticiansIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Politicians & Candidates"}
         description={"AI-generated professional headshots for politicians, candidates, and public officials for campaign websites, press kits, and official profiles."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Public Service"
         slug="industries/politicians"
       />

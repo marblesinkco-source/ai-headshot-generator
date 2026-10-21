@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Therapists & Counselors | TailorPic";
 const pageDescription =
   'Professional AI headshots for therapists, counselors and mental health practitioners. A warm, trustworthy portrait for Psychology Today and your practice site.';
@@ -121,7 +124,7 @@ export default function TherapistsIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Therapists & Counselors"}
         description={"AI-generated professional headshots for therapists, counselors, and mental health practitioners for directories, websites, and practice profiles."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/therapists"
       />

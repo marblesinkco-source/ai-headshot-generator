@@ -23,6 +23,8 @@ import {
   Check,
 } from 'lucide-react';
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: { absolute: 'Gift Cards: Give Professional AI Headshots | TailorPic' },
   description:

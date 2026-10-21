@@ -9,7 +9,7 @@ import { ProductSchema, FAQSchema, BreadcrumbSchema } from '@/components/structu
 import { siteConfig } from '@/config/site';
 import { Button } from '@/components/ui/button';
 import { Users, CheckCircle, ArrowRight } from 'lucide-react';
-import { BASE_PRICE_DISPLAY, TEAM_PRICE_LARGE_DISPLAY } from '@/config/pricing';
+import { BASE_PRICE_DISPLAY, TEAM_PRICE_LARGE_DISPLAY, LITE_PRICE_CENTS } from '@/config/pricing';
 
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
@@ -136,7 +136,7 @@ export default function RealEstateIndustryPage() {
       <ProductSchema
         name="Professional Headshots for Real Estate Agents"
         description="AI-generated professional headshots for real estate agents and brokerages, sized for MLS profiles, listing portals, signage, and marketing materials."
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/real-estate"
       />

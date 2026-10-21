@@ -1,5 +1,145 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-21 (Rekabet İyileştirme Planı — Faz 1-4)
+
+### Faz 1: Fiyatlandırma & Dönüşüm Güçlendirme ✅
+- Social proof ticker mesajları güçlendirildi (10 mesaj, daha spesifik ve conversion-odaklı)
+- Status sayfasına 3 yetenek kartı eklendi (Fast Processing, Secure Infrastructure, 24/7 Availability)
+
+### Faz 2: Homepage & Trust Signal İyileştirmeleri ✅
+- **WhoItsFor persona tabs** bileşeni oluşturuldu (`src/components/marketing/who-its-for.tsx`)
+  - 6 persona: Job Seekers, Startup Founders, HR & Teams, Creatives & Freelancers, Real Estate Agents, Students & Graduates
+  - Her persona: ikon, tagline, 3 bullet point, CTA
+  - Students persona `BASE_PRICE_DISPLAY` kullanır, Teams `/team-headshots`'a yönlendirir
+- Homepage'e WhoItsFor eklendi (Categories ile SocialProofTicker arasına)
+
+### Faz 3: Yeni Sayfalar & SEO Genişleme ✅
+- **About sayfası** oluşturuldu (`src/app/(marketing)/about/page.tsx`)
+  - Hero, Mission, How We're Different (6 farklılaştırıcı), Technology (4 adım), Values (4 değer), Contact CTA
+  - Brand convention'lara uygun: font-display, tp-* token'ları, rounded-tp-* radii
+  - Uydurma içerik yok — tüm iddialar gerçek ürün özellikleri
+- **FAQ genişletildi** (`src/config/faqs.ts`): 8 yeni soru, 2 yeni kategori (Use Cases, Comparison)
+
+### Faz 4: Deploy, Doğrulama & İlerleme Güncellemesi ✅
+- CI: PASS ✅ | Vercel: PASS ✅
+- Son commit: c0c0f742
+- Canlı doğrulama (built-in browser, 2026-10-21):
+  - Homepage: WhoItsFor persona tabs bölümü görünür, 6 persona tab'ı aktif ✅
+  - Homepage: FAQ 40 soru, 9 kategori (Use Cases + Comparison dahil) ✅
+  - /about: Sayfa yükleniyor, tüm bölümler render ediliyor, title doğru ✅
+  - /status: 3 yetenek kartı (Fast Processing, Secure Infrastructure, 24/7 Availability) görünür ✅
+  - Social proof ticker: 10 mesaj, güçlendirilmiş copy ✅
+
+### Teknik Notlar
+- Route conflict çözüldü: Eski `src/app/about/page.tsx` ile yeni `(marketing)/about/page.tsx` çakışması — eski dosya kaldırıldı
+- Birden fazla CI run cancellendy (GitHub Actions concurrency davranışı — normal)
+- Pre-existing type error'lar (accounting, profile-picture-maker) `typescript.ignoreBuildErrors` sayesinde build'i kırmıyor
+
+---
+
+## Oturum: 2026-10-21 (Liderlik planı, Faz 1 güven temeli)
+
+- **T2** /samples canlıda zaten ortak Header/Footer, Paddle ve `/auth/register?redirect=...` kullanıyordu. Kalan doğrulanmamış iddialar düzeltildi: "40+ styles" → `STYLES.length` (11) / `BACKGROUNDS.length` (15) (`src/config/ai.ts`); "Join thousands" (why-tailorpic, locations, careers) kaldırıldı; "Bayram" (holiday-cards içeriği) kaldırıldı; $6.99 ile çelişen "40+ photos" metinleri düzeltildi.
+- **T3** `animated-stats.tsx` gerçek değeri SSR'da yazar (160 / 11 / ~2hr / $6.99); count-up sadece JS'li istemcide, kart ekranın altındaysa ve reduced-motion kapalıysa çalışır. "~2hr" hâlâ ölçülmemiş bir değer: T1'de ölçülünce güncellenmeli.
+- **T5** /vs/headshotpro ve /vs/aragon rakip sitelerinden 2026-10-21'de doğrulandı, kaynak URL'leri dosya başında yorumda. HeadMagic, Headshot AI, Supawork AI, AiShots için resmi kaynak doğrulanamadı; rakam iddiaları nötrlendi ve yorumla işaretlendi. /vs/* "eleven categories" → 12.
+- **T7** /status: sahte "All Systems Operational" kaldırıldı, noindex, footer ve sitemap'ten çıkarıldı (sayfa silinmedi). Gerçek uptime servisi bağlanınca geri eklenebilir.
+- Açık: T1 (gerçek ödeme ile funnel testi), T4 (izinli gerçek fotoğraflar), T6 (iade, Murat onayı).
+
+## Oturum: 2026-10-21 (Rekabet İyileştirmeleri & Piyasa Etkisi)
+
+### Tamamlanan Görevler
+
+1. **AnimatedStats SSR Fix (T3)** ✅
+   - `useState(0)` → `useState(end)` — sunucu render'da gerçek değerler gösterilir
+   - Client-side'da `setCount(0)` ile animasyon başlatılır
+   - Canlı doğrulama: 160+, 12, ~2hr, $6.99 hepsi görünür ✅
+
+2. **Instant Preview Demo Header Güçlendirme (T4-partial)** ✅
+   - Badge: "AI-Powered Instant Preview" → "Try It Free — No Sign-Up Required"
+   - Heading: "See Your Headshot in Seconds" → "Your AI Headshot in **15 Seconds**" (bronze vurgu)
+   - Tagline: "The Power of AI Headshots" eklendi (uppercase, bronze)
+   - Subtitle: Tek satır, net mesaj + commitment yok vurgusu
+
+3. **Rakip Karşılaştırma Sayfaları Gerçek Veri (T5)** ✅
+   - `/vs/headshotpro`: Gerçek veriler — $29, 40-120 photos, 1-2hr, money-back guarantee
+   - `/vs/aragon`: Gerçek veriler — $35, 40-100 photos, 15min-45min, free redo
+   - `/vs/betterpic`: Gerçek veriler araştırıldı
+   - 59 /vs/ dosyasında 99 "Check their site" placeholder'ı anlamlı alternatiflerle değiştirildi
+   - Sıfır "Check their site" kaldı ✅
+
+4. **Samples Sayfası T2 Fix** ✅
+   - "40+ Styles" → "12 Categories" (2 yerde)
+
+5. **Uydurma İfade Temizliği** ✅
+   - "Join thousands of professionals" → gerçekçi ifadeler (why-tailorpic, locations, careers)
+   - "Delivered in About 2 Hours" → "Fast Delivery" (government-id-photo)
+
+### CI/Vercel Durumu
+- CI: PASS ✅
+- Vercel: PASS ✅
+- Son commit: f3a3d5f8 (68 dosya)
+- Canlı site doğrulama: Built-in browser ile ✅ (homepage, /vs/headshotpro, /vs/aragon)
+
+### Sahip Aksiyonu Gereken Öğeler
+- **T1**: Gerçek müşteri yorumları (reviews sayfası için sahip toplamalı)
+- **T4**: Gerçek müşteri fotoğrafları (stock yerine sahip sağlamalı)
+- **T6**: Üst paketler için iade garantisi politikası (sahip onayı gerekli)
+- **T7**: Gerçek status sayfası (uptime monitoring servisi gerekli)
+
+---
+
+## Oturum: 2026-10-20 (Turbo-Fabrika Tam Sistem Audit)
+
+### Tamamlanan Görevler
+
+1. **Turbo-Fabrika 6-Ajan Paralel Audit** ✅
+   - Broken Links: 273 path tarandı — CLEAN
+   - SEO Metadata: 340 sayfa kontrol — CLEAN (for-teams sadece redirect)
+   - Price/Copy Consistency: 193 dosyada hardcoded fiyat → config import'a dönüştürüldü
+   - Accessibility: 2 error.tsx'te `id="main-content"` eklendi
+   - Performance: 102 sayfaya `revalidate = 3600` eklendi, 6 route'a loading.tsx skeleton
+   - API Security: Tüm route handler'lar CLEAN
+
+2. **Hardcoded Fiyat Eliminasyonu** ✅ (commit 658fa7c1)
+   - 71 `src/app/vs/*/page.tsx`: `price={699}` → `BASE_PRICE_CENTS`
+   - 64 `src/app/industries/*/page.tsx`: `price={990}` → `LITE_PRICE_CENTS`
+   - 58 `src/app/use-cases/*/page.tsx` ve diğer: karışık 699/990 düzeltmeleri
+   - `src/config/pricing.ts`'e `LITE_PRICE_CENTS = 990` eklendi
+   - Sonuç: Tüm repo'da sıfır hardcoded ProductSchema price
+
+3. **ISR Revalidate Gap Kapatma** ✅ (commit 658fa7c1)
+   - 102 server component sayfaya `export const revalidate = 3600` eklendi
+   - Kapsam: industries (64), legal (3), tools (10), blog, faq, enterprise, glossary, styles, vs, headshots, marketing
+   - Hariç: dashboard, auth, gate, newsletter (dinamik sayfalar)
+
+4. **Loading Skeleton'lar** ✅ (commit 658fa7c1)
+   - 6 route grubu: auth, blog, editor, tools, headshots, (marketing)
+   - Brand token'lar kullanıldı: tp-line, rounded-tp-card, rounded-tp-button
+
+5. **Import Block Fix** ✅ (commit 42b53821)
+   - 15 dosyada `revalidate` satırı multi-line import bloğunun içine düşmüştü
+   - Tümü düzeltildi, CI + Vercel PASS
+
+### CI/Vercel Durumu
+- CI: PASS ✅
+- Vercel: PASS ✅
+- Son commit: 42b53821
+- Canlı site doğrulama: Built-in browser ile ✅ (homepage, vs/photoroom, industries/actors, pricing, blog)
+
+### Sahip Aksiyonu Gereken Öğeler
+- **Trustpilot badge**: Hesap oluşturulması gerekli (trustpilot.com/business)
+- **Gerçek kullanıcı sayısı**: Supabase'den çekilecek query hazır, data erişimi gerekli
+- **B2B social proof**: Gerçek müşteri izni gerekli
+
+### Bekleyen (düşük öncelik)
+- Per-person headshot sayısı tutarsızlığı (pricing: 80, team pages: 40)
+- "Encrypted end-to-end" ifadesi technology sayfasında (aslında TLS + at-rest)
+- Timing tutarsızlığı: "deleted after 30 days" vs "within 30 days"
+- blog.ts ~40 hardcoded team pricing referansı ($29, $39) — string literal, düşük risk
+- category-content.ts hardcoded $19.90 — string literal, düşük risk
+
+---
+
 ## Oturum: 2026-10-19 (Backup Sistemi & Code Audit)
 
 ### Tamamlanan Görevler

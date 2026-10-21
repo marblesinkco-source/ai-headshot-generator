@@ -14,6 +14,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Pilots & Aviation Professionals | TailorPic";
 const pageDescription =
   'Professional AI headshots for airline pilots, flight instructors, charter pilots and aviation professionals. Stand out on LinkedIn and in crew profiles.';
@@ -121,7 +124,7 @@ export default function PilotsIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Pilots & Aviation Professionals"}
         description={"AI-generated professional headshots for pilots and aviation professionals for airline applications, crew profiles, LinkedIn, and flight school websites."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Professional Services"
         slug="industries/pilots"
       />

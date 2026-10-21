@@ -28,6 +28,8 @@ import {
   Crown,
 } from 'lucide-react';
 
+export const revalidate = 3600;
+
 /* Prices come from config/categories.ts (display only). */
 const avatarPackages = CATEGORIES.avatars?.packages ?? [];
 const AVATAR_PACK = avatarPackages.find((p) => p.id === 'avatar-starter') ?? avatarPackages[0];

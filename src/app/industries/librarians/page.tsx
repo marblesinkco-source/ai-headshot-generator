@@ -15,6 +15,9 @@ import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 
 import { ContentPhoto } from '@/components/marketing/content-photo';
 import { FAQAccordion } from '@/components/marketing/faq-accordion';
+import { LITE_PRICE_CENTS } from '@/config/pricing';
+
+export const revalidate = 3600;
 const pageTitle = "AI Headshots for Librarians | TailorPic";
 const pageDescription =
   'Professional AI headshots for public, academic and school librarians. Put a friendly, credible face on staff directories, library websites and LinkedIn.';
@@ -122,7 +125,7 @@ export default function LibrariansIndustryPage() {
       <ProductSchema
         name={"Professional Headshots for Librarians"}
         description={"AI-generated professional headshots for librarians for staff directories, library websites, conference bios, and LinkedIn."}
-        price={990}
+        price={LITE_PRICE_CENTS}
         category="Education"
         slug="industries/librarians"
       />

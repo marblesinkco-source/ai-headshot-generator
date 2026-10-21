@@ -20,6 +20,8 @@ import {
   Rocket,
 } from 'lucide-react';
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic Partner Program: Referral, Integration, Reseller' },
   description: `Partner with ${siteConfig.name} as a referral, integration, or reseller partner. Earn commission, access our API, or white-label AI headshots under your brand.`,

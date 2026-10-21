@@ -8,13 +8,15 @@ import { useEffect, useState, useRef } from 'react';
  */
 const messages = [
   { icon: 'camera', text: 'Up to 160 unique headshots per order' },
-  { icon: 'clock', text: 'Results delivered within hours' },
-  { icon: 'shield', text: 'Quality guarantee included' },
-  { icon: 'zap', text: 'No studio appointment needed' },
-  { icon: 'globe', text: 'Available worldwide, 24/7' },
-  { icon: 'lock', text: 'Secure checkout via Paddle' },
-  { icon: 'check', text: 'Full commercial usage rights' },
-  { icon: 'repeat', text: 'Free regeneration if not satisfied' },
+  { icon: 'clock', text: 'Results delivered within hours — not days' },
+  { icon: 'shield', text: 'Quality guarantee — free regeneration included' },
+  { icon: 'zap', text: 'No studio appointment, no travel, no waiting' },
+  { icon: 'globe', text: 'Available worldwide, 24/7 — upload from your phone' },
+  { icon: 'lock', text: 'Secure one-time payment via Paddle' },
+  { icon: 'check', text: 'Full commercial usage rights on every photo' },
+  { icon: 'repeat', text: 'Not satisfied? Regenerate at no extra cost' },
+  { icon: 'camera', text: 'Custom AI model trained on your unique features' },
+  { icon: 'zap', text: 'Studio-quality results at a fraction of the cost' },
 ];
 
 const iconPaths: Record<string, string> = {
