@@ -28,7 +28,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: { absolute: 'TailorPic vs Secta Labs: AI Headshot Generator Comparison' },
   description:
-    `Compare TailorPic vs Secta Labs for AI headshots. TailorPic starts at ${BASE_PRICE_DISPLAY} with photos, 12 categories.`,
+    `Compare TailorPic vs Secta Labs for AI headshots. TailorPic starts at ${BASE_PRICE_DISPLAY} for one photo, across 12 categories.`,
   alternates: { canonical: '/vs/secta' },
   openGraph: generateOGMetadata({ title: 'TailorPic vs Secta Labs: AI Headshot Generator Comparison', description: 'Compare TailorPic and Secta Labs for AI headshots. Pricing, categories, delivery, and quality commitment side by side.', path: '/vs/secta', type: 'vs' }),
   twitter: generateTwitterMetadata({ title: 'TailorPic vs Secta Labs: AI Headshot Generator Comparison', description: 'Compare TailorPic and Secta Labs for AI headshots. Pricing, categories, delivery, and quality commitment side by side.', type: 'vs' }),
@@ -38,24 +38,32 @@ export const metadata: Metadata = {
 /*  Data                                                               */
 /* ------------------------------------------------------------------ */
 
+// Competitor facts, checked on Secta Labs' own site on 2026-10-21:
+//   https://secta.ai  "Professional Package": 7 styles, one-time payment,
+//     "100+ HD Photos" (no price shown on the homepage); "Results in less than
+//     2 hours"; "Refund guaranteed" badge (terms not shown); 90+ / 130+
+//     styles; professional, LinkedIn, actor and corporate headshots plus fun
+//     profile pictures, oil paintings and gift headshots; teams page linked
+// Re-check this page before adding any Secta price below.
+
 const quickBadges = [
   {
     icon: DollarSign,
     label: 'Starting Price',
     tailorpic: `From ${BASE_PRICE_DISPLAY}`,
-    competitor: '~$49+',
+    competitor: 'Not shown on homepage',
   },
   {
     icon: ImageIcon,
     label: 'Photos Included',
     tailorpic: '1 to 160',
-    competitor: 'Varies by plan',
+    competitor: '100+',
   },
   {
     icon: Clock,
     label: 'Delivery Time',
     tailorpic: 'Within hours',
-    competitor: 'Varies by plan',
+    competitor: 'Under 2 hours',
   },
 ];
 
@@ -66,30 +74,27 @@ type FeatureRow = {
 };
 
 const comparisonRows: FeatureRow[] = [
-  { feature: 'Starting Price', tailorpic: `From ${BASE_PRICE_DISPLAY}`, competitor: '~$49+' },
-  { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: 'Varies by plan' },
-  { feature: 'Delivery Time', tailorpic: 'Within hours', competitor: 'Varies by plan' },
-  { feature: 'Photo Categories', tailorpic: '12 categories', competitor: 'Fewer categories' },
-  { feature: 'Quality Commitment', tailorpic: 'Free regeneration', competitor: 'Check current terms' },
-  { feature: 'Industry-Specific Solutions', tailorpic: true, competitor: 'Limited' },
-  { feature: 'Pet Portraits', tailorpic: true, competitor: false },
-  { feature: 'Dating Photos', tailorpic: true, competitor: 'Limited' },
-  { feature: 'E-Commerce Product Photos', tailorpic: true, competitor: false },
+  { feature: 'Starting Price', tailorpic: `From ${BASE_PRICE_DISPLAY}`, competitor: 'Not shown on their homepage' },
+  { feature: 'Try a Single Photo First', tailorpic: `Yes, 1 photo for ${BASE_PRICE_DISPLAY}`, competitor: 'Not shown' },
+  { feature: 'Number of Photos', tailorpic: '1 to 160', competitor: '100+ (Professional Package)' },
+  { feature: 'Delivery Time', tailorpic: 'Within hours', competitor: 'Under 2 hours' },
+  { feature: 'Styles', tailorpic: '11 styles, 15 backgrounds', competitor: '90+ to 130+ styles' },
+  { feature: 'If You Are Not Happy', tailorpic: 'Free regeneration', competitor: 'Refund guaranteed (terms not shown)' },
   { feature: 'Professional Headshots', tailorpic: true, competitor: true },
 ];
 
 const whyCards = [
   {
     icon: BadgeDollarSign,
-    title: 'Far More Affordable',
+    title: 'Start With One Photo',
     description:
-      `TailorPic starts at just ${BASE_PRICE_DISPLAY} — a fraction of the roughly $49+ entry price you can expect from Secta Labs. Professional results without the premium price tag.`,
+      `TailorPic starts at ${BASE_PRICE_DISPLAY} for a single photo, so you can see your result before buying a larger package. Secta Labs sells a package of 100+ photos.`,
   },
   {
     icon: LayoutGrid,
     title: '12 Categories, Not Just Headshots',
     description:
-      'Secta Labs centers on professional headshots. TailorPic covers 12 categories — business, dating, pet portraits, e-commerce and more — so one service fits every need.',
+      'Secta Labs centers on professional headshots, with extras like fun profile pictures and oil paintings. TailorPic covers 12 categories, including dating, pet portraits and e-commerce.',
   },
   {
     icon: Sparkles,
@@ -117,17 +122,17 @@ const faqs = [
   {
     question: 'How does TailorPic\'s price compare to Secta Labs?',
     answer:
-      `TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY}. Secta Labs\' entry price is roughly $49+. They may change their pricing, so check their site for current pricing.`,
+      `TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY}. Secta Labs sells a one-time Professional Package with 100+ photos; its homepage did not show a price in October 2026.`,
   },
   {
     question: 'How many photos do I get with TailorPic?',
     answer:
-      'Every TailorPic order includes photos across 12 categories. Secta Labs\' photo count varies by plan and it centers on professional headshots with fewer categories.',
+      'TailorPic packages range from 1 to 160 photos across 12 categories. Secta Labs\' Professional Package includes 100+ photos.',
   },
   {
     question: 'How long does delivery take?',
     answer:
-      'TailorPic delivers within hours. Secta Labs delivery time varies by plan, so check their site for current details.',
+      'TailorPic delivers within hours. Secta Labs says results arrive in less than 2 hours.',
   },
   {
     question: 'Is TailorPic a subscription or a one-time purchase?',

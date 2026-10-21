@@ -19,7 +19,7 @@ export const revalidate = 3600;
 const competitor = "PhotoAI";
 const title = `TailorPic vs ${competitor} — AI Headshot Generator Comparison`;
 const description =
-  `Compare TailorPic vs PhotoAI for headshots. TailorPic: one-time packages from ${BASE_PRICE_DISPLAY}, up to 160 headshots. PhotoAI: a subscription from around $29 per month.`;
+  `Compare TailorPic vs PhotoAI for headshots. TailorPic: one-time packages from ${BASE_PRICE_DISPLAY}, up to 160 headshots. PhotoAI: a membership with many photo packs.`;
 const path = '/vs/photoai';
 
 export const metadata: Metadata = {
@@ -31,29 +31,33 @@ export const metadata: Metadata = {
 };
 
 
+// Competitor facts, checked on PhotoAI's own site on 2026-10-21:
+//   https://photoai.com  membership ("All photo packs are included in your
+//     membership", "You can cancel your subscription at any time"); model
+//     creation "takes about 5 minutes"; packs include Dating, Fashion, Travel,
+//     Professional and more. Plan prices were not shown on the homepage.
+// Re-check this page before adding any PhotoAI price below.
 const rows: { label: string; tailorpic: string; other: string }[] = [
-  { label: "Starting price", tailorpic: `from ${BASE_PRICE_DISPLAY}`, other: "Approximately $29 per month" },
-  { label: "Billing model", tailorpic: "One-time payment, no subscription", other: "Monthly subscription" },
+  { label: "Starting price", tailorpic: `from ${BASE_PRICE_DISPLAY}`, other: "Membership; see their site for current prices" },
+  { label: "Billing model", tailorpic: "One-time payment, no subscription", other: "Subscription you can cancel any time" },
   { label: "Focus", tailorpic: "Headshots and profile photos", other: "Many kinds of AI photos, not only headshots" },
-  { label: "Photos included", tailorpic: "1 to 160, depending on package", other: "Varies by plan; check their site" },
-  { label: "Delivery time", tailorpic: "Results within hours", other: "Varies; check their site" },
-  { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Wide range of photo styles and scenarios" },
-  { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
+  { label: "Setup time", tailorpic: "Results within hours", other: "AI model created in about 5 minutes" },
+  { label: "Categories / styles", tailorpic: "12 categories (headshots, dating, pets, avatars and more)", other: "Photo packs such as Dating, Fashion, Travel and Professional" },
+  { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Personal AI model trained on your photos" },
   { label: "Ongoing cost", tailorpic: `None after your one-time payment (from ${BASE_PRICE_DISPLAY})`, other: "Recurring while you stay subscribed" },
-  { label: "Team features", tailorpic: "Team and enterprise options available", other: "Not publicly listed" },
 ];
 
 const differences = [
-  { title: "Subscription vs one-time", body: `PhotoAI is billed monthly at approximately $29. TailorPic is a single payment from ${BASE_PRICE_DISPLAY}, so you are not paying every month for a set of photos you only need once.` },
+  { title: "Subscription vs one-time", body: `PhotoAI is a membership subscription. TailorPic is a single payment from ${BASE_PRICE_DISPLAY}, so there is nothing to cancel if you only need one set of photos.` },
   { title: "Specialist vs generalist", body: "PhotoAI covers many photo types beyond headshots. TailorPic focuses on headshots and profile photos, including business, dating and creative looks." },
-  { title: "Cost over time", body: `If you keep a PhotoAI subscription for several months, the total can pass the cost of a TailorPic package. TailorPic is paid once, with packages starting at ${BASE_PRICE_DISPLAY}.` },
-  { title: "Personalized model", body: "TailorPic trains a personal LoRA model on your photos for a close likeness, which is why delivery typically completes within hours." },
+  { title: "Cost over time", body: `A PhotoAI subscription renews until you cancel it. TailorPic is paid once, with packages starting at ${BASE_PRICE_DISPLAY}.` },
+  { title: "Speed", body: "PhotoAI creates its AI model in about 5 minutes. TailorPic trains a personal LoRA model on your photos and typically delivers within hours." },
 ];
 
 const useCases = {
   tailorpic: [
     `A one-time payment from ${BASE_PRICE_DISPLAY} with no subscription`,
-    "A tool built specifically for headshots",
+    "A tool built around portraits of you",
     "A personalized LoRA-trained model of your face",
     "Photos for work, dating and creative uses",
   ],
@@ -66,10 +70,10 @@ const useCases = {
 };
 
 const faqs = [
-  { question: "Is TailorPic cheaper than PhotoAI?", answer: `Our entry price is lower, but the packages are not like-for-like: TailorPic starts from ${BASE_PRICE_DISPLAY} for a single photo and goes up to 160 photos, while PhotoAI is a subscription starting at approximately $29 per month. PhotoAI pricing may change, so check their site.` },
+  { question: "Is TailorPic cheaper than PhotoAI?", answer: `Our entry price is lower, but the packages are not like-for-like: TailorPic starts from ${BASE_PRICE_DISPLAY} for a single photo and goes up to 160 photos, while PhotoAI is a membership subscription you can cancel any time.` },
   { question: "Is PhotoAI only for headshots?", answer: "No. PhotoAI generates various types of AI photos, not just headshots. TailorPic is focused on headshots and profile photos." },
   { question: "Is TailorPic a subscription?", answer: `No. TailorPic packages are one-time payments starting at ${BASE_PRICE_DISPLAY} with no recurring fees.` },
-  { question: "How many photos does TailorPic include?", answer: "TailorPic includes photos across 12 categories, results typically delivered within hours." },
+  { question: "How many photos does TailorPic include?", answer: "TailorPic packages range from 1 to 160 photos across 12 categories, typically delivered within hours." },
 ];
 
 export default function Page() {
@@ -102,7 +106,7 @@ export default function Page() {
               TailorPic <span className="text-tp-bronze">vs</span> {competitor}
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-tp-beige">
-              PhotoAI is a broad AI photo tool sold as a monthly subscription. TailorPic is a headshot specialist: polished, LoRA-trained photos across 12 categories (up to 160 per order), from {BASE_PRICE_DISPLAY}.
+              PhotoAI is a broad AI photo tool sold as a subscription. TailorPic is a headshot specialist: polished, LoRA-trained photos across 12 categories (up to 160 per order), from {BASE_PRICE_DISPLAY}.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ variant: 'primary', size: 'lg' }) + ' bg-tp-bronze text-tp-black hover:bg-tp-beige'}>

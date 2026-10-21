@@ -43,7 +43,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Starting price",
     "tailorpic": `from ${BASE_PRICE_DISPLAY}`,
-    "other": "Varies by plan"
+    "other": "Check their site for current pricing"
   },
   {
     "label": "Photos included",
@@ -53,7 +53,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Delivery time",
     "tailorpic": "Results within hours",
-    "other": "Varies by plan"
+    "other": "Check their site for current turnaround"
   },
   {
     "label": "Core purpose",
@@ -63,12 +63,12 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Training method",
     "tailorpic": "LoRA fine-tuning on your own photos",
-    "other": "Varies"
+    "other": "Check their site for their method"
   },
   {
     "label": "Pricing model",
     "tailorpic": "One-time payment, no subscription",
-    "other": "Not specified"
+    "other": "Check their site"
   },
   {
     "label": "Professional headshots",
@@ -78,17 +78,17 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   {
     "label": "Dating and social photos",
     "tailorpic": "Dedicated dating category",
-    "other": "Limited styles"
+    "other": "Check their site for available styles"
   },
   {
     "label": "Pets, family and creative categories",
     "tailorpic": "Included across 12 categories",
-    "other": "Limited"
+    "other": "Check their site for available categories"
   },
   {
     "label": "Team features",
     "tailorpic": "Team and enterprise options available",
-    "other": "Not publicly listed"
+    "other": "Check their site for team plans"
   }
 ];
 

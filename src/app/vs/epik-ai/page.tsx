@@ -44,7 +44,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Dating and social photos", tailorpic: "Dedicated dating category", other: "Style availability varies" },
   { label: "Pet portraits", tailorpic: "Included as a category", other: "Not a known focus" },
   { label: "E-commerce product photos", tailorpic: "Included as a category", other: "Not a known focus" },
-  { label: "Team features", tailorpic: "Team and enterprise options available", other: "Not publicly listed" },
+  { label: "Team features", tailorpic: "Team and enterprise options available", other: "Check their site for team plans" },
 ];
 
 const differences = [
