@@ -170,6 +170,24 @@ const teamMembers = [
     photo: '/brand/tailorpic/web/team-halil.jpg',
     bio: 'Founder of Bulut Diving, bringing entrepreneurial experience and a passion for adventure to the TailorPic network.',
   },
+  {
+    name: 'Murat Soğancı',
+    role: 'Marketing, Ünver Group',
+    photo: '/brand/tailorpic/web/celebration-murat-soganci.jpg',
+    bio: 'Leads marketing efforts at Ünver Group, driving brand awareness and customer engagement across the organization.',
+  },
+  {
+    name: 'Ediz Zingal',
+    role: 'Business Associate',
+    photo: '/brand/tailorpic/web/team-ediz.jpg',
+    bio: 'A valued business associate contributing to the growth and network of the TailorPic ecosystem.',
+  },
+  {
+    name: 'Murat Ünver Jr.',
+    role: 'Next Generation',
+    photo: '/brand/tailorpic/web/team-murat-jr.jpg',
+    bio: 'Representing the next generation of the Ünver family, bringing fresh perspective and energy to the team.',
+  },
 ];
 
 const explore = [

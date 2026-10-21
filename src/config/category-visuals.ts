@@ -330,14 +330,48 @@ export const categoryVisuals: Record<string, CategoryVisuals> = {
     ),
   },
 
-  /* ------ holiday-cards (non-people, local image) ------ */
-  'holiday-cards': fromLocalBase('holiday-cards', 'Family decorating a Christmas tree together under staircase', POS.group),
+  /* ------ holiday-cards (real photos) ------ */
+  'holiday-cards': {
+    megaMenu: asset(`${BRAND_WEB}/holiday-couple-vacation.jpg`, 'Couple enjoying a holiday vacation', POS.group),
+    quickCard: asset(`${BRAND_WEB}/holiday-couple-vacation.jpg`, 'Couple enjoying a holiday vacation', POS.group),
+    heroDesktop: asset(`${BRAND_WEB}/holiday-couple-vacation.jpg`, 'Couple laughing together on a European holiday vacation', POS.group),
+    heroMobile: asset(`${BRAND_WEB}/holiday-couple-vacation.jpg`, 'Couple laughing together on a European holiday vacation', POS.group),
+    gallery: [
+      asset(`${BRAND_WEB}/holiday-couple-vacation.jpg`, 'Couple enjoying a holiday vacation on a charming European street', POS.group),
+      asset(`${BRAND_WEB}/celebration-murat-soganci.jpg`, 'Celebrating a milestone with a new car delivery', POS.group),
+      asset(`${CATEGORY_IMG}/holiday-cards.jpg`, 'Family decorating a Christmas tree together', POS.group),
+    ],
+  },
 
-  /* ------ family-portraits (non-people, local image) ------ */
-  'family-portraits': fromLocalBase('family-portraits', 'Happy family portrait together', POS.group),
+  /* ------ family-portraits (real Ünver family photos) ------ */
+  'family-portraits': {
+    megaMenu: asset(`${BRAND_WEB}/family-unver-group.jpg`, 'Ünver family group portrait', POS.group),
+    quickCard: asset(`${BRAND_WEB}/family-unver-group.jpg`, 'Ünver family group portrait', POS.group),
+    heroDesktop: asset(`${BRAND_WEB}/family-unver-group.jpg`, 'Family of four posing together outdoors', POS.group),
+    heroMobile: asset(`${BRAND_WEB}/family-unver-portrait.jpg`, 'Family standing together in a portrait pose', POS.group),
+    gallery: [
+      asset(`${BRAND_WEB}/family-unver-group.jpg`, 'Family of four posing together outdoors', POS.group),
+      asset(`${BRAND_WEB}/family-unver-portrait.jpg`, 'Family standing together in a portrait pose', POS.group),
+      asset(`${BRAND_WEB}/family-unver-mom-kids.jpg`, 'Mother with kids kissing her cheeks', POS.group),
+      asset(`${BRAND_WEB}/family-unver-kids.jpg`, 'Two children posing together', POS.group),
+      asset(`${BRAND_WEB}/family-unver-hands.jpg`, 'Family hands together in an artistic shot', POS.group),
+      asset(`${BRAND_WEB}/family-unver-couple2.jpg`, 'Couple in an elegant family portrait', POS.group),
+    ],
+  },
 
-  /* ------ couple-engagement (non-people, local image) ------ */
-  'couple-engagement': fromLocalBase('couple-engagement', 'Romantic couple engagement portrait', POS.group),
+  /* ------ couple-engagement (real couple photos) ------ */
+  'couple-engagement': {
+    megaMenu: asset(`${BRAND_WEB}/family-unver-couple.jpg`, 'Couple laughing together', POS.group),
+    quickCard: asset(`${BRAND_WEB}/family-unver-couple.jpg`, 'Couple in a joyful moment', POS.group),
+    heroDesktop: asset(`${BRAND_WEB}/family-unver-couple.jpg`, 'Couple pointing and laughing together', POS.group),
+    heroMobile: asset(`${BRAND_WEB}/family-unver-couple.jpg`, 'Couple pointing and laughing together', POS.group),
+    gallery: [
+      asset(`${BRAND_WEB}/family-unver-couple.jpg`, 'Couple sharing a joyful moment together', POS.group),
+      asset(`${BRAND_WEB}/family-unver-couple2.jpg`, 'Couple in an elegant pose', POS.group),
+      asset(`${BRAND_WEB}/family-unver-couple-bw.jpg`, 'Romantic black and white couple portrait', POS.group),
+      asset(`${BRAND_WEB}/holiday-couple-vacation.jpg`, 'Couple enjoying time together on vacation', POS.group),
+    ],
+  },
 
   /* ------ real-estate (non-people, local image) ------ */
   'real-estate': fromLocalBase('real-estate', 'Modern living room interior with sofa and wooden staircase', POS.room),
