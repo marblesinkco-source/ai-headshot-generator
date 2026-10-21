@@ -1,11 +1,25 @@
 import Image from 'next/image';
-import { square, STOCK_PORTRAITS } from '@/config/stock-portraits';
 import { cn } from '@/lib/utils';
+
+const BRAND_WEB = '/brand/tailorpic/web';
+
+/** Brand portrait pool used by industry pages in place of stock photos. */
+const BRAND_PORTRAITS = [
+  { src: `${BRAND_WEB}/after-ozlem.jpg`, alt: 'Professional portrait' },
+  { src: `${BRAND_WEB}/after-murat.jpg`, alt: 'Corporate portrait' },
+  { src: `${BRAND_WEB}/after-tarkan.jpg`, alt: 'Executive portrait' },
+  { src: `${BRAND_WEB}/after-ahmet.jpg`, alt: 'Business portrait' },
+  { src: `${BRAND_WEB}/after-alpaslan.jpg`, alt: 'Creative portrait' },
+  { src: `${BRAND_WEB}/after-mert.jpg`, alt: 'Editorial portrait' },
+  { src: `${BRAND_WEB}/after-ozan.jpg`, alt: 'Modern portrait' },
+  { src: `${BRAND_WEB}/after-halil.jpg`, alt: 'Lifestyle portrait' },
+  { src: `${BRAND_WEB}/after-mustafa.jpg`, alt: 'Professional portrait' },
+];
 
 /**
  * Renders a small circular/rounded photo in place of a Lucide icon
  * on industry pages. Deterministically selects a portrait from the
- * collection based on the industry slug + a seed string, so the same
+ * brand collection based on the industry slug + a seed string, so the same
  * page always shows the same photos but different cards show different ones.
  *
  * Server component — no hooks, no 'use client'.
@@ -40,18 +54,18 @@ export function ContentPhoto({
     for (let i = 0; i < seed.length; i++) {
       seedHash = ((seedHash << 5) - seedHash + seed.charCodeAt(i)) | 0;
     }
-    hash = Math.abs((hash + seedHash) % STOCK_PORTRAITS.length);
+    hash = Math.abs((hash + seedHash) % BRAND_PORTRAITS.length);
   } else {
     // Spread indices using a prime multiplier so adjacent cards look different
-    hash = Math.abs((hash + index * 7) % STOCK_PORTRAITS.length);
+    hash = Math.abs((hash + index * 7) % BRAND_PORTRAITS.length);
   }
 
-  const photo = STOCK_PORTRAITS[hash];
+  const photo = BRAND_PORTRAITS[hash];
 
   return (
     <div className={cn('overflow-hidden', className)}>
       <Image
-        src={square(photo.id)}
+        src={photo.src}
         alt={alt}
         width={100}
         height={100}

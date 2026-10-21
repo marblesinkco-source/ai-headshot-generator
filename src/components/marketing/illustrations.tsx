@@ -1,9 +1,9 @@
 // Marketing illustrations — a mix of inline SVG patterns/icons (HeroPattern, TrustGlyph)
-// and Unsplash-photo components that replaced the old SVG bust silhouettes.
-// Unsplash is whitelisted in next.config.mjs remotePatterns.
+// and photo components using real brand portraits.
 
 import Image from 'next/image';
-import { portrait, square } from '@/config/stock-portraits';
+
+const BRAND_WEB = '/brand/tailorpic/web';
 
 const BRONZE = '#C9A98A';
 const BRONZE_INK = '#76563D';
@@ -166,25 +166,23 @@ export function BlogIllustration({ className = '' }: { className?: string }) {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Photo-based components (replaced SVG bust illustrations)           */
-/*  Each uses Unsplash portraits via stock-portraits helpers.          */
+/*  Photo-based components (real brand portraits)                      */
 /* ------------------------------------------------------------------ */
 
 /** Reusable portrait card with rounded corners and brand border. */
 function PortraitCard({
-  photoId,
+  src,
   alt,
   size = 'portrait',
   className = '',
   highlight = false,
 }: {
-  photoId: string;
+  src: string;
   alt: string;
   size?: 'portrait' | 'square';
   className?: string;
   highlight?: boolean;
 }) {
-  const src = size === 'square' ? square(photoId) : portrait(photoId);
   return (
     <div
       className={`relative overflow-hidden rounded-tp-card ${
@@ -208,16 +206,16 @@ function PortraitCard({
 export function StepStyleIllustration({ className = '' }: { className?: string }) {
   return (
     <div className={`flex items-end justify-center gap-2 ${className}`} role="img" aria-label="Choose a photo style">
-      <PortraitCard photoId="photo-1573496359142-b8d87734a5a2" alt="Professional woman" size="square" className="h-16 w-12 opacity-60" />
+      <PortraitCard src={`${BRAND_WEB}/after-ozlem.jpg`} alt="Professional woman" size="square" className="h-16 w-12 opacity-60" />
       <div className="relative">
-        <PortraitCard photoId="photo-1560250097-0b93528c311a" alt="Businessman in suit" size="square" className="h-20 w-16" highlight />
+        <PortraitCard src={`${BRAND_WEB}/after-murat.jpg`} alt="Businessman in suit" size="square" className="h-20 w-16" highlight />
         <div className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-tp-ink">
           <svg viewBox="0 0 16 16" className="h-3 w-3" fill="none" stroke="#C9A98A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M3 8l3.5 3.5L13 5" />
           </svg>
         </div>
       </div>
-      <PortraitCard photoId="photo-1494790108377-be9c29b29330" alt="Young professional woman" size="square" className="h-16 w-12 opacity-60" />
+      <PortraitCard src={`${BRAND_WEB}/after-tarkan.jpg`} alt="Professional man" size="square" className="h-16 w-12 opacity-60" />
     </div>
   );
 }
@@ -225,16 +223,16 @@ export function StepStyleIllustration({ className = '' }: { className?: string }
 /** Step 2 — upload selfies: grid of portrait thumbnails with an upload placeholder. */
 export function StepUploadIllustration({ className = '' }: { className?: string }) {
   const photos = [
-    { id: 'photo-1507003211169-0a1dd7228f2d', alt: 'Man with warm smile' },
-    { id: 'photo-1580489944761-15a19d654956', alt: 'Confident woman' },
-    { id: 'photo-1534528741775-53994a69daeb', alt: 'Woman with natural hairstyle' },
-    { id: 'photo-1472099645785-5658abf4ff4e', alt: 'Professional man' },
-    { id: 'photo-1519085360753-af0119f7cbe7', alt: 'Young man' },
+    { src: `${BRAND_WEB}/before-ahmet-1.jpg`, alt: 'Man with warm smile' },
+    { src: `${BRAND_WEB}/before-ozlem-1.jpg`, alt: 'Professional woman' },
+    { src: `${BRAND_WEB}/before-murat-1.jpg`, alt: 'Man in casual setting' },
+    { src: `${BRAND_WEB}/before-ozan-1.jpg`, alt: 'Young man' },
+    { src: `${BRAND_WEB}/before-mert-1.jpg`, alt: 'Man selfie' },
   ];
   return (
     <div className={`grid grid-cols-3 gap-1.5 ${className}`} role="img" aria-label="Upload your selfies">
       {photos.map((p) => (
-        <PortraitCard key={p.id} photoId={p.id} alt={p.alt} size="square" className="aspect-square w-full" />
+        <PortraitCard key={p.src} src={p.src} alt={p.alt} size="square" className="aspect-square w-full" />
       ))}
       <div className="flex aspect-square w-full items-center justify-center rounded-tp-card border-2 border-dashed border-tp-bronze-ink bg-tp-paper">
         <svg viewBox="0 0 24 24" className="h-5 w-5 text-tp-bronze-ink" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -251,7 +249,7 @@ export function StepDownloadIllustration({ className = '' }: { className?: strin
     <div className={`flex items-center justify-center gap-2 ${className}`} role="img" aria-label="Download your portraits">
       <div className="relative h-16 w-12 overflow-hidden rounded-lg border border-tp-line bg-tp-beige/30">
         <Image
-          src={square('photo-1507003211169-0a1dd7228f2d')}
+          src={`${BRAND_WEB}/before-mert-1.jpg`}
           alt="Casual selfie"
           width={96}
           height={96}
@@ -264,7 +262,7 @@ export function StepDownloadIllustration({ className = '' }: { className?: strin
         <path d="M11 16h9m0 0l-4-4m4 4l-4 4" stroke={BRONZE} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
       <div className="relative">
-        <PortraitCard photoId="photo-1560250097-0b93528c311a" alt="Polished professional headshot" size="square" className="h-20 w-16" highlight />
+        <PortraitCard src={`${BRAND_WEB}/after-mert.jpg`} alt="Polished professional headshot" size="square" className="h-20 w-16" highlight />
         <div className="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-tp-bronze ring-2 ring-tp-paper">
           <svg viewBox="0 0 16 16" className="h-3 w-3" fill="none" stroke={INK} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M8 4v7m0 0l-3-3m3 3l3-3" />
@@ -279,22 +277,22 @@ export function StepDownloadIllustration({ className = '' }: { className?: strin
 export function CategoryFallbackIllustration({ seed = 0, className = '' }: { seed?: number; className?: string }) {
   // Pick a portrait deterministically based on seed
   const photos = [
-    'photo-1573496359142-b8d87734a5a2',
-    'photo-1560250097-0b93528c311a',
-    'photo-1580489944761-15a19d654956',
-    'photo-1507003211169-0a1dd7228f2d',
-    'photo-1494790108377-be9c29b29330',
-    'photo-1539571696357-5a69c17a67c6',
-    'photo-1519085360753-af0119f7cbe7',
-    'photo-1534528741775-53994a69daeb',
-    'photo-1556157382-97ede2916cd2',
-    'photo-1544005313-94ddf0286df2',
+    `${BRAND_WEB}/after-ozlem.jpg`,
+    `${BRAND_WEB}/after-murat.jpg`,
+    `${BRAND_WEB}/after-ahmet.jpg`,
+    `${BRAND_WEB}/after-tarkan.jpg`,
+    `${BRAND_WEB}/after-mustafa.jpg`,
+    `${BRAND_WEB}/after-alpaslan.jpg`,
+    `${BRAND_WEB}/after-mert.jpg`,
+    `${BRAND_WEB}/after-ozan.jpg`,
+    `${BRAND_WEB}/after-halil.jpg`,
+    `${BRAND_WEB}/after-ozlem.jpg`,
   ];
-  const photoId = photos[seed % photos.length];
+  const src = photos[seed % photos.length];
   return (
     <div className={`relative overflow-hidden bg-gradient-to-br from-tp-paper to-tp-beige ${className}`}>
       <Image
-        src={portrait(photoId)}
+        src={src}
         alt="Professional headshot example"
         width={400}
         height={300}
@@ -313,17 +311,17 @@ export function CategoryFallbackIllustration({ seed = 0, className = '' }: { see
 /** Team consistency — 3x2 grid of matching portrait cards. */
 export function TeamGridIllustration({ className = '' }: { className?: string }) {
   const team = [
-    { id: 'photo-1573496359142-b8d87734a5a2', alt: 'Professional woman in navy blazer' },
-    { id: 'photo-1560250097-0b93528c311a', alt: 'Businessman in dark suit' },
-    { id: 'photo-1494790108377-be9c29b29330', alt: 'Young professional woman' },
-    { id: 'photo-1507003211169-0a1dd7228f2d', alt: 'Man with warm smile' },
-    { id: 'photo-1580489944761-15a19d654956', alt: 'Confident woman' },
-    { id: 'photo-1519085360753-af0119f7cbe7', alt: 'Young man in white shirt' },
+    { src: `${BRAND_WEB}/after-ozlem.jpg`, alt: 'Professional woman' },
+    { src: `${BRAND_WEB}/after-murat.jpg`, alt: 'Businessman in dark suit' },
+    { src: `${BRAND_WEB}/after-tarkan.jpg`, alt: 'Professional man' },
+    { src: `${BRAND_WEB}/after-ahmet.jpg`, alt: 'Man with warm smile' },
+    { src: `${BRAND_WEB}/after-mustafa.jpg`, alt: 'Professional man' },
+    { src: `${BRAND_WEB}/after-ozan.jpg`, alt: 'Young professional' },
   ];
   return (
     <div className={`grid grid-cols-3 gap-2 ${className}`} role="img" aria-label="A team of matching professional portraits">
       {team.map((p, i) => (
-        <PortraitCard key={p.id} photoId={p.id} alt={p.alt} size="square" className="aspect-square w-full" highlight={i === 1} />
+        <PortraitCard key={p.src} src={p.src} alt={p.alt} size="square" className="aspect-square w-full" highlight={i === 1} />
       ))}
     </div>
   );
@@ -332,12 +330,12 @@ export function TeamGridIllustration({ className = '' }: { className?: string })
 /** Enterprise dashboard — dark card with a grid of team portrait circles. */
 export function EnterpriseIllustration({ className = '' }: { className?: string }) {
   const members = [
-    { id: 'photo-1573496359142-b8d87734a5a2', alt: 'Team member' },
-    { id: 'photo-1560250097-0b93528c311a', alt: 'Team member' },
-    { id: 'photo-1534528741775-53994a69daeb', alt: 'Team member' },
-    { id: 'photo-1507003211169-0a1dd7228f2d', alt: 'Team member' },
-    { id: 'photo-1494790108377-be9c29b29330', alt: 'Team member' },
-    { id: 'photo-1472099645785-5658abf4ff4e', alt: 'Team member' },
+    { src: `${BRAND_WEB}/team-ozlem.jpg`, alt: 'Team member' },
+    { src: `${BRAND_WEB}/team-ozan.jpg`, alt: 'Team member' },
+    { src: `${BRAND_WEB}/team-ahmet.jpg`, alt: 'Team member' },
+    { src: `${BRAND_WEB}/team-alpaslan.jpg`, alt: 'Team member' },
+    { src: `${BRAND_WEB}/team-halil.jpg`, alt: 'Team member' },
+    { src: `${BRAND_WEB}/team-mustafa.jpg`, alt: 'Team member' },
   ];
   return (
     <div className={`overflow-hidden rounded-tp-card bg-tp-paper ring-1 ring-tp-line ${className}`} role="img" aria-label="Team dashboard showing headshots">
@@ -358,9 +356,9 @@ export function EnterpriseIllustration({ className = '' }: { className?: string 
           </div>
           <div className="grid grid-cols-3 gap-2 p-3">
             {members.map((m, i) => (
-              <div key={m.id} className="flex flex-col items-center">
+              <div key={m.src} className="flex flex-col items-center">
                 <div className={`relative h-10 w-10 overflow-hidden rounded-full ${i === 1 ? 'ring-2 ring-tp-bronze' : 'ring-1 ring-tp-line'}`}>
-                  <Image src={square(m.id)} alt={m.alt} width={80} height={80} className="h-full w-full object-cover" sizes="40px" />
+                  <Image src={m.src} alt={m.alt} width={80} height={80} className="h-full w-full object-cover" sizes="40px" />
                 </div>
                 <div className="mt-1 h-1 w-6 rounded bg-tp-ink/50" />
               </div>
@@ -379,7 +377,7 @@ export function BeforeAfterIllustration({ className = '' }: { className?: string
       {/* Before */}
       <div className="relative h-24 w-20 rotate-[-4deg] overflow-hidden rounded-xl border-2 border-dashed border-tp-line bg-tp-beige/30">
         <Image
-          src={square('photo-1507003211169-0a1dd7228f2d')}
+          src={`${BRAND_WEB}/before-ozan-1.jpg`}
           alt="Casual selfie"
           width={160}
           height={200}
@@ -395,7 +393,7 @@ export function BeforeAfterIllustration({ className = '' }: { className?: string
       {/* After */}
       <div className="relative h-28 w-[88px] overflow-hidden rounded-xl ring-2 ring-tp-bronze">
         <Image
-          src={portrait('photo-1560250097-0b93528c311a')}
+          src={`${BRAND_WEB}/after-ozan.jpg`}
           alt="Polished studio headshot"
           width={176}
           height={224}
@@ -423,7 +421,7 @@ export function LinkedInProfileIllustration({ className = '' }: { className?: st
         <div className="-mt-6 mb-2 flex items-end gap-3">
           <div className="h-14 w-14 shrink-0 overflow-hidden rounded-full border-2 border-tp-paper ring-1 ring-tp-line">
             <Image
-              src={square('photo-1573496359142-b8d87734a5a2')}
+              src={`${BRAND_WEB}/after-ozlem.jpg`}
               alt="Professional headshot"
               width={112}
               height={112}
@@ -454,11 +452,11 @@ export function LinkedInProfileIllustration({ className = '' }: { className?: st
 /** About mission — diverse portrait circles connected by dotted lines. */
 export function AboutMissionIllustration({ className = '' }: { className?: string }) {
   const people = [
-    { id: 'photo-1573496359142-b8d87734a5a2', alt: 'Professional woman', pos: 'left-4 top-2' },
-    { id: 'photo-1560250097-0b93528c311a', alt: 'Businessman', pos: 'left-1/2 -translate-x-1/2 top-0' },
-    { id: 'photo-1534528741775-53994a69daeb', alt: 'Woman with natural hairstyle', pos: 'right-4 top-2' },
-    { id: 'photo-1507003211169-0a1dd7228f2d', alt: 'Man with warm smile', pos: 'left-8 bottom-0' },
-    { id: 'photo-1494790108377-be9c29b29330', alt: 'Young professional woman', pos: 'right-8 bottom-0' },
+    { src: `${BRAND_WEB}/after-ozlem.jpg`, alt: 'Professional woman', pos: 'left-4 top-2' },
+    { src: `${BRAND_WEB}/after-murat.jpg`, alt: 'Businessman', pos: 'left-1/2 -translate-x-1/2 top-0' },
+    { src: `${BRAND_WEB}/after-alpaslan.jpg`, alt: 'Creative professional', pos: 'right-4 top-2' },
+    { src: `${BRAND_WEB}/after-ahmet.jpg`, alt: 'Man with warm smile', pos: 'left-8 bottom-0' },
+    { src: `${BRAND_WEB}/after-halil.jpg`, alt: 'Young professional', pos: 'right-8 bottom-0' },
   ];
   return (
     <div className={`relative ${className}`} role="img" aria-label="People around the world accessing professional photos" style={{ minHeight: 120 }}>
@@ -472,8 +470,8 @@ export function AboutMissionIllustration({ className = '' }: { className?: strin
       </div>
       {/* People circles */}
       {people.map((p) => (
-        <div key={p.id} className={`absolute ${p.pos} h-10 w-10 overflow-hidden rounded-full border border-tp-beige`}>
-          <Image src={square(p.id)} alt={p.alt} width={80} height={80} className="h-full w-full object-cover" sizes="40px" />
+        <div key={p.src} className={`absolute ${p.pos} h-10 w-10 overflow-hidden rounded-full border border-tp-beige`}>
+          <Image src={p.src} alt={p.alt} width={80} height={80} className="h-full w-full object-cover" sizes="40px" />
         </div>
       ))}
     </div>
@@ -495,7 +493,7 @@ export function FreeTrialIllustration({ className = '' }: { className?: string }
         <div className="mx-auto mt-1 h-1.5 w-8 rounded-full bg-tp-beige/60" />
         <div className="mx-2 mt-1.5 overflow-hidden rounded-lg" style={{ height: 100 }}>
           <Image
-            src={portrait('photo-1560250097-0b93528c311a')}
+            src={`${BRAND_WEB}/after-murat.jpg`}
             alt="Professional headshot on phone"
             width={152}
             height={200}
@@ -520,15 +518,15 @@ export function FreeTrialIllustration({ className = '' }: { className?: string }
 /** Pricing tiers — three ascending portrait cards. */
 export function PricingVisualIllustration({ className = '' }: { className?: string }) {
   const tiers = [
-    { id: 'photo-1494790108377-be9c29b29330', alt: 'Lite plan portrait', h: 'h-16' },
-    { id: 'photo-1560250097-0b93528c311a', alt: 'Professional plan portrait', h: 'h-20' },
-    { id: 'photo-1573496359142-b8d87734a5a2', alt: 'Executive plan portrait', h: 'h-24' },
+    { src: `${BRAND_WEB}/after-tarkan.jpg`, alt: 'Lite plan portrait', h: 'h-16' },
+    { src: `${BRAND_WEB}/after-murat.jpg`, alt: 'Professional plan portrait', h: 'h-20' },
+    { src: `${BRAND_WEB}/after-ozlem.jpg`, alt: 'Executive plan portrait', h: 'h-24' },
   ];
   return (
     <div className={`flex items-end justify-center gap-2 ${className}`} role="img" aria-label="Three pricing tiers of increasing size">
       {tiers.map((t, i) => (
-        <div key={t.id} className="flex flex-col items-center gap-1">
-          <PortraitCard photoId={t.id} alt={t.alt} size="square" className={`w-16 ${t.h}`} highlight={i === 1} />
+        <div key={t.src} className="flex flex-col items-center gap-1">
+          <PortraitCard src={t.src} alt={t.alt} size="square" className={`w-16 ${t.h}`} highlight={i === 1} />
           <div className="h-1 w-8 rounded-full" style={{ backgroundColor: i === 1 ? BRONZE_INK : BEIGE }} />
         </div>
       ))}
@@ -544,7 +542,7 @@ export function ToolsIllustration({ className = '' }: { className?: string }) {
         {/* Portrait in frame */}
         <div className="overflow-hidden rounded-lg bg-tp-paper/5 ring-1 ring-tp-paper/50" style={{ width: 100, height: 100 }}>
           <Image
-            src={square('photo-1560250097-0b93528c311a')}
+            src={`${BRAND_WEB}/after-murat.jpg`}
             alt=""
             width={200}
             height={200}
@@ -578,7 +576,7 @@ export function TechnologyIllustration({ className = '' }: { className?: string 
       {/* Input: casual */}
       <div className="h-16 w-16 overflow-hidden rounded-full border-2 border-dashed border-tp-beige">
         <Image
-          src={square('photo-1507003211169-0a1dd7228f2d')}
+          src={`${BRAND_WEB}/before-ahmet-1.jpg`}
           alt=""
           width={128}
           height={128}
@@ -607,7 +605,7 @@ export function TechnologyIllustration({ className = '' }: { className?: string 
       {/* Output: polished */}
       <div className="relative h-16 w-16 overflow-hidden rounded-full ring-2 ring-tp-bronze-ink">
         <Image
-          src={square('photo-1560250097-0b93528c311a')}
+          src={`${BRAND_WEB}/after-ahmet.jpg`}
           alt=""
           width={128}
           height={128}
@@ -641,7 +639,7 @@ export function PhotoTipsIllustration({ className = '' }: { className?: string }
         <div className="mx-auto mt-1.5 h-1 w-8 rounded-full bg-tp-bronze-ink" />
         <div className="m-1.5 mt-1 overflow-hidden rounded-xl" style={{ height: 126 }}>
           <Image
-            src={portrait('photo-1580489944761-15a19d654956')}
+            src={`${BRAND_WEB}/after-ozlem.jpg`}
             alt=""
             width={172}
             height={252}
@@ -668,7 +666,7 @@ export function UseCasesIllustration({ className = '' }: { className?: string })
         <div className="h-5 bg-tp-ink" />
         <div className="relative px-2 pb-2">
           <div className="-mt-3 mb-1 h-7 w-7 overflow-hidden rounded-full border border-tp-paper">
-            <Image src={square('photo-1573496359142-b8d87734a5a2')} alt="" width={56} height={56} className="h-full w-full object-cover" sizes="28px" />
+            <Image src={`${BRAND_WEB}/after-ozlem.jpg`} alt="" width={56} height={56} className="h-full w-full object-cover" sizes="28px" />
           </div>
           <div className="h-1 w-12 rounded bg-tp-ink/80" />
           <div className="mt-1 h-1 w-8 rounded bg-tp-bronze" />
@@ -678,7 +676,7 @@ export function UseCasesIllustration({ className = '' }: { className?: string })
       <div className="w-20 rounded-lg bg-tp-paper p-2 ring-1 ring-tp-line">
         <div className="flex gap-1.5">
           <div className="h-7 w-7 overflow-hidden rounded-full ring-1 ring-tp-bronze-ink">
-            <Image src={square('photo-1560250097-0b93528c311a')} alt="" width={56} height={56} className="h-full w-full object-cover" sizes="28px" />
+            <Image src={`${BRAND_WEB}/after-murat.jpg`} alt="" width={56} height={56} className="h-full w-full object-cover" sizes="28px" />
           </div>
           <div className="flex-1 space-y-1 pt-1">
             <div className="h-1 w-full rounded bg-tp-ink/70" />
@@ -695,7 +693,7 @@ export function UseCasesIllustration({ className = '' }: { className?: string })
       {/* ID badge */}
       <div className="w-20 rounded-lg bg-tp-ink p-2 ring-1 ring-tp-paper/30">
         <div className="mx-auto h-10 w-10 overflow-hidden rounded-full ring-1 ring-tp-bronze">
-          <Image src={square('photo-1494790108377-be9c29b29330')} alt="" width={80} height={80} className="h-full w-full object-cover" sizes="40px" />
+          <Image src={`${BRAND_WEB}/after-tarkan.jpg`} alt="" width={80} height={80} className="h-full w-full object-cover" sizes="40px" />
         </div>
         <div className="mx-auto mt-1.5 h-1 w-10 rounded bg-tp-bronze" />
         <div className="mx-auto mt-1 h-0.5 w-7 rounded bg-tp-beige/50" />

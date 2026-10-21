@@ -10,8 +10,9 @@ import { cn } from '@/lib/utils';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
 import { siteConfig } from '@/config/site';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
-import { portrait } from '@/config/stock-portraits';
 import { STYLES, BACKGROUNDS } from '@/config/ai';
+
+const BRAND_WEB = '/brand/tailorpic/web';
 
 
 // Below-the-fold client components: lazy load for performance
@@ -100,22 +101,22 @@ const qualityBadges = [
 
 const styleGroupImages: Record<string, SampleImage[]> = {
   Corporate: [
-    { src: portrait('photo-1580489944761-15a19d654956'), alt: 'Confident woman in professional attire' },
-    { src: portrait('photo-1507003211169-0a1dd7228f2d'), alt: 'Man with warm smile in casual business wear' },
-    { src: portrait('photo-1500648767791-00dcc994a43e'), alt: 'Man with confident expression' },
+    { src: `${BRAND_WEB}/after-ozlem.jpg`, alt: 'AI-generated corporate portrait — professional attire' },
+    { src: `${BRAND_WEB}/after-murat.jpg`, alt: 'AI-generated corporate portrait — business style' },
+    { src: `${BRAND_WEB}/after-tarkan.jpg`, alt: 'AI-generated corporate portrait — executive style' },
   ],
   Creative: [
-    { src: portrait('photo-1552374196-c4e7ffc6e126'), alt: 'Man with relaxed confident pose' },
-    { src: portrait('photo-1517841905240-472988babdf9'), alt: 'Creative professional woman' },
+    { src: `${BRAND_WEB}/after-alpaslan.jpg`, alt: 'AI-generated creative portrait — artistic style' },
+    { src: `${BRAND_WEB}/after-mert.jpg`, alt: 'AI-generated creative portrait — editorial style' },
   ],
   Casual: [
-    { src: portrait('photo-1573496799652-408c2ac9fe98'), alt: 'Professional woman in natural setting' },
-    { src: portrait('photo-1539571696357-5a69c17a67c6'), alt: 'Casual professional in relaxed wear' },
-    { src: portrait('photo-1511895426328-dc8714191300'), alt: 'Joyful family moment outdoors' },
+    { src: `${BRAND_WEB}/after-ozan.jpg`, alt: 'AI-generated casual portrait — natural setting' },
+    { src: `${BRAND_WEB}/after-halil.jpg`, alt: 'AI-generated casual portrait — relaxed style' },
+    { src: `${BRAND_WEB}/family-unver-group.jpg`, alt: 'Family portrait — warm candid style' },
   ],
   Academic: [
-    { src: portrait('photo-1545167622-3a6ac756afa4'), alt: 'Young professional with modern style' },
-    { src: portrait('photo-1508214751196-bcfd4ca60f91'), alt: 'Elegant professional woman' },
+    { src: `${BRAND_WEB}/after-ahmet.jpg`, alt: 'AI-generated academic portrait — modern style' },
+    { src: `${BRAND_WEB}/after-mustafa.jpg`, alt: 'AI-generated academic portrait — classic style' },
   ],
 };
 

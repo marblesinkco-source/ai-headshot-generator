@@ -1,12 +1,15 @@
 /**
- * Diverse stock portrait registry for TailorPic
+ * Brand portrait registry for TailorPic
  *
- * All images are from Unsplash (already whitelisted in next.config.mjs CSP + remotePatterns).
- * Images are AI-concept illustrations or stock photography, NOT testimonials.
+ * All images are real TailorPic customer/team photos stored in /brand/tailorpic/web/.
+ * Images are AI-generated headshot results, NOT testimonials.
  * No fabricated names, reviews, or user counts are attached.
  *
- * URL format uses Unsplash's image CDN with face-aware cropping.
+ * Legacy Unsplash helpers remain for backward compatibility but all new
+ * entries use local brand paths.
  */
+
+const BRAND_WEB = '/brand/tailorpic/web';
 
 /* ------------------------------------------------------------------ */
 /*  Helpers                                                            */
@@ -21,138 +24,113 @@ function unsplash(
   return `https://images.unsplash.com/${photoId}?w=${w}&h=${h}&fit=crop&crop=${crop}&auto=format&q=80`;
 }
 
+/**
+ * Smart resolver — if the ID starts with "/" it's a local brand path;
+ * return it directly. Otherwise build an Unsplash URL.
+ * This allows gradual migration without touching 60+ consumer files.
+ */
+function resolve(photoId: string, w: number, h: number, crop: string = 'face'): string {
+  if (photoId.startsWith('/')) return photoId;
+  return unsplash(photoId, w, h, crop);
+}
+
 /** 3:4 portrait (headshots, hero) — 600w is enough since Next.js Image generates srcSet */
 export function portrait(photoId: string): string {
-  return unsplash(photoId, 600, 800, 'face');
+  return resolve(photoId, 600, 800, 'face');
 }
 
 /** 4:3 landscape (cards, thumbnails) */
 export function landscape(photoId: string): string {
-  return unsplash(photoId, 800, 600, 'face');
+  return resolve(photoId, 800, 600, 'face');
 }
 
 /** 1:1 square (mega menu, avatars) */
 export function square(photoId: string): string {
-  return unsplash(photoId, 400, 400, 'face');
+  return resolve(photoId, 400, 400, 'face');
 }
 
 /** 16:9 wide (blog covers, OG images) */
 export function wide(photoId: string): string {
-  return unsplash(photoId, 1200, 675, 'face');
+  return resolve(photoId, 1200, 675, 'face');
 }
 
-/** "Casual selfie" variant of a portrait — same person, wider framing.
- *  Uses entropy-based crop + slightly wider dimensions so more background
- *  shows, giving the impression of a quick phone snap rather than a
- *  studio headshot. Combined with CSS `grayscale` this sells the
- *  before/after transformation convincingly. */
+/** "Casual selfie" variant of a portrait — same person, wider framing. */
 export function casualPortrait(photoId: string): string {
-  return unsplash(photoId, 700, 800, 'entropy');
+  return resolve(photoId, 700, 800, 'entropy');
 }
 
 /** Content photo — uses entropy-based crop instead of face-crop.
  *  Ideal for pets, products, scenes where face detection fails. */
 export function contentPhoto(photoId: string, w = 800, h = 1067): string {
-  return unsplash(photoId, w, h, 'entropy');
+  return resolve(photoId, w, h, 'entropy');
 }
 
 /** 1:1 content square — entropy crop for non-face subjects */
 export function contentSquare(photoId: string): string {
-  return unsplash(photoId, 400, 400, 'entropy');
+  return resolve(photoId, 400, 400, 'entropy');
 }
 
 /* ------------------------------------------------------------------ */
-/*  Portrait collection — diverse age, gender, ethnicity               */
+/*  Portrait collection — real TailorPic results                       */
 /*                                                                     */
 /*  Each entry: { id, label (for alt text), category }                 */
 /*  Categories help organize usage across the site.                    */
 /* ------------------------------------------------------------------ */
 
 export interface StockPortrait {
-  id: string;       // Unsplash photo path (photo-XXXX or just the hash)
+  id: string;       // Local brand path (e.g. /brand/tailorpic/web/after-murat.jpg)
   label: string;    // Descriptive alt text (no names)
   category: 'corporate' | 'creative' | 'medical' | 'legal' | 'tech' | 'education' | 'realestate' | 'casual' | 'team' | 'pet' | 'family' | 'lifestyle';
 }
 
 /**
- * Curated diverse portrait collection.
+ * Curated portrait collection — real AI headshot results from TailorPic.
  * Each person appears ONLY ONCE across the entire site.
  */
 export const STOCK_PORTRAITS: StockPortrait[] = [
-  // Corporate / Business — diverse professionals
-  { id: 'photo-1573496359142-b8d87734a5a2', label: 'Professional woman in navy blazer', category: 'corporate' },
-  { id: 'photo-1560250097-0b93528c311a', label: 'Businessman in dark suit', category: 'corporate' },
-  { id: 'photo-1580489944761-15a19d654956', label: 'Confident woman in professional attire', category: 'corporate' },
-  { id: 'photo-1507003211169-0a1dd7228f2d', label: 'Man with warm smile in casual business wear', category: 'corporate' },
-  { id: 'photo-1494790108377-be9c29b29330', label: 'Young professional woman with blonde hair', category: 'corporate' },
-  { id: 'photo-1472099645785-5658abf4ff4e', label: 'Professional man with glasses', category: 'corporate' },
-  { id: 'photo-1519085360753-af0119f7cbe7', label: 'Young man in crisp white shirt', category: 'corporate' },
-  { id: 'photo-1438761681033-6461ffad8d80', label: 'Mature professional woman', category: 'corporate' },
-  { id: 'photo-1500648767791-00dcc994a43e', label: 'Man with confident expression', category: 'corporate' },
-  { id: 'photo-1534528741775-53994a69daeb', label: 'Woman with natural hairstyle', category: 'corporate' },
+  // Corporate / Business — AI headshot results
+  { id: `${BRAND_WEB}/after-murat.jpg`, label: 'Professional man in corporate portrait', category: 'corporate' },
+  { id: `${BRAND_WEB}/after-ozlem.jpg`, label: 'Professional woman in business attire', category: 'corporate' },
+  { id: `${BRAND_WEB}/after-tarkan.jpg`, label: 'Executive portrait with confident expression', category: 'corporate' },
+  { id: `${BRAND_WEB}/after-mustafa.jpg`, label: 'Businessman in professional headshot', category: 'corporate' },
+  { id: `${BRAND_WEB}/after-ahmet.jpg`, label: 'Professional man with warm smile', category: 'corporate' },
+  { id: `${BRAND_WEB}/after-alpaslan.jpg`, label: 'Business professional portrait', category: 'corporate' },
+  { id: `${BRAND_WEB}/after-mert.jpg`, label: 'Young professional with modern style', category: 'corporate' },
+  { id: `${BRAND_WEB}/after-ozan.jpg`, label: 'Professional man with confident pose', category: 'corporate' },
+  { id: `${BRAND_WEB}/after-halil.jpg`, label: 'Corporate professional headshot', category: 'corporate' },
+  { id: `${BRAND_WEB}/after-isik.jpg`, label: 'Professional woman in elegant blazer', category: 'corporate' },
 
-  // Medical / Healthcare
-  { id: 'photo-1559839734-2b71ea197ec2', label: 'Doctor in white coat', category: 'medical' },
-  { id: 'photo-1612349317150-e413f6a5b16d', label: 'Healthcare professional smiling', category: 'medical' },
-  { id: 'photo-1622253692010-333f2da6031d', label: 'Medical professional with stethoscope', category: 'medical' },
+  // Team context — real team members
+  { id: `${BRAND_WEB}/team-ozlem.jpg`, label: 'Team member with friendly smile', category: 'team' },
+  { id: `${BRAND_WEB}/team-ozan.jpg`, label: 'Professional in team environment', category: 'team' },
+  { id: `${BRAND_WEB}/team-ahmet.jpg`, label: 'Team member in modern office', category: 'team' },
+  { id: `${BRAND_WEB}/team-alpaslan.jpg`, label: 'Team professional at work', category: 'team' },
+  { id: `${BRAND_WEB}/team-halil.jpg`, label: 'Team member portrait', category: 'team' },
+  { id: `${BRAND_WEB}/team-mustafa.jpg`, label: 'Professional team member', category: 'team' },
+  { id: `${BRAND_WEB}/team-ediz.jpg`, label: 'Team member with warm expression', category: 'team' },
+  { id: `${BRAND_WEB}/team-murat-jr.jpg`, label: 'Young team professional', category: 'team' },
+  { id: `${BRAND_WEB}/team-sadiye.jpg`, label: 'Female team member portrait', category: 'team' },
+  { id: `${BRAND_WEB}/team-can-bilen.jpg`, label: 'Team member in professional setting', category: 'team' },
 
-  // Legal
-  { id: 'photo-1556157382-97ede2916cd2', label: 'Attorney in formal business attire', category: 'legal' },
-  { id: 'photo-1573497019940-1c28c88b4f3e', label: 'Female attorney in professional setting', category: 'legal' },
+  // Creative / Casual — editorial style portraits
+  { id: `${BRAND_WEB}/portrait-woman-editorial.webp`, label: 'Creative professional with artistic style', category: 'creative' },
+  { id: `${BRAND_WEB}/portrait-man-editorial.webp`, label: 'Man with creative casual look', category: 'creative' },
+  { id: `${BRAND_WEB}/portrait-woman-creative-after.webp`, label: 'Woman with bright creative expression', category: 'creative' },
 
-  // Tech / Startup
-  { id: 'photo-1539571696357-5a69c17a67c6', label: 'Tech professional in casual wear', category: 'tech' },
-  { id: 'photo-1517841905240-472988babdf9', label: 'Creative professional woman', category: 'tech' },
-  { id: 'photo-1506794778202-cad84cf45f1d', label: 'Young man with creative style', category: 'tech' },
+  // Family & Warm — real family photos
+  { id: `${BRAND_WEB}/family-unver-group.jpg`, label: 'Happy family portrait together', category: 'family' },
+  { id: `${BRAND_WEB}/family-unver-mom-kids.jpg`, label: 'Mother and children sharing a warm moment', category: 'family' },
+  { id: `${BRAND_WEB}/family-unver-kids.jpg`, label: 'Joyful children moment', category: 'family' },
+  { id: `${BRAND_WEB}/family-unver-couple.jpg`, label: 'Couple portrait together', category: 'family' },
 
-  // Education
-  { id: 'photo-1544005313-94ddf0286df2', label: 'Educator with warm expression', category: 'education' },
-  { id: 'photo-1568602471122-7832951cc4c5', label: 'Male educator in smart casual', category: 'education' },
+  // Lifestyle / Outdoor
+  { id: `${BRAND_WEB}/family-unver-portrait.jpg`, label: 'Portrait in warm light', category: 'lifestyle' },
+  { id: `${BRAND_WEB}/holiday-couple-vacation.jpg`, label: 'Couple enjoying vacation', category: 'lifestyle' },
+  { id: `${BRAND_WEB}/celebration-murat-soganci.jpg`, label: 'Celebration moment', category: 'lifestyle' },
 
-  // Real Estate
-  { id: 'photo-1519345182560-3f2917c472ef', label: 'Real estate professional outdoors', category: 'realestate' },
-  { id: 'photo-1573496799652-408c2ac9fe98', label: 'Female real estate agent portrait', category: 'realestate' },
-
-  // Creative / Casual
-  { id: 'photo-1531746020798-e6953c6e8e04', label: 'Creative professional with artistic style', category: 'creative' },
-  { id: 'photo-1524504388940-b1c1722653e1', label: 'Man with creative casual look', category: 'creative' },
-  { id: 'photo-1488426862026-3ee34a7d66df', label: 'Woman with bright creative expression', category: 'creative' },
-  { id: 'photo-1552374196-c4e7ffc6e126', label: 'Man with relaxed confident pose', category: 'creative' },
-
-  // Team / Group context
-  { id: 'photo-1522075469751-3a6694fb2f61', label: 'Professional in team environment', category: 'team' },
-  { id: 'photo-1580894732444-8ecded7900cd', label: 'Team member with friendly smile', category: 'team' },
-  { id: 'photo-1530268729831-4b0b9e170218', label: 'Professional woman in modern office', category: 'team' },
-  { id: 'photo-1487412720507-e7ab37603c6f', label: 'Woman professional at work', category: 'team' },
-
-  // Additional diverse portraits for variety
-  { id: 'photo-1542190891-2093d38760f2', label: 'Professional with confident stance', category: 'corporate' },
-  { id: 'photo-1508214751196-bcfd4ca60f91', label: 'Elegant professional woman', category: 'corporate' },
-  { id: 'photo-1566492031773-4f4e44671857', label: 'Distinguished man in suit', category: 'corporate' },
-  { id: 'photo-1545167622-3a6ac756afa4', label: 'Young professional with modern style', category: 'corporate' },
-  { id: 'photo-1504257432389-52343af06ae3', label: 'Professional man with warm smile', category: 'corporate' },
-  { id: 'photo-1548142813-c348350df52b', label: 'Woman in sophisticated business look', category: 'corporate' },
-  { id: 'photo-1603415526960-f7e0328c63b1', label: 'Man with professional headshot look', category: 'corporate' },
-  { id: 'photo-1567532939604-b6b5b0db2604', label: 'Professional woman headshot', category: 'corporate' },
-  { id: 'photo-1557862921-37829c790f19', label: 'Man in professional portrait', category: 'corporate' },
-  { id: 'photo-1551836022-d5d88e9218df', label: 'Woman with professional corporate look', category: 'corporate' },
-
-  // Pet portraits — use contentPhoto() for these, NOT portrait()
-  { id: 'photo-1587300003388-59208cc962cb', label: 'Golden retriever with friendly expression', category: 'pet' },
-  { id: 'photo-1543466835-00a7907e9de1', label: 'Happy dog outdoors in natural light', category: 'pet' },
-  { id: 'photo-1514888286974-6c03e2ca1dba', label: 'Orange tabby cat with bright eyes', category: 'pet' },
-  { id: 'photo-1548199973-03cce0bbc87b', label: 'Two dogs running together playfully', category: 'pet' },
-  { id: 'photo-1583337130417-13571c78e6f3', label: 'Adorable puppy portrait', category: 'pet' },
-
-  // Family & Warm — use portrait() for people, contentPhoto() for group scenes
-  { id: 'photo-1609220136736-443140cffec6', label: 'Happy family portrait together', category: 'family' },
-  { id: 'photo-1581579438747-104c53d7fbc4', label: 'Mother and child sharing a warm moment', category: 'family' },
-  { id: 'photo-1511895426328-dc8714191300', label: 'Joyful family moment outdoors', category: 'family' },
-
-  // Lifestyle / Outdoor / Casual
-  { id: 'photo-1506863530036-1efeddceb993', label: 'Woman enjoying golden hour outdoors', category: 'lifestyle' },
-  { id: 'photo-1529626455594-4ff0802cfb7e', label: 'Man with relaxed confident smile outdoors', category: 'lifestyle' },
-  { id: 'photo-1496345875659-11f7dd282d1d', label: 'Man in casual outdoor setting with warm light', category: 'lifestyle' },
+  // Founders
+  { id: `${BRAND_WEB}/founder-mert.jpg`, label: 'Founder portrait', category: 'corporate' },
+  { id: `${BRAND_WEB}/founder-murat.jpg`, label: 'Co-founder portrait', category: 'corporate' },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -188,50 +166,48 @@ export function getPortraitsByCategory(category: StockPortrait['category']): Sto
 /* ------------------------------------------------------------------ */
 
 export interface IndustryVisual {
-  heroPortraitId: string;  // Unsplash photo ID for hero section
+  heroPortraitId: string;  // Brand photo path
   alt: string;
-  cardPortraitId: string;  // Unsplash photo ID for card/thumbnail
+  cardPortraitId: string;  // Brand photo path
 }
 
 /**
- * Industry-specific visuals. Each industry gets a unique portrait
- * showing a person in that profession's typical setting/attire.
+ * Industry-specific visuals. Each industry gets a portrait from
+ * TailorPic's real AI headshot results.
  */
 export const INDUSTRY_VISUALS: Record<string, IndustryVisual> = {
-  // Top professions with unique images
-  finance: { heroPortraitId: 'photo-1560250097-0b93528c311a', alt: 'Finance professional in business attire', cardPortraitId: 'photo-1560250097-0b93528c311a' },
-  healthcare: { heroPortraitId: 'photo-1559839734-2b71ea197ec2', alt: 'Healthcare professional portrait', cardPortraitId: 'photo-1559839734-2b71ea197ec2' },
-  legal: { heroPortraitId: 'photo-1556157382-97ede2916cd2', alt: 'Legal professional portrait', cardPortraitId: 'photo-1556157382-97ede2916cd2' },
-  tech: { heroPortraitId: 'photo-1539571696357-5a69c17a67c6', alt: 'Tech professional portrait', cardPortraitId: 'photo-1539571696357-5a69c17a67c6' },
-  'real-estate': { heroPortraitId: 'photo-1519345182560-3f2917c472ef', alt: 'Real estate professional portrait', cardPortraitId: 'photo-1519345182560-3f2917c472ef' },
-  education: { heroPortraitId: 'photo-1544005313-94ddf0286df2', alt: 'Education professional portrait', cardPortraitId: 'photo-1544005313-94ddf0286df2' },
-  // Map slug variants
-  doctors: { heroPortraitId: 'photo-1612349317150-e413f6a5b16d', alt: 'Doctor in professional setting', cardPortraitId: 'photo-1612349317150-e413f6a5b16d' },
-  nurses: { heroPortraitId: 'photo-1622253692010-333f2da6031d', alt: 'Nurse in healthcare setting', cardPortraitId: 'photo-1622253692010-333f2da6031d' },
-  lawyers: { heroPortraitId: 'photo-1573497019940-1c28c88b4f3e', alt: 'Attorney in professional setting', cardPortraitId: 'photo-1573497019940-1c28c88b4f3e' },
-  consultants: { heroPortraitId: 'photo-1573496359142-b8d87734a5a2', alt: 'Consultant in business setting', cardPortraitId: 'photo-1573496359142-b8d87734a5a2' },
-  accountants: { heroPortraitId: 'photo-1507003211169-0a1dd7228f2d', alt: 'Accountant portrait', cardPortraitId: 'photo-1507003211169-0a1dd7228f2d' },
-  engineers: { heroPortraitId: 'photo-1472099645785-5658abf4ff4e', alt: 'Engineer portrait', cardPortraitId: 'photo-1472099645785-5658abf4ff4e' },
-  teachers: { heroPortraitId: 'photo-1568602471122-7832951cc4c5', alt: 'Teacher portrait', cardPortraitId: 'photo-1568602471122-7832951cc4c5' },
-  executives: { heroPortraitId: 'photo-1566492031773-4f4e44671857', alt: 'Executive portrait', cardPortraitId: 'photo-1566492031773-4f4e44671857' },
-  entrepreneurs: { heroPortraitId: 'photo-1519085360753-af0119f7cbe7', alt: 'Entrepreneur portrait', cardPortraitId: 'photo-1519085360753-af0119f7cbe7' },
-  architects: { heroPortraitId: 'photo-1506794778202-cad84cf45f1d', alt: 'Architect portrait', cardPortraitId: 'photo-1506794778202-cad84cf45f1d' },
-  designers: { heroPortraitId: 'photo-1531746020798-e6953c6e8e04', alt: 'Designer portrait', cardPortraitId: 'photo-1531746020798-e6953c6e8e04' },
-  marketers: { heroPortraitId: 'photo-1517841905240-472988babdf9', alt: 'Marketing professional portrait', cardPortraitId: 'photo-1517841905240-472988babdf9' },
-  salespeople: { heroPortraitId: 'photo-1500648767791-00dcc994a43e', alt: 'Sales professional portrait', cardPortraitId: 'photo-1500648767791-00dcc994a43e' },
-  coaches: { heroPortraitId: 'photo-1494790108377-be9c29b29330', alt: 'Coach portrait', cardPortraitId: 'photo-1494790108377-be9c29b29330' },
-  therapists: { heroPortraitId: 'photo-1438761681033-6461ffad8d80', alt: 'Therapist portrait', cardPortraitId: 'photo-1438761681033-6461ffad8d80' },
-  photographers: { heroPortraitId: 'photo-1524504388940-b1c1722653e1', alt: 'Photographer portrait', cardPortraitId: 'photo-1524504388940-b1c1722653e1' },
-  journalists: { heroPortraitId: 'photo-1534528741775-53994a69daeb', alt: 'Journalist portrait', cardPortraitId: 'photo-1534528741775-53994a69daeb' },
-  pharmacists: { heroPortraitId: 'photo-1580489944761-15a19d654956', alt: 'Pharmacist portrait', cardPortraitId: 'photo-1580489944761-15a19d654956' },
+  finance: { heroPortraitId: `${BRAND_WEB}/after-murat.jpg`, alt: 'Finance professional AI headshot', cardPortraitId: `${BRAND_WEB}/after-murat.jpg` },
+  healthcare: { heroPortraitId: `${BRAND_WEB}/after-ozlem.jpg`, alt: 'Healthcare professional AI headshot', cardPortraitId: `${BRAND_WEB}/after-ozlem.jpg` },
+  legal: { heroPortraitId: `${BRAND_WEB}/after-tarkan.jpg`, alt: 'Legal professional AI headshot', cardPortraitId: `${BRAND_WEB}/after-tarkan.jpg` },
+  tech: { heroPortraitId: `${BRAND_WEB}/after-mert.jpg`, alt: 'Tech professional AI headshot', cardPortraitId: `${BRAND_WEB}/after-mert.jpg` },
+  'real-estate': { heroPortraitId: `${BRAND_WEB}/after-mustafa.jpg`, alt: 'Real estate professional AI headshot', cardPortraitId: `${BRAND_WEB}/after-mustafa.jpg` },
+  education: { heroPortraitId: `${BRAND_WEB}/after-ahmet.jpg`, alt: 'Education professional AI headshot', cardPortraitId: `${BRAND_WEB}/after-ahmet.jpg` },
+  doctors: { heroPortraitId: `${BRAND_WEB}/after-ozlem.jpg`, alt: 'Doctor AI headshot', cardPortraitId: `${BRAND_WEB}/after-ozlem.jpg` },
+  nurses: { heroPortraitId: `${BRAND_WEB}/after-isik.jpg`, alt: 'Nurse AI headshot', cardPortraitId: `${BRAND_WEB}/after-isik.jpg` },
+  lawyers: { heroPortraitId: `${BRAND_WEB}/after-tarkan.jpg`, alt: 'Attorney AI headshot', cardPortraitId: `${BRAND_WEB}/after-tarkan.jpg` },
+  consultants: { heroPortraitId: `${BRAND_WEB}/after-murat.jpg`, alt: 'Consultant AI headshot', cardPortraitId: `${BRAND_WEB}/after-murat.jpg` },
+  accountants: { heroPortraitId: `${BRAND_WEB}/after-mustafa.jpg`, alt: 'Accountant AI headshot', cardPortraitId: `${BRAND_WEB}/after-mustafa.jpg` },
+  engineers: { heroPortraitId: `${BRAND_WEB}/after-alpaslan.jpg`, alt: 'Engineer AI headshot', cardPortraitId: `${BRAND_WEB}/after-alpaslan.jpg` },
+  teachers: { heroPortraitId: `${BRAND_WEB}/after-ahmet.jpg`, alt: 'Teacher AI headshot', cardPortraitId: `${BRAND_WEB}/after-ahmet.jpg` },
+  executives: { heroPortraitId: `${BRAND_WEB}/after-tarkan.jpg`, alt: 'Executive AI headshot', cardPortraitId: `${BRAND_WEB}/after-tarkan.jpg` },
+  entrepreneurs: { heroPortraitId: `${BRAND_WEB}/after-mert.jpg`, alt: 'Entrepreneur AI headshot', cardPortraitId: `${BRAND_WEB}/after-mert.jpg` },
+  architects: { heroPortraitId: `${BRAND_WEB}/after-ozan.jpg`, alt: 'Architect AI headshot', cardPortraitId: `${BRAND_WEB}/after-ozan.jpg` },
+  designers: { heroPortraitId: `${BRAND_WEB}/after-ozlem.jpg`, alt: 'Designer AI headshot', cardPortraitId: `${BRAND_WEB}/after-ozlem.jpg` },
+  marketers: { heroPortraitId: `${BRAND_WEB}/after-isik.jpg`, alt: 'Marketing professional AI headshot', cardPortraitId: `${BRAND_WEB}/after-isik.jpg` },
+  salespeople: { heroPortraitId: `${BRAND_WEB}/after-halil.jpg`, alt: 'Sales professional AI headshot', cardPortraitId: `${BRAND_WEB}/after-halil.jpg` },
+  coaches: { heroPortraitId: `${BRAND_WEB}/after-murat.jpg`, alt: 'Coach AI headshot', cardPortraitId: `${BRAND_WEB}/after-murat.jpg` },
+  therapists: { heroPortraitId: `${BRAND_WEB}/after-ozlem.jpg`, alt: 'Therapist AI headshot', cardPortraitId: `${BRAND_WEB}/after-ozlem.jpg` },
+  photographers: { heroPortraitId: `${BRAND_WEB}/after-ozan.jpg`, alt: 'Photographer AI headshot', cardPortraitId: `${BRAND_WEB}/after-ozan.jpg` },
+  journalists: { heroPortraitId: `${BRAND_WEB}/after-ahmet.jpg`, alt: 'Journalist AI headshot', cardPortraitId: `${BRAND_WEB}/after-ahmet.jpg` },
+  pharmacists: { heroPortraitId: `${BRAND_WEB}/after-mustafa.jpg`, alt: 'Pharmacist AI headshot', cardPortraitId: `${BRAND_WEB}/after-mustafa.jpg` },
 };
 
-/** Get industry visual with fallback to generic corporate. */
+/** Get industry visual with fallback to generic brand portrait. */
 export function getIndustryVisual(slug: string): IndustryVisual {
   return INDUSTRY_VISUALS[slug] ?? {
-    heroPortraitId: 'photo-1573496359142-b8d87734a5a2',
-    alt: 'Professional headshot portrait',
-    cardPortraitId: 'photo-1573496359142-b8d87734a5a2',
+    heroPortraitId: `${BRAND_WEB}/after-murat.jpg`,
+    alt: 'Professional AI headshot portrait',
+    cardPortraitId: `${BRAND_WEB}/after-murat.jpg`,
   };
 }
 
@@ -239,70 +215,68 @@ export function getIndustryVisual(slug: string): IndustryVisual {
 /*  Blog cover images                                                  */
 /* ------------------------------------------------------------------ */
 
-/** Unique cover photo IDs for blog posts, keyed by post slug. */
+/** Unique cover photo paths for blog posts, keyed by post slug. */
 export const BLOG_COVERS: Record<string, string> = {
-  // Original 14
-  'ai-headshot-revolution': 'photo-1560250097-0b93528c311a',
-  'perfect-linkedin-photo': 'photo-1573496359142-b8d87734a5a2',
-  'headshot-tips-professionals': 'photo-1507003211169-0a1dd7228f2d',
-  'ai-vs-traditional-photography': 'photo-1516035069371-29a1b244cc32',
-  'corporate-headshot-guide': 'photo-1556157382-97ede2916cd2',
-  'remote-work-headshots': 'photo-1519085360753-af0119f7cbe7',
-  'personal-branding-photos': 'photo-1494790108377-be9c29b29330',
-  'team-photos-guide': 'photo-1522075469751-3a6694fb2f61',
-  'headshot-lighting-tips': 'photo-1531746020798-e6953c6e8e04',
-  'social-media-photos': 'photo-1488426862026-3ee34a7d66df',
-  'executive-portrait-guide': 'photo-1566492031773-4f4e44671857',
-  'startup-team-photos': 'photo-1539571696357-5a69c17a67c6',
-  'medical-headshots': 'photo-1559839734-2b71ea197ec2',
-  'legal-headshots': 'photo-1573497019940-1c28c88b4f3e',
-  // Extended coverage for actual blog slugs
-  'aragon-ai-alternatives': 'photo-1542190891-2093d38760f2',
-  'linkedin-headshot-optimization': 'photo-1573496359142-b8d87734a5a2',
-  'work-from-home-headshots': 'photo-1519085360753-af0119f7cbe7',
-  'ai-headshots-for-students': 'photo-1545167622-3a6ac756afa4',
-  'headshot-retouching-guide': 'photo-1508214751196-bcfd4ca60f91',
-  'best-ai-headshot-generators-2025': 'photo-1603415526960-f7e0328c63b1',
-  'nursing-headshot-guide': 'photo-1622253692010-333f2da6031d',
-  'teacher-headshot-guide': 'photo-1568602471122-7832951cc4c5',
-  'ai-headshot-cost-comparison': 'photo-1504257432389-52343af06ae3',
-  'passport-photo-ai': 'photo-1548142813-c348350df52b',
-  'how-ai-headshots-work': 'photo-1472099645785-5658abf4ff4e',
-  'best-photos-for-linkedin': 'photo-1580489944761-15a19d654956',
-  'ai-pet-portraits-guide': 'photo-1552374196-c4e7ffc6e126',
-  'professional-headshot-tips-2025': 'photo-1500648767791-00dcc994a43e',
-  'ai-headshots-vs-traditional-photography': 'photo-1516035069371-29a1b244cc32',
-  'best-headshot-for-linkedin-profile': 'photo-1534528741775-53994a69daeb',
-  'real-estate-agent-headshots': 'photo-1519345182560-3f2917c472ef',
-  'corporate-team-photos-guide': 'photo-1530268729831-4b0b9e170218',
-  'headshot-background-guide': 'photo-1524504388940-b1c1722653e1',
-  'lawyer-headshot-guide': 'photo-1556157382-97ede2916cd2',
-  'dating-profile-photo-tips': 'photo-1517841905240-472988babdf9',
-  'ai-headshot-privacy-security': 'photo-1557862921-37829c790f19',
-  'headshot-dos-and-donts': 'photo-1438761681033-6461ffad8d80',
-  'executive-headshot-guide': 'photo-1566492031773-4f4e44671857',
-  'startup-team-branding-photos': 'photo-1539571696357-5a69c17a67c6',
-  'remote-worker-headshot-guide': 'photo-1580894732444-8ecded7900cd',
-  'medical-residency-headshot-requirements': 'photo-1612349317150-e413f6a5b16d',
-  'headshot-trends-2025': 'photo-1551836022-d5d88e9218df',
-  'ai-headshots-for-teams-enterprise': 'photo-1487412720507-e7ab37603c6f',
-  'headshot-lighting-guide': 'photo-1531746020798-e6953c6e8e04',
-  'social-media-profile-photo-sizes': 'photo-1488426862026-3ee34a7d66df',
-  'ai-photography-ethics-guide': 'photo-1567532939604-b6b5b0db2604',
-  'what-to-wear-for-headshots': 'photo-1573496799652-408c2ac9fe98',
-  'diy-headshots-at-home': 'photo-1544005313-94ddf0286df2',
-  'actor-headshot-guide': 'photo-1506794778202-cad84cf45f1d',
-  'virtual-headshots-remote-teams': 'photo-1522075469751-3a6694fb2f61',
-  'headshot-trends-2026': 'photo-1560250097-0b93528c311a',
-  'can-recruiters-tell-ai-headshots': 'photo-1507003211169-0a1dd7228f2d',
-  'professional-profile-picture-examples': 'photo-1494790108377-be9c29b29330',
-  'take-professional-headshot-with-phone': 'photo-1542190891-2093d38760f2',
-  'ai-headshot-for-healthcare': 'photo-1559839734-2b71ea197ec2',
-  'corporate-headshot-dress-code': 'photo-1573497019940-1c28c88b4f3e',
+  'ai-headshot-revolution': `${BRAND_WEB}/after-murat.jpg`,
+  'perfect-linkedin-photo': `${BRAND_WEB}/after-ozlem.jpg`,
+  'headshot-tips-professionals': `${BRAND_WEB}/after-tarkan.jpg`,
+  'ai-vs-traditional-photography': `${BRAND_WEB}/after-mert.jpg`,
+  'corporate-headshot-guide': `${BRAND_WEB}/after-mustafa.jpg`,
+  'remote-work-headshots': `${BRAND_WEB}/after-ahmet.jpg`,
+  'personal-branding-photos': `${BRAND_WEB}/after-alpaslan.jpg`,
+  'team-photos-guide': `${BRAND_WEB}/team-ozlem.jpg`,
+  'headshot-lighting-tips': `${BRAND_WEB}/after-ozan.jpg`,
+  'social-media-photos': `${BRAND_WEB}/after-isik.jpg`,
+  'executive-portrait-guide': `${BRAND_WEB}/after-tarkan.jpg`,
+  'startup-team-photos': `${BRAND_WEB}/after-mert.jpg`,
+  'medical-headshots': `${BRAND_WEB}/after-ozlem.jpg`,
+  'legal-headshots': `${BRAND_WEB}/after-tarkan.jpg`,
+  'aragon-ai-alternatives': `${BRAND_WEB}/after-halil.jpg`,
+  'linkedin-headshot-optimization': `${BRAND_WEB}/after-murat.jpg`,
+  'work-from-home-headshots': `${BRAND_WEB}/after-ahmet.jpg`,
+  'ai-headshots-for-students': `${BRAND_WEB}/after-mert.jpg`,
+  'headshot-retouching-guide': `${BRAND_WEB}/after-ozlem.jpg`,
+  'best-ai-headshot-generators-2025': `${BRAND_WEB}/after-alpaslan.jpg`,
+  'nursing-headshot-guide': `${BRAND_WEB}/after-isik.jpg`,
+  'teacher-headshot-guide': `${BRAND_WEB}/after-ahmet.jpg`,
+  'ai-headshot-cost-comparison': `${BRAND_WEB}/after-mustafa.jpg`,
+  'passport-photo-ai': `${BRAND_WEB}/after-ozan.jpg`,
+  'how-ai-headshots-work': `${BRAND_WEB}/after-halil.jpg`,
+  'best-photos-for-linkedin': `${BRAND_WEB}/after-ozlem.jpg`,
+  'ai-pet-portraits-guide': `${BRAND_WEB}/family-unver-group.jpg`,
+  'professional-headshot-tips-2025': `${BRAND_WEB}/after-murat.jpg`,
+  'ai-headshots-vs-traditional-photography': `${BRAND_WEB}/after-tarkan.jpg`,
+  'best-headshot-for-linkedin-profile': `${BRAND_WEB}/after-alpaslan.jpg`,
+  'real-estate-agent-headshots': `${BRAND_WEB}/after-mustafa.jpg`,
+  'corporate-team-photos-guide': `${BRAND_WEB}/team-ahmet.jpg`,
+  'headshot-background-guide': `${BRAND_WEB}/after-ozan.jpg`,
+  'lawyer-headshot-guide': `${BRAND_WEB}/after-tarkan.jpg`,
+  'dating-profile-photo-tips': `${BRAND_WEB}/after-isik.jpg`,
+  'ai-headshot-privacy-security': `${BRAND_WEB}/after-mert.jpg`,
+  'headshot-dos-and-donts': `${BRAND_WEB}/after-ozlem.jpg`,
+  'executive-headshot-guide': `${BRAND_WEB}/after-tarkan.jpg`,
+  'startup-team-branding-photos': `${BRAND_WEB}/team-ozan.jpg`,
+  'remote-worker-headshot-guide': `${BRAND_WEB}/after-ahmet.jpg`,
+  'medical-residency-headshot-requirements': `${BRAND_WEB}/after-ozlem.jpg`,
+  'headshot-trends-2025': `${BRAND_WEB}/after-halil.jpg`,
+  'ai-headshots-for-teams-enterprise': `${BRAND_WEB}/team-alpaslan.jpg`,
+  'headshot-lighting-guide': `${BRAND_WEB}/after-murat.jpg`,
+  'social-media-profile-photo-sizes': `${BRAND_WEB}/after-isik.jpg`,
+  'ai-photography-ethics-guide': `${BRAND_WEB}/after-mustafa.jpg`,
+  'what-to-wear-for-headshots': `${BRAND_WEB}/after-ozlem.jpg`,
+  'diy-headshots-at-home': `${BRAND_WEB}/after-alpaslan.jpg`,
+  'actor-headshot-guide': `${BRAND_WEB}/after-ozan.jpg`,
+  'virtual-headshots-remote-teams': `${BRAND_WEB}/team-mustafa.jpg`,
+  'headshot-trends-2026': `${BRAND_WEB}/after-murat.jpg`,
+  'can-recruiters-tell-ai-headshots': `${BRAND_WEB}/after-mert.jpg`,
+  'professional-profile-picture-examples': `${BRAND_WEB}/after-tarkan.jpg`,
+  'take-professional-headshot-with-phone': `${BRAND_WEB}/after-ahmet.jpg`,
+  'ai-headshot-for-healthcare': `${BRAND_WEB}/after-ozlem.jpg`,
+  'corporate-headshot-dress-code': `${BRAND_WEB}/after-mustafa.jpg`,
 };
 
-/** Get blog cover URL. Falls back to a generic portrait. */
+/** Get blog cover URL. Falls back to a generic brand portrait. */
 export function getBlogCover(slug: string): string {
-  const photoId = BLOG_COVERS[slug] ?? 'photo-1573496359142-b8d87734a5a2';
+  const photoId = BLOG_COVERS[slug] ?? `${BRAND_WEB}/after-murat.jpg`;
   return wide(photoId);
 }
