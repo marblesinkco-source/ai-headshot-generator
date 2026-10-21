@@ -189,6 +189,12 @@ const teamMembers = [
     photo: '/brand/tailorpic/web/team-murat-jr.jpg',
     bio: 'Representing the next generation of the Ünver family, bringing fresh perspective and energy to the team.',
   },
+  {
+    name: 'Can Bilen',
+    role: 'Logistics, Marblesinkco',
+    photo: '/brand/tailorpic/web/team-can-bilen.jpg',
+    bio: 'Manages logistics operations at Marblesinkco, ensuring efficient coordination and timely delivery across the supply chain.',
+  },
 ];
 
 const explore = [
