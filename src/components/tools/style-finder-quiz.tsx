@@ -282,7 +282,7 @@ export function StyleFinderQuiz() {
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
               href={`/styles/${result.styleSlug}`}
-              className="inline-flex h-12 items-center gap-2 rounded-tp-button bg-tp-bronze px-6 text-sm font-medium text-white transition-colors hover:bg-tp-bronze-ink"
+              className="inline-flex h-12 items-center gap-2 rounded-tp-button bg-tp-bronze px-6 text-sm font-medium text-tp-black transition-colors hover:bg-tp-black hover:text-tp-bronze"
             >
               Explore {result.styleName} Style
               <ArrowRight className="h-4 w-4" />

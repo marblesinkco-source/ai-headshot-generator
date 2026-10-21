@@ -109,7 +109,7 @@ export function StyleConfigurator() {
                     <span
                       className={cn(
                         'text-center text-[11px] leading-tight sm:text-xs',
-                        active ? 'font-medium text-tp-ink' : 'text-tp-muted'
+                        active ? 'font-medium text-tp-ink' : 'text-tp-ink/80'
                       )}
                     >
                       {b.name}

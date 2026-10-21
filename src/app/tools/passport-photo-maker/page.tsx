@@ -133,7 +133,7 @@ export default function Page() {
           <p className="mx-auto mt-3 max-w-xl text-sm text-tp-beige sm:text-base">
             TailorPic creates studio-style AI headshots from your selfies for LinkedIn, resumes and more.
           </p>
-          <Link href={ctaHref} className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'mt-7 bg-tp-bronze text-tp-black hover:bg-tp-beige')}>
+          <Link href={ctaHref} className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'mt-7 h-auto min-h-11 max-w-full whitespace-normal py-3 text-center bg-tp-bronze text-tp-black hover:bg-tp-beige')}>
             Try TailorPic →
           </Link>
         </div>

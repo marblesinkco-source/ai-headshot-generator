@@ -188,7 +188,7 @@ export default function VsPicofmePage() {
         <section className="py-16 md:py-20">
           <div className="mx-auto max-w-4xl px-4">
             <h2 className="mb-8 text-center text-3xl font-display font-normal text-tp-ink">Side-by-side comparison</h2>
-            <div className="overflow-x-auto rounded-tp-card border border-tp-line bg-white">
+            <div className="relative overflow-x-auto rounded-tp-card border border-tp-line bg-white">
               <table className="w-full min-w-[560px] text-left text-sm">
                 <thead>
                   <tr className="border-b border-tp-line bg-tp-paper">

@@ -316,7 +316,7 @@ export default function FreeHeadshotGeneratorPage() {
           <p className="mx-auto mt-3 max-w-2xl text-center text-tp-muted">
             Free generators are tempting, but results vary. TailorPic starts at {BASE_PRICE_DISPLAY} with no subscription.
           </p>
-          <div className="mt-10 overflow-x-auto rounded-tp-card border border-tp-line bg-white">
+          <div className="relative mt-10 overflow-x-auto rounded-tp-card border border-tp-line bg-white">
             <table className="w-full min-w-[560px] text-left text-sm">
               <thead>
                 <tr className="border-b border-tp-line bg-tp-paper">
@@ -358,7 +358,7 @@ export default function FreeHeadshotGeneratorPage() {
           <h2 className="font-display text-center text-3xl font-normal text-tp-ink">
             Traditional Photography vs AI Headshots
           </h2>
-          <div className="mt-10 overflow-x-auto rounded-tp-card border border-tp-line bg-white">
+          <div className="relative mt-10 overflow-x-auto rounded-tp-card border border-tp-line bg-white">
             <table className="w-full min-w-[560px] text-left text-sm">
               <thead>
                 <tr className="border-b border-tp-line bg-tp-paper">

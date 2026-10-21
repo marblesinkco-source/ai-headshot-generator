@@ -29,6 +29,10 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
+// Only the slugs from generateStaticParams exist; anything else is a real 404
+// (with the root loading.tsx, notFound() inside a page would stream a 200).
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   return getAllBlogPosts().map((post) => ({
     slug: post.slug,

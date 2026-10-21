@@ -205,7 +205,7 @@ export default function CreditsDashboard() {
           </div>
         ) : (
           <div className="overflow-hidden rounded-tp-card border border-tp-line/50 bg-white">
-            <div className="overflow-x-auto">
+            <div className="relative overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-tp-line/50 bg-tp-paper/50">

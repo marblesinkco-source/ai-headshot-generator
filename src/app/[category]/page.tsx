@@ -376,7 +376,7 @@ export default async function CategoryPage({ params }: Props) {
                   />
                 </div>
                 <div className="relative aspect-[3/4] bg-tp-warm">
-                  <div className="absolute bottom-3 right-3 rounded-full bg-tp-bronze px-3 py-1 text-xs font-medium text-white">
+                  <div className="absolute bottom-3 right-3 rounded-full bg-tp-bronze px-3 py-1 text-xs font-medium text-tp-black">
                     AI style
                   </div>
                   <Image

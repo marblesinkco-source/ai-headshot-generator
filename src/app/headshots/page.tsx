@@ -22,21 +22,18 @@ export const revalidate = 3600;
 
 
 const StickyCTA = dynamic(() => import('@/components/marketing/sticky-cta').then(m => ({ default: m.StickyCTA })), { ssr: false });
-const StyleConfigurator = dynamic(() => import('@/components/marketing/style-configurator').then(m => ({ default: m.StyleConfigurator })), { ssr: false });
+const StyleConfigurator = dynamic(() => import('@/components/marketing/style-configurator').then(m => ({ default: m.StyleConfigurator })));
 const BeforeAfterShowcase = dynamic(
   () => import('@/components/marketing/before-after-showcase').then(m => ({ default: m.BeforeAfterShowcase })),
-  { ssr: false }
 );
 const SocialProofBar = dynamic(
   () => import('@/components/marketing/social-proof-bar').then(m => ({ default: m.SocialProofBar })),
-  { ssr: false }
 );
 const HeadshotStyleGallery = dynamic(
   () => import('@/components/marketing/headshot-style-gallery').then(m => ({ default: m.HeadshotStyleGallery })),
-  { ssr: false }
 );
 
-const PAGE_TITLE = 'AI Professional Headshots | Studio-Quality Portraits from Selfies | TailorPic';
+const PAGE_TITLE = 'AI Professional Headshots From Selfies | TailorPic';
 const PAGE_DESC =
   `Get studio-quality professional headshots from your own selfies. ${STYLES.length} styles, ${BACKGROUNDS.length} backgrounds, 30+ profession-specific options. From ${BASE_PRICE_DISPLAY}. No studio visit needed.`;
 
@@ -344,7 +341,7 @@ export default function HeadshotsLandingPage() {
           </div>
 
           {/* Package ladder table */}
-          <div className="overflow-x-auto -mx-4 sm:mx-0">
+          <div className="relative overflow-x-auto -mx-4 sm:mx-0">
             <table className="w-full text-left text-sm">
               <thead>
                 <tr className="border-b border-tp-line">
@@ -474,7 +471,7 @@ export default function HeadshotsLandingPage() {
                 Not happy with your headshots? We&apos;ll work with you until you are.
               </p>
               <Link href="/guarantee" className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-tp-bronze-ink hover:text-tp-ink transition-colors min-h-[44px]">
-                Learn more <ArrowRight className="h-3.5 w-3.5" />
+                Learn more about our guarantee <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>
             <div className="rounded-tp-card border border-tp-line bg-tp-paper p-6 text-center">

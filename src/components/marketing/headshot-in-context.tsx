@@ -223,7 +223,7 @@ export function HeadshotInContext() {
                 data-context-reveal
                 className={`reveal flex items-center gap-1.5 rounded-tp-button px-4 py-2 text-sm transition-all ${
                   isActive
-                    ? 'bg-tp-bronze text-white shadow-sm'
+                    ? 'bg-tp-bronze text-tp-black shadow-sm'
                     : 'bg-tp-beige text-tp-muted hover:bg-tp-beige/80 hover:text-tp-ink'
                 }`}
                 style={{ '--reveal-i': i } as CSSProperties}

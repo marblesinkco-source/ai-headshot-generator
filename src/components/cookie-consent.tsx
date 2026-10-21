@@ -153,7 +153,7 @@ export function CookieConsent() {
                 href="/cookie-policy"
                 className="font-medium text-tp-bronze-ink underline-offset-2 hover:underline"
               >
-                Learn more
+                Read our cookie policy
               </Link>
             </p>
             <div className="flex shrink-0 items-center gap-2">

@@ -121,7 +121,7 @@ export default function Page() {
       <section className="px-4 py-10 sm:px-6">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-center font-display font-normal text-3xl text-tp-ink sm:text-4xl">Platform size guide</h2>
-          <div className="mt-8 overflow-x-auto rounded-tp-card border border-tp-line bg-white">
+          <div className="relative mt-8 overflow-x-auto rounded-tp-card border border-tp-line bg-white">
             <table className="w-full min-w-[420px] text-left text-sm">
               <thead className="bg-tp-beige/30 text-tp-ink">
                 <tr><th className="px-5 py-3 font-semibold">Platform</th><th className="px-5 py-3 font-semibold">Recommended size</th><th className="px-5 py-3 font-semibold">Ratio</th></tr>
@@ -157,7 +157,7 @@ export default function Page() {
         <div className="mx-auto max-w-3xl rounded-tp-dialog bg-tp-ink px-6 py-12 text-center sm:px-10">
           <h2 className="font-display font-normal text-3xl text-tp-paper sm:text-4xl">Start with a better photo</h2>
           <p className="mx-auto mt-3 max-w-xl text-sm text-tp-beige sm:text-base">Resizing works best on a great source image. TailorPic creates studio-quality headshots in minutes.</p>
-          <Link href={ctaHref} className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'mt-7 bg-tp-bronze text-tp-black hover:bg-tp-beige')}>
+          <Link href={ctaHref} className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'mt-7 h-auto min-h-11 max-w-full whitespace-normal py-3 text-center bg-tp-bronze text-tp-black hover:bg-tp-beige')}>
             Want professional headshots? Try TailorPic →
           </Link>
         </div>

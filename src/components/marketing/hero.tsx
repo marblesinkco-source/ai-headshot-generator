@@ -84,7 +84,7 @@ export function Hero() {
 
               <h1
                 id="tp-title"
-                className="tp-hero-enter font-display text-[clamp(44px,5.6vw,82px)] leading-[1.04] tracking-[-0.04em] font-normal mb-5 max-w-[680px]"
+                className="tp-hero-enter tp-hero-enter-lcp font-display text-[clamp(44px,5.6vw,82px)] leading-[1.04] tracking-[-0.04em] font-normal mb-5 max-w-[680px]"
                 style={{ '--enter-i': 1 } as React.CSSProperties}
               >
                 AI Headshots&nbsp;&mdash;{' '}<br className="hidden lg:inline" /><em className="tp-hero-shimmer font-normal font-display italic">Without&nbsp;a&nbsp;Studio</em>
@@ -99,7 +99,7 @@ export function Hero() {
               </p>
 
               <p
-                className="tp-hero-enter text-[16px] text-tp-ink/75 leading-[1.7] max-w-[460px] mb-4"
+                className="tp-hero-enter tp-hero-enter-lcp text-[16px] text-tp-ink/75 leading-[1.7] max-w-[460px] mb-4"
                 style={{ '--enter-i': 2 } as React.CSSProperties}
               >
                 Upload a few selfies, get studio-quality headshots within hours. Up to 160 photos across 12 categories. Pay once&nbsp;&mdash; no subscription.
@@ -223,7 +223,7 @@ export function Hero() {
                       loading="lazy"
                     />
                   </div>
-                  <span className="mt-1 block text-center text-[9px] font-semibold text-tp-muted/70 uppercase tracking-wider">
+                  <span className="mt-1 block text-center text-[9px] font-semibold text-tp-muted uppercase tracking-wider">
                     {thumb.style}
                   </span>
                 </div>
@@ -235,6 +235,7 @@ export function Hero() {
           <div
             className="tp-hero-enter relative mt-6 lg:mt-8 py-5 border-y border-tp-line overflow-hidden"
             style={{ '--enter-i': 5 } as React.CSSProperties}
+            role="group"
             aria-label="AI headshot style examples"
           >
             {/* Fade edges */}

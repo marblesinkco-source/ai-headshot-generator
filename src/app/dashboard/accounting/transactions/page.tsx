@@ -187,7 +187,7 @@ export default function TransactionsPage() {
         />
       ) : (
         <>
-          <div className="hidden overflow-x-auto rounded-tp-card border border-tp-line/30 bg-white md:block">
+          <div className="relative hidden overflow-x-auto rounded-tp-card border border-tp-line/30 bg-white md:block">
             <table className="min-w-full divide-y divide-tp-line/40">
               <thead className="bg-tp-paper">
                 <tr>
