@@ -7,6 +7,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema, AboutPageSchema } from '@/components/structured-data';
 import { AboutMissionIllustration } from '@/components/marketing/illustrations';
+import Image from 'next/image';
 import {
   Shield,
   Zap,
@@ -124,6 +125,21 @@ const stats = [
   { value: '12', label: 'Photo categories' },
   { value: 'Within hours', label: 'Typical delivery' },
   { value: `From ${BASE_PRICE_DISPLAY}`, label: 'Starting price' },
+];
+
+const teamMembers = [
+  {
+    name: 'Mert Aslanoglu',
+    role: 'Consultant',
+    photo: '/brand/tailorpic/web/founder-mert.jpg',
+    bio: 'Drives the product vision behind TailorPic, working to make AI-powered photography accessible and affordable for everyone.',
+  },
+  {
+    name: 'Özlem Ünver',
+    role: 'Sales Manager',
+    photo: '/brand/tailorpic/web/team-ozlem.jpg',
+    bio: 'Leads sales and partnerships, helping businesses and individuals discover how AI headshots can elevate their professional image.',
+  },
 ];
 
 const explore = [
@@ -371,6 +387,44 @@ export default function AboutPage() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section className="border-t border-tp-line py-24">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-sm font-medium uppercase tracking-widest text-tp-bronze-ink">
+              The People Behind {siteConfig.name}
+            </p>
+            <h2 className="mt-3 font-display text-3xl font-normal text-tp-black sm:text-4xl">
+              Meet our team
+            </h2>
+            <p className="mt-4 text-tp-muted">
+              A small team that cares about every photo we deliver.
+            </p>
+          </div>
+          <div className="mt-14 grid gap-8 sm:grid-cols-2">
+            {teamMembers.map((member) => (
+              <div
+                key={member.name}
+                className="rounded-tp-card border border-tp-line bg-tp-paper p-6 text-center shadow-sm"
+              >
+                <div className="mx-auto h-40 w-40 overflow-hidden rounded-full border-2 border-tp-bronze/30">
+                  <Image
+                    src={member.photo}
+                    alt={`${member.name}, ${member.role} at ${siteConfig.name}`}
+                    width={160}
+                    height={160}
+                    className="h-full w-full object-cover object-top"
+                  />
+                </div>
+                <h3 className="mt-5 font-display text-xl font-normal text-tp-ink">{member.name}</h3>
+                <p className="text-sm font-medium text-tp-bronze-ink">{member.role}</p>
+                <p className="mt-3 text-sm leading-relaxed text-tp-muted">{member.bio}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
