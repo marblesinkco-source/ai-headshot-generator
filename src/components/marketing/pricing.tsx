@@ -411,7 +411,7 @@ export function Pricing() {
                       <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z" />
                       <path d="M9 12l2 2 4-4" />
                     </svg>
-                    Not happy? Free regeneration
+                    Not happy? 1 free retry included
                   </p>
                 </CardFooter>
               </Card>
@@ -475,7 +475,7 @@ export function Pricing() {
               <path d="M12 3 4.5 6v5.5c0 4.4 3.1 8.2 7.5 9.5 4.4-1.3 7.5-5.1 7.5-9.5V6L12 3Z" />
               <path d="m8.75 12 2.25 2.25L15.5 9.75" />
             </svg>
-            <span><strong>Quality Commitment</strong> — free regeneration</span>
+            <span><strong>Quality Commitment</strong> — 1 free retry included</span>
           </div>
           <div className="flex items-center gap-2 text-sm text-tp-ink">
             <Lock className="h-4 w-4 flex-shrink-0 text-tp-bronze-ink" aria-hidden="true" />

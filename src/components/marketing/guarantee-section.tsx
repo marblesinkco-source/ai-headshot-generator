@@ -45,7 +45,7 @@ const items = [
   {
     Icon: ShieldIcon,
     title: 'Quality Guarantee',
-    description: "Not happy with your headshots? Regenerate them within your package at no extra cost.",
+    description: "Not happy with your headshots? You get one complimentary retry at no extra cost. This is your sole remedy — no refunds once processing begins.",
   },
   {
     Icon: LockIcon,
@@ -102,7 +102,7 @@ export function GuaranteeSection() {
 
         <div className="mt-10 text-center">
           <Link
-            href="/guarantee"
+            href="/refund-policy"
             className="text-sm font-semibold text-tp-bronze-ink underline-offset-4 hover:underline"
           >
             Read our quality commitment &rarr;

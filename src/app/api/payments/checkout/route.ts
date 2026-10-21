@@ -319,7 +319,7 @@ export async function POST(request: NextRequest) {
           ...(withdrawalConsent ? {
             withdrawalConsentGiven: 'true',
             consentTimestamp: consentTs || new Date().toISOString(),
-            consentText: 'Customer expressly requested immediate AI processing and waived right of withdrawal per EU Directive 2011/83/EU Art.16(a)',
+            consentText: 'Customer expressly requested immediate AI processing, waived right of withdrawal per EU Directive 2011/83/EU Art.16(a), acknowledged no-refund policy, and accepted one (1) complimentary retry as sole remedy.',
           } : {}),
         },
         settings: {

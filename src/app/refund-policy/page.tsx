@@ -44,7 +44,7 @@ export default function RefundPolicyPage() {
           Refund &amp; Satisfaction Policy
         </h1>
         <p className="mt-4 text-sm text-tp-muted">
-          Last updated: October 8, 2026
+          Last updated: October 21, 2026
         </p>
 
         <div className="prose-tp mt-10 space-y-8 text-sm leading-relaxed text-tp-muted [&_h2]:mt-10 [&_h2]:text-lg [&_h2]:font-semibold [&_h2]:text-tp-ink [&_h3]:mt-6 [&_h3]:text-base [&_h3]:font-semibold [&_h3]:text-tp-ink [&_strong]:text-tp-ink [&_a]:text-tp-bronze-ink [&_a]:underline">
@@ -52,23 +52,22 @@ export default function RefundPolicyPage() {
           <h2>Quality Commitment</h2>
           <p>
             We are committed to delivering studio-quality results. If you are not satisfied
-            with your AI-generated headshots, we offer the following remedies:
+            with your AI-generated headshots, the following remedies are available:
           </p>
           <ul className="list-disc space-y-2 pl-5">
             <li>
-              <strong>Regeneration at no extra cost:</strong> You may regenerate photos within
-              your purchased package at no extra cost. The number of regenerations depends on your package tier.
+              <strong>One (1) complimentary retry:</strong> If you are not satisfied with your
+              initial results, you are entitled to exactly one (1) free regeneration using your
+              original uploaded photos. This retry is your sole and exclusive remedy.
             </li>
             <li>
-              <strong>Dedicated support:</strong> If the results do not meet your expectations
-              after regeneration, contact our support team at{' '}
-              <a href={`mailto:${siteConfig.supportEmail}`}>{siteConfig.supportEmail}</a> and
-              we will work with you to resolve the issue.
+              <strong>Dedicated support:</strong> You may contact our support team at{' '}
+              <a href={`mailto:${siteConfig.supportEmail}`}>{siteConfig.supportEmail}</a> for
+              assistance. Support does not include monetary refunds.
             </li>
             <li>
-              <strong>Technical failures:</strong> If we are unable to deliver any results due
-              to a confirmed technical failure on our side, we will re-process your order at no
-              additional cost.
+              <strong>Technical failures:</strong> Free re-processing is provided only for
+              confirmed technical failures on TailorPic&apos;s side.
             </li>
           </ul>
 
@@ -79,11 +78,22 @@ export default function RefundPolicyPage() {
           </p>
           <ul className="list-disc space-y-2 pl-5">
             <li>
-              <strong>No refunds after processing begins:</strong> Once AI processing has
-              started (which occurs immediately after payment), no monetary refund,
-              chargeback, credit, or compensation will be issued. This applies regardless of
-              the reason, including dissatisfaction with results, change of mind, or accidental
-              purchase.
+              <strong>No refunds, no chargebacks, no credits, no monetary compensation:</strong>{' '}
+              Processing begins immediately upon payment. Once processing begins, no refund,
+              chargeback, credit, or monetary compensation of any kind will be issued, regardless
+              of the reason, including change of mind or accidental purchase.
+            </li>
+            <li>
+              <strong>One free retry is the only remedy:</strong> The one (1) complimentary retry
+              described above is the only remedy available.
+            </li>
+            <li>
+              <strong>Dissatisfaction is not grounds for a refund:</strong> Dissatisfaction with
+              AI-generated results is not grounds for a refund.
+            </li>
+            <li>
+              <strong>Chargebacks:</strong> Any chargeback initiated after agreeing to these
+              terms may result in account suspension and collection of associated fees.
             </li>
             <li>
               <strong>Right of withdrawal waiver:</strong> By confirming your purchase, you
@@ -111,23 +121,36 @@ export default function RefundPolicyPage() {
               <tbody className="divide-y divide-tp-line">
                 <tr>
                   <td className="py-3 pr-4">Not happy with results</td>
-                  <td className="py-3">Free regeneration within your package</td>
-                </tr>
-                <tr>
-                  <td className="py-3 pr-4">Still unsatisfied after regeneration</td>
-                  <td className="py-3">Dedicated support to find a resolution</td>
+                  <td className="py-3">One (1) complimentary retry — your sole remedy</td>
                 </tr>
                 <tr>
                   <td className="py-3 pr-4">Technical failure on our side</td>
-                  <td className="py-3">Free re-processing of your order</td>
+                  <td className="py-3">Free re-processing</td>
                 </tr>
                 <tr>
                   <td className="py-3 pr-4">Change of mind / accidental purchase</td>
-                  <td className="py-3">No refund once processing has begun</td>
+                  <td className="py-3">No refund — processing begins immediately</td>
+                </tr>
+                <tr>
+                  <td className="py-3 pr-4">After your free retry</td>
+                  <td className="py-3">Dedicated support (no monetary refunds)</td>
                 </tr>
               </tbody>
             </table>
           </div>
+
+          <h2>Chargeback Policy</h2>
+          <p>
+            By completing a purchase, you confirm that you have read and agreed to these terms,
+            including the immediate start of processing and the absence of refunds.
+          </p>
+          <ul className="list-disc space-y-2 pl-5">
+            <li>Unauthorized chargebacks may result in account termination.</li>
+            <li>
+              TailorPic reserves the right to dispute any chargeback and to recover associated
+              fees.
+            </li>
+          </ul>
 
           <h2>Contact Us</h2>
           <p>

@@ -25,7 +25,7 @@ export default function TermsPage() {
         ]}
       />
       <h1>Terms of Service</h1>
-      <p className="lead">Last updated: October 7, 2026</p>
+      <p className="lead">Last updated: October 21, 2026</p>
 
       <p>
         These Terms of Service (&quot;Terms&quot;) govern your use of TailorPic (&quot;Service&quot;),
@@ -96,7 +96,7 @@ export default function TermsPage() {
         </li>
         <li>
           <strong>No refunds after processing begins:</strong> Once AI processing has started (which occurs
-          immediately after payment), no refund, chargeback, credit, or compensation will be issued,
+          immediately after payment), no refund, chargeback, credit, or monetary compensation will be issued,
           regardless of the reason — including but not limited to dissatisfaction with AI-generated results,
           internet or service interruption, browser or device malfunction, session timeout, accidental purchase,
           change of mind, or any other technical or personal circumstance.
@@ -109,12 +109,19 @@ export default function TermsPage() {
         <li>
           <strong>Technical failures on our end:</strong> If we are unable to deliver any results due to a
           confirmed technical failure solely on our side (not related to your internet connection, browser,
-          or device), we will re-process your order at no additional cost. This is the sole remedy available.
+          or device), we will re-process your order at no additional cost.
         </li>
         <li>
-          <strong>Chargebacks:</strong> Filing a fraudulent chargeback after expressly consenting to
-          immediate processing constitutes a breach of these Terms and may result in account suspension
-          and pursuit of the disputed amount.
+          <strong>One free retry as sole remedy:</strong> If you are not satisfied with your initial results,
+          you are entitled to exactly one (1) complimentary regeneration using your original uploaded photos.
+          This retry is your sole and exclusive remedy for dissatisfaction with AI-generated results. Support
+          is available for assistance but does not include monetary refunds.
+        </li>
+        <li>
+          <strong>Chargebacks:</strong> By completing a purchase, you agree to these terms. Any chargeback
+          initiated after agreeing to them may result in account suspension or termination and collection of
+          associated fees, and TailorPic reserves the right to dispute any chargeback and recover the disputed
+          amount and associated fees.
         </li>
       </ul>
 
