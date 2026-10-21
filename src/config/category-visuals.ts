@@ -171,7 +171,7 @@ export const homeBeforeAfterPairs: HomeBeforeAfter[] = [
   },
 ];
 
-/** Dedicated before/after page — 7 real pairs showing diverse transformations. */
+/** Dedicated before/after page — 9 real pairs showing diverse transformations. */
 export const dedicatedBeforeAfterPairs: HomeBeforeAfter[] = [
   {
     label: 'LinkedIn Profile',
@@ -236,13 +236,31 @@ export const dedicatedBeforeAfterPairs: HomeBeforeAfter[] = [
       'Professional AI headshot for business marketing',
     ),
   },
+  {
+    label: 'Optician Executive',
+    detail: 'Board member, Ferruh Filiz Optik',
+    ...realBeforeAfter(
+      'before-tarkan-1.jpg', 'after-tarkan.jpg',
+      'Casual photo before AI processing',
+      'Professional AI headshot for an executive profile',
+    ),
+  },
+  {
+    label: 'Real Estate Professional',
+    detail: 'Real estate management',
+    ...realBeforeAfter(
+      'before-mustafa-1.jpg', 'after-mustafa.jpg',
+      'Casual photo before AI processing',
+      'Professional AI headshot for real estate',
+    ),
+  },
 ];
 
 /** Extra brand portraits usable in galleries (samples page). */
 export const brandPortraits = {
-  manAfter: portraitAsset('photo-1507003211169-0a1dd7228f2d', 'AI-generated executive portrait of a man'),
-  manEditorial: portraitAsset('photo-1560250097-0b93528c311a', 'AI-generated editorial portrait of a man'),
-  womanAfter: portraitAsset('photo-1580489944761-15a19d654956', 'AI-generated studio portrait of a woman'),
+  manAfter: asset(`${BRAND_WEB}/after-murat.jpg`, 'AI-generated executive portrait', POS.portrait),
+  manEditorial: asset(`${BRAND_WEB}/after-ahmet.jpg`, 'AI-generated editorial portrait', POS.portrait),
+  womanAfter: asset(`${BRAND_WEB}/after-ozlem.jpg`, 'AI-generated studio portrait', POS.portrait),
   womanEditorial: homeHero,
 } as const;
 
@@ -262,17 +280,17 @@ export const blogDefaults = {
 export const categoryVisuals: Record<string, CategoryVisuals> = {
   /* ------ headshots: corporate professionals ------ */
   headshots: {
-    megaMenu: squareAsset('photo-1573496359142-b8d87734a5a2', 'Professional woman in navy blazer'),
-    quickCard: landscapeAsset('photo-1560250097-0b93528c311a', 'Businessman in dark suit'),
-    heroDesktop: portraitAsset('photo-1573496359142-b8d87734a5a2', 'Professional woman in navy blazer'),
-    heroMobile: portraitAsset('photo-1573496359142-b8d87734a5a2', 'Professional woman in navy blazer'),
+    megaMenu: asset(`${BRAND_WEB}/after-ozlem.jpg`, 'Professional AI headshot', POS.portrait),
+    quickCard: asset(`${BRAND_WEB}/after-murat.jpg`, 'Professional AI headshot', POS.portrait),
+    heroDesktop: asset(`${BRAND_WEB}/after-ozlem.jpg`, 'Professional AI headshot', POS.portrait),
+    heroMobile: asset(`${BRAND_WEB}/after-ozlem.jpg`, 'Professional AI headshot', POS.portrait),
     gallery: [
-      portraitAsset('photo-1580489944761-15a19d654956', 'Confident woman in professional attire'),
-      portraitAsset('photo-1507003211169-0a1dd7228f2d', 'Man with warm smile in casual business wear'),
-      portraitAsset('photo-1494790108377-be9c29b29330', 'Young professional woman with blonde hair'),
-      portraitAsset('photo-1472099645785-5658abf4ff4e', 'Professional man with glasses'),
-      portraitAsset('photo-1519085360753-af0119f7cbe7', 'Young man in crisp white shirt'),
-      portraitAsset('photo-1438761681033-6461ffad8d80', 'Mature professional woman'),
+      asset(`${BRAND_WEB}/after-ozlem.jpg`, 'Professional AI headshot', POS.portrait),
+      asset(`${BRAND_WEB}/after-murat.jpg`, 'Professional AI headshot for corporate use', POS.portrait),
+      asset(`${BRAND_WEB}/after-ahmet.jpg`, 'Executive AI headshot', POS.portrait),
+      asset(`${BRAND_WEB}/after-tarkan.jpg`, 'Professional AI headshot for business', POS.portrait),
+      asset(`${BRAND_WEB}/after-mustafa.jpg`, 'Professional AI headshot for real estate', POS.portrait),
+      asset(`${BRAND_WEB}/after-alpaslan.jpg`, 'Professional AI headshot', POS.portrait),
     ],
     beforeAfter: realBeforeAfter(
       'before-ozlem-1.jpg', 'after-ozlem.jpg',
@@ -283,17 +301,17 @@ export const categoryVisuals: Record<string, CategoryVisuals> = {
 
   /* ------ dating: approachable, natural portraits ------ */
   dating: {
-    megaMenu: squareAsset('photo-1534528741775-53994a69daeb', 'Woman with natural hairstyle'),
-    quickCard: landscapeAsset('photo-1539571696357-5a69c17a67c6', 'Relaxed man in casual wear'),
-    heroDesktop: portraitAsset('photo-1534528741775-53994a69daeb', 'Woman with natural hairstyle'),
-    heroMobile: portraitAsset('photo-1534528741775-53994a69daeb', 'Woman with natural hairstyle'),
+    megaMenu: asset(`${BRAND_WEB}/after-mert.jpg`, 'AI-enhanced dating profile photo', POS.portrait),
+    quickCard: asset(`${BRAND_WEB}/after-ozan.jpg`, 'AI-enhanced casual portrait', POS.portrait),
+    heroDesktop: asset(`${BRAND_WEB}/after-mert.jpg`, 'AI-enhanced dating profile photo', POS.portrait),
+    heroMobile: asset(`${BRAND_WEB}/after-mert.jpg`, 'AI-enhanced dating profile photo', POS.portrait),
     gallery: [
-      portraitAsset('photo-1517841905240-472988babdf9', 'Creative professional woman'),
-      portraitAsset('photo-1506794778202-cad84cf45f1d', 'Young man with creative style'),
-      portraitAsset('photo-1488426862026-3ee34a7d66df', 'Woman with bright creative expression'),
-      portraitAsset('photo-1552374196-c4e7ffc6e126', 'Man with relaxed confident pose'),
-      portraitAsset('photo-1524504388940-b1c1722653e1', 'Man with creative casual look'),
-      portraitAsset('photo-1531746020798-e6953c6e8e04', 'Woman with artistic style'),
+      asset(`${BRAND_WEB}/after-mert.jpg`, 'AI-enhanced dating profile photo', POS.portrait),
+      asset(`${BRAND_WEB}/after-ozan.jpg`, 'Casual AI portrait for dating profiles', POS.portrait),
+      asset(`${BRAND_WEB}/after-halil.jpg`, 'Warm AI portrait for dating profiles', POS.portrait),
+      asset(`${BRAND_WEB}/after-mustafa.jpg`, 'Approachable AI portrait', POS.portrait),
+      asset(`${BRAND_WEB}/after-tarkan.jpg`, 'Confident AI portrait for dating', POS.portrait),
+      asset(`${BRAND_WEB}/after-alpaslan.jpg`, 'Professional AI portrait', POS.portrait),
     ],
     beforeAfter: realBeforeAfter(
       'before-mert-1.jpg', 'after-mert.jpg',
@@ -307,17 +325,17 @@ export const categoryVisuals: Record<string, CategoryVisuals> = {
 
   /* ------ linkedin-team: corporate team members ------ */
   'linkedin-team': {
-    megaMenu: squareAsset('photo-1522075469751-3a6694fb2f61', 'Professional in team environment'),
-    quickCard: landscapeAsset('photo-1580894732444-8ecded7900cd', 'Team member with friendly smile'),
-    heroDesktop: portraitAsset('photo-1522075469751-3a6694fb2f61', 'Professional in team environment'),
-    heroMobile: portraitAsset('photo-1522075469751-3a6694fb2f61', 'Professional in team environment'),
+    megaMenu: asset(`${BRAND_WEB}/after-murat.jpg`, 'Professional AI team headshot', POS.portrait),
+    quickCard: asset(`${BRAND_WEB}/after-ahmet.jpg`, 'Team member AI headshot', POS.portrait),
+    heroDesktop: asset(`${BRAND_WEB}/after-murat.jpg`, 'Professional AI team headshot', POS.portrait),
+    heroMobile: asset(`${BRAND_WEB}/after-murat.jpg`, 'Professional AI team headshot', POS.portrait),
     gallery: [
-      portraitAsset('photo-1530268729831-4b0b9e170218', 'Professional woman in modern office'),
-      portraitAsset('photo-1487412720507-e7ab37603c6f', 'Woman professional at work'),
-      portraitAsset('photo-1542190891-2093d38760f2', 'Professional with confident stance'),
-      portraitAsset('photo-1508214751196-bcfd4ca60f91', 'Elegant professional woman'),
-      portraitAsset('photo-1566492031773-4f4e44671857', 'Distinguished man in suit'),
-      portraitAsset('photo-1545167622-3a6ac756afa4', 'Young professional with modern style'),
+      asset(`${BRAND_WEB}/after-murat.jpg`, 'Professional AI team headshot', POS.portrait),
+      asset(`${BRAND_WEB}/after-ozlem.jpg`, 'AI headshot for team page', POS.portrait),
+      asset(`${BRAND_WEB}/after-ahmet.jpg`, 'Executive AI team headshot', POS.portrait),
+      asset(`${BRAND_WEB}/after-ozan.jpg`, 'Modern AI team headshot', POS.portrait),
+      asset(`${BRAND_WEB}/after-halil.jpg`, 'Professional AI team headshot', POS.portrait),
+      asset(`${BRAND_WEB}/after-alpaslan.jpg`, 'Corporate AI team headshot', POS.portrait),
     ],
     beforeAfter: realBeforeAfter(
       'before-murat-1.jpg', 'after-murat.jpg',
@@ -331,17 +349,17 @@ export const categoryVisuals: Record<string, CategoryVisuals> = {
 
   /* ------ graduation: fresh, youthful portraits ------ */
   graduation: {
-    megaMenu: squareAsset('photo-1548142813-c348350df52b', 'Young woman in sophisticated look'),
-    quickCard: landscapeAsset('photo-1603415526960-f7e0328c63b1', 'Man with professional headshot look'),
-    heroDesktop: portraitAsset('photo-1548142813-c348350df52b', 'Young woman in sophisticated look'),
-    heroMobile: portraitAsset('photo-1548142813-c348350df52b', 'Young woman in sophisticated look'),
+    megaMenu: asset(`${BRAND_WEB}/after-ozan.jpg`, 'AI graduation portrait', POS.portrait),
+    quickCard: asset(`${BRAND_WEB}/after-mert.jpg`, 'AI graduation headshot', POS.portrait),
+    heroDesktop: asset(`${BRAND_WEB}/after-ozan.jpg`, 'AI graduation portrait', POS.portrait),
+    heroMobile: asset(`${BRAND_WEB}/after-ozan.jpg`, 'AI graduation portrait', POS.portrait),
     gallery: [
-      portraitAsset('photo-1567532939604-b6b5b0db2604', 'Professional woman headshot'),
-      portraitAsset('photo-1557862921-37829c790f19', 'Man in professional portrait'),
-      portraitAsset('photo-1551836022-d5d88e9218df', 'Woman with professional corporate look'),
-      portraitAsset('photo-1568602471122-7832951cc4c5', 'Young man in smart casual'),
-      portraitAsset('photo-1573497019940-1c28c88b4f3e', 'Woman in professional setting'),
-      portraitAsset('photo-1556157382-97ede2916cd2', 'Professional in formal business attire'),
+      asset(`${BRAND_WEB}/after-ozan.jpg`, 'AI graduation portrait', POS.portrait),
+      asset(`${BRAND_WEB}/after-mert.jpg`, 'AI graduation headshot', POS.portrait),
+      asset(`${BRAND_WEB}/after-halil.jpg`, 'AI graduation portrait', POS.portrait),
+      asset(`${BRAND_WEB}/after-mustafa.jpg`, 'Professional AI graduation photo', POS.portrait),
+      asset(`${BRAND_WEB}/after-murat.jpg`, 'AI graduation portrait', POS.portrait),
+      asset(`${BRAND_WEB}/after-tarkan.jpg`, 'AI graduation headshot', POS.portrait),
     ],
     beforeAfter: realBeforeAfter(
       'before-ozan-1.jpg', 'after-ozan.jpg',
@@ -401,16 +419,16 @@ export const categoryVisuals: Record<string, CategoryVisuals> = {
 
   /* ------ avatars: diverse creative faces ------ */
   avatars: {
-    megaMenu: squareAsset('photo-1559839734-2b71ea197ec2', 'Portrait with professional styling'),
-    quickCard: landscapeAsset('photo-1612349317150-e413f6a5b16d', 'Portrait with creative styling'),
-    heroDesktop: portraitAsset('photo-1559839734-2b71ea197ec2', 'Portrait with professional styling'),
-    heroMobile: portraitAsset('photo-1559839734-2b71ea197ec2', 'Portrait with professional styling'),
+    megaMenu: asset(`${BRAND_WEB}/after-alpaslan.jpg`, 'AI avatar portrait', POS.portrait),
+    quickCard: asset(`${BRAND_WEB}/after-mert.jpg`, 'AI avatar portrait', POS.portrait),
+    heroDesktop: asset(`${BRAND_WEB}/after-alpaslan.jpg`, 'AI avatar portrait', POS.portrait),
+    heroMobile: asset(`${BRAND_WEB}/after-alpaslan.jpg`, 'AI avatar portrait', POS.portrait),
     gallery: [
-      portraitAsset('photo-1622253692010-333f2da6031d', 'Portrait for avatar generation'),
-      portraitAsset('photo-1573496799652-408c2ac9fe98', 'Woman portrait for avatar styling'),
-      portraitAsset('photo-1519345182560-3f2917c472ef', 'Man portrait for avatar transformation'),
-      portraitAsset('photo-1544005313-94ddf0286df2', 'Woman with warm expression for avatar'),
-      portraitAsset('photo-1559839734-2b71ea197ec2', 'Portrait with versatile styling'),
+      asset(`${BRAND_WEB}/after-alpaslan.jpg`, 'AI avatar portrait', POS.portrait),
+      asset(`${BRAND_WEB}/after-mert.jpg`, 'AI avatar for creative use', POS.portrait),
+      asset(`${BRAND_WEB}/after-ozan.jpg`, 'AI avatar portrait', POS.portrait),
+      asset(`${BRAND_WEB}/after-tarkan.jpg`, 'AI avatar portrait', POS.portrait),
+      asset(`${BRAND_WEB}/after-halil.jpg`, 'AI avatar portrait', POS.portrait),
     ],
     beforeAfter: realBeforeAfter(
       'before-alpaslan-1.jpg', 'after-alpaslan.jpg',

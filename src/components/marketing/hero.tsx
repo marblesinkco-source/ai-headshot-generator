@@ -7,7 +7,6 @@ import { getActiveCategories, FEATURED_CATEGORIES } from '@/config/categories';
 import { BASE_PRICE_DISPLAY, BASE_PRICE_LABEL } from '@/config/pricing';
 import { HeroPattern } from '@/components/marketing/illustrations';
 import { homeHero, categoryVisuals } from '@/config/category-visuals';
-import { portrait } from '@/config/stock-portraits';
 import { useAnalytics } from '@/hooks/use-analytics';
 
 const categories = getActiveCategories();
@@ -15,24 +14,26 @@ const quickCategories = categories.filter((c) =>
   FEATURED_CATEGORIES.includes(c.id)
 ).slice(0, 6);
 
-/* Floating thumbnail data — diverse AI-concept portraits around the hero image */
+const BRAND_WEB = '/brand/tailorpic/web';
+
+/* Floating thumbnail data — real AI headshot results around the hero image */
 const floatingThumbs = [
-  { id: 'photo-1580489944761-15a19d654956', alt: 'AI headshot concept — professional woman', style: 'LinkedIn', x: '-12%', y: '8%', size: 72, r: '-3deg', d: '4.2s', delay: '0s', floatY: '-7px' },
-  { id: 'photo-1507003211169-0a1dd7228f2d', alt: 'AI headshot concept — corporate man', style: 'Corporate', x: '-8%', y: '62%', size: 64, r: '2deg', d: '5.1s', delay: '0.8s', floatY: '-5px' },
-  { id: 'photo-1531746020798-e6953c6e8e04', alt: 'AI headshot concept — creative portrait', style: 'Creative', x: '88%', y: '18%', size: 68, r: '3deg', d: '4.6s', delay: '0.4s', floatY: '-8px' },
-  { id: 'photo-1573496359142-b8d87734a5a2', alt: 'AI headshot concept — business woman', style: 'Business', x: '92%', y: '70%', size: 60, r: '-2deg', d: '5.4s', delay: '1.2s', floatY: '-6px' },
+  { src: `${BRAND_WEB}/after-ozlem.jpg`, alt: 'AI headshot — professional portrait', style: 'LinkedIn', x: '-12%', y: '8%', size: 72, r: '-3deg', d: '4.2s', delay: '0s', floatY: '-7px' },
+  { src: `${BRAND_WEB}/after-murat.jpg`, alt: 'AI headshot — corporate portrait', style: 'Corporate', x: '-8%', y: '62%', size: 64, r: '2deg', d: '5.1s', delay: '0.8s', floatY: '-5px' },
+  { src: `${BRAND_WEB}/after-tarkan.jpg`, alt: 'AI headshot — executive portrait', style: 'Creative', x: '88%', y: '18%', size: 68, r: '3deg', d: '4.6s', delay: '0.4s', floatY: '-8px' },
+  { src: `${BRAND_WEB}/after-mustafa.jpg`, alt: 'AI headshot — business portrait', style: 'Business', x: '92%', y: '70%', size: 60, r: '-2deg', d: '5.4s', delay: '1.2s', floatY: '-6px' },
 ];
 
-/* Style gallery marquee items — showcasing variety of AI headshot styles */
+/* Style gallery marquee items — real AI headshot results showcasing variety */
 const marqueeItems = [
-  { id: 'photo-1580489944761-15a19d654956', label: 'LinkedIn Profile' },
-  { id: 'photo-1507003211169-0a1dd7228f2d', label: 'Corporate' },
-  { id: 'photo-1531746020798-e6953c6e8e04', label: 'Creative' },
-  { id: 'photo-1573496359142-b8d87734a5a2', label: 'Business' },
-  { id: 'photo-1519085360753-af0119f7cbe7', label: 'Executive' },
-  { id: 'photo-1534528741775-53994a69daeb', label: 'Fashion' },
-  { id: 'photo-1506794778202-cad84cf45f1d', label: 'Modern' },
-  { id: 'photo-1472099645785-5658abf4ff4e', label: 'Casual Pro' },
+  { src: `${BRAND_WEB}/after-ozlem.jpg`, label: 'LinkedIn Profile' },
+  { src: `${BRAND_WEB}/after-murat.jpg`, label: 'Corporate' },
+  { src: `${BRAND_WEB}/after-ahmet.jpg`, label: 'Creative' },
+  { src: `${BRAND_WEB}/after-tarkan.jpg`, label: 'Business' },
+  { src: `${BRAND_WEB}/after-mustafa.jpg`, label: 'Executive' },
+  { src: `${BRAND_WEB}/after-alpaslan.jpg`, label: 'Modern' },
+  { src: `${BRAND_WEB}/after-mert.jpg`, label: 'Fashion' },
+  { src: `${BRAND_WEB}/after-ozan.jpg`, label: 'Casual Pro' },
 ];
 
 const rotatingWords = ['LinkedIn', 'Business', 'Dating', 'Creative', 'Corporate'] as const;
@@ -200,7 +201,7 @@ export function Hero() {
               {/* Floating style thumbnails — desktop only */}
               {floatingThumbs.map((thumb) => (
                 <div
-                  key={thumb.id}
+                  key={thumb.src}
                   className="tp-float-thumb hidden lg:block absolute z-20 group"
                   style={{
                     left: thumb.x,
@@ -217,7 +218,7 @@ export function Hero() {
                     style={{ width: thumb.size, height: thumb.size }}
                   >
                     <Image
-                      src={portrait(thumb.id)}
+                      src={thumb.src}
                       alt={thumb.alt}
                       width={thumb.size * 2}
                       height={thumb.size * 2}
@@ -248,10 +249,10 @@ export function Hero() {
             <div className="tp-marquee-track" aria-hidden="true">
               {/* Duplicate items for seamless loop */}
               {[...marqueeItems, ...marqueeItems].map((item, idx) => (
-                <div key={`${item.id}-${idx}`} className="flex-shrink-0 mx-3 flex flex-col items-center gap-2">
+                <div key={`${item.src}-${idx}`} className="flex-shrink-0 mx-3 flex flex-col items-center gap-2">
                   <div className="w-[72px] h-[90px] sm:w-[80px] sm:h-[100px] overflow-hidden rounded-lg border border-tp-line bg-tp-beige shadow-sm">
                     <Image
-                      src={portrait(item.id)}
+                      src={item.src}
                       alt={item.label}
                       width={160}
                       height={200}
