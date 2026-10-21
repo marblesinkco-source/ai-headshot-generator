@@ -80,7 +80,12 @@ Headshots ladder in `src/config/categories.ts` (order matters — some pages ind
 - Team pricing: `TEAM_PRICES` ($39/person 5–15, $29/person 16–50).
 - Entry-tier detection in UI is "cheapest package in the category", not `name === 'Express'`.
 
-## 7. Known gotchas
+## 7. Protected pages & PR workflow
+
+- **Do NOT modify** `/about` (`src/app/(marketing)/about/page.tsx`) or any `/vs/*` page (`src/app/(marketing)/vs/*/page.tsx`) without explicit owner approval. These pages were recently audited and verified; uncoordinated edits have already caused duplicate-route build failures.
+- **All changes must go through a Pull Request** — do not push directly to `main`. Open a PR, let CI pass, and wait for review. Direct pushes to `main` risk breaking the live site and conflicting with other sessions.
+
+## 8. Known gotchas
 
 - `vercel.json` crons call `/api/emails/upgrade` and `/api/cron/retry-stuck` with **GET**; route handlers must export `GET` (not only `POST`) and `dynamic = 'force-dynamic'`.
 - No `package-lock.json` is committed; CI falls back to `npm install`. Commit a lockfile when npm is reachable.
