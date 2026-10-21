@@ -286,7 +286,7 @@ export const categoryVisuals: Record<string, CategoryVisuals> = {
   },
 
   /* ------ pet-portraits (non-people, local image) ------ */
-  'pet-portraits': fromLocalBase('pet-portraits', 'Two golden retriever puppies sitting on grass with orange flowers', POS.pet),
+  'pet-portraits': fromLocalBase('pet-portraits', 'Woman holding a tabby cat in her arms — real TailorPic customer Işık Bulut', POS.pet),
 
   /* ------ linkedin-team: corporate team members ------ */
   'linkedin-team': {

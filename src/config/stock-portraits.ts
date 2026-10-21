@@ -131,6 +131,11 @@ export const STOCK_PORTRAITS: StockPortrait[] = [
   // Founders
   { id: `${BRAND_WEB}/founder-mert.jpg`, label: 'Founder portrait', category: 'corporate' },
   { id: `${BRAND_WEB}/founder-murat.jpg`, label: 'Co-founder portrait', category: 'corporate' },
+
+  // Pet Portraits — real customer Işık Bulut with her cat
+  { id: `${BRAND_WEB}/pet-isik-1.jpg`, label: 'Woman holding a tabby cat lovingly', category: 'pet' },
+  { id: `${BRAND_WEB}/pet-isik-2.jpg`, label: 'Tabby cat looking content in owners arms', category: 'pet' },
+  { id: `${BRAND_WEB}/pet-isik-3.jpg`, label: 'Cat looking at camera with owner', category: 'pet' },
 ];
 
 /* ------------------------------------------------------------------ */
