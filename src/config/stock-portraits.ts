@@ -11,6 +11,9 @@
 
 const BRAND_WEB = '/brand/tailorpic/web';
 
+/** Cache-busting version — increment when brand images are updated */
+const BRAND_IMG_VERSION = '2';
+
 /* ------------------------------------------------------------------ */
 /*  Helpers                                                            */
 /* ------------------------------------------------------------------ */
@@ -30,7 +33,7 @@ function unsplash(
  * This allows gradual migration without touching 60+ consumer files.
  */
 function resolve(photoId: string, w: number, h: number, crop: string = 'face'): string {
-  if (photoId.startsWith('/')) return photoId;
+  if (photoId.startsWith('/')) return `${photoId}?v=${BRAND_IMG_VERSION}`;
   return unsplash(photoId, w, h, crop);
 }
 

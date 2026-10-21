@@ -99,24 +99,27 @@ const qualityBadges = [
   { icon: ShieldCheck, label: 'Commercial License' },
 ];
 
+/** Cache-busting version — increment when brand images are updated */
+const V = '?v=2';
+
 const styleGroupImages: Record<string, SampleImage[]> = {
   Corporate: [
-    { src: `${BRAND_WEB}/after-ozlem.jpg`, alt: 'AI-generated corporate portrait — professional attire' },
-    { src: `${BRAND_WEB}/after-murat.jpg`, alt: 'AI-generated corporate portrait — business style' },
-    { src: `${BRAND_WEB}/after-tarkan.jpg`, alt: 'AI-generated corporate portrait — executive style' },
+    { src: `${BRAND_WEB}/after-ozlem.jpg${V}`, alt: 'AI-generated corporate portrait — professional attire' },
+    { src: `${BRAND_WEB}/after-murat.jpg${V}`, alt: 'AI-generated corporate portrait — business style' },
+    { src: `${BRAND_WEB}/after-tarkan.jpg${V}`, alt: 'AI-generated corporate portrait — executive style' },
   ],
   Creative: [
-    { src: `${BRAND_WEB}/after-alpaslan.jpg`, alt: 'AI-generated creative portrait — artistic style' },
-    { src: `${BRAND_WEB}/after-mert.jpg`, alt: 'AI-generated creative portrait — editorial style' },
+    { src: `${BRAND_WEB}/after-alpaslan.jpg${V}`, alt: 'AI-generated creative portrait — artistic style' },
+    { src: `${BRAND_WEB}/after-mert.jpg${V}`, alt: 'AI-generated creative portrait — editorial style' },
   ],
   Casual: [
-    { src: `${BRAND_WEB}/after-ozan.jpg`, alt: 'AI-generated casual portrait — natural setting' },
-    { src: `${BRAND_WEB}/after-halil.jpg`, alt: 'AI-generated casual portrait — relaxed style' },
+    { src: `${BRAND_WEB}/after-ozan.jpg${V}`, alt: 'AI-generated casual portrait — natural setting' },
+    { src: `${BRAND_WEB}/after-halil.jpg${V}`, alt: 'AI-generated casual portrait — relaxed style' },
     { src: `${BRAND_WEB}/family-unver-group.jpg`, alt: 'Family portrait — warm candid style' },
   ],
   Academic: [
-    { src: `${BRAND_WEB}/after-ahmet.jpg`, alt: 'AI-generated academic portrait — modern style' },
-    { src: `${BRAND_WEB}/after-mustafa.jpg`, alt: 'AI-generated academic portrait — classic style' },
+    { src: `${BRAND_WEB}/after-ahmet.jpg${V}`, alt: 'AI-generated academic portrait — modern style' },
+    { src: `${BRAND_WEB}/after-mustafa.jpg${V}`, alt: 'AI-generated academic portrait — classic style' },
   ],
 };
 

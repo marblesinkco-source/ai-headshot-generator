@@ -53,9 +53,14 @@ const POS = {
 const CATEGORY_IMG = '/images/categories';
 const BRAND_WEB = '/brand/tailorpic/web';
 
+/** Cache-busting version — increment when brand images are updated */
+const BRAND_IMG_V = '2';
+
 function asset(src: string, alt: string, pos: Pos): ImageAsset {
+  // Add cache-busting for brand images
+  const finalSrc = src.startsWith(BRAND_WEB) ? `${src}?v=${BRAND_IMG_V}` : src;
   return {
-    src,
+    src: finalSrc,
     alt,
     desktopObjectPosition: pos.desktop,
     mobileObjectPosition: pos.mobile,

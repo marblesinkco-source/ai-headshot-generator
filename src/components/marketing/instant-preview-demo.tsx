@@ -9,32 +9,35 @@ import { Camera, Sparkles, ArrowRight } from 'lucide-react';
 /*  AI Headshot style showcase — no client-side processing             */
 /* ------------------------------------------------------------------ */
 
+/** Cache-busting version — increment when brand images are updated */
+const V = '?v=2';
+
 const STYLE_CATEGORIES = [
   {
     name: 'Professional',
     description: 'Clean, polished headshots for LinkedIn and resumes',
     samples: [
-      { src: '/brand/tailorpic/web/after-ozlem.jpg', alt: 'AI headshot — professional style' },
-      { src: '/brand/tailorpic/web/after-murat.jpg', alt: 'AI headshot — professional style' },
-      { src: '/brand/tailorpic/web/after-ahmet.jpg', alt: 'AI headshot — professional style' },
+      { src: `/brand/tailorpic/web/after-ozlem.jpg${V}`, alt: 'AI headshot — professional style' },
+      { src: `/brand/tailorpic/web/after-murat.jpg${V}`, alt: 'AI headshot — professional style' },
+      { src: `/brand/tailorpic/web/after-ahmet.jpg${V}`, alt: 'AI headshot — professional style' },
     ],
   },
   {
     name: 'Corporate',
     description: 'Formal business headshots for company directories',
     samples: [
-      { src: '/brand/tailorpic/web/after-mert.jpg', alt: 'AI headshot — corporate style' },
-      { src: '/brand/tailorpic/web/after-halil.jpg', alt: 'AI headshot — corporate style' },
-      { src: '/brand/tailorpic/web/after-alpaslan.jpg', alt: 'AI headshot — corporate style' },
+      { src: `/brand/tailorpic/web/after-mert.jpg${V}`, alt: 'AI headshot — corporate style' },
+      { src: `/brand/tailorpic/web/after-halil.jpg${V}`, alt: 'AI headshot — corporate style' },
+      { src: `/brand/tailorpic/web/after-alpaslan.jpg${V}`, alt: 'AI headshot — corporate style' },
     ],
   },
   {
     name: 'Creative',
     description: 'Expressive headshots for portfolios and social media',
     samples: [
-      { src: '/brand/tailorpic/web/after-tarkan.jpg', alt: 'AI headshot — creative style' },
-      { src: '/brand/tailorpic/web/after-ozan.jpg', alt: 'AI headshot — creative style' },
-      { src: '/brand/tailorpic/web/after-mustafa.jpg', alt: 'AI headshot — creative style' },
+      { src: `/brand/tailorpic/web/after-tarkan.jpg${V}`, alt: 'AI headshot — creative style' },
+      { src: `/brand/tailorpic/web/after-ozan.jpg${V}`, alt: 'AI headshot — creative style' },
+      { src: `/brand/tailorpic/web/after-mustafa.jpg${V}`, alt: 'AI headshot — creative style' },
     ],
   },
 ];
