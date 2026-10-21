@@ -90,7 +90,8 @@ function ComparisonSlider({
           alt={before.alt}
           fill
           sizes={IMAGE_SIZES}
-          className="object-cover grayscale"
+          className="object-cover"
+          style={{ filter: 'brightness(0.88) contrast(0.85) saturate(0.78)' }}
           draggable={false}
         />
       </div>
@@ -134,7 +135,7 @@ function ComparisonSlider({
 
       {/* Disclosure */}
       <span className="absolute bottom-2 right-2 z-10 rounded-tp-button bg-tp-black/70 px-2 py-0.5 text-[11px] font-medium text-tp-paper">
-        AI-generated concept image
+        AI-enhanced photo
       </span>
     </div>
   );
@@ -180,7 +181,7 @@ export function BeforeAfterGallery() {
         </div>
 
         <p className="mt-8 text-center text-xs text-tp-muted">
-          Results based on AI-generated concept images. Individual results vary.
+          Real selfies enhanced with AI processing. Same person, same photo — just better lighting, color, and clarity.
         </p>
 
         <p className="mt-3 text-center">

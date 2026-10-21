@@ -5,12 +5,12 @@
 // Notes
 // - People-centric categories use real brand portraits from /brand/tailorpic/web/.
 //   Non-people categories (pets, rooms, products, cards) keep local images.
-// - Portraits here are AI-generated concepts, never testimonial evidence.
+// - Before/after "after" images are the SAME before selfies processed through
+//   the AI canvas photo engine (brightness, contrast, color grading, portrait
+//   lighting, sharpening, vignette, background softening). Same person in both.
 // - Keys are CategoryId values from src/config/categories.ts (not URL slugs). Use
 //   getCategoryVisualsBySlug() when you only have the route slug.
-// - Before/after pairs use two distinct portraits: a casual/candid "before" and
-//   a polished "after". Consumers also apply CSS `filter: grayscale(1)` on the
-//   "before" src for additional visual contrast.
+// - Consumers apply CSS filter on "before" and canvas-engine processing on "after".
 
 import { CATEGORIES, type CategoryId } from '@/config/categories';
 

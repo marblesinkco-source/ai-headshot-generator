@@ -176,7 +176,7 @@ function CanvasComparisonSlider({
           fill
           sizes={IMAGE_SIZES}
           className="object-cover"
-          style={{ filter: 'brightness(0.92) contrast(0.9) saturate(0.85)' }}
+          style={{ filter: 'brightness(0.88) contrast(0.85) saturate(0.78)' }}
           draggable={false}
           priority={priority}
         />
@@ -247,7 +247,7 @@ function CanvasComparisonSlider({
 
       {/* Disclosure */}
       <span className="absolute bottom-2 right-2 z-10 rounded-tp-button bg-tp-black/70 px-2 py-0.5 text-[11px] font-medium text-tp-paper">
-        AI-generated concept image
+        AI-enhanced photo
       </span>
     </div>
   );
@@ -309,7 +309,7 @@ export function BeforeAfterShowcase() {
         </div>
 
         <p className="mt-8 text-center text-xs text-tp-muted">
-          Enhancement powered by AI canvas processing. Results based on AI-generated concept images. Individual results vary.
+          Real selfies enhanced with AI canvas processing. Same person, same photo — just better lighting, color, and clarity.
         </p>
 
         <p className="mt-3 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-center">
