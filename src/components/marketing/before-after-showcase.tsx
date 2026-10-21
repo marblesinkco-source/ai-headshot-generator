@@ -7,6 +7,13 @@ import { homeBeforeAfterPairs } from '@/config/category-visuals';
 
 const IMAGE_SIZES = '(min-width: 768px) 30vw, 90vw';
 
+/* Transformation tags shown under each before/after card */
+const TRANSFORM_TAGS: Record<string, string[]> = {
+  'LinkedIn Profile': ['Background', 'Lighting', 'Attire'],
+  'Corporate Team': ['Background', 'Expression', 'Style'],
+  'Creative Portfolio': ['Background', 'Mood', 'Framing'],
+};
+
 /* ------------------------------------------------------------------ */
 /*  Interactive drag slider — pure React, no dependencies              */
 /* ------------------------------------------------------------------ */
