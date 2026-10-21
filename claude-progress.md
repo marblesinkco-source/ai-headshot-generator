@@ -1,5 +1,39 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-21 (No-Refund Policy, Analytics, Route Fix)
+
+### Tamamlanan Görevler
+
+1. **T2 — No-Refund Policy & Legal Consent** ✅ (commit 0f4f36fd)
+   - `/refund-policy` sayfası tam no-refund politikasıyla güncellendi (önceki oturumda)
+   - `/guarantee` route conflict düzeltildi: `src/app/guarantee/page.tsx` silindi, `src/app/(marketing)/guarantee/page.tsx` → redirect('/refund-policy')
+   - Canlı site doğrulaması: /refund-policy çalışıyor, /guarantee redirect ediyor ✅
+
+2. **T10 — Conversion Tracking / Analytics Events** ✅ (commit fcf0dc8d)
+   - `UploadClient.tsx`: 5 conversion event eklendi (category_selected, checkout_initiated, consent_accepted, photos_uploaded, generation_started)
+   - `pricing.tsx`: Pricing CTA click tracking eklendi
+   - `hero.tsx`: Hero CTA click tracking eklendi
+   - Mevcut `useAnalytics` hook kullanıldı (cookie consent'e saygılı)
+   - Canlı site doğrulaması: Homepage, pricing, upload sayfaları çalışıyor ✅
+
+3. **T12 — Odak Sadeleştirme** ✅ (değişiklik gerekmedi)
+   - Navigation zaten temiz: 3 ana link (How It Works, Examples, Pricing)
+   - Photo Types dropdown ile 12 kategori erişilebilir
+   - secondaryLinks ile ek sayfalar organize
+
+### CI/Vercel Durumu
+- CI: PASS ✅ (her iki commit)
+- Vercel status: GitHub'a post edilmedi (NONE) — CI `next build` içerdiği için build doğrulandı
+- Canlı site: Built-in browser ile homepage, /refund-policy, /guarantee doğrulandı ✅
+
+### Kalan Görevler (dış bağımlılık/büyük özellik)
+- **T8** (Trustpilot reviews): Trustpilot hesabı gerekli — sahip aksiyonu
+- **T9** (Teslim <1 saat): Backend/AI altyapı optimizasyonu — kod değişikliğiyle çözülemez
+- **T11** (Yerelleştirme TR→DE→ES→AR): Büyük i18n özelliği — Next.js locale routing, çeviri dosyaları
+- **T13** (B2B ekip satışı): Team/enterprise sayfaları ve lead capture form'u zaten mevcut
+
+---
+
 ## Oturum: 2026-10-21 (Rekabet İyileştirme Planı — Faz 1-4)
 
 ### Faz 1: Fiyatlandırma & Dönüşüm Güçlendirme ✅
