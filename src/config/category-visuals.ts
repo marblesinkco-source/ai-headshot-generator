@@ -3,9 +3,9 @@
 // Never hard-code image paths in components
 //
 // Notes
-// - People-centric categories use diverse Unsplash stock portraits from stock-portraits.ts.
+// - People-centric categories use real brand portraits from /brand/tailorpic/web/.
 //   Non-people categories (pets, rooms, products, cards) keep local images.
-// - Portraits here are AI-generated concepts or stock photos, never testimonial evidence.
+// - Portraits here are AI-generated concepts, never testimonial evidence.
 // - Keys are CategoryId values from src/config/categories.ts (not URL slugs). Use
 //   getCategoryVisualsBySlug() when you only have the route slug.
 // - Before/after pairs use two distinct portraits: a casual/candid "before" and
@@ -13,7 +13,6 @@
 //   "before" src for additional visual contrast.
 
 import { CATEGORIES, type CategoryId } from '@/config/categories';
-import { portrait, casualPortrait, landscape, square } from '@/config/stock-portraits';
 
 export interface ImageAsset {
   src: string;
@@ -60,40 +59,6 @@ function asset(src: string, alt: string, pos: Pos): ImageAsset {
     alt,
     desktopObjectPosition: pos.desktop,
     mobileObjectPosition: pos.mobile,
-  };
-}
-
-/** Build a portrait asset from an Unsplash photo ID (3:4 crop). */
-function portraitAsset(photoId: string, alt: string): ImageAsset {
-  return asset(portrait(photoId), alt, POS.portrait);
-}
-
-/** Build a square asset from an Unsplash photo ID (1:1 crop). */
-function squareAsset(photoId: string, alt: string): ImageAsset {
-  return asset(square(photoId), alt, POS.portrait);
-}
-
-/** Build a landscape asset from an Unsplash photo ID (4:3 crop). */
-function landscapeAsset(photoId: string, alt: string): ImageAsset {
-  return asset(landscape(photoId), alt, POS.portrait);
-}
-
-/**
- * Build a before/after pair from the SAME Unsplash portrait.
- * "Before" uses casualPortrait() (entropy crop, wider framing) to look
- * like an unprocessed phone snap; "after" uses portrait() (tight face crop)
- * for the polished result. Consumers also apply CSS `grayscale` on the
- * "before" image. Using the same person for both makes the transformation
- * believable.
- */
-function samePersonBeforeAfter(
-  photoId: string,
-  altBefore: string,
-  altAfter: string,
-): BeforeAfterPair {
-  return {
-    before: asset(casualPortrait(photoId), altBefore, POS.portrait),
-    after: portraitAsset(photoId, altAfter),
   };
 }
 
@@ -273,7 +238,7 @@ export const blogDefaults = {
 /* ------------------------------------------------------------------ */
 /*  Per-category registry                                              */
 /*                                                                     */
-/*  Unsplash portrait assignments — each photo ID appears in ONE       */
+/*  Brand portrait assignments — each photo appears in ONE             */
 /*  category only. Non-people categories use local /images/ files.     */
 /* ------------------------------------------------------------------ */
 
