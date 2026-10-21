@@ -1,5 +1,25 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-21 (i18n / Turkish Locale Support)
+
+### Tamamlanan Görevler
+
+1. **T11 — Yerelleştirme / i18n Altyapısı** ✅ (commit 282c6b76)
+   - Dictionary-based çeviri sistemi: `src/dictionaries/en.json`, `src/dictionaries/tr.json`
+   - Locale detection middleware'e eklendi (`/tr/` prefix routing)
+   - `LanguageSwitcher` bileşeni header'a eklendi (desktop + mobile)
+   - Türkçe anasayfa (`/tr`) ve fiyatlandırma (`/tr/pricing`) sayfaları oluşturuldu
+   - hreflang alternates hem EN hem TR sayfalarına eklendi (SEO)
+   - İngilizce root'ta kalıyor (prefix yok), Türkçe `/tr/` altında
+   - Canlı site doğrulaması: `/tr`, `/tr/pricing`, ana sayfa dil değiştirici ✅
+
+### CI/Vercel Durumu
+- CI: PASS ✅
+- Vercel: PASS ✅
+- Canlı site: Built-in browser ile doğrulandı ✅
+
+---
+
 ## Oturum: 2026-10-21 (No-Refund Policy, Analytics, Route Fix)
 
 ### Tamamlanan Görevler

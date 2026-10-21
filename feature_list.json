@@ -697,6 +697,16 @@
       ],
       "status": "done",
       "evidence": "Commit 61e37116 — CI PASS, Vercel PASS. 5 dosya düzeltildi: upload/route.ts, generate/route.ts, webhook/route.ts, paddle/route.ts, emails/upgrade/route.ts."
+    },
+    {
+      "id": "feat-I18N",
+      "name": "i18n Infrastructure & Turkish Locale",
+      "description": "Dictionary-based i18n sistemi, TR locale routing (/tr/), LanguageSwitcher, hreflang SEO, Türkçe anasayfa ve fiyatlandırma",
+      "dependencies": [
+        "feat-D"
+      ],
+      "status": "done",
+      "evidence": "Commit 282c6b76 — CI PASS, Vercel PASS. /tr ve /tr/pricing canlıda doğrulandı. LanguageSwitcher header'da aktif."
     }
   ]
 }
