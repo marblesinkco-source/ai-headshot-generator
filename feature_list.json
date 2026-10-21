@@ -707,6 +707,16 @@
       ],
       "status": "done",
       "evidence": "Commit 282c6b76 — CI PASS, Vercel PASS. /tr ve /tr/pricing canlıda doğrulandı. LanguageSwitcher header'da aktif."
+    },
+    {
+      "id": "feat-SHOWCASE-VFX",
+      "name": "Showcase Visual Enhancements — Professional AI Demo",
+      "description": "4 bileşende kapsamlı görsel iyileştirme: (1) before-after-showcase: grain overlay, kamera/sparkle ikonlu label'lar, dönüşüm badge'leri (Background/Lighting/Attire), (2) who-its-for: 6 persona'ya gerçek AI headshot fotoğrafları + disclosure, (3) vs-studio: before/after görsel karşılaştırma, (4) instant-preview-demo: 3 örnek AI headshot thumbnail strip.",
+      "dependencies": [
+        "feat-I18N"
+      ],
+      "status": "done",
+      "evidence": "Commits: 1d8b38ec (showcase photos), 76b3173c (TRANSFORM_TAGS build fix). CI PASS + Vercel PASS. Canlı site doğrulaması: homepage before/after slider (3 kart, ikonlar, badge'ler, disclosure), who-its-for (6 persona fotoğraflı), vs-studio (before/after görsel), instant-preview-demo (thumbnail strip), /headshots sayfası (BeforeAfterShowcase tam render). Tümü built-in browser ile doğrulandı."
     }
   ]
 }

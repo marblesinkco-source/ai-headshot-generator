@@ -1,5 +1,22 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-21 (Showcase Visual Enhancements)
+
+### Tamamlanan Görevler
+- **before-after-showcase.tsx**: Grain overlay eklendi (before side), label'lara camera/sparkle SVG ikonları eklendi, figcaption'a dönüşüm badge'leri eklendi (Background, Lighting, Attire vb.)
+- **who-its-for.tsx**: 6 persona'nın hepsine gerçek AI headshot fotoğrafları eklendi (tab thumbnail + detail panel), "AI-generated concept" disclosure eklendi
+- **vs-studio.tsx**: Before/After visual comparison eklendi (selfie → AI result görseli)
+- **instant-preview-demo.tsx**: Idle state'e 3 örnek AI headshot görseli eklendi (thumbnail strip ile)
+- Build hatası düzeltildi: `TRANSFORM_TAGS` ReferenceError — module-level const yerine function kullanıldı
+- CI & Vercel deploy PASS ✅
+- Canlı site doğrulaması tamamlandı ✅
+
+### Teknik Notlar
+- `TRANSFORM_TAGS` const'ı Next.js 14 prerender sırasında ReferenceError verdi — `getTransformTags()` fonksiyonuna çevrildi
+- Commit: `1d8b38ec` (showcase photos) + `76b3173c` (build fix)
+
+---
+
 ## Oturum: 2026-10-21 (i18n / Turkish Locale Support)
 
 ### Tamamlanan Görevler
