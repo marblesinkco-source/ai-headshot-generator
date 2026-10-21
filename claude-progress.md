@@ -1,5 +1,40 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-21 (Rekabet İyileştirme Planı — Faz 1-4)
+
+### Faz 1: Fiyatlandırma & Dönüşüm Güçlendirme ✅
+- Social proof ticker mesajları güçlendirildi (10 mesaj, daha spesifik ve conversion-odaklı)
+- Status sayfasına 3 yetenek kartı eklendi (Fast Processing, Secure Infrastructure, 24/7 Availability)
+
+### Faz 2: Homepage & Trust Signal İyileştirmeleri ✅
+- **WhoItsFor persona tabs** bileşeni oluşturuldu (`src/components/marketing/who-its-for.tsx`)
+  - 6 persona: Job Seekers, Startup Founders, HR & Teams, Creatives & Freelancers, Real Estate Agents, Students & Graduates
+  - Her persona: ikon, tagline, 3 bullet point, CTA
+  - Students persona `BASE_PRICE_DISPLAY` kullanır, Teams `/team-headshots`'a yönlendirir
+- Homepage'e WhoItsFor eklendi (Categories ile SocialProofTicker arasına)
+
+### Faz 3: Yeni Sayfalar & SEO Genişleme ✅
+- **About sayfası** oluşturuldu (`src/app/(marketing)/about/page.tsx`)
+  - Hero, Mission, How We're Different (6 farklılaştırıcı), Technology (4 adım), Values (4 değer), Contact CTA
+  - Brand convention'lara uygun: font-display, tp-* token'ları, rounded-tp-* radii
+  - Uydurma içerik yok — tüm iddialar gerçek ürün özellikleri
+- **FAQ genişletildi** (`src/config/faqs.ts`): 8 yeni soru, 2 yeni kategori (Use Cases, Comparison)
+
+### Faz 4: Deploy, Doğrulama & İlerleme Güncellemesi ✅
+- CI: PASS ✅ | Vercel: PASS ✅
+- Son commit: c0c0f742
+- Canlı doğrulama (built-in browser):
+  - Homepage: WhoItsFor persona tabs bölümü görünür ✅
+  - /about: Sayfa yükleniyor, tüm bölümler render ediliyor ✅
+  - FAQ: Use Cases ve Comparison kategorileri görünür ✅
+
+### Teknik Notlar
+- Route conflict çözüldü: Eski `src/app/about/page.tsx` ile yeni `(marketing)/about/page.tsx` çakışması — eski dosya kaldırıldı
+- Birden fazla CI run cancellendy (GitHub Actions concurrency davranışı — normal)
+- Pre-existing type error'lar (accounting, profile-picture-maker) `typescript.ignoreBuildErrors` sayesinde build'i kırmıyor
+
+---
+
 ## Oturum: 2026-10-21 (Liderlik planı, Faz 1 güven temeli)
 
 - **T2** /samples canlıda zaten ortak Header/Footer, Paddle ve `/auth/register?redirect=...` kullanıyordu. Kalan doğrulanmamış iddialar düzeltildi: "40+ styles" → `STYLES.length` (11) / `BACKGROUNDS.length` (15) (`src/config/ai.ts`); "Join thousands" (why-tailorpic, locations, careers) kaldırıldı; "Bayram" (holiday-cards içeriği) kaldırıldı; $6.99 ile çelişen "40+ photos" metinleri düzeltildi.
