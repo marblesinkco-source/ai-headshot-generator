@@ -44,7 +44,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Artistic / creative looks", tailorpic: "Creative category included", other: "Portrait styles may lean artistic" },
   { label: "Professional business headshots", tailorpic: "Dedicated business category", other: "Available; scope varies" },
   { label: "Pet portraits", tailorpic: "Included", other: "Not a known focus" },
-  { label: "Team features", tailorpic: "Team and enterprise options", other: "Check their site" },
+  { label: "Team features", tailorpic: "Team and enterprise options", other: "Not specified" },
 ];
 
 const differences = [

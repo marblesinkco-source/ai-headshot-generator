@@ -44,7 +44,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Built for headshots", tailorpic: "Yes, purpose-built workflow", other: "AI art platform; portraits are one use among many" },
   { label: "Setup effort", tailorpic: "Upload photos and receive results", other: "Choose models, write prompts and iterate" },
   { label: "Likeness of you", tailorpic: "Personal LoRA trained on your selfies", other: "Depends on the workflow you set up yourself" },
-  { label: "Team features", tailorpic: "Team and enterprise options available", other: "Check their site for team plans" },
+  { label: "Team features", tailorpic: "Team and enterprise options available", other: "Not publicly listed" },
 ];
 
 const differences = [

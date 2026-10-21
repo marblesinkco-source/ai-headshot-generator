@@ -40,11 +40,11 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Delivery time", tailorpic: "Results within hours", other: "Varies by mode and queue" },
   { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Artistic and photorealistic imagery of all kinds" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Prompt-based generation; not a model trained on your face" },
-  { label: "Pricing model", tailorpic: "One-time payment, no subscription", other: "Check their site for current plans" },
+  { label: "Pricing model", tailorpic: "One-time payment, no subscription", other: "Varies" },
   { label: "Built for headshots", tailorpic: "Yes, purpose-built workflow", other: "General art tool, not specialized for headshots" },
   { label: "Skill required", tailorpic: "None: upload photos and receive results", other: "Prompting skill helps a lot to get usable portraits" },
   { label: "Interface", tailorpic: "Simple web upload flow", other: "Has been associated with Discord; check their site for current options" },
-  { label: "Team features", tailorpic: "Team and enterprise options available", other: "Check their site for team plans" },
+  { label: "Team features", tailorpic: "Team and enterprise options available", other: "Not publicly listed" },
 ];
 
 const differences = [

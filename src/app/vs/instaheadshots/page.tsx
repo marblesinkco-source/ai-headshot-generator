@@ -37,7 +37,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
   { label: "Delivery time", tailorpic: "Results within hours", other: "Varies by plan; check their site" },
   { label: "Categories / styles", tailorpic: "12 categories (business, dating, creative, pets and more)", other: "Limited styles" },
   { label: "Training method", tailorpic: "LoRA fine-tuning on your own photos", other: "Not publicly detailed" },
-  { label: "One-time vs subscription", tailorpic: "One-time payment, no subscription", other: "Check their site for current pricing model" },
+  { label: "One-time vs subscription", tailorpic: "One-time payment, no subscription", other: "Varies" },
   { label: "Team features", tailorpic: "Team and enterprise options available", other: "Not a focus; check their site" },
 ];
 

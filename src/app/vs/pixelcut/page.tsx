@@ -46,7 +46,7 @@ const rows: { label: string; tailorpic: string; other: string }[] = [
 const differences = [
   { title: "Generator vs editor", body: "TailorPic generates entirely new headshots from your selfies using a personal AI model. Pixelcut edits photos you already have, offering background removal, upscaling and design templates. They solve different problems." },
   { title: "Headshot specialist vs general tool", body: "TailorPic is built specifically for headshots across professional, dating and creative styles. Pixelcut is a broader photo editing and design platform that handles product photos, social media graphics and more." },
-  { title: "Pricing structure", body: `TailorPic starts from ${BASE_PRICE_DISPLAY} with no recurring fees. Pixelcut offers a free tier with limited features and paid plans for full access. Check their site for current pricing.` },
+  { title: "Pricing structure", body: `TailorPic starts from ${BASE_PRICE_DISPLAY} with no recurring fees. Pixelcut offers a free tier with limited features and paid plans for full access. ` },
   { title: "Personal AI model", body: "TailorPic trains a LoRA model on your uploaded selfies, producing photos that closely resemble you in new settings. Pixelcut enhances existing photos but does not create new portraits from scratch." },
 ];
 
