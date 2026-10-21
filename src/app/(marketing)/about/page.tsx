@@ -158,6 +158,18 @@ const teamMembers = [
     photo: '/brand/tailorpic/web/team-ahmet.jpg',
     bio: 'Keeps the wheels turning with reliable transportation and delivery support across the company.',
   },
+  {
+    name: 'Alpaslan Solak',
+    role: 'CEO, Erde Otelcilik',
+    photo: '/brand/tailorpic/web/team-alpaslan.jpg',
+    bio: 'Brings hospitality industry expertise as CEO of Erde Otelcilik, contributing strategic business insights to the TailorPic ecosystem.',
+  },
+  {
+    name: 'Halil Bulut',
+    role: 'Founder, Bulut Diving',
+    photo: '/brand/tailorpic/web/team-halil.jpg',
+    bio: 'Founder of Bulut Diving, bringing entrepreneurial experience and a passion for adventure to the TailorPic network.',
+  },
 ];
 
 const explore = [
