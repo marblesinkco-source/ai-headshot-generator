@@ -8,6 +8,7 @@ import { BASE_PRICE_DISPLAY, BASE_PRICE_LABEL } from '@/config/pricing';
 import { HeroPattern } from '@/components/marketing/illustrations';
 import { homeHero, categoryVisuals } from '@/config/category-visuals';
 import { portrait } from '@/config/stock-portraits';
+import { useAnalytics } from '@/hooks/use-analytics';
 
 const categories = getActiveCategories();
 const quickCategories = categories.filter((c) =>
@@ -65,6 +66,7 @@ function RotatingWord() {
 
 export function Hero() {
   const categoryDialog = useRef<HTMLDialogElement>(null);
+  const { trackClick } = useAnalytics();
 
   return (
     <>
@@ -133,6 +135,7 @@ export function Hero() {
               >
                 <Link
                   href={`/auth/register?redirect=${encodeURIComponent('/dashboard/upload?category=headshots')}`}
+                  onClick={() => trackClick('hero_cta', 'link')}
                   className="inline-flex w-full justify-center items-center gap-4 rounded-tp-button bg-tp-black px-6 py-4 text-[15px] font-semibold text-tp-paper shadow-md transition-[transform,box-shadow,border-color,background-color] hover:-translate-y-0.5 hover:bg-tp-ink hover:shadow-xl hover:animate-cta-pulse motion-reduce:hover:animate-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze sm:w-auto sm:px-8 whitespace-nowrap cta-ring tp-glow-cta"
                 >
                   Get My Headshots &mdash; {BASE_PRICE_LABEL} <span aria-hidden="true" className="text-[20px] leading-none">&#8599;</span>

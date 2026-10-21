@@ -12,6 +12,7 @@ import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { useAnalytics } from '@/hooks/use-analytics';
 
 const categories = getActiveCategories();
 
@@ -39,6 +40,7 @@ export function Pricing() {
   );
   const [pricingMode, setPricingMode] = useState<'individual' | 'teams'>('individual');
   const [showAll, setShowAll] = useState(false);
+  const { trackClick } = useAnalytics();
 
   const packages = activeCategory.packages;
   // Entry tier = cheapest package in the category (TailorPic 1 for headshots, Express elsewhere).
@@ -388,6 +390,7 @@ export function Pricing() {
                 <CardFooter className="flex-col items-stretch">
                   <Link
                     href={registerHref}
+                    onClick={() => trackClick(`pricing_cta_${pkg.id}`, 'link', { packageName: pkg.name, price: pkg.price, categoryId: activeCategory.id })}
                     className={cn(
                       buttonVariants({ variant: isRecommended ? 'primary' : 'outline' }),
                       'w-full transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tp-bronze',

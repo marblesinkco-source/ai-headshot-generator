@@ -16,6 +16,7 @@ import { Button } from '@/components/ui/button';
 import { PhotoUploader } from '@/components/dashboard/photo-uploader';
 import { PhotoGuidelines, PhotoQuickTips } from '@/components/upload/photo-guidelines';
 import { PrivacyAssurance } from '@/components/ui/privacy-assurance';
+import { useAnalytics } from '@/hooks/use-analytics';
 
 type Step = 1 | 2 | 3 | 4;
 
@@ -52,6 +53,7 @@ function UploadContent() {
   const [purchaseConsent, setPurchaseConsent] = useState(false);
 
   const supabase = createClient();
+  const { trackClick, trackConversion } = useAnalytics();
   const activeCategories = getActiveCategories();
   const category = selectedCategory ? getCategoryById(selectedCategory) : null;
   const categoryPackages = selectedCategory ? getCategoryPackages(selectedCategory) : [];
@@ -98,6 +100,7 @@ function UploadContent() {
     setSelectedPackage(null);
     setPurchaseConsent(false);
     setCurrentStep(2);
+    trackConversion('category_selected', { categoryId: catId });
   }
 
   async function handleCheckout(packageId: string, couponCode?: string) {
@@ -105,6 +108,11 @@ function UploadContent() {
 
     setCheckoutLoading(packageId);
     setError(null);
+    trackConversion('checkout_initiated', {
+      categoryId: selectedCategory,
+      packageId,
+      metadata: { couponCode: couponCode || undefined },
+    });
 
     try {
       const response = await fetch('/api/payments/checkout', {
@@ -236,6 +244,11 @@ function UploadContent() {
     setGenerating(true);
     setGenerationStatus('Starting AI training on your photos...');
     setError(null);
+    trackConversion('generation_started', {
+      categoryId: selectedCategory || undefined,
+      packageId: selectedPackage || undefined,
+      metadata: { photoCount: uploadedCount },
+    });
     setProgressPhase('training');
     setProgressPercent(5);
 
@@ -524,7 +537,12 @@ function UploadContent() {
               <input
                 type="checkbox"
                 checked={purchaseConsent}
-                onChange={(e) => setPurchaseConsent(e.target.checked)}
+                onChange={(e) => {
+                  setPurchaseConsent(e.target.checked);
+                  if (e.target.checked) {
+                    trackConversion('consent_accepted', { categoryId: selectedCategory || undefined });
+                  }
+                }}
                 className="mt-0.5 h-5 w-5 flex-shrink-0 rounded border-tp-line text-tp-black accent-tp-black focus:ring-tp-bronze cursor-pointer"
               />
               <span className="text-xs leading-relaxed text-tp-ink">
@@ -560,7 +578,13 @@ function UploadContent() {
 
           <PhotoUploader
             orderId={orderId}
-            onUploadComplete={(count) => setUploadedCount(count)}
+            onUploadComplete={(count) => {
+                  setUploadedCount(count);
+                  trackConversion('photos_uploaded', {
+                    categoryId: selectedCategory || undefined,
+                    metadata: { photoCount: count },
+                  });
+                }}
           />
 
           <PrivacyAssurance />
