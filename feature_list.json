@@ -727,6 +727,16 @@
       ],
       "status": "done",
       "evidence": "1 yeni bileşen + 3 güncellenmiş dosya. style-showcase.tsx: 8 stil kartı radio group, featured image crossfade, IntersectionObserver, aria-live. headshot-in-context.tsx: +ZoomMockup +TeamsMockup, contextReveal animasyon, mobil scroll, brand fix (emerald→tp-bronze, red→tp-black). ai-process-demo.tsx: tpDemoArrow1/2 keyframes, step indicator dots, tpDemoTimer progress bar, inline SVG icons, radial glow bg-tp-bronze/10. page.tsx: StyleShowcase dynamic import. Commit: dda7c489. CI PASS + Vercel PASS. Canlı doğrulama: Style Showcase (8 stil), Headshot in Context (6 tab), Process Demo (arrows+dots+timer) tümü www.tailorpic.com'da doğru render."
+    },
+    {
+      "id": "feat-CANVAS-ENGINE",
+      "name": "Canvas Photo Processing Engine + Demo Rebuild",
+      "description": "Basit CSS grayscale/filter hilesi yerine gerçek Canvas API tabanlı fotoğraf işleme: brightness, contrast, color grading, sharpening, vignette, portrait lighting, skin smoothing. Before/After Showcase ve Instant Preview Demo bileşenleri tamamen yeniden yazıldı.",
+      "dependencies": [
+        "feat-INTERACTIVE-SHOWCASE"
+      ],
+      "status": "done",
+      "evidence": "3 dosya: canvas-photo-engine.ts (yeni, 454 satır, 5 preset), before-after-showcase.tsx (canvas slider), instant-preview-demo.tsx (client-side 3-stil varyasyon). Commits: 6205db4e, aa6e7f78. CI PASS + Vercel PASS. Canlı doğrulama: Before/After slider'ları canvas-processed, Instant Preview upload+process çalışıyor. www.tailorpic.com doğrulandı 2026-10-21."
     }
   ]
 }

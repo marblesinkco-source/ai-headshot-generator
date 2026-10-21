@@ -1,5 +1,21 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-21 (Canvas Photo Engine + Demo Rebuild)
+
+### Tamamlanan Görevler
+- **canvas-photo-engine.ts (YENİ)**: 454 satır pure Canvas API fotoğraf işleme motoru. Brightness, contrast, saturation, warmth, sharpen, vignette, portrait lighting, skin smoothing. 5 preset (professional, corporate, creative, linkedin, cinematic). processPhoto(), generateStyleVariations() vb. yardımcı fonksiyonlar.
+- **before-after-showcase.tsx (YENİDEN YAZILDI)**: Basit CSS grayscale yerine gerçek canvas-based enhancement. CanvasComparisonSlider bileşeni her karta uygun preset uyguluyor (linkedin/corporate/creative). "Enhancing…" loading shimmer, grain overlay, transformation tag'leri (Lighting, Color Grade, Sharpen vb.).
+- **instant-preview-demo.tsx (YENİDEN YAZILDI)**: Çalışmayan /api/ai/instant-preview API çağrısı kaldırıldı. Client-side generateStyleVariations() ile 3 stil varyasyonu (Professional, Corporate, Creative) tarayıcıda oluşturuluyor. Brand token ihlali düzeltildi (emerald→tp-bronze, red→tp-bronze).
+- CI & Vercel deploy PASS ✅
+- Canlı site doğrulaması tamamlandı ✅ (Before/After slider'lar, Instant Preview upload alanı, örnek görseller)
+
+### Teknik Notlar
+- npm registry BLOCKED olduğu için tüm fotoğraf işleme pure Canvas API ile yapıldı (sıfır dış bağımlılık)
+- Data URL'ler için native <img> kullanıldı (Next/Image data URL desteklemiyor)
+- Commits: 6205db4e (engine), aa6e7f78 (component rebuild)
+
+---
+
 ## Oturum: 2026-10-21 (Interactive Showcase Expansion)
 
 ### Tamamlanan Görevler
