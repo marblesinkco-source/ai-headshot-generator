@@ -717,6 +717,16 @@
       ],
       "status": "done",
       "evidence": "Commits: 1d8b38ec (showcase photos), 76b3173c (TRANSFORM_TAGS build fix). CI PASS + Vercel PASS. Canlı site doğrulaması: homepage before/after slider (3 kart, ikonlar, badge'ler, disclosure), who-its-for (6 persona fotoğraflı), vs-studio (before/after görsel), instant-preview-demo (thumbnail strip), /headshots sayfası (BeforeAfterShowcase tam render). Tümü built-in browser ile doğrulandı."
+    },
+    {
+      "id": "feat-INTERACTIVE-SHOWCASE",
+      "name": "Interactive Showcase Expansion",
+      "description": "StyleShowcase galerisi (8 endüstri stili, interactive click-to-select, keyboard nav), HeadshotInContext genişlemesi (+Zoom +Teams = 6 platform), AIProcessDemo görsel iyileştirmeleri (animated arrows, step dots, timer, icons, glow)",
+      "dependencies": [
+        "feat-SHOWCASE-VFX"
+      ],
+      "status": "done",
+      "evidence": "1 yeni bileşen + 3 güncellenmiş dosya. style-showcase.tsx: 8 stil kartı radio group, featured image crossfade, IntersectionObserver, aria-live. headshot-in-context.tsx: +ZoomMockup +TeamsMockup, contextReveal animasyon, mobil scroll, brand fix (emerald→tp-bronze, red→tp-black). ai-process-demo.tsx: tpDemoArrow1/2 keyframes, step indicator dots, tpDemoTimer progress bar, inline SVG icons, radial glow bg-tp-bronze/10. page.tsx: StyleShowcase dynamic import. Commit: dda7c489. CI PASS + Vercel PASS. Canlı doğrulama: Style Showcase (8 stil), Headshot in Context (6 tab), Process Demo (arrows+dots+timer) tümü www.tailorpic.com'da doğru render."
     }
   ]
 }
