@@ -195,6 +195,12 @@ const teamMembers = [
     photo: '/brand/tailorpic/web/team-can-bilen.jpg',
     bio: 'Manages logistics operations at Marblesinkco, ensuring efficient coordination and timely delivery across the supply chain.',
   },
+  {
+    name: 'Sadiye Ünver',
+    role: 'Founder, Sadiyem.com',
+    photo: '/brand/tailorpic/web/team-sadiye.jpg',
+    bio: 'Founder of Sadiyem.com, bringing entrepreneurial vision and creative energy to the Ünver family of businesses.',
+  },
 ];
 
 const explore = [
