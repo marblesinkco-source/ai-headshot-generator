@@ -1,5 +1,20 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-22 (OpenCV Portrait Enhancement + Cache Busting)
+
+### Tamamlanan Görevler
+- **12 after portre görseli OpenCV ile yeniden üretildi**: GrabCut + spatial gradient hybrid mask, 5-pass professional bokeh (sigma 45+35), bilateral+edge-preserving skin smoothing, CLAHE+key light+vignette lighting, 5 color grading style (professional, linkedin, corporate, creative, cinematic). Çıktı: 600×732 JPEG q92.
+- **Cache-busting eklendi**: Vercel CDN eski görselleri cache'liyordu. `stock-portraits.ts`, `category-visuals.ts`, `instant-preview-demo.tsx`, `samples/page.tsx` dosyalarına `?v=2` query string eklendi.
+- CI & Vercel deploy PASS ✅ (her iki commit için)
+- Canlı site doğrulaması tamamlandı ✅ — Before/after slider'lar, style showcase, tüm enhanced görseller doğru yükleniyor.
+
+### Teknik Notlar
+- 17 Pillow denemesi başarısız oldu → OpenCV 4.13 (bilateralFilter, edgePreservingFilter, GrabCut, CLAHE, Haar cascade) ile çözüm bulundu.
+- Pipeline: `opencv_headshot_v3.py` (scratchpad'de, repo'ya commit edilmedi).
+- Commits: `7e203599` (12 enhanced after images), `063c8747` (cache-busting query strings)
+
+---
+
 ## Oturum: 2026-10-21 (Canvas Photo Engine + Demo Rebuild)
 
 ### Tamamlanan Görevler
