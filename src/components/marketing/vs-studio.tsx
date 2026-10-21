@@ -1,8 +1,12 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import { BASE_PRICE_DISPLAY } from '@/config/pricing';
+
+const BRAND_WEB = '/brand/tailorpic/web';
 
 /**
  * "TailorPic vs Traditional Studio" comparison section.
@@ -68,6 +72,56 @@ export function VsStudio() {
           </h2>
           <p className="mt-4 text-[15px] text-tp-muted leading-relaxed max-w-lg mx-auto">
             Professional photography shouldn&apos;t require an appointment, travel, or a big budget. Here&apos;s how TailorPic compares.
+          </p>
+        </div>
+
+        {/* Visual Before/After */}
+        <div className="mt-10 sm:mt-12 mx-auto max-w-md">
+          <div className="flex items-center justify-center gap-3 sm:gap-5">
+            {/* Before — Selfie */}
+            <div className="flex flex-col items-center gap-2">
+              <div className="relative w-[120px] sm:w-[150px] aspect-[3/4] overflow-hidden rounded-tp-card border border-tp-line bg-tp-beige">
+                <Image
+                  src={`${BRAND_WEB}/before-ozlem-1.jpg`}
+                  alt="Selfie before AI headshot transformation"
+                  fill
+                  sizes="150px"
+                  className="object-cover object-[50%_25%] grayscale"
+                />
+                <span className="absolute left-2 top-2 rounded-tp-button bg-white/90 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-tp-muted">
+                  Your Selfie
+                </span>
+              </div>
+            </div>
+
+            {/* Arrow */}
+            <div className="flex flex-col items-center gap-1">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-tp-bronze/15">
+                <ArrowRight className="h-5 w-5 text-tp-bronze-ink" aria-hidden="true" />
+              </div>
+              <span className="text-[10px] font-semibold uppercase tracking-wider text-tp-bronze-ink">
+                AI
+              </span>
+            </div>
+
+            {/* After — TailorPic Result */}
+            <div className="flex flex-col items-center gap-2">
+              <div className="relative w-[120px] sm:w-[150px] aspect-[3/4] overflow-hidden rounded-tp-card border-2 border-tp-bronze/30 bg-tp-beige shadow-lg shadow-tp-bronze/10">
+                <Image
+                  src={`${BRAND_WEB}/after-ozlem.jpg`}
+                  alt="Professional AI headshot result by TailorPic"
+                  fill
+                  sizes="150px"
+                  className="object-cover object-[50%_25%]"
+                />
+                <span className="absolute left-2 top-2 rounded-tp-button bg-tp-black/80 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-tp-bronze">
+                  TailorPic Result
+                </span>
+              </div>
+            </div>
+          </div>
+          <p className="mt-3 text-center text-[11px] text-tp-muted">
+            AI-generated concept image
           </p>
         </div>
 

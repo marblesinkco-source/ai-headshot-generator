@@ -13,11 +13,18 @@ type PreviewResult = {
 
 type DemoState = 'idle' | 'uploading' | 'generating' | 'done' | 'error';
 
+const EXAMPLE_RESULTS = [
+  { src: '/brand/tailorpic/web/after-ozlem.jpg', alt: 'Example AI headshot — professional style' },
+  { src: '/brand/tailorpic/web/after-murat.jpg', alt: 'Example AI headshot — corporate style' },
+  { src: '/brand/tailorpic/web/after-ahmet.jpg', alt: 'Example AI headshot — creative style' },
+];
+
 export function InstantPreviewDemo() {
   const [state, setState] = useState<DemoState>('idle');
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [results, setResults] = useState<PreviewResult[]>([]);
   const [selectedIdx, setSelectedIdx] = useState(0);
+  const [exampleIdx, setExampleIdx] = useState(0);
   const [errorMsg, setErrorMsg] = useState('');
   const [elapsed, setElapsed] = useState(0);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -194,12 +201,63 @@ export function InstantPreviewDemo() {
           {/* Right: Results */}
           <div className="relative">
             {state === 'idle' && (
-              <div className="border border-tp-line rounded-tp-card p-8 md:p-12 text-center min-h-[400px] flex flex-col items-center justify-center">
-                <div className="mx-auto mb-4 w-12 h-12 rounded-full bg-tp-ink flex items-center justify-center">
-                  <ArrowRight className="h-5 w-5 text-tp-beige/70" />
+              <div>
+                {/* Example result display */}
+                <div className="rounded-tp-card overflow-hidden bg-tp-ink mb-4 relative">
+                  <div className="relative aspect-[3/4] w-full">
+                    <Image
+                      src={EXAMPLE_RESULTS[exampleIdx].src}
+                      alt={EXAMPLE_RESULTS[exampleIdx].alt}
+                      fill
+                      className="object-cover object-[50%_25%]"
+                      sizes="(min-width: 768px) 40vw, 90vw"
+                    />
+                    {/* Gradient overlay for "example" feel */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-tp-black/40 via-transparent to-transparent" />
+                    {/* Example label */}
+                    <div className="absolute top-3 left-3 bg-tp-bronze/20 backdrop-blur-sm text-tp-bronze-ink text-xs font-semibold px-3 py-1 rounded-tp-button border border-tp-bronze/30">
+                      Example Result
+                    </div>
+                    {/* Upload prompt overlay */}
+                    <div className="absolute bottom-12 left-0 right-0 text-center">
+                      <span className="inline-flex items-center gap-2 bg-tp-black/70 backdrop-blur-sm text-tp-paper text-sm font-medium px-4 py-2 rounded-tp-button">
+                        <Upload className="h-4 w-4 text-tp-bronze" />
+                        Upload your selfie to see yours
+                      </span>
+                    </div>
+                    {/* Disclosure */}
+                    <span className="absolute bottom-3 right-3 bg-tp-black/60 backdrop-blur-sm text-tp-paper/80 text-[10px] px-2 py-0.5 rounded-tp-button">
+                      AI-generated concept image
+                    </span>
+                  </div>
                 </div>
-                <p className="text-tp-beige/70">
-                  Your AI headshot previews will appear here
+
+                {/* Example thumbnail strip */}
+                <div className="flex gap-2 mb-4">
+                  {EXAMPLE_RESULTS.map((ex, i) => (
+                    <button
+                      key={ex.src}
+                      type="button"
+                      onClick={() => setExampleIdx(i)}
+                      className={`relative flex-1 aspect-[3/4] rounded-lg overflow-hidden border-2 transition-colors ${
+                        i === exampleIdx
+                          ? 'border-tp-bronze'
+                          : 'border-tp-line hover:border-tp-muted'
+                      }`}
+                    >
+                      <Image
+                        src={ex.src}
+                        alt={`Example ${i + 1}`}
+                        fill
+                        className="object-cover object-[50%_25%]"
+                        sizes="100px"
+                      />
+                    </button>
+                  ))}
+                </div>
+
+                <p className="text-center text-tp-beige/50 text-xs">
+                  Upload a selfie on the left to get your own AI headshot previews
                 </p>
               </div>
             )}

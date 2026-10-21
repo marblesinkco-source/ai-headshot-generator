@@ -107,6 +107,15 @@ function ComparisonSlider({
           draggable={false}
           priority={priority}
         />
+        {/* Subtle grain overlay on the before side */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 opacity-[0.07] mix-blend-overlay pointer-events-none"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+            backgroundSize: '150px 150px',
+          }}
+        />
       </div>
 
       {/* Divider line */}
@@ -141,10 +150,12 @@ function ComparisonSlider({
       </div>
 
       {/* Labels */}
-      <span className="absolute left-3 top-3 z-10 rounded-tp-button border border-tp-line bg-white px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-tp-muted">
+      <span className="absolute left-3 top-3 z-10 inline-flex items-center gap-1 rounded-tp-button border border-tp-line bg-white px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-tp-muted">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
         Selfie
       </span>
-      <span className="absolute right-3 top-3 z-10 rounded-tp-button bg-tp-black px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-tp-bronze">
+      <span className="absolute right-3 top-3 z-10 inline-flex items-center gap-1 rounded-tp-button bg-tp-black px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-tp-bronze">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
         AI Headshot
       </span>
 
@@ -191,6 +202,18 @@ export function BeforeAfterShowcase() {
               <figcaption className="border-t border-tp-line px-4 py-4 text-center transition-colors group-hover:border-tp-bronze/30">
                 <span className="block text-sm font-medium text-tp-ink">{label}</span>
                 <span className="mt-1 block text-xs text-tp-muted">{detail}</span>
+                {TRANSFORM_TAGS[label] && (
+                  <span className="mt-2 flex flex-wrap items-center justify-center gap-1.5">
+                    {TRANSFORM_TAGS[label].map((tag) => (
+                      <span
+                        key={tag}
+                        className="inline-block rounded-full border border-tp-bronze/20 bg-tp-bronze/5 px-2 py-0.5 text-[10px] font-medium text-tp-bronze-ink"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </span>
+                )}
               </figcaption>
             </figure>
           ))}
