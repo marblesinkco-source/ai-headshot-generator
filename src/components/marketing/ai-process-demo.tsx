@@ -85,6 +85,16 @@ const CSS = `
 .tp-demo .a-dot3 { animation-name: tpDemoDot3; }
 .tp-demo .a-line1 { animation-name: tpDemoLine1; }
 .tp-demo .a-line2 { animation-name: tpDemoLine2; }
+/* Animated arrow between steps */
+@keyframes tpDemoArrow1 { 0%,24%{opacity:0} 30%{opacity:1} 63%{opacity:1} 69%{opacity:0.3} 100%{opacity:0.3} }
+@keyframes tpDemoArrow2 { 0%,57%{opacity:0.3} 63%{opacity:1} 94%{opacity:1} 100%{opacity:0.3} }
+.tp-demo .a-arrow1 { animation-name: tpDemoArrow1; }
+.tp-demo .a-arrow2 { animation-name: tpDemoArrow2; }
+
+/* Cycle timer */
+@keyframes tpDemoTimer { from{transform:scaleX(0)} to{transform:scaleX(1)} }
+.tp-demo .a-timer { animation-name: tpDemoTimer; animation-timing-function: linear; transform-origin: left; }
+
 .tp-demo .a-pop { animation-name: tpDemoPop; }
 .tp-demo .a-bar { animation-name: tpDemoBar; transform-origin: left center; }
 .tp-demo .a-spin { animation-name: tpDemoSpin; animation-timing-function: linear; }
@@ -105,6 +115,8 @@ const CSS = `
   .tp-demo .a-line1, .tp-demo .a-line2 { transform: scale(1); }
   .tp-demo .a-pop, .tp-demo .a-result, .tp-demo .a-check { opacity: 1; transform: none; }
   .tp-demo .a-bar { transform: scaleX(1); }
+  .tp-demo .a-arrow1, .tp-demo .a-arrow2 { opacity: 1; }
+  .tp-demo .a-timer { transform: scaleX(0); }
   .tp-demo .a-ring { opacity: .25; transform: scale(1.15); }
   .tp-demo .a-twinkle { opacity: .8; transform: none; }
 }
@@ -171,6 +183,7 @@ function StepVisual({ step }: { step: 1 | 2 | 3 }) {
           </div>
           {/* Central circle with real photo */}
           <div className="absolute inset-0 flex items-center justify-center">
+            <div className="d-anim a-pulse absolute h-20 w-20 rounded-full bg-tp-bronze/10 blur-xl" />
             <div className="d-anim a-pulse relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-full bg-tp-black">
               <Image
                 src={`${BRAND_WEB}/before-mert-1.jpg`}
@@ -248,6 +261,18 @@ export function AIProcessDemo() {
           <p className="mt-4 text-[15px] text-tp-muted leading-relaxed max-w-lg mx-auto">
             From selfies to studio-quality headshots in three simple steps
           </p>
+
+          {/* Step indicator dots + cycle timer */}
+          <div className="mt-6 flex justify-center gap-2" aria-hidden="true">
+            {[1, 2, 3].map((n) => (
+              <span key={n} className="relative h-2 w-2 rounded-full bg-tp-line">
+                <span className={`d-anim a-dot${n} absolute inset-0 rounded-full bg-tp-bronze`} />
+              </span>
+            ))}
+          </div>
+          <div className="mx-auto mt-3 h-0.5 w-32 overflow-hidden rounded-full bg-tp-line/50" aria-hidden="true">
+            <div className="d-anim a-timer h-full w-full bg-tp-bronze/60" />
+          </div>
         </div>
 
         <ol className="mt-12 flex flex-col sm:mt-14 md:flex-row">
@@ -276,6 +301,18 @@ export function AIProcessDemo() {
                       )}
                       style={{ transformOrigin: 'top left' }}
                     />
+                    {/* Chevron at the midpoint of the line (li right edge), desktop only */}
+                    <span
+                      aria-hidden="true"
+                      className={cn(
+                        'd-anim absolute left-full top-[9px] z-10 hidden h-6 w-6 -translate-x-1/2 items-center justify-center md:flex',
+                        i === 0 ? 'a-arrow1' : 'a-arrow2'
+                      )}
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4 text-tp-bronze">
+                        <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </span>
                   </>
                 )}
 
@@ -294,7 +331,30 @@ export function AIProcessDemo() {
                   <StepVisual step={s.n as 1 | 2 | 3} />
                 </div>
 
-                <h3 className="mt-5 text-base font-semibold text-tp-black">{s.label}</h3>
+                <h3 className="mt-5 flex items-center justify-center gap-2 text-base font-semibold text-tp-black">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 shrink-0 text-tp-bronze" aria-hidden="true">
+                    {s.n === 1 && (
+                      <>
+                        <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z" />
+                        <circle cx="12" cy="13" r="4" />
+                      </>
+                    )}
+                    {s.n === 2 && (
+                      <>
+                        <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z" />
+                        <path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z" />
+                      </>
+                    )}
+                    {s.n === 3 && (
+                      <>
+                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                        <circle cx="8.5" cy="8.5" r="1.5" />
+                        <path d="M21 15l-5-5L5 21" />
+                      </>
+                    )}
+                  </svg>
+                  <span>{s.label}</span>
+                </h3>
                 <p className="mt-1 max-w-[15rem] text-sm text-tp-muted">{s.detail}</p>
               </li>
             );

@@ -90,6 +90,10 @@ const AnimatedStats = dynamic(
 const SocialProofTicker = dynamic(
   () => import('@/components/marketing/social-proof-ticker').then((m) => m.SocialProofTicker)
 );
+const StyleShowcase = dynamic(
+  () => import('@/components/marketing/style-showcase').then((m) => m.StyleShowcase),
+  { loading: () => <SectionSkeleton height="h-[700px] md:h-[600px]" /> }
+);
 const WhoItsFor = dynamic(
   () => import('@/components/marketing/who-its-for').then((m) => m.WhoItsFor),
   { loading: () => <SectionSkeleton height="h-[500px] md:h-[420px]" /> }
@@ -123,6 +127,9 @@ export default function LandingPage() {
 
       {/* How It Works — animated demo */}
       <AIProcessDemo />
+
+      {/* Style Showcase Gallery */}
+      <StyleShowcase />
 
       {/* Categories */}
       <Categories />
