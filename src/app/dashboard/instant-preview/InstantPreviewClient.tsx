@@ -93,7 +93,7 @@ export default function InstantPreviewClient() {
       const response = await fetch('/api/ai/instant-preview', {
         method: 'POST',
         body: formData,
-        headers: { 'x-csrf-token': '1' },
+        // CSRF protection handled by browser's sec-fetch-site header
       });
 
       if (!response.ok) {
@@ -197,7 +197,7 @@ export default function InstantPreviewClient() {
                     <X className="mr-1.5 h-3.5 w-3.5" />
                     Change Photo
                   </Button>
-                  {phase === 'idle' && (
+                  {(phase === 'idle' || phase === 'error') && (
                     <Button
                       size="sm"
                       className="flex-1 rounded-tp-button bg-tp-black text-tp-paper hover:bg-tp-ink"
