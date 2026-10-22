@@ -1,5 +1,34 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-22 (Instant Preview Dashboard UI)
+
+### Tamamlanan Görevler
+- **Instant Preview dashboard sayfası oluşturuldu**: PuLID-Flux (bytedance/flux-pulid) 15 saniyelik hızlı AI headshot ön izleme arayüzü. Mevcut `/api/ai/instant-preview` API endpoint'ine tam bağlantılı.
+  - `InstantPreviewClient.tsx`: Drag & drop selfie yükleme, dosya doğrulama (JPEG/PNG/WebP, max 10MB), progress spinner, 5 stil varyasyonu (Business Formal, Smart Casual, Creative Modern, LinkedIn Ready, Executive) thumbnail strip, download, "upgrade to full package" upsell CTA.
+  - `page.tsx`: Server component wrapper (metadata ile).
+  - `loading.tsx`: Skeleton loading state.
+- **DashboardShell navigasyona "Instant Preview" eklendi**: Zap (⚡) ikonu ile sidebar'a yeni nav item.
+- **Error recovery düzeltmesi**: Hata sonrası "Generate Previews" butonu tekrar gösteriliyor (retry desteği).
+- **CSRF header temizliği**: Gereksiz x-csrf-token header'ı kaldırıldı (CSRF koruması sec-fetch-site ile otomatik çalışıyor).
+- CI & Vercel deploy PASS ✅ (her iki commit)
+- Canlı site doğrulaması: Auth middleware doğru çalışıyor (login redirect'i `/dashboard/instant-preview` parametresi ile).
+
+### Teknik Notlar
+- API rate limit: 5 preview/saat/kullanıcı (Upstash Redis, in-memory fallback).
+- CSRF koruması: isSameOrigin() → sec-fetch-site + origin header kontrolü.
+- Replicate delivery domain'leri zaten next.config.mjs'de tanımlı (Image component `unoptimized` ile kullanılıyor).
+- Commits: `31f1f519` (instant preview UI), `0ce25c32` (error retry fix)
+
+### Onay Bekleyen Öğeler (Kullanıcı Yapılandırması Gerekli)
+1. **Replicate API Token**: `REPLICATE_API_TOKEN` → Instant Preview, AI generate, background-change, outfit-change API'lerinin tamamı buna bağlı. Vercel env'de ayarlanmalı.
+2. **Paddle ödeme yapılandırması**: `PADDLE_API_KEY`, `PADDLE_WEBHOOK_SECRET`, `NEXT_PUBLIC_PADDLE_CLIENT_TOKEN` + her paket için `PADDLE_PRICE_*` fiyat ID'leri oluşturulup Vercel'e eklenmeli.
+3. **Resend e-posta**: `RESEND_API_KEY` → transactional e-postalar (welcome, order confirmation, upgrade) için gerekli.
+4. **Upstash Redis**: `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN` → rate limiting (instant preview dahil) ve caching için gerekli. Yoksa in-memory fallback çalışır ama production'da önerilmez.
+5. **Supabase migration'lar**: `gh workflow run db-migrate.yml` ile çalıştırılmalı (`SUPABASE_DB_URL` secret gerekli).
+6. **Fotoğraf görselleri**: Kullanıcı kendi fotoğraf programları ile hazırlayacak (bu oturumda atlandı).
+
+---
+
 ## Oturum: 2026-10-22 (OpenCV Portrait Enhancement + Cache Busting)
 
 ### Tamamlanan Görevler
