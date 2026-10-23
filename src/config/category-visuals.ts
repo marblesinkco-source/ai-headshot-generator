@@ -54,7 +54,7 @@ const CATEGORY_IMG = '/images/categories';
 const BRAND_WEB = '/brand/tailorpic/web';
 
 /** Cache-busting version — increment when brand images are updated */
-const BRAND_IMG_V = '2';
+const BRAND_IMG_V = '3';
 
 function asset(src: string, alt: string, pos: Pos): ImageAsset {
   // Add cache-busting for brand images

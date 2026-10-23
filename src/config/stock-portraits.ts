@@ -12,7 +12,7 @@
 const BRAND_WEB = '/brand/tailorpic/web';
 
 /** Cache-busting version — increment when brand images are updated */
-const BRAND_IMG_VERSION = '2';
+const BRAND_IMG_VERSION = '3';
 
 /* ------------------------------------------------------------------ */
 /*  Helpers                                                            */
