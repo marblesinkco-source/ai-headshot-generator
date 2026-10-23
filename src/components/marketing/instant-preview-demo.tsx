@@ -10,7 +10,7 @@ import { Camera, Sparkles, ArrowRight } from 'lucide-react';
 /* ------------------------------------------------------------------ */
 
 /** Cache-busting version — increment when brand images are updated */
-const V = '?v=3';
+const V = '?v=4';
 
 const STYLE_CATEGORIES = [
   {
