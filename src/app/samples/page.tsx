@@ -100,7 +100,7 @@ const qualityBadges = [
 ];
 
 /** Cache-busting version — increment when brand images are updated */
-const V = '?v=4';
+const V = '?v=5';
 
 const styleGroupImages: Record<string, SampleImage[]> = {
   Corporate: [
