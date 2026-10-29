@@ -1,36 +1,61 @@
 name: Supabase keep-alive
 
-# Prevents Supabase Hobby-plan project from being paused due to inactivity.
-# Hits the /api/cron/keep-alive endpoint every 6 hours via the live site.
+# Prevents the Supabase free-plan project from being paused for inactivity.
+#
+# Two independent pings, so one broken path cannot silently let the project pause:
+#   1. db   — runs a real SQL query straight against Postgres with psql
+#             (secret SUPABASE_DB_URL, the same one db-migrate.yml uses).
+#   2. http — calls https://www.tailorpic.com/api/cron/keep-alive, which queries
+#             the DB through the app's own Supabase client (Vercel env vars).
+#
+# Any failure makes the run red, so GitHub emails the repo owner long before
+# Supabase's ~7-day inactivity window runs out. (The previous version always
+# exited 0, so a failing ping looked green.)
 
 on:
   schedule:
-    # Every 6 hours: 00:00, 06:00, 12:00, 18:00 UTC
-    - cron: '0 */6 * * *'
+    # Every 12 hours. GitHub may delay or skip scheduled runs under load,
+    # so this leaves plenty of margin against the 7-day window.
+    - cron: '17 3,15 * * *'
   workflow_dispatch: {}
 
+permissions:
+  contents: read
+
 jobs:
-  ping:
+  db:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    env:
+      DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+    steps:
+      - name: Query Postgres directly
+        run: |
+          set -euo pipefail
+          if [ -z "$DB_URL" ]; then
+            echo "::error::Secret SUPABASE_DB_URL is not set (Supabase → Project Settings → Database → Connection string, Session pooler)."
+            exit 1
+          fi
+          out=$(psql "$DB_URL" -v ON_ERROR_STOP=1 -At -c "select now(), (select count(*) from public.orders)") || {
+            echo "::error::Direct DB query failed. If the Supabase project is paused, restore it from the dashboard."
+            exit 1
+          }
+          echo "DB OK: $out"
+          echo "✅ DB ping OK — \`$out\`" >> "$GITHUB_STEP_SUMMARY"
+
+  http:
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
-      - name: Ping Supabase via keep-alive endpoint
+      - name: Ping keep-alive endpoint on the live site
         run: |
-          RESPONSE=$(curl -sf -w "\n%{http_code}" \
-            "https://www.tailorpic.com/api/cron/keep-alive" \
-            --max-time 30 2>&1) || true
-
-          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
-          BODY=$(echo "$RESPONSE" | head -n -1)
-
-          echo "HTTP Status: $HTTP_CODE"
-          echo "Response: $BODY"
-
-          if [ "$HTTP_CODE" = "200" ]; then
-            echo "✅ Supabase ping successful"
-          elif [ "$HTTP_CODE" = "401" ]; then
-            echo "⚠️ Auth required — endpoint works but needs CRON_SECRET"
-            echo "Supabase is still pinged by the daily Vercel crons"
-          else
-            echo "⚠️ Ping returned $HTTP_CODE — Supabase may still be active via Vercel crons"
+          set -uo pipefail
+          code=$(curl -sS -o body.json -w '%{http_code}' --max-time 30 \
+            -H 'Cache-Control: no-cache' \
+            "https://www.tailorpic.com/api/cron/keep-alive?t=$(date +%s)") || code=000
+          echo "HTTP $code: $(cat body.json 2>/dev/null)"
+          if [ "$code" != "200" ] || ! grep -q '"ok":true' body.json; then
+            echo "::error::Keep-alive endpoint returned HTTP $code — the app could not reach Supabase."
+            exit 1
           fi
+          echo "✅ HTTP ping OK" >> "$GITHUB_STEP_SUMMARY"
