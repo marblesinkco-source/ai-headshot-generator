@@ -37,10 +37,15 @@ interface Props {
 /** Only pre-defined category slugs are valid; everything else → 404 */
 export const dynamicParams = false;
 
+/** Slugs that have their own dedicated route (e.g. /create-a-hero/page.tsx) */
+const DEDICATED_ROUTES = new Set(['create-a-hero']);
+
 export async function generateStaticParams() {
-  return getActiveCategories().map((cat) => ({
-    category: cat.slug,
-  }));
+  return getActiveCategories()
+    .filter((cat) => !DEDICATED_ROUTES.has(cat.slug))
+    .map((cat) => ({
+      category: cat.slug,
+    }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
