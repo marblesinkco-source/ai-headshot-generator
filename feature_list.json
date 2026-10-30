@@ -737,6 +737,94 @@
       ],
       "status": "done",
       "evidence": "3 dosya: canvas-photo-engine.ts (yeni, 454 satır, 5 preset), before-after-showcase.tsx (canvas slider), instant-preview-demo.tsx (client-side 3-stil varyasyon). Commits: 6205db4e, aa6e7f78. CI PASS + Vercel PASS. Canlı doğrulama: Before/After slider'ları canvas-processed, Instant Preview upload+process çalışıyor. www.tailorpic.com doğrulandı 2026-10-21."
+    },
+    {
+      "id": "feat-HERO-INFRA",
+      "name": "Create a Hero — Murat Setup Checklist + Audit",
+      "description": "Mevcut feat-G funnel durumunun doğrulanması, eksik hesap/anahtar/migration listesinin çıkarılması. docs/murat-setup-checklist.md oluşturuldu.",
+      "dependencies": [],
+      "status": "done",
+      "evidence": "40 API route, 34 DB tablosu, 8 migration dosyası audit edildi. Paddle/Replicate/Resend/Upstash eksik anahtarları tespit edildi. docs/murat-setup-checklist.md yazıldı. 2026-10-30."
+    },
+    {
+      "id": "feat-HERO-CATEGORY",
+      "name": "Create a Hero — Category + DB Schema + Config",
+      "description": "hero-storybook kategorisi categories.ts'e eklenir. Yeni DB tabloları: stories, story_pages, story_contributions. Migration dosyası yazılır. Paddle price env var eklenir.",
+      "dependencies": [
+        "feat-HERO-INFRA"
+      ],
+      "status": "done",
+      "evidence": "categories.ts: hero-storybook CategoryId + full category entry (slug: create-a-hero, $19 digital package) + Gifts group. hero-storybook.ts: 6 universes, 7 occasions, 8 hero questions, STORY_CONFIG, types. 009_hero_storybook.sql + 20261030_hero_storybook.sql: 4 tables (hero_stories, hero_story_pages, hero_story_photos, hero_group_contributions) with RLS. .env.example: PADDLE_PRICE_HERO_DIGITAL. 2026-10-30."
+    },
+    {
+      "id": "feat-HERO-WIZARD",
+      "name": "Create a Hero — Wizard UI (Questions + Universe + Photo Upload)",
+      "description": "Çok adımlı sihirbaz: 1) Kime hediye (ad, meslek, hobiler, alışkanlık, süper güç, laf, yer, ekip). 2) Evren seçimi (uzay, şövalye, dedektif, süper kahraman, Viking, masal). 3) Fotoğraf yükleme (3-5 foto, KVKK/GDPR onay kutusu). 4) Vesile seçimi (doğum günü, terfi, emeklilik, vb).",
+      "dependencies": [
+        "feat-HERO-CATEGORY"
+      ],
+      "status": "done",
+      "evidence": "/create-a-hero/page.tsx + HeroWizard.tsx: 4-step wizard (Universe → Occasion → Profile → Photos). /create-a-hero/preview/[storyId]/page.tsx + StoryPreview.tsx: page viewer with locked/unlocked states, checkout CTA. /api/hero/generate/route.ts: template-based story generation stub. KVKK/GDPR consent checkbox with 30-day photo deletion notice. 2026-10-30."
+    },
+    {
+      "id": "feat-HERO-STORY-ENGINE",
+      "name": "Create a Hero — Story Generation Engine",
+      "description": "AI ile 16-24 sayfalık destansı hikâye metni üretimi. Her sayfa: metin + sahne tanımı (flux-pulid prompt). Girdi: sihirbaz cevapları + evren. Çıktı: JSON story structure. API route: /api/ai/story-generate.",
+      "dependencies": [
+        "feat-HERO-WIZARD"
+      ],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "feat-HERO-ILLUSTRATION",
+      "name": "Create a Hero — Illustration Generation (flux-pulid)",
+      "description": "Her hikâye sayfası için flux-pulid ile kişinin yüzünü kullanan illüstrasyon üretimi. Mevcut instant-preview altyapısı genişletilir. Sayfa başına 1 görsel, paralel üretim.",
+      "dependencies": [
+        "feat-HERO-STORY-ENGINE"
+      ],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "feat-HERO-PREVIEW",
+      "name": "Create a Hero — 3-Page Free Preview + Digital Book Viewer",
+      "description": "İlk 3 sayfa ücretsiz önizleme (metin + illüstrasyon). Kitap görüntüleyici: sayfa çevirme animasyonu, kapak, arka kapak. Önizleme sonrası satın alma CTA'sı.",
+      "dependencies": [
+        "feat-HERO-ILLUSTRATION"
+      ],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "feat-HERO-CHECKOUT",
+      "name": "Create a Hero — Digital Book Purchase ($19)",
+      "description": "Paddle checkout entegrasyonu: dijital kitap ~$19. Ödeme sonrası tüm sayfalar açılır. PDF indirme seçeneği. Sipariş onay e-postası.",
+      "dependencies": [
+        "feat-HERO-PREVIEW"
+      ],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "feat-HERO-LANDING",
+      "name": "Create a Hero — Marketing Landing Page",
+      "description": "tailorpic.com/create-a-hero landing sayfası: değer teklifi, nasıl çalışır, örnek kitap sayfaları, fiyat, CTA. Menüye eklenir. SEO meta tags.",
+      "dependencies": [
+        "feat-HERO-CATEGORY"
+      ],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "feat-HERO-GROUP-GIFT",
+      "name": "Create a Hero — Group Gift Link (Viral Growth Loop)",
+      "description": "Organizatör kitabı başlatır, paylaşım linki alır. Katılımcılar link üzerinden anı/cevap ekler, isteğe bağlı ödemeye katkı yapar. Her kitap ~10 kişiye ürünü gösterir. Paylaşım sayfası, katkı formu, katkı listesi.",
+      "dependencies": [
+        "feat-HERO-CHECKOUT"
+      ],
+      "status": "not-started",
+      "evidence": ""
     }
   ]
 }

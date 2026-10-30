@@ -17,7 +17,8 @@ export type CategoryId =
   | 'couple-engagement'
   | 'real-estate'
   | 'ecommerce-product'
-  | 'avatars';
+  | 'avatars'
+  | 'hero-storybook';
 
 export interface CategoryPackage {
   id: string;
@@ -740,6 +741,44 @@ export const CATEGORIES: Record<CategoryId, Category> = {
     slug: 'avatars',
     active: true,
   },
+  'hero-storybook': {
+    id: 'hero-storybook',
+    name: 'Create a Hero',
+    shortName: 'Hero Book',
+    description: 'Personalized AI storybooks starring anyone — the perfect gift for birthdays, promotions, retirements, and more.',
+    tagline: 'Turn anyone into the hero of their own epic story',
+    icon: '📖',
+    color: 'amber',
+    gradient: 'from-amber-500 to-red-600',
+    uploadInstructions: 'Upload 3-5 clear photos of the person who will star in the story. Include front-facing and slight angle shots for best results.',
+    minPhotos: 3,
+    maxPhotos: 5,
+    outputLabel: 'storybook pages',
+    packages: [
+      {
+        id: 'hero-digital',
+        name: 'Digital Storybook',
+        price: 1900,
+        currency: 'usd',
+        outputCount: 24,
+        features: [
+          '16-24 page personalized story',
+          'AI illustrations with their face',
+          '6 adventure universes',
+          'Instant digital delivery',
+          'PDF download',
+          'Shareable link',
+        ],
+        recommended: true,
+      },
+    ],
+    promptTemplate: 'An epic illustration of a hero in a {universe} setting. {scene_prompt}. The hero has the face of the reference person. Cinematic composition, rich colors, storybook illustration style, detailed background.',
+    negativePrompt: 'deformed, distorted, disfigured, poorly drawn face, bad anatomy, blurry, low quality, watermark, text, logo, copyrighted characters, Marvel, DC, Disney, trademark, brand name',
+    seoTitle: 'Create a Hero — Personalized AI Storybook | TailorPic',
+    seoDescription: 'Turn anyone into the hero of a personalized AI storybook. Perfect gift for birthdays, promotions, retirements. Digital delivery from $19.',
+    slug: 'create-a-hero',
+    active: true,
+  },
 } as const;
 
 // Helper functions
@@ -790,5 +829,10 @@ export const CATEGORY_GROUPS = [
     title: 'Creative',
     description: 'Artistic designs and portraits',
     categories: ['avatars', 'pet-portraits', 'baby-shower', 'holiday-cards'] as CategoryId[],
+  },
+  {
+    title: 'Gifts',
+    description: 'Personalized gifts powered by AI',
+    categories: ['hero-storybook'] as CategoryId[],
   },
 ];
