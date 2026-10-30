@@ -345,7 +345,7 @@ export default function ExpressHeadshotsPage() {
                   a: 'Every Express order includes 5 styles: Business Formal, Smart Casual, Creative Modern, LinkedIn Ready, and Executive.',
                 },
                 {
-                  q: 'Is it really just $19.90?',
+                  q: `Is it really just ${price}?`,
                   a: `Yes — ${price} is a one-time payment. No subscription, no hidden fees. You get all 5 headshots instantly.`,
                 },
                 {

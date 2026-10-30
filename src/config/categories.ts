@@ -162,7 +162,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
     promptTemplate: 'A professional headshot portrait photograph of a person. {style_prompt}. Sharp focus on the face, professional studio-quality lighting, natural skin tone. Shot with an 85mm lens at f/2.8.',
     negativePrompt: 'deformed, distorted, disfigured, poorly drawn face, bad anatomy, wrong anatomy, extra limb, missing limb, floating limbs, mutated hands, extra fingers, blurry, low quality, watermark, text, logo, cartoon, 3d render, anime, illustration',
     seoTitle: 'Express AI Headshots in 15 Seconds | TailorPic',
-    seoDescription: 'Get 5 professional AI headshots in just 15 seconds from a single selfie. No photo training, no waiting. Instant results for $19.90.',
+    seoDescription: `Get 5 professional AI headshots in just 15 seconds from a single selfie. No photo training, no waiting. Instant results for $${(1990 / 100).toFixed(2)}.`,
     slug: 'express-headshots',
     active: true,
   },
