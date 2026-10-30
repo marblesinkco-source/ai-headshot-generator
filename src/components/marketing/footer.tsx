@@ -25,6 +25,7 @@ const productLinks: FooterLink[] = [
 ];
 
 const photoTypeLinks: FooterLink[] = [
+  { label: 'Express Headshots ⚡', href: '/express-headshots' },
   { label: 'Professional Headshots', href: '/headshots' },
   { label: 'Team Photos', href: '/team-headshots' },
   { label: 'Dating Photos', href: '/dating-photos' },

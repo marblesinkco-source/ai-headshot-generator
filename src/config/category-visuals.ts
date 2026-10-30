@@ -269,6 +269,26 @@ export const categoryVisuals: Record<string, CategoryVisuals> = {
     ),
   },
 
+  /* ------ express-headshots: instant AI headshots ------ */
+  'express-headshots': {
+    megaMenu: asset(`${BRAND_WEB}/after-mert.jpg`, 'Express AI headshot', POS.portrait),
+    quickCard: asset(`${BRAND_WEB}/after-ozan.jpg`, 'Express AI headshot', POS.portrait),
+    heroDesktop: asset(`${BRAND_WEB}/after-mert.jpg`, 'Express AI headshot in 15 seconds', POS.portrait),
+    heroMobile: asset(`${BRAND_WEB}/after-mert.jpg`, 'Express AI headshot in 15 seconds', POS.portrait),
+    gallery: [
+      asset(`${BRAND_WEB}/after-mert.jpg`, 'Express AI headshot — business formal', POS.portrait),
+      asset(`${BRAND_WEB}/after-ozan.jpg`, 'Express AI headshot — smart casual', POS.portrait),
+      asset(`${BRAND_WEB}/after-halil.jpg`, 'Express AI headshot — creative modern', POS.portrait),
+      asset(`${BRAND_WEB}/after-alpaslan.jpg`, 'Express AI headshot — linkedin ready', POS.portrait),
+      asset(`${BRAND_WEB}/after-tarkan.jpg`, 'Express AI headshot — executive', POS.portrait),
+    ],
+    beforeAfter: realBeforeAfter(
+      'before-mert-1.jpg', 'after-mert.jpg',
+      'Original selfie uploaded for Express headshot',
+      'AI-generated Express headshot in 15 seconds',
+    ),
+  },
+
   /* ------ dating: approachable, natural portraits ------ */
   dating: {
     megaMenu: asset(`${BRAND_WEB}/after-mert.jpg`, 'AI-enhanced dating profile photo', POS.portrait),

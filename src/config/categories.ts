@@ -7,6 +7,7 @@ import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 export type CategoryId =
   | 'headshots'
+  | 'express-headshots'
   | 'dating'
   | 'pet-portraits'
   | 'linkedin-team'
@@ -124,6 +125,45 @@ export const CATEGORIES: Record<CategoryId, Category> = {
     seoTitle: 'AI Professional Headshots | TailorPic',
     seoDescription: `Get studio-quality professional headshots from your selfies. For LinkedIn, resumes, and company pages. Try one photo from ${BASE_PRICE_DISPLAY}.`,
     slug: 'headshots',
+    active: true,
+  },
+
+  'express-headshots': {
+    id: 'express-headshots',
+    name: 'Express Headshots',
+    shortName: 'Express',
+    description: 'AI headshots in 15 seconds from a single selfie. No training, no waiting — instant professional results.',
+    tagline: 'Professional headshot in 15 seconds',
+    icon: '⚡',
+    color: 'amber',
+    gradient: 'from-amber-500 to-orange-600',
+    uploadInstructions: 'Upload 1 clear selfie. Front-facing, good lighting, neutral background works best.',
+    minPhotos: 1,
+    maxPhotos: 1,
+    outputLabel: 'headshots',
+    packages: [
+      {
+        id: 'express-instant',
+        name: 'Express Headshot',
+        price: 1990,
+        currency: 'usd',
+        outputCount: 5,
+        features: [
+          '5 professional headshots',
+          '5 different styles',
+          'Ready in 15 seconds',
+          'Only 1 selfie needed',
+          'HD resolution',
+          'Instant delivery',
+        ],
+        recommended: true,
+      },
+    ],
+    promptTemplate: 'A professional headshot portrait photograph of a person. {style_prompt}. Sharp focus on the face, professional studio-quality lighting, natural skin tone. Shot with an 85mm lens at f/2.8.',
+    negativePrompt: 'deformed, distorted, disfigured, poorly drawn face, bad anatomy, wrong anatomy, extra limb, missing limb, floating limbs, mutated hands, extra fingers, blurry, low quality, watermark, text, logo, cartoon, 3d render, anime, illustration',
+    seoTitle: 'Express AI Headshots in 15 Seconds | TailorPic',
+    seoDescription: 'Get 5 professional AI headshots in just 15 seconds from a single selfie. No photo training, no waiting. Instant results for $19.90.',
+    slug: 'express-headshots',
     active: true,
   },
 
@@ -805,6 +845,7 @@ export function getPackageById(categoryId: CategoryId, packageId: string): Categ
 // Featured categories for homepage
 export const FEATURED_CATEGORIES: CategoryId[] = [
   'headshots',
+  'express-headshots',
   'avatars',
   'dating',
   'pet-portraits',
@@ -818,7 +859,7 @@ export const CATEGORY_GROUPS = [
   {
     title: 'Professional',
     description: 'For your career and business',
-    categories: ['headshots', 'linkedin-team', 'ecommerce-product', 'real-estate'] as CategoryId[],
+    categories: ['headshots', 'express-headshots', 'linkedin-team', 'ecommerce-product', 'real-estate'] as CategoryId[],
   },
   {
     title: 'Personal',

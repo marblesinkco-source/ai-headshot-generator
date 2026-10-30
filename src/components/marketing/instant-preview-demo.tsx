@@ -3,10 +3,10 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Camera, Sparkles, ArrowRight } from 'lucide-react';
+import { Camera, Sparkles, ArrowRight, Zap, Clock } from 'lucide-react';
 
 /* ------------------------------------------------------------------ */
-/*  AI Headshot style showcase — no client-side processing             */
+/*  AI Headshot style showcase + Express Headshots banner               */
 /* ------------------------------------------------------------------ */
 
 /** Cache-busting version — increment when brand images are updated */
@@ -51,7 +51,54 @@ export function InstantPreviewDemo() {
   return (
     <section className="bg-tp-black py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6 md:px-8">
-        {/* Header */}
+
+        {/* ── Express Headshots Banner ── */}
+        <div className="mb-16 md:mb-20 rounded-tp-dialog border border-tp-bronze/20 bg-gradient-to-br from-tp-ink to-tp-black p-6 sm:p-8 md:p-10">
+          <div className="grid gap-8 md:grid-cols-2 md:items-center">
+            {/* Left: Copy */}
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-4 py-1.5 text-sm text-tp-bronze mb-5">
+                <Zap className="h-4 w-4" />
+                <span>New: Express Headshots</span>
+              </div>
+              <h2 className="font-display font-normal text-3xl md:text-4xl text-tp-paper mb-3">
+                Professional Headshot
+                <br />
+                <span className="text-tp-bronze">in 15 Seconds</span>
+              </h2>
+              <p className="text-tp-beige/70 leading-relaxed mb-4">
+                Upload a single selfie and get 5 studio-quality headshots instantly.
+                No photo training, no waiting — just results.
+              </p>
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-tp-beige/60 mb-6">
+                <span className="flex items-center gap-1.5"><Clock className="h-3.5 w-3.5 text-tp-bronze" /> 15 seconds</span>
+                <span className="flex items-center gap-1.5"><Camera className="h-3.5 w-3.5 text-tp-bronze" /> 1 selfie</span>
+                <span className="flex items-center gap-1.5"><Sparkles className="h-3.5 w-3.5 text-tp-bronze" /> 5 styles</span>
+              </div>
+              <Link
+                href="/express-headshots"
+                className="inline-flex items-center gap-2 bg-tp-bronze text-tp-black py-3 px-6 rounded-tp-button font-medium hover:bg-tp-beige transition-colors"
+              >
+                Get Express Headshots — $19.90
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+
+            {/* Right: Video placeholder */}
+            <div className="relative aspect-video rounded-tp-card overflow-hidden bg-tp-black border border-tp-line">
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-tp-bronze/20 border border-tp-bronze/40">
+                  <svg className="h-6 w-6 text-tp-bronze ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+                <span className="text-tp-beige/50 text-xs">Demo video coming soon</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ── Style Showcase Header ── */}
         <div className="text-center mb-12 md:mb-16">
           <div className="inline-flex items-center gap-2 rounded-full border border-tp-bronze/30 bg-tp-bronze/10 px-4 py-1.5 text-sm text-tp-bronze mb-6">
             <Sparkles className="h-4 w-4" />
