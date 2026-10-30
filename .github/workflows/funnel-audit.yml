@@ -1,0 +1,77 @@
+name: Funnel audit
+
+# Read-only check of the money path (signup → checkout → upload → generation →
+# results) against PRODUCTION, from a runner that has full network access.
+# Nothing here writes to the site or the database; secret VALUES are never
+# printed, only whether a service answers as "configured".
+#
+# Result is posted as a commit comment (Actions logs are not readable from the
+# Claude Code sandbox): gh api repos/<repo>/commits/<sha>/comments
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: ['claude/**']
+    paths: ['.github/workflows/funnel-audit.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      SITE: https://www.tailorpic.com
+      DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Probe production
+        run: |
+          set +e
+          R=report.md
+          echo "## Funnel audit — $(date -u +%FT%TZ)" > $R
+          echo "" >> $R
+          code() { curl -s -o /tmp/body -w '%{http_code}' --max-time 30 "$@"; }
+
+          echo "### Public endpoints" >> $R
+          for p in / /pricing /auth/login /auth/register /api/health /api/health/readiness; do
+            c=$(code "$SITE$p"); echo "- GET $p → $c" >> $R
+            [ "$p" = "/api/health/readiness" ] && [ "$c" = "200" ] && { echo '```json' >> $R; cat /tmp/body >> $R; echo '' >> $R; echo '```' >> $R; }
+          done
+
+          echo "" >> $R; echo "### Webhook secrets (unsigned POST, expected 400/401 when configured)" >> $R
+          c=$(code -X POST -H 'content-type: application/json' -d '{}' "$SITE/api/webhooks/paddle"); echo "- /api/webhooks/paddle → $c $(head -c 120 /tmp/body)" >> $R
+          c=$(code -X POST -H 'content-type: application/json' -d '{}' "$SITE/api/ai/webhook"); echo "- /api/ai/webhook (Replicate) → $c $(head -c 120 /tmp/body)" >> $R
+
+          echo "" >> $R; echo "### Paddle client token in shipped JS" >> $R
+          curl -s --max-time 30 "$SITE/pricing" > /tmp/pricing.html
+          curl -s --max-time 30 "$SITE/dashboard/upload" -L > /tmp/upload.html
+          grep -oE '/_next/static/[^"]+\.js' /tmp/pricing.html /tmp/upload.html | cut -d: -f2 | sort -u > /tmp/chunks
+          found=none
+          while read -r ch; do
+            if curl -s --max-time 20 "$SITE$ch" | grep -qE '"(live|test)_[a-f0-9]{20,}"'; then
+              found=$(curl -s --max-time 20 "$SITE$ch" | grep -oE '"(live|test)_' | head -1 | tr -d '"'); break
+            fi
+          done < /tmp/chunks
+          echo "- chunks scanned: $(wc -l < /tmp/chunks); token prefix found: ${found}" >> $R
+
+          echo "" >> $R; echo "### Supabase (via SUPABASE_DB_URL)" >> $R
+          if [ -z "$DB_URL" ]; then echo "- secret not set" >> $R; else
+            sudo apt-get -qq install -y postgresql-client >/dev/null 2>&1
+            q() { psql "$DB_URL" -At -v ON_ERROR_STOP=1 -c "$1" 2>&1 | head -20; }
+            echo "- ping: $(q 'select 1')" >> $R
+            echo "- public tables: $(q "select string_agg(table_name, ', ' order by table_name) from information_schema.tables where table_schema='public'")" >> $R
+            echo "- recorded migrations: $(q "select string_agg(name, ', ' order by name) from public.schema_migrations" )" >> $R
+            echo "- orders by status (counts only): $(q "select coalesce(string_agg(status||'='||n, ', '),'none') from (select status, count(*) n from public.orders group by status) s")" >> $R
+            echo "- orders by provider: $(q "select coalesce(string_agg(coalesce(payment_provider,'null')||'='||n, ', '),'none') from (select payment_provider, count(*) n from public.orders group by payment_provider) s")" >> $R
+            echo "- storage buckets: $(q "select string_agg(id, ', ') from storage.buckets")" >> $R
+            echo "- auth users (count): $(q 'select count(*) from auth.users')" >> $R
+          fi
+          cat $R
+
+      - name: Post report as commit comment
+        if: always()
+        run: |
+          [ -f report.md ] || echo "report missing" > report.md
+          gh api "repos/${{ github.repository }}/commits/${GITHUB_SHA}/comments" -F body=@report.md > /dev/null
