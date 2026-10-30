@@ -45,7 +45,7 @@ export const HERO_UNIVERSES: HeroUniverse[] = [
     description: 'Solve impossible cases, chase clues through foggy streets, and unmask the villain.',
     icon: '🔍',
     sceneKeywords: 'noir detective office, foggy city streets, magnifying glass, trench coat, dimly lit alley, mystery',
-    color: 'from-slate-600 to-gray-900',
+    color: 'from-tp-muted to-tp-black',
     sampleChapters: ['The Missing Letter', 'Shadows on Baker Street', 'The Final Clue', 'Case Closed'],
   },
   {

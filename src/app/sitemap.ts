@@ -2008,6 +2008,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/status`,
+      lastModified: new Date('2026-10-10'),
+      changeFrequency: 'weekly',
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/tr`,
+      lastModified: new Date('2026-10-10'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/tr/pricing`,
+      lastModified: new Date('2026-10-10'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/create-a-hero`,
+      lastModified: new Date('2026-10-10'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/team-headshots`,
       lastModified: new Date('2026-10-10'),
       changeFrequency: 'monthly',

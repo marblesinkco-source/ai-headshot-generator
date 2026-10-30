@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient, createAdminClient } from '@/lib/supabase/server';
 import { rateLimit } from '@/lib/rate-limit';
+import { logger } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -130,7 +131,7 @@ export async function GET(request: NextRequest) {
       })),
     });
   } catch (err) {
-    console.error('[Analytics] Metrics error:', err);
+    logger.error('[Analytics] Metrics error:', err);
     // Graceful fallback
     return NextResponse.json({
       period: { days: 7, since: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString() },

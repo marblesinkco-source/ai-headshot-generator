@@ -661,7 +661,7 @@ export function Header() {
               >
                 Dashboard <span aria-hidden="true" className="text-lg leading-none">&#8599;</span>
               </Link>
-              <div className="grid grid-cols-3 gap-1">
+              <div className="grid grid-cols-4 gap-1">
                 <Link
                   href="/dashboard/gallery"
                   className="flex min-h-[44px] items-center justify-center rounded-tp-button border border-tp-line px-3 py-2.5 text-[13px] font-medium text-tp-ink hover:bg-white transition-colors"
@@ -682,6 +682,13 @@ export function Header() {
                   onClick={() => closeMobile()}
                 >
                   Billing
+                </Link>
+                <Link
+                  href="/dashboard/settings"
+                  className="flex min-h-[44px] items-center justify-center rounded-tp-button border border-tp-line px-3 py-2.5 text-[13px] font-medium text-tp-ink hover:bg-white transition-colors"
+                  onClick={() => closeMobile()}
+                >
+                  Settings
                 </Link>
               </div>
               <button

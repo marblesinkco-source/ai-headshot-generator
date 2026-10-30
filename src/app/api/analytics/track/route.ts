@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { createClient } from '@/lib/supabase/server';
 import { rateLimit } from '@/lib/rate-limit';
+import { logger } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -100,7 +101,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ ok: true });
   } catch (err) {
     // Graceful fallback: don't break the site if tables don't exist
-    console.error('[Analytics] Track error:', err);
+    logger.error('[Analytics] Track error:', err);
     return NextResponse.json({ ok: true }); // Silent fail — analytics should never block UX
   }
 }

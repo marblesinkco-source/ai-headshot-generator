@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 import { CreditLedgerService, isTableMissingError } from '@/lib/accounting';
+import { logger } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -34,7 +35,7 @@ export async function GET(request: NextRequest) {
     if (isTableMissingError(error)) {
       return NextResponse.json({ entries: [], balance: 0 });
     }
-    console.error('[accounting/credits] GET failed:', error);
+    logger.error('[accounting/credits] GET failed:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

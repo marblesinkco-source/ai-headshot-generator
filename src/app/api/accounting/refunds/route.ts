@@ -4,6 +4,7 @@ import { createClient } from '@/lib/supabase/server';
 import { RefundService, isTableMissingError } from '@/lib/accounting';
 import { rateLimit } from '@/lib/rate-limit';
 import { csrfGuard } from '@/lib/security';
+import { logger } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -41,7 +42,7 @@ export async function GET(request: NextRequest) {
     if (isTableMissingError(error)) {
       return NextResponse.json({ data: [], total: 0, page: 1, pageSize: 20, totalPages: 0 });
     }
-    console.error('[accounting/refunds] GET failed:', error);
+    logger.error('[accounting/refunds] GET failed:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
@@ -111,7 +112,7 @@ export async function POST(request: NextRequest) {
         { status: 503 }
       );
     }
-    console.error('[accounting/refunds] POST failed:', error);
+    logger.error('[accounting/refunds] POST failed:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

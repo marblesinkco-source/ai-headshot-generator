@@ -3,6 +3,7 @@ import { createClient } from '@/lib/supabase/server';
 import { BillingProfileService, isTableMissingError } from '@/lib/accounting';
 import type { BillingProfileType } from '@/types/accounting';
 import type { UpdateBillingProfileParams } from '@/lib/accounting/services/billing-profile-service';
+import { logger } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -22,7 +23,7 @@ export async function GET(_request: NextRequest) {
     if (isTableMissingError(error)) {
       return NextResponse.json([]);
     }
-    console.error('[accounting/billing-profile] GET failed:', error);
+    logger.error('[accounting/billing-profile] GET failed:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
@@ -111,7 +112,7 @@ export async function PUT(request: NextRequest) {
     if (isTableMissingError(error)) {
       return NextResponse.json({ error: 'Accounting tables not yet initialized.' }, { status: 503 });
     }
-    console.error('[accounting/billing-profile] PUT failed:', error);
+    logger.error('[accounting/billing-profile] PUT failed:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

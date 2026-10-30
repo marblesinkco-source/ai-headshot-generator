@@ -3,6 +3,7 @@ import { createClient } from '@/lib/supabase/server';
 import { ExportService, isTableMissingError } from '@/lib/accounting';
 import { ExportFormatNotAvailableError } from '@/lib/accounting/services/export-service';
 import type { ExportFilters, ExportFormat } from '@/types/accounting';
+import { logger } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -61,7 +62,7 @@ export async function POST(request: NextRequest) {
         headers: { 'Content-Type': 'text/plain' },
       });
     }
-    console.error('[accounting/export] POST failed:', error);
+    logger.error('[accounting/export] POST failed:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

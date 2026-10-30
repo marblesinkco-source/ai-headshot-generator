@@ -15,10 +15,36 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
+import crypto from 'crypto';
 import { createAdminClient } from '@/lib/supabase/server';
 import Replicate from 'replicate';
 import { logger } from '@/lib/logger';
 import { safeEqual } from '@/lib/security';
+
+/**
+ * Generate Replicate-compatible webhook signature headers for internal calls.
+ * Matches the format expected by verifyReplicateWebhook() in /api/ai/webhook.
+ */
+function signWebhookPayload(body: string, secret: string): Record<string, string> {
+  const webhookId = `msg_retry_${crypto.randomUUID()}`;
+  const webhookTimestamp = Math.floor(Date.now() / 1000).toString();
+  const secretBytes = Buffer.from(
+    secret.startsWith('whsec_') ? secret.slice(6) : secret,
+    'base64'
+  );
+  const signedContent = `${webhookId}.${webhookTimestamp}.${body}`;
+  const signature = crypto
+    .createHmac('sha256', secretBytes)
+    .update(signedContent)
+    .digest('base64');
+
+  return {
+    'Content-Type': 'application/json',
+    'webhook-id': webhookId,
+    'webhook-timestamp': webhookTimestamp,
+    'webhook-signature': `v1,${signature}`,
+  };
+}
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 60;
@@ -201,13 +227,12 @@ async function handleRetryStuck(request: NextRequest) {
                   error: null,
                 });
 
-                // Use internal fetch if webhook secret available
+                // Use internal fetch with signed headers so the webhook route accepts it
                 if (process.env.REPLICATE_WEBHOOK_SECRET) {
+                  const signedHeaders = signWebhookPayload(webhookBody, process.env.REPLICATE_WEBHOOK_SECRET);
                   const response = await fetch(webhookUrl, {
                     method: 'POST',
-                    headers: {
-                      'Content-Type': 'application/json',
-                    },
+                    headers: signedHeaders,
                     body: webhookBody,
                   });
 

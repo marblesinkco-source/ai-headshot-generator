@@ -32,13 +32,13 @@ export default function NotFound() {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Link
             href="/"
-            className="rounded-tp-button bg-tp-black px-6 py-3 text-sm font-semibold text-tp-bronze transition-colors hover:bg-tp-ink"
+            className="min-h-[44px] flex items-center rounded-tp-button bg-tp-black px-6 py-3 text-sm font-semibold text-tp-bronze transition-colors hover:bg-tp-ink"
           >
             Back to Home
           </Link>
           <Link
             href="/dashboard"
-            className="rounded-tp-button border border-tp-bronze bg-white px-6 py-3 text-sm font-semibold text-tp-bronze-ink transition-colors hover:bg-tp-beige/40"
+            className="min-h-[44px] flex items-center rounded-tp-button border border-tp-bronze bg-white px-6 py-3 text-sm font-semibold text-tp-bronze-ink transition-colors hover:bg-tp-beige/40"
           >
             Dashboard
           </Link>

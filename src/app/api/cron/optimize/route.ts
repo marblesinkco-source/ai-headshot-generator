@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createAdminClient } from '@/lib/supabase/server';
 import { safeEqual } from '@/lib/security';
+import { logger } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -230,7 +231,7 @@ export async function GET(request: NextRequest) {
       duration,
     });
   } catch (err) {
-    console.error('[Optimize] Cron error:', err);
+    logger.error('[Optimize] Cron error:', err);
     // Return 200 even on error — Vercel cron retries on non-200
     return NextResponse.json({
       ok: false,

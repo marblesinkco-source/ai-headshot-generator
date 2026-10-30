@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 import { TransactionService, isTableMissingError } from '@/lib/accounting';
+import { logger } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -38,7 +39,7 @@ export async function GET(
     if (isTableMissingError(error)) {
       return NextResponse.json({ error: 'Transaction not found' }, { status: 404 });
     }
-    console.error('[accounting/transactions/[id]] GET failed:', error);
+    logger.error('[accounting/transactions/[id]] GET failed:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

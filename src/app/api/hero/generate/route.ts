@@ -1,8 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { z } from 'zod';
+import { createClient } from '@/lib/supabase/server';
 import { createAdminClient } from '@/lib/supabase/server';
 import { HERO_UNIVERSES, HERO_OCCASIONS, STORY_CONFIG } from '@/config/hero-storybook';
+import { rateLimit } from '@/lib/rate-limit';
+import { csrfGuard } from '@/lib/security';
+import { logger } from '@/lib/logger';
 
 export const maxDuration = 300; // 5 min for story generation
+
+const generateSchema = z.object({
+  storyId: z.string().uuid('Invalid story ID'),
+});
 
 /**
  * POST /api/hero/generate
@@ -10,13 +19,37 @@ export const maxDuration = 300; // 5 min for story generation
  * Phase 1: generates text and scene prompts (illustrations come after payment).
  */
 export async function POST(req: NextRequest) {
-  try {
-    const { storyId } = await req.json();
+  const csrf = csrfGuard(req);
+  if (csrf) return csrf;
 
-    if (!storyId) {
-      return NextResponse.json({ error: 'storyId is required' }, { status: 400 });
+  try {
+    // Rate limit: 5 requests per minute per user
+    const rl = await rateLimit(req, { limit: 5, window: 60 });
+    if (rl) return rl;
+
+    // Auth check
+    const userClient = await createClient();
+    const { data: { user } } = await userClient.auth.getUser();
+    if (!user) {
+      return NextResponse.json({ error: 'Authentication required' }, { status: 401 });
     }
 
+    let body: unknown;
+    try {
+      body = await req.json();
+    } catch {
+      return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 });
+    }
+
+    const parsed = generateSchema.safeParse(body);
+    if (!parsed.success) {
+      return NextResponse.json(
+        { error: 'Invalid request', details: parsed.error.flatten().fieldErrors },
+        { status: 400 },
+      );
+    }
+
+    const { storyId } = parsed.data;
     const supabase = createAdminClient();
 
     // Fetch the story
@@ -27,6 +60,11 @@ export async function POST(req: NextRequest) {
       .single();
 
     if (fetchError || !story) {
+      return NextResponse.json({ error: 'Story not found' }, { status: 404 });
+    }
+
+    // Verify story ownership
+    if (story.user_id !== user.id) {
       return NextResponse.json({ error: 'Story not found' }, { status: 404 });
     }
 
@@ -108,7 +146,7 @@ export async function POST(req: NextRequest) {
       totalPages: pages.length,
     });
   } catch (err) {
-    console.error('Hero story generation error:', err);
+    logger.error('Hero story generation error:', err);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 },

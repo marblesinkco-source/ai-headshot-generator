@@ -22,11 +22,11 @@ const BRAND = {
 // ─── Unsubscribe helpers ──────────────────────────────────────────────
 
 function unsubscribeSecret(): string {
-  return (
-    process.env.RESEND_API_KEY ||
-    process.env.SUPABASE_SERVICE_ROLE_KEY ||
-    'tailorpic-unsubscribe-dev-secret'
-  );
+  const secret = process.env.RESEND_API_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!secret) {
+    throw new Error('Missing RESEND_API_KEY or SUPABASE_SERVICE_ROLE_KEY for unsubscribe HMAC');
+  }
+  return secret;
 }
 
 export function signUnsubscribeEmail(email: string): string {

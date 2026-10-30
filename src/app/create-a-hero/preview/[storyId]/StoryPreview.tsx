@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import { Button } from '@/components/ui/button';
@@ -12,6 +12,7 @@ import {
   ChevronRight,
   Sparkles,
   Download,
+  CheckCircle,
 } from 'lucide-react';
 
 interface StoryPage {
@@ -286,20 +287,38 @@ export function StoryPreview({ storyId }: { storyId: string }) {
           <p className="text-tp-ink mb-4">
             All {story.page_count} pages are complete with personalized illustrations.
           </p>
-          <div className="flex items-center justify-center gap-3">
-            <Button
-              variant="outline"
-              className="gap-2"
-              onClick={() => {
-                // TODO: implement PDF download
-                alert('PDF download coming soon!');
-              }}
-            >
-              <Download className="w-4 h-4" />
-              Download PDF
-            </Button>
-          </div>
+          <PdfDownloadButton />
         </div>
+      )}
+    </div>
+  );
+}
+
+/* ── Inline PDF download button with "coming soon" notice ── */
+function PdfDownloadButton() {
+  const [showNotice, setShowNotice] = useState(false);
+
+  useEffect(() => {
+    if (!showNotice) return;
+    const t = setTimeout(() => setShowNotice(false), 3000);
+    return () => clearTimeout(t);
+  }, [showNotice]);
+
+  return (
+    <div className="flex flex-col items-center gap-2">
+      <Button
+        variant="outline"
+        className="gap-2"
+        onClick={() => setShowNotice(true)}
+      >
+        <Download className="w-4 h-4" />
+        Download PDF
+      </Button>
+      {showNotice && (
+        <p className="flex items-center gap-1.5 text-sm text-tp-bronze-ink animate-in fade-in duration-200">
+          <CheckCircle className="w-4 h-4" />
+          PDF download will be available soon
+        </p>
       )}
     </div>
   );

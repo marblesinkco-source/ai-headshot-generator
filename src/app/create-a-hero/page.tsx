@@ -408,7 +408,7 @@ export default function CreateAHeroPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content">
         <HeroBanner />
         <HowItWorks />
         <UniverseShowcase />
