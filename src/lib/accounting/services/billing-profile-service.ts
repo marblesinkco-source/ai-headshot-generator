@@ -3,6 +3,7 @@
  */
 
 import { createAdminClient } from '@/lib/supabase/server';
+import { logger } from '@/lib/logger';
 import type { BillingProfile, BillingProfileType, BillingAddress } from '@/types/accounting';
 
 export interface CreateBillingProfileParams {
@@ -162,7 +163,7 @@ export class BillingProfileService {
       .neq('id', id)
       .eq('is_default', true);
     if (unsetError) {
-      console.error('[BillingProfileService.setDefault] Failed to unset previous defaults:', unsetError);
+      logger.error('[BillingProfileService.setDefault] Failed to unset previous defaults:', unsetError);
       // Do not throw — the new default is already set, which is the critical path.
       // Two profiles being marked default is a benign state that self-heals on the next setDefault call.
     }
