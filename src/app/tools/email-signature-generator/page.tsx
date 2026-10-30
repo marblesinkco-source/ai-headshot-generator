@@ -6,8 +6,8 @@ import { Footer } from '@/components/marketing/footer';
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { BreadcrumbSchema } from '@/components/structured-data';
+import { cn } from '@/lib/utils';
 import { SignatureForm } from './signature-form';
-import { BASE_PRICE_DISPLAY } from '@/config/pricing';
 
 // Revalidate every hour so pricing changes propagate without a manual redeploy
 export const revalidate = 3600;
@@ -121,19 +121,12 @@ export default function EmailSignatureGeneratorPage() {
         </div>
       </section>
 
-      <section className="border-t border-tp-line bg-tp-paper">
-        <div className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
-          <h2 className="text-2xl font-display font-normal text-tp-ink sm:text-3xl">
-            Ready for a better headshot in your signature?
-          </h2>
-          <p className="mt-3 text-tp-muted">
-            Upload a few selfies and get studio-quality photos in hours, from {BASE_PRICE_DISPLAY}.
-          </p>
-          <Link
-            href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
-            className={buttonVariants({ size: 'lg', className: 'mt-6' })}
-          >
-            Get Started
+      <section className="px-4 pb-20 pt-6 sm:px-6">
+        <div className="mx-auto max-w-3xl rounded-tp-dialog bg-tp-ink px-6 py-12 text-center sm:px-10">
+          <h2 className="font-display font-normal text-3xl text-tp-paper sm:text-4xl">Need a professional headshot for your signature?</h2>
+          <p className="mx-auto mt-3 max-w-xl text-sm text-tp-beige sm:text-base">TailorPic creates studio-quality headshots from your selfies, backed by a quality commitment.</p>
+          <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'mt-7 h-auto min-h-11 max-w-full whitespace-normal py-3 text-center bg-tp-bronze text-tp-black hover:bg-tp-beige')}>
+            Want professional headshots? Try TailorPic →
           </Link>
         </div>
       </section>

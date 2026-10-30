@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
 import { generateOGMetadata, generateTwitterMetadata } from '@/lib/og-metadata';
+import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
+import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
+import { cn } from '@/lib/utils';
 import { TEAM_PRICE_SMALL_DISPLAY, TEAM_PRICE_LARGE_DISPLAY } from '@/config/pricing';
 import { BreadcrumbSchema } from '@/components/structured-data';
 import { CalculatorForm } from './calculator-form';
@@ -112,6 +115,17 @@ export default function TeamHeadshotCalculatorPage() {
               </details>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="px-4 pb-20 pt-6 sm:px-6">
+        <div className="mx-auto max-w-3xl rounded-tp-dialog bg-tp-ink px-6 py-12 text-center sm:px-10">
+          <h2 className="font-display font-normal text-3xl text-tp-paper sm:text-4xl">Ready to get your team&apos;s headshots?</h2>
+          <p className="mx-auto mt-3 max-w-xl text-sm text-tp-beige sm:text-base">TailorPic creates studio-quality headshots from your selfies, backed by a quality commitment.</p>
+          <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'mt-7 h-auto min-h-11 max-w-full whitespace-normal py-3 text-center bg-tp-bronze text-tp-black hover:bg-tp-beige')}>
+            Want professional headshots? Try TailorPic →
+          </Link>
         </div>
       </section>
 
