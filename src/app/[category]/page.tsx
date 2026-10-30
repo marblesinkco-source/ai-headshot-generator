@@ -38,7 +38,7 @@ interface Props {
 export const dynamicParams = false;
 
 /** Slugs that have their own dedicated route (e.g. /create-a-hero/page.tsx) */
-const DEDICATED_ROUTES = new Set(['create-a-hero', 'headshots', 'team-headshots', 'avatars']);
+const DEDICATED_ROUTES = new Set(['create-a-hero', 'headshots', 'team-headshots', 'avatars', 'express-headshots']);
 
 export async function generateStaticParams() {
   return getActiveCategories()
