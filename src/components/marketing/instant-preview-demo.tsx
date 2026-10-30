@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Camera, Sparkles, ArrowRight, Zap, Clock } from 'lucide-react';
+import { CATEGORIES } from '@/config/categories';
 
 /* ------------------------------------------------------------------ */
 /*  AI Headshot style showcase + Express Headshots banner               */
@@ -11,6 +12,13 @@ import { Camera, Sparkles, ArrowRight, Zap, Clock } from 'lucide-react';
 
 /** Cache-busting version — increment when brand images are updated */
 const V = '?v=5';
+
+/** Express Headshots price — derived from categories.ts config */
+const EXPRESS_PRICE = (() => {
+  const cat = CATEGORIES['express-headshots'];
+  const pkg = cat?.packages?.[0];
+  return pkg ? `$${(pkg.price / 100).toFixed(2)}` : '$19.90';
+})();
 
 const STYLE_CATEGORIES = [
   {
@@ -75,12 +83,11 @@ export function InstantPreviewDemo() {
                 <span className="flex items-center gap-1.5"><Camera className="h-3.5 w-3.5 text-tp-bronze" /> 1 selfie</span>
                 <span className="flex items-center gap-1.5"><Sparkles className="h-3.5 w-3.5 text-tp-bronze" /> 5 styles</span>
               </div>
-              {/* Price hardcoded — update here if express-headshots price changes in categories.ts */}
               <Link
                 href="/express-headshots"
                 className="inline-flex items-center gap-2 bg-tp-bronze text-tp-black py-3 px-6 rounded-tp-button font-medium hover:bg-tp-beige transition-colors"
               >
-                Get Express Headshots — $19.90
+                Get Express Headshots — {EXPRESS_PRICE}
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

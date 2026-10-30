@@ -78,7 +78,7 @@ Headshots ladder in `src/config/categories.ts` (order matters — some pages ind
 - `BASE_PRICE_CENTS` in `src/config/pricing.ts` must equal the cheapest headshots package (699). `BASE_PRICE_DISPLAY` is the site-wide "from $6.99".
 - `$6.99` buys ONE photo: never pair it with "40+ photos" or call it a flat/single price; say "from $6.99" and "up to 160 photos".
 - Team pricing: `TEAM_PRICES` ($39/person 5–15, $29/person 16–50).
-- Express Headshots: `express-headshots` category, `express-instant` package, $19.90/5 photos (1990 cents). Separate category from headshots (uses flux-pulid, 1 selfie, ~15s). Homepage banner price in `instant-preview-demo.tsx` is hardcoded — update if price changes.
+- Express Headshots: `express-headshots` category, `express-instant` package, $19.90/5 photos (1990 cents). Separate category from headshots (uses flux-pulid, 1 selfie, ~15s). Price in homepage banner (`instant-preview-demo.tsx`) is derived from `CATEGORIES['express-headshots']`.
 - Entry-tier detection in UI is "cheapest package in the category", not `name === 'Express'`.
 
 ## 7. Known gotchas
