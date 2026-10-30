@@ -2,7 +2,9 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "buildCommand": "npm run build",
-  "regions": ["fra1"],
+  "regions": [
+    "fra1"
+  ],
   "functions": {
     "src/app/api/ai/generate/route.ts": {
       "memory": 1024,
@@ -10,6 +12,9 @@
     },
     "src/app/api/ai/webhook/route.ts": {
       "memory": 1024,
+      "maxDuration": 300
+    },
+    "src/app/api/hero/books/[id]/story/route.ts": {
       "maxDuration": 300
     }
   },
@@ -29,6 +34,10 @@
     {
       "path": "/api/cron/expire-orders",
       "schedule": "0 4 * * *"
+    },
+    {
+      "path": "/api/cron/hero-cleanup",
+      "schedule": "30 4 * * *"
     }
   ]
 }

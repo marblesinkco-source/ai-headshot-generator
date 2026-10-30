@@ -75,6 +75,8 @@ const PUBLIC_SKIP_AUTH_PREFIXES = [
   "/teams",
   "/free-ai-headshot",
   "/pricing-comparison",
+  "/create-a-hero",
+  "/hero-gift/",
 ];
 
 export async function middleware(request: NextRequest) {

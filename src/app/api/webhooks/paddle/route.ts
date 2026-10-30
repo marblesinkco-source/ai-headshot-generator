@@ -14,6 +14,7 @@ import {
 } from '@/lib/emails';
 import { nanoid } from 'nanoid';
 import { logger } from '@/lib/logger';
+import { fulfillHeroTransaction, isHeroTransaction, relockHeroBook } from '@/lib/hero/fulfillment';
 import { TransactionService, InvoiceService, ReceiptService } from '@/lib/accounting';
 
 export const maxDuration = 30;
@@ -202,6 +203,13 @@ export async function POST(request: NextRequest) {
       case 'transaction.completed': {
         const txnData = event.data as PaddleTransactionData;
         const customData = txnData.custom_data;
+
+        // Create a Hero books are fulfilled separately (no orders row).
+        if (isHeroTransaction(customData)) {
+          const result = await fulfillHeroTransaction(txnData as unknown as Parameters<typeof fulfillHeroTransaction>[0]);
+          if (result.status >= 500) await releaseDedupe();
+          return NextResponse.json(result.error ? { error: result.error } : { received: true }, { status: result.status });
+        }
 
         if (!customData?.orderId || !customData?.packageId || !customData?.userId) {
           logger.error('[paddle-webhook] Missing custom_data in transaction:', txnData.id);
@@ -563,7 +571,11 @@ export async function POST(request: NextRequest) {
           .maybeSingle();
 
         if (!refundOrder) {
-          logger.warn('[paddle-webhook] No order found for adjusted transaction:', adjData.transaction_id);
+          // A refunded hero book goes back to preview-only.
+          const relocked = await relockHeroBook(adjData.transaction_id);
+          if (!relocked) {
+            logger.warn('[paddle-webhook] No order found for adjusted transaction:', adjData.transaction_id);
+          }
           break;
         }
 

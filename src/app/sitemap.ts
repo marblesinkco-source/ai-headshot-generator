@@ -1758,6 +1758,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/create-a-hero`,
+      lastModified: new Date('2026-10-30'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
     // /avatars removed — auto-generated in categoryPages from getActiveCategories()
     {
       url: `${baseUrl}/tools/passport-photo-maker`,
