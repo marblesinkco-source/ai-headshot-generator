@@ -48,6 +48,11 @@ Each package needs a one-time product+price created in Paddle. The `pri_...` ID 
 | Professional | $49.90 | `PADDLE_PRICE_HEADSHOTS_PROFESSIONAL` |
 | Executive | $89.90 | `PADDLE_PRICE_HEADSHOTS_EXECUTIVE` |
 
+**Express Headshots (flux-pulid instant generation):**
+| Package | Price | Env var name |
+|---------|-------|-------------|
+| Express Instant | $19.90 | `PADDLE_PRICE_EXPRESS_INSTANT` |
+
 **Create a Hero (new — after code is deployed):**
 | Package | Price | Env var name |
 |---------|-------|-------------|
@@ -141,6 +146,9 @@ PADDLE_PRICE_HEADSHOTS_STARTER=pri_...
 PADDLE_PRICE_HEADSHOTS_PROFESSIONAL=pri_...
 PADDLE_PRICE_HEADSHOTS_EXECUTIVE=pri_...
 
+# Paddle Price ID (Express Headshots — flux-pulid instant)
+PADDLE_PRICE_EXPRESS_INSTANT=pri_...
+
 # Replicate
 REPLICATE_API_TOKEN=
 
@@ -167,11 +175,11 @@ UPSTASH_REDIS_REST_TOKEN=
 
 ## Priority Order
 
-1. **Paddle** (keys + 6 headshot price IDs) — unlocks all payments
+1. **Paddle** (keys + 6 headshot price IDs + 1 Express Headshots price ID) — unlocks all payments
 2. **Replicate** (API token) — unlocks all AI generation
 3. **Resend** (API key + domain DNS) — unlocks order confirmations
 4. **DB migrations** (verify + apply) — unlocks accounting center
 5. **Upstash** — production-grade rate limiting
 6. **Create a Hero price ID** — after storybook code is deployed
 
-Once items 1-4 are done, the existing headshot product is fully operational. Item 6 comes after the Create a Hero code ships.
+Once items 1-4 are done, the existing headshot and Express Headshots products are fully operational. Item 6 comes after the Create a Hero code ships.
