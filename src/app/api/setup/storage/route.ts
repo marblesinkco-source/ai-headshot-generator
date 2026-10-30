@@ -55,7 +55,8 @@ export async function POST(request: Request) {
     {
       public: false,
       fileSizeLimit: 10 * 1024 * 1024, // 10 MB
-      allowedMimeTypes: ["image/jpeg", "image/png", "image/webp"],
+      // application/zip: /api/ai/generate stores the training archive here
+      allowedMimeTypes: ["image/jpeg", "image/png", "image/webp", "application/zip"],
     }
   );
 

@@ -145,6 +145,16 @@ export async function POST(request: NextRequest) {
         );
       }
 
+      // Resolve Paddle price ID from config or environment
+      const creditPriceId = creditPkg.paddlePriceId || getPaddlePriceId(creditPkg.id);
+      if (!creditPriceId) {
+        logger.error(`[checkout] Missing Paddle price ID for credit package ${creditPkg.id}. Set PADDLE_PRICE_${creditPkg.id.toUpperCase().replace(/-/g, '_')} in environment.`);
+        return NextResponse.json(
+          { error: 'Payment configuration incomplete. Please try again later or contact support.' },
+          { status: 503 }
+        );
+      }
+
       const orderId = nanoid();
       const { error: orderError } = await supabase
         .from('orders')
@@ -172,16 +182,6 @@ export async function POST(request: NextRequest) {
       }
 
       const discountId = creditCoupon ? DISCOUNT_MAP[creditCoupon.toUpperCase()] : undefined;
-
-      // Resolve Paddle price ID from config or environment
-      const creditPriceId = creditPkg.paddlePriceId || getPaddlePriceId(creditPkg.id);
-      if (!creditPriceId) {
-        logger.error(`[checkout] Missing Paddle price ID for credit package ${creditPkg.id}. Set PADDLE_PRICE_${creditPkg.id.toUpperCase().replace(/-/g, '_')} in environment.`);
-        return NextResponse.json(
-          { error: 'Payment configuration incomplete. Please try again later or contact support.' },
-          { status: 503 }
-        );
-      }
 
       // Return data for Paddle.js checkout overlay
       return NextResponse.json({
@@ -264,6 +264,17 @@ export async function POST(request: NextRequest) {
       paddlePriceId = (legacyPkg as { paddlePriceId?: string }).paddlePriceId;
     }
 
+    // Resolve the Paddle price before creating the order, so a missing
+    // PADDLE_PRICE_* never leaves an orphan pending order behind.
+    const resolvedPriceId = paddlePriceId || getPaddlePriceId(packageId);
+    if (!resolvedPriceId) {
+      logger.error(`[checkout] Missing Paddle price ID for package ${packageId} (category: ${categoryId}). Set PADDLE_PRICE_${packageId.toUpperCase().replace(/-/g, '_')} in environment.`);
+      return NextResponse.json(
+        { error: 'Payment configuration incomplete. Please try again later or contact support.' },
+        { status: 503 }
+      );
+    }
+
     const orderId = nanoid();
     const { data: order, error: orderError } = await supabase
       .from('orders')
@@ -290,16 +301,6 @@ export async function POST(request: NextRequest) {
     }
 
     const discountId = couponCode ? DISCOUNT_MAP[couponCode.toUpperCase()] : undefined;
-
-    // Resolve Paddle price ID from config or environment
-    const resolvedPriceId = paddlePriceId || getPaddlePriceId(packageId);
-    if (!resolvedPriceId) {
-      logger.error(`[checkout] Missing Paddle price ID for package ${packageId} (category: ${categoryId}). Set PADDLE_PRICE_${packageId.toUpperCase().replace(/-/g, '_')} in environment.`);
-      return NextResponse.json(
-        { error: 'Payment configuration incomplete. Please try again later or contact support.' },
-        { status: 503 }
-      );
-    }
 
     // Return data for Paddle.js checkout overlay
     return NextResponse.json({

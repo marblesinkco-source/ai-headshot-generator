@@ -121,11 +121,22 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Every failure after the claim must hand the order back, otherwise it
+    // sits in 'processing' with no training and the user cannot retry.
+    const releaseClaim = async () => {
+      await adminForClaim
+        .from('orders')
+        .update({ status: 'uploading' })
+        .eq('id', orderId)
+        .eq('status', 'processing');
+    };
+
     // Resolve category and package from the new category-based config
     const categoryId = (order.category_id || 'headshots') as CategoryId;
     const category = getCategoryById(categoryId);
 
     if (!category) {
+      await releaseClaim();
       return NextResponse.json(
         { error: 'Invalid category' },
         { status: 400 }
@@ -134,6 +145,7 @@ export async function POST(request: NextRequest) {
 
     const pkg = getPackageById(categoryId, order.package_id);
     if (!pkg) {
+      await releaseClaim();
       return NextResponse.json(
         { error: 'Invalid package configuration' },
         { status: 400 }
@@ -147,6 +159,7 @@ export async function POST(request: NextRequest) {
       .eq('order_id', orderId);
 
     if (!photoCount || photoCount < category.minPhotos) {
+      await releaseClaim();
       return NextResponse.json(
         {
           error: `At least ${category.minPhotos} photos required. Currently uploaded: ${photoCount || 0}`,
@@ -162,17 +175,23 @@ export async function POST(request: NextRequest) {
       .eq('order_id', orderId);
 
     if (!photos || photos.length < category.minPhotos) {
+      await releaseClaim();
       return NextResponse.json(
         { error: 'Failed to retrieve uploaded photos' },
         { status: 500 }
       );
     }
 
+    // Storage reads use the service role: the order's ownership was checked
+    // above and the uploads bucket has no per-user SELECT policy.
+    const { createAdminClient } = await import('@/lib/supabase/server');
+    const adminClient = createAdminClient();
+
     // Create signed URLs with 24h expiry for training queue delays
     const trainingImageUrls = (
       await Promise.all(
         photos.map(async (photo) => {
-          const { data } = await supabase.storage
+          const { data } = await adminClient.storage
             .from('uploads')
             .createSignedUrl(photo.storage_path, 86400); // 24 hours
           return data?.signedUrl;
@@ -181,6 +200,7 @@ export async function POST(request: NextRequest) {
     ).filter(Boolean) as string[];
 
     if (trainingImageUrls.length < category.minPhotos) {
+      await releaseClaim();
       return NextResponse.json(
         { error: 'Failed to retrieve uploaded photos' },
         { status: 500 }
@@ -188,9 +208,6 @@ export async function POST(request: NextRequest) {
     }
 
     // Build a ZIP archive of training images and upload to storage for Replicate
-    const { createAdminClient } = await import('@/lib/supabase/server');
-    const adminClient = createAdminClient();
-
     // Download all images and create a zip file in memory
     const JSZip = (await import('jszip')).default;
     const zip = new JSZip();
@@ -229,6 +246,7 @@ export async function POST(request: NextRequest) {
     const fileCount = Object.keys(zip.files).length;
     if (fileCount === 0) {
       logger.error('No training images could be fetched — ZIP is empty', { orderId });
+      await releaseClaim();
       return NextResponse.json(
         { error: 'No training images could be prepared. Please re-upload your photos.' },
         { status: 400 }
@@ -238,15 +256,25 @@ export async function POST(request: NextRequest) {
     const zipBuffer = await zip.generateAsync({ type: 'nodebuffer' });
     const zipPath = `${user.id}/${orderId}/training_images.zip`;
 
-    const { error: zipUploadError } = await adminClient.storage
-      .from('uploads')
-      .upload(zipPath, zipBuffer, {
+    const uploadZip = () =>
+      adminClient.storage.from('uploads').upload(zipPath, zipBuffer, {
         contentType: 'application/zip',
         upsert: true,
       });
+    let { error: zipUploadError } = await uploadZip();
+    if (zipUploadError && /mime/i.test(zipUploadError.message)) {
+      // Buckets created by /api/setup/storage only allowed images; add zip once.
+      await adminClient.storage.updateBucket('uploads', {
+        public: false,
+        fileSizeLimit: 10 * 1024 * 1024,
+        allowedMimeTypes: ['image/jpeg', 'image/png', 'image/webp', 'application/zip'],
+      });
+      ({ error: zipUploadError } = await uploadZip());
+    }
 
     if (zipUploadError) {
       logger.error('Failed to upload training ZIP:', zipUploadError);
+      await releaseClaim();
       return NextResponse.json(
         { error: 'Failed to prepare training images' },
         { status: 500 }
@@ -259,6 +287,7 @@ export async function POST(request: NextRequest) {
       .createSignedUrl(zipPath, 86400);
 
     if (!zipSignedUrl?.signedUrl) {
+      await releaseClaim();
       return NextResponse.json(
         { error: 'Failed to create training data URL' },
         { status: 500 }
@@ -271,6 +300,10 @@ export async function POST(request: NextRequest) {
     const webhookUrl = `${siteConfig.url}/api/ai/webhook?type=training&orderId=${orderId}&categoryId=${categoryId}&packageId=${order.package_id}&triggerWord=${triggerWord}`;
 
     try {
+      const destination = process.env.REPLICATE_TRAINING_DESTINATION;
+      if (!destination) {
+        throw new MissingEnvError(['REPLICATE_TRAINING_DESTINATION']);
+      }
       const replicate = getReplicate();
       const training = await replicate.trainings.create(
         FLUX_TRAIN_MODEL_OWNER,
@@ -284,6 +317,9 @@ export async function POST(request: NextRequest) {
             learning_rate: 1e-4,
             resolution: '512,512',
           },
+          // Each training becomes a new version of this private model
+          // ("owner/name"), which must exist on Replicate.
+          destination: destination as `${string}/${string}`,
           webhook: webhookUrl,
           webhook_events_filter: ['completed', 'failed'],
         }

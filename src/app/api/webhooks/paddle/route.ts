@@ -211,17 +211,31 @@ export async function POST(request: NextRequest) {
         const { orderId, packageId, userId, orderType, categoryId: catId } = customData;
         const categoryId = (catId || 'headshots') as CategoryId;
 
-        // ── Security: verify that the paid price_id matches the expected one ──
-        // custom_data is user-controlled; an attacker could send a lower-priced
-        // transaction with a higher-tier packageId in custom_data. We verify
-        // the actual Paddle price ID from line_items matches what we expect.
-        const paidPriceId = txnData.details?.line_items?.[0]?.price_id;
-        const expectedPriceId = getPaddlePriceId(packageId);
+        // ── Security: verify the paid price against the ORDER's package ──
+        // custom_data is user-controlled: a buyer could pay the cheapest price
+        // while naming the orderId of a bigger order. So the expected price is
+        // derived from the order row in our DB, never from custom_data, and a
+        // missing price on either side is a rejection.
+        const { data: existingOrder } = await supabase
+          .from('orders')
+          .select('status, package_id, user_id')
+          .eq('id', orderId)
+          .single();
 
-        if (expectedPriceId && paidPriceId && paidPriceId !== expectedPriceId) {
+        if (!existingOrder || existingOrder.user_id !== userId) {
+          logger.error('[paddle-webhook] Order not found for transaction', { orderId, transactionId: txnData.id });
+          await releaseDedupe();
+          return NextResponse.json({ error: 'Order not found' }, { status: 400 });
+        }
+
+        const paidPriceId = txnData.details?.line_items?.[0]?.price_id;
+        const expectedPriceId = getPaddlePriceId(existingOrder.package_id);
+
+        if (!expectedPriceId || !paidPriceId || paidPriceId !== expectedPriceId || existingOrder.package_id !== packageId) {
           logger.error('[paddle-webhook] Price ID mismatch — possible fraud attempt', {
             orderId,
             packageId,
+            orderPackageId: existingOrder.package_id,
             paidPriceId,
             expectedPriceId,
             transactionId: txnData.id,
@@ -234,13 +248,7 @@ export async function POST(request: NextRequest) {
         }
 
         // Idempotency: skip if already paid
-        const { data: existingOrder } = await supabase
-          .from('orders')
-          .select('status')
-          .eq('id', orderId)
-          .single();
-
-        if (existingOrder?.status === 'paid' || existingOrder?.status === 'uploading' || existingOrder?.status === 'processing' || existingOrder?.status === 'completed') {
+        if (existingOrder.status === 'paid' || existingOrder.status === 'uploading' || existingOrder.status === 'processing' || existingOrder.status === 'completed') {
           return NextResponse.json({ received: true }, { status: 200 });
         }
 
