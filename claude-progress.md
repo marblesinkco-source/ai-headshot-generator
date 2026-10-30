@@ -1,5 +1,26 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-30 (Production-Readiness Audit — Security, A11y, SEO, Code Quality)
+
+### Tamamlanan Görevler
+- **Security hardening**: Hero generate API'ye csrfGuard/rateLimit/logger stack, CRON_SECRET doğrulaması keep-alive+retry-stuck cron'larda, emails.ts hardcoded fallback secret kaldırıldı, retry-stuck webhook'a HMAC imza eklendi (signWebhookPayload).
+- **Accessibility**: create-a-hero error boundary, skip-to-content main-content ID, StoryPreview alert()→PdfDownloadButton, not-found 44px touch targets.
+- **Code quality**: 14 API route'ta console.error→logger.error, billing-profile-service.ts console.error→logger, hero-storybook.ts gray-900/slate-600→tp-ink/tp-muted brand token düzeltmesi.
+- **SEO**: Sitemap'e /create-a-hero, /status, /tr, /tr/pricing eklendi.
+- **Navigation**: Mobile menüye Settings link eklendi (header parity), DEDICATED_ROUTES Set genişletildi.
+- Commits: `780989a` (27 dosya, 395 satır), `96033b9` (billing-profile-service logger)
+- CI PASS ✅, Vercel PASS ✅ (her iki commit)
+- Canlı doğrulama: homepage ✅, create-a-hero ✅, mobile menu ✅, 404 ✅, pricing ✅
+
+### Hâlâ Bekleyen (Murat Gerekli)
+1. **REPLICATE_API_TOKEN** — AI generation + Create a Hero story engine blocked
+2. **Paddle config** — PADDLE_API_KEY, PADDLE_WEBHOOK_SECRET, NEXT_PUBLIC_PADDLE_CLIENT_TOKEN, PADDLE_PRICE_* ID'leri
+3. **Supabase migrations** — hero_stories + accounting tables need `gh workflow run db-migrate.yml`
+4. **RESEND_API_KEY** — transactional emails
+5. **Upstash Redis** — rate limiting
+
+---
+
 ## Oturum: 2026-10-30 (Create a Hero — Landing Page + Wizard)
 
 ### Tamamlanan Görevler

@@ -739,6 +739,14 @@
       "evidence": "3 dosya: canvas-photo-engine.ts (yeni, 454 satır, 5 preset), before-after-showcase.tsx (canvas slider), instant-preview-demo.tsx (client-side 3-stil varyasyon). Commits: 6205db4e, aa6e7f78. CI PASS + Vercel PASS. Canlı doğrulama: Before/After slider'ları canvas-processed, Instant Preview upload+process çalışıyor. www.tailorpic.com doğrulandı 2026-10-21."
     },
     {
+      "id": "feat-PROD-READY",
+      "name": "Production-Readiness Audit & Fixes",
+      "description": "Security hardening (CSRF, rate limiting, webhook signatures, CRON_SECRET), accessibility (error boundaries, touch targets, skip-to-content), code quality (console.error→logger 15 files, brand token fixes), SEO (sitemap gaps), navigation (mobile menu parity, DEDICATED_ROUTES)",
+      "dependencies": ["feat-HERO-LANDING"],
+      "status": "done",
+      "evidence": "27 dosya düzeltildi. Commits: 780989a, 96033b9. CI PASS + Vercel PASS. Canlı doğrulama: homepage, create-a-hero, mobile menu, 404, pricing tümü OK. 2026-10-30."
+    },
+    {
       "id": "feat-HERO-INFRA",
       "name": "Create a Hero — Murat Setup Checklist + Audit",
       "description": "Mevcut feat-G funnel durumunun doğrulanması, eksik hesap/anahtar/migration listesinin çıkarılması. docs/murat-setup-checklist.md oluşturuldu.",
