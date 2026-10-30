@@ -103,13 +103,15 @@ function UploadContent() {
     trackConversion('category_selected', { categoryId: catId });
   }
 
-  async function handleCheckout(packageId: string, couponCode?: string) {
-    if (!selectedCategory) return;
+  async function handleCheckout(packageId: string, couponCode?: string, categoryOverride?: CategoryId) {
+    // setState is async: cross-sell buttons pass the category explicitly.
+    const checkoutCategory = categoryOverride ?? selectedCategory;
+    if (!checkoutCategory) return;
 
     setCheckoutLoading(packageId);
     setError(null);
     trackConversion('checkout_initiated', {
-      categoryId: selectedCategory,
+      categoryId: checkoutCategory,
       packageId,
       metadata: { couponCode: couponCode || undefined },
     });
@@ -119,7 +121,7 @@ function UploadContent() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          categoryId: selectedCategory,
+          categoryId: checkoutCategory,
           packageId,
           ...(couponCode && { couponCode }),
           withdrawalConsentGiven: true,
@@ -521,7 +523,7 @@ function UploadContent() {
                     onClick={() => {
                       setSelectedCategory('avatars' as CategoryId);
                       setSelectedPackage('avatar-starter');
-                      handleCheckout('avatar-starter', 'AVATAR20');
+                      handleCheckout('avatar-starter', 'AVATAR20', 'avatars' as CategoryId);
                     }}
                   >
                     Add Avatars — {discountedPrice}

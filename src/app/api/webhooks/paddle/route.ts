@@ -14,6 +14,7 @@ import {
 } from '@/lib/emails';
 import { nanoid } from 'nanoid';
 import { logger } from '@/lib/logger';
+import { fulfillHeroTransaction, isHeroTransaction, relockHeroBook } from '@/lib/hero/fulfillment';
 import { TransactionService, InvoiceService, ReceiptService } from '@/lib/accounting';
 
 export const maxDuration = 30;
@@ -203,6 +204,13 @@ export async function POST(request: NextRequest) {
         const txnData = event.data as PaddleTransactionData;
         const customData = txnData.custom_data;
 
+        // Create a Hero books are fulfilled separately (no orders row).
+        if (isHeroTransaction(customData)) {
+          const result = await fulfillHeroTransaction(txnData as unknown as Parameters<typeof fulfillHeroTransaction>[0]);
+          if (result.status >= 500) await releaseDedupe();
+          return NextResponse.json(result.error ? { error: result.error } : { received: true }, { status: result.status });
+        }
+
         if (!customData?.orderId || !customData?.packageId || !customData?.userId) {
           logger.error('[paddle-webhook] Missing custom_data in transaction:', txnData.id);
           return NextResponse.json({ received: true }, { status: 200 });
@@ -211,17 +219,31 @@ export async function POST(request: NextRequest) {
         const { orderId, packageId, userId, orderType, categoryId: catId } = customData;
         const categoryId = (catId || 'headshots') as CategoryId;
 
-        // ── Security: verify that the paid price_id matches the expected one ──
-        // custom_data is user-controlled; an attacker could send a lower-priced
-        // transaction with a higher-tier packageId in custom_data. We verify
-        // the actual Paddle price ID from line_items matches what we expect.
-        const paidPriceId = txnData.details?.line_items?.[0]?.price_id;
-        const expectedPriceId = getPaddlePriceId(packageId);
+        // ── Security: verify the paid price against the ORDER's package ──
+        // custom_data is user-controlled: a buyer could pay the cheapest price
+        // while naming the orderId of a bigger order. So the expected price is
+        // derived from the order row in our DB, never from custom_data, and a
+        // missing price on either side is a rejection.
+        const { data: existingOrder } = await supabase
+          .from('orders')
+          .select('status, package_id, user_id')
+          .eq('id', orderId)
+          .single();
 
-        if (expectedPriceId && paidPriceId && paidPriceId !== expectedPriceId) {
+        if (!existingOrder || existingOrder.user_id !== userId) {
+          logger.error('[paddle-webhook] Order not found for transaction', { orderId, transactionId: txnData.id });
+          await releaseDedupe();
+          return NextResponse.json({ error: 'Order not found' }, { status: 400 });
+        }
+
+        const paidPriceId = txnData.details?.line_items?.[0]?.price_id;
+        const expectedPriceId = getPaddlePriceId(existingOrder.package_id);
+
+        if (!expectedPriceId || !paidPriceId || paidPriceId !== expectedPriceId || existingOrder.package_id !== packageId) {
           logger.error('[paddle-webhook] Price ID mismatch — possible fraud attempt', {
             orderId,
             packageId,
+            orderPackageId: existingOrder.package_id,
             paidPriceId,
             expectedPriceId,
             transactionId: txnData.id,
@@ -234,13 +256,7 @@ export async function POST(request: NextRequest) {
         }
 
         // Idempotency: skip if already paid
-        const { data: existingOrder } = await supabase
-          .from('orders')
-          .select('status')
-          .eq('id', orderId)
-          .single();
-
-        if (existingOrder?.status === 'paid' || existingOrder?.status === 'uploading' || existingOrder?.status === 'processing' || existingOrder?.status === 'completed') {
+        if (existingOrder.status === 'paid' || existingOrder.status === 'uploading' || existingOrder.status === 'processing' || existingOrder.status === 'completed') {
           return NextResponse.json({ received: true }, { status: 200 });
         }
 
@@ -281,9 +297,11 @@ export async function POST(request: NextRequest) {
 
         // ── Credit package purchase ──────────────────────────────────
         if (orderType === 'credits') {
-          const creditCount = parseInt(customData.creditCount || '0', 10);
-          const validityDays = parseInt(customData.validityDays || '365', 10);
-          const creditPkg = CREDIT_PACKAGES.find((p) => p.id === packageId);
+          // Amounts come from our config for the verified package, never from
+          // custom_data (the buyer can edit what Paddle.js sends).
+          const creditPkg = CREDIT_PACKAGES.find((p) => p.id === existingOrder.package_id);
+          const creditCount = creditPkg?.credits ?? 0;
+          const validityDays = creditPkg?.validityDays ?? 365;
 
           if (creditCount > 0) {
             const creditId = nanoid();
@@ -555,7 +573,14 @@ export async function POST(request: NextRequest) {
           .maybeSingle();
 
         if (!refundOrder) {
-          logger.warn('[paddle-webhook] No order found for adjusted transaction:', adjData.transaction_id);
+          // A refunded hero book goes back to preview-only.
+          const relocked = await relockHeroBook(
+            adjData.transaction_id,
+            adjData.totals?.total ? Math.abs(parseInt(adjData.totals.total, 10)) : 0,
+          );
+          if (!relocked) {
+            logger.warn('[paddle-webhook] No order found for adjusted transaction:', adjData.transaction_id);
+          }
           break;
         }
 

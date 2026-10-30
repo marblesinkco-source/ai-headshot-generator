@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback } from 'react';
+import { downscaleForUpload } from '@/lib/client-image';
 import { useDropzone } from 'react-dropzone';
 import { cn } from '@/lib/utils';
 import { PhotoQualityChecker } from '@/components/upload/photo-quality-checker';
@@ -49,53 +50,39 @@ export function PhotoUploader({ orderId, onUploadComplete }: PhotoUploaderProps)
 
   async function uploadFiles(newFiles: UploadedFile[]) {
     setUploading(true);
-
-    const formData = new FormData();
-    formData.append('orderId', orderId);
-    newFiles.forEach((f) => formData.append('files', f.file));
-
-    // Update all to uploading
-    setFiles((prev) =>
-      prev.map((f) =>
-        newFiles.find((nf) => nf.id === f.id) ? { ...f, status: 'uploading' as const, progress: 50 } : f
-      )
-    );
-
+    // One photo per request, downscaled first: Vercel rejects bodies > 4.5 MB.
     try {
-      const response = await fetch('/api/upload', {
-        method: 'POST',
-        body: formData,
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
+      for (const item of newFiles) {
         setFiles((prev) =>
-          prev.map((f) =>
-            newFiles.find((nf) => nf.id === f.id)
-              ? { ...f, status: 'error' as const, progress: 0, error: data.error }
-              : f
-          )
+          prev.map((f) => (f.id === item.id ? { ...f, status: 'uploading' as const, progress: 50 } : f))
         );
-      } else {
-        setFiles((prev) =>
-          prev.map((f) =>
-            newFiles.find((nf) => nf.id === f.id)
-              ? { ...f, status: 'done' as const, progress: 100 }
-              : f
-          )
-        );
-        setTotalUploaded(data.totalPhotos);
-        onUploadComplete?.(data.totalPhotos);
+        try {
+          const formData = new FormData();
+          formData.append('orderId', orderId);
+          formData.append('files', await downscaleForUpload(item.file));
+          const response = await fetch('/api/upload', { method: 'POST', body: formData });
+          const data = await response.json();
+          if (!response.ok) {
+            setFiles((prev) =>
+              prev.map((f) =>
+                f.id === item.id ? { ...f, status: 'error' as const, progress: 0, error: data.error } : f
+              )
+            );
+          } else {
+            setFiles((prev) =>
+              prev.map((f) => (f.id === item.id ? { ...f, status: 'done' as const, progress: 100 } : f))
+            );
+            setTotalUploaded(data.totalPhotos);
+            onUploadComplete?.(data.totalPhotos);
+          }
+        } catch {
+          setFiles((prev) =>
+            prev.map((f) =>
+              f.id === item.id ? { ...f, status: 'error' as const, progress: 0, error: 'Upload failed' } : f
+            )
+          );
+        }
       }
-    } catch {
-      setFiles((prev) =>
-        prev.map((f) =>
-          newFiles.find((nf) => nf.id === f.id)
-            ? { ...f, status: 'error' as const, progress: 0, error: 'Upload failed' }
-            : f
-        )
-      );
     } finally {
       setUploading(false);
     }

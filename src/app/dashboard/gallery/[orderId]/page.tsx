@@ -44,7 +44,8 @@ export default function OrderGalleryPage() {
 
   const fetchGallery = useCallback(async () => {
     try {
-      const response = await fetch(`/api/gallery/${orderId}`);
+      // The largest package delivers 160 photos; load them all in one page.
+      const response = await fetch(`/api/gallery/${orderId}?limit=200`);
       const data = await response.json();
 
       if (response.ok) {

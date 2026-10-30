@@ -65,8 +65,8 @@
       "dependencies": [
         "feat-F"
       ],
-      "status": "not-started",
-      "evidence": ""
+      "status": "done",
+      "evidence": "Duplicate of the later feat-G entry (UI pass, commit 4ec036c). The paid funnel itself was audited on 2026-10-30: see feat-HERO-AUDIT / feat-HERO-FUNNEL."
     },
     {
       "id": "feat-H",
@@ -737,6 +737,84 @@
       ],
       "status": "done",
       "evidence": "3 dosya: canvas-photo-engine.ts (yeni, 454 satır, 5 preset), before-after-showcase.tsx (canvas slider), instant-preview-demo.tsx (client-side 3-stil varyasyon). Commits: 6205db4e, aa6e7f78. CI PASS + Vercel PASS. Canlı doğrulama: Before/After slider'ları canvas-processed, Instant Preview upload+process çalışıyor. www.tailorpic.com doğrulandı 2026-10-21."
+    },
+    {
+      "id": "feat-HERO-AUDIT",
+      "name": "Funnel audit (production, read-only)",
+      "description": "Measure the real state of payment, AI and DB keys and the signup→checkout→upload→generation→results code path.",
+      "dependencies": [],
+      "status": "done",
+      "evidence": "funnel-audit.yml run on 94c0d33: Supabase tenant not found (DB paused/deleted), REPLICATE_WEBHOOK_SECRET missing (500). Code audit found 6 blockers. Report: docs/create-a-hero-audit-2026-10-30.md"
+    },
+    {
+      "id": "feat-HERO-FUNNEL",
+      "name": "Funnel code fixes",
+      "description": "Fix code defects that would stop paid orders even with all keys set.",
+      "dependencies": [
+        "feat-HERO-AUDIT"
+      ],
+      "status": "in-progress",
+      "evidence": "Commit e72ce08: Replicate destination, claim release, storage reads, zip mime, Paddle price-vs-order check, upload size, gallery 200, migration 010. Local next build OK. Open: download-all size, post-payment polling, retry-stuck signature, public headshots bucket. End-to-end test blocked on Supabase restore + keys."
+    },
+    {
+      "id": "feat-HERO-WIZARD",
+      "name": "Create a Hero wizard + landing",
+      "description": "/create-a-hero landing; /dashboard/hero/new wizard (audience, occasion, 8 questions, universe, 3-5 photos, explicit consent).",
+      "dependencies": [
+        "feat-HERO-FUNNEL"
+      ],
+      "status": "in-progress",
+      "evidence": "Commit 88ed001. Local build OK, landing rendered at 390px and 1280px with no console errors or horizontal scroll. Live check pending merge."
+    },
+    {
+      "id": "feat-HERO-STORY",
+      "name": "Story generation + illustrations",
+      "description": "Claude writes a 16-24 page original story (structured output, franchise guard); PuLID-Flux illustrates with the hero face; private storage.",
+      "dependencies": [
+        "feat-HERO-WIZARD"
+      ],
+      "status": "blocked",
+      "evidence": "Code in 88ed001. Blocked: ANTHROPIC_API_KEY, REPLICATE_API_TOKEN, Supabase, migration 009."
+    },
+    {
+      "id": "feat-HERO-PREVIEW",
+      "name": "3-page free preview",
+      "description": "Only pages 1-3 are illustrated and returned before payment.",
+      "dependencies": [
+        "feat-HERO-STORY"
+      ],
+      "status": "in-progress",
+      "evidence": "Enforced server-side in /api/hero/books/[id] and /illustrate (402 for locked pages)."
+    },
+    {
+      "id": "feat-HERO-DIGITAL",
+      "name": "Digital book sale ($19)",
+      "description": "Paddle checkout PADDLE_PRICE_HERO_DIGITAL; webhook unlocks with price verification; refunds relock; Save as PDF via print.",
+      "dependencies": [
+        "feat-HERO-PREVIEW"
+      ],
+      "status": "blocked",
+      "evidence": "Code in 88ed001. Blocked: Murat approval of $19 + refund wording, Paddle price ID."
+    },
+    {
+      "id": "feat-HERO-GIFT",
+      "name": "Group gift link",
+      "description": "/hero-gift/[token]: teammates add memories without an account; organiser can hide; memories close the book.",
+      "dependencies": [
+        "feat-HERO-WIZARD"
+      ],
+      "status": "in-progress",
+      "evidence": "Memories done in 88ed001. Money chip-in intentionally not built: payment policy decision for Murat."
+    },
+    {
+      "id": "feat-HERO-PRINT",
+      "name": "Printed hardcover (print partner)",
+      "description": "Lulu Print API first (24-page min, 8.5x8.5, sandbox, US+FR print), Prodigi second.",
+      "dependencies": [
+        "feat-HERO-DIGITAL"
+      ],
+      "status": "not-started",
+      "evidence": "Research done (docs/create-a-hero-audit-2026-10-30.md §5). Needs Lulu account + price before integration."
     }
   ]
 }
