@@ -1,5 +1,30 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-30 (Create a Hero — Landing Page + Wizard)
+
+### Tamamlanan Görevler
+- **Create a Hero landing page** (`/create-a-hero`): 8-section marketing page — hero banner, how-it-works (4 steps), 6 adventure universes with chapter tags, occasion grid (7 occasions), pricing card ($19 digital), trust section (4 pillars), FAQ (6 questions with `<details>` accordion), final CTA.
+- **Wizard sub-route** (`/create-a-hero/start`): Server component wrapping HeroWizard with metadata + canonical URL.
+- **Config-driven**: All content pulls from `src/config/hero-storybook.ts` (universes, occasions, story config).
+- **Mega menu integration**: Automatically works via `CATEGORY_GROUPS` "Gifts" group in `categories.ts`.
+- CI PASS ✅, Vercel PASS ✅, live site verified ✅
+- Commit: `c55ccba`
+
+### Hâlâ Bekleyen (Murat Gerekli)
+1. **REPLICATE_API_TOKEN** — AI generation blocked
+2. **Paddle config** — PADDLE_API_KEY, PADDLE_WEBHOOK_SECRET, NEXT_PUBLIC_PADDLE_CLIENT_TOKEN, PADDLE_PRICE_HERO_DIGITAL
+3. **Supabase migrations** — hero_stories, hero_story_pages, hero_photos tables need `gh workflow run db-migrate.yml`
+4. **RESEND_API_KEY** — transactional emails
+5. **Upstash Redis** — rate limiting
+
+### Sonraki Adımlar
+- feat-HERO-STORY-ENGINE (blocked by REPLICATE_API_TOKEN)
+- feat-HERO-PREVIEW (blocked by story engine)
+- feat-HERO-CHECKOUT (blocked by Paddle config)
+- feat-HERO-GROUP-GIFT (Week 2)
+
+---
+
 ## Oturum: 2026-10-22 (Instant Preview Dashboard UI)
 
 ### Tamamlanan Görevler

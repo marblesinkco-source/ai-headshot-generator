@@ -813,8 +813,8 @@
       "dependencies": [
         "feat-HERO-CATEGORY"
       ],
-      "status": "not-started",
-      "evidence": ""
+      "status": "done",
+      "evidence": "Landing page deployed at /create-a-hero with 8 sections (hero, how-it-works, universes, occasions, pricing, trust, FAQ, final CTA). Wizard at /create-a-hero/start. CI PASS, Vercel PASS, live site verified. Commit: c55ccba"
     },
     {
       "id": "feat-HERO-GROUP-GIFT",
