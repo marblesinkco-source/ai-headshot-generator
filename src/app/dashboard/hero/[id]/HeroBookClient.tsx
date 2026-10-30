@@ -63,9 +63,12 @@ export default function HeroBookClient({ id }: { id: string }) {
         if (!res.ok && res.status !== 202) throw new Error((await res.json()).error || 'Story failed');
         b = await load();
       }
-      while (b.status === 'writing') {
+      // Another tab (or a killed run) holds the story; wait, then take over.
+      for (let tries = 0; b.status === 'writing'; tries++) {
+        if (tries >= 80) throw new Error('Writing the story is taking too long.');
         setWorking('Writing your story. This usually takes a minute or two…');
         await new Promise((r) => setTimeout(r, 5000));
+        if (tries % 12 === 11) await fetch(`/api/hero/books/${id}/story`, { method: 'POST' });
         b = await load();
       }
       if (b.paid && !b.photosAvailable && b.pages.some((p) => !p.illustrated)) {
@@ -74,12 +77,17 @@ export default function HeroBookClient({ id }: { id: string }) {
       for (const p of b.pages) {
         if (p.locked || p.illustrated) continue;
         setWorking(`Illustrating page ${p.index + 1} of ${b.paid ? b.pageCount : b.previewPages}…`);
-        const res = await fetch(`/api/hero/books/${id}/illustrate`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ page: p.index }),
-        });
-        if (!res.ok) throw new Error((await res.json()).error || 'Illustration failed');
+        for (let tries = 0; ; tries++) {
+          const res = await fetch(`/api/hero/books/${id}/illustrate`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ page: p.index }),
+          });
+          if (!res.ok) throw new Error((await res.json()).error || 'Illustration failed');
+          if (res.status !== 202) break;
+          if (tries >= 40) throw new Error('This illustration is taking too long.');
+          await new Promise((r) => setTimeout(r, 4000));
+        }
         b = await load();
       }
       setWorking(null);

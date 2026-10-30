@@ -10,6 +10,9 @@ import { logger } from '@/lib/logger';
 export const dynamic = 'force-dynamic';
 export const maxDuration = 300;
 
+/** Longer than maxDuration: a claim this old belongs to a dead run. */
+const STALE_WRITING_MS = 6 * 60 * 1000;
+
 /** Writes the story once. Safe to call again: an existing story is kept. */
 export async function POST(request: NextRequest, { params }: { params: { id: string } }) {
   const csrf = csrfGuard(request);
@@ -27,13 +30,15 @@ export async function POST(request: NextRequest, { params }: { params: { id: str
   if (!rl.success) return NextResponse.json({ error: 'Daily limit reached. Please try again tomorrow.' }, { status: 429 });
 
   const db = heroDb();
-  // Claim: only one writer per book.
+  // Claim: only one writer per book. A 'writing' claim older than the
+  // function limit means that run was killed (timeout/crash), so take it over.
+  const staleBefore = new Date(Date.now() - STALE_WRITING_MS).toISOString();
   const { data: claimed } = await db
     .from('hero_books')
     .update({ status: 'writing', error: null, updated_at: new Date().toISOString() })
     .eq('id', book.id)
-    .in('status', ['draft', 'failed'])
     .is('story', null)
+    .or(`status.in.(draft,failed),and(status.eq.writing,updated_at.lt.${staleBefore})`)
     .select('id');
   if (!claimed?.length) return NextResponse.json({ status: 'writing' }, { status: 202 });
 

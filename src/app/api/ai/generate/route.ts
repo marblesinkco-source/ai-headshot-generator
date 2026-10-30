@@ -28,6 +28,8 @@ const generateSchema = z.object({
 });
 
 export async function POST(request: NextRequest) {
+  // Set once the order is claimed, so an unexpected throw can release it.
+  let releaseClaimOnError: (() => Promise<void>) | null = null;
   const csrf = csrfGuard(request);
   if (csrf) return csrf;
   try {
@@ -123,6 +125,9 @@ export async function POST(request: NextRequest) {
 
     // Every failure after the claim must hand the order back, otherwise it
     // sits in 'processing' with no training and the user cannot retry.
+    releaseClaimOnError = async () => {
+      await releaseClaim();
+    };
     const releaseClaim = async () => {
       await adminForClaim
         .from('orders')
@@ -363,6 +368,7 @@ export async function POST(request: NextRequest) {
       );
     }
   } catch (error) {
+    if (releaseClaimOnError) await releaseClaimOnError().catch(() => undefined);
     if (error instanceof MissingEnvError) {
       logger.error('Generation misconfigured', error);
     } else {

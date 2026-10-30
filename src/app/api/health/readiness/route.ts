@@ -29,6 +29,7 @@ export function GET() {
     headshotPricesTotal: headshotIds.length,
     replicate: has('REPLICATE_API_TOKEN'),
     replicateWebhook: has('REPLICATE_WEBHOOK_SECRET'),
+    replicateTrainingDestination: has('REPLICATE_TRAINING_DESTINATION'),
     resend: has('RESEND_API_KEY'),
     upstash: has('UPSTASH_REDIS_REST_URL') && has('UPSTASH_REDIS_REST_TOKEN'),
     cronSecret: has('CRON_SECRET'),
@@ -43,7 +44,8 @@ export function GET() {
     checks.paddleClient &&
     missingHeadshotPrices.length === 0 &&
     checks.replicate &&
-    checks.replicateWebhook;
+    checks.replicateWebhook &&
+    checks.replicateTrainingDestination;
 
   return NextResponse.json(
     { funnelReady: ready, checks, version: process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) || 'dev' },

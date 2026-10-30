@@ -22,7 +22,7 @@ export async function GET(request: NextRequest) {
   const db = heroDb();
   const { data: due, error } = await db
     .from('hero_books')
-    .select('id, photo_paths')
+    .select('id, photo_paths, paid_digital, story, page_images')
     .is('photos_deleted_at', null)
     .lte('photos_delete_after', new Date().toISOString())
     .limit(200);
@@ -34,6 +34,12 @@ export async function GET(request: NextRequest) {
   let deleted = 0;
   for (const book of due ?? []) {
     const paths = (book.photo_paths as string[]) ?? [];
+    // The deletion date is a promise to the customer, so it is kept even when
+    // a paid book still has undrawn pages; support has to follow up on those.
+    const total = (book.story as { pages?: unknown[] } | null)?.pages?.length ?? 0;
+    if (book.paid_digital && Object.keys((book.page_images as Record<string, string>) ?? {}).length < total) {
+      logger.warn('[hero-cleanup] paid book unfinished at photo deletion', { bookId: book.id });
+    }
     if (paths.length > 0) {
       const { error: rmError } = await db.storage.from(HERO_PHOTO_BUCKET).remove(paths);
       if (rmError) {

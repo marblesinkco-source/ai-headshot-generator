@@ -7,7 +7,7 @@ export const HERO_DIGITAL_PACKAGE_ID = 'hero-digital';
 interface HeroTransaction {
   id: string;
   custom_data?: Record<string, unknown> | null;
-  details?: { line_items?: { price_id?: string }[] };
+  details?: { line_items?: { price_id?: string }[]; totals?: { grand_total?: string } };
 }
 
 export function isHeroTransaction(customData: unknown): boolean {
@@ -42,6 +42,7 @@ export async function fulfillHeroTransaction(txn: HeroTransaction): Promise<{ st
       paid_digital: true,
       paid_at: new Date().toISOString(),
       paddle_transaction_id: txn.id,
+      paid_amount_minor: txn.details?.totals?.grand_total ? parseInt(txn.details.totals.grand_total, 10) : null,
       status: 'paid',
       updated_at: new Date().toISOString(),
     })
@@ -54,12 +55,26 @@ export async function fulfillHeroTransaction(txn: HeroTransaction): Promise<{ st
   return { status: 200 };
 }
 
-/** Approved refund or chargeback: back to the free preview. */
-export async function relockHeroBook(transactionId: string): Promise<boolean> {
-  const { data } = await heroDb()
+/**
+ * Approved refund or chargeback: back to the free preview, but only when the
+ * whole amount was returned (a partial goodwill refund keeps the book).
+ * Returns true when the transaction belonged to a hero book.
+ */
+export async function relockHeroBook(transactionId: string, refundedMinor: number): Promise<boolean> {
+  const db = heroDb();
+  const { data: book } = await db
     .from('hero_books')
-    .update({ paid_digital: false, status: 'preview_ready', updated_at: new Date().toISOString() })
+    .select('id, paid_amount_minor')
     .eq('paddle_transaction_id', transactionId)
-    .select('id');
-  return !!data && data.length > 0;
+    .maybeSingle();
+  if (!book) return false;
+  const full = !book.paid_amount_minor || refundedMinor >= book.paid_amount_minor;
+  if (full) {
+    await db
+      .from('hero_books')
+      .update({ paid_digital: false, status: 'preview_ready', updated_at: new Date().toISOString() })
+      .eq('id', book.id);
+  }
+  logger.info(`[hero] ${full ? 'Full' : 'Partial'} refund on book ${book.id}`);
+  return true;
 }

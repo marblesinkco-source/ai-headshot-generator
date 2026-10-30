@@ -50,9 +50,11 @@ export interface HeroBookRow {
   consent_text: string;
   story: HeroStory | null;
   page_images: Record<string, string>;
+  page_predictions: Record<string, string>;
   paid_digital: boolean;
   paid_at: string | null;
   paddle_transaction_id: string | null;
+  paid_amount_minor: number | null;
   gift_token: string | null;
   gift_note: string | null;
   chipin_total_cents: number;

@@ -1,5 +1,25 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-30 (Create a Hero + funnel audit)
+
+### Doğrulanmış
+- Production funnel audit (`.github/workflows/funnel-audit.yml`, salt-okunur): **Supabase bağlantısı "tenant/user not found"** (proje duraklatılmış/silinmiş), `REPLICATE_WEBHOOK_SECRET` production'da yok (webhook 500). Ayrıntı: `docs/create-a-hero-audit-2026-10-30.md`.
+- Kod denetimi: anahtarlar eklense bile her ücretli sipariş Replicate eğitiminde duruyordu (`destination` eksik). 11 hata düzeltildi (commit e72ce08), migration 010.
+- Create a Hero (commit 88ed001): landing, sihirbaz, Claude hikâye + PuLID-Flux çizim, 3 sayfa önizleme, Paddle dijital satış, toplu hediye linki, 30 günlük fotoğraf silme cron'u, migration 009.
+- Yerel `next build` PASS (npm artık erişilebilir). /create-a-hero 390px ve 1280px'te konsol hatasız, yatay kaydırma yok.
+
+### Bloklu (Murat)
+- Supabase restore → `db-migrate.yml` apply (009, 010).
+- Anahtarlar: REPLICATE_API_TOKEN, REPLICATE_WEBHOOK_SECRET, REPLICATE_TRAINING_DESTINATION, ANTHROPIC_API_KEY, Paddle (API key, webhook secret, client token, PADDLE_PRICE_*, PADDLE_PRICE_HERO_DIGITAL), RESEND_API_KEY, Upstash, CRON_SECRET.
+- Onay: $19 dijital fiyat, hero iade metni, chip-in (para katkısı) politikası, basılı kitap fiyatı.
+
+### Sonraki adım
+- Merge sonrası funnel-audit'i tekrar çalıştır (`/api/health/readiness` artık canlı olacak).
+- Açık funnel hataları: download-all boyutu, ödeme sonrası bekleme, retry-stuck imzası, public headshots bucket.
+- Lulu hesabı açılınca feat-HERO-PRINT.
+
+---
+
 ## Oturum: 2026-10-22 (Instant Preview Dashboard UI)
 
 ### Tamamlanan Görevler

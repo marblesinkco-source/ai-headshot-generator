@@ -3,7 +3,8 @@ name: Funnel audit
 # Read-only check of the money path (signup → checkout → upload → generation →
 # results) against PRODUCTION, from a runner that has full network access.
 # Nothing here writes to the site or the database; secret VALUES are never
-# printed, only whether a service answers as "configured".
+# printed, only whether a service answers as "configured". The repo is
+# public, so the report holds yes/no answers only, never counts.
 #
 # Result is posted as a commit comment (Actions logs are not readable from the
 # Claude Code sandbox): gh api repos/<repo>/commits/<sha>/comments
@@ -59,14 +60,18 @@ jobs:
           echo "" >> $R; echo "### Supabase (via SUPABASE_DB_URL)" >> $R
           if [ -z "$DB_URL" ]; then echo "- secret not set" >> $R; else
             sudo apt-get -qq install -y postgresql-client >/dev/null 2>&1
-            q() { psql "$DB_URL" -At -v ON_ERROR_STOP=1 -c "$1" 2>&1 | head -20; }
-            echo "- ping: $(q 'select 1')" >> $R
-            echo "- public tables: $(q "select string_agg(table_name, ', ' order by table_name) from information_schema.tables where table_schema='public'")" >> $R
-            echo "- recorded migrations: $(q "select string_agg(name, ', ' order by name) from public.schema_migrations" )" >> $R
-            echo "- orders by status (counts only): $(q "select coalesce(string_agg(status||'='||n, ', '),'none') from (select status, count(*) n from public.orders group by status) s")" >> $R
-            echo "- orders by provider: $(q "select coalesce(string_agg(coalesce(payment_provider,'null')||'='||n, ', '),'none') from (select payment_provider, count(*) n from public.orders group by payment_provider) s")" >> $R
-            echo "- storage buckets: $(q "select string_agg(id, ', ') from storage.buckets")" >> $R
-            echo "- auth users (count): $(q 'select count(*) from auth.users')" >> $R
+            # The repo is PUBLIC and this report is a commit comment: only
+            # yes/no answers here, never row counts or business numbers.
+            q() { psql "$DB_URL" -At -v ON_ERROR_STOP=1 -c "$1" 2>/dev/null; }
+            if [ "$(q 'select 1')" = "1" ]; then echo "- database reachable: yes" >> $R; else echo "- database reachable: NO" >> $R; fi
+            for t in orders uploaded_photos generated_headshots processed_paddle_events hero_books hero_contributions schema_migrations; do
+              ok=$(q "select to_regclass('public.$t') is not null")
+              echo "- table $t: $([ "$ok" = "t" ] && echo yes || echo no)" >> $R
+            done
+            for bkt in uploads headshots hero-photos hero-pages; do
+              ok=$(q "select exists(select 1 from storage.buckets where id='$bkt')")
+              echo "- bucket $bkt: $([ "$ok" = "t" ] && echo yes || echo no)" >> $R
+            done
           fi
           cat $R
 

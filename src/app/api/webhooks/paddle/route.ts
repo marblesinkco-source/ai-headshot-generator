@@ -297,9 +297,11 @@ export async function POST(request: NextRequest) {
 
         // ── Credit package purchase ──────────────────────────────────
         if (orderType === 'credits') {
-          const creditCount = parseInt(customData.creditCount || '0', 10);
-          const validityDays = parseInt(customData.validityDays || '365', 10);
-          const creditPkg = CREDIT_PACKAGES.find((p) => p.id === packageId);
+          // Amounts come from our config for the verified package, never from
+          // custom_data (the buyer can edit what Paddle.js sends).
+          const creditPkg = CREDIT_PACKAGES.find((p) => p.id === existingOrder.package_id);
+          const creditCount = creditPkg?.credits ?? 0;
+          const validityDays = creditPkg?.validityDays ?? 365;
 
           if (creditCount > 0) {
             const creditId = nanoid();
@@ -572,7 +574,10 @@ export async function POST(request: NextRequest) {
 
         if (!refundOrder) {
           // A refunded hero book goes back to preview-only.
-          const relocked = await relockHeroBook(adjData.transaction_id);
+          const relocked = await relockHeroBook(
+            adjData.transaction_id,
+            adjData.totals?.total ? Math.abs(parseInt(adjData.totals.total, 10)) : 0,
+          );
           if (!relocked) {
             logger.warn('[paddle-webhook] No order found for adjusted transaction:', adjData.transaction_id);
           }

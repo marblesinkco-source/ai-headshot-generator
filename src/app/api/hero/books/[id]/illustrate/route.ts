@@ -15,7 +15,8 @@ const bodySchema = z.object({ page: z.number().int().min(0).max(40) });
 
 /**
  * Illustrates one page. The client calls this page by page (sequentially),
- * which keeps each request inside the function time limit. Only unlocked
+ * which keeps each request inside the function time limit; 202 means the
+ * drawing is still running and the client should call again shortly. Only unlocked
  * pages can be illustrated: the preview before payment, all pages after.
  */
 export async function POST(request: NextRequest, { params }: { params: { id: string } }) {
@@ -40,7 +41,8 @@ export async function POST(request: NextRequest, { params }: { params: { id: str
   if (!rl.success) return NextResponse.json({ error: 'Daily limit reached. Please try again tomorrow.' }, { status: 429 });
 
   try {
-    await illustratePage(book, page);
+    const finished = await illustratePage(book, page);
+    if (!finished) return NextResponse.json({ page, done: false }, { status: 202 });
     const db = heroDb();
     const { data: fresh } = await db.from('hero_books').select('page_images, paid_digital, story').eq('id', book.id).single();
     const done = Object.keys((fresh?.page_images as Record<string, string>) ?? {}).length;

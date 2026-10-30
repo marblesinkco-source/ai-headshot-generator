@@ -63,7 +63,7 @@ const steps = [
 const faqs = [
   {
     question: 'Who is it for?',
-    answer: `Children and adults. Popular occasions are ${HERO_OCCASIONS.map((o) => o.label.toLowerCase()).join(', ')}.`,
+    answer: `Children and adults. Occasions include ${HERO_OCCASIONS.map((o) => o.label.toLowerCase()).join(', ')}.`,
   },
   {
     question: 'What happens to the photos?',

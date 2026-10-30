@@ -20,9 +20,11 @@ CREATE TABLE IF NOT EXISTS hero_books (
   consent_text text NOT NULL,
   story jsonb,                          -- { title, dedication, pages: [{ text, scene }] }
   page_images jsonb NOT NULL DEFAULT '{}', -- { "<page index>": "<storage path in hero-pages>" }
+  page_predictions jsonb NOT NULL DEFAULT '{}', -- { "<page index>": "<Replicate prediction id>" } while drawing
   paid_digital boolean NOT NULL DEFAULT false,
   paid_at timestamptz,
   paddle_transaction_id text,
+  paid_amount_minor integer,            -- grand total of the unlocking transaction (refund checks)
   -- group gift
   gift_token text UNIQUE,
   gift_note text,
@@ -62,3 +64,15 @@ CREATE POLICY "Owners read contributions to their books" ON hero_contributions
 INSERT INTO storage.buckets (id, name, public)
 VALUES ('hero-photos', 'hero-photos', false), ('hero-pages', 'hero-pages', false)
 ON CONFLICT (id) DO NOTHING;
+
+-- Atomic per-page updates (two tabs may illustrate at once).
+CREATE OR REPLACE FUNCTION hero_set_page(p_book uuid, p_page text, p_image text, p_prediction text)
+RETURNS void LANGUAGE sql SECURITY DEFINER SET search_path = public AS $$
+  UPDATE hero_books SET
+    page_images = CASE WHEN p_image IS NULL THEN page_images ELSE page_images || jsonb_build_object(p_page, p_image) END,
+    page_predictions = CASE WHEN p_prediction IS NULL THEN page_predictions - p_page
+                            ELSE page_predictions || jsonb_build_object(p_page, p_prediction) END,
+    updated_at = now()
+  WHERE id = p_book;
+$$;
+REVOKE ALL ON FUNCTION hero_set_page(uuid, text, text, text) FROM PUBLIC, anon, authenticated;
