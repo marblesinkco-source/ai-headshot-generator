@@ -166,13 +166,13 @@ export default function LinkedInAboutGeneratorPage() {
           </p>
           <div className="mt-8">
             <Link
-              href="/headshots"
+              href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
               className={cn(
                 buttonVariants({ size: 'lg' }),
                 'bg-tp-bronze text-tp-black shadow-none hover:bg-tp-bronze/90',
               )}
             >
-              Create your AI headshots <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              Try TailorPic <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
         </div>

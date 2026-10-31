@@ -169,8 +169,8 @@ export default function LinkedInHeadlineGeneratorPage() {
             A strong headline gets the click. A professional photo helps your profile make a good
             first impression. Create yours with AI from selfies, from {BASE_PRICE_DISPLAY}.
           </p>
-          <Link href="/headshots" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
-            See AI Headshots
+          <Link href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots" className={buttonVariants({ size: 'lg', className: 'mt-6' })}>
+            Try TailorPic →
           </Link>
         </div>
       </section>

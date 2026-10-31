@@ -167,13 +167,13 @@ export default function PhotoChecklistPage() {
           <p className="mt-4 text-tp-beige/60">Upload your best photos and choose the package that fits your needs.</p>
           <div className="mt-8">
             <Link
-              href="/pricing"
+              href="/auth/register?redirect=%2Fdashboard%2Fupload%3Fcategory%3Dheadshots"
               className={cn(
                 buttonVariants({ size: 'lg' }),
                 'bg-tp-bronze text-tp-black shadow-none hover:bg-tp-bronze/90',
               )}
             >
-              View pricing <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              Try TailorPic <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
         </div>
