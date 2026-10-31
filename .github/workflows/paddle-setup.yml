@@ -34,12 +34,13 @@ jobs:
         run: |
           # Debug: check key format (no content shown)
           KEY_LEN=${#PADDLE_API_KEY}
-          echo "API key length: $KEY_LEN"
           # Trim any whitespace from key
           PADDLE_API_KEY=$(echo "$PADDLE_API_KEY" | tr -d '[:space:]')
           TRIMMED_LEN=${#PADDLE_API_KEY}
-          echo "Trimmed key length: $TRIMMED_LEN"
-          echo "Changed: $( [ $KEY_LEN -ne $TRIMMED_LEN ] && echo YES || echo NO )"
+          # Save debug info for issue
+          echo "key_len_original=$KEY_LEN" > /tmp/debug_info.txt
+          echo "key_len_trimmed=$TRIMMED_LEN" >> /tmp/debug_info.txt
+          echo "key_starts_with_pdl=$(echo "$PADDLE_API_KEY" | grep -c '^pdl_')" >> /tmp/debug_info.txt
 
           # Fetch all products
           HTTP_CODE=$(curl -s -w "%{http_code}" -o /tmp/products_raw.json \
@@ -58,6 +59,14 @@ jobs:
           python3 << 'PYEOF' || true
           import json
 
+          # Read debug info
+          debug_info = ""
+          try:
+              with open('/tmp/debug_info.txt') as f:
+                  debug_info = f.read().strip()
+          except:
+              pass
+
           # Read products
           try:
               with open('/tmp/products_raw.json') as f:
@@ -75,6 +84,8 @@ jobs:
               prdata = {"error": str(e), "raw": raw_prices[:500]}
 
           lines = ["# Paddle Products & Prices\n"]
+          if debug_info:
+              lines.append(f"## Debug\n```\n{debug_info}\n```\n")
 
           # Products section
           products = {}
