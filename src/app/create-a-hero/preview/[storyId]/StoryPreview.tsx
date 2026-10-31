@@ -106,7 +106,7 @@ export function StoryPreview({ storyId }: { storyId: string }) {
 
       // Open Paddle checkout overlay
       if (typeof window !== 'undefined' && (window as any).Paddle) {
-        (window as any).Paddle.Checkout.open(data.checkoutConfig);
+        (window as any).Paddle.Checkout.open(data.checkout);
       } else {
         throw new Error('Payment system not loaded. Please refresh and try again.');
       }

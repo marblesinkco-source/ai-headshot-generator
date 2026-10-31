@@ -1,5 +1,18 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-31 Akşam (Supabase DB Migration + Doğrulama)
+
+### Tamamlanan Görevler
+- **Supabase DB şifresi sıfırlandı**: Murat dashboard'dan reset etti, yeni şifre alındı
+- **SUPABASE_DB_URL GitHub secret güncellendi**: Session pooler connection string (aws-1-eu-west-1.pooler.supabase.com:5432)
+- **DB Migration baseline**: Başarılı ✅ (run 41216398700)
+- **DB Migration list**: Başarılı ✅ (run 41216462628) — bağlantı doğrulandı
+- **DB Migration apply**: Başarılı ✅ (run 41220987828) — tüm migration'lar uygulandı
+- **Canlı site doğrulama**: Homepage ✅, Pricing ✅, Auth/Login ✅
+- npm registry erişimi geri geldi (registry.npmjs.org OK)
+
+---
+
 ## Oturum: 2026-10-31 (Infrastructure Setup — Paddle, Email, DNS)
 
 ### Tamamlanan Görevler
@@ -40,9 +53,9 @@
    - `PADDLE_DISCOUNT_AVATARBUNDLE` (Plaintext) — değer sohbette verildi
    - `PADDLE_DISCOUNT_AVATAR20` (Plaintext) — değer sohbette verildi
 2. **Vercel'de PADDLE_API_KEY ve PADDLE_WEBHOOK_SECRET tiplerini düzelt**: Config → Secret
-3. **GitHub Secrets'ta SUPABASE_DB_URL düzelt**: "tenant not found" hatası veriyor. Supabase → Project Settings → Database → Connection string (Session pooler, port 5432)
+3. ~~**GitHub Secrets'ta SUPABASE_DB_URL düzelt**~~ → ✅ TAMAMLANDI (31 Ekim akşam)
 4. **Upstash Redis** — URL ve token gerekli (acil değil, in-memory fallback çalışıyor)
-5. SUPABASE_DB_URL düzeldikten sonra: Supabase migrations çalıştırılacak
+5. ~~SUPABASE_DB_URL düzeldikten sonra: Supabase migrations çalıştırılacak~~ → ✅ TAMAMLANDI (31 Ekim akşam)
 
 ---
 

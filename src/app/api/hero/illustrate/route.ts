@@ -95,7 +95,7 @@ export async function POST(req: NextRequest) {
     // Get the hero's face photo
     const { data: photos } = await supabase
       .from('hero_story_photos')
-      .select('storage_path')
+      .select('file_path')
       .eq('story_id', storyId)
       .order('created_at', { ascending: true })
       .limit(1);
@@ -108,9 +108,9 @@ export async function POST(req: NextRequest) {
     }
 
     // Download face photo from Supabase storage
-    const photoPath = photos[0].storage_path;
+    const photoPath = photos[0].file_path;
     const { data: photoData, error: downloadError } = await supabase.storage
-      .from('hero-photos')
+      .from('photos')
       .download(photoPath);
 
     if (downloadError || !photoData) {

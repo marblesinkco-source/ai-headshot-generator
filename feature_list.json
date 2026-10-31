@@ -59,16 +59,6 @@
       "evidence": "Tüm conversion sayfaları canlıda doğrulandı. Commit: 79da7a2"
     },
     {
-      "id": "feat-G",
-      "name": "Phase G — Funnel (Auth + Checkout + Upload + Generation + Results)",
-      "description": "Signup / signin / checkout / upload / generation / results akışının UI tarafı — tüm ekranların doğru çalışması",
-      "dependencies": [
-        "feat-F"
-      ],
-      "status": "not-started",
-      "evidence": ""
-    },
-    {
       "id": "feat-H",
       "name": "Phase H — Cleanup + Optimization",
       "description": "URL canonical, footer sadeleştirme, checkout funnel, mobil QA, CWV, acceptance test",
@@ -742,7 +732,9 @@
       "id": "feat-PROD-READY",
       "name": "Production-Readiness Audit & Fixes",
       "description": "Security hardening (CSRF, rate limiting, webhook signatures, CRON_SECRET), accessibility (error boundaries, touch targets, skip-to-content), code quality (console.error→logger 15 files, brand token fixes), SEO (sitemap gaps), navigation (mobile menu parity, DEDICATED_ROUTES)",
-      "dependencies": ["feat-HERO-LANDING"],
+      "dependencies": [
+        "feat-HERO-LANDING"
+      ],
       "status": "done",
       "evidence": "27 dosya düzeltildi. Commits: 780989a, 96033b9. CI PASS + Vercel PASS. Canlı doğrulama: homepage, create-a-hero, mobile menu, 404, pricing tümü OK. 2026-10-30."
     },
