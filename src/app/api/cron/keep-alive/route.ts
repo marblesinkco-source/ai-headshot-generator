@@ -2,7 +2,8 @@
  * GET /api/cron/keep-alive
  *
  * Lightweight Supabase ping to prevent the Hobby-plan project from being
- * paused due to inactivity. Runs every 6 hours via Vercel Cron.
+ * paused due to inactivity. Called daily by Vercel Cron (vercel.json) and
+ * twice a day by .github/workflows/supabase-keepalive.yml.
  *
  * Supabase pauses free/Hobby projects after ~1 week of zero database
  * activity. This endpoint issues a trivial SELECT to keep the connection
