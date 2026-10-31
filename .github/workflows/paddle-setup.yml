@@ -58,181 +58,198 @@ jobs:
         env:
           PADDLE_API_KEY: ${{ secrets.PADDLE_API_KEY }}
         run: |
-          set -e
+          echo "========================================"
+          echo "  TailorPic Paddle Product Setup"
+          echo "========================================"
+          echo ""
 
-          # Helper function to create a product
+          # Check API key is set
+          if [ -z "$PADDLE_API_KEY" ]; then
+            echo "ERROR: PADDLE_API_KEY secret is not set"
+            exit 1
+          fi
+          echo "API key present: ${PADDLE_API_KEY:0:15}..."
+
+          FAIL_COUNT=0
+
+          # Helper: create product, prints product ID or FAIL
           create_product() {
             local name="$1"
             local description="$2"
-            local custom_data="$3"
+            local package_id="$3"
 
+            local RESULT
             RESULT=$(curl -s -X POST https://api.paddle.com/products \
               -H "Authorization: Bearer $PADDLE_API_KEY" \
               -H "Content-Type: application/json" \
-              -d "{
-                \"name\": \"$name\",
-                \"description\": \"$description\",
-                \"tax_category\": \"digital-goods\",
-                \"custom_data\": $custom_data
-              }")
+              -d "{\"name\": \"$name\", \"description\": \"$description\", \"tax_category\": \"digital-goods\", \"custom_data\": {\"package_id\": \"$package_id\"}}")
 
-            PRODUCT_ID=$(echo "$RESULT" | python3 -c "import sys,json; print(json.load(sys.stdin)['data']['id'])" 2>/dev/null)
-            if [ -z "$PRODUCT_ID" ]; then
-              echo "ERROR creating product '$name':"
-              echo "$RESULT" | python3 -m json.tool
-              return 1
+            local PRODUCT_ID
+            PRODUCT_ID=$(echo "$RESULT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('data',{}).get('id',''))" 2>/dev/null)
+            if [ -n "$PRODUCT_ID" ] && [ "$PRODUCT_ID" != "" ]; then
+              echo "$PRODUCT_ID"
+            else
+              echo "FAIL"
+              echo "  API response: $RESULT" >&2
             fi
-            echo "$PRODUCT_ID"
           }
 
-          # Helper function to create a one-time price
+          # Helper: create price, prints price ID or FAIL
           create_price() {
             local product_id="$1"
             local amount="$2"
             local description="$3"
             local package_id="$4"
 
+            local RESULT
             RESULT=$(curl -s -X POST https://api.paddle.com/prices \
               -H "Authorization: Bearer $PADDLE_API_KEY" \
               -H "Content-Type: application/json" \
-              -d "{
-                \"product_id\": \"$product_id\",
-                \"description\": \"$description\",
-                \"type\": \"standard\",
-                \"billing_cycle\": null,
-                \"unit_price\": {
-                  \"amount\": \"$amount\",
-                  \"currency_code\": \"USD\"
-                },
-                \"custom_data\": {\"package_id\": \"$package_id\"}
-              }")
+              -d "{\"product_id\": \"$product_id\", \"description\": \"$description\", \"type\": \"standard\", \"unit_price\": {\"amount\": \"$amount\", \"currency_code\": \"USD\"}, \"custom_data\": {\"package_id\": \"$package_id\"}}")
 
-            PRICE_ID=$(echo "$RESULT" | python3 -c "import sys,json; print(json.load(sys.stdin)['data']['id'])" 2>/dev/null)
-            if [ -z "$PRICE_ID" ]; then
-              echo "ERROR creating price for product $product_id:"
-              echo "$RESULT" | python3 -m json.tool
-              return 1
+            local PRICE_ID
+            PRICE_ID=$(echo "$RESULT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('data',{}).get('id',''))" 2>/dev/null)
+            if [ -n "$PRICE_ID" ] && [ "$PRICE_ID" != "" ]; then
+              echo "$PRICE_ID"
+            else
+              echo "FAIL"
+              echo "  API response: $RESULT" >&2
             fi
-            echo "$PRICE_ID"
           }
 
-          echo "========================================"
-          echo "  TailorPic Paddle Product Setup"
-          echo "========================================"
-          echo ""
-
-          # Track all created IDs
-          declare -A PRICE_IDS
-
-          # ---- 1. TailorPic 1 ----
-          # Product already exists: pro_01m68s5dc6aqczq04cw6nfgxk1
-          # But it has wrong prices. We'll create a correct price on the existing product.
-          echo "--- 1/7: TailorPic 1 (using existing product) ---"
-          PRICE=$(create_price "pro_01m68s5dc6aqczq04cw6nfgxk1" "699" "TailorPic 1 - 1 AI headshot" "headshots-tailorpic1")
-          if [ $? -eq 0 ]; then
-            echo "  ✅ Price created: $PRICE ($6.99)"
-            PRICE_IDS[HEADSHOTS_TAILORPIC1]="$PRICE"
+          # ---- 1. TailorPic 1 (product already exists) ----
+          echo "--- 1/7: TailorPic 1 (existing product: pro_01m68s5dc6aqczq04cw6nfgxk1) ---"
+          P1_PRICE=$(create_price "pro_01m68s5dc6aqczq04cw6nfgxk1" "699" "TailorPic 1 - 1 AI headshot" "headshots-tailorpic1")
+          if [ "$P1_PRICE" != "FAIL" ]; then
+            echo "  Price: $P1_PRICE (699 cents = 6.99 USD)"
           else
-            echo "  ❌ Failed to create TailorPic 1 price"
+            echo "  FAILED to create price"
+            FAIL_COUNT=$((FAIL_COUNT + 1))
           fi
           echo ""
 
           # ---- 2. Lite ----
           echo "--- 2/7: Lite ---"
-          PRODUCT=$(create_product "Lite" "5 AI professional headshots" '{"package_id": "headshots-lite"}')
-          if [ $? -eq 0 ]; then
-            echo "  Product: $PRODUCT"
-            PRICE=$(create_price "$PRODUCT" "990" "Lite - 5 AI headshots" "headshots-lite")
-            if [ $? -eq 0 ]; then
-              echo "  ✅ Price created: $PRICE ($9.90)"
-              PRICE_IDS[HEADSHOTS_LITE]="$PRICE"
+          P2_PROD=$(create_product "Lite" "5 AI professional headshots" "headshots-lite")
+          if [ "$P2_PROD" != "FAIL" ]; then
+            echo "  Product: $P2_PROD"
+            P2_PRICE=$(create_price "$P2_PROD" "990" "Lite - 5 AI headshots" "headshots-lite")
+            if [ "$P2_PRICE" != "FAIL" ]; then
+              echo "  Price: $P2_PRICE (990 cents = 9.90 USD)"
+            else
+              echo "  FAILED to create price"
+              FAIL_COUNT=$((FAIL_COUNT + 1))
             fi
+          else
+            echo "  FAILED to create product"
+            FAIL_COUNT=$((FAIL_COUNT + 1))
           fi
           echo ""
 
           # ---- 3. Basic ----
           echo "--- 3/7: Basic ---"
-          PRODUCT=$(create_product "Basic" "10 AI professional headshots" '{"package_id": "headshots-express"}')
-          if [ $? -eq 0 ]; then
-            echo "  Product: $PRODUCT"
-            PRICE=$(create_price "$PRODUCT" "1990" "Basic - 10 AI headshots" "headshots-express")
-            if [ $? -eq 0 ]; then
-              echo "  ✅ Price created: $PRICE ($19.90)"
-              PRICE_IDS[HEADSHOTS_EXPRESS]="$PRICE"
+          P3_PROD=$(create_product "Basic" "10 AI professional headshots" "headshots-express")
+          if [ "$P3_PROD" != "FAIL" ]; then
+            echo "  Product: $P3_PROD"
+            P3_PRICE=$(create_price "$P3_PROD" "1990" "Basic - 10 AI headshots" "headshots-express")
+            if [ "$P3_PRICE" != "FAIL" ]; then
+              echo "  Price: $P3_PRICE (1990 cents = 19.90 USD)"
+            else
+              echo "  FAILED to create price"
+              FAIL_COUNT=$((FAIL_COUNT + 1))
             fi
+          else
+            echo "  FAILED to create product"
+            FAIL_COUNT=$((FAIL_COUNT + 1))
           fi
           echo ""
 
           # ---- 4. Starter ----
           echo "--- 4/7: Starter ---"
-          PRODUCT=$(create_product "Starter" "40 AI professional headshots" '{"package_id": "headshots-starter"}')
-          if [ $? -eq 0 ]; then
-            echo "  Product: $PRODUCT"
-            PRICE=$(create_price "$PRODUCT" "2990" "Starter - 40 AI headshots" "headshots-starter")
-            if [ $? -eq 0 ]; then
-              echo "  ✅ Price created: $PRICE ($29.90)"
-              PRICE_IDS[HEADSHOTS_STARTER]="$PRICE"
+          P4_PROD=$(create_product "Starter" "40 AI professional headshots" "headshots-starter")
+          if [ "$P4_PROD" != "FAIL" ]; then
+            echo "  Product: $P4_PROD"
+            P4_PRICE=$(create_price "$P4_PROD" "2990" "Starter - 40 AI headshots" "headshots-starter")
+            if [ "$P4_PRICE" != "FAIL" ]; then
+              echo "  Price: $P4_PRICE (2990 cents = 29.90 USD)"
+            else
+              echo "  FAILED to create price"
+              FAIL_COUNT=$((FAIL_COUNT + 1))
             fi
+          else
+            echo "  FAILED to create product"
+            FAIL_COUNT=$((FAIL_COUNT + 1))
           fi
           echo ""
 
           # ---- 5. Professional ----
           echo "--- 5/7: Professional ---"
-          PRODUCT=$(create_product "Professional" "80 AI professional headshots - recommended" '{"package_id": "headshots-professional"}')
-          if [ $? -eq 0 ]; then
-            echo "  Product: $PRODUCT"
-            PRICE=$(create_price "$PRODUCT" "4990" "Professional - 80 AI headshots" "headshots-professional")
-            if [ $? -eq 0 ]; then
-              echo "  ✅ Price created: $PRICE ($49.90)"
-              PRICE_IDS[HEADSHOTS_PROFESSIONAL]="$PRICE"
+          P5_PROD=$(create_product "Professional" "80 AI professional headshots - recommended" "headshots-professional")
+          if [ "$P5_PROD" != "FAIL" ]; then
+            echo "  Product: $P5_PROD"
+            P5_PRICE=$(create_price "$P5_PROD" "4990" "Professional - 80 AI headshots" "headshots-professional")
+            if [ "$P5_PRICE" != "FAIL" ]; then
+              echo "  Price: $P5_PRICE (4990 cents = 49.90 USD)"
+            else
+              echo "  FAILED to create price"
+              FAIL_COUNT=$((FAIL_COUNT + 1))
             fi
+          else
+            echo "  FAILED to create product"
+            FAIL_COUNT=$((FAIL_COUNT + 1))
           fi
           echo ""
 
           # ---- 6. Executive ----
           echo "--- 6/7: Executive ---"
-          PRODUCT=$(create_product "Executive" "160 AI professional headshots - premium" '{"package_id": "headshots-executive"}')
-          if [ $? -eq 0 ]; then
-            echo "  Product: $PRODUCT"
-            PRICE=$(create_price "$PRODUCT" "8990" "Executive - 160 AI headshots" "headshots-executive")
-            if [ $? -eq 0 ]; then
-              echo "  ✅ Price created: $PRICE ($89.90)"
-              PRICE_IDS[HEADSHOTS_EXECUTIVE]="$PRICE"
+          P6_PROD=$(create_product "Executive" "160 AI professional headshots - premium" "headshots-executive")
+          if [ "$P6_PROD" != "FAIL" ]; then
+            echo "  Product: $P6_PROD"
+            P6_PRICE=$(create_price "$P6_PROD" "8990" "Executive - 160 AI headshots" "headshots-executive")
+            if [ "$P6_PRICE" != "FAIL" ]; then
+              echo "  Price: $P6_PRICE (8990 cents = 89.90 USD)"
+            else
+              echo "  FAILED to create price"
+              FAIL_COUNT=$((FAIL_COUNT + 1))
             fi
+          else
+            echo "  FAILED to create product"
+            FAIL_COUNT=$((FAIL_COUNT + 1))
           fi
           echo ""
 
           # ---- 7. Express Headshot ----
           echo "--- 7/7: Express Headshot ---"
-          PRODUCT=$(create_product "Express Headshot" "5 instant AI headshots from 1 selfie in 15 seconds" '{"package_id": "express-instant"}')
-          if [ $? -eq 0 ]; then
-            echo "  Product: $PRODUCT"
-            PRICE=$(create_price "$PRODUCT" "1990" "Express Headshot - 5 instant AI headshots" "express-instant")
-            if [ $? -eq 0 ]; then
-              echo "  ✅ Price created: $PRICE ($19.90)"
-              PRICE_IDS[EXPRESS_INSTANT]="$PRICE"
+          P7_PROD=$(create_product "Express Headshot" "5 instant AI headshots from 1 selfie in 15 seconds" "express-instant")
+          if [ "$P7_PROD" != "FAIL" ]; then
+            echo "  Product: $P7_PROD"
+            P7_PRICE=$(create_price "$P7_PROD" "1990" "Express Headshot - 5 instant AI headshots" "express-instant")
+            if [ "$P7_PRICE" != "FAIL" ]; then
+              echo "  Price: $P7_PRICE (1990 cents = 19.90 USD)"
+            else
+              echo "  FAILED to create price"
+              FAIL_COUNT=$((FAIL_COUNT + 1))
             fi
+          else
+            echo "  FAILED to create product"
+            FAIL_COUNT=$((FAIL_COUNT + 1))
           fi
           echo ""
 
           # ---- Summary ----
           echo "========================================"
-          echo "  SUMMARY — Environment Variables"
+          echo "  SUMMARY"
           echo "========================================"
           echo ""
-          echo "Add these to Vercel Environment Variables:"
+          echo "PADDLE_PRICE_HEADSHOTS_TAILORPIC1=${P1_PRICE:-FAIL}"
+          echo "PADDLE_PRICE_HEADSHOTS_LITE=${P2_PRICE:-FAIL}"
+          echo "PADDLE_PRICE_HEADSHOTS_EXPRESS=${P3_PRICE:-FAIL}"
+          echo "PADDLE_PRICE_HEADSHOTS_STARTER=${P4_PRICE:-FAIL}"
+          echo "PADDLE_PRICE_HEADSHOTS_PROFESSIONAL=${P5_PRICE:-FAIL}"
+          echo "PADDLE_PRICE_HEADSHOTS_EXECUTIVE=${P6_PRICE:-FAIL}"
+          echo "PADDLE_PRICE_EXPRESS_INSTANT=${P7_PRICE:-FAIL}"
           echo ""
-          for KEY in HEADSHOTS_TAILORPIC1 HEADSHOTS_LITE HEADSHOTS_EXPRESS HEADSHOTS_STARTER HEADSHOTS_PROFESSIONAL HEADSHOTS_EXECUTIVE EXPRESS_INSTANT; do
-            VALUE="${PRICE_IDS[$KEY]}"
-            if [ -n "$VALUE" ]; then
-              echo "PADDLE_PRICE_$KEY=$VALUE"
-            else
-              echo "PADDLE_PRICE_$KEY=⚠️ FAILED — create manually"
-            fi
-          done
-          echo ""
-          echo "Also add:"
-          echo "PADDLE_API_KEY=<your-api-key>"
-          echo "PADDLE_WEBHOOK_SECRET=<your-webhook-secret>"
-          echo "NEXT_PUBLIC_PADDLE_CLIENT_TOKEN=<your-client-token>"
-          echo "NEXT_PUBLIC_PADDLE_ENV=production"
+          echo "Failed: $FAIL_COUNT / 7"
+          if [ "$FAIL_COUNT" -gt 0 ]; then
+            exit 1
+          fi
