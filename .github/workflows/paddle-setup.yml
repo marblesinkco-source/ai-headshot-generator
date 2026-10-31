@@ -10,6 +10,7 @@ on:
         options:
           - list-products
           - create-all
+          - create-python
           - archive-price
       price_id:
         description: 'Price ID to archive (for archive-price action)'
@@ -469,3 +470,34 @@ jobs:
 
           # Write to step summary
           cat /tmp/issue_body.txt >> "$GITHUB_STEP_SUMMARY"
+
+      # ===== CREATE PYTHON (better error handling) =====
+      - name: Checkout repo
+        if: inputs.action == 'create-python'
+        uses: actions/checkout@v4
+
+      - name: "Create all products via Python script"
+        if: inputs.action == 'create-python'
+        env:
+          PADDLE_API_KEY: ${{ secrets.PADDLE_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        shell: bash {0}
+        run: |
+          python3 scripts/paddle-create-all.py 2>&1 | tee /tmp/python_output.txt
+          EXIT_CODE=${PIPESTATUS[0]}
+
+          # Post results as issue
+          cat > /tmp/py_issue.txt << 'HEADER'
+          # Paddle Create-Python Results
+          ```
+          HEADER
+          cat /tmp/python_output.txt >> /tmp/py_issue.txt
+          echo '```' >> /tmp/py_issue.txt
+
+          gh issue create \
+            --repo "${{ github.repository }}" \
+            --title "Paddle Create-Python $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            --body-file /tmp/py_issue.txt 2>&1 || echo "Issue creation failed"
+
+          exit $EXIT_CODE
