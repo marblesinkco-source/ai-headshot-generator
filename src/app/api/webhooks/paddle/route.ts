@@ -412,6 +412,20 @@ export async function POST(request: NextRequest) {
             logger.error('[paddle-webhook] Failed to update hero story status:', storyUpdateError);
           } else {
             logger.info(`[paddle-webhook] Hero story ${customData.storyId} marked as paid`);
+
+            // Trigger illustration generation asynchronously (fire-and-forget)
+            const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://www.tailorpic.com';
+            const srvKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+            fetch(`${appUrl}/api/hero/illustrate`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                ...(srvKey ? { 'Authorization': `Bearer ${srvKey}` } : {}),
+              },
+              body: JSON.stringify({ storyId: customData.storyId }),
+            }).catch((err) => {
+              logger.error('[paddle-webhook] Failed to trigger illustration generation:', err);
+            });
           }
           // Continue to email + financial recording below
         }

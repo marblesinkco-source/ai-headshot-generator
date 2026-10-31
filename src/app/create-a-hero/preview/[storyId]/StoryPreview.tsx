@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import { Button } from '@/components/ui/button';
@@ -13,6 +13,8 @@ import {
   Sparkles,
   Download,
   CheckCircle,
+  Loader2,
+  Share2,
 } from 'lucide-react';
 
 interface StoryPage {
@@ -35,6 +37,7 @@ interface Story {
   cover_subtitle: string;
   status: string;
   page_count: number;
+  generation_progress: number;
 }
 
 export function StoryPreview({ storyId }: { storyId: string }) {
@@ -47,39 +50,67 @@ export function StoryPreview({ storyId }: { storyId: string }) {
   const [loading, setLoading] = useState(true);
   const [checkoutLoading, setCheckoutLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
+  const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  useEffect(() => {
-    async function loadStory() {
-      try {
-        const { data: storyData, error: storyError } = await supabase
-          .from('hero_stories')
-          .select('id, hero_name, universe_id, occasion_id, cover_title, cover_subtitle, status, page_count')
-          .eq('id', storyId)
-          .single();
+  const loadStory = useCallback(async () => {
+    try {
+      const { data: storyData, error: storyError } = await supabase
+        .from('hero_stories')
+        .select('id, hero_name, universe_id, occasion_id, cover_title, cover_subtitle, status, page_count, generation_progress')
+        .eq('id', storyId)
+        .single();
 
-        if (storyError || !storyData) {
-          setError('Story not found');
-          return;
-        }
-
-        setStory(storyData);
-
-        const { data: pagesData } = await supabase
-          .from('hero_story_pages')
-          .select('*')
-          .eq('story_id', storyId)
-          .order('page_number', { ascending: true });
-
-        setPages(pagesData || []);
-      } catch (err) {
-        setError('Failed to load story');
-      } finally {
-        setLoading(false);
+      if (storyError || !storyData) {
+        setError('Story not found');
+        return;
       }
+
+      setStory(storyData);
+
+      const { data: pagesData } = await supabase
+        .from('hero_story_pages')
+        .select('*')
+        .eq('story_id', storyId)
+        .order('page_number', { ascending: true });
+
+      setPages(pagesData || []);
+    } catch {
+      setError('Failed to load story');
+    } finally {
+      setLoading(false);
+    }
+  }, [storyId, supabase]);
+
+  // Initial load
+  useEffect(() => {
+    loadStory();
+  }, [loadStory]);
+
+  // Poll for illustration progress when story is generating or paid
+  useEffect(() => {
+    if (!story) return;
+
+    const shouldPoll = story.status === 'generating' || story.status === 'paid';
+    if (!shouldPoll) {
+      if (pollRef.current) {
+        clearInterval(pollRef.current);
+        pollRef.current = null;
+      }
+      return;
     }
 
-    loadStory();
-  }, [storyId, supabase]);
+    pollRef.current = setInterval(() => {
+      loadStory();
+    }, 5000);
+
+    return () => {
+      if (pollRef.current) {
+        clearInterval(pollRef.current);
+        pollRef.current = null;
+      }
+    };
+  }, [story?.status, loadStory]);
 
   async function handleCheckout() {
     if (!story) return;
@@ -117,6 +148,14 @@ export function StoryPreview({ storyId }: { storyId: string }) {
     }
   }
 
+  function handleShare() {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  }
+
   if (loading) {
     return (
       <div className="max-w-3xl mx-auto px-4 text-center py-20">
@@ -138,7 +177,9 @@ export function StoryPreview({ storyId }: { storyId: string }) {
   }
 
   const isPreviewPage = (idx: number) => idx < STORY_CONFIG.freePreviewPages;
-  const isPaid = story.status === 'paid' || story.status === 'completed';
+  const isPaid = story.status === 'paid' || story.status === 'completed' || story.status === 'generating';
+  const isGenerating = story.status === 'generating' || story.status === 'paid';
+  const isCompleted = story.status === 'completed';
   const page = pages[currentPage];
 
   return (
@@ -147,7 +188,7 @@ export function StoryPreview({ storyId }: { storyId: string }) {
       <div className="text-center mb-8">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-50 text-amber-800 rounded-full text-sm font-medium mb-4">
           <BookOpen className="w-4 h-4" />
-          Story Preview
+          {isGenerating ? 'Generating Illustrations...' : isCompleted ? 'Story Complete' : 'Story Preview'}
         </div>
         <h1 className="font-display font-normal text-3xl sm:text-4xl text-tp-black mb-2">
           {story.cover_title || `The Adventures of ${story.hero_name}`}
@@ -155,11 +196,32 @@ export function StoryPreview({ storyId }: { storyId: string }) {
         <p className="text-tp-ink">{story.cover_subtitle}</p>
       </div>
 
+      {/* Illustration generation progress bar */}
+      {isGenerating && (
+        <div className="bg-amber-50 border border-amber-200 rounded-tp-card p-4 mb-6">
+          <div className="flex items-center gap-3 mb-2">
+            <Loader2 className="w-5 h-5 text-amber-600 animate-spin" />
+            <p className="text-sm font-medium text-amber-800">
+              Creating illustrations with {story.hero_name}&apos;s face...
+            </p>
+          </div>
+          <div className="w-full bg-amber-200 rounded-full h-2">
+            <div
+              className="bg-amber-600 h-2 rounded-full transition-all duration-500"
+              style={{ width: `${story.generation_progress || 0}%` }}
+            />
+          </div>
+          <p className="text-xs text-amber-600 mt-1.5">
+            {story.generation_progress || 0}% complete — this usually takes a few minutes
+          </p>
+        </div>
+      )}
+
       {/* Page viewer */}
       <div className="bg-white rounded-tp-card border border-tp-line shadow-sm overflow-hidden mb-6">
         {page ? (
           <div className="relative">
-            {/* Illustration placeholder */}
+            {/* Illustration */}
             <div className="aspect-[4/3] bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center">
               {page.illustration_url ? (
                 // eslint-disable-next-line @next/next/no-img-element
@@ -172,14 +234,16 @@ export function StoryPreview({ storyId }: { storyId: string }) {
                 <div className="text-center p-8">
                   <BookOpen className="w-12 h-12 text-amber-300 mx-auto mb-3" />
                   <p className="text-sm text-amber-600">
-                    {!isPreviewPage(currentPage) && !isPaid
-                      ? 'Illustration unlocked after purchase'
-                      : 'Illustration generating...'}
+                    {isGenerating
+                      ? 'Illustration in progress...'
+                      : !isPreviewPage(currentPage) && !isPaid
+                        ? 'Illustration unlocked after purchase'
+                        : 'Illustration will appear here'}
                   </p>
                 </div>
               )}
 
-              {/* Lock overlay for non-preview pages */}
+              {/* Lock overlay for non-preview pages when not paid */}
               {!isPreviewPage(currentPage) && !isPaid && (
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-md flex items-center justify-center">
                   <div className="text-center text-white">
@@ -195,9 +259,14 @@ export function StoryPreview({ storyId }: { storyId: string }) {
 
             {/* Page text */}
             <div className="p-6 sm:p-8">
-              <h2 className="font-display font-normal text-2xl text-tp-black mb-3">
-                {page.title}
-              </h2>
+              <div className="flex items-center justify-between mb-3">
+                <h2 className="font-display font-normal text-2xl text-tp-black">
+                  {page.title}
+                </h2>
+                <span className="text-xs text-tp-muted bg-tp-beige px-2 py-0.5 rounded">
+                  {currentPage + 1}/{pages.length}
+                </span>
+              </div>
               {(isPreviewPage(currentPage) || isPaid) ? (
                 <p className="text-tp-ink leading-relaxed">{page.text}</p>
               ) : (
@@ -227,10 +296,26 @@ export function StoryPreview({ storyId }: { storyId: string }) {
           Previous
         </Button>
 
-        <span className="text-sm text-tp-muted">
-          Page {currentPage + 1} of {pages.length}
-          {!isPaid && currentPage >= STORY_CONFIG.freePreviewPages && ' (locked)'}
-        </span>
+        {/* Page dots */}
+        <div className="flex items-center gap-1">
+          {pages.slice(0, Math.min(pages.length, 20)).map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentPage(idx)}
+              className={`w-2 h-2 rounded-full transition-all ${
+                idx === currentPage
+                  ? 'bg-tp-bronze w-4'
+                  : isPreviewPage(idx) || isPaid
+                    ? 'bg-tp-line hover:bg-tp-muted'
+                    : 'bg-tp-line/50'
+              }`}
+              aria-label={`Go to page ${idx + 1}`}
+            />
+          ))}
+          {pages.length > 20 && (
+            <span className="text-xs text-tp-muted ml-1">+{pages.length - 20}</span>
+          )}
+        </div>
 
         <Button
           variant="outline"
@@ -244,7 +329,7 @@ export function StoryPreview({ storyId }: { storyId: string }) {
         </Button>
       </div>
 
-      {/* Purchase CTA */}
+      {/* Purchase CTA — only when not paid */}
       {!isPaid && (
         <div className="bg-gradient-to-r from-amber-50 to-red-50 border border-amber-200 rounded-tp-card p-6 text-center">
           <h3 className="font-display font-normal text-xl text-tp-black mb-2">
@@ -262,7 +347,7 @@ export function StoryPreview({ storyId }: { storyId: string }) {
           >
             {checkoutLoading ? (
               <>
-                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                <Loader2 className="w-4 h-4 animate-spin" />
                 Processing...
               </>
             ) : (
@@ -278,16 +363,45 @@ export function StoryPreview({ storyId }: { storyId: string }) {
         </div>
       )}
 
-      {/* Completed story CTA */}
-      {isPaid && story.status === 'completed' && (
+      {/* Completed story actions */}
+      {isCompleted && (
         <div className="bg-green-50 border border-green-200 rounded-tp-card p-6 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium mb-3">
+            <CheckCircle className="w-4 h-4" />
+            Story Complete
+          </div>
           <h3 className="font-display font-normal text-xl text-tp-black mb-2">
-            Your Story is Ready!
+            {story.hero_name}&apos;s Story is Ready!
           </h3>
           <p className="text-tp-ink mb-4">
             All {story.page_count} pages are complete with personalized illustrations.
           </p>
-          <PdfDownloadButton />
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <PdfDownloadButton />
+            <Button
+              variant="outline"
+              className="gap-2"
+              onClick={handleShare}
+            >
+              <Share2 className="w-4 h-4" />
+              {copied ? 'Link Copied!' : 'Share Story'}
+            </Button>
+          </div>
+        </div>
+      )}
+
+      {/* Failed story notice */}
+      {story.status === 'failed' && (
+        <div className="bg-red-50 border border-red-200 rounded-tp-card p-6 text-center">
+          <h3 className="font-display font-normal text-xl text-tp-black mb-2">
+            Something Went Wrong
+          </h3>
+          <p className="text-tp-ink mb-4">
+            Some illustrations could not be generated. Our team has been notified.
+          </p>
+          <Button variant="outline" onClick={() => router.push('/contact')}>
+            Contact Support
+          </Button>
         </div>
       )}
     </div>
@@ -315,7 +429,7 @@ function PdfDownloadButton() {
         Download PDF
       </Button>
       {showNotice && (
-        <p className="flex items-center gap-1.5 text-sm text-tp-bronze-ink animate-in fade-in duration-200">
+        <p className="flex items-center gap-1.5 text-sm text-tp-bronze-ink">
           <CheckCircle className="w-4 h-4" />
           PDF download will be available soon
         </p>

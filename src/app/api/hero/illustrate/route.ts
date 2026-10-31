@@ -19,28 +19,40 @@ const illustrateSchema = z.object({
  * Uses the hero's uploaded face photo for face-preserving generation.
  */
 export async function POST(req: NextRequest) {
-  const csrf = csrfGuard(req);
-  if (csrf) return csrf;
-
   try {
-    // Auth check
-    const userClient = await createClient();
-    const { data: { user } } = await userClient.auth.getUser();
-    if (!user) {
-      return NextResponse.json({ error: 'Authentication required' }, { status: 401 });
-    }
+    // Check for internal (webhook) call via service role key in Authorization header
+    const authHeader = req.headers.get('authorization');
+    const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    const isInternalCall = serviceRoleKey && authHeader === `Bearer ${serviceRoleKey}`;
 
-    // Rate limit
-    const rl = await rateLimit({
-      key: `hero-illustrate:${user.id}`,
-      limit: 3,
-      windowMs: 60 * 1000,
-    });
-    if (!rl.success) {
-      return NextResponse.json(
-        { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': '60' } },
-      );
+    let userId: string | null = null;
+
+    if (isInternalCall) {
+      // Internal call from webhook — skip CSRF, auth, and rate limit
+      logger.info('[hero-illustrate] Internal call from webhook');
+    } else {
+      // User-facing call — enforce CSRF, auth, rate limit
+      const csrf = csrfGuard(req);
+      if (csrf) return csrf;
+
+      const userClient = await createClient();
+      const { data: { user } } = await userClient.auth.getUser();
+      if (!user) {
+        return NextResponse.json({ error: 'Authentication required' }, { status: 401 });
+      }
+      userId = user.id;
+
+      const rl = await rateLimit({
+        key: `hero-illustrate:${user.id}`,
+        limit: 3,
+        windowMs: 60 * 1000,
+      });
+      if (!rl.success) {
+        return NextResponse.json(
+          { error: 'Too many requests. Please try again later.' },
+          { status: 429, headers: { 'Retry-After': '60' } },
+        );
+      }
     }
 
     let body: unknown;
@@ -72,7 +84,8 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Story not found' }, { status: 404 });
     }
 
-    if (story.user_id !== user.id) {
+    // For user calls, verify ownership
+    if (userId && story.user_id !== userId) {
       return NextResponse.json({ error: 'Story not found' }, { status: 404 });
     }
 
