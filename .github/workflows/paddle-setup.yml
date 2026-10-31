@@ -31,35 +31,31 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         shell: bash {0}
         run: |
-          PRICES=$(curl -s "https://api.paddle.com/prices" \
+          curl -s "https://api.paddle.com/prices" \
             -H "Authorization: Bearer $PADDLE_API_KEY" \
-            -H "Content-Type: application/json")
+            -H "Content-Type: application/json" \
+            -o /tmp/prices_raw.json
 
-          # Write mapping to a temp file to avoid shell escaping issues
-          echo "$PRICES" | python3 -c "
-          import sys, json
-          data = json.load(sys.stdin)
+          python3 << 'PYEOF' || true
+          import json
+          with open('/tmp/prices_raw.json') as f:
+              data = json.load(f)
           lines = []
           for p in data.get('data', []):
               pid = p.get('id','?')
               amt = p.get('unit_price',{}).get('amount','?')
               st = p.get('status','?')
               cd = p.get('custom_data') or {}
-              pkg = cd.get('package_id','no-package')
-              desc = p.get('description','')
-              lines.append(f'{pkg} | {pid} | \${int(amt)/100:.2f} | {st} | {desc}')
-          with open('/tmp/prices.txt', 'w') as f:
+              pkg = cd.get('package_id','no-pkg')
+              lines.append(f"{pkg} | {pid} | {amt} cents | {st}")
+          with open('/tmp/prices_summary.txt', 'w') as f:
               f.write('\n'.join(lines))
           print('\n'.join(lines))
-          " 2>/dev/null
+          PYEOF
 
-          HEAD_SHA=$(gh api 'repos/${{ github.repository }}/commits/main' -q '.sha' 2>/dev/null)
-          if [ -n "$HEAD_SHA" ] && [ -f /tmp/prices.txt ]; then
-            BODY=$(cat /tmp/prices.txt)
-            gh api "repos/${{ github.repository }}/commits/$HEAD_SHA/comments" \
-              --raw-field "body=Paddle Prices:
-          $BODY" || echo "Comment post failed"
-          fi
+          HEAD_SHA=$(gh api "repos/${{ github.repository }}/commits/main" -q '.sha')
+          gh api "repos/${{ github.repository }}/commits/${HEAD_SHA}/comments" \
+            -F "body=@/tmp/prices_summary.txt" || echo "Comment failed"
 
       # ===== ARCHIVE PRICE =====
       - name: Archive a price
