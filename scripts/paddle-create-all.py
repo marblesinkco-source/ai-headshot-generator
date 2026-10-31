@@ -150,6 +150,7 @@ def main():
             c, r = paddle_api("POST", "/products", {
                 "name": name,
                 "description": desc,
+                "tax_category": "standard",
                 "custom_data": {"package_id": pkg_id},
             })
             product_id = r.get("data", {}).get("id", "")
