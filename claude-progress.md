@@ -1,5 +1,32 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-31 (Infrastructure Setup — Paddle, Email, DNS)
+
+### Tamamlanan Görevler
+- **Cloudflare DNS**: tailorpic.com zone yönetimi, A/CNAME/MX kayıtları
+- **Resend Email**: noreply@tailorpic.com gönderim yapılandırması (API key: re_gisv7f4u_...)
+- **Cloudflare Email Routing**: Catch-all → unvergrp@gmail.com
+- **SPF/DKIM/DMARC**: Tam email altyapısı (SPF includes Resend, DKIM doğrulandı, DMARC quarantine)
+- **Paddle Webhook**: https://www.tailorpic.com/api/webhooks/paddle — Active, 56 event
+- **Paddle API Key**: pdl_live_apikey_01m68qxe768hns67c6yj651t9e_... oluşturuldu
+- **Paddle Client Token**: live_90acb708bffaad7766d651616f5 oluşturuldu
+- **Paddle Setup Workflow**: `.github/workflows/paddle-setup.yml` — API üzerinden ürün/fiyat oluşturma
+
+### Devam Eden
+- **Paddle ürün/fiyat oluşturma**: Dashboard decimal sorunu nedeniyle API workflow'a taşındı. Murat'ın PADDLE_API_KEY'i GitHub secret olarak ekleyip workflow'u çalıştırması gerekiyor.
+  - Yanlış fiyatlar (arşivlenmeli): pri_01m68s8mxe0sth8vg85crbgrb0, pri_01m68sm2w59dmcaybscy1wbah8 (arşivlendi), pri_01m68t7yxxnjqxj5d0czf7ddgy (aktif, $699 yanlış)
+  - Mevcut product: pro_01m68s5dc6aqczq04cw6nfgxk1 (TailorPic 1)
+
+### Hâlâ Bekleyen (Murat Gerekli)
+1. **PADDLE_API_KEY GitHub Secret** → paddle-setup workflow'u çalıştırılabilir olacak
+2. **Paddle prices oluşturma** → workflow ile 7 ürün/fiyat
+3. **Vercel env vars** → PADDLE_*, RESEND_API_KEY, NEXT_PUBLIC_PADDLE_* eklenmeli
+4. **REPLICATE_API_TOKEN** — AI generation blocked
+5. **Upstash Redis** — rate limiting (UPSTASH_REDIS_REST_URL, UPSTASH_REDIS_REST_TOKEN)
+6. **Supabase migrations** — gh workflow run db-migrate.yml
+
+---
+
 ## Oturum: 2026-10-30 (Production-Readiness Audit — Security, A11y, SEO, Code Quality)
 
 ### Tamamlanan Görevler
