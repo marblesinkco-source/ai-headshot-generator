@@ -12,18 +12,23 @@
 - **Paddle Client Token**: live_90acb708bffaad7766d651616f5 oluşturuldu
 - **Paddle Setup Workflow**: `.github/workflows/paddle-setup.yml` — API üzerinden ürün/fiyat oluşturma
 
-### Devam Eden
-- **Paddle ürün/fiyat oluşturma**: Dashboard decimal sorunu nedeniyle API workflow'a taşındı. Murat'ın PADDLE_API_KEY'i GitHub secret olarak ekleyip workflow'u çalıştırması gerekiyor.
-  - Yanlış fiyatlar (arşivlenmeli): pri_01m68s8mxe0sth8vg85crbgrb0, pri_01m68sm2w59dmcaybscy1wbah8 (arşivlendi), pri_01m68t7yxxnjqxj5d0czf7ddgy (aktif, $699 yanlış)
-  - Mevcut product: pro_01m68s5dc6aqczq04cw6nfgxk1 (TailorPic 1)
+- **Paddle API Key**: Yeni key (69 char) GitHub secret'a eklendi, API doğrulandı (HTTP 200)
+- **Paddle Ürünler + Fiyatlar**: 7/7 başarılı oluşturuldu (tax_category: standard)
+  - TailorPic 1: pro_01m68s5dc6aqczq04cw6nfgxk1 / pri_01m692tcycwye6z1nb4axf130p ($6.99)
+  - Lite: pro_01m693atjgaj4ky02d14ajh4h0 / pri_01m693atnt86pxsv7d240nxp9m ($9.90)
+  - Basic: pro_01m693atvzzjd3htnn1hk0as5z / pri_01m693atz6pedn6e8cmt03p8hf ($19.90)
+  - Starter: pro_01m693av50ry8p45z11svj6tj5 / pri_01m693av8a2hrb1m5s4g8amp46 ($29.90)
+  - Professional: pro_01m693ave8xa9d7r8njrxx99sd / pri_01m693avhvpb3kqrpd8j51csfm ($49.90)
+  - Executive: pro_01m693avpbt3jg221s57ez3dxs / pri_01m693avsacsm0xbqq7jrrctf9 ($89.90)
+  - Express Instant: pro_01m693aw1me8d8mtvkg5h76k05 / pri_01m693aw4wdj9373ryq35p455j ($19.90)
+- **Duplicate price'lar arşivlendi**: pri_01m692y4r0gdtf7za9m3m48qrx, pri_01m692ztvq4t75pb35ff8b3f9y
 
 ### Hâlâ Bekleyen (Murat Gerekli)
-1. **PADDLE_API_KEY GitHub Secret** → paddle-setup workflow'u çalıştırılabilir olacak
-2. **Paddle prices oluşturma** → workflow ile 7 ürün/fiyat
-3. **Vercel env vars** → PADDLE_*, RESEND_API_KEY, NEXT_PUBLIC_PADDLE_* eklenmeli
-4. **REPLICATE_API_TOKEN** — AI generation blocked
-5. **Upstash Redis** — rate limiting (UPSTASH_REDIS_REST_URL, UPSTASH_REDIS_REST_TOKEN)
-6. **Supabase migrations** — gh workflow run db-migrate.yml
+1. **Vercel env vars** → Paddle key/token/price ID'leri + eksik değerler eklenmeli (liste verildi)
+2. **Upstash Redis** — URL ve token gerekli
+3. **Supabase migrations** — gh workflow run db-migrate.yml
+4. **Paddle discounts** — PADDLE_DISCOUNT_AVATAR20, AVATARBUNDLE, UPGRADE25 oluşturulacak
+5. **CRON_SECRET, ADMIN_EMAILS, REPLICATE_WEBHOOK_SECRET** — değerler gerekli
 
 ---
 
