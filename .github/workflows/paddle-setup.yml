@@ -18,6 +18,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   paddle-setup:
@@ -53,20 +54,60 @@ jobs:
           print('\n'.join(lines))
           PYEOF
 
-          # Try multiple approaches for comment
-          echo "GITHUB_SHA=$GITHUB_SHA"
-          echo "github.sha=${{ github.sha }}"
-          # Use github.sha directly
-          gh api "repos/${{ github.repository }}/commits/${{ github.sha }}/comments" \
-            -F "body=@/tmp/prices_summary.txt" || echo "Comment via github.sha failed"
-          # Also try creating an issue comment or just output to summary
-          if [ -f /tmp/prices_summary.txt ]; then
-            {
-              echo "## Paddle Prices"
-              echo '```'
-              cat /tmp/prices_summary.txt
-              echo '```'
-            } >> "$GITHUB_STEP_SUMMARY"
+          # Also fetch products
+          curl -s "https://api.paddle.com/products" \
+            -H "Authorization: Bearer $PADDLE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -o /tmp/products_raw.json
+
+          python3 << 'PYEOF2' || true
+          import json
+          products = {}
+          with open('/tmp/products_raw.json') as f:
+              pdata = json.load(f)
+          for p in pdata.get('data', []):
+              products[p['id']] = p.get('name', '?')
+
+          with open('/tmp/prices_summary.txt') as f:
+              prices_text = f.read()
+
+          with open('/tmp/prices_raw.json') as f:
+              data = json.load(f)
+
+          lines = ["# Paddle Products & Prices\n"]
+          lines.append("## Products")
+          for pid, name in products.items():
+              lines.append(f"- **{name}**: `{pid}`")
+          lines.append("\n## Prices")
+          lines.append("| Package ID | Price ID | Amount | Status |")
+          lines.append("|---|---|---|---|")
+          for p in data.get('data', []):
+              pid = p.get('id','?')
+              amt = p.get('unit_price',{}).get('amount','?')
+              st = p.get('status','?')
+              cd = p.get('custom_data') or {}
+              pkg = cd.get('package_id','no-pkg')
+              prod_id = p.get('product_id','?')
+              prod_name = products.get(prod_id, prod_id)
+              lines.append(f"| {pkg} | `{pid}` | {amt} cents | {st} |")
+
+          lines.append(f"\n## Raw counts")
+          lines.append(f"- Products: {len(products)}")
+          lines.append(f"- Prices: {len(data.get('data', []))}")
+
+          body = '\n'.join(lines)
+          with open('/tmp/issue_body.txt', 'w') as f:
+              f.write(body)
+          print(body)
+          PYEOF2
+
+          # Create a GitHub issue with results
+          if [ -f /tmp/issue_body.txt ]; then
+            gh issue create \
+              --repo "${{ github.repository }}" \
+              --title "Paddle Products & Prices - $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+              --body-file /tmp/issue_body.txt \
+              --label "" 2>&1 || echo "Issue creation failed"
           fi
 
       # ===== ARCHIVE PRICE =====
