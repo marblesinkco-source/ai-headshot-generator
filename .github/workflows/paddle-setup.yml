@@ -426,28 +426,46 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         shell: bash {0}
         run: |
-          SUMMARY="PADDLE_PRICE_HEADSHOTS_TAILORPIC1=${PRICE_TAILORPIC1:-UNKNOWN}
-          PADDLE_PRICE_HEADSHOTS_LITE=${PRICE_LITE:-UNKNOWN}
-          PADDLE_PRICE_HEADSHOTS_EXPRESS=${PRICE_BASIC:-UNKNOWN}
-          PADDLE_PRICE_HEADSHOTS_STARTER=${PRICE_STARTER:-UNKNOWN}
-          PADDLE_PRICE_HEADSHOTS_PROFESSIONAL=${PRICE_PROFESSIONAL:-UNKNOWN}
-          PADDLE_PRICE_HEADSHOTS_EXECUTIVE=${PRICE_EXECUTIVE:-UNKNOWN}
-          PADDLE_PRICE_EXPRESS_INSTANT=${PRICE_EXPRESS:-UNKNOWN}"
+          cat > /tmp/issue_body.txt << 'BODYEOF'
+          # Paddle Create-All Results
 
-          echo "========================================"
-          echo "  ALL PRICE IDs"
-          echo "========================================"
-          echo "$SUMMARY"
+          ## Price IDs
+          ```
+          BODYEOF
 
-          # Post as commit comment
-          COMMIT_SHA="${{ github.sha }}"
-          gh api "repos/${{ github.repository }}/commits/$COMMIT_SHA/comments" \
-            -f body="$SUMMARY" 2>/dev/null || true
+          {
+            echo "PADDLE_PRICE_HEADSHOTS_TAILORPIC1=${PRICE_TAILORPIC1:-UNKNOWN}"
+            echo "PADDLE_PRICE_HEADSHOTS_LITE=${PRICE_LITE:-UNKNOWN}"
+            echo "PADDLE_PRICE_HEADSHOTS_EXPRESS=${PRICE_BASIC:-UNKNOWN}"
+            echo "PADDLE_PRICE_HEADSHOTS_STARTER=${PRICE_STARTER:-UNKNOWN}"
+            echo "PADDLE_PRICE_HEADSHOTS_PROFESSIONAL=${PRICE_PROFESSIONAL:-UNKNOWN}"
+            echo "PADDLE_PRICE_HEADSHOTS_EXECUTIVE=${PRICE_EXECUTIVE:-UNKNOWN}"
+            echo "PADDLE_PRICE_EXPRESS_INSTANT=${PRICE_EXPRESS:-UNKNOWN}"
+          } >> /tmp/issue_body.txt
+
+          echo '```' >> /tmp/issue_body.txt
+
+          # Count successes vs failures
+          SUCCESS=0
+          FAIL=0
+          for VAR in "$PRICE_TAILORPIC1" "$PRICE_LITE" "$PRICE_BASIC" "$PRICE_STARTER" "$PRICE_PROFESSIONAL" "$PRICE_EXECUTIVE" "$PRICE_EXPRESS"; do
+            if echo "$VAR" | grep -q "^pri_"; then
+              SUCCESS=$((SUCCESS + 1))
+            else
+              FAIL=$((FAIL + 1))
+            fi
+          done
+
+          echo "" >> /tmp/issue_body.txt
+          echo "**Result: $SUCCESS/7 succeeded, $FAIL/7 failed**" >> /tmp/issue_body.txt
+
+          cat /tmp/issue_body.txt
+
+          # Create GitHub Issue
+          gh issue create \
+            --repo "${{ github.repository }}" \
+            --title "Paddle Create-All $(date -u +%Y-%m-%dT%H:%M:%SZ) — $SUCCESS/7" \
+            --body-file /tmp/issue_body.txt 2>&1 || echo "Issue creation failed"
 
           # Write to step summary
-          {
-            echo "## Paddle Setup Results"
-            echo '```'
-            echo "$SUMMARY"
-            echo '```'
-          } >> "$GITHUB_STEP_SUMMARY"
+          cat /tmp/issue_body.txt >> "$GITHUB_STEP_SUMMARY"
