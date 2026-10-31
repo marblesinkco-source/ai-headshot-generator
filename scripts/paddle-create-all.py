@@ -1,265 +1,180 @@
 #!/usr/bin/env python3
-"""Create all Paddle products and prices for TailorPic."""
+"""Create all Paddle products and prices for TailorPic.
 
+Designed to run in GitHub Actions with PADDLE_API_KEY and GH_TOKEN env vars.
+Posts results as a commit comment for visibility when log downloads are blocked.
+"""
 import json
 import os
 import subprocess
 import sys
-import urllib.request
-import urllib.error
+
+try:
+    from urllib.request import Request, urlopen
+    from urllib.error import HTTPError
+except ImportError:
+    print("ERROR: urllib not available")
+    sys.exit(1)
 
 API_KEY = os.environ.get("PADDLE_API_KEY", "")
-GITHUB_REPOSITORY = os.environ.get("GITHUB_REPOSITORY", "")
-GITHUB_STEP_SUMMARY = os.environ.get("GITHUB_STEP_SUMMARY", "")
-
 BASE_URL = "https://api.paddle.com"
-
-# Existing product for TailorPic 1
-EXISTING_PRODUCT_ID = "pro_01m68s5dc6aqczq04cw6nfgxk1"
-
-PACKAGES = [
-    {
-        "name": "TailorPic 1",
-        "description": "1 AI professional headshot",
-        "package_id": "headshots-tailorpic1",
-        "amount": "699",
-        "product_id": EXISTING_PRODUCT_ID,  # already exists
-    },
-    {
-        "name": "Lite",
-        "description": "5 AI professional headshots",
-        "package_id": "headshots-lite",
-        "amount": "990",
-    },
-    {
-        "name": "Basic",
-        "description": "10 AI professional headshots",
-        "package_id": "headshots-express",
-        "amount": "1990",
-    },
-    {
-        "name": "Starter",
-        "description": "40 AI professional headshots",
-        "package_id": "headshots-starter",
-        "amount": "2990",
-    },
-    {
-        "name": "Professional",
-        "description": "80 AI professional headshots",
-        "package_id": "headshots-professional",
-        "amount": "4990",
-    },
-    {
-        "name": "Executive",
-        "description": "160 AI professional headshots",
-        "package_id": "headshots-executive",
-        "amount": "8990",
-    },
-    {
-        "name": "Express Headshot",
-        "description": "5 instant AI headshots from 1 selfie",
-        "package_id": "express-instant",
-        "amount": "1990",
-    },
-]
+EXISTING_TAILORPIC1_PRODUCT = "pro_01m68s5dc6aqczq04cw6nfgxk1"
 
 
-def api_request(method, path, data=None):
-    """Make a Paddle API request."""
-    url = f"{BASE_URL}{path}"
+def paddle_api(method, path, data=None):
+    """Call Paddle API. Returns (http_code, response_dict)."""
+    url = BASE_URL + path
     headers = {
-        "Authorization": f"Bearer {API_KEY}",
+        "Authorization": "Bearer " + API_KEY,
         "Content-Type": "application/json",
     }
-    body = json.dumps(data).encode() if data else None
-    req = urllib.request.Request(url, data=body, headers=headers, method=method)
+    body = json.dumps(data).encode("utf-8") if data else None
+    req = Request(url, data=body, headers=headers, method=method)
     try:
-        with urllib.request.urlopen(req) as resp:
-            return resp.status, json.loads(resp.read().decode())
-    except urllib.error.HTTPError as e:
-        body = e.read().decode()
+        resp = urlopen(req)
+        return resp.status, json.loads(resp.read().decode("utf-8"))
+    except HTTPError as e:
         try:
-            return e.code, json.loads(body)
-        except json.JSONDecodeError:
-            return e.code, {"raw": body}
+            return e.code, json.loads(e.read().decode("utf-8"))
+        except Exception:
+            return e.code, {}
     except Exception as e:
         return 0, {"error": str(e)}
 
 
-def create_product(name, description, package_id):
-    """Create a product and return its ID."""
-    data = {
-        "name": name,
-        "description": description,
-        "tax_category": "digital-goods",
-        "custom_data": {"package_id": package_id},
-    }
-    print(f"  Creating product: {name}")
-    code, resp = api_request("POST", "/products", data)
-    print(f"  HTTP {code}")
-
-    if code == 201 or code == 200:
-        pid = resp.get("data", {}).get("id", "")
-        if pid:
-            print(f"  Product ID: {pid}")
-            return pid
-
-    print(f"  ERROR: {json.dumps(resp, indent=2)}")
-    return None
-
-
-def create_price(product_id, amount, description, package_id):
-    """Create a price and return its ID."""
-    data = {
-        "product_id": product_id,
-        "description": description,
-        "unit_price": {
-            "amount": amount,
-            "currency_code": "USD",
-        },
-        "custom_data": {"package_id": package_id},
-    }
-    cents = int(amount)
-    dollars = cents / 100
-    print(f"  Creating price: ${dollars:.2f} ({amount} cents)")
-    code, resp = api_request("POST", "/prices", data)
-    print(f"  HTTP {code}")
-
-    if code == 201 or code == 200:
-        pid = resp.get("data", {}).get("id", "")
-        if pid:
-            print(f"  Price ID: {pid}")
-            return pid
-
-    print(f"  ERROR: {json.dumps(resp, indent=2)}")
-    return None
-
-
-def post_commit_comment(body):
+def post_comment(text):
     """Post a commit comment via gh CLI."""
+    sha = os.environ.get("GITHUB_SHA", "")
+    repo = os.environ.get("GITHUB_REPOSITORY", "")
+    if not sha or not repo:
+        try:
+            sha = subprocess.check_output(
+                ["git", "rev-parse", "HEAD"], text=True, stderr=subprocess.DEVNULL
+            ).strip()
+        except Exception:
+            return
+    if not sha or not repo:
+        return
     try:
-        sha = subprocess.check_output(
-            ["git", "rev-parse", "HEAD"], text=True
-        ).strip()
         subprocess.run(
-            [
-                "gh", "api",
-                f"repos/{GITHUB_REPOSITORY}/commits/{sha}/comments",
-                "-f", f"body={body}",
-            ],
-            check=False,
-            capture_output=True,
+            ["gh", "api", "repos/" + repo + "/commits/" + sha + "/comments",
+             "-f", "body=" + text],
+            capture_output=True, text=True, timeout=30
         )
     except Exception:
         pass
 
 
-def main():
-    print("=" * 40)
-    print("  TailorPic Paddle Product Setup")
-    print("=" * 40)
-    print()
+# Package definitions: (name, description, package_id, price_cents, existing_product_id)
+PACKAGES = [
+    ("TailorPic 1", "1 AI professional headshot", "headshots-tailorpic1", "699", EXISTING_TAILORPIC1_PRODUCT),
+    ("Lite", "5 AI professional headshots", "headshots-lite", "990", ""),
+    ("Basic", "10 AI professional headshots", "headshots-express", "1990", ""),
+    ("Starter", "40 AI professional headshots", "headshots-starter", "2990", ""),
+    ("Professional", "80 AI professional headshots", "headshots-professional", "4990", ""),
+    ("Executive", "160 AI professional headshots", "headshots-executive", "8990", ""),
+    ("Express Headshot", "5 instant AI headshots from 1 selfie", "express-instant", "1990", ""),
+]
 
-    # Immediate debug comment
-    post_commit_comment(f"paddle-create-all.py started. API_KEY present: {bool(API_KEY)}, len: {len(API_KEY)}")
+ENV_MAP = {
+    "headshots-tailorpic1": "PADDLE_PRICE_HEADSHOTS_TAILORPIC1",
+    "headshots-lite": "PADDLE_PRICE_HEADSHOTS_LITE",
+    "headshots-express": "PADDLE_PRICE_HEADSHOTS_EXPRESS",
+    "headshots-starter": "PADDLE_PRICE_HEADSHOTS_STARTER",
+    "headshots-professional": "PADDLE_PRICE_HEADSHOTS_PROFESSIONAL",
+    "headshots-executive": "PADDLE_PRICE_HEADSHOTS_EXECUTIVE",
+    "express-instant": "PADDLE_PRICE_EXPRESS_INSTANT",
+}
+
+
+def main():
+    print("=== TailorPic Paddle Product Setup ===")
+    post_comment("Script started")
 
     if not API_KEY:
-        print("ERROR: PADDLE_API_KEY not set")
-        post_commit_comment("FAIL: PADDLE_API_KEY is empty")
+        msg = "FAIL: PADDLE_API_KEY not set"
+        print(msg)
+        post_comment(msg)
         sys.exit(1)
 
-    print(f"API key: present (length={len(API_KEY)})")
-    print()
+    print("API key: present (length=" + str(len(API_KEY)) + ")")
 
     # Test connectivity
-    print("--- Testing API connectivity ---")
-    try:
-        code, resp = api_request("GET", "/products")
-    except Exception as e:
-        msg = f"API request exception: {e}"
-        print(msg)
-        post_commit_comment(msg)
-        sys.exit(1)
-
-    print(f"GET /products: HTTP {code}")
+    code, _ = paddle_api("GET", "/products")
+    print("API test: HTTP " + str(code))
     if code != 200:
-        msg = f"API Error: HTTP {code} - {json.dumps(resp)[:500]}"
+        msg = "FAIL: API returned " + str(code)
         print(msg)
-        post_commit_comment(msg)
+        post_comment(msg)
         sys.exit(1)
     print("API OK")
-    post_commit_comment("API connectivity OK, starting product creation...")
-    print()
+    post_comment("API OK, creating products...")
 
     results = {}
     fail_count = 0
 
-    for i, pkg in enumerate(PACKAGES, 1):
-        print(f"--- {i}/{len(PACKAGES)}: {pkg['name']} ---")
+    for i, (name, desc, pkg_id, amount, existing_prod) in enumerate(PACKAGES):
+        num = i + 1
+        print("")
+        print("--- " + str(num) + "/7: " + name + " ---")
 
-        # Get or create product
-        product_id = pkg.get("product_id")
-        if product_id:
-            print(f"  Using existing product: {product_id}")
-        else:
-            product_id = create_product(
-                pkg["name"], pkg["description"], pkg["package_id"]
-            )
+        product_id = existing_prod
+        if not product_id:
+            c, r = paddle_api("POST", "/products", {
+                "name": name,
+                "description": desc,
+                "tax_category": "digital-goods",
+                "custom_data": {"package_id": pkg_id},
+            })
+            product_id = r.get("data", {}).get("id", "")
             if not product_id:
+                print("  FAIL product creation: HTTP " + str(c))
+                results[pkg_id] = "FAIL"
                 fail_count += 1
-                results[pkg["package_id"]] = "FAIL"
-                print()
                 continue
-
-        # Create price
-        price_id = create_price(
-            product_id,
-            pkg["amount"],
-            f"{pkg['name']} - {pkg['description']}",
-            pkg["package_id"],
-        )
-        if price_id:
-            results[pkg["package_id"]] = price_id
+            print("  Product: " + product_id)
         else:
+            print("  Product (existing): " + product_id)
+
+        c2, r2 = paddle_api("POST", "/prices", {
+            "product_id": product_id,
+            "description": name + " - " + desc,
+            "unit_price": {"amount": amount, "currency_code": "USD"},
+            "custom_data": {"package_id": pkg_id},
+        })
+        price_id = r2.get("data", {}).get("id", "")
+        if price_id:
+            print("  Price: " + price_id)
+            results[pkg_id] = price_id
+        else:
+            print("  FAIL price creation: HTTP " + str(c2))
+            results[pkg_id] = "FAIL"
             fail_count += 1
-            results[pkg["package_id"]] = "FAIL"
 
-        print()
-
-    # Summary
-    print("=" * 40)
-    print("  SUMMARY")
-    print("=" * 40)
-
-    env_map = {
-        "headshots-tailorpic1": "PADDLE_PRICE_HEADSHOTS_TAILORPIC1",
-        "headshots-lite": "PADDLE_PRICE_HEADSHOTS_LITE",
-        "headshots-express": "PADDLE_PRICE_HEADSHOTS_EXPRESS",
-        "headshots-starter": "PADDLE_PRICE_HEADSHOTS_STARTER",
-        "headshots-professional": "PADDLE_PRICE_HEADSHOTS_PROFESSIONAL",
-        "headshots-executive": "PADDLE_PRICE_HEADSHOTS_EXECUTIVE",
-        "express-instant": "PADDLE_PRICE_EXPRESS_INSTANT",
-    }
-
+    # Build summary
     lines = []
-    for pkg_id, env_name in env_map.items():
+    for pkg_id in ENV_MAP:
+        env_name = ENV_MAP[pkg_id]
         val = results.get(pkg_id, "FAIL")
-        line = f"{env_name}={val}"
-        print(line)
-        lines.append(line)
+        lines.append(env_name + "=" + val)
+    lines.append("Failed: " + str(fail_count) + "/7")
 
-    lines.append(f"Failed: {fail_count} / {len(PACKAGES)}")
-    print(f"\nFailed: {fail_count} / {len(PACKAGES)}")
+    summary = "\n".join(lines)
+    print("")
+    print("========================================")
+    print(summary)
+    print("========================================")
 
-    # Post as commit comment
-    post_commit_comment("\n".join(lines))
+    post_comment(summary)
 
-    # Write step summary
-    if GITHUB_STEP_SUMMARY:
-        with open(GITHUB_STEP_SUMMARY, "a") as f:
-            f.write("## Paddle Setup Results\n\n```\n")
-            f.write("\n".join(lines))
-            f.write("\n```\n")
+    # Step summary
+    step_summary_path = os.environ.get("GITHUB_STEP_SUMMARY", "")
+    if step_summary_path:
+        try:
+            with open(step_summary_path, "a") as f:
+                f.write("## Paddle Setup Results\n```\n" + summary + "\n```\n")
+        except Exception:
+            pass
 
     if fail_count > 0:
         sys.exit(1)
