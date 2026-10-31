@@ -58,6 +58,7 @@ jobs:
 
       - name: Create all products and prices
         if: inputs.action == 'create-all'
+        shell: bash {0}
         env:
           PADDLE_API_KEY: ${{ secrets.PADDLE_API_KEY }}
           GH_TOKEN: ${{ github.token }}
