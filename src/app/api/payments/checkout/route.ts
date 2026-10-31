@@ -63,6 +63,8 @@ const checkoutSchema = z.union([
     cancelUrl: z.string().url().optional(),
     withdrawalConsentGiven: z.boolean().optional(),
     consentTimestamp: z.string().optional(),
+    /** Hero storybook: pass story ID for post-payment fulfillment */
+    storyId: z.string().uuid().optional(),
   }),
   // Legacy checkout (backward compatible)
   z.object({
@@ -222,11 +224,13 @@ export async function POST(request: NextRequest) {
       couponCode?: string;
       withdrawalConsentGiven?: boolean;
       consentTimestamp?: string;
+      storyId?: string;
     };
     const couponCode = 'couponCode' in parsed.data ? (parsed.data as { couponCode?: string }).couponCode : undefined;
     const categoryId = 'categoryId' in parsed.data ? (parsed.data as { categoryId: string }).categoryId : 'headshots';
     const withdrawalConsent = 'withdrawalConsentGiven' in parsed.data ? (parsed.data as { withdrawalConsentGiven?: boolean }).withdrawalConsentGiven : undefined;
     const consentTs = 'consentTimestamp' in parsed.data ? (parsed.data as { consentTimestamp?: string }).consentTimestamp : undefined;
+    const storyId = 'storyId' in parsed.data ? (parsed.data as { storyId?: string }).storyId : undefined;
 
     let pkgName: string;
     let pkgPrice: number;
@@ -316,6 +320,7 @@ export async function POST(request: NextRequest) {
           packageId,
           categoryId,
           userId: user.id,
+          ...(storyId ? { storyId } : {}),
           ...(withdrawalConsent ? {
             withdrawalConsentGiven: 'true',
             consentTimestamp: consentTs || new Date().toISOString(),
@@ -323,7 +328,11 @@ export async function POST(request: NextRequest) {
           } : {}),
         },
         settings: {
-          successUrl: sanitizeRedirectUrl(successUrl) || `${baseUrl}/dashboard/orders/${order.id}?status=success`,
+          successUrl: sanitizeRedirectUrl(successUrl) || (
+            categoryId === 'hero-storybook' && storyId
+              ? `${baseUrl}/create-a-hero/preview/${storyId}?status=success`
+              : `${baseUrl}/dashboard/orders/${order.id}?status=success`
+          ),
           ...(discountId ? { discountId } : {}),
         },
         customer: {

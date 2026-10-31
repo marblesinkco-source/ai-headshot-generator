@@ -101,4 +101,6 @@ export interface PaddleTransactionCustomData {
   withdrawalConsentGiven?: string;
   consentTimestamp?: string;
   consentText?: string;
+  /** Hero storybook: story ID to update after payment */
+  storyId?: string;
 }

@@ -397,6 +397,25 @@ export async function POST(request: NextRequest) {
           break;
         }
 
+        // ── Hero storybook purchase ─────────────────────────────────
+        if (categoryId === 'hero-storybook' && customData.storyId) {
+          const { error: storyUpdateError } = await supabase
+            .from('hero_stories')
+            .update({
+              status: 'paid',
+              order_id: orderId,
+            })
+            .eq('id', customData.storyId)
+            .eq('user_id', userId);
+
+          if (storyUpdateError) {
+            logger.error('[paddle-webhook] Failed to update hero story status:', storyUpdateError);
+          } else {
+            logger.info(`[paddle-webhook] Hero story ${customData.storyId} marked as paid`);
+          }
+          // Continue to email + financial recording below
+        }
+
         // ── Category / legacy package purchase ────────────────────────
         const category = getCategoryById(categoryId);
         const catPkg = category ? getPackageById(categoryId, packageId) : null;
