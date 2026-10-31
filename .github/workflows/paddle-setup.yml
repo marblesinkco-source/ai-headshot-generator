@@ -233,6 +233,11 @@ jobs:
           cat /tmp/discount_results.txt
           cat /tmp/discount_results.txt >> "$GITHUB_STEP_SUMMARY"
 
+          # Emit as annotations so sandbox can read them
+          echo -e "$RESULTS" | while IFS= read -r line; do
+            [ -n "$line" ] && echo "::notice::$line"
+          done
+
           gh issue create \
             --repo "${{ github.repository }}" \
             --title "Paddle Discounts $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
