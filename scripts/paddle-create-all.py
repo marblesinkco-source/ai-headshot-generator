@@ -108,9 +108,31 @@ def main():
         post_comment(msg)
         sys.exit(1)
     print("API OK")
+
+    # Archive duplicate TailorPic 1 prices (keep first, archive rest)
+    KEEP_PRICE = "pri_01m692tcycwye6z1nb4axf130p"
+    ARCHIVE_PRICES = [
+        "pri_01m692y4r0gdtf7za9m3m48qrx",
+        "pri_01m692ztvq4t75pb35ff8b3f9y",
+    ]
+    for pid in ARCHIVE_PRICES:
+        ac, ar = paddle_api("PATCH", "/prices/" + pid, {"status": "archived"})
+        if ac == 200:
+            print("Archived duplicate price: " + pid)
+        else:
+            print("Archive " + pid + ": HTTP " + str(ac) + " (may already be archived)")
+
+    # Check existing product details
+    pc, pr = paddle_api("GET", "/products/" + EXISTING_TAILORPIC1_PRODUCT)
+    if pc == 200:
+        prod_data = pr.get("data", {})
+        print("Existing product tax_category: " + str(prod_data.get("tax_category", "NOT SET")))
+
     post_comment("API OK, creating products...")
 
     results = {}
+    # TailorPic 1 already has a price
+    results["headshots-tailorpic1"] = KEEP_PRICE
     fail_count = 0
 
     for i, (name, desc, pkg_id, amount, existing_prod) in enumerate(PACKAGES):
@@ -118,12 +140,16 @@ def main():
         print("")
         print("--- " + str(num) + "/7: " + name + " ---")
 
+        # Skip TailorPic 1 — already has product + price
+        if pkg_id == "headshots-tailorpic1":
+            print("  SKIP: already set up (price=" + KEEP_PRICE + ")")
+            continue
+
         product_id = existing_prod
         if not product_id:
             c, r = paddle_api("POST", "/products", {
                 "name": name,
                 "description": desc,
-                "tax_category": "digital-goods",
                 "custom_data": {"package_id": pkg_id},
             })
             product_id = r.get("data", {}).get("id", "")
