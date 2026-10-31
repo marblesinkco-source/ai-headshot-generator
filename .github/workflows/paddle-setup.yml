@@ -78,11 +78,20 @@ jobs:
             local description="$2"
             local package_id="$3"
 
+            local PAYLOAD="{\"name\": \"$name\", \"description\": \"$description\", \"tax_category\": \"digital-goods\", \"custom_data\": {\"package_id\": \"$package_id\"}}"
+            echo "  Request payload: $PAYLOAD" >&2
+
             local RESULT
-            RESULT=$(curl -s -X POST https://api.paddle.com/products \
+            local HTTP_CODE
+            RESULT=$(curl -s -w "\n%{http_code}" -X POST https://api.paddle.com/products \
               -H "Authorization: Bearer $PADDLE_API_KEY" \
               -H "Content-Type: application/json" \
-              -d "{\"name\": \"$name\", \"description\": \"$description\", \"tax_category\": \"digital-goods\", \"custom_data\": {\"package_id\": \"$package_id\"}}")
+              -d "$PAYLOAD")
+
+            HTTP_CODE=$(echo "$RESULT" | tail -1)
+            RESULT=$(echo "$RESULT" | sed '$d')
+            echo "  HTTP $HTTP_CODE" >&2
+            echo "  Response: $RESULT" >&2
 
             local PRODUCT_ID
             PRODUCT_ID=$(echo "$RESULT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('data',{}).get('id',''))" 2>/dev/null)
@@ -90,7 +99,6 @@ jobs:
               echo "$PRODUCT_ID"
             else
               echo "FAIL"
-              echo "  API response: $RESULT" >&2
             fi
           }
 
@@ -101,11 +109,20 @@ jobs:
             local description="$3"
             local package_id="$4"
 
+            local PAYLOAD="{\"product_id\": \"$product_id\", \"description\": \"$description\", \"unit_price\": {\"amount\": \"$amount\", \"currency_code\": \"USD\"}, \"custom_data\": {\"package_id\": \"$package_id\"}}"
+            echo "  Request payload: $PAYLOAD" >&2
+
             local RESULT
-            RESULT=$(curl -s -X POST https://api.paddle.com/prices \
+            local HTTP_CODE
+            RESULT=$(curl -s -w "\n%{http_code}" -X POST https://api.paddle.com/prices \
               -H "Authorization: Bearer $PADDLE_API_KEY" \
               -H "Content-Type: application/json" \
-              -d "{\"product_id\": \"$product_id\", \"description\": \"$description\", \"type\": \"standard\", \"unit_price\": {\"amount\": \"$amount\", \"currency_code\": \"USD\"}, \"custom_data\": {\"package_id\": \"$package_id\"}}")
+              -d "$PAYLOAD")
+
+            HTTP_CODE=$(echo "$RESULT" | tail -1)
+            RESULT=$(echo "$RESULT" | sed '$d')
+            echo "  HTTP $HTTP_CODE" >&2
+            echo "  Response: $RESULT" >&2
 
             local PRICE_ID
             PRICE_ID=$(echo "$RESULT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('data',{}).get('id',''))" 2>/dev/null)
@@ -113,7 +130,6 @@ jobs:
               echo "$PRICE_ID"
             else
               echo "FAIL"
-              echo "  API response: $RESULT" >&2
             fi
           }
 
@@ -250,6 +266,24 @@ jobs:
           echo "PADDLE_PRICE_EXPRESS_INSTANT=${P7_PRICE:-FAIL}"
           echo ""
           echo "Failed: $FAIL_COUNT / 7"
+
+          # Write summary to GitHub Actions job summary
+          {
+            echo "## Paddle Product Setup Results"
+            echo ""
+            echo "| Package | Price ID |"
+            echo "|---|---|"
+            echo "| TailorPic 1 | ${P1_PRICE:-FAIL} |"
+            echo "| Lite | ${P2_PRICE:-FAIL} |"
+            echo "| Basic | ${P3_PRICE:-FAIL} |"
+            echo "| Starter | ${P4_PRICE:-FAIL} |"
+            echo "| Professional | ${P5_PRICE:-FAIL} |"
+            echo "| Executive | ${P6_PRICE:-FAIL} |"
+            echo "| Express Instant | ${P7_PRICE:-FAIL} |"
+            echo ""
+            echo "Failed: $FAIL_COUNT / 7"
+          } >> "$GITHUB_STEP_SUMMARY"
+
           if [ "$FAIL_COUNT" -gt 0 ]; then
             exit 1
           fi
