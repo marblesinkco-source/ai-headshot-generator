@@ -32,29 +32,36 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         shell: bash {0}
         run: |
-          # Debug: check key format (no content shown)
+          # Debug: check key format
           KEY_LEN=${#PADDLE_API_KEY}
-          # Trim any whitespace from key
           PADDLE_API_KEY=$(echo "$PADDLE_API_KEY" | tr -d '[:space:]')
           TRIMMED_LEN=${#PADDLE_API_KEY}
-          # Save debug info for issue
-          echo "key_len_original=$KEY_LEN" > /tmp/debug_info.txt
-          echo "key_len_trimmed=$TRIMMED_LEN" >> /tmp/debug_info.txt
-          echo "key_starts_with_pdl=$(echo "$PADDLE_API_KEY" | grep -c '^pdl_')" >> /tmp/debug_info.txt
+          # Check first 4 and last 3 chars (safe to reveal partial)
+          FIRST4="${PADDLE_API_KEY:0:4}"
+          LAST3="${PADDLE_API_KEY: -3}"
 
-          # Fetch all products
-          HTTP_CODE=$(curl -s -w "%{http_code}" -o /tmp/products_raw.json \
-            "https://api.paddle.com/products?per_page=200" \
+          # Debug curl with verbose output (mask sensitive parts)
+          curl -v "https://api.paddle.com/products?per_page=5" \
             -H "Authorization: Bearer $PADDLE_API_KEY" \
-            -H "Content-Type: application/json")
-          echo "Products HTTP: $HTTP_CODE"
+            -H "Content-Type: application/json" \
+            -o /tmp/products_raw.json 2>/tmp/curl_debug.txt
+          # Sanitize debug output — mask the token but keep headers
+          sed -i "s/$PADDLE_API_KEY/***MASKED***/g" /tmp/curl_debug.txt
+
+          {
+            echo "key_len=$KEY_LEN"
+            echo "trimmed_len=$TRIMMED_LEN"
+            echo "first4=$FIRST4"
+            echo "last3=$LAST3"
+            echo "---curl-debug---"
+            grep -E '(> |< |HTTP|Auth|error)' /tmp/curl_debug.txt | head -20
+          } > /tmp/debug_info.txt
 
           # Fetch all prices
-          HTTP_CODE2=$(curl -s -w "%{http_code}" -o /tmp/prices_raw.json \
+          curl -s -o /tmp/prices_raw.json \
             "https://api.paddle.com/prices?per_page=200" \
             -H "Authorization: Bearer $PADDLE_API_KEY" \
-            -H "Content-Type: application/json")
-          echo "Prices HTTP: $HTTP_CODE2"
+            -H "Content-Type: application/json"
 
           python3 << 'PYEOF' || true
           import json
