@@ -1,5 +1,33 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-31 Gece-3 (Group Gift + PDF Download)
+
+### Tamamlanan Görevler
+- **Group Gift Feature** (feat-HERO-GROUP-GIFT): Tamamlandı
+  - 4 API route: create, contribute, [token] info, contributions list
+  - Public contribution page: `/create-a-hero/gift/[token]`
+  - ContributionForm client component: story info, name/email/message form, success state
+  - GroupGiftPanel in StoryPreview: create link, copy URL, view contributions
+  - Security: CSRF guard, rate limiting, auth checks, ownership verification
+- **PDF Download Feature**: Tamamlandı
+  - Raw PDF 1.4 generator (`src/lib/pdf-generator.ts`) — zero npm dependencies
+  - `/api/hero/download-pdf` POST route with auth + ownership check
+  - Working download button in StoryPreview (replaces "coming soon" toast)
+  - US Letter format, cover page, story pages with illustrations, back cover
+- **Canlı Site Doğrulama**: ✅
+  - /create-a-hero sayfası çalışıyor
+  - /create-a-hero/gift/[token] — invalid token error handling doğru
+
+### Commitler
+- `7614ff5` — feat(hero): add Group Gift and PDF Download features — CI PASS + Vercel PASS ✅
+
+### Murat-action bekleyenler (değişmedi)
+- Paddle account + $19 price ID → PADDLE_PRICE_HERO_DIGITAL env var
+- REPLICATE_API_TOKEN, RESEND_API_KEY, Upstash Redis URL+token (Vercel env)
+- SUPABASE_DB_URL GitHub Secret → DB migrations
+
+---
+
 ## Oturum: 2026-10-31 Gece-2 (Dashboard + Nav + Dynamic Pricing)
 
 ### Tamamlanan Görevler

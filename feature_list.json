@@ -804,7 +804,7 @@
         "feat-HERO-PREVIEW"
       ],
       "status": "done",
-      "evidence": "checkout/route.ts: storyId Zod schema + customData flow. paddle webhook: hero-storybook handling (status→paid, order_id set). Success URL → /create-a-hero/preview/{storyId}?status=success. paddle.ts: PaddleTransactionCustomData.storyId field. Commit: 6c41cbc. CI+Vercel PASS. BLOCKER: PADDLE_PRICE_HERO_DIGITAL env var must be set by Murat in Vercel. 2026-10-31."
+      "evidence": "checkout/route.ts: storyId Zod schema + customData flow. paddle webhook: hero-storybook handling (status→paid, order_id set). Success URL → /create-a-hero/preview/{storyId}?status=success. paddle.ts: PaddleTransactionCustomData.storyId field. Commit: 6c41cbc. PDF download: raw PDF 1.4 generator (zero deps) + /api/hero/download-pdf route + working button in StoryPreview. Commit: 7614ff5. CI+Vercel PASS. BLOCKER: PADDLE_PRICE_HERO_DIGITAL env var must be set by Murat in Vercel."
     },
     {
       "id": "feat-HERO-LANDING",
@@ -823,8 +823,8 @@
       "dependencies": [
         "feat-HERO-CHECKOUT"
       ],
-      "status": "not-started",
-      "evidence": ""
+      "status": "done",
+      "evidence": "4 API routes (create, contribute, [token] info, contributions list), public contribution page /create-a-hero/gift/[token], GroupGiftPanel in preview. Commit 7614ff5. CI+Vercel PASS. Live verified."
     }
   ]
 }
