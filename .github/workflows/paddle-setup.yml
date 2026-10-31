@@ -11,6 +11,7 @@ on:
           - list-products
           - create-all
           - create-python
+          - create-discounts
           - archive-price
       price_id:
         description: 'Price ID to archive (for archive-price action)'
@@ -171,6 +172,71 @@ jobs:
               --title "Paddle Inventory $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
               --body-file /tmp/issue_body.txt 2>&1 || echo "Issue creation failed"
           fi
+
+      # ===== CREATE DISCOUNTS =====
+      - name: "Create discounts"
+        if: inputs.action == 'create-discounts'
+        env:
+          PADDLE_API_KEY: ${{ secrets.PADDLE_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        shell: bash {0}
+        run: |
+          RESULTS=""
+          create_discount() {
+            local CODE="$1" PERCENT="$2" DESC="$3" ENV_NAME="$4"
+            echo "--- Creating discount: $CODE ($PERCENT% off) ---"
+            RESP=$(curl -s -X POST https://api.paddle.com/discounts \
+              -H "Authorization: Bearer $PADDLE_API_KEY" \
+              -H "Content-Type: application/json" \
+              -d "{
+                \"amount\": \"$PERCENT\",
+                \"description\": \"$DESC\",
+                \"type\": \"percentage\",
+                \"enabled_for_checkout\": true,
+                \"code\": \"$CODE\",
+                \"recur\": false,
+                \"usage_limit\": null
+              }")
+            echo "$RESP" | python3 -m json.tool 2>/dev/null || echo "$RESP"
+            DSC_ID=$(echo "$RESP" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('data',{}).get('id',''))" 2>/dev/null)
+            if [ -n "$DSC_ID" ] && echo "$DSC_ID" | grep -q "^dsc_"; then
+              echo "SUCCESS: $DSC_ID"
+              RESULTS="$RESULTS\n$ENV_NAME=$DSC_ID"
+            else
+              # Maybe already exists — try listing
+              EXISTING=$(curl -s "https://api.paddle.com/discounts?code=$CODE" \
+                -H "Authorization: Bearer $PADDLE_API_KEY" \
+                -H "Content-Type: application/json")
+              EX_ID=$(echo "$EXISTING" | python3 -c "import sys,json; d=json.load(sys.stdin); data=d.get('data',[]); print(data[0]['id'] if data else '')" 2>/dev/null)
+              if [ -n "$EX_ID" ] && echo "$EX_ID" | grep -q "^dsc_"; then
+                echo "ALREADY EXISTS: $EX_ID"
+                RESULTS="$RESULTS\n$ENV_NAME=$EX_ID"
+              else
+                echo "FAILED"
+                RESULTS="$RESULTS\n$ENV_NAME=FAILED"
+              fi
+            fi
+          }
+
+          create_discount "UPGRADE25" "25" "25% off upgrade from entry-tier package" "PADDLE_DISCOUNT_UPGRADE25"
+          create_discount "AVATARBUNDLE" "15" "15% off avatar bundle" "PADDLE_DISCOUNT_AVATARBUNDLE"
+          create_discount "AVATAR20" "20" "20% off avatar package" "PADDLE_DISCOUNT_AVATAR20"
+
+          # Summary
+          {
+            echo "# Paddle Discounts"
+            echo '```'
+            echo -e "$RESULTS"
+            echo '```'
+          } > /tmp/discount_results.txt
+
+          cat /tmp/discount_results.txt
+          cat /tmp/discount_results.txt >> "$GITHUB_STEP_SUMMARY"
+
+          gh issue create \
+            --repo "${{ github.repository }}" \
+            --title "Paddle Discounts $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            --body-file /tmp/discount_results.txt 2>&1 || echo "Issue creation failed"
 
       # ===== ARCHIVE PRICE =====
       - name: Archive a price
