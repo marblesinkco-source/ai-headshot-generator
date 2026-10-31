@@ -31,36 +31,34 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         shell: bash {0}
         run: |
-          echo "=== Listing Paddle Prices ==="
-          PRICES=$(curl -s "https://api.paddle.com/prices?status=active" \
+          PRICES=$(curl -s "https://api.paddle.com/prices" \
             -H "Authorization: Bearer $PADDLE_API_KEY" \
             -H "Content-Type: application/json")
-          echo "$PRICES" | python3 -m json.tool 2>/dev/null || echo "$PRICES"
 
-          # Extract price IDs with package_id mapping
-          SUMMARY=$(echo "$PRICES" | python3 -c "
+          # Write mapping to a temp file to avoid shell escaping issues
+          echo "$PRICES" | python3 -c "
           import sys, json
           data = json.load(sys.stdin)
+          lines = []
           for p in data.get('data', []):
               pid = p.get('id','?')
               amt = p.get('unit_price',{}).get('amount','?')
-              cd = p.get('custom_data',{}) or {}
+              st = p.get('status','?')
+              cd = p.get('custom_data') or {}
               pkg = cd.get('package_id','no-package')
               desc = p.get('description','')
-              print(f'{pkg} -> {pid} (amount: {amt}, desc: {desc})')
-          " 2>/dev/null || echo "parse failed")
+              lines.append(f'{pkg} | {pid} | \${int(amt)/100:.2f} | {st} | {desc}')
+          with open('/tmp/prices.txt', 'w') as f:
+              f.write('\n'.join(lines))
+          print('\n'.join(lines))
+          " 2>/dev/null
 
-          echo ""
-          echo "=== PRICE MAPPING ==="
-          echo "$SUMMARY"
-
-          # Post as commit comment
-          SHA=$(gh api repos/${{ github.repository }} -q '.default_branch' 2>/dev/null)
-          HEAD_SHA=$(gh api "repos/${{ github.repository }}/commits/main" -q '.sha' 2>/dev/null)
-          if [ -n "$HEAD_SHA" ]; then
+          HEAD_SHA=$(gh api 'repos/${{ github.repository }}/commits/main' -q '.sha' 2>/dev/null)
+          if [ -n "$HEAD_SHA" ] && [ -f /tmp/prices.txt ]; then
+            BODY=$(cat /tmp/prices.txt)
             gh api "repos/${{ github.repository }}/commits/$HEAD_SHA/comments" \
-              -f body="Paddle Prices:
-          $SUMMARY" 2>/dev/null || echo "Comment post failed"
+              --raw-field "body=Paddle Prices:
+          $BODY" || echo "Comment post failed"
           fi
 
       # ===== ARCHIVE PRICE =====
