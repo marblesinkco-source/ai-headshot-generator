@@ -32,23 +32,28 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         shell: bash {0}
         run: |
-          # Fetch all prices (with pagination)
-          curl -s -w "\nHTTP_%{http_code}" "https://api.paddle.com/prices?per_page=200" \
-            -H "Authorization: Bearer $PADDLE_API_KEY" \
-            -H "Content-Type: application/json" \
-            -o /tmp/prices_raw.json
-          echo "Prices HTTP: $(tail -1 /tmp/prices_raw.json)"
+          # Debug: check key format (no content shown)
+          KEY_LEN=${#PADDLE_API_KEY}
+          echo "API key length: $KEY_LEN"
+          # Trim any whitespace from key
+          PADDLE_API_KEY=$(echo "$PADDLE_API_KEY" | tr -d '[:space:]')
+          TRIMMED_LEN=${#PADDLE_API_KEY}
+          echo "Trimmed key length: $TRIMMED_LEN"
+          echo "Changed: $( [ $KEY_LEN -ne $TRIMMED_LEN ] && echo YES || echo NO )"
 
-          # Fetch all products (with pagination)
-          curl -s -w "\nHTTP_%{http_code}" "https://api.paddle.com/products?per_page=200" \
+          # Fetch all products
+          HTTP_CODE=$(curl -s -w "%{http_code}" -o /tmp/products_raw.json \
+            "https://api.paddle.com/products?per_page=200" \
             -H "Authorization: Bearer $PADDLE_API_KEY" \
-            -H "Content-Type: application/json" \
-            -o /tmp/products_raw.json
-          echo "Products HTTP: $(tail -1 /tmp/products_raw.json)"
+            -H "Content-Type: application/json")
+          echo "Products HTTP: $HTTP_CODE"
 
-          # Clean trailing HTTP status from files
-          sed -i '/^HTTP_/d' /tmp/prices_raw.json
-          sed -i '/^HTTP_/d' /tmp/products_raw.json
+          # Fetch all prices
+          HTTP_CODE2=$(curl -s -w "%{http_code}" -o /tmp/prices_raw.json \
+            "https://api.paddle.com/prices?per_page=200" \
+            -H "Authorization: Bearer $PADDLE_API_KEY" \
+            -H "Content-Type: application/json")
+          echo "Prices HTTP: $HTTP_CODE2"
 
           python3 << 'PYEOF' || true
           import json
