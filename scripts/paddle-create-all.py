@@ -129,6 +129,7 @@ def main():
             product_id = r.get("data", {}).get("id", "")
             if not product_id:
                 print("  FAIL product creation: HTTP " + str(c))
+                print("  Response: " + json.dumps(r, indent=2)[:500])
                 results[pkg_id] = "FAIL"
                 fail_count += 1
                 continue
@@ -148,6 +149,7 @@ def main():
             results[pkg_id] = price_id
         else:
             print("  FAIL price creation: HTTP " + str(c2))
+            print("  Response: " + json.dumps(r2, indent=2)[:500])
             results[pkg_id] = "FAIL"
             fail_count += 1
 
