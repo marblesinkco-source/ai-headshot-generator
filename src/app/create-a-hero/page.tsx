@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { Header } from '@/components/marketing/header';
 import { Footer } from '@/components/marketing/footer';
 import { HERO_UNIVERSES, HERO_OCCASIONS, STORY_CONFIG } from '@/config/hero-storybook';
+import { CATEGORIES } from '@/config/categories';
+import { formatPrice } from '@/lib/utils';
 import {
   BookOpen,
   Camera,
@@ -15,6 +17,9 @@ import {
   Download,
   Zap,
 } from 'lucide-react';
+
+const heroPkg = CATEGORIES['hero-storybook'].packages[0];
+const heroPrice = formatPrice(heroPkg.price, heroPkg.currency, true);
 
 export const metadata: Metadata = {
   title: 'Create a Hero — Personalized AI Storybook | TailorPic',
@@ -66,7 +71,7 @@ function HeroBanner() {
             <ChevronRight className="w-5 h-5" />
           </Link>
           <span className="text-sm text-tp-muted">
-            Digital storybook · $19 · Instant delivery
+            Digital storybook · {heroPrice} · Instant delivery
           </span>
         </div>
       </div>
@@ -235,7 +240,7 @@ function PricingSection() {
           </div>
           <div className="p-8 text-center">
             <div className="mb-6">
-              <span className="text-5xl font-bold text-tp-black">$19</span>
+              <span className="text-5xl font-bold text-tp-black">{heroPrice}</span>
               <span className="text-tp-muted ml-1">one-time</span>
             </div>
             <ul className="text-left space-y-3 mb-8">
@@ -390,7 +395,7 @@ function FinalCTA() {
           className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-amber-500 to-red-600 hover:from-amber-600 hover:to-red-700 text-white text-lg font-semibold rounded-tp-button shadow-lg shadow-amber-500/20 transition-all hover:shadow-xl hover:shadow-amber-500/30"
         >
           <Sparkles className="w-5 h-5" />
-          Create a Storybook — $19
+          Create a Storybook — {heroPrice}
         </Link>
         <p className="text-sm text-tp-muted mt-4">
           3 pages free preview · No account required to start

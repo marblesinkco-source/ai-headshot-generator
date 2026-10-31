@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import { Button } from '@/components/ui/button';
 import { STORY_CONFIG } from '@/config/hero-storybook';
+import { CATEGORIES } from '@/config/categories';
+import { formatPrice } from '@/lib/utils';
 import {
   BookOpen,
   Lock,
@@ -16,6 +18,9 @@ import {
   Loader2,
   Share2,
 } from 'lucide-react';
+
+const heroPkg = CATEGORIES['hero-storybook'].packages[0];
+const heroPrice = formatPrice(heroPkg.price, heroPkg.currency, true);
 
 interface StoryPage {
   id: string;
@@ -353,7 +358,7 @@ export function StoryPreview({ storyId }: { storyId: string }) {
             ) : (
               <>
                 <Sparkles className="w-4 h-4" />
-                Get Full Story — $19
+                Get Full Story — {heroPrice}
               </>
             )}
           </Button>

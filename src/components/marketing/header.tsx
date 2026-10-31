@@ -18,6 +18,7 @@ const categories = getActiveCategories();
 // Blog and Enterprise are in the footer and mobile secondary links — desktop nav stays lean for new users.
 const navLinks = [
   { label: 'Express ⚡', href: '/express-headshots' },
+  { label: 'Create a Hero', href: '/create-a-hero' },
   { label: 'How It Works', href: '/how-it-works' },
   { label: 'Examples', href: '/samples' },
   { label: 'Pricing', href: '/pricing' },
@@ -27,6 +28,7 @@ const navLinks = [
 // Support links first, then discovery, then company.
 const secondaryLinks = [
   { label: 'Express Headshots ⚡', href: '/express-headshots' },
+  { label: 'Create a Hero 📖', href: '/create-a-hero' },
   { label: 'Help Center', href: '/help' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Contact', href: '/contact' },

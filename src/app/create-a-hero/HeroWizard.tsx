@@ -3,7 +3,8 @@
 import { useState, useCallback, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { useDropzone } from 'react-dropzone';
-import { cn } from '@/lib/utils';
+import { cn, formatPrice } from '@/lib/utils';
+import { CATEGORIES } from '@/config/categories';
 import { Button } from '@/components/ui/button';
 import { createClient } from '@/lib/supabase/client';
 import {
@@ -24,6 +25,9 @@ import {
   Shield,
   Check,
 } from 'lucide-react';
+
+const heroPkg = CATEGORIES['hero-storybook'].packages[0];
+const heroPrice = formatPrice(heroPkg.price, heroPkg.currency, true);
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -580,7 +584,7 @@ export function HeroWizard() {
               ) : (
                 <>
                   <Sparkles className="w-4 h-4" />
-                  Create Story — $19
+                  Create Story — {heroPrice}
                 </>
               )}
             </Button>
