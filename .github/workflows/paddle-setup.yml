@@ -20,6 +20,7 @@ jobs:
   paddle-setup:
     runs-on: ubuntu-latest
     steps:
+      # ===== LIST PRODUCTS =====
       - name: List existing products
         if: inputs.action == 'list-products'
         env:
@@ -36,6 +37,7 @@ jobs:
             -H "Authorization: Bearer $PADDLE_API_KEY" \
             -H "Content-Type: application/json" | python3 -m json.tool
 
+      # ===== ARCHIVE PRICE =====
       - name: Archive a price
         if: inputs.action == 'archive-price'
         env:
@@ -53,19 +55,181 @@ jobs:
             -d '{"status": "archived"}')
           echo "$RESULT" | python3 -m json.tool
 
-      - uses: actions/checkout@v4
-        if: inputs.action == 'create-all'
-
-      - name: Create all products and prices
+      # ===== CREATE ALL =====
+      - name: "Create: TailorPic 1 price (product exists)"
         if: inputs.action == 'create-all'
         env:
           PADDLE_API_KEY: ${{ secrets.PADDLE_API_KEY }}
+        run: |
+          echo "--- 1/7: TailorPic 1 (existing product pro_01m68s5dc6aqczq04cw6nfgxk1) ---"
+          RESP=$(curl -s -X POST https://api.paddle.com/prices \
+            -H "Authorization: Bearer $PADDLE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{"product_id":"pro_01m68s5dc6aqczq04cw6nfgxk1","description":"TailorPic 1 - 1 AI headshot","unit_price":{"amount":"699","currency_code":"USD"},"custom_data":{"package_id":"headshots-tailorpic1"}}')
+          echo "$RESP" | python3 -m json.tool
+          PRICE_ID=$(echo "$RESP" | python3 -c "import sys,json; print(json.load(sys.stdin).get('data',{}).get('id','FAIL'))" 2>/dev/null || echo "FAIL")
+          echo "PADDLE_PRICE_HEADSHOTS_TAILORPIC1=$PRICE_ID"
+          echo "PRICE_TAILORPIC1=$PRICE_ID" >> "$GITHUB_ENV"
+
+      - name: "Create: Lite product + price"
+        if: inputs.action == 'create-all'
+        env:
+          PADDLE_API_KEY: ${{ secrets.PADDLE_API_KEY }}
+        run: |
+          echo "--- 2/7: Lite ---"
+          PROD_RESP=$(curl -s -X POST https://api.paddle.com/products \
+            -H "Authorization: Bearer $PADDLE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{"name":"Lite","description":"5 AI professional headshots","tax_category":"digital-goods","custom_data":{"package_id":"headshots-lite"}}')
+          PROD_ID=$(echo "$PROD_RESP" | python3 -c "import sys,json; print(json.load(sys.stdin).get('data',{}).get('id','FAIL'))" 2>/dev/null || echo "FAIL")
+          echo "Product: $PROD_ID"
+          if [ "$PROD_ID" = "FAIL" ]; then echo "$PROD_RESP" | python3 -m json.tool; exit 1; fi
+          PRICE_RESP=$(curl -s -X POST https://api.paddle.com/prices \
+            -H "Authorization: Bearer $PADDLE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d "{\"product_id\":\"$PROD_ID\",\"description\":\"Lite - 5 AI headshots\",\"unit_price\":{\"amount\":\"990\",\"currency_code\":\"USD\"},\"custom_data\":{\"package_id\":\"headshots-lite\"}}")
+          PRICE_ID=$(echo "$PRICE_RESP" | python3 -c "import sys,json; print(json.load(sys.stdin).get('data',{}).get('id','FAIL'))" 2>/dev/null || echo "FAIL")
+          echo "Price: $PRICE_ID"
+          echo "PADDLE_PRICE_HEADSHOTS_LITE=$PRICE_ID"
+          echo "PRICE_LITE=$PRICE_ID" >> "$GITHUB_ENV"
+
+      - name: "Create: Basic product + price"
+        if: inputs.action == 'create-all'
+        env:
+          PADDLE_API_KEY: ${{ secrets.PADDLE_API_KEY }}
+        run: |
+          echo "--- 3/7: Basic ---"
+          PROD_RESP=$(curl -s -X POST https://api.paddle.com/products \
+            -H "Authorization: Bearer $PADDLE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{"name":"Basic","description":"10 AI professional headshots","tax_category":"digital-goods","custom_data":{"package_id":"headshots-express"}}')
+          PROD_ID=$(echo "$PROD_RESP" | python3 -c "import sys,json; print(json.load(sys.stdin).get('data',{}).get('id','FAIL'))" 2>/dev/null || echo "FAIL")
+          echo "Product: $PROD_ID"
+          if [ "$PROD_ID" = "FAIL" ]; then echo "$PROD_RESP" | python3 -m json.tool; exit 1; fi
+          PRICE_RESP=$(curl -s -X POST https://api.paddle.com/prices \
+            -H "Authorization: Bearer $PADDLE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d "{\"product_id\":\"$PROD_ID\",\"description\":\"Basic - 10 AI headshots\",\"unit_price\":{\"amount\":\"1990\",\"currency_code\":\"USD\"},\"custom_data\":{\"package_id\":\"headshots-express\"}}")
+          PRICE_ID=$(echo "$PRICE_RESP" | python3 -c "import sys,json; print(json.load(sys.stdin).get('data',{}).get('id','FAIL'))" 2>/dev/null || echo "FAIL")
+          echo "Price: $PRICE_ID"
+          echo "PADDLE_PRICE_HEADSHOTS_EXPRESS=$PRICE_ID"
+          echo "PRICE_BASIC=$PRICE_ID" >> "$GITHUB_ENV"
+
+      - name: "Create: Starter product + price"
+        if: inputs.action == 'create-all'
+        env:
+          PADDLE_API_KEY: ${{ secrets.PADDLE_API_KEY }}
+        run: |
+          echo "--- 4/7: Starter ---"
+          PROD_RESP=$(curl -s -X POST https://api.paddle.com/products \
+            -H "Authorization: Bearer $PADDLE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{"name":"Starter","description":"40 AI professional headshots","tax_category":"digital-goods","custom_data":{"package_id":"headshots-starter"}}')
+          PROD_ID=$(echo "$PROD_RESP" | python3 -c "import sys,json; print(json.load(sys.stdin).get('data',{}).get('id','FAIL'))" 2>/dev/null || echo "FAIL")
+          echo "Product: $PROD_ID"
+          if [ "$PROD_ID" = "FAIL" ]; then echo "$PROD_RESP" | python3 -m json.tool; exit 1; fi
+          PRICE_RESP=$(curl -s -X POST https://api.paddle.com/prices \
+            -H "Authorization: Bearer $PADDLE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d "{\"product_id\":\"$PROD_ID\",\"description\":\"Starter - 40 AI headshots\",\"unit_price\":{\"amount\":\"2990\",\"currency_code\":\"USD\"},\"custom_data\":{\"package_id\":\"headshots-starter\"}}")
+          PRICE_ID=$(echo "$PRICE_RESP" | python3 -c "import sys,json; print(json.load(sys.stdin).get('data',{}).get('id','FAIL'))" 2>/dev/null || echo "FAIL")
+          echo "Price: $PRICE_ID"
+          echo "PADDLE_PRICE_HEADSHOTS_STARTER=$PRICE_ID"
+          echo "PRICE_STARTER=$PRICE_ID" >> "$GITHUB_ENV"
+
+      - name: "Create: Professional product + price"
+        if: inputs.action == 'create-all'
+        env:
+          PADDLE_API_KEY: ${{ secrets.PADDLE_API_KEY }}
+        run: |
+          echo "--- 5/7: Professional ---"
+          PROD_RESP=$(curl -s -X POST https://api.paddle.com/products \
+            -H "Authorization: Bearer $PADDLE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{"name":"Professional","description":"80 AI professional headshots","tax_category":"digital-goods","custom_data":{"package_id":"headshots-professional"}}')
+          PROD_ID=$(echo "$PROD_RESP" | python3 -c "import sys,json; print(json.load(sys.stdin).get('data',{}).get('id','FAIL'))" 2>/dev/null || echo "FAIL")
+          echo "Product: $PROD_ID"
+          if [ "$PROD_ID" = "FAIL" ]; then echo "$PROD_RESP" | python3 -m json.tool; exit 1; fi
+          PRICE_RESP=$(curl -s -X POST https://api.paddle.com/prices \
+            -H "Authorization: Bearer $PADDLE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d "{\"product_id\":\"$PROD_ID\",\"description\":\"Professional - 80 AI headshots\",\"unit_price\":{\"amount\":\"4990\",\"currency_code\":\"USD\"},\"custom_data\":{\"package_id\":\"headshots-professional\"}}")
+          PRICE_ID=$(echo "$PRICE_RESP" | python3 -c "import sys,json; print(json.load(sys.stdin).get('data',{}).get('id','FAIL'))" 2>/dev/null || echo "FAIL")
+          echo "Price: $PRICE_ID"
+          echo "PADDLE_PRICE_HEADSHOTS_PROFESSIONAL=$PRICE_ID"
+          echo "PRICE_PROFESSIONAL=$PRICE_ID" >> "$GITHUB_ENV"
+
+      - name: "Create: Executive product + price"
+        if: inputs.action == 'create-all'
+        env:
+          PADDLE_API_KEY: ${{ secrets.PADDLE_API_KEY }}
+        run: |
+          echo "--- 6/7: Executive ---"
+          PROD_RESP=$(curl -s -X POST https://api.paddle.com/products \
+            -H "Authorization: Bearer $PADDLE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{"name":"Executive","description":"160 AI professional headshots","tax_category":"digital-goods","custom_data":{"package_id":"headshots-executive"}}')
+          PROD_ID=$(echo "$PROD_RESP" | python3 -c "import sys,json; print(json.load(sys.stdin).get('data',{}).get('id','FAIL'))" 2>/dev/null || echo "FAIL")
+          echo "Product: $PROD_ID"
+          if [ "$PROD_ID" = "FAIL" ]; then echo "$PROD_RESP" | python3 -m json.tool; exit 1; fi
+          PRICE_RESP=$(curl -s -X POST https://api.paddle.com/prices \
+            -H "Authorization: Bearer $PADDLE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d "{\"product_id\":\"$PROD_ID\",\"description\":\"Executive - 160 AI headshots\",\"unit_price\":{\"amount\":\"8990\",\"currency_code\":\"USD\"},\"custom_data\":{\"package_id\":\"headshots-executive\"}}")
+          PRICE_ID=$(echo "$PRICE_RESP" | python3 -c "import sys,json; print(json.load(sys.stdin).get('data',{}).get('id','FAIL'))" 2>/dev/null || echo "FAIL")
+          echo "Price: $PRICE_ID"
+          echo "PADDLE_PRICE_HEADSHOTS_EXECUTIVE=$PRICE_ID"
+          echo "PRICE_EXECUTIVE=$PRICE_ID" >> "$GITHUB_ENV"
+
+      - name: "Create: Express Headshot product + price"
+        if: inputs.action == 'create-all'
+        env:
+          PADDLE_API_KEY: ${{ secrets.PADDLE_API_KEY }}
+        run: |
+          echo "--- 7/7: Express Headshot ---"
+          PROD_RESP=$(curl -s -X POST https://api.paddle.com/products \
+            -H "Authorization: Bearer $PADDLE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{"name":"Express Headshot","description":"5 instant AI headshots from 1 selfie","tax_category":"digital-goods","custom_data":{"package_id":"express-instant"}}')
+          PROD_ID=$(echo "$PROD_RESP" | python3 -c "import sys,json; print(json.load(sys.stdin).get('data',{}).get('id','FAIL'))" 2>/dev/null || echo "FAIL")
+          echo "Product: $PROD_ID"
+          if [ "$PROD_ID" = "FAIL" ]; then echo "$PROD_RESP" | python3 -m json.tool; exit 1; fi
+          PRICE_RESP=$(curl -s -X POST https://api.paddle.com/prices \
+            -H "Authorization: Bearer $PADDLE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d "{\"product_id\":\"$PROD_ID\",\"description\":\"Express Headshot - 5 instant headshots\",\"unit_price\":{\"amount\":\"1990\",\"currency_code\":\"USD\"},\"custom_data\":{\"package_id\":\"express-instant\"}}")
+          PRICE_ID=$(echo "$PRICE_RESP" | python3 -c "import sys,json; print(json.load(sys.stdin).get('data',{}).get('id','FAIL'))" 2>/dev/null || echo "FAIL")
+          echo "Price: $PRICE_ID"
+          echo "PADDLE_PRICE_EXPRESS_INSTANT=$PRICE_ID"
+          echo "PRICE_EXPRESS=$PRICE_ID" >> "$GITHUB_ENV"
+
+      - name: "Summary: all price IDs"
+        if: inputs.action == 'create-all'
+        env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          echo "Starting paddle-create-all.py..."
-          echo "PWD: $(pwd)"
-          echo "File exists: $(test -f scripts/paddle-create-all.py && echo YES || echo NO)"
-          python3 scripts/paddle-create-all.py
-          RC=$?
-          echo "Exit code: $RC"
-          exit $RC
+          SUMMARY="PADDLE_PRICE_HEADSHOTS_TAILORPIC1=${PRICE_TAILORPIC1:-UNKNOWN}
+          PADDLE_PRICE_HEADSHOTS_LITE=${PRICE_LITE:-UNKNOWN}
+          PADDLE_PRICE_HEADSHOTS_EXPRESS=${PRICE_BASIC:-UNKNOWN}
+          PADDLE_PRICE_HEADSHOTS_STARTER=${PRICE_STARTER:-UNKNOWN}
+          PADDLE_PRICE_HEADSHOTS_PROFESSIONAL=${PRICE_PROFESSIONAL:-UNKNOWN}
+          PADDLE_PRICE_HEADSHOTS_EXECUTIVE=${PRICE_EXECUTIVE:-UNKNOWN}
+          PADDLE_PRICE_EXPRESS_INSTANT=${PRICE_EXPRESS:-UNKNOWN}"
+
+          echo "========================================"
+          echo "  ALL PRICE IDs"
+          echo "========================================"
+          echo "$SUMMARY"
+
+          # Post as commit comment
+          COMMIT_SHA="${{ github.sha }}"
+          gh api "repos/${{ github.repository }}/commits/$COMMIT_SHA/comments" \
+            -f body="$SUMMARY" || true
+
+          # Write to step summary
+          {
+            echo "## Paddle Setup Results"
+            echo '```'
+            echo "$SUMMARY"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
