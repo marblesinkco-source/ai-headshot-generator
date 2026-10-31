@@ -1,5 +1,40 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-31 Gece (Create a Hero — AI Engine + Checkout)
+
+### Tamamlanan Görevler
+- **feat-HERO-STORY-ENGINE**: `/api/hero/generate/route.ts` tamamen yeniden yazıldı
+  - LLM tabanlı hikâye üretimi: meta/meta-llama-3-70b-instruct via Replicate
+  - `buildLLMPrompt()` → `callReplicateLLM()` → `parseLLMResponse()` (Zod doğrulama)
+  - Template fallback: cover, 4 story beats, filler pages, conclusion
+  - rateLimit signature bug düzeltildi
+- **feat-HERO-ILLUSTRATION**: `/api/hero/illustrate/route.ts` sıfırdan yazıldı
+  - bytedance/flux-pulid ile yüz-koruyucu illüstrasyon
+  - Hero fotoğrafı Supabase storage'dan indirilir, base64'e çevrilir
+  - 3'lü batch'ler, Promise.allSettled, progress tracking
+  - STORY_CONFIG: steps=20, guidance=4.0, idWeight=0.7, 1024x768
+- **feat-HERO-CHECKOUT**: Paddle checkout akışı tamamlandı
+  - `checkout/route.ts`: storyId Zod schema + customData akışı
+  - `webhooks/paddle/route.ts`: hero-storybook handling (status→paid)
+  - `paddle.ts`: PaddleTransactionCustomData.storyId alanı
+  - Success URL: `/create-a-hero/preview/{storyId}?status=success`
+- **Canlı Site Doğrulama**:
+  - `/create-a-hero` landing ✅ (8 bölüm, evrenler, fiyatlandırma, FAQ)
+  - `/create-a-hero/start` wizard ✅ (4-adımlı sihirbaz, evren seçimi çalışıyor)
+
+### Commit
+- `6c41cbc` — CI PASS + Vercel PASS
+
+### Bekleyen (Murat Aksiyonu)
+- `PADDLE_PRICE_HERO_DIGITAL` env var'ı Vercel dashboard'da oluşturulmalı
+  - Paddle'da hero-storybook ürünü + $19 fiyat ID'si oluşturulmalı
+  - Env var pattern: `PADDLE_PRICE_HERO_DIGITAL=pri_xxxxx`
+
+### Sonraki Adımlar
+- feat-HERO-GROUP-GIFT (Hafta 2): Toplu hediye linki + katkı formu + paylaşım sayfası
+
+---
+
 ## Oturum: 2026-10-31 Akşam (Supabase DB Migration + Doğrulama)
 
 ### Tamamlanan Görevler

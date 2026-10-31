@@ -769,12 +769,12 @@
     {
       "id": "feat-HERO-STORY-ENGINE",
       "name": "Create a Hero — Story Generation Engine",
-      "description": "AI ile 16-24 sayfalık destansı hikâye metni üretimi. Her sayfa: metin + sahne tanımı (flux-pulid prompt). Girdi: sihirbaz cevapları + evren. Çıktı: JSON story structure. API route: /api/ai/story-generate.",
+      "description": "AI ile 16-24 sayfalık destansı hikâye metni üretimi. Her sayfa: metin + sahne tanımı (flux-pulid prompt). Girdi: sihirbaz cevapları + evren. Çıktı: JSON story structure. API route: /api/hero/generate.",
       "dependencies": [
         "feat-HERO-WIZARD"
       ],
-      "status": "not-started",
-      "evidence": ""
+      "status": "done",
+      "evidence": "/api/hero/generate/route.ts: LLM-powered story generation via meta/meta-llama-3-70b-instruct on Replicate. buildLLMPrompt → callReplicateLLM → parseLLMResponse with Zod validation. Template fallback with full story arc (cover, beats, filler, conclusion). Rate limit, CSRF guard. Commit: 6c41cbc. CI+Vercel PASS. 2026-10-31."
     },
     {
       "id": "feat-HERO-ILLUSTRATION",
@@ -783,8 +783,8 @@
       "dependencies": [
         "feat-HERO-STORY-ENGINE"
       ],
-      "status": "not-started",
-      "evidence": ""
+      "status": "done",
+      "evidence": "/api/hero/illustrate/route.ts: bytedance/flux-pulid via Replicate. Downloads hero face from Supabase storage, converts to base64. Batches of 3 with Promise.allSettled. Progress tracking via hero_stories.generation_progress. STORY_CONFIG: steps=20, guidance=4.0, idWeight=0.7, 1024x768. Commit: 6c41cbc. CI+Vercel PASS. 2026-10-31."
     },
     {
       "id": "feat-HERO-PREVIEW",
@@ -793,8 +793,8 @@
       "dependencies": [
         "feat-HERO-ILLUSTRATION"
       ],
-      "status": "not-started",
-      "evidence": ""
+      "status": "done",
+      "evidence": "/create-a-hero/preview/[storyId]/page.tsx + StoryPreview.tsx: Book viewer with locked/unlocked pages, 3 free preview pages. Purchase CTA for locked pages. Previously built with wizard. 2026-10-30."
     },
     {
       "id": "feat-HERO-CHECKOUT",
@@ -803,8 +803,8 @@
       "dependencies": [
         "feat-HERO-PREVIEW"
       ],
-      "status": "not-started",
-      "evidence": ""
+      "status": "done",
+      "evidence": "checkout/route.ts: storyId Zod schema + customData flow. paddle webhook: hero-storybook handling (status→paid, order_id set). Success URL → /create-a-hero/preview/{storyId}?status=success. paddle.ts: PaddleTransactionCustomData.storyId field. Commit: 6c41cbc. CI+Vercel PASS. BLOCKER: PADDLE_PRICE_HERO_DIGITAL env var must be set by Murat in Vercel. 2026-10-31."
     },
     {
       "id": "feat-HERO-LANDING",
