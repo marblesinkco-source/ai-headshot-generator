@@ -53,10 +53,14 @@ jobs:
             -d '{"status": "archived"}')
           echo "$RESULT" | python3 -m json.tool
 
+      - uses: actions/checkout@v4
+        if: inputs.action == 'create-all'
+
       - name: Create all products and prices
         if: inputs.action == 'create-all'
         env:
           PADDLE_API_KEY: ${{ secrets.PADDLE_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           echo "========================================"
           echo "  TailorPic Paddle Product Setup"
@@ -68,7 +72,32 @@ jobs:
             echo "ERROR: PADDLE_API_KEY secret is not set"
             exit 1
           fi
-          echo "API key present: ${PADDLE_API_KEY:0:15}..."
+          echo "API key present: yes (length=${#PADDLE_API_KEY})"
+
+          # Test API connectivity first
+          echo ""
+          echo "--- Testing Paddle API connectivity ---"
+          TEST_RESULT=$(curl -s -w "\nHTTP_CODE:%{http_code}" https://api.paddle.com/products \
+            -H "Authorization: Bearer $PADDLE_API_KEY" \
+            -H "Content-Type: application/json")
+          TEST_HTTP=$(echo "$TEST_RESULT" | grep "HTTP_CODE:" | cut -d: -f2)
+          TEST_BODY=$(echo "$TEST_RESULT" | grep -v "HTTP_CODE:")
+          echo "API test: HTTP $TEST_HTTP"
+          echo "Response preview: $(echo "$TEST_BODY" | head -c 500)"
+          echo ""
+
+          if [ "$TEST_HTTP" != "200" ]; then
+            echo "ERROR: Paddle API returned HTTP $TEST_HTTP. Cannot proceed."
+            echo "Full response: $TEST_BODY"
+
+            COMMIT_SHA=$(git rev-parse HEAD)
+            gh api "repos/$GITHUB_REPOSITORY/commits/$COMMIT_SHA/comments" \
+              -f body="Paddle API Error: HTTP $TEST_HTTP - $(echo "$TEST_BODY" | head -c 1000)" || true
+
+            exit 1
+          fi
+          echo "API connectivity OK"
+          echo ""
 
           FAIL_COUNT=0
 
@@ -283,6 +312,21 @@ jobs:
             echo ""
             echo "Failed: $FAIL_COUNT / 7"
           } >> "$GITHUB_STEP_SUMMARY"
+
+          # Post results as a commit comment so we can read it
+          COMMENT_BODY="Paddle Setup Results:
+          P1=${P1_PRICE:-FAIL}
+          P2_PROD=${P2_PROD:-FAIL} P2=${P2_PRICE:-FAIL}
+          P3_PROD=${P3_PROD:-FAIL} P3=${P3_PRICE:-FAIL}
+          P4_PROD=${P4_PROD:-FAIL} P4=${P4_PRICE:-FAIL}
+          P5_PROD=${P5_PROD:-FAIL} P5=${P5_PRICE:-FAIL}
+          P6_PROD=${P6_PROD:-FAIL} P6=${P6_PRICE:-FAIL}
+          P7_PROD=${P7_PROD:-FAIL} P7=${P7_PRICE:-FAIL}
+          Failed: $FAIL_COUNT / 7"
+
+          COMMIT_SHA=$(git rev-parse HEAD)
+          gh api "repos/$GITHUB_REPOSITORY/commits/$COMMIT_SHA/comments" \
+            -f body="$COMMENT_BODY" || echo "Could not post comment"
 
           if [ "$FAIL_COUNT" -gt 0 ]; then
             exit 1
