@@ -32,82 +32,120 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         shell: bash {0}
         run: |
-          curl -s "https://api.paddle.com/prices" \
+          # Fetch all prices (with pagination)
+          curl -s -w "\nHTTP_%{http_code}" "https://api.paddle.com/prices?per_page=200" \
             -H "Authorization: Bearer $PADDLE_API_KEY" \
             -H "Content-Type: application/json" \
             -o /tmp/prices_raw.json
+          echo "Prices HTTP: $(tail -1 /tmp/prices_raw.json)"
 
-          python3 << 'PYEOF' || true
-          import json
-          with open('/tmp/prices_raw.json') as f:
-              data = json.load(f)
-          lines = []
-          for p in data.get('data', []):
-              pid = p.get('id','?')
-              amt = p.get('unit_price',{}).get('amount','?')
-              st = p.get('status','?')
-              cd = p.get('custom_data') or {}
-              pkg = cd.get('package_id','no-pkg')
-              lines.append(f"{pkg} | {pid} | {amt} cents | {st}")
-          with open('/tmp/prices_summary.txt', 'w') as f:
-              f.write('\n'.join(lines))
-          print('\n'.join(lines))
-          PYEOF
-
-          # Also fetch products
-          curl -s "https://api.paddle.com/products" \
+          # Fetch all products (with pagination)
+          curl -s -w "\nHTTP_%{http_code}" "https://api.paddle.com/products?per_page=200" \
             -H "Authorization: Bearer $PADDLE_API_KEY" \
             -H "Content-Type: application/json" \
             -o /tmp/products_raw.json
+          echo "Products HTTP: $(tail -1 /tmp/products_raw.json)"
 
-          python3 << 'PYEOF2' || true
+          # Clean trailing HTTP status from files
+          sed -i '/^HTTP_/d' /tmp/prices_raw.json
+          sed -i '/^HTTP_/d' /tmp/products_raw.json
+
+          python3 << 'PYEOF' || true
           import json
-          products = {}
-          with open('/tmp/products_raw.json') as f:
-              pdata = json.load(f)
-          for p in pdata.get('data', []):
-              products[p['id']] = p.get('name', '?')
 
-          with open('/tmp/prices_summary.txt') as f:
-              prices_text = f.read()
+          # Read products
+          try:
+              with open('/tmp/products_raw.json') as f:
+                  raw_products = f.read()
+              pdata = json.loads(raw_products)
+          except Exception as e:
+              pdata = {"error": str(e), "raw": raw_products[:500]}
 
-          with open('/tmp/prices_raw.json') as f:
-              data = json.load(f)
+          # Read prices
+          try:
+              with open('/tmp/prices_raw.json') as f:
+                  raw_prices = f.read()
+              prdata = json.loads(raw_prices)
+          except Exception as e:
+              prdata = {"error": str(e), "raw": raw_prices[:500]}
 
           lines = ["# Paddle Products & Prices\n"]
-          lines.append("## Products")
-          for pid, name in products.items():
-              lines.append(f"- **{name}**: `{pid}`")
-          lines.append("\n## Prices")
-          lines.append("| Package ID | Price ID | Amount | Status |")
-          lines.append("|---|---|---|---|")
-          for p in data.get('data', []):
-              pid = p.get('id','?')
-              amt = p.get('unit_price',{}).get('amount','?')
-              st = p.get('status','?')
-              cd = p.get('custom_data') or {}
-              pkg = cd.get('package_id','no-pkg')
-              prod_id = p.get('product_id','?')
-              prod_name = products.get(prod_id, prod_id)
-              lines.append(f"| {pkg} | `{pid}` | {amt} cents | {st} |")
 
-          lines.append(f"\n## Raw counts")
-          lines.append(f"- Products: {len(products)}")
-          lines.append(f"- Prices: {len(data.get('data', []))}")
+          # Products section
+          products = {}
+          if 'data' in pdata:
+              for p in pdata['data']:
+                  pid = p.get('id', '?')
+                  name = p.get('name', '?')
+                  status = p.get('status', '?')
+                  cd = p.get('custom_data') or {}
+                  pkg = cd.get('package_id', 'no-pkg')
+                  products[pid] = name
+                  lines.append(f"- **{name}** (pkg: {pkg}): `{pid}` [{status}]")
+          else:
+              lines.append(f"Products error or empty response:")
+              lines.append(f"```json\n{json.dumps(pdata, indent=2)[:1000]}\n```")
+
+          lines.append(f"\n**Total products: {len(products)}**\n")
+
+          # Prices section
+          lines.append("## Prices\n")
+          lines.append("| Package ID | Price ID | Amount | Status | Product |")
+          lines.append("|---|---|---|---|---|")
+          price_count = 0
+          if 'data' in prdata:
+              for p in prdata['data']:
+                  pid = p.get('id','?')
+                  amt = p.get('unit_price',{}).get('amount','?')
+                  st = p.get('status','?')
+                  cd = p.get('custom_data') or {}
+                  pkg = cd.get('package_id','no-pkg')
+                  prod_id = p.get('product_id','?')
+                  prod_name = products.get(prod_id, prod_id)
+                  lines.append(f"| {pkg} | `{pid}` | {amt} cents | {st} | {prod_name} |")
+                  price_count += 1
+          else:
+              lines.append(f"Prices error or empty response:")
+              lines.append(f"```json\n{json.dumps(prdata, indent=2)[:1000]}\n```")
+
+          lines.append(f"\n**Total prices: {price_count}**")
+
+          # Env var mapping
+          env_map = {
+              "headshots-tailorpic1": "PADDLE_PRICE_HEADSHOTS_TAILORPIC1",
+              "headshots-lite": "PADDLE_PRICE_HEADSHOTS_LITE",
+              "headshots-express": "PADDLE_PRICE_HEADSHOTS_EXPRESS",
+              "headshots-starter": "PADDLE_PRICE_HEADSHOTS_STARTER",
+              "headshots-professional": "PADDLE_PRICE_HEADSHOTS_PROFESSIONAL",
+              "headshots-executive": "PADDLE_PRICE_HEADSHOTS_EXECUTIVE",
+              "express-instant": "PADDLE_PRICE_EXPRESS_INSTANT",
+          }
+
+          if 'data' in prdata:
+              lines.append("\n## Environment Variables\n```")
+              price_by_pkg = {}
+              for p in prdata['data']:
+                  cd = p.get('custom_data') or {}
+                  pkg = cd.get('package_id', '')
+                  if pkg and p.get('status') == 'active':
+                      price_by_pkg[pkg] = p['id']
+              for pkg, env in env_map.items():
+                  val = price_by_pkg.get(pkg, 'NOT_FOUND')
+                  lines.append(f"{env}={val}")
+              lines.append("```")
 
           body = '\n'.join(lines)
           with open('/tmp/issue_body.txt', 'w') as f:
               f.write(body)
           print(body)
-          PYEOF2
+          PYEOF
 
           # Create a GitHub issue with results
           if [ -f /tmp/issue_body.txt ]; then
             gh issue create \
               --repo "${{ github.repository }}" \
-              --title "Paddle Products & Prices - $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
-              --body-file /tmp/issue_body.txt \
-              --label "" 2>&1 || echo "Issue creation failed"
+              --title "Paddle Inventory $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+              --body-file /tmp/issue_body.txt 2>&1 || echo "Issue creation failed"
           fi
 
       # ===== ARCHIVE PRICE =====
