@@ -75,10 +75,10 @@ jobs:
           # Test connectivity — show the actual psql error
           CONN_OUTPUT=$(psql "$DB_URL" -c "SELECT 1" 2>&1) || {
             echo "psql error: $CONN_OUTPUT"
-            echo "psql error: $CONN_OUTPUT" >> "$GITHUB_STEP_SUMMARY"
-            echo "::error::Cannot connect to database. Verify SUPABASE_DB_URL in GitHub Secrets."
-            echo "Go to Supabase → Project Settings → Database → Connection string (Session pooler, port 5432)"
-            echo "Format: postgresql://postgres.[project-ref]:[password]@aws-0-[region].pooler.supabase.com:5432/postgres"
+            echo "psql error: \`\`\`$CONN_OUTPUT\`\`\`" >> "$GITHUB_STEP_SUMMARY"
+            # Also post as annotation so sandbox can read it
+            echo "::error::psql: $CONN_OUTPUT"
+            echo "::error::Cannot connect to database. Verify SUPABASE_DB_URL in GitHub Secrets. Go to Supabase → Project Settings → Database → Connection string (Session pooler, port 5432). Format: postgresql://postgres.[project-ref]:[password]@aws-0-[region].pooler.supabase.com:5432/postgres"
             exit 1
           }
           echo "Connection OK."
