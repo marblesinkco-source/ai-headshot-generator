@@ -56,6 +56,17 @@ jobs:
       - uses: actions/checkout@v4
         if: inputs.action == 'create-all'
 
+      - name: Debug - verify files
+        if: inputs.action == 'create-all'
+        run: |
+          echo "PWD: $(pwd)"
+          echo "---"
+          ls -la scripts/
+          echo "---"
+          python3 --version
+          echo "---"
+          head -5 scripts/paddle-create-all.py
+
       - name: Create all products and prices
         if: inputs.action == 'create-all'
         env:
