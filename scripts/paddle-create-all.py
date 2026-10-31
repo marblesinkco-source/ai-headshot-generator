@@ -160,8 +160,12 @@ def main():
     print("=" * 40)
     print()
 
+    # Immediate debug comment
+    post_commit_comment(f"paddle-create-all.py started. API_KEY present: {bool(API_KEY)}, len: {len(API_KEY)}")
+
     if not API_KEY:
         print("ERROR: PADDLE_API_KEY not set")
+        post_commit_comment("FAIL: PADDLE_API_KEY is empty")
         sys.exit(1)
 
     print(f"API key: present (length={len(API_KEY)})")
@@ -169,7 +173,14 @@ def main():
 
     # Test connectivity
     print("--- Testing API connectivity ---")
-    code, resp = api_request("GET", "/products")
+    try:
+        code, resp = api_request("GET", "/products")
+    except Exception as e:
+        msg = f"API request exception: {e}"
+        print(msg)
+        post_commit_comment(msg)
+        sys.exit(1)
+
     print(f"GET /products: HTTP {code}")
     if code != 200:
         msg = f"API Error: HTTP {code} - {json.dumps(resp)[:500]}"
@@ -177,6 +188,7 @@ def main():
         post_commit_comment(msg)
         sys.exit(1)
     print("API OK")
+    post_commit_comment("API connectivity OK, starting product creation...")
     print()
 
     results = {}
