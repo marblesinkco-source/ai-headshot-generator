@@ -1,5 +1,33 @@
 # TailorPic — Progress Tracker
 
+## Oturum: 2026-10-31 Gece-2 (Dashboard + Nav + Dynamic Pricing)
+
+### Tamamlanan Görevler
+- **Dashboard Storybooks Sayfası**: `/dashboard/storybooks/page.tsx` oluşturuldu
+  - Server component, hero_stories tablosu sorgusu, kullanıcı filtresi
+  - Status badge'leri (draft/preview/paid/generating/completed/failed)
+  - Universe ikon ve isim gösterimi, tarih, occasion
+  - Empty state + "Create New Story" CTA
+  - `force-dynamic` + auth redirect
+- **Header Navigasyon**: `Create a Hero` linki eklendi
+  - Desktop navLinks'e eklendi (Express ⚡ sonrası)
+  - Mobile secondaryLinks'e eklendi (📖 emoji ile)
+- **Dashboard Sidebar**: `My Storybooks` nav item eklendi
+  - DashboardShell NAV_ITEMS'a kitap ikonu ile eklendi (Orders sonrası)
+- **Dinamik Fiyatlandırma**: Tüm hardcoded `$19` kaldırıldı
+  - `page.tsx`: 3 adet $19 → `formatPrice(CATEGORIES['hero-storybook'].packages[0].price)`
+  - `HeroWizard.tsx`: 1 adet $19 → dinamik
+  - `StoryPreview.tsx`: 1 adet $19 → dinamik
+- **Canlı Site Doğrulama**: ✅
+  - Header'da "Create a Hero" linki görünüyor (desktop + mobile)
+  - Fiyat $19 config'den doğru geliyor
+  - Sayfa sorunsuz yükleniyor
+
+### Commitler
+- `c80c04f` — Dashboard storybooks + nav links + dynamic pricing — Vercel PASS ✅
+
+---
+
 ## Oturum: 2026-10-31 Gece (Create a Hero — AI Engine + Checkout)
 
 ### Tamamlanan Görevler
