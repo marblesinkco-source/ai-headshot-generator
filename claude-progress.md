@@ -22,8 +22,20 @@
   - `/create-a-hero` landing ✅ (8 bölüm, evrenler, fiyatlandırma, FAQ)
   - `/create-a-hero/start` wizard ✅ (4-adımlı sihirbaz, evren seçimi çalışıyor)
 
-### Commit
-- `6c41cbc` — CI PASS + Vercel PASS
+### Entegrasyon Bug Düzeltmeleri (87d5484 commit)
+- `illustrate/route.ts`: `storage_path` → `file_path` (DB migration ile uyumlu)
+- `illustrate/route.ts`: `hero-photos` → `photos` bucket (wizard ile uyumlu)
+- `StoryPreview.tsx`: `data.checkoutConfig` → `data.checkout` (API response ile uyumlu)
+
+### Ödeme Sonrası İllüstrasyon Akışı (da4379c commit)
+- `webhooks/paddle/route.ts`: Ödeme sonrası illüstrasyon tetikleme (fire-and-forget)
+- `illustrate/route.ts`: Internal webhook çağrıları için service role key desteği
+- `StoryPreview.tsx`: İlerleme çubuğu (5s polling), page dots, share butonu, failed state
+
+### Commitler
+- `6c41cbc` — Story engine + illustrate + checkout flow — CI PASS + Vercel PASS
+- `87d5484` — Integration bug fixes (3 bugs) — CI PASS + Vercel PASS
+- `da4379c` — Post-payment illustration trigger + enhanced preview — CI PASS + Vercel PASS
 
 ### Bekleyen (Murat Aksiyonu)
 - `PADDLE_PRICE_HERO_DIGITAL` env var'ı Vercel dashboard'da oluşturulmalı
