@@ -23,12 +23,26 @@
   - Express Instant: pro_01m693aw1me8d8mtvkg5h76k05 / pri_01m693aw4wdj9373ryq35p455j ($19.90)
 - **Duplicate price'lar arşivlendi**: pri_01m692y4r0gdtf7za9m3m48qrx, pri_01m692ztvq4t75pb35ff8b3f9y
 
-### Hâlâ Bekleyen (Murat Gerekli)
-1. **Vercel env vars** → Paddle key/token/price ID'leri + eksik değerler eklenmeli (liste verildi)
-2. **Upstash Redis** — URL ve token gerekli
-3. **Supabase migrations** — gh workflow run db-migrate.yml
-4. **Paddle discounts** — PADDLE_DISCOUNT_AVATAR20, AVATARBUNDLE, UPGRADE25 oluşturulacak
-5. **CRON_SECRET, ADMIN_EMAILS, REPLICATE_WEBHOOK_SECRET** — değerler gerekli
+- **Paddle İndirimler**: 3/3 başarılı oluşturuldu
+  - UPGRADE25 (25%): dsc_01m696465eenf64z5vaygkmhvx
+  - AVATARBUNDLE (15%): dsc_01m69646bk0eqb5ymdjys3sg3f
+  - AVATAR20 (20%): dsc_01m69646hjbqd40zkgfm20jhft
+- **CRON_SECRET**: Oluşturuldu, Vercel'e eklendi (Secret, Production)
+- **NEXT_PUBLIC_PADDLE_ENV**: Vercel'e eklendi
+- **PADDLE_PRICE_* (7 adet)**: Vercel'e eklendi
+- **CI + Vercel**: commit 4079110 — PASS ✅
+
+### Hâlâ Bekleyen (Murat'ın Yapması Gereken)
+1. **Vercel'e 5 env var ekle** (Settings → Environment Variables):
+   - `REPLICATE_WEBHOOK_SECRET` (Secret) — değer sohbette verildi
+   - `ADMIN_EMAILS` (Plaintext) — değer sohbette verildi
+   - `PADDLE_DISCOUNT_UPGRADE25` (Plaintext) — değer sohbette verildi
+   - `PADDLE_DISCOUNT_AVATARBUNDLE` (Plaintext) — değer sohbette verildi
+   - `PADDLE_DISCOUNT_AVATAR20` (Plaintext) — değer sohbette verildi
+2. **Vercel'de PADDLE_API_KEY ve PADDLE_WEBHOOK_SECRET tiplerini düzelt**: Config → Secret
+3. **GitHub Secrets'ta SUPABASE_DB_URL düzelt**: "tenant not found" hatası veriyor. Supabase → Project Settings → Database → Connection string (Session pooler, port 5432)
+4. **Upstash Redis** — URL ve token gerekli (acil değil, in-memory fallback çalışıyor)
+5. SUPABASE_DB_URL düzeldikten sonra: Supabase migrations çalıştırılacak
 
 ---
 
