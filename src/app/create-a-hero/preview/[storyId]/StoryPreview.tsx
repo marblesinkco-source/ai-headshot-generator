@@ -18,6 +18,7 @@ import {
   Loader2,
   Share2,
 } from 'lucide-react';
+import { GroupGiftPanel } from './GroupGiftPanel';
 
 const heroPkg = CATEGORIES['hero-storybook'].packages[0];
 const heroPrice = formatPrice(heroPkg.price, heroPkg.currency, true);
@@ -382,7 +383,7 @@ export function StoryPreview({ storyId }: { storyId: string }) {
             All {story.page_count} pages are complete with personalized illustrations.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <PdfDownloadButton />
+            <PdfDownloadButton storyId={storyId} />
             <Button
               variant="outline"
               className="gap-2"
@@ -409,34 +410,85 @@ export function StoryPreview({ storyId }: { storyId: string }) {
           </Button>
         </div>
       )}
+
+      {/* Group Gift panel */}
+      <div className="mt-8">
+        <GroupGiftPanel storyId={storyId} />
+      </div>
     </div>
   );
 }
 
-/* ── Inline PDF download button with "coming soon" notice ── */
-function PdfDownloadButton() {
-  const [showNotice, setShowNotice] = useState(false);
+/* ── Inline PDF download button ── */
+function PdfDownloadButton({ storyId }: { storyId: string }) {
+  const [downloading, setDownloading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!showNotice) return;
-    const t = setTimeout(() => setShowNotice(false), 3000);
+    if (!error) return;
+    const t = setTimeout(() => setError(null), 4000);
     return () => clearTimeout(t);
-  }, [showNotice]);
+  }, [error]);
+
+  async function handleDownload() {
+    setDownloading(true);
+    setError(null);
+
+    try {
+      const res = await fetch('/api/hero/download-pdf', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ storyId }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({ error: 'Download failed' }));
+        throw new Error(data.error || 'Download failed');
+      }
+
+      // Trigger browser download
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      // Extract filename from Content-Disposition or use default
+      const disposition = res.headers.get('Content-Disposition');
+      const match = disposition?.match(/filename="(.+?)"/);
+      a.download = match?.[1] || 'storybook.pdf';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Download failed');
+    } finally {
+      setDownloading(false);
+    }
+  }
 
   return (
     <div className="flex flex-col items-center gap-2">
       <Button
         variant="outline"
         className="gap-2"
-        onClick={() => setShowNotice(true)}
+        onClick={handleDownload}
+        disabled={downloading}
       >
-        <Download className="w-4 h-4" />
-        Download PDF
+        {downloading ? (
+          <>
+            <Loader2 className="w-4 h-4 animate-spin" />
+            Generating PDF...
+          </>
+        ) : (
+          <>
+            <Download className="w-4 h-4" />
+            Download PDF
+          </>
+        )}
       </Button>
-      {showNotice && (
-        <p className="flex items-center gap-1.5 text-sm text-tp-bronze-ink">
-          <CheckCircle className="w-4 h-4" />
-          PDF download will be available soon
+      {error && (
+        <p className="flex items-center gap-1.5 text-sm text-red-600">
+          {error}
         </p>
       )}
     </div>
